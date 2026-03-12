@@ -127,6 +127,9 @@ function extractExpansionEdges(expansionData) {
   if (!expansionData) {
     return [];
   }
+  if (Array.isArray(expansionData)) {
+    return expansionData;
+  }
   return Array.isArray(expansionData.edges) ? expansionData.edges : [];
 }
 
@@ -218,10 +221,28 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     .map((edge) => ({
       source: String(edge.source),
       target: String(edge.target),
-      type: String(edge.type || "relationship"),
+      type: String(edge.type || edge.relationship || "relationship"),
     }));
 
   return baseRoot;
+}
+
+function combineExpansionPayloads(...payloads) {
+  const nodes = [];
+  const edges = [];
+
+  for (const payload of payloads) {
+    if (!payload) {
+      continue;
+    }
+    nodes.push(...extractExpansionNodes(payload));
+    edges.push(...extractExpansionEdges(payload));
+  }
+
+  return {
+    nodes,
+    edges,
+  };
 }
 
 async function fetchJson(url) {
@@ -237,6 +258,8 @@ async function fetchJson(url) {
 export async function loadMergedGraphData({
   baseUrl,
   corporateUrl,
+  expandedNodesUrl = "./output/expanded_nodes.json",
+  expandedEdgesUrl = "./output/expanded_edges.json",
   onStatus = () => {},
 } = {}) {
   onStatus("Fetching federal hierarchy…");
@@ -248,12 +271,42 @@ export async function loadMergedGraphData({
     }
     throw error;
   });
+  onStatus("Fetching pipeline-expanded nodes…");
+  const expandedNodesPromise = fetchJson(expandedNodesUrl).catch((error) => {
+    if (error.status === 404) {
+      return [];
+    }
+    throw error;
+  });
+  onStatus("Fetching pipeline-expanded edges…");
+  const expandedEdgesPromise = fetchJson(expandedEdgesUrl).catch((error) => {
+    if (error.status === 404) {
+      return [];
+    }
+    throw error;
+  });
 
-  const [baseRaw, corporateData] = await Promise.all([basePromise, corporatePromise]);
+  const [baseRaw, corporateData, expandedNodes, expandedEdges] = await Promise.all([
+    basePromise,
+    corporatePromise,
+    expandedNodesPromise,
+    expandedEdgesPromise,
+  ]);
   const baseData = normalizeNode(baseRaw);
 
   onStatus("Merging federal and corporate structures…");
-  const mergedGraph = corporateData ? mergeExpansionGraph(baseData, cloneValue(corporateData)) : baseData;
+  const mergedPayload = combineExpansionPayloads(
+    corporateData,
+    expandedNodes.length > 0 || expandedEdges.length > 0
+      ? {
+          nodes: expandedNodes,
+          edges: expandedEdges,
+        }
+      : null,
+  );
+  const mergedGraph = mergedPayload.nodes.length > 0 || mergedPayload.edges.length > 0
+    ? mergeExpansionGraph(baseData, cloneValue(mergedPayload))
+    : baseData;
   trimDepth(mergedGraph);
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
