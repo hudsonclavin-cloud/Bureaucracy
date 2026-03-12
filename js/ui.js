@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260312b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260312b";
+import { createGovernmentGraph } from "./graph.js?v=20260312c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
 
 const dom = {
   loading: document.getElementById("loading"),
@@ -786,4 +786,12 @@ async function init() {
 init().catch((error) => {
   console.error(error);
   setText(dom.loadStatus, "Failed to load explorer data.");
+  if (dom.loading) {
+    dom.loading.style.opacity = "0";
+    window.setTimeout(() => {
+      if (dom.loading?.parentElement) {
+        dom.loading.remove();
+      }
+    }, 600);
+  }
 });
