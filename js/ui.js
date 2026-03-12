@@ -1,0 +1,453 @@
+import { createGovernmentGraph } from "./graph.js";
+import { loadMergedGraphData } from "./graphLoader.js";
+
+const dom = {
+  loading: document.getElementById("loading"),
+  loadStatus: document.getElementById("load-status"),
+  infoPanel: document.getElementById("info-panel"),
+  infoName: document.getElementById("info-name"),
+  infoType: document.getElementById("info-type"),
+  infoDesc: document.getElementById("info-desc"),
+  infoStats: document.getElementById("info-stats"),
+  childrenLabel: document.getElementById("info-children-label"),
+  childrenList: document.getElementById("info-children-list"),
+  breadcrumb: document.getElementById("bc-items"),
+  nodeCounter: document.getElementById("node-counter"),
+  statsTotal: document.getElementById("stats-total"),
+  statsLoaded: document.getElementById("stats-loaded"),
+  statsDepth: document.getElementById("stats-depth"),
+  statsPanel: document.getElementById("stats"),
+  depthCtrl: document.getElementById("depth-ctrl"),
+  expandLoader: document.getElementById("expand-loader"),
+  btnExpand: document.getElementById("btn-expand"),
+  btnExpandAll: document.getElementById("btn-expand-all"),
+  btnCancelExpand: document.getElementById("btn-cancel-expand"),
+  btnFocus: document.getElementById("btn-focus"),
+  btnCollapse: document.getElementById("btn-collapse"),
+  searchInput: document.getElementById("search-input"),
+  searchResults: document.getElementById("search-results"),
+  tooltip: document.getElementById("tooltip"),
+  canvas: document.getElementById("canvas"),
+};
+
+const state = {
+  graph: null,
+  searchIndex: [],
+  expandCancelled: false,
+  expandTimer: null,
+  loaderTimer: null,
+};
+
+function setText(element, value) {
+  if (element.textContent !== value) {
+    element.textContent = value;
+  }
+}
+
+function showLoader(label) {
+  clearTimeout(state.loaderTimer);
+  setText(dom.expandLoader, label);
+  dom.expandLoader.style.display = "block";
+}
+
+function hideLoader(delay = 200) {
+  clearTimeout(state.loaderTimer);
+  state.loaderTimer = window.setTimeout(() => {
+    dom.expandLoader.style.display = "none";
+  }, delay);
+}
+
+function updateStats(stats) {
+  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
+  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  setText(dom.statsLoaded, `${stats.visibleNodeCount.toLocaleString()} currently loaded`);
+  setText(
+    dom.statsDepth,
+    `Depth filter: ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"}`,
+  );
+}
+
+function renderBreadcrumb(nodeObj) {
+  const path = [];
+  let cursor = nodeObj;
+  while (cursor) {
+    path.unshift(cursor);
+    cursor = cursor.parent;
+  }
+
+  dom.breadcrumb.replaceChildren();
+  const fragment = document.createDocumentFragment();
+  path.forEach((item, index) => {
+    if (index > 0) {
+      const separator = document.createElement("span");
+      separator.className = "bc-sep";
+      separator.textContent = "›";
+      fragment.appendChild(separator);
+    }
+
+    const crumb = document.createElement("span");
+    crumb.className = "bc-item";
+    crumb.textContent = item.data.name.length > 28 ? `${item.data.name.slice(0, 26)}…` : item.data.name;
+    crumb.addEventListener("click", () => state.graph.setSelectedNode(item));
+    fragment.appendChild(crumb);
+  });
+  dom.breadcrumb.appendChild(fragment);
+}
+
+function renderInfoPanel(nodeObj) {
+  if (!nodeObj) {
+    return;
+  }
+
+  const data = nodeObj.data;
+  setText(dom.infoName, data.name);
+  setText(dom.infoType, data.type || "—");
+  setText(dom.infoDesc, data.desc || "—");
+
+  const statsFragment = document.createDocumentFragment();
+  const statRows = [];
+  if (data.employees) {
+    statRows.push(["EMPLOYEES", data.employees]);
+  }
+  if (data.budget) {
+    statRows.push(["BUDGET", data.budget]);
+  }
+  if ((data.children || []).length > 0) {
+    statRows.push(["SUB-UNITS", String(data.children.length)]);
+  }
+  statRows.push(["DEPTH", String(nodeObj.depth)]);
+
+  for (const [label, value] of statRows) {
+    const row = document.createElement("div");
+    row.className = "info-stat";
+
+    const labelSpan = document.createElement("span");
+    labelSpan.className = "info-stat-label";
+    labelSpan.textContent = label;
+    row.appendChild(labelSpan);
+
+    const valueSpan = document.createElement("span");
+    valueSpan.className = "info-stat-val";
+    valueSpan.textContent = value;
+    row.appendChild(valueSpan);
+
+    statsFragment.appendChild(row);
+  }
+  dom.infoStats.replaceChildren(statsFragment);
+
+  dom.childrenList.replaceChildren();
+  const children = data.children || [];
+  if (children.length > 0) {
+    dom.childrenLabel.style.display = "block";
+    const fragment = document.createDocumentFragment();
+    for (const child of children.slice(0, 8)) {
+      const item = document.createElement("div");
+      item.className = "child-item";
+
+      const dot = document.createElement("div");
+      dot.className = "child-dot";
+      dot.style.background = child.color || "#666";
+      item.appendChild(dot);
+
+      const label = document.createElement("span");
+      label.textContent = child.name;
+      item.appendChild(label);
+
+      item.addEventListener("click", () => {
+        const childObj = state.graph.getNodeById(child.id);
+        if (childObj) {
+          state.graph.setSelectedNode(childObj);
+          return;
+        }
+        state.graph.expandNode(nodeObj, true);
+        window.setTimeout(() => {
+          const revealed = state.graph.getNodeById(child.id);
+          if (revealed) {
+            state.graph.setSelectedNode(revealed);
+          }
+        }, 750);
+      });
+
+      fragment.appendChild(item);
+    }
+
+    if (children.length > 8) {
+      const more = document.createElement("div");
+      more.className = "child-item";
+      more.style.color = "#5a4a3a";
+      more.innerHTML = `<div class="child-dot" style="background:#333"></div><span>+ ${children.length - 8} more</span>`;
+      fragment.appendChild(more);
+    }
+
+    dom.childrenList.appendChild(fragment);
+  } else {
+    dom.childrenLabel.style.display = "none";
+  }
+
+  if (children.length > 0 && !nodeObj.expanded) {
+    dom.btnExpand.disabled = false;
+    setText(dom.btnExpand, `Expand — ${children.length} nodes`);
+    dom.btnExpandAll.disabled = false;
+    setText(dom.btnExpandAll, "Expand All Below");
+    dom.btnCollapse.style.display = "none";
+  } else if (nodeObj.expanded) {
+    dom.btnExpand.disabled = true;
+    setText(dom.btnExpand, "Already Expanded");
+    dom.btnExpandAll.disabled = false;
+    setText(dom.btnExpandAll, "Expand All Below");
+    dom.btnCollapse.style.display = "block";
+  } else {
+    dom.btnExpand.disabled = true;
+    setText(dom.btnExpand, "No Sub-nodes");
+    dom.btnExpandAll.disabled = true;
+    setText(dom.btnExpandAll, "No Sub-nodes");
+    dom.btnCollapse.style.display = "none";
+  }
+
+  dom.infoPanel.classList.add("open");
+  dom.depthCtrl.classList.add("panel-open");
+  dom.statsPanel.classList.remove("panel-closed");
+  renderBreadcrumb(nodeObj);
+}
+
+function updateTooltip(payload) {
+  if (!payload) {
+    dom.tooltip.style.display = "none";
+    return;
+  }
+
+  dom.tooltip.style.display = "block";
+  dom.tooltip.style.left = `${payload.x + 14}px`;
+  dom.tooltip.style.top = `${payload.y - 10}px`;
+  setText(dom.tooltip, payload.node.data.name);
+}
+
+function closeSearch() {
+  dom.searchResults.style.display = "none";
+  dom.searchResults.replaceChildren();
+}
+
+function renderSearchResults(matches) {
+  dom.searchResults.replaceChildren();
+  if (matches.length === 0) {
+    closeSearch();
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  for (const match of matches) {
+    const row = document.createElement("div");
+    row.className = "sr-item";
+
+    const name = document.createElement("span");
+    name.className = "sr-name";
+    name.textContent = match.name;
+    row.appendChild(name);
+
+    if (match.pathStr) {
+      const path = document.createElement("span");
+      path.className = "sr-path";
+      path.textContent = match.pathStr;
+      row.appendChild(path);
+    }
+
+    const type = document.createElement("span");
+    type.className = "sr-type";
+    type.textContent = match.type;
+    type.style.color = match.color || "#666";
+    type.style.borderColor = `${match.color || "#666"}40`;
+    row.appendChild(type);
+
+    row.addEventListener("click", () => {
+      closeSearch();
+      dom.searchInput.value = "";
+      revealAndSelect(match.id);
+    });
+
+    fragment.appendChild(row);
+  }
+
+  dom.searchResults.appendChild(fragment);
+  dom.searchResults.style.display = "block";
+}
+
+function revealAndSelect(id) {
+  const nodeObj = state.graph.revealNodeById(id, true);
+  window.setTimeout(() => {
+    const revealed = nodeObj || state.graph.getNodeById(id);
+    if (revealed) {
+      state.graph.setSelectedNode(revealed);
+    }
+  }, 800);
+}
+
+function stopProgressiveExpansion() {
+  state.expandCancelled = true;
+  clearTimeout(state.expandTimer);
+  dom.btnCancelExpand.style.display = "none";
+  dom.btnExpandAll.disabled = false;
+  setText(dom.btnExpandAll, "Expand All Below");
+  hideLoader(0);
+}
+
+function expandProgressively(targetDepth) {
+  state.expandCancelled = false;
+  dom.btnExpandAll.disabled = true;
+  setText(dom.btnExpandAll, "Expanding…");
+  dom.btnCancelExpand.style.display = "block";
+
+  const totalLevels = Number.isFinite(targetDepth) ? targetDepth : state.graph.getMaxDataDepth();
+
+  const tick = () => {
+    if (state.expandCancelled) {
+      hideLoader(0);
+      return;
+    }
+
+    const frontier = state.graph.getFrontier(targetDepth);
+    if (frontier.nodes.length === 0) {
+      dom.btnCancelExpand.style.display = "none";
+      dom.btnExpandAll.disabled = false;
+      setText(dom.btnExpandAll, "Expand All Below");
+      hideLoader();
+      renderInfoPanel(state.graph.getSelectedNode());
+      return;
+    }
+
+    const nextCount = state.graph.estimateExpansionSize(frontier.nodes);
+    const stats = state.graph.getStats();
+    if (stats.visibleNodeCount + nextCount > stats.maxNodes) {
+      state.graph.pruneDistantNodes();
+    }
+
+    const refreshedStats = state.graph.getStats();
+    if (refreshedStats.visibleNodeCount + nextCount > refreshedStats.maxNodes) {
+      showLoader(`Node cap reached at level ${frontier.depth + 1}`);
+      dom.btnCancelExpand.style.display = "none";
+      dom.btnExpandAll.disabled = false;
+      setText(dom.btnExpandAll, "Expand All Below");
+      hideLoader(900);
+      renderInfoPanel(state.graph.getSelectedNode());
+      return;
+    }
+
+    showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
+    state.graph.expandNodesBatch(frontier.nodes, true);
+    renderInfoPanel(state.graph.getSelectedNode());
+    state.expandTimer = window.setTimeout(tick, 650);
+  };
+
+  showLoader("Starting expansion…");
+  state.expandTimer = window.setTimeout(tick, 0);
+}
+
+function bindControls() {
+  dom.btnExpand.addEventListener("click", () => {
+    const selected = state.graph.getSelectedNode();
+    if (!selected) {
+      return;
+    }
+    showLoader("Loading branch…");
+    state.graph.expandNode(selected, true);
+    window.setTimeout(() => {
+      hideLoader();
+      renderInfoPanel(selected);
+    }, 250);
+  });
+
+  dom.btnExpandAll.addEventListener("click", () => {
+    if (!state.graph.getSelectedNode()) {
+      return;
+    }
+    expandProgressively(Infinity);
+  });
+
+  dom.btnCancelExpand.addEventListener("click", stopProgressiveExpansion);
+
+  dom.btnFocus.addEventListener("click", () => {
+    state.graph.focusSelectedNode();
+  });
+
+  dom.btnCollapse.addEventListener("click", () => {
+    const selected = state.graph.getSelectedNode();
+    if (!selected) {
+      return;
+    }
+    state.graph.collapseNode(selected);
+    renderInfoPanel(selected);
+  });
+
+  document.querySelectorAll(".depth-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".depth-btn").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      const depth = button.dataset.depth === "all" ? Infinity : Number(button.dataset.depth);
+      state.graph.setDepthFilter(depth);
+      updateStats(state.graph.getStats());
+    });
+  });
+
+  document.querySelectorAll(".depth-expand-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".depth-expand-btn").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      expandProgressively(Number(button.dataset.target));
+    });
+  });
+
+  dom.searchInput.addEventListener("input", () => {
+    const query = dom.searchInput.value.trim().toLowerCase();
+    if (query.length < 2) {
+      closeSearch();
+      return;
+    }
+    const matches = [];
+    for (const item of state.searchIndex) {
+      if (
+        item.name.toLowerCase().includes(query) ||
+        item.type.toLowerCase().includes(query) ||
+        item.pathStr.toLowerCase().includes(query)
+      ) {
+        matches.push(item);
+      }
+      if (matches.length === 12) {
+        break;
+      }
+    }
+    renderSearchResults(matches);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest("#search-wrap")) {
+      closeSearch();
+    }
+  });
+}
+
+async function init() {
+  state.graph = createGovernmentGraph({
+    canvas: dom.canvas,
+    onSelect: renderInfoPanel,
+    onHover: updateTooltip,
+    onCountsChange: updateStats,
+  });
+
+  const data = await loadMergedGraphData({
+    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
+    corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
+    onStatus: (message) => setText(dom.loadStatus, message),
+  });
+  state.graph.loadData(data);
+  state.searchIndex = state.graph.getSearchIndex();
+  bindControls();
+
+  dom.loading.style.opacity = "0";
+  window.setTimeout(() => {
+    dom.loading.remove();
+  }, 600);
+}
+
+init().catch((error) => {
+  console.error(error);
+  setText(dom.loadStatus, "Failed to load explorer data.");
+});

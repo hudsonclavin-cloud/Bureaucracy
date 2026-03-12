@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Federal Government — 3D Explorer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#c8a84a;--gold-dim:#7a6030;--gold-bright:#e8c86a;
+  --bg:#020408;--bg2:#060c14;--text:#e8dcc8;--text-dim:#6a5a3a;
+  --leg:#8a4ac8;--exec:#c84a4a;--jud:#4a8ac8;--ind:#4ac88a;--reg:#c8884a;
+}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;overflow:hidden;cursor:grab;}
+body.dragging{cursor:grabbing;}
+#canvas{display:block;position:fixed;inset:0;}
+#loading{
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  z-index:200;transition:opacity 0.6s ease;
+}
+#loading h1{font-family:'Playfair Display',serif;font-size:32px;color:var(--text);margin-bottom:8px;letter-spacing:0.04em;}
+#loading p{font-size:10px;color:var(--gold-dim);letter-spacing:0.3em;text-transform:uppercase;margin-bottom:28px;}
+.load-bar{width:240px;height:1px;background:rgba(200,168,74,0.12);}
+.load-fill{height:100%;background:var(--gold);width:0;animation:loadAnim 1.8s cubic-bezier(.4,0,.2,1) forwards;}
+@keyframes loadAnim{to{width:100%;}}
+#load-status{font-size:9px;color:var(--gold-dim);margin-top:12px;letter-spacing:0.15em;}
+#title-panel{position:fixed;top:28px;left:32px;pointer-events:none;z-index:10;}
+#title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
+#title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
+#node-counter{font-size:9px;color:var(--gold-dim);margin-top:2px;letter-spacing:0.1em;}
+#search-wrap{position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;}
+#search-input{
+  background:rgba(4,8,16,0.88);border:1px solid rgba(200,168,74,0.2);
+  color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;
+  padding:8px 14px;width:280px;outline:none;letter-spacing:0.05em;
+  backdrop-filter:blur(12px);transition:border-color 0.2s;
+}
+#search-input:focus{border-color:rgba(200,168,74,0.5);}
+#search-input::placeholder{color:var(--gold-dim);}
+#search-results{
+  background:rgba(4,8,16,0.96);border:1px solid rgba(200,168,74,0.15);
+  border-top:none;max-height:260px;overflow-y:auto;display:none;
+}
+.sr-item{
+  padding:7px 14px;font-size:10px;cursor:pointer;
+  border-bottom:1px solid rgba(200,168,74,0.06);
+  display:flex;flex-direction:column;gap:2px;
+  transition:background 0.15s;
+}
+.sr-item:hover{background:rgba(200,168,74,0.08);}
+.sr-name{color:var(--text);letter-spacing:0.03em;}
+.sr-path{color:var(--gold-dim);font-size:9px;letter-spacing:0.08em;}
+.sr-type{font-size:8px;padding:1px 5px;border:1px solid;display:inline-block;margin-top:1px;}
+#info-panel{
+  position:fixed;top:28px;right:32px;width:290px;
+  background:rgba(4,8,16,0.94);border:1px solid rgba(200,168,74,0.18);
+  padding:18px;z-index:20;pointer-events:auto;
+  transform:translateX(340px);transition:transform 0.45s cubic-bezier(.16,1,.3,1);
+  backdrop-filter:blur(16px);max-height:calc(100vh - 56px);overflow-y:auto;
+}
+#info-panel.open{transform:translateX(0);}
+#info-panel::-webkit-scrollbar{width:3px;}
+#info-panel::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.2);}
+#info-name{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold-bright);line-height:1.35;margin-bottom:4px;}
+#info-type{font-size:8px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-dim);padding-bottom:10px;border-bottom:1px solid rgba(200,168,74,0.1);margin-bottom:10px;}
+#info-desc{font-size:10px;color:#9a8a6a;line-height:1.7;margin-bottom:12px;}
+.info-stat{display:flex;justify-content:space-between;font-size:9px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.info-stat-label{color:var(--gold-dim);letter-spacing:0.1em;}
+.info-stat-val{color:var(--text);}
+#info-children-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.15em;text-transform:uppercase;margin:12px 0 6px;}
+#info-children-list{display:flex;flex-direction:column;gap:3px;max-height:180px;overflow-y:auto;}
+#info-children-list::-webkit-scrollbar{width:2px;}
+#info-children-list::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.15);}
+.child-item{
+  font-size:9px;color:#7a9a7a;padding:4px 8px;
+  border:1px solid rgba(100,160,100,0.15);background:rgba(100,160,100,0.04);
+  cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:6px;
+}
+.child-item:hover{background:rgba(100,160,100,0.12);color:#aadaaa;}
+.child-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+#info-actions{margin-top:14px;display:flex;flex-direction:column;gap:6px;}
+.btn{
+  width:100%;padding:8px;font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;
+  border:1px solid;transition:all 0.2s;background:transparent;
+}
+.btn-expand{border-color:rgba(200,168,74,0.4);color:var(--gold);}
+.btn-expand:hover{background:rgba(200,168,74,0.1);}
+.btn-expand:disabled{opacity:0.3;cursor:default;}
+.btn-focus{border-color:rgba(200,200,200,0.2);color:#aaa;}
+.btn-focus:hover{background:rgba(255,255,255,0.05);}
+.btn-collapse{border-color:rgba(200,80,80,0.3);color:#c87a7a;}
+.btn-collapse:hover{background:rgba(200,80,80,0.08);}
+.btn-cancel{border-color:rgba(200,80,80,0.55);color:#e09090;}
+.btn-cancel:hover{background:rgba(200,80,80,0.15);}
+#breadcrumb{position:fixed;bottom:28px;left:32px;z-index:20;pointer-events:auto;max-width:60vw;}
+#bc-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
+#bc-items{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+.bc-item{
+  font-size:9px;color:var(--gold);cursor:pointer;padding:3px 8px;
+  border:1px solid rgba(200,168,74,0.25);background:rgba(200,168,74,0.04);
+  transition:all 0.15s;white-space:nowrap;
+}
+.bc-item:hover{background:rgba(200,168,74,0.12);}
+.bc-sep{font-size:9px;color:#2a2010;padding:0 2px;}
+#legend{position:fixed;bottom:28px;right:32px;z-index:20;pointer-events:none;text-align:right;}
+#legend-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
+.leg-item{display:flex;align-items:center;justify-content:flex-end;gap:7px;font-size:9px;color:#5a4a2a;margin-bottom:3px;}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+#controls-hint{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%);
+  font-size:8px;color:#2a2015;letter-spacing:0.2em;text-transform:uppercase;
+  pointer-events:none;z-index:10;
+}
+#depth-ctrl{
+  position:fixed;top:50%;right:32px;transform:translateY(-50%);
+  z-index:20;pointer-events:auto;display:flex;flex-direction:column;
+  align-items:center;gap:4px;
+}
+#depth-ctrl.panel-open{right:338px;}
+.depth-btn{
+  width:28px;height:28px;background:rgba(4,8,16,0.8);
+  border:1px solid rgba(200,168,74,0.15);color:var(--gold-dim);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;
+}
+.depth-btn:hover,.depth-btn.active{background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);}
+#depth-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.1em;writing-mode:vertical-rl;margin:4px 0;}
+#tooltip{
+  position:fixed;background:rgba(4,8,16,0.97);border:1px solid rgba(200,168,74,0.25);
+  color:var(--gold);font-size:10px;padding:5px 10px;pointer-events:none;
+  display:none;z-index:30;white-space:nowrap;backdrop-filter:blur(8px);
+}
+#stats{position:fixed;top:28px;right:340px;z-index:10;pointer-events:none;text-align:right;}
+#stats.panel-closed{right:32px;}
+.stat-item{font-size:8px;color:var(--gold-dim);letter-spacing:0.1em;margin-bottom:2px;}
+#expand-loader{
+  position:fixed;bottom:72px;left:50%;transform:translateX(-50%);
+  background:rgba(4,8,16,0.94);border:1px solid rgba(200,168,74,0.35);
+  color:var(--gold);font-size:9px;padding:6px 18px;letter-spacing:0.22em;
+  text-transform:uppercase;z-index:30;pointer-events:none;display:none;
+  backdrop-filter:blur(10px);animation:expandPulse 0.9s ease infinite alternate;
+}
+@keyframes expandPulse{to{border-color:rgba(200,168,74,0.8);color:var(--gold-bright);}}
+#depth-expand-ctrl{
+  position:fixed;top:130px;left:32px;z-index:20;pointer-events:auto;
+}
+#depth-expand-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
+#depth-expand-btns{display:flex;gap:4px;}
+.depth-expand-btn{
+  width:28px;height:28px;background:rgba(4,8,16,0.8);
+  border:1px solid rgba(200,168,74,0.15);color:var(--gold-dim);
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;
+}
+.depth-expand-btn:hover,.depth-expand-btn.active{
+  background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);
+}
+@media (max-width: 900px){
+  #info-panel{top:auto;right:16px;left:16px;bottom:16px;width:auto;max-height:40vh;transform:translateY(110%);}
+  #info-panel.open{transform:translateY(0);}
+  #depth-ctrl{right:16px;top:auto;bottom:180px;transform:none;}
+  #depth-ctrl.panel-open{right:16px;}
+  #legend{display:none;}
+  #stats{display:none;}
+  #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
+  #search-wrap{top:16px;width:calc(100vw - 32px);}
+  #search-input{width:100%;}
+  #controls-hint{display:none;}
+}
+</style>
+</head>
+<body>
+<div id="loading">
+  <h1>The Federal Government</h1>
+  <p>United States of America</p>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div id="load-status">Loading government and corporate hierarchy…</div>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<div id="title-panel">
+  <h1>Government of the<br>United States</h1>
+  <p>3D Organizational Explorer</p>
+  <div id="node-counter">0 / 0 nodes rendered</div>
+</div>
+
+<div id="depth-expand-ctrl">
+  <div id="depth-expand-label">Expand to depth</div>
+  <div id="depth-expand-btns">
+    <button class="depth-expand-btn" data-target="1" title="Show depth 1">1</button>
+    <button class="depth-expand-btn" data-target="2" title="Show depth 2">2</button>
+    <button class="depth-expand-btn" data-target="3" title="Show depth 3">3</button>
+    <button class="depth-expand-btn" data-target="4" title="Show depth 4">4</button>
+    <button class="depth-expand-btn" data-target="5" title="Show depth 5">5</button>
+  </div>
+</div>
+
+<div id="search-wrap">
+  <input id="search-input" type="text" placeholder="Search any position, agency, office...">
+  <div id="search-results"></div>
+</div>
+
+<div id="info-panel">
+  <div id="info-name">—</div>
+  <div id="info-type">—</div>
+  <div id="info-desc">Select any node to explore</div>
+  <div id="info-stats"></div>
+  <div id="info-children-label" style="display:none">Sub-units</div>
+  <div id="info-children-list"></div>
+  <div id="info-actions">
+    <button class="btn btn-expand" id="btn-expand" disabled>Expand Node</button>
+    <button class="btn btn-expand" id="btn-expand-all" disabled>Expand All Below</button>
+    <button class="btn btn-cancel" id="btn-cancel-expand" style="display:none">Cancel Expand</button>
+    <button class="btn btn-focus" id="btn-focus">Fly to Node</button>
+    <button class="btn btn-collapse" id="btn-collapse" style="display:none">Collapse Children</button>
+  </div>
+</div>
+
+<div id="breadcrumb">
+  <div id="bc-label">Navigation Path</div>
+  <div id="bc-items"></div>
+</div>
+
+<div id="depth-ctrl">
+  <div id="depth-label">DEPTH</div>
+  <button class="depth-btn active" data-depth="all" title="Show all expanded">∞</button>
+  <button class="depth-btn" data-depth="1" title="Depth 1">1</button>
+  <button class="depth-btn" data-depth="2" title="Depth 2">2</button>
+  <button class="depth-btn" data-depth="3" title="Depth 3">3</button>
+  <button class="depth-btn" data-depth="4" title="Depth 4">4</button>
+  <button class="depth-btn" data-depth="5" title="Depth 5">5</button>
+</div>
+
+<div id="legend">
+  <div id="legend-label">Branch</div>
+  <div class="leg-item"><span>Constitution</span><div class="leg-dot" style="background:#c8a84a"></div></div>
+  <div class="leg-item"><span>Legislative</span><div class="leg-dot" style="background:#8a4ac8"></div></div>
+  <div class="leg-item"><span>Executive</span><div class="leg-dot" style="background:#c84a4a"></div></div>
+  <div class="leg-item"><span>Judicial</span><div class="leg-dot" style="background:#4a8ac8"></div></div>
+  <div class="leg-item"><span>Independent</span><div class="leg-dot" style="background:#4ac88a"></div></div>
+  <div class="leg-item"><span>Regulatory</span><div class="leg-dot" style="background:#c8884a"></div></div>
+  <div class="leg-item"><span>Position / Office</span><div class="leg-dot" style="background:#666666"></div></div>
+</div>
+
+<div id="stats" class="panel-closed">
+  <div class="stat-item" id="stats-total">0 total nodes</div>
+  <div class="stat-item" id="stats-loaded">0 currently loaded</div>
+  <div class="stat-item" id="stats-depth">Depth filter: All</div>
+</div>
+
+<div id="controls-hint">Drag · Scroll to zoom · Click to explore · Search any role</div>
+<div id="expand-loader">Loading branch…</div>
+<div id="tooltip"></div>
+
+<script>
+window.GRAPH_DATA_SOURCES = {
+  base: "./data/federal_gov_complete_1.json",
+  corporate: "./data_expansion/corporate_expansion.json",
+};
+</script>
+<script type="module" src="./js/ui.js"></script>
+</body>
+</html>
