@@ -1376,9 +1376,9 @@ export function createGovernmentGraph({
     applyFlyMovement();
 
     const distance = CAMERA_DISTANCE / state.zoom;
-    camera.position.x = distance * Math.sin(state.rotY) * Math.cos(state.rotX);
-    camera.position.y = distance * Math.sin(state.rotX);
-    camera.position.z = distance * Math.cos(state.rotY) * Math.cos(state.rotX);
+    camera.position.x = state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX);
+    camera.position.y = state.camFocus.y + distance * Math.sin(state.rotX);
+    camera.position.z = state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX);
     camera.lookAt(state.camFocus);
     camera.updateMatrixWorld();
 
