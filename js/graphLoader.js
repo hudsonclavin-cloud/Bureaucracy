@@ -9,7 +9,7 @@ const DEFAULT_NODE = {
   children: [],
 };
 
-const MAX_DEPTH = 12;
+const MAX_DEPTH = 20;
 
 function cloneValue(value) {
   return JSON.parse(JSON.stringify(value));

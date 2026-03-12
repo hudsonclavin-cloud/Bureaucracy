@@ -3,10 +3,10 @@ import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
-const MAX_NODES = 10000;
-const MAX_DEPTH = 12;
+const MAX_NODES = 25000;
+const MAX_DEPTH = 20;
 const NODE_RADIUS = 4;
-const NODE_OPACITY = 0.9;
+const NODE_OPACITY = 0.92;
 const EXPANSION_TIME_BUDGET_MS = 8;
 const EXPANSION_CHILD_BUDGET = 240;
 const EXPANSION_PARENT_BATCH = 48;
@@ -31,19 +31,20 @@ export function createGovernmentGraph({
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x020408, 1);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 3000);
   camera.position.set(0, 0, CAMERA_DISTANCE);
 
-  scene.add(new THREE.AmbientLight(0x223344, 0.9));
-  const lightA = new THREE.PointLight(0xc8a84a, 2.5, 600);
+  scene.add(new THREE.AmbientLight(0xffffff, 1.55));
+  const lightA = new THREE.PointLight(0xffffff, 2.6, 900);
   lightA.position.set(0, 120, 120);
   scene.add(lightA);
-  const lightB = new THREE.PointLight(0x4a5aa8, 1.5, 500);
+  const lightB = new THREE.PointLight(0x4D96FF, 1.8, 700);
   lightB.position.set(-120, -60, 60);
   scene.add(lightB);
-  const lightC = new THREE.PointLight(0x8a4ac8, 1.0, 400);
+  const lightC = new THREE.PointLight(0xFFD166, 1.4, 700);
   lightC.position.set(100, -100, -60);
   scene.add(lightC);
 
@@ -87,6 +88,7 @@ export function createGovernmentGraph({
   scene.add(rootHalo);
 
   const raycaster = new THREE.Raycaster();
+  raycaster.params.Points.threshold = 5;
   const mouse2d = new THREE.Vector2();
   const frustum = new THREE.Frustum();
   const projectionMatrix = new THREE.Matrix4();
@@ -152,6 +154,15 @@ export function createGovernmentGraph({
     renderDirty: false,
     forceFullRenderRefresh: true,
     lastCameraSignature: "",
+    flyMode: false,
+    keyState: {
+      KeyW: false,
+      KeyA: false,
+      KeyS: false,
+      KeyD: false,
+      KeyQ: false,
+      KeyE: false,
+    },
   };
 
   function notifyCounts() {
@@ -253,11 +264,12 @@ export function createGovernmentGraph({
   function createNodeBatch(depth, capacity) {
     const radius = nodeRadiusForDepth(depth);
     const geometry = new THREE.SphereGeometry(radius, depth <= 2 ? 16 : 10, depth <= 2 ? 16 : 10);
-    const material = new THREE.MeshPhongMaterial({
+    const material = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       emissive: 0xffffff,
       emissiveIntensity: 0.3,
-      shininess: 70,
+      roughness: 0.38,
+      metalness: 0.05,
       transparent: true,
       opacity: NODE_OPACITY,
       vertexColors: true,
@@ -283,11 +295,12 @@ export function createGovernmentGraph({
     }
 
     const clusterGeometry = new THREE.SphereGeometry(1, 12, 12);
-    const clusterMaterial = new THREE.MeshPhongMaterial({
+    const clusterMaterial = new THREE.MeshStandardMaterial({
       color: 0xffffff,
       emissive: 0xffffff,
-      emissiveIntensity: 0.22,
-      shininess: 30,
+      emissiveIntensity: 0.18,
+      roughness: 0.5,
+      metalness: 0.04,
       transparent: true,
       opacity: 0.9,
       vertexColors: true,
@@ -309,9 +322,9 @@ export function createGovernmentGraph({
     edgeGeometry.setAttribute("position", new THREE.BufferAttribute(edgePositions, 3));
     edgeGeometry.setAttribute("color", new THREE.BufferAttribute(edgeColors, 3));
     const edgeMaterial = new THREE.LineBasicMaterial({
-      color: 0xaaaaaa,
+      color: 0x999999,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.3,
     });
     const edgeLines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
     edgeLines.frustumCulled = false;
@@ -904,13 +917,19 @@ export function createGovernmentGraph({
     raycaster.setFromCamera(mouse2d, camera);
     const interactive = [state.clusterBatch.mesh, ...[...state.nodeBatches.values()].map((batch) => batch.mesh)];
     const hits = raycaster.intersectObjects(interactive, false);
+    let clusterFallback = null;
     for (const hit of hits) {
       const target = getRenderableFromIntersection(hit);
       if (target && target.renderVisible !== false) {
-        return target;
+        if (!target.isCluster) {
+          return target;
+        }
+        if (!clusterFallback) {
+          clusterFallback = target;
+        }
       }
     }
-    return null;
+    return clusterFallback;
   }
 
   function updateFrustum() {
@@ -1158,6 +1177,45 @@ export function createGovernmentGraph({
     }
   }
 
+  function applyFlyMovement() {
+    if (!state.flyMode) {
+      return;
+    }
+
+    const moveSpeed = Math.max(0.65, 1.8 / Math.max(state.zoom, 0.35));
+    const forward = tempVecA.copy(state.camFocusTarget).sub(camera.position).normalize();
+    const right = basisA.copy(forward).cross(camera.up).normalize();
+    const worldUp = basisB.set(0, 1, 0);
+    const delta = directionVec.set(0, 0, 0);
+
+    if (state.keyState.KeyW) {
+      delta.add(forward);
+    }
+    if (state.keyState.KeyS) {
+      delta.sub(forward);
+    }
+    if (state.keyState.KeyD) {
+      delta.add(right);
+    }
+    if (state.keyState.KeyA) {
+      delta.sub(right);
+    }
+    if (state.keyState.KeyE) {
+      delta.add(worldUp);
+    }
+    if (state.keyState.KeyQ) {
+      delta.sub(worldUp);
+    }
+
+    if (delta.lengthSq() === 0) {
+      return;
+    }
+
+    delta.normalize().multiplyScalar(moveSpeed);
+    state.camFocusTarget.add(delta);
+    state.renderDirty = true;
+  }
+
   function animate() {
     requestAnimationFrame(animate);
     state.time += 0.008;
@@ -1169,6 +1227,7 @@ export function createGovernmentGraph({
     state.rotY += (state.targetRotY - state.rotY) * 0.07;
     state.zoom += (state.targetZoom - state.zoom) * 0.07;
     state.camFocus.lerp(state.camFocusTarget, 0.05);
+    applyFlyMovement();
 
     const distance = CAMERA_DISTANCE / state.zoom;
     camera.position.x = distance * Math.sin(state.rotY) * Math.cos(state.rotX);
@@ -1226,9 +1285,20 @@ export function createGovernmentGraph({
     }
 
     if (event.buttons === 1 && state.isDragging) {
-      state.targetRotY += dx * 0.004;
-      state.targetRotX += dy * 0.004;
-      state.targetRotX = Math.max(-Math.PI / 2.1, Math.min(Math.PI / 2.1, state.targetRotX));
+      if (event.shiftKey && !state.flyMode) {
+        const distance = CAMERA_DISTANCE / state.zoom;
+        const forward = tempVecA.copy(state.camFocus).sub(camera.position).normalize();
+        const right = basisA.copy(forward).cross(camera.up).normalize();
+        const up = basisB.copy(camera.up).normalize();
+        const panScale = distance * 0.0018;
+        state.camFocusTarget.addScaledVector(right, -dx * panScale);
+        state.camFocusTarget.addScaledVector(up, dy * panScale);
+      } else {
+        state.targetRotY += dx * 0.004;
+        state.targetRotX += dy * 0.004;
+        state.targetRotX = Math.max(-Math.PI / 2.1, Math.min(Math.PI / 2.1, state.targetRotX));
+      }
+      state.renderDirty = true;
     }
     state.prevMouse = { x: event.clientX, y: event.clientY };
 
@@ -1265,7 +1335,7 @@ export function createGovernmentGraph({
       "wheel",
       (event) => {
         state.targetZoom *= event.deltaY > 0 ? 1.1 : 0.9;
-        state.targetZoom = Math.max(0.35, Math.min(8, state.targetZoom));
+        state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
         state.renderDirty = true;
         event.preventDefault();
       },
@@ -1297,6 +1367,18 @@ export function createGovernmentGraph({
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
       state.renderDirty = true;
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.code in state.keyState) {
+        state.keyState[event.code] = true;
+      }
+    });
+
+    window.addEventListener("keyup", (event) => {
+      if (event.code in state.keyState) {
+        state.keyState[event.code] = false;
+      }
     });
   }
 
@@ -1347,7 +1429,18 @@ export function createGovernmentGraph({
     focusSelectedNode() {
       if (state.selectedNode) {
         state.camFocusTarget.copy(state.selectedNode.pos);
+        state.targetZoom = Math.max(state.targetZoom, 1.45);
       }
+    },
+    setFlyMode(enabled) {
+      state.flyMode = Boolean(enabled);
+      if (state.flyMode) {
+        state.targetZoom = Math.max(state.targetZoom, 1.6);
+      }
+      return state.flyMode;
+    },
+    isFlyMode() {
+      return state.flyMode;
     },
     getNodeById(id) {
       return state.nodeMap.get(id) || null;

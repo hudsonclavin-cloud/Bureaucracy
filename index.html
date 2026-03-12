@@ -197,6 +197,9 @@ body.dragging{cursor:grabbing;}
     <button class="depth-expand-btn" data-target="3" title="Show depth 3">3</button>
     <button class="depth-expand-btn" data-target="4" title="Show depth 4">4</button>
     <button class="depth-expand-btn" data-target="5" title="Show depth 5">5</button>
+    <button class="depth-expand-btn" data-target="6" title="Show depth 6">6</button>
+    <button class="depth-expand-btn" data-target="8" title="Show depth 8">8</button>
+    <button class="depth-expand-btn" data-target="12" title="Show depth 12">12</button>
   </div>
 </div>
 
@@ -217,6 +220,7 @@ body.dragging{cursor:grabbing;}
     <button class="btn btn-expand" id="btn-expand-all" disabled>Expand All Below</button>
     <button class="btn btn-cancel" id="btn-cancel-expand" style="display:none">Cancel Expand</button>
     <button class="btn btn-focus" id="btn-focus">Fly to Node</button>
+    <button class="btn btn-focus" id="btn-fly-mode">Enable Fly Mode</button>
     <button class="btn btn-collapse" id="btn-collapse" style="display:none">Collapse Children</button>
   </div>
 </div>
@@ -234,6 +238,9 @@ body.dragging{cursor:grabbing;}
   <button class="depth-btn" data-depth="3" title="Depth 3">3</button>
   <button class="depth-btn" data-depth="4" title="Depth 4">4</button>
   <button class="depth-btn" data-depth="5" title="Depth 5">5</button>
+  <button class="depth-btn" data-depth="6" title="Depth 6">6</button>
+  <button class="depth-btn" data-depth="8" title="Depth 8">8</button>
+  <button class="depth-btn" data-depth="12" title="Depth 12">12</button>
 </div>
 
 <div id="legend">
@@ -253,7 +260,7 @@ body.dragging{cursor:grabbing;}
   <div class="stat-item" id="stats-depth">Depth filter: All</div>
 </div>
 
-<div id="controls-hint">Drag · Scroll to zoom · Click to explore · Search any role</div>
+<div id="controls-hint">Drag orbit · Shift+Drag pan · Scroll zoom · Click focus · Fly mode: WASD + Q/E</div>
 <div id="expand-loader">Loading branch…</div>
 <div id="tooltip"></div>
 

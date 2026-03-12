@@ -23,6 +23,7 @@ const dom = {
   btnExpandAll: document.getElementById("btn-expand-all"),
   btnCancelExpand: document.getElementById("btn-cancel-expand"),
   btnFocus: document.getElementById("btn-focus"),
+  btnFlyMode: document.getElementById("btn-fly-mode"),
   btnCollapse: document.getElementById("btn-collapse"),
   searchInput: document.getElementById("search-input"),
   searchResults: document.getElementById("search-results"),
@@ -63,7 +64,7 @@ function updateStats(stats) {
   setText(dom.statsLoaded, `${stats.visibleNodeCount.toLocaleString()} currently loaded`);
   setText(
     dom.statsDepth,
-    `Depth filter: ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"}`,
+    `Depth filter: ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} · queue ${stats.pendingExpansions ?? 0}`,
   );
 }
 
@@ -207,6 +208,7 @@ function renderInfoPanel(nodeObj) {
   dom.infoPanel.classList.add("open");
   dom.depthCtrl.classList.add("panel-open");
   dom.statsPanel.classList.remove("panel-closed");
+  setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
   renderBreadcrumb(nodeObj);
 }
 
@@ -298,10 +300,11 @@ function stopProgressiveExpansion() {
 
 function progressiveRender(frontierNodes, onComplete) {
   let index = 0;
+  const BATCH = 150;
 
   function batch() {
     let count = 0;
-    while (index < frontierNodes.length && count < 200) {
+    while (index < frontierNodes.length && count < BATCH) {
       state.graph.expandNodesBatch([frontierNodes[index]], true);
       index += 1;
       count += 1;
@@ -369,7 +372,7 @@ function expandProgressively(targetDepth) {
 
     showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
     progressiveRender(frontier.nodes, () => {
-      renderInfoPanel(state.graph.getSelectedNode());
+      updateStats(state.graph.getStats());
       state.expandFrame = window.requestAnimationFrame(tick);
     });
   };
@@ -408,6 +411,11 @@ function bindControls() {
 
   dom.btnFocus.addEventListener("click", () => {
     state.graph.focusSelectedNode();
+  });
+
+  dom.btnFlyMode.addEventListener("click", () => {
+    const enabled = state.graph.setFlyMode(!state.graph.isFlyMode());
+    setText(dom.btnFlyMode, enabled ? "Disable Fly Mode" : "Enable Fly Mode");
   });
 
   dom.btnCollapse.addEventListener("click", () => {
