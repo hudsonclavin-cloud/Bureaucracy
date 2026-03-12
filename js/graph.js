@@ -108,6 +108,7 @@ export function createGovernmentGraph({
   const tempVecA = new THREE.Vector3();
   const tempVecB = new THREE.Vector3();
   const tempVecC = new THREE.Vector3();
+  const tempVecD = new THREE.Vector3();
   const tempMat4 = new THREE.Matrix4();
   const tempQuat = new THREE.Quaternion();
   const tempScale = new THREE.Vector3();
@@ -980,11 +981,19 @@ export function createGovernmentGraph({
     return null;
   }
 
+  function setPointerFromEvent(event) {
+    const rect = canvas.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    mouse2d.set(x, y);
+    return rect;
+  }
+
   function getHit(event) {
     if (!state.clusterBatch) {
       return null;
     }
-    mouse2d.set((event.clientX / window.innerWidth) * 2 - 1, -(event.clientY / window.innerHeight) * 2 + 1);
+    const rect = setPointerFromEvent(event);
     raycaster.setFromCamera(mouse2d, camera);
     const interactive = [state.clusterBatch.mesh, ...[...state.nodeBatches.values()].map((batch) => batch.mesh)];
     const hits = raycaster.intersectObjects(interactive, false);
@@ -1001,22 +1010,25 @@ export function createGovernmentGraph({
       }
     }
 
-    const pickThreshold = Math.max(6, (CAMERA_DISTANCE / Math.max(state.zoom, 0.35)) * 0.05);
+    const pointerX = event.clientX - rect.left;
+    const pointerY = event.clientY - rect.top;
+    const pickThreshold = 18;
     let bestNode = null;
     let bestDistance = Infinity;
     for (const nodeObj of state.visibleNodes) {
       if (!nodeObj.renderVisible || nodeObj.clustered) {
         continue;
       }
-      tempVecA.subVectors(nodeObj.pos, raycaster.ray.origin);
-      const alongRay = tempVecA.dot(raycaster.ray.direction);
-      if (alongRay < 0) {
+      tempVecD.copy(nodeObj.pos).project(camera);
+      if (tempVecD.z < -1 || tempVecD.z > 1) {
         continue;
       }
-      tempVecB.copy(raycaster.ray.direction).multiplyScalar(alongRay).add(raycaster.ray.origin);
-      const distanceToRay = tempVecB.distanceTo(nodeObj.pos);
-      if (distanceToRay < pickThreshold && distanceToRay < bestDistance) {
-        bestDistance = distanceToRay;
+
+      const screenX = ((tempVecD.x + 1) * 0.5) * rect.width;
+      const screenY = ((1 - tempVecD.y) * 0.5) * rect.height;
+      const distanceToPointer = Math.hypot(screenX - pointerX, screenY - pointerY);
+      if (distanceToPointer < pickThreshold && distanceToPointer < bestDistance) {
+        bestDistance = distanceToPointer;
         bestNode = nodeObj;
       }
     }
