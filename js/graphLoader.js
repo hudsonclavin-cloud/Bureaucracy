@@ -9,6 +9,8 @@ const DEFAULT_NODE = {
   children: [],
 };
 
+const MAX_DEPTH = 12;
+
 function cloneValue(value) {
   return JSON.parse(JSON.stringify(value));
 }
@@ -33,6 +35,16 @@ function walkTree(node, visit, parent = null) {
   visit(node, parent);
   for (const child of node.children) {
     walkTree(child, visit, node);
+  }
+}
+
+function trimDepth(node, depth = 0) {
+  if (depth >= MAX_DEPTH) {
+    node.children = [];
+    return;
+  }
+  for (const child of node.children) {
+    trimDepth(child, depth + 1);
   }
 }
 
@@ -189,15 +201,6 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     safeAddChild(parentNode, childNode, parentMap);
   }
 
-  for (const edge of rawEdges) {
-    if (!edge || !edge.source || !edge.target) {
-      continue;
-    }
-    const sourceNode = baseNodeMap.get(String(edge.source));
-    const targetNode = baseNodeMap.get(String(edge.target));
-    safeAddChild(sourceNode, targetNode, parentMap);
-  }
-
   for (const treeRoot of treeRoots) {
     const existingRoot = baseNodeMap.get(treeRoot.id);
     mergeExpansionTree(baseNodeMap, parentMap, existingRoot || treeRoot);
@@ -251,6 +254,7 @@ export async function loadMergedGraphData({
 
   onStatus("Merging federal and corporate structures…");
   const mergedGraph = corporateData ? mergeExpansionGraph(baseData, cloneValue(corporateData)) : baseData;
+  trimDepth(mergedGraph);
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
   return mergedGraph;

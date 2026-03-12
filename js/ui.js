@@ -34,7 +34,7 @@ const state = {
   graph: null,
   searchIndex: [],
   expandCancelled: false,
-  expandTimer: null,
+  expandFrame: 0,
   loaderTimer: null,
 };
 
@@ -273,21 +273,49 @@ function renderSearchResults(matches) {
 
 function revealAndSelect(id) {
   const nodeObj = state.graph.revealNodeById(id, true);
-  window.setTimeout(() => {
+  const settle = () => {
     const revealed = nodeObj || state.graph.getNodeById(id);
     if (revealed) {
       state.graph.setSelectedNode(revealed);
+      return;
     }
-  }, 800);
+    window.requestAnimationFrame(settle);
+  };
+  window.requestAnimationFrame(settle);
 }
 
 function stopProgressiveExpansion() {
   state.expandCancelled = true;
-  clearTimeout(state.expandTimer);
+  if (state.expandFrame) {
+    window.cancelAnimationFrame(state.expandFrame);
+    state.expandFrame = 0;
+  }
   dom.btnCancelExpand.style.display = "none";
   dom.btnExpandAll.disabled = false;
   setText(dom.btnExpandAll, "Expand All Below");
   hideLoader(0);
+}
+
+function progressiveRender(frontierNodes, onComplete) {
+  let index = 0;
+
+  function batch() {
+    let count = 0;
+    while (index < frontierNodes.length && count < 200) {
+      state.graph.expandNodesBatch([frontierNodes[index]], true);
+      index += 1;
+      count += 1;
+    }
+
+    if (index < frontierNodes.length) {
+      state.expandFrame = window.requestAnimationFrame(batch);
+      return;
+    }
+
+    onComplete();
+  }
+
+  batch();
 }
 
 function expandProgressively(targetDepth) {
@@ -296,7 +324,10 @@ function expandProgressively(targetDepth) {
   setText(dom.btnExpandAll, "Expanding…");
   dom.btnCancelExpand.style.display = "block";
 
-  const totalLevels = Number.isFinite(targetDepth) ? targetDepth : state.graph.getMaxDataDepth();
+  const totalLevels = Math.min(
+    Number.isFinite(targetDepth) ? targetDepth : state.graph.getMaxDataDepth(),
+    state.graph.getConfig().MAX_DEPTH,
+  );
 
   const tick = () => {
     if (state.expandCancelled) {
@@ -306,6 +337,11 @@ function expandProgressively(targetDepth) {
 
     const frontier = state.graph.getFrontier(targetDepth);
     if (frontier.nodes.length === 0) {
+      if (state.graph.hasPendingExpansions()) {
+        showLoader("Loading queued nodes…");
+        state.expandFrame = window.requestAnimationFrame(tick);
+        return;
+      }
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
       setText(dom.btnExpandAll, "Expand All Below");
@@ -332,13 +368,14 @@ function expandProgressively(targetDepth) {
     }
 
     showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
-    state.graph.expandNodesBatch(frontier.nodes, true);
-    renderInfoPanel(state.graph.getSelectedNode());
-    state.expandTimer = window.setTimeout(tick, 650);
+    progressiveRender(frontier.nodes, () => {
+      renderInfoPanel(state.graph.getSelectedNode());
+      state.expandFrame = window.requestAnimationFrame(tick);
+    });
   };
 
   showLoader("Starting expansion…");
-  state.expandTimer = window.setTimeout(tick, 0);
+  state.expandFrame = window.requestAnimationFrame(tick);
 }
 
 function bindControls() {
@@ -349,10 +386,15 @@ function bindControls() {
     }
     showLoader("Loading branch…");
     state.graph.expandNode(selected, true);
-    window.setTimeout(() => {
+    const settle = () => {
+      if (state.graph.hasPendingExpansions()) {
+        window.requestAnimationFrame(settle);
+        return;
+      }
       hideLoader();
       renderInfoPanel(selected);
-    }, 250);
+    };
+    window.requestAnimationFrame(settle);
   });
 
   dom.btnExpandAll.addEventListener("click", () => {

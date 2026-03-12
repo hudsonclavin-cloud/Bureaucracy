@@ -3,9 +3,23 @@ import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
-const EXPANSION_TIME_BUDGET_MS = 6;
-const EXPANSION_CHILD_BUDGET = 320;
+const MAX_NODES = 10000;
+const MAX_DEPTH = 12;
+const NODE_RADIUS = 4;
+const NODE_OPACITY = 0.9;
+const EXPANSION_TIME_BUDGET_MS = 8;
+const EXPANSION_CHILD_BUDGET = 240;
+const EXPANSION_PARENT_BATCH = 48;
 const CLUSTER_CAPACITY = 8192;
+const branchColors = {
+  constitution: "#FFD166",
+  legislative: "#9B5DE5",
+  executive: "#F94144",
+  judicial: "#4D96FF",
+  independent: "#06D6A0",
+  regulatory: "#F8961E",
+  position: "#B0B0B0",
+};
 
 export function createGovernmentGraph({
   canvas,
@@ -102,7 +116,7 @@ export function createGovernmentGraph({
     totalNodeCount: 0,
     maxDataDepth: 0,
     maxNodes: 0,
-    maxVisibleDepth: Infinity,
+    maxVisibleDepth: MAX_DEPTH,
     nodeMap: new Map(),
     dataMap: new Map(),
     parentIdById: new Map(),
@@ -147,11 +161,45 @@ export function createGovernmentGraph({
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       maxNodes: state.maxNodes,
+      pendingExpansions: state.pendingExpansions.length,
     });
   }
 
   function hexToInt(hex) {
     return parseInt((hex || "#888888").replace("#", ""), 16);
+  }
+
+  function getNodeColor(data) {
+    const id = String(data?.id || "").toLowerCase();
+    const type = String(data?.type || "").toLowerCase();
+
+    if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
+      return branchColors.constitution;
+    }
+    if (type === "position" || type.includes("office") || type.includes("officer")) {
+      return branchColors.position;
+    }
+    if (id.startsWith("leg-")) {
+      return branchColors.legislative;
+    }
+    if (id.startsWith("jud-")) {
+      return branchColors.judicial;
+    }
+    if (id.startsWith("exec-regulatory") || type.includes("regulatory")) {
+      return branchColors.regulatory;
+    }
+    if (
+      id.startsWith("exec-ind") ||
+      id === "exec-independent" ||
+      type.includes("government corporation") ||
+      type.includes("independent")
+    ) {
+      return branchColors.independent;
+    }
+    if (id.startsWith("exec-")) {
+      return branchColors.executive;
+    }
+    return data?.color || branchColors.position;
   }
 
   function hashString(input) {
@@ -164,7 +212,7 @@ export function createGovernmentGraph({
   }
 
   function nodeRadiusForDepth(depth) {
-    return Math.max(1.15, 6.8 - depth * 0.48);
+    return NODE_RADIUS;
   }
 
   function shellRadiusForDepth(depth) {
@@ -207,11 +255,11 @@ export function createGovernmentGraph({
     const geometry = new THREE.SphereGeometry(radius, depth <= 2 ? 16 : 10, depth <= 2 ? 16 : 10);
     const material = new THREE.MeshPhongMaterial({
       color: 0xffffff,
-      emissive: 0x222222,
-      emissiveIntensity: 0.28,
-      shininess: 55,
+      emissive: 0xffffff,
+      emissiveIntensity: 0.3,
+      shininess: 70,
       transparent: true,
-      opacity: 0.94,
+      opacity: NODE_OPACITY,
       vertexColors: true,
     });
     const mesh = new THREE.InstancedMesh(geometry, material, Math.max(capacity, 1));
@@ -237,11 +285,11 @@ export function createGovernmentGraph({
     const clusterGeometry = new THREE.SphereGeometry(1, 12, 12);
     const clusterMaterial = new THREE.MeshPhongMaterial({
       color: 0xffffff,
-      emissive: 0x3a2a12,
+      emissive: 0xffffff,
       emissiveIntensity: 0.22,
-      shininess: 20,
+      shininess: 30,
       transparent: true,
-      opacity: 0.86,
+      opacity: 0.9,
       vertexColors: true,
     });
     const clusterMesh = new THREE.InstancedMesh(clusterGeometry, clusterMaterial, CLUSTER_CAPACITY);
@@ -254,16 +302,16 @@ export function createGovernmentGraph({
       dirty: true,
     };
 
-    const edgeCapacity = Math.max(state.totalNodeCount - 1, 1);
+    const edgeCapacity = Math.max(state.totalNodeCount + state.relationships.length + 256, 1);
     const edgePositions = new Float32Array(edgeCapacity * 6);
     const edgeColors = new Float32Array(edgeCapacity * 6);
     const edgeGeometry = new THREE.BufferGeometry();
     edgeGeometry.setAttribute("position", new THREE.BufferAttribute(edgePositions, 3));
     edgeGeometry.setAttribute("color", new THREE.BufferAttribute(edgeColors, 3));
     const edgeMaterial = new THREE.LineBasicMaterial({
+      color: 0xaaaaaa,
       transparent: true,
-      opacity: 0.18,
-      vertexColors: true,
+      opacity: 0.35,
     });
     const edgeLines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
     edgeLines.frustumCulled = false;
@@ -364,7 +412,8 @@ export function createGovernmentGraph({
   }
 
   function setNodeColor(nodeObj) {
-    nodeObj.batch.mesh.setColorAt(nodeObj.slot, new THREE.Color(hexToInt(nodeObj.data.color)));
+    const resolvedColor = getNodeColor(nodeObj.data);
+    nodeObj.batch.mesh.setColorAt(nodeObj.slot, new THREE.Color(hexToInt(resolvedColor)));
     nodeObj.batch.dirty = true;
   }
 
@@ -378,7 +427,7 @@ export function createGovernmentGraph({
       to: toObj,
       slot: state.edgeBatch.freeSlots.length > 0 ? state.edgeBatch.freeSlots.pop() : state.edgeBatch.nextSlot++,
       active: false,
-      color: new THREE.Color(hexToInt(options.color || toObj.data.color)),
+      color: new THREE.Color(hexToInt(options.color || "#aaaaaa")),
       type: options.type || "hierarchy",
       key: options.key || null,
     };
@@ -393,6 +442,9 @@ export function createGovernmentGraph({
   }
 
   function setEdgeColor(edge) {
+    if (!state.edgeBatch.geometry.getAttribute("color")) {
+      return;
+    }
     const offset = edge.slot * 6;
     for (let i = 0; i < 2; i += 1) {
       state.edgeBatch.colors[offset + i * 3] = edge.color.r;
@@ -488,7 +540,7 @@ export function createGovernmentGraph({
   function estimateExpansionSize(nodes) {
     let nextNodes = 0;
     for (const nodeObj of nodes) {
-      if (!nodeObj.expanded) {
+      if (!nodeObj.expanded && !nodeObj.expanding) {
         nextNodes += (nodeObj.data.children || []).length;
       }
     }
@@ -546,8 +598,14 @@ export function createGovernmentGraph({
     if (!parentObj || parentObj.expanded || parentObj.expanding) {
       return;
     }
+    if (parentObj.depth >= MAX_DEPTH) {
+      parentObj.expanded = true;
+      parentObj.expanding = false;
+      return;
+    }
     const children = parentObj.data.children || [];
     if (children.length === 0) {
+      parentObj.expanded = true;
       return;
     }
 
@@ -627,7 +685,7 @@ export function createGovernmentGraph({
 
   function expandNodesBatch(nodes, animate = true) {
     const expandedParents = [];
-    for (const nodeObj of nodes) {
+    for (const nodeObj of nodes.slice(0, EXPANSION_PARENT_BATCH)) {
       if (nodeObj.expanded || nodeObj.expanding) {
         continue;
       }
@@ -764,17 +822,18 @@ export function createGovernmentGraph({
   }
 
   function setDepthFilter(depth) {
-    state.maxVisibleDepth = depth;
+    state.maxVisibleDepth = Number.isFinite(depth) ? Math.min(depth, MAX_DEPTH) : MAX_DEPTH;
     state.renderDirty = true;
     refreshVisibility();
   }
 
   function getFrontier(targetDepth = Infinity) {
+    const boundedDepth = Number.isFinite(targetDepth) ? Math.min(targetDepth, MAX_DEPTH) : MAX_DEPTH;
     let minDepth = Infinity;
     const frontier = [];
 
     for (const nodeObj of state.visibleNodes) {
-      if (nodeObj.expanded || nodeObj.expanding || nodeObj.depth >= targetDepth) {
+      if (nodeObj.expanded || nodeObj.expanding || nodeObj.depth >= boundedDepth) {
         continue;
       }
       const childCount = nodeObj.data.__meta?.childCount || 0;
@@ -812,7 +871,7 @@ export function createGovernmentGraph({
     for (let i = 0; i < pathIds.length - 1; i += 1) {
       const ancestorId = pathIds[i];
       const ancestorObj = state.nodeMap.get(ancestorId);
-      if (ancestorObj && !ancestorObj.expanded) {
+      if (ancestorObj && ancestorObj.depth < MAX_DEPTH && !ancestorObj.expanded) {
         expandNode(ancestorObj, animate);
       }
       flushPendingExpansions(12, 1200);
@@ -951,7 +1010,7 @@ export function createGovernmentGraph({
         name: `${members.length} clustered nodes`,
         type: `Depth ${clusterObj.depth} cluster`,
         desc: "Zoom in to inspect individual offices.",
-        color: "#c8a84a",
+        color: branchColors.constitution,
         children: [],
       };
       nextClusters.push(clusterObj);
@@ -1250,8 +1309,9 @@ export function createGovernmentGraph({
     state.connectedRelationshipKeys.clear();
     const meta = registerDataNode(data);
     state.totalNodeCount = meta.subtreeCount;
-    state.maxDataDepth = data.__meta.maxDepth;
-    state.maxNodes = Math.max(25000, Math.min(90000, state.totalNodeCount + 2048));
+    state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
+    state.maxNodes = MAX_NODES;
+    state.maxVisibleDepth = MAX_DEPTH;
 
     ensureNodeBatches();
     indexRelationships(data.relationships || []);
@@ -1308,10 +1368,20 @@ export function createGovernmentGraph({
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         maxNodes: state.maxNodes,
+        pendingExpansions: state.pendingExpansions.length,
       };
     },
     getMaxDataDepth() {
       return state.maxDataDepth;
+    },
+    hasPendingExpansions() {
+      return state.pendingExpansions.length > 0;
+    },
+    getConfig() {
+      return {
+        MAX_NODES,
+        MAX_DEPTH,
+      };
     },
   };
 }
