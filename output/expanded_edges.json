@@ -10,6 +10,51 @@
     "type": "reports_to"
   },
   {
+    "source": "ministry-of-environment-and-energy",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-foreign-affairs",
+    "target": "executive-yuan",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-foreign-affairs-of-the-people-s-republic-of-china",
+    "target": "central-foreign-affairs-commission",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-foreign-and-european-affairs",
+    "target": "government-of-luxembourg",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-public-security",
+    "target": "q11815203",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "executive-yuan",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "government-of-italy",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "government-of-romania",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture-sports-and-tourism",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
     "source": "national-board-of-trade",
     "target": "ministry-of-finance-of-sweden",
     "type": "reports_to"
@@ -30,1083 +75,5278 @@
     "type": "reports_to"
   },
   {
+    "source": "q110803431",
+    "target": "ministry-of-higher-education-and-research",
+    "type": "reports_to"
+  },
+  {
+    "source": "q21480586",
+    "target": "ministry-of-information-and-tourism",
+    "type": "reports_to"
+  },
+  {
+    "source": "directorate-general-of-cinematography-and-theatre",
+    "target": "ministry-of-national-education",
+    "type": "reports_to"
+  },
+  {
+    "source": "rediris",
+    "target": "ministry-of-economy",
+    "type": "reports_to"
+  },
+  {
+    "source": "soil-erosion-service",
+    "target": "united-states-department-of-the-interior",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-education",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-institute-on-disability-independent-living-and-rehabilitation-research",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "statens-j-rnv-gar",
+    "target": "ministry-of-communications",
+    "type": "reports_to"
+  },
+  {
     "source": "pertamina",
     "target": "ministry-of-energy-and-mineral-resources",
     "type": "reports_to"
   },
   {
-    "source": "person-stefan-wallin",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "q11573616",
+    "target": "ministry-of-finance-of-japan",
+    "type": "reports_to"
+  },
+  {
+    "source": "permanent-secretary-of-the-ministry-of-justice",
+    "target": "ministry-of-justice-of-thailand",
+    "type": "reports_to"
+  },
+  {
+    "source": "law-and-justice-division",
+    "target": "ministry-of-law-justice-and-parliamentary-affairs",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-hong-kong",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-wuhan",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-s-o-paulo",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-shanghai",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-the-united-kingdom-in-istanbul",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-guangzhou",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-boston",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-melbourne",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-alexandria",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-munich",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-milan",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-osaka",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-amsterdam",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-jerusalem",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-social-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-court-of-justice-of-germany",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-fiscal-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-administrative-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "finance-division",
+    "target": "ministry-of-finance",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-los-angeles",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-miami",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-new-york",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-ho-chi-minh-city",
+    "target": "foreign-commonwealth-and-development-office",
+    "type": "reports_to"
+  },
+  {
+    "source": "carbon-science-and-technology-institute",
+    "target": "ministry-of-science-and-innovation",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-finance",
+    "target": "ministry-of-finance-and-economic-affairs",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-board-of-trade",
+    "target": "ministry-of-trade",
+    "type": "reports_to"
+  },
+  {
+    "source": "office-for-artificial-intelligence",
+    "target": "department-for-culture-media-and-sport",
+    "type": "reports_to"
+  },
+  {
+    "source": "taipei-economic-and-cultural-office-in-houston",
+    "target": "taipei-economic-and-cultural-representative-office-in-the-united-states",
+    "type": "reports_to"
+  },
+  {
+    "source": "q113552175",
+    "target": "minister-of-agriculture-and-food-economy-of-poland",
+    "type": "reports_to"
+  },
+  {
+    "source": "q113552175",
+    "target": "q111736815",
+    "type": "reports_to"
+  },
+  {
+    "source": "q113552175",
+    "target": "q111737107",
+    "type": "reports_to"
+  },
+  {
+    "source": "q120737682",
+    "target": "ministry-of-energy",
+    "type": "reports_to"
+  },
+  {
+    "source": "q3029595",
+    "target": "ministry-of-cohesion-of-the-territories",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-universities-and-research",
+    "target": "ministry-of-education-universities-and-research",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-guangzhou",
+    "target": "ministry-of-foreign-affairs-of-the-republic-of-korea",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-fukuoka",
+    "target": "embassy-of-south-korea-tokyo",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-in-osaka",
+    "target": "embassy-of-south-korea-tokyo",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-sapporo",
+    "target": "embassy-of-south-korea-tokyo",
+    "type": "reports_to"
+  },
+  {
+    "source": "q28738589",
+    "target": "q2305637",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-munich",
+    "target": "embassy-of-the-people-s-republic-of-china-berlin",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-in-d-sseldorf",
+    "target": "embassy-of-the-people-s-republic-of-china-berlin",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-hamburg",
+    "target": "embassy-of-the-people-s-republic-of-china-berlin",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-frakfurt-am-main",
+    "target": "embassy-of-the-people-s-republic-of-china-berlin",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-israel-munich",
+    "target": "embassy-of-israel-berlin",
+    "type": "reports_to"
+  },
+  {
+    "source": "leisure-and-cultural-services-department",
+    "target": "home-affairs-bureau",
+    "type": "reports_to"
+  },
+  {
+    "source": "main-missile-and-artillery-directorate-of-the-ministry-of-defense-of-the-russian-federation",
+    "target": "college-of-war",
+    "type": "reports_to"
+  },
+  {
+    "source": "chief-of-the-general-staff",
+    "target": "ministry-of-defence-of-ukraine",
+    "type": "reports_to"
+  },
+  {
+    "source": "main-missile-and-artillery-directorate-of-the-ministry-of-defense-of-the-russian-federation",
+    "target": "ministry-of-defense-of-the-soviet-union",
+    "type": "reports_to"
+  },
+  {
+    "source": "q28738534",
+    "target": "q1937077",
+    "type": "reports_to"
+  },
+  {
+    "source": "1-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "2-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "3-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "4-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "5-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "6-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "7-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "8-turma-do-tribunal-superior-do-trabalho",
+    "target": "superior-labor-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-boston",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-india-chicago",
+    "target": "embassy-of-india-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-ukraine-new-york",
+    "target": "embassy-of-ukraine-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-the-people-s-republic-of-china-los-angeles",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-new-york",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-chicago",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "chinese-consulate-general-san-francisco",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "person-milutin-mrkonji",
+    "target": "position-minister-of-transportation-construction-and-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-goran-vesi",
+    "target": "position-minister-of-transportation-construction-and-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-aleksandar-anti",
+    "target": "position-minister-of-transportation-construction-and-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-zorana-mihajlovi",
+    "target": "position-minister-of-transportation-construction-and-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-tomislav-momirovi",
+    "target": "position-minister-of-transportation-construction-and-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-barna-p-l-zsigmond",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-yun-hai-jung",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-maryse-daviet",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-georges-meunier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-makl-ri",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-istv-n-monori",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-l-on-herbin",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pedro-juan-carlos-v-squez",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-richard-meschede",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edward-stanton",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pierre-voillery",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-nos-fuzik",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-lequen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sergey-shutenko",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adamantios-vassilakis",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-thierry-guichoux",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-domingo-estrada",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-yury-kovalchuk",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-joan-borrell-mayeur",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-yngve-holmberg",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-anders-ljungstedt",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sam-e-woods",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-patrick-nicoloso",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-michel-de-camaret",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-maximilien-g-rard-de-rayneval",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-mathieu-de-lesseps",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-l-opold-louis-dreyfus",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-louis-dreyfus",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-andre-pichon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-laurent-charles-f-raud",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-r-me-isaac-m-chain",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-b-guin-billecocq",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-antoine-valli-re",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustave-samuel-de-rothschild",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-marliani",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-daniel-lescallier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-istv-n-varga",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sebasti-n-romero-radigales",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-armand-joseph-dubernad",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ra-l-carlos-migone",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adrien-louis-cochelet",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-henrik-becker-christensen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q27951796",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-istv-n-dercze",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-denis-fran-ois",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferdinand-cardez",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jules-hannezo",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-walter-hochmuth",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-giacomo-errera-oppenheim",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-chin-ki-hoon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-chung-sang-ki",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-christopher-terence-wood",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gaston-lemay",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-martin-eberts",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-j-j-serrurier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-taylor-money",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-paul-schoeller",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-holker",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-victor-b-strand",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-e-m-cousin-ry",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-rgen-peder-hansen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustave-halphen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-rune-aasheim",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-per-paust",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-alexander-anderson",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-christian-karl-bernhard-von-tauchnitz",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-nos-ber-nyi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-rapha-l-de-bauer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-corneille-osy-de-zegwaart",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustav-kreitner",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gregers-b-nnelycke",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-murray-mclean",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-kim-yang",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gu-sang-chan",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-lancelot-giles",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-carey-hall",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-d-sir-sauveur-de-la-chapelle",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-moriz-k-nigswarter",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustav-kosjek",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustav-travers",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alexander-von-pflaum",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-horace-g-nzburg",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacques-de-thier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-fran-ois-de-cannart-d-hamale",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-clifford-a-hart-jr",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-eug-ne-pereire",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ernst-meyer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-rufus-gibson",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-nos-katona",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q131767292",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-peder-pedersen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-luc-decker",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-julius-holmblad",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edouard-whettnall",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-carlos-vallejo-martell",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-drago-iftar",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferencz-wagner",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-mcnamara",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-margy-bond",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adriaan-de-hoog",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q135540433",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pierre-donon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-armand-donon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-guillaume-delvall-e",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-suh-young-kil",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-issam-masalaha",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-takashi-shinozuka",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-david-gill",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-fran-ois-casabonne-masonnave",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ole-richter",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-mayer-de-rothschild",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-vicente-francisco-del-sol-y-vey-n",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-r-keith",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-rn-rosenberg",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jen-csisz-r",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-t-koepcke",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-benjamin-wegner",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-dan-ben-eliezer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-amikam-levy",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ahuva-spieler",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sagi-karni",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-maurice-henri-blanchard-de-farges",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-vladimir-a-kalinin",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sylvius-paul-du-boys",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-auguste-abeille-du-rivoire",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hyacinthe-constantin-guys",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-anton-novak",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-bernardo-rolland-de-miota",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-istv-n-manno",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andr-nicolas-le-vasseur",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sir-james-douglas",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-anders-ohlsson",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-monika-ko-czyk",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-fran-ois-louis-laporte-comte-de-castelnau",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-w-cnoop-koopmans",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-victor-allard",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-henry-salt",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-park-ki-jun",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gabriela-danc-u",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-p-ter-f-l-p",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-dmitriy-lvovich-baranov",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-guilherme-studart",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-cornelia-pieper",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-varga",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-szab",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferdinand-roger",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-baiz",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gabriel-salomon-raba",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hanscom-smith",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andrzej-olsz-wka",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-francis-roux",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-isaac-thuret",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-walter-ekman",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-marek-ciesielczuk",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-clara-grace-thornton",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adam-bernatowicz",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-paul-veillet-dufr-che",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-daniel-gromann",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ron-cseh",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-kang-young-hoon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-nos-magd",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-michael-w-meserve",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-douglas-g-spelman",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-j-norris-jr",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q63118195",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-raymond-f-greene-iii",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-ross",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-juan-jos-diaz",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-th-odore-meynier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-detlef-boldt",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adolf-springer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q61115709",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-endre-szalipszki",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q61115660",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-zsef-bacskai",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-zsef-buhajla",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-m-ty-s-szil-gyi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hiroyasu-izumi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustaf-noring",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-tord-magnuson",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohammed-bin-ibrahim-bin-amer-al-otaibi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-guillermo-bianchi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-bertil-jobeus",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-antoine-beyens",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-braithwaite-wallis",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-villegas-villalobos",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-hermann-master",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-csaba-grezsa",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q114029010",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q114028849",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-anton-simon",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-raymond-xerri",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-maximiliano-gonz-lez-mej-a",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-margarito-gonz-lez-mej-a",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alasdair-hamilton",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-zsolt-maris",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-schoenlank",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-vladim-r-vot-pek",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-kim-hang-kyung",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-l-szl-t-th",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-simon-hartogensis",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q111033578",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ahmad-shahizan-abd-samad",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q110980358",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-l-szl-moln-r",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-szabolcs-ker-k-b-rczy",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-henri-faesy",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-bert-van-der-lingen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andr-s-kasnyik",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-kim-gunn",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-vichit-chitvimarn",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-werner-k-hler",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q110096961",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-petr-plikhin",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-joanne-hawley",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gota-hetey",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-metka-lajn-ek",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-oleh-nikolenko",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-milutin-j-uri-i",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-folliero-de-luna",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-shin-ichi-mori",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andrew-lee",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-t-child",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-august-belmont",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sisinio-de-pretis-edler-von-cagnodo",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-m-rta-horv-thn-fekszi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-careaga",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-watson-r-sperry",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-latimer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hans-clausen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andreas-gr-ning",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-szil-rd-bolla",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ulrich-auguste-pelloutier",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-p-l-attila-ill-s",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pedro-pablo-marrero-henning",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hermogenes-ebdane",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-v-raquiza",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-bayani-fernando",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-yabut",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-mark-villar",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-avelino",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-roger-mercado",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-bonoan",
+    "target": "position-secretary-of-public-works-and-highways",
+    "type": "manages"
+  },
+  {
+    "source": "person-unnamed-node",
+    "target": "position-secretary-of-transportation-and-public-works-of-puerto-rico",
+    "type": "manages"
+  },
+  {
+    "source": "person-lars-barfoed",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-c-larsen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-viggo-h-rup",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-jens-hassing-j-rgensen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-friis-skotte",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-pia-olsen-dyhr",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-henrik-dam-kristensen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-alfred-jensen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-wilhelm-weimann",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-danielsen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-victor-larsen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-trine-bramsen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-niels-elgaard",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-n-p-fisker",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-n-c-monberg",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-marius-abel-nielsen-slebsager",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-magnus-heunicke",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-k-riis-hansen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-stensballe",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-jens-j-rgen-jensen-onsted",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-gunnar-larsen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-christian-juul-rysensteen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-benny-engelbrecht",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-axel-i-s-rensen",
+    "target": "position-danish-minister-of-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-rus-an-parchamovi",
+    "target": "position-minister-of-architecture-and-construction-of-the-republic-of-belarus",
+    "type": "manages"
+  },
+  {
+    "source": "person-alaksandar-studniew",
+    "target": "position-minister-of-architecture-and-construction-of-the-republic-of-belarus",
+    "type": "manages"
+  },
+  {
+    "source": "person-q18690391",
+    "target": "position-minister-of-architecture-and-construction-of-the-republic-of-belarus",
+    "type": "manages"
+  },
+  {
+    "source": "person-hienad-navicki",
+    "target": "position-minister-of-architecture-and-construction-of-the-republic-of-belarus",
+    "type": "manages"
+  },
+  {
+    "source": "person-anatol-ni-kasaw",
+    "target": "position-minister-of-architecture-and-construction-of-the-republic-of-belarus",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-gustave-stanislas-bevers",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-josef-van-schaik",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-petrus-havelaar",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jan-van-aartsen",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-gregorius-van-den-bergh",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-henk-zeevalking",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-camiel-eurlings",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-tieman",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-cornelis-lely",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-berend-jan-udink",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jan-de-quay",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-joseph-4th-duke-d-ursel",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-pierre-van-gobbelschroy",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-hendrikus-colijn",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-hein-vos",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-tineke-netelenbos",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-hendrik-van-der-vegte",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-joop-bakker",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-ko-suurhoff",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-algera",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-q460753",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-annemarie-jorritsma",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-nicolaas-bastert",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-gerardus-jacobus-van-swaaij",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-frans-wijffels",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-otto-cornelis-adriaan-van-lidth-de-jeude",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-antonius-marie-van-buuren",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-herman-witte",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-dirk-gerard-willem-spitzen",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-henk-korthals",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-tak-van-poortvliet",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-dirk-veegens",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-hendrik-hermanus-wemmers",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-kraus",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-jacob-adriaan-kalff",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-max-charles-emile-bongaerts",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-willem-albarda",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-frederik-cornelis-tromp",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-johannes-christiaan-de-marez-oyens",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-willem-drees-jr",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-ocker-repelaer-van-driel",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-syb-talma",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-gerard-george-clifford",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-roelf-de-boer",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-neelie-kroes",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-theodoor-philibert-tromp",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-adrianus-antonie-henri-willem-k-nig",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-karla-peijs",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-regout",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-danny-tuijnman",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-guillaume-jean-g-rard-klerck",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-philippe-willem-van-der-sleijden",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-tjerk-westerterp",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-pieter-bogaers",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-paul-reymer",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-koos-andriessen",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-adriaan-pieter-twent-van-raaphorst",
+    "target": "position-minister-of-transport-public-works-and-water-management",
+    "type": "manages"
+  },
+  {
+    "source": "person-telesforo-montejo-robledo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-eduardo-alonso-colmenares",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-tom-s-mosquera",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-echegaray",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-ruiz-zorrilla",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-orovio-echag-e",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferm-n-calbet-n-y-blanch-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-santiago-diego-madrazo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-joaqu-n-ignacio-mencos-y-manso-de-z-iga",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-eugenio-de-ochoa",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-augusto-ulloa-y-casta-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-pedro-salaverr-a",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-alonso-mart-nez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-de-lux-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-santos-isasa-y-valseca",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-javier-ugarte-y-pag-s",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-agust-n-esteban-collantes",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-claudio-moyano",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-pablo-govantes-fern-ndez-de-angulo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-ar-stegui-y-v-lez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-isidro-de-alaix-f-bregas",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-javier-de-burgos",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-narciso-fern-ndez-de-heredia-2nd-count-of-heredia-sp-nola",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-mar-a-moscoso-de-altamira-quiroga",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-carlos-navarro-rodrigo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferm-n-de-lasala-y-collado",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-pidal-y-mon",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-alejandro-groizard-y-g-mez-de-la-serna",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-crist-bal-mart-n-de-herrera",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ram-n-p-rez-costales",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-pedro-vives-vich",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-miquel-santal-i-parvorell",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-julio-just-gimeno",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-mar-a-cid-ruiz-zorrilla",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-eduardo-chao-fern-ndez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-c-sar-jal-n-arag-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-lara-z-rate",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-albert-bosch-i-fustegueras",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-v-ctor-balaguer-i-cirera",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-miguel-villanueva-y-g-mez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-s-nchez-guerra",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-eugenio-montero-r-os",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-lvarez-de-toledo-y-acu-a",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-q628418",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ngel-carvajal-y-fern-ndez-de-c-rdoba",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-vicente-romero-gir-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-severo-catalina",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-de-bustos-y-castilla-portugal",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-catal",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-benjumea-y-bur-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-miguel-de-roda-y-roda",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-gonz-lez-de-aguilar-8th-marquis-of-la-vega-de-armijo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-moreno-l-pez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-marichalar-y-monreal",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-leopoldo-matos-y-massieu",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-maestre-p-rez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-g-mez-acebo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-fernando-gonz-lez-s-nchez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jorge-vig-n-suero-d-az",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-javier-gonz-lez-de-castej-n-y-el-o",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-joaqu-n-gil-berges",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-emilio-ortu-o-berte",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-vald-s-gonz-lez-rold-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-alejandro-pidal-y-mon",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-segismundo-moret",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-garc-a-prieto-1st-marquis-of-alhucemas",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-portela-valladares",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-de-borja-queipo-de-llano-8th-count-of-toreno",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-am-s-salvador-rodrig-ez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-amalio-gimeno",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ana-pastor-juli-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-luis-albareda-y-sezde",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-luis-balos",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-pr-xedes-mateo-sagasta",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesc-camb",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-canalejas",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-igo-de-la-serna",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-becerra-berm-dez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-aureliano-linares-rivas",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-rodr-guez-de-viguri-seoane",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-gasset-chinchilla",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-abilio-calder-n-rojo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-alcal-galiano",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-mart-n-rosales-martel",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-augusto-gonz-lez-besada",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-juli-n-campo-sainz-de-rozas",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-juan-de-la-cierva-y-pe-afiel",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-javier-s-enz-de-cosculluela",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-niceto-alcal-zamora",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-arias-salgado",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-ortiz-gonz-lez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-espada-gunt-n",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-estrada-y-estrada",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-magdalena-lvarez",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-ngel-ossorio-y-gallardo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-lvaro-de-figueroa-1st-count-of-romanones",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-lucia-lucia",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-romero-robledo",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-lvarez-cascos",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-pedro-gonz-lez-bueno-y-bocos",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-bernardo-giner-de-los-r-os",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-manuel-arg-elles-arg-elles",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-eduardo-benot",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-guerra-del-r-o",
+    "target": "position-minister-of-development-of-spain",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonis-tritsis",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-vasso-papandreou",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-georgios-souflias",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-evangelos-kouloumbis",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-vasilis-kedikoglou",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-kostas-laliotis",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-sotiris-kouvelas",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-achilleas-karamanlis",
+    "target": "position-minister-of-environment-physical-planning-and-public-works-of-greece",
+    "type": "manages"
+  },
+  {
+    "source": "person-yoav-gallant",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-ze-ev-elkin",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-uri-ariel",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-yifat-shasha-biton",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-effie-eitam",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-tzipi-livni",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-max-maldacker",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-graeme-meehan",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-b-nlaki",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-lars-danielsson",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alberto-i-gache",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-tanya-dimitrova",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-d-n-wampetich",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-bielik",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jen-boros",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alexander-constantine-ionides",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gy-rgy-bern-d",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-arnold-van-der-venne",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-l-szl-velics",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-raspail",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-k-roly-winter",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-rudolf-wodianer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-waldem-r-alth",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hsueh-shou",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-p-l-m-nyik",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferenc-bozs-ki",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hans-henning-schr-der",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-p-t-raaschou",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-watson-armstrong-2nd-baron-armstrong",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ambassador-of-senegal-to-switzerland",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-carl-viggo-andersen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-carol-foster",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-arnolds-spekke",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pit-heltmann",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-norbert-riedel",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-margit-hellwig-b-tte",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-lee-coldren",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q136526040",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q136227807",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-piotr-stacha-czyk",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-carl-ellis-wandel",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-grigory-shklovski",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-adelssen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-g-ajith-kuma",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-siddarth-gowrav",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-seviti-sai-murali",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-anil-kumar-anand",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-shivji-tiwari",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ram-n-negr-n",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-emil-kuranda",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-victor-socaciu",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-foo-teow-lee",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-g-za-k-tai",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-elijah-blunt",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-g-bor-menczel",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-josefine-wallat",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alfred-r-magleby",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-choi-youngsam",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-egon-abele",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-fakri-rodr-guez-pinelo",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gustavus-nathan",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferdinand-prior",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-pomutz",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jens-christian-johansen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ernst-carlsen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-domokos-v-k-s",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-mar-a-vergara-tenorio",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jens-ege",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hans-valdemar-ludvigsen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-h-o-lange",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-carl-von-below",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q121791084",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-q121790734",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-tanja-beyer",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andr-s-m-rton",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-andr-s-p-ldi",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-vadim-rozanov",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-cyprien-emmanuel-marie-de-bellissen",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-piotr-marciniak",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gerard-pott",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-mieczys-aw-epstein",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-lajos-mile",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-leon-feliks-goldstand",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-adolf-guyer-zeller",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-janusz-witkowski",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-monika-sobczak",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-daniel-weisweiller",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-gregory-c-may",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-asher-yarden",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-kim-byungkwun",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-rudolf-willem-johan-cornelis-de-menthon-bake",
+    "target": "position-consul-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-david-levy",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-isaac-goldknopf",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-s-crates",
+    "target": "position-minister-of-social-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-lvaro-augusto-veiga-de-oliveira",
+    "target": "position-minister-of-social-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-francisco-lu-s-murteira-nabo",
+    "target": "position-minister-of-social-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-henrique-de-oliveira-constantino",
+    "target": "position-minister-of-social-infrastructure",
+    "type": "manages"
+  },
+  {
+    "source": "person-stefano-jacini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-bartolomeo-bona",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-monticelli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-de-rossi-di-santarosa",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-giovanni-filippo-galvagno",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-ubaldino-peruzzi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-paleocapa",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-sebastiano-tecchio",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-luigi-des-ambrois",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-sardinia",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-saracco",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-gaspare-finali",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-zanardelli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-luigi-federico-menabrea",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-stefano-jacini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-zenone-benini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-vincenzo-riccio",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-silvio-spaventa",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-raffaele-mezzanotte",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-raffaele-de-caro",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-mancini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-carmine",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-bertolini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-nicola-balenzano",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-luigi-razza",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-luigi-dari",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-lodovico-pasini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-leone-cattani",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-romita",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-pavoncelli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-micheli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-gorla",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-gadda",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-devincenzi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-de-nava",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-cobolli-gigli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giulio-rubini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-girolamo-giusso",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-girolamo-cantelli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-gino-sarrocchi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-gaetano-barbareschi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-gabriello-carnazza",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesco-tedesco",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesco-paolo-perez",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesco-genala",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-ettore-sacchi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-emanuele-gianturco",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-edoardo-pantano",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-domenico-romano",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-costantino-perazzi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-carlo-francesco-ferraris",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-camillo-peano",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-meuccio-ruini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-augusto-ciuffelli",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-ascanio-branca",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-alfredo-baccarini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-alberto-tarchiani",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-adelchi-serena",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-achille-afan-de-rivera",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-agostino-depretis",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-lacava",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giovanni-giuriati",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-ivanoe-bonomi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giovanni-giolitti",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-araldo-di-crollalanza",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-mordini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-giovanola",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-benito-mussolini",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-michele-bianchi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-ubaldino-peruzzi",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-giulio-prinetti",
+    "target": "position-minister-of-public-works-of-the-kingdom-of-italy",
+    "type": "manages"
+  },
+  {
+    "source": "person-jorge-fern-ndez-maldonado",
+    "target": "position-minister-of-development-and-public-works-of-peru",
+    "type": "manages"
+  },
+  {
+    "source": "person-carlos-alzamora-elster",
+    "target": "position-minister-of-development-and-public-works-of-peru",
+    "type": "manages"
+  },
+  {
+    "source": "person-h-ctor-escard",
+    "target": "position-minister-of-development-and-public-works-of-peru",
+    "type": "manages"
+  },
+  {
+    "source": "person-vasyl-lozynskyi",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-denys-shmyhal",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-hennadii-zubko",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-oleksiy-chernyshov",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-volodymyr-hroisman",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-hennadii-temnyk",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-aliona-babak",
+    "target": "position-minister-of-communities-and-regional-development",
+    "type": "manages"
+  },
+  {
+    "source": "person-paolo-costa",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-benigno-zaccagnini",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-franco-nicolazzi",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonio-di-pietro",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-willer-bordon",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-umberto-tupini",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-salvatore-lauricella",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-roberto-maria-radice",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-paolo-baratta",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-nerio-nesi",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-mario-ferrari-aggradi",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-salvatore-aldisio",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-zamberletti",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-togni",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-romita",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giovanni-prandini",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giovanni-pieraccini",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giacomo-mancini",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-gaetano-stammati",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesco-merloni",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-francesco-compagna",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-fiorentino-sullo",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-enrico-luigi-micheli",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-emilio-sereni",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-umberto-merlin",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-antonino-pietro-gullotti",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-pietro-bucalossi",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-q3054632",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-emilio-de-rose",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-giuseppe-spataro",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-lorenzo-natali",
+    "target": "position-italian-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-georges-gueyraud",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-bertrand-edmond-rochereau-de-la-sabli-re",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-gilles-d-humi-res",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-christian-marcotte-de-sainte-marie",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-herv-magro",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-stanislas-de-laboulaye",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-pierre-cochard",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-de-gliniasty",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-ren-neuville",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-ren-troccaz",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-gu-guinou",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-fr-d-ric-desagneaux",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-pierre-bitard",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-auguste-boppe",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-am-d-e-outrey",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-denis-pietton",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-ledoulx",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-r-gis-koetschet",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-claude-cousseran",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-gaston-maugras",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-alain-r-my",
+    "target": "position-consul-general-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-lucien-lemoine",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-hugo-sterman",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-charles-destr-es",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-jussi-niinist",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-bernard-lopinot",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-v-in-valve",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-paul-antoine-henry",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-vilhelm-aleksander-thesleff",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-christian-fouache-d-halloy",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-ole-norrback",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-andr-favereau",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-karl-emil-berg",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-marcel-laforge",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-kaarlo-leinonen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-guy-du-chaylard",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-leonard-hjelmman",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-henri-zimmermann",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-anneli-taina",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-jacques-d-aumale",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-bruno-jalander",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-alphonse-doire",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-seppo-k-ri-inen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-louis-rais",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-vilho-petter-nenonen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-georges-outrey",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-elisabeth-rehn",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-honor-daumas",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-jan-erik-enestam",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-ernest-auzepy",
+    "target": "position-consul-general-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-lauri-malmberg",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-juan-andr-s-fontaine-talavera",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-matti-vanhanen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-javier-etcheberry",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-kalle-lehmus",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-jaime-toh",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-antti-h-kk-nen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-alfredo-moreno",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-seppo-westerlund",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-carlos-hurtado-ruiz-tagle",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-ivar-aminoff",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-carlos-cruz-lorenzen",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-rudolf-walden",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-bruno-siebert",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-kustaa-tiitu",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-alberto-undurraga",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-jyri-h-k-mies",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-jaime-est-vez",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-emil-skog",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-edmundo-p-rez-zujovic",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-carl-olaf-hom-n",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-ricardo-lagos",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-yrj-kallinen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-francisco-mardones-ota-za",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-viktor-henrik-schvindt",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-juan-carlos-garc-a-p-rez-de-arce",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-onni-h-m-l-inen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-humberto-magliochetti",
+    "target": "position-minister-of-public-works-of-chile",
     "type": "manages"
   },
   {
-    "source": "person-mikko-savola",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-fran-ois-bausch",
+    "target": "position-minister-for-mobility-and-public-works",
     "type": "manages"
   },
   {
-    "source": "person-lars-bj-rkenheim",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-q137734226",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-arvo-pentti",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-jean-marin-schuh",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-arvi-oksala",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-axel-cruau",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-antti-kaikkonen",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-q137733828",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-aleksander-lamp-n",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-jacques-baeyens",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-carl-haglund",
-    "target": "position-minister-of-defence-of-finland",
+    "source": "person-thierry-mathou",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-sten-tolgfors",
-    "target": "position-minister-for-defence",
+    "source": "person-emmanuel-lenain",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-sven-andersson",
-    "target": "position-minister-for-defence",
+    "source": "person-beno-t-guid-e",
+    "target": "position-consul-general-of-france-in-shanghai",
     "type": "manages"
   },
   {
-    "source": "person-bj-rn-von-sydow",
-    "target": "position-minister-for-defence",
+    "source": "person-henry-du-chesne",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-mikael-odenberg",
-    "target": "position-minister-for-defence",
+    "source": "person-serge-mostura",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-anders-thunborg",
-    "target": "position-minister-for-defence",
+    "source": "person-andr-travert",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-per-edvin-sk-ld",
-    "target": "position-minister-for-defence",
+    "source": "person-louis-reynaud",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-otto-lybeck",
-    "target": "position-minister-for-defence",
+    "source": "person-franck-dupuy",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-torsten-gustafsson",
-    "target": "position-minister-for-defence",
+    "source": "person-georges-gueyraud",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-anton-rundqvist",
-    "target": "position-minister-for-defence",
+    "source": "person-l-on-dejardin",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-gustav-ros-n",
-    "target": "position-minister-for-defence",
+    "source": "person-gustave-delongraye",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-janne-nilsson",
-    "target": "position-minister-for-defence",
+    "source": "person-ernest-godeaux",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-carl-malmroth",
-    "target": "position-minister-for-defence",
+    "source": "person-alexandre-giorgini",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-harald-malmberg",
-    "target": "position-minister-for-defence",
+    "source": "person-andr-saint-mleux",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-eric-kr-nmark",
-    "target": "position-minister-for-defence",
+    "source": "person-j-r-me-pasquier",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-carl-gustaf-hammarskj-ld",
-    "target": "position-minister-for-defence",
+    "source": "person-gilles-chouraqui",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-lars-de-geer",
-    "target": "position-minister-for-defence",
+    "source": "person-laurent-aublin",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-roine-carlsson",
-    "target": "position-minister-for-defence",
+    "source": "person-jean-pierre-th-bault",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-curt-bostr-m",
-    "target": "position-minister-for-defence",
+    "source": "person-joseph-adam-sienkiewicz",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-b-rje-andersson",
-    "target": "position-minister-for-defence",
+    "source": "person-thierry-dana",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-leni-bj-rklund",
-    "target": "position-minister-for-defence",
+    "source": "person-yves-du-courthial",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-per-albin-hansson",
-    "target": "position-minister-for-defence",
+    "source": "person-q134969376",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-carl-gustaf-ekman",
-    "target": "position-minister-for-defence",
+    "source": "person-jacques-de-buzon",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-anders-bj-rck",
-    "target": "position-minister-for-defence",
+    "source": "person-christile-drulhe",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-allan-vougt",
-    "target": "position-minister-for-defence",
+    "source": "person-georges-dufaure-de-la-prade",
+    "target": "position-consul-general-of-france-hong-kong",
     "type": "manages"
   },
   {
-    "source": "person-lena-hjelm-wall-n",
-    "target": "position-minister-for-defence",
+    "source": "person-nguy-n-m-nh-ki-m",
+    "target": "position-minister-of-construction-of-vietnam",
     "type": "manages"
   },
   {
-    "source": "person-ivar-vennerstr-m",
-    "target": "position-minister-for-defence",
+    "source": "person-tr-nh-nh-d-ng",
+    "target": "position-minister-of-construction-of-vietnam",
     "type": "manages"
   },
   {
-    "source": "person-karin-enstr-m",
-    "target": "position-minister-for-defence",
+    "source": "person-ph-m-h-ng-h",
+    "target": "position-minister-of-construction-of-vietnam",
     "type": "manages"
   },
   {
-    "source": "person-peter-hultqvist",
-    "target": "position-minister-for-defence",
+    "source": "person-nguy-n-thanh-ngh",
+    "target": "position-minister-of-construction-of-vietnam",
     "type": "manages"
   },
   {
-    "source": "person-p-r-nuder",
-    "target": "position-minister-for-defence",
+    "source": "person-q10799144",
+    "target": "position-minister-of-construction-of-vietnam",
     "type": "manages"
   },
   {
-    "source": "person-catharina-elms-ter-sv-rd",
-    "target": "position-minister-for-defence",
+    "source": "person-georges-fieschi",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-p-l-jonson",
-    "target": "position-minister-for-defence",
+    "source": "person-cyrille-rogeau",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-torsten-nilsson",
-    "target": "position-minister-for-defence",
+    "source": "person-jo-l-meyer",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-thage-g-peterson",
-    "target": "position-minister-for-defence",
+    "source": "person-jean-michel-despax",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-eric-holmqvist",
-    "target": "position-minister-for-defence",
+    "source": "person-olivier-brochet",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-oskari-lehtonen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-andr-guibaut",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-karl-johan-l-ng",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-jean-marie-momal",
+    "target": "position-consul-general-of-france-in-milan",
     "type": "manages"
   },
   {
-    "source": "person-kurt-kaira",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-fr-d-ric-de-touchet",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-jussi-j-rventaus",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-didier-destremau",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-antti-h-kk-nen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-alain-du-boisp-an",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-keijo-liinamaa",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-michel-raineri",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-urho-castr-n",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-pascal-vagogne",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-weio-henriksson",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-aleksis-sahtaxtinski",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-tuure-salo",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-c-dric-peltier",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-sven-h-gstr-m",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-arnold-van-ghele",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-pauli-lehtosalo",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-anne-schmidt-riou",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-oiva-huttunen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-sylvie-de-bruchard",
+    "target": "position-consul-general-of-france-in-krakow",
     "type": "manages"
   },
   {
-    "source": "person-mikko-laaksonen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-philippe-sutter",
+    "target": "position-consul-general-of-france-in-vancouver",
     "type": "manages"
   },
   {
-    "source": "person-kari-h-k-mies",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-jean-christophe-fleury",
+    "target": "position-consul-general-of-france-in-vancouver",
     "type": "manages"
   },
   {
-    "source": "person-jari-lindstr-m",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-velyne-decorps",
+    "target": "position-consul-general-of-france-in-vancouver",
     "type": "manages"
   },
   {
-    "source": "person-inkeri-anttila",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-vincent-sciama",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-hjalmar-kahelin",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-gregor-trumel",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-heikki-kannisto",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-anne-louis-tousard",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-erkki-tuominen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-fran-ois-louis-michel-chemin-deforgues",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-eric-j-serlachius",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-rodolphe-sambou",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-emil-jatkola",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-pierre-mathivet-de-la-ville-de-mirmont",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-elias-sopanen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-nathalie-beras",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-eino-pekkala",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-pierre-boillot",
+    "target": "position-consul-general-of-france-in-new-orleans",
     "type": "manages"
   },
   {
-    "source": "person-arvi-ahmavaara",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-alfred-vinceslas-kleczkowski",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-antti-hannikainen",
-    "target": "position-minister-of-justice-of-finland",
+    "source": "person-fr-d-ric-sanchez",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-sven-andersson",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-h-l-ne-le-gal",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-herman-wrangel",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-fran-ois-de-vial",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-eric-trolle",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-paul-louis-de-turenne",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-arvid-taube",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-charles-henri-philippe-gauldr-e-boilleau",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-fredrik-ramel",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-camille-rohou",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-carl-lewenhaupt",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-nicolas-chibaeff",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-johannes-hellner",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-laurence-haguenauer",
+    "target": "position-consul-general-of-france-in-qu-bec",
     "type": "manages"
   },
   {
-    "source": "person-carl-hederstierna",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-christophe-lemoine",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-albert-ehrensv-rd-the-elder",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-david-martinon",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-count-ludvig-douglas-12th-count-of-skenninge-and-stjernorp",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-bernard-miyet",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-jan-eliasson",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-philippe-larrieu",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-erik-marks-von-w-rtemberg",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-jean-luc-sibiude",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-ola-ullsten",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-g-rard-coste",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-rickard-sandler",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-jean-claude-moreau",
+    "target": "position-consul-general-of-france-in-los-angeles",
     "type": "manages"
   },
   {
-    "source": "person-ernst-trygger",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-jacques-antoine-moerenhout",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-hjalmar-branting",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-pierre-basdevant",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-eliel-l-fgren",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-jacques-baeyens",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-arvid-lindman",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-florian-cardinaux",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-gustaf-kerhielm",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-yvon-ro-d-albert",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-carl-bildt",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-pauline-carmona",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-karin-s-der",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-romain-serman",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-lena-hjelm-wall-n",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-pierre-fran-ois-mourier",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-margaretha-af-ugglas",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-emmanuel-lebrun-damiens",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-albert-ehrensv-rd-the-younger",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-pierre-viaux",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-oscar-bj-rnstjerna",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-claude-br-art-de-boisanger",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-karl-gustaf-westman",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-louis-de-guiringaud",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-lennart-bodstr-m",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-pierre-brochand",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-august-gyldenstolpe",
-    "target": "position-minister-for-foreign-affairs-of-sweden",
+    "source": "person-emmanuel-de-casteja",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-aarre-simonen",
-    "target": "position-minister-of-finance",
+    "source": "person-claude-batault",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-yrj-pulkkinen",
-    "target": "position-minister-of-finance",
+    "source": "person-pierre-mathivet-de-la-ville-de-mirmont",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-ralf-t-rngren",
-    "target": "position-minister-of-finance",
+    "source": "person-fr-d-ric-jung",
+    "target": "position-consul-general-of-france-in-san-francisco",
     "type": "manages"
   },
   {
-    "source": "person-sakari-tuomioja",
-    "target": "position-minister-of-finance",
+    "source": "person-yves-teyssier-d-orfeuil",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-p-ivi-hetem-ki",
-    "target": "position-minister-of-finance",
+    "source": "person-brieuc-pont",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-v-j-sukselainen",
-    "target": "position-minister-of-finance",
+    "source": "person-damien-loras",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-annika-saarikko",
-    "target": "position-minister-of-finance",
+    "source": "person-pierre-viaux",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-matti-louekoski",
-    "target": "position-minister-of-finance",
+    "source": "person-jehan-marie-de-latour-de-geay",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-juho-niukkanen",
-    "target": "position-minister-of-finance",
+    "source": "person-robert-valeur",
+    "target": "position-consul-general-of-france-in-s-o-paulo",
     "type": "manages"
   },
   {
-    "source": "person-august-ramsay",
-    "target": "position-minister-of-finance",
+    "source": "person-alain-briottet",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-antti-kalliom-ki",
-    "target": "position-minister-of-finance",
+    "source": "person-arnaud-mentr",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-petteri-orpo",
-    "target": "position-minister-of-finance",
+    "source": "person-albert-chambon",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-iiro-viinanen",
-    "target": "position-minister-of-finance",
+    "source": "person-alain-grenier",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-ky-sti-j-rvinen",
-    "target": "position-minister-of-finance",
+    "source": "person-charles-de-guyon-de-pampelonne",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-jyrki-katainen",
-    "target": "position-minister-of-finance",
+    "source": "person-st-phane-chmelewsky",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-onni-hiltunen",
-    "target": "position-minister-of-finance",
+    "source": "person-joseph-de-valnais",
+    "target": "position-consul-g-n-ral-de-france-boston",
     "type": "manages"
   },
   {
-    "source": "person-tyko-reinikka",
-    "target": "position-minister-of-finance",
+    "source": "person-anne-boillon",
+    "target": "position-consul-general-of-france-in-sydney",
     "type": "manages"
   },
   {
-    "source": "person-hannes-ry-m",
-    "target": "position-minister-of-finance",
+    "source": "person-xavier-driencourt",
+    "target": "position-consul-general-of-france-in-sydney",
     "type": "manages"
   },
   {
-    "source": "person-alexander-stubb",
-    "target": "position-minister-of-finance",
+    "source": "person-barth-lemy-de-lesseps",
+    "target": "position-consul-general-of-france-in-saint-petersburg",
     "type": "manages"
   },
   {
-    "source": "person-kaarlo-castr-n",
-    "target": "position-minister-of-finance",
+    "source": "person-martin-de-lesseps",
+    "target": "position-consul-general-of-france-in-saint-petersburg",
     "type": "manages"
   },
   {
-    "source": "person-johannes-virolainen",
-    "target": "position-minister-of-finance",
+    "source": "person-hughes-de-chavagnac",
+    "target": "position-consul-general-of-france-in-saint-petersburg",
     "type": "manages"
   },
   {
-    "source": "person-martti-miettunen",
-    "target": "position-minister-of-finance",
+    "source": "person-philippe-legrain",
+    "target": "position-consul-general-of-france-in-saint-petersburg",
     "type": "manages"
   },
   {
-    "source": "person-mauno-pekkala",
-    "target": "position-minister-of-finance",
+    "source": "person-michel-boulmer",
+    "target": "position-consul-general-of-france-in-saint-petersburg",
     "type": "manages"
   },
   {
-    "source": "person-juho-vennola",
-    "target": "position-minister-of-finance",
+    "source": "person-romain-louvet",
+    "target": "position-consul-general-of-france-in-recife",
     "type": "manages"
   },
   {
-    "source": "person-juhani-araj-rvi",
-    "target": "position-minister-of-finance",
+    "source": "person-pierre-fournier",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-johannes-lundson",
-    "target": "position-minister-of-finance",
+    "source": "person-catherine-suard",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-riikka-purra",
-    "target": "position-minister-of-finance",
+    "source": "person-philippe-janvier-kamiyama",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-sauli-niinist",
-    "target": "position-minister-of-finance",
+    "source": "person-michel-seguy",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-mauno-koivisto",
-    "target": "position-minister-of-finance",
+    "source": "person-jo-lle-rayet",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-jutta-urpilainen",
-    "target": "position-minister-of-finance",
+    "source": "person-henri-de-roquefeuil",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-eero-hein-luoma",
-    "target": "position-minister-of-finance",
+    "source": "person-lise-talbot-barr",
+    "target": "position-consul-general-of-france-in-pondicherry",
     "type": "manages"
   },
   {
-    "source": "person-ahti-pekkala",
-    "target": "position-minister-of-finance",
+    "source": "person-j-r-mie-robert",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-risto-ryti",
-    "target": "position-minister-of-finance",
+    "source": "person-anne-claire-legendre",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-katri-kulmuni",
-    "target": "position-minister-of-finance",
+    "source": "person-jacques-baeyens",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-erkki-liikanen",
-    "target": "position-minister-of-finance",
+    "source": "person-fran-ois-delattre",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-matti-vanhanen",
-    "target": "position-minister-of-finance",
+    "source": "person-patrick-gautrat",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-paul-paavela",
-    "target": "position-minister-of-finance",
+    "source": "person-bertrand-lortholary",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-nils-meinander",
-    "target": "position-minister-of-finance",
+    "source": "person-jean-marie-sotin-de-la-coindi-re",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-osmo-p-karttunen",
-    "target": "position-minister-of-finance",
+    "source": "person-philippe-lalliot",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-lauri-hietanen",
-    "target": "position-minister-of-finance",
+    "source": "person-albert-lefaivre",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-mika-lintil",
-    "target": "position-minister-of-finance",
+    "source": "person-andr-gadaud",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-johan-helo",
-    "target": "position-minister-of-finance",
+    "source": "person-c-drik-fouriscot",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-wiljam-sarjala",
-    "target": "position-minister-of-finance",
+    "source": "person-andr-baeyens",
+    "target": "position-consul-general-of-france-in-new-york",
     "type": "manages"
   },
   {
-    "source": "person-viljo-rantala",
-    "target": "position-minister-of-finance",
+    "source": "person-laurent-gallissot",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-tuure-junnila",
-    "target": "position-minister-of-finance",
+    "source": "person-christophe-bouchard",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-penna-tervo",
-    "target": "position-minister-of-finance",
+    "source": "person-denis-pietton",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-mauno-jussila",
-    "target": "position-minister-of-finance",
+    "source": "person-q133005810",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-jonathan-wartiovaara",
-    "target": "position-minister-of-finance",
+    "source": "person-philippe-chatignoux",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-ilmo-nurmela",
-    "target": "position-minister-of-finance",
+    "source": "person-thierry-reynard",
+    "target": "position-consul-general-of-france-in-miami",
     "type": "manages"
   },
   {
-    "source": "person-hugo-relander",
-    "target": "position-minister-of-finance",
+    "source": "person-jules-irrmann",
+    "target": "position-consul-general-of-france-in-kyoto",
     "type": "manages"
   },
   {
-    "source": "person-heikki-tuominen",
-    "target": "position-minister-of-finance",
+    "source": "person-philippe-janvier-kamiyama",
+    "target": "position-consul-general-of-france-in-kyoto",
     "type": "manages"
   },
   {
-    "source": "person-esko-rekola",
-    "target": "position-minister-of-finance",
+    "source": "person-sandrine-mouchet",
+    "target": "position-consul-general-of-france-in-kyoto",
     "type": "manages"
   },
   {
-    "source": "person-esko-ollila",
-    "target": "position-minister-of-finance",
+    "source": "person-jean-matthieu-bonnel",
+    "target": "position-consul-general-of-france-in-kyoto",
     "type": "manages"
   },
   {
-    "source": "person-esa-kaitila",
-    "target": "position-minister-of-finance",
+    "source": "person-charles-henri-brosseau",
+    "target": "position-consul-general-of-france-in-kyoto",
     "type": "manages"
   },
   {
-    "source": "person-ernst-gr-sten",
-    "target": "position-minister-of-finance",
+    "source": "person-guillaume-lacroix",
+    "target": "position-consul-general-of-france-in-chicago",
     "type": "manages"
   },
   {
-    "source": "person-eino-raunio",
-    "target": "position-minister-of-finance",
+    "source": "person-graham-paul",
+    "target": "position-consul-general-of-france-in-chicago",
     "type": "manages"
   },
   {
-    "source": "person-carl-olof-tallgren",
-    "target": "position-minister-of-finance",
+    "source": "person-dominique-decherf",
+    "target": "position-consul-general-of-france-in-chicago",
     "type": "manages"
   },
   {
-    "source": "person-antti-rinne",
-    "target": "position-minister-of-finance",
+    "source": "person-jean-baptiste-de-boissi-re",
+    "target": "position-consul-general-of-france-in-chicago",
     "type": "manages"
   },
   {
-    "source": "person-v-in-tanner",
-    "target": "position-minister-of-finance",
+    "source": "person-gilbert-de-trenqualye",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-carl-enckell",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-henry-du-chesne",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-sakari-tuomioja",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-siv-leng-chhuor",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-ilkka-kanerva",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-q134966340",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-antti-hackzell",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-georges-dufaure-de-la-prade",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-erkki-tuomioja",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-sylvain-fourri-re",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-paavo-v-yrynen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-bertrand-lavezzari",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-reino-rossi",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-claude-ambrosini",
+    "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
   },
   {
-    "source": "person-alexander-stubb",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-vincent-hommeril",
+    "target": "position-consul-general-of-france-in-atlanta",
     "type": "manages"
   },
   {
-    "source": "person-johannes-virolainen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-pascal-le-deunff",
+    "target": "position-consul-general-of-france-in-atlanta",
     "type": "manages"
   },
   {
-    "source": "person-juho-vennola",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-anne-laure-desjonqu-res",
+    "target": "position-consul-general-of-france-in-atlanta",
     "type": "manages"
   },
   {
-    "source": "person-paavo-hynninen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-denis-barbet",
+    "target": "position-consul-general-of-france-in-atlanta",
     "type": "manages"
   },
   {
-    "source": "person-jaakko-hallama",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-louis-de-corail",
+    "target": "position-consul-general-of-france-in-atlanta",
     "type": "manages"
   },
   {
-    "source": "person-heikki-haavisto",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-kamel-nasri",
+    "target": "position-minister-of-public-works",
     "type": "manages"
   },
   {
-    "source": "person-paavo-rantanen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-boudjemaa-talai",
+    "target": "position-minister-of-public-works",
     "type": "manages"
   },
   {
-    "source": "person-veli-merikoski",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-bualam-ibn-hammouda",
+    "target": "position-minister-of-public-works",
     "type": "manages"
   },
   {
-    "source": "person-olavi-j-mattila",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-ali-yahia-abdennour",
+    "target": "position-minister-of-public-works",
     "type": "manages"
   },
   {
-    "source": "person-timo-soini",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-lakhdar-rakhroukh",
+    "target": "position-minister-of-public-works",
     "type": "manages"
   },
   {
-    "source": "person-kalevi-sorsa",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-andrej-dole-al",
+    "target": "position-minister-of-transport-and-construction-of-the-slovak-republic",
     "type": "manages"
   },
   {
-    "source": "person-pekka-haavisto",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-rp-d-rsek",
+    "target": "position-minister-of-transport-and-construction-of-the-slovak-republic",
     "type": "manages"
   },
   {
-    "source": "person-eljas-erkko",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-pavol-lan-ari",
+    "target": "position-minister-of-transport-and-construction-of-the-slovak-republic",
     "type": "manages"
   },
   {
-    "source": "person-tarja-halonen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-jozef-r-jr",
+    "target": "position-minister-of-transport-and-construction-of-the-slovak-republic",
     "type": "manages"
   },
   {
-    "source": "person-rudolf-holsti",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-s-awomir-nowak",
+    "target": "position-minister-of-transport-construction-and-marine-economy",
     "type": "manages"
   },
   {
-    "source": "person-henrik-ramsay",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-yahya-musa-kisbi",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-eemil-nestor-set-l",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-raed-abu-soud",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-pertti-paasio",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-abdul-hadi-majali",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-ke-gartz",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-ahmad-maher-abul-samen",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-gustaf-idman",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-ra-if-nagm",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-rolf-witting",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-abdullah-amin-salah",
+    "target": "position-minister-of-public-works-and-housing-of-jordan",
     "type": "manages"
   },
   {
-    "source": "person-otto-stenroth",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-paul-mile-botta",
+    "target": "position-consul-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-aarno-yrj-koskinen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-joseph-adam-sienkiewicz",
+    "target": "position-consul-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-urho-kekkonen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-charles-ledoulx",
+    "target": "position-consul-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-elina-valtonen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-gabriel-de-lantivy-de-kerveno",
+    "target": "position-consul-of-france-in-jerusalem",
     "type": "manages"
   },
   {
-    "source": "person-keijo-korhonen",
-    "target": "position-minister-for-foreign-affairs-of-finland",
+    "source": "person-jean-lempereur",
+    "target": "position-consul-of-france-in-jerusalem",
     "type": "manages"
+  },
+  {
+    "source": "person-lucien-monge",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-adrien-langlais",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-salvator-patrimonio",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-ernest-crampon",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-joseph-h-louis-jorelle",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-edmond-de-barr-re",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-de-blacas",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-s-bastien-de-bremond",
+    "target": "position-consul-of-france-in-jerusalem",
+    "type": "manages"
+  },
+  {
+    "source": "person-vladimir-jaku-ev",
+    "target": "position-minister-of-construction-housing-and-utilities",
+    "type": "manages"
+  },
+  {
+    "source": "person-irek-faizullin",
+    "target": "position-minister-of-construction-housing-and-utilities",
+    "type": "manages"
+  },
+  {
+    "source": "person-david-burch",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-alfred-sears",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-desmond-thomas-bannister",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-nizar-baraka",
+    "target": "position-minister-of-equipment-transport-logistics-and-water",
+    "type": "manages"
+  },
+  {
+    "source": "person-abdelkader-aamara",
+    "target": "position-minister-of-equipment-transport-logistics-and-water",
+    "type": "manages"
+  },
+  {
+    "source": "position-minister-of-public-works",
+    "target": "secretariat-of-public-works-of-argentina",
+    "type": "reports_to"
+  },
+  {
+    "source": "person-gabriel-katopodis",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-salvador-soares-dos-reis-pires",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-abel-pires",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohammed-nasim",
+    "target": "position-minister-of-housing-and-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-sm-rezaul-karim",
+    "target": "position-minister-of-housing-and-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-emmanuel-nganou-djoumessi",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-jean-baptiste-bokam",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-patrice-amba-salla",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "position-minister-of-construction",
+    "target": "ministry-of-construction",
+    "type": "reports_to"
+  },
+  {
+    "source": "person-q130468383",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-shwe-lay",
+    "target": "position-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-klara-geywitz",
+    "target": "position-federal-minister-for-housing-urban-development-and-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-verena-hubertz",
+    "target": "position-federal-minister-for-housing-urban-development-and-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-karl-ravens",
+    "target": "position-federal-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-klaus-t-pfer",
+    "target": "position-federal-minister-of-construction",
+    "type": "manages"
+  },
+  {
+    "source": "person-edgar-romeo-rodr-guez-herrera",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-alberto-h-ber",
+    "target": "position-minister-of-transport-and-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-jos-luis-falero",
+    "target": "position-minister-of-transport-and-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-mutorwa",
+    "target": "position-minister-of-works-and-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-slah-zouari",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-moncef-sliti",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-noureddine-selmi",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohamed-charfeddine-gallouz",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-moncef-mouelhi",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-yassine-brahim",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-slaheddine-malouche",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-sadok-ben-jem-a",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohamed-salmane",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohamed-ridha-far-s",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mansour-skhiri",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-h-di-khefacha",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-ali-chaouch",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-ahmed-noureddine",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-ahmed-friaa",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-abdallah-farhat",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohamed-salah-arfaoui",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-lassaad-ben-osman",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-ghazi-chaouachi",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-samira-khayach-belhaj",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-slaheddine-bela-d",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-h-di-larbi",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-ezzeddine-abassi",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-mohamed-sayah",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-kamel-doukh",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-sarra-zaafrani",
+    "target": "position-minister-of-equipment",
+    "type": "manages"
+  },
+  {
+    "source": "person-rana-abdullah-al-fares",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-ammar-muhammad-al-ajmi",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-amani-suleiman-bu-qamaz",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-ali-husain-ali-al-mousa",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "position-minister-of-public-works",
+    "target": "panama-ministry-of-public-works",
+    "type": "reports_to"
+  },
+  {
+    "source": "person-ram-n-arosemena",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-jaime-ford",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-federico-jos-su-rez",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-rafael-sabonge",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-hubert-czerniuk",
+    "target": "position-consul-general-of-poland-in-lyon",
+    "type": "manages"
+  },
+  {
+    "source": "person-dariusz-wi-niewski",
+    "target": "position-consul-general-of-poland-in-lyon",
+    "type": "manages"
+  },
+  {
+    "source": "person-joanna-kozi-ska-frybes",
+    "target": "position-consul-general-of-poland-in-lyon",
+    "type": "manages"
+  },
+  {
+    "source": "person-riad-nurmohamed",
+    "target": "position-minister-of-public-works",
+    "type": "manages"
+  },
+  {
+    "source": "person-mansour-fadlallah-azzam",
+    "target": "position-minister-of-public-works-and-housing-syria",
+    "type": "manages"
+  },
+  {
+    "source": "person-hussein-arnous",
+    "target": "position-minister-of-public-works-and-housing-syria",
+    "type": "manages"
+  },
+  {
+    "source": "person-hala-mohammad-al-nasser",
+    "target": "position-minister-of-public-works-and-housing-syria",
+    "type": "manages"
+  },
+  {
+    "source": "person-suhail-mohammad-abd-al-latif",
+    "target": "position-minister-of-public-works-and-housing-syria",
+    "type": "manages"
+  },
+  {
+    "source": "person-marcelo-cabrera",
+    "target": "position-minister-of-transport-and-public-works-of-ecuador",
+    "type": "manages"
+  },
+  {
+    "source": "person-dar-o-herrera-falcones",
+    "target": "position-minister-of-transport-and-public-works-of-ecuador",
+    "type": "manages"
+  },
+  {
+    "source": "person-ra-l-alfonso-paredes",
+    "target": "position-minister-of-public-works-of-venezuela",
+    "type": "manages"
+  },
+  {
+    "source": "person-luis-amador-jim-nez",
+    "target": "position-minister-of-public-works-and-transport",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-zsef-antall",
+    "target": "position-q123703051",
+    "type": "manages"
+  },
+  {
+    "source": "person-endre-misteth",
+    "target": "position-q123703051",
+    "type": "manages"
+  },
+  {
+    "source": "person-ferenc-nagy",
+    "target": "position-q123703051",
+    "type": "manages"
+  },
+  {
+    "source": "person-cemil-a-da-y-ld-r-m",
+    "target": "position-consul-general-of-turkey-in-lyon",
+    "type": "manages"
+  },
+  {
+    "source": "position-consul-general",
+    "target": "hungarian-consulate-general-in-sao-paulo-brazil",
+    "type": "reports_to"
   }
 ]
