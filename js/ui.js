@@ -29,6 +29,9 @@ const dom = {
   searchResults: document.getElementById("search-results"),
   tooltip: document.getElementById("tooltip"),
   canvas: document.getElementById("canvas"),
+  btnTraceOrigin: null,
+  originWrap: null,
+  originList: null,
 };
 
 const state = {
@@ -37,6 +40,7 @@ const state = {
   expandCancelled: false,
   expandFrame: 0,
   loaderTimer: null,
+  tracedNodeId: null,
 };
 
 function setText(element, value) {
@@ -93,6 +97,97 @@ function renderBreadcrumb(nodeObj) {
     fragment.appendChild(crumb);
   });
   dom.breadcrumb.appendChild(fragment);
+}
+
+function ensureOriginUi() {
+  if (dom.btnTraceOrigin && dom.originWrap && dom.originList) {
+    return;
+  }
+
+  const actionRow = dom.btnFocus.parentElement;
+  const traceButton = document.createElement("button");
+  traceButton.className = "btn btn-focus";
+  traceButton.id = "btn-trace-origin";
+  traceButton.textContent = "Trace Origin";
+  actionRow.insertBefore(traceButton, dom.btnCollapse);
+
+  const originWrap = document.createElement("div");
+  originWrap.style.display = "none";
+  originWrap.style.marginTop = "10px";
+
+  const originLabel = document.createElement("div");
+  originLabel.textContent = "ORIGIN PATH";
+  originLabel.style.fontSize = "10px";
+  originLabel.style.letterSpacing = "0.12em";
+  originLabel.style.color = "#8f7a5d";
+  originLabel.style.marginBottom = "6px";
+  originWrap.appendChild(originLabel);
+
+  const originList = document.createElement("div");
+  originList.style.display = "flex";
+  originList.style.flexDirection = "column";
+  originList.style.gap = "4px";
+  originList.style.padding = "8px 10px";
+  originList.style.border = "1px solid rgba(200,168,74,0.14)";
+  originList.style.background = "rgba(20,16,12,0.72)";
+  originList.style.borderRadius = "10px";
+  originWrap.appendChild(originList);
+
+  dom.childrenList.insertAdjacentElement("afterend", originWrap);
+
+  dom.btnTraceOrigin = traceButton;
+  dom.originWrap = originWrap;
+  dom.originList = originList;
+}
+
+function renderOriginTrace(nodeObj) {
+  const originTrace = state.graph?.getOriginTrace?.() || [];
+  const traceMatchesSelected =
+    originTrace.length > 0 && originTrace[originTrace.length - 1]?.data?.id === nodeObj.data.id;
+
+  if (!traceMatchesSelected && state.tracedNodeId && state.tracedNodeId !== nodeObj.data.id) {
+    state.graph.clearOriginTrace();
+    state.tracedNodeId = null;
+  }
+
+  if (!traceMatchesSelected) {
+    dom.originWrap.style.display = "none";
+    dom.originList.replaceChildren();
+    setText(dom.btnTraceOrigin, "Trace Origin");
+    dom.btnTraceOrigin.disabled = Boolean(nodeObj.isCluster);
+    return;
+  }
+
+  state.tracedNodeId = nodeObj.data.id;
+  dom.originWrap.style.display = "block";
+  dom.originList.replaceChildren();
+
+  const fragment = document.createDocumentFragment();
+  originTrace.forEach((item, index) => {
+    const row = document.createElement("div");
+    row.style.display = "flex";
+    row.style.alignItems = "center";
+    row.style.gap = "8px";
+    row.style.color = item.data.color || "#d4c4a1";
+    row.style.cursor = "pointer";
+    row.style.paddingLeft = `${index * 10}px`;
+
+    const arrow = document.createElement("span");
+    arrow.textContent = index === 0 ? "•" : "→";
+    arrow.style.color = "rgba(220, 210, 180, 0.75)";
+    row.appendChild(arrow);
+
+    const label = document.createElement("span");
+    label.textContent = item.data.name;
+    row.appendChild(label);
+
+    row.addEventListener("click", () => state.graph.setSelectedNode(item));
+    fragment.appendChild(row);
+  });
+
+  dom.originList.appendChild(fragment);
+  setText(dom.btnTraceOrigin, "Hide Origin");
+  dom.btnTraceOrigin.disabled = false;
 }
 
 function renderInfoPanel(nodeObj) {
@@ -209,6 +304,9 @@ function renderInfoPanel(nodeObj) {
   dom.depthCtrl.classList.add("panel-open");
   dom.statsPanel.classList.remove("panel-closed");
   setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
+  if (dom.btnTraceOrigin) {
+    renderOriginTrace(nodeObj);
+  }
   renderBreadcrumb(nodeObj);
 }
 
@@ -298,14 +396,14 @@ function stopProgressiveExpansion() {
   hideLoader(0);
 }
 
-function progressiveRender(frontierNodes, onComplete) {
+function progressiveRender(frontierNodes, addNode, onComplete) {
   let index = 0;
   const BATCH = 200;
 
-  function batch() {
+  function step() {
     let count = 0;
     while (index < frontierNodes.length && count < BATCH) {
-      state.graph.expandNodesBatch([frontierNodes[index]], true);
+      addNode(frontierNodes[index]);
       index += 1;
       count += 1;
     }
@@ -313,14 +411,13 @@ function progressiveRender(frontierNodes, onComplete) {
     updateStats(state.graph.getStats());
 
     if (index < frontierNodes.length) {
-      state.expandFrame = window.requestAnimationFrame(batch);
-      return;
+      state.expandFrame = window.requestAnimationFrame(step);
+    } else if (onComplete) {
+      onComplete();
     }
-
-    onComplete();
   }
 
-  batch();
+  step();
 }
 
 function waitForExpansionDrain(onDone) {
@@ -388,7 +485,9 @@ function expandProgressively(targetDepth) {
     }
 
     showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
-    progressiveRender(frontier.nodes, () => {
+    progressiveRender(frontier.nodes, (nodeObj) => {
+      state.graph.expandNodesBatch([nodeObj], true);
+    }, () => {
       waitForExpansionDrain(() => {
         renderInfoPanel(state.graph.getSelectedNode());
         state.expandFrame = window.requestAnimationFrame(tick);
@@ -401,6 +500,28 @@ function expandProgressively(targetDepth) {
 }
 
 function bindControls() {
+  dom.btnTraceOrigin.addEventListener("click", () => {
+    const selected = state.graph.getSelectedNode();
+    if (!selected || selected.isCluster) {
+      return;
+    }
+
+    const currentTrace = state.graph.getOriginTrace();
+    const traceMatchesSelected =
+      currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
+
+    if (traceMatchesSelected) {
+      state.graph.clearOriginTrace();
+      state.tracedNodeId = null;
+    } else {
+      const originPath = state.graph.traceOrigin(selected);
+      state.graph.setOriginTrace(originPath);
+      state.tracedNodeId = selected.data.id;
+    }
+
+    renderInfoPanel(selected);
+  });
+
   dom.btnExpand.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
     if (!selected) {
@@ -494,6 +615,7 @@ function bindControls() {
 }
 
 async function init() {
+  ensureOriginUi();
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: renderInfoPanel,
