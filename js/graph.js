@@ -237,6 +237,9 @@ export function createGovernmentGraph({
     flyYawTarget: 0,
     flyPitchTarget: 0,
     lastUserDrillAt: 0,
+    showUnverifiedNodes: true,
+    showCandidateNodes: false,
+    candidateNodes: [],
     keyState: {
       KeyW: false,
       KeyA: false,
@@ -260,6 +263,8 @@ export function createGovernmentGraph({
       lodLabel: state.lod.label,
       cameraDistance: state.lod.cameraDistance,
       densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
+      showUnverifiedNodes: state.showUnverifiedNodes,
+      showCandidateNodes: state.showCandidateNodes,
     });
   }
 
@@ -323,6 +328,44 @@ export function createGovernmentGraph({
 
   function getBranchColor(branchKey) {
     return branchColors[branchKey] || branchColors.position;
+  }
+
+  function getVerificationStyleKey(data) {
+    if (data?.isCandidate) {
+      return "candidate";
+    }
+    const status = String(data?.verificationStatus || "verified").toLowerCase();
+    if (status === "partial") {
+      return "partial";
+    }
+    if (status === "unverified") {
+      return "unverified";
+    }
+    return "verified";
+  }
+
+  function getVerificationBadgeColor(data) {
+    const styleKey = getVerificationStyleKey(data);
+    if (styleKey === "partial") {
+      return "#d9b55e";
+    }
+    if (styleKey === "unverified") {
+      return "#8e7d62";
+    }
+    if (styleKey === "candidate") {
+      return "#9b8bbd";
+    }
+    return "#6fcf97";
+  }
+
+  function shouldDisplayNodeByVerification(data) {
+    if (data?.isCandidate) {
+      return state.showCandidateNodes;
+    }
+    if (state.showUnverifiedNodes) {
+      return true;
+    }
+    return !(Number(data?.confidenceScore || 0) < 0.5 || String(data?.verificationStatus || "") === "unverified");
   }
 
   function normalizeClusterKey(value) {
@@ -551,6 +594,9 @@ export function createGovernmentGraph({
     if (nodeObj.depth <= 1) {
       score += 120_000;
     }
+    if (nodeObj.isCandidate) {
+      score -= 60_000;
+    }
     score += Math.min(90_000, (nodeObj.data?.__meta?.subtreeCount || 1) * 4);
     score -= nodeObj.depth * 400;
     if (nodeObj.clusterRef) {
@@ -745,13 +791,15 @@ export function createGovernmentGraph({
     state.dataMap.set(node.id, node);
     state.parentIdById.set(node.id, parentId);
     state.depthTotals.set(depth, (state.depthTotals.get(depth) || 0) + 1);
-    const batchKey = `${depth}:${getNodeColor(node)}`;
+    const batchKey = `${depth}:${getNodeColor(node)}:${getVerificationStyleKey(node)}`;
     state.batchTotals.set(batchKey, (state.batchTotals.get(batchKey) || 0) + 1);
     state.searchIndex.push({
       id: node.id,
       name: node.name,
       type: node.type,
       color: node.color,
+      verificationStatus: node.verificationStatus || "unverified",
+      isCandidate: Boolean(node.isCandidate),
       pathStr: path.join(" › "),
     });
 
@@ -773,17 +821,83 @@ export function createGovernmentGraph({
     return { subtreeCount, maxDepth: subtreeDepth };
   }
 
-  function createNodeBatch(depth, color, capacity) {
+  function registerCandidateNode(node) {
+    const depth = 1;
+    node.parent = null;
+    node.depth = depth;
+    state.dataMap.set(node.id, node);
+    state.parentIdById.set(node.id, null);
+    state.depthTotals.set(depth, (state.depthTotals.get(depth) || 0) + 1);
+    const batchKey = `${depth}:${getNodeColor(node)}:${getVerificationStyleKey(node)}`;
+    state.batchTotals.set(batchKey, (state.batchTotals.get(batchKey) || 0) + 1);
+    state.searchIndex.push({
+      id: node.id,
+      name: node.name,
+      type: node.type,
+      color: node.color,
+      verificationStatus: "candidate",
+      isCandidate: true,
+      pathStr: node.possibleParent ? `Candidate › ${node.possibleParent}` : "Candidate",
+    });
+    node.__meta = {
+      depth,
+      subtreeCount: 1,
+      maxDepth: depth,
+      childCount: 0,
+    };
+  }
+
+  function getVerificationMaterialProfile(styleKey, color) {
+    const baseColor = new THREE.Color(color);
+    if (styleKey === "partial") {
+      return {
+        color: baseColor.clone().lerp(whiteColor, 0.12),
+        emissive: baseColor.clone().multiplyScalar(0.42),
+        emissiveIntensity: 0.12,
+        opacity: 0.64,
+        wireframe: false,
+      };
+    }
+    if (styleKey === "unverified") {
+      return {
+        color: baseColor.clone().lerp(whiteColor, 0.18),
+        emissive: baseColor.clone().multiplyScalar(0.08),
+        emissiveIntensity: 0.05,
+        opacity: 0.2,
+        wireframe: true,
+      };
+    }
+    if (styleKey === "candidate") {
+      return {
+        color: baseColor.clone().lerp(whiteColor, 0.2),
+        emissive: baseColor.clone().multiplyScalar(0.12),
+        emissiveIntensity: 0.06,
+        opacity: 0.16,
+        wireframe: true,
+      };
+    }
+    return {
+      color: baseColor,
+      emissive: baseColor.clone(),
+      emissiveIntensity: 0.3,
+      opacity: NODE_OPACITY,
+      wireframe: false,
+    };
+  }
+
+  function createNodeBatch(depth, color, styleKey, capacity) {
     const radius = nodeRadiusForDepth(depth);
     const geometry = new THREE.SphereGeometry(radius, depth <= 2 ? 16 : 10, depth <= 2 ? 16 : 10);
+    const profile = getVerificationMaterialProfile(styleKey, color);
     const material = new THREE.MeshStandardMaterial({
-      color: new THREE.Color(color),
-      emissive: new THREE.Color(color),
-      emissiveIntensity: 0.3,
+      color: profile.color,
+      emissive: profile.emissive,
+      emissiveIntensity: profile.emissiveIntensity,
       roughness: 0.38,
       metalness: 0.05,
       transparent: true,
-      opacity: NODE_OPACITY,
+      opacity: profile.opacity,
+      wireframe: profile.wireframe,
     });
     const mesh = new THREE.InstancedMesh(geometry, material, Math.max(capacity, 1));
     mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
@@ -793,6 +907,7 @@ export function createGovernmentGraph({
       depth,
       radius,
       color,
+      styleKey,
       mesh,
       nodesBySlot: new Array(Math.max(capacity, 1)),
       nextSlot: 0,
@@ -803,10 +918,9 @@ export function createGovernmentGraph({
 
   function ensureNodeBatches() {
     for (const [batchKey, count] of state.batchTotals) {
-      const separator = batchKey.indexOf(":");
-      const depth = Number(batchKey.slice(0, separator));
-      const color = batchKey.slice(separator + 1);
-      state.nodeBatches.set(batchKey, createNodeBatch(depth, color, count));
+      const [depthText, color, styleKey] = batchKey.split(":");
+      const depth = Number(depthText);
+      state.nodeBatches.set(batchKey, createNodeBatch(depth, color, styleKey, count));
     }
 
     const clusterGeometry = new THREE.TorusGeometry(1, 0.18, 10, 28);
@@ -857,7 +971,7 @@ export function createGovernmentGraph({
   }
 
   function assignBatchSlot(nodeObj) {
-    const batchKey = `${nodeObj.depth}:${getNodeColor(nodeObj.data)}`;
+    const batchKey = `${nodeObj.depth}:${getNodeColor(nodeObj.data)}:${getVerificationStyleKey(nodeObj.data)}`;
     const batch = state.nodeBatches.get(batchKey);
     nodeObj.batch = batch;
     nodeObj.slot = batch.freeSlots.length > 0 ? batch.freeSlots.pop() : batch.nextSlot++;
@@ -889,6 +1003,7 @@ export function createGovernmentGraph({
       clusterRef: null,
       edgeToParent: null,
       resolvedColor: getNodeColor(data),
+      isCandidate: Boolean(data?.isCandidate),
     };
 
     if (parent?.branchDirection?.lengthSq() > 0) {
@@ -902,6 +1017,25 @@ export function createGovernmentGraph({
     state.nodeRenderMap.set(data.id, { mesh: nodeObj.batch.mesh, slot: nodeObj.slot });
     state.allNodes.push(nodeObj);
     return nodeObj;
+  }
+
+  function placeCandidateNode(nodeObj, index = 0) {
+    const baseDistance = shellRadiusForDepth(1) + 30 + index * 2.4;
+    const seed = hashString(nodeObj.data.id);
+    const direction = directionFromSeed(seed, index + 1);
+    nodeObj.pos.copy(direction).multiplyScalar(baseDistance);
+    nodeObj.targetPos.copy(nodeObj.pos);
+    nodeObj.branchDirection.copy(direction);
+  }
+
+  function syncCandidateVisibility() {
+    for (const nodeObj of state.candidateNodes) {
+      if (state.showCandidateNodes) {
+        markVisible(nodeObj);
+      } else {
+        markHidden(nodeObj);
+      }
+    }
   }
 
   function markVisible(nodeObj) {
@@ -1470,7 +1604,7 @@ export function createGovernmentGraph({
   }
 
   function isProtectedFromClustering(nodeObj) {
-    if (!nodeObj || nodeObj === state.rootObj || nodeObj === state.selectedNode) {
+    if (!nodeObj || nodeObj.isCandidate || nodeObj === state.rootObj || nodeObj === state.selectedNode) {
       return true;
     }
     const normalizedName = normalizeClusterKey(nodeObj.data?.name || nodeObj.data?.id);
@@ -2169,7 +2303,9 @@ export function createGovernmentGraph({
     updateLodState();
     updateFrustum();
     state.screenSpaceBuckets = computeScreenSpaceBuckets(
-      state.visibleNodes.filter((nodeObj) => lodManager.shouldRenderNode(nodeObj, state.lod)),
+      state.visibleNodes.filter(
+        (nodeObj) => lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data),
+      ),
     );
     recomputeClusters();
     const baseEdgeOpacity = state.lod.level <= 1 ? 0.34 : state.zoom <= 1 ? 0.24 : 0.3;
@@ -2179,7 +2315,11 @@ export function createGovernmentGraph({
 
     for (const nodeObj of state.allNodes) {
       nodeObj.renderVisible = false;
-      if (!lodManager.shouldRenderNode(nodeObj, state.lod) || nodeObj.clustered) {
+      if (
+        !lodManager.shouldRenderNode(nodeObj, state.lod) ||
+        !shouldDisplayNodeByVerification(nodeObj.data) ||
+        nodeObj.clustered
+      ) {
         hideNodeInstance(nodeObj);
         continue;
       }
@@ -2330,7 +2470,7 @@ export function createGovernmentGraph({
 
     let updated = false;
     for (const nodeObj of state.visibleNodes) {
-      if (nodeObj.depth === 0 || nodeObj.animating || !nodeObj.renderVisible || nodeObj.clustered) {
+      if (nodeObj.depth === 0 || nodeObj.isCandidate || nodeObj.animating || !nodeObj.renderVisible || nodeObj.clustered) {
         continue;
       }
 
@@ -2624,11 +2764,15 @@ export function createGovernmentGraph({
     state.searchIndex = [];
     state.depthTotals.clear();
     state.batchTotals.clear();
+    state.candidateNodes = [];
     state.relationships = [];
     state.relationshipIndex = new Map();
     state.connectedRelationshipKeys.clear();
     const meta = registerDataNode(data);
-    state.totalNodeCount = meta.subtreeCount;
+    for (const candidateNode of data.candidateNodes || []) {
+      registerCandidateNode(candidateNode);
+    }
+    state.totalNodeCount = meta.subtreeCount + (data.candidateNodes || []).length;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_NODES;
     state.manualDepthFilter = MAX_DEPTH;
@@ -2646,6 +2790,14 @@ export function createGovernmentGraph({
     setNodeMatrix(state.rootObj, 1);
     markVisible(state.rootObj);
     connectRelationshipsForNode(state.rootObj);
+    for (const [index, candidateData] of (data.candidateNodes || []).entries()) {
+      const candidateObj = createNodeObj(candidateData, null, 1);
+      setNodeColor(candidateObj);
+      placeCandidateNode(candidateObj, index);
+      setNodeMatrix(candidateObj, 1);
+      state.candidateNodes.push(candidateObj);
+    }
+    syncCandidateVisibility();
     expandNode(state.rootObj, false);
     flushPendingExpansions(18, 4096);
     updateLodState();
@@ -2672,6 +2824,19 @@ export function createGovernmentGraph({
     revealNodeById,
     setSelectedNode,
     setDepthFilter,
+    setShowUnverifiedNodes(enabled) {
+      state.showUnverifiedNodes = Boolean(enabled);
+      state.renderDirty = true;
+      refreshVisibility(true);
+      return state.showUnverifiedNodes;
+    },
+    setShowCandidateNodes(enabled) {
+      state.showCandidateNodes = Boolean(enabled);
+      syncCandidateVisibility();
+      state.renderDirty = true;
+      refreshVisibility(true);
+      return state.showCandidateNodes;
+    },
     getFrontier,
     refreshVisibility,
     focusSelectedNode() {
@@ -2744,6 +2909,8 @@ export function createGovernmentGraph({
         lodLabel: state.lod.label,
         cameraDistance: state.lod.cameraDistance,
         densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
+        showUnverifiedNodes: state.showUnverifiedNodes,
+        showCandidateNodes: state.showCandidateNodes,
       };
     },
     getMaxDataDepth() {

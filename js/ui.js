@@ -1,6 +1,18 @@
 import { createGovernmentGraph } from "./graph.js?v=20260312c";
 import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
 
+const shouldBootUi = (() => {
+  if (typeof window === "undefined") {
+    return true;
+  }
+  if (window.__bureaucracy_ui_loaded__) {
+    console.warn("ui.js loaded twice - preventing duplicate initialization.");
+    return false;
+  }
+  window.__bureaucracy_ui_loaded__ = true;
+  return true;
+})();
+
 const dom = {
   loading: document.getElementById("loading"),
   loadStatus: document.getElementById("load-status"),
@@ -17,6 +29,7 @@ const dom = {
   statsLoaded: document.getElementById("stats-loaded"),
   statsDepth: document.getElementById("stats-depth"),
   statsPanel: document.getElementById("stats"),
+  legend: document.getElementById("legend"),
   depthCtrl: document.getElementById("depth-ctrl"),
   expandLoader: document.getElementById("expand-loader"),
   btnExpand: document.getElementById("btn-expand"),
@@ -37,6 +50,10 @@ const dom = {
   verificationConfidence: null,
   verificationSources: null,
   verificationLastVerified: null,
+  verificationBadge: null,
+  togglesWrap: null,
+  toggleUnverified: null,
+  toggleCandidates: null,
 };
 
 const state = {
@@ -72,25 +89,39 @@ function updateStats(stats) {
   setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
   setText(
     dom.statsLoaded,
-    `${stats.visibleNodeCount.toLocaleString()} currently loaded · ${stats.lodLabel || "Universe View"}`,
-  );
-  setText(
-    dom.statsDepth,
-    `Depth filter: ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} · queue ${stats.pendingExpansions ?? 0}`,
-  );
-}
-
-function updateStats(stats) {
-  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
-  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
-  setText(
-    dom.statsLoaded,
     `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
   );
   setText(
     dom.statsDepth,
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
+}
+
+function hideLoadingOverlay(delay = 600) {
+  if (!dom.loading) {
+    return;
+  }
+  dom.loading.style.opacity = "0";
+  window.setTimeout(() => {
+    if (dom.loading?.parentElement) {
+      dom.loading.remove();
+    }
+  }, delay);
+}
+
+function handleUiFailure(error, message = "UI failed to initialize. Open browser console for details.") {
+  console.error(message, error);
+  setText(dom.loadStatus, message);
+  hideLoadingOverlay();
+}
+
+function safeUiCall(label, callback, ...args) {
+  try {
+    return callback(...args);
+  } catch (error) {
+    console.error(`UI callback failed: ${label}`, error);
+    return undefined;
+  }
 }
 
 function renderBreadcrumb(nodeObj) {
@@ -188,6 +219,14 @@ function ensureVerificationUi() {
   verificationWrap.appendChild(title);
 
   const status = document.createElement("div");
+  const badge = document.createElement("span");
+  badge.style.display = "inline-block";
+  badge.style.padding = "2px 6px";
+  badge.style.marginBottom = "6px";
+  badge.style.borderRadius = "999px";
+  badge.style.fontSize = "9px";
+  badge.style.letterSpacing = "0.08em";
+  badge.style.fontWeight = "600";
   const confidence = document.createElement("div");
   const sources = document.createElement("div");
   const lastVerified = document.createElement("div");
@@ -195,6 +234,7 @@ function ensureVerificationUi() {
   sources.style.flexDirection = "column";
   sources.style.gap = "4px";
   sources.style.marginTop = "8px";
+  verificationWrap.appendChild(badge);
   verificationWrap.appendChild(status);
   verificationWrap.appendChild(confidence);
   verificationWrap.appendChild(sources);
@@ -202,10 +242,101 @@ function ensureVerificationUi() {
 
   dom.infoPanel.appendChild(verificationWrap);
   dom.verificationWrap = verificationWrap;
+  dom.verificationBadge = badge;
   dom.verificationStatus = status;
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+}
+
+function getVerificationBadgeConfig(data) {
+  if (data.isCandidate) {
+    return { label: "CANDIDATE", bg: "rgba(155,139,189,0.18)", border: "#9b8bbd", color: "#d6caef" };
+  }
+  const status = String(data.verificationStatus || "unverified").toLowerCase();
+  if (status === "verified") {
+    return { label: "VERIFIED", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" };
+  }
+  if (status === "partial") {
+    return { label: "PARTIAL", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
+  }
+  return { label: "UNVERIFIED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" };
+}
+
+function ensureVerificationToggles() {
+  if (dom.togglesWrap && dom.toggleUnverified && dom.toggleCandidates) {
+    return;
+  }
+
+  const wrap = document.createElement("div");
+  wrap.style.position = "fixed";
+  wrap.style.top = "130px";
+  wrap.style.left = "32px";
+  wrap.style.zIndex = "20";
+  wrap.style.display = "flex";
+  wrap.style.flexDirection = "column";
+  wrap.style.gap = "6px";
+
+  const makeToggle = (labelText) => {
+    const label = document.createElement("label");
+    label.style.display = "flex";
+    label.style.alignItems = "center";
+    label.style.gap = "8px";
+    label.style.fontSize = "10px";
+    label.style.color = "#d4c4a1";
+    label.style.pointerEvents = "auto";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = true;
+    label.appendChild(checkbox);
+
+    const text = document.createElement("span");
+    text.textContent = labelText;
+    label.appendChild(text);
+    wrap.appendChild(label);
+    return checkbox;
+  };
+
+  const toggleUnverified = makeToggle("Show Unverified Nodes");
+  const toggleCandidates = makeToggle("Show Candidate Nodes");
+  toggleCandidates.checked = false;
+
+  document.body.appendChild(wrap);
+  dom.togglesWrap = wrap;
+  dom.toggleUnverified = toggleUnverified;
+  dom.toggleCandidates = toggleCandidates;
+}
+
+function ensureVerificationLegend() {
+  if (!dom.legend || dom.legend.querySelector("[data-verification-legend='true']")) {
+    return;
+  }
+
+  const title = document.createElement("div");
+  title.id = "legend-verification-label";
+  title.dataset.verificationLegend = "true";
+  title.textContent = "Verification";
+  title.style.fontSize = "8px";
+  title.style.color = "#8f7a5d";
+  title.style.letterSpacing = "0.2em";
+  title.style.textTransform = "uppercase";
+  title.style.margin = "10px 0 5px";
+  dom.legend.appendChild(title);
+
+  const items = [
+    ["Verified", "#6fcf97"],
+    ["Partial", "#d9b55e"],
+    ["Unverified", "#8e7d62"],
+    ["Candidate", "#9b8bbd"],
+  ];
+  items.forEach(([labelText, color]) => {
+    const row = document.createElement("div");
+    row.className = "leg-item";
+    row.dataset.verificationLegend = "true";
+    row.innerHTML = `<span>${labelText}</span><div class="leg-dot" style="background:${color}"></div>`;
+    dom.legend.appendChild(row);
+  });
 }
 
 function renderVerificationPanel(data) {
@@ -213,13 +344,19 @@ function renderVerificationPanel(data) {
     return;
   }
 
-  const status = String(data.verificationStatus || "unverified").toUpperCase();
+  const status = data.isCandidate ? "CANDIDATE" : String(data.verificationStatus || "unverified").toUpperCase();
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
   const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+  const badge = getVerificationBadgeConfig(data);
+
+  setText(dom.verificationBadge, badge.label);
+  dom.verificationBadge.style.background = badge.bg;
+  dom.verificationBadge.style.border = `1px solid ${badge.border}`;
+  dom.verificationBadge.style.color = badge.color;
 
   setText(dom.verificationStatus, `Verification Status: ${status}`);
-  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)}`);
+  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
   setText(
     dom.verificationLastVerified,
     `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
@@ -332,6 +469,9 @@ function renderInfoPanel(nodeObj) {
       dom.infoDesc,
       `${clusterReason} Represents ${clusterCount.toLocaleString()} descendants across ${loadedBranchCount.toLocaleString()} loaded sub-branches.`,
     );
+  }
+  if (data.isCandidate) {
+    setText(dom.infoType, `${data.type || "Candidate"} Candidate`);
   }
 
   const statsFragment = document.createDocumentFragment();
@@ -497,7 +637,8 @@ function renderSearchResults(matches) {
 
     const type = document.createElement("span");
     type.className = "sr-type";
-    type.textContent = match.type;
+    const status = match.isCandidate ? "CANDIDATE" : String(match.verificationStatus || "unverified").toUpperCase();
+    type.textContent = `${match.type} — ${status}`;
     type.style.color = match.color || "#666";
     type.style.borderColor = `${match.color || "#666"}40`;
     row.appendChild(type);
@@ -644,6 +785,16 @@ function expandProgressively(targetDepth) {
 }
 
 function bindControls() {
+  dom.toggleUnverified.addEventListener("change", () => {
+    state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
+    updateStats(state.graph.getStats());
+  });
+
+  dom.toggleCandidates.addEventListener("change", () => {
+    state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
+    updateStats(state.graph.getStats());
+  });
+
   dom.btnTraceOrigin.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
     if (!selected || selected.isCluster) {
@@ -758,14 +909,29 @@ function bindControls() {
   });
 }
 
-async function init() {
+function initUI() {
   ensureOriginUi();
   ensureVerificationUi();
+  ensureVerificationToggles();
+  ensureVerificationLegend();
+  bindControls();
+  safeUiCall("updateStats", updateStats, state.graph.getStats());
+}
+
+function safeInitUI() {
+  try {
+    initUI();
+  } catch (error) {
+    handleUiFailure(error);
+  }
+}
+
+async function initGraphApp() {
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
-    onSelect: renderInfoPanel,
-    onHover: updateTooltip,
-    onCountsChange: updateStats,
+    onSelect: (nodeObj) => safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj),
+    onHover: (payload) => safeUiCall("updateTooltip", updateTooltip, payload),
+    onCountsChange: (stats) => safeUiCall("updateStats", updateStats, stats),
   });
 
   const data = await loadMergedGraphData({
@@ -775,23 +941,14 @@ async function init() {
   });
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
-  bindControls();
-
-  dom.loading.style.opacity = "0";
-  window.setTimeout(() => {
-    dom.loading.remove();
-  }, 600);
+  safeInitUI();
+  hideLoadingOverlay();
 }
 
-init().catch((error) => {
-  console.error(error);
-  setText(dom.loadStatus, "Failed to load explorer data.");
-  if (dom.loading) {
-    dom.loading.style.opacity = "0";
-    window.setTimeout(() => {
-      if (dom.loading?.parentElement) {
-        dom.loading.remove();
-      }
-    }, 600);
-  }
-});
+if (shouldBootUi) {
+  initGraphApp().catch((error) => {
+    console.error(error);
+    setText(dom.loadStatus, "Failed to load explorer data.");
+    hideLoadingOverlay();
+  });
+}

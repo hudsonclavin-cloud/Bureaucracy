@@ -12,6 +12,9 @@ const DEFAULT_NODE = {
   verificationStatus: "unverified",
   lastVerified: null,
   sourceCount: 0,
+  isCandidate: false,
+  possibleParent: null,
+  discoveryMethod: null,
   children: [],
 };
 
@@ -39,6 +42,9 @@ function normalizeNode(rawNode) {
   node.verificationStatus = String(node.verificationStatus || DEFAULT_NODE.verificationStatus);
   node.lastVerified = node.lastVerified ? String(node.lastVerified) : null;
   node.sourceCount = Number.isFinite(Number(node.sourceCount)) ? Number(node.sourceCount) : node.sourceUrls.length;
+  node.isCandidate = Boolean(node.isCandidate);
+  node.possibleParent = node.possibleParent ? String(node.possibleParent) : null;
+  node.discoveryMethod = node.discoveryMethod ? String(node.discoveryMethod) : null;
   node.children = Array.isArray(node.children) ? node.children.map(normalizeNode) : [];
   return node;
 }
@@ -114,6 +120,31 @@ function mergeNodeData(targetNode, sourceNode) {
       ? sourceNode.verificationStatus
       : targetNode.verificationStatus;
   targetNode.lastVerified = sourceNode.lastVerified || targetNode.lastVerified;
+  targetNode.isCandidate = Boolean(targetNode.isCandidate || sourceNode.isCandidate);
+  targetNode.possibleParent = targetNode.possibleParent || sourceNode.possibleParent || null;
+  targetNode.discoveryMethod = targetNode.discoveryMethod || sourceNode.discoveryMethod || null;
+}
+
+function normalizeCandidateNode(rawCandidate) {
+  const name = String(rawCandidate?.name || "Unnamed Candidate");
+  const sourceUrl = rawCandidate?.sourceUrl ? String(rawCandidate.sourceUrl) : null;
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return normalizeNode({
+    id: String(rawCandidate?.id || `candidate-${slug || "node"}`),
+    name,
+    type: String(rawCandidate?.type || "Candidate"),
+    desc: String(rawCandidate?.desc || `Candidate node discovered via ${rawCandidate?.discoveryMethod || "automated discovery"}.`),
+    color: typeof rawCandidate?.color === "string" ? rawCandidate.color : "#9b8bbd",
+    sourceUrls: sourceUrl ? [sourceUrl] : [],
+    sourceTypes: ["candidate_discovery"],
+    confidenceScore: Number(rawCandidate?.confidenceEstimate || 0),
+    verificationStatus: "unverified",
+    lastVerified: null,
+    sourceCount: sourceUrl ? 1 : 0,
+    isCandidate: true,
+    possibleParent: rawCandidate?.possibleParent || null,
+    discoveryMethod: rawCandidate?.discoveryMethod || null,
+  });
 }
 
 function extractExplicitParentId(rawNode) {
@@ -256,6 +287,7 @@ function mergeExpansionGraph(baseRoot, expansionData) {
 function combineExpansionPayloads(...payloads) {
   const nodes = [];
   const edges = [];
+  const candidateNodes = [];
 
   for (const payload of payloads) {
     if (!payload) {
@@ -263,11 +295,15 @@ function combineExpansionPayloads(...payloads) {
     }
     nodes.push(...extractExpansionNodes(payload));
     edges.push(...extractExpansionEdges(payload));
+    if (Array.isArray(payload.candidateNodes)) {
+      candidateNodes.push(...payload.candidateNodes);
+    }
   }
 
   return {
     nodes,
     edges,
+    candidateNodes,
   };
 }
 
@@ -286,6 +322,7 @@ export async function loadMergedGraphData({
   corporateUrl,
   expandedNodesUrl = "./output/expanded_nodes.json",
   expandedEdgesUrl = "./output/expanded_edges.json",
+  candidateNodesUrl = "./output/candidate_nodes.json",
   onStatus = () => {},
 } = {}) {
   onStatus("Fetching federal hierarchy…");
@@ -311,12 +348,19 @@ export async function loadMergedGraphData({
     }
     throw error;
   });
+  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch((error) => {
+    if (error.status === 404) {
+      return [];
+    }
+    throw error;
+  });
 
-  const [baseRaw, corporateData, expandedNodes, expandedEdges] = await Promise.all([
+  const [baseRaw, corporateData, expandedNodes, expandedEdges, candidateNodes] = await Promise.all([
     basePromise,
     corporatePromise,
     expandedNodesPromise,
     expandedEdgesPromise,
+    candidateNodesPromise,
   ]);
   const baseData = normalizeNode(baseRaw);
 
@@ -327,12 +371,14 @@ export async function loadMergedGraphData({
       ? {
           nodes: expandedNodes,
           edges: expandedEdges,
+          candidateNodes: candidateNodes.map(normalizeCandidateNode),
         }
       : null,
   );
   const mergedGraph = mergedPayload.nodes.length > 0 || mergedPayload.edges.length > 0
     ? mergeExpansionGraph(baseData, cloneValue(mergedPayload))
     : baseData;
+  mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
   trimDepth(mergedGraph);
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
