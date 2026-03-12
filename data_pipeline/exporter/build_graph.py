@@ -93,6 +93,7 @@ def validate_and_prepare_graph(
 
     parent_by_child = build_parent_index(kept_edges)
     dropped_orphan_nodes = 0
+    root_attached_missing_parent_nodes = 0
 
     for node in nodes:
         prepared = verify_node_sources(dict(node))
@@ -112,13 +113,11 @@ def validate_and_prepare_graph(
             explicitly_attached_to_root = prepared["attachToRoot"]
 
         if "parentId" not in prepared:
-            if prepared["id"] in related_node_ids:
-                prepared["attachToRoot"] = True
-            elif explicitly_attached_to_root:
+            if prepared["id"] in related_node_ids or explicitly_attached_to_root:
                 prepared["attachToRoot"] = True
             else:
-                dropped_orphan_nodes += 1
-                continue
+                prepared["attachToRoot"] = True
+                root_attached_missing_parent_nodes += 1
 
         kept_nodes.append(prepared)
         status = prepared.get("verificationStatus", "unverified")
@@ -130,6 +129,7 @@ def validate_and_prepare_graph(
         "exported_node_count": len(kept_nodes),
         "exported_edge_count": len(kept_edges),
         "dropped_orphan_nodes": dropped_orphan_nodes,
+        "root_attached_missing_parent_nodes": root_attached_missing_parent_nodes,
         "dropped_edges_missing_source": dropped_edges_missing_source,
         "dropped_edges_missing_target": dropped_edges_missing_target,
         "orphaned_parent_ids": orphaned_parent_ids,

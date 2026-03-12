@@ -29,6 +29,8 @@ const FLY_TURN_MULTIPLIER = 3;
 const FLY_MOVE_SPEED = 120;
 const FLY_LOOK_DISTANCE = 42;
 const FLY_PITCH_LIMIT = Math.PI / 2.15;
+const FLY_DAMPING = 0.85;
+const FLY_MAX_SPEED = 160;
 const MIN_ZOOM_NODE_SCALE = 0.35;
 const ORBIT_CAMERA_LERP = 0.08;
 const DENSITY_BUCKET_BUFFER = 1;
@@ -123,6 +125,21 @@ export function createGovernmentGraph({
   );
   rootHalo.visible = false;
   scene.add(rootHalo);
+
+  const rootCore = new THREE.Mesh(
+    new THREE.SphereGeometry(1, 64, 64),
+    new THREE.MeshStandardMaterial({
+      color: 0xc8a84a,
+      emissive: 0xc8a84a,
+      emissiveIntensity: 0.55,
+      roughness: 0.28,
+      metalness: 0.08,
+      transparent: true,
+      opacity: 0.96,
+    }),
+  );
+  rootCore.visible = false;
+  scene.add(rootCore);
 
   const pathGlowGeometry = new THREE.SphereGeometry(1, 14, 14);
   const pathGlowPool = Array.from({ length: MAX_DEPTH + 8 }, () => {
@@ -231,6 +248,7 @@ export function createGovernmentGraph({
     lastCameraSignature: "",
     flyMode: false,
     flyPosition: new THREE.Vector3(),
+    flyVelocity: new THREE.Vector3(),
     flyLookTarget: new THREE.Vector3(),
     flyYaw: 0,
     flyPitch: 0,
@@ -503,6 +521,11 @@ export function createGovernmentGraph({
     });
   }
 
+  function getLabelDistanceScale(worldPosition) {
+    const distance = Math.max(camera.position.distanceTo(worldPosition), 1);
+    return THREE.MathUtils.clamp(distance * 0.006, 0.5, 4);
+  }
+
   function hashString(input) {
     let hash = 2166136261;
     for (let i = 0; i < input.length; i += 1) {
@@ -739,6 +762,7 @@ export function createGovernmentGraph({
   function syncFlyStateFromCamera() {
     camera.getWorldDirection(tempVecA);
     state.flyPosition.copy(camera.position);
+    state.flyVelocity.set(0, 0, 0);
     state.flyLookTarget.copy(state.camFocus);
     state.flyYaw = Math.atan2(tempVecA.x, tempVecA.z);
     state.flyPitch = Math.asin(THREE.MathUtils.clamp(tempVecA.y, -0.999, 0.999));
@@ -760,6 +784,7 @@ export function createGovernmentGraph({
     state.rotY = nextRotY;
     state.targetRotX = nextRotX;
     state.targetRotY = nextRotY;
+    state.flyVelocity.set(0, 0, 0);
   }
 
   function updateFlyLookTarget() {
@@ -782,6 +807,11 @@ export function createGovernmentGraph({
     state.flyLookTarget.copy(target);
     state.camFocus.copy(target);
     state.camFocusTarget.copy(target);
+  }
+
+  function stopFlyMovement() {
+    state.flyVelocity.set(0, 0, 0);
+    state.renderDirty = true;
   }
 
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
@@ -1082,6 +1112,13 @@ export function createGovernmentGraph({
       lodManager.getNodeScale(cameraDistance, state.lod) * distanceScale,
     );
     const finalScale = scaleMultiplier * zoomScale;
+    if (nodeObj === state.rootObj) {
+      rootCore.visible = nodeObj.visible !== false;
+      rootCore.position.copy(nodeObj.pos);
+      rootCore.scale.setScalar(nodeRadiusForDepth(0) * 1.45);
+      rootCore.material.color.set(getNodeColor(nodeObj.data));
+      rootCore.material.emissive.set(getNodeColor(nodeObj.data));
+    }
     tempMat4.compose(
       nodeObj.pos,
       tempQuat,
@@ -2124,8 +2161,8 @@ export function createGovernmentGraph({
       label.sprite.visible = true;
       label.sprite.position.copy(clusterObj.pos);
       label.sprite.position.y += Math.max(8, clusterObj.radius + 5);
-      const scale = Math.max(24, clusterObj.radius * 3.8);
-      label.sprite.scale.set(scale * 2.4, scale * 0.72, 1);
+      const labelScale = getLabelDistanceScale(label.sprite.position);
+      label.sprite.scale.set(28 * labelScale, 8.4 * labelScale, 1);
       let priority = clusterObj.count || 0;
       if (state.selectedNode?.data?.id === clusterObj.data.sourceId) {
         priority += 1_000_000;
@@ -2171,7 +2208,8 @@ export function createGovernmentGraph({
       haloLabel.sprite.visible = true;
       haloLabel.sprite.position.copy(nodeObj.pos);
       haloLabel.sprite.position.y += haloRadius + 14;
-      haloLabel.sprite.scale.set(88, 28, 1);
+      const labelScale = getLabelDistanceScale(haloLabel.sprite.position);
+      haloLabel.sprite.scale.set(22 * labelScale, 7 * labelScale, 1);
       let priority = 50_000;
       if (nodeObj === state.selectedNode) {
         priority += 1_000_000;
@@ -2542,14 +2580,26 @@ export function createGovernmentGraph({
       delta.sub(worldUp);
     }
 
-    if (delta.lengthSq() === 0) {
+    if (delta.lengthSq() > 0) {
+      const moveSpeed = FLY_MOVE_SPEED * deltaSeconds * Math.max(0.7, 1 / Math.sqrt(Math.max(state.zoom, 0.35)));
+      delta.normalize().multiplyScalar(moveSpeed);
+      state.flyVelocity.add(delta);
+      if (state.flyVelocity.length() > FLY_MAX_SPEED) {
+        state.flyVelocity.setLength(FLY_MAX_SPEED);
+      }
+    } else {
+      state.flyVelocity.multiplyScalar(FLY_DAMPING);
+      if (state.flyVelocity.lengthSq() < 0.0001) {
+        state.flyVelocity.set(0, 0, 0);
+      }
+    }
+
+    if (state.flyVelocity.lengthSq() === 0) {
       updateFlyLookTarget();
       return;
     }
 
-    const moveSpeed = FLY_MOVE_SPEED * deltaSeconds * Math.max(0.7, 1 / Math.sqrt(Math.max(state.zoom, 0.35)));
-    delta.normalize().multiplyScalar(moveSpeed);
-    state.flyPosition.add(delta);
+    state.flyPosition.add(state.flyVelocity);
     updateFlyLookTarget();
     state.renderDirty = true;
   }
@@ -2614,6 +2664,11 @@ export function createGovernmentGraph({
       rootHalo.visible = true;
       rootHalo.position.copy(state.rootObj.pos);
       rootHalo.scale.setScalar(nodeRadiusForDepth(0) * (1.7 + Math.sin(state.time * 1.5) * 0.18));
+      rootCore.visible = true;
+      rootCore.position.copy(state.rootObj.pos);
+      rootCore.scale.setScalar(nodeRadiusForDepth(0) * (1.42 + Math.sin(state.time * 1.2) * 0.04));
+      rootCore.material.opacity = state.selectedNode === state.rootObj ? 1 : 0.96;
+      rootCore.material.emissiveIntensity = 0.5 + Math.sin(state.time * 1.4) * 0.06;
     }
     if (selectionHalo.visible) {
       selectionHalo.material.opacity = 0.12 + Math.sin(state.time * 2.5) * 0.05;
@@ -2750,6 +2805,9 @@ export function createGovernmentGraph({
       if (event.code in state.keyState) {
         state.keyState[event.code] = true;
       }
+      if (event.code === "Space" && state.flyMode) {
+        stopFlyMovement();
+      }
     });
 
     window.addEventListener("keyup", (event) => {
@@ -2805,6 +2863,9 @@ export function createGovernmentGraph({
     flushPendingExpansions(18, 4096);
     rootHalo.visible = true;
     rootHalo.material.color.set(getNodeColor(state.rootObj.data));
+    rootCore.visible = true;
+    rootCore.material.color.set(getNodeColor(state.rootObj.data));
+    rootCore.material.emissive.set(getNodeColor(state.rootObj.data));
     setSelectedNode(state.rootObj);
     syncFlyStateFromCamera();
     refreshVisibility(true);
@@ -2862,9 +2923,11 @@ export function createGovernmentGraph({
       state.flyMode = nextEnabled;
       if (state.flyMode) {
         syncFlyStateFromCamera();
+        stopFlyMovement();
         state.targetZoom = Math.max(state.targetZoom, 1.6);
       } else {
         syncOrbitStateFromFlyCamera();
+        stopFlyMovement();
       }
       state.renderDirty = true;
       return state.flyMode;

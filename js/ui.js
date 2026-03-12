@@ -785,15 +785,19 @@ function expandProgressively(targetDepth) {
 }
 
 function bindControls() {
-  dom.toggleUnverified.addEventListener("change", () => {
-    state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
-    updateStats(state.graph.getStats());
-  });
+  if (dom.toggleUnverified) {
+    dom.toggleUnverified.addEventListener("change", () => {
+      state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
+      updateStats(state.graph.getStats());
+    });
+  }
 
-  dom.toggleCandidates.addEventListener("change", () => {
-    state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
-    updateStats(state.graph.getStats());
-  });
+  if (dom.toggleCandidates) {
+    dom.toggleCandidates.addEventListener("change", () => {
+      state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
+      updateStats(state.graph.getStats());
+    });
+  }
 
   dom.btnTraceOrigin.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
@@ -912,8 +916,6 @@ function bindControls() {
 function initUI() {
   ensureOriginUi();
   ensureVerificationUi();
-  ensureVerificationToggles();
-  ensureVerificationLegend();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
