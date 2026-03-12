@@ -159,6 +159,46 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(result.validation["dropped_edges_missing_source"], 1)
         self.assertEqual(result.validation["dropped_edges_missing_target"], 1)
 
+    def test_build_graph_exports_verification_metadata(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {
+                        "id": "office-gamma",
+                        "name": "Office Gamma",
+                        "type": "Office",
+                        "sourceUrls": [
+                            "https://www.energy.gov/ne/office-gamma",
+                            "https://www.wikidata.org/wiki/Q456",
+                        ],
+                    },
+                ],
+                "edges": [
+                    {"source": "office-gamma", "target": "agency-alpha", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tmp_path = Path(tmp_dir)
+            base_path = tmp_path / "base.json"
+            nodes_path = tmp_path / "nodes.json"
+            edges_path = tmp_path / "edges.json"
+            base_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
+
+            result = build_graph(
+                payloads,
+                base_graph_path=base_path,
+                nodes_output_path=nodes_path,
+                edges_output_path=edges_path,
+            )
+
+        office = next(node for node in result.nodes if node["id"] == "office-gamma")
+        self.assertEqual(office["verificationStatus"], "verified")
+        self.assertEqual(office["sourceCount"], 2)
+        self.assertGreater(office["confidenceScore"], 0.8)
+        self.assertIn("verification_status_counts", result.validation)
+
 
 if __name__ == "__main__":
     unittest.main()

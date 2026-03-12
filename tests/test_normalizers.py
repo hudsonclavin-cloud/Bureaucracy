@@ -3,7 +3,7 @@ from __future__ import annotations
 import unittest
 
 from data_pipeline.processors.normalize_edges import normalize_edge
-from data_pipeline.processors.normalize_nodes import normalize_node
+from data_pipeline.processors.normalize_nodes import normalize_node, verify_node_sources
 
 
 class NormalizerTests(unittest.TestCase):
@@ -40,6 +40,23 @@ class NormalizerTests(unittest.TestCase):
         )
 
         self.assertEqual(edge["type"], "manages")
+
+    def test_verify_node_sources_scores_official_and_wikidata_sources(self) -> None:
+        node = verify_node_sources(
+            {
+                "id": "office-nuclear-energy",
+                "sourceUrls": [
+                    "https://energy.gov/ne",
+                    "https://www.wikidata.org/wiki/Q123",
+                ],
+            }
+        )
+
+        self.assertEqual(node["sourceCount"], 2)
+        self.assertEqual(node["verificationStatus"], "verified")
+        self.assertGreaterEqual(node["confidenceScore"], 0.9)
+        self.assertIn("official_site", node["sourceTypes"])
+        self.assertIn("wikidata", node["sourceTypes"])
 
 
 if __name__ == "__main__":

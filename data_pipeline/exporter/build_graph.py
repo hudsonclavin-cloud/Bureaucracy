@@ -15,6 +15,7 @@ from data_pipeline.processors.normalize_edges import EdgeRegistry
 from data_pipeline.processors.normalize_nodes import (
     NodeRegistry,
     load_existing_node_ids,
+    verify_node_sources,
 )
 
 
@@ -74,6 +75,7 @@ def validate_and_prepare_graph(
     orphaned_parent_ids = 0
     dropped_edges_missing_source = 0
     dropped_edges_missing_target = 0
+    verification_status_counts: dict[str, int] = {}
 
     for edge in edges:
         relationship_counts[edge["type"]] = relationship_counts.get(edge["type"], 0) + 1
@@ -93,7 +95,7 @@ def validate_and_prepare_graph(
     dropped_orphan_nodes = 0
 
     for node in nodes:
-        prepared = dict(node)
+        prepared = verify_node_sources(dict(node))
         parent_id = parent_by_child.get(prepared["id"]) or prepared.get("parentId")
         if parent_id:
             if parent_id == prepared["id"] or parent_id not in all_known_ids:
@@ -119,6 +121,8 @@ def validate_and_prepare_graph(
                 continue
 
         kept_nodes.append(prepared)
+        status = prepared.get("verificationStatus", "unverified")
+        verification_status_counts[status] = verification_status_counts.get(status, 0) + 1
 
     validation = {
         "input_node_count": len(nodes),
@@ -131,6 +135,11 @@ def validate_and_prepare_graph(
         "orphaned_parent_ids": orphaned_parent_ids,
         "attached_to_root": sum(1 for node in kept_nodes if node.get("attachToRoot")),
         "relationship_counts": relationship_counts,
+        "verification_status_counts": verification_status_counts,
+        "average_confidence_score": round(
+            sum(float(node.get("confidenceScore") or 0.0) for node in kept_nodes) / max(len(kept_nodes), 1),
+            2,
+        ),
     }
     return kept_nodes, kept_edges, validation
 

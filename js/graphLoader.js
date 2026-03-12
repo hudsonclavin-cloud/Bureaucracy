@@ -6,6 +6,12 @@ const DEFAULT_NODE = {
   employees: null,
   budget: null,
   color: "#666666",
+  sourceUrls: [],
+  sourceTypes: [],
+  confidenceScore: 0,
+  verificationStatus: "unverified",
+  lastVerified: null,
+  sourceCount: 0,
   children: [],
 };
 
@@ -27,6 +33,12 @@ function normalizeNode(rawNode) {
   node.employees = node.employees ?? null;
   node.budget = node.budget ?? null;
   node.color = typeof node.color === "string" ? node.color : DEFAULT_NODE.color;
+  node.sourceUrls = Array.isArray(node.sourceUrls) ? node.sourceUrls.map((value) => String(value)) : [];
+  node.sourceTypes = Array.isArray(node.sourceTypes) ? node.sourceTypes.map((value) => String(value)) : [];
+  node.confidenceScore = Number.isFinite(Number(node.confidenceScore)) ? Number(node.confidenceScore) : 0;
+  node.verificationStatus = String(node.verificationStatus || DEFAULT_NODE.verificationStatus);
+  node.lastVerified = node.lastVerified ? String(node.lastVerified) : null;
+  node.sourceCount = Number.isFinite(Number(node.sourceCount)) ? Number(node.sourceCount) : node.sourceUrls.length;
   node.children = Array.isArray(node.children) ? node.children.map(normalizeNode) : [];
   return node;
 }
@@ -86,12 +98,22 @@ function safeAddChild(parentNode, childNode, parentMap) {
 }
 
 function mergeNodeData(targetNode, sourceNode) {
+  const statusRank = { unverified: 0, partial: 1, verified: 2 };
   targetNode.name = sourceNode.name || targetNode.name;
   targetNode.type = sourceNode.type || targetNode.type;
   targetNode.desc = sourceNode.desc || targetNode.desc;
   targetNode.employees = sourceNode.employees ?? targetNode.employees;
   targetNode.budget = sourceNode.budget ?? targetNode.budget;
   targetNode.color = sourceNode.color || targetNode.color;
+  targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));
+  targetNode.sourceTypes = Array.from(new Set([...(targetNode.sourceTypes || []), ...(sourceNode.sourceTypes || [])]));
+  targetNode.sourceCount = Math.max(targetNode.sourceCount || 0, sourceNode.sourceCount || 0, targetNode.sourceUrls.length);
+  targetNode.confidenceScore = Math.max(targetNode.confidenceScore || 0, sourceNode.confidenceScore || 0);
+  targetNode.verificationStatus =
+    statusRank[sourceNode.verificationStatus] >= statusRank[targetNode.verificationStatus]
+      ? sourceNode.verificationStatus
+      : targetNode.verificationStatus;
+  targetNode.lastVerified = sourceNode.lastVerified || targetNode.lastVerified;
 }
 
 function extractExplicitParentId(rawNode) {

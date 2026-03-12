@@ -32,6 +32,11 @@ const dom = {
   btnTraceOrigin: null,
   originWrap: null,
   originList: null,
+  verificationWrap: null,
+  verificationStatus: null,
+  verificationConfidence: null,
+  verificationSources: null,
+  verificationLastVerified: null,
 };
 
 const state = {
@@ -154,6 +159,102 @@ function ensureOriginUi() {
   dom.btnTraceOrigin = traceButton;
   dom.originWrap = originWrap;
   dom.originList = originList;
+}
+
+function ensureVerificationUi() {
+  if (
+    dom.verificationWrap &&
+    dom.verificationStatus &&
+    dom.verificationConfidence &&
+    dom.verificationSources &&
+    dom.verificationLastVerified
+  ) {
+    return;
+  }
+
+  const verificationWrap = document.createElement("div");
+  verificationWrap.style.marginTop = "10px";
+  verificationWrap.style.padding = "10px";
+  verificationWrap.style.border = "1px solid rgba(200,168,74,0.14)";
+  verificationWrap.style.background = "rgba(20,16,12,0.72)";
+  verificationWrap.style.borderRadius = "10px";
+
+  const title = document.createElement("div");
+  title.textContent = "DATA VERIFICATION";
+  title.style.fontSize = "10px";
+  title.style.letterSpacing = "0.12em";
+  title.style.color = "#8f7a5d";
+  title.style.marginBottom = "8px";
+  verificationWrap.appendChild(title);
+
+  const status = document.createElement("div");
+  const confidence = document.createElement("div");
+  const sources = document.createElement("div");
+  const lastVerified = document.createElement("div");
+  sources.style.display = "flex";
+  sources.style.flexDirection = "column";
+  sources.style.gap = "4px";
+  sources.style.marginTop = "8px";
+  verificationWrap.appendChild(status);
+  verificationWrap.appendChild(confidence);
+  verificationWrap.appendChild(sources);
+  verificationWrap.appendChild(lastVerified);
+
+  dom.infoPanel.appendChild(verificationWrap);
+  dom.verificationWrap = verificationWrap;
+  dom.verificationStatus = status;
+  dom.verificationConfidence = confidence;
+  dom.verificationSources = sources;
+  dom.verificationLastVerified = lastVerified;
+}
+
+function renderVerificationPanel(data) {
+  if (!dom.verificationWrap) {
+    return;
+  }
+
+  const status = String(data.verificationStatus || "unverified").toUpperCase();
+  const confidence = Number(data.confidenceScore || 0);
+  const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
+  const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+
+  setText(dom.verificationStatus, `Verification Status: ${status}`);
+  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)}`);
+  setText(
+    dom.verificationLastVerified,
+    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
+  );
+
+  dom.verificationSources.replaceChildren();
+  const sourcesLabel = document.createElement("div");
+  sourcesLabel.textContent = "Sources";
+  sourcesLabel.style.marginTop = "6px";
+  sourcesLabel.style.color = "#d4c4a1";
+  dom.verificationSources.appendChild(sourcesLabel);
+
+  if (sourceUrls.length === 0) {
+    const empty = document.createElement("div");
+    empty.textContent = "No confirming sources recorded.";
+    empty.style.color = "#8f7a5d";
+    dom.verificationSources.appendChild(empty);
+    return;
+  }
+
+  sourceUrls.forEach((url, index) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    let host = url;
+    try {
+      host = new URL(url).hostname;
+    } catch (_error) {
+      host = url;
+    }
+    link.textContent = `• ${host}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
+    link.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(link);
+  });
 }
 
 function renderOriginTrace(nodeObj) {
@@ -349,6 +450,7 @@ function renderInfoPanel(nodeObj) {
   if (dom.btnTraceOrigin) {
     renderOriginTrace(nodeObj);
   }
+  renderVerificationPanel(data);
   renderBreadcrumb(nodeObj);
 }
 
@@ -658,6 +760,7 @@ function bindControls() {
 
 async function init() {
   ensureOriginUi();
+  ensureVerificationUi();
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: renderInfoPanel,
