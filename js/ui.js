@@ -300,7 +300,7 @@ function stopProgressiveExpansion() {
 
 function progressiveRender(frontierNodes, onComplete) {
   let index = 0;
-  const BATCH = 150;
+  const BATCH = 200;
 
   function batch() {
     let count = 0;

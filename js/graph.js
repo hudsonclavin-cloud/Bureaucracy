@@ -12,10 +12,13 @@ const EXPANSION_TIME_BUDGET_MS = 8;
 const EXPANSION_CHILD_BUDGET = MAX_BATCH;
 const EXPANSION_PARENT_BATCH = MAX_BATCH;
 const CLUSTER_CAPACITY = 8192;
-const REPULSION = -40;
-const LINK_DISTANCE = 20;
+const REPULSION = -60;
+const LINK_DISTANCE = 25;
 const DAMPING = 0.9;
 const MIN_DISTANCE = 5;
+const OUTWARD_FORCE = 0.02;
+const BASE_RADIUS = 16;
+const RADIUS_STEP = 40;
 const branchColors = {
   constitution: "#FFD166",
   legislative: "#9B5DE5",
@@ -93,7 +96,7 @@ export function createGovernmentGraph({
   scene.add(rootHalo);
 
   const raycaster = new THREE.Raycaster();
-  raycaster.params.Points.threshold = 5;
+  raycaster.params.Points.threshold = 6;
   const mouse2d = new THREE.Vector2();
   const frustum = new THREE.Frustum();
   const projectionMatrix = new THREE.Matrix4();
@@ -102,6 +105,7 @@ export function createGovernmentGraph({
   const basisB = new THREE.Vector3();
   const directionVec = new THREE.Vector3();
   const tempVecA = new THREE.Vector3();
+  const tempVecB = new THREE.Vector3();
   const tempMat4 = new THREE.Matrix4();
   const tempQuat = new THREE.Quaternion();
   const tempScale = new THREE.Vector3();
@@ -238,7 +242,20 @@ export function createGovernmentGraph({
   }
 
   function shellRadiusForDepth(depth) {
-    return 18 + depth * LINK_DISTANCE + depth * depth * 4.5;
+    return BASE_RADIUS + depth * RADIUS_STEP + depth * depth * 6;
+  }
+
+  function directionFromSeed(seedA, seedB = 0) {
+    const thetaSeed = (seedA ^ (seedB * 2654435761)) >>> 0;
+    const phiSeed = (seedA * 1597334677 + seedB * 3812015801) >>> 0;
+    const theta = ((thetaSeed % 100000) / 100000) * Math.PI * 2;
+    const phi = Math.acos((phiSeed % 200000) / 100000 - 1);
+
+    return new THREE.Vector3(
+      Math.sin(phi) * Math.cos(theta),
+      Math.sin(phi) * Math.sin(theta),
+      Math.cos(phi),
+    );
   }
 
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
@@ -433,14 +450,17 @@ export function createGovernmentGraph({
   }
 
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
+    const distance = CAMERA_DISTANCE / Math.max(state.zoom, 0.25);
+    const zoomScale = THREE.MathUtils.clamp(220 / distance, 0.4, 1);
+    const finalScale = scaleMultiplier * zoomScale;
     tempMat4.compose(
       nodeObj.pos,
       tempQuat,
-      tempScale.set(scaleMultiplier, scaleMultiplier, scaleMultiplier),
+      tempScale.set(finalScale, finalScale, finalScale),
     );
     nodeObj.batch.mesh.setMatrixAt(nodeObj.slot, tempMat4);
     nodeObj.batch.dirty = true;
-    nodeObj.renderVisible = scaleMultiplier > 0;
+    nodeObj.renderVisible = finalScale > 0;
   }
 
   function setNodeColor(nodeObj) {
@@ -568,26 +588,24 @@ export function createGovernmentGraph({
   function getSpreadPositions(parentObj, children) {
     const depth = parentObj.depth + 1;
     const shellRadius = shellRadiusForDepth(depth);
+    const parentSeed = hashString(parentObj.data.id);
     const anchorDir =
       parentObj.pos.lengthSq() > 0.0001
         ? tempVecA.copy(parentObj.pos).normalize()
-        : new THREE.Vector3(
-            Math.cos(hashString(parentObj.data.id) * 0.0003),
-            0.3,
-            Math.sin(hashString(parentObj.data.id) * 0.0003),
-          ).normalize();
+        : directionFromSeed(parentSeed, depth);
     getOrbitBasis(anchorDir);
 
     const count = children.length;
-    const baseSpread = Math.min(0.9, 0.22 + count * 0.012 + depth * 0.015);
-    const seed = hashString(parentObj.data.id) % 10000;
     const positions = new Array(count);
 
     for (let i = 0; i < count; i += 1) {
-      const theta = GOLDEN_ANGLE * (i + seed * 0.001);
-      const radial = Math.sqrt((i + 0.5) / Math.max(count, 1)) * baseSpread;
+      const childSeed = hashString(children[i].id);
+      const theta = GOLDEN_ANGLE * (i + 1);
+      const radial = Math.min(0.42, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * 0.3);
+      const shellDirection = directionFromSeed(childSeed, depth);
       directionVec
-        .copy(anchorDir)
+        .copy(shellDirection)
+        .lerp(anchorDir, parentObj.depth > 0 ? 0.22 : 0.08)
         .addScaledVector(basisA, Math.cos(theta) * radial)
         .addScaledVector(basisB, Math.sin(theta) * radial)
         .normalize();
@@ -997,7 +1015,7 @@ export function createGovernmentGraph({
     if (nodeObj === state.rootObj || nodeObj === state.selectedNode || nodeObj.depth < 2) {
       return false;
     }
-    if (state.zoom > 0.9) {
+    if (state.zoom > 1.2) {
       return false;
     }
     return nodeObj.depth >= 2;
@@ -1228,6 +1246,46 @@ export function createGovernmentGraph({
     }
   }
 
+  function applyWebForces() {
+    if (state.frame % 2 !== 0) {
+      return;
+    }
+
+    let updated = false;
+    for (const nodeObj of state.visibleNodes) {
+      if (nodeObj.depth === 0 || nodeObj.animating || !nodeObj.renderVisible || nodeObj.clustered) {
+        continue;
+      }
+
+      const desiredRadius = shellRadiusForDepth(nodeObj.depth);
+      const outwardTarget =
+        nodeObj.targetPos.lengthSq() > 0
+          ? tempVecA.copy(nodeObj.targetPos).normalize().multiplyScalar(desiredRadius)
+          : tempVecA.copy(nodeObj.pos).normalize().multiplyScalar(desiredRadius);
+
+      if (outwardTarget.lengthSq() === 0) {
+        continue;
+      }
+
+      nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
+
+      if (nodeObj.parent) {
+        tempVecB.subVectors(nodeObj.pos, nodeObj.parent.pos);
+        const distance = tempVecB.length();
+        if (distance < LINK_DISTANCE && distance > 0.0001) {
+          tempVecB.normalize().multiplyScalar((LINK_DISTANCE - distance) * 0.08);
+          nodeObj.pos.add(tempVecB);
+        }
+      }
+
+      updated = true;
+    }
+
+    if (updated) {
+      state.renderDirty = true;
+    }
+  }
+
   function applyFlyMovement() {
     if (!state.flyMode) {
       return;
@@ -1288,6 +1346,7 @@ export function createGovernmentGraph({
     camera.updateMatrixWorld();
 
     animateNodes();
+    applyWebForces();
 
     const cameraSignature = [
       camera.position.x.toFixed(2),
@@ -1367,7 +1426,7 @@ export function createGovernmentGraph({
 
     canvas.addEventListener("mousemove", handlePointerMove);
 
-    canvas.addEventListener("mouseup", (event) => {
+    function handleSelection(event) {
       document.body.classList.remove("dragging");
       if (state.isDragging) {
         return;
@@ -1380,7 +1439,10 @@ export function createGovernmentGraph({
         }
         setSelectedNode(hit);
       }
-    });
+    }
+
+    canvas.addEventListener("mouseup", handleSelection);
+    canvas.addEventListener("click", handleSelection);
 
     canvas.addEventListener(
       "wheel",
