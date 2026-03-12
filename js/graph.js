@@ -19,11 +19,18 @@ const MIN_DISTANCE = 5;
 const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
+const BRANCH_SECTOR_BLEND = 0.62;
+const BRANCH_PARENT_BLEND = 0.32;
+const BRANCH_FORCE = 0.018;
 const FLY_TURN_MULTIPLIER = 3;
+const FLY_MOVE_SPEED = 120;
+const FLY_LOOK_DISTANCE = 42;
+const FLY_PITCH_LIMIT = Math.PI / 2.15;
 const MIN_ZOOM_NODE_SCALE = 0.2;
 const HIERARCHY_EDGE_MIN_ZOOM = 0.95;
 const RELATIONSHIP_EDGE_MIN_ZOOM = 1.3;
 const CLUSTER_START_ZOOM = 2.0;
+const PICK_RADIUS_PX = 18;
 const branchColors = {
   constitution: "#FFD166",
   legislative: "#9B5DE5",
@@ -32,6 +39,15 @@ const branchColors = {
   independent: "#06D6A0",
   regulatory: "#F8961E",
   position: "#B0B0B0",
+};
+const branchSectorDirections = {
+  constitution: new THREE.Vector3(0, 1, 0.08).normalize(),
+  legislative: new THREE.Vector3(-0.94, 0.24, 0.22).normalize(),
+  executive: new THREE.Vector3(0.95, 0.2, 0.18).normalize(),
+  judicial: new THREE.Vector3(0.08, 0.9, -0.42).normalize(),
+  independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
+  regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
+  position: new THREE.Vector3(-0.14, 0.18, 0.97).normalize(),
 };
 
 export function createGovernmentGraph({
@@ -169,10 +185,17 @@ export function createGovernmentGraph({
     camFocusTarget: new THREE.Vector3(),
     time: 0,
     frame: 0,
+    lastFrameTime: performance.now(),
     renderDirty: false,
     forceFullRenderRefresh: true,
     lastCameraSignature: "",
     flyMode: false,
+    flyPosition: new THREE.Vector3(),
+    flyLookTarget: new THREE.Vector3(),
+    flyYaw: 0,
+    flyPitch: 0,
+    flyYawTarget: 0,
+    flyPitchTarget: 0,
     keyState: {
       KeyW: false,
       KeyA: false,
@@ -198,28 +221,24 @@ export function createGovernmentGraph({
     return parseInt((hex || "#888888").replace("#", ""), 16);
   }
 
-  function getNodeColor(data) {
-    if (typeof data?.color === "string" && data.color.length > 0) {
-      return data.color;
-    }
-
+  function inferBranchKey(data) {
     const id = String(data?.id || "").toLowerCase();
     const type = String(data?.type || "").toLowerCase();
 
     if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
-      return branchColors.constitution;
+      return "constitution";
     }
     if (type === "position" || type.includes("office") || type.includes("officer")) {
-      return branchColors.position;
+      return "position";
     }
     if (id.startsWith("leg-")) {
-      return branchColors.legislative;
+      return "legislative";
     }
     if (id.startsWith("jud-")) {
-      return branchColors.judicial;
+      return "judicial";
     }
     if (id.startsWith("exec-regulatory") || type.includes("regulatory")) {
-      return branchColors.regulatory;
+      return "regulatory";
     }
     if (
       id.startsWith("exec-ind") ||
@@ -227,12 +246,33 @@ export function createGovernmentGraph({
       type.includes("government corporation") ||
       type.includes("independent")
     ) {
-      return branchColors.independent;
+      return "independent";
     }
     if (id.startsWith("exec-")) {
-      return branchColors.executive;
+      return "executive";
     }
-    return branchColors.position;
+    return "position";
+  }
+
+  function resolveLayoutBranchKey(data, parentBranchKey = null) {
+    const branchKey = inferBranchKey(data);
+    if (branchKey === "position" && parentBranchKey && parentBranchKey !== "constitution") {
+      return parentBranchKey;
+    }
+    return branchKey;
+  }
+
+  function copyBranchBaseDirection(branchKey, out = new THREE.Vector3()) {
+    out.copy(branchSectorDirections[branchKey] || branchSectorDirections.position);
+    return out.normalize();
+  }
+
+  function getNodeColor(data) {
+    if (typeof data?.color === "string" && data.color.length > 0) {
+      return data.color;
+    }
+
+    return branchColors[inferBranchKey(data)] || branchColors.position;
   }
 
   function hashString(input) {
@@ -246,6 +286,80 @@ export function createGovernmentGraph({
 
   function nodeRadiusForDepth(depth) {
     return NODE_RADIUS;
+  }
+
+  function getForwardFromAngles(yaw, pitch, out = new THREE.Vector3()) {
+    out.set(
+      Math.sin(yaw) * Math.cos(pitch),
+      Math.sin(pitch),
+      Math.cos(yaw) * Math.cos(pitch),
+    );
+    return out.normalize();
+  }
+
+  function getLodConfig(zoom = state.zoom) {
+    if (zoom <= 0.45) {
+      return {
+        key: "far",
+        nodeScale: 0.18,
+        clusterMinDepth: 1,
+        minClusterSize: 2,
+        gridScale: 3.8,
+        showHierarchyEdges: false,
+        showRelationshipEdges: false,
+        pickRadius: PICK_RADIUS_PX + 6,
+      };
+    }
+
+    if (zoom <= 0.85) {
+      return {
+        key: "wide",
+        nodeScale: 0.25,
+        clusterMinDepth: 2,
+        minClusterSize: 3,
+        gridScale: 2.9,
+        showHierarchyEdges: false,
+        showRelationshipEdges: false,
+        pickRadius: PICK_RADIUS_PX + 4,
+      };
+    }
+
+    if (zoom <= 1.35) {
+      return {
+        key: "mid",
+        nodeScale: 0.42,
+        clusterMinDepth: 2,
+        minClusterSize: 4,
+        gridScale: 2,
+        showHierarchyEdges: zoom >= HIERARCHY_EDGE_MIN_ZOOM,
+        showRelationshipEdges: false,
+        pickRadius: PICK_RADIUS_PX + 2,
+      };
+    }
+
+    if (zoom <= 2.2) {
+      return {
+        key: "near",
+        nodeScale: 0.66,
+        clusterMinDepth: 3,
+        minClusterSize: 5,
+        gridScale: 1.3,
+        showHierarchyEdges: true,
+        showRelationshipEdges: zoom >= RELATIONSHIP_EDGE_MIN_ZOOM,
+        pickRadius: PICK_RADIUS_PX,
+      };
+    }
+
+    return {
+      key: "detail",
+      nodeScale: 1,
+      clusterMinDepth: Infinity,
+      minClusterSize: Infinity,
+      gridScale: 1,
+      showHierarchyEdges: true,
+      showRelationshipEdges: true,
+      pickRadius: Math.max(12, PICK_RADIUS_PX - 2),
+    };
   }
 
   function shellRadiusForDepth(depth) {
@@ -263,6 +377,54 @@ export function createGovernmentGraph({
       Math.sin(phi) * Math.sin(theta),
       Math.cos(phi),
     );
+  }
+
+  function syncFlyStateFromCamera() {
+    camera.getWorldDirection(tempVecA);
+    state.flyPosition.copy(camera.position);
+    state.flyLookTarget.copy(state.camFocus);
+    state.flyYaw = Math.atan2(tempVecA.x, tempVecA.z);
+    state.flyPitch = Math.asin(THREE.MathUtils.clamp(tempVecA.y, -0.999, 0.999));
+    state.flyYawTarget = state.flyYaw;
+    state.flyPitchTarget = state.flyPitch;
+  }
+
+  function syncOrbitStateFromFlyCamera() {
+    const distance = CAMERA_DISTANCE / Math.max(state.zoom, 0.35);
+    const forward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA);
+    state.camFocus.copy(state.flyPosition).addScaledVector(forward, distance);
+    state.camFocusTarget.copy(state.camFocus);
+
+    const offset = tempVecB.copy(state.flyPosition).sub(state.camFocus);
+    const offsetLength = Math.max(offset.length(), 0.0001);
+    const nextRotX = Math.asin(THREE.MathUtils.clamp(offset.y / offsetLength, -1, 1));
+    const nextRotY = Math.atan2(offset.x, offset.z);
+    state.rotX = nextRotX;
+    state.rotY = nextRotY;
+    state.targetRotX = nextRotX;
+    state.targetRotY = nextRotY;
+  }
+
+  function updateFlyLookTarget() {
+    getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA);
+    state.flyLookTarget.copy(state.flyPosition).addScaledVector(tempVecA, FLY_LOOK_DISTANCE);
+    state.camFocus.copy(state.flyLookTarget);
+    state.camFocusTarget.copy(state.flyLookTarget);
+  }
+
+  function setFlyLookAt(target) {
+    tempVecA.copy(target).sub(state.flyPosition);
+    if (tempVecA.lengthSq() < 0.0001) {
+      return;
+    }
+    tempVecA.normalize();
+    state.flyYaw = Math.atan2(tempVecA.x, tempVecA.z);
+    state.flyPitch = Math.asin(THREE.MathUtils.clamp(tempVecA.y, -0.999, 0.999));
+    state.flyYawTarget = state.flyYaw;
+    state.flyPitchTarget = state.flyPitch;
+    state.flyLookTarget.copy(target);
+    state.camFocus.copy(target);
+    state.camFocusTarget.copy(target);
   }
 
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
@@ -390,10 +552,13 @@ export function createGovernmentGraph({
   }
 
   function createNodeObj(data, parent, depth) {
+    const layoutBranchKey = resolveLayoutBranchKey(data, parent?.layoutBranchKey || null);
     const nodeObj = {
       data,
       parent,
       depth,
+      layoutBranchKey,
+      branchDirection: new THREE.Vector3(),
       pos: new THREE.Vector3(),
       targetPos: new THREE.Vector3(),
       animFrom: new THREE.Vector3(),
@@ -412,6 +577,12 @@ export function createGovernmentGraph({
       edgeToParent: null,
       resolvedColor: getNodeColor(data),
     };
+
+    if (parent?.branchDirection?.lengthSq() > 0) {
+      nodeObj.branchDirection.copy(parent.branchDirection);
+    } else {
+      copyBranchBaseDirection(layoutBranchKey, nodeObj.branchDirection);
+    }
 
     assignBatchSlot(nodeObj);
     state.nodeMap.set(data.id, nodeObj);
@@ -457,8 +628,10 @@ export function createGovernmentGraph({
   }
 
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
-    const distance = CAMERA_DISTANCE / Math.max(state.zoom, 0.25);
-    const zoomScale = THREE.MathUtils.clamp(140 / distance, MIN_ZOOM_NODE_SCALE, 1);
+    const lod = getLodConfig();
+    const cameraDistance = Math.max(camera.position.distanceTo(nodeObj.pos), 1);
+    const distanceScale = THREE.MathUtils.clamp(170 / cameraDistance, 0.82, 1.12);
+    const zoomScale = Math.max(MIN_ZOOM_NODE_SCALE, lod.nodeScale * distanceScale);
     const finalScale = scaleMultiplier * zoomScale;
     tempMat4.compose(
       nodeObj.pos,
@@ -536,13 +709,14 @@ export function createGovernmentGraph({
   }
 
   function applyEdgeVisibility(edge) {
-    const minZoom = edge.type === "relationship" ? RELATIONSHIP_EDGE_MIN_ZOOM : HIERARCHY_EDGE_MIN_ZOOM;
+    const lod = getLodConfig();
+    const zoomAllowed = edge.type === "relationship" ? lod.showRelationshipEdges : lod.showHierarchyEdges;
     const show =
+      zoomAllowed &&
       edge.from.renderVisible &&
       edge.to.renderVisible &&
       !edge.from.clustered &&
       !edge.to.clustered &&
-      state.zoom >= minZoom &&
       edge.from.depth < state.maxVisibleDepth &&
       edge.to.depth <= state.maxVisibleDepth;
     if (show) {
@@ -593,6 +767,25 @@ export function createGovernmentGraph({
     }
   }
 
+  function getLayoutDirectionForChild(childData, parentObj, childSeed) {
+    const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
+    const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
+    const hasParentDirection = parentObj.branchDirection && parentObj.branchDirection.lengthSq() > 0;
+    const parentDirection = hasParentDirection
+      ? tempVecA.copy(parentObj.branchDirection).normalize()
+      : parentObj.pos.lengthSq() > 0.0001
+        ? tempVecA.copy(parentObj.pos).normalize()
+        : copyBranchBaseDirection(parentBranchKey, tempVecA);
+    const branchBase = copyBranchBaseDirection(childBranchKey, tempVecB);
+    const seeded = directionFromSeed(childSeed, parentObj.depth + 1);
+
+    return tempVecC
+      .copy(branchBase)
+      .lerp(parentDirection, parentObj.depth === 0 ? 1 - BRANCH_SECTOR_BLEND : BRANCH_PARENT_BLEND)
+      .addScaledVector(seeded, childBranchKey === parentBranchKey ? 0.08 : 0.14)
+      .normalize();
+  }
+
   function getSpreadPositions(parentObj, children) {
     const depth = parentObj.depth + 1;
     const shellRadius = shellRadiusForDepth(depth);
@@ -605,24 +798,33 @@ export function createGovernmentGraph({
 
     const count = children.length;
     const positions = new Array(count);
+    const directions = new Array(count);
 
     for (let i = 0; i < count; i += 1) {
       const childSeed = hashString(children[i].id);
       const theta = GOLDEN_ANGLE * (i + 1);
       const radial = Math.min(0.42, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * 0.3);
       const shellDirection = directionFromSeed(childSeed, depth);
+      const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone();
+      getOrbitBasis(branchDirection);
       directionVec
-        .copy(shellDirection)
-        .lerp(anchorDir, parentObj.depth > 0 ? 0.22 : 0.08)
+        .copy(branchDirection)
+        .lerp(anchorDir, parentObj.depth > 0 ? 0.18 : 0.06)
         .addScaledVector(basisA, Math.cos(theta) * radial)
         .addScaledVector(basisB, Math.sin(theta) * radial)
+        .addScaledVector(shellDirection, 0.12)
         .normalize();
 
       positions[i] = directionVec.clone().multiplyScalar(shellRadius);
+      directions[i] = branchDirection;
     }
 
     relaxSiblingPositions(positions, shellRadius);
-    return positions;
+    return positions.map((position, index) => ({
+      position,
+      direction: positions[index].clone().normalize().lerp(directions[index], 0.28).normalize(),
+      layoutBranchKey: resolveLayoutBranchKey(children[index], parentObj.layoutBranchKey || inferBranchKey(parentObj.data)),
+    }));
   }
 
   function estimateExpansionSize(nodes) {
@@ -703,7 +905,7 @@ export function createGovernmentGraph({
       parentObj,
       animate,
       children,
-      positions: getSpreadPositions(parentObj, children),
+      placements: getSpreadPositions(parentObj, children),
       index: 0,
     });
   }
@@ -718,7 +920,7 @@ export function createGovernmentGraph({
       performance.now() - start < timeBudgetMs
     ) {
       const job = state.pendingExpansions[0];
-      const { parentObj, children, positions, animate } = job;
+      const { parentObj, children, placements, animate } = job;
       const childData = children[job.index];
       let childObj = state.nodeMap.get(childData.id);
       if (!childObj) {
@@ -733,7 +935,10 @@ export function createGovernmentGraph({
       }
       markVisible(childObj);
 
-      const targetPos = positions[job.index];
+      const placement = placements[job.index];
+      const targetPos = placement.position;
+      childObj.layoutBranchKey = placement.layoutBranchKey;
+      childObj.branchDirection.copy(placement.direction);
       childObj.targetPos.copy(targetPos);
 
       if (animate) {
@@ -863,6 +1068,16 @@ export function createGovernmentGraph({
     return ancestorIds;
   }
 
+  function isProtectedFromClustering(nodeObj) {
+    if (!nodeObj || nodeObj === state.rootObj || nodeObj === state.selectedNode) {
+      return true;
+    }
+    if (!state.selectedNode || state.selectedNode.isCluster) {
+      return false;
+    }
+    return isDescendantOf(nodeObj, state.selectedNode) || isDescendantOf(state.selectedNode, nodeObj);
+  }
+
   function pruneDistantNodes() {
     if (state.visibleNodeCount <= state.maxNodes) {
       return;
@@ -906,7 +1121,12 @@ export function createGovernmentGraph({
     }
 
     state.selectedNode = nodeObj;
-    state.camFocusTarget.copy(nodeObj.pos);
+    if (state.flyMode) {
+      setFlyLookAt(nodeObj.pos);
+    } else {
+      state.camFocusTarget.copy(nodeObj.pos);
+    }
+    state.renderDirty = true;
     updateSelectionHalo();
     onSelect(nodeObj);
   }
@@ -994,7 +1214,67 @@ export function createGovernmentGraph({
     return rect;
   }
 
-  function getHit(event) {
+  function pickScreenSpaceHit(clientX, clientY, rect) {
+    const lod = getLodConfig();
+    const pointerX = clientX - rect.left;
+    const pointerY = clientY - rect.top;
+    let bestNode = null;
+    let bestNodeScore = Infinity;
+    let bestCluster = null;
+    let bestClusterScore = Infinity;
+
+    for (const nodeObj of state.visibleNodes) {
+      if (!nodeObj.renderVisible || nodeObj.clustered) {
+        continue;
+      }
+      tempVecD.copy(nodeObj.pos).project(camera);
+      if (tempVecD.z < -1 || tempVecD.z > 1) {
+        continue;
+      }
+
+      const screenX = ((tempVecD.x + 1) * 0.5) * rect.width;
+      const screenY = ((1 - tempVecD.y) * 0.5) * rect.height;
+      const distanceToPointer = Math.hypot(screenX - pointerX, screenY - pointerY);
+      const threshold = lod.pickRadius + nodeRadiusForDepth(nodeObj.depth) * 1.3;
+      if (distanceToPointer > threshold) {
+        continue;
+      }
+
+      const score = distanceToPointer + Math.max(0, tempVecD.z) * 8;
+      if (score < bestNodeScore) {
+        bestNodeScore = score;
+        bestNode = nodeObj;
+      }
+    }
+
+    for (const clusterObj of state.activeClusters) {
+      if (!clusterObj.renderVisible) {
+        continue;
+      }
+      tempVecD.copy(clusterObj.pos).project(camera);
+      if (tempVecD.z < -1 || tempVecD.z > 1) {
+        continue;
+      }
+
+      const screenX = ((tempVecD.x + 1) * 0.5) * rect.width;
+      const screenY = ((1 - tempVecD.y) * 0.5) * rect.height;
+      const distanceToPointer = Math.hypot(screenX - pointerX, screenY - pointerY);
+      const threshold = lod.pickRadius + clusterObj.radius * 1.8;
+      if (distanceToPointer > threshold) {
+        continue;
+      }
+
+      const score = distanceToPointer + Math.max(0, tempVecD.z) * 8;
+      if (score < bestClusterScore) {
+        bestClusterScore = score;
+        bestCluster = clusterObj;
+      }
+    }
+
+    return bestNode || bestCluster || null;
+  }
+
+  function getHit(event, { allowScreenSpaceFallback = true } = {}) {
     if (!state.clusterBatch) {
       return null;
     }
@@ -1015,30 +1295,14 @@ export function createGovernmentGraph({
       }
     }
 
-    const pointerX = event.clientX - rect.left;
-    const pointerY = event.clientY - rect.top;
-    const pickThreshold = 18;
-    let bestNode = null;
-    let bestDistance = Infinity;
-    for (const nodeObj of state.visibleNodes) {
-      if (!nodeObj.renderVisible || nodeObj.clustered) {
-        continue;
-      }
-      tempVecD.copy(nodeObj.pos).project(camera);
-      if (tempVecD.z < -1 || tempVecD.z > 1) {
-        continue;
-      }
-
-      const screenX = ((tempVecD.x + 1) * 0.5) * rect.width;
-      const screenY = ((1 - tempVecD.y) * 0.5) * rect.height;
-      const distanceToPointer = Math.hypot(screenX - pointerX, screenY - pointerY);
-      if (distanceToPointer < pickThreshold && distanceToPointer < bestDistance) {
-        bestDistance = distanceToPointer;
-        bestNode = nodeObj;
+    if (allowScreenSpaceFallback) {
+      const screenHit = pickScreenSpaceHit(event.clientX, event.clientY, rect);
+      if (screenHit) {
+        return screenHit;
       }
     }
 
-    return bestNode || clusterFallback;
+    return clusterFallback;
   }
 
   function updateFrustum() {
@@ -1048,25 +1312,26 @@ export function createGovernmentGraph({
   }
 
   function clusterGridSize(depth) {
+    const lod = getLodConfig();
     const zoomFactor = Math.max(state.zoom, 0.18);
     const baseSize = 95 + depth * 34;
-    const zoomMultiplier = zoomFactor < 0.75 ? 2.2 : zoomFactor < 1.1 ? 1.7 : 1.2;
-    return (baseSize * zoomMultiplier) / zoomFactor;
+    return (baseSize * lod.gridScale) / zoomFactor;
   }
 
   function shouldClusterNode(nodeObj) {
-    if (nodeObj === state.rootObj || nodeObj === state.selectedNode || nodeObj.depth < 2) {
+    const lod = getLodConfig();
+    if (isProtectedFromClustering(nodeObj) || nodeObj.depth < lod.clusterMinDepth) {
       return false;
     }
-    if (state.zoom > CLUSTER_START_ZOOM) {
+    if (state.zoom > CLUSTER_START_ZOOM || !Number.isFinite(lod.clusterMinDepth)) {
       return false;
     }
-    return nodeObj.depth >= 2;
+    return true;
   }
 
   function setClusterSlot(slot, clusterObj) {
-    const scale = Math.max(2.4, clusterObj.radius);
-    tempMat4.compose(clusterObj.pos, tempQuat, tempScale.set(scale, scale, scale));
+    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius);
+    tempMat4.compose(clusterObj.displayPos || clusterObj.pos, tempQuat, tempScale.set(scale, scale, scale));
     state.clusterBatch.mesh.setMatrixAt(slot, tempMat4);
     state.clusterBatch.mesh.setColorAt(
       slot,
@@ -1085,6 +1350,7 @@ export function createGovernmentGraph({
   }
 
   function recomputeClusters() {
+    const lod = getLodConfig();
     const clusterBuckets = new Map();
     for (const nodeObj of state.visibleNodes) {
       nodeObj.clustered = false;
@@ -1097,6 +1363,7 @@ export function createGovernmentGraph({
       }
       const cellSize = clusterGridSize(nodeObj.depth);
       const key = [
+        lod.key,
         nodeObj.depth,
         Math.round(nodeObj.pos.x / cellSize),
         Math.round(nodeObj.pos.y / cellSize),
@@ -1110,8 +1377,7 @@ export function createGovernmentGraph({
 
     const nextClusters = [];
     for (const [key, members] of clusterBuckets) {
-      const minimumClusterSize = state.zoom < 0.85 ? 2 : 4;
-      if (members.length < minimumClusterSize) {
+      if (members.length < lod.minClusterSize) {
         continue;
       }
       let clusterObj = state.clusterMap.get(key);
@@ -1121,7 +1387,11 @@ export function createGovernmentGraph({
           isCluster: true,
           depth: members[0].depth,
           pos: new THREE.Vector3(),
+          displayPos: new THREE.Vector3(),
+          targetPos: new THREE.Vector3(),
           radius: 1,
+          displayRadius: 1,
+          targetRadius: 1,
           renderVisible: false,
           slot: -1,
           members: [],
@@ -1131,17 +1401,27 @@ export function createGovernmentGraph({
       }
 
       clusterObj.members = members;
-      clusterObj.pos.set(0, 0, 0);
+      clusterObj.targetPos.set(0, 0, 0);
       for (const member of members) {
-        clusterObj.pos.add(member.pos);
+        clusterObj.targetPos.add(member.pos);
       }
-      clusterObj.pos.multiplyScalar(1 / members.length);
-      clusterObj.radius = 2.8 + Math.sqrt(members.length) * 0.9;
+      clusterObj.targetPos.multiplyScalar(1 / members.length);
+      clusterObj.targetRadius = 2.8 + Math.sqrt(members.length) * 0.9;
+      if (clusterObj.displayRadius <= 1.01) {
+        clusterObj.displayPos.copy(clusterObj.targetPos);
+        clusterObj.displayRadius = clusterObj.targetRadius;
+      } else {
+        clusterObj.displayPos.lerp(clusterObj.targetPos, 0.28);
+        clusterObj.displayRadius = THREE.MathUtils.lerp(clusterObj.displayRadius, clusterObj.targetRadius, 0.28);
+      }
+      clusterObj.pos.copy(clusterObj.displayPos);
+      clusterObj.radius = clusterObj.displayRadius;
+      clusterObj.lastSeenFrame = state.frame;
       clusterObj.data = {
         id: key,
         name: `${members.length} clustered nodes`,
         type: `Depth ${clusterObj.depth} cluster`,
-        desc: "Zoom in to inspect individual offices.",
+        desc: `Zoom in to inspect ${members.length} individual offices.`,
         color: branchColors.constitution,
         children: [],
       };
@@ -1156,6 +1436,12 @@ export function createGovernmentGraph({
       clusterObj.renderVisible = false;
     }
     state.activeClusters = nextClusters;
+
+    for (const [key, clusterObj] of state.clusterMap) {
+      if ((clusterObj.lastSeenFrame || 0) < state.frame - 8) {
+        state.clusterMap.delete(key);
+      }
+    }
   }
 
   function applyRenderVisibility() {
@@ -1302,6 +1588,10 @@ export function createGovernmentGraph({
       }
 
       const desiredRadius = shellRadiusForDepth(nodeObj.depth);
+      const branchTarget =
+        nodeObj.branchDirection.lengthSq() > 0
+          ? tempVecD.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius)
+          : null;
       const outwardTarget =
         nodeObj.targetPos.lengthSq() > 0
           ? tempVecA.copy(nodeObj.targetPos).normalize().multiplyScalar(desiredRadius)
@@ -1311,6 +1601,9 @@ export function createGovernmentGraph({
         continue;
       }
 
+      if (branchTarget) {
+        nodeObj.pos.lerp(branchTarget, BRANCH_FORCE);
+      }
       nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
 
       if (nodeObj.parent) {
@@ -1330,15 +1623,16 @@ export function createGovernmentGraph({
     }
   }
 
-  function applyFlyMovement() {
+  function applyFlyMovement(deltaSeconds) {
     if (!state.flyMode) {
       return;
     }
 
-    const moveSpeed = Math.max(0.65, 1.8 / Math.max(state.zoom, 0.35));
-    camera.getWorldDirection(tempVecA);
-    const forward = tempVecA.normalize();
-    const right = tempVecB.copy(forward).cross(camera.up).normalize();
+    state.flyYaw += (state.flyYawTarget - state.flyYaw) * 0.22;
+    state.flyPitch += (state.flyPitchTarget - state.flyPitch) * 0.22;
+
+    const forward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA);
+    const right = tempVecB.crossVectors(forward, upVector).normalize();
     const worldUp = tempVecC.set(0, 1, 0);
     const delta = directionVec.set(0, 0, 0);
 
@@ -1362,18 +1656,23 @@ export function createGovernmentGraph({
     }
 
     if (delta.lengthSq() === 0) {
+      updateFlyLookTarget();
       return;
     }
 
+    const moveSpeed = FLY_MOVE_SPEED * deltaSeconds * Math.max(0.7, 1 / Math.sqrt(Math.max(state.zoom, 0.35)));
     delta.normalize().multiplyScalar(moveSpeed);
-    state.camFocus.add(delta);
-    state.camFocusTarget.add(delta);
+    state.flyPosition.add(delta);
+    updateFlyLookTarget();
     state.renderDirty = true;
   }
 
   function animate() {
     requestAnimationFrame(animate);
-    state.time += 0.008;
+    const now = performance.now();
+    const deltaSeconds = Math.min((now - state.lastFrameTime) / 1000, 0.05) || 0.016;
+    state.lastFrameTime = now;
+    state.time += deltaSeconds * 0.5;
     state.frame += 1;
 
     flushPendingExpansions();
@@ -1381,14 +1680,18 @@ export function createGovernmentGraph({
     state.rotX += (state.targetRotX - state.rotX) * 0.07;
     state.rotY += (state.targetRotY - state.rotY) * 0.07;
     state.zoom += (state.targetZoom - state.zoom) * 0.07;
-    state.camFocus.lerp(state.camFocusTarget, 0.05);
-    applyFlyMovement();
-
-    const distance = CAMERA_DISTANCE / state.zoom;
-    camera.position.x = state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX);
-    camera.position.y = state.camFocus.y + distance * Math.sin(state.rotX);
-    camera.position.z = state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX);
-    camera.lookAt(state.camFocus);
+    if (state.flyMode) {
+      applyFlyMovement(deltaSeconds);
+      camera.position.copy(state.flyPosition);
+      camera.lookAt(state.flyLookTarget);
+    } else {
+      state.camFocus.lerp(state.camFocusTarget, 0.05);
+      const distance = CAMERA_DISTANCE / state.zoom;
+      camera.position.x = state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX);
+      camera.position.y = state.camFocus.y + distance * Math.sin(state.rotX);
+      camera.position.z = state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX);
+      camera.lookAt(state.camFocus);
+    }
     camera.updateMatrixWorld();
 
     animateNodes();
@@ -1442,9 +1745,12 @@ export function createGovernmentGraph({
 
     if (event.buttons === 1 && state.isDragging) {
       if (state.flyMode) {
-        state.targetRotY += dx * 0.004 * FLY_TURN_MULTIPLIER;
-        state.targetRotX += dy * 0.004 * FLY_TURN_MULTIPLIER;
-        state.targetRotX = Math.max(-Math.PI / 2.1, Math.min(Math.PI / 2.1, state.targetRotX));
+        state.flyYawTarget += dx * 0.004 * FLY_TURN_MULTIPLIER;
+        state.flyPitchTarget = THREE.MathUtils.clamp(
+          state.flyPitchTarget + dy * 0.004 * FLY_TURN_MULTIPLIER,
+          -FLY_PITCH_LIMIT,
+          FLY_PITCH_LIMIT,
+        );
       } else if (event.shiftKey) {
         const distance = CAMERA_DISTANCE / state.zoom;
         const forward = tempVecA.copy(state.camFocus).sub(camera.position).normalize();
@@ -1462,7 +1768,7 @@ export function createGovernmentGraph({
     }
     state.prevMouse = { x: event.clientX, y: event.clientY };
 
-    const hit = getHit(event);
+    const hit = getHit(event, { allowScreenSpaceFallback: false });
     onHover(hit ? { node: hit, x: event.clientX, y: event.clientY } : null);
   }
 
@@ -1481,11 +1787,15 @@ export function createGovernmentGraph({
       if (state.isDragging) {
         return;
       }
-      const hit = getHit(event);
+      const hit = getHit(event, { allowScreenSpaceFallback: true });
       if (hit) {
         if (hit.isCluster) {
-          state.camFocusTarget.copy(hit.pos);
-          state.targetZoom = Math.min(3.5, Math.max(state.targetZoom, 1.15));
+          if (state.flyMode) {
+            setFlyLookAt(hit.pos);
+          } else {
+            state.camFocusTarget.copy(hit.pos);
+            state.targetZoom = Math.min(3.5, Math.max(state.targetZoom, 1.15));
+          }
         }
         setSelectedNode(hit);
       }
@@ -1497,8 +1807,15 @@ export function createGovernmentGraph({
     canvas.addEventListener(
       "wheel",
       (event) => {
-        state.targetZoom *= event.deltaY > 0 ? 1.1 : 0.9;
-        state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
+        if (state.flyMode) {
+          const forward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA);
+          const zoomStep = event.deltaY > 0 ? -16 : 16;
+          state.flyPosition.addScaledVector(forward, zoomStep);
+          updateFlyLookTarget();
+        } else {
+          state.targetZoom *= event.deltaY > 0 ? 1.1 : 0.9;
+          state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
+        }
         state.renderDirty = true;
         event.preventDefault();
       },
@@ -1516,8 +1833,17 @@ export function createGovernmentGraph({
         const touch = event.touches[0];
         const dx = touch.clientX - state.prevMouse.x;
         const dy = touch.clientY - state.prevMouse.y;
-        state.targetRotY += dx * 0.004;
-        state.targetRotX += dy * 0.004;
+        if (state.flyMode) {
+          state.flyYawTarget += dx * 0.004 * FLY_TURN_MULTIPLIER;
+          state.flyPitchTarget = THREE.MathUtils.clamp(
+            state.flyPitchTarget + dy * 0.004 * FLY_TURN_MULTIPLIER,
+            -FLY_PITCH_LIMIT,
+            FLY_PITCH_LIMIT,
+          );
+        } else {
+          state.targetRotY += dx * 0.004;
+          state.targetRotX += dy * 0.004;
+        }
         state.prevMouse = { x: touch.clientX, y: touch.clientY };
         state.renderDirty = true;
         event.preventDefault();
@@ -1564,6 +1890,8 @@ export function createGovernmentGraph({
 
     state.rootObj = createNodeObj(data, null, 0);
     setNodeColor(state.rootObj);
+    state.rootObj.layoutBranchKey = "constitution";
+    copyBranchBaseDirection("constitution", state.rootObj.branchDirection);
     state.rootObj.pos.set(0, 0, 0);
     state.rootObj.targetPos.set(0, 0, 0);
     setNodeMatrix(state.rootObj, 1);
@@ -1572,6 +1900,7 @@ export function createGovernmentGraph({
     rootHalo.visible = true;
     rootHalo.material.color.set(getNodeColor(state.rootObj.data));
     setSelectedNode(state.rootObj);
+    syncFlyStateFromCamera();
     refreshVisibility(true);
     return state.rootObj;
   }
@@ -1593,15 +1922,31 @@ export function createGovernmentGraph({
     refreshVisibility,
     focusSelectedNode() {
       if (state.selectedNode) {
-        state.camFocusTarget.copy(state.selectedNode.pos);
-        state.targetZoom = Math.max(state.targetZoom, 1.45);
+        if (state.flyMode) {
+          const focusPoint = state.selectedNode.pos;
+          const backward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA).multiplyScalar(-Math.max(22, state.selectedNode.radius ? state.selectedNode.radius * 5 : 28));
+          state.flyPosition.copy(focusPoint).add(backward);
+          setFlyLookAt(focusPoint);
+        } else {
+          state.camFocusTarget.copy(state.selectedNode.pos);
+          state.targetZoom = Math.max(state.targetZoom, 1.45);
+        }
       }
     },
     setFlyMode(enabled) {
-      state.flyMode = Boolean(enabled);
-      if (state.flyMode) {
-        state.targetZoom = Math.max(state.targetZoom, 1.6);
+      const nextEnabled = Boolean(enabled);
+      if (nextEnabled === state.flyMode) {
+        return state.flyMode;
       }
+
+      state.flyMode = nextEnabled;
+      if (state.flyMode) {
+        syncFlyStateFromCamera();
+        state.targetZoom = Math.max(state.targetZoom, 1.6);
+      } else {
+        syncOrbitStateFromFlyCamera();
+      }
+      state.renderDirty = true;
       return state.flyMode;
     },
     isFlyMode() {
