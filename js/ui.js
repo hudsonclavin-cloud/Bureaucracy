@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js";
-import { loadMergedGraphData } from "./graphLoader.js";
+import { createGovernmentGraph } from "./graph.js?v=20260312b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260312b";
 
 const dom = {
   loading: document.getElementById("loading"),
