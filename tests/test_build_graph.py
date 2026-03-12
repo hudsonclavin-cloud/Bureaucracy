@@ -26,7 +26,7 @@ BASE_GRAPH = {
 
 
 class BuildGraphTests(unittest.TestCase):
-    def test_build_graph_attaches_related_orphans_to_root_and_drops_unrelated_nodes(self) -> None:
+    def test_build_graph_attaches_related_and_unrelated_orphans_to_root(self) -> None:
         payloads = [
             {
                 "nodes": [
@@ -55,12 +55,15 @@ class BuildGraphTests(unittest.TestCase):
 
         exported_ids = {node["id"] for node in result.nodes}
         self.assertIn("contractor-acme", exported_ids)
-        self.assertNotIn("floating-node", exported_ids)
+        self.assertIn("floating-node", exported_ids)
 
         contractor = next(node for node in result.nodes if node["id"] == "contractor-acme")
+        floating = next(node for node in result.nodes if node["id"] == "floating-node")
         self.assertTrue(contractor["attachToRoot"])
-        self.assertEqual(result.validation["attached_to_root"], 1)
-        self.assertEqual(result.validation["dropped_orphan_nodes"], 1)
+        self.assertTrue(floating["attachToRoot"])
+        self.assertEqual(result.validation["attached_to_root"], 2)
+        self.assertEqual(result.validation["dropped_orphan_nodes"], 0)
+        self.assertEqual(result.validation["root_attached_missing_parent_nodes"], 1)
 
     def test_build_graph_keeps_hierarchical_parent_references(self) -> None:
         payloads = [
@@ -198,6 +201,8 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(office["sourceCount"], 2)
         self.assertGreater(office["confidenceScore"], 0.8)
         self.assertIn("verification_status_counts", result.validation)
+        self.assertIn("pipeline_summary", result.validation)
+        self.assertEqual(result.validation["pipeline_summary"]["final_exported_nodes"], len(result.nodes))
 
 
 if __name__ == "__main__":

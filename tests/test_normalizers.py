@@ -7,6 +7,23 @@ from data_pipeline.processors.normalize_nodes import normalize_node, verify_node
 
 
 class NormalizerTests(unittest.TestCase):
+    def test_normalize_node_preserves_description_aliases_and_unknown_fields(self) -> None:
+        node = normalize_node(
+            {
+                "name": "Deputy Director",
+                "type": "Role",
+                "description": "Leads the office when the director is absent.",
+                "bio": "Career civil servant.",
+                "customField": {"source": "imported"},
+            }
+        )
+
+        self.assertEqual(node["type"], "Role")
+        self.assertEqual(node["desc"], "Leads the office when the director is absent.")
+        self.assertEqual(node["description"], "Leads the office when the director is absent.")
+        self.assertEqual(node["bio"], "Career civil servant.")
+        self.assertEqual(node["customField"], {"source": "imported"})
+
     def test_normalize_node_preserves_attach_to_root_flag(self) -> None:
         node = normalize_node(
             {

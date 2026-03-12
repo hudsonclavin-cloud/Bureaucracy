@@ -41,6 +41,30 @@ def iter_payload_items(payloads: Iterable[dict[str, Any]]) -> Iterable[dict[str,
             yield payload
 
 
+def count_payload_nodes(payloads: Iterable[dict[str, Any]]) -> int:
+    total = 0
+    for payload in payloads:
+        if not isinstance(payload, dict):
+            continue
+        total += sum(1 for node in payload.get("nodes", []) if isinstance(node, dict))
+    return total
+
+
+def format_pipeline_summary(summary: dict[str, int]) -> str:
+    return "\n".join(
+        [
+            "PIPELINE SUMMARY",
+            "----------------",
+            f"Raw nodes: {summary['raw_nodes_loaded']}",
+            f"After normalization: {summary['nodes_after_normalization']}",
+            f"After merge: {summary['nodes_after_merge']}",
+            f"After validation: {summary['nodes_after_validation']}",
+            f"Root-attached orphans: {summary['root_attached_orphans']}",
+            f"Final exported: {summary['final_exported_nodes']}",
+        ]
+    )
+
+
 def build_parent_index(edges: list[dict[str, str]]) -> dict[str, str]:
     parent_by_child: dict[str, str] = {}
     for edge in edges:
@@ -151,17 +175,22 @@ def build_graph(
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
 ) -> BuildResult:
+    payload_list = list(iter_payload_items(payloads))
+    raw_nodes_loaded = count_payload_nodes(payload_list)
     existing_ids = load_existing_node_ids(base_graph_path)
     node_registry = NodeRegistry(existing_ids=set(existing_ids))
     edge_registry = EdgeRegistry()
+    normalized_node_count = 0
 
-    for payload in iter_payload_items(payloads):
-        node_registry.add_many(payload.get("nodes", []))
+    for payload in payload_list:
+        normalized_nodes = node_registry.add_many(payload.get("nodes", []))
+        normalized_node_count += len(normalized_nodes)
         edge_registry.add_many(payload.get("edges", []))
 
     raw_edges = edge_registry.values()
     parent_by_child = build_parent_index(raw_edges)
     nodes = node_registry.values()
+    merged_node_count = len(nodes)
     for node in nodes:
         parent_id = parent_by_child.get(node["id"])
         if parent_id and parent_id != node["id"]:
@@ -173,6 +202,16 @@ def build_graph(
         export_edges,
         existing_ids=existing_ids,
     )
+    pipeline_summary = {
+        "raw_nodes_loaded": raw_nodes_loaded,
+        "nodes_after_normalization": normalized_node_count,
+        "nodes_after_merge": merged_node_count,
+        "nodes_after_validation": len(export_nodes),
+        "root_attached_orphans": validation["root_attached_missing_parent_nodes"],
+        "nodes_attached_to_root": validation["attached_to_root"],
+        "final_exported_nodes": len(export_nodes),
+    }
+    validation["pipeline_summary"] = pipeline_summary
 
     nodes_path = Path(nodes_output_path)
     edges_path = Path(edges_output_path)
@@ -196,6 +235,7 @@ def build_graph(
 
 def main() -> None:
     result = build_graph(payloads=[])
+    print(format_pipeline_summary(result.validation["pipeline_summary"]))
     print(f"Wrote {len(result.nodes)} nodes to {result.nodes_path}")
     print(f"Wrote {len(result.edges)} edges to {result.edges_path}")
     print(json.dumps(result.validation, indent=2))

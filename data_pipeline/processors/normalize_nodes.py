@@ -36,6 +36,9 @@ TYPE_COLORS = {
     "division": "#888888",
     "corporation": "#4ac88a",
     "position": "#888888",
+    "role": "#888888",
+    "staff": "#888888",
+    "employee": "#888888",
     "person": "#8a4ac8",
 }
 
@@ -145,6 +148,14 @@ def normalize_string_list(value: Any) -> list[str]:
     return normalized
 
 
+def get_first_text(*values: Any) -> str:
+    for value in values:
+        text = str(value).strip() if value is not None else ""
+        if text:
+            return text
+    return ""
+
+
 def classify_source_url(url: str) -> str:
     host = urlparse(url).netloc.lower()
     if host.endswith(".gov") or host.endswith(".mil"):
@@ -200,14 +211,21 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
 
 
 def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organization") -> dict[str, Any]:
-    node = deepcopy(DEFAULT_NODE)
-    node.update(raw_node or {})
+    node = dict(raw_node or {})
+    for key, value in DEFAULT_NODE.items():
+        node.setdefault(key, deepcopy(value))
 
     node["name"] = normalize_name(node.get("name"))
     node_type = normalize_name(node.get("type") or fallback_type)
     node["type"] = node_type
     node["id"] = str(node.get("id") or generate_node_id(node["name"]))
-    node["desc"] = str(node.get("desc") or "").strip()
+    node["desc"] = get_first_text(
+        node.get("desc"),
+        node.get("description"),
+        node.get("summary"),
+        node.get("details"),
+        node.get("bio"),
+    )
     node["employees"] = coerce_nullable_number(node.get("employees"))
     node["budget"] = coerce_nullable_text(node.get("budget"))
     node["color"] = infer_color(node_type, node.get("color"))
@@ -238,8 +256,22 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         if incoming.get(key):
             existing[key] = incoming[key]
 
-    if incoming.get("desc") and len(incoming["desc"]) > len(existing.get("desc", "")):
-        existing["desc"] = incoming["desc"]
+    incoming_desc = get_first_text(
+        incoming.get("desc"),
+        incoming.get("description"),
+        incoming.get("summary"),
+        incoming.get("details"),
+        incoming.get("bio"),
+    )
+    existing_desc = get_first_text(
+        existing.get("desc"),
+        existing.get("description"),
+        existing.get("summary"),
+        existing.get("details"),
+        existing.get("bio"),
+    )
+    if incoming_desc and len(incoming_desc) > len(existing_desc):
+        existing["desc"] = incoming_desc
 
     for key in ("employees", "budget", "industry", "location"):
         if incoming.get(key) and not existing.get(key):
@@ -258,6 +290,32 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         if child["id"] not in seen_children:
             existing.setdefault("children", []).append(child)
             seen_children.add(child["id"])
+
+    handled_keys = {
+        "id",
+        "name",
+        "type",
+        "color",
+        "desc",
+        "employees",
+        "budget",
+        "industry",
+        "location",
+        "parentId",
+        "children",
+        "sourceUrls",
+        "sourceTypes",
+        "sourceCount",
+        "confidenceScore",
+        "verificationStatus",
+        "lastVerified",
+    }
+    for key, value in incoming.items():
+        if key in handled_keys:
+            continue
+        if key not in existing or existing.get(key) in (None, "", [], {}):
+            existing[key] = deepcopy(value)
+
     return verify_node_sources(existing)
 
 
