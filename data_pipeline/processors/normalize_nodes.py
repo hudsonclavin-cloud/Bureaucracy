@@ -131,7 +131,7 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         if isinstance(child, dict)
     ]
 
-    for field_name in ("parentId", "parent", "industry", "location", "source"):
+    for field_name in ("parentId", "parent", "industry", "location", "source", "attachToRoot"):
         if field_name in raw_node and raw_node[field_name] is not None:
             node[field_name] = raw_node[field_name]
 

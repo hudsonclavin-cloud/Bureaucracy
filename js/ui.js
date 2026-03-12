@@ -65,10 +65,26 @@ function hideLoader(delay = 200) {
 function updateStats(stats) {
   setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
   setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
-  setText(dom.statsLoaded, `${stats.visibleNodeCount.toLocaleString()} currently loaded`);
+  setText(
+    dom.statsLoaded,
+    `${stats.visibleNodeCount.toLocaleString()} currently loaded · ${stats.lodLabel || "Universe View"}`,
+  );
   setText(
     dom.statsDepth,
     `Depth filter: ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} · queue ${stats.pendingExpansions ?? 0}`,
+  );
+}
+
+function updateStats(stats) {
+  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
+  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  setText(
+    dom.statsLoaded,
+    `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
+  );
+  setText(
+    dom.statsDepth,
+    `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
 }
 
@@ -196,9 +212,26 @@ function renderInfoPanel(nodeObj) {
   }
 
   const data = nodeObj.data;
+  const activeCluster = nodeObj.isCluster ? nodeObj : nodeObj.clusterRef || null;
+  const clusterCount =
+    activeCluster?.count ||
+    activeCluster?.data?.count ||
+    Math.max(0, (data.__meta?.subtreeCount || 1) - 1);
+  const isClusteredView = Boolean(activeCluster);
+  const clusterReason = activeCluster?.data?.clusterReason || "";
+  const clusterTierLabel = activeCluster?.data?.clusterTierLabel || "Current View";
+  const loadedBranchCount = activeCluster?.data?.loadedBranchCount || 0;
   setText(dom.infoName, data.name);
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
+
+  if (isClusteredView) {
+    setText(dom.infoType, `${data.type || "Group"} Cluster`);
+    setText(
+      dom.infoDesc,
+      `${clusterReason} Represents ${clusterCount.toLocaleString()} descendants across ${loadedBranchCount.toLocaleString()} loaded sub-branches.`,
+    );
+  }
 
   const statsFragment = document.createDocumentFragment();
   const statRows = [];
@@ -210,6 +243,11 @@ function renderInfoPanel(nodeObj) {
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
+  }
+  if (isClusteredView) {
+    statRows.push(["CLUSTER SIZE", clusterCount.toLocaleString()]);
+    statRows.push(["CLUSTER TIER", clusterTierLabel]);
+    statRows.push(["LOADED BRANCHES", loadedBranchCount.toLocaleString()]);
   }
   statRows.push(["DEPTH", String(nodeObj.depth)]);
 
@@ -285,6 +323,10 @@ function renderInfoPanel(nodeObj) {
     setText(dom.btnExpand, `Expand — ${children.length} nodes`);
     dom.btnExpandAll.disabled = false;
     setText(dom.btnExpandAll, "Expand All Below");
+    if (isClusteredView) {
+      setText(dom.btnExpand, `Open Cluster - ${children.length} nodes`);
+      setText(dom.btnExpandAll, "Open Full Branch");
+    }
     dom.btnCollapse.style.display = "none";
   } else if (nodeObj.expanded) {
     dom.btnExpand.disabled = true;

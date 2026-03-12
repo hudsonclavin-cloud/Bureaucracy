@@ -98,6 +98,10 @@ function extractExplicitParentId(rawNode) {
   return rawNode.parentId || rawNode.parent || rawNode.attachTo || rawNode.attachToId || rawNode.source || null;
 }
 
+function shouldAttachToRoot(rawNode) {
+  return Boolean(rawNode && rawNode.attachToRoot);
+}
+
 function extractExpansionNodes(expansionData) {
   if (!expansionData) {
     return [];
@@ -210,7 +214,7 @@ function mergeExpansionGraph(baseRoot, expansionData) {
   }
 
   for (const node of flatNodes.values()) {
-    if (!parentMap.has(node.id) && node.id !== baseRoot.id) {
+    if (!parentMap.has(node.id) && node.id !== baseRoot.id && shouldAttachToRoot(node)) {
       const attachTarget = baseNodeMap.get(node.id);
       safeAddChild(baseRoot, attachTarget, parentMap);
     }
