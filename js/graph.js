@@ -19,6 +19,7 @@ const MIN_DISTANCE = 5;
 const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
+const FLY_TURN_MULTIPLIER = 3;
 const branchColors = {
   constitution: "#FFD166",
   legislative: "#9B5DE5",
@@ -106,6 +107,7 @@ export function createGovernmentGraph({
   const directionVec = new THREE.Vector3();
   const tempVecA = new THREE.Vector3();
   const tempVecB = new THREE.Vector3();
+  const tempVecC = new THREE.Vector3();
   const tempMat4 = new THREE.Matrix4();
   const tempQuat = new THREE.Quaternion();
   const tempScale = new THREE.Vector3();
@@ -998,7 +1000,28 @@ export function createGovernmentGraph({
         }
       }
     }
-    return clusterFallback;
+
+    const pickThreshold = Math.max(6, (CAMERA_DISTANCE / Math.max(state.zoom, 0.35)) * 0.05);
+    let bestNode = null;
+    let bestDistance = Infinity;
+    for (const nodeObj of state.visibleNodes) {
+      if (!nodeObj.renderVisible || nodeObj.clustered) {
+        continue;
+      }
+      tempVecA.subVectors(nodeObj.pos, raycaster.ray.origin);
+      const alongRay = tempVecA.dot(raycaster.ray.direction);
+      if (alongRay < 0) {
+        continue;
+      }
+      tempVecB.copy(raycaster.ray.direction).multiplyScalar(alongRay).add(raycaster.ray.origin);
+      const distanceToRay = tempVecB.distanceTo(nodeObj.pos);
+      if (distanceToRay < pickThreshold && distanceToRay < bestDistance) {
+        bestDistance = distanceToRay;
+        bestNode = nodeObj;
+      }
+    }
+
+    return bestNode || clusterFallback;
   }
 
   function updateFrustum() {
@@ -1292,9 +1315,10 @@ export function createGovernmentGraph({
     }
 
     const moveSpeed = Math.max(0.65, 1.8 / Math.max(state.zoom, 0.35));
-    const forward = tempVecA.copy(state.camFocusTarget).sub(camera.position).normalize();
-    const right = basisA.copy(forward).cross(camera.up).normalize();
-    const worldUp = basisB.set(0, 1, 0);
+    camera.getWorldDirection(tempVecA);
+    const forward = tempVecA.normalize();
+    const right = tempVecB.copy(forward).cross(camera.up).normalize();
+    const worldUp = tempVecC.set(0, 1, 0);
     const delta = directionVec.set(0, 0, 0);
 
     if (state.keyState.KeyW) {
@@ -1321,6 +1345,7 @@ export function createGovernmentGraph({
     }
 
     delta.normalize().multiplyScalar(moveSpeed);
+    state.camFocus.add(delta);
     state.camFocusTarget.add(delta);
     state.renderDirty = true;
   }
@@ -1395,7 +1420,11 @@ export function createGovernmentGraph({
     }
 
     if (event.buttons === 1 && state.isDragging) {
-      if (event.shiftKey && !state.flyMode) {
+      if (state.flyMode) {
+        state.targetRotY += dx * 0.004 * FLY_TURN_MULTIPLIER;
+        state.targetRotX += dy * 0.004 * FLY_TURN_MULTIPLIER;
+        state.targetRotX = Math.max(-Math.PI / 2.1, Math.min(Math.PI / 2.1, state.targetRotX));
+      } else if (event.shiftKey) {
         const distance = CAMERA_DISTANCE / state.zoom;
         const forward = tempVecA.copy(state.camFocus).sub(camera.position).normalize();
         const right = basisA.copy(forward).cross(camera.up).normalize();
