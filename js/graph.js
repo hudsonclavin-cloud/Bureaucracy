@@ -20,6 +20,10 @@ const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
 const FLY_TURN_MULTIPLIER = 3;
+const MIN_ZOOM_NODE_SCALE = 0.2;
+const HIERARCHY_EDGE_MIN_ZOOM = 0.95;
+const RELATIONSHIP_EDGE_MIN_ZOOM = 1.3;
+const CLUSTER_START_ZOOM = 2.0;
 const branchColors = {
   constitution: "#FFD166",
   legislative: "#9B5DE5",
@@ -454,7 +458,7 @@ export function createGovernmentGraph({
 
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
     const distance = CAMERA_DISTANCE / Math.max(state.zoom, 0.25);
-    const zoomScale = THREE.MathUtils.clamp(220 / distance, 0.4, 1);
+    const zoomScale = THREE.MathUtils.clamp(140 / distance, MIN_ZOOM_NODE_SCALE, 1);
     const finalScale = scaleMultiplier * zoomScale;
     tempMat4.compose(
       nodeObj.pos,
@@ -532,12 +536,13 @@ export function createGovernmentGraph({
   }
 
   function applyEdgeVisibility(edge) {
+    const minZoom = edge.type === "relationship" ? RELATIONSHIP_EDGE_MIN_ZOOM : HIERARCHY_EDGE_MIN_ZOOM;
     const show =
       edge.from.renderVisible &&
       edge.to.renderVisible &&
       !edge.from.clustered &&
       !edge.to.clustered &&
-      state.zoom >= (edge.type === "relationship" ? 0.8 : 0.55) &&
+      state.zoom >= minZoom &&
       edge.from.depth < state.maxVisibleDepth &&
       edge.to.depth <= state.maxVisibleDepth;
     if (show) {
@@ -1043,14 +1048,17 @@ export function createGovernmentGraph({
   }
 
   function clusterGridSize(depth) {
-    return (42 + depth * 16) / Math.max(state.zoom, 0.25);
+    const zoomFactor = Math.max(state.zoom, 0.18);
+    const baseSize = 95 + depth * 34;
+    const zoomMultiplier = zoomFactor < 0.75 ? 2.2 : zoomFactor < 1.1 ? 1.7 : 1.2;
+    return (baseSize * zoomMultiplier) / zoomFactor;
   }
 
   function shouldClusterNode(nodeObj) {
     if (nodeObj === state.rootObj || nodeObj === state.selectedNode || nodeObj.depth < 2) {
       return false;
     }
-    if (state.zoom > 1.2) {
+    if (state.zoom > CLUSTER_START_ZOOM) {
       return false;
     }
     return nodeObj.depth >= 2;
@@ -1102,7 +1110,8 @@ export function createGovernmentGraph({
 
     const nextClusters = [];
     for (const [key, members] of clusterBuckets) {
-      if (members.length < 4) {
+      const minimumClusterSize = state.zoom < 0.85 ? 2 : 4;
+      if (members.length < minimumClusterSize) {
         continue;
       }
       let clusterObj = state.clusterMap.get(key);
