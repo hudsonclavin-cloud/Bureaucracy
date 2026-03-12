@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
-from data_pipeline.processors.normalize_nodes import generate_node_id, normalize_name
+from data_pipeline.processors.normalize_nodes import merge_node, normalize_node, generate_node_id, normalize_name
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -202,6 +202,155 @@ def build_existing_candidate_indexes(
     return existing_ids, existing_name_parent_keys, name_lookup
 
 
+def build_existing_node_maps(
+    existing_nodes: Iterable[dict[str, Any]],
+) -> tuple[dict[str, str], dict[tuple[str, str | None], dict[str, Any]]]:
+    name_to_id: dict[str, str] = {}
+    name_parent_to_node: dict[tuple[str, str | None], dict[str, Any]] = {}
+    for raw_node in existing_nodes:
+        if not isinstance(raw_node, dict):
+            continue
+        node = normalize_node(raw_node)
+        node_name = normalize_candidate_name(node.get("name"))
+        node_id = str(node.get("id") or "").strip()
+        parent_id = str(node.get("parentId") or node.get("parent") or "").strip() or None
+        if node_name and node_id:
+            name_to_id.setdefault(node_name.casefold(), node_id)
+            name_parent_to_node[(node_name.casefold(), parent_id)] = node
+    return name_to_id, name_parent_to_node
+
+
+def infer_candidate_type(name: str, description: str | None = None) -> str:
+    lowered_name = normalize_candidate_name(name).lower()
+    lowered_description = str(description or "").lower()
+    combined = f"{lowered_name} {lowered_description}".strip()
+    if any(token in combined for token in ("office", "directorate", "administration", "service", "center")):
+        return "Office"
+    if "bureau" in combined:
+        return "Bureau"
+    if "division" in combined:
+        return "Division"
+    if any(token in combined for token in ("director", "chief", "manager", "administrator", "secretary", "advisor", "chair")):
+        return "Role"
+    if any(token in combined for token in ("committee", "commission", "board", "council")):
+        return "Organization"
+    return "Organization"
+
+
+def resolve_parent_id(
+    possible_parent: str | None,
+    *,
+    name_to_id: dict[str, str],
+) -> str | None:
+    if not possible_parent:
+        return None
+    return name_to_id.get(normalize_candidate_name(possible_parent).casefold())
+
+
+def candidate_to_node_record(
+    candidate: CandidateNode,
+    *,
+    parent_name_to_id: dict[str, str],
+) -> dict[str, Any]:
+    parent_id = resolve_parent_id(candidate.possibleParent, name_to_id=parent_name_to_id)
+    source_urls = [candidate.sourceUrl]
+    if candidate.wikidataId:
+        source_urls.append(f"https://www.wikidata.org/wiki/{candidate.wikidataId}")
+    source_types = [classify_source_url(url) for url in source_urls]
+    source_types.append("candidate_discovery")
+    node_id_seed = f"{parent_id or candidate.possibleParent or ''} {candidate.name}".strip()
+    node = normalize_node(
+        {
+            "id": generate_node_id(node_id_seed or candidate.name),
+            "name": candidate.name,
+            "type": infer_candidate_type(candidate.name, candidate.description),
+            "parentId": parent_id,
+            "desc": candidate.description or f"Candidate discovered via {candidate.discoveryMethod}.",
+            "description": candidate.description or f"Candidate discovered via {candidate.discoveryMethod}.",
+            "sourceUrls": source_urls,
+            "sourceTypes": source_types,
+            "attachToRoot": parent_id is None,
+        }
+    )
+    node["possibleParent"] = candidate.possibleParent
+    node["discoveryMethod"] = candidate.discoveryMethod
+    node["sourceUrl"] = candidate.sourceUrl
+    node["wikidataId"] = candidate.wikidataId
+    node["description"] = node["desc"]
+    node["discoveryConfidenceEstimate"] = candidate.confidenceEstimate
+    node["isCandidate"] = True
+    return node
+
+
+def node_name_parent_key(node: dict[str, Any]) -> tuple[str, str | None]:
+    name = normalize_candidate_name(node.get("name")).casefold()
+    parent_id = str(node.get("parentId") or "").strip() or None
+    return name, parent_id
+
+
+def is_duplicate_node(
+    name: str,
+    parent_id: str | None,
+    existing_name_parent_pairs: set[tuple[str, str | None]],
+) -> bool:
+    key = (normalize_candidate_name(name).casefold(), str(parent_id or "").strip() or None)
+    return key in existing_name_parent_pairs
+
+
+def promote_candidates(
+    candidates: Iterable[dict[str, Any]],
+    *,
+    existing_nodes: Iterable[dict[str, Any]],
+    min_confidence_score: float = 0.7,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    existing_name_to_id, existing_name_parent_to_node = build_existing_node_maps(existing_nodes)
+    existing_keys = set(existing_name_parent_to_node.keys())
+    promoted_by_key: dict[tuple[str, str | None], dict[str, Any]] = {}
+    stats = {
+        "candidates_reviewed": 0,
+        "candidates_below_threshold": 0,
+        "promoted_new_nodes": 0,
+        "merged_duplicates": 0,
+    }
+
+    for raw_candidate in candidates:
+        if not isinstance(raw_candidate, dict):
+            continue
+        stats["candidates_reviewed"] += 1
+        candidate = normalize_node(raw_candidate)
+        parent_id = str(candidate.get("parentId") or "").strip() or None
+        if not parent_id and candidate.get("possibleParent"):
+            parent_id = resolve_parent_id(candidate.get("possibleParent"), name_to_id=existing_name_to_id)
+            if parent_id:
+                candidate["parentId"] = parent_id
+                candidate.pop("attachToRoot", None)
+        if float(candidate.get("confidenceScore") or 0.0) < min_confidence_score:
+            stats["candidates_below_threshold"] += 1
+            continue
+
+        key = node_name_parent_key(candidate)
+        duplicate = existing_name_parent_to_node.get(key)
+        if duplicate:
+            merged_candidate = dict(candidate)
+            merged_candidate["id"] = duplicate["id"]
+            merged_candidate["parentId"] = duplicate.get("parentId")
+            promoted_by_key[key] = merge_node(dict(duplicate), merged_candidate)
+            stats["merged_duplicates"] += 1
+            continue
+
+        if key in promoted_by_key:
+            promoted_by_key[key] = merge_node(promoted_by_key[key], candidate)
+            stats["merged_duplicates"] += 1
+            continue
+
+        promoted_by_key[key] = candidate
+        existing_keys.add(key)
+        existing_name_to_id.setdefault(normalize_candidate_name(candidate["name"]).casefold(), candidate["id"])
+        stats["promoted_new_nodes"] += 1
+
+    return sorted(promoted_by_key.values(), key=lambda item: (item.get("parentId") or "", item["name"])), stats
+
+
 def is_us_federal_record(record: dict[str, Any]) -> bool:
     us_markers = {
         "united states",
@@ -376,6 +525,7 @@ def discover_candidates(
         existing_nodes = load_existing_graph_nodes(base_graph_path)
     existing_node_list = [node for node in existing_nodes if isinstance(node, dict)]
     existing_ids, existing_name_parent_keys, _ = build_existing_candidate_indexes(existing_node_list)
+    existing_name_to_id, _ = build_existing_node_maps(existing_node_list)
 
     candidates = [
         *discover_from_wikidata(wikidata_records),
@@ -385,11 +535,18 @@ def discover_candidates(
         *discover_from_federal_register(federal_register_records),
         *discover_leadership_positions(existing_node_list),
     ]
-    return [asdict(candidate) for candidate in dedupe_candidates(
+    deduped_candidates = dedupe_candidates(
         candidates,
         existing_node_ids=existing_ids,
         existing_name_parent_keys=existing_name_parent_keys,
-    )]
+    )
+    return [
+        {
+            **candidate_to_node_record(candidate, parent_name_to_id=existing_name_to_id),
+            **asdict(candidate),
+        }
+        for candidate in deduped_candidates
+    ]
 
 
 def discover_from_official_directory(records: Iterable[dict[str, Any]]) -> list[CandidateNode]:

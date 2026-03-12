@@ -186,7 +186,7 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
     confidence += min(0.3, additional_sources * 0.1)
 
     confidence = round(max(0.0, min(confidence, 1.0)), 2)
-    if confidence >= 0.8 and "official_site" in source_types:
+    if confidence >= 0.8:
         verification_status = "verified"
     elif confidence >= 0.5:
         verification_status = "partial"

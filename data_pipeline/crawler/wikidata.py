@@ -21,18 +21,20 @@ SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
 
 AGENCY_HIERARCHY_QUERY = """
-SELECT ?agency ?agencyLabel ?parent ?parentLabel WHERE {{
+SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
   OPTIONAL {{ ?agency wdt:P749 ?parent . }}
+  OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 LIMIT {limit}
 """
 
 OFFICE_HOLDER_QUERY = """
-SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel WHERE {{
+SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?officialWebsite WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
   ?agency wdt:P2388 ?position .
+  OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   OPTIONAL {{
     ?person p:P39 ?statement .
     ?statement ps:P39 ?position .
@@ -43,9 +45,10 @@ LIMIT {limit}
 """
 
 SUBUNIT_QUERY = """
-SELECT ?office ?officeLabel ?parent ?parentLabel WHERE {{
+SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite WHERE {{
   ?office wdt:P361 ?parent .
   ?parent wdt:P31/wdt:P279* wd:Q327333 .
+  OPTIONAL {{ ?office wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 LIMIT {limit}
@@ -69,6 +72,13 @@ def run_sparql(query: str, *, timeout: int = 45) -> dict[str, Any]:
 def extract_label(binding: dict[str, Any], key: str) -> str:
     value = binding.get(key, {}).get("value", "")
     return normalize_name(value)
+
+
+def extract_entity_id(binding: dict[str, Any], key: str) -> str | None:
+    value = binding.get(key, {}).get("value", "")
+    if not value:
+        return None
+    return value.rstrip("/").rsplit("/", 1)[-1] or None
 
 
 def classify_parent_type(name: str) -> str:
@@ -231,6 +241,71 @@ class WikidataCrawler:
 
         return nodes, edges
 
+    def build_discovery_records(
+        self,
+        *,
+        hierarchy_limit: int = 500,
+        office_holder_limit: int = 250,
+        subunit_limit: int = 500,
+    ) -> list[dict[str, Any]]:
+        records: list[dict[str, Any]] = []
+
+        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
+        time.sleep(self.request_delay)
+        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
+        time.sleep(self.request_delay)
+        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+
+        for row in hierarchy_rows:
+            agency_name = extract_label(row, "agencyLabel")
+            if not agency_name:
+                continue
+            records.append(
+                {
+                    "label": agency_name,
+                    "parentName": extract_label(row, "parentLabel"),
+                    "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
+                    "wikidataId": extract_entity_id(row, "agency"),
+                    "description": "Federal agency discovered through Wikidata organizational hierarchy.",
+                    "countryLabel": "United States",
+                }
+            )
+
+        for row in subunit_rows:
+            office_name = extract_label(row, "officeLabel")
+            parent_name = extract_label(row, "parentLabel")
+            if not office_name:
+                continue
+            records.append(
+                {
+                    "label": office_name,
+                    "parentName": parent_name,
+                    "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
+                    "wikidataId": extract_entity_id(row, "office"),
+                    "description": f"Organizational unit associated with {parent_name or 'a federal agency'} via Wikidata.",
+                    "countryLabel": "United States",
+                }
+            )
+
+        for row in office_rows:
+            position_name = extract_label(row, "positionLabel")
+            agency_name = extract_label(row, "agencyLabel")
+            if not position_name:
+                continue
+            records.append(
+                {
+                    "label": position_name,
+                    "parentName": agency_name,
+                    "agencyName": agency_name,
+                    "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
+                    "wikidataId": extract_entity_id(row, "position"),
+                    "description": f"Leadership role associated with {agency_name or 'a federal agency'} via Wikidata.",
+                    "countryLabel": "United States",
+                }
+            )
+
+        return records
+
 
 def crawl(
     *,
@@ -245,6 +320,20 @@ def crawl(
         subunit_limit=subunit_limit,
     )
     return {"nodes": nodes, "edges": edges}
+
+
+def crawl_discovery_records(
+    *,
+    hierarchy_limit: int = 500,
+    office_holder_limit: int = 250,
+    subunit_limit: int = 500,
+) -> list[dict[str, Any]]:
+    crawler = WikidataCrawler()
+    return crawler.build_discovery_records(
+        hierarchy_limit=hierarchy_limit,
+        office_holder_limit=office_holder_limit,
+        subunit_limit=subunit_limit,
+    )
 
 
 if __name__ == "__main__":

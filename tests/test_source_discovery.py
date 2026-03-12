@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from data_pipeline.discovery.source_discovery import discover_candidates
+from data_pipeline.discovery.source_discovery import discover_candidates, promote_candidates
 
 
 class SourceDiscoveryTests(unittest.TestCase):
@@ -91,6 +91,66 @@ class SourceDiscoveryTests(unittest.TestCase):
 
         self.assertFalse(any(item["name"] == "Office of Nuclear Energy" for item in candidates))
         self.assertTrue(any(item["name"] == "Director" and item["possibleParent"] == "Office of Nuclear Energy" for item in candidates))
+
+    def test_promote_candidates_adds_high_confidence_nodes_and_merges_duplicates(self) -> None:
+        candidates = [
+            {
+                "id": "department-of-energy-office-of-cybersecurity",
+                "name": "Office of Cybersecurity",
+                "type": "Office",
+                "parentId": "department-of-energy",
+                "possibleParent": "Department of Energy",
+                "desc": "Official office listing.",
+                "sourceUrls": [
+                    "https://www.energy.gov/organization-chart",
+                    "https://www.wikidata.org/wiki/Q123",
+                ],
+                "sourceTypes": ["official_site", "wikidata"],
+                "confidenceScore": 0.9,
+                "verificationStatus": "verified",
+                "lastVerified": "2026-03-12",
+            },
+            {
+                "id": "candidate-office-of-nuclear-energy",
+                "name": "Office of Nuclear Energy",
+                "type": "Office",
+                "parentId": "department-of-energy",
+                "possibleParent": "Department of Energy",
+                "desc": "Duplicate office with new sources.",
+                "sourceUrls": [
+                    "https://www.energy.gov/ne/office-of-nuclear-energy",
+                    "https://www.wikidata.org/wiki/Q456",
+                ],
+                "sourceTypes": ["official_site", "wikidata"],
+                "confidenceScore": 0.9,
+                "verificationStatus": "verified",
+                "lastVerified": "2026-03-12",
+            },
+        ]
+        existing_nodes = [
+            {
+                "id": "department-of-energy",
+                "name": "Department of Energy",
+                "type": "Cabinet Department",
+                "children": [],
+            },
+            {
+                "id": "office-of-nuclear-energy",
+                "name": "Office of Nuclear Energy",
+                "type": "Office",
+                "parentId": "department-of-energy",
+                "sourceUrls": ["https://www.energy.gov/ne"],
+                "children": [],
+            },
+        ]
+
+        promoted, stats = promote_candidates(candidates, existing_nodes=existing_nodes)
+
+        self.assertEqual(stats["promoted_new_nodes"], 1)
+        self.assertEqual(stats["merged_duplicates"], 1)
+        self.assertTrue(any(item["id"] == "department-of-energy-office-of-cybersecurity" for item in promoted))
+        merged = next(item for item in promoted if item["id"] == "office-of-nuclear-energy")
+        self.assertIn("https://www.wikidata.org/wiki/Q456", merged["sourceUrls"])
 
 
 if __name__ == "__main__":
