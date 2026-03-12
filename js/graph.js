@@ -5,12 +5,17 @@ const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
 const MAX_NODES = 25000;
 const MAX_DEPTH = 20;
+const MAX_BATCH = 200;
 const NODE_RADIUS = 4;
 const NODE_OPACITY = 0.92;
 const EXPANSION_TIME_BUDGET_MS = 8;
-const EXPANSION_CHILD_BUDGET = 240;
-const EXPANSION_PARENT_BATCH = 48;
+const EXPANSION_CHILD_BUDGET = MAX_BATCH;
+const EXPANSION_PARENT_BATCH = MAX_BATCH;
 const CLUSTER_CAPACITY = 8192;
+const REPULSION = -40;
+const LINK_DISTANCE = 20;
+const DAMPING = 0.9;
+const MIN_DISTANCE = 5;
 const branchColors = {
   constitution: "#FFD166",
   legislative: "#9B5DE5",
@@ -124,7 +129,9 @@ export function createGovernmentGraph({
     parentIdById: new Map(),
     searchIndex: [],
     depthTotals: new Map(),
+    batchTotals: new Map(),
     nodeBatches: new Map(),
+    nodeRenderMap: new Map(),
     clusterBatch: null,
     edgeBatch: null,
     allNodes: [],
@@ -181,6 +188,10 @@ export function createGovernmentGraph({
   }
 
   function getNodeColor(data) {
+    if (typeof data?.color === "string" && data.color.length > 0) {
+      return data.color;
+    }
+
     const id = String(data?.id || "").toLowerCase();
     const type = String(data?.type || "").toLowerCase();
 
@@ -210,7 +221,7 @@ export function createGovernmentGraph({
     if (id.startsWith("exec-")) {
       return branchColors.executive;
     }
-    return data?.color || branchColors.position;
+    return branchColors.position;
   }
 
   function hashString(input) {
@@ -227,7 +238,7 @@ export function createGovernmentGraph({
   }
 
   function shellRadiusForDepth(depth) {
-    return 18 + depth * 36 + depth * depth * 4.5;
+    return 18 + depth * LINK_DISTANCE + depth * depth * 4.5;
   }
 
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
@@ -235,6 +246,8 @@ export function createGovernmentGraph({
     state.dataMap.set(node.id, node);
     state.parentIdById.set(node.id, parentId);
     state.depthTotals.set(depth, (state.depthTotals.get(depth) || 0) + 1);
+    const batchKey = `${depth}:${getNodeColor(node)}`;
+    state.batchTotals.set(batchKey, (state.batchTotals.get(batchKey) || 0) + 1);
     state.searchIndex.push({
       id: node.id,
       name: node.name,
@@ -261,18 +274,17 @@ export function createGovernmentGraph({
     return { subtreeCount, maxDepth: subtreeDepth };
   }
 
-  function createNodeBatch(depth, capacity) {
+  function createNodeBatch(depth, color, capacity) {
     const radius = nodeRadiusForDepth(depth);
     const geometry = new THREE.SphereGeometry(radius, depth <= 2 ? 16 : 10, depth <= 2 ? 16 : 10);
     const material = new THREE.MeshStandardMaterial({
-      color: 0xffffff,
-      emissive: 0xffffff,
+      color: new THREE.Color(color),
+      emissive: new THREE.Color(color),
       emissiveIntensity: 0.3,
       roughness: 0.38,
       metalness: 0.05,
       transparent: true,
       opacity: NODE_OPACITY,
-      vertexColors: true,
     });
     const mesh = new THREE.InstancedMesh(geometry, material, Math.max(capacity, 1));
     mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
@@ -281,6 +293,7 @@ export function createGovernmentGraph({
     return {
       depth,
       radius,
+      color,
       mesh,
       nodesBySlot: new Array(Math.max(capacity, 1)),
       nextSlot: 0,
@@ -290,8 +303,11 @@ export function createGovernmentGraph({
   }
 
   function ensureNodeBatches() {
-    for (const [depth, count] of state.depthTotals) {
-      state.nodeBatches.set(depth, createNodeBatch(depth, count));
+    for (const [batchKey, count] of state.batchTotals) {
+      const separator = batchKey.indexOf(":");
+      const depth = Number(batchKey.slice(0, separator));
+      const color = batchKey.slice(separator + 1);
+      state.nodeBatches.set(batchKey, createNodeBatch(depth, color, count));
     }
 
     const clusterGeometry = new THREE.SphereGeometry(1, 12, 12);
@@ -342,7 +358,8 @@ export function createGovernmentGraph({
   }
 
   function assignBatchSlot(nodeObj) {
-    const batch = state.nodeBatches.get(nodeObj.depth);
+    const batchKey = `${nodeObj.depth}:${getNodeColor(nodeObj.data)}`;
+    const batch = state.nodeBatches.get(batchKey);
     nodeObj.batch = batch;
     nodeObj.slot = batch.freeSlots.length > 0 ? batch.freeSlots.pop() : batch.nextSlot++;
     batch.nodesBySlot[nodeObj.slot] = nodeObj;
@@ -369,10 +386,12 @@ export function createGovernmentGraph({
       renderVisible: false,
       clusterRef: null,
       edgeToParent: null,
+      resolvedColor: getNodeColor(data),
     };
 
     assignBatchSlot(nodeObj);
     state.nodeMap.set(data.id, nodeObj);
+    state.nodeRenderMap.set(data.id, { mesh: nodeObj.batch.mesh, slot: nodeObj.slot });
     state.allNodes.push(nodeObj);
     return nodeObj;
   }
@@ -425,9 +444,7 @@ export function createGovernmentGraph({
   }
 
   function setNodeColor(nodeObj) {
-    const resolvedColor = getNodeColor(nodeObj.data);
-    nodeObj.batch.mesh.setColorAt(nodeObj.slot, new THREE.Color(hexToInt(resolvedColor)));
-    nodeObj.batch.dirty = true;
+    nodeObj.resolvedColor = getNodeColor(nodeObj.data);
   }
 
   function relationshipKey(fromId, toId, type = "relationship") {
@@ -517,6 +534,37 @@ export function createGovernmentGraph({
     basisB.copy(anchorDir).cross(basisA).normalize();
   }
 
+  function relaxSiblingPositions(positions, shellRadius) {
+    const minimumDistance = Math.max(MIN_DISTANCE, NODE_RADIUS * 2.2);
+    const minimumDistanceSq = minimumDistance * minimumDistance;
+
+    for (let iteration = 0; iteration < 2; iteration += 1) {
+      for (let i = 0; i < positions.length; i += 1) {
+        for (let j = i + 1; j < positions.length; j += 1) {
+          tempVecA.subVectors(positions[i], positions[j]);
+          const distanceSq = tempVecA.lengthSq();
+          if (distanceSq >= minimumDistanceSq) {
+            continue;
+          }
+
+          if (distanceSq < 0.0001) {
+            tempVecA.set(Math.sin(i + 1), Math.cos(j + 1), Math.sin(i + j + 1));
+          }
+
+          const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
+          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 400);
+          tempVecA.normalize().multiplyScalar(pushStrength);
+          positions[i].add(tempVecA);
+          positions[j].sub(tempVecA);
+        }
+      }
+
+      for (const position of positions) {
+        position.normalize().multiplyScalar(shellRadius * DAMPING + shellRadius * (1 - DAMPING));
+      }
+    }
+  }
+
   function getSpreadPositions(parentObj, children) {
     const depth = parentObj.depth + 1;
     const shellRadius = shellRadiusForDepth(depth);
@@ -547,6 +595,7 @@ export function createGovernmentGraph({
       positions[i] = directionVec.clone().multiplyScalar(shellRadius);
     }
 
+    relaxSiblingPositions(positions, shellRadius);
     return positions;
   }
 
@@ -719,6 +768,7 @@ export function createGovernmentGraph({
       nodeObj.batch.freeSlots.push(nodeObj.slot);
     }
     state.nodeMap.delete(nodeObj.data.id);
+    state.nodeRenderMap.delete(nodeObj.data.id);
     const nodeIndex = state.allNodes.indexOf(nodeObj);
     if (nodeIndex >= 0) {
       state.allNodes.splice(nodeIndex, 1);
@@ -818,6 +868,7 @@ export function createGovernmentGraph({
     const radius = state.selectedNode.isCluster
       ? Math.max(6, state.selectedNode.radius * 1.4)
       : nodeRadiusForDepth(state.selectedNode.depth) * 2.1;
+    selectionHalo.material.color.set(getNodeColor(state.selectedNode.data));
     selectionHalo.visible = true;
     selectionHalo.position.copy(state.selectedNode.pos);
     selectionHalo.scale.setScalar(radius);
@@ -1386,6 +1437,7 @@ export function createGovernmentGraph({
     state.data = data;
     state.searchIndex = [];
     state.depthTotals.clear();
+    state.batchTotals.clear();
     state.relationships = [];
     state.relationshipIndex = new Map();
     state.connectedRelationshipKeys.clear();
@@ -1406,6 +1458,7 @@ export function createGovernmentGraph({
     markVisible(state.rootObj);
     connectRelationshipsForNode(state.rootObj);
     rootHalo.visible = true;
+    rootHalo.material.color.set(getNodeColor(state.rootObj.data));
     setSelectedNode(state.rootObj);
     refreshVisibility(true);
     return state.rootObj;

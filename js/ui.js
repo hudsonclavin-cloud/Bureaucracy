@@ -310,6 +310,8 @@ function progressiveRender(frontierNodes, onComplete) {
       count += 1;
     }
 
+    updateStats(state.graph.getStats());
+
     if (index < frontierNodes.length) {
       state.expandFrame = window.requestAnimationFrame(batch);
       return;
@@ -319,6 +321,21 @@ function progressiveRender(frontierNodes, onComplete) {
   }
 
   batch();
+}
+
+function waitForExpansionDrain(onDone) {
+  if (state.expandCancelled) {
+    return;
+  }
+
+  updateStats(state.graph.getStats());
+  if (state.graph.hasPendingExpansions()) {
+    showLoader("Loading queued nodes…");
+    state.expandFrame = window.requestAnimationFrame(() => waitForExpansionDrain(onDone));
+    return;
+  }
+
+  onDone();
 }
 
 function expandProgressively(targetDepth) {
@@ -372,8 +389,10 @@ function expandProgressively(targetDepth) {
 
     showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
     progressiveRender(frontier.nodes, () => {
-      updateStats(state.graph.getStats());
-      state.expandFrame = window.requestAnimationFrame(tick);
+      waitForExpansionDrain(() => {
+        renderInfoPanel(state.graph.getSelectedNode());
+        state.expandFrame = window.requestAnimationFrame(tick);
+      });
     });
   };
 
