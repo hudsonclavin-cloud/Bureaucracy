@@ -20,15 +20,15 @@ DEFAULT_NODE = {
 }
 
 TYPE_COLORS = {
-    "branch": "#FFD166",
-    "department": "#F94144",
-    "agency": "#4D96FF",
-    "bureau": "#4D96FF",
-    "office": "#F8961E",
-    "division": "#B0B0B0",
-    "corporation": "#06D6A0",
-    "position": "#B0B0B0",
-    "person": "#9B5DE5",
+    "branch": "#c8a84a",
+    "department": "#c84a4a",
+    "agency": "#4a8ac8",
+    "bureau": "#4a8ac8",
+    "office": "#888888",
+    "division": "#888888",
+    "corporation": "#4ac88a",
+    "position": "#888888",
+    "person": "#8a4ac8",
 }
 
 ACRONYMS = {
@@ -89,6 +89,30 @@ def coerce_nullable_text(value: Any) -> str | None:
     return text or None
 
 
+def coerce_nullable_number(value: Any) -> int | float | None:
+    if value is None or value == "":
+        return None
+    if isinstance(value, (int, float)):
+        return value
+
+    text = str(value).strip()
+    if not text:
+        return None
+
+    normalized = re.sub(r"[^0-9.\-]", "", text)
+    if not normalized:
+        return None
+
+    try:
+        number = float(normalized)
+    except ValueError:
+        return None
+
+    if number.is_integer():
+        return int(number)
+    return number
+
+
 def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organization") -> dict[str, Any]:
     node = deepcopy(DEFAULT_NODE)
     node.update(raw_node or {})
@@ -98,7 +122,7 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     node["type"] = node_type
     node["id"] = str(node.get("id") or generate_node_id(node["name"]))
     node["desc"] = str(node.get("desc") or "").strip()
-    node["employees"] = coerce_nullable_text(node.get("employees"))
+    node["employees"] = coerce_nullable_number(node.get("employees"))
     node["budget"] = coerce_nullable_text(node.get("budget"))
     node["color"] = infer_color(node_type, node.get("color"))
     node["children"] = [

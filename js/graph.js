@@ -3,7 +3,7 @@ import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
-const MAX_NODES = 25000;
+const MAX_NODES = 100000;
 const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
 const NODE_RADIUS = 4;
@@ -11,10 +11,10 @@ const NODE_OPACITY = 0.92;
 const EXPANSION_TIME_BUDGET_MS = 8;
 const EXPANSION_CHILD_BUDGET = MAX_BATCH;
 const EXPANSION_PARENT_BATCH = MAX_BATCH;
-const CLUSTER_CAPACITY = 8192;
+const CLUSTER_CAPACITY = 16384;
 const MIN_CLUSTER_DISTANCE = 6;
 const REPULSION = -60;
-const LINK_DISTANCE = 25;
+const LINK_DISTANCE = 30;
 const DAMPING = 0.9;
 const MIN_DISTANCE = 5;
 const OUTWARD_FORCE = 0.02;
@@ -33,13 +33,13 @@ const RELATIONSHIP_EDGE_MIN_ZOOM = 1.3;
 const CLUSTER_START_ZOOM = 2.0;
 const PICK_RADIUS_PX = 18;
 const branchColors = {
-  constitution: "#FFD166",
-  legislative: "#9B5DE5",
-  executive: "#F94144",
-  judicial: "#4D96FF",
-  independent: "#06D6A0",
-  regulatory: "#F8961E",
-  position: "#B0B0B0",
+  constitution: "#c8a84a",
+  legislative: "#8a4ac8",
+  executive: "#c84a4a",
+  judicial: "#4a8ac8",
+  independent: "#4ac88a",
+  regulatory: "#c8884a",
+  position: "#888888",
 };
 const branchSectorDirections = {
   constitution: new THREE.Vector3(0, 1, 0.08).normalize(),

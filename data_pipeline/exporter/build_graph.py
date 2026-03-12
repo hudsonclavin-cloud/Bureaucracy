@@ -42,7 +42,7 @@ def iter_payload_items(payloads: Iterable[dict[str, Any]]) -> Iterable[dict[str,
 def build_parent_index(edges: list[dict[str, str]]) -> dict[str, str]:
     parent_by_child: dict[str, str] = {}
     for edge in edges:
-        if edge["relationship"] not in HIERARCHICAL_RELATIONSHIPS:
+        if edge["type"] not in HIERARCHICAL_RELATIONSHIPS:
             continue
         parent_by_child.setdefault(edge["source"], edge["target"])
     return parent_by_child
@@ -51,7 +51,7 @@ def build_parent_index(edges: list[dict[str, str]]) -> dict[str, str]:
 def split_hierarchical_edges(edges: list[dict[str, str]], parent_by_child: dict[str, str]) -> list[dict[str, str]]:
     exported_edges: list[dict[str, str]] = []
     for edge in edges:
-        if edge["relationship"] in HIERARCHICAL_RELATIONSHIPS and parent_by_child.get(edge["source"]) == edge["target"]:
+        if edge["type"] in HIERARCHICAL_RELATIONSHIPS and parent_by_child.get(edge["source"]) == edge["target"]:
             continue
         exported_edges.append(edge)
     return exported_edges

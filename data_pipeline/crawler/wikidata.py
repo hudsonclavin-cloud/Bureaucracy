@@ -121,7 +121,7 @@ class WikidataCrawler:
                     "name": agency_name,
                     "type": "Agency",
                     "desc": "Federal agency discovered through Wikidata organizational hierarchy.",
-                    "color": "#4D96FF",
+                    "color": "#4a8ac8",
                 }
             )
 
@@ -133,14 +133,14 @@ class WikidataCrawler:
                         "name": parent_name,
                         "type": classify_parent_type(parent_name),
                         "desc": "Parent government organization from Wikidata.",
-                        "color": "#FFD166" if "branch" in parent_name.lower() else "#F94144",
+                        "color": "#c8a84a" if "branch" in parent_name.lower() else "#c84a4a",
                     }
                 )
                 edges.append(
                     {
                         "source": agency_id,
                         "target": parent_id,
-                        "relationship": "reports_to",
+                        "type": "reports_to",
                     }
                 )
 
@@ -165,7 +165,7 @@ class WikidataCrawler:
                     "name": office_name,
                     "type": office_type,
                     "desc": f"{office_type} discovered as part of {parent_name} via Wikidata.",
-                    "color": "#F8961E" if office_type == "Office" else "#4D96FF",
+                    "color": "#888888" if office_type == "Office" else "#4a8ac8",
                 }
             )
             nodes.append(
@@ -180,7 +180,7 @@ class WikidataCrawler:
                 {
                     "source": office_id,
                     "target": parent_id,
-                    "relationship": "reports_to",
+                    "type": "reports_to",
                 }
             )
 
@@ -199,14 +199,14 @@ class WikidataCrawler:
                     "name": position_name,
                     "type": "Position",
                     "desc": f"Leadership position associated with {agency_name} from Wikidata.",
-                    "color": "#B0B0B0",
+                    "color": "#888888",
                 }
             )
             edges.append(
                 {
                     "source": position_id,
                     "target": agency_id,
-                    "relationship": "reports_to",
+                    "type": "reports_to",
                 }
             )
 
@@ -218,14 +218,14 @@ class WikidataCrawler:
                         "name": person_name,
                         "type": "Person",
                         "desc": f"Office holder connected to {position_name} via Wikidata.",
-                        "color": "#9B5DE5",
+                        "color": "#8a4ac8",
                     }
                 )
                 edges.append(
                     {
                         "source": person_id,
                         "target": position_id,
-                        "relationship": "manages",
+                        "type": "manages",
                     }
                 )
 

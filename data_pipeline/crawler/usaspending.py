@@ -149,7 +149,7 @@ class USASpendingCrawler:
                     "type": "Agency",
                     "desc": agency.get("abbreviation") or "Top-tier federal agency from USAspending.",
                     "budget": str(agency.get("agency_total_obligated_amount") or "") or None,
-                    "color": "#4D96FF",
+                    "color": "#4a8ac8",
                 }
             )
 
@@ -190,7 +190,7 @@ class USASpendingCrawler:
                         "name": contractor_name,
                         "type": "Corporation",
                         "desc": " ".join(contractor_desc_bits),
-                        "color": "#06D6A0",
+                        "color": "#4ac88a",
                         "industry": industry,
                         "location": location,
                     }
@@ -199,7 +199,7 @@ class USASpendingCrawler:
                     {
                         "source": agency_id,
                         "target": contractor_id,
-                        "relationship": "contracts_with",
+                        "type": "contracts_with",
                     }
                 )
 

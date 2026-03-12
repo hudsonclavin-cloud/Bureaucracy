@@ -27,7 +27,7 @@ def normalize_edge(raw_edge: dict[str, Any]) -> dict[str, str] | None:
 
     source = str(raw_edge.get("source") or "").strip()
     target = str(raw_edge.get("target") or "").strip()
-    relationship = normalize_relationship(raw_edge.get("relationship") or raw_edge.get("type"))
+    relationship = normalize_relationship(raw_edge.get("type") or raw_edge.get("relationship"))
 
     if not source or not target or source == target:
         return None
@@ -35,12 +35,12 @@ def normalize_edge(raw_edge: dict[str, Any]) -> dict[str, str] | None:
     return {
         "source": source,
         "target": target,
-        "relationship": relationship,
+        "type": relationship,
     }
 
 
 def edge_key(edge: dict[str, str]) -> str:
-    return f"{edge['source']}::{edge['target']}::{edge['relationship']}"
+    return f"{edge['source']}::{edge['target']}::{edge['type']}"
 
 
 @dataclass

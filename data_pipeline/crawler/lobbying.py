@@ -95,7 +95,7 @@ class LobbyingCrawler:
                     "name": client_name,
                     "type": "Corporation",
                     "desc": "Corporate entity discovered through lobbying disclosure filings.",
-                    "color": "#06D6A0",
+                    "color": "#4ac88a",
                 }
             )
 
@@ -130,14 +130,14 @@ class LobbyingCrawler:
                         "name": agency_name,
                         "type": "Agency",
                         "desc": desc,
-                        "color": "#4D96FF",
+                        "color": "#4a8ac8",
                     }
                 )
                 edges.append(
                     {
                         "source": client_id,
                         "target": agency_id,
-                        "relationship": "lobbies",
+                        "type": "lobbies",
                     }
                 )
 
