@@ -4,7 +4,9 @@ import json
 import re
 from copy import deepcopy
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlparse
 from typing import Any, Iterable
 
 
@@ -16,12 +18,25 @@ DEFAULT_NODE = {
     "employees": None,
     "budget": None,
     "color": "#666666",
-    "children": [],
     "sourceUrls": [],
     "sourceTypes": [],
-    "confidenceScore": None,
-    "verificationStatus": None,
+    "confidenceScore": 0.0,
+    "verificationStatus": "unverified",
     "lastVerified": None,
+    "sourceCount": 0,
+    "founded_date": None,
+    "jurisdiction": None,
+    "official_website": None,
+    "parent_agency": None,
+    "related_agencies": [],
+    "annual_budget": None,
+    "budget_source": None,
+    "budget_year": None,
+    "created_year": None,
+    "restructured_year": None,
+    "merged_into": None,
+    "renamed_from": None,
+    "children": [],
 }
 
 TYPE_COLORS = {
@@ -31,10 +46,11 @@ TYPE_COLORS = {
     "bureau": "#4a8ac8",
     "office": "#888888",
     "division": "#888888",
-    "committee": "#888888",
-    "subcommittee": "#888888",
     "corporation": "#4ac88a",
     "position": "#888888",
+    "role": "#888888",
+    "staff": "#888888",
+    "employee": "#888888",
     "person": "#8a4ac8",
 }
 
@@ -120,27 +136,116 @@ def coerce_nullable_number(value: Any) -> int | float | None:
     return number
 
 
-def unique_list(values: Iterable[Any]) -> list[str]:
+def normalize_string_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        values = [value]
+    elif isinstance(value, Iterable):
+        values = [str(item) for item in value if item is not None]
+    else:
+        values = [str(value)]
+
     seen: set[str] = set()
-    ordered: list[str] = []
-    for value in values:
-        text = str(value or "").strip()
-        if not text or text in seen:
+    normalized: list[str] = []
+    for item in values:
+        cleaned = item.strip()
+        if not cleaned:
             continue
-        seen.add(text)
-        ordered.append(text)
-    return ordered
+        key = cleaned.casefold()
+        if key in seen:
+            continue
+        seen.add(key)
+        normalized.append(cleaned)
+    return normalized
+
+
+def get_first_text(*values: Any) -> str:
+    for value in values:
+        text = str(value).strip() if value is not None else ""
+        if text:
+            return text
+    return ""
+
+
+def classify_source_url(url: str) -> str:
+    host = urlparse(url).netloc.lower()
+    if host.endswith(".gov") or host.endswith(".mil"):
+        return "official_site"
+    if "wikidata.org" in host:
+        return "wikidata"
+    if "wikipedia.org" in host:
+        return "wikipedia"
+    if "federalregister.gov" in host:
+        return "historical_documentation"
+    if "house.gov" in host or "senate.gov" in host or "congress.gov" in host or "govinfo.gov" in host:
+        return "legislative_reference"
+    return "unknown"
+
+
+def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
+    source_urls = normalize_string_list(node.get("sourceUrls"))
+    if not source_urls and node.get("source"):
+        source_urls = normalize_string_list(node.get("source"))
+
+    inferred_types = [classify_source_url(url) for url in source_urls]
+    explicit_types = normalize_string_list(node.get("sourceTypes"))
+    source_types = normalize_string_list([*explicit_types, *inferred_types])
+    source_count = len(source_urls)
+
+    confidence = 0.0 if source_count == 0 else 0.4
+    if "official_site" in source_types:
+        confidence += 0.3
+    if "wikidata" in source_types:
+        confidence += 0.2
+    if len(set(source_types)) >= 2 or source_count >= 2:
+        confidence += 0.2
+    if "historical_documentation" in source_types:
+        confidence += 0.1
+    if "legislative_reference" in source_types:
+        confidence += 0.1
+
+    confidence = round(max(0.0, min(confidence, 1.0)), 2)
+    if confidence >= 0.8:
+        verification_status = "verified"
+    elif confidence >= 0.5:
+        verification_status = "partial"
+    else:
+        verification_status = "unverified"
+
+    last_verified = node.get("lastVerified")
+    if source_count > 0:
+        last_verified = (
+            str(last_verified).strip()
+            if last_verified
+            else datetime.now(timezone.utc).date().isoformat()
+        )
+
+    node["sourceUrls"] = source_urls
+    node["sourceTypes"] = source_types
+    node["sourceCount"] = source_count
+    node["confidenceScore"] = confidence
+    node["verificationStatus"] = verification_status
+    node["lastVerified"] = last_verified
+    return node
 
 
 def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organization") -> dict[str, Any]:
-    node = deepcopy(DEFAULT_NODE)
-    node.update(raw_node or {})
+    node = dict(raw_node or {})
+    for key, value in DEFAULT_NODE.items():
+        node.setdefault(key, deepcopy(value))
 
     node["name"] = normalize_name(node.get("name"))
     node_type = normalize_name(node.get("type") or fallback_type)
     node["type"] = node_type
     node["id"] = str(node.get("id") or generate_node_id(node["name"]))
-    node["desc"] = str(node.get("desc") or "").strip()
+    node["desc"] = get_first_text(
+        node.get("desc"),
+        node.get("description"),
+        node.get("summary"),
+        node.get("details"),
+        node.get("bio"),
+    )
     node["employees"] = coerce_nullable_number(node.get("employees"))
     node["budget"] = coerce_nullable_text(node.get("budget"))
     node["color"] = infer_color(node_type, node.get("color"))
@@ -149,11 +254,6 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         for child in node.get("children", [])
         if isinstance(child, dict)
     ]
-    node["sourceUrls"] = unique_list(node.get("sourceUrls", []))
-    node["sourceTypes"] = unique_list(node.get("sourceTypes", []))
-    node["confidenceScore"] = node.get("confidenceScore")
-    node["verificationStatus"] = coerce_nullable_text(node.get("verificationStatus"))
-    node["lastVerified"] = coerce_nullable_text(node.get("lastVerified"))
 
     for field_name in (
         "parentId",
@@ -161,18 +261,57 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         "industry",
         "location",
         "source",
-        "sourceUrl",
+        "attachToRoot",
+        "founded_date",
+        "jurisdiction",
+        "official_website",
+        "parent_agency",
+        "related_agencies",
+        "annual_budget",
+        "budget_source",
+        "budget_year",
+        "created_year",
+        "restructured_year",
+        "merged_into",
+        "renamed_from",
         "sourceType",
+        "sourceUrl",
         "possibleParent",
         "discoveryMethod",
-        "attachToRoot",
-        "confidenceEstimate",
-        "discoveryMethods",
+        "discoveryConfidenceEstimate",
+        "wikidataId",
+        "description",
+        "summary",
+        "details",
+        "bio",
     ):
         if field_name in raw_node and raw_node[field_name] is not None:
             node[field_name] = raw_node[field_name]
 
-    return node
+    source_urls = normalize_string_list(raw_node.get("sourceUrls") or raw_node.get("sourceUrl") or raw_node.get("sources"))
+    if raw_node.get("source") and isinstance(raw_node.get("source"), str) and "://" in str(raw_node.get("source")):
+        source_urls = normalize_string_list([*source_urls, raw_node["source"]])
+    node["sourceUrls"] = source_urls
+    node["sourceTypes"] = normalize_string_list(raw_node.get("sourceTypes") or raw_node.get("sourceType"))
+    node["sourceCount"] = int(raw_node.get("sourceCount") or 0)
+    node["confidenceScore"] = float(raw_node.get("confidenceScore") or 0.0)
+    node["verificationStatus"] = str(raw_node.get("verificationStatus") or "unverified")
+    node["lastVerified"] = coerce_nullable_text(raw_node.get("lastVerified"))
+    node["founded_date"] = coerce_nullable_text(node.get("founded_date"))
+    node["jurisdiction"] = coerce_nullable_text(node.get("jurisdiction"))
+    node["official_website"] = coerce_nullable_text(node.get("official_website")) or (
+        source_urls[0] if source_urls and classify_source_url(source_urls[0]) == "official_site" else None
+    )
+    node["parent_agency"] = coerce_nullable_text(node.get("parent_agency"))
+    node["related_agencies"] = normalize_string_list(node.get("related_agencies"))
+    node["annual_budget"] = coerce_nullable_text(node.get("annual_budget"))
+    node["budget_source"] = coerce_nullable_text(node.get("budget_source"))
+    node["budget_year"] = coerce_nullable_text(node.get("budget_year"))
+    node["created_year"] = coerce_nullable_text(node.get("created_year"))
+    node["restructured_year"] = coerce_nullable_text(node.get("restructured_year"))
+    node["merged_into"] = coerce_nullable_text(node.get("merged_into"))
+    node["renamed_from"] = coerce_nullable_text(node.get("renamed_from"))
+    return verify_node_sources(node)
 
 
 def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
@@ -180,38 +319,86 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         if incoming.get(key):
             existing[key] = incoming[key]
 
-    if incoming.get("desc") and len(incoming["desc"]) > len(existing.get("desc", "")):
-        existing["desc"] = incoming["desc"]
+    incoming_desc = get_first_text(
+        incoming.get("desc"),
+        incoming.get("description"),
+        incoming.get("summary"),
+        incoming.get("details"),
+        incoming.get("bio"),
+    )
+    existing_desc = get_first_text(
+        existing.get("desc"),
+        existing.get("description"),
+        existing.get("summary"),
+        existing.get("details"),
+        existing.get("bio"),
+    )
+    if incoming_desc and len(incoming_desc) > len(existing_desc):
+        existing["desc"] = incoming_desc
 
-    for key in ("employees", "budget", "industry", "location"):
+    for key in (
+        "employees",
+        "budget",
+        "industry",
+        "location",
+        "founded_date",
+        "jurisdiction",
+        "official_website",
+        "parent_agency",
+        "annual_budget",
+        "budget_source",
+        "budget_year",
+        "created_year",
+        "restructured_year",
+        "merged_into",
+        "renamed_from",
+    ):
         if incoming.get(key) and not existing.get(key):
             existing[key] = incoming[key]
 
     if incoming.get("parentId") and not existing.get("parentId"):
         existing["parentId"] = incoming["parentId"]
 
-    existing["sourceUrls"] = unique_list([*existing.get("sourceUrls", []), *incoming.get("sourceUrls", [])])
-    existing["sourceTypes"] = unique_list([*existing.get("sourceTypes", []), *incoming.get("sourceTypes", [])])
-    if incoming.get("confidenceScore") is not None:
-        existing["confidenceScore"] = max(existing.get("confidenceScore") or 0, incoming["confidenceScore"])
-    if incoming.get("verificationStatus") and not existing.get("verificationStatus"):
-        existing["verificationStatus"] = incoming["verificationStatus"]
+    existing["sourceUrls"] = normalize_string_list([*existing.get("sourceUrls", []), *incoming.get("sourceUrls", [])])
+    existing["sourceTypes"] = normalize_string_list([*existing.get("sourceTypes", []), *incoming.get("sourceTypes", [])])
+    existing["related_agencies"] = normalize_string_list(
+        [*existing.get("related_agencies", []), *incoming.get("related_agencies", [])]
+    )
     if incoming.get("lastVerified"):
         existing["lastVerified"] = incoming["lastVerified"]
-    for key in ("sourceUrl", "sourceType", "possibleParent", "discoveryMethod", "attachToRoot", "confidenceEstimate"):
-        if incoming.get(key) and not existing.get(key):
-            existing[key] = incoming[key]
-    if incoming.get("discoveryMethods"):
-        existing["discoveryMethods"] = unique_list(
-            [*existing.get("discoveryMethods", []), *incoming.get("discoveryMethods", [])]
-        )
 
     seen_children = {child["id"] for child in existing.get("children", []) if child.get("id")}
     for child in incoming.get("children", []):
         if child["id"] not in seen_children:
             existing.setdefault("children", []).append(child)
             seen_children.add(child["id"])
-    return existing
+
+    handled_keys = {
+        "id",
+        "name",
+        "type",
+        "color",
+        "desc",
+        "employees",
+        "budget",
+        "industry",
+        "location",
+        "parentId",
+        "children",
+        "sourceUrls",
+        "sourceTypes",
+        "sourceCount",
+        "confidenceScore",
+        "verificationStatus",
+        "lastVerified",
+    }
+    for key, value in incoming.items():
+        if key in handled_keys:
+            continue
+        if key not in existing or existing.get(key) in (None, "", [], {}):
+            existing[key] = deepcopy(value)
+
+    return verify_node_sources(existing)
 
 
 def iter_tree_nodes(root: dict[str, Any]) -> Iterable[dict[str, Any]]:

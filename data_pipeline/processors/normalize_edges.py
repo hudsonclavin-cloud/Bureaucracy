@@ -6,10 +6,14 @@ from typing import Any, Iterable
 
 ALLOWED_RELATIONSHIPS = {
     "reports_to",
+    "oversees",
     "contracts_with",
     "subsidiary_of",
     "lobbies",
     "funds",
+    "regulates",
+    "collaborates_with",
+    "created_by",
     "manages",
 }
 
