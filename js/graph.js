@@ -23,6 +23,11 @@ const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
 const SPHERE_RADIUS_SPACING = 18;
+const SHELL_CAPACITIES = [32, 64, 128];
+const SHELL_GAP_MULTIPLIER = 1.55;
+const SHELL_BRANCH_HINT_BLEND = 0.12;
+const SHELL_ANCHOR_RESTORE = 0.12;
+const BRANCH_RELAXATION_ITERATIONS = 5;
 const BRANCH_SECTOR_BLEND = 0.62;
 const BRANCH_PARENT_BLEND = 0.32;
 const BRANCH_FORCE = 0.018;
@@ -557,6 +562,41 @@ export function createGovernmentGraph({
   function childSphereRadius(parentObj, childCount) {
     const baseRadius = BASE_RADIUS + parentObj.depth * 10;
     return baseRadius + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1));
+  }
+
+  function getShellCapacity(shellIndex) {
+    if (shellIndex < SHELL_CAPACITIES.length) {
+      return SHELL_CAPACITIES[shellIndex];
+    }
+    return SHELL_CAPACITIES[SHELL_CAPACITIES.length - 1] * (2 ** (shellIndex - SHELL_CAPACITIES.length + 1));
+  }
+
+  function buildChildShells(parentObj, childCount) {
+    const shells = [];
+    let remaining = childCount;
+    let start = 0;
+    let shellIndex = 0;
+    const baseShellRadius = childSphereRadius(parentObj, childCount);
+    const shellGap = Math.max(
+      SPHERE_RADIUS_SPACING * SHELL_GAP_MULTIPLIER,
+      12 + Math.sqrt(Math.max(childCount, 1)) * 2.4,
+    );
+
+    while (remaining > 0) {
+      const capacity = getShellCapacity(shellIndex);
+      const count = Math.min(remaining, capacity);
+      shells.push({
+        index: shellIndex,
+        start,
+        count,
+        radius: baseShellRadius + shellIndex * shellGap,
+      });
+      remaining -= count;
+      start += count;
+      shellIndex += 1;
+    }
+
+    return shells;
   }
 
   function computeVisibleNodeBudget(cameraDistance) {
@@ -1280,25 +1320,21 @@ export function createGovernmentGraph({
     }
   }
 
-  function getOrbitBasis(anchorDir) {
-    basisA.copy(anchorDir);
-    if (Math.abs(basisA.dot(upVector)) > 0.92) {
-      basisA.set(1, 0, 0);
-    } else {
-      basisA.cross(upVector).normalize();
-    }
-    basisB.copy(anchorDir).cross(basisA).normalize();
-  }
-
-  function relaxSiblingPositions(offsets, shellRadius, branchAnchors = []) {
-    const minimumDistance = Math.max(MIN_DISTANCE * 1.5, shellRadius * 0.28, NODE_RADIUS * 2.6);
-    const minimumDistanceSq = minimumDistance * minimumDistance;
-
-    for (let iteration = 0; iteration < 3; iteration += 1) {
+  function relaxSiblingPositions(offsets, shellRadii, branchAnchors = [], branchMetadata = []) {
+    for (let iteration = 0; iteration < BRANCH_RELAXATION_ITERATIONS; iteration += 1) {
       for (let i = 0; i < offsets.length; i += 1) {
         for (let j = i + 1; j < offsets.length; j += 1) {
           tempVecA.subVectors(offsets[i], offsets[j]);
           const distanceSq = tempVecA.lengthSq();
+          const metaA = branchMetadata[i] || {};
+          const metaB = branchMetadata[j] || {};
+          const subtreeScaleA = Math.max(1, Math.sqrt(metaA.subtreeCount || 1));
+          const subtreeScaleB = Math.max(1, Math.sqrt(metaB.subtreeCount || 1));
+          const shellRadius = Math.max(shellRadii[i] || 0, shellRadii[j] || 0, MIN_DISTANCE);
+          const baseDistance = Math.max(MIN_DISTANCE * 1.8, shellRadius * 0.18, NODE_RADIUS * 3.2);
+          const branchBoost = metaA.branchKey === metaB.branchKey ? 0 : 1.2;
+          const minimumDistance = baseDistance + (subtreeScaleA + subtreeScaleB) * 1.8 + branchBoost * 6;
+          const minimumDistanceSq = minimumDistance * minimumDistance;
           if (distanceSq >= minimumDistanceSq) {
             continue;
           }
@@ -1308,7 +1344,7 @@ export function createGovernmentGraph({
           }
 
           const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
-          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 320);
+          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 220);
           tempVecA.normalize().multiplyScalar(pushStrength);
           offsets[i].add(tempVecA);
           offsets[j].sub(tempVecA);
@@ -1317,85 +1353,75 @@ export function createGovernmentGraph({
 
       for (let i = 0; i < offsets.length; i += 1) {
         const offset = offsets[i];
+        const shellRadius = shellRadii[i] || MIN_DISTANCE;
         if (branchAnchors[i]?.lengthSq() > 0) {
-          offset.lerp(branchAnchors[i], 0.1);
+          offset.lerp(branchAnchors[i], SHELL_ANCHOR_RESTORE);
         }
         offset.normalize().multiplyScalar(shellRadius);
       }
     }
   }
 
-  function getLayoutDirectionForChild(childData, parentObj, childSeed) {
-    const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
-    const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
-    const hasParentDirection = parentObj.branchDirection && parentObj.branchDirection.lengthSq() > 0;
-    const parentDirection = hasParentDirection
-      ? tempVecA.copy(parentObj.branchDirection).normalize()
-      : parentObj.pos.lengthSq() > 0.0001
-        ? tempVecA.copy(parentObj.pos).normalize()
-        : copyBranchBaseDirection(parentBranchKey, tempVecA);
-    const branchBase = copyBranchBaseDirection(childBranchKey, tempVecB);
-    const seeded = directionFromSeed(childSeed, parentObj.depth + 1);
+  function getShellOrientationQuaternion(parentObj, shellIndex) {
+    const parentVector =
+      parentObj.parent
+        ? tempVecA.copy(parentObj.pos).sub(parentObj.parent.pos)
+        : parentObj.pos.lengthSq() > 0.0001
+          ? tempVecA.copy(parentObj.pos)
+          : directionFromSeed(hashString(parentObj.data.id), parentObj.depth + 1);
+    const anchor = parentVector.lengthSq() > 0.0001
+      ? parentVector.normalize()
+      : directionFromSeed(hashString(parentObj.data.id), shellIndex + 1);
 
-    return tempVecC
-      .copy(branchBase)
-      .lerp(parentDirection, parentObj.depth === 0 ? 1 - BRANCH_SECTOR_BLEND : BRANCH_PARENT_BLEND)
-      .addScaledVector(seeded, childBranchKey === parentBranchKey ? 0.08 : 0.14)
-      .normalize();
+    tempQuat.setFromUnitVectors(upVector, anchor);
+    tempQuatB.setFromAxisAngle(anchor, ((hashString(parentObj.data.id) >>> 4) % 4096) / 4096 * Math.PI * 2 + shellIndex * GOLDEN_ANGLE * 0.5);
+    return tempQuat.multiply(tempQuatB);
   }
 
   function getSpreadPositions(parentObj, children) {
-    const depth = parentObj.depth + 1;
     const childCount = children.length;
-    const shellRadius = childSphereRadius(parentObj, childCount);
-    const parentSeed = hashString(parentObj.data.id);
-    const outwardAxis =
-      parentObj.depth === 0
-        ? copyBranchBaseDirection(parentObj.layoutBranchKey || "constitution", tempVecA)
-        : parentObj.pos.lengthSq() > 0.0001
-          ? tempVecA.copy(parentObj.pos).normalize()
-          : parentObj.branchDirection.lengthSq() > 0
-            ? tempVecA.copy(parentObj.branchDirection).normalize()
-            : directionFromSeed(parentSeed, depth);
-    const count = children.length;
-    const offsets = new Array(count);
-    const directions = new Array(count);
-    const branchAnchors = new Array(count);
+    const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
+    const shells = buildChildShells(parentObj, childCount);
+    const offsets = new Array(childCount);
+    const directions = new Array(childCount);
+    const branchAnchors = new Array(childCount);
+    const shellRadii = new Array(childCount);
+    const branchMetadata = new Array(childCount);
 
-    for (let i = 0; i < count; i += 1) {
-      const childSeed = hashString(children[i].id);
-      const childBranchKey = resolveLayoutBranchKey(children[i], parentObj.layoutBranchKey || inferBranchKey(parentObj.data));
-      const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone().normalize();
-      const baseLocalDir = fibonacciSphereDirection(i, count, tempVecB).clone();
-      const shellNoise = directionFromSeed(childSeed, depth).multiplyScalar(0.08);
-      const branchBlend = childBranchKey === parentObj.layoutBranchKey ? 0.2 : 0.36;
-      const branchAxis = tempVecC
-        .copy(outwardAxis)
-        .lerp(branchDirection, branchBlend)
-        .normalize();
+    for (const shell of shells) {
+      const shellQuaternion = getShellOrientationQuaternion(parentObj, shell.index).clone();
 
-      tempQuat.setFromUnitVectors(upVector, branchAxis);
-      tempQuatB.setFromAxisAngle(
-        branchAxis,
-        (((childSeed % 4096) / 4096) - 0.5) * 0.9,
-      );
-      directionVec
-        .copy(baseLocalDir)
-        .applyQuaternion(tempQuat)
-        .applyQuaternion(tempQuatB)
-        .add(shellNoise)
-        .normalize();
+      for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
+        const i = shell.start + localIndex;
+        const childData = children[i];
+        const childSeed = hashString(childData.id);
+        const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
+        const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
+        const branchHint = copyBranchBaseDirection(childBranchKey, tempVecB).clone();
 
-      branchAnchors[i] = branchAxis.clone().multiplyScalar(shellRadius);
-      offsets[i] = directionVec.clone().multiplyScalar(shellRadius);
-      directions[i] = branchAxis.clone();
+        directionVec
+          .copy(baseDirection)
+          .applyQuaternion(shellQuaternion)
+          .lerp(branchHint, parentObj.depth <= 1 ? SHELL_BRANCH_HINT_BLEND : SHELL_BRANCH_HINT_BLEND * 0.45)
+          .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.035)
+          .normalize();
+
+        offsets[i] = directionVec.clone().multiplyScalar(shell.radius);
+        directions[i] = directionVec.clone();
+        branchAnchors[i] = offsets[i].clone();
+        shellRadii[i] = shell.radius;
+        branchMetadata[i] = {
+          branchKey: childBranchKey,
+          subtreeCount: childData.__meta?.subtreeCount || 1,
+        };
+      }
     }
 
-    relaxSiblingPositions(offsets, shellRadius, branchAnchors);
+    relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
     return offsets.map((offset, index) => ({
       position: tempVecA.copy(parentObj.pos).add(offset).clone(),
-      direction: offset.clone().normalize().lerp(directions[index], 0.22).normalize(),
-      layoutBranchKey: resolveLayoutBranchKey(children[index], parentObj.layoutBranchKey || inferBranchKey(parentObj.data)),
+      direction: offset.clone().normalize(),
+      layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
     }));
   }
 
@@ -2565,9 +2591,7 @@ export function createGovernmentGraph({
       const desiredOffset =
         nodeObj.targetPos.lengthSq() > 0
           ? tempVecA.copy(nodeObj.targetPos).sub(nodeObj.parent.pos)
-          : nodeObj.branchDirection.lengthSq() > 0
-            ? tempVecA.copy(nodeObj.branchDirection).multiplyScalar(childSphereRadius(nodeObj.parent, Math.max(nodeObj.parent.childObjs.length, 1)))
-            : tempVecA.copy(nodeObj.pos).sub(nodeObj.parent.pos);
+          : tempVecA.copy(nodeObj.pos).sub(nodeObj.parent.pos);
       if (desiredOffset.lengthSq() === 0) {
         continue;
       }
@@ -2577,18 +2601,9 @@ export function createGovernmentGraph({
         desiredOffset.length(),
       );
       const outwardTarget = tempVecB.copy(nodeObj.parent.pos).add(desiredOffset.normalize().multiplyScalar(desiredRadius));
-      const branchTarget =
-        nodeObj.branchDirection.lengthSq() > 0
-          ? tempVecD
-              .copy(nodeObj.parent.pos)
-              .add(tempVecC.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius))
-          : null;
-      if (branchTarget) {
-        nodeObj.pos.lerp(branchTarget, BRANCH_FORCE);
-      }
       nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
 
-      const globalRadius = shellRadiusForDepth(nodeObj.depth);
+      const globalRadius = Math.max(shellRadiusForDepth(nodeObj.depth), nodeObj.targetPos.length() || 0);
       if (nodeObj.pos.lengthSq() > 0.0001) {
         tempVecC.copy(nodeObj.pos).normalize().multiplyScalar(globalRadius);
         nodeObj.pos.lerp(tempVecC, OUTWARD_FORCE * 0.25);

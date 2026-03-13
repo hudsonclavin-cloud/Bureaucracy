@@ -1,37 +1,27 @@
 [
   {
-    "source": "person-stefan-wallin",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
+    "source": "department-of-energy",
+    "target": "department-of-energy-office-of-nuclear-energy",
+    "type": "oversees"
   },
   {
-    "source": "person-hugo-sterman",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
+    "source": "department-of-energy-office-of-nuclear-energy",
+    "target": "department-of-energy",
+    "type": "created_by"
   },
   {
-    "source": "person-jussi-niinist",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
+    "source": "executive-branch-department-of-energy",
+    "target": "department-of-energy-office-of-nuclear-energy",
+    "type": "funds"
   },
   {
-    "source": "person-v-in-valve",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
+    "source": "department-of-energy",
+    "target": "executive-branch-department-of-energy",
+    "type": "oversees"
   },
   {
-    "source": "person-vilhelm-aleksander-thesleff",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
-  },
-  {
-    "source": "person-ole-norrback",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
-  },
-  {
-    "source": "person-karl-emil-berg",
-    "target": "position-minister-of-defence-of-finland",
-    "type": "manages"
+    "source": "executive-branch-department-of-energy",
+    "target": "department-of-energy",
+    "type": "created_by"
   }
 ]

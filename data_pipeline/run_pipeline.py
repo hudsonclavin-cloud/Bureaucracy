@@ -88,7 +88,7 @@ def run_pipeline(
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
     enrichment_stats_output_path: str | Path = DEFAULT_ENRICHMENT_STATS_OUTPUT,
-    direct_payload_fetchers: list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
+    direct_payload_fetchers: dict[str, Callable[[], dict[str, list[dict[str, Any]]]]] | list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
 ) -> dict[str, Any]:
     fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", datetime.now(tz=timezone.utc).year)
@@ -113,6 +113,8 @@ def run_pipeline(
             page_size=getenv_int("PIPELINE_LOBBYING_PAGE_SIZE", 50),
         ),
     }
+    if isinstance(direct_fetchers, list):
+        direct_fetchers = {f"payload_{index + 1}": fetcher for index, fetcher in enumerate(direct_fetchers)}
     raw_discovery_fetchers = discovery_fetchers or {
         "wikidata_records": lambda: crawl_wikidata_discovery_records(
             hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
@@ -131,6 +133,7 @@ def run_pipeline(
     payloads: list[dict[str, list[dict[str, Any]]]] = []
     stage_errors: list[str] = []
     direct_payload_results: dict[str, dict[str, list[dict[str, Any]]]] = {}
+    successful_sources: list[str] = []
     for payload_name, fetcher in direct_fetchers.items():
         payload, error = safe_stage(payload_name, fetcher)
         if error:
@@ -139,15 +142,21 @@ def run_pipeline(
         if isinstance(payload, dict):
             payloads.append(payload)
             direct_payload_results[payload_name] = payload
+            successful_sources.append(payload_name)
 
     discovery_inputs: dict[str, list[dict[str, Any]]] = {}
+    discovery_record_counts: dict[str, int] = {}
     for input_name, fetcher in raw_discovery_fetchers.items():
         records, error = safe_stage(input_name, fetcher)
         if error:
             stage_errors.append(error)
             discovery_inputs[input_name] = []
+            discovery_record_counts[input_name] = 0
             continue
-        discovery_inputs[input_name] = records if isinstance(records, list) else []
+        normalized_records = records if isinstance(records, list) else []
+        discovery_inputs[input_name] = normalized_records
+        discovery_record_counts[input_name] = len(normalized_records)
+        successful_sources.append(input_name)
 
     candidates = discover_candidates(
         existing_nodes=existing_nodes,
@@ -224,6 +233,15 @@ def run_pipeline(
         "average_confidence_score": build_result.validation.get("average_confidence_score", 0.0),
         "verified_node_count": build_result.validation.get("verified_node_count", 0),
         "build_validation": build_result.validation,
+        "discovery_sources_used": successful_sources,
+        "discovery_record_counts": discovery_record_counts,
+        "direct_payload_counts": {
+            source_name: {
+                "nodes": len(payload.get("nodes", [])),
+                "edges": len(payload.get("edges", [])),
+            }
+            for source_name, payload in direct_payload_results.items()
+        },
         "stage_errors": stage_errors,
         "outputs": {
             "graph": str(build_result.graph_path),

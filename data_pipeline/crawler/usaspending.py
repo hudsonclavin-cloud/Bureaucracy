@@ -23,6 +23,45 @@ BASE_URL = "https://api.usaspending.gov/api/v2/"
 TOP_TIER_ENDPOINT = "references/toptier_agencies/"
 SPENDING_BY_AWARD_ENDPOINT = "search/spending_by_award/"
 USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
+HIGH_VALUE_AGENCY_KEYWORDS = (
+    "department of defense",
+    "department of energy",
+    "department of state",
+    "department of justice",
+    "department of the treasury",
+    "department of homeland security",
+    "department of transportation",
+    "department of health and human services",
+    "department of veterans affairs",
+    "department of agriculture",
+    "department of commerce",
+    "department of labor",
+    "department of the interior",
+    "department of education",
+    "environmental protection agency",
+    "national aeronautics and space administration",
+    "nasa",
+    "general services administration",
+    "social security administration",
+)
+
+
+def agency_priority(agency: dict[str, Any]) -> tuple[int, float, str]:
+    agency_name = normalize_name(
+        agency.get("agency_name")
+        or agency.get("toptier_agency_name")
+        or agency.get("name")
+        or ""
+    ).casefold()
+    priority_rank = 1
+    if any(keyword in agency_name for keyword in HIGH_VALUE_AGENCY_KEYWORDS):
+        priority_rank = 0
+    amount = agency.get("agency_total_obligated_amount") or 0
+    try:
+        numeric_amount = float(str(amount).replace(",", ""))
+    except (TypeError, ValueError):
+        numeric_amount = 0.0
+    return priority_rank, -numeric_amount, agency_name
 
 
 def request_json(url: str, *, payload: dict[str, Any] | None = None, timeout: int = 30) -> dict[str, Any]:
@@ -54,7 +93,7 @@ class USASpendingCrawler:
         results = payload.get("results") if isinstance(payload, dict) else payload
         if not isinstance(results, list):
             return []
-        return results[:limit]
+        return sorted(results, key=agency_priority)[:limit]
 
     def fetch_spending_by_award(
         self,
@@ -142,19 +181,20 @@ class USASpendingCrawler:
                 continue
 
             agency_id = generate_node_id(agency_name)
-            nodes.append(
-                {
-                    "id": agency_id,
-                    "name": agency_name,
-                    "type": "Agency",
-                    "desc": agency.get("abbreviation") or "Top-tier federal agency from USAspending.",
-                    "budget": str(agency.get("agency_total_obligated_amount") or "") or None,
-                    "annual_budget": str(agency.get("agency_total_obligated_amount") or "") or None,
-                    "budget_source": "USAspending",
-                    "budget_year": str(fiscal_year or date.today().year),
-                    "color": "#4a8ac8",
-                }
-            )
+            sampled_award_total = 0.0
+            direct_budget = agency.get("agency_total_obligated_amount")
+            agency_node = {
+                "id": agency_id,
+                "name": agency_name,
+                "type": "Agency",
+                "desc": agency.get("abbreviation") or "Top-tier federal agency from USAspending.",
+                "budget": str(direct_budget or "") or None,
+                "annual_budget": str(direct_budget or "") or None,
+                "budget_source": "USAspending" if direct_budget else None,
+                "budget_year": str(fiscal_year or date.today().year),
+                "color": "#4a8ac8",
+            }
+            nodes.append(agency_node)
 
             try:
                 award_results = self.fetch_spending_by_award(
@@ -176,6 +216,10 @@ class USASpendingCrawler:
                     continue
 
                 contract_amount = award.get("Award Amount") or award.get("generated_internal_id")
+                try:
+                    sampled_award_total += float(str(contract_amount).replace(",", ""))
+                except (TypeError, ValueError):
+                    pass
                 industry = award.get("NAICS Description") or award.get("naics_description")
                 location = award.get("Place of Performance State Code") or award.get("place_of_performance_code")
                 contractor_desc_bits = [f"Top USAspending contractor connected to {agency_name}."]
@@ -205,6 +249,12 @@ class USASpendingCrawler:
                         "type": "contracts_with",
                     }
                 )
+
+            if not direct_budget and sampled_award_total > 0:
+                sample_budget = f"${sampled_award_total:,.0f}"
+                agency_node["budget"] = sample_budget
+                agency_node["annual_budget"] = sample_budget
+                agency_node["budget_source"] = "USAspending sampled obligations"
 
             time.sleep(self.request_delay)
 

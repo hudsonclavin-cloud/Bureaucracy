@@ -80,7 +80,8 @@ def normalize_name(value: Any) -> str:
         text = text.title()
 
     for source, target in ACRONYMS.items():
-        text = text.replace(source, target)
+        pattern = re.compile(rf"\b{re.escape(source)}\b")
+        text = pattern.sub(target, text)
     return text
 
 

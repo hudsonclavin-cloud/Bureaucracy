@@ -38,6 +38,7 @@ class RunPipelineTests(unittest.TestCase):
             nodes_output_path = tmp_path / "expanded_nodes.json"
             edges_output_path = tmp_path / "expanded_edges.json"
             stats_output_path = tmp_path / "pipeline_stats.json"
+            enrichment_stats_output_path = tmp_path / "enrichment_stats.json"
             base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
 
             stats = run_pipeline(
@@ -47,6 +48,7 @@ class RunPipelineTests(unittest.TestCase):
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
+                enrichment_stats_output_path=enrichment_stats_output_path,
                 direct_payload_fetchers=[
                     lambda: {
                         "nodes": [
@@ -89,12 +91,16 @@ class RunPipelineTests(unittest.TestCase):
             self.assertTrue(graph_output_path.exists())
             self.assertTrue(candidate_output_path.exists())
             self.assertTrue(stats_output_path.exists())
+            self.assertTrue(enrichment_stats_output_path.exists())
             self.assertGreaterEqual(stats["new_nodes_added"], 1)
             self.assertEqual(saved_stats["nodes_after"], stats["nodes_after"])
             self.assertTrue(any(node["name"] == "Office of Grid Deployment" for node in candidates))
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
             self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
             self.assertIn("verification_breakdown", stats)
+            self.assertIn("discovery_sources_used", stats)
+            self.assertIn("wikidata_records", stats["discovery_sources_used"])
+            self.assertIn("direct_payload_counts", stats)
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 

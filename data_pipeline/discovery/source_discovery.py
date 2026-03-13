@@ -76,13 +76,13 @@ def estimate_candidate_confidence(source_url: str, discovery_method: str) -> flo
     if "org_chart" in discovery_method:
         confidence += 0.18
     elif "leadership" in discovery_method:
-        confidence += 0.04
+        confidence += 0.12
     elif "wikidata" in discovery_method:
         confidence += 0.12
     elif "advisory" in discovery_method:
         confidence += 0.16
     elif "register" in discovery_method:
-        confidence += 0.08
+        confidence += 0.18
 
     return round(max(0.0, min(confidence, 1.0)), 2)
 
