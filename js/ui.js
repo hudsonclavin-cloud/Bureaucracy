@@ -85,11 +85,13 @@ function hideLoader(delay = 200) {
 }
 
 function updateStats(stats) {
-  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
+  const loadedCount = Number.isFinite(stats.loadedDisplayNodeCount) ? stats.loadedDisplayNodeCount : stats.visibleNodeCount;
+  const eligibleTotal = Number.isFinite(stats.eligibleTotalNodeCount) ? stats.eligibleTotalNodeCount : stats.totalNodeCount;
+  setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${eligibleTotal.toLocaleString()} nodes loaded`);
   setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
   setText(
     dom.statsLoaded,
-    `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
+    `${loadedCount.toLocaleString()} eligible under current filters | ${stats.visibleNodeCount.toLocaleString()} loaded in memory | ${(stats.hiddenCandidateCount || 0).toLocaleString()} candidate nodes hidden | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
   );
   setText(
     dom.statsDepth,
@@ -744,10 +746,14 @@ function expandProgressively(targetDepth) {
         state.expandFrame = window.requestAnimationFrame(tick);
         return;
       }
+      const finalStats = state.graph.getStats();
+      if ((finalStats.hiddenCandidateCount || 0) > 0 && !finalStats.showCandidateNodes) {
+        showLoader(`All hierarchy nodes loaded. ${finalStats.hiddenCandidateCount.toLocaleString()} candidate nodes are hidden.`);
+      }
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
       setText(dom.btnExpandAll, "Expand All Below");
-      hideLoader();
+      hideLoader((finalStats.hiddenCandidateCount || 0) > 0 && !finalStats.showCandidateNodes ? 1400 : 200);
       renderInfoPanel(state.graph.getSelectedNode());
       return;
     }

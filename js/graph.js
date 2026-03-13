@@ -279,9 +279,23 @@ export function createGovernmentGraph({
   };
 
   function notifyCounts() {
+    const loadedDisplayNodeCount = state.visibleNodes.reduce(
+      (count, nodeObj) => count + (shouldDisplayNodeByVerification(nodeObj.data) ? 1 : 0),
+      0,
+    );
+    const eligibleTotalNodeCount = Array.from(state.dataMap.values()).reduce(
+      (count, dataNode) => count + (shouldDisplayNodeByVerification(dataNode) ? 1 : 0),
+      0,
+    );
+    const candidateNodeCount = state.candidateNodes.length;
+    const hiddenCandidateCount = state.showCandidateNodes ? 0 : candidateNodeCount;
     onCountsChange({
       visibleNodeCount: state.visibleNodeCount,
       totalNodeCount: state.totalNodeCount,
+      loadedDisplayNodeCount,
+      eligibleTotalNodeCount,
+      candidateNodeCount,
+      hiddenCandidateCount,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       manualDepthFilter: state.manualDepthFilter,
@@ -3188,9 +3202,22 @@ export function createGovernmentGraph({
       return state.searchIndex;
     },
     getStats() {
+      const loadedDisplayNodeCount = state.visibleNodes.reduce(
+        (count, nodeObj) => count + (shouldDisplayNodeByVerification(nodeObj.data) ? 1 : 0),
+        0,
+      );
+      const eligibleTotalNodeCount = Array.from(state.dataMap.values()).reduce(
+        (count, dataNode) => count + (shouldDisplayNodeByVerification(dataNode) ? 1 : 0),
+        0,
+      );
+      const candidateNodeCount = state.candidateNodes.length;
       return {
         visibleNodeCount: state.visibleNodeCount,
         totalNodeCount: state.totalNodeCount,
+        loadedDisplayNodeCount,
+        eligibleTotalNodeCount,
+        candidateNodeCount,
+        hiddenCandidateCount: state.showCandidateNodes ? 0 : candidateNodeCount,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,
