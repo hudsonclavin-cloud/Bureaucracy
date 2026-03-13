@@ -28,6 +28,8 @@ const SHELL_GAP_MULTIPLIER = 1.55;
 const SHELL_BRANCH_HINT_BLEND = 0.12;
 const SHELL_ANCHOR_RESTORE = 0.12;
 const BRANCH_RELAXATION_ITERATIONS = 5;
+const BRANCH_SECTOR_BASE_DISTANCE = 88;
+const BRANCH_SECTOR_SPACING = 16;
 const BRANCH_SECTOR_BLEND = 0.62;
 const BRANCH_PARENT_BLEND = 0.32;
 const BRANCH_FORCE = 0.018;
@@ -191,6 +193,7 @@ export function createGovernmentGraph({
   const clusterAccentColor = new THREE.Color(0x5a7bb8);
   const whiteColor = new THREE.Color(0xffffff);
   const desiredCameraPosition = new THREE.Vector3();
+  const edgeUpdateRange = { offset: Infinity, count: 0 };
 
   const state = {
     data: null,
@@ -562,6 +565,10 @@ export function createGovernmentGraph({
   function childSphereRadius(parentObj, childCount) {
     const baseRadius = BASE_RADIUS + parentObj.depth * 10;
     return baseRadius + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1));
+  }
+
+  function topLevelBranchDistance(subtreeCount) {
+    return BRANCH_SECTOR_BASE_DISTANCE + Math.sqrt(Math.max(subtreeCount, 1)) * BRANCH_SECTOR_SPACING;
   }
 
   function getShellCapacity(shellIndex) {
@@ -1046,12 +1053,18 @@ export function createGovernmentGraph({
     const edgePositions = new Float32Array(edgeCapacity * 6);
     const edgeColors = new Float32Array(edgeCapacity * 6);
     const edgeGeometry = new THREE.BufferGeometry();
-    edgeGeometry.setAttribute("position", new THREE.BufferAttribute(edgePositions, 3));
-    edgeGeometry.setAttribute("color", new THREE.BufferAttribute(edgeColors, 3));
+    const positionAttribute = new THREE.BufferAttribute(edgePositions, 3);
+    const colorAttribute = new THREE.BufferAttribute(edgeColors, 3);
+    positionAttribute.setUsage(THREE.DynamicDrawUsage);
+    colorAttribute.setUsage(THREE.DynamicDrawUsage);
+    edgeGeometry.setAttribute("position", positionAttribute);
+    edgeGeometry.setAttribute("color", colorAttribute);
+    edgeGeometry.setDrawRange(0, 0);
     const edgeMaterial = new THREE.LineBasicMaterial({
       color: 0x999999,
       transparent: true,
       opacity: 0.3,
+      vertexColors: true,
     });
     const edgeLines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
     edgeLines.frustumCulled = false;
@@ -1063,6 +1076,8 @@ export function createGovernmentGraph({
       lines: edgeLines,
       nextSlot: 0,
       freeSlots: [],
+      activeCount: 0,
+      maxActiveSlot: -1,
       dirtyPositions: false,
       dirtyColors: false,
     };
@@ -1084,6 +1099,8 @@ export function createGovernmentGraph({
       depth,
       layoutBranchKey,
       branchDirection: new THREE.Vector3(),
+      sectorDirection: new THREE.Vector3(),
+      shellRadius: 0,
       pos: new THREE.Vector3(),
       targetPos: new THREE.Vector3(),
       animFrom: new THREE.Vector3(),
@@ -1108,6 +1125,11 @@ export function createGovernmentGraph({
       nodeObj.branchDirection.copy(parent.branchDirection);
     } else {
       copyBranchBaseDirection(layoutBranchKey, nodeObj.branchDirection);
+    }
+    if (parent?.sectorDirection?.lengthSq() > 0) {
+      nodeObj.sectorDirection.copy(parent.sectorDirection);
+    } else {
+      copyBranchBaseDirection(layoutBranchKey, nodeObj.sectorDirection);
     }
 
     assignBatchSlot(nodeObj);
@@ -1251,6 +1273,28 @@ export function createGovernmentGraph({
     state.edgeBatch.dirtyColors = true;
   }
 
+  function markEdgeBatchRange(offset, count = 6) {
+    edgeUpdateRange.offset = Math.min(edgeUpdateRange.offset, offset);
+    edgeUpdateRange.count = Math.max(edgeUpdateRange.count, offset + count - edgeUpdateRange.offset);
+  }
+
+  function recomputeActiveEdgeRange() {
+    let maxActiveSlot = -1;
+    let activeCount = 0;
+    for (const edge of state.allEdges) {
+      if (!edge.active) {
+        continue;
+      }
+      activeCount += 1;
+      if (edge.slot > maxActiveSlot) {
+        maxActiveSlot = edge.slot;
+      }
+    }
+    state.edgeBatch.activeCount = activeCount;
+    state.edgeBatch.maxActiveSlot = maxActiveSlot;
+    state.edgeBatch.geometry.setDrawRange(0, Math.max(0, (maxActiveSlot + 1) * 2));
+  }
+
   function updateEdge(edge) {
     const offset = edge.slot * 6;
     state.edgeBatch.positions[offset] = edge.from.pos.x;
@@ -1259,7 +1303,16 @@ export function createGovernmentGraph({
     state.edgeBatch.positions[offset + 3] = edge.to.pos.x;
     state.edgeBatch.positions[offset + 4] = edge.to.pos.y;
     state.edgeBatch.positions[offset + 5] = edge.to.pos.z;
+    markEdgeBatchRange(offset);
     state.edgeBatch.dirtyPositions = true;
+    if (!edge.active) {
+      edge.active = true;
+      state.edgeBatch.activeCount += 1;
+      if (edge.slot > state.edgeBatch.maxActiveSlot) {
+        state.edgeBatch.maxActiveSlot = edge.slot;
+        state.edgeBatch.geometry.setDrawRange(0, (state.edgeBatch.maxActiveSlot + 1) * 2);
+      }
+    }
     edge.active = true;
   }
 
@@ -1271,8 +1324,15 @@ export function createGovernmentGraph({
     state.edgeBatch.positions[offset + 3] = hiddenVector.x;
     state.edgeBatch.positions[offset + 4] = hiddenVector.y;
     state.edgeBatch.positions[offset + 5] = hiddenVector.z;
+    markEdgeBatchRange(offset);
     state.edgeBatch.dirtyPositions = true;
-    edge.active = false;
+    if (edge.active) {
+      edge.active = false;
+      state.edgeBatch.activeCount = Math.max(0, state.edgeBatch.activeCount - 1);
+      if (edge.slot === state.edgeBatch.maxActiveSlot) {
+        recomputeActiveEdgeRange();
+      }
+    }
   }
 
   function applyEdgeVisibility(edge) {
@@ -1287,6 +1347,8 @@ export function createGovernmentGraph({
       edge.to.renderVisible &&
       !edge.from.clustered &&
       !edge.to.clustered &&
+      !edge.from.culled &&
+      !edge.to.culled &&
       edge.from.depth < state.maxVisibleDepth &&
       edge.to.depth <= state.maxVisibleDepth;
     if (show) {
@@ -1345,9 +1407,27 @@ export function createGovernmentGraph({
 
           const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
           const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 220);
-          tempVecA.normalize().multiplyScalar(pushStrength);
-          offsets[i].add(tempVecA);
-          offsets[j].sub(tempVecA);
+          tempVecB.copy(offsets[i]).normalize();
+          tempVecC.copy(offsets[j]).normalize();
+
+          const pushI = tempVecD
+            .copy(tempVecA)
+            .sub(tempVecB.clone().multiplyScalar(tempVecA.dot(tempVecB)));
+          if (pushI.lengthSq() < 0.0001) {
+            pushI.copy(directionFromSeed(i + 1, j + 1));
+          }
+          pushI.normalize().multiplyScalar(pushStrength);
+          offsets[i].add(pushI);
+
+          const pushJ = basisA
+            .copy(tempVecA)
+            .negate()
+            .sub(tempVecC.clone().multiplyScalar(tempVecA.clone().negate().dot(tempVecC)));
+          if (pushJ.lengthSq() < 0.0001) {
+            pushJ.copy(directionFromSeed(j + 1, i + 1));
+          }
+          pushJ.normalize().multiplyScalar(pushStrength);
+          offsets[j].add(pushJ);
         }
       }
 
@@ -1364,7 +1444,9 @@ export function createGovernmentGraph({
 
   function getShellOrientationQuaternion(parentObj, shellIndex) {
     const parentVector =
-      parentObj.parent
+      parentObj.sectorDirection?.lengthSq() > 0
+        ? tempVecA.copy(parentObj.sectorDirection)
+        : parentObj.parent
         ? tempVecA.copy(parentObj.pos).sub(parentObj.parent.pos)
         : parentObj.pos.lengthSq() > 0.0001
           ? tempVecA.copy(parentObj.pos)
@@ -1378,9 +1460,61 @@ export function createGovernmentGraph({
     return tempQuat.multiply(tempQuatB);
   }
 
+  function getRootBranchPlacements(parentObj, children, parentBranchKey) {
+    const placements = new Array(children.length);
+    const groups = new Map();
+
+    for (let i = 0; i < children.length; i += 1) {
+      const childBranchKey = resolveLayoutBranchKey(children[i], parentBranchKey);
+      if (!groups.has(childBranchKey)) {
+        groups.set(childBranchKey, []);
+      }
+      groups.get(childBranchKey).push({ index: i, data: children[i] });
+    }
+
+    for (const [branchKey, group] of groups) {
+      const sectorDirection = copyBranchBaseDirection(branchKey, tempVecA).clone();
+      const largestSubtree = Math.max(...group.map(({ data }) => data.__meta?.subtreeCount || 1));
+      const sectorCenter = tempVecB
+        .copy(parentObj.pos)
+        .addScaledVector(sectorDirection, topLevelBranchDistance(largestSubtree));
+      const localRadius = group.length <= 1
+        ? 0
+        : Math.max(12, SPHERE_RADIUS_SPACING * 0.9 * Math.sqrt(group.length));
+      const shellQuaternion = tempQuat.setFromUnitVectors(upVector, sectorDirection).clone();
+
+      for (let localIndex = 0; localIndex < group.length; localIndex += 1) {
+        const { index, data } = group[localIndex];
+        let position = sectorCenter.clone();
+        if (localRadius > 0) {
+          position = sectorCenter
+            .clone()
+            .add(
+              fibonacciSphereDirection(localIndex, group.length, tempVecC)
+                .clone()
+                .applyQuaternion(shellQuaternion)
+                .multiplyScalar(localRadius),
+            );
+        }
+        placements[index] = {
+          position,
+          direction: position.clone().sub(parentObj.pos).normalize(),
+          sectorDirection: sectorDirection.clone(),
+          shellRadius: position.distanceTo(parentObj.pos),
+          layoutBranchKey: resolveLayoutBranchKey(data, parentBranchKey),
+        };
+      }
+    }
+
+    return placements;
+  }
+
   function getSpreadPositions(parentObj, children) {
     const childCount = children.length;
     const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
+    if (parentObj.depth === 0) {
+      return getRootBranchPlacements(parentObj, children, parentBranchKey);
+    }
     const shells = buildChildShells(parentObj, childCount);
     const offsets = new Array(childCount);
     const directions = new Array(childCount);
@@ -1421,6 +1555,8 @@ export function createGovernmentGraph({
     return offsets.map((offset, index) => ({
       position: tempVecA.copy(parentObj.pos).add(offset).clone(),
       direction: offset.clone().normalize(),
+      sectorDirection: parentObj.sectorDirection.clone(),
+      shellRadius: shellRadii[index],
       layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
     }));
   }
@@ -1537,6 +1673,14 @@ export function createGovernmentGraph({
       const targetPos = placement.position;
       childObj.layoutBranchKey = placement.layoutBranchKey;
       childObj.branchDirection.copy(placement.direction);
+      if (placement.sectorDirection?.lengthSq() > 0) {
+        childObj.sectorDirection.copy(placement.sectorDirection);
+      } else if (parentObj.sectorDirection.lengthSq() > 0) {
+        childObj.sectorDirection.copy(parentObj.sectorDirection);
+      } else {
+        copyBranchBaseDirection(childObj.layoutBranchKey, childObj.sectorDirection);
+      }
+      childObj.shellRadius = placement.shellRadius || targetPos.distanceTo(parentObj.pos);
       childObj.targetPos.copy(targetPos);
 
       if (animate) {
@@ -2542,8 +2686,15 @@ export function createGovernmentGraph({
       state.clusterBatch.dirty = false;
     }
     if (state.edgeBatch.dirtyPositions) {
-      state.edgeBatch.geometry.attributes.position.needsUpdate = true;
+      const attribute = state.edgeBatch.geometry.attributes.position;
+      if (edgeUpdateRange.offset !== Infinity) {
+        attribute.updateRange.offset = edgeUpdateRange.offset;
+        attribute.updateRange.count = edgeUpdateRange.count;
+      }
+      attribute.needsUpdate = true;
       state.edgeBatch.dirtyPositions = false;
+      edgeUpdateRange.offset = Infinity;
+      edgeUpdateRange.count = 0;
     }
     if (state.edgeBatch.dirtyColors) {
       state.edgeBatch.geometry.attributes.color.needsUpdate = true;
@@ -2596,24 +2747,24 @@ export function createGovernmentGraph({
         continue;
       }
 
-      const desiredRadius = Math.max(
+      const shellRadius = Math.max(
         LINK_DISTANCE,
-        desiredOffset.length(),
+        nodeObj.shellRadius || desiredOffset.length(),
       );
-      const outwardTarget = tempVecB.copy(nodeObj.parent.pos).add(desiredOffset.normalize().multiplyScalar(desiredRadius));
-      nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
+      const targetDirection = tempVecB.copy(desiredOffset).normalize();
+      const currentOffset = tempVecC.copy(nodeObj.pos).sub(nodeObj.parent.pos);
+      const currentDirection =
+        currentOffset.lengthSq() > 0.0001
+          ? currentOffset.normalize()
+          : targetDirection;
 
-      const globalRadius = Math.max(shellRadiusForDepth(nodeObj.depth), nodeObj.targetPos.length() || 0);
-      if (nodeObj.pos.lengthSq() > 0.0001) {
-        tempVecC.copy(nodeObj.pos).normalize().multiplyScalar(globalRadius);
-        nodeObj.pos.lerp(tempVecC, OUTWARD_FORCE * 0.25);
-      }
+      currentDirection.lerp(targetDirection, OUTWARD_FORCE).normalize();
+      nodeObj.pos.copy(nodeObj.parent.pos).addScaledVector(currentDirection, shellRadius);
 
       tempVecD.subVectors(nodeObj.pos, nodeObj.parent.pos);
-      const distance = tempVecD.length();
-      if (distance < LINK_DISTANCE && distance > 0.0001) {
-        tempVecD.normalize().multiplyScalar((LINK_DISTANCE - distance) * 0.08);
-        nodeObj.pos.add(tempVecD);
+      if (tempVecD.lengthSq() > 0.0001) {
+        tempVecD.normalize().multiplyScalar(shellRadius);
+        nodeObj.pos.copy(nodeObj.parent.pos).add(tempVecD);
       }
 
       updated = true;
@@ -2919,6 +3070,7 @@ export function createGovernmentGraph({
     setNodeColor(state.rootObj);
     state.rootObj.layoutBranchKey = "constitution";
     copyBranchBaseDirection("constitution", state.rootObj.branchDirection);
+    copyBranchBaseDirection("constitution", state.rootObj.sectorDirection);
     state.rootObj.pos.set(0, 0, 0);
     state.rootObj.targetPos.set(0, 0, 0);
     setNodeMatrix(state.rootObj, 1);
