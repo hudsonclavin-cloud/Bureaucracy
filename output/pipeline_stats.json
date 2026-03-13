@@ -1,22 +1,75 @@
 {
-  "timestamp": "2026-03-13T02:44:43.629354+00:00",
-  "nodes_before": 6632,
-  "nodes_after": 7011,
-  "new_nodes_added": 379,
-  "duplicates_merged": 381,
-  "candidates_discovered": 618,
-  "verification_breakdown": {
-    "verified": 7,
-    "partial": 611,
-    "unverified": 0
+  "timestamp": "2026-03-13T04:05:52.388860+00:00",
+  "nodes_before": 5170,
+  "nodes_after": 5397,
+  "new_nodes_added": 227,
+  "candidate_nodes_written": 2024,
+  "promoted_nodes_written": 84,
+  "promotion_stats": {
+    "candidates_reviewed": 2024,
+    "candidates_below_threshold": 1940,
+    "promoted_new_nodes": 80,
+    "merged_duplicates": 4
   },
-  "discovery_sources_used": [
-    "wikidata",
-    "gov_directory",
-    "federal_register",
-    "usaspending_agency_registry",
-    "congressional_committees",
-    "agency_org_charts"
-  ],
-  "discovery_errors": {}
+  "enrichment_stats": {
+    "nodes_enriched": 151,
+    "relationships_added": 0,
+    "leadership_positions_added": 0,
+    "budgets_linked": 0,
+    "verification_score_changes": 120
+  },
+  "verification_breakdown": {
+    "unverified": 22,
+    "verified": 149,
+    "partial": 2
+  },
+  "average_confidence_score": 0.81,
+  "verified_node_count": 149,
+  "build_validation": {
+    "initial_node_count": 173,
+    "input_node_count": 173,
+    "input_edge_count": 7,
+    "exported_node_count": 173,
+    "exported_edge_count": 7,
+    "nodes_removed_missing_parent": 0,
+    "nodes_reattached_to_root": 119,
+    "nodes_removed_structural_errors": 0,
+    "final_node_count": 173,
+    "orphan_nodes_detected": 1,
+    "recovered_orphan_nodes": 27,
+    "root_attached_missing_parent_nodes": 27,
+    "dropped_edges_missing_source": 0,
+    "dropped_edges_missing_target": 0,
+    "orphaned_parent_ids": 1,
+    "attached_to_root": 119,
+    "explicitly_root_attached_nodes": 84,
+    "relationship_counts": {
+      "manages": 7
+    },
+    "verification_status_counts": {
+      "unverified": 22,
+      "verified": 149,
+      "partial": 2
+    },
+    "verified_node_count": 149,
+    "average_confidence_score": 0.81,
+    "pipeline_summary": {
+      "initial_node_count": 411,
+      "raw_nodes_loaded": 411,
+      "nodes_after_normalization": 411,
+      "nodes_after_merge": 173,
+      "nodes_removed_missing_parent": 0,
+      "nodes_reattached_to_root": 119,
+      "nodes_removed_structural_errors": 0,
+      "final_node_count": 173
+    }
+  },
+  "stage_errors": [],
+  "outputs": {
+    "graph": "/private/tmp/bureaucracy-live/output/graph.json",
+    "expanded_nodes": "/private/tmp/bureaucracy-live/output/expanded_nodes.json",
+    "expanded_edges": "/private/tmp/bureaucracy-live/output/expanded_edges.json",
+    "candidate_nodes": "/private/tmp/bureaucracy-live/output/candidate_nodes.json",
+    "enrichment_stats": "/private/tmp/bureaucracy-live/output/enrichment_stats.json"
+  }
 }
