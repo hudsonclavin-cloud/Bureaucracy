@@ -12,30 +12,25 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from data_pipeline.crawler.federal_register import crawl as crawl_federal_register
-from data_pipeline.crawler.lobbying import crawl as crawl_lobbying
-from data_pipeline.crawler.official_directory import crawl as crawl_official_directory
-from data_pipeline.crawler.usaspending import crawl as crawl_usaspending
-from data_pipeline.crawler.wikidata import crawl as crawl_wikidata
-from data_pipeline.crawler.wikidata import crawl_discovery_records as crawl_wikidata_discovery_records
-from data_pipeline.discovery.source_discovery import (
-    DEFAULT_OUTPUT_PATH as DEFAULT_CANDIDATE_OUTPUT,
-    discover_candidates,
-    load_existing_graph_nodes,
+from data_pipeline.crawler.congressional_committees import discover_candidates as discover_committees
+from data_pipeline.crawler.federal_register import discover_candidates as discover_federal_register
+from data_pipeline.crawler.gov_directory import discover_candidates as discover_gov_directory
+from data_pipeline.crawler.opm import discover_candidates as discover_opm
+from data_pipeline.crawler.org_charts import discover_candidates as discover_org_charts
+from data_pipeline.crawler.usaspending import discover_candidates as discover_usaspending
+from data_pipeline.crawler.wikidata import discover_candidates as discover_wikidata
+from data_pipeline.exporter.build_graph import build_graph
+from data_pipeline.processors.candidate_nodes import (
+    CandidateRegistry,
+    ReferenceNodeIndex,
     promote_candidates,
-    write_review_queue,
-)
-from data_pipeline.exporter.build_graph import (
-    DEFAULT_BASE_GRAPH,
-    DEFAULT_GRAPH_OUTPUT,
-    DEFAULT_NODES_OUTPUT,
-    DEFAULT_EDGES_OUTPUT,
-    build_graph,
 )
 
 
-DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "output"
-DEFAULT_STATS_OUTPUT = DEFAULT_OUTPUT_DIR / "pipeline_stats.json"
+OUTPUT_DIR = PROJECT_ROOT / "output"
+CANDIDATE_NODES_OUTPUT = OUTPUT_DIR / "candidate_nodes.json"
+PIPELINE_STATS_OUTPUT = OUTPUT_DIR / "pipeline_stats.json"
+DEFAULT_PROMOTION_THRESHOLD = 0.7
 
 
 def getenv_int(name: str, default: int) -> int:
@@ -48,156 +43,161 @@ def getenv_int(name: str, default: int) -> int:
         return default
 
 
-def count_tree_nodes(node: dict[str, Any]) -> int:
-    total = 1
-    for child in node.get("children", []):
-        if isinstance(child, dict):
-            total += count_tree_nodes(child)
-    return total
-
-
-def safe_stage(stage_name: str, fn: Callable[[], Any]) -> tuple[Any, str | None]:
+def getenv_float(name: str, default: float) -> float:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
     try:
-        return fn(), None
-    except Exception as error:  # noqa: BLE001
-        return None, f"{stage_name}: {error}"
+        return float(raw)
+    except ValueError:
+        return default
 
 
-def format_pipeline_summary(stats: dict[str, Any]) -> str:
-    verification = stats.get("verification_breakdown", {})
-    return "\n".join(
-        [
-            "PIPELINE SUMMARY",
-            "----------------",
-            f"nodes_before: {stats['nodes_before']}",
-            f"nodes_after: {stats['nodes_after']}",
-            f"new_nodes_added: {stats['new_nodes_added']}",
-            f"verification_breakdown: {json.dumps(verification, sort_keys=True)}",
-        ]
-    )
+def write_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2)
 
 
-def run_pipeline(
-    *,
-    base_graph_path: str | Path = DEFAULT_BASE_GRAPH,
-    candidate_output_path: str | Path = DEFAULT_CANDIDATE_OUTPUT,
-    graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
-    nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
-    edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
-    stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
-    direct_payload_fetchers: list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
-    discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
-) -> dict[str, Any]:
-    fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", datetime.now(tz=timezone.utc).year)
-    lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", fiscal_year)
-    existing_nodes = load_existing_graph_nodes(base_graph_path)
-    nodes_before = len(existing_nodes)
-
-    direct_fetchers = direct_payload_fetchers or [
-        lambda: crawl_usaspending(
-            limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
-            awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
-            fiscal_year=fiscal_year,
+def discover_from_sources() -> tuple[list[dict[str, Any]], list[str], dict[str, str]]:
+    sources: list[tuple[str, Callable[[], dict[str, list[dict[str, Any]]]]]] = [
+        (
+            "wikidata",
+            lambda: discover_wikidata(
+                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 800),
+                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 400),
+                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 800),
+            ),
         ),
-        lambda: crawl_wikidata(
-            hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-            office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-            subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+        ("gov_directory", lambda: discover_gov_directory(timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 45))),
+        (
+            "federal_register",
+            lambda: discover_federal_register(
+                per_page=getenv_int("PIPELINE_FEDERAL_REGISTER_PER_PAGE", 100),
+            ),
         ),
-        lambda: crawl_lobbying(
-            year=lobbying_year,
-            pages=getenv_int("PIPELINE_LOBBYING_PAGES", 5),
-            page_size=getenv_int("PIPELINE_LOBBYING_PAGE_SIZE", 50),
+        (
+            "usaspending_agency_registry",
+            lambda: discover_usaspending(
+                limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 100),
+            ),
         ),
+        ("opm", lambda: discover_opm(timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 45))),
+        (
+            "congressional_committees",
+            lambda: discover_committees(timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 45)),
+        ),
+        ("agency_org_charts", lambda: discover_org_charts(timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 45))),
     ]
-    raw_discovery_fetchers = discovery_fetchers or {
-        "wikidata_records": lambda: crawl_wikidata_discovery_records(
-            hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-            office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-            subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
-        ),
-        "official_directory_records": lambda: crawl_official_directory(
-            max_records_per_source=getenv_int("PIPELINE_OFFICIAL_DIRECTORY_LIMIT", 150),
-        ),
-        "federal_register_records": lambda: crawl_federal_register(
-            pages=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGES", 3),
-            per_page=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGE_SIZE", 100),
-        ),
+
+    candidates: list[dict[str, Any]] = []
+    sources_used: list[str] = []
+    errors: dict[str, str] = {}
+
+    for source_name, loader in sources:
+        try:
+            payload = loader() or {}
+            batch = payload.get("candidates", [])
+            if batch:
+                candidates.extend(batch)
+                sources_used.append(source_name)
+        except Exception as error:  # noqa: BLE001
+            errors[source_name] = str(error)
+
+    return candidates, sources_used, errors
+
+
+def build_metrics(
+    *,
+    nodes_before: int,
+    nodes_after: int,
+    new_nodes_added: int,
+    duplicates_merged: int,
+    candidates: list[dict[str, Any]],
+    discovery_sources_used: list[str],
+    discovery_errors: dict[str, str],
+) -> dict[str, Any]:
+    verification_breakdown = {
+        "verified": 0,
+        "partial": 0,
+        "unverified": 0,
     }
+    for candidate in candidates:
+        status = candidate.get("verificationStatus", "unverified")
+        if status not in verification_breakdown:
+            verification_breakdown[status] = 0
+        verification_breakdown[status] += 1
 
-    payloads: list[dict[str, list[dict[str, Any]]]] = []
-    stage_errors: list[str] = []
-    for fetcher in direct_fetchers:
-        payload, error = safe_stage("direct_payload", fetcher)
-        if error:
-            stage_errors.append(error)
-            continue
-        if isinstance(payload, dict):
-            payloads.append(payload)
-
-    discovery_inputs: dict[str, list[dict[str, Any]]] = {}
-    for input_name, fetcher in raw_discovery_fetchers.items():
-        records, error = safe_stage(input_name, fetcher)
-        if error:
-            stage_errors.append(error)
-            discovery_inputs[input_name] = []
-            continue
-        discovery_inputs[input_name] = records if isinstance(records, list) else []
-
-    candidates = discover_candidates(
-        existing_nodes=existing_nodes,
-        base_graph_path=base_graph_path,
-        **discovery_inputs,
-    )
-    candidate_path = write_review_queue(candidates, output_path=candidate_output_path)
-    promoted_nodes, promotion_stats = promote_candidates(
-        candidates,
-        existing_nodes=existing_nodes,
-        min_confidence_score=float(os.environ.get("PIPELINE_PROMOTION_THRESHOLD", "0.7")),
-    )
-    if promoted_nodes:
-        payloads.append({"nodes": promoted_nodes, "edges": []})
-
-    build_result = build_graph(
-        payloads,
-        base_graph_path=base_graph_path,
-        graph_output_path=graph_output_path,
-        nodes_output_path=nodes_output_path,
-        edges_output_path=edges_output_path,
-    )
-    nodes_after = count_tree_nodes(build_result.graph)
-    stats = {
+    return {
         "timestamp": datetime.now(tz=timezone.utc).isoformat(),
         "nodes_before": nodes_before,
         "nodes_after": nodes_after,
-        "new_nodes_added": max(0, nodes_after - nodes_before),
-        "candidate_nodes_written": len(candidates),
-        "promoted_nodes_written": len(promoted_nodes),
-        "promotion_stats": promotion_stats,
-        "verification_breakdown": build_result.validation.get("verification_status_counts", {}),
-        "average_confidence_score": build_result.validation.get("average_confidence_score", 0.0),
-        "verified_node_count": build_result.validation.get("verified_node_count", 0),
-        "build_validation": build_result.validation,
-        "stage_errors": stage_errors,
-        "outputs": {
-            "graph": str(build_result.graph_path),
-            "expanded_nodes": str(build_result.nodes_path),
-            "expanded_edges": str(build_result.edges_path),
-            "candidate_nodes": str(candidate_path),
-        },
+        "new_nodes_added": new_nodes_added,
+        "duplicates_merged": duplicates_merged,
+        "candidates_discovered": len(candidates),
+        "verification_breakdown": verification_breakdown,
+        "discovery_sources_used": discovery_sources_used,
+        "discovery_errors": discovery_errors,
     }
 
-    stats_path = Path(stats_output_path)
-    stats_path.parent.mkdir(parents=True, exist_ok=True)
-    with stats_path.open("w", encoding="utf-8") as handle:
-        json.dump(stats, handle, indent=2)
-    return stats
+
+def run_pipeline() -> dict[str, Any]:
+    references = ReferenceNodeIndex.load()
+    nodes_before = len(references.by_id)
+
+    raw_candidates, discovery_sources_used, discovery_errors = discover_from_sources()
+    registry = CandidateRegistry(references=references)
+    registry.add_many(raw_candidates)
+    candidates = registry.values()
+    write_json(CANDIDATE_NODES_OUTPUT, candidates)
+
+    promotion_threshold = getenv_float("PIPELINE_PROMOTION_THRESHOLD", DEFAULT_PROMOTION_THRESHOLD)
+    promoted_nodes, promoted_edges, skipped_duplicates = promote_candidates(
+        candidates,
+        references,
+        promotion_threshold=promotion_threshold,
+    )
+
+    build_result = build_graph(
+        [
+            {
+                "nodes": promoted_nodes,
+                "edges": promoted_edges,
+            }
+        ]
+    )
+
+    nodes_after = nodes_before + len(promoted_nodes)
+    metrics = build_metrics(
+        nodes_before=nodes_before,
+        nodes_after=nodes_after,
+        new_nodes_added=len(promoted_nodes),
+        duplicates_merged=registry.merges + skipped_duplicates,
+        candidates=candidates,
+        discovery_sources_used=discovery_sources_used,
+        discovery_errors=discovery_errors,
+    )
+    write_json(PIPELINE_STATS_OUTPUT, metrics)
+
+    return {
+        "timestamp": metrics["timestamp"],
+        "candidate_nodes": len(candidates),
+        "promoted_nodes": len(promoted_nodes),
+        "promoted_edges": len(promoted_edges),
+        "expanded_nodes_path": str(build_result.nodes_path),
+        "expanded_edges_path": str(build_result.edges_path),
+        "candidate_nodes_path": str(CANDIDATE_NODES_OUTPUT),
+        "pipeline_stats_path": str(PIPELINE_STATS_OUTPUT),
+        "nodes_before": nodes_before,
+        "nodes_after": nodes_after,
+        "duplicates_merged": metrics["duplicates_merged"],
+        "discovery_sources_used": discovery_sources_used,
+        "discovery_errors": discovery_errors,
+    }
 
 
 def main() -> None:
-    stats = run_pipeline()
-    print(format_pipeline_summary(stats))
-    print(f"Wrote pipeline stats to {DEFAULT_STATS_OUTPUT}")
+    print(json.dumps(run_pipeline(), indent=2))
 
 
 if __name__ == "__main__":

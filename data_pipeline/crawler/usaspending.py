@@ -17,6 +17,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from data_pipeline.processors.normalize_nodes import generate_node_id, normalize_name
+from data_pipeline.crawler.common import clamp
 
 
 BASE_URL = "https://api.usaspending.gov/api/v2/"
@@ -221,6 +222,46 @@ def crawl(
         fiscal_year=fiscal_year,
     )
     return {"nodes": nodes, "edges": edges}
+
+
+def discover_candidates(*, limit_agencies: int = 100) -> dict[str, list[dict[str, Any]]]:
+    crawler = USASpendingCrawler()
+    candidates: list[dict[str, Any]] = []
+
+    for agency in crawler.fetch_top_tier_agencies(limit=limit_agencies):
+        agency_name = normalize_name(
+            agency.get("agency_name")
+            or agency.get("toptier_agency_name")
+            or agency.get("name")
+            or ""
+        )
+        if not agency_name:
+            continue
+
+        budget = agency.get("agency_total_obligated_amount")
+        confidence = 0.66
+        if budget:
+            confidence += 0.08
+
+        candidates.append(
+            {
+                "id": generate_node_id(agency_name),
+                "name": agency_name,
+                "type": "Agency",
+                "possibleParent": "Executive Branch",
+                "parentName": "Executive Branch",
+                "desc": agency.get("abbreviation") or "Top-tier federal agency from USAspending agency registry.",
+                "sourceUrl": urljoin(BASE_URL, TOP_TIER_ENDPOINT),
+                "sourceUrls": [urljoin(BASE_URL, TOP_TIER_ENDPOINT)],
+                "sourceType": "usaspending",
+                "sourceTypes": ["usaspending"],
+                "discoveryMethod": "agency_registry",
+                "confidenceEstimate": clamp(confidence),
+                "budget": str(budget) if budget else None,
+            }
+        )
+
+    return {"candidates": candidates}
 
 
 if __name__ == "__main__":

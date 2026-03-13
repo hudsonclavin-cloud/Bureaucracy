@@ -1,68 +1,18 @@
 {
-  "timestamp": "2026-03-12T19:32:08.132534+00:00",
-  "nodes_before": 5170,
-  "nodes_after": 13551,
-  "new_nodes_added": 8381,
-  "candidate_nodes_written": 6335,
-  "promoted_nodes_written": 2450,
-  "promotion_stats": {
-    "candidates_reviewed": 6335,
-    "candidates_below_threshold": 3828,
-    "promoted_new_nodes": 2438,
-    "merged_duplicates": 69
-  },
+  "timestamp": "2026-03-13T02:21:49.281464+00:00",
+  "nodes_before": 6632,
+  "nodes_after": 6632,
+  "new_nodes_added": 0,
+  "duplicates_merged": 0,
+  "candidates_discovered": 0,
   "verification_breakdown": {
-    "unverified": 5751,
-    "partial": 2295,
-    "verified": 155
+    "verified": 0,
+    "partial": 0,
+    "unverified": 0
   },
-  "average_confidence_score": 0.21,
-  "verified_node_count": 155,
-  "build_validation": {
-    "initial_node_count": 8201,
-    "input_node_count": 8201,
-    "input_edge_count": 940,
-    "exported_node_count": 8201,
-    "exported_edge_count": 940,
-    "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 3775,
-    "nodes_removed_structural_errors": 0,
-    "final_node_count": 8201,
-    "orphan_nodes_detected": 0,
-    "recovered_orphan_nodes": 970,
-    "root_attached_missing_parent_nodes": 970,
-    "dropped_edges_missing_source": 0,
-    "dropped_edges_missing_target": 0,
-    "orphaned_parent_ids": 0,
-    "attached_to_root": 3775,
-    "explicitly_root_attached_nodes": 1979,
-    "relationship_counts": {
-      "reports_to": 95,
-      "manages": 845
-    },
-    "verification_status_counts": {
-      "unverified": 5751,
-      "partial": 2295,
-      "verified": 155
-    },
-    "verified_node_count": 155,
-    "average_confidence_score": 0.21,
-    "pipeline_summary": {
-      "initial_node_count": 16050,
-      "raw_nodes_loaded": 16050,
-      "nodes_after_normalization": 16050,
-      "nodes_after_merge": 8201,
-      "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 3775,
-      "nodes_removed_structural_errors": 0,
-      "final_node_count": 8201
-    }
-  },
-  "stage_errors": [],
-  "outputs": {
-    "graph": "C:\\Users\\hudso\\Bureaucracy\\output\\graph.json",
-    "expanded_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_nodes.json",
-    "expanded_edges": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_edges.json",
-    "candidate_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\candidate_nodes.json"
+  "discovery_sources_used": [],
+  "discovery_errors": {
+    "wikidata": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+    "usaspending_agency_registry": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
   }
 }

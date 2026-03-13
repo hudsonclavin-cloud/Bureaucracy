@@ -29,16 +29,7 @@ def getenv_int(name: str, default: int) -> int:
 
 
 def run_once() -> dict[str, Any]:
-    result = run_pipeline()
-    return {
-        "timestamp": datetime.now(tz=timezone.utc).isoformat(),
-        "node_count": result["nodes_after"],
-        "edge_count": result["build_validation"]["exported_edge_count"],
-        "nodes_path": result["outputs"]["expanded_nodes"],
-        "edges_path": result["outputs"]["expanded_edges"],
-        "graph_path": result["outputs"]["graph"],
-        "candidate_nodes_path": result["outputs"]["candidate_nodes"],
-    }
+    return run_pipeline()
 
 
 def run_forever(*, sleep_seconds: int = DEFAULT_SLEEP_SECONDS) -> None:
@@ -48,7 +39,8 @@ def run_forever(*, sleep_seconds: int = DEFAULT_SLEEP_SECONDS) -> None:
             result = run_once()
             print(
                 f"[{started_at.isoformat()}] pipeline complete: "
-                f"{result['node_count']} nodes, {result['edge_count']} edges"
+                f"{result['promoted_nodes']} promoted nodes, "
+                f"{result['candidate_nodes']} candidates"
             )
         except Exception as error:  # noqa: BLE001
             print(f"[{started_at.isoformat()}] pipeline failed: {error}")
