@@ -58,13 +58,13 @@ const branchColors = {
   position: "#888888",
 };
 const branchSectorDirections = {
-  constitution: new THREE.Vector3(0, 1, 0.08).normalize(),
-  legislative: new THREE.Vector3(-0.94, 0.24, 0.22).normalize(),
-  executive: new THREE.Vector3(0.95, 0.2, 0.18).normalize(),
-  judicial: new THREE.Vector3(0.08, 0.9, -0.42).normalize(),
-  independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
-  regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
-  position: new THREE.Vector3(-0.14, 0.18, 0.97).normalize(),
+  constitution: new THREE.Vector3(0, 0, 0),
+  legislative: new THREE.Vector3(-1, 0, 0).normalize(),
+  executive: new THREE.Vector3(1, 0, 0).normalize(),
+  judicial: new THREE.Vector3(0, 1, 0).normalize(),
+  independent: new THREE.Vector3(0, -1, 0).normalize(),
+  regulatory: new THREE.Vector3(0, 0, 1).normalize(),
+  position: new THREE.Vector3(0, 0, -1).normalize(),
 };
 
 export function createGovernmentGraph({
@@ -317,32 +317,63 @@ export function createGovernmentGraph({
   function inferBranchKey(data) {
     const id = String(data?.id || "").toLowerCase();
     const type = String(data?.type || "").toLowerCase();
+    const name = String(data?.name || "").toLowerCase();
 
-    if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
+    if (type.includes("constitution") || name.includes("constitution") || id === "constitution" || id.startsWith("const")) {
       return "constitution";
     }
-    if (type === "position" || type.includes("office") || type.includes("officer")) {
-      return "position";
-    }
-    if (id.startsWith("leg-")) {
+    if (
+      id.startsWith("leg-") ||
+      id.startsWith("legislative-") ||
+      name.includes("legislative branch") ||
+      name.includes("congress") ||
+      name.includes("house of representatives") ||
+      name.includes("senate")
+    ) {
       return "legislative";
     }
-    if (id.startsWith("jud-")) {
+    if (
+      id.startsWith("jud-") ||
+      id.startsWith("judicial-") ||
+      name.includes("judicial branch") ||
+      name.includes("supreme court") ||
+      name.includes("federal judiciary") ||
+      type.includes("court")
+    ) {
       return "judicial";
     }
-    if (id.startsWith("exec-regulatory") || type.includes("regulatory")) {
+    if (
+      id.startsWith("exec-regulatory") ||
+      type.includes("regulatory") ||
+      type.includes("commission") ||
+      name.includes("regulatory") ||
+      name.includes("commission")
+    ) {
       return "regulatory";
     }
     if (
       id.startsWith("exec-ind") ||
       id === "exec-independent" ||
+      name.includes("independent") ||
       type.includes("government corporation") ||
       type.includes("independent")
     ) {
       return "independent";
     }
-    if (id.startsWith("exec-")) {
+    if (
+      id.startsWith("exec-") ||
+      id.startsWith("executive-") ||
+      name.includes("executive branch") ||
+      name.includes("department of ") ||
+      type.includes("department") ||
+      type.includes("cabinet") ||
+      type.includes("agency") ||
+      type.includes("bureau")
+    ) {
       return "executive";
+    }
+    if (type === "position" || type.includes("office") || type.includes("officer") || type.includes("division")) {
+      return "position";
     }
     return "position";
   }
