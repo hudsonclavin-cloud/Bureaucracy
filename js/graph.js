@@ -26,6 +26,7 @@ const SPHERE_RADIUS_SPACING = 18;
 const SHELL_CAPACITIES = [32, 64, 128];
 const SHELL_GAP_MULTIPLIER = 1.55;
 const SHELL_BRANCH_HINT_BLEND = 0.12;
+const DEEP_SHELL_BRANCH_HINT_BLEND = 0.01;
 const SHELL_ANCHOR_RESTORE = 0.12;
 const BRANCH_RELAXATION_ITERATIONS = 5;
 const BRANCH_SECTOR_BASE_DISTANCE = 88;
@@ -1488,20 +1489,12 @@ export function createGovernmentGraph({
   }
 
   function getShellOrientationQuaternion(parentObj, shellIndex) {
-    const parentVector =
-      parentObj.sectorDirection?.lengthSq() > 0
-        ? tempVecA.copy(parentObj.sectorDirection)
-        : parentObj.parent
-        ? tempVecA.copy(parentObj.pos).sub(parentObj.parent.pos)
-        : parentObj.pos.lengthSq() > 0.0001
-          ? tempVecA.copy(parentObj.pos)
-          : directionFromSeed(hashString(parentObj.data.id), parentObj.depth + 1);
-    const anchor = parentVector.lengthSq() > 0.0001
-      ? parentVector.normalize()
-      : directionFromSeed(hashString(parentObj.data.id), shellIndex + 1);
-
+    const anchor = directionFromSeed(hashString(parentObj.data.id), shellIndex + parentObj.depth * 17 + 1);
     tempQuat.setFromUnitVectors(upVector, anchor);
-    tempQuatB.setFromAxisAngle(anchor, ((hashString(parentObj.data.id) >>> 4) % 4096) / 4096 * Math.PI * 2 + shellIndex * GOLDEN_ANGLE * 0.5);
+    tempQuatB.setFromAxisAngle(
+      anchor,
+      (((hashString(parentObj.data.id) >>> 4) + shellIndex * 977) % 4096) / 4096 * Math.PI * 2,
+    );
     return tempQuat.multiply(tempQuatB);
   }
 
@@ -1577,11 +1570,12 @@ export function createGovernmentGraph({
         const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
         const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
         const branchHint = copyBranchBaseDirection(childBranchKey, tempVecB).clone();
+        const branchHintBlend = parentObj.depth <= 1 ? DEEP_SHELL_BRANCH_HINT_BLEND : 0;
 
         directionVec
           .copy(baseDirection)
           .applyQuaternion(shellQuaternion)
-          .lerp(branchHint, parentObj.depth <= 1 ? SHELL_BRANCH_HINT_BLEND : SHELL_BRANCH_HINT_BLEND * 0.45)
+          .lerp(branchHint, branchHintBlend)
           .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.035)
           .normalize();
 
