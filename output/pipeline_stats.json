@@ -1,18 +1,22 @@
 {
-  "timestamp": "2026-03-13T02:21:49.281464+00:00",
+  "timestamp": "2026-03-13T02:44:43.629354+00:00",
   "nodes_before": 6632,
-  "nodes_after": 6632,
-  "new_nodes_added": 0,
-  "duplicates_merged": 0,
-  "candidates_discovered": 0,
+  "nodes_after": 7011,
+  "new_nodes_added": 379,
+  "duplicates_merged": 381,
+  "candidates_discovered": 618,
   "verification_breakdown": {
-    "verified": 0,
-    "partial": 0,
+    "verified": 7,
+    "partial": 611,
     "unverified": 0
   },
-  "discovery_sources_used": [],
-  "discovery_errors": {
-    "wikidata": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
-    "usaspending_agency_registry": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
-  }
+  "discovery_sources_used": [
+    "wikidata",
+    "gov_directory",
+    "federal_register",
+    "usaspending_agency_registry",
+    "congressional_committees",
+    "agency_org_charts"
+  ],
+  "discovery_errors": {}
 }

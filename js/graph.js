@@ -4,7 +4,7 @@ import { createLodManager } from "./lodManager.js?v=20260312a";
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
-const MAX_NODES = 100000;
+const MAX_VISIBLE_NODES = 25000;
 const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
 const NODE_RADIUS = 4;
@@ -22,6 +22,7 @@ const MIN_DISTANCE = 5;
 const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
+const SPHERE_RADIUS_SPACING = 18;
 const BRANCH_SECTOR_BLEND = 0.62;
 const BRANCH_PARENT_BLEND = 0.32;
 const BRANCH_FORCE = 0.018;
@@ -171,6 +172,7 @@ export function createGovernmentGraph({
   const tempVecD = new THREE.Vector3();
   const tempMat4 = new THREE.Matrix4();
   const tempQuat = new THREE.Quaternion();
+  const tempQuatB = new THREE.Quaternion();
   const tempScale = new THREE.Vector3();
   const tempSphere = new THREE.Sphere();
   const tempClusterColor = new THREE.Color();
@@ -552,6 +554,18 @@ export function createGovernmentGraph({
     return BASE_RADIUS + depth * RADIUS_STEP + depth * depth * 6;
   }
 
+  function childSphereRadius(parentObj, childCount) {
+    const baseRadius = BASE_RADIUS + parentObj.depth * 10;
+    return baseRadius + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1));
+  }
+
+  function computeVisibleNodeBudget(cameraDistance) {
+    const distance = Math.max(cameraDistance, 1);
+    const normalizedDistance = THREE.MathUtils.clamp((distance - 140) / 1100, 0, 1);
+    const farBudget = Math.max(5000, Math.floor(MAX_VISIBLE_NODES * 0.3));
+    return Math.round(THREE.MathUtils.lerp(MAX_VISIBLE_NODES, farBudget, normalizedDistance));
+  }
+
   function getNavigationDistance() {
     if (state.flyMode) {
       return Math.max(camera.position.distanceTo(state.flyLookTarget), 1);
@@ -560,11 +574,13 @@ export function createGovernmentGraph({
   }
 
   function updateLodState() {
+    const cameraDistance = getNavigationDistance();
     state.lod = lodManager.updateLOD({
-      cameraDistance: getNavigationDistance(),
+      cameraDistance,
       rootNode: state.rootObj,
       maxDepthFilter: state.manualDepthFilter,
     });
+    state.maxNodes = computeVisibleNodeBudget(cameraDistance);
     state.maxVisibleDepth = state.lod.visibleDepth;
     return state.lod;
   }
@@ -757,6 +773,18 @@ export function createGovernmentGraph({
       Math.sin(phi) * Math.sin(theta),
       Math.cos(phi),
     );
+  }
+
+  function fibonacciSphereDirection(index, count, out = new THREE.Vector3()) {
+    if (count <= 1) {
+      return out.set(0, 1, 0);
+    }
+    const sample = (index + 0.5) / count;
+    const y = 1 - sample * 2;
+    const radius = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = GOLDEN_ANGLE * index;
+    out.set(Math.cos(theta) * radius, y, Math.sin(theta) * radius);
+    return out.normalize();
   }
 
   function syncFlyStateFromCamera() {
@@ -1262,14 +1290,14 @@ export function createGovernmentGraph({
     basisB.copy(anchorDir).cross(basisA).normalize();
   }
 
-  function relaxSiblingPositions(positions, shellRadius) {
-    const minimumDistance = Math.max(MIN_DISTANCE, NODE_RADIUS * 2.2);
+  function relaxSiblingPositions(offsets, shellRadius, branchAnchors = []) {
+    const minimumDistance = Math.max(MIN_DISTANCE * 1.5, shellRadius * 0.28, NODE_RADIUS * 2.6);
     const minimumDistanceSq = minimumDistance * minimumDistance;
 
-    for (let iteration = 0; iteration < 2; iteration += 1) {
-      for (let i = 0; i < positions.length; i += 1) {
-        for (let j = i + 1; j < positions.length; j += 1) {
-          tempVecA.subVectors(positions[i], positions[j]);
+    for (let iteration = 0; iteration < 3; iteration += 1) {
+      for (let i = 0; i < offsets.length; i += 1) {
+        for (let j = i + 1; j < offsets.length; j += 1) {
+          tempVecA.subVectors(offsets[i], offsets[j]);
           const distanceSq = tempVecA.lengthSq();
           if (distanceSq >= minimumDistanceSq) {
             continue;
@@ -1280,15 +1308,19 @@ export function createGovernmentGraph({
           }
 
           const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
-          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 400);
+          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 320);
           tempVecA.normalize().multiplyScalar(pushStrength);
-          positions[i].add(tempVecA);
-          positions[j].sub(tempVecA);
+          offsets[i].add(tempVecA);
+          offsets[j].sub(tempVecA);
         }
       }
 
-      for (const position of positions) {
-        position.normalize().multiplyScalar(shellRadius * DAMPING + shellRadius * (1 - DAMPING));
+      for (let i = 0; i < offsets.length; i += 1) {
+        const offset = offsets[i];
+        if (branchAnchors[i]?.lengthSq() > 0) {
+          offset.lerp(branchAnchors[i], 0.1);
+        }
+        offset.normalize().multiplyScalar(shellRadius);
       }
     }
   }
@@ -1314,41 +1346,55 @@ export function createGovernmentGraph({
 
   function getSpreadPositions(parentObj, children) {
     const depth = parentObj.depth + 1;
-    const shellRadius = shellRadiusForDepth(depth);
+    const childCount = children.length;
+    const shellRadius = childSphereRadius(parentObj, childCount);
     const parentSeed = hashString(parentObj.data.id);
-    const anchorDir =
-      parentObj.pos.lengthSq() > 0.0001
-        ? tempVecA.copy(parentObj.pos).normalize()
-        : directionFromSeed(parentSeed, depth);
-    getOrbitBasis(anchorDir);
-
+    const outwardAxis =
+      parentObj.depth === 0
+        ? copyBranchBaseDirection(parentObj.layoutBranchKey || "constitution", tempVecA)
+        : parentObj.pos.lengthSq() > 0.0001
+          ? tempVecA.copy(parentObj.pos).normalize()
+          : parentObj.branchDirection.lengthSq() > 0
+            ? tempVecA.copy(parentObj.branchDirection).normalize()
+            : directionFromSeed(parentSeed, depth);
     const count = children.length;
-    const positions = new Array(count);
+    const offsets = new Array(count);
     const directions = new Array(count);
+    const branchAnchors = new Array(count);
 
     for (let i = 0; i < count; i += 1) {
       const childSeed = hashString(children[i].id);
-      const theta = GOLDEN_ANGLE * (i + 1);
-      const radial = Math.min(0.42, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * 0.3);
-      const shellDirection = directionFromSeed(childSeed, depth);
-      const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone();
-      getOrbitBasis(branchDirection);
-      directionVec
-        .copy(branchDirection)
-        .lerp(anchorDir, parentObj.depth > 0 ? 0.18 : 0.06)
-        .addScaledVector(basisA, Math.cos(theta) * radial)
-        .addScaledVector(basisB, Math.sin(theta) * radial)
-        .addScaledVector(shellDirection, 0.12)
+      const childBranchKey = resolveLayoutBranchKey(children[i], parentObj.layoutBranchKey || inferBranchKey(parentObj.data));
+      const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone().normalize();
+      const baseLocalDir = fibonacciSphereDirection(i, count, tempVecB).clone();
+      const shellNoise = directionFromSeed(childSeed, depth).multiplyScalar(0.08);
+      const branchBlend = childBranchKey === parentObj.layoutBranchKey ? 0.2 : 0.36;
+      const branchAxis = tempVecC
+        .copy(outwardAxis)
+        .lerp(branchDirection, branchBlend)
         .normalize();
 
-      positions[i] = directionVec.clone().multiplyScalar(shellRadius);
-      directions[i] = branchDirection;
+      tempQuat.setFromUnitVectors(upVector, branchAxis);
+      tempQuatB.setFromAxisAngle(
+        branchAxis,
+        (((childSeed % 4096) / 4096) - 0.5) * 0.9,
+      );
+      directionVec
+        .copy(baseLocalDir)
+        .applyQuaternion(tempQuat)
+        .applyQuaternion(tempQuatB)
+        .add(shellNoise)
+        .normalize();
+
+      branchAnchors[i] = branchAxis.clone().multiplyScalar(shellRadius);
+      offsets[i] = directionVec.clone().multiplyScalar(shellRadius);
+      directions[i] = branchAxis.clone();
     }
 
-    relaxSiblingPositions(positions, shellRadius);
-    return positions.map((position, index) => ({
-      position,
-      direction: positions[index].clone().normalize().lerp(directions[index], 0.28).normalize(),
+    relaxSiblingPositions(offsets, shellRadius, branchAnchors);
+    return offsets.map((offset, index) => ({
+      position: tempVecA.copy(parentObj.pos).add(offset).clone(),
+      direction: offset.clone().normalize().lerp(directions[index], 0.22).normalize(),
       layoutBranchKey: resolveLayoutBranchKey(children[index], parentObj.layoutBranchKey || inferBranchKey(parentObj.data)),
     }));
   }
@@ -2512,32 +2558,47 @@ export function createGovernmentGraph({
         continue;
       }
 
-      const desiredRadius = shellRadiusForDepth(nodeObj.depth);
-      const branchTarget =
-        nodeObj.branchDirection.lengthSq() > 0
-          ? tempVecD.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius)
-          : null;
-      const outwardTarget =
-        nodeObj.targetPos.lengthSq() > 0
-          ? tempVecA.copy(nodeObj.targetPos).normalize().multiplyScalar(desiredRadius)
-          : tempVecA.copy(nodeObj.pos).normalize().multiplyScalar(desiredRadius);
-
-      if (outwardTarget.lengthSq() === 0) {
+      if (!nodeObj.parent) {
         continue;
       }
 
+      const desiredOffset =
+        nodeObj.targetPos.lengthSq() > 0
+          ? tempVecA.copy(nodeObj.targetPos).sub(nodeObj.parent.pos)
+          : nodeObj.branchDirection.lengthSq() > 0
+            ? tempVecA.copy(nodeObj.branchDirection).multiplyScalar(childSphereRadius(nodeObj.parent, Math.max(nodeObj.parent.childObjs.length, 1)))
+            : tempVecA.copy(nodeObj.pos).sub(nodeObj.parent.pos);
+      if (desiredOffset.lengthSq() === 0) {
+        continue;
+      }
+
+      const desiredRadius = Math.max(
+        LINK_DISTANCE,
+        desiredOffset.length(),
+      );
+      const outwardTarget = tempVecB.copy(nodeObj.parent.pos).add(desiredOffset.normalize().multiplyScalar(desiredRadius));
+      const branchTarget =
+        nodeObj.branchDirection.lengthSq() > 0
+          ? tempVecD
+              .copy(nodeObj.parent.pos)
+              .add(tempVecC.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius))
+          : null;
       if (branchTarget) {
         nodeObj.pos.lerp(branchTarget, BRANCH_FORCE);
       }
       nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
 
-      if (nodeObj.parent) {
-        tempVecB.subVectors(nodeObj.pos, nodeObj.parent.pos);
-        const distance = tempVecB.length();
-        if (distance < LINK_DISTANCE && distance > 0.0001) {
-          tempVecB.normalize().multiplyScalar((LINK_DISTANCE - distance) * 0.08);
-          nodeObj.pos.add(tempVecB);
-        }
+      const globalRadius = shellRadiusForDepth(nodeObj.depth);
+      if (nodeObj.pos.lengthSq() > 0.0001) {
+        tempVecC.copy(nodeObj.pos).normalize().multiplyScalar(globalRadius);
+        nodeObj.pos.lerp(tempVecC, OUTWARD_FORCE * 0.25);
+      }
+
+      tempVecD.subVectors(nodeObj.pos, nodeObj.parent.pos);
+      const distance = tempVecD.length();
+      if (distance < LINK_DISTANCE && distance > 0.0001) {
+        tempVecD.normalize().multiplyScalar((LINK_DISTANCE - distance) * 0.08);
+        nodeObj.pos.add(tempVecD);
       }
 
       updated = true;
@@ -2832,7 +2893,7 @@ export function createGovernmentGraph({
     }
     state.totalNodeCount = meta.subtreeCount + (data.candidateNodes || []).length;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
-    state.maxNodes = MAX_NODES;
+    state.maxNodes = MAX_VISIBLE_NODES;
     state.manualDepthFilter = MAX_DEPTH;
     state.maxVisibleDepth = MAX_DEPTH;
 
@@ -2984,7 +3045,7 @@ export function createGovernmentGraph({
     },
     getConfig() {
       return {
-        MAX_NODES,
+        MAX_VISIBLE_NODES,
         MAX_DEPTH,
       };
     },
