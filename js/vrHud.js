@@ -175,10 +175,15 @@ export function createVrHud({
   }
 
   function init() {
-    const camera = graph.getCamera();
-    camera.add(root);
+    graph.getScene().add(root);
     root.visible = true;
-    frameHook = () => renderPanel();
+    frameHook = ({ activeCamera }) => {
+      activeCamera.getWorldPosition(root.position);
+      activeCamera.getWorldQuaternion(root.quaternion);
+      root.translateZ(-QUEST_VR_CONFIG.hudDistance);
+      root.translateY(QUEST_VR_CONFIG.hudHeight);
+      renderPanel();
+    };
     graph.registerFrameHook(frameHook);
     renderPanel();
     onStatus("VR HUD active.");

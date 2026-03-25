@@ -3294,16 +3294,21 @@ export function createGovernmentGraph({
 
     const activeCamera = getActiveCamera();
     for (const hook of state.frameHooks) {
-      hook({
-        deltaSeconds,
-        time: state.time,
-        frame: state.frame,
-        renderer,
-        scene,
-        camera,
-        activeCamera,
-        xrDolly,
-      });
+      try {
+        hook({
+          deltaSeconds,
+          time: state.time,
+          frame: state.frame,
+          renderer,
+          scene,
+          camera,
+          activeCamera,
+          xrDolly,
+        });
+      } catch (error) {
+        console.error("Frame hook failed", error);
+        state.frameHooks.delete(hook);
+      }
     }
 
     const cameraPosition = getActiveCameraPosition(tempVecA);

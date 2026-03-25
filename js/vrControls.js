@@ -171,7 +171,7 @@ export function createVrControls({
           -moveY * QUEST_VR_CONFIG.smoothMoveSpeed * deltaSeconds,
         );
       }
-    } else if (handedness === "right") {
+    } else if (bindings.handedness === "right") {
       if (Math.abs(axes.x) > QUEST_VR_CONFIG.snapTurnDeadzone && timeSeconds - controllerState.lastSnapTurnAt > 0.32) {
         graph.snapTurnVr(-Math.sign(axes.x) * QUEST_VR_CONFIG.snapTurnAngle);
         controllerState.lastSnapTurnAt = timeSeconds;

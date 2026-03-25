@@ -46,6 +46,10 @@ export function createVrMode({
     vrHud?.destroy();
     vrHud = null;
     graph?.setVrSessionActive(false);
+    const renderer = graph?.getRenderer?.();
+    if (renderer) {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    }
     setButtonLabel("Enter VR");
     publishStatus("Exited VR.");
     try {
@@ -64,6 +68,7 @@ export function createVrMode({
       publishStatus("Starting VR session…");
       const renderer = graph.getRenderer();
       renderer.xr.enabled = true;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.1));
       renderer.xr.setReferenceSpaceType("local-floor");
       graph.setFlyMode(false);
       session = await navigator.xr.requestSession("immersive-vr", {
