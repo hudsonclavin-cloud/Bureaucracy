@@ -107,6 +107,35 @@ def load_base_graph(base_graph_path: str | Path) -> dict[str, Any]:
     }
 
 
+def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
+    path = Path(graph_path)
+    if not path.exists():
+        return {"nodes": [], "edges": []}
+
+    try:
+        with path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, json.JSONDecodeError):
+        return {"nodes": [], "edges": []}
+
+    if not isinstance(payload, dict):
+        return {"nodes": [], "edges": []}
+
+    nodes: list[dict[str, Any]] = []
+    for node, parent in walk_tree(payload):
+        normalized = deepcopy(node)
+        normalized["children"] = []
+        if parent and parent.get("id"):
+            normalized["parentId"] = str(parent["id"])
+        nodes.append(normalized)
+
+    edges = list(payload.get("relationships", [])) if isinstance(payload.get("relationships"), list) else []
+    return {
+        "nodes": nodes,
+        "edges": edges,
+    }
+
+
 def walk_tree(root: dict[str, Any]) -> Iterable[tuple[dict[str, Any], dict[str, Any] | None]]:
     stack: list[tuple[dict[str, Any], dict[str, Any] | None]] = [(root, None)]
     while stack:
@@ -297,6 +326,9 @@ def build_graph(
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
+    existing_graph_payload = load_existing_graph_payload(graph_output_path)
+    if existing_graph_payload["nodes"] or existing_graph_payload["edges"]:
+        payload_list.insert(0, existing_graph_payload)
     raw_nodes_loaded = count_payload_nodes(payload_list)
     existing_ids = load_existing_node_ids(base_graph_path)
     node_registry = NodeRegistry(existing_ids=set(existing_ids))

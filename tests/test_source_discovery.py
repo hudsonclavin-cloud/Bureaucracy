@@ -152,6 +152,36 @@ class SourceDiscoveryTests(unittest.TestCase):
         merged = next(item for item in promoted if item["id"] == "office-of-nuclear-energy")
         self.assertIn("https://www.wikidata.org/wiki/Q456", merged["sourceUrls"])
 
+    def test_promote_candidates_keeps_template_roles_out_without_real_sources(self) -> None:
+        candidates = [
+            {
+                "id": "director-office-of-clean-energy",
+                "name": "Director",
+                "type": "Position",
+                "parentId": "office-of-clean-energy",
+                "possibleParent": "Office of Clean Energy",
+                "desc": "Template-generated role.",
+                "sourceUrls": ["generated://leadership/office-of-clean-energy"],
+                "sourceTypes": ["candidate_discovery"],
+                "confidenceScore": 0.92,
+                "verificationStatus": "partial",
+            }
+        ]
+        existing_nodes = [
+            {
+                "id": "office-of-clean-energy",
+                "name": "Office of Clean Energy",
+                "type": "Office",
+                "parentId": "department-of-energy",
+                "children": [],
+            }
+        ]
+
+        promoted, stats = promote_candidates(candidates, existing_nodes=existing_nodes)
+
+        self.assertEqual(promoted, [])
+        self.assertEqual(stats["candidates_below_threshold"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

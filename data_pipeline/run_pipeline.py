@@ -33,6 +33,15 @@ from data_pipeline.exporter.build_graph import (
     build_graph,
 )
 from data_pipeline.processors.enrichment import enrich_nodes
+from data_pipeline.state.pipeline_state import (
+    DEFAULT_FRONTIER_OUTPUT,
+    DEFAULT_STATE_PATH,
+    build_frontier_targets,
+    load_pipeline_state,
+    update_pipeline_state,
+    write_frontier_targets,
+    write_pipeline_state,
+)
 
 
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "output"
@@ -88,47 +97,65 @@ def run_pipeline(
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
     enrichment_stats_output_path: str | Path = DEFAULT_ENRICHMENT_STATS_OUTPUT,
+    frontier_output_path: str | Path = DEFAULT_FRONTIER_OUTPUT,
+    state_output_path: str | Path = DEFAULT_STATE_PATH,
     direct_payload_fetchers: dict[str, Callable[[], dict[str, list[dict[str, Any]]]]] | list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
 ) -> dict[str, Any]:
     fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", datetime.now(tz=timezone.utc).year)
     lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", fiscal_year)
-    existing_nodes = load_existing_graph_nodes(base_graph_path)
+    existing_graph_path = Path(graph_output_path)
+    existing_nodes = load_existing_graph_nodes(existing_graph_path if existing_graph_path.exists() else base_graph_path)
     nodes_before = len(existing_nodes)
+    pipeline_state = load_pipeline_state(state_output_path)
+    frontier_targets = build_frontier_targets(
+        existing_nodes,
+        state=pipeline_state,
+        limit=getenv_int("PIPELINE_FRONTIER_LIMIT", 80),
+    )
+    frontier_path = write_frontier_targets(frontier_targets, frontier_output_path)
 
-    direct_fetchers = direct_payload_fetchers or {
-        "usaspending": lambda: crawl_usaspending(
-            limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
-            awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
-            fiscal_year=fiscal_year,
-        ),
-        "wikidata": lambda: crawl_wikidata(
-            hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-            office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-            subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
-        ),
-        "lobbying": lambda: crawl_lobbying(
-            year=lobbying_year,
-            pages=getenv_int("PIPELINE_LOBBYING_PAGES", 5),
-            page_size=getenv_int("PIPELINE_LOBBYING_PAGE_SIZE", 50),
-        ),
-    }
+    if direct_payload_fetchers is None:
+        direct_fetchers = {
+            "usaspending": lambda: crawl_usaspending(
+                limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
+                awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
+                fiscal_year=fiscal_year,
+            ),
+            "wikidata": lambda: crawl_wikidata(
+                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
+                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
+                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+            ),
+            "lobbying": lambda: crawl_lobbying(
+                year=lobbying_year,
+                pages=getenv_int("PIPELINE_LOBBYING_PAGES", 5),
+                page_size=getenv_int("PIPELINE_LOBBYING_PAGE_SIZE", 50),
+            ),
+        }
+    else:
+        direct_fetchers = direct_payload_fetchers
     if isinstance(direct_fetchers, list):
         direct_fetchers = {f"payload_{index + 1}": fetcher for index, fetcher in enumerate(direct_fetchers)}
-    raw_discovery_fetchers = discovery_fetchers or {
-        "wikidata_records": lambda: crawl_wikidata_discovery_records(
-            hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-            office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-            subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
-        ),
-        "official_directory_records": lambda: crawl_official_directory(
-            max_records_per_source=getenv_int("PIPELINE_OFFICIAL_DIRECTORY_LIMIT", 150),
-        ),
-        "federal_register_records": lambda: crawl_federal_register(
-            pages=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGES", 3),
-            per_page=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGE_SIZE", 100),
-        ),
-    }
+    if discovery_fetchers is None:
+        raw_discovery_fetchers = {
+            "wikidata_records": lambda: crawl_wikidata_discovery_records(
+                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
+                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
+                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+            ),
+            "official_directory_records": lambda: crawl_official_directory(
+                sources=frontier_targets,
+                max_records_per_source=getenv_int("PIPELINE_OFFICIAL_DIRECTORY_LIMIT", 150),
+                return_metadata=True,
+            ),
+            "federal_register_records": lambda: crawl_federal_register(
+                pages=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGES", 3),
+                per_page=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGE_SIZE", 100),
+            ),
+        }
+    else:
+        raw_discovery_fetchers = discovery_fetchers
 
     payloads: list[dict[str, list[dict[str, Any]]]] = []
     stage_errors: list[str] = []
@@ -146,6 +173,7 @@ def run_pipeline(
 
     discovery_inputs: dict[str, list[dict[str, Any]]] = {}
     discovery_record_counts: dict[str, int] = {}
+    frontier_metrics: list[dict[str, Any]] = []
     for input_name, fetcher in raw_discovery_fetchers.items():
         records, error = safe_stage(input_name, fetcher)
         if error:
@@ -153,7 +181,19 @@ def run_pipeline(
             discovery_inputs[input_name] = []
             discovery_record_counts[input_name] = 0
             continue
-        normalized_records = records if isinstance(records, list) else []
+        if input_name == "official_directory_records" and isinstance(records, dict):
+            frontier_metrics = [
+                metric
+                for metric in records.get("sourceMetrics", [])
+                if isinstance(metric, dict)
+            ]
+            normalized_records = [
+                record
+                for record in records.get("records", [])
+                if isinstance(record, dict)
+            ]
+        else:
+            normalized_records = records if isinstance(records, list) else []
         discovery_inputs[input_name] = normalized_records
         discovery_record_counts[input_name] = len(normalized_records)
         successful_sources.append(input_name)
@@ -220,8 +260,18 @@ def run_pipeline(
         edges_output_path=edges_output_path,
     )
     nodes_after = count_tree_nodes(build_result.graph)
+    timestamp = datetime.now(tz=timezone.utc).isoformat()
+    next_state = update_pipeline_state(
+        pipeline_state,
+        frontier_targets=frontier_targets,
+        frontier_metrics=frontier_metrics,
+        promoted_nodes=promoted_nodes,
+        enriched_nodes=enriched_nodes,
+        timestamp=timestamp,
+    )
+    state_path = write_pipeline_state(next_state, state_output_path)
     stats = {
-        "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+        "timestamp": timestamp,
         "nodes_before": nodes_before,
         "nodes_after": nodes_after,
         "new_nodes_added": max(0, nodes_after - nodes_before),
@@ -235,6 +285,9 @@ def run_pipeline(
         "build_validation": build_result.validation,
         "discovery_sources_used": successful_sources,
         "discovery_record_counts": discovery_record_counts,
+        "frontier_targets_written": len(frontier_targets),
+        "frontier_success_count": sum(1 for metric in frontier_metrics if metric.get("success")),
+        "frontier_failure_count": sum(1 for metric in frontier_metrics if not metric.get("success")),
         "direct_payload_counts": {
             source_name: {
                 "nodes": len(payload.get("nodes", [])),
@@ -249,6 +302,8 @@ def run_pipeline(
             "expanded_edges": str(build_result.edges_path),
             "candidate_nodes": str(candidate_path),
             "enrichment_stats": str(enrichment_stats_output_path),
+            "frontier_targets": str(frontier_path),
+            "pipeline_state": str(state_path),
         },
     }
 

@@ -1,0 +1,2 @@
+"""Persistent pipeline state helpers."""
+

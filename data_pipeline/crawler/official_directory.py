@@ -105,23 +105,41 @@ def crawl(
     *,
     sources: list[dict[str, str]] | None = None,
     max_records_per_source: int = 150,
-) -> list[dict[str, Any]]:
+    return_metadata: bool = False,
+) -> list[dict[str, Any]] | dict[str, Any]:
     records: list[dict[str, Any]] = []
+    source_metrics: list[dict[str, Any]] = []
     for source in sources or list(DEFAULT_DIRECTORY_SOURCES):
         directory_url = str(source.get("directoryUrl") or source.get("url") or "").strip()
         agency_name = str(source.get("agencyName") or source.get("agency") or "").strip()
         if not directory_url or not agency_name:
             continue
+        metric = {
+            "agencyName": agency_name,
+            "directoryUrl": directory_url,
+            "success": False,
+            "recordCount": 0,
+            "error": None,
+        }
         try:
             html = request_text(directory_url)
-        except Exception:  # noqa: BLE001
+        except Exception as error:  # noqa: BLE001
+            metric["error"] = str(error)
+            source_metrics.append(metric)
             continue
-        records.extend(
-            extract_directory_records(
-                html,
-                agency_name=agency_name,
-                directory_url=directory_url,
-                max_records=max_records_per_source,
-            )
+        extracted = extract_directory_records(
+            html,
+            agency_name=agency_name,
+            directory_url=directory_url,
+            max_records=max_records_per_source,
         )
+        records.extend(extracted)
+        metric["success"] = True
+        metric["recordCount"] = len(extracted)
+        source_metrics.append(metric)
+    if return_metadata:
+        return {
+            "records": records,
+            "sourceMetrics": source_metrics,
+        }
     return records

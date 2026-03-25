@@ -297,6 +297,41 @@ def is_duplicate_node(
     return key in existing_name_parent_pairs
 
 
+def candidate_has_official_source(candidate: dict[str, Any]) -> bool:
+    return any(classify_source_url(url) == "official_site" for url in candidate.get("sourceUrls", []) or [])
+
+
+def candidate_has_multiple_independent_sources(candidate: dict[str, Any]) -> bool:
+    source_types = {str(source_type).strip().lower() for source_type in candidate.get("sourceTypes", []) or [] if source_type}
+    source_types.discard("candidate_discovery")
+    return len(source_types) >= 2
+
+
+def should_promote_candidate(candidate: dict[str, Any], *, min_confidence_score: float) -> bool:
+    confidence = float(candidate.get("confidenceScore") or 0.0)
+    if confidence < min_confidence_score:
+        return False
+
+    type_name = normalize_candidate_name(candidate.get("type")).casefold()
+    discovery_method = normalize_candidate_name(candidate.get("discoveryMethod")).casefold()
+    has_official_source = candidate_has_official_source(candidate)
+    has_multiple_sources = candidate_has_multiple_independent_sources(candidate)
+    has_parent = bool(str(candidate.get("parentId") or "").strip() or candidate.get("possibleParent"))
+
+    if "leadership_template_expansion" in discovery_method and not (has_official_source or has_multiple_sources):
+        return False
+
+    if any(keyword in type_name for keyword in ("department", "branch", "agency", "bureau", "office", "division", "organization")):
+        if not has_parent and not candidate.get("attachToRoot"):
+            return False
+        return has_official_source or (has_multiple_sources and confidence >= max(0.76, min_confidence_score))
+
+    if any(keyword in type_name for keyword in ("position", "role", "person", "staff")):
+        return has_official_source or (has_multiple_sources and confidence >= max(0.8, min_confidence_score))
+
+    return has_official_source or has_multiple_sources
+
+
 def promote_candidates(
     candidates: Iterable[dict[str, Any]],
     *,
@@ -324,7 +359,7 @@ def promote_candidates(
             if parent_id:
                 candidate["parentId"] = parent_id
                 candidate.pop("attachToRoot", None)
-        if float(candidate.get("confidenceScore") or 0.0) < min_confidence_score:
+        if not should_promote_candidate(candidate, min_confidence_score=min_confidence_score):
             stats["candidates_below_threshold"] += 1
             continue
 
