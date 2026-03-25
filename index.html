@@ -157,6 +157,11 @@ body.dragging{cursor:grabbing;}
 #depth-expand-ctrl{
   position:fixed;top:130px;left:32px;z-index:20;pointer-events:auto;
 }
+#btn-vr{
+  position:fixed;top:28px;left:240px;z-index:20;display:none;
+  width:auto;min-width:104px;padding:8px 12px;
+  background:rgba(4,8,16,0.84);backdrop-filter:blur(12px);
+}
 #depth-expand-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
 #depth-expand-btns{display:flex;gap:4px;}
 .depth-expand-btn{
@@ -176,6 +181,7 @@ body.dragging{cursor:grabbing;}
   #legend{display:none;}
   #stats{display:none;}
   #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
+  #btn-vr{top:90px;left:16px;}
   #search-wrap{top:16px;width:44px;max-width:calc(100vw - 32px);}
   #search-wrap:focus-within{width:calc(100vw - 32px);}
   #controls-hint{display:none;}
@@ -197,6 +203,8 @@ body.dragging{cursor:grabbing;}
   <p>3D Organizational Explorer</p>
   <div id="node-counter">0 / 0 nodes rendered</div>
 </div>
+
+<button class="btn btn-focus" id="btn-vr" type="button">Enter VR</button>
 
 <div id="depth-expand-ctrl">
   <div id="depth-expand-label">Expand to depth</div>
@@ -279,6 +287,6 @@ window.GRAPH_DATA_SOURCES = {
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260312c"></script>
+<script type="module" src="./js/ui.js?v=20260324vr2"></script>
 </body>
 </html>

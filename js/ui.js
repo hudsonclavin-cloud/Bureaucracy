@@ -1,5 +1,6 @@
-import { createGovernmentGraph } from "./graph.js?v=20260312c";
+import { createGovernmentGraph } from "./graph.js?v=20260324vr2";
 import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
+import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -38,6 +39,7 @@ const dom = {
   btnFocus: document.getElementById("btn-focus"),
   btnFlyMode: document.getElementById("btn-fly-mode"),
   btnCollapse: document.getElementById("btn-collapse"),
+  btnVr: document.getElementById("btn-vr"),
   searchInput: document.getElementById("search-input"),
   searchResults: document.getElementById("search-results"),
   tooltip: document.getElementById("tooltip"),
@@ -63,6 +65,7 @@ const state = {
   expandFrame: 0,
   loaderTimer: null,
   tracedNodeId: null,
+  vrMode: null,
 };
 
 function setText(element, value) {
@@ -959,6 +962,20 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   state.graph.loadData(data);
+  state.vrMode = createVrMode({
+    graph: state.graph,
+    button: dom.btnVr,
+    onStatus: (message) => {
+      if (message) {
+        setText(dom.loadStatus, message);
+      }
+    },
+    onError: (error) => {
+      console.error("VR mode failed", error);
+      setText(dom.loadStatus, "VR mode unavailable.");
+    },
+  });
+  await state.vrMode.init();
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
   hideLoadingOverlay();
