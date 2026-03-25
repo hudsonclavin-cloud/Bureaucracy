@@ -110,6 +110,10 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.desc = sourceNode.desc || targetNode.desc;
   targetNode.employees = sourceNode.employees ?? targetNode.employees;
   targetNode.budget = sourceNode.budget ?? targetNode.budget;
+  targetNode.annual_budget = sourceNode.annual_budget ?? targetNode.annual_budget;
+  targetNode.budget_source = sourceNode.budget_source || targetNode.budget_source;
+  targetNode.budget_year = sourceNode.budget_year || targetNode.budget_year;
+  targetNode.official_website = sourceNode.official_website || targetNode.official_website;
   targetNode.color = sourceNode.color || targetNode.color;
   targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));
   targetNode.sourceTypes = Array.from(new Set([...(targetNode.sourceTypes || []), ...(sourceNode.sourceTypes || [])]));

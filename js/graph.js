@@ -8,6 +8,7 @@ const HIDDEN_OFFSET = 1e8;
 const MAX_VISIBLE_NODES = 25000;
 const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
+const SOURCE_SAMPLE_LIMIT = 12;
 const NODE_RADIUS = 4;
 const NODE_OPACITY = 0.92;
 const EXPANSION_TIME_BUDGET_MS = 8;
@@ -727,6 +728,48 @@ export function createGovernmentGraph({
     return Number.isFinite(parsed) ? parsed : 0;
   }
 
+  function mergeSourceSamples(...sampleGroups) {
+    const merged = [];
+    const seen = new Set();
+    for (const sampleGroup of sampleGroups) {
+      for (const value of sampleGroup || []) {
+        const normalized = String(value || "").trim();
+        if (!normalized) {
+          continue;
+        }
+        const key = normalized.toLowerCase();
+        if (seen.has(key)) {
+          continue;
+        }
+        seen.add(key);
+        merged.push(normalized);
+        if (merged.length >= SOURCE_SAMPLE_LIMIT) {
+          return merged;
+        }
+      }
+    }
+    return merged;
+  }
+
+  function getNodeSourceUrls(node) {
+    return mergeSourceSamples(
+      Array.isArray(node?.sourceUrls) ? node.sourceUrls : [],
+      node?.official_website ? [node.official_website] : [],
+    );
+  }
+
+  function getNodeSourceCount(node, sourceUrls = getNodeSourceUrls(node)) {
+    const explicitCount = Number(node?.sourceCount);
+    if (Number.isFinite(explicitCount) && explicitCount > 0) {
+      return explicitCount;
+    }
+    return sourceUrls.length;
+  }
+
+  function getNodeDirectCost(node) {
+    return parseBudgetAmount(node?.budget ?? node?.annual_budget);
+  }
+
   function nodeRadiusForDepth(depth) {
     return NODE_RADIUS;
   }
@@ -1210,14 +1253,26 @@ export function createGovernmentGraph({
 
     let subtreeCount = 1;
     let subtreeDepth = depth;
-    const directCost = parseBudgetAmount(node.budget);
+    const directSourceUrls = getNodeSourceUrls(node);
+    const directSourceCount = getNodeSourceCount(node, directSourceUrls);
+    const directCost = getNodeDirectCost(node);
     let subtreeCost = directCost;
+    let subtreeSourceCount = directSourceCount;
+    let subtreeEvidenceNodeCount = directSourceCount > 0 ? 1 : 0;
+    let subtreeVerifiedNodeCount = String(node.verificationStatus || "").toLowerCase() === "verified" ? 1 : 0;
+    let subtreePartialNodeCount = String(node.verificationStatus || "").toLowerCase() === "partial" ? 1 : 0;
+    let subtreeSourceUrlSamples = mergeSourceSamples(directSourceUrls);
     const children = node.children || [];
     for (const child of children) {
       const childMeta = registerDataNode(child, node.id, depth + 1, nextPath);
       subtreeCount += childMeta.subtreeCount;
       subtreeDepth = Math.max(subtreeDepth, childMeta.maxDepth);
       subtreeCost += childMeta.subtreeCost || 0;
+      subtreeSourceCount += childMeta.subtreeSourceCount || 0;
+      subtreeEvidenceNodeCount += childMeta.subtreeEvidenceNodeCount || 0;
+      subtreeVerifiedNodeCount += childMeta.subtreeVerifiedNodeCount || 0;
+      subtreePartialNodeCount += childMeta.subtreePartialNodeCount || 0;
+      subtreeSourceUrlSamples = mergeSourceSamples(subtreeSourceUrlSamples, childMeta.subtreeSourceUrlSamples);
     }
 
     node.__meta = {
@@ -1227,8 +1282,24 @@ export function createGovernmentGraph({
       childCount: children.length,
       directCost,
       subtreeCost,
+      directSourceCount,
+      directSourceUrls,
+      subtreeSourceCount,
+      subtreeEvidenceNodeCount,
+      subtreeVerifiedNodeCount,
+      subtreePartialNodeCount,
+      subtreeSourceUrlSamples,
     };
-    return { subtreeCount, maxDepth: subtreeDepth, subtreeCost };
+    return {
+      subtreeCount,
+      maxDepth: subtreeDepth,
+      subtreeCost,
+      subtreeSourceCount,
+      subtreeEvidenceNodeCount,
+      subtreeVerifiedNodeCount,
+      subtreePartialNodeCount,
+      subtreeSourceUrlSamples,
+    };
   }
 
   function registerCandidateNode(node) {
@@ -1254,14 +1325,22 @@ export function createGovernmentGraph({
       subtreeCount: 1,
       maxDepth: depth,
       childCount: 0,
-      directCost: parseBudgetAmount(node.budget),
-      subtreeCost: parseBudgetAmount(node.budget),
+      directCost: getNodeDirectCost(node),
+      subtreeCost: getNodeDirectCost(node),
+      directSourceCount: getNodeSourceCount(node),
+      directSourceUrls: getNodeSourceUrls(node),
+      subtreeSourceCount: getNodeSourceCount(node),
+      subtreeEvidenceNodeCount: getNodeSourceCount(node) > 0 ? 1 : 0,
+      subtreeVerifiedNodeCount: 0,
+      subtreePartialNodeCount: 0,
+      subtreeSourceUrlSamples: getNodeSourceUrls(node),
     };
   }
 
   function expandEntireGraph() {
     let safetyCounter = 0;
-    while (safetyCounter < MAX_NODES) {
+    const expansionBudget = Math.max(state.totalNodeCount + 1, 1);
+    while (safetyCounter < expansionBudget) {
       const frontier = getFrontier(MAX_DEPTH);
       if (frontier.nodes.length === 0) {
         break;
@@ -3547,6 +3626,7 @@ export function createGovernmentGraph({
     state.totalBudgetCost = meta.subtreeCost || 0;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_VISIBLE_NODES;
+    state.fullExpandRenderMode = state.totalNodeCount <= MAX_VISIBLE_NODES;
     state.manualDepthFilter = MAX_DEPTH;
     state.maxVisibleDepth = MAX_DEPTH;
 

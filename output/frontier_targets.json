@@ -78,5 +78,565 @@
     "sourceNodeType": "Cabinet Department",
     "priority": 1.73,
     "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/about",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/about/leadership",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/about/organization",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/bureaus",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/leadership",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/offices",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/org-chart",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/organization",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/organization-chart",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/about",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/about/leadership",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/about/organization",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/bureaus",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/leadership",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/offices",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/org-chart",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/organization",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart/organization-chart",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.7,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "400 Years of African-American History Commission",
+    "directoryUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies",
+    "sourceNodeId": "400-years-of-african-american-history-commission",
+    "sourceNodeType": "Agency",
+    "priority": 1.55,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of Energy",
+    "directoryUrl": "https://www.energy.gov/organization-chart",
+    "sourceNodeId": "department-of-energy",
+    "sourceNodeType": "Agency",
+    "priority": 1.55,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/about",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/about/leadership",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/about/organization",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/bureaus",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/leadership",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/offices",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/org-chart",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/organization",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Bureau of International Organization Affairs",
+    "directoryUrl": "http://state.gov/io/organization-chart",
+    "sourceNodeId": "exec-dept-state-bureau-of-international-organization-affairs",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/about",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/about/leadership",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/about/organization",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/bureaus",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/leadership",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/offices",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/org-chart",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/organization",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Census Bureau",
+    "directoryUrl": "https://www.federalregister.gov/documents/2026/02/17/2026-03073/agency-information-collection-activities-submission-to-the-office-of-management-and-budget-omb-for/organization-chart",
+    "sourceNodeId": "exec-dept-doc-census",
+    "sourceNodeType": "Bureau",
+    "priority": 1.52,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/about",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/about/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/about/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/bureaus",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/offices",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/org-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "http://www.usda.gov/wps/portal/usda/usdahome/organization-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/about",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/about/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/about/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/bureaus",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/offices",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/org-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://usda.gov/organization-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/about",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/about/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/about/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/bureaus",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/offices",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/org-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/northeast-area/beltsville-md-barc/beltsville-agricultural-research-center/systematic-entomology-laboratory/organization-chart",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/southeast-area/new-orleans-la/southern-regional-research-center/cfbru/about",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/southeast-area/new-orleans-la/southern-regional-research-center/cfbru/about/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/southeast-area/new-orleans-la/southern-regional-research-center/cfbru/about/organization",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/southeast-area/new-orleans-la/southern-regional-research-center/cfbru/bureaus",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
+  },
+  {
+    "agencyName": "United States Department of Agriculture",
+    "directoryUrl": "https://www.ars.usda.gov/southeast-area/new-orleans-la/southern-regional-research-center/cfbru/leadership",
+    "sourceNodeId": "united-states-department-of-agriculture",
+    "sourceNodeType": "Department",
+    "priority": 1.5,
+    "reason": "official_frontier_scan"
   }
 ]

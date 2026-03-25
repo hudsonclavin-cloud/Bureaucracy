@@ -87,6 +87,76 @@ function formatCurrency(value) {
   }).format(numeric);
 }
 
+function uniqueStrings(values) {
+  const result = [];
+  const seen = new Set();
+  for (const value of values || []) {
+    const normalized = String(value || "").trim();
+    if (!normalized) {
+      continue;
+    }
+    const key = normalized.toLowerCase();
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    result.push(normalized);
+  }
+  return result;
+}
+
+function getNodeSourceUrls(data) {
+  return uniqueStrings([
+    ...(Array.isArray(data?.sourceUrls) ? data.sourceUrls : []),
+    ...(data?.official_website ? [data.official_website] : []),
+  ]);
+}
+
+function getNodeVerificationEvidence(data) {
+  const meta = data?.__meta || {};
+  const directSourceUrls = getNodeSourceUrls(data);
+  const directSourceCount = Math.max(
+    Number(data?.sourceCount || 0),
+    Number(meta.directSourceCount || 0),
+    directSourceUrls.length,
+  );
+  const branchSourceCount = Math.max(Number(meta.subtreeSourceCount || 0), directSourceCount);
+  const branchEvidenceNodeCount = Math.max(
+    Number(meta.subtreeEvidenceNodeCount || 0),
+    directSourceCount > 0 ? 1 : 0,
+  );
+  const branchVerifiedNodeCount = Math.max(Number(meta.subtreeVerifiedNodeCount || 0), 0);
+  const branchSourceUrls = uniqueStrings([
+    ...directSourceUrls,
+    ...(Array.isArray(meta.subtreeSourceUrlSamples) ? meta.subtreeSourceUrlSamples : []),
+  ]);
+  const inheritedEvidenceNodeCount = Math.max(0, branchEvidenceNodeCount - (directSourceCount > 0 ? 1 : 0));
+  const inheritedSourceCount = Math.max(0, branchSourceCount - directSourceCount);
+  return {
+    directSourceUrls,
+    directSourceCount,
+    branchSourceCount,
+    branchEvidenceNodeCount,
+    branchVerifiedNodeCount,
+    branchSourceUrls,
+    inheritedEvidenceNodeCount,
+    inheritedSourceCount,
+    hasDirectEvidence: directSourceCount > 0,
+    hasInheritedEvidence: inheritedEvidenceNodeCount > 0 || inheritedSourceCount > 0,
+  };
+}
+
+function getDirectCostLabel(data) {
+  if (data?.budget) {
+    return data.budget;
+  }
+  if (data?.annual_budget) {
+    return data.annual_budget;
+  }
+  const directCost = Number(data?.__meta?.directCost || 0);
+  return directCost > 0 ? formatCurrency(directCost) : null;
+}
+
 function showLoader(label) {
   clearTimeout(state.loaderTimer);
   setText(dom.expandLoader, label);
@@ -274,9 +344,12 @@ function ensureVerificationUi() {
   dom.verificationLastVerified = lastVerified;
 }
 
-function getVerificationBadgeConfig(data) {
+function getVerificationBadgeConfig(data, evidence = getNodeVerificationEvidence(data)) {
   if (data.isCandidate) {
     return { label: "CANDIDATE", bg: "rgba(155,139,189,0.18)", border: "#9b8bbd", color: "#d6caef" };
+  }
+  if (!evidence.hasDirectEvidence && evidence.hasInheritedEvidence) {
+    return { label: "INHERITED", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
   }
   const status = String(data.verificationStatus || "unverified").toLowerCase();
   if (status === "verified") {
@@ -420,6 +493,148 @@ function renderVerificationPanel(data) {
   });
 }
 
+function renderVerificationPanelWithEvidence(data) {
+  if (!dom.verificationWrap) {
+    return;
+  }
+
+  const evidence = getNodeVerificationEvidence(data);
+  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
+  const status = data.isCandidate
+    ? `CANDIDATE Â· ${baseStatus}`
+    : !evidence.hasDirectEvidence && evidence.hasInheritedEvidence
+      ? `INHERITED EVIDENCE Â· ${evidence.inheritedEvidenceNodeCount.toLocaleString()} sourced descendants`
+      : baseStatus;
+  const confidence = Number(data.confidenceScore || 0);
+  const sourceUrls = evidence.hasDirectEvidence ? evidence.directSourceUrls : evidence.branchSourceUrls;
+  const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+  const badge = getVerificationBadgeConfig(data, evidence);
+
+  setText(dom.verificationBadge, badge.label);
+  dom.verificationBadge.style.background = badge.bg;
+  dom.verificationBadge.style.border = `1px solid ${badge.border}`;
+  dom.verificationBadge.style.color = badge.color;
+
+  setText(dom.verificationStatus, `Verification Status: ${status}`);
+  setText(
+    dom.verificationConfidence,
+    evidence.hasDirectEvidence
+      ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Direct Sources: ${evidence.directSourceCount.toLocaleString()} Â· Branch Evidence: ${evidence.branchSourceCount.toLocaleString()} refs across ${evidence.branchEvidenceNodeCount.toLocaleString()} nodes`
+      : evidence.hasInheritedEvidence
+        ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Inherited Evidence: ${evidence.inheritedSourceCount.toLocaleString()} refs across ${evidence.inheritedEvidenceNodeCount.toLocaleString()} descendants Â· Verified in Branch: ${evidence.branchVerifiedNodeCount.toLocaleString()}`
+        : `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Direct Sources: 0`,
+  );
+  setText(
+    dom.verificationLastVerified,
+    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
+  );
+
+  dom.verificationSources.replaceChildren();
+  const sourcesLabel = document.createElement("div");
+  sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
+  sourcesLabel.style.marginTop = "6px";
+  sourcesLabel.style.color = "#d4c4a1";
+  dom.verificationSources.appendChild(sourcesLabel);
+
+  if (sourceUrls.length === 0) {
+    const empty = document.createElement("div");
+    empty.textContent = evidence.hasInheritedEvidence
+      ? "No direct sources on this node. Branch evidence exists but no sample links were available."
+      : "No confirming sources recorded.";
+    empty.style.color = "#8f7a5d";
+    dom.verificationSources.appendChild(empty);
+    return;
+  }
+
+  sourceUrls.forEach((url, index) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    let host = url;
+    try {
+      host = new URL(url).hostname;
+    } catch (_error) {
+      host = url;
+    }
+    const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
+    link.textContent = `â€¢ ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
+    link.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(link);
+  });
+}
+
+function renderVerificationPanelWithEvidenceClean(data) {
+  if (!dom.verificationWrap) {
+    return;
+  }
+
+  const evidence = getNodeVerificationEvidence(data);
+  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
+  const status = data.isCandidate
+    ? `CANDIDATE - ${baseStatus}`
+    : !evidence.hasDirectEvidence && evidence.hasInheritedEvidence
+      ? `INHERITED EVIDENCE - ${evidence.inheritedEvidenceNodeCount.toLocaleString()} sourced descendants`
+      : baseStatus;
+  const confidence = Number(data.confidenceScore || 0);
+  const sourceUrls = evidence.hasDirectEvidence ? evidence.directSourceUrls : evidence.branchSourceUrls;
+  const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+  const badge = getVerificationBadgeConfig(data, evidence);
+
+  setText(dom.verificationBadge, badge.label);
+  dom.verificationBadge.style.background = badge.bg;
+  dom.verificationBadge.style.border = `1px solid ${badge.border}`;
+  dom.verificationBadge.style.color = badge.color;
+
+  setText(dom.verificationStatus, `Verification Status: ${status}`);
+  setText(
+    dom.verificationConfidence,
+    evidence.hasDirectEvidence
+      ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Direct Sources: ${evidence.directSourceCount.toLocaleString()} | Branch Evidence: ${evidence.branchSourceCount.toLocaleString()} refs across ${evidence.branchEvidenceNodeCount.toLocaleString()} nodes`
+      : evidence.hasInheritedEvidence
+        ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Inherited Evidence: ${evidence.inheritedSourceCount.toLocaleString()} refs across ${evidence.inheritedEvidenceNodeCount.toLocaleString()} descendants | Verified in Branch: ${evidence.branchVerifiedNodeCount.toLocaleString()}`
+        : `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Direct Sources: 0`,
+  );
+  setText(
+    dom.verificationLastVerified,
+    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
+  );
+
+  dom.verificationSources.replaceChildren();
+  const sourcesLabel = document.createElement("div");
+  sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
+  sourcesLabel.style.marginTop = "6px";
+  sourcesLabel.style.color = "#d4c4a1";
+  dom.verificationSources.appendChild(sourcesLabel);
+
+  if (sourceUrls.length === 0) {
+    const empty = document.createElement("div");
+    empty.textContent = evidence.hasInheritedEvidence
+      ? "No direct sources on this node. Branch evidence exists but no sample links were available."
+      : "No confirming sources recorded.";
+    empty.style.color = "#8f7a5d";
+    dom.verificationSources.appendChild(empty);
+    return;
+  }
+
+  sourceUrls.forEach((url, index) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    let host = url;
+    try {
+      host = new URL(url).hostname;
+    } catch (_error) {
+      host = url;
+    }
+    const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
+    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
+    link.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(link);
+  });
+}
+
 function renderOriginTrace(nodeObj) {
   const originTrace = state.graph?.getOriginTrace?.() || [];
   const traceMatchesSelected =
@@ -505,12 +720,35 @@ function renderInfoPanel(nodeObj) {
   if (data.employees) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
-  if (data.budget) {
-    statRows.push(["DIRECT COST", data.budget]);
+  const directCostLabel = getDirectCostLabel(data);
+  if (directCostLabel) {
+    statRows.push(["DIRECT COST", directCostLabel]);
+  }
+  if (data.budget_source || data.budget_year) {
+    const budgetBasis = [data.budget_source, data.budget_year].filter(Boolean).join(" Â· ");
+    statRows.push(["BUDGET BASIS", budgetBasis]);
   }
   const totalCost = Number(data.__meta?.subtreeCost || 0);
+  const operationCost = Number(state.graph?.getStats?.().totalBudgetCost || 0);
   if (totalCost > 0) {
     statRows.push(["TOTAL COST", formatCurrency(totalCost)]);
+  }
+  if (operationCost > 0) {
+    const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
+    statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} Â· ${share}`]);
+  }
+  if (data.budget_source || data.budget_year) {
+    const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
+    if (budgetBasisRow) {
+      budgetBasisRow[1] = [data.budget_source, data.budget_year].filter(Boolean).join(" | ");
+    }
+  }
+  if (operationCost > 0) {
+    const operationRow = statRows.find((row) => row[0] === "WHOLE OPERATION");
+    const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
+    if (operationRow) {
+      operationRow[1] = `${formatCurrency(operationCost)} | ${share}`;
+    }
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
@@ -620,7 +858,7 @@ function renderInfoPanel(nodeObj) {
   if (dom.btnTraceOrigin) {
     renderOriginTrace(nodeObj);
   }
-  renderVerificationPanel(data);
+  renderVerificationPanelWithEvidenceClean(data);
   renderBreadcrumb(nodeObj);
 }
 

@@ -1,96 +1,103 @@
 {
-  "timestamp": "2026-03-25T20:09:45.385640+00:00",
-  "nodes_before": 5170,
-  "nodes_after": 13894,
-  "new_nodes_added": 8724,
-  "candidate_nodes_written": 4808,
-  "promoted_nodes_written": 1995,
+  "timestamp": "2026-03-25T20:39:59.477857+00:00",
+  "nodes_before": 16190,
+  "nodes_after": 18691,
+  "new_nodes_added": 2501,
+  "candidate_nodes_written": 936,
+  "promoted_nodes_written": 570,
   "promotion_stats": {
-    "candidates_reviewed": 4808,
-    "candidates_below_threshold": 2782,
-    "promoted_new_nodes": 1990,
-    "merged_duplicates": 36
+    "candidates_reviewed": 936,
+    "candidates_below_threshold": 358,
+    "promoted_new_nodes": 570,
+    "merged_duplicates": 8
   },
   "enrichment_stats": {
-    "nodes_enriched": 7282,
-    "relationships_added": 48,
-    "leadership_positions_added": 29,
+    "nodes_enriched": 9281,
+    "relationships_added": 684,
+    "leadership_positions_added": 2,
     "budgets_linked": 0,
-    "verification_score_changes": 3391,
+    "verification_score_changes": 1061,
     "enriched_nodes_by_source": {
-      "wikidata": 6527,
-      "official_http": 8,
-      "federal_register": 273
+      "wikidata": 6038,
+      "official_http": 6,
+      "official_directory": 34,
+      "federal_register": 293
     },
     "relationships_by_type": {
-      "reports_to": 33,
-      "regulates": 11,
-      "oversees": 4
+      "reports_to": 327,
+      "oversees": 309,
+      "regulates": 38,
+      "created_by": 10
     },
     "relationships_by_source": {
-      "official_http": 29,
-      "federal_register": 19
+      "official_directory": 66,
+      "official_http": 18,
+      "federal_register": 600
     },
     "leadership_positions_by_source": {
-      "official_http": 29
+      "official_http": 2
     },
     "budgets_linked_by_source": {},
     "verification_score_changes_by_source": {
-      "wikidata": 3389,
-      "federal_register": 2
+      "wikidata": 1059,
+      "official_directory": 2
     },
     "fetch_failures_by_source": {
-      "official_http": 382
+      "official_http": 308
     }
   },
   "verification_breakdown": {
-    "verified": 4873,
-    "partial": 3578
+    "unverified": 5147,
+    "partial": 5600,
+    "verified": 7890
   },
-  "average_confidence_score": 0.81,
-  "verified_node_count": 4873,
+  "average_confidence_score": 0.59,
+  "verified_node_count": 7890,
   "build_validation": {
-    "initial_node_count": 8451,
-    "input_node_count": 8451,
-    "input_edge_count": 1233,
-    "exported_node_count": 8451,
-    "exported_edge_count": 1233,
+    "initial_node_count": 18637,
+    "input_node_count": 18637,
+    "input_edge_count": 2725,
+    "exported_node_count": 18637,
+    "exported_edge_count": 2725,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 3683,
+    "nodes_reattached_to_root": 2115,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 8451,
+    "final_node_count": 18637,
     "orphan_nodes_detected": 0,
-    "recovered_orphan_nodes": 800,
-    "root_attached_missing_parent_nodes": 800,
+    "recovered_orphan_nodes": 56,
+    "root_attached_missing_parent_nodes": 56,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 3683,
-    "explicitly_root_attached_nodes": 1722,
+    "attached_to_root": 2115,
+    "explicitly_root_attached_nodes": 975,
     "relationship_counts": {
-      "reports_to": 53,
-      "manages": 1165,
-      "regulates": 11,
-      "oversees": 4
+      "reports_to": 89,
+      "manages": 2275,
+      "regulates": 42,
+      "oversees": 309,
+      "created_by": 10
     },
     "verification_status_counts": {
-      "verified": 4873,
-      "partial": 3578
+      "unverified": 5147,
+      "partial": 5600,
+      "verified": 7890
     },
-    "verified_node_count": 4873,
-    "average_confidence_score": 0.81,
+    "verified_node_count": 7890,
+    "average_confidence_score": 0.59,
     "pipeline_summary": {
-      "initial_node_count": 22806,
-      "raw_nodes_loaded": 22806,
-      "nodes_after_normalization": 22806,
-      "nodes_after_merge": 8451,
+      "initial_node_count": 39643,
+      "raw_nodes_loaded": 39643,
+      "nodes_after_normalization": 39643,
+      "nodes_after_merge": 18637,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 3683,
+      "nodes_reattached_to_root": 2115,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 8451
+      "final_node_count": 18637
     }
   },
   "discovery_sources_used": [
+    "usaspending",
     "wikidata",
     "lobbying",
     "wikidata_records",
@@ -99,13 +106,17 @@
   ],
   "discovery_record_counts": {
     "wikidata_records": 6500,
-    "official_directory_records": 0,
+    "official_directory_records": 40,
     "federal_register_records": 285
   },
-  "frontier_targets_written": 10,
-  "frontier_success_count": 10,
-  "frontier_failure_count": 0,
+  "frontier_targets_written": 80,
+  "frontier_success_count": 31,
+  "frontier_failure_count": 49,
   "direct_payload_counts": {
+    "usaspending": {
+      "nodes": 100,
+      "edges": 0
+    },
     "wikidata": {
       "nodes": 13000,
       "edges": 8000
@@ -115,9 +126,7 @@
       "edges": 0
     }
   },
-  "stage_errors": [
-    "usaspending: [WinError 10054] An existing connection was forcibly closed by the remote host"
-  ],
+  "stage_errors": [],
   "outputs": {
     "graph": "C:\\Users\\hudso\\Bureaucracy\\output\\graph.json",
     "expanded_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_nodes.json",
