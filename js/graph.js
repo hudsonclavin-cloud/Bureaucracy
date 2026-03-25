@@ -311,6 +311,7 @@ export function createGovernmentGraph({
     lastUserDrillAt: 0,
     showUnverifiedNodes: true,
     showCandidateNodes: false,
+    fullExpandRenderMode: false,
     candidateNodes: [],
     keyState: {
       KeyW: false,
@@ -351,6 +352,7 @@ export function createGovernmentGraph({
       densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
       showUnverifiedNodes: state.showUnverifiedNodes,
       showCandidateNodes: state.showCandidateNodes,
+      fullExpandRenderMode: state.fullExpandRenderMode,
     });
   }
 
@@ -741,6 +743,9 @@ export function createGovernmentGraph({
   }
 
   function computeVisibleNodeBudget(cameraDistance) {
+    if (state.fullExpandRenderMode) {
+      return MAX_VISIBLE_NODES;
+    }
     const distance = Math.max(cameraDistance, 1);
     const normalizedDistance = THREE.MathUtils.clamp((distance - 140) / 1100, 0, 1);
     const farBudget = Math.max(5000, Math.floor(MAX_VISIBLE_NODES * 0.3));
@@ -762,6 +767,14 @@ export function createGovernmentGraph({
       maxDepthFilter: state.manualDepthFilter,
     });
     state.maxNodes = computeVisibleNodeBudget(cameraDistance);
+    if (state.fullExpandRenderMode) {
+      state.lod.visibleDepth = Math.min(MAX_DEPTH, state.manualDepthFilter);
+      state.lod.visibleNodeBudget = MAX_VISIBLE_NODES;
+      state.lod.label = "Full Expansion";
+      state.lod.showHalos = false;
+      state.lod.clusterHiddenDescendants = false;
+      state.lod.clusterPositionsOnly = false;
+    }
     state.maxVisibleDepth = state.lod.visibleDepth;
     return state.lod;
   }
@@ -847,6 +860,13 @@ export function createGovernmentGraph({
   }
 
   function applyDensityCap(nodeObjs) {
+    if (state.fullExpandRenderMode) {
+      for (const nodeObj of nodeObjs) {
+        nodeObj.densityCapped = false;
+      }
+      state.lod.densityHiddenNodeCount = 0;
+      return;
+    }
     const protectedIds = getProtectedNodeIds();
     const ancestorIds = state.selectedNode?.isCluster ? new Set() : getAncestorIds(state.selectedNode);
     const buckets = computeScreenSpaceBuckets(nodeObjs);
@@ -1622,53 +1642,54 @@ export function createGovernmentGraph({
   }
 
   function getRootBranchPlacements(parentObj, children, parentBranchKey) {
-    const placements = new Array(children.length);
-    const groups = new Map();
+    const childCount = children.length;
+    const shells = buildChildShells(parentObj, childCount);
+    const offsets = new Array(childCount);
+    const shellRadii = new Array(childCount);
+    const branchAnchors = new Array(childCount);
+    const branchMetadata = new Array(childCount);
 
-    for (let i = 0; i < children.length; i += 1) {
-      const childBranchKey = resolveLayoutBranchKey(children[i], parentBranchKey);
-      if (!groups.has(childBranchKey)) {
-        groups.set(childBranchKey, []);
-      }
-      groups.get(childBranchKey).push({ index: i, data: children[i] });
-    }
+    for (const shell of shells) {
+      tempQuat.setFromAxisAngle(
+        upVector,
+        (((hashString(parentObj.data.id) >>> 6) + shell.index * 577) % 4096) / 4096 * Math.PI * 2,
+      );
 
-    for (const [branchKey, group] of groups) {
-      const sectorDirection = copyBranchBaseDirection(branchKey, tempVecA).clone();
-      const largestSubtree = Math.max(...group.map(({ data }) => data.__meta?.subtreeCount || 1));
-      const sectorCenter = tempVecB
-        .copy(parentObj.pos)
-        .addScaledVector(sectorDirection, topLevelBranchDistance(largestSubtree));
-      const localRadius = group.length <= 1
-        ? 0
-        : Math.max(12, SPHERE_RADIUS_SPACING * 0.9 * Math.sqrt(group.length));
-      const shellQuaternion = tempQuat.setFromUnitVectors(upVector, sectorDirection).clone();
+      for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
+        const i = shell.start + localIndex;
+        const childData = children[i];
+        const childSeed = hashString(childData.id);
+        const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
+        const branchHint = copyBranchBaseDirection(childBranchKey, tempVecB).clone();
 
-      for (let localIndex = 0; localIndex < group.length; localIndex += 1) {
-        const { index, data } = group[localIndex];
-        let position = sectorCenter.clone();
-        if (localRadius > 0) {
-          position = sectorCenter
-            .clone()
-            .add(
-              fibonacciSphereDirection(localIndex, group.length, tempVecC)
-                .clone()
-                .applyQuaternion(shellQuaternion)
-                .multiplyScalar(localRadius),
-            );
-        }
-        placements[index] = {
-          position,
-          direction: position.clone().sub(parentObj.pos).normalize(),
-          branchDirection: sectorDirection.clone(),
-          sectorDirection: sectorDirection.clone(),
-          shellRadius: position.distanceTo(parentObj.pos),
-          layoutBranchKey: resolveLayoutBranchKey(data, parentBranchKey),
+        directionVec
+          .copy(fibonacciSphereDirection(localIndex, shell.count, tempVecA))
+          .applyQuaternion(tempQuat);
+        applyBranchWarp(directionVec, branchHint, SHELL_BRANCH_HINT_BLEND * 0.72, directionVec);
+        directionVec
+          .addScaledVector(directionFromSeed(childSeed, shell.index + 1), 0.014)
+          .normalize();
+
+        offsets[i] = directionVec.clone().multiplyScalar(shell.radius);
+        shellRadii[i] = shell.radius;
+        branchAnchors[i] = offsets[i].clone();
+        branchMetadata[i] = {
+          branchKey: childBranchKey,
+          subtreeCount: childData.__meta?.subtreeCount || 1,
+          branchDirection: directionVec.clone(),
         };
       }
     }
 
-    return placements;
+    relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
+    return offsets.map((offset, index) => ({
+      position: tempVecA.copy(parentObj.pos).add(offset).clone(),
+      direction: offset.clone().normalize(),
+      branchDirection: offset.clone().normalize(),
+      sectorDirection: offset.clone().normalize(),
+      shellRadius: shellRadii[index],
+      layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
+    }));
   }
 
   function getSpreadPositions(parentObj, children) {
@@ -2046,6 +2067,9 @@ export function createGovernmentGraph({
   }
 
   function pruneDistantNodes() {
+    if (state.fullExpandRenderMode) {
+      return;
+    }
     if (state.visibleNodeCount <= state.maxNodes) {
       return;
     }
@@ -2626,6 +2650,14 @@ export function createGovernmentGraph({
       nodeObj.clusterRef = null;
     }
 
+    if (state.fullExpandRenderMode) {
+      for (const clusterObj of state.activeClusters) {
+        clusterObj.renderVisible = false;
+      }
+      state.activeClusters = [];
+      return;
+    }
+
     const nextClusters = [];
     const clusteredRoots = new Set();
     const candidates = [...state.visibleNodes].sort((a, b) => a.depth - b.depth);
@@ -2670,6 +2702,9 @@ export function createGovernmentGraph({
   }
 
   function visibleNodeBudgetExceeded() {
+    if (state.fullExpandRenderMode) {
+      return false;
+    }
     return state.visibleNodeCount >= Math.min(state.maxNodes, state.lod.visibleNodeBudget);
   }
 
@@ -2730,7 +2765,8 @@ export function createGovernmentGraph({
     updateFrustum();
     state.screenSpaceBuckets = computeScreenSpaceBuckets(
       state.visibleNodes.filter(
-        (nodeObj) => lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data),
+        (nodeObj) => (state.fullExpandRenderMode || lodManager.shouldRenderNode(nodeObj, state.lod))
+          && shouldDisplayNodeByVerification(nodeObj.data),
       ),
     );
     recomputeClusters();
@@ -2742,7 +2778,7 @@ export function createGovernmentGraph({
     for (const nodeObj of state.allNodes) {
       nodeObj.renderVisible = false;
       if (
-        !lodManager.shouldRenderNode(nodeObj, state.lod) ||
+        (!(state.fullExpandRenderMode || lodManager.shouldRenderNode(nodeObj, state.lod))) ||
         !shouldDisplayNodeByVerification(nodeObj.data) ||
         nodeObj.clustered
       ) {
@@ -3298,6 +3334,17 @@ export function createGovernmentGraph({
       refreshVisibility(true);
       return state.showCandidateNodes;
     },
+    setFullExpandRenderMode(enabled) {
+      state.fullExpandRenderMode = Boolean(enabled);
+      state.forceFullRenderRefresh = true;
+      state.renderDirty = true;
+      refreshVisibility(true);
+      notifyCounts();
+      return state.fullExpandRenderMode;
+    },
+    isFullExpandRenderMode() {
+      return state.fullExpandRenderMode;
+    },
     getFrontier,
     refreshVisibility,
     focusSelectedNode() {
@@ -3387,6 +3434,7 @@ export function createGovernmentGraph({
         densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
         showUnverifiedNodes: state.showUnverifiedNodes,
         showCandidateNodes: state.showCandidateNodes,
+        fullExpandRenderMode: state.fullExpandRenderMode,
       };
     },
     getMaxDataDepth() {

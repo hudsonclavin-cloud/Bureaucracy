@@ -89,9 +89,10 @@ function updateStats(stats) {
   const eligibleTotal = Number.isFinite(stats.eligibleTotalNodeCount) ? stats.eligibleTotalNodeCount : stats.totalNodeCount;
   setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${eligibleTotal.toLocaleString()} nodes loaded`);
   setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  const fullExpandLabel = stats.fullExpandRenderMode ? " | full-expansion render active" : "";
   setText(
     dom.statsLoaded,
-    `${loadedCount.toLocaleString()} eligible under current filters | ${stats.visibleNodeCount.toLocaleString()} loaded in memory | ${(stats.hiddenCandidateCount || 0).toLocaleString()} candidate nodes hidden | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
+    `${loadedCount.toLocaleString()} eligible under current filters | ${stats.visibleNodeCount.toLocaleString()} loaded in memory | ${(stats.hiddenCandidateCount || 0).toLocaleString()} candidate nodes hidden | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden${fullExpandLabel}`,
   );
   setText(
     dom.statsDepth,
@@ -677,6 +678,7 @@ function stopProgressiveExpansion() {
     window.cancelAnimationFrame(state.expandFrame);
     state.expandFrame = 0;
   }
+  state.graph.setFullExpandRenderMode(false);
   dom.btnCancelExpand.style.display = "none";
   dom.btnExpandAll.disabled = false;
   setText(dom.btnExpandAll, "Expand All Below");
@@ -724,6 +726,7 @@ function waitForExpansionDrain(onDone) {
 
 function expandProgressively(targetDepth) {
   state.expandCancelled = false;
+  state.graph.setFullExpandRenderMode(true);
   dom.btnExpandAll.disabled = true;
   setText(dom.btnExpandAll, "Expanding…");
   dom.btnCancelExpand.style.display = "block";
@@ -749,6 +752,8 @@ function expandProgressively(targetDepth) {
       const finalStats = state.graph.getStats();
       if ((finalStats.hiddenCandidateCount || 0) > 0 && !finalStats.showCandidateNodes) {
         showLoader(`All hierarchy nodes loaded. ${finalStats.hiddenCandidateCount.toLocaleString()} candidate nodes are hidden.`);
+      } else {
+        showLoader("All eligible hierarchy nodes rendered.");
       }
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
@@ -767,6 +772,7 @@ function expandProgressively(targetDepth) {
     const refreshedStats = state.graph.getStats();
     if (refreshedStats.visibleNodeCount + nextCount > refreshedStats.maxNodes) {
       showLoader(`Node cap reached at level ${frontier.depth + 1}`);
+      state.graph.setFullExpandRenderMode(false);
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
       setText(dom.btnExpandAll, "Expand All Below");
@@ -868,6 +874,7 @@ function bindControls() {
     if (!selected) {
       return;
     }
+    state.graph.setFullExpandRenderMode(false);
     state.graph.collapseNode(selected);
     renderInfoPanel(selected);
   });
@@ -877,6 +884,9 @@ function bindControls() {
       document.querySelectorAll(".depth-btn").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       const depth = button.dataset.depth === "all" ? Infinity : Number(button.dataset.depth);
+      if (Number.isFinite(depth)) {
+        state.graph.setFullExpandRenderMode(false);
+      }
       state.graph.setDepthFilter(depth);
       updateStats(state.graph.getStats());
     });
