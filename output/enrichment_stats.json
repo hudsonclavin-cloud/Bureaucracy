@@ -1,7 +1,32 @@
 {
-  "nodes_enriched": 4,
-  "relationships_added": 11,
-  "leadership_positions_added": 4,
-  "budgets_linked": 3,
-  "verification_score_changes": 1
+  "nodes_enriched": 7282,
+  "relationships_added": 48,
+  "leadership_positions_added": 29,
+  "budgets_linked": 0,
+  "verification_score_changes": 3391,
+  "enriched_nodes_by_source": {
+    "wikidata": 6527,
+    "official_http": 8,
+    "federal_register": 273
+  },
+  "relationships_by_type": {
+    "reports_to": 33,
+    "regulates": 11,
+    "oversees": 4
+  },
+  "relationships_by_source": {
+    "official_http": 29,
+    "federal_register": 19
+  },
+  "leadership_positions_by_source": {
+    "official_http": 29
+  },
+  "budgets_linked_by_source": {},
+  "verification_score_changes_by_source": {
+    "wikidata": 3389,
+    "federal_register": 2
+  },
+  "fetch_failures_by_source": {
+    "official_http": 382
+  }
 }

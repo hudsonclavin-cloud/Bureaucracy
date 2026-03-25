@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260324vr2";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
+import { createGovernmentGraph } from "./graph.js?v=20260325a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260325a";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
@@ -29,6 +29,7 @@ const dom = {
   statsTotal: document.getElementById("stats-total"),
   statsLoaded: document.getElementById("stats-loaded"),
   statsDepth: document.getElementById("stats-depth"),
+  statsCost: document.getElementById("stats-cost"),
   statsPanel: document.getElementById("stats"),
   legend: document.getElementById("legend"),
   depthCtrl: document.getElementById("depth-ctrl"),
@@ -74,6 +75,18 @@ function setText(element, value) {
   }
 }
 
+function formatCurrency(value) {
+  const numeric = Number(value || 0);
+  if (!Number.isFinite(numeric) || numeric <= 0) {
+    return "$0";
+  }
+  return new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(numeric);
+}
+
 function showLoader(label) {
   clearTimeout(state.loaderTimer);
   setText(dom.expandLoader, label);
@@ -90,9 +103,11 @@ function hideLoader(delay = 200) {
 function updateStats(stats) {
   const loadedCount = Number.isFinite(stats.visibleNodeCount) ? stats.visibleNodeCount : 0;
   const totalCount = Number.isFinite(stats.totalNodeCount) ? stats.totalNodeCount : loadedCount;
-  const eligibleTotal = Number.isFinite(stats.eligibleTotalNodeCount) ? stats.eligibleTotalNodeCount : totalCount;
   setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${totalCount.toLocaleString()} nodes loaded`);
-  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  setText(
+    dom.statsTotal,
+    `${stats.totalNodeCount.toLocaleString()} total nodes${stats.candidateNodeCount ? ` | ${stats.candidateNodeCount.toLocaleString()} candidates` : ""}`,
+  );
   const fullExpandLabel = stats.fullExpandRenderMode ? " | full-expansion render active" : "";
   setText(
     dom.statsLoaded,
@@ -102,6 +117,9 @@ function updateStats(stats) {
     dom.statsDepth,
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
+  if (dom.statsCost) {
+    setText(dom.statsCost, `${formatCurrency(stats.totalBudgetCost)} total cost`);
+  }
 }
 
 function hideLoadingOverlay(delay = 600) {
@@ -307,7 +325,7 @@ function ensureVerificationToggles() {
 
   const toggleUnverified = makeToggle("Show Unverified Nodes");
   const toggleCandidates = makeToggle("Show Candidate Nodes");
-  toggleCandidates.checked = false;
+  toggleCandidates.checked = true;
 
   document.body.appendChild(wrap);
   dom.togglesWrap = wrap;
@@ -351,7 +369,8 @@ function renderVerificationPanel(data) {
     return;
   }
 
-  const status = data.isCandidate ? "CANDIDATE" : String(data.verificationStatus || "unverified").toUpperCase();
+  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
+  const status = data.isCandidate ? `CANDIDATE · ${baseStatus}` : baseStatus;
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
   const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
@@ -487,7 +506,11 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
   if (data.budget) {
-    statRows.push(["BUDGET", data.budget]);
+    statRows.push(["DIRECT COST", data.budget]);
+  }
+  const totalCost = Number(data.__meta?.subtreeCost || 0);
+  if (totalCost > 0) {
+    statRows.push(["TOTAL COST", formatCurrency(totalCost)]);
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);

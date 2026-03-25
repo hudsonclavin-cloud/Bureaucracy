@@ -96,6 +96,7 @@ class LobbyingCrawler:
                     "type": "Corporation",
                     "desc": "Corporate entity discovered through lobbying disclosure filings.",
                     "color": "#4ac88a",
+                    "sourceUrls": [f"{BASE_URLS[0]}filings/"],
                 }
             )
 
@@ -131,6 +132,7 @@ class LobbyingCrawler:
                         "type": "Agency",
                         "desc": desc,
                         "color": "#4a8ac8",
+                        "sourceUrls": [f"{BASE_URLS[0]}filings/"],
                     }
                 )
                 edges.append(

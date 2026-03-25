@@ -183,6 +183,8 @@ class USASpendingCrawler:
             agency_id = generate_node_id(agency_name)
             sampled_award_total = 0.0
             direct_budget = agency.get("agency_total_obligated_amount")
+            top_tier_source_url = urljoin(BASE_URL, TOP_TIER_ENDPOINT)
+            awards_source_url = urljoin(BASE_URL, SPENDING_BY_AWARD_ENDPOINT)
             agency_node = {
                 "id": agency_id,
                 "name": agency_name,
@@ -193,6 +195,7 @@ class USASpendingCrawler:
                 "budget_source": "USAspending" if direct_budget else None,
                 "budget_year": str(fiscal_year or date.today().year),
                 "color": "#4a8ac8",
+                "sourceUrls": [top_tier_source_url],
             }
             nodes.append(agency_node)
 
@@ -237,9 +240,11 @@ class USASpendingCrawler:
                         "name": contractor_name,
                         "type": "Corporation",
                         "desc": " ".join(contractor_desc_bits),
+                        "budget": str(contract_amount or "") or None,
                         "color": "#4ac88a",
                         "industry": industry,
                         "location": location,
+                        "sourceUrls": [awards_source_url],
                     }
                 )
                 edges.append(

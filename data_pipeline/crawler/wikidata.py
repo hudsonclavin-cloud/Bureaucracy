@@ -81,6 +81,17 @@ def extract_entity_id(binding: dict[str, Any], key: str) -> str | None:
     return value.rstrip("/").rsplit("/", 1)[-1] or None
 
 
+def build_source_urls(binding: dict[str, Any], key: str) -> list[str]:
+    source_urls: list[str] = []
+    official_website = binding.get("officialWebsite", {}).get("value", "")
+    if official_website:
+        source_urls.append(official_website)
+    entity_id = extract_entity_id(binding, key)
+    if entity_id:
+        source_urls.append(f"https://www.wikidata.org/wiki/{entity_id}")
+    return source_urls
+
+
 def classify_parent_type(name: str) -> str:
     lowered = name.lower()
     if "branch" in lowered:
@@ -132,6 +143,7 @@ class WikidataCrawler:
                     "type": "Agency",
                     "desc": "Federal agency discovered through Wikidata organizational hierarchy.",
                     "color": "#4a8ac8",
+                    "sourceUrls": build_source_urls(row, "agency"),
                 }
             )
 
@@ -144,6 +156,7 @@ class WikidataCrawler:
                         "type": classify_parent_type(parent_name),
                         "desc": "Parent government organization from Wikidata.",
                         "color": "#c8a84a" if "branch" in parent_name.lower() else "#c84a4a",
+                        "sourceUrls": build_source_urls(row, "parent"),
                     }
                 )
                 edges.append(
@@ -176,6 +189,7 @@ class WikidataCrawler:
                     "type": office_type,
                     "desc": f"{office_type} discovered as part of {parent_name} via Wikidata.",
                     "color": "#888888" if office_type == "Office" else "#4a8ac8",
+                    "sourceUrls": build_source_urls(row, "office"),
                 }
             )
             nodes.append(
@@ -184,6 +198,7 @@ class WikidataCrawler:
                     "name": parent_name,
                     "type": classify_parent_type(parent_name),
                     "desc": "Parent organization from Wikidata.",
+                    "sourceUrls": build_source_urls(row, "parent"),
                 }
             )
             edges.append(
@@ -210,6 +225,7 @@ class WikidataCrawler:
                     "type": "Position",
                     "desc": f"Leadership position associated with {agency_name} from Wikidata.",
                     "color": "#888888",
+                    "sourceUrls": build_source_urls(row, "position"),
                 }
             )
             edges.append(
@@ -229,6 +245,7 @@ class WikidataCrawler:
                         "type": "Person",
                         "desc": f"Office holder connected to {position_name} via Wikidata.",
                         "color": "#8a4ac8",
+                        "sourceUrls": build_source_urls(row, "person"),
                     }
                 )
                 edges.append(

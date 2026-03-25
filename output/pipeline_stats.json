@@ -1,75 +1,130 @@
 {
-  "timestamp": "2026-03-13T03:55:34.445507+00:00",
+  "timestamp": "2026-03-25T20:09:45.385640+00:00",
   "nodes_before": 5170,
-  "nodes_after": 5177,
-  "new_nodes_added": 7,
-  "candidate_nodes_written": 1942,
-  "promoted_nodes_written": 2,
+  "nodes_after": 13894,
+  "new_nodes_added": 8724,
+  "candidate_nodes_written": 4808,
+  "promoted_nodes_written": 1995,
   "promotion_stats": {
-    "candidates_reviewed": 1942,
-    "candidates_below_threshold": 1940,
-    "promoted_new_nodes": 2,
-    "merged_duplicates": 0
+    "candidates_reviewed": 4808,
+    "candidates_below_threshold": 2782,
+    "promoted_new_nodes": 1990,
+    "merged_duplicates": 36
   },
   "enrichment_stats": {
-    "nodes_enriched": 4,
-    "relationships_added": 11,
-    "leadership_positions_added": 4,
-    "budgets_linked": 3,
-    "verification_score_changes": 1
+    "nodes_enriched": 7282,
+    "relationships_added": 48,
+    "leadership_positions_added": 29,
+    "budgets_linked": 0,
+    "verification_score_changes": 3391,
+    "enriched_nodes_by_source": {
+      "wikidata": 6527,
+      "official_http": 8,
+      "federal_register": 273
+    },
+    "relationships_by_type": {
+      "reports_to": 33,
+      "regulates": 11,
+      "oversees": 4
+    },
+    "relationships_by_source": {
+      "official_http": 29,
+      "federal_register": 19
+    },
+    "leadership_positions_by_source": {
+      "official_http": 29
+    },
+    "budgets_linked_by_source": {},
+    "verification_score_changes_by_source": {
+      "wikidata": 3389,
+      "federal_register": 2
+    },
+    "fetch_failures_by_source": {
+      "official_http": 382
+    }
   },
   "verification_breakdown": {
-    "verified": 7,
-    "partial": 1
+    "verified": 4873,
+    "partial": 3578
   },
-  "average_confidence_score": 0.89,
-  "verified_node_count": 7,
+  "average_confidence_score": 0.81,
+  "verified_node_count": 4873,
   "build_validation": {
-    "initial_node_count": 8,
-    "input_node_count": 8,
-    "input_edge_count": 5,
-    "exported_node_count": 8,
-    "exported_edge_count": 5,
+    "initial_node_count": 8451,
+    "input_node_count": 8451,
+    "input_edge_count": 1233,
+    "exported_node_count": 8451,
+    "exported_edge_count": 1233,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 2,
+    "nodes_reattached_to_root": 3683,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 8,
+    "final_node_count": 8451,
     "orphan_nodes_detected": 0,
-    "recovered_orphan_nodes": 1,
-    "root_attached_missing_parent_nodes": 1,
+    "recovered_orphan_nodes": 800,
+    "root_attached_missing_parent_nodes": 800,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 2,
-    "explicitly_root_attached_nodes": 0,
+    "attached_to_root": 3683,
+    "explicitly_root_attached_nodes": 1722,
     "relationship_counts": {
-      "oversees": 2,
-      "created_by": 2,
-      "funds": 1
+      "reports_to": 53,
+      "manages": 1165,
+      "regulates": 11,
+      "oversees": 4
     },
     "verification_status_counts": {
-      "verified": 7,
-      "partial": 1
+      "verified": 4873,
+      "partial": 3578
     },
-    "verified_node_count": 7,
-    "average_confidence_score": 0.89,
+    "verified_node_count": 4873,
+    "average_confidence_score": 0.81,
     "pipeline_summary": {
-      "initial_node_count": 11,
-      "raw_nodes_loaded": 11,
-      "nodes_after_normalization": 11,
-      "nodes_after_merge": 8,
+      "initial_node_count": 22806,
+      "raw_nodes_loaded": 22806,
+      "nodes_after_normalization": 22806,
+      "nodes_after_merge": 8451,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 2,
+      "nodes_reattached_to_root": 3683,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 8
+      "final_node_count": 8451
     }
   },
-  "stage_errors": [],
+  "discovery_sources_used": [
+    "wikidata",
+    "lobbying",
+    "wikidata_records",
+    "official_directory_records",
+    "federal_register_records"
+  ],
+  "discovery_record_counts": {
+    "wikidata_records": 6500,
+    "official_directory_records": 0,
+    "federal_register_records": 285
+  },
+  "frontier_targets_written": 10,
+  "frontier_success_count": 10,
+  "frontier_failure_count": 0,
+  "direct_payload_counts": {
+    "wikidata": {
+      "nodes": 13000,
+      "edges": 8000
+    },
+    "lobbying": {
+      "nodes": 500,
+      "edges": 0
+    }
+  },
+  "stage_errors": [
+    "usaspending: [WinError 10054] An existing connection was forcibly closed by the remote host"
+  ],
   "outputs": {
-    "graph": "/Users/hudsonclavin/Desktop/bureaucracy/output/graph.json",
-    "expanded_nodes": "/Users/hudsonclavin/Desktop/bureaucracy/output/expanded_nodes.json",
-    "expanded_edges": "/Users/hudsonclavin/Desktop/bureaucracy/output/expanded_edges.json",
-    "candidate_nodes": "/Users/hudsonclavin/Desktop/bureaucracy/output/candidate_nodes.json",
-    "enrichment_stats": "/Users/hudsonclavin/Desktop/bureaucracy/output/enrichment_stats.json"
+    "graph": "C:\\Users\\hudso\\Bureaucracy\\output\\graph.json",
+    "expanded_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_nodes.json",
+    "expanded_edges": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_edges.json",
+    "candidate_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\candidate_nodes.json",
+    "enrichment_stats": "C:\\Users\\hudso\\Bureaucracy\\output\\enrichment_stats.json",
+    "frontier_targets": "C:\\Users\\hudso\\Bureaucracy\\output\\frontier_targets.json",
+    "pipeline_state": "C:\\Users\\hudso\\Bureaucracy\\output\\pipeline_state.json"
   }
 }

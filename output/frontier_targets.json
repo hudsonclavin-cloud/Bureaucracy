@@ -1,0 +1,82 @@
+[
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/about",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/about/leadership",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/about/organization",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/bureaus",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/leadership",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/offices",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/org-chart",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/organization",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/organization-chart",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.88,
+    "reason": "revisit_low_confidence"
+  },
+  {
+    "agencyName": "Department of State",
+    "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary",
+    "sourceNodeId": "exec-dept-state",
+    "sourceNodeType": "Cabinet Department",
+    "priority": 1.73,
+    "reason": "revisit_low_confidence"
+  }
+]

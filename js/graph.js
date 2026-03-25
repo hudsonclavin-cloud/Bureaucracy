@@ -250,6 +250,9 @@ export function createGovernmentGraph({
     rootObj: null,
     selectedNode: null,
     totalNodeCount: 0,
+    graphNodeCount: 0,
+    candidateNodeCount: 0,
+    totalBudgetCost: 0,
     maxDataDepth: 0,
     maxNodes: 0,
     maxVisibleDepth: MAX_DEPTH,
@@ -316,7 +319,7 @@ export function createGovernmentGraph({
     flyPitchTarget: 0,
     lastUserDrillAt: 0,
     showUnverifiedNodes: true,
-    showCandidateNodes: false,
+    showCandidateNodes: true,
     fullExpandRenderMode: false,
     xrSessionActive: false,
     frameHooks: new Set(),
@@ -342,13 +345,16 @@ export function createGovernmentGraph({
     );
     const candidateNodeCount = state.candidateNodes.length;
     const hiddenCandidateCount = state.showCandidateNodes ? 0 : candidateNodeCount;
+    const totalNodeCount = state.totalNodeCount;
     onCountsChange({
       visibleNodeCount: state.visibleNodeCount,
-      totalNodeCount: state.totalNodeCount,
+      totalNodeCount,
       loadedDisplayNodeCount,
       eligibleTotalNodeCount,
-      candidateNodeCount,
+      graphNodeCount: state.graphNodeCount,
+      candidateNodeCount: state.candidateNodeCount,
       hiddenCandidateCount,
+      totalBudgetCost: state.totalBudgetCost,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       manualDepthFilter: state.manualDepthFilter,
@@ -707,6 +713,18 @@ export function createGovernmentGraph({
       hash = Math.imul(hash, 16777619);
     }
     return hash >>> 0;
+  }
+
+  function parseBudgetAmount(value) {
+    if (value === null || value === undefined || value === "") {
+      return 0;
+    }
+    if (typeof value === "number" && Number.isFinite(value)) {
+      return value;
+    }
+    const normalized = String(value).replace(/[^0-9.\-]/g, "");
+    const parsed = Number(normalized);
+    return Number.isFinite(parsed) ? parsed : 0;
   }
 
   function nodeRadiusForDepth(depth) {
@@ -1192,11 +1210,14 @@ export function createGovernmentGraph({
 
     let subtreeCount = 1;
     let subtreeDepth = depth;
+    const directCost = parseBudgetAmount(node.budget);
+    let subtreeCost = directCost;
     const children = node.children || [];
     for (const child of children) {
       const childMeta = registerDataNode(child, node.id, depth + 1, nextPath);
       subtreeCount += childMeta.subtreeCount;
       subtreeDepth = Math.max(subtreeDepth, childMeta.maxDepth);
+      subtreeCost += childMeta.subtreeCost || 0;
     }
 
     node.__meta = {
@@ -1204,8 +1225,10 @@ export function createGovernmentGraph({
       subtreeCount,
       maxDepth: subtreeDepth,
       childCount: children.length,
+      directCost,
+      subtreeCost,
     };
-    return { subtreeCount, maxDepth: subtreeDepth };
+    return { subtreeCount, maxDepth: subtreeDepth, subtreeCost };
   }
 
   function registerCandidateNode(node) {
@@ -1231,7 +1254,22 @@ export function createGovernmentGraph({
       subtreeCount: 1,
       maxDepth: depth,
       childCount: 0,
+      directCost: parseBudgetAmount(node.budget),
+      subtreeCost: parseBudgetAmount(node.budget),
     };
+  }
+
+  function expandEntireGraph() {
+    let safetyCounter = 0;
+    while (safetyCounter < MAX_NODES) {
+      const frontier = getFrontier(MAX_DEPTH);
+      if (frontier.nodes.length === 0) {
+        break;
+      }
+      expandNodesBatch(frontier.nodes, false);
+      flushPendingExpansions(50, Math.max(frontier.nodes.length * 64, 4096));
+      safetyCounter += frontier.nodes.length;
+    }
   }
 
   function getVerificationMaterialProfile(styleKey, color) {
@@ -3503,7 +3541,10 @@ export function createGovernmentGraph({
     for (const candidateNode of data.candidateNodes || []) {
       registerCandidateNode(candidateNode);
     }
-    state.totalNodeCount = meta.subtreeCount + (data.candidateNodes || []).length;
+    state.graphNodeCount = meta.subtreeCount;
+    state.candidateNodeCount = (data.candidateNodes || []).length;
+    state.totalNodeCount = state.graphNodeCount + state.candidateNodeCount;
+    state.totalBudgetCost = meta.subtreeCost || 0;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_VISIBLE_NODES;
     state.manualDepthFilter = MAX_DEPTH;
@@ -3531,6 +3572,7 @@ export function createGovernmentGraph({
     }
     syncCandidateVisibility();
     expandNode(state.rootObj, false);
+    expandEntireGraph();
     flushPendingExpansions(18, 4096);
     updateLodState();
     ensureLodCoverage();
@@ -3739,8 +3781,10 @@ export function createGovernmentGraph({
         totalNodeCount: state.totalNodeCount,
         loadedDisplayNodeCount,
         eligibleTotalNodeCount,
-        candidateNodeCount,
+        graphNodeCount: state.graphNodeCount,
+        candidateNodeCount: state.candidateNodeCount,
         hiddenCandidateCount: state.showCandidateNodes ? 0 : candidateNodeCount,
+        totalBudgetCost: state.totalBudgetCost,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,

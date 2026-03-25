@@ -127,20 +127,27 @@ function mergeNodeData(targetNode, sourceNode) {
 
 function normalizeCandidateNode(rawCandidate) {
   const name = String(rawCandidate?.name || "Unnamed Candidate");
-  const sourceUrl = rawCandidate?.sourceUrl ? String(rawCandidate.sourceUrl) : null;
+  const sourceUrls = Array.isArray(rawCandidate?.sourceUrls)
+    ? rawCandidate.sourceUrls.map((value) => String(value))
+    : rawCandidate?.sourceUrl
+      ? [String(rawCandidate.sourceUrl)]
+      : [];
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   return normalizeNode({
     id: String(rawCandidate?.id || `candidate-${slug || "node"}`),
     name,
     type: String(rawCandidate?.type || "Candidate"),
     desc: String(rawCandidate?.desc || `Candidate node discovered via ${rawCandidate?.discoveryMethod || "automated discovery"}.`),
+    budget: rawCandidate?.budget ?? null,
     color: typeof rawCandidate?.color === "string" ? rawCandidate.color : "#9b8bbd",
-    sourceUrls: sourceUrl ? [sourceUrl] : [],
-    sourceTypes: ["candidate_discovery"],
-    confidenceScore: Number(rawCandidate?.confidenceEstimate || 0),
-    verificationStatus: "unverified",
-    lastVerified: null,
-    sourceCount: sourceUrl ? 1 : 0,
+    sourceUrls,
+    sourceTypes: Array.isArray(rawCandidate?.sourceTypes)
+      ? rawCandidate.sourceTypes
+      : ["candidate_discovery"],
+    confidenceScore: Number((rawCandidate?.confidenceScore ?? rawCandidate?.confidenceEstimate) || 0),
+    verificationStatus: String(rawCandidate?.verificationStatus || "unverified"),
+    lastVerified: rawCandidate?.lastVerified ? String(rawCandidate.lastVerified) : null,
+    sourceCount: Number(rawCandidate?.sourceCount || sourceUrls.length),
     isCandidate: true,
     possibleParent: rawCandidate?.possibleParent || null,
     discoveryMethod: rawCandidate?.discoveryMethod || null,

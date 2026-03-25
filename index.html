@@ -275,6 +275,7 @@ body.dragging{cursor:grabbing;}
   <div class="stat-item" id="stats-total">0 total nodes</div>
   <div class="stat-item" id="stats-loaded">0 currently loaded</div>
   <div class="stat-item" id="stats-depth">Depth filter: All</div>
+  <div class="stat-item" id="stats-cost">$0 total cost</div>
 </div>
 
 <div id="controls-hint">Drag orbit · Shift+Drag pan · Scroll zoom · Click focus · Fly mode: WASD + Q/E</div>
@@ -283,10 +284,10 @@ body.dragging{cursor:grabbing;}
 
 <script>
 window.GRAPH_DATA_SOURCES = {
-  base: "./data/federal_gov_complete_1.json",
+  base: "./output/graph.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260324vr2"></script>
+<script type="module" src="./js/ui.js?v=20260325a"></script>
 </body>
 </html>
