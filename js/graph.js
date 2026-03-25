@@ -1165,6 +1165,12 @@ export function createGovernmentGraph({
     teleportVrRig(destination);
   }
 
+  function resetVrRig() {
+    xrDolly.position.set(0, 0, 0);
+    xrDolly.rotation.set(0, 0, 0);
+    state.renderDirty = true;
+  }
+
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
     const nextPath = [...path, node.name];
     node.parent = parentId;
@@ -3616,6 +3622,9 @@ export function createGovernmentGraph({
     teleportVrRig(targetWorldPosition) {
       teleportVrRig(targetWorldPosition);
     },
+    resetVrRig() {
+      resetVrRig();
+    },
     snapTurnVr(angle) {
       snapTurnVr(angle);
     },
@@ -3751,6 +3760,7 @@ export function createGovernmentGraph({
       return {
         MAX_VISIBLE_NODES,
         MAX_DEPTH,
+        VR_EXPAND_ALL_DEPTH_LIMIT: QUEST_VR_CONFIG.expandAllDepthLimit,
       };
     },
   };

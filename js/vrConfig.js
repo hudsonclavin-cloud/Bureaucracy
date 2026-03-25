@@ -1,6 +1,7 @@
 export const QUEST_VR_CONFIG = {
   maxVisibleNodes: 8000,
   farVisibleNodes: 3200,
+  expandAllDepthLimit: 4,
   clusterCollapseDistanceMultiplier: 0.78,
   clusterDescendantBonus: 2,
   smoothMoveSpeed: 2.8,

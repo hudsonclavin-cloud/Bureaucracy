@@ -730,13 +730,20 @@ function waitForExpansionDrain(onDone) {
 
 function expandProgressively(targetDepth) {
   state.expandCancelled = false;
-  state.graph.setFullExpandRenderMode(true);
+  const vrActive = state.graph.isVrSessionActive?.() || false;
+  const selected = state.graph.getSelectedNode();
+  const vrExpandDepthLimit = state.graph.getConfig?.().VR_EXPAND_ALL_DEPTH_LIMIT || 4;
+  const effectiveTargetDepth = vrActive && !Number.isFinite(targetDepth)
+    ? Math.min((selected?.depth || 0) + vrExpandDepthLimit, state.graph.getMaxDataDepth(), state.graph.getConfig().MAX_DEPTH)
+    : targetDepth;
+
+  state.graph.setFullExpandRenderMode(!vrActive);
   dom.btnExpandAll.disabled = true;
   setText(dom.btnExpandAll, "Expanding…");
   dom.btnCancelExpand.style.display = "block";
 
   const totalLevels = Math.min(
-    Number.isFinite(targetDepth) ? targetDepth : state.graph.getMaxDataDepth(),
+    Number.isFinite(effectiveTargetDepth) ? effectiveTargetDepth : state.graph.getMaxDataDepth(),
     state.graph.getConfig().MAX_DEPTH,
   );
 
@@ -746,7 +753,7 @@ function expandProgressively(targetDepth) {
       return;
     }
 
-    const frontier = state.graph.getFrontier(targetDepth);
+    const frontier = state.graph.getFrontier(effectiveTargetDepth);
     if (frontier.nodes.length === 0) {
       if (state.graph.hasPendingExpansions()) {
         showLoader("Loading queued nodes…");
@@ -785,7 +792,9 @@ function expandProgressively(targetDepth) {
       return;
     }
 
-    showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
+    showLoader(vrActive
+      ? `VR expanding level ${frontier.depth + 1} of ${totalLevels}…`
+      : `Loading level ${frontier.depth + 1} of ${totalLevels}…`);
     progressiveRender(frontier.nodes, (nodeObj) => {
       state.graph.expandNodesBatch([nodeObj], true);
     }, () => {
@@ -796,7 +805,12 @@ function expandProgressively(targetDepth) {
     });
   };
 
-  showLoader("Starting expansion…");
+  if (vrActive && !Number.isFinite(targetDepth)) {
+    setText(dom.loadStatus, `VR mode limits Expand All to ${vrExpandDepthLimit} additional levels. Use desktop for full global expansion.`);
+    showLoader(`VR mode: expanding ${vrExpandDepthLimit} levels from the selected node…`);
+  } else {
+    showLoader("Starting expansion…");
+  }
   state.expandFrame = window.requestAnimationFrame(tick);
 }
 

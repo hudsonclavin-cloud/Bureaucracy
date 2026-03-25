@@ -40,6 +40,7 @@ export function createVrHud({
   let frameHook = null;
   let lastSignature = "";
   let hoverNode = null;
+  let statusMessage = "VR ready.";
 
   function drawRoundedRect(x, y, width, height, radius, fillStyle, strokeStyle = null) {
     ctx.beginPath();
@@ -103,6 +104,7 @@ export function createVrHud({
       childrenCount,
       traceText,
       hoverText,
+      statusMessage,
       stats.pendingExpansions,
       stats.lodLabel,
     ].join("|");
@@ -118,6 +120,7 @@ export function createVrHud({
     drawRoundedRect(28, 134, canvas.width - 56, 230, 18, "rgba(10, 12, 18, 0.84)");
     drawRoundedRect(28, 382, canvas.width - 56, 102, 18, "rgba(18, 18, 28, 0.84)");
     drawRoundedRect(28, 500, canvas.width - 56, 112, 18, "rgba(10, 12, 18, 0.84)");
+    drawRoundedRect(28, 620 - 88, canvas.width - 56, 60, 18, "rgba(16, 20, 28, 0.84)");
 
     ctx.fillStyle = "#e8c86a";
     ctx.font = "700 44px Georgia";
@@ -146,7 +149,7 @@ export function createVrHud({
     ctx.font = "700 24px IBM Plex Mono";
     ctx.fillText("CONTROLS", 520, 420);
     drawWrappedText(
-      "Trigger: select  |  Squeeze: focus  |  A/X: expand  |  B/Y: collapse  |  Left stick: fly  |  Right stick: snap-turn / rise-fall  |  Trace: X",
+      "Trigger: select  |  Squeeze: focus  |  A/X: expand  |  B/Y: collapse/trace  |  Stick press: recenter  |  Left stick: fly  |  Right stick: snap-turn / rise-fall",
       520,
       456,
       430,
@@ -155,11 +158,20 @@ export function createVrHud({
       "22px IBM Plex Mono",
     );
 
+    ctx.fillStyle = "#e8c86a";
+    ctx.font = "700 20px IBM Plex Mono";
+    ctx.fillText("STATUS", 50, 580);
+    drawWrappedText(statusMessage, 160, 580, 800, 26, "#9fb2d9", "22px IBM Plex Mono");
+
     texture.needsUpdate = true;
   }
 
   function setHoverNode(nodeObj) {
     hoverNode = nodeObj || null;
+  }
+
+  function setStatusMessage(message) {
+    statusMessage = String(message || "VR ready.");
   }
 
   function init() {
@@ -185,6 +197,7 @@ export function createVrHud({
     init,
     destroy,
     setHoverNode,
+    setStatusMessage,
     getObject() {
       return root;
     },

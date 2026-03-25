@@ -1,17 +1,36 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 import { QUEST_VR_CONFIG } from "./vrConfig.js?v=20260324vr2";
 
-function getButtonPressed(gamepad, index) {
-  return Boolean(gamepad?.buttons?.[index]?.pressed);
+function getButtonPressed(gamepad, indices) {
+  const list = Array.isArray(indices) ? indices : [indices];
+  return list.some((index) => Boolean(gamepad?.buttons?.[index]?.pressed));
 }
 
-function getAxes(gamepad) {
+function getAxes(gamepad, handedness = "right") {
   if (!gamepad?.axes?.length) {
     return { x: 0, y: 0 };
   }
-  const x = gamepad.axes.length >= 3 ? gamepad.axes[2] : gamepad.axes[0] || 0;
-  const y = gamepad.axes.length >= 4 ? gamepad.axes[3] : gamepad.axes[1] || 0;
+  const primaryPair = handedness === "left" ? [0, 1] : [2, 3];
+  const fallbackPair = handedness === "left" ? [2, 3] : [0, 1];
+  const pair = gamepad.axes.length > Math.max(...primaryPair) ? primaryPair : fallbackPair;
+  const x = gamepad.axes[pair[0]] || 0;
+  const y = gamepad.axes[pair[1]] || 0;
   return { x, y };
+}
+
+function getQuestBindings(inputSource = {}) {
+  const handedness = inputSource.handedness || "right";
+  const profiles = inputSource.profiles || [];
+  const isQuestProfile = profiles.some((profile) => /oculus|meta|touch/i.test(profile));
+
+  return {
+    handedness,
+    trigger: isQuestProfile ? [0] : [0],
+    squeeze: isQuestProfile ? [1] : [1],
+    stickPress: isQuestProfile ? [3] : [3],
+    primary: handedness === "left" ? [4] : [4],
+    secondary: handedness === "left" ? [5] : [5],
+  };
 }
 
 export function createVrControls({
@@ -65,6 +84,7 @@ export function createVrControls({
       prevSqueeze: false,
       prevPrimary: false,
       prevSecondary: false,
+      prevStickPress: false,
       lastSnapTurnAt: 0,
       hovered: null,
     };
@@ -101,11 +121,13 @@ export function createVrControls({
     if (!gamepad) {
       return;
     }
+    const bindings = getQuestBindings(inputSource);
 
-    const trigger = getButtonPressed(gamepad, 0);
-    const squeeze = getButtonPressed(gamepad, 1);
-    const primary = getButtonPressed(gamepad, 4);
-    const secondary = getButtonPressed(gamepad, 5);
+    const trigger = getButtonPressed(gamepad, bindings.trigger);
+    const squeeze = getButtonPressed(gamepad, bindings.squeeze);
+    const primary = getButtonPressed(gamepad, bindings.primary);
+    const secondary = getButtonPressed(gamepad, bindings.secondary);
+    const stickPress = getButtonPressed(gamepad, bindings.stickPress);
 
     if (trigger && !controllerState.prevTrigger) {
       const activated = graph.activateRenderable(hit || graph.getSelectedNode());
@@ -124,7 +146,7 @@ export function createVrControls({
     }
 
     if (secondary && !controllerState.prevSecondary) {
-      if (controllerState.controller.userData.inputSource?.handedness === "left") {
+      if (bindings.handedness === "left") {
         graph.toggleTraceSelectedNode();
         onStatus("Toggled origin trace.");
       } else {
@@ -133,9 +155,13 @@ export function createVrControls({
       }
     }
 
-    const axes = getAxes(gamepad);
-    const handedness = controllerState.controller.userData.inputSource?.handedness;
-    if (handedness === "left") {
+    if (stickPress && !controllerState.prevStickPress) {
+      graph.resetVrRig();
+      onStatus("Recentred VR view.");
+    }
+
+    const axes = getAxes(gamepad, bindings.handedness);
+    if (bindings.handedness === "left") {
       const moveX = Math.abs(axes.x) > QUEST_VR_CONFIG.moveDeadzone ? axes.x : 0;
       const moveY = Math.abs(axes.y) > QUEST_VR_CONFIG.moveDeadzone ? axes.y : 0;
       if (moveX || moveY) {
@@ -159,6 +185,7 @@ export function createVrControls({
     controllerState.prevSqueeze = squeeze;
     controllerState.prevPrimary = primary;
     controllerState.prevSecondary = secondary;
+    controllerState.prevStickPress = stickPress;
   }
 
   function update({ deltaSeconds, time }) {
