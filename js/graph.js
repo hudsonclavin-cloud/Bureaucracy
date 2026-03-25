@@ -25,8 +25,8 @@ const RADIUS_STEP = 40;
 const SPHERE_RADIUS_SPACING = 18;
 const SHELL_CAPACITIES = [32, 64, 128];
 const SHELL_GAP_MULTIPLIER = 1.55;
-const SHELL_BRANCH_HINT_BLEND = 0.12;
-const DEEP_SHELL_BRANCH_HINT_BLEND = 0.01;
+const SHELL_BRANCH_HINT_BLEND = 0.16;
+const DEEP_SHELL_BRANCH_HINT_BLEND = 0.06;
 const SHELL_ANCHOR_RESTORE = 0.12;
 const BRANCH_RELAXATION_ITERATIONS = 5;
 const BRANCH_SECTOR_BASE_DISTANCE = 88;
@@ -67,6 +67,49 @@ const branchSectorDirections = {
   regulatory: new THREE.Vector3(0, 0, 1).normalize(),
   position: new THREE.Vector3(0, 0, -1).normalize(),
 };
+const POSITION_TYPES = new Set(["position", "person", "appointment", "staff", "officer", "official", "role"]);
+const LEGISLATIVE_TYPES = new Set(["committee", "subcommittee", "chamber", "congressional office"]);
+const JUDICIAL_TYPES = new Set(["court", "circuit court", "specialized court", "judicial office"]);
+const REGULATORY_TYPES = new Set(["regulatory commission", "independent regulatory commission"]);
+const INDEPENDENT_TYPES = new Set(["independent agency", "board", "commission", "authority", "government corporation"]);
+const EXECUTIVE_TYPES = new Set([
+  "cabinet department",
+  "agency",
+  "component agency",
+  "defense agency",
+  "operating division",
+  "bureau",
+  "military branch",
+  "combatant command",
+  "national laboratory",
+  "nasa center",
+  "presidential library",
+  "museum/unit",
+  "visn",
+]);
+const STRUCTURAL_CONTAINER_TYPES = new Set([
+  "office",
+  "regional office",
+  "area office",
+  "division",
+  "operating division",
+  "directorate",
+  "mission directorate",
+  "service",
+  "center",
+  "administration",
+  "organization",
+  "unit",
+  "program",
+  "component agency",
+  "defense agency",
+  "agency",
+  "bureau",
+  "national laboratory",
+  "nasa center",
+  "museum/unit",
+  "visn",
+]);
 
 export function createGovernmentGraph({
   canvas,
@@ -315,13 +358,36 @@ export function createGovernmentGraph({
     return parseInt((hex || "#888888").replace("#", ""), 16);
   }
 
+  function normalizeTypeKey(type) {
+    return String(type || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+
   function inferBranchKey(data) {
     const id = String(data?.id || "").toLowerCase();
     const type = String(data?.type || "").toLowerCase();
     const name = String(data?.name || "").toLowerCase();
+    const exactType = normalizeTypeKey(type);
 
     if (type.includes("constitution") || name.includes("constitution") || id === "constitution" || id.startsWith("const")) {
       return "constitution";
+    }
+    if (POSITION_TYPES.has(exactType)) {
+      return "position";
+    }
+    if (LEGISLATIVE_TYPES.has(exactType)) {
+      return "legislative";
+    }
+    if (JUDICIAL_TYPES.has(exactType)) {
+      return "judicial";
+    }
+    if (REGULATORY_TYPES.has(exactType)) {
+      return "regulatory";
+    }
+    if (INDEPENDENT_TYPES.has(exactType)) {
+      return "independent";
+    }
+    if (EXECUTIVE_TYPES.has(exactType) || exactType === "department" || exactType === "cabinet") {
+      return "executive";
     }
     if (
       id.startsWith("leg-") ||
@@ -329,7 +395,10 @@ export function createGovernmentGraph({
       name.includes("legislative branch") ||
       name.includes("congress") ||
       name.includes("house of representatives") ||
-      name.includes("senate")
+      name.includes("senate") ||
+      type.includes("committee") ||
+      type.includes("subcommittee") ||
+      type.includes("congressional")
     ) {
       return "legislative";
     }
@@ -339,16 +408,16 @@ export function createGovernmentGraph({
       name.includes("judicial branch") ||
       name.includes("supreme court") ||
       name.includes("federal judiciary") ||
-      type.includes("court")
+      type.includes("court") ||
+      type.includes("judicial") ||
+      type.includes("judge")
     ) {
       return "judicial";
     }
     if (
       id.startsWith("exec-regulatory") ||
       type.includes("regulatory") ||
-      type.includes("commission") ||
-      name.includes("regulatory") ||
-      name.includes("commission")
+      name.includes("regulatory")
     ) {
       return "regulatory";
     }
@@ -357,7 +426,10 @@ export function createGovernmentGraph({
       id === "exec-independent" ||
       name.includes("independent") ||
       type.includes("government corporation") ||
-      type.includes("independent")
+      type.includes("independent") ||
+      (type.includes("board") && !type.includes("board of")) ||
+      (type.includes("commission") && !type.includes("commissioner")) ||
+      type.includes("authority")
     ) {
       return "independent";
     }
@@ -368,20 +440,30 @@ export function createGovernmentGraph({
       name.includes("department of ") ||
       type.includes("department") ||
       type.includes("cabinet") ||
-      type.includes("agency") ||
-      type.includes("bureau")
+      (type.includes("agency") &&
+        !type.includes("independent") &&
+        !type.includes("regulatory") &&
+        !name.includes("independent")) ||
+      (type.includes("bureau") && !type.includes("judicial") && !type.includes("legislative"))
     ) {
       return "executive";
-    }
-    if (type === "position" || type.includes("office") || type.includes("officer") || type.includes("division")) {
-      return "position";
     }
     return "position";
   }
 
   function resolveLayoutBranchKey(data, parentBranchKey = null) {
     const branchKey = inferBranchKey(data);
-    if (branchKey === "position" && parentBranchKey && parentBranchKey !== "constitution") {
+    const type = String(data?.type || "").toLowerCase();
+    const exactType = normalizeTypeKey(type);
+    const inheritsParentBranch =
+      branchKey === "position" ||
+      STRUCTURAL_CONTAINER_TYPES.has(exactType) ||
+      exactType.endsWith(" office") ||
+      exactType.endsWith(" division") ||
+      exactType.endsWith(" directorate") ||
+      exactType.endsWith(" center") ||
+      exactType.endsWith(" service");
+    if (inheritsParentBranch && parentBranchKey && parentBranchKey !== "constitution") {
       return parentBranchKey;
     }
     return branchKey;
@@ -610,7 +692,13 @@ export function createGovernmentGraph({
 
   function childSphereRadius(parentObj, childCount) {
     const baseRadius = BASE_RADIUS + parentObj.depth * 10;
-    return baseRadius + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1));
+    const subtreeMass = (parentObj.data?.children || []).reduce(
+      (sum, child) => sum + (child?.__meta?.subtreeCount || 1),
+      0,
+    );
+    return baseRadius
+      + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1))
+      + Math.log2(Math.max(subtreeMass, 1) + 1) * 9;
   }
 
   function topLevelBranchDistance(subtreeCount) {
@@ -1432,43 +1520,32 @@ export function createGovernmentGraph({
     for (let iteration = 0; iteration < BRANCH_RELAXATION_ITERATIONS; iteration += 1) {
       for (let i = 0; i < offsets.length; i += 1) {
         for (let j = i + 1; j < offsets.length; j += 1) {
-          tempVecA.subVectors(offsets[i], offsets[j]);
-          const distanceSq = tempVecA.lengthSq();
           const metaA = branchMetadata[i] || {};
           const metaB = branchMetadata[j] || {};
           const subtreeScaleA = Math.max(1, Math.sqrt(metaA.subtreeCount || 1));
           const subtreeScaleB = Math.max(1, Math.sqrt(metaB.subtreeCount || 1));
           const shellRadius = Math.max(shellRadii[i] || 0, shellRadii[j] || 0, MIN_DISTANCE);
-          const baseDistance = Math.max(MIN_DISTANCE * 1.8, shellRadius * 0.18, NODE_RADIUS * 3.2);
-          const branchBoost = metaA.branchKey === metaB.branchKey ? 0 : 1.2;
-          const minimumDistance = baseDistance + (subtreeScaleA + subtreeScaleB) * 1.8 + branchBoost * 6;
-          const minimumDistanceSq = minimumDistance * minimumDistance;
-          if (distanceSq >= minimumDistanceSq) {
+          tempVecB.copy(offsets[i]).normalize();
+          tempVecC.copy(offsets[j]).normalize();
+          const dot = THREE.MathUtils.clamp(tempVecB.dot(tempVecC), -0.9999, 0.9999);
+          const angle = Math.acos(dot);
+          const baseAngle = Math.max(0.08, (NODE_RADIUS * 3.4) / Math.max(shellRadius, 1));
+          const subtreeAngle = ((subtreeScaleA + subtreeScaleB) * 1.2) / Math.max(shellRadius, 1);
+          const branchBoost = metaA.branchKey === metaB.branchKey ? 0.02 : 0.09;
+          const minimumAngle = baseAngle + subtreeAngle + branchBoost;
+          if (angle >= minimumAngle) {
             continue;
           }
 
-          if (distanceSq < 0.0001) {
-            tempVecA.set(Math.sin(i + 1), Math.cos(j + 1), Math.sin(i + j + 1));
-          }
-
-          const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
-          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 220);
-          tempVecB.copy(offsets[i]).normalize();
-          tempVecC.copy(offsets[j]).normalize();
-
-          const pushI = tempVecD
-            .copy(tempVecA)
-            .sub(tempVecB.clone().multiplyScalar(tempVecA.dot(tempVecB)));
+          const pushStrength = ((minimumAngle - angle) / minimumAngle) * shellRadius * 0.24;
+          const pushI = tempVecD.crossVectors(tempVecB, tempVecC).cross(tempVecB);
           if (pushI.lengthSq() < 0.0001) {
             pushI.copy(directionFromSeed(i + 1, j + 1));
           }
           pushI.normalize().multiplyScalar(pushStrength);
           offsets[i].add(pushI);
 
-          const pushJ = basisA
-            .copy(tempVecA)
-            .negate()
-            .sub(tempVecC.clone().multiplyScalar(tempVecA.clone().negate().dot(tempVecC)));
+          const pushJ = basisA.crossVectors(tempVecC, tempVecB).cross(tempVecC);
           if (pushJ.lengthSq() < 0.0001) {
             pushJ.copy(directionFromSeed(j + 1, i + 1));
           }
@@ -1488,8 +1565,54 @@ export function createGovernmentGraph({
     }
   }
 
+  function getStableBranchDirection(nodeObj, out = new THREE.Vector3()) {
+    if (nodeObj?.branchDirection?.lengthSq() > 0) {
+      out.copy(nodeObj.branchDirection);
+    } else if (nodeObj?.sectorDirection?.lengthSq() > 0) {
+      out.copy(nodeObj.sectorDirection);
+    } else if (nodeObj?.parent?.branchDirection?.lengthSq() > 0) {
+      out.copy(nodeObj.parent.branchDirection);
+    } else if (nodeObj?.pos?.lengthSq() > 0) {
+      out.copy(nodeObj.pos);
+    } else {
+      out.set(0, 1, 0);
+    }
+
+    if (nodeObj?.pos?.lengthSq() > 0.0001) {
+      tempVecD.copy(nodeObj.pos).normalize();
+      out.lerp(tempVecD, BRANCH_SECTOR_BLEND);
+    }
+
+    if (nodeObj?.parent?.pos?.lengthSq() > 0.0001) {
+      basisB.copy(nodeObj.parent.pos).normalize();
+      out.lerp(basisB, BRANCH_PARENT_BLEND * 0.35);
+    }
+
+    if (out.lengthSq() < 0.0001) {
+      out.set(0, 1, 0);
+    }
+
+    return out.normalize();
+  }
+
+  function applyBranchWarp(direction, branchDirection, blend, out = new THREE.Vector3()) {
+    out.copy(direction);
+    if (!branchDirection || branchDirection.lengthSq() < 0.0001) {
+      return out.normalize();
+    }
+
+    basisA.copy(branchDirection).normalize();
+    const antiBranch = Math.max(0, -out.dot(basisA));
+    const totalBlend = THREE.MathUtils.clamp(blend + antiBranch * 0.08, 0, 0.22);
+    out.lerp(basisA, totalBlend);
+    if (out.lengthSq() < 0.0001) {
+      out.copy(basisA);
+    }
+    return out.normalize();
+  }
+
   function getShellOrientationQuaternion(parentObj, shellIndex) {
-    const anchor = directionFromSeed(hashString(parentObj.data.id), shellIndex + parentObj.depth * 17 + 1);
+    const anchor = getStableBranchDirection(parentObj, tempVecA);
     tempQuat.setFromUnitVectors(upVector, anchor);
     tempQuatB.setFromAxisAngle(
       anchor,
@@ -1537,6 +1660,7 @@ export function createGovernmentGraph({
         placements[index] = {
           position,
           direction: position.clone().sub(parentObj.pos).normalize(),
+          branchDirection: sectorDirection.clone(),
           sectorDirection: sectorDirection.clone(),
           shellRadius: position.distanceTo(parentObj.pos),
           layoutBranchKey: resolveLayoutBranchKey(data, parentBranchKey),
@@ -1562,6 +1686,7 @@ export function createGovernmentGraph({
 
     for (const shell of shells) {
       const shellQuaternion = getShellOrientationQuaternion(parentObj, shell.index).clone();
+      const branchHint = getStableBranchDirection(parentObj, tempVecB).clone();
 
       for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
         const i = shell.start + localIndex;
@@ -1569,14 +1694,14 @@ export function createGovernmentGraph({
         const childSeed = hashString(childData.id);
         const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
         const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
-        const branchHint = copyBranchBaseDirection(childBranchKey, tempVecB).clone();
-        const branchHintBlend = parentObj.depth <= 1 ? DEEP_SHELL_BRANCH_HINT_BLEND : 0;
+        const branchHintBlend = parentObj.depth <= 1 ? SHELL_BRANCH_HINT_BLEND : DEEP_SHELL_BRANCH_HINT_BLEND;
 
         directionVec
           .copy(baseDirection)
-          .applyQuaternion(shellQuaternion)
-          .lerp(branchHint, branchHintBlend)
-          .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.035)
+          .applyQuaternion(shellQuaternion);
+        applyBranchWarp(directionVec, branchHint, branchHintBlend, directionVec);
+        directionVec
+          .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.022)
           .normalize();
 
         offsets[i] = directionVec.clone().multiplyScalar(shell.radius);
@@ -1586,6 +1711,7 @@ export function createGovernmentGraph({
         branchMetadata[i] = {
           branchKey: childBranchKey,
           subtreeCount: childData.__meta?.subtreeCount || 1,
+          branchDirection: branchHint.clone(),
         };
       }
     }
@@ -1594,6 +1720,7 @@ export function createGovernmentGraph({
     return offsets.map((offset, index) => ({
       position: tempVecA.copy(parentObj.pos).add(offset).clone(),
       direction: offset.clone().normalize(),
+      branchDirection: parentObj.branchDirection.clone(),
       sectorDirection: parentObj.sectorDirection.clone(),
       shellRadius: shellRadii[index],
       layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
@@ -1711,7 +1838,13 @@ export function createGovernmentGraph({
       const placement = placements[job.index];
       const targetPos = placement.position;
       childObj.layoutBranchKey = placement.layoutBranchKey;
-      childObj.branchDirection.copy(placement.direction);
+      if (placement.branchDirection?.lengthSq() > 0) {
+        childObj.branchDirection.copy(placement.branchDirection);
+      } else if (parentObj.branchDirection.lengthSq() > 0) {
+        childObj.branchDirection.copy(parentObj.branchDirection);
+      } else {
+        childObj.branchDirection.copy(placement.direction);
+      }
       if (placement.sectorDirection?.lengthSq() > 0) {
         childObj.sectorDirection.copy(placement.sectorDirection);
       } else if (parentObj.sectorDirection.lengthSq() > 0) {
