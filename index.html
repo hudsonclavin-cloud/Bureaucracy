@@ -31,15 +31,24 @@ body.dragging{cursor:grabbing;}
 #title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
 #title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
 #node-counter{font-size:9px;color:var(--gold-dim);margin-top:2px;letter-spacing:0.1em;}
-#search-wrap{position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;}
+#search-wrap{
+  position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;
+  width:44px;transition:width 0.24s ease;
+}
+#search-wrap:focus-within{width:280px;}
 #search-input{
   background:rgba(4,8,16,0.88);border:1px solid rgba(200,168,74,0.2);
   color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:11px;
-  padding:8px 14px;width:280px;outline:none;letter-spacing:0.05em;
-  backdrop-filter:blur(12px);transition:border-color 0.2s;
+  padding:8px 14px;width:100%;outline:none;letter-spacing:0.05em;
+  backdrop-filter:blur(12px);transition:border-color 0.2s,color 0.2s,padding 0.2s;
 }
 #search-input:focus{border-color:rgba(200,168,74,0.5);}
 #search-input::placeholder{color:var(--gold-dim);}
+#search-wrap:not(:focus-within) #search-input{
+  color:transparent;caret-color:transparent;padding-left:10px;padding-right:10px;
+}
+#search-wrap:not(:focus-within) #search-input::placeholder{color:transparent;}
+#search-wrap:not(:focus-within) #search-results{display:none !important;}
 #search-results{
   background:rgba(4,8,16,0.96);border:1px solid rgba(200,168,74,0.15);
   border-top:none;max-height:260px;overflow-y:auto;display:none;
@@ -167,8 +176,8 @@ body.dragging{cursor:grabbing;}
   #legend{display:none;}
   #stats{display:none;}
   #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
-  #search-wrap{top:16px;width:calc(100vw - 32px);}
-  #search-input{width:100%;}
+  #search-wrap{top:16px;width:44px;max-width:calc(100vw - 32px);}
+  #search-wrap:focus-within{width:calc(100vw - 32px);}
   #controls-hint{display:none;}
 }
 </style>

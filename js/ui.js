@@ -85,9 +85,10 @@ function hideLoader(delay = 200) {
 }
 
 function updateStats(stats) {
-  const loadedCount = Number.isFinite(stats.loadedDisplayNodeCount) ? stats.loadedDisplayNodeCount : stats.visibleNodeCount;
-  const eligibleTotal = Number.isFinite(stats.eligibleTotalNodeCount) ? stats.eligibleTotalNodeCount : stats.totalNodeCount;
-  setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${eligibleTotal.toLocaleString()} nodes loaded`);
+  const loadedCount = Number.isFinite(stats.visibleNodeCount) ? stats.visibleNodeCount : 0;
+  const totalCount = Number.isFinite(stats.totalNodeCount) ? stats.totalNodeCount : loadedCount;
+  const eligibleTotal = Number.isFinite(stats.eligibleTotalNodeCount) ? stats.eligibleTotalNodeCount : totalCount;
+  setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${totalCount.toLocaleString()} nodes loaded`);
   setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
   const fullExpandLabel = stats.fullExpandRenderMode ? " | full-expansion render active" : "";
   setText(
