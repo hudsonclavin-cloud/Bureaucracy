@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -224,6 +225,8 @@ def infer_candidate_type(name: str, description: str | None = None) -> str:
     lowered_name = normalize_candidate_name(name).lower()
     lowered_description = str(description or "").lower()
     combined = f"{lowered_name} {lowered_description}".strip()
+    if any(token in lowered_name for token in ("director", "chief", "manager", "administrator", "secretary", "advisor", "chair")):
+        return "Role"
     if any(token in combined for token in ("office", "directorate", "administration", "service", "center")):
         return "Office"
     if "bureau" in combined:
@@ -562,13 +565,14 @@ def discover_candidates(
     existing_ids, existing_name_parent_keys, _ = build_existing_candidate_indexes(existing_node_list)
     existing_name_to_id, _ = build_existing_node_maps(existing_node_list)
 
+    enable_template_leadership = os.environ.get("PIPELINE_ENABLE_TEMPLATE_LEADERSHIP", "0") == "1"
     candidates = [
         *discover_from_wikidata(wikidata_records),
         *discover_from_advisory_committees(advisory_committee_records),
         *discover_from_agency_org_charts(org_chart_records),
         *discover_from_official_directory(official_directory_records),
         *discover_from_federal_register(federal_register_records),
-        *discover_leadership_positions(existing_node_list),
+        *(discover_leadership_positions(existing_node_list) if enable_template_leadership else []),
     ]
     deduped_candidates = dedupe_candidates(
         candidates,
