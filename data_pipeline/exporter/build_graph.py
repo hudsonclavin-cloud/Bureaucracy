@@ -55,6 +55,17 @@ def count_payload_nodes(payloads: Iterable[dict[str, Any]]) -> int:
     return total
 
 
+def extract_budget_summary(payloads: Iterable[dict[str, Any]]) -> dict[str, Any] | None:
+    selected_summary: dict[str, Any] | None = None
+    for payload in payloads:
+        if not isinstance(payload, dict):
+            continue
+        summary = payload.get("budgetSummary")
+        if isinstance(summary, dict) and summary.get("government_total_outlay_amount") is not None:
+            selected_summary = dict(summary)
+    return selected_summary
+
+
 def format_pipeline_summary(summary: dict[str, int]) -> str:
     return "\n".join(
         [
@@ -379,6 +390,10 @@ def build_graph(
         nodes=export_nodes,
         edges=export_edges,
     )
+    budget_summary = extract_budget_summary(payload_list)
+    if budget_summary:
+        graph["__budgetSummary"] = budget_summary
+        validation["budget_summary"] = budget_summary
 
     with graph_path.open("w", encoding="utf-8") as handle:
         json.dump(graph, handle, indent=2)

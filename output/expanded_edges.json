@@ -1,15 +1,5 @@
 [
   {
-    "source": "joint-senate-of-the-supreme-courts-of-germany",
-    "target": "federal-fiscal-court",
-    "type": "reports_to"
-  },
-  {
-    "source": "joint-senate-of-the-supreme-courts-of-germany",
-    "target": "federal-administrative-court",
-    "type": "reports_to"
-  },
-  {
     "source": "person-tetsuo-saito",
     "target": "position-minister-of-land-infrastructure-transport-and-tourism",
     "type": "manages"
@@ -3910,11 +3900,6 @@
     "type": "manages"
   },
   {
-    "source": "position-minister-of-infrastructure",
-    "target": "ministry-of-infrastructure",
-    "type": "reports_to"
-  },
-  {
     "source": "person-tarc-sio-de-freitas",
     "target": "position-minister-of-infrastructure",
     "type": "manages"
@@ -5915,38 +5900,8 @@
     "type": "regulates"
   },
   {
-    "source": "ministry-of-the-environment",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-justice",
-    "target": "government-of-italy",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-economy-and-finance",
-    "target": "government-of-ecuador",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-finance",
-    "target": "government-of-romania",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-finance",
-    "target": "federal-government-of-nigeria",
-    "type": "reports_to"
-  },
-  {
     "source": "ministry-of-finance",
     "target": "cabinet-of-yemen",
-    "type": "reports_to"
-  },
-  {
-    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
-    "target": "united-states-department-of-commerce",
     "type": "reports_to"
   },
   {
@@ -5955,23 +5910,8 @@
     "type": "reports_to"
   },
   {
-    "source": "national-fortifications-administration",
-    "target": "ministry-of-health-and-social-affairs",
-    "type": "reports_to"
-  },
-  {
-    "source": "national-board-of-trade",
-    "target": "ministry-for-foreign-affairs-of-sweden",
-    "type": "reports_to"
-  },
-  {
     "source": "joint-senate-of-the-supreme-courts-of-germany",
     "target": "federal-labour-court-of-germany",
-    "type": "reports_to"
-  },
-  {
-    "source": "position-minister-of-infrastructure",
-    "target": "ministry-of-infrastructure-of-ukraine",
     "type": "reports_to"
   },
   {
@@ -6078,16 +6018,6 @@
     "source": "person-claude-ambrosini",
     "target": "position-consul-general-of-france-in-guangzhou",
     "type": "manages"
-  },
-  {
-    "source": "position-consul-general",
-    "target": "consulate-general-of-sweden-in-brussels",
-    "type": "reports_to"
-  },
-  {
-    "source": "position-consul-general",
-    "target": "consulate-general-of-hungary-in-shanghai",
-    "type": "reports_to"
   },
   {
     "source": "consumer-financial-protection-bureau",
@@ -6425,183 +6355,8 @@
     "type": "oversees"
   },
   {
-    "source": "consulate-general-of-spain-in-toulouse",
-    "target": "embassy-of-spain-paris",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-france-in-s-o-paulo",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-hong-kong",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-the-people-s-republic-of-china-los-angeles",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-india-chicago",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-south-korea-wuhan",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-gdansk",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-munich",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-in-d-sseldorf",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-hamburg",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-frakfurt-am-main",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-new-york",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-china-chicago",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-wuhan",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-s-o-paulo",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "chinese-consulate-general-san-francisco",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-south-korea-guangzhou",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-shanghai",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-israel-munich",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-the-united-kingdom-in-istanbul",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "consulate-general-of-south-korea-shanghai",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-guangzhou",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-water-resources",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-infrastructure",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "labour-court",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-agriculture-and-food",
-    "target": "government-of-the-french-republic",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-science-and-technology",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-science-and-higher-education",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "department-of-economy-sciency-innovation",
-    "target": "economy-science-and-innovation-policy-area",
-    "type": "reports_to"
-  },
-  {
     "source": "ministry-of-finance",
     "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-communications",
-    "target": "government-of-japan",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-digitalization-of-public-administration-information-technologies-and-communications-of-the-republic-of-tatarstan",
-    "target": "r-is-of-tatarstan",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-digitalization-of-public-administration-information-technologies-and-communications-of-the-republic-of-tatarstan",
-    "target": "republic-of-tatarstan-cabinet-of-ministers",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-communication",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-communication",
-    "target": "government-of-bolivia",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-economy-and-finance",
-    "target": "government-of-south-korea",
     "type": "reports_to"
   },
   {
@@ -6615,163 +6370,8 @@
     "type": "reports_to"
   },
   {
-    "source": "ministry-of-transportation-and-communications",
-    "target": "executive-yuan",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-transport-and-communications",
-    "target": "government-of-norway",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-justice",
-    "target": "government-offices-of-sweden",
-    "type": "reports_to"
-  },
-  {
     "source": "ministry-of-justice",
     "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "ministry-of-the-army",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "prime-minister-s-office",
-    "target": "finnish-government",
-    "type": "reports_to"
-  },
-  {
-    "source": "department-of-agriculture",
-    "target": "unnamed-node",
-    "type": "reports_to"
-  },
-  {
-    "source": "lagos-state-agricultural-inputs-supply-authority",
-    "target": "lagos-state-ministry-of-agriculture-and-cooperatives",
-    "type": "reports_to"
-  },
-  {
-    "source": "lagos-state-agricultural-inputs-supply-authority",
-    "target": "lagos-state-government",
-    "type": "reports_to"
-  },
-  {
-    "source": "administration-p-nitentiaire-fran-aise",
-    "target": "ministry-of-the-interior",
-    "type": "reports_to"
-  },
-  {
-    "source": "q3029595",
-    "target": "ministry-of-the-ecological-transition",
-    "type": "reports_to"
-  },
-  {
-    "source": "q110803431",
-    "target": "french-ministry-of-education",
-    "type": "reports_to"
-  },
-  {
-    "source": "q11573616",
-    "target": "ministry-of-the-treasury",
-    "type": "reports_to"
-  },
-  {
-    "source": "national-board-of-trade",
-    "target": "ministry-of-finance-of-sweden",
-    "type": "reports_to"
-  },
-  {
-    "source": "rediris",
-    "target": "ministry-of-science-innovation-and-universities",
-    "type": "reports_to"
-  },
-  {
-    "source": "directorate-general-of-cinematography-and-theatre",
-    "target": "ministry-of-national-education",
-    "type": "reports_to"
-  },
-  {
-    "source": "swedish-water-supply-and-sewage-tribunal",
-    "target": "ministry-of-health-and-social-affairs",
-    "type": "reports_to"
-  },
-  {
-    "source": "soil-erosion-service",
-    "target": "united-states-department-of-the-interior",
-    "type": "reports_to"
-  },
-  {
-    "source": "national-fortifications-administration",
-    "target": "ministry-of-defence-of-sweden",
-    "type": "reports_to"
-  },
-  {
-    "source": "finance-division",
-    "target": "ministry-of-finance",
-    "type": "reports_to"
-  },
-  {
-    "source": "pertamina",
-    "target": "ministry-of-state-owned-enterprises-republic-of-indonesia",
-    "type": "reports_to"
-  },
-  {
-    "source": "office-for-artificial-intelligence",
-    "target": "department-for-business-energy-and-industrial-strategy",
-    "type": "reports_to"
-  },
-  {
-    "source": "general-court",
-    "target": "court-of-justice-of-the-european-union",
-    "type": "reports_to"
-  },
-  {
-    "source": "european-court-of-justice",
-    "target": "court-of-justice-of-the-european-union",
-    "type": "reports_to"
-  },
-  {
-    "source": "court-of-first-instance",
-    "target": "court-of-justice-of-the-european-union",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-alexandria",
-    "target": "foreign-commonwealth-and-development-office",
-    "type": "reports_to"
-  },
-  {
-    "source": "national-institute-on-disability-independent-living-and-rehabilitation-research",
-    "target": "united-states-department-of-health-and-human-services",
-    "type": "reports_to"
-  },
-  {
-    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
-    "target": "united-states-department-of-education",
-    "type": "reports_to"
-  },
-  {
-    "source": "q120737682",
-    "target": "ministry-of-environment",
-    "type": "reports_to"
-  },
-  {
-    "source": "statens-j-rnv-gar",
-    "target": "ministry-of-communications",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-boston",
-    "target": "foreign-commonwealth-and-development-office",
-    "type": "reports_to"
-  },
-  {
-    "source": "british-consulate-general-melbourne",
-    "target": "foreign-commonwealth-and-development-office",
     "type": "reports_to"
   },
   {
@@ -8540,11 +8140,6 @@
     "type": "manages"
   },
   {
-    "source": "position-minister-of-public-works",
-    "target": "secretariat-of-public-works-of-argentina",
-    "type": "reports_to"
-  },
-  {
     "source": "person-gabriel-katopodis",
     "target": "position-minister-of-public-works",
     "type": "manages"
@@ -8623,11 +8218,6 @@
     "source": "person-patrice-amba-salla",
     "target": "position-minister-of-public-works",
     "type": "manages"
-  },
-  {
-    "source": "position-minister-of-construction",
-    "target": "ministry-of-construction",
-    "type": "reports_to"
   },
   {
     "source": "person-q130468383",
@@ -13622,6 +13212,476 @@
   {
     "source": "the-constitution-of-the-united-states",
     "target": "federal-government-of-the-united-states-united-states-department-of-agriculture",
+    "type": "oversees"
+  },
+  {
+    "source": "ministry-of-the-environment",
+    "target": "federal-government-of-brazil",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-economy-and-finance",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-fortifications-administration",
+    "target": "ministry-of-finance-of-sweden",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-board-of-trade",
+    "target": "ministry-of-trade",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "access-board",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "consumer-financial-protection-bureau",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "consumer-product-safety-commission",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "corporation-for-national-and-community-service",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "environmental-protection-agency",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "federal-communications-commission",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "federal-labor-relations-authority",
+    "type": "oversees"
+  },
+  {
+    "source": "federal-trade-commission",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "federal-trade-commission",
+    "type": "oversees"
+  },
+  {
+    "source": "national-aeronautics-and-space-administration",
+    "target": "the-constitution-of-the-united-states",
+    "type": "created_by"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "national-aeronautics-and-space-administration",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "national-science-foundation",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "nuclear-regulatory-commission",
+    "type": "oversees"
+  },
+  {
+    "source": "pension-benefit-guaranty-corporation",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "pension-benefit-guaranty-corporation",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "selective-service-system",
+    "type": "oversees"
+  },
+  {
+    "source": "access-board",
+    "target": "access-board-https-www-kennedy-center-org-cj",
+    "type": "oversees"
+  },
+  {
+    "source": "access-board",
+    "target": "access-board-https-www-nationalservice-gov-cj",
+    "type": "oversees"
+  },
+  {
+    "source": "department-of-transportation",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "oversees"
+  },
+  {
+    "source": "pension-benefit-guaranty-corporation-office-of-management-and-budget-omb-extend-approval-under-the-paperwork-reduction-act-of-a-collection-of-information-contained-in-its-regulation-on-liability-for-termination-of-single-employer-plans-omb-control-number-1212-0017",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "federal-trade-commission-office-of-management-and-budget-omb-extend-for-three-years-the-current-paperwork-reduction-act-pra-clearance-for-information-collection-requirements-contained-in-the-ftc-s-portion-of-the-information-collection-requirements-contained-in-the-consumer-financial-protection-bureau-s-regulation-n-the-mortgage-acts-and-practices-advertising-rule",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "exec-dept-doc-census",
+    "target": "transportation-department-office-of-management-and-budget-omb-for-review-and-approval",
+    "type": "oversees"
+  },
+  {
+    "source": "corporation-for-national-and-community-service",
+    "target": "interior-department-office-of-management-and-budget-for-review-and-approval",
+    "type": "oversees"
+  },
+  {
+    "source": "consulate-general-of-spain-in-toulouse",
+    "target": "embassy-of-spain-paris",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-water-resources",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-infrastructure",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-hong-kong",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-wuhan",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-s-o-paulo",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-shanghai",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-the-united-kingdom-in-istanbul",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "british-consulate-general-guangzhou",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "united-states-department-of-homeland-security",
+    "target": "federal-government-of-the-united-states",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-environment",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-the-environment",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-environment-and-energy",
+    "target": "government-of-ecuador",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture-and-tourism",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-justice",
+    "target": "government-of-algeria",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-finance",
+    "target": "government-of-algeria",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "government-of-algeria",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-youth-and-sports",
+    "target": "government-of-algeria",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-trade",
+    "target": "government-of-algeria",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-of-italy-in-barcelona",
+    "target": "embassy-of-italy-in-spain",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-industry-and-trade",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-economy",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "department-of-economy-sciency-innovation",
+    "target": "economy-science-and-innovation-policy-area",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "executive-yuan",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "government-of-italy",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture",
+    "target": "government-of-romania",
+    "type": "reports_to"
+  },
+  {
+    "source": "ministry-of-culture-sports-and-tourism",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-fortifications-administration",
+    "target": "ministry-of-health-and-social-affairs",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-board-of-trade",
+    "target": "ministry-for-foreign-affairs-of-sweden",
+    "type": "reports_to"
+  },
+  {
+    "source": "pertamina",
+    "target": "ministry-of-state-owned-enterprises-republic-of-indonesia",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-commerce",
+    "type": "reports_to"
+  },
+  {
+    "source": "q21480586",
+    "target": "ministry-of-information-and-tourism",
+    "type": "reports_to"
+  },
+  {
+    "source": "soil-erosion-service",
+    "target": "united-states-department-of-the-interior",
+    "type": "reports_to"
+  },
+  {
+    "source": "q11573616",
+    "target": "ministry-of-the-treasury",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-institute-on-disability-independent-living-and-rehabilitation-research",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "q120737682",
+    "target": "ministry-of-environment",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-social-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-court-of-justice-of-germany",
+    "type": "reports_to"
+  },
+  {
+    "source": "joint-senate-of-the-supreme-courts-of-germany",
+    "target": "federal-fiscal-court",
+    "type": "reports_to"
+  },
+  {
+    "source": "q113552175",
+    "target": "q111736815",
+    "type": "reports_to"
+  },
+  {
+    "source": "q113552175",
+    "target": "q111737107",
+    "type": "reports_to"
+  },
+  {
+    "source": "administration-p-nitentiaire-fran-aise",
+    "target": "ministry-of-the-interior",
+    "type": "reports_to"
+  },
+  {
+    "source": "office-for-artificial-intelligence",
+    "target": "department-for-business-energy-and-industrial-strategy",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-consul-general",
+    "target": "general-consulate-of-the-republic-of-slovenia-in-klagenfurt",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-minister-of-infrastructure",
+    "target": "ministry-of-infrastructure-of-poland",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-minister-of-infrastructure",
+    "target": "ministry-of-infrastructure-of-rwanda",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-minister-of-infrastructure",
+    "target": "ministry-of-infrastructure",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-consul-general",
+    "target": "consulate-general-of-hungary-milan",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-consul-general",
+    "target": "consulate-general-of-sweden-in-brussels",
+    "type": "reports_to"
+  },
+  {
+    "source": "position-consul-general",
+    "target": "hungarian-consulate-general-in-sao-paulo-brazil",
+    "type": "reports_to"
+  },
+  {
+    "source": "exec-cabinet",
+    "target": "exec-dept-usda",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "administrative-conference-of-the-u-s",
+    "type": "oversees"
+  },
+  {
+    "source": "federal-trade-commission",
+    "target": "transportation-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "pension-benefit-guaranty-corporation",
+    "target": "transportation-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "state-department-bureau-of-political-military-affairs",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "agriculture-department-bureau-of-land-management-blm",
+    "type": "oversees"
+  },
+  {
+    "source": "exec-dept-usda",
+    "target": "exec-dept-usda-https-api-fiscaldata-treasury-gov-services-api-fiscal-service",
+    "type": "oversees"
+  },
+  {
+    "source": "administrative-conference-of-the-u-s",
+    "target": "administrative-conference-of-the-u-s-https-www-kennedy-center-org-cj",
+    "type": "oversees"
+  },
+  {
+    "source": "administrative-conference-of-the-u-s",
+    "target": "administrative-conference-of-the-u-s-https-www-nationalservice-gov-cj",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "state-department-office-of-foreign-assets-control-ofac",
+    "type": "oversees"
+  },
+  {
+    "source": "department-of-transportation",
+    "target": "transportation-department-office-of-management-and-budget-omb",
+    "type": "oversees"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "management-and-budget-office-office-of-management-and-budget-omb-circular-no",
+    "type": "oversees"
+  },
+  {
+    "source": "pension-benefit-guaranty-corporation-office-of-management-and-budget-omb-extend-approval-under-the-paperwork-reduction-act-of-a-collection-of-information-contained-in-its-regulation-on-liability-for-termination-of-single-employer-plans-omb-control-number-1212-0017",
+    "target": "transportation-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "federal-trade-commission-office-of-management-and-budget-omb-extend-for-three-years-the-current-paperwork-reduction-act-pra-clearance-for-information-collection-requirements-contained-in-the-ftc-s-portion-of-the-information-collection-requirements-contained-in-the-consumer-financial-protection-bureau-s-regulation-n-the-mortgage-acts-and-practices-advertising-rule",
+    "target": "transportation-department-office-of-management-and-budget-omb",
+    "type": "regulates"
+  },
+  {
+    "source": "the-constitution-of-the-united-states",
+    "target": "small-business-administration-office-of-management-and-budget-review",
+    "type": "oversees"
+  },
+  {
+    "source": "corporation-for-national-and-community-service",
+    "target": "transportation-department-office-of-management-and-budget-for-review-and-approval",
     "type": "oversees"
   }
 ]

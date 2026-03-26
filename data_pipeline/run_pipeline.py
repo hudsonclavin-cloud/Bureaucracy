@@ -15,6 +15,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from data_pipeline.crawler.federal_register import crawl as crawl_federal_register
 from data_pipeline.crawler.lobbying import crawl as crawl_lobbying
 from data_pipeline.crawler.official_directory import crawl as crawl_official_directory
+from data_pipeline.crawler.treasury_outlays import crawl as crawl_treasury_outlays
 from data_pipeline.crawler.usaspending import crawl as crawl_usaspending
 from data_pipeline.crawler.wikidata import crawl as crawl_wikidata
 from data_pipeline.crawler.wikidata import crawl_discovery_records as crawl_wikidata_discovery_records
@@ -121,6 +122,10 @@ def run_pipeline(
                 limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
                 awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
                 fiscal_year=fiscal_year,
+            ),
+            "treasury_outlays": lambda: crawl_treasury_outlays(
+                fiscal_year=fiscal_year,
+                timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 30),
             ),
             "wikidata": lambda: crawl_wikidata(
                 hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
@@ -235,6 +240,7 @@ def run_pipeline(
             official_directory_records=discovery_inputs.get("official_directory_records", []),
             federal_register_records=discovery_inputs.get("federal_register_records", []),
             usaspending_payload=direct_payload_results.get("usaspending"),
+            treasury_outlay_payload=direct_payload_results.get("treasury_outlays"),
             max_http_nodes=getenv_int("PIPELINE_ENRICHMENT_HTTP_LIMIT", 18),
             http_timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 10),
         ),
@@ -288,10 +294,12 @@ def run_pipeline(
         "frontier_targets_written": len(frontier_targets),
         "frontier_success_count": sum(1 for metric in frontier_metrics if metric.get("success")),
         "frontier_failure_count": sum(1 for metric in frontier_metrics if not metric.get("success")),
+        "budget_summary": direct_payload_results.get("treasury_outlays", {}).get("budgetSummary"),
         "direct_payload_counts": {
             source_name: {
                 "nodes": len(payload.get("nodes", [])),
                 "edges": len(payload.get("edges", [])),
+                **({"outlayRows": len(payload.get("outlayRows", []))} if isinstance(payload.get("outlayRows"), list) else {}),
             }
             for source_name, payload in direct_payload_results.items()
         },

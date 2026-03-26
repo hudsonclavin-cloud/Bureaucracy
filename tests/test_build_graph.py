@@ -170,6 +170,27 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(result.validation["pipeline_summary"]["final_node_count"], len(result.nodes))
         self.assertIn("relationships", result.graph)
 
+    def test_build_graph_preserves_budget_summary_metadata(self) -> None:
+        payloads = [
+            {
+                "nodes": [],
+                "edges": [],
+                "budgetSummary": {
+                    "government_total_outlay_amount": 3102409296183.04,
+                    "label": "FYTD net outlays through 2026-02-28",
+                    "record_date": "2026-02-28",
+                    "fiscal_year": "2026",
+                },
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        self.assertIn("__budgetSummary", result.graph)
+        self.assertEqual(result.graph["__budgetSummary"]["government_total_outlay_amount"], 3102409296183.04)
+        self.assertIn("budget_summary", result.validation)
+        self.assertEqual(result.validation["budget_summary"]["record_date"], "2026-02-28")
+
 
 if __name__ == "__main__":
     unittest.main()

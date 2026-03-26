@@ -147,6 +147,12 @@ function getNodeVerificationEvidence(data) {
 }
 
 function getDirectCostLabel(data) {
+  if (Number.isFinite(Number(data?.direct_outlay_amount)) && Number(data.direct_outlay_amount) > 0) {
+    return formatCurrency(data.direct_outlay_amount);
+  }
+  if (data?.amount_kind === "fytd_net_outlays" && Number.isFinite(Number(data?.rollup_total_amount))) {
+    return null;
+  }
   if (data?.budget) {
     return data.budget;
   }
@@ -188,7 +194,7 @@ function updateStats(stats) {
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
   if (dom.statsCost) {
-    setText(dom.statsCost, `${formatCurrency(stats.totalBudgetCost)} total cost`);
+    setText(dom.statsCost, `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`);
   }
 }
 
@@ -724,8 +730,13 @@ function renderInfoPanel(nodeObj) {
   if (directCostLabel) {
     statRows.push(["DIRECT COST", directCostLabel]);
   }
-  if (data.budget_source || data.budget_year) {
-    const budgetBasis = [data.budget_source, data.budget_year].filter(Boolean).join(" Â· ");
+  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind) {
+    const budgetBasis = [
+      data.source_system || data.budget_source,
+      data.amount_kind,
+      data.budget_year,
+      data.budget_as_of,
+    ].filter(Boolean).join(" Â· ");
     statRows.push(["BUDGET BASIS", budgetBasis]);
   }
   const totalCost = Number(data.__meta?.subtreeCost || 0);
@@ -737,10 +748,15 @@ function renderInfoPanel(nodeObj) {
     const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
     statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} Â· ${share}`]);
   }
-  if (data.budget_source || data.budget_year) {
+  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
     if (budgetBasisRow) {
-      budgetBasisRow[1] = [data.budget_source, data.budget_year].filter(Boolean).join(" | ");
+      budgetBasisRow[1] = [
+        data.source_system || data.budget_source,
+        data.amount_kind,
+        data.budget_year,
+        data.budget_as_of,
+      ].filter(Boolean).join(" | ");
     }
   }
   if (operationCost > 0) {

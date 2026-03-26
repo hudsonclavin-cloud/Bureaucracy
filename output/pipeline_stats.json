@@ -1,103 +1,113 @@
 {
-  "timestamp": "2026-03-25T20:39:59.477857+00:00",
-  "nodes_before": 16190,
-  "nodes_after": 18691,
-  "new_nodes_added": 2501,
-  "candidate_nodes_written": 936,
-  "promoted_nodes_written": 570,
+  "timestamp": "2026-03-25T21:14:50.856653+00:00",
+  "nodes_before": 19472,
+  "nodes_after": 20259,
+  "new_nodes_added": 787,
+  "candidate_nodes_written": 604,
+  "promoted_nodes_written": 252,
   "promotion_stats": {
-    "candidates_reviewed": 936,
-    "candidates_below_threshold": 358,
-    "promoted_new_nodes": 570,
-    "merged_duplicates": 8
+    "candidates_reviewed": 604,
+    "candidates_below_threshold": 351,
+    "promoted_new_nodes": 252,
+    "merged_duplicates": 1
   },
   "enrichment_stats": {
-    "nodes_enriched": 9281,
-    "relationships_added": 684,
-    "leadership_positions_added": 2,
-    "budgets_linked": 0,
-    "verification_score_changes": 1061,
+    "nodes_enriched": 10499,
+    "relationships_added": 725,
+    "leadership_positions_added": 0,
+    "budgets_linked": 121,
+    "verification_score_changes": 498,
     "enriched_nodes_by_source": {
-      "wikidata": 6038,
-      "official_http": 6,
-      "official_directory": 34,
-      "federal_register": 293
+      "wikidata": 5949,
+      "official_directory": 40,
+      "official_http": 9,
+      "treasury_outlays": 121,
+      "federal_register": 298
     },
     "relationships_by_type": {
-      "reports_to": 327,
-      "oversees": 309,
+      "reports_to": 338,
+      "oversees": 338,
       "regulates": 38,
-      "created_by": 10
+      "created_by": 11
     },
     "relationships_by_source": {
-      "official_directory": 66,
-      "official_http": 18,
-      "federal_register": 600
+      "official_directory": 80,
+      "federal_register": 645
     },
-    "leadership_positions_by_source": {
-      "official_http": 2
+    "leadership_positions_by_source": {},
+    "budgets_linked_by_source": {
+      "treasury_outlays": 121
     },
-    "budgets_linked_by_source": {},
     "verification_score_changes_by_source": {
-      "wikidata": 1059,
-      "official_directory": 2
+      "official_directory": 2,
+      "official_http": 2,
+      "treasury_outlays": 3,
+      "wikidata": 494
     },
-    "fetch_failures_by_source": {
-      "official_http": 308
-    }
+    "fetch_failures_by_source": {}
   },
   "verification_breakdown": {
-    "unverified": 5147,
-    "partial": 5600,
-    "verified": 7890
+    "unverified": 5085,
+    "partial": 6192,
+    "verified": 8928
   },
-  "average_confidence_score": 0.59,
-  "verified_node_count": 7890,
+  "average_confidence_score": 0.61,
+  "verified_node_count": 8928,
   "build_validation": {
-    "initial_node_count": 18637,
-    "input_node_count": 18637,
-    "input_edge_count": 2725,
-    "exported_node_count": 18637,
-    "exported_edge_count": 2725,
+    "initial_node_count": 20205,
+    "input_node_count": 20205,
+    "input_edge_count": 2737,
+    "exported_node_count": 20205,
+    "exported_edge_count": 2737,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 2115,
+    "nodes_reattached_to_root": 68,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 18637,
+    "final_node_count": 20205,
     "orphan_nodes_detected": 0,
-    "recovered_orphan_nodes": 56,
-    "root_attached_missing_parent_nodes": 56,
+    "recovered_orphan_nodes": 16,
+    "root_attached_missing_parent_nodes": 16,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 2115,
-    "explicitly_root_attached_nodes": 975,
+    "attached_to_root": 68,
+    "explicitly_root_attached_nodes": 52,
     "relationship_counts": {
-      "reports_to": 89,
       "manages": 2275,
-      "regulates": 42,
-      "oversees": 309,
-      "created_by": 10
+      "regulates": 50,
+      "oversees": 339,
+      "reports_to": 62,
+      "created_by": 11
     },
     "verification_status_counts": {
-      "unverified": 5147,
-      "partial": 5600,
-      "verified": 7890
+      "unverified": 5085,
+      "partial": 6192,
+      "verified": 8928
     },
-    "verified_node_count": 7890,
-    "average_confidence_score": 0.59,
+    "verified_node_count": 8928,
+    "average_confidence_score": 0.61,
     "pipeline_summary": {
-      "initial_node_count": 39643,
-      "raw_nodes_loaded": 39643,
-      "nodes_after_normalization": 39643,
-      "nodes_after_merge": 18637,
+      "initial_node_count": 43823,
+      "raw_nodes_loaded": 43823,
+      "nodes_after_normalization": 43823,
+      "nodes_after_merge": 20205,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 2115,
+      "nodes_reattached_to_root": 68,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 18637
+      "final_node_count": 20205
+    },
+    "budget_summary": {
+      "government_total_outlay_amount": 3102409296183.04,
+      "amount_kind": "fytd_net_outlays",
+      "fiscal_year": "2026",
+      "record_date": "2026-02-28",
+      "label": "FYTD net outlays through 2026-02-28",
+      "source_system": "Treasury Fiscal Data",
+      "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     }
   },
   "discovery_sources_used": [
     "usaspending",
+    "treasury_outlays",
     "wikidata",
     "lobbying",
     "wikidata_records",
@@ -106,16 +116,30 @@
   ],
   "discovery_record_counts": {
     "wikidata_records": 6500,
-    "official_directory_records": 40,
+    "official_directory_records": 50,
     "federal_register_records": 285
   },
   "frontier_targets_written": 80,
-  "frontier_success_count": 31,
-  "frontier_failure_count": 49,
+  "frontier_success_count": 41,
+  "frontier_failure_count": 39,
+  "budget_summary": {
+    "government_total_outlay_amount": 3102409296183.04,
+    "amount_kind": "fytd_net_outlays",
+    "fiscal_year": "2026",
+    "record_date": "2026-02-28",
+    "label": "FYTD net outlays through 2026-02-28",
+    "source_system": "Treasury Fiscal Data",
+    "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+  },
   "direct_payload_counts": {
     "usaspending": {
       "nodes": 100,
       "edges": 0
+    },
+    "treasury_outlays": {
+      "nodes": 0,
+      "edges": 0,
+      "outlayRows": 630
     },
     "wikidata": {
       "nodes": 13000,

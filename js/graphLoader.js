@@ -12,6 +12,12 @@ const DEFAULT_NODE = {
   verificationStatus: "unverified",
   lastVerified: null,
   sourceCount: 0,
+  budget_as_of: null,
+  source_system: null,
+  amount_kind: null,
+  allocation_basis: null,
+  direct_outlay_amount: null,
+  rollup_total_amount: null,
   isCandidate: false,
   possibleParent: null,
   discoveryMethod: null,
@@ -42,6 +48,12 @@ function normalizeNode(rawNode) {
   node.verificationStatus = String(node.verificationStatus || DEFAULT_NODE.verificationStatus);
   node.lastVerified = node.lastVerified ? String(node.lastVerified) : null;
   node.sourceCount = Number.isFinite(Number(node.sourceCount)) ? Number(node.sourceCount) : node.sourceUrls.length;
+  node.budget_as_of = node.budget_as_of ? String(node.budget_as_of) : null;
+  node.source_system = node.source_system ? String(node.source_system) : null;
+  node.amount_kind = node.amount_kind ? String(node.amount_kind) : null;
+  node.allocation_basis = node.allocation_basis ? String(node.allocation_basis) : null;
+  node.direct_outlay_amount = Number.isFinite(Number(node.direct_outlay_amount)) ? Number(node.direct_outlay_amount) : null;
+  node.rollup_total_amount = Number.isFinite(Number(node.rollup_total_amount)) ? Number(node.rollup_total_amount) : null;
   node.isCandidate = Boolean(node.isCandidate);
   node.possibleParent = node.possibleParent ? String(node.possibleParent) : null;
   node.discoveryMethod = node.discoveryMethod ? String(node.discoveryMethod) : null;
@@ -113,6 +125,12 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.annual_budget = sourceNode.annual_budget ?? targetNode.annual_budget;
   targetNode.budget_source = sourceNode.budget_source || targetNode.budget_source;
   targetNode.budget_year = sourceNode.budget_year || targetNode.budget_year;
+  targetNode.budget_as_of = sourceNode.budget_as_of || targetNode.budget_as_of;
+  targetNode.source_system = sourceNode.source_system || targetNode.source_system;
+  targetNode.amount_kind = sourceNode.amount_kind || targetNode.amount_kind;
+  targetNode.allocation_basis = sourceNode.allocation_basis || targetNode.allocation_basis;
+  targetNode.direct_outlay_amount = sourceNode.direct_outlay_amount ?? targetNode.direct_outlay_amount;
+  targetNode.rollup_total_amount = sourceNode.rollup_total_amount ?? targetNode.rollup_total_amount;
   targetNode.official_website = sourceNode.official_website || targetNode.official_website;
   targetNode.color = sourceNode.color || targetNode.color;
   targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));

@@ -32,6 +32,12 @@ DEFAULT_NODE = {
     "annual_budget": None,
     "budget_source": None,
     "budget_year": None,
+    "budget_as_of": None,
+    "source_system": None,
+    "amount_kind": None,
+    "allocation_basis": None,
+    "direct_outlay_amount": None,
+    "rollup_total_amount": None,
     "created_year": None,
     "restructured_year": None,
     "merged_into": None,
@@ -271,6 +277,12 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         "annual_budget",
         "budget_source",
         "budget_year",
+        "budget_as_of",
+        "source_system",
+        "amount_kind",
+        "allocation_basis",
+        "direct_outlay_amount",
+        "rollup_total_amount",
         "created_year",
         "restructured_year",
         "merged_into",
@@ -308,6 +320,12 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     node["annual_budget"] = coerce_nullable_text(node.get("annual_budget"))
     node["budget_source"] = coerce_nullable_text(node.get("budget_source"))
     node["budget_year"] = coerce_nullable_text(node.get("budget_year"))
+    node["budget_as_of"] = coerce_nullable_text(node.get("budget_as_of"))
+    node["source_system"] = coerce_nullable_text(node.get("source_system"))
+    node["amount_kind"] = coerce_nullable_text(node.get("amount_kind"))
+    node["allocation_basis"] = coerce_nullable_text(node.get("allocation_basis"))
+    node["direct_outlay_amount"] = coerce_nullable_number(node.get("direct_outlay_amount"))
+    node["rollup_total_amount"] = coerce_nullable_number(node.get("rollup_total_amount"))
     node["created_year"] = coerce_nullable_text(node.get("created_year"))
     node["restructured_year"] = coerce_nullable_text(node.get("restructured_year"))
     node["merged_into"] = coerce_nullable_text(node.get("merged_into"))
@@ -349,6 +367,12 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         "annual_budget",
         "budget_source",
         "budget_year",
+        "budget_as_of",
+        "source_system",
+        "amount_kind",
+        "allocation_basis",
+        "direct_outlay_amount",
+        "rollup_total_amount",
         "created_year",
         "restructured_year",
         "merged_into",

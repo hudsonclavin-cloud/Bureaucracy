@@ -155,6 +155,29 @@ def alias_keys(value: Any) -> list[str]:
     return [variant for variant in variants if variant]
 
 
+def budget_alias_keys(value: Any) -> list[str]:
+    name = normalize_name(value)
+    if not name:
+        return []
+    variants = {normalize_key(name)}
+    without_us = re.sub(r"^(u\.s\.|us)\s+", "", name, flags=re.IGNORECASE).strip()
+    if without_us:
+        variants.add(normalize_key(without_us))
+    without_parenthetical = re.sub(r"\s*\([^)]*\)", "", name).strip()
+    if without_parenthetical:
+        variants.add(normalize_key(without_parenthetical))
+    for separator in ("--", " - ", " — ", " – "):
+        if separator in name:
+            prefix = name.split(separator, 1)[0].strip()
+            if prefix:
+                variants.add(normalize_key(prefix))
+        if separator in without_parenthetical:
+            prefix = without_parenthetical.split(separator, 1)[0].strip()
+            if prefix:
+                variants.add(normalize_key(prefix))
+    return [variant for variant in variants if variant]
+
+
 def node_priority(node: dict[str, Any]) -> tuple[int, str]:
     type_name = normalize_key(node.get("type"))
     if "department" in type_name:
@@ -303,6 +326,27 @@ def build_budget_index(usaspending_payload: dict[str, list[dict[str, Any]]] | No
     return index
 
 
+def build_treasury_outlay_index(treasury_outlay_payload: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    index: dict[str, dict[str, Any]] = {}
+    if not isinstance(treasury_outlay_payload, dict):
+        return index
+
+    def rank(record: dict[str, Any]) -> tuple[int, float]:
+        return (
+            int(record.get("sequence_level") or 99),
+            -float(record.get("rollup_total_amount") or 0.0),
+        )
+
+    for row in treasury_outlay_payload.get("outlayRows", []):
+        if not isinstance(row, dict):
+            continue
+        for key in budget_alias_keys(row.get("name")):
+            existing = index.get(key)
+            if existing is None or rank(row) < rank(existing):
+                index[key] = row
+    return index
+
+
 def ancestor_chain(node: dict[str, Any], working_by_id: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     ancestors: list[dict[str, Any]] = []
     visited: set[str] = set()
@@ -424,6 +468,7 @@ def enrich_nodes(
     official_directory_records: Iterable[dict[str, Any]] = (),
     federal_register_records: Iterable[dict[str, Any]] = (),
     usaspending_payload: dict[str, list[dict[str, Any]]] | None = None,
+    treasury_outlay_payload: dict[str, Any] | None = None,
     max_http_nodes: int = 18,
     http_timeout: int = 10,
 ) -> tuple[list[dict[str, Any]], list[dict[str, str]], dict[str, Any]]:
@@ -449,6 +494,7 @@ def enrich_nodes(
     directory_by_name = record_index(official_directory_records, "officeName", "agencyName")
     federal_by_name = record_index(federal_register_records, "officeName", "agencyName", "departmentName")
     budget_by_name = build_budget_index(usaspending_payload)
+    treasury_outlays_by_name = build_treasury_outlay_index(treasury_outlay_payload)
     edge_registry = EdgeRegistry()
 
     enriched_nodes: dict[str, dict[str, Any]] = {}
@@ -590,6 +636,25 @@ def enrich_nodes(
                     source_labels.add(budget_source_label or "usaspending_parent")
                     stats["budgets_linked"] += 1
                     increment_metric(stats, "budgets_linked_by_source", budget_source_label or "usaspending_parent")
+
+        treasury_outlay_record = treasury_outlays_by_name.get(name_key)
+        if treasury_outlay_record is None:
+            for key in budget_alias_keys(node.get("name")):
+                treasury_outlay_record = treasury_outlays_by_name.get(key)
+                if treasury_outlay_record:
+                    break
+        if treasury_outlay_record:
+            updates["rollup_total_amount"] = treasury_outlay_record.get("rollup_total_amount")
+            updates["budget_as_of"] = treasury_outlay_record.get("budget_as_of")
+            updates["budget_year"] = updates.get("budget_year") or treasury_outlay_record.get("budget_year")
+            updates["source_system"] = treasury_outlay_record.get("source_system")
+            updates["amount_kind"] = treasury_outlay_record.get("amount_kind")
+            updates["allocation_basis"] = treasury_outlay_record.get("allocation_basis")
+            updates["sourceUrls"] = normalize_string_list([*node.get("sourceUrls", []), *treasury_outlay_record.get("sourceUrls", [])])
+            updates["sourceTypes"] = normalize_string_list([*node.get("sourceTypes", []), *treasury_outlay_record.get("sourceTypes", [])])
+            source_labels.add("treasury_outlays")
+            stats["budgets_linked"] += 1
+            increment_metric(stats, "budgets_linked_by_source", "treasury_outlays")
 
         official_website = choose_official_website({**node, **updates}, wikidata_by_name)
         if official_website:

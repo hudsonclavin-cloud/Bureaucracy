@@ -116,6 +116,77 @@ class EnrichmentTests(unittest.TestCase):
         self.assertEqual(stats["budgets_linked_by_source"]["usaspending_parent"], 1)
         self.assertGreaterEqual(stats["relationships_by_source"]["federal_register"], 1)
 
+    def test_enrich_nodes_attaches_treasury_rollup_outlays(self) -> None:
+        existing_nodes = [
+            {
+                "id": "department-of-energy",
+                "name": "Department of Energy",
+                "type": "Department",
+                "children": [],
+            },
+            {
+                "id": "department-of-defense",
+                "name": "Department of Defense (DoD)",
+                "type": "Department",
+                "children": [],
+            }
+        ]
+
+        enriched_nodes, edges, stats = enrich_nodes(
+            existing_nodes=existing_nodes,
+            direct_payload_nodes=[],
+            treasury_outlay_payload={
+                "outlayRows": [
+                    {
+                        "name": "Department of Energy",
+                        "originalName": "Total--Department of Energy",
+                        "rollup_total_amount": 987654321.0,
+                        "amount_kind": "fytd_net_outlays",
+                        "budget_year": "2026",
+                        "budget_as_of": "2026-02-28",
+                        "source_system": "Treasury Fiscal Data",
+                        "budget_source": "Treasury MTS Table 5",
+                        "allocation_basis": "treasury_rollup",
+                        "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                        "sourceTypes": ["official_site"],
+                        "sequence_level": 2,
+                        "print_order": 100,
+                    },
+                    {
+                        "name": "Department of Defense--Military Programs",
+                        "originalName": "Department of Defense--Military Programs",
+                        "rollup_total_amount": 393327577008.87,
+                        "amount_kind": "fytd_net_outlays",
+                        "budget_year": "2026",
+                        "budget_as_of": "2026-02-28",
+                        "source_system": "Treasury Fiscal Data",
+                        "budget_source": "Treasury MTS Table 5",
+                        "allocation_basis": "treasury_rollup",
+                        "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                        "sourceTypes": ["official_site"],
+                        "sequence_level": 2,
+                        "print_order": 200,
+                    }
+                ],
+                "budgetSummary": {
+                    "government_total_outlay_amount": 3102409296183.04,
+                },
+            },
+            max_http_nodes=0,
+        )
+
+        department = next(node for node in enriched_nodes if node["id"] == "department-of-energy")
+        defense = next(node for node in enriched_nodes if node["id"] == "department-of-defense")
+        self.assertEqual(department["rollup_total_amount"], 987654321.0)
+        self.assertEqual(department["amount_kind"], "fytd_net_outlays")
+        self.assertEqual(department["budget_as_of"], "2026-02-28")
+        self.assertEqual(department["source_system"], "Treasury Fiscal Data")
+        self.assertEqual(department["allocation_basis"], "treasury_rollup")
+        self.assertIn("fiscaldata.treasury.gov", "".join(department["sourceUrls"]))
+        self.assertEqual(defense["rollup_total_amount"], 393327577008.87)
+        self.assertEqual(edges, [])
+        self.assertEqual(stats["budgets_linked_by_source"]["treasury_outlays"], 2)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -254,6 +254,7 @@ export function createGovernmentGraph({
     graphNodeCount: 0,
     candidateNodeCount: 0,
     totalBudgetCost: 0,
+    totalBudgetLabel: "total cost",
     maxDataDepth: 0,
     maxNodes: 0,
     maxVisibleDepth: MAX_DEPTH,
@@ -356,6 +357,7 @@ export function createGovernmentGraph({
       candidateNodeCount: state.candidateNodeCount,
       hiddenCandidateCount,
       totalBudgetCost: state.totalBudgetCost,
+      totalBudgetLabel: state.totalBudgetLabel,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       manualDepthFilter: state.manualDepthFilter,
@@ -723,7 +725,27 @@ export function createGovernmentGraph({
     if (typeof value === "number" && Number.isFinite(value)) {
       return value;
     }
-    const normalized = String(value).replace(/[^0-9.\-]/g, "");
+    const text = String(value);
+    const matches = [...text.matchAll(/(-?\d+(?:,\d{3})*(?:\.\d+)?)\s*([kmbt])?/gi)];
+    if (matches.length > 0) {
+      let total = 0;
+      for (const [, numericText, suffix = ""] of matches) {
+        const numericValue = Number(String(numericText).replace(/,/g, ""));
+        if (!Number.isFinite(numericValue)) {
+          continue;
+        }
+        const normalizedSuffix = String(suffix).toLowerCase();
+        const multiplier =
+          normalizedSuffix === "t" ? 1e12
+            : normalizedSuffix === "b" ? 1e9
+              : normalizedSuffix === "m" ? 1e6
+                : normalizedSuffix === "k" ? 1e3
+                  : 1;
+        total += numericValue * multiplier;
+      }
+      return total;
+    }
+    const normalized = text.replace(/[^0-9.\-]/g, "");
     const parsed = Number(normalized);
     return Number.isFinite(parsed) ? parsed : 0;
   }
@@ -767,7 +789,11 @@ export function createGovernmentGraph({
   }
 
   function getNodeDirectCost(node) {
-    return parseBudgetAmount(node?.budget ?? node?.annual_budget);
+    return parseBudgetAmount(node?.direct_outlay_amount ?? node?.budget ?? node?.annual_budget);
+  }
+
+  function getNodeRollupCost(node) {
+    return parseBudgetAmount(node?.rollup_total_amount);
   }
 
   function nodeRadiusForDepth(depth) {
@@ -1256,7 +1282,8 @@ export function createGovernmentGraph({
     const directSourceUrls = getNodeSourceUrls(node);
     const directSourceCount = getNodeSourceCount(node, directSourceUrls);
     const directCost = getNodeDirectCost(node);
-    let subtreeCost = directCost;
+    const explicitRollupCost = getNodeRollupCost(node);
+    let subtreeCost = explicitRollupCost > 0 ? explicitRollupCost : directCost;
     let subtreeSourceCount = directSourceCount;
     let subtreeEvidenceNodeCount = directSourceCount > 0 ? 1 : 0;
     let subtreeVerifiedNodeCount = String(node.verificationStatus || "").toLowerCase() === "verified" ? 1 : 0;
@@ -1267,7 +1294,9 @@ export function createGovernmentGraph({
       const childMeta = registerDataNode(child, node.id, depth + 1, nextPath);
       subtreeCount += childMeta.subtreeCount;
       subtreeDepth = Math.max(subtreeDepth, childMeta.maxDepth);
-      subtreeCost += childMeta.subtreeCost || 0;
+      if (!(explicitRollupCost > 0)) {
+        subtreeCost += childMeta.subtreeCost || 0;
+      }
       subtreeSourceCount += childMeta.subtreeSourceCount || 0;
       subtreeEvidenceNodeCount += childMeta.subtreeEvidenceNodeCount || 0;
       subtreeVerifiedNodeCount += childMeta.subtreeVerifiedNodeCount || 0;
@@ -1281,6 +1310,7 @@ export function createGovernmentGraph({
       maxDepth: subtreeDepth,
       childCount: children.length,
       directCost,
+      explicitRollupCost,
       subtreeCost,
       directSourceCount,
       directSourceUrls,
@@ -1326,7 +1356,8 @@ export function createGovernmentGraph({
       maxDepth: depth,
       childCount: 0,
       directCost: getNodeDirectCost(node),
-      subtreeCost: getNodeDirectCost(node),
+      explicitRollupCost: getNodeRollupCost(node),
+      subtreeCost: getNodeRollupCost(node) || getNodeDirectCost(node),
       directSourceCount: getNodeSourceCount(node),
       directSourceUrls: getNodeSourceUrls(node),
       subtreeSourceCount: getNodeSourceCount(node),
@@ -3623,7 +3654,8 @@ export function createGovernmentGraph({
     state.graphNodeCount = meta.subtreeCount;
     state.candidateNodeCount = (data.candidateNodes || []).length;
     state.totalNodeCount = state.graphNodeCount + state.candidateNodeCount;
-    state.totalBudgetCost = meta.subtreeCost || 0;
+    state.totalBudgetCost = Number(data.__budgetSummary?.government_total_outlay_amount || 0) || meta.subtreeCost || 0;
+    state.totalBudgetLabel = data.__budgetSummary?.label || "total cost";
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_VISIBLE_NODES;
     state.fullExpandRenderMode = state.totalNodeCount <= MAX_VISIBLE_NODES;
@@ -3865,6 +3897,7 @@ export function createGovernmentGraph({
         candidateNodeCount: state.candidateNodeCount,
         hiddenCandidateCount: state.showCandidateNodes ? 0 : candidateNodeCount,
         totalBudgetCost: state.totalBudgetCost,
+        totalBudgetLabel: state.totalBudgetLabel,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,
