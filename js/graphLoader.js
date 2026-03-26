@@ -314,13 +314,16 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  baseRoot.relationships = rawEdges
+  const mappedEdges = rawEdges
     .filter((edge) => edge && edge.source && edge.target)
     .map((edge) => ({
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
     }));
+  if (mappedEdges.length > 0) {
+    baseRoot.relationships = mappedEdges;
+  }
 
   return baseRoot;
 }

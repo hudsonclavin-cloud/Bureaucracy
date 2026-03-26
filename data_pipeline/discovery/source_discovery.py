@@ -174,20 +174,11 @@ def build_existing_candidate_indexes(
 ) -> tuple[set[str], set[tuple[str, str | None]], dict[str, str | None]]:
     existing_ids: set[str] = set()
     existing_name_parent_keys: set[tuple[str, str | None]] = set()
-    parent_name_by_id: dict[str, str | None] = {}
 
     for node in existing_nodes:
         node_id = str(node.get("id") or "").strip()
         if node_id:
             existing_ids.add(node_id)
-
-    for node in existing_nodes:
-        node_id = str(node.get("id") or "").strip()
-        parent_id = str(node.get("parent") or node.get("parentId") or "").strip() or None
-        parent_name = None
-        if parent_id:
-            parent_name = parent_name_by_id.get(parent_id)
-        parent_name_by_id[node_id] = parent_name
 
     name_lookup = {
         str(node.get("id") or "").strip(): normalize_candidate_name(node.get("name"))
@@ -233,8 +224,6 @@ def infer_candidate_type(name: str, description: str | None = None) -> str:
         return "Bureau"
     if "division" in combined:
         return "Division"
-    if any(token in combined for token in ("director", "chief", "manager", "administrator", "secretary", "advisor", "chair")):
-        return "Role"
     if any(token in combined for token in ("committee", "commission", "board", "council")):
         return "Organization"
     return "Organization"
