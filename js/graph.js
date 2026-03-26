@@ -323,6 +323,7 @@ export function createGovernmentGraph({
     showUnverifiedNodes: true,
     showCandidateNodes: true,
     fullExpandRenderMode: false,
+    manuallyCollapsedNodeIds: new Set(),
     xrSessionActive: false,
     frameHooks: new Set(),
     candidateNodes: [],
@@ -2193,6 +2194,7 @@ export function createGovernmentGraph({
       if (nodeObj.expanded || nodeObj.expanding) {
         continue;
       }
+      state.manuallyCollapsedNodeIds.delete(nodeObj.data.id);
       queueExpansion(nodeObj, animate);
       expandedParents.push(nodeObj);
     }
@@ -2252,7 +2254,10 @@ export function createGovernmentGraph({
     return false;
   }
 
-  function collapseNode(parentObj) {
+  function collapseNode(parentObj, { manual = false } = {}) {
+    if (manual && parentObj?.data?.id) {
+      state.manuallyCollapsedNodeIds.add(parentObj.data.id);
+    }
     state.pendingExpansions = state.pendingExpansions.filter((job) => !isDescendantOf(job.parentObj, parentObj));
 
     for (const child of [...parentObj.childObjs]) {
@@ -3077,6 +3082,9 @@ export function createGovernmentGraph({
     if (!nodeObj || !state.lod.autoExpand || visibleNodeBudgetExceeded()) {
       return false;
     }
+    if (state.manuallyCollapsedNodeIds.has(nodeObj.data.id)) {
+      return false;
+    }
     if (state.lod.level <= 1) {
       return false;
     }
@@ -3798,7 +3806,8 @@ export function createGovernmentGraph({
     },
     collapseSelectedNode() {
       if (state.selectedNode) {
-        collapseNode(state.selectedNode);
+        state.fullExpandRenderMode = false;
+        collapseNode(state.selectedNode, { manual: true });
       }
       return state.selectedNode;
     },

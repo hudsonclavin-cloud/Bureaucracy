@@ -337,7 +337,7 @@ function combineExpansionPayloads(...payloads) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) {
     const error = new Error(`Failed to load ${url}: ${response.status}`);
     error.status = response.status;

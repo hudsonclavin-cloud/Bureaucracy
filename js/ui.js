@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260325a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260325a";
+import { createGovernmentGraph } from "./graph.js?v=20260326b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260326b";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
@@ -87,6 +87,17 @@ function formatCurrency(value) {
   }).format(numeric);
 }
 
+function truncateLabel(value, maxLength = 32) {
+  const text = String(value || "").trim();
+  if (!text) {
+    return "";
+  }
+  if (text.length <= maxLength) {
+    return text;
+  }
+  return `${text.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
+}
+
 function uniqueStrings(values) {
   const result = [];
   const seen = new Set();
@@ -163,6 +174,40 @@ function getDirectCostLabel(data) {
   return directCost > 0 ? formatCurrency(directCost) : null;
 }
 
+function getNodeSelectionCostContext(nodeObj) {
+  if (!nodeObj?.data) {
+    return null;
+  }
+
+  const selectedTotal = Number(nodeObj.data.__meta?.subtreeCost || 0);
+  if (selectedTotal > 0) {
+    return {
+      amount: selectedTotal,
+      inherited: false,
+      nodeName: nodeObj.data.name,
+      label: "selected total",
+    };
+  }
+
+  let cursor = nodeObj.parent;
+  while (cursor) {
+    const explicitRollup = Number(cursor.data?.__meta?.explicitRollupCost || 0);
+    const directCost = Number(cursor.data?.__meta?.directCost || 0);
+    const ancestorAmount = explicitRollup > 0 ? explicitRollup : directCost;
+    if (ancestorAmount > 0) {
+      return {
+        amount: ancestorAmount,
+        inherited: true,
+        nodeName: cursor.data?.name || "Parent branch",
+        label: "nearest funded branch",
+      };
+    }
+    cursor = cursor.parent;
+  }
+
+  return null;
+}
+
 function showLoader(label) {
   clearTimeout(state.loaderTimer);
   setText(dom.expandLoader, label);
@@ -194,7 +239,16 @@ function updateStats(stats) {
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
   if (dom.statsCost) {
-    setText(dom.statsCost, `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`);
+    const operationSummary = `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
+    const selectedContext = getNodeSelectionCostContext(state.graph?.getSelectedNode?.());
+    if (selectedContext?.amount > 0) {
+      const selectionSummary = selectedContext.inherited
+        ? `selection inherits ${formatCurrency(selectedContext.amount)} from ${truncateLabel(selectedContext.nodeName)}`
+        : `selection total ${formatCurrency(selectedContext.amount)}`;
+      setText(dom.statsCost, `${operationSummary} | ${selectionSummary}`);
+    } else {
+      setText(dom.statsCost, `${operationSummary} | selection cost unavailable`);
+    }
   }
 }
 
@@ -741,8 +795,14 @@ function renderInfoPanel(nodeObj) {
   }
   const totalCost = Number(data.__meta?.subtreeCost || 0);
   const operationCost = Number(state.graph?.getStats?.().totalBudgetCost || 0);
+  const selectionCostContext = getNodeSelectionCostContext(nodeObj);
   if (totalCost > 0) {
     statRows.push(["TOTAL COST", formatCurrency(totalCost)]);
+  } else if (selectionCostContext?.inherited) {
+    statRows.push([
+      "NEAREST FUNDED BRANCH",
+      `${selectionCostContext.nodeName} | ${formatCurrency(selectionCostContext.amount)}`,
+    ]);
   }
   if (operationCost > 0) {
     const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
@@ -1170,7 +1230,7 @@ function bindControls() {
       return;
     }
     state.graph.setFullExpandRenderMode(false);
-    state.graph.collapseNode(selected);
+    state.graph.collapseNode(selected, { manual: true });
     renderInfoPanel(selected);
   });
 
@@ -1242,13 +1302,16 @@ function safeInitUI() {
 async function initGraphApp() {
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
-    onSelect: (nodeObj) => safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj),
+    onSelect: (nodeObj) => {
+      safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj);
+      safeUiCall("updateStats", updateStats, state.graph.getStats());
+    },
     onHover: (payload) => safeUiCall("updateTooltip", updateTooltip, payload),
     onCountsChange: (stats) => safeUiCall("updateStats", updateStats, stats),
   });
 
   const data = await loadMergedGraphData({
-    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
+    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./output/graph.json",
     corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
