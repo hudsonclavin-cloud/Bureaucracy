@@ -1942,12 +1942,10 @@ export function createGovernmentGraph({
         const childData = children[i];
         const childSeed = hashString(childData.id);
         const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
-        const branchHint = copyBranchBaseDirection(childBranchKey, tempVecB).clone();
 
         directionVec
           .copy(fibonacciSphereDirection(localIndex, shell.count, tempVecA))
           .applyQuaternion(tempQuat);
-        applyBranchWarp(directionVec, branchHint, SHELL_BRANCH_HINT_BLEND * 0.72, directionVec);
         directionVec
           .addScaledVector(directionFromSeed(childSeed, shell.index + 1), 0.014)
           .normalize();
@@ -1989,7 +1987,6 @@ export function createGovernmentGraph({
 
     for (const shell of shells) {
       const shellQuaternion = getShellOrientationQuaternion(parentObj, shell.index).clone();
-      const branchHint = getStableBranchDirection(parentObj, tempVecB).clone();
 
       for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
         const i = shell.start + localIndex;
@@ -1997,12 +1994,10 @@ export function createGovernmentGraph({
         const childSeed = hashString(childData.id);
         const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
         const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
-        const branchHintBlend = parentObj.depth === 1 ? 0 : DEEP_SHELL_BRANCH_HINT_BLEND;
 
         directionVec
           .copy(baseDirection)
           .applyQuaternion(shellQuaternion);
-        applyBranchWarp(directionVec, branchHint, branchHintBlend, directionVec);
         directionVec
           .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.022)
           .normalize();
@@ -2022,23 +2017,11 @@ export function createGovernmentGraph({
     relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
     return offsets.map((offset, index) => {
       const localDirection = offset.clone().normalize();
-      const inheritedBranchDirection = parentObj.branchDirection.clone();
-      const inheritedSectorDirection = parentObj.sectorDirection.clone();
-      const branchDirection = parentObj.depth === 1
-        ? localDirection.clone()
-        : inheritedBranchDirection.lengthSq() > 0
-          ? inheritedBranchDirection.normalize()
-          : localDirection.clone();
-      const sectorDirection = parentObj.depth === 1
-        ? localDirection.clone()
-        : inheritedSectorDirection.lengthSq() > 0
-          ? inheritedSectorDirection.normalize()
-          : localDirection.clone();
       return {
         position: tempVecA.copy(parentObj.pos).add(offset).clone(),
         direction: localDirection.clone(),
-        branchDirection,
-        sectorDirection,
+        branchDirection: localDirection.clone(),
+        sectorDirection: localDirection.clone(),
         shellRadius: shellRadii[index],
         layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
       };
