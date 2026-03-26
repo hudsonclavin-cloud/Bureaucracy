@@ -23,6 +23,7 @@ USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipelin
 AGENCY_HIERARCHY_QUERY = """
 SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
+  ?agency wdt:P17 wd:Q30 .
   OPTIONAL {{ ?agency wdt:P749 ?parent . }}
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
@@ -33,6 +34,7 @@ LIMIT {limit}
 OFFICE_HOLDER_QUERY = """
 SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?officialWebsite WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
+  ?agency wdt:P17 wd:Q30 .
   ?agency wdt:P2388 ?position .
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   OPTIONAL {{
@@ -48,6 +50,7 @@ SUBUNIT_QUERY = """
 SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite WHERE {{
   ?office wdt:P361 ?parent .
   ?parent wdt:P31/wdt:P279* wd:Q327333 .
+  ?parent wdt:P17 wd:Q30 .
   OPTIONAL {{ ?office wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}

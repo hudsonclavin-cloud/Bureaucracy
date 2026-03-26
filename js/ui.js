@@ -940,7 +940,7 @@ function renderInfoPanel(nodeObj) {
     const share = Number.isFinite(totalCost) && totalCost !== 0
       ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
       : "0%";
-    statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} Â· ${share}`]);
+    statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} · ${share}`]);
   }
   if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");

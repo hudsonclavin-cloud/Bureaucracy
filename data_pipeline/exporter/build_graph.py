@@ -151,10 +151,11 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
         nodes.append(normalized)
 
     edges = list(payload.get("relationships", [])) if isinstance(payload.get("relationships"), list) else []
-    return {
-        "nodes": nodes,
-        "edges": edges,
-    }
+    result: dict[str, Any] = {"nodes": nodes, "edges": edges}
+    budget_summary = payload.get("__budgetSummary") or payload.get("budgetSummary")
+    if isinstance(budget_summary, dict):
+        result["budgetSummary"] = budget_summary
+    return result
 
 
 def walk_tree(root: dict[str, Any]) -> Iterable[tuple[dict[str, Any], dict[str, Any] | None]]:
@@ -589,9 +590,11 @@ def validate_and_prepare_graph(
         if "parentId" not in prepared:
             if prepared["id"] in related_node_ids or explicitly_attached_to_root:
                 prepared["attachToRoot"] = True
+            elif prepared["id"] in existing_ids:
+                pass  # Base-graph node; build_graph_tree places it via the base hierarchy
             else:
-                prepared["attachToRoot"] = True
                 root_attached_missing_parent_nodes += 1
+                continue
 
         kept_nodes.append(prepared)
         status = prepared.get("verificationStatus", "unverified")

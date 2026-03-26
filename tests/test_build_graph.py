@@ -60,7 +60,7 @@ class BuildGraphTests(unittest.TestCase):
             stack.extend(reversed(current.get("children", [])))
         raise KeyError(node_id)
 
-    def test_build_graph_attaches_related_and_unrelated_orphans_to_root(self) -> None:
+    def test_build_graph_attaches_related_orphans_and_drops_unrelated_orphans(self) -> None:
         payloads = [
             {
                 "nodes": [
@@ -77,16 +77,14 @@ class BuildGraphTests(unittest.TestCase):
 
         exported_ids = {node["id"] for node in result.nodes}
         self.assertIn("contractor-acme", exported_ids)
-        self.assertIn("floating-node", exported_ids)
+        self.assertNotIn("floating-node", exported_ids)
 
         contractor = next(node for node in result.nodes if node["id"] == "contractor-acme")
-        floating = next(node for node in result.nodes if node["id"] == "floating-node")
         self.assertTrue(contractor["attachToRoot"])
-        self.assertTrue(floating["attachToRoot"])
-        self.assertEqual(result.validation["attached_to_root"], 2)
+        self.assertEqual(result.validation["attached_to_root"], 1)
         self.assertEqual(result.validation["nodes_removed_missing_parent"], 0)
         self.assertEqual(result.validation["root_attached_missing_parent_nodes"], 1)
-        self.assertEqual(result.validation["nodes_reattached_to_root"], 2)
+        self.assertEqual(result.validation["nodes_reattached_to_root"], 1)
 
     def test_build_graph_keeps_hierarchical_parent_references(self) -> None:
         payloads = [
