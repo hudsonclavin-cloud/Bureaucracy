@@ -1997,7 +1997,7 @@ export function createGovernmentGraph({
         const childSeed = hashString(childData.id);
         const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
         const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
-        const branchHintBlend = parentObj.depth <= 1 ? SHELL_BRANCH_HINT_BLEND : DEEP_SHELL_BRANCH_HINT_BLEND;
+        const branchHintBlend = parentObj.depth === 1 ? 0 : DEEP_SHELL_BRANCH_HINT_BLEND;
 
         directionVec
           .copy(baseDirection)
@@ -2020,14 +2020,29 @@ export function createGovernmentGraph({
     }
 
     relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
-    return offsets.map((offset, index) => ({
-      position: tempVecA.copy(parentObj.pos).add(offset).clone(),
-      direction: offset.clone().normalize(),
-      branchDirection: parentObj.branchDirection.clone(),
-      sectorDirection: parentObj.sectorDirection.clone(),
-      shellRadius: shellRadii[index],
-      layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
-    }));
+    return offsets.map((offset, index) => {
+      const localDirection = offset.clone().normalize();
+      const inheritedBranchDirection = parentObj.branchDirection.clone();
+      const inheritedSectorDirection = parentObj.sectorDirection.clone();
+      const branchDirection = parentObj.depth === 1
+        ? localDirection.clone()
+        : inheritedBranchDirection.lengthSq() > 0
+          ? inheritedBranchDirection.normalize()
+          : localDirection.clone();
+      const sectorDirection = parentObj.depth === 1
+        ? localDirection.clone()
+        : inheritedSectorDirection.lengthSq() > 0
+          ? inheritedSectorDirection.normalize()
+          : localDirection.clone();
+      return {
+        position: tempVecA.copy(parentObj.pos).add(offset).clone(),
+        direction: localDirection.clone(),
+        branchDirection,
+        sectorDirection,
+        shellRadius: shellRadii[index],
+        layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
+      };
+    });
   }
 
   function estimateExpansionSize(nodes) {
