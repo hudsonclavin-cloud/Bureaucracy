@@ -209,6 +209,9 @@ export function createLodManager({ maxDepth = Infinity } = {}) {
       if (!lodState.showHalos || !nodeObj?.visible) {
         return false;
       }
+      if (nodeObj.depth !== 0) {
+        return false;
+      }
       return lodState.haloNodeIds.has(nodeObj.data?.id);
     },
     getClusterPolicy(nodeObj, lodState) {
