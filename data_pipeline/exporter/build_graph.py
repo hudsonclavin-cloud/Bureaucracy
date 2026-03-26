@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from copy import deepcopy
 import json
+import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,7 +27,15 @@ DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "output"
 DEFAULT_GRAPH_OUTPUT = DEFAULT_OUTPUT_DIR / "graph.json"
 DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
+DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
 HIERARCHICAL_RELATIONSHIPS = {"reports_to", "subsidiary_of"}
+COST_NUMBER_PATTERN = re.compile(r"(-?\d[\d,]*(?:\.\d+)?)\s*(trillion|billion|million|thousand|t|b|m|k)?", re.IGNORECASE)
+COST_EXPORT_FIELDS = (
+    "resolved_total_amount",
+    "cost_status",
+    "cost_basis",
+    "cost_validation",
+)
 
 
 @dataclass
@@ -38,6 +47,7 @@ class BuildResult:
     nodes_path: Path
     edges_path: Path
     validation: dict[str, Any]
+    validity_report_path: Path | None = None
 
 
 def iter_payload_items(payloads: Iterable[dict[str, Any]]) -> Iterable[dict[str, Any]]:
@@ -230,6 +240,294 @@ def build_graph_tree(
     return root
 
 
+def round_currency(value: float | None) -> float | None:
+    if value is None:
+        return None
+    return round(float(value), 2)
+
+
+def parse_cost_amount(value: Any) -> float | None:
+    if value in (None, "", "null"):
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+
+    text = str(value).strip()
+    if not text:
+        return None
+
+    matches = COST_NUMBER_PATTERN.findall(text.replace("$", " "))
+    if matches:
+        parsed_values: list[float] = []
+        for number_text, suffix in matches:
+            if not number_text:
+                continue
+            try:
+                number = float(number_text.replace(",", ""))
+            except ValueError:
+                continue
+            normalized_suffix = str(suffix or "").strip().lower()
+            multiplier = {
+                "k": 1e3,
+                "thousand": 1e3,
+                "m": 1e6,
+                "million": 1e6,
+                "b": 1e9,
+                "billion": 1e9,
+                "t": 1e12,
+                "trillion": 1e12,
+            }.get(normalized_suffix, 1.0)
+            parsed_values.append(number * multiplier)
+        if parsed_values:
+            return max(parsed_values, key=abs)
+
+    normalized = re.sub(r"[^0-9.\-]", "", text)
+    if not normalized:
+        return None
+    try:
+        return float(normalized)
+    except ValueError:
+        return None
+
+
+def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
+    sizes: dict[str, int] = {}
+
+    def visit(node: dict[str, Any]) -> int:
+        total = 1
+        for child in node.get("children", []):
+            if isinstance(child, dict):
+                total += visit(child)
+        node_id = str(node.get("id") or "").strip()
+        if node_id:
+            sizes[node_id] = total
+        return total
+
+    visit(root)
+    return sizes
+
+
+def get_node_official_total(node: dict[str, Any]) -> float | None:
+    return parse_cost_amount(node.get("rollup_total_amount"))
+
+
+def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tuple[float, str]:
+    for key, basis in (
+        ("annual_budget", "annual_budget_weight"),
+        ("budget", "budget_weight"),
+        ("direct_outlay_amount", "direct_outlay_weight"),
+    ):
+        amount = parse_cost_amount(node.get(key))
+        if amount is not None and amount != 0:
+            return max(abs(amount), 1.0), basis
+
+    employees = parse_cost_amount(node.get("employees"))
+    if employees is not None and employees > 0:
+        return max(abs(employees), 1.0), "employee_weight"
+
+    node_id = str(node.get("id") or "").strip()
+    subtree_weight = float(max(subtree_sizes.get(node_id, 1), 1))
+    return subtree_weight, "subtree_weight"
+
+
+def costs_nearly_equal(left: float | None, right: float | None, tolerance: float = 0.01) -> bool:
+    if left is None or right is None:
+        return False
+    return abs(left - right) <= max(tolerance, max(abs(left), abs(right)) * 1e-9)
+
+
+def official_rollups_exceed_total(official_sum: float, allocated_total: float | None) -> bool:
+    if allocated_total is None or official_sum == 0:
+        return False
+    if official_sum > 0 and allocated_total >= 0:
+        return official_sum > allocated_total
+    if official_sum < 0 and allocated_total <= 0:
+        return abs(official_sum) > abs(allocated_total)
+    return False
+
+
+def annotate_resolved_costs(
+    root: dict[str, Any],
+    *,
+    budget_summary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    subtree_sizes = compute_subtree_sizes(root)
+    budget_total = parse_cost_amount((budget_summary or {}).get("government_total_outlay_amount"))
+
+    if budget_total is None:
+        child_totals = [amount for amount in (get_node_official_total(child) for child in root.get("children", [])) if amount is not None]
+        budget_total = sum(child_totals) if child_totals else None
+
+    def recurse(
+        node: dict[str, Any],
+        allocated_total: float | None,
+        *,
+        inherited_basis: str | None,
+        inherited_validation: str | None,
+        is_root: bool = False,
+    ) -> None:
+        official_total = get_node_official_total(node)
+        node["resolved_total_amount"] = round_currency(allocated_total)
+
+        if is_root:
+            node["cost_status"] = "root_total" if allocated_total is not None else "unavailable"
+            node["cost_basis"] = "treasury_total_outlays" if budget_summary else "summed_child_official_totals"
+            node["cost_validation"] = "verified_with_treasury_total" if budget_summary else "summed_from_child_totals"
+        elif allocated_total is None:
+            node["cost_status"] = "unavailable"
+            node["cost_basis"] = inherited_basis
+            node["cost_validation"] = inherited_validation or "missing_cost"
+        elif official_total is not None and costs_nearly_equal(allocated_total, official_total):
+            node["cost_status"] = "official"
+            node["cost_basis"] = "treasury_rollup"
+            node["cost_validation"] = "matched_official_rollup"
+        elif official_total is not None:
+            node["cost_status"] = "scaled_official"
+            node["cost_basis"] = "treasury_rollup"
+            node["cost_validation"] = inherited_validation or "scaled_to_parent_total"
+        else:
+            node["cost_status"] = "allocated"
+            node["cost_basis"] = inherited_basis or "equal_split"
+            node["cost_validation"] = inherited_validation or "estimated_from_parent"
+
+        children = [child for child in node.get("children", []) if isinstance(child, dict)]
+        if not children or allocated_total is None:
+            return
+
+        anchored_children: list[tuple[dict[str, Any], float]] = []
+        weighted_children: list[tuple[dict[str, Any], float, str]] = []
+        for child in children:
+            official_child_total = get_node_official_total(child)
+            if official_child_total is not None:
+                anchored_children.append((child, official_child_total))
+            else:
+                weight, weight_basis = get_node_weight(child, subtree_sizes)
+                weighted_children.append((child, weight, weight_basis))
+
+        official_child_sum = sum(amount for _, amount in anchored_children)
+        anchor_scale = 1.0
+        scaled_to_fit_parent = False
+        if anchored_children and official_rollups_exceed_total(official_child_sum, allocated_total):
+            anchor_scale = abs(allocated_total) / abs(official_child_sum) if official_child_sum else 1.0
+            scaled_to_fit_parent = True
+
+        assigned_anchor_total = sum(amount * anchor_scale for _, amount in anchored_children)
+        remainder_total = allocated_total - assigned_anchor_total
+
+        total_weight = sum(weight for _, weight, _ in weighted_children) or float(len(weighted_children) or 1)
+        weighted_remaining = len(weighted_children)
+        remainder_left = remainder_total
+        for child, weight, weight_basis in weighted_children:
+            weighted_remaining -= 1
+            if weighted_remaining <= 0:
+                child_total = remainder_left
+            else:
+                child_total = remainder_total * (weight / total_weight)
+                remainder_left -= child_total
+            recurse(
+                child,
+                child_total,
+                inherited_basis=weight_basis,
+                inherited_validation="estimated_from_parent",
+            )
+
+        for child, official_child_total in anchored_children:
+            recurse(
+                child,
+                official_child_total * anchor_scale,
+                inherited_basis="treasury_rollup",
+                inherited_validation="scaled_to_parent_total" if scaled_to_fit_parent else "matched_official_rollup",
+            )
+
+    recurse(
+        root,
+        budget_total,
+        inherited_basis="treasury_total_outlays",
+        inherited_validation="verified_with_treasury_total",
+        is_root=True,
+    )
+
+    validity_nodes: list[dict[str, Any]] = []
+    verification_status_counts: dict[str, int] = {}
+    cost_status_counts: dict[str, int] = {}
+    cost_validation_counts: dict[str, int] = {}
+    nodes_with_sources = 0
+    nodes_without_sources = 0
+    resolved_cost_node_count = 0
+    unresolved_cost_node_count = 0
+    estimated_cost_node_count = 0
+    official_cost_node_count = 0
+
+    for node, parent in walk_tree(root):
+        verification_status = str(node.get("verificationStatus") or "unverified")
+        cost_status = str(node.get("cost_status") or "unavailable")
+        cost_validation = str(node.get("cost_validation") or "missing_cost")
+        verification_status_counts[verification_status] = verification_status_counts.get(verification_status, 0) + 1
+        cost_status_counts[cost_status] = cost_status_counts.get(cost_status, 0) + 1
+        cost_validation_counts[cost_validation] = cost_validation_counts.get(cost_validation, 0) + 1
+
+        source_count = int(node.get("sourceCount") or 0)
+        if source_count > 0:
+            nodes_with_sources += 1
+        else:
+            nodes_without_sources += 1
+
+        resolved_total = node.get("resolved_total_amount")
+        if resolved_total is not None:
+            resolved_cost_node_count += 1
+        else:
+            unresolved_cost_node_count += 1
+
+        if cost_status in {"allocated", "scaled_official"}:
+            estimated_cost_node_count += 1
+        if cost_status in {"official", "root_total"}:
+            official_cost_node_count += 1
+
+        issues: list[str] = []
+        if source_count == 0:
+            issues.append("no_sources")
+        if verification_status == "unverified":
+            issues.append("unverified")
+        if cost_status == "unavailable":
+            issues.append("missing_cost")
+        elif cost_status != "official" and cost_status != "root_total":
+            issues.append("estimated_cost")
+
+        validity_nodes.append(
+            {
+                "id": node.get("id"),
+                "name": node.get("name"),
+                "type": node.get("type"),
+                "parentId": parent.get("id") if isinstance(parent, dict) else None,
+                "verificationStatus": verification_status,
+                "confidenceScore": node.get("confidenceScore"),
+                "sourceCount": source_count,
+                "resolved_total_amount": resolved_total,
+                "rollup_total_amount": node.get("rollup_total_amount"),
+                "cost_status": cost_status,
+                "cost_basis": node.get("cost_basis"),
+                "cost_validation": cost_validation,
+                "issues": issues,
+            }
+        )
+
+    return {
+        "summary": {
+            "verified_treasury_total": round_currency(budget_total),
+            "verification_status_counts": verification_status_counts,
+            "cost_status_counts": cost_status_counts,
+            "cost_validation_counts": cost_validation_counts,
+            "nodes_with_sources": nodes_with_sources,
+            "nodes_without_sources": nodes_without_sources,
+            "resolved_cost_node_count": resolved_cost_node_count,
+            "unresolved_cost_node_count": unresolved_cost_node_count,
+            "estimated_cost_node_count": estimated_cost_node_count,
+            "official_cost_node_count": official_cost_node_count,
+        },
+        "nodes": validity_nodes,
+    }
+
+
 def validate_and_prepare_graph(
     nodes: list[dict[str, Any]],
     edges: list[dict[str, str]],
@@ -335,6 +633,7 @@ def build_graph(
     graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
+    validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     existing_graph_payload = load_existing_graph_payload(graph_output_path)
@@ -381,9 +680,11 @@ def build_graph(
     graph_path = Path(graph_output_path)
     nodes_path = Path(nodes_output_path)
     edges_path = Path(edges_output_path)
+    validity_report_path = Path(validity_report_output_path)
     graph_path.parent.mkdir(parents=True, exist_ok=True)
     nodes_path.parent.mkdir(parents=True, exist_ok=True)
     edges_path.parent.mkdir(parents=True, exist_ok=True)
+    validity_report_path.parent.mkdir(parents=True, exist_ok=True)
 
     graph = build_graph_tree(
         base_graph_path=base_graph_path,
@@ -395,6 +696,16 @@ def build_graph(
         graph["__budgetSummary"] = budget_summary
         validation["budget_summary"] = budget_summary
 
+    validity_report = annotate_resolved_costs(graph, budget_summary=budget_summary)
+    graph_node_map, _ = index_tree(graph)
+    for node in export_nodes:
+        graph_node = graph_node_map.get(node["id"])
+        if not graph_node:
+            continue
+        for field_name in COST_EXPORT_FIELDS:
+            node[field_name] = deepcopy(graph_node.get(field_name))
+    validation.update(validity_report["summary"])
+
     with graph_path.open("w", encoding="utf-8") as handle:
         json.dump(graph, handle, indent=2)
 
@@ -404,6 +715,9 @@ def build_graph(
     with edges_path.open("w", encoding="utf-8") as handle:
         json.dump(export_edges, handle, indent=2)
 
+    with validity_report_path.open("w", encoding="utf-8") as handle:
+        json.dump(validity_report, handle, indent=2)
+
     return BuildResult(
         nodes=export_nodes,
         edges=export_edges,
@@ -412,6 +726,7 @@ def build_graph(
         nodes_path=nodes_path,
         edges_path=edges_path,
         validation=validation,
+        validity_report_path=validity_report_path,
     )
 
 

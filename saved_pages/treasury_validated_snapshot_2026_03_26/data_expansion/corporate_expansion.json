@@ -1,0 +1,1281 @@
+{
+  "nodes": [
+    {
+      "id": "exec-ind-usps",
+      "name": "U.S. Postal Service (USPS)",
+      "type": "Government Corporation",
+      "desc": "Independent agency delivering mail to 165M+ addresses 6 days/week. Largest civilian fleet in the world. ~600,000 employees.",
+      "employees": "~600,000",
+      "budget": null,
+      "color": "#4ac88a",
+      "children": [
+        {
+          "id": "exec-ind-usps-corp-chief-logistics-officer",
+          "name": "Chief Logistics Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Logistics Officer role associated with U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-usps-corp-chief-retail-officer",
+          "name": "Chief Retail Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Retail Officer role associated with U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-usps-corp-chief-technology-officer",
+          "name": "Chief Technology Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Technology Officer role associated with U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-usps-corp-svp-government-affairs",
+          "name": "SVP Government Affairs",
+          "type": "Corporate Officer",
+          "desc": "SVP Government Affairs role associated with U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-usps-corp-package-mail-operations",
+          "name": "Package & Mail Operations",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-usps-corp-package-mail-operations-head",
+              "name": "Head of Package & Mail Operations",
+              "type": "Position",
+              "desc": "Head of Package & Mail Operations within Package & Mail Operations at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-package-mail-operations-director",
+              "name": "Director, Package & Mail Operations",
+              "type": "Position",
+              "desc": "Director, Package & Mail Operations within Package & Mail Operations at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-package-mail-operations-manager",
+              "name": "Manager, Package & Mail Operations",
+              "type": "Position",
+              "desc": "Manager, Package & Mail Operations within Package & Mail Operations at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-usps-corp-retail-network",
+          "name": "Retail Network",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-usps-corp-retail-network-head",
+              "name": "Head of Retail Network",
+              "type": "Position",
+              "desc": "Head of Retail Network within Retail Network at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-retail-network-director",
+              "name": "Director, Retail Network",
+              "type": "Position",
+              "desc": "Director, Retail Network within Retail Network at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-retail-network-manager",
+              "name": "Manager, Retail Network",
+              "type": "Position",
+              "desc": "Manager, Retail Network within Retail Network at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-usps-corp-logistics-technology",
+          "name": "Logistics Technology",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-usps-corp-logistics-technology-head",
+              "name": "Head of Logistics Technology",
+              "type": "Position",
+              "desc": "Head of Logistics Technology within Logistics Technology at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-logistics-technology-director",
+              "name": "Director, Logistics Technology",
+              "type": "Position",
+              "desc": "Director, Logistics Technology within Logistics Technology at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-logistics-technology-manager",
+              "name": "Manager, Logistics Technology",
+              "type": "Position",
+              "desc": "Manager, Logistics Technology within Logistics Technology at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-usps-corp-government-affairs",
+          "name": "Government Affairs",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. Postal Service (USPS).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-usps-corp-government-affairs-head",
+              "name": "Head of Government Affairs",
+              "type": "Position",
+              "desc": "Head of Government Affairs within Government Affairs at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-government-affairs-director",
+              "name": "Director, Government Affairs",
+              "type": "Position",
+              "desc": "Director, Government Affairs within Government Affairs at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-usps-corp-government-affairs-manager",
+              "name": "Manager, Government Affairs",
+              "type": "Position",
+              "desc": "Manager, Government Affairs within Government Affairs at U.S. Postal Service (USPS).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exec-ind-misc-peace-corps",
+      "name": "Peace Corps",
+      "type": "Independent Agency",
+      "desc": "Sends volunteers to developing countries. ~8,000 volunteers in 60+ countries.",
+      "employees": "~1,500 staff",
+      "budget": null,
+      "color": "#4ac88a",
+      "children": [
+        {
+          "id": "exec-ind-misc-peace-corps-corp-chief-executive-officer",
+          "name": "Chief Executive Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Executive Officer role associated with Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-chief-financial-officer",
+          "name": "Chief Financial Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Financial Officer role associated with Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-chief-operating-officer",
+          "name": "Chief Operating Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Operating Officer role associated with Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-chief-information-officer",
+          "name": "Chief Information Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Information Officer role associated with Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-executive-leadership",
+          "name": "Executive Leadership",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-peace-corps-corp-executive-leadership-head",
+              "name": "Head of Executive Leadership",
+              "type": "Position",
+              "desc": "Head of Executive Leadership within Executive Leadership at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-executive-leadership-director",
+              "name": "Director, Executive Leadership",
+              "type": "Position",
+              "desc": "Director, Executive Leadership within Executive Leadership at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-executive-leadership-manager",
+              "name": "Manager, Executive Leadership",
+              "type": "Position",
+              "desc": "Manager, Executive Leadership within Executive Leadership at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-operations",
+          "name": "Operations",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-peace-corps-corp-operations-head",
+              "name": "Head of Operations",
+              "type": "Position",
+              "desc": "Head of Operations within Operations at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-operations-director",
+              "name": "Director, Operations",
+              "type": "Position",
+              "desc": "Director, Operations within Operations at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-operations-manager",
+              "name": "Manager, Operations",
+              "type": "Position",
+              "desc": "Manager, Operations within Operations at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-finance-risk",
+          "name": "Finance & Risk",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-peace-corps-corp-finance-risk-head",
+              "name": "Head of Finance & Risk",
+              "type": "Position",
+              "desc": "Head of Finance & Risk within Finance & Risk at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-finance-risk-director",
+              "name": "Director, Finance & Risk",
+              "type": "Position",
+              "desc": "Director, Finance & Risk within Finance & Risk at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-finance-risk-manager",
+              "name": "Manager, Finance & Risk",
+              "type": "Position",
+              "desc": "Manager, Finance & Risk within Finance & Risk at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-peace-corps-corp-technology",
+          "name": "Technology",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Peace Corps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-peace-corps-corp-technology-head",
+              "name": "Head of Technology",
+              "type": "Position",
+              "desc": "Head of Technology within Technology at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-technology-director",
+              "name": "Director, Technology",
+              "type": "Position",
+              "desc": "Director, Technology within Technology at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-peace-corps-corp-technology-manager",
+              "name": "Manager, Technology",
+              "type": "Position",
+              "desc": "Manager, Technology within Technology at Peace Corps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exec-ind-misc-americorps",
+      "name": "AmeriCorps",
+      "type": "Independent Agency",
+      "desc": "Manages national service programs including AmeriCorps VISTA and NCCC. ~2,500 staff.",
+      "employees": "~2,500",
+      "budget": "~$1.1B",
+      "color": "#4ac88a",
+      "children": [
+        {
+          "id": "exec-ind-misc-americorps-corp-chief-executive-officer",
+          "name": "Chief Executive Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Executive Officer role associated with AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-chief-financial-officer",
+          "name": "Chief Financial Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Financial Officer role associated with AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-chief-operating-officer",
+          "name": "Chief Operating Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Operating Officer role associated with AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-chief-information-officer",
+          "name": "Chief Information Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Information Officer role associated with AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-executive-leadership",
+          "name": "Executive Leadership",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-americorps-corp-executive-leadership-head",
+              "name": "Head of Executive Leadership",
+              "type": "Position",
+              "desc": "Head of Executive Leadership within Executive Leadership at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-executive-leadership-director",
+              "name": "Director, Executive Leadership",
+              "type": "Position",
+              "desc": "Director, Executive Leadership within Executive Leadership at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-executive-leadership-manager",
+              "name": "Manager, Executive Leadership",
+              "type": "Position",
+              "desc": "Manager, Executive Leadership within Executive Leadership at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-operations",
+          "name": "Operations",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-americorps-corp-operations-head",
+              "name": "Head of Operations",
+              "type": "Position",
+              "desc": "Head of Operations within Operations at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-operations-director",
+              "name": "Director, Operations",
+              "type": "Position",
+              "desc": "Director, Operations within Operations at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-operations-manager",
+              "name": "Manager, Operations",
+              "type": "Position",
+              "desc": "Manager, Operations within Operations at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-finance-risk",
+          "name": "Finance & Risk",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-americorps-corp-finance-risk-head",
+              "name": "Head of Finance & Risk",
+              "type": "Position",
+              "desc": "Head of Finance & Risk within Finance & Risk at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-finance-risk-director",
+              "name": "Director, Finance & Risk",
+              "type": "Position",
+              "desc": "Director, Finance & Risk within Finance & Risk at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-finance-risk-manager",
+              "name": "Manager, Finance & Risk",
+              "type": "Position",
+              "desc": "Manager, Finance & Risk within Finance & Risk at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-americorps-corp-technology",
+          "name": "Technology",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for AmeriCorps.",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-americorps-corp-technology-head",
+              "name": "Head of Technology",
+              "type": "Position",
+              "desc": "Head of Technology within Technology at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-technology-director",
+              "name": "Director, Technology",
+              "type": "Position",
+              "desc": "Director, Technology within Technology at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-americorps-corp-technology-manager",
+              "name": "Manager, Technology",
+              "type": "Position",
+              "desc": "Manager, Technology within Technology at AmeriCorps.",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
+      "name": "U.S. International Development Finance Corp (DFC)",
+      "type": "Independent Agency",
+      "desc": "Mobilizes private capital for development in emerging markets.",
+      "employees": "~400",
+      "budget": null,
+      "color": "#4ac88a",
+      "children": [
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-executive-officer",
+          "name": "Chief Executive Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Executive Officer role associated with U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-financial-officer",
+          "name": "Chief Financial Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Financial Officer role associated with U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-operating-officer",
+          "name": "Chief Operating Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Operating Officer role associated with U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-information-officer",
+          "name": "Chief Information Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Information Officer role associated with U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership",
+          "name": "Executive Leadership",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership-head",
+              "name": "Head of Executive Leadership",
+              "type": "Position",
+              "desc": "Head of Executive Leadership within Executive Leadership at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership-director",
+              "name": "Director, Executive Leadership",
+              "type": "Position",
+              "desc": "Director, Executive Leadership within Executive Leadership at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership-manager",
+              "name": "Manager, Executive Leadership",
+              "type": "Position",
+              "desc": "Manager, Executive Leadership within Executive Leadership at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations",
+          "name": "Operations",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations-head",
+              "name": "Head of Operations",
+              "type": "Position",
+              "desc": "Head of Operations within Operations at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations-director",
+              "name": "Director, Operations",
+              "type": "Position",
+              "desc": "Director, Operations within Operations at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations-manager",
+              "name": "Manager, Operations",
+              "type": "Position",
+              "desc": "Manager, Operations within Operations at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk",
+          "name": "Finance & Risk",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk-head",
+              "name": "Head of Finance & Risk",
+              "type": "Position",
+              "desc": "Head of Finance & Risk within Finance & Risk at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk-director",
+              "name": "Director, Finance & Risk",
+              "type": "Position",
+              "desc": "Director, Finance & Risk within Finance & Risk at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk-manager",
+              "name": "Manager, Finance & Risk",
+              "type": "Position",
+              "desc": "Manager, Finance & Risk within Finance & Risk at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology",
+          "name": "Technology",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for U.S. International Development Finance Corp (DFC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology-head",
+              "name": "Head of Technology",
+              "type": "Position",
+              "desc": "Head of Technology within Technology at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology-director",
+              "name": "Director, Technology",
+              "type": "Position",
+              "desc": "Director, Technology within Technology at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology-manager",
+              "name": "Manager, Technology",
+              "type": "Position",
+              "desc": "Manager, Technology within Technology at U.S. International Development Finance Corp (DFC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+      "name": "Pension Benefit Guaranty Corporation (PBGC)",
+      "type": "Independent Agency",
+      "desc": "Insures defined-benefit pensions for 33M Americans.",
+      "employees": "~900",
+      "budget": null,
+      "color": "#4ac88a",
+      "children": [
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-executive-officer",
+          "name": "Chief Executive Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Executive Officer role associated with Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-financial-officer",
+          "name": "Chief Financial Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Financial Officer role associated with Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-operating-officer",
+          "name": "Chief Operating Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Operating Officer role associated with Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-information-officer",
+          "name": "Chief Information Officer",
+          "type": "Corporate Officer",
+          "desc": "Chief Information Officer role associated with Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#666666",
+          "children": []
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership",
+          "name": "Executive Leadership",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership-head",
+              "name": "Head of Executive Leadership",
+              "type": "Position",
+              "desc": "Head of Executive Leadership within Executive Leadership at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership-director",
+              "name": "Director, Executive Leadership",
+              "type": "Position",
+              "desc": "Director, Executive Leadership within Executive Leadership at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership-manager",
+              "name": "Manager, Executive Leadership",
+              "type": "Position",
+              "desc": "Manager, Executive Leadership within Executive Leadership at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations",
+          "name": "Operations",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations-head",
+              "name": "Head of Operations",
+              "type": "Position",
+              "desc": "Head of Operations within Operations at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations-director",
+              "name": "Director, Operations",
+              "type": "Position",
+              "desc": "Director, Operations within Operations at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations-manager",
+              "name": "Manager, Operations",
+              "type": "Position",
+              "desc": "Manager, Operations within Operations at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk",
+          "name": "Finance & Risk",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk-head",
+              "name": "Head of Finance & Risk",
+              "type": "Position",
+              "desc": "Head of Finance & Risk within Finance & Risk at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk-director",
+              "name": "Director, Finance & Risk",
+              "type": "Position",
+              "desc": "Director, Finance & Risk within Finance & Risk at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk-manager",
+              "name": "Manager, Finance & Risk",
+              "type": "Position",
+              "desc": "Manager, Finance & Risk within Finance & Risk at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology",
+          "name": "Technology",
+          "type": "Corporate Division",
+          "desc": "Expanded corporate division generated for Pension Benefit Guaranty Corporation (PBGC).",
+          "employees": null,
+          "budget": null,
+          "color": "#4ac88a",
+          "children": [
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology-head",
+              "name": "Head of Technology",
+              "type": "Position",
+              "desc": "Head of Technology within Technology at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology-director",
+              "name": "Director, Technology",
+              "type": "Position",
+              "desc": "Director, Technology within Technology at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            },
+            {
+              "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology-manager",
+              "name": "Manager, Technology",
+              "type": "Position",
+              "desc": "Manager, Technology within Technology at Pension Benefit Guaranty Corporation (PBGC).",
+              "employees": null,
+              "budget": null,
+              "color": "#666666",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "exec-ind-usps-corp-chief-logistics-officer",
+      "target": "exec-ind-usps-corp-package-mail-operations",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-chief-retail-officer",
+      "target": "exec-ind-usps-corp-retail-network",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-chief-technology-officer",
+      "target": "exec-ind-usps-corp-logistics-technology",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-svp-government-affairs",
+      "target": "exec-ind-usps-corp-government-affairs",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-package-mail-operations",
+      "target": "exec-ind-usps-corp-package-mail-operations-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-retail-network",
+      "target": "exec-ind-usps-corp-retail-network-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-logistics-technology",
+      "target": "exec-ind-usps-corp-logistics-technology-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-usps-corp-government-affairs",
+      "target": "exec-ind-usps-corp-government-affairs-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-chief-executive-officer",
+      "target": "exec-ind-misc-peace-corps-corp-executive-leadership",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-chief-financial-officer",
+      "target": "exec-ind-misc-peace-corps-corp-operations",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-chief-operating-officer",
+      "target": "exec-ind-misc-peace-corps-corp-finance-risk",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-chief-information-officer",
+      "target": "exec-ind-misc-peace-corps-corp-technology",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-executive-leadership",
+      "target": "exec-ind-misc-peace-corps-corp-executive-leadership-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-operations",
+      "target": "exec-ind-misc-peace-corps-corp-operations-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-finance-risk",
+      "target": "exec-ind-misc-peace-corps-corp-finance-risk-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-peace-corps-corp-technology",
+      "target": "exec-ind-misc-peace-corps-corp-technology-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-chief-executive-officer",
+      "target": "exec-ind-misc-americorps-corp-executive-leadership",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-chief-financial-officer",
+      "target": "exec-ind-misc-americorps-corp-operations",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-chief-operating-officer",
+      "target": "exec-ind-misc-americorps-corp-finance-risk",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-chief-information-officer",
+      "target": "exec-ind-misc-americorps-corp-technology",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-executive-leadership",
+      "target": "exec-ind-misc-americorps-corp-executive-leadership-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-operations",
+      "target": "exec-ind-misc-americorps-corp-operations-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-finance-risk",
+      "target": "exec-ind-misc-americorps-corp-finance-risk-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-americorps-corp-technology",
+      "target": "exec-ind-misc-americorps-corp-technology-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-executive-officer",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-financial-officer",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-operating-officer",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-chief-information-officer",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-executive-leadership-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-operations-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-finance-risk-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology",
+      "target": "exec-ind-misc-u-s-international-development-finance-corp-dfc-corp-technology-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-executive-officer",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-financial-officer",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-operating-officer",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-chief-information-officer",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-executive-leadership-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-operations-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-finance-risk-director",
+      "type": "relationship"
+    },
+    {
+      "source": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology",
+      "target": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-corp-technology-director",
+      "type": "relationship"
+    }
+  ]
+}

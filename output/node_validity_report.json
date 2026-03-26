@@ -1,0 +1,95 @@
+{
+  "summary": {
+    "verified_treasury_total": null,
+    "verification_status_counts": {
+      "unverified": 1,
+      "partial": 2,
+      "verified": 1
+    },
+    "cost_status_counts": {
+      "unavailable": 4
+    },
+    "cost_validation_counts": {
+      "summed_from_child_totals": 1,
+      "missing_cost": 3
+    },
+    "nodes_with_sources": 3,
+    "nodes_without_sources": 1,
+    "resolved_cost_node_count": 0,
+    "unresolved_cost_node_count": 4,
+    "estimated_cost_node_count": 0,
+    "official_cost_node_count": 0
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "name": "Root",
+      "type": "Foundation",
+      "parentId": null,
+      "verificationStatus": "unverified",
+      "confidenceScore": null,
+      "sourceCount": 0,
+      "resolved_total_amount": null,
+      "rollup_total_amount": null,
+      "cost_status": "unavailable",
+      "cost_basis": "summed_child_official_totals",
+      "cost_validation": "summed_from_child_totals",
+      "issues": [
+        "no_sources",
+        "unverified",
+        "missing_cost"
+      ]
+    },
+    {
+      "id": "department-of-energy",
+      "name": "Department of Energy",
+      "type": "Department",
+      "parentId": "root",
+      "verificationStatus": "partial",
+      "confidenceScore": 0.7,
+      "sourceCount": 1,
+      "resolved_total_amount": null,
+      "rollup_total_amount": null,
+      "cost_status": "unavailable",
+      "cost_basis": null,
+      "cost_validation": "missing_cost",
+      "issues": [
+        "missing_cost"
+      ]
+    },
+    {
+      "id": "department-of-energy-office-of-grid-deployment",
+      "name": "Office of Grid Deployment",
+      "type": "Office",
+      "parentId": "department-of-energy",
+      "verificationStatus": "verified",
+      "confidenceScore": 1.0,
+      "sourceCount": 2,
+      "resolved_total_amount": null,
+      "rollup_total_amount": null,
+      "cost_status": "unavailable",
+      "cost_basis": null,
+      "cost_validation": "missing_cost",
+      "issues": [
+        "missing_cost"
+      ]
+    },
+    {
+      "id": "contractor-acme",
+      "name": "Acme Corp",
+      "type": "Corporation",
+      "parentId": "root",
+      "verificationStatus": "partial",
+      "confidenceScore": 0.7,
+      "sourceCount": 1,
+      "resolved_total_amount": null,
+      "rollup_total_amount": null,
+      "cost_status": "unavailable",
+      "cost_basis": null,
+      "cost_validation": "missing_cost",
+      "issues": [
+        "missing_cost"
+      ]
+    }
+  ]
+}

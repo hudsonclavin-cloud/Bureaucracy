@@ -1,0 +1,182 @@
+{
+  "timestamp": "2026-03-26T05:41:32.216471+00:00",
+  "nodes_before": 20259,
+  "nodes_after": 20448,
+  "new_nodes_added": 189,
+  "candidate_nodes_written": 13,
+  "promoted_nodes_written": 9,
+  "promotion_stats": {
+    "candidates_reviewed": 13,
+    "candidates_below_threshold": 4,
+    "promoted_new_nodes": 9,
+    "merged_duplicates": 0
+  },
+  "enrichment_stats": {
+    "nodes_enriched": 8915,
+    "relationships_added": 541,
+    "leadership_positions_added": 0,
+    "budgets_linked": 122,
+    "verification_score_changes": 3,
+    "enriched_nodes_by_source": {
+      "official_directory": 45,
+      "official_http": 9,
+      "treasury_outlays": 122,
+      "wikidata": 1573,
+      "federal_register": 214
+    },
+    "relationships_by_type": {
+      "reports_to": 259,
+      "oversees": 259,
+      "regulates": 14,
+      "created_by": 9
+    },
+    "relationships_by_source": {
+      "official_directory": 90,
+      "federal_register": 451
+    },
+    "leadership_positions_by_source": {},
+    "budgets_linked_by_source": {
+      "treasury_outlays": 122
+    },
+    "verification_score_changes_by_source": {
+      "official_directory": 3,
+      "official_http": 1,
+      "treasury_outlays": 2
+    },
+    "fetch_failures_by_source": {}
+  },
+  "verification_breakdown": {
+    "unverified": 5130,
+    "partial": 6190,
+    "verified": 9128
+  },
+  "average_confidence_score": 0.62,
+  "verified_node_count": 9127,
+  "build_validation": {
+    "initial_node_count": 20402,
+    "input_node_count": 20402,
+    "input_edge_count": 2891,
+    "exported_node_count": 20402,
+    "exported_edge_count": 2891,
+    "nodes_removed_missing_parent": 0,
+    "nodes_reattached_to_root": 207,
+    "nodes_removed_structural_errors": 0,
+    "final_node_count": 20402,
+    "orphan_nodes_detected": 0,
+    "recovered_orphan_nodes": 0,
+    "root_attached_missing_parent_nodes": 0,
+    "dropped_edges_missing_source": 0,
+    "dropped_edges_missing_target": 0,
+    "orphaned_parent_ids": 0,
+    "attached_to_root": 207,
+    "explicitly_root_attached_nodes": 25,
+    "relationship_counts": {
+      "manages": 2457,
+      "regulates": 50,
+      "oversees": 346,
+      "reports_to": 27,
+      "created_by": 11
+    },
+    "verification_status_counts": {
+      "unverified": 5130,
+      "partial": 6190,
+      "verified": 9128
+    },
+    "verified_node_count": 9127,
+    "average_confidence_score": 0.62,
+    "pipeline_summary": {
+      "initial_node_count": 31828,
+      "raw_nodes_loaded": 31828,
+      "nodes_after_normalization": 31828,
+      "nodes_after_merge": 20402,
+      "nodes_removed_missing_parent": 0,
+      "nodes_reattached_to_root": 207,
+      "nodes_removed_structural_errors": 0,
+      "final_node_count": 20402
+    },
+    "budget_summary": {
+      "government_total_outlay_amount": 3102409296183.04,
+      "amount_kind": "fytd_net_outlays",
+      "fiscal_year": "2026",
+      "record_date": "2026-02-28",
+      "label": "FYTD net outlays through 2026-02-28",
+      "source_system": "Treasury Fiscal Data",
+      "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+    },
+    "verified_treasury_total": 3102409296183.04,
+    "cost_status_counts": {
+      "root_total": 1,
+      "official": 62,
+      "allocated": 20324,
+      "scaled_official": 61
+    },
+    "cost_validation_counts": {
+      "verified_with_treasury_total": 1,
+      "matched_official_rollup": 62,
+      "estimated_from_parent": 20324,
+      "scaled_to_parent_total": 61
+    },
+    "nodes_with_sources": 15318,
+    "nodes_without_sources": 5130,
+    "resolved_cost_node_count": 20448,
+    "unresolved_cost_node_count": 0,
+    "estimated_cost_node_count": 20385,
+    "official_cost_node_count": 63
+  },
+  "discovery_sources_used": [
+    "usaspending",
+    "treasury_outlays",
+    "wikidata",
+    "lobbying",
+    "wikidata_records",
+    "official_directory_records",
+    "federal_register_records"
+  ],
+  "discovery_record_counts": {
+    "wikidata_records": 1250,
+    "official_directory_records": 57,
+    "federal_register_records": 200
+  },
+  "frontier_targets_written": 80,
+  "frontier_success_count": 48,
+  "frontier_failure_count": 32,
+  "budget_summary": {
+    "government_total_outlay_amount": 3102409296183.04,
+    "amount_kind": "fytd_net_outlays",
+    "fiscal_year": "2026",
+    "record_date": "2026-02-28",
+    "label": "FYTD net outlays through 2026-02-28",
+    "source_system": "Treasury Fiscal Data",
+    "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+  },
+  "direct_payload_counts": {
+    "usaspending": {
+      "nodes": 20,
+      "edges": 0
+    },
+    "treasury_outlays": {
+      "nodes": 0,
+      "edges": 0,
+      "outlayRows": 630
+    },
+    "wikidata": {
+      "nodes": 2500,
+      "edges": 1500
+    },
+    "lobbying": {
+      "nodes": 125,
+      "edges": 0
+    }
+  },
+  "stage_errors": [],
+  "outputs": {
+    "graph": "C:\\Users\\hudso\\Bureaucracy\\output\\graph.json",
+    "expanded_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_nodes.json",
+    "expanded_edges": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_edges.json",
+    "node_validity_report": "C:\\Users\\hudso\\Bureaucracy\\output\\node_validity_report.json",
+    "candidate_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\candidate_nodes.json",
+    "enrichment_stats": "C:\\Users\\hudso\\Bureaucracy\\output\\enrichment_stats.json",
+    "frontier_targets": "C:\\Users\\hudso\\Bureaucracy\\output\\frontier_targets.json",
+    "pipeline_state": "C:\\Users\\hudso\\Bureaucracy\\output\\pipeline_state.json"
+  }
+}

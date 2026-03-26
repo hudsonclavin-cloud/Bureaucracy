@@ -308,6 +308,7 @@ def run_pipeline(
             "graph": str(build_result.graph_path),
             "expanded_nodes": str(build_result.nodes_path),
             "expanded_edges": str(build_result.edges_path),
+            "node_validity_report": str(build_result.validity_report_path) if build_result.validity_report_path else None,
             "candidate_nodes": str(candidate_path),
             "enrichment_stats": str(enrichment_stats_output_path),
             "frontier_targets": str(frontier_path),

@@ -38,6 +38,10 @@ DEFAULT_NODE = {
     "allocation_basis": None,
     "direct_outlay_amount": None,
     "rollup_total_amount": None,
+    "resolved_total_amount": None,
+    "cost_status": None,
+    "cost_basis": None,
+    "cost_validation": None,
     "created_year": None,
     "restructured_year": None,
     "merged_into": None,
@@ -283,6 +287,10 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         "allocation_basis",
         "direct_outlay_amount",
         "rollup_total_amount",
+        "resolved_total_amount",
+        "cost_status",
+        "cost_basis",
+        "cost_validation",
         "created_year",
         "restructured_year",
         "merged_into",
@@ -326,6 +334,10 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     node["allocation_basis"] = coerce_nullable_text(node.get("allocation_basis"))
     node["direct_outlay_amount"] = coerce_nullable_number(node.get("direct_outlay_amount"))
     node["rollup_total_amount"] = coerce_nullable_number(node.get("rollup_total_amount"))
+    node["resolved_total_amount"] = coerce_nullable_number(node.get("resolved_total_amount"))
+    node["cost_status"] = coerce_nullable_text(node.get("cost_status"))
+    node["cost_basis"] = coerce_nullable_text(node.get("cost_basis"))
+    node["cost_validation"] = coerce_nullable_text(node.get("cost_validation"))
     node["created_year"] = coerce_nullable_text(node.get("created_year"))
     node["restructured_year"] = coerce_nullable_text(node.get("restructured_year"))
     node["merged_into"] = coerce_nullable_text(node.get("merged_into"))
@@ -373,6 +385,10 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         "allocation_basis",
         "direct_outlay_amount",
         "rollup_total_amount",
+        "resolved_total_amount",
+        "cost_status",
+        "cost_basis",
+        "cost_validation",
         "created_year",
         "restructured_year",
         "merged_into",

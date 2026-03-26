@@ -49,6 +49,15 @@ def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
 
 
 class BuildGraphTests(unittest.TestCase):
+    def find_graph_node(self, root: dict[str, object], node_id: str) -> dict[str, object]:
+        stack = [root]
+        while stack:
+            current = stack.pop()
+            if current.get("id") == node_id:
+                return current
+            stack.extend(reversed(current.get("children", [])))
+        raise KeyError(node_id)
+
     def test_build_graph_attaches_related_and_unrelated_orphans_to_root(self) -> None:
         payloads = [
             {
@@ -190,6 +199,76 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(result.graph["__budgetSummary"]["government_total_outlay_amount"], 3102409296183.04)
         self.assertIn("budget_summary", result.validation)
         self.assertEqual(result.validation["budget_summary"]["record_date"], "2026-02-28")
+
+    def test_build_graph_assigns_resolved_costs_to_each_node(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "office-beta", "name": "Office Beta", "type": "Office"},
+                ],
+                "edges": [
+                    {"source": "office-beta", "target": "agency-alpha", "type": "reports_to"},
+                ],
+                "budgetSummary": {
+                    "government_total_outlay_amount": 100.0,
+                    "label": "Test total",
+                    "record_date": "2026-02-28",
+                    "fiscal_year": "2026",
+                },
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        root = result.graph
+        agency = self.find_graph_node(root, "agency-alpha")
+        office = self.find_graph_node(root, "office-beta")
+
+        self.assertEqual(root["resolved_total_amount"], 100.0)
+        self.assertEqual(agency["resolved_total_amount"], 100.0)
+        self.assertEqual(office["resolved_total_amount"], 100.0)
+        self.assertEqual(result.validation["resolved_cost_node_count"], 3)
+        self.assertEqual(result.validation["unresolved_cost_node_count"], 0)
+        self.assertIn("cost_status_counts", result.validation)
+
+    def test_build_graph_scales_conflicting_official_rollups(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {
+                        "id": "special-advisor",
+                        "name": "Special Advisor",
+                        "type": "Position",
+                        "attachToRoot": True,
+                        "rollup_total_amount": 60.0,
+                    },
+                    {
+                        "id": "agency-alpha",
+                        "name": "Agency Alpha",
+                        "type": "Agency",
+                        "rollup_total_amount": 80.0,
+                    },
+                ],
+                "edges": [],
+                "budgetSummary": {
+                    "government_total_outlay_amount": 100.0,
+                    "label": "Test total",
+                    "record_date": "2026-02-28",
+                    "fiscal_year": "2026",
+                },
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        agency = self.find_graph_node(result.graph, "agency-alpha")
+        advisor = self.find_graph_node(result.graph, "special-advisor")
+        combined = round(float(agency["resolved_total_amount"]) + float(advisor["resolved_total_amount"]), 2)
+
+        self.assertEqual(combined, 100.0)
+        self.assertEqual(agency["cost_status"], "scaled_official")
+        self.assertEqual(advisor["cost_status"], "scaled_official")
+        self.assertGreater(result.validation["estimated_cost_node_count"], 0)
 
 
 if __name__ == "__main__":

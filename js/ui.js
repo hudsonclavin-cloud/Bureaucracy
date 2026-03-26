@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260326b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260326b";
+import { createGovernmentGraph } from "./graph.js?v=20260326c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260326c";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
@@ -76,8 +76,8 @@ function setText(element, value) {
 }
 
 function formatCurrency(value) {
-  const numeric = Number(value || 0);
-  if (!Number.isFinite(numeric) || numeric <= 0) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric) || numeric === 0) {
     return "$0";
   }
   return new Intl.NumberFormat(undefined, {
@@ -180,7 +180,7 @@ function getNodeSelectionCostContext(nodeObj) {
   }
 
   const selectedTotal = Number(nodeObj.data.__meta?.subtreeCost || 0);
-  if (selectedTotal > 0) {
+  if (Number.isFinite(selectedTotal) && selectedTotal !== 0) {
     return {
       amount: selectedTotal,
       inherited: false,
@@ -193,8 +193,8 @@ function getNodeSelectionCostContext(nodeObj) {
   while (cursor) {
     const explicitRollup = Number(cursor.data?.__meta?.explicitRollupCost || 0);
     const directCost = Number(cursor.data?.__meta?.directCost || 0);
-    const ancestorAmount = explicitRollup > 0 ? explicitRollup : directCost;
-    if (ancestorAmount > 0) {
+    const ancestorAmount = explicitRollup !== 0 ? explicitRollup : directCost;
+    if (Number.isFinite(ancestorAmount) && ancestorAmount !== 0) {
       return {
         amount: ancestorAmount,
         inherited: true,
@@ -241,7 +241,7 @@ function updateStats(stats) {
   if (dom.statsCost) {
     const operationSummary = `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
     const selectedContext = getNodeSelectionCostContext(state.graph?.getSelectedNode?.());
-    if (selectedContext?.amount > 0) {
+    if (selectedContext?.amount && Number.isFinite(selectedContext.amount)) {
       const selectionSummary = selectedContext.inherited
         ? `selection inherits ${formatCurrency(selectedContext.amount)} from ${truncateLabel(selectedContext.nodeName)}`
         : `selection total ${formatCurrency(selectedContext.amount)}`;
@@ -784,19 +784,22 @@ function renderInfoPanel(nodeObj) {
   if (directCostLabel) {
     statRows.push(["DIRECT COST", directCostLabel]);
   }
-  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind) {
+  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasis = [
       data.source_system || data.budget_source,
       data.amount_kind,
       data.budget_year,
       data.budget_as_of,
+      data.cost_status,
+      data.cost_basis,
+      data.cost_validation,
     ].filter(Boolean).join(" Â· ");
     statRows.push(["BUDGET BASIS", budgetBasis]);
   }
   const totalCost = Number(data.__meta?.subtreeCost || 0);
   const operationCost = Number(state.graph?.getStats?.().totalBudgetCost || 0);
   const selectionCostContext = getNodeSelectionCostContext(nodeObj);
-  if (totalCost > 0) {
+  if (Number.isFinite(totalCost) && totalCost !== 0) {
     statRows.push(["TOTAL COST", formatCurrency(totalCost)]);
   } else if (selectionCostContext?.inherited) {
     statRows.push([
@@ -805,10 +808,12 @@ function renderInfoPanel(nodeObj) {
     ]);
   }
   if (operationCost > 0) {
-    const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
+    const share = Number.isFinite(totalCost) && totalCost !== 0
+      ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
+      : "0%";
     statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} Â· ${share}`]);
   }
-  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind) {
+  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
     if (budgetBasisRow) {
       budgetBasisRow[1] = [
@@ -816,12 +821,17 @@ function renderInfoPanel(nodeObj) {
         data.amount_kind,
         data.budget_year,
         data.budget_as_of,
+        data.cost_status,
+        data.cost_basis,
+        data.cost_validation,
       ].filter(Boolean).join(" | ");
     }
   }
   if (operationCost > 0) {
     const operationRow = statRows.find((row) => row[0] === "WHOLE OPERATION");
-    const share = totalCost > 0 ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%` : "0%";
+    const share = Number.isFinite(totalCost) && totalCost !== 0
+      ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
+      : "0%";
     if (operationRow) {
       operationRow[1] = `${formatCurrency(operationCost)} | ${share}`;
     }

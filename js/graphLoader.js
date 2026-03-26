@@ -18,6 +18,10 @@ const DEFAULT_NODE = {
   allocation_basis: null,
   direct_outlay_amount: null,
   rollup_total_amount: null,
+  resolved_total_amount: null,
+  cost_status: null,
+  cost_basis: null,
+  cost_validation: null,
   isCandidate: false,
   possibleParent: null,
   discoveryMethod: null,
@@ -54,6 +58,10 @@ function normalizeNode(rawNode) {
   node.allocation_basis = node.allocation_basis ? String(node.allocation_basis) : null;
   node.direct_outlay_amount = Number.isFinite(Number(node.direct_outlay_amount)) ? Number(node.direct_outlay_amount) : null;
   node.rollup_total_amount = Number.isFinite(Number(node.rollup_total_amount)) ? Number(node.rollup_total_amount) : null;
+  node.resolved_total_amount = Number.isFinite(Number(node.resolved_total_amount)) ? Number(node.resolved_total_amount) : null;
+  node.cost_status = node.cost_status ? String(node.cost_status) : null;
+  node.cost_basis = node.cost_basis ? String(node.cost_basis) : null;
+  node.cost_validation = node.cost_validation ? String(node.cost_validation) : null;
   node.isCandidate = Boolean(node.isCandidate);
   node.possibleParent = node.possibleParent ? String(node.possibleParent) : null;
   node.discoveryMethod = node.discoveryMethod ? String(node.discoveryMethod) : null;
@@ -131,6 +139,10 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.allocation_basis = sourceNode.allocation_basis || targetNode.allocation_basis;
   targetNode.direct_outlay_amount = sourceNode.direct_outlay_amount ?? targetNode.direct_outlay_amount;
   targetNode.rollup_total_amount = sourceNode.rollup_total_amount ?? targetNode.rollup_total_amount;
+  targetNode.resolved_total_amount = sourceNode.resolved_total_amount ?? targetNode.resolved_total_amount;
+  targetNode.cost_status = sourceNode.cost_status || targetNode.cost_status;
+  targetNode.cost_basis = sourceNode.cost_basis || targetNode.cost_basis;
+  targetNode.cost_validation = sourceNode.cost_validation || targetNode.cost_validation;
   targetNode.official_website = sourceNode.official_website || targetNode.official_website;
   targetNode.color = sourceNode.color || targetNode.color;
   targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));

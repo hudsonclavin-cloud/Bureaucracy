@@ -794,7 +794,11 @@ export function createGovernmentGraph({
   }
 
   function getNodeRollupCost(node) {
-    return parseBudgetAmount(node?.rollup_total_amount);
+    return parseBudgetAmount(node?.resolved_total_amount ?? node?.rollup_total_amount);
+  }
+
+  function hasNodeRollupCost(node) {
+    return node?.resolved_total_amount != null || node?.rollup_total_amount != null;
   }
 
   function nodeRadiusForDepth(depth) {
@@ -1284,7 +1288,8 @@ export function createGovernmentGraph({
     const directSourceCount = getNodeSourceCount(node, directSourceUrls);
     const directCost = getNodeDirectCost(node);
     const explicitRollupCost = getNodeRollupCost(node);
-    let subtreeCost = explicitRollupCost > 0 ? explicitRollupCost : directCost;
+    const hasExplicitRollupCost = hasNodeRollupCost(node) && Number.isFinite(explicitRollupCost);
+    let subtreeCost = hasExplicitRollupCost ? explicitRollupCost : directCost;
     let subtreeSourceCount = directSourceCount;
     let subtreeEvidenceNodeCount = directSourceCount > 0 ? 1 : 0;
     let subtreeVerifiedNodeCount = String(node.verificationStatus || "").toLowerCase() === "verified" ? 1 : 0;
@@ -1295,7 +1300,7 @@ export function createGovernmentGraph({
       const childMeta = registerDataNode(child, node.id, depth + 1, nextPath);
       subtreeCount += childMeta.subtreeCount;
       subtreeDepth = Math.max(subtreeDepth, childMeta.maxDepth);
-      if (!(explicitRollupCost > 0)) {
+      if (!hasExplicitRollupCost) {
         subtreeCost += childMeta.subtreeCost || 0;
       }
       subtreeSourceCount += childMeta.subtreeSourceCount || 0;
