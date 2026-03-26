@@ -255,6 +255,7 @@ export function createGovernmentGraph({
     candidateNodeCount: 0,
     totalBudgetCost: 0,
     totalBudgetLabel: "total cost",
+    budgetSummary: null,
     maxDataDepth: 0,
     maxNodes: 0,
     maxVisibleDepth: MAX_DEPTH,
@@ -359,6 +360,7 @@ export function createGovernmentGraph({
       hiddenCandidateCount,
       totalBudgetCost: state.totalBudgetCost,
       totalBudgetLabel: state.totalBudgetLabel,
+      budgetSummary: state.budgetSummary,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       manualDepthFilter: state.manualDepthFilter,
@@ -3667,6 +3669,7 @@ export function createGovernmentGraph({
     state.totalNodeCount = state.graphNodeCount + state.candidateNodeCount;
     state.totalBudgetCost = Number(data.__budgetSummary?.government_total_outlay_amount || 0) || meta.subtreeCost || 0;
     state.totalBudgetLabel = data.__budgetSummary?.label || "total cost";
+    state.budgetSummary = data.__budgetSummary || null;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_VISIBLE_NODES;
     state.fullExpandRenderMode = state.totalNodeCount <= MAX_VISIBLE_NODES;
@@ -3910,6 +3913,7 @@ export function createGovernmentGraph({
         hiddenCandidateCount: state.showCandidateNodes ? 0 : candidateNodeCount,
         totalBudgetCost: state.totalBudgetCost,
         totalBudgetLabel: state.totalBudgetLabel,
+        budgetSummary: state.budgetSummary,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,

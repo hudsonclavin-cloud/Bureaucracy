@@ -231,6 +231,16 @@ def update_pipeline_state(
         node_id = str(node.get("id") or "").strip()
         if not node_id:
             continue
+        # Only track entities that have at least one official (.gov/.mil) source URL.
+        # Wikidata-only nodes with no official website are excluded to prevent
+        # foreign government entities from accumulating in the state.
+        source_urls = node.get("sourceUrls") or []
+        has_official_source = any(classify_source_url(str(u)) == "official_site" for u in source_urls)
+        official_website = str(node.get("official_website") or "").strip()
+        if official_website:
+            has_official_source = has_official_source or classify_source_url(official_website) == "official_site"
+        if not has_official_source:
+            continue
         entry = dict(entity_store.get(node_id) or {})
         entry["name"] = node.get("name")
         entry["type"] = node.get("type")

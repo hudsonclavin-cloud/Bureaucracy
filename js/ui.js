@@ -96,8 +96,36 @@ const COST_VALIDATION_LABELS = {
 };
 
 const AMOUNT_KIND_LABELS = {
-  fytd_net_outlays: "FYTD net outlays",
+  fytd_net_outlays: "Partial-year net outlays (FYTD)",
 };
+
+/**
+ * Returns FYTD context for a budget summary, including an annualized estimate.
+ * US fiscal year starts October 1.
+ */
+function getBudgetFytdContext(budgetSummary) {
+  if (!budgetSummary || budgetSummary.amount_kind !== "fytd_net_outlays") {
+    return null;
+  }
+  const amount = Number(budgetSummary.government_total_outlay_amount);
+  const recordDate = String(budgetSummary.record_date || "");
+  const fiscalYear = String(budgetSummary.fiscal_year || "");
+  if (!amount || !recordDate) {
+    return null;
+  }
+  const [yr, mo] = recordDate.split("-").map(Number);
+  if (!yr || !mo) {
+    return null;
+  }
+  // Months elapsed since Oct 1 of the fiscal year start
+  const fyStartYear = mo >= 10 ? yr : yr - 1;
+  const monthsElapsed = mo >= 10 ? mo - 9 : mo + 3;
+  if (monthsElapsed <= 0) {
+    return null;
+  }
+  const annualized = amount * (12 / monthsElapsed);
+  return { amount, annualized, recordDate, fiscalYear, monthsElapsed };
+}
 
 function setText(element, value) {
   if (element.textContent !== value) {
@@ -228,10 +256,12 @@ function getCostTypeDetails(data) {
 
   const status = String(data?.cost_status || "").toLowerCase();
   if (status === "root_total") {
-    return {
-      label: COST_STATUS_LABELS.root_total,
-      detail: "Verified top-line Treasury outlays for the whole government.",
-    };
+    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
+    const fytd = getBudgetFytdContext(budgetSummary);
+    const detail = fytd
+      ? `Treasury net outlays through ${fytd.recordDate} (${fytd.monthsElapsed} of 12 months of FY${fytd.fiscalYear}). Estimated full-year: ${formatCurrency(fytd.annualized)}.`
+      : "Verified top-line Treasury outlays for the whole government.";
+    return { label: COST_STATUS_LABELS.root_total, detail };
   }
   if (status === "official") {
     return {
@@ -369,7 +399,10 @@ function updateStats(stats) {
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
   if (dom.statsCost) {
-    const operationSummary = `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
+    const fytd = getBudgetFytdContext(stats.budgetSummary);
+    const operationSummary = fytd
+      ? `${formatCurrency(stats.totalBudgetCost)} FYTD through ${fytd.recordDate} | est. ${formatCurrency(fytd.annualized)}/yr`
+      : `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
     const selectedContext = getNodeSelectionCostContext(state.graph?.getSelectedNode?.());
     if (selectedContext?.amount && Number.isFinite(selectedContext.amount)) {
       const selectionSummary = selectedContext.inherited
@@ -940,21 +973,17 @@ function renderInfoPanel(nodeObj) {
     const share = Number.isFinite(totalCost) && totalCost !== 0
       ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
       : "0%";
-    statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} · ${share}`]);
+    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
+    const fytd = getBudgetFytdContext(budgetSummary);
+    const operationLabel = fytd
+      ? `${formatCurrency(operationCost)} FYTD (est. ${formatCurrency(fytd.annualized)}/yr) · ${share}`
+      : `${formatCurrency(operationCost)} · ${share}`;
+    statRows.push(["WHOLE OPERATION", operationLabel]);
   }
   if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
     if (budgetBasisRow) {
       budgetBasisRow[1] = getBudgetBasisLabel(data);
-    }
-  }
-  if (operationCost > 0) {
-    const operationRow = statRows.find((row) => row[0] === "WHOLE OPERATION");
-    const share = Number.isFinite(totalCost) && totalCost !== 0
-      ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
-      : "0%";
-    if (operationRow) {
-      operationRow[1] = `${formatCurrency(operationCost)} | ${share}`;
     }
   }
   if ((data.children || []).length > 0) {

@@ -1,34 +1,38 @@
 {
-  "nodes_enriched": 8915,
-  "relationships_added": 541,
-  "leadership_positions_added": 0,
-  "budgets_linked": 122,
-  "verification_score_changes": 3,
+  "nodes_enriched": 1887,
+  "relationships_added": 40,
+  "leadership_positions_added": 3,
+  "budgets_linked": 93,
+  "verification_score_changes": 662,
   "enriched_nodes_by_source": {
-    "official_directory": 45,
-    "official_http": 9,
-    "treasury_outlays": 122,
-    "wikidata": 1573,
-    "federal_register": 214
+    "wikidata": 1283,
+    "official_http": 15,
+    "treasury_outlays": 93,
+    "federal_register": 197
   },
   "relationships_by_type": {
-    "reports_to": 259,
-    "oversees": 259,
-    "regulates": 14,
-    "created_by": 9
+    "reports_to": 19,
+    "oversees": 16,
+    "created_by": 1,
+    "regulates": 4
   },
   "relationships_by_source": {
-    "official_directory": 90,
-    "federal_register": 451
+    "official_http": 3,
+    "federal_register": 37
   },
-  "leadership_positions_by_source": {},
+  "leadership_positions_by_source": {
+    "official_http": 3
+  },
   "budgets_linked_by_source": {
-    "treasury_outlays": 122
+    "treasury_outlays": 93
   },
   "verification_score_changes_by_source": {
-    "official_directory": 3,
-    "official_http": 1,
-    "treasury_outlays": 2
+    "wikidata": 596,
+    "official_http": 13,
+    "treasury_outlays": 67,
+    "federal_register": 3
   },
-  "fetch_failures_by_source": {}
+  "fetch_failures_by_source": {
+    "official_http": 80
+  }
 }

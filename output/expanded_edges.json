@@ -1,1 +1,1282 @@
-[]
+[
+  {
+    "source": "united-states-department-of-homeland-security",
+    "target": "united-states-cabinet",
+    "type": "reports_to"
+  },
+  {
+    "source": "united-states-department-of-war",
+    "target": "unnamed-node",
+    "type": "reports_to"
+  },
+  {
+    "source": "united-states-mission-to-the-united-nations",
+    "target": "united-states-department-of-state",
+    "type": "reports_to"
+  },
+  {
+    "source": "soil-erosion-service",
+    "target": "united-states-department-of-the-interior",
+    "type": "reports_to"
+  },
+  {
+    "source": "taipei-economic-and-cultural-office-in-houston",
+    "target": "taipei-economic-and-cultural-representative-office-in-the-united-states",
+    "type": "reports_to"
+  },
+  {
+    "source": "taipei-economic-and-cultural-office-in-new-york",
+    "target": "taipei-economic-and-cultural-representative-office-in-the-united-states",
+    "type": "reports_to"
+  },
+  {
+    "source": "national-institute-on-disability-independent-living-and-rehabilitation-research",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-education",
+    "type": "reports_to"
+  },
+  {
+    "source": "white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
+    "target": "united-states-department-of-health-and-human-services",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-france-in-new-york",
+    "target": "embassy-of-france-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-the-people-s-republic-of-china-los-angeles",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-new-york",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-china-chicago",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "chinese-consulate-general-san-francisco",
+    "target": "embassy-of-the-people-s-republic-of-china-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-india-chicago",
+    "target": "embassy-of-india-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "north-dakota-supreme-court",
+    "target": "courts-of-north-dakota",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-los-angeles",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-honolulu",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-san-francisco",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-new-york",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-ukraine-new-york",
+    "target": "embassy-of-ukraine-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-boston",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-houston",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-seattle",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-washington-d-c",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "consulate-general-of-south-korea-atlanta",
+    "target": "embassy-of-south-korea-washington-d-c",
+    "type": "reports_to"
+  },
+  {
+    "source": "person-henry-d-gilpin",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-breckinridge",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-richard-rush",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-harlan-f-stone",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edwards-pierrepont",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-joseph-bonaparte",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-speed",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-frank-murphy",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-dick-thornburgh",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-isaac-toucey",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-j-crittenden",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-benjamin-franklin-butler",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-augustus-hill-garland",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-stuart-m-gerson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jeremiah-s-black",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-h-h-miller",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-henry-williams",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-joseph-mckenna",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ebenezer-r-hoar",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-henry-stanbery",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-henry-moody",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-nathan-clifford",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-lee",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-clark-mcreynolds",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-j-howard-mcgrath",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-campbell-clark",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-wayne-macveagh",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-barr",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-p-mcgranery",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-levi-lincoln-sr",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-elliot-richardson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-pam-bondi",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edwin-meese",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-bradford",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-m-evarts",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-ramsey-clark",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-richard-olney",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-philander-c-knox",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-francis-biddle",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-matthew-whitaker",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-loretta-lynch",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alphonso-taft",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-judson-harmon",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-smith",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-michael-mukasey",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-richard-kleindienst",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-h-jackson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edwin-m-stanton",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-p-rogers",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-demers",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-roger-b-taney",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jeff-sessions",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-w-griggs",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-benjamin-h-brewster",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-devens",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-amos-t-akerman",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-d-mitchell",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-woodward-wickersham",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-g-sargent",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-watt-gregory",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-harry-micajah-daugherty",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-herbert-brownell",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-benjamin-civiletti",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-french-smith",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-peter-keisler",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edmund-randolph",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-eric-holder",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-ashcroft",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-jeffrey-a-rosen",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-f-kennedy",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-janet-reno",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-oliver-babish",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-sally-yates",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alberto-gonzales",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-merrick-garland",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-dana-boente",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-caleb-cushing",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-mark-filip",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-nelson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-m-berrien",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-pinkney",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-nicholas-katzenbach",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-homer-stille-cummings",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-felix-grundy",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-hugh-s-legar",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-reverdy-johnson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-bork",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-paul-clement",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-alexander-mitchell-palmer",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-n-mitchell",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-griffin-bell",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-b-saxbe",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edward-h-levi",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-edward-bates",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-y-mason",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-wirt",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-monty-wilkinson",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-caesar-augustus-rodney",
+    "target": "position-united-states-attorney-general",
+    "type": "manages"
+  },
+  {
+    "source": "person-markwayne-mullin",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-pete-gaynor",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-michael-chertoff",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-rand-beers",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-chad-wolf",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-f-kelly",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-jeh-c-johnson",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-tom-ridge",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-david-pekoske",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-alejandro-mayorkas",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-kristi-noem",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-kirstjen-nielsen",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-kevin-mcaleenan",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-elaine-duke",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-janet-napolitano",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-loy",
+    "target": "position-united-states-secretary-of-homeland-security",
+    "type": "manages"
+  },
+  {
+    "source": "person-lloyd-j-austin-iii",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-neil-h-mcelroy",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-elliot-richardson",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-cohen",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-calvin-swanwick",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-harold-brown",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-perry",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-frank-carlucci",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-melvin-laird",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-dick-cheney",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-ash-carter",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-forrestal",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-q434142",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-clark-clifford",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-chuck-hagel",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-mark-t-esper",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-heller",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-david-l-norquist",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-defense-secretary",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-jim-mattis",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-leon-panetta",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-miles-hutchinson",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-gates",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-abercrombie-lovett",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-mcnamara",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-donald-rumsfeld",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-les-aspin",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-r-schlesinger",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-marshall",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-louis-a-johnson",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-s-gates-jr",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-salesses",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-sam-lane",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-charles-erwin-wilson",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-christopher-c-miller",
+    "target": "position-united-states-secretary-of-defense",
+    "type": "manages"
+  },
+  {
+    "source": "person-pete-buttigieg",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-norman-mineta",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-egil-krogh",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-andrew-card",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-anthony-foxx",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-mary-peters",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-ray-lahood",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-samuel-k-skinner",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-alan-stephenson-boyd",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-neil-goldschmidt",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-andrew-l-lewis-jr",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-anthony-volpe",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-brock-adams",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-elaine-chao",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-elizabeth-dole",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-rodney-e-slater",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-sean-duffy",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-h-burnley-iv",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-steven-g-bradbury",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-thaddeus-coleman-jr",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-federico-pe-a",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-maria-cino",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-claude-brinegar",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-lana-hurdle",
+    "target": "position-united-states-secretary-of-transportation",
+    "type": "manages"
+  },
+  {
+    "source": "person-thomas-perez",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-alexander-acosta",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-bauchop-wilson",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-robert-reich",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-arthur-goldberg",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-leo-mcgarry",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-w-willard-wirtz",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-howard-m-radzely",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-edward-c-hugler",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-hilda-solis",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-ray-marshall",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-p-mitchell",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-usery",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-ann-mclaughlin-korologos",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-seth-harris",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-john-thomas-dunlop",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-george-shultz",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-patrick-pizzella",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-alexis-herman",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-maurice-j-tobin",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-elaine-chao",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-william-n-doak",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-frances-perkins",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-elizabeth-dole",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-raymond-j-donovan",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-martin-patrick-durkin",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-eugene-scalia",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-james-j-davis",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-peter-j-brennan",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-marty-walsh",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-vince-micone",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-lori-chavez-deremer",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-al-stewart",
+    "target": "position-united-states-secretary-of-labor",
+    "type": "manages"
+  },
+  {
+    "source": "person-richard-riley",
+    "target": "position-united-states-secretary-of-education",
+    "type": "manages"
+  },
+  {
+    "source": "person-black-lightning",
+    "target": "position-united-states-secretary-of-education",
+    "type": "manages"
+  },
+  {
+    "source": "exec-dept-doc",
+    "target": "exec-dept-doc-census",
+    "type": "oversees"
+  },
+  {
+    "source": "exec-dept-treasury",
+    "target": "exec-dept-treasury-ofac",
+    "type": "oversees"
+  },
+  {
+    "source": "national-aeronautics-and-space-administration-bureau-of-investigation-fbi",
+    "target": "national-aeronautics-and-space-administration",
+    "type": "created_by"
+  },
+  {
+    "source": "national-aeronautics-and-space-administration",
+    "target": "national-aeronautics-and-space-administration-bureau-of-investigation-fbi",
+    "type": "oversees"
+  },
+  {
+    "source": "department-of-transportation",
+    "target": "transportation-department-bureau-of-transportation-statistics-bts-within-the-department-of-transportation-dot-invites-the-general-public-and-other-federal-agencies-to-comment-on-an-existing-information-collection",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-center-for-biological-diversity-cbd",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-center-of-harrisburg",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-office-of-acquisition-solutions-is-giving-notice-that-it-proposes-to-modify-a-system-of-records-pursuant-to-the-provisions-of-the-privacy-act-of-1974-to-add-a-new-routine-use-as-required-by-executive-order-e",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-office-of-finance-and-administration-is-giving-notice-that-it-proposes-to-rescind-a-system-of-records-pursuant-to-the-provisions-of-the-privacy-act-of-1974",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-office-of-finance-and-administration-is-no-longer-using-the-igms",
+    "type": "oversees"
+  },
+  {
+    "source": "department-of-transportation",
+    "target": "exec-eop-omb",
+    "type": "oversees"
+  },
+  {
+    "source": "exec-eop-omb",
+    "target": "exec-eop",
+    "type": "reports_to"
+  },
+  {
+    "source": "exec-eop",
+    "target": "exec-eop-omb",
+    "type": "oversees"
+  },
+  {
+    "source": "department-of-transportation",
+    "target": "health-and-human-services-department-office-of-management-and-budget-omb",
+    "type": "oversees"
+  },
+  {
+    "source": "exec-dept-doc-census",
+    "target": "exec-dept-doc-census-office-of-management-and-budget-omb-for-review-and-approval",
+    "type": "oversees"
+  },
+  {
+    "source": "exec-dept-doc-census",
+    "target": "commerce-department-office-of-management-and-budget-omb-for-review-and-approval",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "environmental-protection-agency-office-of-management-and-budget-omb-for-review-and-approval-in-accordance-with-the-paperwork-reduction-act",
+    "type": "oversees"
+  },
+  {
+    "source": "environmental-protection-agency",
+    "target": "education-department-office-of-management-and-budget-for-review-and-approval",
+    "type": "oversees"
+  },
+  {
+    "source": "consumer-financial-protection-bureau-office-of-management-and-budget-s-omb-s-extension-of-an-information-collection-titled",
+    "target": "federal-communications-commission-office-of-management-and-budget",
+    "type": "regulates"
+  },
+  {
+    "source": "federal-labor-relations-authority-office-of-personnel-management-opm-71-flra-571-2020-member-abbott-concurring",
+    "target": "leg-senate-cmte-armed-services-sub-personnel",
+    "type": "regulates"
+  },
+  {
+    "source": "federal-labor-relations-authority-office-of-personnel-management-opm-71-flra-571-2020-member-abbott-concurring",
+    "target": "exec-ind-opm",
+    "type": "regulates"
+  },
+  {
+    "source": "interior-department-office-of-surface-mining-reclamation-and-enforcement-osmre-are-publishing-this-final-rule-to-amend-the-existing-federal-lands-cooperative-agreement-between-west-virginia-and-the-u",
+    "target": "department-of-the-interior",
+    "type": "regulates"
+  }
+]
