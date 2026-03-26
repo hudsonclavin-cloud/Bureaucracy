@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260326c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260326c";
+import { createGovernmentGraph } from "./graph.js?v=20260326d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
@@ -26,6 +26,7 @@ const dom = {
   childrenList: document.getElementById("info-children-list"),
   breadcrumb: document.getElementById("bc-items"),
   nodeCounter: document.getElementById("node-counter"),
+  buildBadge: document.getElementById("build-badge"),
   statsTotal: document.getElementById("stats-total"),
   statsLoaded: document.getElementById("stats-loaded"),
   statsDepth: document.getElementById("stats-depth"),
@@ -67,6 +68,35 @@ const state = {
   loaderTimer: null,
   tracedNodeId: null,
   vrMode: null,
+};
+
+const COST_STATUS_LABELS = {
+  root_total: "Treasury Total",
+  official: "Official Rollup",
+  scaled_official: "Official Rollup (Scaled)",
+  allocated: "Estimated Allocation",
+  unavailable: "Cost Unavailable",
+};
+
+const COST_BASIS_LABELS = {
+  treasury_total_outlays: "Treasury total outlays",
+  treasury_rollup: "Treasury rollup",
+  subtree_weight: "Subtree-size weighting",
+  employee_weight: "Employee weighting",
+  budget_weight: "Budget weighting",
+};
+
+const COST_VALIDATION_LABELS = {
+  verified_with_treasury_total: "Verified with Treasury total",
+  matched_official_rollup: "Matched official rollup",
+  estimated_from_parent: "Estimated from parent total",
+  scaled_to_parent_total: "Scaled to parent total",
+  missing_cost: "Missing cost",
+  summed_from_child_totals: "Summed from child totals",
+};
+
+const AMOUNT_KIND_LABELS = {
+  fytd_net_outlays: "FYTD net outlays",
 };
 
 function setText(element, value) {
@@ -174,6 +204,91 @@ function getDirectCostLabel(data) {
   return directCost > 0 ? formatCurrency(directCost) : null;
 }
 
+function humanizeMetadataValue(value, labelMap = {}) {
+  const key = String(value || "").trim();
+  if (!key) {
+    return "";
+  }
+  if (labelMap[key]) {
+    return labelMap[key];
+  }
+  return key
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
+function getCostTypeDetails(data) {
+  const directOutlayAmount = Number(data?.direct_outlay_amount);
+  if (Number.isFinite(directOutlayAmount) && directOutlayAmount !== 0) {
+    return {
+      label: "Direct Cost",
+      detail: "Recorded directly on this node.",
+    };
+  }
+
+  const status = String(data?.cost_status || "").toLowerCase();
+  if (status === "root_total") {
+    return {
+      label: COST_STATUS_LABELS.root_total,
+      detail: "Verified top-line Treasury outlays for the whole government.",
+    };
+  }
+  if (status === "official") {
+    return {
+      label: COST_STATUS_LABELS.official,
+      detail: "Matched an official Treasury rollup for this organization.",
+    };
+  }
+  if (status === "scaled_official") {
+    return {
+      label: COST_STATUS_LABELS.scaled_official,
+      detail: "Official rollup scaled to fit inside the parent total without double counting.",
+    };
+  }
+  if (status === "allocated") {
+    const basis = String(data?.cost_basis || "").toLowerCase();
+    const detail =
+      basis === "employee_weight"
+        ? "Estimated from parent totals using employee weighting."
+        : basis === "budget_weight"
+          ? "Estimated from parent totals using known budget weighting."
+          : basis === "subtree_weight"
+            ? "Estimated from parent totals using subtree-size weighting."
+            : "Estimated from parent totals so every node has a value.";
+    return {
+      label: COST_STATUS_LABELS.allocated,
+      detail,
+    };
+  }
+  if (Number.isFinite(Number(data?.rollup_total_amount)) && Number(data.rollup_total_amount) !== 0) {
+    return {
+      label: COST_STATUS_LABELS.official,
+      detail: "Using the matched rollup total on this node.",
+    };
+  }
+  if (Number.isFinite(Number(data?.resolved_total_amount)) && Number(data.resolved_total_amount) !== 0) {
+    return {
+      label: "Resolved Cost",
+      detail: "Computed final cost for display.",
+    };
+  }
+  return {
+    label: COST_STATUS_LABELS.unavailable,
+    detail: "No resolved cost is currently assigned to this node.",
+  };
+}
+
+function getBudgetBasisLabel(data) {
+  return [
+    data.source_system || data.budget_source,
+    humanizeMetadataValue(data.amount_kind, AMOUNT_KIND_LABELS),
+    data.budget_year,
+    data.budget_as_of,
+    humanizeMetadataValue(data.cost_basis, COST_BASIS_LABELS),
+    humanizeMetadataValue(data.cost_validation, COST_VALIDATION_LABELS),
+  ].filter(Boolean).join(" | ");
+}
+
 function getNodeSelectionCostContext(nodeObj) {
   if (!nodeObj?.data) {
     return null;
@@ -221,7 +336,22 @@ function hideLoader(delay = 200) {
   }, delay);
 }
 
+function updateBuildBadge(stats = state.graph?.getStats?.()) {
+  if (!dom.buildBadge) {
+    return;
+  }
+
+  const version = window.APP_BUILD_INFO?.version || "dev";
+  const label = window.APP_BUILD_INFO?.label || "active build";
+  const totalNodes = Number.isFinite(stats?.totalNodeCount) ? stats.totalNodeCount.toLocaleString() : "loading";
+  const totalCost = Number.isFinite(Number(stats?.totalBudgetCost)) && Number(stats.totalBudgetCost) !== 0
+    ? formatCurrency(stats.totalBudgetCost)
+    : "cost pending";
+  setText(dom.buildBadge, `Build ${version} | ${totalNodes} nodes | ${totalCost} | ${label}`);
+}
+
 function updateStats(stats) {
+  updateBuildBadge(stats);
   const loadedCount = Number.isFinite(stats.visibleNodeCount) ? stats.visibleNodeCount : 0;
   const totalCount = Number.isFinite(stats.totalNodeCount) ? stats.totalNodeCount : loadedCount;
   setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${totalCount.toLocaleString()} nodes loaded`);
@@ -777,23 +907,22 @@ function renderInfoPanel(nodeObj) {
 
   const statsFragment = document.createDocumentFragment();
   const statRows = [];
+  const costType = getCostTypeDetails(data);
   if (data.employees) {
     statRows.push(["EMPLOYEES", data.employees]);
+  }
+  if (costType.label) {
+    statRows.push(["COST TYPE", costType.label]);
+  }
+  if (costType.detail) {
+    statRows.push(["COST DETAIL", costType.detail]);
   }
   const directCostLabel = getDirectCostLabel(data);
   if (directCostLabel) {
     statRows.push(["DIRECT COST", directCostLabel]);
   }
   if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
-    const budgetBasis = [
-      data.source_system || data.budget_source,
-      data.amount_kind,
-      data.budget_year,
-      data.budget_as_of,
-      data.cost_status,
-      data.cost_basis,
-      data.cost_validation,
-    ].filter(Boolean).join(" Â· ");
+    const budgetBasis = getBudgetBasisLabel(data);
     statRows.push(["BUDGET BASIS", budgetBasis]);
   }
   const totalCost = Number(data.__meta?.subtreeCost || 0);
@@ -816,15 +945,7 @@ function renderInfoPanel(nodeObj) {
   if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
     if (budgetBasisRow) {
-      budgetBasisRow[1] = [
-        data.source_system || data.budget_source,
-        data.amount_kind,
-        data.budget_year,
-        data.budget_as_of,
-        data.cost_status,
-        data.cost_basis,
-        data.cost_validation,
-      ].filter(Boolean).join(" | ");
+      budgetBasisRow[1] = getBudgetBasisLabel(data);
     }
   }
   if (operationCost > 0) {
@@ -1295,6 +1416,7 @@ function bindControls() {
 }
 
 function initUI() {
+  updateBuildBadge();
   ensureOriginUi();
   ensureVerificationUi();
   bindControls();
@@ -1348,7 +1470,10 @@ async function initGraphApp() {
 if (shouldBootUi) {
   initGraphApp().catch((error) => {
     console.error(error);
-    setText(dom.loadStatus, "Failed to load explorer data.");
+    const message = window.location.protocol === "file:"
+      ? "Failed to load explorer data. Open this page through a local web server, not file://."
+      : "Failed to load explorer data.";
+    setText(dom.loadStatus, message);
     hideLoadingOverlay();
   });
 }

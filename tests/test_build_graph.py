@@ -36,6 +36,7 @@ def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
         graph_path = tmp_path / "graph.json"
         nodes_path = tmp_path / "nodes.json"
         edges_path = tmp_path / "edges.json"
+        validity_report_path = tmp_path / "node_validity_report.json"
         base_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
         return build_graph(
             payloads,
@@ -43,6 +44,7 @@ def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
             graph_output_path=graph_path,
             nodes_output_path=nodes_path,
             edges_output_path=edges_path,
+            validity_report_output_path=validity_report_path,
         )
     finally:
         shutil.rmtree(tmp_path, ignore_errors=True)

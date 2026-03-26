@@ -31,6 +31,19 @@ body.dragging{cursor:grabbing;}
 #title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
 #title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
 #node-counter{font-size:9px;color:var(--gold-dim);margin-top:2px;letter-spacing:0.1em;}
+#build-badge{
+  position:fixed;top:90px;left:32px;z-index:20;pointer-events:none;
+  font-size:8px;color:#f1dfb4;letter-spacing:0.12em;text-transform:uppercase;
+  padding:6px 10px;border:1px solid rgba(200,168,74,0.24);border-radius:999px;
+  background:rgba(4,8,16,0.82);backdrop-filter:blur(10px);
+}
+#snapshot-link{
+  position:fixed;top:118px;left:32px;z-index:20;pointer-events:auto;
+  font-size:8px;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;
+  padding:6px 10px;border:1px solid rgba(200,168,74,0.24);border-radius:999px;
+  background:rgba(4,8,16,0.78);text-decoration:none;transition:all 0.2s ease;
+}
+#snapshot-link:hover{background:rgba(200,168,74,0.12);border-color:rgba(200,168,74,0.45);}
 #search-wrap{
   position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;
   width:44px;transition:width 0.24s ease;
@@ -181,6 +194,8 @@ body.dragging{cursor:grabbing;}
   #legend{display:none;}
   #stats{display:none;}
   #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
+  #build-badge{top:78px;left:16px;}
+  #snapshot-link{top:106px;left:16px;}
   #btn-vr{top:90px;left:16px;}
   #search-wrap{top:16px;width:44px;max-width:calc(100vw - 32px);}
   #search-wrap:focus-within{width:calc(100vw - 32px);}
@@ -203,6 +218,8 @@ body.dragging{cursor:grabbing;}
   <p>3D Organizational Explorer Snapshot</p>
   <div id="node-counter">0 / 0 nodes rendered</div>
 </div>
+<div id="build-badge">Build 20260326e-snapshot | loading data...</div>
+<a id="snapshot-link" href="../../index.html">Open Main Explorer</a>
 
 <button class="btn btn-focus" id="btn-vr" type="button">Enter VR</button>
 
@@ -283,11 +300,15 @@ body.dragging{cursor:grabbing;}
 <div id="tooltip"></div>
 
 <script>
+window.APP_BUILD_INFO = {
+  version: "20260326e-snapshot",
+  label: "Treasury validated snapshot",
+};
 window.GRAPH_DATA_SOURCES = {
   base: "./output/graph.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260326c"></script>
+<script type="module" src="./js/ui.js?v=20260326e"></script>
 </body>
 </html>
