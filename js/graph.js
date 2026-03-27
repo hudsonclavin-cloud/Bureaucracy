@@ -306,8 +306,8 @@ export function createGovernmentGraph({
     rotY: 0,
     targetRotX: 0,
     targetRotY: 0,
-    zoom: 0.25,
-    targetZoom: 0.25,
+    zoom: 1,
+    targetZoom: 1,
     camFocus: new THREE.Vector3(),
     camFocusTarget: new THREE.Vector3(),
     lod: lodManager.updateLOD({
@@ -4017,7 +4017,7 @@ export function createGovernmentGraph({
       }
       state.targetRotX = 0;
       state.targetRotY = 0;
-      state.targetZoom = 0.25;
+      state.targetZoom = 1;
       state.camFocusTarget.set(0, 0, 0);
       state.renderDirty = true;
     },
@@ -4036,7 +4036,7 @@ export function createGovernmentGraph({
       }
       state.targetRotX = 0;
       state.targetRotY = 0;
-      state.targetZoom = 0.25;
+      state.targetZoom = 1;
       state.camFocusTarget.set(0, 0, 0);
       state.renderDirty = true;
       setSelectedNode(root);

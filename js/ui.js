@@ -1,4 +1,4 @@
-import { createGovernmentGraph } from "./graph.js?v=20260326j";
+import { createGovernmentGraph } from "./graph.js?v=20260327a";
 import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
@@ -1830,6 +1830,14 @@ function dismissIntro(autoExpand) {
 }
 document.getElementById("btn-intro-start")?.addEventListener("click", () => dismissIntro(true));
 document.getElementById("btn-intro-skip")?.addEventListener("click", () => dismissIntro(false));
+if (introOverlay) {
+  introOverlay.addEventListener("click", (e) => {
+    if (e.target === introOverlay) dismissIntro(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && introOverlay.style.display !== "none") dismissIntro(false);
+  });
+}
 
 function initUI() {
   updateBuildBadge();
