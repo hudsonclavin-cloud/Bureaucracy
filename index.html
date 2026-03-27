@@ -44,6 +44,33 @@ body.dragging{cursor:grabbing;}
   background:rgba(4,8,16,0.78);text-decoration:none;transition:all 0.2s ease;
 }
 #snapshot-link:hover{background:rgba(200,168,74,0.12);border-color:rgba(200,168,74,0.45);}
+#nav-shortcuts{
+  position:fixed;top:146px;left:32px;z-index:20;pointer-events:auto;
+  display:flex;gap:5px;
+}
+.btn-nav{
+  font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.12em;
+  text-transform:uppercase;cursor:pointer;padding:5px 9px;
+  border:1px solid rgba(200,168,74,0.24);border-radius:999px;
+  background:rgba(4,8,16,0.78);color:var(--gold);
+  transition:all 0.2s ease;pointer-events:auto;
+}
+.btn-nav:hover{background:rgba(200,168,74,0.12);border-color:rgba(200,168,74,0.45);}
+#branch-filter-ctrl{
+  position:fixed;top:176px;left:32px;z-index:20;pointer-events:auto;
+  display:flex;flex-direction:column;gap:4px;
+}
+#branch-filter-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2px;}
+#branch-filter-btns{display:flex;gap:4px;flex-wrap:wrap;max-width:240px;}
+.branch-btn{
+  font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.08em;
+  text-transform:uppercase;cursor:pointer;padding:4px 8px;
+  border:1px solid;border-radius:2px;background:rgba(4,8,16,0.78);
+  transition:all 0.2s ease;
+}
+.branch-btn.active{opacity:1;}
+.branch-btn:not(.active){opacity:0.45;}
+.branch-btn:hover{opacity:1;}
 #search-wrap{
   position:fixed;top:28px;left:50%;transform:translateX(-50%);z-index:20;pointer-events:auto;
   width:44px;transition:width 0.24s ease;
@@ -118,6 +145,25 @@ body.dragging{cursor:grabbing;}
 .btn-collapse:hover{background:rgba(200,80,80,0.08);}
 .btn-cancel{border-color:rgba(200,80,80,0.55);color:#e09090;}
 .btn-cancel:hover{background:rgba(200,80,80,0.15);}
+.btn-share{border-color:rgba(100,180,255,0.35);color:#7ab8f0;}
+.btn-share:hover{background:rgba(100,180,255,0.08);}
+.btn-export{border-color:rgba(150,200,100,0.35);color:#a8d878;}
+.btn-export:hover{background:rgba(150,200,100,0.08);}
+.cost-section{margin-bottom:10px;}
+.cost-section-title{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid rgba(200,168,74,0.1);}
+.cost-badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:9px;letter-spacing:0.06em;font-weight:600;margin-bottom:8px;}
+.cost-bar{height:4px;background:rgba(200,168,74,0.12);border-radius:2px;margin-bottom:8px;}
+.cost-bar-fill{height:100%;border-radius:2px;}
+#info-tabs{display:flex;gap:0;margin-bottom:12px;border-bottom:1px solid rgba(200,168,74,0.15);}
+.info-tab{flex:1;padding:6px 0;font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;background:transparent;border:none;color:var(--gold-dim);transition:all 0.2s;}
+.info-tab.active{color:var(--gold);border-bottom:1px solid var(--gold);}
+.info-tab:hover{color:var(--gold);}
+#intro-overlay{position:fixed;inset:0;background:rgba(10,8,6,0.88);display:none;align-items:center;justify-content:center;z-index:1000;}
+#intro-box{max-width:420px;padding:28px 32px;border-radius:14px;background:rgba(30,24,18,0.97);border:1px solid rgba(200,168,74,0.22);color:#d4c4a1;text-align:center;}
+#intro-box h2{color:#c8a84a;margin-bottom:12px;font-family:'Playfair Display',serif;}
+#intro-box ul{text-align:left;margin:14px 0;line-height:1.7;padding-left:20px;}
+#intro-box p{font-size:11px;line-height:1.6;color:#9a8a6a;}
+#intro-actions{display:flex;gap:10px;justify-content:center;margin-top:18px;}
 #breadcrumb{position:fixed;bottom:28px;left:32px;z-index:20;pointer-events:auto;max-width:60vw;}
 #bc-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
 #bc-items{display:flex;align-items:center;flex-wrap:wrap;gap:0;}
@@ -168,7 +214,7 @@ body.dragging{cursor:grabbing;}
 }
 @keyframes expandPulse{to{border-color:rgba(200,168,74,0.8);color:var(--gold-bright);}}
 #depth-expand-ctrl{
-  position:fixed;top:130px;left:32px;z-index:20;pointer-events:auto;
+  position:fixed;top:255px;left:32px;z-index:20;pointer-events:auto;
 }
 #btn-vr{
   position:fixed;top:28px;left:240px;z-index:20;display:none;
@@ -196,6 +242,8 @@ body.dragging{cursor:grabbing;}
   #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
   #build-badge{top:78px;left:16px;}
   #snapshot-link{top:106px;left:16px;}
+  #nav-shortcuts{top:134px;left:16px;}
+  #branch-filter-ctrl{top:162px;left:16px;}
   #btn-vr{top:90px;left:16px;}
   #search-wrap{top:16px;width:44px;max-width:calc(100vw - 32px);}
   #search-wrap:focus-within{width:calc(100vw - 32px);}
@@ -218,8 +266,25 @@ body.dragging{cursor:grabbing;}
   <p>3D Organizational Explorer</p>
   <div id="node-counter">0 / 0 nodes rendered</div>
 </div>
-<div id="build-badge">Build 20260326h | loading data...</div>
+<div id="build-badge">Build 20260326j | loading data...</div>
 <a id="snapshot-link" href="./saved_pages/treasury_validated_snapshot_2026_03_26/index.html">Open Treasury Snapshot</a>
+
+<div id="nav-shortcuts">
+  <button class="btn-nav" id="btn-home" title="Navigate back to the Constitution root node">Home</button>
+  <button class="btn-nav" id="btn-reset-camera" title="Reset camera to default orbit position">Reset View</button>
+</div>
+
+<div id="branch-filter-ctrl">
+  <div id="branch-filter-label">Filter Branch</div>
+  <div id="branch-filter-btns">
+    <button class="branch-btn active" data-branch="all" style="color:#c8a84a;border-color:#c8a84a40">All</button>
+    <button class="branch-btn" data-branch="executive" style="color:#c84a4a;border-color:#c84a4a40">Executive</button>
+    <button class="branch-btn" data-branch="legislative" style="color:#8a4ac8;border-color:#8a4ac840">Legislative</button>
+    <button class="branch-btn" data-branch="judicial" style="color:#4a8ac8;border-color:#4a8ac840">Judicial</button>
+    <button class="branch-btn" data-branch="independent" style="color:#4ac88a;border-color:#4ac88a40">Independent</button>
+    <button class="branch-btn" data-branch="regulatory" style="color:#c8884a;border-color:#c8884a40">Regulatory</button>
+  </div>
+</div>
 
 <button class="btn btn-focus" id="btn-vr" type="button">Enter VR</button>
 
@@ -246,17 +311,30 @@ body.dragging{cursor:grabbing;}
   <div id="info-name">—</div>
   <div id="info-type">—</div>
   <div id="info-desc">Select any node to explore</div>
-  <div id="info-stats"></div>
-  <div id="info-children-label" style="display:none">Sub-units</div>
-  <div id="info-children-list"></div>
-  <div id="info-actions">
-    <button class="btn btn-expand" id="btn-expand" disabled>Expand Node</button>
-    <button class="btn btn-expand" id="btn-expand-all" disabled>Expand All Below</button>
-    <button class="btn btn-cancel" id="btn-cancel-expand" style="display:none">Cancel Expand</button>
-    <button class="btn btn-focus" id="btn-focus">Fly to Node</button>
-    <button class="btn btn-focus" id="btn-fly-mode">Enable Fly Mode</button>
-    <button class="btn btn-collapse" id="btn-collapse" style="display:none">Collapse Children</button>
+  <div id="info-tabs">
+    <button class="info-tab active" data-tab="details">Details</button>
+    <button class="info-tab" data-tab="cost">Cost</button>
+    <button class="info-tab" data-tab="sources">Sources</button>
   </div>
+  <div id="tab-details">
+    <div id="info-stats"></div>
+    <div id="info-children-label" style="display:none">Sub-units</div>
+    <div id="info-children-list"></div>
+    <div id="info-actions">
+      <button class="btn btn-expand" id="btn-expand" disabled>Expand Node</button>
+      <button class="btn btn-expand" id="btn-expand-all" disabled>Expand All Below</button>
+      <button class="btn btn-cancel" id="btn-cancel-expand" style="display:none">Cancel Expand</button>
+      <button class="btn btn-focus" id="btn-focus">Fly to Node</button>
+      <button class="btn btn-focus" id="btn-fit-branch">Fit Selected Branch</button>
+      <button class="btn btn-focus" id="btn-fly-mode">Enable Fly Mode</button>
+      <button class="btn btn-collapse" id="btn-collapse" style="display:none">Collapse Children</button>
+      <button class="btn btn-collapse" id="btn-collapse-all">Collapse All</button>
+      <button class="btn btn-share" id="btn-copy-share-link">Copy Share Link</button>
+      <button class="btn btn-export" id="btn-export-json" style="display:none">Export Branch JSON</button>
+    </div>
+  </div>
+  <div id="tab-cost" style="display:none"></div>
+  <div id="tab-sources" style="display:none"></div>
 </div>
 
 <div id="breadcrumb">
@@ -286,6 +364,7 @@ body.dragging{cursor:grabbing;}
   <div class="leg-item"><span>Independent</span><div class="leg-dot" style="background:#4ac88a"></div></div>
   <div class="leg-item"><span>Regulatory</span><div class="leg-dot" style="background:#c8884a"></div></div>
   <div class="leg-item"><span>Position / Office</span><div class="leg-dot" style="background:#666666"></div></div>
+  <div class="leg-item"><span>Treasury Verified</span><div class="leg-dot" style="background:#c8b060;box-shadow:0 0 4px rgba(200,176,96,0.5)"></div></div>
 </div>
 
 <div id="stats" class="panel-closed">
@@ -301,14 +380,29 @@ body.dragging{cursor:grabbing;}
 
 <script>
 window.APP_BUILD_INFO = {
-  version: "20260326h",
-  label: "Treasury validated node costs",
+  version: "20260327",
+  label: "MVP features: home, share link, cost tab, branch filter, collapse all, export",
 };
 window.GRAPH_DATA_SOURCES = {
   base: "./output/graph.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260326i"></script>
+<div id="intro-overlay">
+  <div id="intro-box">
+    <h2>U.S. Government Explorer</h2>
+    <p>Navigate the complete federal structure — from the Constitution down to individual offices and positions — with budget data on every node.</p>
+    <ul>
+      <li>Scroll to zoom · Drag to orbit · Click to focus</li>
+      <li>Larger, brighter nodes have Treasury-verified costs</li>
+      <li>Use the depth controls or search to navigate</li>
+    </ul>
+    <div id="intro-actions">
+      <button id="btn-intro-start" class="btn btn-focus">Start Exploring</button>
+      <button id="btn-intro-skip" class="btn">Skip</button>
+    </div>
+  </div>
+</div>
+<script type="module" src="./js/ui.js?v=20260327"></script>
 </body>
 </html>

@@ -51,6 +51,15 @@ const ALWAYS_VISIBLE_CLUSTER_NAMES = new Set([
   "executive branch",
   "judicial branch",
 ]);
+const colorToBranchKey = {
+  "#c8a84a": "constitution",
+  "#8a4ac8": "legislative",
+  "#c84a4a": "executive",
+  "#4a8ac8": "judicial",
+  "#4ac88a": "independent",
+  "#c8884a": "regulatory",
+  "#888888": "position",
+};
 const branchColors = {
   constitution: "#c8a84a",
   legislative: "#8a4ac8",
@@ -297,8 +306,8 @@ export function createGovernmentGraph({
     rotY: 0,
     targetRotX: 0,
     targetRotY: 0,
-    zoom: 1,
-    targetZoom: 1,
+    zoom: 0.25,
+    targetZoom: 0.25,
     camFocus: new THREE.Vector3(),
     camFocusTarget: new THREE.Vector3(),
     lod: lodManager.updateLOD({
@@ -322,7 +331,8 @@ export function createGovernmentGraph({
     flyPitchTarget: 0,
     lastUserDrillAt: 0,
     showUnverifiedNodes: true,
-    showCandidateNodes: true,
+    showCandidateNodes: false,
+    activeBranchFilter: null,
     fullExpandRenderMode: false,
     manuallyCollapsedNodeIds: new Set(),
     xrSessionActive: false,
@@ -538,6 +548,8 @@ export function createGovernmentGraph({
     if (data?.isCandidate) {
       return "candidate";
     }
+    const costStatus = String(data?.cost_status || "").toLowerCase();
+    if (costStatus === "official" || costStatus === "root_total") return "official";
     const status = String(data?.verificationStatus || "verified").toLowerCase();
     if (status === "partial") {
       return "partial";
@@ -565,6 +577,14 @@ export function createGovernmentGraph({
   function shouldDisplayNodeByVerification(data) {
     if (data?.isCandidate) {
       return state.showCandidateNodes;
+    }
+    if (state.activeBranchFilter !== null) {
+      // Use the color field (set during build) for accurate branch matching, fall back to inference
+      const colorBranch = colorToBranchKey[String(data?.color || "").toLowerCase()];
+      const branchKey = colorBranch || inferBranchKey(data);
+      if (branchKey !== "constitution" && branchKey !== state.activeBranchFilter) {
+        return false;
+      }
     }
     if (state.showUnverifiedNodes) {
       return true;
@@ -1093,6 +1113,9 @@ export function createGovernmentGraph({
         continue;
       }
       const bounds = measureLabelBounds(candidate.sprite, candidate.priority);
+      if (!candidate.sprite.visible) {
+        continue;
+      }
       let blocked = false;
       for (const acceptedBounds of accepted) {
         if (labelBoundsIntersect(bounds, acceptedBounds)) {
@@ -1392,6 +1415,15 @@ export function createGovernmentGraph({
 
   function getVerificationMaterialProfile(styleKey, color) {
     const baseColor = new THREE.Color(color);
+    if (styleKey === "official") {
+      return {
+        color: baseColor.clone().lerp(new THREE.Color("#c8a84a"), 0.08),
+        emissive: baseColor.clone().multiplyScalar(0.6),
+        emissiveIntensity: 0.45,
+        opacity: NODE_OPACITY,
+        wireframe: false,
+      };
+    }
     if (styleKey === "partial") {
       return {
         color: baseColor.clone().lerp(whiteColor, 0.12),
@@ -1632,6 +1664,14 @@ export function createGovernmentGraph({
     state.renderDirty = true;
   }
 
+  function getTrustScaleMultiplier(data) {
+    const costStatus = String(data?.cost_status || "").toLowerCase();
+    if (costStatus === "root_total" || costStatus === "official") return 1.45;
+    if (costStatus === "scaled_official") return 1.25;
+    if (String(data?.verificationStatus || "").toLowerCase() === "verified") return 1.15;
+    return 1.0;
+  }
+
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
     const cameraDistance = Math.max(getActiveCameraPosition(tempVecA).distanceTo(nodeObj.pos), 1);
     const distanceScale = THREE.MathUtils.clamp(180 / cameraDistance, MIN_ZOOM_NODE_SCALE, 1);
@@ -1639,7 +1679,7 @@ export function createGovernmentGraph({
       MIN_ZOOM_NODE_SCALE,
       lodManager.getNodeScale(cameraDistance, state.lod) * distanceScale,
     );
-    const finalScale = scaleMultiplier * zoomScale;
+    const finalScale = scaleMultiplier * zoomScale * getTrustScaleMultiplier(nodeObj.data);
     if (nodeObj === state.rootObj) {
       rootCore.visible = nodeObj.visible !== false;
       rootCore.position.copy(nodeObj.pos);
@@ -3516,6 +3556,16 @@ export function createGovernmentGraph({
   }
 
   function handlePointerMove(event) {
+    if (state.flyMode) {
+      state.flyYawTarget += event.movementX * 0.004 * FLY_TURN_MULTIPLIER;
+      state.flyPitchTarget = THREE.MathUtils.clamp(
+        state.flyPitchTarget + event.movementY * 0.004 * FLY_TURN_MULTIPLIER,
+        -FLY_PITCH_LIMIT,
+        FLY_PITCH_LIMIT,
+      );
+      state.renderDirty = true;
+      return;
+    }
     const dx = event.clientX - state.prevMouse.x;
     const dy = event.clientY - state.prevMouse.y;
     const dragDistance = Math.hypot(event.clientX - state.mouseDownPos.x, event.clientY - state.mouseDownPos.y);
@@ -3524,14 +3574,7 @@ export function createGovernmentGraph({
     }
 
     if (event.buttons === 1 && state.isDragging) {
-      if (state.flyMode) {
-        state.flyYawTarget += dx * 0.004 * FLY_TURN_MULTIPLIER;
-        state.flyPitchTarget = THREE.MathUtils.clamp(
-          state.flyPitchTarget + dy * 0.004 * FLY_TURN_MULTIPLIER,
-          -FLY_PITCH_LIMIT,
-          FLY_PITCH_LIMIT,
-        );
-      } else if (event.shiftKey) {
+      if (event.shiftKey) {
         const distance = CAMERA_DISTANCE / state.zoom;
         const forward = tempVecA.copy(state.camFocus).sub(camera.position).normalize();
         const right = basisA.copy(forward).cross(camera.up).normalize();
@@ -3635,6 +3678,24 @@ export function createGovernmentGraph({
       state.renderDirty = true;
     });
 
+    document.addEventListener("pointerlockchange", () => {
+      if (document.pointerLockElement !== canvas && state.flyMode) {
+        state.flyMode = false;
+        syncOrbitStateFromFlyCamera();
+        stopFlyMovement();
+        state.renderDirty = true;
+      }
+    });
+
+    document.addEventListener("pointerlockerror", () => {
+      if (state.flyMode) {
+        state.flyMode = false;
+        syncOrbitStateFromFlyCamera();
+        stopFlyMovement();
+        state.renderDirty = true;
+      }
+    });
+
     window.addEventListener("keydown", (event) => {
       if (event.code in state.keyState) {
         state.keyState[event.code] = true;
@@ -3672,7 +3733,7 @@ export function createGovernmentGraph({
     state.budgetSummary = data.__budgetSummary || null;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_VISIBLE_NODES;
-    state.fullExpandRenderMode = state.totalNodeCount <= MAX_VISIBLE_NODES;
+    state.fullExpandRenderMode = false;
     state.manualDepthFilter = MAX_DEPTH;
     state.maxVisibleDepth = MAX_DEPTH;
 
@@ -3859,9 +3920,13 @@ export function createGovernmentGraph({
         syncFlyStateFromCamera();
         stopFlyMovement();
         state.targetZoom = Math.max(state.targetZoom, 1.6);
+        canvas.requestPointerLock();
       } else {
         syncOrbitStateFromFlyCamera();
         stopFlyMovement();
+        if (document.pointerLockElement === canvas) {
+          document.exitPointerLock();
+        }
       }
       state.renderDirty = true;
       return state.flyMode;
@@ -3940,6 +4005,88 @@ export function createGovernmentGraph({
         MAX_DEPTH,
         VR_EXPAND_ALL_DEPTH_LIMIT: QUEST_VR_CONFIG.expandAllDepthLimit,
       };
+    },
+    resetCamera() {
+      if (state.flyMode) {
+        state.flyMode = false;
+        stopFlyMovement();
+        if (document.pointerLockElement === canvas) {
+          document.exitPointerLock();
+        }
+        syncOrbitStateFromFlyCamera();
+      }
+      state.targetRotX = 0;
+      state.targetRotY = 0;
+      state.targetZoom = 0.25;
+      state.camFocusTarget.set(0, 0, 0);
+      state.renderDirty = true;
+    },
+    navigateToRoot() {
+      const root = state.rootObj;
+      if (!root) {
+        return;
+      }
+      if (state.flyMode) {
+        state.flyMode = false;
+        stopFlyMovement();
+        if (document.pointerLockElement === canvas) {
+          document.exitPointerLock();
+        }
+        syncOrbitStateFromFlyCamera();
+      }
+      state.targetRotX = 0;
+      state.targetRotY = 0;
+      state.targetZoom = 0.25;
+      state.camFocusTarget.set(0, 0, 0);
+      state.renderDirty = true;
+      setSelectedNode(root);
+    },
+    collapseAll() {
+      if (!state.rootObj) {
+        return;
+      }
+      state.fullExpandRenderMode = false;
+      state.pendingExpansions = [];
+      collapseNode(state.rootObj);
+      state.renderDirty = true;
+    },
+    filterByBranch(branchKey) {
+      state.activeBranchFilter = branchKey || null;
+      state.renderDirty = true;
+      refreshVisibility(true);
+      notifyCounts();
+      return state.activeBranchFilter;
+    },
+    fitBranch(nodeObj) {
+      if (!nodeObj) {
+        return;
+      }
+      const positions = [];
+      function collectPositions(obj) {
+        positions.push(obj.pos.clone());
+        for (const child of obj.childObjs) {
+          collectPositions(child);
+        }
+      }
+      collectPositions(nodeObj);
+      if (positions.length === 0) {
+        return;
+      }
+      const centroid = new THREE.Vector3();
+      for (const p of positions) {
+        centroid.add(p);
+      }
+      centroid.divideScalar(positions.length);
+      let maxDist = 0;
+      for (const p of positions) {
+        maxDist = Math.max(maxDist, centroid.distanceTo(p));
+      }
+      maxDist = Math.max(maxDist, 30);
+      state.camFocusTarget.copy(centroid);
+      state.targetZoom = Math.max(0.28, Math.min(10, CAMERA_DISTANCE / (maxDist * 2.8)));
+      state.targetRotX = 0;
+      state.targetRotY = 0;
+      state.renderDirty = true;
     },
   };
 }

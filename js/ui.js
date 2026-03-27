@@ -1,4 +1,4 @@
-import { createGovernmentGraph } from "./graph.js?v=20260326h";
+import { createGovernmentGraph } from "./graph.js?v=20260326j";
 import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
 import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
@@ -42,6 +42,12 @@ const dom = {
   btnFlyMode: document.getElementById("btn-fly-mode"),
   btnCollapse: document.getElementById("btn-collapse"),
   btnVr: document.getElementById("btn-vr"),
+  btnHome: document.getElementById("btn-home"),
+  btnResetCamera: document.getElementById("btn-reset-camera"),
+  btnFitBranch: document.getElementById("btn-fit-branch"),
+  btnCollapseAll: document.getElementById("btn-collapse-all"),
+  btnCopyShareLink: document.getElementById("btn-copy-share-link"),
+  btnExportJson: document.getElementById("btn-export-json"),
   searchInput: document.getElementById("search-input"),
   searchResults: document.getElementById("search-results"),
   tooltip: document.getElementById("tooltip"),
@@ -58,6 +64,7 @@ const dom = {
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
+  costTabEl: null,
 };
 
 const state = {
@@ -558,13 +565,29 @@ function ensureVerificationUi() {
   verificationWrap.appendChild(sources);
   verificationWrap.appendChild(lastVerified);
 
-  dom.infoPanel.appendChild(verificationWrap);
+  const tabSources = document.getElementById("tab-sources");
+  (tabSources || dom.infoPanel).appendChild(verificationWrap);
   dom.verificationWrap = verificationWrap;
   dom.verificationBadge = badge;
   dom.verificationStatus = status;
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+
+  // Tab switching
+  dom.infoPanel.querySelectorAll(".info-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      dom.infoPanel.querySelectorAll(".info-tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const tab = btn.dataset.tab;
+      const detailsEl = document.getElementById("tab-details");
+      const costEl = document.getElementById("tab-cost");
+      const sourcesEl = document.getElementById("tab-sources");
+      if (detailsEl) detailsEl.style.display = tab === "details" ? "" : "none";
+      if (costEl) costEl.style.display = tab === "cost" ? "" : "none";
+      if (sourcesEl) sourcesEl.style.display = tab === "sources" ? "" : "none";
+    });
+  });
 }
 
 function getVerificationBadgeConfig(data, evidence = getNodeVerificationEvidence(data)) {
@@ -591,7 +614,7 @@ function ensureVerificationToggles() {
 
   const wrap = document.createElement("div");
   wrap.style.position = "fixed";
-  wrap.style.top = "130px";
+  wrap.style.top = "315px";
   wrap.style.left = "32px";
   wrap.style.zIndex = "20";
   wrap.style.display = "flex";
@@ -620,8 +643,8 @@ function ensureVerificationToggles() {
   };
 
   const toggleUnverified = makeToggle("Show Unverified Nodes");
-  const toggleCandidates = makeToggle("Show Candidate Nodes");
-  toggleCandidates.checked = true;
+  const toggleCandidates = makeToggle("Show Unconfirmed Nodes (candidates)");
+  toggleCandidates.checked = false;
 
   document.body.appendChild(wrap);
   dom.togglesWrap = wrap;
@@ -840,6 +863,15 @@ function renderVerificationPanelWithEvidenceClean(data) {
     return;
   }
 
+  const SOURCE_TYPE_LABELS = {
+    official_directory: "Official Website",
+    wikidata: "Wikidata",
+    federal_register: "Federal Register",
+    usaspending: "USAspending.gov",
+    treasury: "Treasury Fiscal Data",
+    enrichment: "Pipeline Enrichment",
+  };
+
   sourceUrls.forEach((url, index) => {
     const link = document.createElement("a");
     link.href = url;
@@ -851,11 +883,244 @@ function renderVerificationPanelWithEvidenceClean(data) {
     } catch (_error) {
       host = url;
     }
-    const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
-    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
+    const rawType = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
+    const sourceTypeLabel = SOURCE_TYPE_LABELS[rawType] || rawType;
+    const lastVerifiedStr =
+      index === 0 && data.lastVerified
+        ? ` · ${new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}`
+        : "";
+    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}${lastVerifiedStr}`;
     link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
+}
+
+function copyShareLink(nodeId) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("node", nodeId);
+  navigator.clipboard.writeText(url.toString()).then(() => {
+    if (dom.btnCopyShareLink) {
+      const orig = dom.btnCopyShareLink.textContent;
+      setText(dom.btnCopyShareLink, "Copied!");
+      window.setTimeout(() => setText(dom.btnCopyShareLink, orig), 1800);
+    }
+  }).catch(() => {
+    // Fallback: show the URL in a prompt so user can copy manually
+    window.prompt("Share link (copy manually):", url.toString());
+  });
+}
+
+function parseShareLink() {
+  const params = new URLSearchParams(window.location.search);
+  const nodeId = params.get("node");
+  if (nodeId) {
+    // Defer until graph is ready
+    window.requestAnimationFrame(function tryReveal() {
+      if (!state.graph) {
+        window.requestAnimationFrame(tryReveal);
+        return;
+      }
+      revealAndSelect(nodeId);
+    });
+  }
+}
+
+function getNodeCostBreakdown(nodeObj) {
+  if (!nodeObj?.data) {
+    return null;
+  }
+  const data = nodeObj.data;
+  const resolvedTotal = Number(data.__meta?.subtreeCost || data.resolved_total_amount || 0);
+  const directOutlay = Number(data.direct_outlay_amount || 0);
+  const rollupTotal = Number(data.rollup_total_amount || 0);
+  const directMetaCost = Number(data.__meta?.directCost || 0);
+  const operationTotal = Number(state.graph?.getStats?.().totalBudgetCost || 0);
+  const share = operationTotal > 0 && resolvedTotal > 0
+    ? (resolvedTotal / operationTotal) * 100
+    : null;
+  const costType = getCostTypeDetails(data);
+  const budgetBasis = getBudgetBasisLabel(data);
+  return {
+    resolvedTotal,
+    directOutlay,
+    rollupTotal,
+    directMetaCost,
+    operationTotal,
+    share,
+    costType,
+    budgetBasis,
+    costStatus: data.cost_status || null,
+    costBasis: data.cost_basis || null,
+    costValidation: data.cost_validation || null,
+    budgetSource: data.budget_source || data.source_system || null,
+    budgetYear: data.budget_year || null,
+    amountKind: data.amount_kind || null,
+    budgetSummary: state.graph?.getStats?.()?.budgetSummary || null,
+  };
+}
+
+function renderCostTab(nodeObj) {
+  const el = document.getElementById("tab-cost");
+  if (!el) {
+    return;
+  }
+  dom.costTabEl = el;
+  el.replaceChildren();
+
+  if (!nodeObj?.data) {
+    const empty = document.createElement("div");
+    empty.textContent = "Select a node to see cost details.";
+    empty.style.color = "#6a5a3a";
+    empty.style.fontSize = "10px";
+    el.appendChild(empty);
+    return;
+  }
+
+  const breakdown = getNodeCostBreakdown(nodeObj);
+  if (!breakdown) {
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+
+  // Cost confidence badge
+  const costBadgeConfig = {
+    root_total: { label: "TREASURY TOTAL", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
+    official: { label: "OFFICIAL ROLLUP", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
+    scaled_official: { label: "OFFICIAL (SCALED)", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" },
+    allocated: { label: "ESTIMATED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" },
+    unavailable: { label: "UNAVAILABLE", bg: "rgba(80,60,60,0.18)", border: "#6a4040", color: "#a08080" },
+  };
+  const badgeCfg = costBadgeConfig[breakdown.costStatus] || costBadgeConfig.unavailable;
+  const badge = document.createElement("span");
+  badge.className = "cost-badge";
+  badge.textContent = badgeCfg.label;
+  badge.style.background = badgeCfg.bg;
+  badge.style.border = `1px solid ${badgeCfg.border}`;
+  badge.style.color = badgeCfg.color;
+  frag.appendChild(badge);
+
+  const makeRow = (label, value) => {
+    const row = document.createElement("div");
+    row.className = "info-stat";
+    const lbl = document.createElement("span");
+    lbl.className = "info-stat-label";
+    lbl.textContent = label;
+    const val = document.createElement("span");
+    val.className = "info-stat-val";
+    val.textContent = value;
+    row.appendChild(lbl);
+    row.appendChild(val);
+    return row;
+  };
+
+  // Cost type and description
+  frag.appendChild(makeRow("COST TYPE", breakdown.costType.label));
+
+  // Main cost figures
+  if (breakdown.resolvedTotal) {
+    frag.appendChild(makeRow("TOTAL (SUBTREE)", formatCurrency(breakdown.resolvedTotal)));
+  }
+  if (breakdown.directOutlay) {
+    frag.appendChild(makeRow("DIRECT OUTLAY", formatCurrency(breakdown.directOutlay)));
+  }
+  if (breakdown.rollupTotal) {
+    frag.appendChild(makeRow("OFFICIAL ROLLUP", formatCurrency(breakdown.rollupTotal)));
+  }
+  if (breakdown.directMetaCost && breakdown.directMetaCost !== breakdown.directOutlay) {
+    frag.appendChild(makeRow("DIRECT COST (COMPUTED)", formatCurrency(breakdown.directMetaCost)));
+  }
+
+  // Share of government
+  if (breakdown.share !== null) {
+    frag.appendChild(makeRow("SHARE OF TOTAL", `${breakdown.share.toFixed(breakdown.share < 0.01 ? 4 : 2)}%`));
+
+    // Bar
+    const barWrap = document.createElement("div");
+    barWrap.className = "cost-bar";
+    const barFill = document.createElement("div");
+    barFill.className = "cost-bar-fill";
+    barFill.style.width = `${Math.min(100, breakdown.share)}%`;
+    barFill.style.background = badgeCfg.border;
+    barWrap.appendChild(barFill);
+    frag.appendChild(barWrap);
+  }
+
+  // Methodology
+  const methodTitle = document.createElement("div");
+  methodTitle.className = "cost-section-title";
+  methodTitle.style.marginTop = "12px";
+  methodTitle.textContent = "COST METHODOLOGY";
+  frag.appendChild(methodTitle);
+
+  frag.appendChild(makeRow("METHODOLOGY", breakdown.costType.detail || "—"));
+  if (breakdown.costBasis) {
+    frag.appendChild(makeRow("ALLOCATION BASIS", humanizeMetadataValue(breakdown.costBasis, COST_BASIS_LABELS)));
+  }
+  if (breakdown.costValidation) {
+    frag.appendChild(makeRow("VALIDATION", humanizeMetadataValue(breakdown.costValidation, COST_VALIDATION_LABELS)));
+  }
+
+  // Source metadata
+  const sourceTitle = document.createElement("div");
+  sourceTitle.className = "cost-section-title";
+  sourceTitle.style.marginTop = "12px";
+  sourceTitle.textContent = "SOURCE";
+  frag.appendChild(sourceTitle);
+
+  if (breakdown.budgetSource) {
+    frag.appendChild(makeRow("SOURCE SYSTEM", breakdown.budgetSource));
+  }
+  if (breakdown.budgetYear) {
+    frag.appendChild(makeRow("FISCAL YEAR", String(breakdown.budgetYear)));
+  }
+  if (breakdown.amountKind) {
+    frag.appendChild(makeRow("AMOUNT KIND", humanizeMetadataValue(breakdown.amountKind, AMOUNT_KIND_LABELS)));
+  }
+
+  // FYTD context
+  const fytd = getBudgetFytdContext(breakdown.budgetSummary);
+  if (fytd) {
+    frag.appendChild(makeRow("FYTD RECORD DATE", fytd.recordDate));
+    frag.appendChild(makeRow("MONTHS ELAPSED", `${fytd.monthsElapsed} / 12`));
+    frag.appendChild(makeRow("ANNUALIZED EST.", formatCurrency(fytd.annualized)));
+  }
+
+  el.appendChild(frag);
+}
+
+function exportSubtreeJson(nodeObj) {
+  if (!nodeObj?.data) {
+    return;
+  }
+
+  function collectNodes(obj) {
+    const result = [obj.data];
+    for (const child of obj.childObjs) {
+      result.push(...collectNodes(child));
+    }
+    return result;
+  }
+
+  const nodes = collectNodes(nodeObj);
+  const exportData = {
+    exportedAt: new Date().toISOString(),
+    rootNode: nodeObj.data.id,
+    nodeCount: nodes.length,
+    nodes,
+  };
+
+  const json = JSON.stringify(exportData, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  const safeName = (nodeObj.data.name || nodeObj.data.id || "branch").replace(/[^a-z0-9_-]/gi, "_").toLowerCase().slice(0, 40);
+  link.download = `bureaucracy_${safeName}_${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }
 
 function renderOriginTrace(nodeObj) {
@@ -908,11 +1173,24 @@ function renderOriginTrace(nodeObj) {
   dom.btnTraceOrigin.disabled = false;
 }
 
+function resetInfoTabs() {
+  const detailsEl = document.getElementById("tab-details");
+  const costEl = document.getElementById("tab-cost");
+  const sourcesEl = document.getElementById("tab-sources");
+  if (detailsEl) detailsEl.style.display = "";
+  if (costEl) costEl.style.display = "none";
+  if (sourcesEl) sourcesEl.style.display = "none";
+  document.querySelectorAll(".info-tab").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.tab === "details");
+  });
+}
+
 function renderInfoPanel(nodeObj) {
   if (!nodeObj) {
     return;
   }
 
+  resetInfoTabs();
   const data = nodeObj.data;
   const activeCluster = nodeObj.isCluster ? nodeObj : nodeObj.clusterRef || null;
   const clusterCount =
@@ -1095,7 +1373,13 @@ function renderInfoPanel(nodeObj) {
     renderOriginTrace(nodeObj);
   }
   renderVerificationPanelWithEvidenceClean(data);
+  renderCostTab(nodeObj);
   renderBreadcrumb(nodeObj);
+
+  // Show export button only when node has loaded children
+  if (dom.btnExportJson) {
+    dom.btnExportJson.style.display = nodeObj.childObjs && nodeObj.childObjs.length > 0 ? "block" : "none";
+  }
 }
 
 function updateTooltip(payload) {
@@ -1320,33 +1604,37 @@ function bindControls() {
   }
 
   if (dom.toggleCandidates) {
+    // Sync initial state: graph.js defaults showCandidateNodes to false
+    state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
     dom.toggleCandidates.addEventListener("change", () => {
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
     });
   }
 
-  dom.btnTraceOrigin.addEventListener("click", () => {
-    const selected = state.graph.getSelectedNode();
-    if (!selected || selected.isCluster) {
-      return;
-    }
+  if (dom.btnTraceOrigin) {
+    dom.btnTraceOrigin.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (!selected || selected.isCluster) {
+        return;
+      }
 
-    const currentTrace = state.graph.getOriginTrace();
-    const traceMatchesSelected =
-      currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
+      const currentTrace = state.graph.getOriginTrace();
+      const traceMatchesSelected =
+        currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
 
-    if (traceMatchesSelected) {
-      state.graph.clearOriginTrace();
-      state.tracedNodeId = null;
-    } else {
-      const originPath = state.graph.traceOrigin(selected);
-      state.graph.setOriginTrace(originPath);
-      state.tracedNodeId = selected.data.id;
-    }
+      if (traceMatchesSelected) {
+        state.graph.clearOriginTrace();
+        state.tracedNodeId = null;
+      } else {
+        const originPath = state.graph.traceOrigin(selected);
+        state.graph.setOriginTrace(originPath);
+        state.tracedNodeId = selected.data.id;
+      }
 
-    renderInfoPanel(selected);
-  });
+      renderInfoPanel(selected);
+    });
+  }
 
   dom.btnExpand.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
@@ -1367,8 +1655,21 @@ function bindControls() {
   });
 
   dom.btnExpandAll.addEventListener("click", () => {
-    if (!state.graph.getSelectedNode()) {
+    const selected = state.graph.getSelectedNode();
+    if (!selected) {
       return;
+    }
+    const stats = state.graph.getStats();
+    const unloaded = stats.totalNodeCount - stats.visibleNodeCount;
+    if (unloaded > 500) {
+      const confirmed = window.confirm(
+        `Expand all below "${selected.data?.name || "selected node"}"?\n\n` +
+        `~${unloaded.toLocaleString()} nodes are not yet loaded. This may be slow on large branches.\n\n` +
+        `Click Cancel Expand at any time to stop.`,
+      );
+      if (!confirmed) {
+        return;
+      }
     }
     expandProgressively(Infinity);
   });
@@ -1384,6 +1685,10 @@ function bindControls() {
     setText(dom.btnFlyMode, enabled ? "Disable Fly Mode" : "Enable Fly Mode");
   });
 
+  document.addEventListener("pointerlockchange", () => {
+    setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
+  });
+
   dom.btnCollapse.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
     if (!selected) {
@@ -1392,6 +1697,72 @@ function bindControls() {
     state.graph.setFullExpandRenderMode(false);
     state.graph.collapseNode(selected, { manual: true });
     renderInfoPanel(selected);
+  });
+
+  if (dom.btnHome) {
+    dom.btnHome.addEventListener("click", () => {
+      state.graph.navigateToRoot();
+      setText(dom.btnFlyMode, "Enable Fly Mode");
+    });
+  }
+
+  if (dom.btnResetCamera) {
+    dom.btnResetCamera.addEventListener("click", () => {
+      state.graph.resetCamera();
+      setText(dom.btnFlyMode, "Enable Fly Mode");
+    });
+  }
+
+  if (dom.btnFitBranch) {
+    dom.btnFitBranch.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        state.graph.fitBranch(selected);
+      }
+    });
+  }
+
+  if (dom.btnCollapseAll) {
+    dom.btnCollapseAll.addEventListener("click", () => {
+      stopProgressiveExpansion();
+      state.graph.collapseAll();
+      const root = state.graph.getRootNode();
+      if (root) {
+        state.graph.setSelectedNode(root);
+      }
+      updateStats(state.graph.getStats());
+    });
+  }
+
+  if (dom.btnCopyShareLink) {
+    dom.btnCopyShareLink.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected?.data?.id) {
+        copyShareLink(selected.data.id);
+      } else {
+        copyShareLink("the-constitution-of-the-united-states");
+      }
+    });
+  }
+
+  if (dom.btnExportJson) {
+    dom.btnExportJson.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        exportSubtreeJson(selected);
+      }
+    });
+  }
+
+  // Branch filter buttons
+  document.querySelectorAll(".branch-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".branch-btn").forEach((b) => b.classList.remove("active"));
+      button.classList.add("active");
+      const branch = button.dataset.branch === "all" ? null : button.dataset.branch;
+      state.graph.filterByBranch(branch);
+      updateStats(state.graph.getStats());
+    });
   });
 
   document.querySelectorAll(".depth-btn").forEach((button) => {
@@ -1444,10 +1815,28 @@ function bindControls() {
   });
 }
 
+const INTRO_KEY = "bureaucracy_intro_v1";
+const introOverlay = document.getElementById("intro-overlay");
+if (introOverlay && !localStorage.getItem(INTRO_KEY)) {
+  introOverlay.style.display = "flex";
+}
+function dismissIntro(autoExpand) {
+  localStorage.setItem(INTRO_KEY, "1");
+  if (introOverlay) introOverlay.style.display = "none";
+  if (autoExpand && state.graph) {
+    const root = state.graph.getNodeById("the-constitution-of-the-united-states");
+    if (root) state.graph.expandNode(root, true);
+  }
+}
+document.getElementById("btn-intro-start")?.addEventListener("click", () => dismissIntro(true));
+document.getElementById("btn-intro-skip")?.addEventListener("click", () => dismissIntro(false));
+
 function initUI() {
   updateBuildBadge();
   ensureOriginUi();
   ensureVerificationUi();
+  ensureVerificationToggles();
+  ensureVerificationLegend();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
@@ -1494,6 +1883,7 @@ async function initGraphApp() {
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
   hideLoadingOverlay();
+  parseShareLink();
 }
 
 if (shouldBootUi) {
