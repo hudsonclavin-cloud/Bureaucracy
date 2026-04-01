@@ -19,9 +19,72 @@ const DEFAULT_NODE = {
 };
 
 const MAX_DEPTH = 20;
+const COST_FIELD_KEYS = [
+  "resolved_total_amount",
+  "direct_outlay_amount",
+  "rollup_total_amount",
+  "cost_status",
+  "cost_basis",
+  "cost_validation",
+  "annual_budget",
+  "budget_source",
+  "budget_year",
+  "budget_as_of",
+  "source_system",
+  "amount_kind",
+  "allocation_basis",
+];
+const VERIFICATION_FIELD_KEYS = ["sourceUrls", "sourceTypes", "sourceCount", "confidenceScore", "verificationStatus", "lastVerified"];
+const RELATION_FIELD_KEYS = [
+  "related_agencies",
+  "parent_agency",
+  "official_website",
+  "jurisdiction",
+  "founded_date",
+  "created_year",
+  "restructured_year",
+  "merged_into",
+  "renamed_from",
+  "relationships",
+  "__budgetSummary",
+];
 
 function cloneValue(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function isMeaningfulValue(value) {
+  if (value === null || value === undefined) {
+    return false;
+  }
+  if (typeof value === "string") {
+    return value.trim().length > 0;
+  }
+  if (Array.isArray(value)) {
+    return value.length > 0;
+  }
+  if (typeof value === "object") {
+    return Object.keys(value).length > 0;
+  }
+  return true;
+}
+
+function copyFieldIfMissing(targetNode, sourceNode, key) {
+  if (!isMeaningfulValue(targetNode[key]) && isMeaningfulValue(sourceNode[key])) {
+    targetNode[key] = cloneValue(sourceNode[key]);
+  }
+}
+
+function mergeRichMetadata(targetNode, sourceNode) {
+  for (const key of VERIFICATION_FIELD_KEYS) {
+    copyFieldIfMissing(targetNode, sourceNode, key);
+  }
+  for (const key of COST_FIELD_KEYS) {
+    copyFieldIfMissing(targetNode, sourceNode, key);
+  }
+  for (const key of RELATION_FIELD_KEYS) {
+    copyFieldIfMissing(targetNode, sourceNode, key);
+  }
 }
 
 function normalizeNode(rawNode) {
@@ -123,6 +186,7 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.isCandidate = Boolean(targetNode.isCandidate || sourceNode.isCandidate);
   targetNode.possibleParent = targetNode.possibleParent || sourceNode.possibleParent || null;
   targetNode.discoveryMethod = targetNode.discoveryMethod || sourceNode.discoveryMethod || null;
+  mergeRichMetadata(targetNode, sourceNode);
 }
 
 function normalizeCandidateNode(rawCandidate) {
@@ -273,13 +337,28 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  baseRoot.relationships = rawEdges
+  const normalizedRelationships = rawEdges
     .filter((edge) => edge && edge.source && edge.target)
     .map((edge) => ({
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
     }));
+  if (normalizedRelationships.length > 0) {
+    const existingRelationships = Array.isArray(baseRoot.relationships) ? baseRoot.relationships : [];
+    const relationshipKey = (relationship) => `${relationship.source}::${relationship.target}::${relationship.type}`;
+    const mergedRelationships = [];
+    const seen = new Set();
+    for (const relationship of [...existingRelationships, ...normalizedRelationships]) {
+      const key = relationshipKey(relationship);
+      if (seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+      mergedRelationships.push(relationship);
+    }
+    baseRoot.relationships = mergedRelationships;
+  }
 
   return baseRoot;
 }
@@ -307,24 +386,23 @@ function combineExpansionPayloads(...payloads) {
   };
 }
 
-async function fetchJson(url) {
-  const response = await fetch(url);
-  if (!response.ok) {
-    const error = new Error(`Failed to load ${url}: ${response.status}`);
-    error.status = response.status;
-    throw error;
-  }
-  return response.json();
+function getPrimaryGraphUrl(baseUrl) {
+  return (
+    (typeof window !== "undefined" ? window?.GRAPH_DATA_SOURCES?.primary : null) ||
+    (typeof window !== "undefined" ? window?.GRAPH_DATA_SOURCES?.graph : null) ||
+    baseUrl ||
+    "./output/graph.json"
+  );
 }
 
-export async function loadMergedGraphData({
+async function loadLegacyMergedGraph({
   baseUrl,
   corporateUrl,
-  expandedNodesUrl = "./output/expanded_nodes.json",
-  expandedEdgesUrl = "./output/expanded_edges.json",
-  candidateNodesUrl = "./output/candidate_nodes.json",
-  onStatus = () => {},
-} = {}) {
+  expandedNodesUrl,
+  expandedEdgesUrl,
+  candidateNodesUrl,
+  onStatus,
+}) {
   onStatus("Fetching federal hierarchy…");
   const basePromise = fetchJson(baseUrl);
   onStatus("Fetching corporate expansion…");
@@ -383,4 +461,64 @@ export async function loadMergedGraphData({
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
   return mergedGraph;
+}
+
+async function fetchJson(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    const error = new Error(`Failed to load ${url}: ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
+  return response.json();
+}
+
+export async function loadMergedGraphData({
+  baseUrl,
+  corporateUrl,
+  primaryUrl = getPrimaryGraphUrl(baseUrl),
+  expandedNodesUrl = "./output/expanded_nodes.json",
+  expandedEdgesUrl = "./output/expanded_edges.json",
+  candidateNodesUrl = "./output/candidate_nodes.json",
+  onStatus = () => {},
+} = {}) {
+  onStatus("Fetching corporate expansion…");
+  const corporatePromise = fetchJson(corporateUrl).catch((error) => {
+    if (error.status === 404) {
+      return null;
+    }
+    return null;
+  });
+  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch((error) => {
+    if (error.status === 404) {
+      return [];
+    }
+    return [];
+  });
+  const primaryPromise = fetchJson(primaryUrl);
+
+  onStatus("Fetching verified graph export…");
+  try {
+    const primaryRaw = await primaryPromise;
+    const [corporateData, candidateNodes] = await Promise.all([corporatePromise, candidateNodesPromise]);
+    const primaryData = normalizeNode(primaryRaw);
+    const mergedGraph = corporateData ? mergeExpansionGraph(primaryData, cloneValue(corporateData)) : primaryData;
+    mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
+    trimDepth(mergedGraph);
+    onStatus("Indexing verified graph export…");
+    return mergedGraph;
+  } catch (primaryError) {
+    if (primaryUrl !== baseUrl) {
+      onStatus("Primary graph export unavailable, falling back to legacy hierarchy…");
+      return loadLegacyMergedGraph({
+        baseUrl,
+        corporateUrl,
+        expandedNodesUrl,
+        expandedEdgesUrl,
+        candidateNodesUrl,
+        onStatus,
+      });
+    }
+    throw primaryError;
+  }
 }

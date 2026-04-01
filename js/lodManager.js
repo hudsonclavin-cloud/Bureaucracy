@@ -19,7 +19,7 @@ const LEVELS = [
     pickRadius: 24,
     nodeScale: 0.2,
     tileSize: 120,
-    nodesPerTile: 1,
+    nodesPerTile: 2,
     autoExpand: false,
     autoExpandDistance: 0,
     visibleNodeBudget: 1200,
@@ -36,10 +36,10 @@ const LEVELS = [
     pickRadius: 22,
     nodeScale: 0.34,
     tileSize: 110,
-    nodesPerTile: 2,
+    nodesPerTile: 3,
     autoExpand: false,
     autoExpandDistance: 260,
-    visibleNodeBudget: 3000,
+    visibleNodeBudget: 3600,
   },
   {
     level: 2,
@@ -53,10 +53,10 @@ const LEVELS = [
     pickRadius: 20,
     nodeScale: 0.5,
     tileSize: 100,
-    nodesPerTile: 3,
+    nodesPerTile: 4,
     autoExpand: true,
     autoExpandDistance: 220,
-    visibleNodeBudget: 8000,
+    visibleNodeBudget: 9000,
   },
   {
     level: 3,
@@ -70,10 +70,10 @@ const LEVELS = [
     pickRadius: 18,
     nodeScale: 0.68,
     tileSize: 92,
-    nodesPerTile: 4,
+    nodesPerTile: 6,
     autoExpand: true,
     autoExpandDistance: 180,
-    visibleNodeBudget: 18000,
+    visibleNodeBudget: 20000,
   },
   {
     level: 4,
@@ -87,10 +87,10 @@ const LEVELS = [
     pickRadius: 16,
     nodeScale: 1,
     tileSize: 84,
-    nodesPerTile: 6,
+    nodesPerTile: 8,
     autoExpand: true,
     autoExpandDistance: 150,
-    visibleNodeBudget: 28000,
+    visibleNodeBudget: 32000,
   },
 ];
 
@@ -162,11 +162,11 @@ function getClusterKind(data) {
 }
 
 const CLUSTER_THRESHOLDS = {
-  agency: { minDescendants: [12, 10, 8, 6, Infinity], collapseDistance: [9999, 360, 280, 220, 0] },
-  bureau: { minDescendants: [10, 8, 7, 5, Infinity], collapseDistance: [9999, 320, 240, 190, 0] },
-  office: { minDescendants: [8, 6, 5, 4, Infinity], collapseDistance: [9999, 260, 190, 150, 0] },
-  positions: { minDescendants: [6, 5, 4, 3, Infinity], collapseDistance: [9999, 220, 165, 135, 0] },
-  group: { minDescendants: [8, 7, 6, 5, Infinity], collapseDistance: [9999, 280, 220, 180, 0] },
+  agency: { minDescendants: [18, 16, 14, 10, Infinity], collapseDistance: [9999, 420, 320, 240, 0] },
+  bureau: { minDescendants: [16, 14, 12, 9, Infinity], collapseDistance: [9999, 380, 280, 210, 0] },
+  office: { minDescendants: [13, 11, 9, 7, Infinity], collapseDistance: [9999, 320, 230, 175, 0] },
+  positions: { minDescendants: [10, 8, 6, 5, Infinity], collapseDistance: [9999, 260, 190, 150, 0] },
+  group: { minDescendants: [14, 12, 10, 8, Infinity], collapseDistance: [9999, 350, 260, 200, 0] },
 };
 
 export function createLodManager({ maxDepth = Infinity } = {}) {
@@ -231,7 +231,7 @@ export function createLodManager({ maxDepth = Infinity } = {}) {
       if (lodState.clusterPositionsOnly) {
         return nodeObj.depth >= lodState.visibleDepth - 1;
       }
-      return nodeObj.depth <= lodState.visibleDepth;
+      return nodeObj.depth < lodState.visibleDepth - 1;
     },
   };
 }

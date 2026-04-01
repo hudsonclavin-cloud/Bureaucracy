@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260312c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
+import { createGovernmentGraph } from "./graph.js?v=20260401c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260401c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -69,6 +69,122 @@ function setText(element, value) {
   if (element.textContent !== value) {
     element.textContent = value;
   }
+}
+
+function uniqueStrings(values) {
+  const result = [];
+  const seen = new Set();
+  for (const value of values || []) {
+    const normalized = String(value || "").trim();
+    if (!normalized) {
+      continue;
+    }
+    const key = normalized.toLowerCase();
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    result.push(normalized);
+  }
+  return result;
+}
+
+function parseAmountValue(value) {
+  if (Number.isFinite(value)) {
+    return value;
+  }
+  const text = String(value || "").trim();
+  if (!text) {
+    return null;
+  }
+  const normalized = text.replace(/[$,]/g, "").replace(/[^0-9.\-]/g, "");
+  if (!normalized || normalized === "-" || normalized === "." || normalized === "-.") {
+    return null;
+  }
+  const numeric = Number(normalized);
+  return Number.isFinite(numeric) ? numeric : null;
+}
+
+function formatCurrency(value) {
+  const numeric = parseAmountValue(value);
+  if (!Number.isFinite(numeric)) {
+    return null;
+  }
+  return new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(numeric);
+}
+
+function getNodeCostEvidence(data) {
+  const amountSources = [
+    { key: "resolved_total_amount", label: "Resolved Total" },
+    { key: "direct_outlay_amount", label: "Direct Outlay" },
+    { key: "rollup_total_amount", label: "Rollup Total" },
+    { key: "annual_budget", label: "Annual Budget" },
+    { key: "budget", label: "Budget" },
+  ];
+  const selected = amountSources.find(({ key }) => parseAmountValue(data?.[key]) !== null);
+  const amountKey = selected?.key || null;
+  const amountLabel = selected?.label || null;
+  const amountValue = amountKey ? formatCurrency(data[amountKey]) : null;
+  const statusParts = uniqueStrings([
+    data?.cost_status,
+    data?.cost_basis,
+    data?.cost_validation,
+    data?.budget_source,
+    data?.amount_kind,
+  ]);
+  const statusText = statusParts.join(" | ");
+  const lowered = statusText.toLowerCase();
+  let confidenceLabel = "unknown";
+  if (
+    lowered.includes("official") ||
+    lowered.includes("verified") ||
+    lowered.includes("direct") ||
+    lowered.includes("matched")
+  ) {
+    confidenceLabel = "official";
+  } else if (
+    lowered.includes("estimate") ||
+    lowered.includes("allocated") ||
+    lowered.includes("scaled") ||
+    lowered.includes("estimated")
+  ) {
+    confidenceLabel = "estimated";
+  } else if (amountKey) {
+    confidenceLabel = amountKey === "direct_outlay_amount" ? "official" : "estimated";
+  }
+  return {
+    amountKey,
+    amountLabel,
+    amountValue,
+    statusText,
+    confidenceLabel,
+  };
+}
+
+function buildCostStatRows(data) {
+  const evidence = getNodeCostEvidence(data);
+  const rows = [];
+
+  if (evidence.amountValue) {
+    const label = evidence.amountLabel
+      ? `${evidence.amountLabel.toUpperCase()} (${evidence.confidenceLabel.toUpperCase()})`
+      : `COST (${evidence.confidenceLabel.toUpperCase()})`;
+    rows.push([label, evidence.amountValue]);
+  }
+
+  if (evidence.statusText) {
+    rows.push(["COST STATUS", evidence.statusText]);
+  }
+
+  if (!evidence.amountValue && !evidence.statusText && data?.budget) {
+    rows.push(["BUDGET", data.budget]);
+  }
+
+  return rows;
 }
 
 function showLoader(label) {
@@ -479,9 +595,6 @@ function renderInfoPanel(nodeObj) {
   if (data.employees) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
-  if (data.budget) {
-    statRows.push(["BUDGET", data.budget]);
-  }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
   }
@@ -490,6 +603,7 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["CLUSTER TIER", clusterTierLabel]);
     statRows.push(["LOADED BRANCHES", loadedBranchCount.toLocaleString()]);
   }
+  statRows.push(...buildCostStatRows(data));
   statRows.push(["DEPTH", String(nodeObj.depth)]);
 
   for (const [label, value] of statRows) {

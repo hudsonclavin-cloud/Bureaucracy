@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260312a";
+import { createLodManager } from "./lodManager.js?v=20260401c";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -9,6 +9,9 @@ const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
 const NODE_RADIUS = 4;
 const NODE_OPACITY = 0.92;
+const SOFT_NODE_OPACITY = 0.42;
+const SOFT_PARTIAL_OPACITY = 0.74;
+const SOFT_CANDIDATE_OPACITY = 0.52;
 const EXPANSION_TIME_BUDGET_MS = 8;
 const EXPANSION_CHILD_BUDGET = MAX_BATCH;
 const EXPANSION_PARENT_BATCH = MAX_BATCH;
@@ -19,12 +22,12 @@ const REPULSION = -60;
 const LINK_DISTANCE = 30;
 const DAMPING = 0.9;
 const MIN_DISTANCE = 5;
-const OUTWARD_FORCE = 0.02;
+const OUTWARD_FORCE = 0.015;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
 const BRANCH_SECTOR_BLEND = 0.62;
 const BRANCH_PARENT_BLEND = 0.32;
-const BRANCH_FORCE = 0.018;
+const BRANCH_FORCE = 0.014;
 const FLY_TURN_MULTIPLIER = 3;
 const FLY_MOVE_SPEED = 120;
 const FLY_LOOK_DISTANCE = 42;
@@ -352,7 +355,7 @@ export function createGovernmentGraph({
     if (data?.isCandidate) {
       return "candidate";
     }
-    const status = String(data?.verificationStatus || "verified").toLowerCase();
+    const status = String(data?.verificationStatus || "unverified").toLowerCase();
     if (status === "partial") {
       return "partial";
     }
@@ -667,7 +670,7 @@ export function createGovernmentGraph({
         allowed.add(entries[i].data.id);
       }
       for (const entry of entries) {
-        if (entry.importanceScore >= 250_000) {
+        if (entry.importanceScore >= 220_000) {
           allowed.add(entry.data.id);
         }
       }
@@ -882,28 +885,28 @@ export function createGovernmentGraph({
     if (styleKey === "partial") {
       return {
         color: baseColor.clone().lerp(whiteColor, 0.12),
-        emissive: baseColor.clone().multiplyScalar(0.42),
-        emissiveIntensity: 0.12,
-        opacity: 0.64,
+        emissive: baseColor.clone().multiplyScalar(0.35),
+        emissiveIntensity: 0.11,
+        opacity: SOFT_PARTIAL_OPACITY,
         wireframe: false,
       };
     }
     if (styleKey === "unverified") {
       return {
-        color: baseColor.clone().lerp(whiteColor, 0.18),
-        emissive: baseColor.clone().multiplyScalar(0.08),
-        emissiveIntensity: 0.05,
-        opacity: 0.2,
-        wireframe: true,
+        color: baseColor.clone().lerp(whiteColor, 0.12),
+        emissive: baseColor.clone().multiplyScalar(0.12),
+        emissiveIntensity: 0.08,
+        opacity: SOFT_NODE_OPACITY,
+        wireframe: false,
       };
     }
     if (styleKey === "candidate") {
       return {
         color: baseColor.clone().lerp(whiteColor, 0.2),
-        emissive: baseColor.clone().multiplyScalar(0.12),
-        emissiveIntensity: 0.06,
-        opacity: 0.16,
-        wireframe: true,
+        emissive: baseColor.clone().multiplyScalar(0.14),
+        emissiveIntensity: 0.08,
+        opacity: SOFT_CANDIDATE_OPACITY,
+        wireframe: false,
       };
     }
     return {
