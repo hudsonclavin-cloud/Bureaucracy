@@ -1,18 +1,6 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 import { QUEST_VR_CONFIG } from "./vrConfig.js?v=20260324vr2";
 
-const VR_THEME = {
-  red: "#ff3b30",
-  blue: "#007aff",
-  yellow: "#ffd60a",
-  green: "#34c759",
-  white: "#f7fbff",
-  ink: "#050814",
-  panel: "rgba(7, 11, 22, 0.92)",
-  panelSoft: "rgba(9, 14, 28, 0.88)",
-  line: "rgba(255, 255, 255, 0.16)",
-};
-
 function clampText(value, maxLength = 150) {
   const text = String(value || "").trim();
   if (!text) {
@@ -127,41 +115,37 @@ export function createVrHud({
     lastSignature = signature;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const bgGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    bgGradient.addColorStop(0, VR_THEME.panel);
-    bgGradient.addColorStop(0.5, VR_THEME.ink);
-    bgGradient.addColorStop(1, VR_THEME.panelSoft);
-    drawRoundedRect(0, 0, canvas.width, canvas.height, 34, bgGradient, VR_THEME.line);
-    drawRoundedRect(28, 26, canvas.width - 56, 92, 18, "rgba(16, 22, 40, 0.98)");
-    drawRoundedRect(28, 134, canvas.width - 56, 230, 18, "rgba(9, 12, 20, 0.86)");
-    drawRoundedRect(28, 382, canvas.width - 56, 102, 18, "rgba(11, 16, 28, 0.86)");
-    drawRoundedRect(28, 500, canvas.width - 56, 112, 18, "rgba(9, 12, 20, 0.86)");
-    drawRoundedRect(28, 620 - 88, canvas.width - 56, 60, 18, "rgba(12, 18, 30, 0.86)");
+    drawRoundedRect(0, 0, canvas.width, canvas.height, 34, "rgba(4, 8, 16, 0.92)", "rgba(200, 168, 74, 0.35)");
+    drawRoundedRect(28, 26, canvas.width - 56, 92, 18, "rgba(12, 20, 34, 0.96)");
+    drawRoundedRect(28, 134, canvas.width - 56, 230, 18, "rgba(10, 12, 18, 0.84)");
+    drawRoundedRect(28, 382, canvas.width - 56, 102, 18, "rgba(18, 18, 28, 0.84)");
+    drawRoundedRect(28, 500, canvas.width - 56, 112, 18, "rgba(10, 12, 18, 0.84)");
+    drawRoundedRect(28, 620 - 88, canvas.width - 56, 60, 18, "rgba(16, 20, 28, 0.84)");
 
-    ctx.fillStyle = VR_THEME.yellow;
+    ctx.fillStyle = "#e8c86a";
     ctx.font = "700 44px Georgia";
     ctx.fillText(name, 48, 72);
 
-    ctx.fillStyle = VR_THEME.blue;
+    ctx.fillStyle = "#8fa0bf";
     ctx.font = "600 20px IBM Plex Mono";
     ctx.fillText(type.toUpperCase(), 50, 104);
 
-    let nextY = drawWrappedText(desc, 48, 178, 920, 34, VR_THEME.white, "28px IBM Plex Mono");
-    nextY = drawWrappedText(`Children: ${childrenCount}    Queue: ${stats.pendingExpansions}    View: ${stats.lodLabel}`, 48, Math.max(294, nextY + 18), 920, 32, VR_THEME.green, "24px IBM Plex Mono");
+    let nextY = drawWrappedText(desc, 48, 178, 920, 34, "#d7d2c5", "28px IBM Plex Mono");
+    nextY = drawWrappedText(`Children: ${childrenCount}    Queue: ${stats.pendingExpansions}    View: ${stats.lodLabel}`, 48, Math.max(294, nextY + 18), 920, 32, "#9fb2d9", "24px IBM Plex Mono");
 
-    ctx.fillStyle = VR_THEME.red;
+    ctx.fillStyle = "#e8c86a";
     ctx.font = "700 24px IBM Plex Mono";
     ctx.fillText("TARGET", 50, 420);
-    ctx.fillStyle = VR_THEME.white;
+    ctx.fillStyle = "#d2d7e2";
     ctx.font = "26px IBM Plex Mono";
     ctx.fillText(hoverText, 50, 456);
 
-    ctx.fillStyle = VR_THEME.blue;
+    ctx.fillStyle = "#e8c86a";
     ctx.font = "700 24px IBM Plex Mono";
     ctx.fillText("TRACE ORIGIN", 50, 536);
-    drawWrappedText(traceText, 50, 572, 920, 28, VR_THEME.white, "22px IBM Plex Mono");
+    drawWrappedText(traceText, 50, 572, 920, 28, "#d2d7e2", "22px IBM Plex Mono");
 
-    ctx.fillStyle = VR_THEME.green;
+    ctx.fillStyle = "#e8c86a";
     ctx.font = "700 24px IBM Plex Mono";
     ctx.fillText("CONTROLS", 520, 420);
     drawWrappedText(
@@ -170,14 +154,14 @@ export function createVrHud({
       456,
       430,
       28,
-      VR_THEME.white,
+      "#d2d7e2",
       "22px IBM Plex Mono",
     );
 
-    ctx.fillStyle = VR_THEME.yellow;
+    ctx.fillStyle = "#e8c86a";
     ctx.font = "700 20px IBM Plex Mono";
     ctx.fillText("STATUS", 50, 580);
-    drawWrappedText(statusMessage, 160, 580, 800, 26, VR_THEME.blue, "22px IBM Plex Mono");
+    drawWrappedText(statusMessage, 160, 580, 800, 26, "#9fb2d9", "22px IBM Plex Mono");
 
     texture.needsUpdate = true;
   }

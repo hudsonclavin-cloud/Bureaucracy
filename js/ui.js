@@ -1,7 +1,6 @@
-import { createGovernmentGraph } from "./graph.js?v=20260401b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260401b";
-import { BRANCH_COLORS, UI_ACCENTS, VERIFICATION_BADGES, hexToRgba } from "./theme.js?v=20260401b";
-import { createVrMode } from "./vrMode.js?v=20260401a";
+import { createGovernmentGraph } from "./graph.js?v=20260327a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
+import { createVrMode } from "./vrMode.js?v=20260324vr2";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -14,12 +13,6 @@ const shouldBootUi = (() => {
   window.__bureaucracy_ui_loaded__ = true;
   return true;
 })();
-
-function resetUiBootGuard() {
-  if (typeof window !== "undefined") {
-    delete window.__bureaucracy_ui_loaded__;
-  }
-}
 
 const dom = {
   loading: document.getElementById("loading"),
@@ -49,6 +42,12 @@ const dom = {
   btnFlyMode: document.getElementById("btn-fly-mode"),
   btnCollapse: document.getElementById("btn-collapse"),
   btnVr: document.getElementById("btn-vr"),
+  btnHome: document.getElementById("btn-home"),
+  btnResetCamera: document.getElementById("btn-reset-camera"),
+  btnFitBranch: document.getElementById("btn-fit-branch"),
+  btnCollapseAll: document.getElementById("btn-collapse-all"),
+  btnCopyShareLink: document.getElementById("btn-copy-share-link"),
+  btnExportJson: document.getElementById("btn-export-json"),
   searchInput: document.getElementById("search-input"),
   searchResults: document.getElementById("search-results"),
   tooltip: document.getElementById("tooltip"),
@@ -65,6 +64,7 @@ const dom = {
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
+  costTabEl: null,
 };
 
 const state = {
@@ -103,8 +103,36 @@ const COST_VALIDATION_LABELS = {
 };
 
 const AMOUNT_KIND_LABELS = {
-  fytd_net_outlays: "FYTD net outlays",
+  fytd_net_outlays: "Partial-year net outlays (FYTD)",
 };
+
+/**
+ * Returns FYTD context for a budget summary, including an annualized estimate.
+ * US fiscal year starts October 1.
+ */
+function getBudgetFytdContext(budgetSummary) {
+  if (!budgetSummary || budgetSummary.amount_kind !== "fytd_net_outlays") {
+    return null;
+  }
+  const amount = Number(budgetSummary.government_total_outlay_amount);
+  const recordDate = String(budgetSummary.record_date || "");
+  const fiscalYear = String(budgetSummary.fiscal_year || "");
+  if (!amount || !recordDate) {
+    return null;
+  }
+  const [yr, mo] = recordDate.split("-").map(Number);
+  if (!yr || !mo) {
+    return null;
+  }
+  // Months elapsed since Oct 1 of the fiscal year start
+  const fyStartYear = mo >= 10 ? yr : yr - 1;
+  const monthsElapsed = mo >= 10 ? mo - 9 : mo + 3;
+  if (monthsElapsed <= 0) {
+    return null;
+  }
+  const annualized = amount * (12 / monthsElapsed);
+  return { amount, annualized, recordDate, fiscalYear, monthsElapsed };
+}
 
 function setText(element, value) {
   if (element.textContent !== value) {
@@ -235,10 +263,12 @@ function getCostTypeDetails(data) {
 
   const status = String(data?.cost_status || "").toLowerCase();
   if (status === "root_total") {
-    return {
-      label: COST_STATUS_LABELS.root_total,
-      detail: "Verified top-line Treasury outlays for the whole government.",
-    };
+    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
+    const fytd = getBudgetFytdContext(budgetSummary);
+    const detail = fytd
+      ? `Treasury net outlays through ${fytd.recordDate} (${fytd.monthsElapsed} of 12 months of FY${fytd.fiscalYear}). Estimated full-year: ${formatCurrency(fytd.annualized)}.`
+      : "Verified top-line Treasury outlays for the whole government.";
+    return { label: COST_STATUS_LABELS.root_total, detail };
   }
   if (status === "official") {
     return {
@@ -376,7 +406,10 @@ function updateStats(stats) {
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
   if (dom.statsCost) {
-    const operationSummary = `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
+    const fytd = getBudgetFytdContext(stats.budgetSummary);
+    const operationSummary = fytd
+      ? `${formatCurrency(stats.totalBudgetCost)} FYTD through ${fytd.recordDate} | est. ${formatCurrency(fytd.annualized)}/yr`
+      : `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
     const selectedContext = getNodeSelectionCostContext(state.graph?.getSelectedNode?.());
     if (selectedContext?.amount && Number.isFinite(selectedContext.amount)) {
       const selectionSummary = selectedContext.inherited
@@ -404,7 +437,6 @@ function hideLoadingOverlay(delay = 600) {
 function handleUiFailure(error, message = "UI failed to initialize. Open browser console for details.") {
   console.error(message, error);
   setText(dom.loadStatus, message);
-  resetUiBootGuard();
   hideLoadingOverlay();
 }
 
@@ -464,7 +496,7 @@ function ensureOriginUi() {
   originLabel.textContent = "ORIGIN PATH";
   originLabel.style.fontSize = "10px";
   originLabel.style.letterSpacing = "0.12em";
-  originLabel.style.color = UI_ACCENTS.textMuted;
+  originLabel.style.color = "#8f7a5d";
   originLabel.style.marginBottom = "6px";
   originWrap.appendChild(originLabel);
 
@@ -473,8 +505,8 @@ function ensureOriginUi() {
   originList.style.flexDirection = "column";
   originList.style.gap = "4px";
   originList.style.padding = "8px 10px";
-  originList.style.border = `1px solid ${hexToRgba(UI_ACCENTS.accent, 0.18)}`;
-  originList.style.background = UI_ACCENTS.panelSoft;
+  originList.style.border = "1px solid rgba(200,168,74,0.14)";
+  originList.style.background = "rgba(20,16,12,0.72)";
   originList.style.borderRadius = "10px";
   originWrap.appendChild(originList);
 
@@ -499,15 +531,15 @@ function ensureVerificationUi() {
   const verificationWrap = document.createElement("div");
   verificationWrap.style.marginTop = "10px";
   verificationWrap.style.padding = "10px";
-  verificationWrap.style.border = `1px solid ${hexToRgba(UI_ACCENTS.accent, 0.18)}`;
-  verificationWrap.style.background = UI_ACCENTS.panelSoft;
+  verificationWrap.style.border = "1px solid rgba(200,168,74,0.14)";
+  verificationWrap.style.background = "rgba(20,16,12,0.72)";
   verificationWrap.style.borderRadius = "10px";
 
   const title = document.createElement("div");
   title.textContent = "DATA VERIFICATION";
   title.style.fontSize = "10px";
   title.style.letterSpacing = "0.12em";
-  title.style.color = UI_ACCENTS.textMuted;
+  title.style.color = "#8f7a5d";
   title.style.marginBottom = "8px";
   verificationWrap.appendChild(title);
 
@@ -533,30 +565,46 @@ function ensureVerificationUi() {
   verificationWrap.appendChild(sources);
   verificationWrap.appendChild(lastVerified);
 
-  dom.infoPanel.appendChild(verificationWrap);
+  const tabSources = document.getElementById("tab-sources");
+  (tabSources || dom.infoPanel).appendChild(verificationWrap);
   dom.verificationWrap = verificationWrap;
   dom.verificationBadge = badge;
   dom.verificationStatus = status;
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+
+  // Tab switching
+  dom.infoPanel.querySelectorAll(".info-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      dom.infoPanel.querySelectorAll(".info-tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const tab = btn.dataset.tab;
+      const detailsEl = document.getElementById("tab-details");
+      const costEl = document.getElementById("tab-cost");
+      const sourcesEl = document.getElementById("tab-sources");
+      if (detailsEl) detailsEl.style.display = tab === "details" ? "" : "none";
+      if (costEl) costEl.style.display = tab === "cost" ? "" : "none";
+      if (sourcesEl) sourcesEl.style.display = tab === "sources" ? "" : "none";
+    });
+  });
 }
 
 function getVerificationBadgeConfig(data, evidence = getNodeVerificationEvidence(data)) {
   if (data.isCandidate) {
-    return VERIFICATION_BADGES.candidate;
+    return { label: "CANDIDATE", bg: "rgba(155,139,189,0.18)", border: "#9b8bbd", color: "#d6caef" };
   }
   if (!evidence.hasDirectEvidence && evidence.hasInheritedEvidence) {
-    return VERIFICATION_BADGES.inherited;
+    return { label: "INHERITED", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
   }
   const status = String(data.verificationStatus || "unverified").toLowerCase();
   if (status === "verified") {
-    return VERIFICATION_BADGES.verified;
+    return { label: "VERIFIED", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" };
   }
   if (status === "partial") {
-    return VERIFICATION_BADGES.partial;
+    return { label: "PARTIAL", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
   }
-  return VERIFICATION_BADGES.unverified;
+  return { label: "UNVERIFIED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" };
 }
 
 function ensureVerificationToggles() {
@@ -566,7 +614,7 @@ function ensureVerificationToggles() {
 
   const wrap = document.createElement("div");
   wrap.style.position = "fixed";
-  wrap.style.top = "182px";
+  wrap.style.top = "315px";
   wrap.style.left = "32px";
   wrap.style.zIndex = "20";
   wrap.style.display = "flex";
@@ -579,7 +627,7 @@ function ensureVerificationToggles() {
     label.style.alignItems = "center";
     label.style.gap = "8px";
     label.style.fontSize = "10px";
-    label.style.color = UI_ACCENTS.textSoft;
+    label.style.color = "#d4c4a1";
     label.style.pointerEvents = "auto";
 
     const checkbox = document.createElement("input");
@@ -595,8 +643,8 @@ function ensureVerificationToggles() {
   };
 
   const toggleUnverified = makeToggle("Show Unverified Nodes");
-  const toggleCandidates = makeToggle("Show Candidate Nodes");
-  toggleCandidates.checked = true;
+  const toggleCandidates = makeToggle("Show Unconfirmed Nodes (candidates)");
+  toggleCandidates.checked = false;
 
   document.body.appendChild(wrap);
   dom.togglesWrap = wrap;
@@ -614,17 +662,17 @@ function ensureVerificationLegend() {
   title.dataset.verificationLegend = "true";
   title.textContent = "Verification";
   title.style.fontSize = "8px";
-  title.style.color = UI_ACCENTS.textMuted;
+  title.style.color = "#8f7a5d";
   title.style.letterSpacing = "0.2em";
   title.style.textTransform = "uppercase";
   title.style.margin = "10px 0 5px";
   dom.legend.appendChild(title);
 
   const items = [
-    ["Verified", VERIFICATION_BADGES.verified.border],
-    ["Partial", VERIFICATION_BADGES.partial.border],
-    ["Unverified", VERIFICATION_BADGES.unverified.border],
-    ["Candidate", VERIFICATION_BADGES.candidate.border],
+    ["Verified", "#6fcf97"],
+    ["Partial", "#d9b55e"],
+    ["Unverified", "#8e7d62"],
+    ["Candidate", "#9b8bbd"],
   ];
   items.forEach(([labelText, color]) => {
     const row = document.createElement("div");
@@ -663,13 +711,13 @@ function renderVerificationPanel(data) {
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = "Sources";
   sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = UI_ACCENTS.textSoft;
+  sourcesLabel.style.color = "#d4c4a1";
   dom.verificationSources.appendChild(sourcesLabel);
 
   if (sourceUrls.length === 0) {
     const empty = document.createElement("div");
     empty.textContent = "No confirming sources recorded.";
-    empty.style.color = UI_ACCENTS.textMuted;
+    empty.style.color = "#8f7a5d";
     dom.verificationSources.appendChild(empty);
     return;
   }
@@ -686,7 +734,7 @@ function renderVerificationPanel(data) {
       host = url;
     }
     link.textContent = `• ${host}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
-    link.style.color = UI_ACCENTS.textSoft;
+    link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
 }
@@ -731,7 +779,7 @@ function renderVerificationPanelWithEvidence(data) {
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
   sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = UI_ACCENTS.textSoft;
+  sourcesLabel.style.color = "#d4c4a1";
   dom.verificationSources.appendChild(sourcesLabel);
 
   if (sourceUrls.length === 0) {
@@ -739,7 +787,7 @@ function renderVerificationPanelWithEvidence(data) {
     empty.textContent = evidence.hasInheritedEvidence
       ? "No direct sources on this node. Branch evidence exists but no sample links were available."
       : "No confirming sources recorded.";
-    empty.style.color = UI_ACCENTS.textMuted;
+    empty.style.color = "#8f7a5d";
     dom.verificationSources.appendChild(empty);
     return;
   }
@@ -757,7 +805,7 @@ function renderVerificationPanelWithEvidence(data) {
     }
     const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
     link.textContent = `â€¢ ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
-    link.style.color = UI_ACCENTS.textSoft;
+    link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
 }
@@ -802,7 +850,7 @@ function renderVerificationPanelWithEvidenceClean(data) {
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
   sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = UI_ACCENTS.textSoft;
+  sourcesLabel.style.color = "#d4c4a1";
   dom.verificationSources.appendChild(sourcesLabel);
 
   if (sourceUrls.length === 0) {
@@ -810,10 +858,19 @@ function renderVerificationPanelWithEvidenceClean(data) {
     empty.textContent = evidence.hasInheritedEvidence
       ? "No direct sources on this node. Branch evidence exists but no sample links were available."
       : "No confirming sources recorded.";
-    empty.style.color = UI_ACCENTS.textMuted;
+    empty.style.color = "#8f7a5d";
     dom.verificationSources.appendChild(empty);
     return;
   }
+
+  const SOURCE_TYPE_LABELS = {
+    official_directory: "Official Website",
+    wikidata: "Wikidata",
+    federal_register: "Federal Register",
+    usaspending: "USAspending.gov",
+    treasury: "Treasury Fiscal Data",
+    enrichment: "Pipeline Enrichment",
+  };
 
   sourceUrls.forEach((url, index) => {
     const link = document.createElement("a");
@@ -826,11 +883,244 @@ function renderVerificationPanelWithEvidenceClean(data) {
     } catch (_error) {
       host = url;
     }
-    const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
-    link.textContent = `• ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
-    link.style.color = UI_ACCENTS.textSoft;
+    const rawType = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
+    const sourceTypeLabel = SOURCE_TYPE_LABELS[rawType] || rawType;
+    const lastVerifiedStr =
+      index === 0 && data.lastVerified
+        ? ` · ${new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}`
+        : "";
+    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}${lastVerifiedStr}`;
+    link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
+}
+
+function copyShareLink(nodeId) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("node", nodeId);
+  navigator.clipboard.writeText(url.toString()).then(() => {
+    if (dom.btnCopyShareLink) {
+      const orig = dom.btnCopyShareLink.textContent;
+      setText(dom.btnCopyShareLink, "Copied!");
+      window.setTimeout(() => setText(dom.btnCopyShareLink, orig), 1800);
+    }
+  }).catch(() => {
+    // Fallback: show the URL in a prompt so user can copy manually
+    window.prompt("Share link (copy manually):", url.toString());
+  });
+}
+
+function parseShareLink() {
+  const params = new URLSearchParams(window.location.search);
+  const nodeId = params.get("node");
+  if (nodeId) {
+    // Defer until graph is ready
+    window.requestAnimationFrame(function tryReveal() {
+      if (!state.graph) {
+        window.requestAnimationFrame(tryReveal);
+        return;
+      }
+      revealAndSelect(nodeId);
+    });
+  }
+}
+
+function getNodeCostBreakdown(nodeObj) {
+  if (!nodeObj?.data) {
+    return null;
+  }
+  const data = nodeObj.data;
+  const resolvedTotal = Number(data.__meta?.subtreeCost || data.resolved_total_amount || 0);
+  const directOutlay = Number(data.direct_outlay_amount || 0);
+  const rollupTotal = Number(data.rollup_total_amount || 0);
+  const directMetaCost = Number(data.__meta?.directCost || 0);
+  const operationTotal = Number(state.graph?.getStats?.().totalBudgetCost || 0);
+  const share = operationTotal > 0 && resolvedTotal > 0
+    ? (resolvedTotal / operationTotal) * 100
+    : null;
+  const costType = getCostTypeDetails(data);
+  const budgetBasis = getBudgetBasisLabel(data);
+  return {
+    resolvedTotal,
+    directOutlay,
+    rollupTotal,
+    directMetaCost,
+    operationTotal,
+    share,
+    costType,
+    budgetBasis,
+    costStatus: data.cost_status || null,
+    costBasis: data.cost_basis || null,
+    costValidation: data.cost_validation || null,
+    budgetSource: data.budget_source || data.source_system || null,
+    budgetYear: data.budget_year || null,
+    amountKind: data.amount_kind || null,
+    budgetSummary: state.graph?.getStats?.()?.budgetSummary || null,
+  };
+}
+
+function renderCostTab(nodeObj) {
+  const el = document.getElementById("tab-cost");
+  if (!el) {
+    return;
+  }
+  dom.costTabEl = el;
+  el.replaceChildren();
+
+  if (!nodeObj?.data) {
+    const empty = document.createElement("div");
+    empty.textContent = "Select a node to see cost details.";
+    empty.style.color = "#6a5a3a";
+    empty.style.fontSize = "10px";
+    el.appendChild(empty);
+    return;
+  }
+
+  const breakdown = getNodeCostBreakdown(nodeObj);
+  if (!breakdown) {
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+
+  // Cost confidence badge
+  const costBadgeConfig = {
+    root_total: { label: "TREASURY TOTAL", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
+    official: { label: "OFFICIAL ROLLUP", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
+    scaled_official: { label: "OFFICIAL (SCALED)", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" },
+    allocated: { label: "ESTIMATED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" },
+    unavailable: { label: "UNAVAILABLE", bg: "rgba(80,60,60,0.18)", border: "#6a4040", color: "#a08080" },
+  };
+  const badgeCfg = costBadgeConfig[breakdown.costStatus] || costBadgeConfig.unavailable;
+  const badge = document.createElement("span");
+  badge.className = "cost-badge";
+  badge.textContent = badgeCfg.label;
+  badge.style.background = badgeCfg.bg;
+  badge.style.border = `1px solid ${badgeCfg.border}`;
+  badge.style.color = badgeCfg.color;
+  frag.appendChild(badge);
+
+  const makeRow = (label, value) => {
+    const row = document.createElement("div");
+    row.className = "info-stat";
+    const lbl = document.createElement("span");
+    lbl.className = "info-stat-label";
+    lbl.textContent = label;
+    const val = document.createElement("span");
+    val.className = "info-stat-val";
+    val.textContent = value;
+    row.appendChild(lbl);
+    row.appendChild(val);
+    return row;
+  };
+
+  // Cost type and description
+  frag.appendChild(makeRow("COST TYPE", breakdown.costType.label));
+
+  // Main cost figures
+  if (breakdown.resolvedTotal) {
+    frag.appendChild(makeRow("TOTAL (SUBTREE)", formatCurrency(breakdown.resolvedTotal)));
+  }
+  if (breakdown.directOutlay) {
+    frag.appendChild(makeRow("DIRECT OUTLAY", formatCurrency(breakdown.directOutlay)));
+  }
+  if (breakdown.rollupTotal) {
+    frag.appendChild(makeRow("OFFICIAL ROLLUP", formatCurrency(breakdown.rollupTotal)));
+  }
+  if (breakdown.directMetaCost && breakdown.directMetaCost !== breakdown.directOutlay) {
+    frag.appendChild(makeRow("DIRECT COST (COMPUTED)", formatCurrency(breakdown.directMetaCost)));
+  }
+
+  // Share of government
+  if (breakdown.share !== null) {
+    frag.appendChild(makeRow("SHARE OF TOTAL", `${breakdown.share.toFixed(breakdown.share < 0.01 ? 4 : 2)}%`));
+
+    // Bar
+    const barWrap = document.createElement("div");
+    barWrap.className = "cost-bar";
+    const barFill = document.createElement("div");
+    barFill.className = "cost-bar-fill";
+    barFill.style.width = `${Math.min(100, breakdown.share)}%`;
+    barFill.style.background = badgeCfg.border;
+    barWrap.appendChild(barFill);
+    frag.appendChild(barWrap);
+  }
+
+  // Methodology
+  const methodTitle = document.createElement("div");
+  methodTitle.className = "cost-section-title";
+  methodTitle.style.marginTop = "12px";
+  methodTitle.textContent = "COST METHODOLOGY";
+  frag.appendChild(methodTitle);
+
+  frag.appendChild(makeRow("METHODOLOGY", breakdown.costType.detail || "—"));
+  if (breakdown.costBasis) {
+    frag.appendChild(makeRow("ALLOCATION BASIS", humanizeMetadataValue(breakdown.costBasis, COST_BASIS_LABELS)));
+  }
+  if (breakdown.costValidation) {
+    frag.appendChild(makeRow("VALIDATION", humanizeMetadataValue(breakdown.costValidation, COST_VALIDATION_LABELS)));
+  }
+
+  // Source metadata
+  const sourceTitle = document.createElement("div");
+  sourceTitle.className = "cost-section-title";
+  sourceTitle.style.marginTop = "12px";
+  sourceTitle.textContent = "SOURCE";
+  frag.appendChild(sourceTitle);
+
+  if (breakdown.budgetSource) {
+    frag.appendChild(makeRow("SOURCE SYSTEM", breakdown.budgetSource));
+  }
+  if (breakdown.budgetYear) {
+    frag.appendChild(makeRow("FISCAL YEAR", String(breakdown.budgetYear)));
+  }
+  if (breakdown.amountKind) {
+    frag.appendChild(makeRow("AMOUNT KIND", humanizeMetadataValue(breakdown.amountKind, AMOUNT_KIND_LABELS)));
+  }
+
+  // FYTD context
+  const fytd = getBudgetFytdContext(breakdown.budgetSummary);
+  if (fytd) {
+    frag.appendChild(makeRow("FYTD RECORD DATE", fytd.recordDate));
+    frag.appendChild(makeRow("MONTHS ELAPSED", `${fytd.monthsElapsed} / 12`));
+    frag.appendChild(makeRow("ANNUALIZED EST.", formatCurrency(fytd.annualized)));
+  }
+
+  el.appendChild(frag);
+}
+
+function exportSubtreeJson(nodeObj) {
+  if (!nodeObj?.data) {
+    return;
+  }
+
+  function collectNodes(obj) {
+    const result = [obj.data];
+    for (const child of obj.childObjs) {
+      result.push(...collectNodes(child));
+    }
+    return result;
+  }
+
+  const nodes = collectNodes(nodeObj);
+  const exportData = {
+    exportedAt: new Date().toISOString(),
+    rootNode: nodeObj.data.id,
+    nodeCount: nodes.length,
+    nodes,
+  };
+
+  const json = JSON.stringify(exportData, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  const safeName = (nodeObj.data.name || nodeObj.data.id || "branch").replace(/[^a-z0-9_-]/gi, "_").toLowerCase().slice(0, 40);
+  link.download = `bureaucracy_${safeName}_${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
 }
 
 function renderOriginTrace(nodeObj) {
@@ -861,13 +1151,13 @@ function renderOriginTrace(nodeObj) {
     row.style.display = "flex";
     row.style.alignItems = "center";
     row.style.gap = "8px";
-    row.style.color = item.data.color || UI_ACCENTS.textSoft;
+    row.style.color = item.data.color || "#d4c4a1";
     row.style.cursor = "pointer";
     row.style.paddingLeft = `${index * 10}px`;
 
     const arrow = document.createElement("span");
     arrow.textContent = index === 0 ? "•" : "→";
-    arrow.style.color = hexToRgba(UI_ACCENTS.text, 0.75);
+    arrow.style.color = "rgba(220, 210, 180, 0.75)";
     row.appendChild(arrow);
 
     const label = document.createElement("span");
@@ -883,11 +1173,24 @@ function renderOriginTrace(nodeObj) {
   dom.btnTraceOrigin.disabled = false;
 }
 
+function resetInfoTabs() {
+  const detailsEl = document.getElementById("tab-details");
+  const costEl = document.getElementById("tab-cost");
+  const sourcesEl = document.getElementById("tab-sources");
+  if (detailsEl) detailsEl.style.display = "";
+  if (costEl) costEl.style.display = "none";
+  if (sourcesEl) sourcesEl.style.display = "none";
+  document.querySelectorAll(".info-tab").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.tab === "details");
+  });
+}
+
 function renderInfoPanel(nodeObj) {
   if (!nodeObj) {
     return;
   }
 
+  resetInfoTabs();
   const data = nodeObj.data;
   const activeCluster = nodeObj.isCluster ? nodeObj : nodeObj.clusterRef || null;
   const clusterCount =
@@ -948,21 +1251,17 @@ function renderInfoPanel(nodeObj) {
     const share = Number.isFinite(totalCost) && totalCost !== 0
       ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
       : "0%";
-    statRows.push(["WHOLE OPERATION", `${formatCurrency(operationCost)} Â· ${share}`]);
+    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
+    const fytd = getBudgetFytdContext(budgetSummary);
+    const operationLabel = fytd
+      ? `${formatCurrency(operationCost)} FYTD (est. ${formatCurrency(fytd.annualized)}/yr) · ${share}`
+      : `${formatCurrency(operationCost)} · ${share}`;
+    statRows.push(["WHOLE OPERATION", operationLabel]);
   }
   if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
     const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
     if (budgetBasisRow) {
       budgetBasisRow[1] = getBudgetBasisLabel(data);
-    }
-  }
-  if (operationCost > 0) {
-    const operationRow = statRows.find((row) => row[0] === "WHOLE OPERATION");
-    const share = Number.isFinite(totalCost) && totalCost !== 0
-      ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
-      : "0%";
-    if (operationRow) {
-      operationRow[1] = `${formatCurrency(operationCost)} | ${share}`;
     }
   }
   if ((data.children || []).length > 0) {
@@ -1004,7 +1303,7 @@ function renderInfoPanel(nodeObj) {
 
       const dot = document.createElement("div");
       dot.className = "child-dot";
-      dot.style.background = child.color || BRANCH_COLORS.position;
+      dot.style.background = child.color || "#666";
       item.appendChild(dot);
 
       const label = document.createElement("span");
@@ -1032,8 +1331,8 @@ function renderInfoPanel(nodeObj) {
     if (children.length > 8) {
       const more = document.createElement("div");
       more.className = "child-item";
-      more.style.color = UI_ACCENTS.textMuted;
-      more.innerHTML = `<div class="child-dot" style="background:${BRANCH_COLORS.position}"></div><span>+ ${children.length - 8} more</span>`;
+      more.style.color = "#5a4a3a";
+      more.innerHTML = `<div class="child-dot" style="background:#333"></div><span>+ ${children.length - 8} more</span>`;
       fragment.appendChild(more);
     }
 
@@ -1074,7 +1373,13 @@ function renderInfoPanel(nodeObj) {
     renderOriginTrace(nodeObj);
   }
   renderVerificationPanelWithEvidenceClean(data);
+  renderCostTab(nodeObj);
   renderBreadcrumb(nodeObj);
+
+  // Show export button only when node has loaded children
+  if (dom.btnExportJson) {
+    dom.btnExportJson.style.display = nodeObj.childObjs && nodeObj.childObjs.length > 0 ? "block" : "none";
+  }
 }
 
 function updateTooltip(payload) {
@@ -1122,8 +1427,8 @@ function renderSearchResults(matches) {
     type.className = "sr-type";
     const status = match.isCandidate ? "CANDIDATE" : String(match.verificationStatus || "unverified").toUpperCase();
     type.textContent = `${match.type} — ${status}`;
-    type.style.color = match.color || BRANCH_COLORS.position;
-    type.style.borderColor = hexToRgba(match.color || BRANCH_COLORS.position, 0.25);
+    type.style.color = match.color || "#666";
+    type.style.borderColor = `${match.color || "#666"}40`;
     row.appendChild(type);
 
     row.addEventListener("click", () => {
@@ -1299,33 +1604,37 @@ function bindControls() {
   }
 
   if (dom.toggleCandidates) {
+    // Sync initial state: graph.js defaults showCandidateNodes to false
+    state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
     dom.toggleCandidates.addEventListener("change", () => {
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
     });
   }
 
-  dom.btnTraceOrigin.addEventListener("click", () => {
-    const selected = state.graph.getSelectedNode();
-    if (!selected || selected.isCluster) {
-      return;
-    }
+  if (dom.btnTraceOrigin) {
+    dom.btnTraceOrigin.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (!selected || selected.isCluster) {
+        return;
+      }
 
-    const currentTrace = state.graph.getOriginTrace();
-    const traceMatchesSelected =
-      currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
+      const currentTrace = state.graph.getOriginTrace();
+      const traceMatchesSelected =
+        currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
 
-    if (traceMatchesSelected) {
-      state.graph.clearOriginTrace();
-      state.tracedNodeId = null;
-    } else {
-      const originPath = state.graph.traceOrigin(selected);
-      state.graph.setOriginTrace(originPath);
-      state.tracedNodeId = selected.data.id;
-    }
+      if (traceMatchesSelected) {
+        state.graph.clearOriginTrace();
+        state.tracedNodeId = null;
+      } else {
+        const originPath = state.graph.traceOrigin(selected);
+        state.graph.setOriginTrace(originPath);
+        state.tracedNodeId = selected.data.id;
+      }
 
-    renderInfoPanel(selected);
-  });
+      renderInfoPanel(selected);
+    });
+  }
 
   dom.btnExpand.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
@@ -1346,8 +1655,21 @@ function bindControls() {
   });
 
   dom.btnExpandAll.addEventListener("click", () => {
-    if (!state.graph.getSelectedNode()) {
+    const selected = state.graph.getSelectedNode();
+    if (!selected) {
       return;
+    }
+    const stats = state.graph.getStats();
+    const unloaded = stats.totalNodeCount - stats.visibleNodeCount;
+    if (unloaded > 500) {
+      const confirmed = window.confirm(
+        `Expand all below "${selected.data?.name || "selected node"}"?\n\n` +
+        `~${unloaded.toLocaleString()} nodes are not yet loaded. This may be slow on large branches.\n\n` +
+        `Click Cancel Expand at any time to stop.`,
+      );
+      if (!confirmed) {
+        return;
+      }
     }
     expandProgressively(Infinity);
   });
@@ -1375,6 +1697,72 @@ function bindControls() {
     state.graph.setFullExpandRenderMode(false);
     state.graph.collapseNode(selected, { manual: true });
     renderInfoPanel(selected);
+  });
+
+  if (dom.btnHome) {
+    dom.btnHome.addEventListener("click", () => {
+      state.graph.navigateToRoot();
+      setText(dom.btnFlyMode, "Enable Fly Mode");
+    });
+  }
+
+  if (dom.btnResetCamera) {
+    dom.btnResetCamera.addEventListener("click", () => {
+      state.graph.resetCamera();
+      setText(dom.btnFlyMode, "Enable Fly Mode");
+    });
+  }
+
+  if (dom.btnFitBranch) {
+    dom.btnFitBranch.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        state.graph.fitBranch(selected);
+      }
+    });
+  }
+
+  if (dom.btnCollapseAll) {
+    dom.btnCollapseAll.addEventListener("click", () => {
+      stopProgressiveExpansion();
+      state.graph.collapseAll();
+      const root = state.graph.getRootNode();
+      if (root) {
+        state.graph.setSelectedNode(root);
+      }
+      updateStats(state.graph.getStats());
+    });
+  }
+
+  if (dom.btnCopyShareLink) {
+    dom.btnCopyShareLink.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected?.data?.id) {
+        copyShareLink(selected.data.id);
+      } else {
+        copyShareLink("the-constitution-of-the-united-states");
+      }
+    });
+  }
+
+  if (dom.btnExportJson) {
+    dom.btnExportJson.addEventListener("click", () => {
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        exportSubtreeJson(selected);
+      }
+    });
+  }
+
+  // Branch filter buttons
+  document.querySelectorAll(".branch-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      document.querySelectorAll(".branch-btn").forEach((b) => b.classList.remove("active"));
+      button.classList.add("active");
+      const branch = button.dataset.branch === "all" ? null : button.dataset.branch;
+      state.graph.filterByBranch(branch);
+      updateStats(state.graph.getStats());
+    });
   });
 
   document.querySelectorAll(".depth-btn").forEach((button) => {
@@ -1427,6 +1815,30 @@ function bindControls() {
   });
 }
 
+const INTRO_KEY = "bureaucracy_intro_v1";
+const introOverlay = document.getElementById("intro-overlay");
+if (introOverlay && !localStorage.getItem(INTRO_KEY)) {
+  introOverlay.style.display = "flex";
+}
+function dismissIntro(autoExpand) {
+  localStorage.setItem(INTRO_KEY, "1");
+  if (introOverlay) introOverlay.style.display = "none";
+  if (autoExpand && state.graph) {
+    const root = state.graph.getNodeById("the-constitution-of-the-united-states");
+    if (root) state.graph.expandNode(root, true);
+  }
+}
+document.getElementById("btn-intro-start")?.addEventListener("click", () => dismissIntro(true));
+document.getElementById("btn-intro-skip")?.addEventListener("click", () => dismissIntro(false));
+if (introOverlay) {
+  introOverlay.addEventListener("click", (e) => {
+    if (e.target === introOverlay) dismissIntro(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && introOverlay.style.display !== "none") dismissIntro(false);
+  });
+}
+
 function initUI() {
   updateBuildBadge();
   ensureOriginUi();
@@ -1462,10 +1874,6 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   state.graph.loadData(data);
-  state.searchIndex = state.graph.getSearchIndex();
-  safeInitUI();
-  hideLoadingOverlay();
-
   state.vrMode = createVrMode({
     graph: state.graph,
     button: dom.btnVr,
@@ -1479,16 +1887,16 @@ async function initGraphApp() {
       setText(dom.loadStatus, "VR mode unavailable.");
     },
   });
-  Promise.resolve(state.vrMode.init()).catch((error) => {
-    console.error("VR mode initialization failed", error);
-    setText(dom.loadStatus, "VR mode unavailable.");
-  });
+  await state.vrMode.init();
+  state.searchIndex = state.graph.getSearchIndex();
+  safeInitUI();
+  hideLoadingOverlay();
+  parseShareLink();
 }
 
 if (shouldBootUi) {
   initGraphApp().catch((error) => {
     console.error(error);
-    resetUiBootGuard();
     const message = window.location.protocol === "file:"
       ? "Failed to load explorer data. Open this page through a local web server, not file://."
       : "Failed to load explorer data.";

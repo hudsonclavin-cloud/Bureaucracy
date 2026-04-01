@@ -1,5 +1,3 @@
-import { BRANCH_COLORS, VERIFICATION_BADGES, canonicalizeThemeColor } from "./theme.js?v=20260401b";
-
 const DEFAULT_NODE = {
   id: "",
   name: "Unnamed Node",
@@ -7,7 +5,7 @@ const DEFAULT_NODE = {
   desc: "",
   employees: null,
   budget: null,
-  color: BRANCH_COLORS.position,
+  color: "#666666",
   sourceUrls: [],
   sourceTypes: [],
   confidenceScore: 0,
@@ -47,7 +45,7 @@ function normalizeNode(rawNode) {
   node.desc = typeof node.desc === "string" ? node.desc : "";
   node.employees = node.employees ?? null;
   node.budget = node.budget ?? null;
-  node.color = canonicalizeThemeColor(node.color, DEFAULT_NODE.color);
+  node.color = typeof node.color === "string" ? node.color : DEFAULT_NODE.color;
   node.sourceUrls = Array.isArray(node.sourceUrls) ? node.sourceUrls.map((value) => String(value)) : [];
   node.sourceTypes = Array.isArray(node.sourceTypes) ? node.sourceTypes.map((value) => String(value)) : [];
   node.confidenceScore = Number.isFinite(Number(node.confidenceScore)) ? Number(node.confidenceScore) : 0;
@@ -146,7 +144,7 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.cost_basis = sourceNode.cost_basis || targetNode.cost_basis;
   targetNode.cost_validation = sourceNode.cost_validation || targetNode.cost_validation;
   targetNode.official_website = sourceNode.official_website || targetNode.official_website;
-  targetNode.color = canonicalizeThemeColor(sourceNode.color || targetNode.color, targetNode.color);
+  targetNode.color = sourceNode.color || targetNode.color;
   targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));
   targetNode.sourceTypes = Array.from(new Set([...(targetNode.sourceTypes || []), ...(sourceNode.sourceTypes || [])]));
   targetNode.sourceCount = Math.max(targetNode.sourceCount || 0, sourceNode.sourceCount || 0, targetNode.sourceUrls.length);
@@ -175,7 +173,7 @@ function normalizeCandidateNode(rawCandidate) {
     type: String(rawCandidate?.type || "Candidate"),
     desc: String(rawCandidate?.desc || `Candidate node discovered via ${rawCandidate?.discoveryMethod || "automated discovery"}.`),
     budget: rawCandidate?.budget ?? null,
-    color: canonicalizeThemeColor(rawCandidate?.color, VERIFICATION_BADGES.candidate.border),
+    color: typeof rawCandidate?.color === "string" ? rawCandidate.color : "#9b8bbd",
     sourceUrls,
     sourceTypes: Array.isArray(rawCandidate?.sourceTypes)
       ? rawCandidate.sourceTypes
@@ -316,13 +314,16 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  baseRoot.relationships = rawEdges
+  const mappedEdges = rawEdges
     .filter((edge) => edge && edge.source && edge.target)
     .map((edge) => ({
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
     }));
+  if (mappedEdges.length > 0) {
+    baseRoot.relationships = mappedEdges;
+  }
 
   return baseRoot;
 }

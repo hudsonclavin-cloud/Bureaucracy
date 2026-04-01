@@ -1,14 +1,6 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
 import { QUEST_VR_CONFIG } from "./vrConfig.js?v=20260324vr2";
 
-const VR_THEME = {
-  red: 0xff3b30,
-  blue: 0x007aff,
-  yellow: 0xffd60a,
-  green: 0x34c759,
-  white: 0xf7fbff,
-};
-
 function getButtonPressed(gamepad, indices) {
   const list = Array.isArray(indices) ? indices : [indices];
   return list.some((index) => Boolean(gamepad?.buttons?.[index]?.pressed));
@@ -61,13 +53,13 @@ export function createVrControls({
     ]);
     const line = new THREE.Line(
       lineGeometry,
-      new THREE.LineBasicMaterial({ color: VR_THEME.blue, transparent: true, opacity: 0.9 }),
+      new THREE.LineBasicMaterial({ color: 0xc8a84a, transparent: true, opacity: 0.85 }),
     );
     line.name = `vr-ray-${index}`;
 
     const cursor = new THREE.Mesh(
       new THREE.SphereGeometry(0.02, 12, 12),
-      new THREE.MeshBasicMaterial({ color: VR_THEME.yellow }),
+      new THREE.MeshBasicMaterial({ color: 0xe8c86a }),
     );
     cursor.visible = false;
     controller.add(line);
@@ -115,11 +107,11 @@ export function createVrControls({
     positionAttr.setXYZ(0, 0, 0, 0);
     positionAttr.setXYZ(1, 0, 0, -targetDistance);
     positionAttr.needsUpdate = true;
-    controllerState.line.material.color.set(hit ? VR_THEME.yellow : VR_THEME.blue);
+    controllerState.line.material.color.set(hit ? 0xe8c86a : 0x5a7bb8);
     controllerState.cursor.visible = Boolean(hitPosition);
     if (hitPosition) {
       controllerState.cursor.position.copy(hitPosition);
-      controllerState.cursor.material.color.set(hit.isCluster ? VR_THEME.blue : VR_THEME.yellow);
+      controllerState.cursor.material.color.set(hit.isCluster ? 0x5a7bb8 : 0xe8c86a);
     }
   }
 
