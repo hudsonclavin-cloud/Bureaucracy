@@ -17,8 +17,7 @@ from data_pipeline.crawler.lobbying import crawl as crawl_lobbying
 from data_pipeline.crawler.official_directory import crawl as crawl_official_directory
 from data_pipeline.crawler.treasury_outlays import crawl as crawl_treasury_outlays
 from data_pipeline.crawler.usaspending import crawl as crawl_usaspending
-from data_pipeline.crawler.wikidata import crawl as crawl_wikidata
-from data_pipeline.crawler.wikidata import crawl_discovery_records as crawl_wikidata_discovery_records
+from data_pipeline.crawler.wikidata import crawl_combined as crawl_wikidata_combined
 from data_pipeline.discovery.source_discovery import (
     DEFAULT_OUTPUT_PATH as DEFAULT_CANDIDATE_OUTPUT,
     discover_candidates,
@@ -116,22 +115,28 @@ def run_pipeline(
     )
     frontier_path = write_frontier_targets(frontier_targets, frontier_output_path)
 
+    _wikidata_combined_cache: list[dict[str, Any]] = []
+
+    def _get_wikidata_combined() -> dict[str, Any]:
+        if not _wikidata_combined_cache:
+            _wikidata_combined_cache.append(crawl_wikidata_combined(
+                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
+                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
+                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+            ))
+        return _wikidata_combined_cache[0]
+
     if direct_payload_fetchers is None:
         direct_fetchers = {
             "usaspending": lambda: crawl_usaspending(
-                limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
-                awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
+                limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 150),
                 fiscal_year=fiscal_year,
             ),
             "treasury_outlays": lambda: crawl_treasury_outlays(
                 fiscal_year=fiscal_year,
                 timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 30),
             ),
-            "wikidata": lambda: crawl_wikidata(
-                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
-            ),
+            "wikidata": lambda: _get_wikidata_combined()["direct"],
             "lobbying": lambda: crawl_lobbying(
                 year=lobbying_year,
                 pages=getenv_int("PIPELINE_LOBBYING_PAGES", 5),
@@ -144,11 +149,7 @@ def run_pipeline(
         direct_fetchers = {f"payload_{index + 1}": fetcher for index, fetcher in enumerate(direct_fetchers)}
     if discovery_fetchers is None:
         raw_discovery_fetchers = {
-            "wikidata_records": lambda: crawl_wikidata_discovery_records(
-                hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
-                office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
-                subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
-            ),
+            "wikidata_records": lambda: _get_wikidata_combined()["discovery"],
             "official_directory_records": lambda: crawl_official_directory(
                 sources=frontier_targets,
                 max_records_per_source=getenv_int("PIPELINE_OFFICIAL_DIRECTORY_LIMIT", 150),
@@ -325,7 +326,33 @@ def run_pipeline(
     enrichment_path.parent.mkdir(parents=True, exist_ok=True)
     with enrichment_path.open("w", encoding="utf-8") as handle:
         json.dump(enrichment_stats, handle, indent=2)
+    create_snapshot(stats, PROJECT_ROOT)
     return stats
+
+
+def create_snapshot(stats: dict[str, Any], project_root: Path) -> Path | None:
+    import shutil
+    if not os.environ.get("PIPELINE_CREATE_SNAPSHOT"):
+        return None
+    ts = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
+    snapshot_dir = project_root / "saved_pages" / ts
+    snapshot_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(project_root / "index.html", snapshot_dir / "index.html")
+    shutil.copytree(project_root / "js", snapshot_dir / "js", dirs_exist_ok=True)
+    shutil.copytree(project_root / "data_expansion", snapshot_dir / "data_expansion",
+                    dirs_exist_ok=True)
+    out_dst = snapshot_dir / "output"
+    out_dst.mkdir(exist_ok=True)
+    for fname in ("graph.json", "expanded_nodes.json", "expanded_edges.json",
+                  "candidate_nodes.json", "pipeline_stats.json"):
+        src = project_root / "output" / fname
+        if src.exists():
+            shutil.copy2(src, out_dst / fname)
+    (snapshot_dir / "README.md").write_text(
+        f"# Snapshot {ts}\nNodes: {stats.get('nodes_after', '?')} | "
+        f"Run: {stats.get('timestamp', ts)}\n", encoding="utf-8",
+    )
+    return snapshot_dir
 
 
 def main() -> None:

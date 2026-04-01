@@ -116,21 +116,39 @@ class WikidataCrawler:
         payload = run_sparql(query_template.format(limit=limit))
         return payload.get("results", {}).get("bindings", [])
 
+    def fetch_all_bindings(
+        self,
+        *,
+        hierarchy_limit: int = 500,
+        office_holder_limit: int = 250,
+        subunit_limit: int = 500,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
+        time.sleep(self.request_delay)
+        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
+        time.sleep(self.request_delay)
+        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+        return hierarchy_rows, subunit_rows, office_rows
+
     def build_records(
         self,
         *,
         hierarchy_limit: int = 500,
         office_holder_limit: int = 250,
         subunit_limit: int = 500,
+        _prefetched: tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]] | None = None,
     ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
         nodes: list[dict[str, Any]] = []
         edges: list[dict[str, Any]] = []
 
-        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
-        time.sleep(self.request_delay)
-        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
-        time.sleep(self.request_delay)
-        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+        if _prefetched is not None:
+            hierarchy_rows, subunit_rows, office_rows = _prefetched
+        else:
+            hierarchy_rows, subunit_rows, office_rows = self.fetch_all_bindings(
+                hierarchy_limit=hierarchy_limit,
+                office_holder_limit=office_holder_limit,
+                subunit_limit=subunit_limit,
+            )
 
         for row in hierarchy_rows:
             agency_name = extract_label(row, "agencyLabel")
@@ -267,14 +285,18 @@ class WikidataCrawler:
         hierarchy_limit: int = 500,
         office_holder_limit: int = 250,
         subunit_limit: int = 500,
+        _prefetched: tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]] | None = None,
     ) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
 
-        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
-        time.sleep(self.request_delay)
-        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
-        time.sleep(self.request_delay)
-        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+        if _prefetched is not None:
+            hierarchy_rows, subunit_rows, office_rows = _prefetched
+        else:
+            hierarchy_rows, subunit_rows, office_rows = self.fetch_all_bindings(
+                hierarchy_limit=hierarchy_limit,
+                office_holder_limit=office_holder_limit,
+                subunit_limit=subunit_limit,
+            )
 
         for row in hierarchy_rows:
             agency_name = extract_label(row, "agencyLabel")
@@ -354,6 +376,23 @@ def crawl_discovery_records(
         office_holder_limit=office_holder_limit,
         subunit_limit=subunit_limit,
     )
+
+
+def crawl_combined(
+    *,
+    hierarchy_limit: int = 500,
+    office_holder_limit: int = 250,
+    subunit_limit: int = 500,
+) -> dict[str, Any]:
+    crawler = WikidataCrawler()
+    rows = crawler.fetch_all_bindings(
+        hierarchy_limit=hierarchy_limit,
+        office_holder_limit=office_holder_limit,
+        subunit_limit=subunit_limit,
+    )
+    nodes, edges = crawler.build_records(_prefetched=rows)
+    discovery = crawler.build_discovery_records(_prefetched=rows)
+    return {"direct": {"nodes": nodes, "edges": edges}, "discovery": discovery}
 
 
 if __name__ == "__main__":

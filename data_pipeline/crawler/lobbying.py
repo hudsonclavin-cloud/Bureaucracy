@@ -75,7 +75,6 @@ class LobbyingCrawler:
         return results
 
     def build_records(self, *, year: int, pages: int = 5, page_size: int = 50) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-        nodes: list[dict[str, Any]] = []
         edges: list[dict[str, Any]] = []
 
         for filing in self.fetch_filings(year=year, pages=pages, page_size=page_size):
@@ -89,16 +88,6 @@ class LobbyingCrawler:
                 continue
 
             client_id = generate_node_id(client_name, prefix="corporation")
-            nodes.append(
-                {
-                    "id": client_id,
-                    "name": client_name,
-                    "type": "Corporation",
-                    "desc": "Corporate entity discovered through lobbying disclosure filings.",
-                    "color": "#4ac88a",
-                    "sourceUrls": [f"{BASE_URLS[0]}filings/"],
-                }
-            )
 
             government_entities = (
                 filing.get("government_entities")
@@ -120,21 +109,6 @@ class LobbyingCrawler:
                     continue
 
                 agency_id = generate_node_id(agency_name)
-                issue_text = normalize_name(entity.get("issue_description") or entity.get("specific_issues") or "")
-                desc = "Government lobbying target discovered through Senate LDA filings."
-                if issue_text and issue_text != DEFAULT_ISSUE_TEXT:
-                    desc = f"{desc} Filing issue: {issue_text}."
-
-                nodes.append(
-                    {
-                        "id": agency_id,
-                        "name": agency_name,
-                        "type": "Agency",
-                        "desc": desc,
-                        "color": "#4a8ac8",
-                        "sourceUrls": [f"{BASE_URLS[0]}filings/"],
-                    }
-                )
                 edges.append(
                     {
                         "source": client_id,
@@ -143,7 +117,7 @@ class LobbyingCrawler:
                     }
                 )
 
-        return nodes, edges
+        return [], edges
 
 
 DEFAULT_ISSUE_TEXT = "Unnamed Node"
