@@ -1,6 +1,6 @@
-import { createGovernmentGraph } from "./graph.js?v=20260326h";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
-import { createVrMode } from "./vrMode.js?v=20260324vr2";
+import { createGovernmentGraph } from "./graph.js?v=20260401a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260401a";
+import { createVrMode } from "./vrMode.js?v=20260401a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -558,7 +558,7 @@ function ensureVerificationToggles() {
 
   const wrap = document.createElement("div");
   wrap.style.position = "fixed";
-  wrap.style.top = "130px";
+  wrap.style.top = "182px";
   wrap.style.left = "32px";
   wrap.style.zIndex = "20";
   wrap.style.display = "flex";
@@ -819,7 +819,7 @@ function renderVerificationPanelWithEvidenceClean(data) {
       host = url;
     }
     const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
-    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
+    link.textContent = `• ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
     link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
@@ -1355,6 +1355,10 @@ function bindControls() {
     setText(dom.btnFlyMode, enabled ? "Disable Fly Mode" : "Enable Fly Mode");
   });
 
+  document.addEventListener("pointerlockchange", () => {
+    setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
+  });
+
   dom.btnCollapse.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
     if (!selected) {
@@ -1419,6 +1423,8 @@ function initUI() {
   updateBuildBadge();
   ensureOriginUi();
   ensureVerificationUi();
+  ensureVerificationToggles();
+  ensureVerificationLegend();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }

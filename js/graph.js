@@ -3647,6 +3647,16 @@ export function createGovernmentGraph({
         state.keyState[event.code] = false;
       }
     });
+
+    document.addEventListener("pointerlockchange", () => {
+      if (document.pointerLockElement === canvas || !state.flyMode || renderer.xr.isPresenting) {
+        return;
+      }
+      syncOrbitStateFromFlyCamera();
+      stopFlyMovement();
+      state.flyMode = false;
+      state.renderDirty = true;
+    });
   }
 
   function loadData(data) {
@@ -3856,9 +3866,24 @@ export function createGovernmentGraph({
         syncFlyStateFromCamera();
         stopFlyMovement();
         state.targetZoom = Math.max(state.targetZoom, 1.6);
+        if (!renderer.xr.isPresenting && document.pointerLockElement !== canvas && typeof canvas.requestPointerLock === "function") {
+          try {
+            const maybePromise = canvas.requestPointerLock();
+            if (maybePromise?.catch) {
+              maybePromise.catch((error) => {
+                console.warn("Pointer lock request failed", error);
+              });
+            }
+          } catch (error) {
+            console.warn("Pointer lock request failed", error);
+          }
+        }
       } else {
         syncOrbitStateFromFlyCamera();
         stopFlyMovement();
+        if (document.pointerLockElement === canvas && typeof document.exitPointerLock === "function") {
+          document.exitPointerLock();
+        }
       }
       state.renderDirty = true;
       return state.flyMode;

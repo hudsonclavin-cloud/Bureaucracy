@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>U.S. Federal Government Snapshot — Treasury Validated</title>
+<title>U.S. Federal Government Explorer - Treasury Validated</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
@@ -215,11 +215,11 @@ body.dragging{cursor:grabbing;}
 
 <div id="title-panel">
   <h1>Government of the<br>United States</h1>
-  <p>3D Organizational Explorer Snapshot</p>
+  <p>3D Organizational Explorer</p>
   <div id="node-counter">0 / 0 nodes rendered</div>
 </div>
-<div id="build-badge">Build 20260326h-snapshot | loading data...</div>
-<a id="snapshot-link" href="../../index.html">Open Main Explorer</a>
+<div id="build-badge">Build 20260401a | loading data...</div>
+<a id="snapshot-link" href="./saved_pages/treasury_validated_snapshot_2026_03_26/index.html">Open Treasury Snapshot</a>
 
 <button class="btn btn-focus" id="btn-vr" type="button">Enter VR</button>
 
@@ -243,8 +243,8 @@ body.dragging{cursor:grabbing;}
 </div>
 
 <div id="info-panel">
-  <div id="info-name">—</div>
-  <div id="info-type">—</div>
+  <div id="info-name">-</div>
+  <div id="info-type">-</div>
   <div id="info-desc">Select any node to explore</div>
   <div id="info-stats"></div>
   <div id="info-children-label" style="display:none">Sub-units</div>
@@ -296,19 +296,19 @@ body.dragging{cursor:grabbing;}
 </div>
 
 <div id="controls-hint">Drag orbit · Shift+Drag pan · Scroll zoom · Click focus · Fly mode: WASD + Q/E</div>
-<div id="expand-loader">Loading branch…</div>
+<div id="expand-loader">Loading branch...</div>
 <div id="tooltip"></div>
 
 <script>
 window.APP_BUILD_INFO = {
-  version: "20260327",
-  label: "Treasury validated snapshot",
+  version: "20260401",
+  label: "Treasury validated main explorer",
 };
 window.GRAPH_DATA_SOURCES = {
   base: "./output/graph.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260327"></script>
+<script type="module" src="./js/ui.js?v=20260401"></script>
 </body>
 </html>
