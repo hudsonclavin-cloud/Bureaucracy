@@ -37,6 +37,13 @@ const FLY_MAX_SPEED = 160;
 const MIN_ZOOM_NODE_SCALE = 0.35;
 const ORBIT_CAMERA_LERP = 0.08;
 const DENSITY_BUCKET_BUFFER = 1;
+const FORCE_SETTLE_WINDOW_MS = 1600;
+const AUTO_EXPAND_COOLDOWN_MS = 900;
+const CAMERA_FOCUS_SNAP_EPS = 0.12;
+const CAMERA_POSITION_SNAP_EPS = 0.2;
+const CAMERA_ROTATION_SNAP_EPS = 0.0025;
+const CAMERA_ZOOM_SNAP_EPS = 0.0025;
+const FORCE_DISPLACEMENT_SETTLE_EPS = 0.012;
 const ALWAYS_VISIBLE_CLUSTER_NAMES = new Set([
   "constitution",
   "legislative branch",
@@ -258,6 +265,8 @@ export function createGovernmentGraph({
     flyYawTarget: 0,
     flyPitchTarget: 0,
     lastUserDrillAt: 0,
+    layoutActiveUntil: 0,
+    lastAutoExpandAt: 0,
     showUnverifiedNodes: true,
     showCandidateNodes: false,
     candidateNodes: [],
@@ -815,6 +824,33 @@ export function createGovernmentGraph({
   function stopFlyMovement() {
     state.flyVelocity.set(0, 0, 0);
     state.renderDirty = true;
+  }
+
+  function markLayoutActivity(durationMs = FORCE_SETTLE_WINDOW_MS) {
+    state.layoutActiveUntil = Math.max(state.layoutActiveUntil, performance.now() + durationMs);
+  }
+
+  function isOrbitCameraSettling() {
+    if (state.flyMode) {
+      return false;
+    }
+    return (
+      state.camFocus.distanceToSquared(state.camFocusTarget) > CAMERA_FOCUS_SNAP_EPS ** 2 ||
+      Math.abs(state.targetRotX - state.rotX) > CAMERA_ROTATION_SNAP_EPS ||
+      Math.abs(state.targetRotY - state.rotY) > CAMERA_ROTATION_SNAP_EPS ||
+      Math.abs(state.targetZoom - state.zoom) > CAMERA_ZOOM_SNAP_EPS ||
+      camera.position.distanceToSquared(desiredCameraPosition) > CAMERA_POSITION_SNAP_EPS ** 2
+    );
+  }
+
+  function shouldRunLayoutForces() {
+    if (state.flyMode || !state.rootObj) {
+      return false;
+    }
+    if (state.pendingExpansions.length > 0) {
+      return true;
+    }
+    return performance.now() < state.layoutActiveUntil;
   }
 
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
@@ -1500,6 +1536,7 @@ export function createGovernmentGraph({
     }
 
     if (processedChildren > 0) {
+      markLayoutActivity();
       state.renderDirty = true;
       notifyCounts();
     }
@@ -1513,6 +1550,9 @@ export function createGovernmentGraph({
       }
       queueExpansion(nodeObj, animate);
       expandedParents.push(nodeObj);
+    }
+    if (expandedParents.length > 0) {
+      markLayoutActivity();
     }
     flushPendingExpansions(10, 1024);
     return expandedParents;
@@ -1583,6 +1623,7 @@ export function createGovernmentGraph({
     parentObj.childObjs = [];
     parentObj.expanded = false;
     parentObj.expanding = false;
+    markLayoutActivity();
     state.renderDirty = true;
     notifyCounts();
   }
@@ -1715,6 +1756,7 @@ export function createGovernmentGraph({
       expandNode(sourceNode, true);
     }
     state.lastUserDrillAt = performance.now();
+    markLayoutActivity();
     setSelectedNode(sourceNode);
   }
 
@@ -1725,6 +1767,7 @@ export function createGovernmentGraph({
 
     state.selectedNode = nodeObj;
     state.lastUserDrillAt = performance.now();
+    markLayoutActivity();
     if (state.flyMode) {
       setFlyLookAt(nodeObj.pos);
     } else {
@@ -2298,6 +2341,9 @@ export function createGovernmentGraph({
     if (!state.selectedNode || state.selectedNode === state.rootObj) {
       return false;
     }
+    if (isOrbitCameraSettling()) {
+      return false;
+    }
     const focusTarget = state.selectedNode?.isCluster ? state.camFocusTarget : state.selectedNode?.pos || state.camFocusTarget;
     const focusDistance = focusTarget.distanceTo(nodeObj.pos);
     const recentlyDrilled = performance.now() - state.lastUserDrillAt < 4000;
@@ -2309,6 +2355,12 @@ export function createGovernmentGraph({
       return;
     }
     if (visibleNodeBudgetExceeded()) {
+      return;
+    }
+    if (isOrbitCameraSettling()) {
+      return;
+    }
+    if (performance.now() - state.lastAutoExpandAt < AUTO_EXPAND_COOLDOWN_MS) {
       return;
     }
 
@@ -2333,6 +2385,8 @@ export function createGovernmentGraph({
     }
 
     if (pending.length > 0) {
+      state.lastAutoExpandAt = performance.now();
+      markLayoutActivity();
       expandNodesBatch(pending, false);
     }
   }
@@ -2500,20 +2554,25 @@ export function createGovernmentGraph({
     }
 
     if (anyAnimating) {
+      markLayoutActivity(350);
       state.renderDirty = true;
     }
   }
 
   function applyWebForces() {
-    if (state.frame % 2 !== 0) {
+    if (state.frame % 2 !== 0 || !shouldRunLayoutForces()) {
       return;
     }
 
     let updated = false;
+    let maxDisplacement = 0;
     for (const nodeObj of state.visibleNodes) {
       if (nodeObj.depth === 0 || nodeObj.isCandidate || nodeObj.animating || !nodeObj.renderVisible || nodeObj.clustered) {
         continue;
       }
+      const beforeX = nodeObj.pos.x;
+      const beforeY = nodeObj.pos.y;
+      const beforeZ = nodeObj.pos.z;
 
       const desiredRadius = shellRadiusForDepth(nodeObj.depth);
       const branchTarget =
@@ -2543,10 +2602,17 @@ export function createGovernmentGraph({
         }
       }
 
-      updated = true;
+      const displacement = Math.hypot(nodeObj.pos.x - beforeX, nodeObj.pos.y - beforeY, nodeObj.pos.z - beforeZ);
+      if (displacement > 0.0005) {
+        updated = true;
+        maxDisplacement = Math.max(maxDisplacement, displacement);
+      }
     }
 
     if (updated) {
+      if (maxDisplacement < FORCE_DISPLACEMENT_SETTLE_EPS && state.pendingExpansions.length === 0) {
+        state.layoutActiveUntil = performance.now();
+      }
       state.renderDirty = true;
     }
   }
@@ -2626,6 +2692,18 @@ export function createGovernmentGraph({
       camera.lookAt(state.flyLookTarget);
     } else {
       state.camFocus.lerp(state.camFocusTarget, 0.05);
+      if (state.camFocus.distanceToSquared(state.camFocusTarget) <= CAMERA_FOCUS_SNAP_EPS ** 2) {
+        state.camFocus.copy(state.camFocusTarget);
+      }
+      if (Math.abs(state.targetRotX - state.rotX) <= CAMERA_ROTATION_SNAP_EPS) {
+        state.rotX = state.targetRotX;
+      }
+      if (Math.abs(state.targetRotY - state.rotY) <= CAMERA_ROTATION_SNAP_EPS) {
+        state.rotY = state.targetRotY;
+      }
+      if (Math.abs(state.targetZoom - state.zoom) <= CAMERA_ZOOM_SNAP_EPS) {
+        state.zoom = state.targetZoom;
+      }
       const distance = CAMERA_DISTANCE / state.zoom;
       desiredCameraPosition.set(
         state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX),
@@ -2633,6 +2711,9 @@ export function createGovernmentGraph({
         state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX),
       );
       camera.position.lerp(desiredCameraPosition, ORBIT_CAMERA_LERP);
+      if (camera.position.distanceToSquared(desiredCameraPosition) <= CAMERA_POSITION_SNAP_EPS ** 2) {
+        camera.position.copy(desiredCameraPosition);
+      }
       camera.lookAt(state.camFocus);
     }
     camera.updateMatrixWorld();
@@ -2861,6 +2942,7 @@ export function createGovernmentGraph({
     syncCandidateVisibility();
     expandNode(state.rootObj, false);
     flushPendingExpansions(18, 4096);
+    markLayoutActivity(2200);
     updateLodState();
     ensureLodCoverage();
     flushPendingExpansions(18, 4096);
@@ -2915,6 +2997,7 @@ export function createGovernmentGraph({
           state.camFocusTarget.copy(state.selectedNode.pos);
           state.targetZoom = Math.max(state.targetZoom, 1.45);
         }
+        markLayoutActivity();
       }
     },
     setFlyMode(enabled) {
