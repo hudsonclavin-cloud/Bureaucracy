@@ -12,16 +12,6 @@ const DEFAULT_NODE = {
   verificationStatus: "unverified",
   lastVerified: null,
   sourceCount: 0,
-  budget_as_of: null,
-  source_system: null,
-  amount_kind: null,
-  allocation_basis: null,
-  direct_outlay_amount: null,
-  rollup_total_amount: null,
-  resolved_total_amount: null,
-  cost_status: null,
-  cost_basis: null,
-  cost_validation: null,
   isCandidate: false,
   possibleParent: null,
   discoveryMethod: null,
@@ -52,16 +42,6 @@ function normalizeNode(rawNode) {
   node.verificationStatus = String(node.verificationStatus || DEFAULT_NODE.verificationStatus);
   node.lastVerified = node.lastVerified ? String(node.lastVerified) : null;
   node.sourceCount = Number.isFinite(Number(node.sourceCount)) ? Number(node.sourceCount) : node.sourceUrls.length;
-  node.budget_as_of = node.budget_as_of ? String(node.budget_as_of) : null;
-  node.source_system = node.source_system ? String(node.source_system) : null;
-  node.amount_kind = node.amount_kind ? String(node.amount_kind) : null;
-  node.allocation_basis = node.allocation_basis ? String(node.allocation_basis) : null;
-  node.direct_outlay_amount = Number.isFinite(Number(node.direct_outlay_amount)) ? Number(node.direct_outlay_amount) : null;
-  node.rollup_total_amount = Number.isFinite(Number(node.rollup_total_amount)) ? Number(node.rollup_total_amount) : null;
-  node.resolved_total_amount = Number.isFinite(Number(node.resolved_total_amount)) ? Number(node.resolved_total_amount) : null;
-  node.cost_status = node.cost_status ? String(node.cost_status) : null;
-  node.cost_basis = node.cost_basis ? String(node.cost_basis) : null;
-  node.cost_validation = node.cost_validation ? String(node.cost_validation) : null;
   node.isCandidate = Boolean(node.isCandidate);
   node.possibleParent = node.possibleParent ? String(node.possibleParent) : null;
   node.discoveryMethod = node.discoveryMethod ? String(node.discoveryMethod) : null;
@@ -130,20 +110,6 @@ function mergeNodeData(targetNode, sourceNode) {
   targetNode.desc = sourceNode.desc || targetNode.desc;
   targetNode.employees = sourceNode.employees ?? targetNode.employees;
   targetNode.budget = sourceNode.budget ?? targetNode.budget;
-  targetNode.annual_budget = sourceNode.annual_budget ?? targetNode.annual_budget;
-  targetNode.budget_source = sourceNode.budget_source || targetNode.budget_source;
-  targetNode.budget_year = sourceNode.budget_year || targetNode.budget_year;
-  targetNode.budget_as_of = sourceNode.budget_as_of || targetNode.budget_as_of;
-  targetNode.source_system = sourceNode.source_system || targetNode.source_system;
-  targetNode.amount_kind = sourceNode.amount_kind || targetNode.amount_kind;
-  targetNode.allocation_basis = sourceNode.allocation_basis || targetNode.allocation_basis;
-  targetNode.direct_outlay_amount = sourceNode.direct_outlay_amount ?? targetNode.direct_outlay_amount;
-  targetNode.rollup_total_amount = sourceNode.rollup_total_amount ?? targetNode.rollup_total_amount;
-  targetNode.resolved_total_amount = sourceNode.resolved_total_amount ?? targetNode.resolved_total_amount;
-  targetNode.cost_status = sourceNode.cost_status || targetNode.cost_status;
-  targetNode.cost_basis = sourceNode.cost_basis || targetNode.cost_basis;
-  targetNode.cost_validation = sourceNode.cost_validation || targetNode.cost_validation;
-  targetNode.official_website = sourceNode.official_website || targetNode.official_website;
   targetNode.color = sourceNode.color || targetNode.color;
   targetNode.sourceUrls = Array.from(new Set([...(targetNode.sourceUrls || []), ...(sourceNode.sourceUrls || [])]));
   targetNode.sourceTypes = Array.from(new Set([...(targetNode.sourceTypes || []), ...(sourceNode.sourceTypes || [])]));
@@ -161,27 +127,20 @@ function mergeNodeData(targetNode, sourceNode) {
 
 function normalizeCandidateNode(rawCandidate) {
   const name = String(rawCandidate?.name || "Unnamed Candidate");
-  const sourceUrls = Array.isArray(rawCandidate?.sourceUrls)
-    ? rawCandidate.sourceUrls.map((value) => String(value))
-    : rawCandidate?.sourceUrl
-      ? [String(rawCandidate.sourceUrl)]
-      : [];
+  const sourceUrl = rawCandidate?.sourceUrl ? String(rawCandidate.sourceUrl) : null;
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   return normalizeNode({
     id: String(rawCandidate?.id || `candidate-${slug || "node"}`),
     name,
     type: String(rawCandidate?.type || "Candidate"),
     desc: String(rawCandidate?.desc || `Candidate node discovered via ${rawCandidate?.discoveryMethod || "automated discovery"}.`),
-    budget: rawCandidate?.budget ?? null,
     color: typeof rawCandidate?.color === "string" ? rawCandidate.color : "#9b8bbd",
-    sourceUrls,
-    sourceTypes: Array.isArray(rawCandidate?.sourceTypes)
-      ? rawCandidate.sourceTypes
-      : ["candidate_discovery"],
-    confidenceScore: Number((rawCandidate?.confidenceScore ?? rawCandidate?.confidenceEstimate) || 0),
-    verificationStatus: String(rawCandidate?.verificationStatus || "unverified"),
-    lastVerified: rawCandidate?.lastVerified ? String(rawCandidate.lastVerified) : null,
-    sourceCount: Number(rawCandidate?.sourceCount || sourceUrls.length),
+    sourceUrls: sourceUrl ? [sourceUrl] : [],
+    sourceTypes: ["candidate_discovery"],
+    confidenceScore: Number(rawCandidate?.confidenceEstimate || 0),
+    verificationStatus: "unverified",
+    lastVerified: null,
+    sourceCount: sourceUrl ? 1 : 0,
     isCandidate: true,
     possibleParent: rawCandidate?.possibleParent || null,
     discoveryMethod: rawCandidate?.discoveryMethod || null,
@@ -314,16 +273,13 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  const mappedEdges = rawEdges
+  baseRoot.relationships = rawEdges
     .filter((edge) => edge && edge.source && edge.target)
     .map((edge) => ({
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
     }));
-  if (mappedEdges.length > 0) {
-    baseRoot.relationships = mappedEdges;
-  }
 
   return baseRoot;
 }
@@ -352,7 +308,7 @@ function combineExpansionPayloads(...payloads) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, { cache: "no-store" });
+  const response = await fetch(url);
   if (!response.ok) {
     const error = new Error(`Failed to load ${url}: ${response.status}`);
     error.status = response.status;

@@ -1,6 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260327a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260326d";
-import { createVrMode } from "./vrMode.js?v=20260324vr2";
+import { createGovernmentGraph } from "./graph.js?v=20260312c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -26,11 +25,9 @@ const dom = {
   childrenList: document.getElementById("info-children-list"),
   breadcrumb: document.getElementById("bc-items"),
   nodeCounter: document.getElementById("node-counter"),
-  buildBadge: document.getElementById("build-badge"),
   statsTotal: document.getElementById("stats-total"),
   statsLoaded: document.getElementById("stats-loaded"),
   statsDepth: document.getElementById("stats-depth"),
-  statsCost: document.getElementById("stats-cost"),
   statsPanel: document.getElementById("stats"),
   legend: document.getElementById("legend"),
   depthCtrl: document.getElementById("depth-ctrl"),
@@ -41,13 +38,6 @@ const dom = {
   btnFocus: document.getElementById("btn-focus"),
   btnFlyMode: document.getElementById("btn-fly-mode"),
   btnCollapse: document.getElementById("btn-collapse"),
-  btnVr: document.getElementById("btn-vr"),
-  btnHome: document.getElementById("btn-home"),
-  btnResetCamera: document.getElementById("btn-reset-camera"),
-  btnFitBranch: document.getElementById("btn-fit-branch"),
-  btnCollapseAll: document.getElementById("btn-collapse-all"),
-  btnCopyShareLink: document.getElementById("btn-copy-share-link"),
-  btnExportJson: document.getElementById("btn-export-json"),
   searchInput: document.getElementById("search-input"),
   searchResults: document.getElementById("search-results"),
   tooltip: document.getElementById("tooltip"),
@@ -64,7 +54,6 @@ const dom = {
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
-  costTabEl: null,
 };
 
 const state = {
@@ -74,290 +63,12 @@ const state = {
   expandFrame: 0,
   loaderTimer: null,
   tracedNodeId: null,
-  vrMode: null,
 };
-
-const COST_STATUS_LABELS = {
-  root_total: "Treasury Total",
-  official: "Official Rollup",
-  scaled_official: "Official Rollup (Scaled)",
-  allocated: "Estimated Allocation",
-  unavailable: "Cost Unavailable",
-};
-
-const COST_BASIS_LABELS = {
-  treasury_total_outlays: "Treasury total outlays",
-  treasury_rollup: "Treasury rollup",
-  subtree_weight: "Subtree-size weighting",
-  employee_weight: "Employee weighting",
-  budget_weight: "Budget weighting",
-};
-
-const COST_VALIDATION_LABELS = {
-  verified_with_treasury_total: "Verified with Treasury total",
-  matched_official_rollup: "Matched official rollup",
-  estimated_from_parent: "Estimated from parent total",
-  scaled_to_parent_total: "Scaled to parent total",
-  missing_cost: "Missing cost",
-  summed_from_child_totals: "Summed from child totals",
-};
-
-const AMOUNT_KIND_LABELS = {
-  fytd_net_outlays: "Partial-year net outlays (FYTD)",
-};
-
-/**
- * Returns FYTD context for a budget summary, including an annualized estimate.
- * US fiscal year starts October 1.
- */
-function getBudgetFytdContext(budgetSummary) {
-  if (!budgetSummary || budgetSummary.amount_kind !== "fytd_net_outlays") {
-    return null;
-  }
-  const amount = Number(budgetSummary.government_total_outlay_amount);
-  const recordDate = String(budgetSummary.record_date || "");
-  const fiscalYear = String(budgetSummary.fiscal_year || "");
-  if (!amount || !recordDate) {
-    return null;
-  }
-  const [yr, mo] = recordDate.split("-").map(Number);
-  if (!yr || !mo) {
-    return null;
-  }
-  // Months elapsed since Oct 1 of the fiscal year start
-  const fyStartYear = mo >= 10 ? yr : yr - 1;
-  const monthsElapsed = mo >= 10 ? mo - 9 : mo + 3;
-  if (monthsElapsed <= 0) {
-    return null;
-  }
-  const annualized = amount * (12 / monthsElapsed);
-  return { amount, annualized, recordDate, fiscalYear, monthsElapsed };
-}
 
 function setText(element, value) {
   if (element.textContent !== value) {
     element.textContent = value;
   }
-}
-
-function formatCurrency(value) {
-  const numeric = Number(value);
-  if (!Number.isFinite(numeric) || numeric === 0) {
-    return "$0";
-  }
-  return new Intl.NumberFormat(undefined, {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(numeric);
-}
-
-function truncateLabel(value, maxLength = 32) {
-  const text = String(value || "").trim();
-  if (!text) {
-    return "";
-  }
-  if (text.length <= maxLength) {
-    return text;
-  }
-  return `${text.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
-}
-
-function uniqueStrings(values) {
-  const result = [];
-  const seen = new Set();
-  for (const value of values || []) {
-    const normalized = String(value || "").trim();
-    if (!normalized) {
-      continue;
-    }
-    const key = normalized.toLowerCase();
-    if (seen.has(key)) {
-      continue;
-    }
-    seen.add(key);
-    result.push(normalized);
-  }
-  return result;
-}
-
-function getNodeSourceUrls(data) {
-  return uniqueStrings([
-    ...(Array.isArray(data?.sourceUrls) ? data.sourceUrls : []),
-    ...(data?.official_website ? [data.official_website] : []),
-  ]);
-}
-
-function getNodeVerificationEvidence(data) {
-  const meta = data?.__meta || {};
-  const directSourceUrls = getNodeSourceUrls(data);
-  const directSourceCount = Math.max(
-    Number(data?.sourceCount || 0),
-    Number(meta.directSourceCount || 0),
-    directSourceUrls.length,
-  );
-  const branchSourceCount = Math.max(Number(meta.subtreeSourceCount || 0), directSourceCount);
-  const branchEvidenceNodeCount = Math.max(
-    Number(meta.subtreeEvidenceNodeCount || 0),
-    directSourceCount > 0 ? 1 : 0,
-  );
-  const branchVerifiedNodeCount = Math.max(Number(meta.subtreeVerifiedNodeCount || 0), 0);
-  const branchSourceUrls = uniqueStrings([
-    ...directSourceUrls,
-    ...(Array.isArray(meta.subtreeSourceUrlSamples) ? meta.subtreeSourceUrlSamples : []),
-  ]);
-  const inheritedEvidenceNodeCount = Math.max(0, branchEvidenceNodeCount - (directSourceCount > 0 ? 1 : 0));
-  const inheritedSourceCount = Math.max(0, branchSourceCount - directSourceCount);
-  return {
-    directSourceUrls,
-    directSourceCount,
-    branchSourceCount,
-    branchEvidenceNodeCount,
-    branchVerifiedNodeCount,
-    branchSourceUrls,
-    inheritedEvidenceNodeCount,
-    inheritedSourceCount,
-    hasDirectEvidence: directSourceCount > 0,
-    hasInheritedEvidence: inheritedEvidenceNodeCount > 0 || inheritedSourceCount > 0,
-  };
-}
-
-function getDirectCostLabel(data) {
-  if (Number.isFinite(Number(data?.direct_outlay_amount)) && Number(data.direct_outlay_amount) > 0) {
-    return formatCurrency(data.direct_outlay_amount);
-  }
-  if (data?.amount_kind === "fytd_net_outlays" && Number.isFinite(Number(data?.rollup_total_amount))) {
-    return null;
-  }
-  if (data?.budget) {
-    return data.budget;
-  }
-  if (data?.annual_budget) {
-    return data.annual_budget;
-  }
-  const directCost = Number(data?.__meta?.directCost || 0);
-  return directCost > 0 ? formatCurrency(directCost) : null;
-}
-
-function humanizeMetadataValue(value, labelMap = {}) {
-  const key = String(value || "").trim();
-  if (!key) {
-    return "";
-  }
-  if (labelMap[key]) {
-    return labelMap[key];
-  }
-  return key
-    .replace(/_/g, " ")
-    .replace(/\b\w/g, (character) => character.toUpperCase());
-}
-
-function getCostTypeDetails(data) {
-  const directOutlayAmount = Number(data?.direct_outlay_amount);
-  if (Number.isFinite(directOutlayAmount) && directOutlayAmount !== 0) {
-    return {
-      label: "Direct Cost",
-      detail: "Recorded directly on this node.",
-    };
-  }
-
-  const status = String(data?.cost_status || "").toLowerCase();
-  if (status === "root_total") {
-    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
-    const fytd = getBudgetFytdContext(budgetSummary);
-    const detail = fytd
-      ? `Treasury net outlays through ${fytd.recordDate} (${fytd.monthsElapsed} of 12 months of FY${fytd.fiscalYear}). Estimated full-year: ${formatCurrency(fytd.annualized)}.`
-      : "Verified top-line Treasury outlays for the whole government.";
-    return { label: COST_STATUS_LABELS.root_total, detail };
-  }
-  if (status === "official") {
-    return {
-      label: COST_STATUS_LABELS.official,
-      detail: "Matched an official Treasury rollup for this organization.",
-    };
-  }
-  if (status === "scaled_official") {
-    return {
-      label: COST_STATUS_LABELS.scaled_official,
-      detail: "Official rollup scaled to fit inside the parent total without double counting.",
-    };
-  }
-  if (status === "allocated") {
-    const basis = String(data?.cost_basis || "").toLowerCase();
-    const detail =
-      basis === "employee_weight"
-        ? "Estimated from parent totals using employee weighting."
-        : basis === "budget_weight"
-          ? "Estimated from parent totals using known budget weighting."
-          : basis === "subtree_weight"
-            ? "Estimated from parent totals using subtree-size weighting."
-            : "Estimated from parent totals so every node has a value.";
-    return {
-      label: COST_STATUS_LABELS.allocated,
-      detail,
-    };
-  }
-  if (Number.isFinite(Number(data?.rollup_total_amount)) && Number(data.rollup_total_amount) !== 0) {
-    return {
-      label: COST_STATUS_LABELS.official,
-      detail: "Using the matched rollup total on this node.",
-    };
-  }
-  if (Number.isFinite(Number(data?.resolved_total_amount)) && Number(data.resolved_total_amount) !== 0) {
-    return {
-      label: "Resolved Cost",
-      detail: "Computed final cost for display.",
-    };
-  }
-  return {
-    label: COST_STATUS_LABELS.unavailable,
-    detail: "No resolved cost is currently assigned to this node.",
-  };
-}
-
-function getBudgetBasisLabel(data) {
-  return [
-    data.source_system || data.budget_source,
-    humanizeMetadataValue(data.amount_kind, AMOUNT_KIND_LABELS),
-    data.budget_year,
-    data.budget_as_of,
-    humanizeMetadataValue(data.cost_basis, COST_BASIS_LABELS),
-    humanizeMetadataValue(data.cost_validation, COST_VALIDATION_LABELS),
-  ].filter(Boolean).join(" | ");
-}
-
-function getNodeSelectionCostContext(nodeObj) {
-  if (!nodeObj?.data) {
-    return null;
-  }
-
-  const selectedTotal = Number(nodeObj.data.__meta?.subtreeCost || 0);
-  if (Number.isFinite(selectedTotal) && selectedTotal !== 0) {
-    return {
-      amount: selectedTotal,
-      inherited: false,
-      nodeName: nodeObj.data.name,
-      label: "selected total",
-    };
-  }
-
-  let cursor = nodeObj.parent;
-  while (cursor) {
-    const explicitRollup = Number(cursor.data?.__meta?.explicitRollupCost || 0);
-    const directCost = Number(cursor.data?.__meta?.directCost || 0);
-    const ancestorAmount = explicitRollup !== 0 ? explicitRollup : directCost;
-    if (Number.isFinite(ancestorAmount) && ancestorAmount !== 0) {
-      return {
-        amount: ancestorAmount,
-        inherited: true,
-        nodeName: cursor.data?.name || "Parent branch",
-        label: "nearest funded branch",
-      };
-    }
-    cursor = cursor.parent;
-  }
-
-  return null;
 }
 
 function showLoader(label) {
@@ -373,53 +84,17 @@ function hideLoader(delay = 200) {
   }, delay);
 }
 
-function updateBuildBadge(stats = state.graph?.getStats?.()) {
-  if (!dom.buildBadge) {
-    return;
-  }
-
-  const version = window.APP_BUILD_INFO?.version || "dev";
-  const label = window.APP_BUILD_INFO?.label || "active build";
-  const totalNodes = Number.isFinite(stats?.totalNodeCount) ? stats.totalNodeCount.toLocaleString() : "loading";
-  const totalCost = Number.isFinite(Number(stats?.totalBudgetCost)) && Number(stats.totalBudgetCost) !== 0
-    ? formatCurrency(stats.totalBudgetCost)
-    : "cost pending";
-  setText(dom.buildBadge, `Build ${version} | ${totalNodes} nodes | ${totalCost} | ${label}`);
-}
-
 function updateStats(stats) {
-  updateBuildBadge(stats);
-  const loadedCount = Number.isFinite(stats.visibleNodeCount) ? stats.visibleNodeCount : 0;
-  const totalCount = Number.isFinite(stats.totalNodeCount) ? stats.totalNodeCount : loadedCount;
-  setText(dom.nodeCounter, `${loadedCount.toLocaleString()} / ${totalCount.toLocaleString()} nodes loaded`);
-  setText(
-    dom.statsTotal,
-    `${stats.totalNodeCount.toLocaleString()} total nodes${stats.candidateNodeCount ? ` | ${stats.candidateNodeCount.toLocaleString()} candidates` : ""}`,
-  );
-  const fullExpandLabel = stats.fullExpandRenderMode ? " | full-expansion render active" : "";
+  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
+  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
   setText(
     dom.statsLoaded,
-    `${loadedCount.toLocaleString()} eligible under current filters | ${stats.visibleNodeCount.toLocaleString()} loaded in memory | ${(stats.hiddenCandidateCount || 0).toLocaleString()} candidate nodes hidden | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden${fullExpandLabel}`,
+    `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
   );
   setText(
     dom.statsDepth,
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
-  if (dom.statsCost) {
-    const fytd = getBudgetFytdContext(stats.budgetSummary);
-    const operationSummary = fytd
-      ? `${formatCurrency(stats.totalBudgetCost)} FYTD through ${fytd.recordDate} | est. ${formatCurrency(fytd.annualized)}/yr`
-      : `${formatCurrency(stats.totalBudgetCost)} ${stats.totalBudgetLabel || "total cost"}`;
-    const selectedContext = getNodeSelectionCostContext(state.graph?.getSelectedNode?.());
-    if (selectedContext?.amount && Number.isFinite(selectedContext.amount)) {
-      const selectionSummary = selectedContext.inherited
-        ? `selection inherits ${formatCurrency(selectedContext.amount)} from ${truncateLabel(selectedContext.nodeName)}`
-        : `selection total ${formatCurrency(selectedContext.amount)}`;
-      setText(dom.statsCost, `${operationSummary} | ${selectionSummary}`);
-    } else {
-      setText(dom.statsCost, `${operationSummary} | selection cost unavailable`);
-    }
-  }
 }
 
 function hideLoadingOverlay(delay = 600) {
@@ -565,37 +240,18 @@ function ensureVerificationUi() {
   verificationWrap.appendChild(sources);
   verificationWrap.appendChild(lastVerified);
 
-  const tabSources = document.getElementById("tab-sources");
-  (tabSources || dom.infoPanel).appendChild(verificationWrap);
+  dom.infoPanel.appendChild(verificationWrap);
   dom.verificationWrap = verificationWrap;
   dom.verificationBadge = badge;
   dom.verificationStatus = status;
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
-
-  // Tab switching
-  dom.infoPanel.querySelectorAll(".info-tab").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      dom.infoPanel.querySelectorAll(".info-tab").forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      const tab = btn.dataset.tab;
-      const detailsEl = document.getElementById("tab-details");
-      const costEl = document.getElementById("tab-cost");
-      const sourcesEl = document.getElementById("tab-sources");
-      if (detailsEl) detailsEl.style.display = tab === "details" ? "" : "none";
-      if (costEl) costEl.style.display = tab === "cost" ? "" : "none";
-      if (sourcesEl) sourcesEl.style.display = tab === "sources" ? "" : "none";
-    });
-  });
 }
 
-function getVerificationBadgeConfig(data, evidence = getNodeVerificationEvidence(data)) {
+function getVerificationBadgeConfig(data) {
   if (data.isCandidate) {
     return { label: "CANDIDATE", bg: "rgba(155,139,189,0.18)", border: "#9b8bbd", color: "#d6caef" };
-  }
-  if (!evidence.hasDirectEvidence && evidence.hasInheritedEvidence) {
-    return { label: "INHERITED", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
   }
   const status = String(data.verificationStatus || "unverified").toLowerCase();
   if (status === "verified") {
@@ -614,7 +270,7 @@ function ensureVerificationToggles() {
 
   const wrap = document.createElement("div");
   wrap.style.position = "fixed";
-  wrap.style.top = "315px";
+  wrap.style.top = "130px";
   wrap.style.left = "32px";
   wrap.style.zIndex = "20";
   wrap.style.display = "flex";
@@ -643,7 +299,7 @@ function ensureVerificationToggles() {
   };
 
   const toggleUnverified = makeToggle("Show Unverified Nodes");
-  const toggleCandidates = makeToggle("Show Unconfirmed Nodes (candidates)");
+  const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
 
   document.body.appendChild(wrap);
@@ -688,8 +344,7 @@ function renderVerificationPanel(data) {
     return;
   }
 
-  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
-  const status = data.isCandidate ? `CANDIDATE · ${baseStatus}` : baseStatus;
+  const status = data.isCandidate ? "CANDIDATE" : String(data.verificationStatus || "unverified").toUpperCase();
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
   const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
@@ -737,390 +392,6 @@ function renderVerificationPanel(data) {
     link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });
-}
-
-function renderVerificationPanelWithEvidence(data) {
-  if (!dom.verificationWrap) {
-    return;
-  }
-
-  const evidence = getNodeVerificationEvidence(data);
-  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
-  const status = data.isCandidate
-    ? `CANDIDATE Â· ${baseStatus}`
-    : !evidence.hasDirectEvidence && evidence.hasInheritedEvidence
-      ? `INHERITED EVIDENCE Â· ${evidence.inheritedEvidenceNodeCount.toLocaleString()} sourced descendants`
-      : baseStatus;
-  const confidence = Number(data.confidenceScore || 0);
-  const sourceUrls = evidence.hasDirectEvidence ? evidence.directSourceUrls : evidence.branchSourceUrls;
-  const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
-  const badge = getVerificationBadgeConfig(data, evidence);
-
-  setText(dom.verificationBadge, badge.label);
-  dom.verificationBadge.style.background = badge.bg;
-  dom.verificationBadge.style.border = `1px solid ${badge.border}`;
-  dom.verificationBadge.style.color = badge.color;
-
-  setText(dom.verificationStatus, `Verification Status: ${status}`);
-  setText(
-    dom.verificationConfidence,
-    evidence.hasDirectEvidence
-      ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Direct Sources: ${evidence.directSourceCount.toLocaleString()} Â· Branch Evidence: ${evidence.branchSourceCount.toLocaleString()} refs across ${evidence.branchEvidenceNodeCount.toLocaleString()} nodes`
-      : evidence.hasInheritedEvidence
-        ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Inherited Evidence: ${evidence.inheritedSourceCount.toLocaleString()} refs across ${evidence.inheritedEvidenceNodeCount.toLocaleString()} descendants Â· Verified in Branch: ${evidence.branchVerifiedNodeCount.toLocaleString()}`
-        : `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) Â· Direct Sources: 0`,
-  );
-  setText(
-    dom.verificationLastVerified,
-    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
-  );
-
-  dom.verificationSources.replaceChildren();
-  const sourcesLabel = document.createElement("div");
-  sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
-  sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = "#d4c4a1";
-  dom.verificationSources.appendChild(sourcesLabel);
-
-  if (sourceUrls.length === 0) {
-    const empty = document.createElement("div");
-    empty.textContent = evidence.hasInheritedEvidence
-      ? "No direct sources on this node. Branch evidence exists but no sample links were available."
-      : "No confirming sources recorded.";
-    empty.style.color = "#8f7a5d";
-    dom.verificationSources.appendChild(empty);
-    return;
-  }
-
-  sourceUrls.forEach((url, index) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    let host = url;
-    try {
-      host = new URL(url).hostname;
-    } catch (_error) {
-      host = url;
-    }
-    const sourceTypeLabel = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
-    link.textContent = `â€¢ ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}`;
-    link.style.color = "#d4c4a1";
-    dom.verificationSources.appendChild(link);
-  });
-}
-
-function renderVerificationPanelWithEvidenceClean(data) {
-  if (!dom.verificationWrap) {
-    return;
-  }
-
-  const evidence = getNodeVerificationEvidence(data);
-  const baseStatus = String(data.verificationStatus || "unverified").toUpperCase();
-  const status = data.isCandidate
-    ? `CANDIDATE - ${baseStatus}`
-    : !evidence.hasDirectEvidence && evidence.hasInheritedEvidence
-      ? `INHERITED EVIDENCE - ${evidence.inheritedEvidenceNodeCount.toLocaleString()} sourced descendants`
-      : baseStatus;
-  const confidence = Number(data.confidenceScore || 0);
-  const sourceUrls = evidence.hasDirectEvidence ? evidence.directSourceUrls : evidence.branchSourceUrls;
-  const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
-  const badge = getVerificationBadgeConfig(data, evidence);
-
-  setText(dom.verificationBadge, badge.label);
-  dom.verificationBadge.style.background = badge.bg;
-  dom.verificationBadge.style.border = `1px solid ${badge.border}`;
-  dom.verificationBadge.style.color = badge.color;
-
-  setText(dom.verificationStatus, `Verification Status: ${status}`);
-  setText(
-    dom.verificationConfidence,
-    evidence.hasDirectEvidence
-      ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Direct Sources: ${evidence.directSourceCount.toLocaleString()} | Branch Evidence: ${evidence.branchSourceCount.toLocaleString()} refs across ${evidence.branchEvidenceNodeCount.toLocaleString()} nodes`
-      : evidence.hasInheritedEvidence
-        ? `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Inherited Evidence: ${evidence.inheritedSourceCount.toLocaleString()} refs across ${evidence.inheritedEvidenceNodeCount.toLocaleString()} descendants | Verified in Branch: ${evidence.branchVerifiedNodeCount.toLocaleString()}`
-        : `Direct Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Direct Sources: 0`,
-  );
-  setText(
-    dom.verificationLastVerified,
-    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
-  );
-
-  dom.verificationSources.replaceChildren();
-  const sourcesLabel = document.createElement("div");
-  sourcesLabel.textContent = evidence.hasDirectEvidence ? "Direct Sources" : evidence.hasInheritedEvidence ? "Branch Evidence" : "Sources";
-  sourcesLabel.style.marginTop = "6px";
-  sourcesLabel.style.color = "#d4c4a1";
-  dom.verificationSources.appendChild(sourcesLabel);
-
-  if (sourceUrls.length === 0) {
-    const empty = document.createElement("div");
-    empty.textContent = evidence.hasInheritedEvidence
-      ? "No direct sources on this node. Branch evidence exists but no sample links were available."
-      : "No confirming sources recorded.";
-    empty.style.color = "#8f7a5d";
-    dom.verificationSources.appendChild(empty);
-    return;
-  }
-
-  const SOURCE_TYPE_LABELS = {
-    official_directory: "Official Website",
-    wikidata: "Wikidata",
-    federal_register: "Federal Register",
-    usaspending: "USAspending.gov",
-    treasury: "Treasury Fiscal Data",
-    enrichment: "Pipeline Enrichment",
-  };
-
-  sourceUrls.forEach((url, index) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    let host = url;
-    try {
-      host = new URL(url).hostname;
-    } catch (_error) {
-      host = url;
-    }
-    const rawType = evidence.hasDirectEvidence ? sourceTypes[index] : "branch evidence";
-    const sourceTypeLabel = SOURCE_TYPE_LABELS[rawType] || rawType;
-    const lastVerifiedStr =
-      index === 0 && data.lastVerified
-        ? ` · ${new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}`
-        : "";
-    link.textContent = `* ${host}${sourceTypeLabel ? ` (${sourceTypeLabel})` : ""}${lastVerifiedStr}`;
-    link.style.color = "#d4c4a1";
-    dom.verificationSources.appendChild(link);
-  });
-}
-
-function copyShareLink(nodeId) {
-  const url = new URL(window.location.href);
-  url.searchParams.set("node", nodeId);
-  navigator.clipboard.writeText(url.toString()).then(() => {
-    if (dom.btnCopyShareLink) {
-      const orig = dom.btnCopyShareLink.textContent;
-      setText(dom.btnCopyShareLink, "Copied!");
-      window.setTimeout(() => setText(dom.btnCopyShareLink, orig), 1800);
-    }
-  }).catch(() => {
-    // Fallback: show the URL in a prompt so user can copy manually
-    window.prompt("Share link (copy manually):", url.toString());
-  });
-}
-
-function parseShareLink() {
-  const params = new URLSearchParams(window.location.search);
-  const nodeId = params.get("node");
-  if (nodeId) {
-    // Defer until graph is ready
-    window.requestAnimationFrame(function tryReveal() {
-      if (!state.graph) {
-        window.requestAnimationFrame(tryReveal);
-        return;
-      }
-      revealAndSelect(nodeId);
-    });
-  }
-}
-
-function getNodeCostBreakdown(nodeObj) {
-  if (!nodeObj?.data) {
-    return null;
-  }
-  const data = nodeObj.data;
-  const resolvedTotal = Number(data.__meta?.subtreeCost || data.resolved_total_amount || 0);
-  const directOutlay = Number(data.direct_outlay_amount || 0);
-  const rollupTotal = Number(data.rollup_total_amount || 0);
-  const directMetaCost = Number(data.__meta?.directCost || 0);
-  const operationTotal = Number(state.graph?.getStats?.().totalBudgetCost || 0);
-  const share = operationTotal > 0 && resolvedTotal > 0
-    ? (resolvedTotal / operationTotal) * 100
-    : null;
-  const costType = getCostTypeDetails(data);
-  const budgetBasis = getBudgetBasisLabel(data);
-  return {
-    resolvedTotal,
-    directOutlay,
-    rollupTotal,
-    directMetaCost,
-    operationTotal,
-    share,
-    costType,
-    budgetBasis,
-    costStatus: data.cost_status || null,
-    costBasis: data.cost_basis || null,
-    costValidation: data.cost_validation || null,
-    budgetSource: data.budget_source || data.source_system || null,
-    budgetYear: data.budget_year || null,
-    amountKind: data.amount_kind || null,
-    budgetSummary: state.graph?.getStats?.()?.budgetSummary || null,
-  };
-}
-
-function renderCostTab(nodeObj) {
-  const el = document.getElementById("tab-cost");
-  if (!el) {
-    return;
-  }
-  dom.costTabEl = el;
-  el.replaceChildren();
-
-  if (!nodeObj?.data) {
-    const empty = document.createElement("div");
-    empty.textContent = "Select a node to see cost details.";
-    empty.style.color = "#6a5a3a";
-    empty.style.fontSize = "10px";
-    el.appendChild(empty);
-    return;
-  }
-
-  const breakdown = getNodeCostBreakdown(nodeObj);
-  if (!breakdown) {
-    return;
-  }
-
-  const frag = document.createDocumentFragment();
-
-  // Cost confidence badge
-  const costBadgeConfig = {
-    root_total: { label: "TREASURY TOTAL", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
-    official: { label: "OFFICIAL ROLLUP", bg: "rgba(111,207,151,0.18)", border: "#6fcf97", color: "#c8f2d7" },
-    scaled_official: { label: "OFFICIAL (SCALED)", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" },
-    allocated: { label: "ESTIMATED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" },
-    unavailable: { label: "UNAVAILABLE", bg: "rgba(80,60,60,0.18)", border: "#6a4040", color: "#a08080" },
-  };
-  const badgeCfg = costBadgeConfig[breakdown.costStatus] || costBadgeConfig.unavailable;
-  const badge = document.createElement("span");
-  badge.className = "cost-badge";
-  badge.textContent = badgeCfg.label;
-  badge.style.background = badgeCfg.bg;
-  badge.style.border = `1px solid ${badgeCfg.border}`;
-  badge.style.color = badgeCfg.color;
-  frag.appendChild(badge);
-
-  const makeRow = (label, value) => {
-    const row = document.createElement("div");
-    row.className = "info-stat";
-    const lbl = document.createElement("span");
-    lbl.className = "info-stat-label";
-    lbl.textContent = label;
-    const val = document.createElement("span");
-    val.className = "info-stat-val";
-    val.textContent = value;
-    row.appendChild(lbl);
-    row.appendChild(val);
-    return row;
-  };
-
-  // Cost type and description
-  frag.appendChild(makeRow("COST TYPE", breakdown.costType.label));
-
-  // Main cost figures
-  if (breakdown.resolvedTotal) {
-    frag.appendChild(makeRow("TOTAL (SUBTREE)", formatCurrency(breakdown.resolvedTotal)));
-  }
-  if (breakdown.directOutlay) {
-    frag.appendChild(makeRow("DIRECT OUTLAY", formatCurrency(breakdown.directOutlay)));
-  }
-  if (breakdown.rollupTotal) {
-    frag.appendChild(makeRow("OFFICIAL ROLLUP", formatCurrency(breakdown.rollupTotal)));
-  }
-  if (breakdown.directMetaCost && breakdown.directMetaCost !== breakdown.directOutlay) {
-    frag.appendChild(makeRow("DIRECT COST (COMPUTED)", formatCurrency(breakdown.directMetaCost)));
-  }
-
-  // Share of government
-  if (breakdown.share !== null) {
-    frag.appendChild(makeRow("SHARE OF TOTAL", `${breakdown.share.toFixed(breakdown.share < 0.01 ? 4 : 2)}%`));
-
-    // Bar
-    const barWrap = document.createElement("div");
-    barWrap.className = "cost-bar";
-    const barFill = document.createElement("div");
-    barFill.className = "cost-bar-fill";
-    barFill.style.width = `${Math.min(100, breakdown.share)}%`;
-    barFill.style.background = badgeCfg.border;
-    barWrap.appendChild(barFill);
-    frag.appendChild(barWrap);
-  }
-
-  // Methodology
-  const methodTitle = document.createElement("div");
-  methodTitle.className = "cost-section-title";
-  methodTitle.style.marginTop = "12px";
-  methodTitle.textContent = "COST METHODOLOGY";
-  frag.appendChild(methodTitle);
-
-  frag.appendChild(makeRow("METHODOLOGY", breakdown.costType.detail || "—"));
-  if (breakdown.costBasis) {
-    frag.appendChild(makeRow("ALLOCATION BASIS", humanizeMetadataValue(breakdown.costBasis, COST_BASIS_LABELS)));
-  }
-  if (breakdown.costValidation) {
-    frag.appendChild(makeRow("VALIDATION", humanizeMetadataValue(breakdown.costValidation, COST_VALIDATION_LABELS)));
-  }
-
-  // Source metadata
-  const sourceTitle = document.createElement("div");
-  sourceTitle.className = "cost-section-title";
-  sourceTitle.style.marginTop = "12px";
-  sourceTitle.textContent = "SOURCE";
-  frag.appendChild(sourceTitle);
-
-  if (breakdown.budgetSource) {
-    frag.appendChild(makeRow("SOURCE SYSTEM", breakdown.budgetSource));
-  }
-  if (breakdown.budgetYear) {
-    frag.appendChild(makeRow("FISCAL YEAR", String(breakdown.budgetYear)));
-  }
-  if (breakdown.amountKind) {
-    frag.appendChild(makeRow("AMOUNT KIND", humanizeMetadataValue(breakdown.amountKind, AMOUNT_KIND_LABELS)));
-  }
-
-  // FYTD context
-  const fytd = getBudgetFytdContext(breakdown.budgetSummary);
-  if (fytd) {
-    frag.appendChild(makeRow("FYTD RECORD DATE", fytd.recordDate));
-    frag.appendChild(makeRow("MONTHS ELAPSED", `${fytd.monthsElapsed} / 12`));
-    frag.appendChild(makeRow("ANNUALIZED EST.", formatCurrency(fytd.annualized)));
-  }
-
-  el.appendChild(frag);
-}
-
-function exportSubtreeJson(nodeObj) {
-  if (!nodeObj?.data) {
-    return;
-  }
-
-  function collectNodes(obj) {
-    const result = [obj.data];
-    for (const child of obj.childObjs) {
-      result.push(...collectNodes(child));
-    }
-    return result;
-  }
-
-  const nodes = collectNodes(nodeObj);
-  const exportData = {
-    exportedAt: new Date().toISOString(),
-    rootNode: nodeObj.data.id,
-    nodeCount: nodes.length,
-    nodes,
-  };
-
-  const json = JSON.stringify(exportData, null, 2);
-  const blob = new Blob([json], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  const safeName = (nodeObj.data.name || nodeObj.data.id || "branch").replace(/[^a-z0-9_-]/gi, "_").toLowerCase().slice(0, 40);
-  link.download = `bureaucracy_${safeName}_${new Date().toISOString().slice(0, 10)}.json`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
 }
 
 function renderOriginTrace(nodeObj) {
@@ -1173,24 +444,11 @@ function renderOriginTrace(nodeObj) {
   dom.btnTraceOrigin.disabled = false;
 }
 
-function resetInfoTabs() {
-  const detailsEl = document.getElementById("tab-details");
-  const costEl = document.getElementById("tab-cost");
-  const sourcesEl = document.getElementById("tab-sources");
-  if (detailsEl) detailsEl.style.display = "";
-  if (costEl) costEl.style.display = "none";
-  if (sourcesEl) sourcesEl.style.display = "none";
-  document.querySelectorAll(".info-tab").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.tab === "details");
-  });
-}
-
 function renderInfoPanel(nodeObj) {
   if (!nodeObj) {
     return;
   }
 
-  resetInfoTabs();
   const data = nodeObj.data;
   const activeCluster = nodeObj.isCluster ? nodeObj : nodeObj.clusterRef || null;
   const clusterCount =
@@ -1218,51 +476,11 @@ function renderInfoPanel(nodeObj) {
 
   const statsFragment = document.createDocumentFragment();
   const statRows = [];
-  const costType = getCostTypeDetails(data);
   if (data.employees) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
-  if (costType.label) {
-    statRows.push(["COST TYPE", costType.label]);
-  }
-  if (costType.detail) {
-    statRows.push(["COST DETAIL", costType.detail]);
-  }
-  const directCostLabel = getDirectCostLabel(data);
-  if (directCostLabel) {
-    statRows.push(["DIRECT COST", directCostLabel]);
-  }
-  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
-    const budgetBasis = getBudgetBasisLabel(data);
-    statRows.push(["BUDGET BASIS", budgetBasis]);
-  }
-  const totalCost = Number(data.__meta?.subtreeCost || 0);
-  const operationCost = Number(state.graph?.getStats?.().totalBudgetCost || 0);
-  const selectionCostContext = getNodeSelectionCostContext(nodeObj);
-  if (Number.isFinite(totalCost) && totalCost !== 0) {
-    statRows.push(["TOTAL COST", formatCurrency(totalCost)]);
-  } else if (selectionCostContext?.inherited) {
-    statRows.push([
-      "NEAREST FUNDED BRANCH",
-      `${selectionCostContext.nodeName} | ${formatCurrency(selectionCostContext.amount)}`,
-    ]);
-  }
-  if (operationCost > 0) {
-    const share = Number.isFinite(totalCost) && totalCost !== 0
-      ? `${((totalCost / operationCost) * 100).toFixed(totalCost === operationCost ? 0 : 2)}%`
-      : "0%";
-    const budgetSummary = state.graph?.getStats?.()?.budgetSummary;
-    const fytd = getBudgetFytdContext(budgetSummary);
-    const operationLabel = fytd
-      ? `${formatCurrency(operationCost)} FYTD (est. ${formatCurrency(fytd.annualized)}/yr) · ${share}`
-      : `${formatCurrency(operationCost)} · ${share}`;
-    statRows.push(["WHOLE OPERATION", operationLabel]);
-  }
-  if (data.budget_source || data.budget_year || data.source_system || data.budget_as_of || data.amount_kind || data.cost_status || data.cost_basis || data.cost_validation) {
-    const budgetBasisRow = statRows.find((row) => row[0] === "BUDGET BASIS");
-    if (budgetBasisRow) {
-      budgetBasisRow[1] = getBudgetBasisLabel(data);
-    }
+  if (data.budget) {
+    statRows.push(["BUDGET", data.budget]);
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
@@ -1372,14 +590,8 @@ function renderInfoPanel(nodeObj) {
   if (dom.btnTraceOrigin) {
     renderOriginTrace(nodeObj);
   }
-  renderVerificationPanelWithEvidenceClean(data);
-  renderCostTab(nodeObj);
+  renderVerificationPanel(data);
   renderBreadcrumb(nodeObj);
-
-  // Show export button only when node has loaded children
-  if (dom.btnExportJson) {
-    dom.btnExportJson.style.display = nodeObj.childObjs && nodeObj.childObjs.length > 0 ? "block" : "none";
-  }
 }
 
 function updateTooltip(payload) {
@@ -1463,7 +675,6 @@ function stopProgressiveExpansion() {
     window.cancelAnimationFrame(state.expandFrame);
     state.expandFrame = 0;
   }
-  state.graph.setFullExpandRenderMode(false);
   dom.btnCancelExpand.style.display = "none";
   dom.btnExpandAll.disabled = false;
   setText(dom.btnExpandAll, "Expand All Below");
@@ -1511,20 +722,12 @@ function waitForExpansionDrain(onDone) {
 
 function expandProgressively(targetDepth) {
   state.expandCancelled = false;
-  const vrActive = state.graph.isVrSessionActive?.() || false;
-  const selected = state.graph.getSelectedNode();
-  const vrExpandDepthLimit = state.graph.getConfig?.().VR_EXPAND_ALL_DEPTH_LIMIT || 4;
-  const effectiveTargetDepth = vrActive && !Number.isFinite(targetDepth)
-    ? Math.min((selected?.depth || 0) + vrExpandDepthLimit, state.graph.getMaxDataDepth(), state.graph.getConfig().MAX_DEPTH)
-    : targetDepth;
-
-  state.graph.setFullExpandRenderMode(!vrActive);
   dom.btnExpandAll.disabled = true;
   setText(dom.btnExpandAll, "Expanding…");
   dom.btnCancelExpand.style.display = "block";
 
   const totalLevels = Math.min(
-    Number.isFinite(effectiveTargetDepth) ? effectiveTargetDepth : state.graph.getMaxDataDepth(),
+    Number.isFinite(targetDepth) ? targetDepth : state.graph.getMaxDataDepth(),
     state.graph.getConfig().MAX_DEPTH,
   );
 
@@ -1534,23 +737,17 @@ function expandProgressively(targetDepth) {
       return;
     }
 
-    const frontier = state.graph.getFrontier(effectiveTargetDepth);
+    const frontier = state.graph.getFrontier(targetDepth);
     if (frontier.nodes.length === 0) {
       if (state.graph.hasPendingExpansions()) {
         showLoader("Loading queued nodes…");
         state.expandFrame = window.requestAnimationFrame(tick);
         return;
       }
-      const finalStats = state.graph.getStats();
-      if ((finalStats.hiddenCandidateCount || 0) > 0 && !finalStats.showCandidateNodes) {
-        showLoader(`All hierarchy nodes loaded. ${finalStats.hiddenCandidateCount.toLocaleString()} candidate nodes are hidden.`);
-      } else {
-        showLoader("All eligible hierarchy nodes rendered.");
-      }
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
       setText(dom.btnExpandAll, "Expand All Below");
-      hideLoader((finalStats.hiddenCandidateCount || 0) > 0 && !finalStats.showCandidateNodes ? 1400 : 200);
+      hideLoader();
       renderInfoPanel(state.graph.getSelectedNode());
       return;
     }
@@ -1564,7 +761,6 @@ function expandProgressively(targetDepth) {
     const refreshedStats = state.graph.getStats();
     if (refreshedStats.visibleNodeCount + nextCount > refreshedStats.maxNodes) {
       showLoader(`Node cap reached at level ${frontier.depth + 1}`);
-      state.graph.setFullExpandRenderMode(false);
       dom.btnCancelExpand.style.display = "none";
       dom.btnExpandAll.disabled = false;
       setText(dom.btnExpandAll, "Expand All Below");
@@ -1573,9 +769,7 @@ function expandProgressively(targetDepth) {
       return;
     }
 
-    showLoader(vrActive
-      ? `VR expanding level ${frontier.depth + 1} of ${totalLevels}…`
-      : `Loading level ${frontier.depth + 1} of ${totalLevels}…`);
+    showLoader(`Loading level ${frontier.depth + 1} of ${totalLevels}…`);
     progressiveRender(frontier.nodes, (nodeObj) => {
       state.graph.expandNodesBatch([nodeObj], true);
     }, () => {
@@ -1586,12 +780,7 @@ function expandProgressively(targetDepth) {
     });
   };
 
-  if (vrActive && !Number.isFinite(targetDepth)) {
-    setText(dom.loadStatus, `VR mode limits Expand All to ${vrExpandDepthLimit} additional levels. Use desktop for full global expansion.`);
-    showLoader(`VR mode: expanding ${vrExpandDepthLimit} levels from the selected node…`);
-  } else {
-    showLoader("Starting expansion…");
-  }
+  showLoader("Starting expansion…");
   state.expandFrame = window.requestAnimationFrame(tick);
 }
 
@@ -1604,37 +793,33 @@ function bindControls() {
   }
 
   if (dom.toggleCandidates) {
-    // Sync initial state: graph.js defaults showCandidateNodes to false
-    state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
     dom.toggleCandidates.addEventListener("change", () => {
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
     });
   }
 
-  if (dom.btnTraceOrigin) {
-    dom.btnTraceOrigin.addEventListener("click", () => {
-      const selected = state.graph.getSelectedNode();
-      if (!selected || selected.isCluster) {
-        return;
-      }
+  dom.btnTraceOrigin.addEventListener("click", () => {
+    const selected = state.graph.getSelectedNode();
+    if (!selected || selected.isCluster) {
+      return;
+    }
 
-      const currentTrace = state.graph.getOriginTrace();
-      const traceMatchesSelected =
-        currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
+    const currentTrace = state.graph.getOriginTrace();
+    const traceMatchesSelected =
+      currentTrace.length > 0 && currentTrace[currentTrace.length - 1]?.data?.id === selected.data.id;
 
-      if (traceMatchesSelected) {
-        state.graph.clearOriginTrace();
-        state.tracedNodeId = null;
-      } else {
-        const originPath = state.graph.traceOrigin(selected);
-        state.graph.setOriginTrace(originPath);
-        state.tracedNodeId = selected.data.id;
-      }
+    if (traceMatchesSelected) {
+      state.graph.clearOriginTrace();
+      state.tracedNodeId = null;
+    } else {
+      const originPath = state.graph.traceOrigin(selected);
+      state.graph.setOriginTrace(originPath);
+      state.tracedNodeId = selected.data.id;
+    }
 
-      renderInfoPanel(selected);
-    });
-  }
+    renderInfoPanel(selected);
+  });
 
   dom.btnExpand.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
@@ -1655,21 +840,8 @@ function bindControls() {
   });
 
   dom.btnExpandAll.addEventListener("click", () => {
-    const selected = state.graph.getSelectedNode();
-    if (!selected) {
+    if (!state.graph.getSelectedNode()) {
       return;
-    }
-    const stats = state.graph.getStats();
-    const unloaded = stats.totalNodeCount - stats.visibleNodeCount;
-    if (unloaded > 500) {
-      const confirmed = window.confirm(
-        `Expand all below "${selected.data?.name || "selected node"}"?\n\n` +
-        `~${unloaded.toLocaleString()} nodes are not yet loaded. This may be slow on large branches.\n\n` +
-        `Click Cancel Expand at any time to stop.`,
-      );
-      if (!confirmed) {
-        return;
-      }
     }
     expandProgressively(Infinity);
   });
@@ -1685,84 +857,13 @@ function bindControls() {
     setText(dom.btnFlyMode, enabled ? "Disable Fly Mode" : "Enable Fly Mode");
   });
 
-  document.addEventListener("pointerlockchange", () => {
-    setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
-  });
-
   dom.btnCollapse.addEventListener("click", () => {
     const selected = state.graph.getSelectedNode();
     if (!selected) {
       return;
     }
-    state.graph.setFullExpandRenderMode(false);
-    state.graph.collapseNode(selected, { manual: true });
+    state.graph.collapseNode(selected);
     renderInfoPanel(selected);
-  });
-
-  if (dom.btnHome) {
-    dom.btnHome.addEventListener("click", () => {
-      state.graph.navigateToRoot();
-      setText(dom.btnFlyMode, "Enable Fly Mode");
-    });
-  }
-
-  if (dom.btnResetCamera) {
-    dom.btnResetCamera.addEventListener("click", () => {
-      state.graph.resetCamera();
-      setText(dom.btnFlyMode, "Enable Fly Mode");
-    });
-  }
-
-  if (dom.btnFitBranch) {
-    dom.btnFitBranch.addEventListener("click", () => {
-      const selected = state.graph.getSelectedNode();
-      if (selected) {
-        state.graph.fitBranch(selected);
-      }
-    });
-  }
-
-  if (dom.btnCollapseAll) {
-    dom.btnCollapseAll.addEventListener("click", () => {
-      stopProgressiveExpansion();
-      state.graph.collapseAll();
-      const root = state.graph.getRootNode();
-      if (root) {
-        state.graph.setSelectedNode(root);
-      }
-      updateStats(state.graph.getStats());
-    });
-  }
-
-  if (dom.btnCopyShareLink) {
-    dom.btnCopyShareLink.addEventListener("click", () => {
-      const selected = state.graph.getSelectedNode();
-      if (selected?.data?.id) {
-        copyShareLink(selected.data.id);
-      } else {
-        copyShareLink("the-constitution-of-the-united-states");
-      }
-    });
-  }
-
-  if (dom.btnExportJson) {
-    dom.btnExportJson.addEventListener("click", () => {
-      const selected = state.graph.getSelectedNode();
-      if (selected) {
-        exportSubtreeJson(selected);
-      }
-    });
-  }
-
-  // Branch filter buttons
-  document.querySelectorAll(".branch-btn").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".branch-btn").forEach((b) => b.classList.remove("active"));
-      button.classList.add("active");
-      const branch = button.dataset.branch === "all" ? null : button.dataset.branch;
-      state.graph.filterByBranch(branch);
-      updateStats(state.graph.getStats());
-    });
   });
 
   document.querySelectorAll(".depth-btn").forEach((button) => {
@@ -1770,9 +871,6 @@ function bindControls() {
       document.querySelectorAll(".depth-btn").forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       const depth = button.dataset.depth === "all" ? Infinity : Number(button.dataset.depth);
-      if (Number.isFinite(depth)) {
-        state.graph.setFullExpandRenderMode(false);
-      }
       state.graph.setDepthFilter(depth);
       updateStats(state.graph.getStats());
     });
@@ -1815,36 +913,9 @@ function bindControls() {
   });
 }
 
-const INTRO_KEY = "bureaucracy_intro_v1";
-const introOverlay = document.getElementById("intro-overlay");
-if (introOverlay && !localStorage.getItem(INTRO_KEY)) {
-  introOverlay.style.display = "flex";
-}
-function dismissIntro(autoExpand) {
-  localStorage.setItem(INTRO_KEY, "1");
-  if (introOverlay) introOverlay.style.display = "none";
-  if (autoExpand && state.graph) {
-    const root = state.graph.getNodeById("the-constitution-of-the-united-states");
-    if (root) state.graph.expandNode(root, true);
-  }
-}
-document.getElementById("btn-intro-start")?.addEventListener("click", () => dismissIntro(true));
-document.getElementById("btn-intro-skip")?.addEventListener("click", () => dismissIntro(false));
-if (introOverlay) {
-  introOverlay.addEventListener("click", (e) => {
-    if (e.target === introOverlay) dismissIntro(false);
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && introOverlay.style.display !== "none") dismissIntro(false);
-  });
-}
-
 function initUI() {
-  updateBuildBadge();
   ensureOriginUi();
   ensureVerificationUi();
-  ensureVerificationToggles();
-  ensureVerificationLegend();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
@@ -1860,47 +931,26 @@ function safeInitUI() {
 async function initGraphApp() {
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
-    onSelect: (nodeObj) => {
-      safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj);
-      safeUiCall("updateStats", updateStats, state.graph.getStats());
-    },
+    onSelect: (nodeObj) => safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj),
     onHover: (payload) => safeUiCall("updateTooltip", updateTooltip, payload),
     onCountsChange: (stats) => safeUiCall("updateStats", updateStats, stats),
   });
 
   const data = await loadMergedGraphData({
-    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./output/graph.json",
+    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
     corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   state.graph.loadData(data);
-  state.vrMode = createVrMode({
-    graph: state.graph,
-    button: dom.btnVr,
-    onStatus: (message) => {
-      if (message) {
-        setText(dom.loadStatus, message);
-      }
-    },
-    onError: (error) => {
-      console.error("VR mode failed", error);
-      setText(dom.loadStatus, "VR mode unavailable.");
-    },
-  });
-  await state.vrMode.init();
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
   hideLoadingOverlay();
-  parseShareLink();
 }
 
 if (shouldBootUi) {
   initGraphApp().catch((error) => {
     console.error(error);
-    const message = window.location.protocol === "file:"
-      ? "Failed to load explorer data. Open this page through a local web server, not file://."
-      : "Failed to load explorer data.";
-    setText(dom.loadStatus, message);
+    setText(dom.loadStatus, "Failed to load explorer data.");
     hideLoadingOverlay();
   });
 }

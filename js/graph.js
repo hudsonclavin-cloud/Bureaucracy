@@ -1,14 +1,12 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260326f";
-import { QUEST_VR_CONFIG } from "./vrConfig.js?v=20260324vr2";
+import { createLodManager } from "./lodManager.js?v=20260312a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
-const MAX_VISIBLE_NODES = 25000;
+const MAX_NODES = 100000;
 const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
-const SOURCE_SAMPLE_LIMIT = 12;
 const NODE_RADIUS = 4;
 const NODE_OPACITY = 0.92;
 const EXPANSION_TIME_BUDGET_MS = 8;
@@ -24,15 +22,6 @@ const MIN_DISTANCE = 5;
 const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
-const SPHERE_RADIUS_SPACING = 18;
-const SHELL_CAPACITIES = [32, 64, 128];
-const SHELL_GAP_MULTIPLIER = 1.55;
-const SHELL_BRANCH_HINT_BLEND = 0.16;
-const DEEP_SHELL_BRANCH_HINT_BLEND = 0.06;
-const SHELL_ANCHOR_RESTORE = 0.12;
-const BRANCH_RELAXATION_ITERATIONS = 5;
-const BRANCH_SECTOR_BASE_DISTANCE = 88;
-const BRANCH_SECTOR_SPACING = 16;
 const BRANCH_SECTOR_BLEND = 0.62;
 const BRANCH_PARENT_BLEND = 0.32;
 const BRANCH_FORCE = 0.018;
@@ -51,15 +40,6 @@ const ALWAYS_VISIBLE_CLUSTER_NAMES = new Set([
   "executive branch",
   "judicial branch",
 ]);
-const colorToBranchKey = {
-  "#c8a84a": "constitution",
-  "#8a4ac8": "legislative",
-  "#c84a4a": "executive",
-  "#4a8ac8": "judicial",
-  "#4ac88a": "independent",
-  "#c8884a": "regulatory",
-  "#888888": "position",
-};
 const branchColors = {
   constitution: "#c8a84a",
   legislative: "#8a4ac8",
@@ -70,57 +50,14 @@ const branchColors = {
   position: "#888888",
 };
 const branchSectorDirections = {
-  constitution: new THREE.Vector3(0, 0, 0),
-  legislative: new THREE.Vector3(-1, 0, 0).normalize(),
-  executive: new THREE.Vector3(1, 0, 0).normalize(),
-  judicial: new THREE.Vector3(0, 1, 0).normalize(),
-  independent: new THREE.Vector3(0, -1, 0).normalize(),
-  regulatory: new THREE.Vector3(0, 0, 1).normalize(),
-  position: new THREE.Vector3(0, 0, -1).normalize(),
+  constitution: new THREE.Vector3(0, 1, 0.08).normalize(),
+  legislative: new THREE.Vector3(-0.94, 0.24, 0.22).normalize(),
+  executive: new THREE.Vector3(0.95, 0.2, 0.18).normalize(),
+  judicial: new THREE.Vector3(0.08, 0.9, -0.42).normalize(),
+  independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
+  regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
+  position: new THREE.Vector3(-0.14, 0.18, 0.97).normalize(),
 };
-const POSITION_TYPES = new Set(["position", "person", "appointment", "staff", "officer", "official", "role"]);
-const LEGISLATIVE_TYPES = new Set(["committee", "subcommittee", "chamber", "congressional office"]);
-const JUDICIAL_TYPES = new Set(["court", "circuit court", "specialized court", "judicial office"]);
-const REGULATORY_TYPES = new Set(["regulatory commission", "independent regulatory commission"]);
-const INDEPENDENT_TYPES = new Set(["independent agency", "board", "commission", "authority", "government corporation"]);
-const EXECUTIVE_TYPES = new Set([
-  "cabinet department",
-  "agency",
-  "component agency",
-  "defense agency",
-  "operating division",
-  "bureau",
-  "military branch",
-  "combatant command",
-  "national laboratory",
-  "nasa center",
-  "presidential library",
-  "museum/unit",
-  "visn",
-]);
-const STRUCTURAL_CONTAINER_TYPES = new Set([
-  "office",
-  "regional office",
-  "area office",
-  "division",
-  "operating division",
-  "directorate",
-  "mission directorate",
-  "service",
-  "center",
-  "administration",
-  "organization",
-  "unit",
-  "program",
-  "component agency",
-  "defense agency",
-  "agency",
-  "bureau",
-  "national laboratory",
-  "nasa center",
-  "museum/unit",
-  "visn",
-]);
 
 export function createGovernmentGraph({
   canvas,
@@ -129,7 +66,6 @@ export function createGovernmentGraph({
   onCountsChange = () => {},
 } = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-  renderer.xr.enabled = true;
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0x020408, 1);
@@ -137,10 +73,6 @@ export function createGovernmentGraph({
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 3000);
-  const xrDolly = new THREE.Group();
-  xrDolly.name = "xr-dolly";
-  xrDolly.add(camera);
-  scene.add(xrDolly);
   camera.position.set(0, 0, CAMERA_DISTANCE);
   const lodManager = createLodManager({ maxDepth: MAX_DEPTH });
 
@@ -239,7 +171,6 @@ export function createGovernmentGraph({
   const tempVecD = new THREE.Vector3();
   const tempMat4 = new THREE.Matrix4();
   const tempQuat = new THREE.Quaternion();
-  const tempQuatB = new THREE.Quaternion();
   const tempScale = new THREE.Vector3();
   const tempSphere = new THREE.Sphere();
   const tempClusterColor = new THREE.Color();
@@ -253,18 +184,12 @@ export function createGovernmentGraph({
   const clusterAccentColor = new THREE.Color(0x5a7bb8);
   const whiteColor = new THREE.Color(0xffffff);
   const desiredCameraPosition = new THREE.Vector3();
-  const edgeUpdateRange = { offset: Infinity, count: 0 };
 
   const state = {
     data: null,
     rootObj: null,
     selectedNode: null,
     totalNodeCount: 0,
-    graphNodeCount: 0,
-    candidateNodeCount: 0,
-    totalBudgetCost: 0,
-    totalBudgetLabel: "total cost",
-    budgetSummary: null,
     maxDataDepth: 0,
     maxNodes: 0,
     maxVisibleDepth: MAX_DEPTH,
@@ -332,11 +257,6 @@ export function createGovernmentGraph({
     lastUserDrillAt: 0,
     showUnverifiedNodes: true,
     showCandidateNodes: false,
-    activeBranchFilter: null,
-    fullExpandRenderMode: false,
-    manuallyCollapsedNodeIds: new Set(),
-    xrSessionActive: false,
-    frameHooks: new Set(),
     candidateNodes: [],
     keyState: {
       KeyW: false,
@@ -349,28 +269,9 @@ export function createGovernmentGraph({
   };
 
   function notifyCounts() {
-    const loadedDisplayNodeCount = state.visibleNodes.reduce(
-      (count, nodeObj) => count + (shouldDisplayNodeByVerification(nodeObj.data) ? 1 : 0),
-      0,
-    );
-    const eligibleTotalNodeCount = Array.from(state.dataMap.values()).reduce(
-      (count, dataNode) => count + (shouldDisplayNodeByVerification(dataNode) ? 1 : 0),
-      0,
-    );
-    const candidateNodeCount = state.candidateNodes.length;
-    const hiddenCandidateCount = state.showCandidateNodes ? 0 : candidateNodeCount;
-    const totalNodeCount = state.totalNodeCount;
     onCountsChange({
       visibleNodeCount: state.visibleNodeCount,
-      totalNodeCount,
-      loadedDisplayNodeCount,
-      eligibleTotalNodeCount,
-      graphNodeCount: state.graphNodeCount,
-      candidateNodeCount: state.candidateNodeCount,
-      hiddenCandidateCount,
-      totalBudgetCost: state.totalBudgetCost,
-      totalBudgetLabel: state.totalBudgetLabel,
-      budgetSummary: state.budgetSummary,
+      totalNodeCount: state.totalNodeCount,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
       manualDepthFilter: state.manualDepthFilter,
@@ -382,7 +283,6 @@ export function createGovernmentGraph({
       densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
       showUnverifiedNodes: state.showUnverifiedNodes,
       showCandidateNodes: state.showCandidateNodes,
-      fullExpandRenderMode: state.fullExpandRenderMode,
     });
   }
 
@@ -390,120 +290,34 @@ export function createGovernmentGraph({
     return parseInt((hex || "#888888").replace("#", ""), 16);
   }
 
-  function getActiveCamera() {
-    if (renderer.xr.isPresenting) {
-      return renderer.xr.getCamera(camera);
-    }
-    return camera;
-  }
-
-  function getActiveCameraPosition(target = tempVecD) {
-    const activeCamera = getActiveCamera();
-    if (renderer.xr.isPresenting && activeCamera.cameras?.[0]) {
-      return target.setFromMatrixPosition(activeCamera.cameras[0].matrixWorld);
-    }
-    camera.getWorldPosition(target);
-    return target;
-  }
-
-  function getActiveCameraQuaternion(target = tempQuat) {
-    const activeCamera = getActiveCamera();
-    if (renderer.xr.isPresenting && activeCamera.cameras?.[0]) {
-      activeCamera.cameras[0].getWorldQuaternion(target);
-      return target;
-    }
-    camera.getWorldQuaternion(target);
-    return target;
-  }
-
-  function normalizeTypeKey(type) {
-    return String(type || "").trim().toLowerCase().replace(/\s+/g, " ");
-  }
-
   function inferBranchKey(data) {
     const id = String(data?.id || "").toLowerCase();
     const type = String(data?.type || "").toLowerCase();
-    const name = String(data?.name || "").toLowerCase();
-    const exactType = normalizeTypeKey(type);
 
-    if (type.includes("constitution") || name.includes("constitution") || id === "constitution" || id.startsWith("const")) {
+    if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
       return "constitution";
     }
-    if (POSITION_TYPES.has(exactType)) {
+    if (type === "position" || type.includes("office") || type.includes("officer")) {
       return "position";
     }
-    if (LEGISLATIVE_TYPES.has(exactType)) {
+    if (id.startsWith("leg-")) {
       return "legislative";
     }
-    if (JUDICIAL_TYPES.has(exactType)) {
+    if (id.startsWith("jud-")) {
       return "judicial";
     }
-    if (REGULATORY_TYPES.has(exactType)) {
-      return "regulatory";
-    }
-    if (INDEPENDENT_TYPES.has(exactType)) {
-      return "independent";
-    }
-    if (EXECUTIVE_TYPES.has(exactType) || exactType === "department" || exactType === "cabinet") {
-      return "executive";
-    }
-    if (
-      id.startsWith("leg-") ||
-      id.startsWith("legislative-") ||
-      name.includes("legislative branch") ||
-      name.includes("congress") ||
-      name.includes("house of representatives") ||
-      name.includes("senate") ||
-      type.includes("committee") ||
-      type.includes("subcommittee") ||
-      type.includes("congressional")
-    ) {
-      return "legislative";
-    }
-    if (
-      id.startsWith("jud-") ||
-      id.startsWith("judicial-") ||
-      name.includes("judicial branch") ||
-      name.includes("supreme court") ||
-      name.includes("federal judiciary") ||
-      type.includes("court") ||
-      type.includes("judicial") ||
-      type.includes("judge")
-    ) {
-      return "judicial";
-    }
-    if (
-      id.startsWith("exec-regulatory") ||
-      type.includes("regulatory") ||
-      name.includes("regulatory")
-    ) {
+    if (id.startsWith("exec-regulatory") || type.includes("regulatory")) {
       return "regulatory";
     }
     if (
       id.startsWith("exec-ind") ||
       id === "exec-independent" ||
-      name.includes("independent") ||
       type.includes("government corporation") ||
-      type.includes("independent") ||
-      (type.includes("board") && !type.includes("board of")) ||
-      (type.includes("commission") && !type.includes("commissioner")) ||
-      type.includes("authority")
+      type.includes("independent")
     ) {
       return "independent";
     }
-    if (
-      id.startsWith("exec-") ||
-      id.startsWith("executive-") ||
-      name.includes("executive branch") ||
-      name.includes("department of ") ||
-      type.includes("department") ||
-      type.includes("cabinet") ||
-      (type.includes("agency") &&
-        !type.includes("independent") &&
-        !type.includes("regulatory") &&
-        !name.includes("independent")) ||
-      (type.includes("bureau") && !type.includes("judicial") && !type.includes("legislative"))
-    ) {
+    if (id.startsWith("exec-")) {
       return "executive";
     }
     return "position";
@@ -511,17 +325,7 @@ export function createGovernmentGraph({
 
   function resolveLayoutBranchKey(data, parentBranchKey = null) {
     const branchKey = inferBranchKey(data);
-    const type = String(data?.type || "").toLowerCase();
-    const exactType = normalizeTypeKey(type);
-    const inheritsParentBranch =
-      branchKey === "position" ||
-      STRUCTURAL_CONTAINER_TYPES.has(exactType) ||
-      exactType.endsWith(" office") ||
-      exactType.endsWith(" division") ||
-      exactType.endsWith(" directorate") ||
-      exactType.endsWith(" center") ||
-      exactType.endsWith(" service");
-    if (inheritsParentBranch && parentBranchKey && parentBranchKey !== "constitution") {
+    if (branchKey === "position" && parentBranchKey && parentBranchKey !== "constitution") {
       return parentBranchKey;
     }
     return branchKey;
@@ -548,8 +352,6 @@ export function createGovernmentGraph({
     if (data?.isCandidate) {
       return "candidate";
     }
-    const costStatus = String(data?.cost_status || "").toLowerCase();
-    if (costStatus === "official" || costStatus === "root_total") return "official";
     const status = String(data?.verificationStatus || "verified").toLowerCase();
     if (status === "partial") {
       return "partial";
@@ -577,14 +379,6 @@ export function createGovernmentGraph({
   function shouldDisplayNodeByVerification(data) {
     if (data?.isCandidate) {
       return state.showCandidateNodes;
-    }
-    if (state.activeBranchFilter !== null) {
-      // Use the color field (set during build) for accurate branch matching, fall back to inference
-      const colorBranch = colorToBranchKey[String(data?.color || "").toLowerCase()];
-      const branchKey = colorBranch || inferBranchKey(data);
-      if (branchKey !== "constitution" && branchKey !== state.activeBranchFilter) {
-        return false;
-      }
     }
     if (state.showUnverifiedNodes) {
       return true;
@@ -728,7 +522,7 @@ export function createGovernmentGraph({
   }
 
   function getLabelDistanceScale(worldPosition) {
-    const distance = Math.max(getActiveCameraPosition(tempVecA).distanceTo(worldPosition), 1);
+    const distance = Math.max(camera.position.distanceTo(worldPosition), 1);
     return THREE.MathUtils.clamp(distance * 0.006, 0.5, 4);
   }
 
@@ -739,88 +533,6 @@ export function createGovernmentGraph({
       hash = Math.imul(hash, 16777619);
     }
     return hash >>> 0;
-  }
-
-  function parseBudgetAmount(value) {
-    if (value === null || value === undefined || value === "") {
-      return 0;
-    }
-    if (typeof value === "number" && Number.isFinite(value)) {
-      return value;
-    }
-    const text = String(value);
-    const matches = [...text.matchAll(/(-?\d+(?:,\d{3})*(?:\.\d+)?)\s*([kmbt])?/gi)];
-    if (matches.length > 0) {
-      let total = 0;
-      for (const [, numericText, suffix = ""] of matches) {
-        const numericValue = Number(String(numericText).replace(/,/g, ""));
-        if (!Number.isFinite(numericValue)) {
-          continue;
-        }
-        const normalizedSuffix = String(suffix).toLowerCase();
-        const multiplier =
-          normalizedSuffix === "t" ? 1e12
-            : normalizedSuffix === "b" ? 1e9
-              : normalizedSuffix === "m" ? 1e6
-                : normalizedSuffix === "k" ? 1e3
-                  : 1;
-        total += numericValue * multiplier;
-      }
-      return total;
-    }
-    const normalized = text.replace(/[^0-9.\-]/g, "");
-    const parsed = Number(normalized);
-    return Number.isFinite(parsed) ? parsed : 0;
-  }
-
-  function mergeSourceSamples(...sampleGroups) {
-    const merged = [];
-    const seen = new Set();
-    for (const sampleGroup of sampleGroups) {
-      for (const value of sampleGroup || []) {
-        const normalized = String(value || "").trim();
-        if (!normalized) {
-          continue;
-        }
-        const key = normalized.toLowerCase();
-        if (seen.has(key)) {
-          continue;
-        }
-        seen.add(key);
-        merged.push(normalized);
-        if (merged.length >= SOURCE_SAMPLE_LIMIT) {
-          return merged;
-        }
-      }
-    }
-    return merged;
-  }
-
-  function getNodeSourceUrls(node) {
-    return mergeSourceSamples(
-      Array.isArray(node?.sourceUrls) ? node.sourceUrls : [],
-      node?.official_website ? [node.official_website] : [],
-    );
-  }
-
-  function getNodeSourceCount(node, sourceUrls = getNodeSourceUrls(node)) {
-    const explicitCount = Number(node?.sourceCount);
-    if (Number.isFinite(explicitCount) && explicitCount > 0) {
-      return explicitCount;
-    }
-    return sourceUrls.length;
-  }
-
-  function getNodeDirectCost(node) {
-    return parseBudgetAmount(node?.direct_outlay_amount ?? node?.budget ?? node?.annual_budget);
-  }
-
-  function getNodeRollupCost(node) {
-    return parseBudgetAmount(node?.resolved_total_amount ?? node?.rollup_total_amount);
-  }
-
-  function hasNodeRollupCost(node) {
-    return node?.resolved_total_amount != null || node?.rollup_total_amount != null;
   }
 
   function nodeRadiusForDepth(depth) {
@@ -840,111 +552,19 @@ export function createGovernmentGraph({
     return BASE_RADIUS + depth * RADIUS_STEP + depth * depth * 6;
   }
 
-  function childSphereRadius(parentObj, childCount) {
-    const baseRadius = BASE_RADIUS + parentObj.depth * 10;
-    const subtreeMass = (parentObj.data?.children || []).reduce(
-      (sum, child) => sum + (child?.__meta?.subtreeCount || 1),
-      0,
-    );
-    return baseRadius
-      + SPHERE_RADIUS_SPACING * Math.sqrt(Math.max(childCount, 1))
-      + Math.log2(Math.max(subtreeMass, 1) + 1) * 9;
-  }
-
-  function topLevelBranchDistance(subtreeCount) {
-    return BRANCH_SECTOR_BASE_DISTANCE + Math.sqrt(Math.max(subtreeCount, 1)) * BRANCH_SECTOR_SPACING;
-  }
-
-  function getShellCapacity(shellIndex) {
-    if (shellIndex < SHELL_CAPACITIES.length) {
-      return SHELL_CAPACITIES[shellIndex];
-    }
-    return SHELL_CAPACITIES[SHELL_CAPACITIES.length - 1] * (2 ** (shellIndex - SHELL_CAPACITIES.length + 1));
-  }
-
-  function buildChildShells(parentObj, childCount) {
-    const shells = [];
-    let remaining = childCount;
-    let start = 0;
-    let shellIndex = 0;
-    const baseShellRadius = childSphereRadius(parentObj, childCount);
-    const shellGap = Math.max(
-      SPHERE_RADIUS_SPACING * SHELL_GAP_MULTIPLIER,
-      12 + Math.sqrt(Math.max(childCount, 1)) * 2.4,
-    );
-
-    while (remaining > 0) {
-      const capacity = getShellCapacity(shellIndex);
-      const count = Math.min(remaining, capacity);
-      shells.push({
-        index: shellIndex,
-        start,
-        count,
-        radius: baseShellRadius + shellIndex * shellGap,
-      });
-      remaining -= count;
-      start += count;
-      shellIndex += 1;
-    }
-
-    return shells;
-  }
-
-  function computeVisibleNodeBudget(cameraDistance) {
-    if (state.xrSessionActive) {
-      const distance = Math.max(cameraDistance, 1);
-      const normalizedDistance = THREE.MathUtils.clamp((distance - 110) / 800, 0, 1);
-      return Math.round(THREE.MathUtils.lerp(
-        QUEST_VR_CONFIG.maxVisibleNodes,
-        QUEST_VR_CONFIG.farVisibleNodes,
-        normalizedDistance,
-      ));
-    }
-    if (state.fullExpandRenderMode) {
-      return MAX_VISIBLE_NODES;
-    }
-    const distance = Math.max(cameraDistance, 1);
-    const normalizedDistance = THREE.MathUtils.clamp((distance - 140) / 1100, 0, 1);
-    const farBudget = Math.max(5000, Math.floor(MAX_VISIBLE_NODES * 0.3));
-    return Math.round(THREE.MathUtils.lerp(MAX_VISIBLE_NODES, farBudget, normalizedDistance));
-  }
-
   function getNavigationDistance() {
-    const cameraPosition = getActiveCameraPosition(tempVecA);
     if (state.flyMode) {
-      return Math.max(cameraPosition.distanceTo(state.flyLookTarget), 1);
+      return Math.max(camera.position.distanceTo(state.flyLookTarget), 1);
     }
-    return Math.max(cameraPosition.distanceTo(state.camFocus), 1);
+    return Math.max(camera.position.distanceTo(state.camFocus), 1);
   }
 
   function updateLodState() {
-    const cameraDistance = getNavigationDistance();
     state.lod = lodManager.updateLOD({
-      cameraDistance,
+      cameraDistance: getNavigationDistance(),
       rootNode: state.rootObj,
       maxDepthFilter: state.manualDepthFilter,
     });
-    if (state.xrSessionActive) {
-      const vrLevelOverride = QUEST_VR_CONFIG.levelOverrides[state.lod.level] || {};
-      state.lod = {
-        ...state.lod,
-        ...vrLevelOverride,
-        label: `${state.lod.label} VR`,
-        showHalos: false,
-        showRelationshipEdges: Boolean(vrLevelOverride.showRelationshipEdges),
-        clusterHiddenDescendants: vrLevelOverride.clusterHiddenDescendants ?? true,
-        clusterPositionsOnly: vrLevelOverride.clusterPositionsOnly ?? state.lod.clusterPositionsOnly,
-      };
-    }
-    state.maxNodes = computeVisibleNodeBudget(cameraDistance);
-    if (state.fullExpandRenderMode) {
-      state.lod.visibleDepth = Math.min(MAX_DEPTH, state.manualDepthFilter);
-      state.lod.visibleNodeBudget = state.xrSessionActive ? QUEST_VR_CONFIG.maxVisibleNodes : MAX_VISIBLE_NODES;
-      state.lod.label = "Full Expansion";
-      state.lod.showHalos = false;
-      state.lod.clusterHiddenDescendants = false;
-      state.lod.clusterPositionsOnly = false;
-    }
     state.maxVisibleDepth = state.lod.visibleDepth;
     return state.lod;
   }
@@ -963,7 +583,7 @@ export function createGovernmentGraph({
   function projectWorldToScreen(position) {
     const width = renderer.domElement.clientWidth || window.innerWidth;
     const height = renderer.domElement.clientHeight || window.innerHeight;
-    const projected = tempVecD.copy(position).project(getActiveCamera());
+    const projected = tempVecD.copy(position).project(camera);
     return {
       x: ((projected.x + 1) * 0.5) * width,
       y: ((1 - projected.y) * 0.5) * height,
@@ -1030,13 +650,6 @@ export function createGovernmentGraph({
   }
 
   function applyDensityCap(nodeObjs) {
-    if (state.fullExpandRenderMode) {
-      for (const nodeObj of nodeObjs) {
-        nodeObj.densityCapped = false;
-      }
-      state.lod.densityHiddenNodeCount = 0;
-      return;
-    }
     const protectedIds = getProtectedNodeIds();
     const ancestorIds = state.selectedNode?.isCluster ? new Set() : getAncestorIds(state.selectedNode);
     const buckets = computeScreenSpaceBuckets(nodeObjs);
@@ -1074,11 +687,9 @@ export function createGovernmentGraph({
   function worldUnitsToPixels(position, widthWorld, heightWorld) {
     const width = renderer.domElement.clientWidth || window.innerWidth;
     const height = renderer.domElement.clientHeight || window.innerHeight;
-    const activeCamera = getActiveCamera();
-    const cameraPosition = getActiveCameraPosition(tempVecA);
-    const distance = Math.max(cameraPosition.distanceTo(position), 1);
-    const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(activeCamera.fov * 0.5)) * distance;
-    const visibleWidth = visibleHeight * activeCamera.aspect;
+    const distance = Math.max(camera.position.distanceTo(position), 1);
+    const visibleHeight = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5)) * distance;
+    const visibleWidth = visibleHeight * camera.aspect;
     return {
       width: (widthWorld / visibleWidth) * width,
       height: (heightWorld / visibleHeight) * height,
@@ -1113,9 +724,6 @@ export function createGovernmentGraph({
         continue;
       }
       const bounds = measureLabelBounds(candidate.sprite, candidate.priority);
-      if (!candidate.sprite.visible) {
-        continue;
-      }
       let blocked = false;
       for (const acceptedBounds of accepted) {
         if (labelBoundsIntersect(bounds, acceptedBounds)) {
@@ -1131,19 +739,11 @@ export function createGovernmentGraph({
   }
 
   function getClusterCollapseDistance(nodeObj) {
-    const distance = lodManager.getClusterPolicy(nodeObj, state.lod).collapseDistance;
-    if (!state.xrSessionActive) {
-      return distance;
-    }
-    return distance === 0 ? 0 : Math.max(0, distance * QUEST_VR_CONFIG.clusterCollapseDistanceMultiplier);
+    return lodManager.getClusterPolicy(nodeObj, state.lod).collapseDistance;
   }
 
   function getClusterDescendantThreshold(nodeObj) {
-    const threshold = lodManager.getClusterPolicy(nodeObj, state.lod).minDescendants;
-    if (!state.xrSessionActive) {
-      return threshold;
-    }
-    return Number.isFinite(threshold) ? threshold + QUEST_VR_CONFIG.clusterDescendantBonus : threshold;
+    return lodManager.getClusterPolicy(nodeObj, state.lod).minDescendants;
   }
 
   function directionFromSeed(seedA, seedB = 0) {
@@ -1159,21 +759,9 @@ export function createGovernmentGraph({
     );
   }
 
-  function fibonacciSphereDirection(index, count, out = new THREE.Vector3()) {
-    if (count <= 1) {
-      return out.set(0, 1, 0);
-    }
-    const sample = (index + 0.5) / count;
-    const y = 1 - sample * 2;
-    const radius = Math.sqrt(Math.max(0, 1 - y * y));
-    const theta = GOLDEN_ANGLE * index;
-    out.set(Math.cos(theta) * radius, y, Math.sin(theta) * radius);
-    return out.normalize();
-  }
-
   function syncFlyStateFromCamera() {
     camera.getWorldDirection(tempVecA);
-    state.flyPosition.copy(getActiveCameraPosition(tempVecB));
+    state.flyPosition.copy(camera.position);
     state.flyVelocity.set(0, 0, 0);
     state.flyLookTarget.copy(state.camFocus);
     state.flyYaw = Math.atan2(tempVecA.x, tempVecA.z);
@@ -1226,68 +814,6 @@ export function createGovernmentGraph({
     state.renderDirty = true;
   }
 
-  function moveVrRig(strafe, vertical, forward) {
-    if (!state.xrSessionActive) {
-      return;
-    }
-    tempVecA.set(strafe, 0, forward);
-    if (tempVecA.lengthSq() > 0) {
-      const cameraQuat = getActiveCameraQuaternion(tempQuat);
-      const yawOnly = new THREE.Euler(0, 0, 0, "YXZ").setFromQuaternion(cameraQuat);
-      tempQuatB.setFromAxisAngle(upVector, yawOnly.y);
-      tempVecA.applyQuaternion(tempQuatB);
-      xrDolly.position.add(tempVecA);
-    }
-    if (vertical) {
-      xrDolly.position.y += vertical;
-    }
-    state.renderDirty = true;
-  }
-
-  function teleportVrRig(targetWorldPosition) {
-    if (!state.xrSessionActive || !targetWorldPosition) {
-      return;
-    }
-    const headPosition = getActiveCameraPosition(tempVecA);
-    tempVecB.copy(targetWorldPosition).sub(headPosition);
-    xrDolly.position.add(tempVecB);
-    state.renderDirty = true;
-  }
-
-  function snapTurnVr(angle) {
-    if (!state.xrSessionActive || !angle) {
-      return;
-    }
-    const headBefore = getActiveCameraPosition(tempVecA).clone();
-    xrDolly.rotateY(angle);
-    const headAfter = getActiveCameraPosition(tempVecB).clone();
-    xrDolly.position.add(headBefore.sub(headAfter));
-    state.renderDirty = true;
-  }
-
-  function focusNodeInVr(nodeObj = state.selectedNode) {
-    if (!state.xrSessionActive || !nodeObj) {
-      return;
-    }
-    const headPosition = getActiveCameraPosition(tempVecA);
-    const currentForward = getActiveCameraQuaternion(tempQuat);
-    tempVecB.set(0, 0, -1).applyQuaternion(currentForward).setY(0);
-    if (tempVecB.lengthSq() < 0.0001) {
-      tempVecB.set(0, 0, 1);
-    }
-    tempVecB.normalize();
-    const focusDistance = Math.max(10, nodeObj.isCluster ? nodeObj.radius * 3 : 18);
-    const destination = tempVecC.copy(nodeObj.pos).sub(tempVecB.multiplyScalar(focusDistance));
-    destination.y = Math.max(headPosition.y, nodeObj.pos.y + 2);
-    teleportVrRig(destination);
-  }
-
-  function resetVrRig() {
-    xrDolly.position.set(0, 0, 0);
-    xrDolly.rotation.set(0, 0, 0);
-    state.renderDirty = true;
-  }
-
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
     const nextPath = [...path, node.name];
     node.parent = parentId;
@@ -1309,30 +835,11 @@ export function createGovernmentGraph({
 
     let subtreeCount = 1;
     let subtreeDepth = depth;
-    const directSourceUrls = getNodeSourceUrls(node);
-    const directSourceCount = getNodeSourceCount(node, directSourceUrls);
-    const directCost = getNodeDirectCost(node);
-    const explicitRollupCost = getNodeRollupCost(node);
-    const hasExplicitRollupCost = hasNodeRollupCost(node) && Number.isFinite(explicitRollupCost);
-    let subtreeCost = hasExplicitRollupCost ? explicitRollupCost : directCost;
-    let subtreeSourceCount = directSourceCount;
-    let subtreeEvidenceNodeCount = directSourceCount > 0 ? 1 : 0;
-    let subtreeVerifiedNodeCount = String(node.verificationStatus || "").toLowerCase() === "verified" ? 1 : 0;
-    let subtreePartialNodeCount = String(node.verificationStatus || "").toLowerCase() === "partial" ? 1 : 0;
-    let subtreeSourceUrlSamples = mergeSourceSamples(directSourceUrls);
     const children = node.children || [];
     for (const child of children) {
       const childMeta = registerDataNode(child, node.id, depth + 1, nextPath);
       subtreeCount += childMeta.subtreeCount;
       subtreeDepth = Math.max(subtreeDepth, childMeta.maxDepth);
-      if (!hasExplicitRollupCost) {
-        subtreeCost += childMeta.subtreeCost || 0;
-      }
-      subtreeSourceCount += childMeta.subtreeSourceCount || 0;
-      subtreeEvidenceNodeCount += childMeta.subtreeEvidenceNodeCount || 0;
-      subtreeVerifiedNodeCount += childMeta.subtreeVerifiedNodeCount || 0;
-      subtreePartialNodeCount += childMeta.subtreePartialNodeCount || 0;
-      subtreeSourceUrlSamples = mergeSourceSamples(subtreeSourceUrlSamples, childMeta.subtreeSourceUrlSamples);
     }
 
     node.__meta = {
@@ -1340,27 +847,8 @@ export function createGovernmentGraph({
       subtreeCount,
       maxDepth: subtreeDepth,
       childCount: children.length,
-      directCost,
-      explicitRollupCost,
-      subtreeCost,
-      directSourceCount,
-      directSourceUrls,
-      subtreeSourceCount,
-      subtreeEvidenceNodeCount,
-      subtreeVerifiedNodeCount,
-      subtreePartialNodeCount,
-      subtreeSourceUrlSamples,
     };
-    return {
-      subtreeCount,
-      maxDepth: subtreeDepth,
-      subtreeCost,
-      subtreeSourceCount,
-      subtreeEvidenceNodeCount,
-      subtreeVerifiedNodeCount,
-      subtreePartialNodeCount,
-      subtreeSourceUrlSamples,
-    };
+    return { subtreeCount, maxDepth: subtreeDepth };
   }
 
   function registerCandidateNode(node) {
@@ -1386,44 +874,11 @@ export function createGovernmentGraph({
       subtreeCount: 1,
       maxDepth: depth,
       childCount: 0,
-      directCost: getNodeDirectCost(node),
-      explicitRollupCost: getNodeRollupCost(node),
-      subtreeCost: getNodeRollupCost(node) || getNodeDirectCost(node),
-      directSourceCount: getNodeSourceCount(node),
-      directSourceUrls: getNodeSourceUrls(node),
-      subtreeSourceCount: getNodeSourceCount(node),
-      subtreeEvidenceNodeCount: getNodeSourceCount(node) > 0 ? 1 : 0,
-      subtreeVerifiedNodeCount: 0,
-      subtreePartialNodeCount: 0,
-      subtreeSourceUrlSamples: getNodeSourceUrls(node),
     };
-  }
-
-  function expandEntireGraph() {
-    let safetyCounter = 0;
-    const expansionBudget = Math.max(state.totalNodeCount + 1, 1);
-    while (safetyCounter < expansionBudget) {
-      const frontier = getFrontier(MAX_DEPTH);
-      if (frontier.nodes.length === 0) {
-        break;
-      }
-      expandNodesBatch(frontier.nodes, false);
-      flushPendingExpansions(50, Math.max(frontier.nodes.length * 64, 4096));
-      safetyCounter += frontier.nodes.length;
-    }
   }
 
   function getVerificationMaterialProfile(styleKey, color) {
     const baseColor = new THREE.Color(color);
-    if (styleKey === "official") {
-      return {
-        color: baseColor.clone().lerp(new THREE.Color("#c8a84a"), 0.08),
-        emissive: baseColor.clone().multiplyScalar(0.6),
-        emissiveIntensity: 0.45,
-        opacity: NODE_OPACITY,
-        wireframe: false,
-      };
-    }
     if (styleKey === "partial") {
       return {
         color: baseColor.clone().lerp(whiteColor, 0.12),
@@ -1523,18 +978,12 @@ export function createGovernmentGraph({
     const edgePositions = new Float32Array(edgeCapacity * 6);
     const edgeColors = new Float32Array(edgeCapacity * 6);
     const edgeGeometry = new THREE.BufferGeometry();
-    const positionAttribute = new THREE.BufferAttribute(edgePositions, 3);
-    const colorAttribute = new THREE.BufferAttribute(edgeColors, 3);
-    positionAttribute.setUsage(THREE.DynamicDrawUsage);
-    colorAttribute.setUsage(THREE.DynamicDrawUsage);
-    edgeGeometry.setAttribute("position", positionAttribute);
-    edgeGeometry.setAttribute("color", colorAttribute);
-    edgeGeometry.setDrawRange(0, 0);
+    edgeGeometry.setAttribute("position", new THREE.BufferAttribute(edgePositions, 3));
+    edgeGeometry.setAttribute("color", new THREE.BufferAttribute(edgeColors, 3));
     const edgeMaterial = new THREE.LineBasicMaterial({
       color: 0x999999,
       transparent: true,
       opacity: 0.3,
-      vertexColors: true,
     });
     const edgeLines = new THREE.LineSegments(edgeGeometry, edgeMaterial);
     edgeLines.frustumCulled = false;
@@ -1546,8 +995,6 @@ export function createGovernmentGraph({
       lines: edgeLines,
       nextSlot: 0,
       freeSlots: [],
-      activeCount: 0,
-      maxActiveSlot: -1,
       dirtyPositions: false,
       dirtyColors: false,
     };
@@ -1569,8 +1016,6 @@ export function createGovernmentGraph({
       depth,
       layoutBranchKey,
       branchDirection: new THREE.Vector3(),
-      sectorDirection: new THREE.Vector3(),
-      shellRadius: 0,
       pos: new THREE.Vector3(),
       targetPos: new THREE.Vector3(),
       animFrom: new THREE.Vector3(),
@@ -1595,11 +1040,6 @@ export function createGovernmentGraph({
       nodeObj.branchDirection.copy(parent.branchDirection);
     } else {
       copyBranchBaseDirection(layoutBranchKey, nodeObj.branchDirection);
-    }
-    if (parent?.sectorDirection?.lengthSq() > 0) {
-      nodeObj.sectorDirection.copy(parent.sectorDirection);
-    } else {
-      copyBranchBaseDirection(layoutBranchKey, nodeObj.sectorDirection);
     }
 
     assignBatchSlot(nodeObj);
@@ -1664,22 +1104,14 @@ export function createGovernmentGraph({
     state.renderDirty = true;
   }
 
-  function getTrustScaleMultiplier(data) {
-    const costStatus = String(data?.cost_status || "").toLowerCase();
-    if (costStatus === "root_total" || costStatus === "official") return 1.45;
-    if (costStatus === "scaled_official") return 1.25;
-    if (String(data?.verificationStatus || "").toLowerCase() === "verified") return 1.15;
-    return 1.0;
-  }
-
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
-    const cameraDistance = Math.max(getActiveCameraPosition(tempVecA).distanceTo(nodeObj.pos), 1);
+    const cameraDistance = Math.max(camera.position.distanceTo(nodeObj.pos), 1);
     const distanceScale = THREE.MathUtils.clamp(180 / cameraDistance, MIN_ZOOM_NODE_SCALE, 1);
     const zoomScale = Math.max(
       MIN_ZOOM_NODE_SCALE,
       lodManager.getNodeScale(cameraDistance, state.lod) * distanceScale,
     );
-    const finalScale = scaleMultiplier * zoomScale * getTrustScaleMultiplier(nodeObj.data);
+    const finalScale = scaleMultiplier * zoomScale;
     if (nodeObj === state.rootObj) {
       rootCore.visible = nodeObj.visible !== false;
       rootCore.position.copy(nodeObj.pos);
@@ -1751,28 +1183,6 @@ export function createGovernmentGraph({
     state.edgeBatch.dirtyColors = true;
   }
 
-  function markEdgeBatchRange(offset, count = 6) {
-    edgeUpdateRange.offset = Math.min(edgeUpdateRange.offset, offset);
-    edgeUpdateRange.count = Math.max(edgeUpdateRange.count, offset + count - edgeUpdateRange.offset);
-  }
-
-  function recomputeActiveEdgeRange() {
-    let maxActiveSlot = -1;
-    let activeCount = 0;
-    for (const edge of state.allEdges) {
-      if (!edge.active) {
-        continue;
-      }
-      activeCount += 1;
-      if (edge.slot > maxActiveSlot) {
-        maxActiveSlot = edge.slot;
-      }
-    }
-    state.edgeBatch.activeCount = activeCount;
-    state.edgeBatch.maxActiveSlot = maxActiveSlot;
-    state.edgeBatch.geometry.setDrawRange(0, Math.max(0, (maxActiveSlot + 1) * 2));
-  }
-
   function updateEdge(edge) {
     const offset = edge.slot * 6;
     state.edgeBatch.positions[offset] = edge.from.pos.x;
@@ -1781,16 +1191,7 @@ export function createGovernmentGraph({
     state.edgeBatch.positions[offset + 3] = edge.to.pos.x;
     state.edgeBatch.positions[offset + 4] = edge.to.pos.y;
     state.edgeBatch.positions[offset + 5] = edge.to.pos.z;
-    markEdgeBatchRange(offset);
     state.edgeBatch.dirtyPositions = true;
-    if (!edge.active) {
-      edge.active = true;
-      state.edgeBatch.activeCount += 1;
-      if (edge.slot > state.edgeBatch.maxActiveSlot) {
-        state.edgeBatch.maxActiveSlot = edge.slot;
-        state.edgeBatch.geometry.setDrawRange(0, (state.edgeBatch.maxActiveSlot + 1) * 2);
-      }
-    }
     edge.active = true;
   }
 
@@ -1802,15 +1203,8 @@ export function createGovernmentGraph({
     state.edgeBatch.positions[offset + 3] = hiddenVector.x;
     state.edgeBatch.positions[offset + 4] = hiddenVector.y;
     state.edgeBatch.positions[offset + 5] = hiddenVector.z;
-    markEdgeBatchRange(offset);
     state.edgeBatch.dirtyPositions = true;
-    if (edge.active) {
-      edge.active = false;
-      state.edgeBatch.activeCount = Math.max(0, state.edgeBatch.activeCount - 1);
-      if (edge.slot === state.edgeBatch.maxActiveSlot) {
-        recomputeActiveEdgeRange();
-      }
-    }
+    edge.active = false;
   }
 
   function applyEdgeVisibility(edge) {
@@ -1825,8 +1219,6 @@ export function createGovernmentGraph({
       edge.to.renderVisible &&
       !edge.from.clustered &&
       !edge.to.clustered &&
-      !edge.from.culled &&
-      !edge.to.culled &&
       edge.from.depth < state.maxVisibleDepth &&
       edge.to.depth <= state.maxVisibleDepth;
     if (show) {
@@ -1860,214 +1252,105 @@ export function createGovernmentGraph({
     }
   }
 
-  function relaxSiblingPositions(offsets, shellRadii, branchAnchors = [], branchMetadata = []) {
-    for (let iteration = 0; iteration < BRANCH_RELAXATION_ITERATIONS; iteration += 1) {
-      for (let i = 0; i < offsets.length; i += 1) {
-        for (let j = i + 1; j < offsets.length; j += 1) {
-          const metaA = branchMetadata[i] || {};
-          const metaB = branchMetadata[j] || {};
-          const subtreeScaleA = Math.max(1, Math.sqrt(metaA.subtreeCount || 1));
-          const subtreeScaleB = Math.max(1, Math.sqrt(metaB.subtreeCount || 1));
-          const shellRadius = Math.max(shellRadii[i] || 0, shellRadii[j] || 0, MIN_DISTANCE);
-          tempVecB.copy(offsets[i]).normalize();
-          tempVecC.copy(offsets[j]).normalize();
-          const dot = THREE.MathUtils.clamp(tempVecB.dot(tempVecC), -0.9999, 0.9999);
-          const angle = Math.acos(dot);
-          const baseAngle = Math.max(0.08, (NODE_RADIUS * 3.4) / Math.max(shellRadius, 1));
-          const subtreeAngle = ((subtreeScaleA + subtreeScaleB) * 1.2) / Math.max(shellRadius, 1);
-          const branchBoost = metaA.branchKey === metaB.branchKey ? 0.02 : 0.09;
-          const minimumAngle = baseAngle + subtreeAngle + branchBoost;
-          if (angle >= minimumAngle) {
+  function getOrbitBasis(anchorDir) {
+    basisA.copy(anchorDir);
+    if (Math.abs(basisA.dot(upVector)) > 0.92) {
+      basisA.set(1, 0, 0);
+    } else {
+      basisA.cross(upVector).normalize();
+    }
+    basisB.copy(anchorDir).cross(basisA).normalize();
+  }
+
+  function relaxSiblingPositions(positions, shellRadius) {
+    const minimumDistance = Math.max(MIN_DISTANCE, NODE_RADIUS * 2.2);
+    const minimumDistanceSq = minimumDistance * minimumDistance;
+
+    for (let iteration = 0; iteration < 2; iteration += 1) {
+      for (let i = 0; i < positions.length; i += 1) {
+        for (let j = i + 1; j < positions.length; j += 1) {
+          tempVecA.subVectors(positions[i], positions[j]);
+          const distanceSq = tempVecA.lengthSq();
+          if (distanceSq >= minimumDistanceSq) {
             continue;
           }
 
-          const pushStrength = ((minimumAngle - angle) / minimumAngle) * shellRadius * 0.24;
-          const pushI = tempVecD.crossVectors(tempVecB, tempVecC).cross(tempVecB);
-          if (pushI.lengthSq() < 0.0001) {
-            pushI.copy(directionFromSeed(i + 1, j + 1));
+          if (distanceSq < 0.0001) {
+            tempVecA.set(Math.sin(i + 1), Math.cos(j + 1), Math.sin(i + j + 1));
           }
-          pushI.normalize().multiplyScalar(pushStrength);
-          offsets[i].add(pushI);
 
-          const pushJ = basisA.crossVectors(tempVecC, tempVecB).cross(tempVecC);
-          if (pushJ.lengthSq() < 0.0001) {
-            pushJ.copy(directionFromSeed(j + 1, i + 1));
-          }
-          pushJ.normalize().multiplyScalar(pushStrength);
-          offsets[j].add(pushJ);
+          const distance = Math.sqrt(Math.max(distanceSq, 0.0001));
+          const pushStrength = ((minimumDistance - distance) / minimumDistance) * (-REPULSION / 400);
+          tempVecA.normalize().multiplyScalar(pushStrength);
+          positions[i].add(tempVecA);
+          positions[j].sub(tempVecA);
         }
       }
 
-      for (let i = 0; i < offsets.length; i += 1) {
-        const offset = offsets[i];
-        const shellRadius = shellRadii[i] || MIN_DISTANCE;
-        if (branchAnchors[i]?.lengthSq() > 0) {
-          offset.lerp(branchAnchors[i], SHELL_ANCHOR_RESTORE);
-        }
-        offset.normalize().multiplyScalar(shellRadius);
+      for (const position of positions) {
+        position.normalize().multiplyScalar(shellRadius * DAMPING + shellRadius * (1 - DAMPING));
       }
     }
   }
 
-  function getStableBranchDirection(nodeObj, out = new THREE.Vector3()) {
-    if (nodeObj?.branchDirection?.lengthSq() > 0) {
-      out.copy(nodeObj.branchDirection);
-    } else if (nodeObj?.sectorDirection?.lengthSq() > 0) {
-      out.copy(nodeObj.sectorDirection);
-    } else if (nodeObj?.parent?.branchDirection?.lengthSq() > 0) {
-      out.copy(nodeObj.parent.branchDirection);
-    } else if (nodeObj?.pos?.lengthSq() > 0) {
-      out.copy(nodeObj.pos);
-    } else {
-      out.set(0, 1, 0);
-    }
+  function getLayoutDirectionForChild(childData, parentObj, childSeed) {
+    const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
+    const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
+    const hasParentDirection = parentObj.branchDirection && parentObj.branchDirection.lengthSq() > 0;
+    const parentDirection = hasParentDirection
+      ? tempVecA.copy(parentObj.branchDirection).normalize()
+      : parentObj.pos.lengthSq() > 0.0001
+        ? tempVecA.copy(parentObj.pos).normalize()
+        : copyBranchBaseDirection(parentBranchKey, tempVecA);
+    const branchBase = copyBranchBaseDirection(childBranchKey, tempVecB);
+    const seeded = directionFromSeed(childSeed, parentObj.depth + 1);
 
-    if (nodeObj?.pos?.lengthSq() > 0.0001) {
-      tempVecD.copy(nodeObj.pos).normalize();
-      out.lerp(tempVecD, BRANCH_SECTOR_BLEND);
-    }
-
-    if (nodeObj?.parent?.pos?.lengthSq() > 0.0001) {
-      basisB.copy(nodeObj.parent.pos).normalize();
-      out.lerp(basisB, BRANCH_PARENT_BLEND * 0.35);
-    }
-
-    if (out.lengthSq() < 0.0001) {
-      out.set(0, 1, 0);
-    }
-
-    return out.normalize();
-  }
-
-  function applyBranchWarp(direction, branchDirection, blend, out = new THREE.Vector3()) {
-    out.copy(direction);
-    if (!branchDirection || branchDirection.lengthSq() < 0.0001) {
-      return out.normalize();
-    }
-
-    basisA.copy(branchDirection).normalize();
-    const antiBranch = Math.max(0, -out.dot(basisA));
-    const totalBlend = THREE.MathUtils.clamp(blend + antiBranch * 0.08, 0, 0.22);
-    out.lerp(basisA, totalBlend);
-    if (out.lengthSq() < 0.0001) {
-      out.copy(basisA);
-    }
-    return out.normalize();
-  }
-
-  function getShellOrientationQuaternion(parentObj, shellIndex) {
-    const anchor = getStableBranchDirection(parentObj, tempVecA);
-    tempQuat.setFromUnitVectors(upVector, anchor);
-    tempQuatB.setFromAxisAngle(
-      anchor,
-      (((hashString(parentObj.data.id) >>> 4) + shellIndex * 977) % 4096) / 4096 * Math.PI * 2,
-    );
-    return tempQuat.multiply(tempQuatB);
-  }
-
-  function getRootBranchPlacements(parentObj, children, parentBranchKey) {
-    const childCount = children.length;
-    const shells = buildChildShells(parentObj, childCount);
-    const offsets = new Array(childCount);
-    const shellRadii = new Array(childCount);
-    const branchAnchors = new Array(childCount);
-    const branchMetadata = new Array(childCount);
-
-    for (const shell of shells) {
-      tempQuat.setFromAxisAngle(
-        upVector,
-        (((hashString(parentObj.data.id) >>> 6) + shell.index * 577) % 4096) / 4096 * Math.PI * 2,
-      );
-
-      for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
-        const i = shell.start + localIndex;
-        const childData = children[i];
-        const childSeed = hashString(childData.id);
-        const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
-
-        directionVec
-          .copy(fibonacciSphereDirection(localIndex, shell.count, tempVecA))
-          .applyQuaternion(tempQuat);
-        directionVec
-          .addScaledVector(directionFromSeed(childSeed, shell.index + 1), 0.014)
-          .normalize();
-
-        offsets[i] = directionVec.clone().multiplyScalar(shell.radius);
-        shellRadii[i] = shell.radius;
-        branchAnchors[i] = offsets[i].clone();
-        branchMetadata[i] = {
-          branchKey: childBranchKey,
-          subtreeCount: childData.__meta?.subtreeCount || 1,
-          branchDirection: directionVec.clone(),
-        };
-      }
-    }
-
-    relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
-    return offsets.map((offset, index) => ({
-      position: tempVecA.copy(parentObj.pos).add(offset).clone(),
-      direction: offset.clone().normalize(),
-      branchDirection: offset.clone().normalize(),
-      sectorDirection: offset.clone().normalize(),
-      shellRadius: shellRadii[index],
-      layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
-    }));
+    return tempVecC
+      .copy(branchBase)
+      .lerp(parentDirection, parentObj.depth === 0 ? 1 - BRANCH_SECTOR_BLEND : BRANCH_PARENT_BLEND)
+      .addScaledVector(seeded, childBranchKey === parentBranchKey ? 0.08 : 0.14)
+      .normalize();
   }
 
   function getSpreadPositions(parentObj, children) {
-    const childCount = children.length;
-    const parentBranchKey = parentObj.layoutBranchKey || inferBranchKey(parentObj.data);
-    if (parentObj.depth === 0) {
-      return getRootBranchPlacements(parentObj, children, parentBranchKey);
-    }
-    const shells = buildChildShells(parentObj, childCount);
-    const offsets = new Array(childCount);
-    const directions = new Array(childCount);
-    const branchAnchors = new Array(childCount);
-    const shellRadii = new Array(childCount);
-    const branchMetadata = new Array(childCount);
+    const depth = parentObj.depth + 1;
+    const shellRadius = shellRadiusForDepth(depth);
+    const parentSeed = hashString(parentObj.data.id);
+    const anchorDir =
+      parentObj.pos.lengthSq() > 0.0001
+        ? tempVecA.copy(parentObj.pos).normalize()
+        : directionFromSeed(parentSeed, depth);
+    getOrbitBasis(anchorDir);
 
-    for (const shell of shells) {
-      const shellQuaternion = getShellOrientationQuaternion(parentObj, shell.index).clone();
+    const count = children.length;
+    const positions = new Array(count);
+    const directions = new Array(count);
 
-      for (let localIndex = 0; localIndex < shell.count; localIndex += 1) {
-        const i = shell.start + localIndex;
-        const childData = children[i];
-        const childSeed = hashString(childData.id);
-        const childBranchKey = resolveLayoutBranchKey(childData, parentBranchKey);
-        const baseDirection = fibonacciSphereDirection(localIndex, shell.count, tempVecA).clone();
+    for (let i = 0; i < count; i += 1) {
+      const childSeed = hashString(children[i].id);
+      const theta = GOLDEN_ANGLE * (i + 1);
+      const radial = Math.min(0.42, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * 0.3);
+      const shellDirection = directionFromSeed(childSeed, depth);
+      const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone();
+      getOrbitBasis(branchDirection);
+      directionVec
+        .copy(branchDirection)
+        .lerp(anchorDir, parentObj.depth > 0 ? 0.18 : 0.06)
+        .addScaledVector(basisA, Math.cos(theta) * radial)
+        .addScaledVector(basisB, Math.sin(theta) * radial)
+        .addScaledVector(shellDirection, 0.12)
+        .normalize();
 
-        directionVec
-          .copy(baseDirection)
-          .applyQuaternion(shellQuaternion);
-        directionVec
-          .addScaledVector(directionFromSeed(childSeed, parentObj.depth + shell.index + 1), 0.022)
-          .normalize();
-
-        offsets[i] = directionVec.clone().multiplyScalar(shell.radius);
-        directions[i] = directionVec.clone();
-        branchAnchors[i] = offsets[i].clone();
-        shellRadii[i] = shell.radius;
-        branchMetadata[i] = {
-          branchKey: childBranchKey,
-          subtreeCount: childData.__meta?.subtreeCount || 1,
-          branchDirection: branchHint.clone(),
-        };
-      }
+      positions[i] = directionVec.clone().multiplyScalar(shellRadius);
+      directions[i] = branchDirection;
     }
 
-    relaxSiblingPositions(offsets, shellRadii, branchAnchors, branchMetadata);
-    return offsets.map((offset, index) => {
-      const localDirection = offset.clone().normalize();
-      return {
-        position: tempVecA.copy(parentObj.pos).add(offset).clone(),
-        direction: localDirection.clone(),
-        branchDirection: localDirection.clone(),
-        sectorDirection: localDirection.clone(),
-        shellRadius: shellRadii[index],
-        layoutBranchKey: resolveLayoutBranchKey(children[index], parentBranchKey),
-      };
-    });
+    relaxSiblingPositions(positions, shellRadius);
+    return positions.map((position, index) => ({
+      position,
+      direction: positions[index].clone().normalize().lerp(directions[index], 0.28).normalize(),
+      layoutBranchKey: resolveLayoutBranchKey(children[index], parentObj.layoutBranchKey || inferBranchKey(parentObj.data)),
+    }));
   }
 
   function estimateExpansionSize(nodes) {
@@ -2181,21 +1464,7 @@ export function createGovernmentGraph({
       const placement = placements[job.index];
       const targetPos = placement.position;
       childObj.layoutBranchKey = placement.layoutBranchKey;
-      if (placement.branchDirection?.lengthSq() > 0) {
-        childObj.branchDirection.copy(placement.branchDirection);
-      } else if (parentObj.branchDirection.lengthSq() > 0) {
-        childObj.branchDirection.copy(parentObj.branchDirection);
-      } else {
-        childObj.branchDirection.copy(placement.direction);
-      }
-      if (placement.sectorDirection?.lengthSq() > 0) {
-        childObj.sectorDirection.copy(placement.sectorDirection);
-      } else if (parentObj.sectorDirection.lengthSq() > 0) {
-        childObj.sectorDirection.copy(parentObj.sectorDirection);
-      } else {
-        copyBranchBaseDirection(childObj.layoutBranchKey, childObj.sectorDirection);
-      }
-      childObj.shellRadius = placement.shellRadius || targetPos.distanceTo(parentObj.pos);
+      childObj.branchDirection.copy(placement.direction);
       childObj.targetPos.copy(targetPos);
 
       if (animate) {
@@ -2239,7 +1508,6 @@ export function createGovernmentGraph({
       if (nodeObj.expanded || nodeObj.expanding) {
         continue;
       }
-      state.manuallyCollapsedNodeIds.delete(nodeObj.data.id);
       queueExpansion(nodeObj, animate);
       expandedParents.push(nodeObj);
     }
@@ -2299,10 +1567,7 @@ export function createGovernmentGraph({
     return false;
   }
 
-  function collapseNode(parentObj, { manual = false } = {}) {
-    if (manual && parentObj?.data?.id) {
-      state.manuallyCollapsedNodeIds.add(parentObj.data.id);
-    }
+  function collapseNode(parentObj) {
     state.pendingExpansions = state.pendingExpansions.filter((job) => !isDescendantOf(job.parentObj, parentObj));
 
     for (const child of [...parentObj.childObjs]) {
@@ -2393,9 +1658,6 @@ export function createGovernmentGraph({
   }
 
   function pruneDistantNodes() {
-    if (state.fullExpandRenderMode) {
-      return;
-    }
     if (state.visibleNodeCount <= state.maxNodes) {
       return;
     }
@@ -2451,18 +1713,6 @@ export function createGovernmentGraph({
     }
     state.lastUserDrillAt = performance.now();
     setSelectedNode(sourceNode);
-  }
-
-  function activateRenderable(renderable) {
-    if (!renderable) {
-      return null;
-    }
-    if (renderable.isCluster) {
-      activateCluster(renderable);
-      return renderable.sourceNode || renderable;
-    }
-    setSelectedNode(renderable);
-    return renderable;
   }
 
   function setSelectedNode(nodeObj) {
@@ -2579,7 +1829,7 @@ export function createGovernmentGraph({
       if (!nodeObj.renderVisible || nodeObj.clustered) {
         continue;
       }
-      tempVecD.copy(nodeObj.pos).project(getActiveCamera());
+      tempVecD.copy(nodeObj.pos).project(camera);
       if (tempVecD.z < -1 || tempVecD.z > 1) {
         continue;
       }
@@ -2603,7 +1853,7 @@ export function createGovernmentGraph({
       if (!clusterObj.renderVisible) {
         continue;
       }
-      tempVecD.copy(clusterObj.pos).project(getActiveCamera());
+      tempVecD.copy(clusterObj.pos).project(camera);
       if (tempVecD.z < -1 || tempVecD.z > 1) {
         continue;
       }
@@ -2631,7 +1881,7 @@ export function createGovernmentGraph({
       return null;
     }
     const rect = setPointerFromEvent(event);
-    raycaster.setFromCamera(mouse2d, getActiveCamera());
+    raycaster.setFromCamera(mouse2d, camera);
     const interactive = [state.clusterBatch.mesh, ...[...state.nodeBatches.values()].map((batch) => batch.mesh)];
     const hits = raycaster.intersectObjects(interactive, false);
     let clusterFallback = null;
@@ -2657,86 +1907,9 @@ export function createGovernmentGraph({
     return clusterFallback;
   }
 
-  function pickFromRay(origin, direction, { allowDistanceFallback = true } = {}) {
-    if (!state.clusterBatch) {
-      return null;
-    }
-
-    const normalizedDirection = tempVecA.copy(direction).normalize();
-    raycaster.set(origin, normalizedDirection);
-    const interactive = [state.clusterBatch.mesh, ...[...state.nodeBatches.values()].map((batch) => batch.mesh)];
-    const hits = raycaster.intersectObjects(interactive, false);
-    let clusterFallback = null;
-
-    for (const hit of hits) {
-      const target = getRenderableFromIntersection(hit);
-      if (target && target.renderVisible !== false) {
-        if (!target.isCluster) {
-          return target;
-        }
-        if (!clusterFallback) {
-          clusterFallback = target;
-        }
-      }
-    }
-
-    if (!allowDistanceFallback) {
-      return clusterFallback;
-    }
-
-    let bestNode = null;
-    let bestNodeScore = Infinity;
-    let bestCluster = null;
-    let bestClusterScore = Infinity;
-
-    for (const nodeObj of state.visibleNodes) {
-      if (!nodeObj.renderVisible || nodeObj.clustered) {
-        continue;
-      }
-      const distanceSq = raycaster.ray.distanceSqToPoint(nodeObj.pos);
-      const alongRay = tempVecB.subVectors(nodeObj.pos, origin).dot(normalizedDirection);
-      if (alongRay < 0) {
-        continue;
-      }
-      const threshold = Math.max(6, nodeRadiusForDepth(nodeObj.depth) * 2.4);
-      if (distanceSq > threshold * threshold) {
-        continue;
-      }
-      const score = distanceSq + alongRay * 0.001;
-      if (score < bestNodeScore) {
-        bestNodeScore = score;
-        bestNode = nodeObj;
-      }
-    }
-
-    for (const clusterObj of state.activeClusters) {
-      if (!clusterObj.renderVisible) {
-        continue;
-      }
-      const distanceSq = raycaster.ray.distanceSqToPoint(clusterObj.pos);
-      const alongRay = tempVecB.subVectors(clusterObj.pos, origin).dot(normalizedDirection);
-      if (alongRay < 0) {
-        continue;
-      }
-      const threshold = Math.max(8, clusterObj.radius * 1.6);
-      if (distanceSq > threshold * threshold) {
-        continue;
-      }
-      const score = distanceSq + alongRay * 0.001;
-      if (score < bestClusterScore) {
-        bestClusterScore = score;
-        bestCluster = clusterObj;
-      }
-    }
-
-    return bestNode || clusterFallback || bestCluster || null;
-  }
-
   function updateFrustum() {
-    const activeCamera = getActiveCamera();
-    activeCamera.updateMatrixWorld?.();
-    activeCamera.matrixWorldInverse.copy(activeCamera.matrixWorld).invert();
-    projectionMatrix.multiplyMatrices(activeCamera.projectionMatrix, activeCamera.matrixWorldInverse);
+    camera.matrixWorldInverse.copy(camera.matrixWorld).invert();
+    projectionMatrix.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     frustum.setFromProjectionMatrix(projectionMatrix);
   }
 
@@ -2833,7 +2006,7 @@ export function createGovernmentGraph({
       return true;
     }
 
-    const cameraDistance = getActiveCameraPosition(tempVecA).distanceTo(nodeObj.pos);
+    const cameraDistance = camera.position.distanceTo(nodeObj.pos);
     return cameraDistance > getClusterCollapseDistance(nodeObj);
   }
 
@@ -2911,7 +2084,7 @@ export function createGovernmentGraph({
     clusterObj.targetPos.copy(nodeObj.pos);
     const radiusConfig = computeClusterRadius(
       clusterObj,
-      getActiveCameraPosition(tempVecA).distanceTo(nodeObj.pos),
+      camera.position.distanceTo(nodeObj.pos),
       getScreenDensityAtPosition(nodeObj.pos),
     );
     clusterObj.targetRadius = radiusConfig.radius;
@@ -2948,7 +2121,7 @@ export function createGovernmentGraph({
 
   function setClusterSlot(slot, clusterObj) {
     const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius);
-    getActiveCameraQuaternion(tempQuat);
+    tempQuat.copy(camera.quaternion);
     tempMat4.compose(
       clusterObj.displayPos || clusterObj.pos,
       tempQuat,
@@ -3026,7 +2199,7 @@ export function createGovernmentGraph({
       const haloRadius = nodeObj.depth === 0 ? 24 : 20;
       haloMesh.visible = true;
       haloMesh.position.copy(nodeObj.pos);
-      haloMesh.quaternion.copy(getActiveCameraQuaternion(tempQuat));
+      haloMesh.quaternion.copy(camera.quaternion);
       haloMesh.material.color.set(color);
       haloMesh.material.opacity = nodeObj === state.selectedNode ? 0.72 : 0.52;
       haloMesh.scale.setScalar(nodeObj.depth === 0 ? 1.22 : 1);
@@ -3063,14 +2236,6 @@ export function createGovernmentGraph({
     for (const nodeObj of state.visibleNodes) {
       nodeObj.clustered = false;
       nodeObj.clusterRef = null;
-    }
-
-    if (state.fullExpandRenderMode) {
-      for (const clusterObj of state.activeClusters) {
-        clusterObj.renderVisible = false;
-      }
-      state.activeClusters = [];
-      return;
     }
 
     const nextClusters = [];
@@ -3117,17 +2282,11 @@ export function createGovernmentGraph({
   }
 
   function visibleNodeBudgetExceeded() {
-    if (state.fullExpandRenderMode) {
-      return false;
-    }
     return state.visibleNodeCount >= Math.min(state.maxNodes, state.lod.visibleNodeBudget);
   }
 
   function shouldAutoExpandAtCurrentTier(nodeObj) {
     if (!nodeObj || !state.lod.autoExpand || visibleNodeBudgetExceeded()) {
-      return false;
-    }
-    if (state.manuallyCollapsedNodeIds.has(nodeObj.data.id)) {
       return false;
     }
     if (state.lod.level <= 1) {
@@ -3183,8 +2342,7 @@ export function createGovernmentGraph({
     updateFrustum();
     state.screenSpaceBuckets = computeScreenSpaceBuckets(
       state.visibleNodes.filter(
-        (nodeObj) => (state.fullExpandRenderMode || lodManager.shouldRenderNode(nodeObj, state.lod))
-          && shouldDisplayNodeByVerification(nodeObj.data),
+        (nodeObj) => lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data),
       ),
     );
     recomputeClusters();
@@ -3196,7 +2354,7 @@ export function createGovernmentGraph({
     for (const nodeObj of state.allNodes) {
       nodeObj.renderVisible = false;
       if (
-        (!(state.fullExpandRenderMode || lodManager.shouldRenderNode(nodeObj, state.lod))) ||
+        !lodManager.shouldRenderNode(nodeObj, state.lod) ||
         !shouldDisplayNodeByVerification(nodeObj.data) ||
         nodeObj.clustered
       ) {
@@ -3312,15 +2470,8 @@ export function createGovernmentGraph({
       state.clusterBatch.dirty = false;
     }
     if (state.edgeBatch.dirtyPositions) {
-      const attribute = state.edgeBatch.geometry.attributes.position;
-      if (edgeUpdateRange.offset !== Infinity) {
-        attribute.updateRange.offset = edgeUpdateRange.offset;
-        attribute.updateRange.count = edgeUpdateRange.count;
-      }
-      attribute.needsUpdate = true;
+      state.edgeBatch.geometry.attributes.position.needsUpdate = true;
       state.edgeBatch.dirtyPositions = false;
-      edgeUpdateRange.offset = Infinity;
-      edgeUpdateRange.count = 0;
     }
     if (state.edgeBatch.dirtyColors) {
       state.edgeBatch.geometry.attributes.color.needsUpdate = true;
@@ -3361,36 +2512,32 @@ export function createGovernmentGraph({
         continue;
       }
 
-      if (!nodeObj.parent) {
-        continue;
-      }
-
-      const desiredOffset =
+      const desiredRadius = shellRadiusForDepth(nodeObj.depth);
+      const branchTarget =
+        nodeObj.branchDirection.lengthSq() > 0
+          ? tempVecD.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius)
+          : null;
+      const outwardTarget =
         nodeObj.targetPos.lengthSq() > 0
-          ? tempVecA.copy(nodeObj.targetPos).sub(nodeObj.parent.pos)
-          : tempVecA.copy(nodeObj.pos).sub(nodeObj.parent.pos);
-      if (desiredOffset.lengthSq() === 0) {
+          ? tempVecA.copy(nodeObj.targetPos).normalize().multiplyScalar(desiredRadius)
+          : tempVecA.copy(nodeObj.pos).normalize().multiplyScalar(desiredRadius);
+
+      if (outwardTarget.lengthSq() === 0) {
         continue;
       }
 
-      const shellRadius = Math.max(
-        LINK_DISTANCE,
-        nodeObj.shellRadius || desiredOffset.length(),
-      );
-      const targetDirection = tempVecB.copy(desiredOffset).normalize();
-      const currentOffset = tempVecC.copy(nodeObj.pos).sub(nodeObj.parent.pos);
-      const currentDirection =
-        currentOffset.lengthSq() > 0.0001
-          ? currentOffset.normalize()
-          : targetDirection;
+      if (branchTarget) {
+        nodeObj.pos.lerp(branchTarget, BRANCH_FORCE);
+      }
+      nodeObj.pos.lerp(outwardTarget, OUTWARD_FORCE);
 
-      currentDirection.lerp(targetDirection, OUTWARD_FORCE).normalize();
-      nodeObj.pos.copy(nodeObj.parent.pos).addScaledVector(currentDirection, shellRadius);
-
-      tempVecD.subVectors(nodeObj.pos, nodeObj.parent.pos);
-      if (tempVecD.lengthSq() > 0.0001) {
-        tempVecD.normalize().multiplyScalar(shellRadius);
-        nodeObj.pos.copy(nodeObj.parent.pos).add(tempVecD);
+      if (nodeObj.parent) {
+        tempVecB.subVectors(nodeObj.pos, nodeObj.parent.pos);
+        const distance = tempVecB.length();
+        if (distance < LINK_DISTANCE && distance > 0.0001) {
+          tempVecB.normalize().multiplyScalar((LINK_DISTANCE - distance) * 0.08);
+          nodeObj.pos.add(tempVecB);
+        }
       }
 
       updated = true;
@@ -3458,6 +2605,7 @@ export function createGovernmentGraph({
   }
 
   function animate() {
+    requestAnimationFrame(animate);
     const now = performance.now();
     const deltaSeconds = Math.min((now - state.lastFrameTime) / 1000, 0.05) || 0.016;
     state.lastFrameTime = now;
@@ -3469,22 +2617,20 @@ export function createGovernmentGraph({
     state.rotX += (state.targetRotX - state.rotX) * 0.07;
     state.rotY += (state.targetRotY - state.rotY) * 0.07;
     state.zoom += (state.targetZoom - state.zoom) * 0.07;
-    if (!renderer.xr.isPresenting) {
-      if (state.flyMode) {
-        applyFlyMovement(deltaSeconds);
-        camera.position.copy(state.flyPosition);
-        camera.lookAt(state.flyLookTarget);
-      } else {
-        state.camFocus.lerp(state.camFocusTarget, 0.05);
-        const distance = CAMERA_DISTANCE / state.zoom;
-        desiredCameraPosition.set(
-          state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX),
-          state.camFocus.y + distance * Math.sin(state.rotX),
-          state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX),
-        );
-        camera.position.lerp(desiredCameraPosition, ORBIT_CAMERA_LERP);
-        camera.lookAt(state.camFocus);
-      }
+    if (state.flyMode) {
+      applyFlyMovement(deltaSeconds);
+      camera.position.copy(state.flyPosition);
+      camera.lookAt(state.flyLookTarget);
+    } else {
+      state.camFocus.lerp(state.camFocusTarget, 0.05);
+      const distance = CAMERA_DISTANCE / state.zoom;
+      desiredCameraPosition.set(
+        state.camFocus.x + distance * Math.sin(state.rotY) * Math.cos(state.rotX),
+        state.camFocus.y + distance * Math.sin(state.rotX),
+        state.camFocus.z + distance * Math.cos(state.rotY) * Math.cos(state.rotX),
+      );
+      camera.position.lerp(desiredCameraPosition, ORBIT_CAMERA_LERP);
+      camera.lookAt(state.camFocus);
     }
     camera.updateMatrixWorld();
     updateLodState();
@@ -3493,30 +2639,10 @@ export function createGovernmentGraph({
     animateNodes();
     applyWebForces();
 
-    const activeCamera = getActiveCamera();
-    for (const hook of state.frameHooks) {
-      try {
-        hook({
-          deltaSeconds,
-          time: state.time,
-          frame: state.frame,
-          renderer,
-          scene,
-          camera,
-          activeCamera,
-          xrDolly,
-        });
-      } catch (error) {
-        console.error("Frame hook failed", error);
-        state.frameHooks.delete(hook);
-      }
-    }
-
-    const cameraPosition = getActiveCameraPosition(tempVecA);
     const cameraSignature = [
-      cameraPosition.x.toFixed(2),
-      cameraPosition.y.toFixed(2),
-      cameraPosition.z.toFixed(2),
+      camera.position.x.toFixed(2),
+      camera.position.y.toFixed(2),
+      camera.position.z.toFixed(2),
       state.camFocus.x.toFixed(2),
       state.camFocus.y.toFixed(2),
       state.camFocus.z.toFixed(2),
@@ -3548,7 +2674,7 @@ export function createGovernmentGraph({
       selectionHalo.material.opacity = 0.12 + Math.sin(state.time * 2.5) * 0.05;
     }
 
-    particles.position.copy(cameraPosition);
+    particles.position.copy(camera.position);
     lightA.position.x = Math.sin(state.time * 0.4) * 50;
     lightA.position.y = 120 + Math.cos(state.time * 0.3) * 30;
 
@@ -3556,16 +2682,6 @@ export function createGovernmentGraph({
   }
 
   function handlePointerMove(event) {
-    if (state.flyMode) {
-      state.flyYawTarget += event.movementX * 0.004 * FLY_TURN_MULTIPLIER;
-      state.flyPitchTarget = THREE.MathUtils.clamp(
-        state.flyPitchTarget + event.movementY * 0.004 * FLY_TURN_MULTIPLIER,
-        -FLY_PITCH_LIMIT,
-        FLY_PITCH_LIMIT,
-      );
-      state.renderDirty = true;
-      return;
-    }
     const dx = event.clientX - state.prevMouse.x;
     const dy = event.clientY - state.prevMouse.y;
     const dragDistance = Math.hypot(event.clientX - state.mouseDownPos.x, event.clientY - state.mouseDownPos.y);
@@ -3574,7 +2690,14 @@ export function createGovernmentGraph({
     }
 
     if (event.buttons === 1 && state.isDragging) {
-      if (event.shiftKey) {
+      if (state.flyMode) {
+        state.flyYawTarget += dx * 0.004 * FLY_TURN_MULTIPLIER;
+        state.flyPitchTarget = THREE.MathUtils.clamp(
+          state.flyPitchTarget + dy * 0.004 * FLY_TURN_MULTIPLIER,
+          -FLY_PITCH_LIMIT,
+          FLY_PITCH_LIMIT,
+        );
+      } else if (event.shiftKey) {
         const distance = CAMERA_DISTANCE / state.zoom;
         const forward = tempVecA.copy(state.camFocus).sub(camera.position).normalize();
         const right = basisA.copy(forward).cross(camera.up).normalize();
@@ -3678,24 +2801,6 @@ export function createGovernmentGraph({
       state.renderDirty = true;
     });
 
-    document.addEventListener("pointerlockchange", () => {
-      if (document.pointerLockElement !== canvas && state.flyMode) {
-        state.flyMode = false;
-        syncOrbitStateFromFlyCamera();
-        stopFlyMovement();
-        state.renderDirty = true;
-      }
-    });
-
-    document.addEventListener("pointerlockerror", () => {
-      if (state.flyMode) {
-        state.flyMode = false;
-        syncOrbitStateFromFlyCamera();
-        stopFlyMovement();
-        state.renderDirty = true;
-      }
-    });
-
     window.addEventListener("keydown", (event) => {
       if (event.code in state.keyState) {
         state.keyState[event.code] = true;
@@ -3725,15 +2830,9 @@ export function createGovernmentGraph({
     for (const candidateNode of data.candidateNodes || []) {
       registerCandidateNode(candidateNode);
     }
-    state.graphNodeCount = meta.subtreeCount;
-    state.candidateNodeCount = (data.candidateNodes || []).length;
-    state.totalNodeCount = state.graphNodeCount + state.candidateNodeCount;
-    state.totalBudgetCost = Number(data.__budgetSummary?.government_total_outlay_amount || 0) || meta.subtreeCost || 0;
-    state.totalBudgetLabel = data.__budgetSummary?.label || "total cost";
-    state.budgetSummary = data.__budgetSummary || null;
+    state.totalNodeCount = meta.subtreeCount + (data.candidateNodes || []).length;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
-    state.maxNodes = MAX_VISIBLE_NODES;
-    state.fullExpandRenderMode = false;
+    state.maxNodes = MAX_NODES;
     state.manualDepthFilter = MAX_DEPTH;
     state.maxVisibleDepth = MAX_DEPTH;
 
@@ -3744,7 +2843,6 @@ export function createGovernmentGraph({
     setNodeColor(state.rootObj);
     state.rootObj.layoutBranchKey = "constitution";
     copyBranchBaseDirection("constitution", state.rootObj.branchDirection);
-    copyBranchBaseDirection("constitution", state.rootObj.sectorDirection);
     state.rootObj.pos.set(0, 0, 0);
     state.rootObj.targetPos.set(0, 0, 0);
     setNodeMatrix(state.rootObj, 1);
@@ -3759,7 +2857,6 @@ export function createGovernmentGraph({
     }
     syncCandidateVisibility();
     expandNode(state.rootObj, false);
-    expandEntireGraph();
     flushPendingExpansions(18, 4096);
     updateLodState();
     ensureLodCoverage();
@@ -3776,7 +2873,7 @@ export function createGovernmentGraph({
   }
 
   attachEvents();
-  renderer.setAnimationLoop(animate);
+  animate();
 
   return {
     loadData,
@@ -3800,98 +2897,6 @@ export function createGovernmentGraph({
       state.renderDirty = true;
       refreshVisibility(true);
       return state.showCandidateNodes;
-    },
-    setFullExpandRenderMode(enabled) {
-      state.fullExpandRenderMode = Boolean(enabled);
-      state.forceFullRenderRefresh = true;
-      state.renderDirty = true;
-      refreshVisibility(true);
-      notifyCounts();
-      return state.fullExpandRenderMode;
-    },
-    isFullExpandRenderMode() {
-      return state.fullExpandRenderMode;
-    },
-    setVrSessionActive(enabled) {
-      state.xrSessionActive = Boolean(enabled);
-      if (state.xrSessionActive) {
-        state.flyMode = false;
-        stopFlyMovement();
-      }
-      state.forceFullRenderRefresh = true;
-      state.renderDirty = true;
-      return state.xrSessionActive;
-    },
-    isVrSessionActive() {
-      return state.xrSessionActive || renderer.xr.isPresenting;
-    },
-    getRenderer() {
-      return renderer;
-    },
-    getScene() {
-      return scene;
-    },
-    getCamera() {
-      return camera;
-    },
-    getXrDolly() {
-      return xrDolly;
-    },
-    registerFrameHook(callback) {
-      state.frameHooks.add(callback);
-      return callback;
-    },
-    unregisterFrameHook(callback) {
-      state.frameHooks.delete(callback);
-    },
-    pickFromRay(origin, direction, options) {
-      return pickFromRay(origin, direction, options);
-    },
-    activateRenderable(renderable) {
-      return activateRenderable(renderable);
-    },
-    moveVrRig(strafe, vertical, forward) {
-      moveVrRig(strafe, vertical, forward);
-    },
-    teleportVrRig(targetWorldPosition) {
-      teleportVrRig(targetWorldPosition);
-    },
-    resetVrRig() {
-      resetVrRig();
-    },
-    snapTurnVr(angle) {
-      snapTurnVr(angle);
-    },
-    focusNodeInVr(nodeObj) {
-      focusNodeInVr(nodeObj);
-    },
-    expandSelectedNode() {
-      if (state.selectedNode) {
-        expandNode(state.selectedNode, true);
-      }
-      return state.selectedNode;
-    },
-    collapseSelectedNode() {
-      if (state.selectedNode) {
-        state.fullExpandRenderMode = false;
-        collapseNode(state.selectedNode, { manual: true });
-      }
-      return state.selectedNode;
-    },
-    toggleTraceSelectedNode() {
-      if (!state.selectedNode || state.selectedNode.isCluster) {
-        return [];
-      }
-      const currentTrace = state.highlightedPathNodes;
-      const selectedId = state.selectedNode.data?.id;
-      const tracedId = currentTrace[currentTrace.length - 1]?.data?.id;
-      if (tracedId === selectedId) {
-        clearOriginTrace();
-        return [];
-      }
-      const path = traceOrigin(state.selectedNode);
-      setOriginTrace(path);
-      return path;
     },
     getFrontier,
     refreshVisibility,
@@ -3920,13 +2925,9 @@ export function createGovernmentGraph({
         syncFlyStateFromCamera();
         stopFlyMovement();
         state.targetZoom = Math.max(state.targetZoom, 1.6);
-        canvas.requestPointerLock();
       } else {
         syncOrbitStateFromFlyCamera();
         stopFlyMovement();
-        if (document.pointerLockElement === canvas) {
-          document.exitPointerLock();
-        }
       }
       state.renderDirty = true;
       return state.flyMode;
@@ -3959,26 +2960,9 @@ export function createGovernmentGraph({
       return state.searchIndex;
     },
     getStats() {
-      const loadedDisplayNodeCount = state.visibleNodes.reduce(
-        (count, nodeObj) => count + (shouldDisplayNodeByVerification(nodeObj.data) ? 1 : 0),
-        0,
-      );
-      const eligibleTotalNodeCount = Array.from(state.dataMap.values()).reduce(
-        (count, dataNode) => count + (shouldDisplayNodeByVerification(dataNode) ? 1 : 0),
-        0,
-      );
-      const candidateNodeCount = state.candidateNodes.length;
       return {
         visibleNodeCount: state.visibleNodeCount,
         totalNodeCount: state.totalNodeCount,
-        loadedDisplayNodeCount,
-        eligibleTotalNodeCount,
-        graphNodeCount: state.graphNodeCount,
-        candidateNodeCount: state.candidateNodeCount,
-        hiddenCandidateCount: state.showCandidateNodes ? 0 : candidateNodeCount,
-        totalBudgetCost: state.totalBudgetCost,
-        totalBudgetLabel: state.totalBudgetLabel,
-        budgetSummary: state.budgetSummary,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,
@@ -3990,7 +2974,6 @@ export function createGovernmentGraph({
         densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
         showUnverifiedNodes: state.showUnverifiedNodes,
         showCandidateNodes: state.showCandidateNodes,
-        fullExpandRenderMode: state.fullExpandRenderMode,
       };
     },
     getMaxDataDepth() {
@@ -4001,92 +2984,9 @@ export function createGovernmentGraph({
     },
     getConfig() {
       return {
-        MAX_VISIBLE_NODES,
+        MAX_NODES,
         MAX_DEPTH,
-        VR_EXPAND_ALL_DEPTH_LIMIT: QUEST_VR_CONFIG.expandAllDepthLimit,
       };
-    },
-    resetCamera() {
-      if (state.flyMode) {
-        state.flyMode = false;
-        stopFlyMovement();
-        if (document.pointerLockElement === canvas) {
-          document.exitPointerLock();
-        }
-        syncOrbitStateFromFlyCamera();
-      }
-      state.targetRotX = 0;
-      state.targetRotY = 0;
-      state.targetZoom = 1;
-      state.camFocusTarget.set(0, 0, 0);
-      state.renderDirty = true;
-    },
-    navigateToRoot() {
-      const root = state.rootObj;
-      if (!root) {
-        return;
-      }
-      if (state.flyMode) {
-        state.flyMode = false;
-        stopFlyMovement();
-        if (document.pointerLockElement === canvas) {
-          document.exitPointerLock();
-        }
-        syncOrbitStateFromFlyCamera();
-      }
-      state.targetRotX = 0;
-      state.targetRotY = 0;
-      state.targetZoom = 1;
-      state.camFocusTarget.set(0, 0, 0);
-      state.renderDirty = true;
-      setSelectedNode(root);
-    },
-    collapseAll() {
-      if (!state.rootObj) {
-        return;
-      }
-      state.fullExpandRenderMode = false;
-      state.pendingExpansions = [];
-      collapseNode(state.rootObj);
-      state.renderDirty = true;
-    },
-    filterByBranch(branchKey) {
-      state.activeBranchFilter = branchKey || null;
-      state.renderDirty = true;
-      refreshVisibility(true);
-      notifyCounts();
-      return state.activeBranchFilter;
-    },
-    fitBranch(nodeObj) {
-      if (!nodeObj) {
-        return;
-      }
-      const positions = [];
-      function collectPositions(obj) {
-        positions.push(obj.pos.clone());
-        for (const child of obj.childObjs) {
-          collectPositions(child);
-        }
-      }
-      collectPositions(nodeObj);
-      if (positions.length === 0) {
-        return;
-      }
-      const centroid = new THREE.Vector3();
-      for (const p of positions) {
-        centroid.add(p);
-      }
-      centroid.divideScalar(positions.length);
-      let maxDist = 0;
-      for (const p of positions) {
-        maxDist = Math.max(maxDist, centroid.distanceTo(p));
-      }
-      maxDist = Math.max(maxDist, 30);
-      state.camFocusTarget.copy(centroid);
-      state.targetZoom = Math.max(0.28, Math.min(10, CAMERA_DISTANCE / (maxDist * 2.8)));
-      state.targetRotX = 0;
-      state.targetRotY = 0;
-      state.renderDirty = true;
     },
   };
 }
