@@ -1,11 +1,11 @@
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urljoin, urlparse
 
+from data_pipeline.json_io import load_json_file, write_json_file
 from data_pipeline.processors.normalize_nodes import classify_source_url, normalize_name
 
 
@@ -57,8 +57,7 @@ def load_pipeline_state(path: str | Path = DEFAULT_STATE_PATH) -> dict[str, Any]
             "frontier": {},
             "entities": {},
         }
-    with state_path.open("r", encoding="utf-8") as handle:
-        payload = json.load(handle)
+    payload = load_json_file(state_path, default_factory=dict)
     if isinstance(payload, dict):
         payload.setdefault("version", 1)
         payload.setdefault("runCount", 0)
@@ -76,11 +75,7 @@ def load_pipeline_state(path: str | Path = DEFAULT_STATE_PATH) -> dict[str, Any]
 
 
 def write_pipeline_state(state: dict[str, Any], path: str | Path = DEFAULT_STATE_PATH) -> Path:
-    state_path = Path(path)
-    state_path.parent.mkdir(parents=True, exist_ok=True)
-    with state_path.open("w", encoding="utf-8") as handle:
-        json.dump(state, handle, indent=2)
-    return state_path
+    return write_json_file(path, state)
 
 
 def normalize_official_url(url: str) -> str:
@@ -257,8 +252,4 @@ def update_pipeline_state(
 
 
 def write_frontier_targets(targets: Iterable[dict[str, Any]], path: str | Path = DEFAULT_FRONTIER_OUTPUT) -> Path:
-    output_path = Path(path)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as handle:
-        json.dump(list(targets), handle, indent=2)
-    return output_path
+    return write_json_file(path, list(targets))

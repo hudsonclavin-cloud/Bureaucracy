@@ -39,8 +39,8 @@ def run_forever(*, sleep_seconds: int = DEFAULT_SLEEP_SECONDS) -> None:
             result = run_once()
             print(
                 f"[{started_at.isoformat()}] pipeline complete: "
-                f"{result['promoted_nodes']} promoted nodes, "
-                f"{result['candidate_nodes']} candidates"
+                f"{result.get('promoted_nodes_written', 0)} promoted nodes, "
+                f"{result.get('candidate_nodes_written', 0)} candidates"
             )
         except Exception as error:  # noqa: BLE001
             print(f"[{started_at.isoformat()}] pipeline failed: {error}")

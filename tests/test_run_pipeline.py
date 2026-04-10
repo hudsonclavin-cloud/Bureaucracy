@@ -180,6 +180,7 @@ class RunPipelineTests(unittest.TestCase):
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[],
+                reuse_existing_graph_payload=True,
                 discovery_fetchers={
                     "wikidata_records": lambda: [],
                     "official_directory_records": lambda: [],
@@ -190,6 +191,74 @@ class RunPipelineTests(unittest.TestCase):
             graph = json.loads(graph_output_path.read_text(encoding="utf-8"))
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
             self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
+        finally:
+            shutil.rmtree(tmp_path, ignore_errors=True)
+
+    def test_run_pipeline_skips_live_publish_when_blocking_stage_errors_occur(self) -> None:
+        tmp_path = TEST_TMP_ROOT / f"run-pipeline-publish-skip-{uuid.uuid4().hex}"
+        tmp_path.mkdir(parents=True, exist_ok=True)
+        try:
+            base_graph_path = tmp_path / "base.json"
+            graph_output_path = tmp_path / "graph.json"
+            candidate_output_path = tmp_path / "candidate_nodes.json"
+            nodes_output_path = tmp_path / "expanded_nodes.json"
+            edges_output_path = tmp_path / "expanded_edges.json"
+            stats_output_path = tmp_path / "pipeline_stats.json"
+            enrichment_stats_output_path = tmp_path / "enrichment_stats.json"
+            frontier_output_path = tmp_path / "frontier_targets.json"
+            state_output_path = tmp_path / "pipeline_state.json"
+            base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
+
+            run_pipeline(
+                base_graph_path=base_graph_path,
+                candidate_output_path=candidate_output_path,
+                graph_output_path=graph_output_path,
+                nodes_output_path=nodes_output_path,
+                edges_output_path=edges_output_path,
+                stats_output_path=stats_output_path,
+                enrichment_stats_output_path=enrichment_stats_output_path,
+                frontier_output_path=frontier_output_path,
+                state_output_path=state_output_path,
+                direct_payload_fetchers=[],
+                discovery_fetchers={
+                    "wikidata_records": lambda: [
+                        {
+                            "label": "Office of Grid Deployment",
+                            "parentName": "Department of Energy",
+                            "officialWebsite": "https://www.energy.gov/gdo/office-grid-deployment",
+                            "wikidataId": "Q999",
+                            "description": "Office discovered via Wikidata.",
+                            "countryLabel": "United States",
+                        }
+                    ],
+                    "official_directory_records": lambda: [],
+                    "federal_register_records": lambda: [],
+                },
+            )
+
+            graph_before = json.loads(graph_output_path.read_text(encoding="utf-8"))
+            stats = run_pipeline(
+                base_graph_path=base_graph_path,
+                candidate_output_path=candidate_output_path,
+                graph_output_path=graph_output_path,
+                nodes_output_path=nodes_output_path,
+                edges_output_path=edges_output_path,
+                stats_output_path=stats_output_path,
+                enrichment_stats_output_path=enrichment_stats_output_path,
+                frontier_output_path=frontier_output_path,
+                state_output_path=state_output_path,
+                direct_payload_fetchers=[],
+                discovery_fetchers={
+                    "wikidata_records": lambda: (_ for _ in ()).throw(TimeoutError("wikidata timed out")),
+                    "official_directory_records": lambda: [],
+                    "federal_register_records": lambda: [],
+                },
+            )
+
+            graph_after = json.loads(graph_output_path.read_text(encoding="utf-8"))
+            self.assertEqual(graph_before, graph_after)
+            self.assertTrue(stats["publish_skipped"])
+            self.assertIn("wikidata_records", "".join(stats["blocking_stage_errors"]))
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 

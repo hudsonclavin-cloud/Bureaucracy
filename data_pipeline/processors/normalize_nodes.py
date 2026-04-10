@@ -24,6 +24,12 @@ DEFAULT_NODE = {
     "verificationStatus": "unverified",
     "lastVerified": None,
     "sourceCount": 0,
+    "proofSourceCount": 0,
+    "proofSourceTypes": [],
+    "existsProven": False,
+    "parentProven": False,
+    "proofStatus": "unproven",
+    "proofReason": "no_evidence_recorded",
     "founded_date": None,
     "jurisdiction": None,
     "official_website": None,
@@ -47,6 +53,15 @@ DEFAULT_NODE = {
     "merged_into": None,
     "renamed_from": None,
     "children": [],
+}
+
+SOURCE_TYPE_ALIASES = {
+    "official_http": "official_site",
+    "official_directory": "official_site",
+    "usaspending_direct": "official_financial_record",
+    "usaspending_parent": "official_financial_record",
+    "treasury_outlays": "official_financial_record",
+    "federal_register": "historical_documentation",
 }
 
 TYPE_COLORS = {
@@ -194,18 +209,36 @@ def classify_source_url(url: str) -> str:
     return "unknown"
 
 
+def is_official_source_url(url: Any) -> bool:
+    text = coerce_nullable_text(url)
+    return bool(text and classify_source_url(text) == "official_site")
+
+
 def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
     source_urls = normalize_string_list(node.get("sourceUrls"))
     if not source_urls and node.get("source"):
         source_urls = normalize_string_list(node.get("source"))
+    if is_official_source_url(node.get("official_website")):
+        source_urls = normalize_string_list([*source_urls, node.get("official_website")])
 
     inferred_types = [classify_source_url(url) for url in source_urls]
     explicit_types = normalize_string_list(node.get("sourceTypes"))
-    source_types = normalize_string_list([*explicit_types, *inferred_types])
+    aliased_types = [SOURCE_TYPE_ALIASES.get(source_type, source_type) for source_type in explicit_types]
+    source_types = normalize_string_list([*explicit_types, *aliased_types, *inferred_types])
     source_count = len(source_urls)
+    proof_source_types = normalize_string_list(
+        [
+            SOURCE_TYPE_ALIASES.get(source_type, source_type)
+            for source_type in source_types
+            if source_type not in {"unknown", "candidate_discovery", "wikipedia"}
+        ]
+    )
+    proof_source_count = len(proof_source_types)
 
-    confidence = 0.0 if source_count == 0 else 0.4
+    confidence = 0.0 if source_count == 0 and proof_source_count == 0 else 0.4
     if "official_site" in source_types:
+        confidence += 0.3
+    if "official_financial_record" in source_types:
         confidence += 0.3
     if "wikidata" in source_types:
         confidence += 0.2
@@ -232,12 +265,34 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
             else datetime.now(timezone.utc).date().isoformat()
         )
 
+    exists_proven = False
+    proof_status = "unproven"
+    proof_reason = "no_evidence_recorded" if proof_source_count == 0 and source_count == 0 else "insufficient_direct_proof"
+    if "official_site" in source_types or "official_financial_record" in source_types or "legislative_reference" in source_types:
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "official_source_recorded"
+    elif "historical_documentation" in source_types and source_count >= 1:
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "historical_documentation_recorded"
+    elif "wikidata" in source_types and proof_source_count >= 2:
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "multi_source_corroborated"
+
     node["sourceUrls"] = source_urls
     node["sourceTypes"] = source_types
     node["sourceCount"] = source_count
     node["confidenceScore"] = confidence
     node["verificationStatus"] = verification_status
     node["lastVerified"] = last_verified
+    node["proofSourceCount"] = proof_source_count
+    node["proofSourceTypes"] = proof_source_types
+    node["existsProven"] = bool(exists_proven)
+    node["parentProven"] = bool(node.get("parentProven"))
+    node["proofStatus"] = proof_status
+    node["proofReason"] = proof_reason
     return node
 
 
@@ -318,6 +373,12 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     node["confidenceScore"] = float(raw_node.get("confidenceScore") or 0.0)
     node["verificationStatus"] = str(raw_node.get("verificationStatus") or "unverified")
     node["lastVerified"] = coerce_nullable_text(raw_node.get("lastVerified"))
+    node["proofSourceCount"] = int(raw_node.get("proofSourceCount") or 0)
+    node["proofSourceTypes"] = normalize_string_list(raw_node.get("proofSourceTypes"))
+    node["existsProven"] = bool(raw_node.get("existsProven"))
+    node["parentProven"] = bool(raw_node.get("parentProven"))
+    node["proofStatus"] = coerce_nullable_text(raw_node.get("proofStatus")) or "unproven"
+    node["proofReason"] = coerce_nullable_text(raw_node.get("proofReason")) or "no_evidence_recorded"
     node["founded_date"] = coerce_nullable_text(node.get("founded_date"))
     node["jurisdiction"] = coerce_nullable_text(node.get("jurisdiction"))
     node["official_website"] = coerce_nullable_text(node.get("official_website")) or (

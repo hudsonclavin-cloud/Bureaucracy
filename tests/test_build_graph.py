@@ -64,7 +64,13 @@ class BuildGraphTests(unittest.TestCase):
         payloads = [
             {
                 "nodes": [
-                    {"id": "contractor-acme", "name": "Acme", "type": "Corporation"},
+                    {
+                        "id": "contractor-acme",
+                        "name": "Acme",
+                        "type": "Corporation",
+                        "sourceUrls": ["https://www.usaspending.gov/recipient/acme"],
+                        "sourceTypes": ["usaspending_direct"],
+                    },
                     {"id": "floating-node", "name": "Floating", "type": "Corporation"},
                 ],
                 "edges": [
@@ -131,7 +137,13 @@ class BuildGraphTests(unittest.TestCase):
         payloads = [
             {
                 "nodes": [
-                    {"id": "contractor-acme", "name": "Acme", "type": "Corporation"},
+                    {
+                        "id": "contractor-acme",
+                        "name": "Acme",
+                        "type": "Corporation",
+                        "sourceUrls": ["https://www.usaspending.gov/recipient/acme"],
+                        "sourceTypes": ["usaspending_direct"],
+                    },
                 ],
                 "edges": [
                     {"source": "agency-alpha", "target": "contractor-acme", "type": "contracts_with"},
@@ -178,6 +190,66 @@ class BuildGraphTests(unittest.TestCase):
         self.assertIn("pipeline_summary", result.validation)
         self.assertEqual(result.validation["pipeline_summary"]["final_node_count"], len(result.nodes))
         self.assertIn("relationships", result.graph)
+
+    def test_build_graph_keeps_trusted_base_nodes_without_sources(self) -> None:
+        result = build_graph_with_paths(payloads=[])
+
+        agency = self.find_graph_node(result.graph, "agency-alpha")
+        self.assertEqual(agency["proofStatus"], "baseline")
+        self.assertEqual(agency["proofReason"], "trusted_base_graph")
+        self.assertFalse(agency["existsProven"])
+        self.assertIn("baseline", result.validation["proof_status_counts"])
+
+    def test_build_graph_culls_unproven_overlay_org_nodes(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "agency-beta", "name": "Agency Beta", "type": "Agency"},
+                ],
+                "edges": [
+                    {"source": "agency-beta", "target": "agency-alpha", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        exported_ids = {node["id"] for node in result.nodes}
+        self.assertNotIn("agency-beta", exported_ids)
+        with self.assertRaises(KeyError):
+            self.find_graph_node(result.graph, "agency-beta")
+        self.assertEqual(result.validation["proof_status_counts_before_cull"]["unproven"], 1)
+
+    def test_build_graph_keeps_derived_nodes_under_proven_parents(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {
+                        "id": "agency-beta",
+                        "name": "Agency Beta",
+                        "type": "Agency",
+                        "official_website": "https://www.energy.gov/agency-beta",
+                    },
+                    {
+                        "id": "agency-beta-office-chief-of-staff",
+                        "name": "Chief of Staff",
+                        "type": "Position",
+                    },
+                ],
+                "edges": [
+                    {"source": "agency-beta", "target": "agency-alpha", "type": "reports_to"},
+                    {"source": "agency-beta-office-chief-of-staff", "target": "agency-beta", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        agency = next(node for node in result.nodes if node["id"] == "agency-beta")
+        chief = next(node for node in result.nodes if node["id"] == "agency-beta-office-chief-of-staff")
+        self.assertEqual(agency["proofStatus"], "proven")
+        self.assertEqual(chief["proofStatus"], "derived")
+        self.assertTrue(chief["parentProven"])
 
     def test_build_graph_preserves_budget_summary_metadata(self) -> None:
         payloads = [

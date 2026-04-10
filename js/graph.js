@@ -85,6 +85,11 @@ export function createGovernmentGraph({
   const camera = new THREE.PerspectiveCamera(52, window.innerWidth / window.innerHeight, 0.1, 3000);
   camera.position.set(0, 0, CAMERA_DISTANCE);
   const lodManager = createLodManager({ maxDepth: MAX_DEPTH });
+  const cosmicDefaults = {
+    nodeScale: lodManager.levels[0].nodeScale,
+    nodesPerTile: lodManager.levels[0].nodesPerTile,
+    visibleNodeBudget: lodManager.levels[0].visibleNodeBudget,
+  };
 
   scene.add(new THREE.AmbientLight(0xffffff, 1.55));
   const lightA = new THREE.PointLight(0xffffff, 2.6, 900);
@@ -267,6 +272,7 @@ export function createGovernmentGraph({
     lastUserDrillAt: 0,
     layoutActiveUntil: 0,
     lastAutoExpandAt: 0,
+    cosmicDensityEnabled: false,
     showUnverifiedNodes: true,
     showCandidateNodes: false,
     candidateNodes: [],
@@ -581,6 +587,23 @@ export function createGovernmentGraph({
     return state.lod;
   }
 
+  function setCosmicDensity(enabled) {
+    state.cosmicDensityEnabled = Boolean(enabled);
+    const level0 = lodManager.levels[0];
+    if (state.cosmicDensityEnabled) {
+      level0.nodeScale = Math.max(level0.nodeScale, 0.5);
+      level0.nodesPerTile = Math.max(level0.nodesPerTile, 4);
+      level0.visibleNodeBudget = Math.max(level0.visibleNodeBudget, 5000);
+    } else {
+      level0.nodeScale = cosmicDefaults.nodeScale;
+      level0.nodesPerTile = cosmicDefaults.nodesPerTile;
+      level0.visibleNodeBudget = cosmicDefaults.visibleNodeBudget;
+    }
+    state.renderDirty = true;
+    refreshVisibility(true);
+    return state.cosmicDensityEnabled;
+  }
+
   function getProtectedNodeIds() {
     const protectedIds = new Set([state.rootObj?.data?.id].filter(Boolean));
     for (const nodeObj of state.visibleNodes) {
@@ -853,6 +876,22 @@ export function createGovernmentGraph({
     return performance.now() < state.layoutActiveUntil;
   }
 
+  function isTextInputTarget(target) {
+    if (!target || !(target instanceof HTMLElement)) {
+      return false;
+    }
+    if (target.isContentEditable) {
+      return true;
+    }
+    return ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName);
+  }
+
+  function clearMovementKeys() {
+    for (const key of Object.keys(state.keyState)) {
+      state.keyState[key] = false;
+    }
+  }
+
   function registerDataNode(node, parentId = null, depth = 0, path = []) {
     const nextPath = [...path, node.name];
     node.parent = parentId;
@@ -867,6 +906,7 @@ export function createGovernmentGraph({
       name: node.name,
       type: node.type,
       color: node.color,
+      confidenceScore: Number(node.confidenceScore || 0),
       verificationStatus: node.verificationStatus || "unverified",
       isCandidate: Boolean(node.isCandidate),
       pathStr: path.join(" › "),
@@ -904,6 +944,7 @@ export function createGovernmentGraph({
       name: node.name,
       type: node.type,
       color: node.color,
+      confidenceScore: Number(node.confidenceScore || 0),
       verificationStatus: "candidate",
       isCandidate: true,
       pathStr: node.possibleParent ? `Candidate › ${node.possibleParent}` : "Candidate",
@@ -2886,6 +2927,10 @@ export function createGovernmentGraph({
     });
 
     window.addEventListener("keydown", (event) => {
+      if (isTextInputTarget(event.target)) {
+        clearMovementKeys();
+        return;
+      }
       if (event.code in state.keyState) {
         state.keyState[event.code] = true;
       }
@@ -2895,6 +2940,10 @@ export function createGovernmentGraph({
     });
 
     window.addEventListener("keyup", (event) => {
+      if (isTextInputTarget(event.target)) {
+        clearMovementKeys();
+        return;
+      }
       if (event.code in state.keyState) {
         state.keyState[event.code] = false;
       }
@@ -2982,6 +3031,12 @@ export function createGovernmentGraph({
       state.renderDirty = true;
       refreshVisibility(true);
       return state.showCandidateNodes;
+    },
+    setCosmicDensity(enabled) {
+      return setCosmicDensity(enabled);
+    },
+    isCosmicDensityEnabled() {
+      return Boolean(state.cosmicDensityEnabled);
     },
     getFrontier,
     refreshVisibility,

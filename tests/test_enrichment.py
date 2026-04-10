@@ -116,6 +116,38 @@ class EnrichmentTests(unittest.TestCase):
         self.assertEqual(stats["budgets_linked_by_source"]["usaspending_parent"], 1)
         self.assertGreaterEqual(stats["relationships_by_source"]["federal_register"], 1)
 
+    def test_enrich_nodes_keeps_non_official_website_metadata_without_promoting_it(self) -> None:
+        existing_nodes = [
+            {
+                "id": "agency-beta",
+                "name": "Agency Beta",
+                "type": "Agency",
+                "official_website": "https://example.com/agency-beta",
+                "children": [],
+            }
+        ]
+
+        enriched_nodes, edges, stats = enrich_nodes(
+            existing_nodes=existing_nodes,
+            direct_payload_nodes=[],
+            wikidata_records=[
+                {
+                    "name": "Agency Beta",
+                    "description": "Wikidata description only.",
+                }
+            ],
+            max_http_nodes=0,
+        )
+
+        agency = next(node for node in enriched_nodes if node["id"] == "agency-beta")
+
+        self.assertEqual(agency["official_website"], "https://example.com/agency-beta")
+        self.assertEqual(agency["sourceUrls"], [])
+        self.assertNotIn("official_site", agency["sourceTypes"])
+        self.assertEqual(agency["proofStatus"], "unproven")
+        self.assertEqual(edges, [])
+        self.assertEqual(stats["nodes_enriched"], 1)
+
     def test_enrich_nodes_attaches_treasury_rollup_outlays(self) -> None:
         existing_nodes = [
             {

@@ -13,6 +13,7 @@ from data_pipeline.processors.normalize_nodes import (
     classify_source_url,
     generate_node_id,
     merge_node,
+    is_official_source_url,
     normalize_name,
     normalize_node,
     normalize_string_list,
@@ -59,6 +60,18 @@ LEADERSHIP_TITLE_PATTERN = re.compile(
     + "|".join(re.escape(title) for title in sorted(LEADERSHIP_TITLES, key=len, reverse=True))
     + r")\b",
     re.IGNORECASE,
+)
+HTTP_ENRICHABLE_TYPE_KEYWORDS = (
+    "branch",
+    "department",
+    "agency",
+    "bureau",
+    "office",
+    "division",
+    "committee",
+    "commission",
+    "board",
+    "court",
 )
 REPORTS_TO_PATTERN = re.compile(
     r"\b(reports to|within the|under the|part of the)\s+([A-Z][A-Za-z0-9&,'\- ]+)",
@@ -196,8 +209,9 @@ def node_priority(node: dict[str, Any]) -> tuple[int, str]:
 
 
 def choose_official_website(node: dict[str, Any], wikidata_records: dict[str, list[dict[str, Any]]]) -> str | None:
-    if node.get("official_website"):
-        return str(node["official_website"]).strip()
+    official_website = str(node.get("official_website") or "").strip()
+    if is_official_source_url(official_website):
+        return official_website
 
     for source_url in node.get("sourceUrls", []) or []:
         if classify_source_url(source_url) == "official_site":
@@ -205,9 +219,9 @@ def choose_official_website(node: dict[str, Any], wikidata_records: dict[str, li
 
     for record in wikidata_records.get(normalize_key(node.get("name")), []):
         website = str(record.get("officialWebsite") or record.get("website") or "").strip()
-        if website:
+        if is_official_source_url(website):
             return website
-    return None
+    return official_website or None
 
 
 def record_index(records: Iterable[dict[str, Any]], *keys: str) -> dict[str, list[dict[str, Any]]]:
@@ -659,19 +673,21 @@ def enrich_nodes(
         official_website = choose_official_website({**node, **updates}, wikidata_by_name)
         if official_website:
             updates["official_website"] = official_website
-            updates["sourceUrls"] = normalize_string_list([*node.get("sourceUrls", []), official_website])
-            updates["sourceTypes"] = normalize_string_list([*node.get("sourceTypes", []), "official_site"])
+            if is_official_source_url(official_website):
+                updates["sourceUrls"] = normalize_string_list([*node.get("sourceUrls", []), official_website])
+                updates["sourceTypes"] = normalize_string_list([*node.get("sourceTypes", []), "official_site"])
 
+        official_fetch_urls = official_url_variants({**node, **updates}, official_website, directory_matches) if official_website else []
         should_fetch = (
-            official_website
+            bool(official_fetch_urls)
             and http_budget < max_http_nodes
-            and any(keyword in normalize_key(node.get("type")) for keyword in ("department", "agency", "bureau", "office"))
+            and any(keyword in normalize_key(node.get("type")) for keyword in HTTP_ENRICHABLE_TYPE_KEYWORDS)
         )
         if should_fetch:
             http_budget += 1
             try:
                 html_blocks: list[tuple[str, str]] = []
-                for url in official_url_variants({**node, **updates}, official_website, directory_matches):
+                for url in official_fetch_urls:
                     try:
                         html_blocks.extend(parse_text_blocks(request_text(url, timeout=http_timeout)))
                     except (HTTPError, URLError, TimeoutError, ValueError):

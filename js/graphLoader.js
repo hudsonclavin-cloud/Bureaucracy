@@ -386,6 +386,14 @@ function combineExpansionPayloads(...payloads) {
   };
 }
 
+function attachQuarantineMetadata(graph, corporateData, corporateUrl) {
+  graph.quarantine = {
+    corporateOverlay: corporateData ? cloneValue(corporateData) : null,
+    corporateOverlaySource: corporateData ? String(corporateUrl || "") : null,
+  };
+  return graph;
+}
+
 function getPrimaryGraphUrl(baseUrl) {
   return (
     (typeof window !== "undefined" ? window?.GRAPH_DATA_SOURCES?.primary : null) ||
@@ -442,14 +450,12 @@ async function loadLegacyMergedGraph({
   ]);
   const baseData = normalizeNode(baseRaw);
 
-  onStatus("Merging federal and corporate structures…");
+  onStatus("Preparing federal hierarchy and quarantined corporate overlay…");
   const mergedPayload = combineExpansionPayloads(
-    corporateData,
     expandedNodes.length > 0 || expandedEdges.length > 0
       ? {
           nodes: expandedNodes,
           edges: expandedEdges,
-          candidateNodes: candidateNodes.map(normalizeCandidateNode),
         }
       : null,
   );
@@ -457,6 +463,7 @@ async function loadLegacyMergedGraph({
     ? mergeExpansionGraph(baseData, cloneValue(mergedPayload))
     : baseData;
   mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
+  attachQuarantineMetadata(mergedGraph, corporateData, corporateUrl);
   trimDepth(mergedGraph);
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
@@ -502,8 +509,9 @@ export async function loadMergedGraphData({
     const primaryRaw = await primaryPromise;
     const [corporateData, candidateNodes] = await Promise.all([corporatePromise, candidateNodesPromise]);
     const primaryData = normalizeNode(primaryRaw);
-    const mergedGraph = corporateData ? mergeExpansionGraph(primaryData, cloneValue(corporateData)) : primaryData;
+    const mergedGraph = primaryData;
     mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
+    attachQuarantineMetadata(mergedGraph, corporateData, corporateUrl);
     trimDepth(mergedGraph);
     onStatus("Indexing verified graph export…");
     return mergedGraph;

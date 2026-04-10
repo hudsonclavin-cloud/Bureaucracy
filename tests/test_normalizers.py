@@ -75,6 +75,39 @@ class NormalizerTests(unittest.TestCase):
         self.assertIn("official_site", node["sourceTypes"])
         self.assertIn("wikidata", node["sourceTypes"])
 
+    def test_verify_node_sources_uses_official_website_and_sets_proof_fields(self) -> None:
+        node = verify_node_sources(
+            {
+                "id": "agency-alpha",
+                "official_website": "https://www.energy.gov/agency-alpha",
+                "sourceTypes": ["official_http", "usaspending_direct"],
+            }
+        )
+
+        self.assertEqual(node["sourceCount"], 1)
+        self.assertTrue(node["existsProven"])
+        self.assertEqual(node["proofStatus"], "proven")
+        self.assertEqual(node["proofReason"], "official_source_recorded")
+        self.assertEqual(node["proofSourceCount"], 2)
+        self.assertIn("official_site", node["proofSourceTypes"])
+        self.assertIn("official_financial_record", node["proofSourceTypes"])
+
+    def test_verify_node_sources_keeps_non_official_website_as_metadata_only(self) -> None:
+        node = verify_node_sources(
+            {
+                "id": "agency-beta",
+                "official_website": "https://example.com/agency-beta",
+                "sourceTypes": ["wikidata"],
+            }
+        )
+
+        self.assertEqual(node["official_website"], "https://example.com/agency-beta")
+        self.assertEqual(node["sourceCount"], 0)
+        self.assertEqual(node["proofSourceCount"], 1)
+        self.assertNotIn("official_site", node["sourceTypes"])
+        self.assertNotIn("official_site", node["proofSourceTypes"])
+        self.assertEqual(node["proofStatus"], "unproven")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -7,11 +7,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from data_pipeline.json_io import remove_file, replace_file, write_json_file
 from data_pipeline.crawler.federal_register import crawl as crawl_federal_register
 from data_pipeline.crawler.lobbying import crawl as crawl_lobbying
 from data_pipeline.crawler.official_directory import crawl as crawl_official_directory
@@ -74,6 +74,20 @@ def safe_stage(stage_name: str, fn: Callable[[], Any]) -> tuple[Any, str | None]
         return None, f"{stage_name}: {error}"
 
 
+def staging_path(path: str | Path) -> Path:
+    output_path = Path(path)
+    return output_path.with_name(f".staging.{output_path.name}")
+
+
+def stage_error_name(error_message: str) -> str:
+    return str(error_message).split(":", 1)[0].strip()
+
+
+def has_blocking_stage_errors(stage_errors: list[str]) -> bool:
+    non_blocking_stages = {"lobbying"}
+    return any(stage_error_name(error_message) not in non_blocking_stages for error_message in stage_errors)
+
+
 def format_pipeline_summary(stats: dict[str, Any]) -> str:
     verification = stats.get("verification_breakdown", {})
     return "\n".join(
@@ -101,11 +115,17 @@ def run_pipeline(
     state_output_path: str | Path = DEFAULT_STATE_PATH,
     direct_payload_fetchers: dict[str, Callable[[], dict[str, list[dict[str, Any]]]]] | list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
+    reuse_existing_graph_payload: bool = False,
 ) -> dict[str, Any]:
     fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", datetime.now(tz=timezone.utc).year)
     lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", fiscal_year)
     existing_graph_path = Path(graph_output_path)
+    base_graph_path = Path(base_graph_path)
     existing_nodes = load_existing_graph_nodes(existing_graph_path if existing_graph_path.exists() else base_graph_path)
+    if not existing_nodes and existing_graph_path.exists():
+        fallback_nodes = load_existing_graph_nodes(base_graph_path)
+        if fallback_nodes:
+            existing_nodes = fallback_nodes
     nodes_before = len(existing_nodes)
     pipeline_state = load_pipeline_state(state_output_path)
     frontier_targets = build_frontier_targets(
@@ -113,7 +133,25 @@ def run_pipeline(
         state=pipeline_state,
         limit=getenv_int("PIPELINE_FRONTIER_LIMIT", 80),
     )
-    frontier_path = write_frontier_targets(frontier_targets, frontier_output_path)
+    frontier_output_path = Path(frontier_output_path)
+    state_output_path = Path(state_output_path)
+    graph_output_path = Path(graph_output_path)
+    nodes_output_path = Path(nodes_output_path)
+    edges_output_path = Path(edges_output_path)
+    candidate_output_path = Path(candidate_output_path)
+    stats_output_path = Path(stats_output_path)
+    enrichment_stats_output_path = Path(enrichment_stats_output_path)
+    validity_report_output_path = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
+
+    staged_frontier_path = staging_path(frontier_output_path)
+    staged_state_path = staging_path(state_output_path)
+    staged_graph_path = staging_path(graph_output_path)
+    staged_nodes_path = staging_path(nodes_output_path)
+    staged_edges_path = staging_path(edges_output_path)
+    staged_candidate_path = staging_path(candidate_output_path)
+    staged_validity_report_path = staging_path(validity_report_output_path)
+
+    frontier_path = write_frontier_targets(frontier_targets, staged_frontier_path)
 
     _wikidata_combined_cache: list[dict[str, Any]] = []
 
@@ -209,7 +247,6 @@ def run_pipeline(
         base_graph_path=base_graph_path,
         **discovery_inputs,
     )
-    candidate_path = write_review_queue(candidates, output_path=candidate_output_path)
     promoted_nodes, promotion_stats = promote_candidates(
         candidates,
         existing_nodes=existing_nodes,
@@ -242,7 +279,7 @@ def run_pipeline(
             federal_register_records=discovery_inputs.get("federal_register_records", []),
             usaspending_payload=direct_payload_results.get("usaspending"),
             treasury_outlay_payload=direct_payload_results.get("treasury_outlays"),
-            max_http_nodes=getenv_int("PIPELINE_ENRICHMENT_HTTP_LIMIT", 18),
+            max_http_nodes=getenv_int("PIPELINE_ENRICHMENT_HTTP_LIMIT", 48),
             http_timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 10),
         ),
     )
@@ -262,21 +299,52 @@ def run_pipeline(
     build_result = build_graph(
         payloads,
         base_graph_path=base_graph_path,
-        graph_output_path=graph_output_path,
-        nodes_output_path=nodes_output_path,
-        edges_output_path=edges_output_path,
+        graph_output_path=staged_graph_path,
+        nodes_output_path=staged_nodes_path,
+        edges_output_path=staged_edges_path,
+        validity_report_output_path=staged_validity_report_path,
+        reuse_existing_graph_payload=reuse_existing_graph_payload,
+        existing_graph_payload_path=graph_output_path,
     )
     nodes_after = count_tree_nodes(build_result.graph)
     timestamp = datetime.now(tz=timezone.utc).isoformat()
-    next_state = update_pipeline_state(
-        pipeline_state,
-        frontier_targets=frontier_targets,
-        frontier_metrics=frontier_metrics,
-        promoted_nodes=promoted_nodes,
-        enriched_nodes=enriched_nodes,
-        timestamp=timestamp,
-    )
-    state_path = write_pipeline_state(next_state, state_output_path)
+    publish_skipped = has_blocking_stage_errors(stage_errors)
+    blocking_stage_errors = [error_message for error_message in stage_errors if stage_error_name(error_message) != "lobbying"]
+    if publish_skipped:
+        state_path = state_output_path
+        candidate_path = candidate_output_path
+        frontier_path = frontier_output_path
+        for path in (
+            staged_frontier_path,
+            staged_state_path,
+            staged_graph_path,
+            staged_nodes_path,
+            staged_edges_path,
+            staged_candidate_path,
+            staged_validity_report_path,
+        ):
+            remove_file(path)
+    else:
+        next_state = update_pipeline_state(
+            pipeline_state,
+            frontier_targets=frontier_targets,
+            frontier_metrics=frontier_metrics,
+            promoted_nodes=promoted_nodes,
+            enriched_nodes=enriched_nodes,
+            timestamp=timestamp,
+        )
+        state_path = write_pipeline_state(next_state, staged_state_path)
+        candidate_path = write_review_queue(candidates, output_path=staged_candidate_path)
+        replace_file(staged_frontier_path, frontier_output_path)
+        replace_file(staged_state_path, state_output_path)
+        replace_file(staged_graph_path, graph_output_path)
+        replace_file(staged_nodes_path, nodes_output_path)
+        replace_file(staged_edges_path, edges_output_path)
+        replace_file(staged_candidate_path, candidate_output_path)
+        replace_file(staged_validity_report_path, validity_report_output_path)
+        frontier_path = frontier_output_path
+        state_path = state_output_path
+        candidate_path = candidate_output_path
     stats = {
         "timestamp": timestamp,
         "nodes_before": nodes_before,
@@ -296,6 +364,8 @@ def run_pipeline(
         "frontier_success_count": sum(1 for metric in frontier_metrics if metric.get("success")),
         "frontier_failure_count": sum(1 for metric in frontier_metrics if not metric.get("success")),
         "budget_summary": direct_payload_results.get("treasury_outlays", {}).get("budgetSummary"),
+        "publish_skipped": publish_skipped,
+        "blocking_stage_errors": blocking_stage_errors,
         "direct_payload_counts": {
             source_name: {
                 "nodes": len(payload.get("nodes", [])),
@@ -306,10 +376,10 @@ def run_pipeline(
         },
         "stage_errors": stage_errors,
         "outputs": {
-            "graph": str(build_result.graph_path),
-            "expanded_nodes": str(build_result.nodes_path),
-            "expanded_edges": str(build_result.edges_path),
-            "node_validity_report": str(build_result.validity_report_path) if build_result.validity_report_path else None,
+            "graph": str(graph_output_path),
+            "expanded_nodes": str(nodes_output_path),
+            "expanded_edges": str(edges_output_path),
+            "node_validity_report": str(validity_report_output_path),
             "candidate_nodes": str(candidate_path),
             "enrichment_stats": str(enrichment_stats_output_path),
             "frontier_targets": str(frontier_path),
@@ -317,15 +387,8 @@ def run_pipeline(
         },
     }
 
-    stats_path = Path(stats_output_path)
-    stats_path.parent.mkdir(parents=True, exist_ok=True)
-    with stats_path.open("w", encoding="utf-8") as handle:
-        json.dump(stats, handle, indent=2)
-
-    enrichment_path = Path(enrichment_stats_output_path)
-    enrichment_path.parent.mkdir(parents=True, exist_ok=True)
-    with enrichment_path.open("w", encoding="utf-8") as handle:
-        json.dump(enrichment_stats, handle, indent=2)
+    write_json_file(stats_output_path, stats)
+    write_json_file(enrichment_stats_output_path, enrichment_stats)
     create_snapshot(stats, PROJECT_ROOT)
     return stats
 

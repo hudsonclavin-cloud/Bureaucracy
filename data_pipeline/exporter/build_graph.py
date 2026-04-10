@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from copy import deepcopy
 import json
 import re
 import sys
+from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -14,6 +14,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from data_pipeline.processors.normalize_edges import EdgeRegistry
+from data_pipeline.json_io import load_json_file, write_json_file
 from data_pipeline.processors.normalize_nodes import (
     NodeRegistry,
     load_existing_node_ids,
@@ -35,6 +36,15 @@ COST_EXPORT_FIELDS = (
     "cost_status",
     "cost_basis",
     "cost_validation",
+)
+DERIVED_NODE_TYPE_KEYWORDS = (
+    "office",
+    "division",
+    "position",
+    "role",
+    "staff",
+    "employee",
+    "leadership",
 )
 
 
@@ -114,8 +124,7 @@ def split_hierarchical_edges(edges: list[dict[str, str]], parent_by_child: dict[
 def load_base_graph(base_graph_path: str | Path) -> dict[str, Any]:
     path = Path(base_graph_path)
     if path.exists():
-        with path.open("r", encoding="utf-8") as handle:
-            payload = json.load(handle)
+        payload = load_json_file(path, default_factory=dict)
         if isinstance(payload, dict):
             return payload
     return {
@@ -133,12 +142,7 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     if not path.exists():
         return {"nodes": [], "edges": []}
 
-    try:
-        with path.open("r", encoding="utf-8") as handle:
-            payload = json.load(handle)
-    except (OSError, json.JSONDecodeError):
-        return {"nodes": [], "edges": []}
-
+    payload = load_json_file(path, default_factory=dict)
     if not isinstance(payload, dict):
         return {"nodes": [], "edges": []}
 
@@ -308,6 +312,94 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
     return sizes
 
 
+def normalize_type_key(value: Any) -> str:
+    return str(value or "").strip().lower()
+
+
+def is_derived_node_type(node: dict[str, Any]) -> bool:
+    type_name = normalize_type_key(node.get("type"))
+    return any(keyword in type_name for keyword in DERIVED_NODE_TYPE_KEYWORDS)
+
+
+def annotate_proof_tree(
+    node: dict[str, Any],
+    *,
+    parent_is_proven: bool,
+    is_root: bool = False,
+    trusted_node_ids: set[str] | None = None,
+) -> tuple[dict[str, int], bool]:
+    verify_node_sources(node)
+    trusted_node_ids = trusted_node_ids or set()
+    node_id = str(node.get("id") or "").strip()
+    is_trusted_baseline = node_id in trusted_node_ids
+    node["parentProven"] = bool(parent_is_proven)
+    direct_proven = bool(node.get("existsProven"))
+    proof_source_count = int(node.get("proofSourceCount") or 0)
+
+    if is_root:
+        node["existsProven"] = True
+        node["parentProven"] = True
+        node["proofStatus"] = "root"
+        node["proofReason"] = "graph_root"
+        keep_node = True
+    elif direct_proven:
+        node["proofStatus"] = "proven"
+        node["proofReason"] = node.get("proofReason") or "official_source_recorded"
+        keep_node = True
+    elif is_trusted_baseline:
+        node["proofStatus"] = "baseline"
+        node["proofReason"] = "trusted_base_graph"
+        keep_node = True
+    elif parent_is_proven and is_derived_node_type(node):
+        node["proofStatus"] = "derived"
+        node["proofReason"] = "derived_from_proven_parent"
+        keep_node = True
+    else:
+        node["proofStatus"] = "unproven"
+        if proof_source_count == 0:
+            node["proofReason"] = "no_evidence_recorded"
+        else:
+            node["proofReason"] = "insufficient_direct_proof"
+        keep_node = False
+
+    counts = {str(node["proofStatus"]): 1}
+    kept_children: list[dict[str, Any]] = []
+    for child in node.get("children", []):
+        if not isinstance(child, dict):
+            continue
+        child_counts, child_keep = annotate_proof_tree(
+            child,
+            parent_is_proven=keep_node,
+            is_root=False,
+            trusted_node_ids=trusted_node_ids,
+        )
+        for key, value in child_counts.items():
+            counts[key] = counts.get(key, 0) + value
+        if child_keep:
+            kept_children.append(child)
+    node["children"] = kept_children
+    return counts, keep_node
+
+
+def filter_relationships_to_kept_nodes(root: dict[str, Any]) -> None:
+    kept_node_ids = {
+        str(node.get("id") or "").strip()
+        for node, _ in walk_tree(root)
+        if str(node.get("id") or "").strip()
+    }
+    relationships = root.get("relationships")
+    if not isinstance(relationships, list):
+        root["relationships"] = []
+        return
+    root["relationships"] = [
+        edge
+        for edge in relationships
+        if isinstance(edge, dict)
+        and str(edge.get("source") or "").strip() in kept_node_ids
+        and str(edge.get("target") or "").strip() in kept_node_ids
+    ]
+
+
 def get_node_official_total(node: dict[str, Any]) -> float | None:
     return parse_cost_amount(node.get("rollup_total_amount"))
 
@@ -458,14 +550,17 @@ def annotate_resolved_costs(
     unresolved_cost_node_count = 0
     estimated_cost_node_count = 0
     official_cost_node_count = 0
+    proof_status_counts: dict[str, int] = {}
 
     for node, parent in walk_tree(root):
         verification_status = str(node.get("verificationStatus") or "unverified")
         cost_status = str(node.get("cost_status") or "unavailable")
         cost_validation = str(node.get("cost_validation") or "missing_cost")
+        proof_status = str(node.get("proofStatus") or "unproven")
         verification_status_counts[verification_status] = verification_status_counts.get(verification_status, 0) + 1
         cost_status_counts[cost_status] = cost_status_counts.get(cost_status, 0) + 1
         cost_validation_counts[cost_validation] = cost_validation_counts.get(cost_validation, 0) + 1
+        proof_status_counts[proof_status] = proof_status_counts.get(proof_status, 0) + 1
 
         source_count = int(node.get("sourceCount") or 0)
         if source_count > 0:
@@ -489,6 +584,8 @@ def annotate_resolved_costs(
             issues.append("no_sources")
         if verification_status == "unverified":
             issues.append("unverified")
+        if proof_status == "unproven":
+            issues.append("unsupported_node")
         if cost_status == "unavailable":
             issues.append("missing_cost")
         elif cost_status != "official" and cost_status != "root_total":
@@ -503,6 +600,9 @@ def annotate_resolved_costs(
                 "verificationStatus": verification_status,
                 "confidenceScore": node.get("confidenceScore"),
                 "sourceCount": source_count,
+                "proofStatus": proof_status,
+                "proofReason": node.get("proofReason"),
+                "proofSourceCount": node.get("proofSourceCount"),
                 "resolved_total_amount": resolved_total,
                 "rollup_total_amount": node.get("rollup_total_amount"),
                 "cost_status": cost_status,
@@ -518,6 +618,7 @@ def annotate_resolved_costs(
             "verification_status_counts": verification_status_counts,
             "cost_status_counts": cost_status_counts,
             "cost_validation_counts": cost_validation_counts,
+            "proof_status_counts": proof_status_counts,
             "nodes_with_sources": nodes_with_sources,
             "nodes_without_sources": nodes_without_sources,
             "resolved_cost_node_count": resolved_cost_node_count,
@@ -637,11 +738,14 @@ def build_graph(
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
+    reuse_existing_graph_payload: bool = True,
+    existing_graph_payload_path: str | Path | None = None,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
-    existing_graph_payload = load_existing_graph_payload(graph_output_path)
-    if existing_graph_payload["nodes"] or existing_graph_payload["edges"]:
-        payload_list.insert(0, existing_graph_payload)
+    if reuse_existing_graph_payload:
+        existing_graph_payload = load_existing_graph_payload(existing_graph_payload_path or graph_output_path)
+        if existing_graph_payload["nodes"] or existing_graph_payload["edges"]:
+            payload_list.insert(0, existing_graph_payload)
     raw_nodes_loaded = count_payload_nodes(payload_list)
     existing_ids = load_existing_node_ids(base_graph_path)
     node_registry = NodeRegistry(existing_ids=set(existing_ids))
@@ -694,6 +798,13 @@ def build_graph(
         nodes=export_nodes,
         edges=export_edges,
     )
+    proof_status_counts, _ = annotate_proof_tree(
+        graph,
+        parent_is_proven=True,
+        is_root=True,
+        trusted_node_ids=set(existing_ids),
+    )
+    filter_relationships_to_kept_nodes(graph)
     budget_summary = extract_budget_summary(payload_list)
     if budget_summary:
         graph["__budgetSummary"] = budget_summary
@@ -701,25 +812,37 @@ def build_graph(
 
     validity_report = annotate_resolved_costs(graph, budget_summary=budget_summary)
     graph_node_map, _ = index_tree(graph)
+    kept_graph_ids = set(graph_node_map)
+    export_nodes = [node for node in export_nodes if node["id"] in kept_graph_ids]
+    export_edges = [
+        edge
+        for edge in export_edges
+        if edge["source"] in kept_graph_ids and edge["target"] in kept_graph_ids
+    ]
     for node in export_nodes:
         graph_node = graph_node_map.get(node["id"])
         if not graph_node:
             continue
         for field_name in COST_EXPORT_FIELDS:
             node[field_name] = deepcopy(graph_node.get(field_name))
+        node["proofStatus"] = deepcopy(graph_node.get("proofStatus"))
+        node["proofReason"] = deepcopy(graph_node.get("proofReason"))
+        node["proofSourceCount"] = deepcopy(graph_node.get("proofSourceCount"))
+        node["existsProven"] = deepcopy(graph_node.get("existsProven"))
+        node["parentProven"] = deepcopy(graph_node.get("parentProven"))
+    validation["export_verification_status_counts"] = deepcopy(validation.get("verification_status_counts", {}))
+    validation["export_verified_node_count"] = int(validation.get("verified_node_count", 0))
+    validation["export_average_confidence_score"] = validation.get("average_confidence_score")
     validation.update(validity_report["summary"])
+    validation["graph_summary"] = deepcopy(validity_report["summary"])
+    validation["proof_status_counts_before_cull"] = proof_status_counts
+    validation["exported_node_count"] = len(export_nodes)
+    validation["exported_edge_count"] = len(export_edges)
 
-    with graph_path.open("w", encoding="utf-8") as handle:
-        json.dump(graph, handle, indent=2)
-
-    with nodes_path.open("w", encoding="utf-8") as handle:
-        json.dump(export_nodes, handle, indent=2)
-
-    with edges_path.open("w", encoding="utf-8") as handle:
-        json.dump(export_edges, handle, indent=2)
-
-    with validity_report_path.open("w", encoding="utf-8") as handle:
-        json.dump(validity_report, handle, indent=2)
+    write_json_file(graph_path, graph)
+    write_json_file(nodes_path, export_nodes)
+    write_json_file(edges_path, export_edges)
+    write_json_file(validity_report_path, validity_report)
 
     return BuildResult(
         nodes=export_nodes,

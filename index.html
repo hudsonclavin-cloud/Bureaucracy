@@ -27,6 +27,10 @@ body.dragging{cursor:grabbing;}
 .load-fill{height:100%;background:var(--gold);width:0;animation:loadAnim 1.8s cubic-bezier(.4,0,.2,1) forwards;}
 @keyframes loadAnim{to{width:100%;}}
 #load-status{font-size:9px;color:var(--gold-dim);margin-top:12px;letter-spacing:0.15em;}
+#loading.error h1{color:#f2d2d2;}
+#loading.error .load-bar{background:rgba(200,80,80,0.18);}
+#loading.error .load-fill{width:100%;background:#c84a4a;animation:none;}
+#loading.error #load-status{color:#f0a0a0;}
 #title-panel{position:fixed;top:28px;left:32px;pointer-events:none;z-index:10;}
 #title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
 #title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
@@ -172,6 +176,7 @@ body.dragging{cursor:grabbing;}
   #controls-hint{display:none;}
 }
 </style>
+<link rel="stylesheet" href="css/ui.css?v=20260410">
 </head>
 <body>
 <div id="loading">
@@ -271,6 +276,6 @@ window.GRAPH_DATA_SOURCES = {
   corporate: "./data_expansion/corporate_expansion.json",
 };
 </script>
-<script type="module" src="./js/ui.js?v=20260401"></script>
+<script type="module" src="./js/ui.js?v=20260410"></script>
 </body>
 </html>

@@ -217,6 +217,7 @@ function hideLoadingOverlay(delay = 600) {
   if (!dom.loading) {
     return;
   }
+  dom.loading.classList.remove("error");
   dom.loading.style.opacity = "0";
   window.setTimeout(() => {
     if (dom.loading?.parentElement) {
@@ -228,7 +229,10 @@ function hideLoadingOverlay(delay = 600) {
 function handleUiFailure(error, message = "UI failed to initialize. Open browser console for details.") {
   console.error(message, error);
   setText(dom.loadStatus, message);
-  hideLoadingOverlay();
+  if (dom.loading) {
+    dom.loading.classList.add("error");
+    dom.loading.style.opacity = "1";
+  }
 }
 
 function safeUiCall(label, callback, ...args) {
@@ -418,10 +422,21 @@ function ensureVerificationToggles() {
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
 
+  const toggleHighDensity = makeToggle("High Universe Density");
+  toggleHighDensity.checked = false;
+  toggleHighDensity.title = "Increase node density in Cosmic/Universe view";
+  toggleHighDensity.addEventListener("change", () => {
+    if (state.graph && typeof state.graph.setCosmicDensity === "function") {
+      state.graph.setCosmicDensity(toggleHighDensity.checked);
+      updateStats(state.graph.getStats());
+    }
+  });
+
   document.body.appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
+  dom.toggleHighDensity = toggleHighDensity;
 }
 
 function ensureVerificationLegend() {
@@ -725,6 +740,51 @@ function closeSearch() {
   dom.searchResults.replaceChildren();
 }
 
+function shouldShowSearchResult(match) {
+  if (match.isCandidate) {
+    return dom.toggleCandidates ? dom.toggleCandidates.checked : false;
+  }
+
+  if (dom.toggleUnverified && !dom.toggleUnverified.checked) {
+    const confidenceScore = Number(match.confidenceScore || 0);
+    const verificationStatus = String(match.verificationStatus || "").toLowerCase();
+    if (confidenceScore < 0.5 || verificationStatus === "unverified") {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function getVisibleSearchMatches(query) {
+  const matches = [];
+  for (const item of state.searchIndex) {
+    if (!shouldShowSearchResult(item)) {
+      continue;
+    }
+    if (
+      item.name.toLowerCase().includes(query) ||
+      item.type.toLowerCase().includes(query) ||
+      item.pathStr.toLowerCase().includes(query)
+    ) {
+      matches.push(item);
+    }
+    if (matches.length === 12) {
+      break;
+    }
+  }
+  return matches;
+}
+
+function refreshSearchResults() {
+  const query = dom.searchInput.value.trim().toLowerCase();
+  if (query.length < 2) {
+    closeSearch();
+    return;
+  }
+  renderSearchResults(getVisibleSearchMatches(query));
+}
+
 function renderSearchResults(matches) {
   dom.searchResults.replaceChildren();
   if (matches.length === 0) {
@@ -903,12 +963,21 @@ function bindControls() {
     dom.toggleUnverified.addEventListener("change", () => {
       state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
       updateStats(state.graph.getStats());
+      refreshSearchResults();
     });
   }
 
   if (dom.toggleCandidates) {
     dom.toggleCandidates.addEventListener("change", () => {
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
+      updateStats(state.graph.getStats());
+      refreshSearchResults();
+    });
+  }
+
+  if (dom.toggleHighDensity) {
+    dom.toggleHighDensity.addEventListener("change", () => {
+      state.graph.setCosmicDensity(dom.toggleHighDensity.checked);
       updateStats(state.graph.getStats());
     });
   }
@@ -998,27 +1067,7 @@ function bindControls() {
     });
   });
 
-  dom.searchInput.addEventListener("input", () => {
-    const query = dom.searchInput.value.trim().toLowerCase();
-    if (query.length < 2) {
-      closeSearch();
-      return;
-    }
-    const matches = [];
-    for (const item of state.searchIndex) {
-      if (
-        item.name.toLowerCase().includes(query) ||
-        item.type.toLowerCase().includes(query) ||
-        item.pathStr.toLowerCase().includes(query)
-      ) {
-        matches.push(item);
-      }
-      if (matches.length === 12) {
-        break;
-      }
-    }
-    renderSearchResults(matches);
-  });
+  dom.searchInput.addEventListener("input", refreshSearchResults);
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest("#search-wrap")) {
@@ -1030,6 +1079,7 @@ function bindControls() {
 function initUI() {
   ensureOriginUi();
   ensureVerificationUi();
+  ensureVerificationToggles();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
@@ -1064,7 +1114,6 @@ async function initGraphApp() {
 if (shouldBootUi) {
   initGraphApp().catch((error) => {
     console.error(error);
-    setText(dom.loadStatus, "Failed to load explorer data.");
-    hideLoadingOverlay();
+    handleUiFailure(error, "Failed to load explorer data. Open browser console for details.");
   });
 }

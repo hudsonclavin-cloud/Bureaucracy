@@ -72,9 +72,16 @@ def run_sparql(query: str, *, timeout: int = 45) -> dict[str, Any]:
         return json.loads(response.read().decode("utf-8"))
 
 
-def extract_label(binding: dict[str, Any], key: str) -> str:
+def extract_label(binding: dict[str, Any], key: str) -> str | None:
     value = binding.get(key, {}).get("value", "")
-    return normalize_name(value)
+    text = str(value).strip()
+    if not text:
+        return None
+
+    label = normalize_name(text)
+    if label == "Unnamed Node" and text.casefold() != "unnamed node":
+        return None
+    return label
 
 
 def extract_entity_id(binding: dict[str, Any], key: str) -> str | None:
@@ -325,7 +332,6 @@ class WikidataCrawler:
                     "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
                     "wikidataId": extract_entity_id(row, "office"),
                     "description": f"Organizational unit associated with {parent_name or 'a federal agency'} via Wikidata.",
-                    "countryLabel": "United States",
                 }
             )
 
@@ -342,7 +348,6 @@ class WikidataCrawler:
                     "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
                     "wikidataId": extract_entity_id(row, "position"),
                     "description": f"Leadership role associated with {agency_name or 'a federal agency'} via Wikidata.",
-                    "countryLabel": "United States",
                 }
             )
 

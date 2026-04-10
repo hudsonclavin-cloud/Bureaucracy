@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-import json
 import os
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Iterable
 from urllib.parse import urlparse
 
+from data_pipeline.json_io import load_json_file, write_json_file
 from data_pipeline.processors.normalize_nodes import merge_node, normalize_node, generate_node_id, normalize_name
 
 
@@ -137,8 +137,7 @@ def build_candidate_node(
 
 
 def load_records(path: str | Path) -> list[dict[str, Any]]:
-    with Path(path).open("r", encoding="utf-8") as handle:
-        payload = json.load(handle)
+    payload = load_json_file(path, default_factory=dict)
     if isinstance(payload, list):
         return [item for item in payload if isinstance(item, dict)]
     if isinstance(payload, dict):
@@ -160,8 +159,7 @@ def load_existing_graph_nodes(base_graph_path: str | Path = DEFAULT_BASE_GRAPH) 
     path = Path(base_graph_path)
     if not path.exists():
         return []
-    with path.open("r", encoding="utf-8") as handle:
-        payload = json.load(handle)
+    payload = load_json_file(path, default_factory=list)
     if isinstance(payload, dict):
         return list(iter_tree_nodes(payload))
     if isinstance(payload, list):
@@ -612,11 +610,7 @@ def write_review_queue(
     *,
     output_path: str | Path = DEFAULT_OUTPUT_PATH,
 ) -> Path:
-    path = Path(output_path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
-        json.dump(list(candidates), handle, indent=2)
-    return path
+    return write_json_file(output_path, list(candidates))
 
 
 def main() -> None:
