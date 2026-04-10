@@ -1,4 +1,4 @@
-const DEFAULT_NODE = {
+﻿const DEFAULT_NODE = {
   id: "",
   name: "Unnamed Node",
   type: "Unknown",
@@ -110,6 +110,10 @@ function normalizeNode(rawNode) {
   node.discoveryMethod = node.discoveryMethod ? String(node.discoveryMethod) : null;
   node.children = Array.isArray(node.children) ? node.children.map(normalizeNode) : [];
   return node;
+}
+
+function hasUsableNodeId(node) {
+  return Boolean(String(node?.id || "").trim());
 }
 
 function walkTree(node, visit, parent = null) {
@@ -261,10 +265,14 @@ function flattenExpansionNodes(rawNodes, flatNodes, treeRoots) {
     }
 
     const normalizedNode = normalizeNode(rawNode);
-    flatNodes.set(normalizedNode.id, normalizedNode);
+    if (hasUsableNodeId(normalizedNode)) {
+      flatNodes.set(normalizedNode.id, normalizedNode);
 
-    if (Array.isArray(rawNode.children) && rawNode.children.length > 0) {
-      treeRoots.push(normalizedNode);
+      if (Array.isArray(rawNode.children) && rawNode.children.length > 0) {
+        treeRoots.push(normalizedNode);
+      }
+    } else {
+      console.warn("Skipping expansion node with missing id.", rawNode);
     }
 
     for (const child of rawNode.children || []) {
@@ -322,6 +330,10 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
     const parentNode = baseNodeMap.get(parentId);
     const childNode = baseNodeMap.get(String(rawNode.id || ""));
+    if (!parentNode || !childNode) {
+      console.warn("Skipping expansion parent attachment with missing endpoint.", { parentId, childId: rawNode.id || "" });
+      continue;
+    }
     safeAddChild(parentNode, childNode, parentMap);
   }
 
@@ -343,7 +355,16 @@ function mergeExpansionGraph(baseRoot, expansionData) {
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
-    }));
+    }))
+    .filter((relationship) => {
+      const sourceExists = baseNodeMap.has(relationship.source);
+      const targetExists = baseNodeMap.has(relationship.target);
+      if (!sourceExists || !targetExists) {
+        console.warn("Skipping expansion relationship with missing endpoint.", relationship);
+        return false;
+      }
+      return true;
+    });
   if (normalizedRelationships.length > 0) {
     const existingRelationships = Array.isArray(baseRoot.relationships) ? baseRoot.relationships : [];
     const relationshipKey = (relationship) => `${relationship.source}::${relationship.target}::${relationship.type}`;
@@ -411,23 +432,23 @@ async function loadLegacyMergedGraph({
   candidateNodesUrl,
   onStatus,
 }) {
-  onStatus("Fetching federal hierarchy…");
+  onStatus("Fetching federal hierarchyâ€¦");
   const basePromise = fetchJson(baseUrl);
-  onStatus("Fetching corporate expansion…");
+  onStatus("Fetching corporate expansionâ€¦");
   const corporatePromise = fetchJson(corporateUrl).catch((error) => {
     if (error.status === 404) {
       return null;
     }
     throw error;
   });
-  onStatus("Fetching pipeline-expanded nodes…");
+  onStatus("Fetching pipeline-expanded nodesâ€¦");
   const expandedNodesPromise = fetchJson(expandedNodesUrl).catch((error) => {
     if (error.status === 404) {
       return [];
     }
     throw error;
   });
-  onStatus("Fetching pipeline-expanded edges…");
+  onStatus("Fetching pipeline-expanded edgesâ€¦");
   const expandedEdgesPromise = fetchJson(expandedEdgesUrl).catch((error) => {
     if (error.status === 404) {
       return [];
@@ -450,7 +471,7 @@ async function loadLegacyMergedGraph({
   ]);
   const baseData = normalizeNode(baseRaw);
 
-  onStatus("Preparing federal hierarchy and quarantined corporate overlay…");
+  onStatus("Preparing federal hierarchy and quarantined corporate overlayâ€¦");
   const mergedPayload = combineExpansionPayloads(
     expandedNodes.length > 0 || expandedEdges.length > 0
       ? {
@@ -466,7 +487,7 @@ async function loadLegacyMergedGraph({
   attachQuarantineMetadata(mergedGraph, corporateData, corporateUrl);
   trimDepth(mergedGraph);
 
-  onStatus("Indexing hierarchy and preparing GPU batches…");
+  onStatus("Indexing hierarchy and preparing GPU batchesâ€¦");
   return mergedGraph;
 }
 
@@ -477,7 +498,14 @@ async function fetchJson(url) {
     error.status = response.status;
     throw error;
   }
-  return response.json();
+  try {
+    return await response.json();
+  } catch (error) {
+    const parseError = new Error(`Invalid JSON in ${url}`);
+    parseError.status = response.status;
+    parseError.cause = error;
+    throw parseError;
+  }
 }
 
 export async function loadMergedGraphData({
@@ -489,32 +517,10 @@ export async function loadMergedGraphData({
   candidateNodesUrl = "./output/candidate_nodes.json",
   onStatus = () => {},
 } = {}) {
-  onStatus("Fetching corporate expansion…");
-  const corporatePromise = fetchJson(corporateUrl).catch((error) => {
-    if (error.status === 404) {
-      return null;
-    }
-    return null;
-  });
-  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch((error) => {
-    if (error.status === 404) {
-      return [];
-    }
-    return [];
-  });
-  const primaryPromise = fetchJson(primaryUrl);
-
   onStatus("Fetching verified graph export…");
+  let primaryRaw;
   try {
-    const primaryRaw = await primaryPromise;
-    const [corporateData, candidateNodes] = await Promise.all([corporatePromise, candidateNodesPromise]);
-    const primaryData = normalizeNode(primaryRaw);
-    const mergedGraph = primaryData;
-    mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
-    attachQuarantineMetadata(mergedGraph, corporateData, corporateUrl);
-    trimDepth(mergedGraph);
-    onStatus("Indexing verified graph export…");
-    return mergedGraph;
+    primaryRaw = await fetchJson(primaryUrl);
   } catch (primaryError) {
     if (primaryUrl !== baseUrl) {
       onStatus("Primary graph export unavailable, falling back to legacy hierarchy…");
@@ -529,4 +535,30 @@ export async function loadMergedGraphData({
     }
     throw primaryError;
   }
+
+  onStatus("Fetching quarantined corporate overlay and candidate data…");
+  const corporatePromise = fetchJson(corporateUrl).catch((error) => {
+    if (error.status === 404) {
+      return null;
+    }
+    throw error;
+  });
+  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch((error) => {
+    if (error.status === 404) {
+      return [];
+    }
+    throw error;
+  });
+
+  const [corporateData, candidateNodes] = await Promise.all([corporatePromise, candidateNodesPromise]);
+  const primaryData = normalizeNode(primaryRaw);
+  if (!hasUsableNodeId(primaryData)) {
+    throw new Error("Verified graph export is missing a root id.");
+  }
+  const mergedGraph = primaryData;
+  mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
+  attachQuarantineMetadata(mergedGraph, corporateData, corporateUrl);
+  trimDepth(mergedGraph);
+  onStatus("Indexing verified graph export…");
+  return mergedGraph;
 }

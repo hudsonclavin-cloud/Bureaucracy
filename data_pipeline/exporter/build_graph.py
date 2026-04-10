@@ -162,6 +162,14 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     return result
 
 
+def is_placeholder_generated_node(node: dict[str, Any], *, existing_ids: set[str]) -> bool:
+    node_id = str(node.get("id") or "").strip()
+    node_name = str(node.get("name") or "").strip()
+    if node_id in existing_ids:
+        return False
+    return node_id == "unnamed-node" and node_name == "Unnamed Node"
+
+
 def walk_tree(root: dict[str, Any]) -> Iterable[tuple[dict[str, Any], dict[str, Any] | None]]:
     stack: list[tuple[dict[str, Any], dict[str, Any] | None]] = [(root, None)]
     while stack:
@@ -239,7 +247,8 @@ def build_graph_tree(
                 attached_node.pop("attachToRoot", None)
             continue
         if node.get("attachToRoot") and node_id != root_id:
-            safe_attach_child(root, attached_node, parent_map=parent_map)
+            if safe_attach_child(root, attached_node, parent_map=parent_map):
+                attached_node["parentId"] = root_id
 
     root["relationships"] = list(edges)
     return root
@@ -670,6 +679,9 @@ def validate_and_prepare_graph(
 
     for node in nodes:
         prepared = verify_node_sources(dict(node))
+        if is_placeholder_generated_node(prepared, existing_ids=existing_ids):
+            structural_error_nodes_removed += 1
+            continue
         parent_id = parent_by_child.get(prepared["id"]) or prepared.get("parentId")
         if parent_id:
             if parent_id == prepared["id"] or parent_id not in all_known_ids:
@@ -722,6 +734,7 @@ def validate_and_prepare_graph(
         "relationship_counts": relationship_counts,
         "verification_status_counts": verification_status_counts,
         "verified_node_count": verification_status_counts.get("verified", 0),
+        "dropped_placeholder_nodes": structural_error_nodes_removed,
         "average_confidence_score": round(
             sum(float(node.get("confidenceScore") or 0.0) for node in kept_nodes) / max(len(kept_nodes), 1),
             2,
@@ -823,6 +836,8 @@ def build_graph(
         graph_node = graph_node_map.get(node["id"])
         if not graph_node:
             continue
+        if graph_node.get("parentId"):
+            node["parentId"] = deepcopy(graph_node.get("parentId"))
         for field_name in COST_EXPORT_FIELDS:
             node[field_name] = deepcopy(graph_node.get(field_name))
         node["proofStatus"] = deepcopy(graph_node.get("proofStatus"))

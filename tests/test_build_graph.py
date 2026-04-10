@@ -130,6 +130,7 @@ class BuildGraphTests(unittest.TestCase):
 
         advisor = next(node for node in result.nodes if node["id"] == "special-advisor")
         self.assertTrue(advisor["attachToRoot"])
+        self.assertEqual(advisor["parentId"], "root")
         self.assertEqual(result.validation["attached_to_root"], 1)
         self.assertEqual(result.validation["nodes_removed_structural_errors"], 0)
 
@@ -187,9 +188,28 @@ class BuildGraphTests(unittest.TestCase):
         self.assertGreater(office["confidenceScore"], 0.8)
         self.assertIn("verification_status_counts", result.validation)
         self.assertIn("verified_node_count", result.validation)
+        self.assertIn("export_verification_status_counts", result.validation)
+        self.assertIn("graph_summary", result.validation)
         self.assertIn("pipeline_summary", result.validation)
         self.assertEqual(result.validation["pipeline_summary"]["final_node_count"], len(result.nodes))
         self.assertIn("relationships", result.graph)
+
+    def test_build_graph_drops_placeholder_generated_nodes(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {},
+                ],
+                "edges": [],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        exported_ids = {node["id"] for node in result.nodes}
+        self.assertNotIn("unnamed-node", exported_ids)
+        self.assertEqual(result.validation["nodes_removed_structural_errors"], 1)
+        self.assertEqual(result.validation["dropped_placeholder_nodes"], 1)
 
     def test_build_graph_keeps_trusted_base_nodes_without_sources(self) -> None:
         result = build_graph_with_paths(payloads=[])
