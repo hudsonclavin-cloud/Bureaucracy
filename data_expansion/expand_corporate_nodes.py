@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from data_pipeline.processors.normalize_nodes import normalize_name
+
 
 GREEN = "#4ac88a"
 GRAY = "#666666"
@@ -42,6 +44,42 @@ def slugify(value: str) -> str:
     return slug.strip("-") or "node"
 
 
+def normalize_text(value: Any, fallback: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        text = fallback
+    return text
+
+
+def normalize_label(value: Any, fallback: str) -> str:
+    text = normalize_name(value)
+    if not text or text == "Unnamed Node":
+        return fallback
+    return text
+
+
+def normalize_type(value: Any, fallback: str) -> str:
+    return normalize_label(value, fallback)
+
+
+def normalized_template_items(values: tuple[str, ...], fallback: tuple[str, ...]) -> tuple[str, ...]:
+    cleaned = tuple(normalize_text(value, "") for value in values if normalize_text(value, ""))
+    return cleaned or fallback
+
+
+def safe_node_id(*parts: Any) -> str:
+    slug_parts = [slugify(normalize_text(part, "")) for part in parts if normalize_text(part, "")]
+    return "-".join(part for part in slug_parts if part) or "node"
+
+
+def iter_generated_nodes(root_nodes: list[dict[str, Any]]):
+    stack = list(root_nodes)
+    while stack:
+        node = stack.pop()
+        yield node
+        stack.extend(reversed(node.get("children", [])))
+
+
 def make_node(
     node_id: str,
     name: str,
@@ -53,11 +91,12 @@ def make_node(
     color: str = GREEN,
     children: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
+    normalized_name = normalize_label(name, "Unnamed Node")
     return {
-        "id": node_id,
-        "name": name,
-        "type": node_type,
-        "desc": desc,
+        "id": safe_node_id(node_id),
+        "name": normalized_name,
+        "type": normalize_type(node_type, "Organization"),
+        "desc": normalize_text(desc, ""),
         "employees": employees,
         "budget": budget,
         "color": color,
@@ -87,6 +126,14 @@ DEFAULT_TEMPLATE = CorporateTemplate(
         "Chief Information Officer",
     ),
 )
+
+
+def normalize_template(template: CorporateTemplate) -> CorporateTemplate:
+    return CorporateTemplate(
+        name=normalize_text(template.name, DEFAULT_TEMPLATE.name),
+        divisions=normalized_template_items(template.divisions, DEFAULT_TEMPLATE.divisions),
+        roles=normalized_template_items(template.roles, DEFAULT_TEMPLATE.roles),
+    )
 
 
 TEMPLATES: dict[str, CorporateTemplate] = {
@@ -124,44 +171,49 @@ TEMPLATES: dict[str, CorporateTemplate] = {
 
 
 def pick_template(node: dict[str, Any]) -> CorporateTemplate:
-    return TEMPLATES.get(slugify(node.get("name", "")), DEFAULT_TEMPLATE)
+    template = TEMPLATES.get(slugify(normalize_text(node.get("name", ""), "")), DEFAULT_TEMPLATE)
+    return normalize_template(template)
 
 
 def build_expansion_for_node(node: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, str]]]:
-    base_id = node["id"]
-    base_name = node["name"]
+    base_name = normalize_label(node.get("name"), "Unnamed Corporate Node")
+    base_id = safe_node_id(node.get("id") or base_name)
     template = pick_template(node)
 
-    roles = [
-        make_node(
-            f"{base_id}-corp-{slugify(role)}",
-            role,
-            "Corporate Officer",
-            f"{role} role associated with {base_name}.",
-            color=GRAY,
+    roles = []
+    for role in template.roles:
+        role_name = normalize_label(role, "Corporate Officer")
+        roles.append(
+            make_node(
+                safe_node_id(base_id, "corp", role),
+                role_name,
+                normalize_type("Corporate Officer", "Corporate Officer"),
+                f"{role_name} role associated with {base_name}.",
+                color=GRAY,
+            )
         )
-        for role in template.roles
-    ]
 
     divisions = []
     relationship_edges = []
 
-    for index, division_name in enumerate(template.divisions):
-        division_id = f"{base_id}-corp-{slugify(division_name)}"
-        division_roles = [
-            make_node(
-                f"{division_id}-{suffix}",
-                label,
-                "Position",
-                f"{label} within {division_name} at {base_name}.",
-                color=GRAY,
+    for division_name in template.divisions:
+        division_id = safe_node_id(base_id, "corp", division_name)
+        division_roles = []
+        for suffix, label in (
+            ("head", f"Head of {division_name}"),
+            ("director", f"Director, {division_name}"),
+            ("manager", f"Manager, {division_name}"),
+        ):
+            normalized_label = normalize_label(label, "Corporate Position")
+            division_roles.append(
+                make_node(
+                    safe_node_id(division_id, suffix),
+                    normalized_label,
+                    normalize_type("Position", "Position"),
+                    f"{normalized_label} within {division_name} at {base_name}.",
+                    color=GRAY,
+                )
             )
-            for suffix, label in (
-                ("head", f"Head of {division_name}"),
-                ("director", f"Director, {division_name}"),
-                ("manager", f"Manager, {division_name}"),
-            )
-        ]
         divisions.append(
             make_node(
                 division_id,
@@ -172,30 +224,35 @@ def build_expansion_for_node(node: dict[str, Any]) -> tuple[dict[str, Any], list
                 children=division_roles,
             )
         )
-        relationship_edges.append(
-            {
-                "source": roles[index % len(roles)]["id"],
-                "target": division_id,
-                "type": "relationship",
-            }
-        )
 
     expansion_root = make_node(
         base_id,
         base_name,
-        node.get("type") or "Independent Company",
-        node.get("desc") or f"Expanded corporate structure for {base_name}.",
+        normalize_type(node.get("type"), "Independent Company"),
+        normalize_text(node.get("desc"), f"Expanded corporate structure for {base_name}."),
         employees=node.get("employees"),
         budget=node.get("budget"),
         color=node.get("color") or GREEN,
         children=roles + divisions,
     )
 
+    if roles and divisions:
+        for index, division in enumerate(divisions):
+            source_id = roles[index % len(roles)]["id"]
+            relationship_edges.append(
+                {
+                    "source": source_id,
+                    "target": division["id"],
+                    "type": "relationship",
+                }
+            )
+
     for division in divisions:
+        director_id = f"{division['id']}-director"
         relationship_edges.append(
             {
                 "source": division["id"],
-                "target": f"{division['id']}-director",
+                "target": director_id,
                 "type": "relationship",
             }
         )
@@ -213,6 +270,13 @@ def build_corporate_expansion(root: dict[str, Any]) -> dict[str, Any]:
         expanded_node, relationship_edges = build_expansion_for_node(node)
         nodes.append(expanded_node)
         edges.extend(relationship_edges)
+
+    all_generated_ids = {generated_node["id"] for generated_node in iter_generated_nodes(nodes)}
+    edges = [
+        edge
+        for edge in edges
+        if edge.get("source") in all_generated_ids and edge.get("target") in all_generated_ids
+    ]
 
     return {
         "nodes": nodes,

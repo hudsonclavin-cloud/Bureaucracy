@@ -35,6 +35,7 @@ const FLY_PITCH_LIMIT = Math.PI / 2.15;
 const FLY_DAMPING = 0.85;
 const FLY_MAX_SPEED = 160;
 const MIN_ZOOM_NODE_SCALE = 0.35;
+const COSMIC_MIN_ZOOM_NODE_SCALE = 0.45;
 const ORBIT_CAMERA_LERP = 0.08;
 const DENSITY_BUCKET_BUFFER = 1;
 const FORCE_SETTLE_WINDOW_MS = 1600;
@@ -1187,8 +1188,9 @@ export function createGovernmentGraph({
   function setNodeMatrix(nodeObj, scaleMultiplier = 1) {
     const cameraDistance = Math.max(camera.position.distanceTo(nodeObj.pos), 1);
     const distanceScale = THREE.MathUtils.clamp(180 / cameraDistance, MIN_ZOOM_NODE_SCALE, 1);
+    const zoomFloor = state.lod.level === 0 ? COSMIC_MIN_ZOOM_NODE_SCALE : MIN_ZOOM_NODE_SCALE;
     const zoomScale = Math.max(
-      MIN_ZOOM_NODE_SCALE,
+      zoomFloor,
       lodManager.getNodeScale(cameraDistance, state.lod) * distanceScale,
     );
     const finalScale = scaleMultiplier * zoomScale;
