@@ -48,6 +48,10 @@ DEFAULT_NODE = {
     "cost_status": None,
     "cost_basis": None,
     "cost_validation": None,
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": None,
+    "costSourceCount": 0,
     "created_year": None,
     "restructured_year": None,
     "merged_into": None,
@@ -346,6 +350,10 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
         "cost_status",
         "cost_basis",
         "cost_validation",
+        "costVerificationStatus",
+        "costConfidenceScore",
+        "costVerificationReason",
+        "costSourceCount",
         "created_year",
         "restructured_year",
         "merged_into",
@@ -399,6 +407,10 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     node["cost_status"] = coerce_nullable_text(node.get("cost_status"))
     node["cost_basis"] = coerce_nullable_text(node.get("cost_basis"))
     node["cost_validation"] = coerce_nullable_text(node.get("cost_validation"))
+    node["costVerificationStatus"] = coerce_nullable_text(node.get("costVerificationStatus")) or "unverified"
+    node["costConfidenceScore"] = coerce_nullable_number(node.get("costConfidenceScore")) or 0.0
+    node["costVerificationReason"] = coerce_nullable_text(node.get("costVerificationReason"))
+    node["costSourceCount"] = int(node.get("costSourceCount") or 0)
     node["created_year"] = coerce_nullable_text(node.get("created_year"))
     node["restructured_year"] = coerce_nullable_text(node.get("restructured_year"))
     node["merged_into"] = coerce_nullable_text(node.get("merged_into"))
@@ -450,6 +462,10 @@ def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, 
         "cost_status",
         "cost_basis",
         "cost_validation",
+        "costVerificationStatus",
+        "costConfidenceScore",
+        "costVerificationReason",
+        "costSourceCount",
         "created_year",
         "restructured_year",
         "merged_into",

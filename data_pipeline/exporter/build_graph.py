@@ -36,6 +36,10 @@ COST_EXPORT_FIELDS = (
     "cost_status",
     "cost_basis",
     "cost_validation",
+    "costVerificationStatus",
+    "costConfidenceScore",
+    "costVerificationReason",
+    "costSourceCount",
 )
 DERIVED_NODE_TYPE_KEYWORDS = (
     "office",
@@ -448,6 +452,40 @@ def official_rollups_exceed_total(official_sum: float, allocated_total: float | 
     return False
 
 
+def classify_cost_verification(
+    node: dict[str, Any],
+    *,
+    has_budget_summary: bool,
+) -> tuple[str, float, str, int]:
+    cost_status = str(node.get("cost_status") or "unverified").strip().lower()
+    cost_validation = str(node.get("cost_validation") or "").strip().lower()
+    resolved_total = parse_cost_amount(node.get("resolved_total_amount"))
+    official_total = get_node_official_total(node)
+    budget_amount = parse_cost_amount(node.get("annual_budget"))
+    if budget_amount is None:
+        budget_amount = parse_cost_amount(node.get("budget"))
+
+    if resolved_total is None or cost_status == "unavailable":
+        return "unverified", 0.0, "missing_cost", 0
+    if cost_status == "root_total":
+        if has_budget_summary:
+            return "verified", 1.0, "treasury_total_outlays", 1
+        return "partial", 0.7, "summed_from_child_totals", 0
+    if cost_status == "official":
+        if official_total is not None:
+            return "verified", 0.95, "matched_official_rollup", 1
+        if budget_amount is not None:
+            return "partial", 0.75, "matched_budget_record", 1
+        return "partial", 0.7, cost_validation or "matched_official_rollup", 0
+    if cost_status == "scaled_official":
+        source_count = 1 if official_total is not None else 0
+        return "partial", 0.72, "scaled_from_official_rollup", source_count
+    if cost_status == "allocated":
+        source_count = 1 if budget_amount is not None or official_total is not None else 0
+        return "unverified", 0.35 if source_count else 0.2, "estimated_from_parent", source_count
+    return "unverified", 0.0, cost_validation or "unknown_cost_verification", 0
+
+
 def annotate_resolved_costs(
     root: dict[str, Any],
     *,
@@ -553,12 +591,16 @@ def annotate_resolved_costs(
     verification_status_counts: dict[str, int] = {}
     cost_status_counts: dict[str, int] = {}
     cost_validation_counts: dict[str, int] = {}
+    cost_verification_status_counts: dict[str, int] = {}
     nodes_with_sources = 0
     nodes_without_sources = 0
     resolved_cost_node_count = 0
     unresolved_cost_node_count = 0
     estimated_cost_node_count = 0
     official_cost_node_count = 0
+    verified_cost_node_count = 0
+    partial_cost_node_count = 0
+    unverified_cost_node_count = 0
     proof_status_counts: dict[str, int] = {}
 
     for node, parent in walk_tree(root):
@@ -566,9 +608,18 @@ def annotate_resolved_costs(
         cost_status = str(node.get("cost_status") or "unavailable")
         cost_validation = str(node.get("cost_validation") or "missing_cost")
         proof_status = str(node.get("proofStatus") or "unproven")
+        cost_verification_status, cost_confidence_score, cost_verification_reason, cost_source_count = classify_cost_verification(
+            node,
+            has_budget_summary=budget_summary is not None,
+        )
+        node["costVerificationStatus"] = cost_verification_status
+        node["costConfidenceScore"] = cost_confidence_score
+        node["costVerificationReason"] = cost_verification_reason
+        node["costSourceCount"] = cost_source_count
         verification_status_counts[verification_status] = verification_status_counts.get(verification_status, 0) + 1
         cost_status_counts[cost_status] = cost_status_counts.get(cost_status, 0) + 1
         cost_validation_counts[cost_validation] = cost_validation_counts.get(cost_validation, 0) + 1
+        cost_verification_status_counts[cost_verification_status] = cost_verification_status_counts.get(cost_verification_status, 0) + 1
         proof_status_counts[proof_status] = proof_status_counts.get(proof_status, 0) + 1
 
         source_count = int(node.get("sourceCount") or 0)
@@ -587,6 +638,12 @@ def annotate_resolved_costs(
             estimated_cost_node_count += 1
         if cost_status in {"official", "root_total"}:
             official_cost_node_count += 1
+        if cost_verification_status == "verified":
+            verified_cost_node_count += 1
+        elif cost_verification_status == "partial":
+            partial_cost_node_count += 1
+        else:
+            unverified_cost_node_count += 1
 
         issues: list[str] = []
         if source_count == 0:
@@ -599,6 +656,10 @@ def annotate_resolved_costs(
             issues.append("missing_cost")
         elif cost_status != "official" and cost_status != "root_total":
             issues.append("estimated_cost")
+        if cost_verification_status == "partial":
+            issues.append("cost_partially_verified")
+        elif cost_verification_status == "unverified" and resolved_total is not None:
+            issues.append("cost_unverified")
 
         validity_nodes.append(
             {
@@ -617,6 +678,10 @@ def annotate_resolved_costs(
                 "cost_status": cost_status,
                 "cost_basis": node.get("cost_basis"),
                 "cost_validation": cost_validation,
+                "costVerificationStatus": cost_verification_status,
+                "costConfidenceScore": cost_confidence_score,
+                "costVerificationReason": cost_verification_reason,
+                "costSourceCount": cost_source_count,
                 "issues": issues,
             }
         )
@@ -627,6 +692,7 @@ def annotate_resolved_costs(
             "verification_status_counts": verification_status_counts,
             "cost_status_counts": cost_status_counts,
             "cost_validation_counts": cost_validation_counts,
+            "cost_verification_status_counts": cost_verification_status_counts,
             "proof_status_counts": proof_status_counts,
             "nodes_with_sources": nodes_with_sources,
             "nodes_without_sources": nodes_without_sources,
@@ -634,6 +700,9 @@ def annotate_resolved_costs(
             "unresolved_cost_node_count": unresolved_cost_node_count,
             "estimated_cost_node_count": estimated_cost_node_count,
             "official_cost_node_count": official_cost_node_count,
+            "verified_cost_node_count": verified_cost_node_count,
+            "partial_cost_node_count": partial_cost_node_count,
+            "unverified_cost_node_count": unverified_cost_node_count,
         },
         "nodes": validity_nodes,
     }

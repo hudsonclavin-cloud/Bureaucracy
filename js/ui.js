@@ -458,6 +458,25 @@ function getCostProvenanceInfo(data) {
   };
 }
 
+function getCostVerificationInfo(data) {
+  const status = String(data?.costVerificationStatus || "unverified").toLowerCase();
+  const confidence = Number(data?.costConfidenceScore || 0);
+  const reason = String(data?.costVerificationReason || "").trim().replace(/_/g, " ");
+  const sourceCount = Number(data?.costSourceCount || 0);
+  const labels = {
+    verified: "VERIFIED",
+    partial: "PARTIAL",
+    unverified: "UNVERIFIED",
+  };
+  return {
+    status,
+    label: labels[status] || "UNVERIFIED",
+    confidence,
+    reason,
+    sourceCount,
+  };
+}
+
 function ensureVerificationToggles() {
   if (dom.togglesWrap && dom.toggleUnverified && dom.toggleCandidates) {
     return;
@@ -569,12 +588,22 @@ function renderVerificationPanel(data) {
   );
 
   const costInfo = getCostProvenanceInfo(data);
+  const costVerification = getCostVerificationInfo(data);
   if (dom.costProvenanceWrap) {
     dom.costProvenanceWrap.className = `cost-provenance-wrap cost-provenance-${costInfo.tone}`;
   }
   setText(dom.costProvenanceBadge, costInfo.label);
   setText(dom.costProvenanceStatus, costInfo.amount ? `${costInfo.amount} | ${costInfo.text}` : costInfo.text);
-  setText(dom.costProvenanceMeta, uniqueStrings([costInfo.budgetSource, costInfo.validationText]).join(" | "));
+  setText(
+    dom.costProvenanceMeta,
+    uniqueStrings([
+      `Cost Verification: ${costVerification.label} (${Math.round(costVerification.confidence * 100)}%)`,
+      costVerification.sourceCount > 0 ? `Cost Sources: ${costVerification.sourceCount}` : null,
+      costVerification.reason ? `Reason: ${costVerification.reason}` : null,
+      costInfo.budgetSource,
+      costInfo.validationText,
+    ]).join(" | "),
+  );
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = "Sources";
@@ -601,7 +630,7 @@ function renderVerificationPanel(data) {
     } catch (_error) {
       host = url;
     }
-    link.textContent = `• ${host}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
+    link.textContent = `* ${host}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
     link.style.color = "#d4c4a1";
     dom.verificationSources.appendChild(link);
   });

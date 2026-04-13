@@ -114,6 +114,11 @@ class NodeRequirements:
         confidence = _as_float(node.get("confidenceScore")) or 0.0
         cost_status = _as_text(node.get("cost_status")).lower()
         cost_validation = _as_text(node.get("cost_validation"))
+        cost_verification_status = _as_text(node.get("costVerificationStatus")).lower() or "unverified"
+        cost_confidence = _as_float(node.get("costConfidenceScore")) or 0.0
+        cost_verification_reason = _as_text(node.get("costVerificationReason"))
+        cost_source_count = node.get("costSourceCount")
+        cost_source_count = int(cost_source_count) if isinstance(cost_source_count, int) or str(cost_source_count).isdigit() else 0
         verification_status = _as_text(node.get("verificationStatus")).lower() or "unverified"
         proof_status = _as_text(node.get("proofStatus")).lower() or "unproven"
 
@@ -205,6 +210,38 @@ class NodeRequirements:
                 )
             )
 
+        if cost_verification_status == "unverified" and resolved_total is not None and cost_status != "unavailable":
+            issues.append(
+                AuditIssue(
+                    code="cost_unverified",
+                    severity="warning",
+                    field="costVerificationStatus",
+                    message="Node cost exists but the cost basis is not separately verified.",
+                    value=cost_verification_status,
+                )
+            )
+        elif cost_verification_status == "partial":
+            issues.append(
+                AuditIssue(
+                    code="cost_partially_verified",
+                    severity="warning",
+                    field="costVerificationStatus",
+                    message="Node cost is partially verified and should be reviewed separately from node existence.",
+                    value=cost_verification_status,
+                )
+            )
+
+        if resolved_total is not None and cost_confidence < 0.5:
+            issues.append(
+                AuditIssue(
+                    code="low_cost_confidence",
+                    severity="warning",
+                    field="costConfidenceScore",
+                    message="Cost confidence score is low.",
+                    value=cost_confidence,
+                )
+            )
+
         if not source_urls:
             issues.append(
                 AuditIssue(
@@ -283,6 +320,10 @@ class NodeRequirements:
             "resolved_total_amount": resolved_total,
             "cost_status": cost_status or None,
             "cost_validation": cost_validation or None,
+            "costVerificationStatus": cost_verification_status,
+            "costConfidenceScore": cost_confidence,
+            "costVerificationReason": cost_verification_reason or None,
+            "costSourceCount": cost_source_count,
             "verificationStatus": verification_status,
             "confidenceScore": confidence,
             "sourceCount": source_count,
@@ -310,6 +351,7 @@ def generate_audit_report(nodes: Iterable[dict[str, Any]]) -> dict[str, Any]:
     severity_counts: Counter[str] = Counter()
     issue_counts: Counter[str] = Counter()
     cost_status_counts: Counter[str] = Counter()
+    cost_verification_status_counts: Counter[str] = Counter()
     verification_status_counts: Counter[str] = Counter()
     proof_status_counts: Counter[str] = Counter()
 
@@ -322,6 +364,8 @@ def generate_audit_report(nodes: Iterable[dict[str, Any]]) -> dict[str, Any]:
         issue_counts.update(finding.get("issue_counts", {}))
         if finding.get("cost_status"):
             cost_status_counts[str(finding["cost_status"])] += 1
+        if finding.get("costVerificationStatus"):
+            cost_verification_status_counts[str(finding["costVerificationStatus"])] += 1
         verification_status_counts[str(finding.get("verificationStatus") or "unverified")] += 1
         proof_status_counts[str(finding.get("proofStatus") or "unproven")] += 1
         if finding.get("has_errors"):
@@ -340,6 +384,7 @@ def generate_audit_report(nodes: Iterable[dict[str, Any]]) -> dict[str, Any]:
             "severity_counts": dict(severity_counts),
             "issue_counts": dict(issue_counts),
             "cost_status_counts": dict(cost_status_counts),
+            "cost_verification_status_counts": dict(cost_verification_status_counts),
             "verification_status_counts": dict(verification_status_counts),
             "proof_status_counts": dict(proof_status_counts),
             "warning_cost_statuses": sorted(WARNING_COST_STATUSES),

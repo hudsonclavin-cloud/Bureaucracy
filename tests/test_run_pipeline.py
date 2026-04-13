@@ -125,6 +125,7 @@ class RunPipelineTests(unittest.TestCase):
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
             self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
             self.assertIn("verification_breakdown", stats)
+            self.assertIn("cost_verification_breakdown", stats)
             self.assertIn("discovery_sources_used", stats)
             self.assertIn("wikidata_records", stats["discovery_sources_used"])
             self.assertIn("direct_payload_counts", stats)

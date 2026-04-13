@@ -16,6 +16,8 @@ class NodeRequirementsTests(unittest.TestCase):
                     "resolved_total_amount": None,
                     "cost_status": None,
                     "cost_validation": None,
+                    "costVerificationStatus": "unverified",
+                    "costConfidenceScore": 0.0,
                     "verificationStatus": "unverified",
                     "confidenceScore": 0.1,
                     "sourceCount": 0,
@@ -49,6 +51,8 @@ class NodeRequirementsTests(unittest.TestCase):
                     "resolved_total_amount": 123456.78,
                     "cost_status": "allocated",
                     "cost_validation": "estimated_from_parent",
+                    "costVerificationStatus": "unverified",
+                    "costConfidenceScore": 0.35,
                     "verificationStatus": "partial",
                     "confidenceScore": 0.62,
                     "sourceCount": 2,
@@ -62,6 +66,8 @@ class NodeRequirementsTests(unittest.TestCase):
                     "resolved_total_amount": 98765.43,
                     "cost_status": "scaled_official",
                     "cost_validation": "scaled_to_parent_total",
+                    "costVerificationStatus": "partial",
+                    "costConfidenceScore": 0.72,
                     "verificationStatus": "verified",
                     "confidenceScore": 0.92,
                     "sourceCount": 1,
@@ -76,6 +82,8 @@ class NodeRequirementsTests(unittest.TestCase):
         self.assertEqual(report["summary"]["warning_only_nodes"], 2)
         self.assertEqual(report["summary"]["cost_status_counts"]["allocated"], 1)
         self.assertEqual(report["summary"]["cost_status_counts"]["scaled_official"], 1)
+        self.assertEqual(report["summary"]["cost_verification_status_counts"]["unverified"], 1)
+        self.assertEqual(report["summary"]["cost_verification_status_counts"]["partial"], 1)
 
         allocated = report["nodes"][0]
         scaled = report["nodes"][1]
@@ -99,6 +107,8 @@ class NodeRequirementsTests(unittest.TestCase):
                     "resolved_total_amount": 1000,
                     "cost_status": "official",
                     "cost_validation": "matched_official_rollup",
+                    "costVerificationStatus": "verified",
+                    "costConfidenceScore": 0.95,
                     "verificationStatus": "verified",
                     "confidenceScore": 0.88,
                     "sourceCount": 1,
@@ -124,6 +134,8 @@ class NodeRequirementsTests(unittest.TestCase):
                 "resolved_total_amount": 25000,
                 "cost_status": "",
                 "cost_validation": "review_pending",
+                "costVerificationStatus": "unverified",
+                "costConfidenceScore": 0.0,
                 "verificationStatus": "verified",
                 "confidenceScore": 0.8,
                 "sourceCount": 1,
@@ -134,7 +146,33 @@ class NodeRequirementsTests(unittest.TestCase):
 
         self.assertIn("unavailable_cost_status", finding["issue_codes"])
         self.assertTrue(finding["has_errors"])
-        self.assertFalse(finding["has_warnings"])
+        self.assertTrue(finding["has_warnings"])
+        self.assertIn("cost_unverified", finding["issue_codes"])
+
+    def test_audit_flags_cost_unverified_separately_from_entity_verification(self) -> None:
+        auditor = NodeRequirements()
+        finding = auditor.audit_node(
+            {
+                "id": "node-5",
+                "name": "Operations Office",
+                "type": "Office",
+                "resolved_total_amount": 42000,
+                "cost_status": "allocated",
+                "cost_validation": "estimated_from_parent",
+                "costVerificationStatus": "unverified",
+                "costConfidenceScore": 0.35,
+                "verificationStatus": "verified",
+                "confidenceScore": 0.91,
+                "sourceCount": 2,
+                "sourceUrls": ["https://example.gov/ops", "https://www.wikidata.org/wiki/Q5"],
+                "proofStatus": "proven",
+            }
+        )
+
+        self.assertEqual(finding["verificationStatus"], "verified")
+        self.assertEqual(finding["costVerificationStatus"], "unverified")
+        self.assertIn("cost_unverified", finding["issue_codes"])
+        self.assertIn("low_cost_confidence", finding["issue_codes"])
 
 
 if __name__ == "__main__":

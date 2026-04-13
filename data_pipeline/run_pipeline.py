@@ -376,6 +376,7 @@ def run_pipeline(
         "promotion_stats": promotion_stats,
         "enrichment_stats": enrichment_stats,
         "verification_breakdown": build_result.validation.get("verification_status_counts", {}),
+        "cost_verification_breakdown": build_result.validation.get("cost_verification_status_counts", {}),
         "average_confidence_score": build_result.validation.get("average_confidence_score", 0.0),
         "verified_node_count": build_result.validation.get("verified_node_count", 0),
         "build_validation": build_result.validation,

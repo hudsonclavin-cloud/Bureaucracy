@@ -319,9 +319,14 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(root["resolved_total_amount"], 100.0)
         self.assertEqual(agency["resolved_total_amount"], 100.0)
         self.assertEqual(office["resolved_total_amount"], 100.0)
+        self.assertEqual(root["costVerificationStatus"], "verified")
+        self.assertEqual(agency["costVerificationStatus"], "unverified")
+        self.assertEqual(office["costVerificationStatus"], "unverified")
         self.assertEqual(result.validation["resolved_cost_node_count"], 3)
         self.assertEqual(result.validation["unresolved_cost_node_count"], 0)
         self.assertIn("cost_status_counts", result.validation)
+        self.assertIn("cost_verification_status_counts", result.validation)
+        self.assertEqual(result.validation["verified_cost_node_count"], 1)
 
     def test_build_graph_scales_conflicting_official_rollups(self) -> None:
         payloads = [
@@ -360,7 +365,38 @@ class BuildGraphTests(unittest.TestCase):
         self.assertEqual(combined, 100.0)
         self.assertEqual(agency["cost_status"], "scaled_official")
         self.assertEqual(advisor["cost_status"], "scaled_official")
+        self.assertEqual(agency["costVerificationStatus"], "partial")
+        self.assertEqual(advisor["costVerificationStatus"], "partial")
         self.assertGreater(result.validation["estimated_cost_node_count"], 0)
+        self.assertGreater(result.validation["partial_cost_node_count"], 0)
+
+    def test_build_graph_marks_matched_official_rollups_as_cost_verified(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {
+                        "id": "agency-alpha",
+                        "name": "Agency Alpha",
+                        "type": "Agency",
+                        "rollup_total_amount": 100.0,
+                    },
+                ],
+                "edges": [],
+                "budgetSummary": {
+                    "government_total_outlay_amount": 100.0,
+                    "label": "Test total",
+                    "record_date": "2026-02-28",
+                    "fiscal_year": "2026",
+                },
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        agency = self.find_graph_node(result.graph, "agency-alpha")
+        self.assertEqual(agency["cost_status"], "official")
+        self.assertEqual(agency["costVerificationStatus"], "verified")
+        self.assertGreaterEqual(agency["costConfidenceScore"], 0.95)
 
 
 if __name__ == "__main__":

@@ -10,6 +10,10 @@
   sourceTypes: [],
   confidenceScore: 0,
   verificationStatus: "unverified",
+  costVerificationStatus: "unverified",
+  costConfidenceScore: 0,
+  costVerificationReason: null,
+  costSourceCount: 0,
   lastVerified: null,
   sourceCount: 0,
   isCandidate: false,
@@ -26,6 +30,10 @@ const COST_FIELD_KEYS = [
   "cost_status",
   "cost_basis",
   "cost_validation",
+  "costVerificationStatus",
+  "costConfidenceScore",
+  "costVerificationReason",
+  "costSourceCount",
   "annual_budget",
   "budget_source",
   "budget_year",
@@ -103,6 +111,10 @@ function normalizeNode(rawNode) {
   node.sourceTypes = Array.isArray(node.sourceTypes) ? node.sourceTypes.map((value) => String(value)) : [];
   node.confidenceScore = Number.isFinite(Number(node.confidenceScore)) ? Number(node.confidenceScore) : 0;
   node.verificationStatus = String(node.verificationStatus || DEFAULT_NODE.verificationStatus);
+  node.costVerificationStatus = String(node.costVerificationStatus || DEFAULT_NODE.costVerificationStatus);
+  node.costConfidenceScore = Number.isFinite(Number(node.costConfidenceScore)) ? Number(node.costConfidenceScore) : 0;
+  node.costVerificationReason = node.costVerificationReason ? String(node.costVerificationReason) : null;
+  node.costSourceCount = Number.isFinite(Number(node.costSourceCount)) ? Number(node.costSourceCount) : 0;
   node.lastVerified = node.lastVerified ? String(node.lastVerified) : null;
   node.sourceCount = Number.isFinite(Number(node.sourceCount)) ? Number(node.sourceCount) : node.sourceUrls.length;
   node.isCandidate = Boolean(node.isCandidate);
@@ -172,6 +184,7 @@ function safeAddChild(parentNode, childNode, parentMap) {
 
 function mergeNodeData(targetNode, sourceNode) {
   const statusRank = { unverified: 0, partial: 1, verified: 2 };
+  const costStatusRank = { unverified: 0, partial: 1, verified: 2 };
   targetNode.name = sourceNode.name || targetNode.name;
   targetNode.type = sourceNode.type || targetNode.type;
   targetNode.desc = sourceNode.desc || targetNode.desc;
@@ -186,6 +199,13 @@ function mergeNodeData(targetNode, sourceNode) {
     statusRank[sourceNode.verificationStatus] >= statusRank[targetNode.verificationStatus]
       ? sourceNode.verificationStatus
       : targetNode.verificationStatus;
+  targetNode.costConfidenceScore = Math.max(targetNode.costConfidenceScore || 0, sourceNode.costConfidenceScore || 0);
+  targetNode.costSourceCount = Math.max(targetNode.costSourceCount || 0, sourceNode.costSourceCount || 0);
+  targetNode.costVerificationStatus =
+    costStatusRank[sourceNode.costVerificationStatus] >= costStatusRank[targetNode.costVerificationStatus]
+      ? sourceNode.costVerificationStatus
+      : targetNode.costVerificationStatus;
+  targetNode.costVerificationReason = sourceNode.costVerificationReason || targetNode.costVerificationReason;
   targetNode.lastVerified = sourceNode.lastVerified || targetNode.lastVerified;
   targetNode.isCandidate = Boolean(targetNode.isCandidate || sourceNode.isCandidate);
   targetNode.possibleParent = targetNode.possibleParent || sourceNode.possibleParent || null;
