@@ -51,6 +51,10 @@ const dom = {
   verificationSources: null,
   verificationLastVerified: null,
   verificationBadge: null,
+  costProvenanceWrap: null,
+  costProvenanceBadge: null,
+  costProvenanceStatus: null,
+  costProvenanceMeta: null,
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
@@ -350,6 +354,19 @@ function ensureVerificationUi() {
   const confidence = document.createElement("div");
   const sources = document.createElement("div");
   const lastVerified = document.createElement("div");
+  const costProvenanceWrap = document.createElement("div");
+  costProvenanceWrap.className = "cost-provenance-wrap";
+  const costProvenanceTitle = document.createElement("div");
+  costProvenanceTitle.textContent = "COST PROVENANCE";
+  costProvenanceTitle.className = "cost-provenance-title";
+  const costProvenanceBadge = document.createElement("span");
+  costProvenanceBadge.className = "cost-provenance-badge";
+  const costProvenanceStatus = document.createElement("div");
+  const costProvenanceMeta = document.createElement("div");
+  costProvenanceWrap.appendChild(costProvenanceTitle);
+  costProvenanceWrap.appendChild(costProvenanceBadge);
+  costProvenanceWrap.appendChild(costProvenanceStatus);
+  costProvenanceWrap.appendChild(costProvenanceMeta);
   sources.style.display = "flex";
   sources.style.flexDirection = "column";
   sources.style.gap = "4px";
@@ -357,6 +374,7 @@ function ensureVerificationUi() {
   verificationWrap.appendChild(badge);
   verificationWrap.appendChild(status);
   verificationWrap.appendChild(confidence);
+  verificationWrap.appendChild(costProvenanceWrap);
   verificationWrap.appendChild(sources);
   verificationWrap.appendChild(lastVerified);
 
@@ -367,6 +385,10 @@ function ensureVerificationUi() {
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+  dom.costProvenanceWrap = costProvenanceWrap;
+  dom.costProvenanceBadge = costProvenanceBadge;
+  dom.costProvenanceStatus = costProvenanceStatus;
+  dom.costProvenanceMeta = costProvenanceMeta;
 }
 
 function getVerificationBadgeConfig(data) {
@@ -381,6 +403,59 @@ function getVerificationBadgeConfig(data) {
     return { label: "PARTIAL", bg: "rgba(217,181,94,0.18)", border: "#d9b55e", color: "#f2deb3" };
   }
   return { label: "UNVERIFIED", bg: "rgba(142,125,98,0.18)", border: "#8e7d62", color: "#d6c7af" };
+}
+
+function getCostProvenanceInfo(data) {
+  const costStatus = String(data?.cost_status || "").toLowerCase();
+  const costValidation = String(data?.cost_validation || "").toLowerCase();
+  const amount = formatCurrency(data?.resolved_total_amount ?? data?.annual_budget ?? data?.budget);
+  const budgetSource = uniqueStrings([
+    data?.budget_source,
+    data?.budget_year ? `FY ${data.budget_year}` : null,
+    data?.budget_as_of ? `as of ${data.budget_as_of}` : null,
+  ]).join(" | ");
+  const statusMap = {
+    root_total: {
+      label: "TREASURY VERIFIED",
+      tone: "treasury",
+      text: "Treasury total outlays",
+    },
+    official: {
+      label: "OFFICIAL ROLLUP",
+      tone: "official",
+      text: "Matches an official source rollup",
+    },
+    scaled_official: {
+      label: "SCALED OFFICIAL",
+      tone: "scaled",
+      text: "Official figure scaled to fit the parent total",
+    },
+    allocated: {
+      label: "ALLOCATED",
+      tone: "allocated",
+      text: "Estimated from the parent and subtree weights",
+    },
+    unavailable: {
+      label: "NO COST DATA",
+      tone: "unavailable",
+      text: "No resolved cost is available yet",
+    },
+  };
+  const config = statusMap[costStatus] || {
+    label: costStatus ? costStatus.replace(/_/g, " ").toUpperCase() : "NO COST DATA",
+    tone: "unavailable",
+    text: "Cost provenance is not labeled yet",
+  };
+  const validationText = uniqueStrings([
+    costValidation ? costValidation.replace(/_/g, " ") : null,
+    data?.budget_source,
+  ]).join(" | ");
+  return {
+    ...config,
+    amount,
+    budgetSource,
+    validationText,
+  };
 }
 
 function ensureVerificationToggles() {
@@ -487,12 +562,19 @@ function renderVerificationPanel(data) {
   dom.verificationBadge.style.color = badge.color;
 
   setText(dom.verificationStatus, `Verification Status: ${status}`);
-  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
+  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) | Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
   setText(
     dom.verificationLastVerified,
     `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
   );
 
+  const costInfo = getCostProvenanceInfo(data);
+  if (dom.costProvenanceWrap) {
+    dom.costProvenanceWrap.className = `cost-provenance-wrap cost-provenance-${costInfo.tone}`;
+  }
+  setText(dom.costProvenanceBadge, costInfo.label);
+  setText(dom.costProvenanceStatus, costInfo.amount ? `${costInfo.amount} | ${costInfo.text}` : costInfo.text);
+  setText(dom.costProvenanceMeta, uniqueStrings([costInfo.budgetSource, costInfo.validationText]).join(" | "));
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
   sourcesLabel.textContent = "Sources";

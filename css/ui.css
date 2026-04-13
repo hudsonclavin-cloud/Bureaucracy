@@ -18,6 +18,16 @@
 .verification-partial{background:rgba(217,181,94,0.18);border:1px solid #d9b55e;color:#f2deb3}
 .verification-unverified{background:rgba(142,125,98,0.18);border:1px solid #8e7d62;color:#d6c7af}
 .verification-candidate{background:rgba(155,139,189,0.18);border:1px solid #9b8bbd;color:#d6caef}
+.cost-provenance-wrap{margin-top:10px;padding:9px 10px;border-radius:9px;border:1px solid rgba(200,168,74,0.12);background:rgba(12,14,20,0.55);display:flex;flex-direction:column;gap:4px}
+.cost-provenance-title{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#8f7a5d}
+.cost-provenance-badge{display:inline-flex;align-self:flex-start;padding:2px 7px;border-radius:999px;font-size:9px;letter-spacing:0.08em;font-weight:600;border:1px solid transparent}
+.cost-provenance-status{font-size:11px;line-height:1.4;color:#e8dcc8}
+.cost-provenance-meta{font-size:10px;line-height:1.35;color:#a08a66}
+.cost-provenance-treasury{background:rgba(111,207,151,0.12);border-color:#6fcf97;color:#c8f2d7}
+.cost-provenance-official{background:rgba(77,163,255,0.12);border-color:#4da3ff;color:#d7e9ff}
+.cost-provenance-scaled{background:rgba(217,181,94,0.12);border-color:#d9b55e;color:#f2deb3}
+.cost-provenance-allocated{background:rgba(229,134,94,0.12);border-color:#e5865e;color:#f5d0be}
+.cost-provenance-unavailable{background:rgba(142,125,98,0.12);border-color:#8e7d62;color:#d6c7af}
 
 /* Child items */
 .child-item{display:flex;align-items:center;gap:8px;color:#d4c4a1;cursor:pointer}

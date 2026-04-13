@@ -50,6 +50,8 @@ class RunPipelineTests(unittest.TestCase):
             edges_output_path = tmp_path / "expanded_edges.json"
             stats_output_path = tmp_path / "pipeline_stats.json"
             enrichment_stats_output_path = tmp_path / "enrichment_stats.json"
+            audit_output_path = tmp_path / "audit_report.json"
+            budget_reconciliation_output_path = tmp_path / "budget_vs_actual.json"
             frontier_output_path = tmp_path / "frontier_targets.json"
             state_output_path = tmp_path / "pipeline_state.json"
             base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
@@ -62,6 +64,8 @@ class RunPipelineTests(unittest.TestCase):
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
                 enrichment_stats_output_path=enrichment_stats_output_path,
+                audit_output_path=audit_output_path,
+                budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[
@@ -102,6 +106,8 @@ class RunPipelineTests(unittest.TestCase):
             graph = json.loads(graph_output_path.read_text(encoding="utf-8"))
             candidates = json.loads(candidate_output_path.read_text(encoding="utf-8"))
             saved_stats = json.loads(stats_output_path.read_text(encoding="utf-8"))
+            audit_report = json.loads(audit_output_path.read_text(encoding="utf-8"))
+            budget_vs_actual = json.loads(budget_reconciliation_output_path.read_text(encoding="utf-8"))
             frontier_targets = json.loads(frontier_output_path.read_text(encoding="utf-8"))
             pipeline_state = json.loads(state_output_path.read_text(encoding="utf-8"))
 
@@ -109,6 +115,8 @@ class RunPipelineTests(unittest.TestCase):
             self.assertTrue(candidate_output_path.exists())
             self.assertTrue(stats_output_path.exists())
             self.assertTrue(enrichment_stats_output_path.exists())
+            self.assertTrue(audit_output_path.exists())
+            self.assertTrue(budget_reconciliation_output_path.exists())
             self.assertTrue(frontier_output_path.exists())
             self.assertTrue(state_output_path.exists())
             self.assertGreaterEqual(stats["new_nodes_added"], 1)
@@ -120,6 +128,10 @@ class RunPipelineTests(unittest.TestCase):
             self.assertIn("discovery_sources_used", stats)
             self.assertIn("wikidata_records", stats["discovery_sources_used"])
             self.assertIn("direct_payload_counts", stats)
+            self.assertIn("audit_report", stats)
+            self.assertIn("budget_vs_actual", stats)
+            self.assertEqual(audit_report["summary"]["total_nodes"], stats["audit_report"]["total_nodes_checked"])
+            self.assertEqual(budget_vs_actual["summary"]["rows_emitted"], stats["budget_vs_actual"]["rows_emitted"])
             self.assertIn("frontier_targets_written", stats)
             self.assertGreaterEqual(stats["frontier_targets_written"], 1)
             self.assertTrue(any(item["agencyName"] == "Department of Energy" for item in frontier_targets))
@@ -138,6 +150,8 @@ class RunPipelineTests(unittest.TestCase):
             edges_output_path = tmp_path / "expanded_edges.json"
             stats_output_path = tmp_path / "pipeline_stats.json"
             enrichment_stats_output_path = tmp_path / "enrichment_stats.json"
+            audit_output_path = tmp_path / "audit_report.json"
+            budget_reconciliation_output_path = tmp_path / "budget_vs_actual.json"
             frontier_output_path = tmp_path / "frontier_targets.json"
             state_output_path = tmp_path / "pipeline_state.json"
             base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
@@ -150,6 +164,8 @@ class RunPipelineTests(unittest.TestCase):
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
                 enrichment_stats_output_path=enrichment_stats_output_path,
+                audit_output_path=audit_output_path,
+                budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[],
@@ -177,6 +193,8 @@ class RunPipelineTests(unittest.TestCase):
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
                 enrichment_stats_output_path=enrichment_stats_output_path,
+                audit_output_path=audit_output_path,
+                budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[],
@@ -205,6 +223,8 @@ class RunPipelineTests(unittest.TestCase):
             edges_output_path = tmp_path / "expanded_edges.json"
             stats_output_path = tmp_path / "pipeline_stats.json"
             enrichment_stats_output_path = tmp_path / "enrichment_stats.json"
+            audit_output_path = tmp_path / "audit_report.json"
+            budget_reconciliation_output_path = tmp_path / "budget_vs_actual.json"
             frontier_output_path = tmp_path / "frontier_targets.json"
             state_output_path = tmp_path / "pipeline_state.json"
             base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
@@ -217,6 +237,8 @@ class RunPipelineTests(unittest.TestCase):
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
                 enrichment_stats_output_path=enrichment_stats_output_path,
+                audit_output_path=audit_output_path,
+                budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[],
@@ -245,6 +267,8 @@ class RunPipelineTests(unittest.TestCase):
                 edges_output_path=edges_output_path,
                 stats_output_path=stats_output_path,
                 enrichment_stats_output_path=enrichment_stats_output_path,
+                audit_output_path=audit_output_path,
+                budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
                 direct_payload_fetchers=[],
@@ -256,9 +280,13 @@ class RunPipelineTests(unittest.TestCase):
             )
 
             graph_after = json.loads(graph_output_path.read_text(encoding="utf-8"))
+            audit_report = json.loads(audit_output_path.read_text(encoding="utf-8"))
+            budget_vs_actual = json.loads(budget_reconciliation_output_path.read_text(encoding="utf-8"))
             self.assertEqual(graph_before, graph_after)
             self.assertTrue(stats["publish_skipped"])
             self.assertIn("wikidata_records", "".join(stats["blocking_stage_errors"]))
+            self.assertTrue(audit_report["summary"]["publish_skipped"])
+            self.assertTrue(budget_vs_actual["summary"]["publish_skipped"])
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 

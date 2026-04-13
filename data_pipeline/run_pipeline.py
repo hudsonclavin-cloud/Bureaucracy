@@ -32,6 +32,7 @@ from data_pipeline.exporter.build_graph import (
     DEFAULT_EDGES_OUTPUT,
     build_graph,
 )
+from data_pipeline.processors.budget_reconciliation import build_budget_vs_actual_report
 from data_pipeline.processors.enrichment import enrich_nodes
 from data_pipeline.state.pipeline_state import (
     DEFAULT_FRONTIER_OUTPUT,
@@ -42,11 +43,14 @@ from data_pipeline.state.pipeline_state import (
     write_frontier_targets,
     write_pipeline_state,
 )
+from data_pipeline.validators.node_requirements import generate_audit_report
 
 
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "output"
 DEFAULT_STATS_OUTPUT = DEFAULT_OUTPUT_DIR / "pipeline_stats.json"
 DEFAULT_ENRICHMENT_STATS_OUTPUT = DEFAULT_OUTPUT_DIR / "enrichment_stats.json"
+DEFAULT_AUDIT_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "audit_report.json"
+DEFAULT_BUDGET_RECONCILIATION_OUTPUT = DEFAULT_OUTPUT_DIR / "budget_vs_actual.json"
 
 
 def getenv_int(name: str, default: int) -> int:
@@ -109,8 +113,11 @@ def run_pipeline(
     graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
+    validity_report_output_path: str | Path | None = None,
     stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
     enrichment_stats_output_path: str | Path = DEFAULT_ENRICHMENT_STATS_OUTPUT,
+    audit_output_path: str | Path = DEFAULT_AUDIT_REPORT_OUTPUT,
+    budget_reconciliation_output_path: str | Path = DEFAULT_BUDGET_RECONCILIATION_OUTPUT,
     frontier_output_path: str | Path = DEFAULT_FRONTIER_OUTPUT,
     state_output_path: str | Path = DEFAULT_STATE_PATH,
     direct_payload_fetchers: dict[str, Callable[[], dict[str, list[dict[str, Any]]]]] | list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
@@ -141,7 +148,13 @@ def run_pipeline(
     candidate_output_path = Path(candidate_output_path)
     stats_output_path = Path(stats_output_path)
     enrichment_stats_output_path = Path(enrichment_stats_output_path)
-    validity_report_output_path = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
+    audit_output_path = Path(audit_output_path)
+    budget_reconciliation_output_path = Path(budget_reconciliation_output_path)
+    validity_report_output_path = (
+        Path(validity_report_output_path)
+        if validity_report_output_path is not None
+        else graph_output_path.with_name("node_validity_report.json")
+    )
 
     staged_frontier_path = staging_path(frontier_output_path)
     staged_state_path = staging_path(state_output_path)
@@ -310,6 +323,14 @@ def run_pipeline(
     timestamp = datetime.now(tz=timezone.utc).isoformat()
     publish_skipped = has_blocking_stage_errors(stage_errors)
     blocking_stage_errors = [error_message for error_message in stage_errors if stage_error_name(error_message) != "lobbying"]
+    audit_report = generate_audit_report(build_result.nodes)
+    audit_report["summary"]["timestamp"] = timestamp
+    audit_report["summary"]["publish_skipped"] = publish_skipped
+    audit_report["summary"]["blocking_stage_errors"] = blocking_stage_errors
+    budget_vs_actual_report = build_budget_vs_actual_report(build_result.nodes)
+    budget_vs_actual_report["summary"]["timestamp"] = timestamp
+    budget_vs_actual_report["summary"]["publish_skipped"] = publish_skipped
+    budget_vs_actual_report["summary"]["blocking_stage_errors"] = blocking_stage_errors
     if publish_skipped:
         state_path = state_output_path
         candidate_path = candidate_output_path
@@ -358,6 +379,19 @@ def run_pipeline(
         "average_confidence_score": build_result.validation.get("average_confidence_score", 0.0),
         "verified_node_count": build_result.validation.get("verified_node_count", 0),
         "build_validation": build_result.validation,
+        "audit_report": {
+            "total_nodes_checked": audit_report["summary"].get("total_nodes", 0),
+            "nodes_with_errors": audit_report["summary"].get("nodes_with_errors", 0),
+            "nodes_with_warnings": audit_report["summary"].get("nodes_with_warnings", 0),
+            "warning_only_nodes": audit_report["summary"].get("warning_only_nodes", 0),
+            "report_file": str(audit_output_path),
+        },
+        "budget_vs_actual": {
+            "rows_emitted": budget_vs_actual_report["summary"].get("rows_emitted", 0),
+            "complete_rows": budget_vs_actual_report["summary"].get("complete_rows", 0),
+            "incomplete_rows": budget_vs_actual_report["summary"].get("incomplete_rows", 0),
+            "report_file": str(budget_reconciliation_output_path),
+        },
         "discovery_sources_used": successful_sources,
         "discovery_record_counts": discovery_record_counts,
         "frontier_targets_written": len(frontier_targets),
@@ -380,6 +414,8 @@ def run_pipeline(
             "expanded_nodes": str(nodes_output_path),
             "expanded_edges": str(edges_output_path),
             "node_validity_report": str(validity_report_output_path),
+            "audit_report": str(audit_output_path),
+            "budget_vs_actual": str(budget_reconciliation_output_path),
             "candidate_nodes": str(candidate_path),
             "enrichment_stats": str(enrichment_stats_output_path),
             "frontier_targets": str(frontier_path),
@@ -387,6 +423,8 @@ def run_pipeline(
         },
     }
 
+    write_json_file(audit_output_path, audit_report)
+    write_json_file(budget_reconciliation_output_path, budget_vs_actual_report)
     write_json_file(stats_output_path, stats)
     write_json_file(enrichment_stats_output_path, enrichment_stats)
     create_snapshot(stats, PROJECT_ROOT)
@@ -406,8 +444,15 @@ def create_snapshot(stats: dict[str, Any], project_root: Path) -> Path | None:
                     dirs_exist_ok=True)
     out_dst = snapshot_dir / "output"
     out_dst.mkdir(exist_ok=True)
-    for fname in ("graph.json", "expanded_nodes.json", "expanded_edges.json",
-                  "candidate_nodes.json", "pipeline_stats.json"):
+    for fname in (
+        "graph.json",
+        "expanded_nodes.json",
+        "expanded_edges.json",
+        "candidate_nodes.json",
+        "pipeline_stats.json",
+        "audit_report.json",
+        "budget_vs_actual.json",
+    ):
         src = project_root / "output" / fname
         if src.exists():
             shutil.copy2(src, out_dst / fname)
