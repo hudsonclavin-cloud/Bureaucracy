@@ -60,6 +60,22 @@ def _normalise_type(value: Any) -> str:
     return _coerce_text(value) or ""
 
 
+def _normalise_string_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple, set)):
+        values = [_coerce_text(item) for item in value]
+    else:
+        values = [_coerce_text(value)]
+    seen: set[str] = set()
+    result: list[str] = []
+    for value in values:
+        if value and value not in seen:
+            seen.add(value)
+            result.append(value)
+    return result
+
+
 def build_budget_vs_actual_report(nodes: list[Mapping[str, Any]]) -> dict[str, Any]:
     """Return a serializable summary of available budget-vs-actual data.
 
@@ -78,6 +94,7 @@ def build_budget_vs_actual_report(nodes: list[Mapping[str, Any]]) -> dict[str, A
         "unavailable_rows": 0,
         "missing_budget_rows": 0,
         "missing_actual_rows": 0,
+        "variance_status_counts": {},
         "budget_source_counts": {},
         "actual_source_counts": {},
     }
@@ -96,6 +113,11 @@ def build_budget_vs_actual_report(nodes: list[Mapping[str, Any]]) -> dict[str, A
         budget_source = _coerce_text(node.get("budget_source"))
         budget_year = _coerce_text(node.get("budget_year"))
         budget_as_of = _coerce_text(node.get("budget_as_of"))
+        tas_codes = _normalise_string_list(
+            node.get("treasuryAccountSymbols")
+            or node.get("treasury_account_symbols")
+            or node.get("tas")
+        )
 
         has_budget = budget_amount is not None
         has_actual = actual_amount is not None
@@ -134,20 +156,51 @@ def build_budget_vs_actual_report(nodes: list[Mapping[str, Any]]) -> dict[str, A
             variance_percent = None
             summary["unavailable_rows"] += 1
 
+        variance_status = (
+            "over_budget"
+            if variance_amount is not None and variance_amount > 0
+            else "under_budget"
+            if variance_amount is not None and variance_amount < 0
+            else "on_budget"
+            if variance_amount == 0
+            else "unavailable"
+        )
+        summary["variance_status_counts"][variance_status] = summary["variance_status_counts"].get(variance_status, 0) + 1
+
         rows.append(
             {
                 "id": _coerce_text(node.get("id")),
                 "name": _coerce_text(node.get("name")),
                 "type": node_type,
+                "treasury_account_symbols": tas_codes,
+                "tas_mapping_status": "mapped" if tas_codes else "unmapped",
                 "budget_amount": budget_amount,
                 "actual_amount": actual_amount,
                 "variance_amount": variance_amount,
                 "variance_percent": variance_percent,
+                "variance_status": variance_status,
                 "budget_source": budget_source,
                 "budget_year": budget_year,
                 "budget_as_of": budget_as_of,
                 "actual_source": "Treasury rollup" if has_actual else None,
                 "actual_as_of": budget_as_of if has_actual else None,
+                "budget": {
+                    "amount": budget_amount,
+                    "source": budget_source,
+                    "year": budget_year,
+                    "as_of": budget_as_of,
+                    "verified": has_budget,
+                },
+                "actual": {
+                    "amount": actual_amount,
+                    "source": "Treasury rollup" if has_actual else None,
+                    "as_of": budget_as_of if has_actual else None,
+                    "verified": has_actual,
+                },
+                "variance": {
+                    "amount": variance_amount,
+                    "percent": variance_percent,
+                },
                 "reconciliation_status": reconciliation_status,
                 "availability": {
                     "budget_present": has_budget,

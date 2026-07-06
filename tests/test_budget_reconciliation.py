@@ -54,6 +54,10 @@ class BudgetReconciliationTests(unittest.TestCase):
         self.assertEqual(row["budget_year"], "2026")
         self.assertEqual(row["budget_as_of"], "2026-02-28")
         self.assertEqual(row["actual_source"], "Treasury rollup")
+        self.assertEqual(row["tas_mapping_status"], "unmapped")
+        self.assertEqual(row["variance_status"], "over_budget")
+        self.assertTrue(row["budget"]["verified"])
+        self.assertTrue(row["actual"]["verified"])
         self.assertEqual(row["reconciliation_status"], "complete")
         self.assertTrue(row["availability"]["complete"])
 
@@ -93,6 +97,7 @@ class BudgetReconciliationTests(unittest.TestCase):
         rows_by_id = {row["id"]: row for row in report["rows"]}
         self.assertEqual(rows_by_id["agency-alpha"]["reconciliation_status"], "budget_only")
         self.assertEqual(rows_by_id["agency-alpha"]["budget_amount"], 1200.0)
+        self.assertEqual(rows_by_id["agency-alpha"]["variance_status"], "unavailable")
         self.assertIsNone(rows_by_id["agency-alpha"]["actual_amount"])
         self.assertEqual(rows_by_id["dept-beta"]["reconciliation_status"], "actual_only")
         self.assertIsNone(rows_by_id["dept-beta"]["budget_amount"])

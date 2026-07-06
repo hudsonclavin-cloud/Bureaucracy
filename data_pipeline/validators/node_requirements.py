@@ -28,6 +28,17 @@ GENERIC_TYPES = {
     "node",
 }
 
+TRUSTED_BASE_EXCEPTION_TYPES = {
+    "Foundation",
+    "Branch",
+    "Department",
+    "Agency",
+    "Bureau",
+    "Cabinet Department",
+    "Independent Agency",
+    "Executive Department",
+}
+
 WARNING_COST_STATUSES = {
     "allocated",
     "scaled_official",
@@ -341,6 +352,56 @@ class NodeRequirements:
 
     def audit_nodes(self, nodes: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
         return [self.audit_node(node) for node in nodes if isinstance(node, dict)]
+
+    def is_trusted_exception_node(self, node: dict[str, Any], trusted_node_ids: set[str]) -> bool:
+        node_id = str(node.get("id") or "")
+        node_type = str(node.get("type") or "")
+        proof_status = str(node.get("proofStatus") or "").lower()
+        if proof_status == "root":
+            return True
+        return node_id in trusted_node_ids and node_type in TRUSTED_BASE_EXCEPTION_TYPES
+
+    def evaluate_export_nodes(
+        self,
+        nodes: Iterable[dict[str, Any]],
+        *,
+        trusted_node_ids: set[str] | None = None,
+        strict_mode: bool = False,
+    ) -> dict[str, Any]:
+        trusted_node_ids = trusted_node_ids or set()
+        findings = self.audit_nodes(nodes)
+        allowed_ids: set[str] = set()
+        rejected_nodes: list[dict[str, Any]] = []
+        exception_count = 0
+
+        for finding in findings:
+            trusted_exception = self.is_trusted_exception_node(finding, trusted_node_ids)
+            blocking = bool(finding.get("has_errors")) or (strict_mode and bool(finding.get("has_warnings")))
+            if blocking and not trusted_exception:
+                rejected_nodes.append(
+                    {
+                        "id": finding.get("id"),
+                        "name": finding.get("name"),
+                        "issue_codes": finding.get("issue_codes", []),
+                        "severity_counts": finding.get("severity_counts", {}),
+                    }
+                )
+                continue
+            if blocking and trusted_exception:
+                exception_count += 1
+            allowed_ids.add(str(finding.get("id") or ""))
+
+        return {
+            "summary": {
+                "nodes_checked": len(findings),
+                "nodes_allowed": len(allowed_ids),
+                "nodes_rejected": len(rejected_nodes),
+                "trusted_exceptions_applied": exception_count,
+            },
+            "allowed_ids": {node_id for node_id in allowed_ids if node_id},
+            "rejected_nodes": rejected_nodes,
+            "findings": findings,
+        }
 
 
 def generate_audit_report(nodes: Iterable[dict[str, Any]]) -> dict[str, Any]:

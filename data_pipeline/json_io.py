@@ -19,7 +19,7 @@ def load_json_file(path: str | Path, *, default_factory: Callable[[], T]) -> T:
         return default_factory()
 
 
-def write_json_file(path: str | Path, payload: Any) -> Path:
+def write_json_file(path: str | Path, payload: Any, *, compact: bool = False) -> Path:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temp_path: Path | None = None
@@ -33,7 +33,13 @@ def write_json_file(path: str | Path, payload: Any) -> Path:
         delete=False,
     ) as handle:
         temp_path = Path(handle.name)
-        json.dump(payload, handle, indent=2)
+        json.dump(
+            payload,
+            handle,
+            indent=None if compact else 2,
+            separators=(",", ":") if compact else None,
+            ensure_ascii=False,
+        )
         handle.write("\n")
         handle.flush()
         os.fsync(handle.fileno())

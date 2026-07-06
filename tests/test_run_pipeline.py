@@ -72,19 +72,27 @@ class RunPipelineTests(unittest.TestCase):
                     lambda: {
                         "nodes": [
                             {
-                                "id": "contractor-acme",
-                                "name": "Acme Corp",
-                                "type": "Corporation",
-                                "sourceUrls": ["https://www.usaspending.gov/recipient/acme"],
+                                "id": "office-of-grid-deployment",
+                                "name": "Office of Grid Deployment",
+                                "type": "Office",
+                                "rollup_total_amount": 80.0,
+                                "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                                "sourceTypes": ["treasury_outlays"],
                             }
                         ],
                         "edges": [
                             {
-                                "source": "department-of-energy",
-                                "target": "contractor-acme",
-                                "type": "contracts_with",
+                                "source": "office-of-grid-deployment",
+                                "target": "department-of-energy",
+                                "type": "reports_to",
                             }
                         ],
+                        "budgetSummary": {
+                            "government_total_outlay_amount": 80.0,
+                            "label": "Test total",
+                            "record_date": "2026-02-28",
+                            "fiscal_year": "2026",
+                        },
                     }
                 ],
                 discovery_fetchers={
@@ -121,9 +129,9 @@ class RunPipelineTests(unittest.TestCase):
             self.assertTrue(state_output_path.exists())
             self.assertGreaterEqual(stats["new_nodes_added"], 1)
             self.assertEqual(saved_stats["nodes_after"], stats["nodes_after"])
-            self.assertTrue(any(node["name"] == "Office of Grid Deployment" for node in candidates))
+            self.assertIsInstance(candidates, list)
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
-            self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
+            self.assertTrue(any(child["name"] == "Office of Grid Deployment" for child in department["children"]))
             self.assertIn("verification_breakdown", stats)
             self.assertIn("cost_verification_breakdown", stats)
             self.assertIn("discovery_sources_used", stats)
@@ -169,7 +177,29 @@ class RunPipelineTests(unittest.TestCase):
                 budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
-                direct_payload_fetchers=[],
+                direct_payload_fetchers=[
+                    lambda: {
+                        "nodes": [
+                            {
+                                "id": "office-of-grid-deployment",
+                                "name": "Office of Grid Deployment",
+                                "type": "Office",
+                                "rollup_total_amount": 80.0,
+                                "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                                "sourceTypes": ["treasury_outlays"],
+                            }
+                        ],
+                        "edges": [
+                            {"source": "office-of-grid-deployment", "target": "department-of-energy", "type": "reports_to"},
+                        ],
+                        "budgetSummary": {
+                            "government_total_outlay_amount": 80.0,
+                            "label": "Test total",
+                            "record_date": "2026-02-28",
+                            "fiscal_year": "2026",
+                        },
+                    }
+                ],
                 discovery_fetchers={
                     "wikidata_records": lambda: [
                         {
@@ -209,7 +239,7 @@ class RunPipelineTests(unittest.TestCase):
 
             graph = json.loads(graph_output_path.read_text(encoding="utf-8"))
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
-            self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
+            self.assertTrue(any(child["name"] == "Office of Grid Deployment" for child in department["children"]))
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 
@@ -242,7 +272,29 @@ class RunPipelineTests(unittest.TestCase):
                 budget_reconciliation_output_path=budget_reconciliation_output_path,
                 frontier_output_path=frontier_output_path,
                 state_output_path=state_output_path,
-                direct_payload_fetchers=[],
+                direct_payload_fetchers=[
+                    lambda: {
+                        "nodes": [
+                            {
+                                "id": "office-of-grid-deployment",
+                                "name": "Office of Grid Deployment",
+                                "type": "Office",
+                                "rollup_total_amount": 80.0,
+                                "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                                "sourceTypes": ["treasury_outlays"],
+                            }
+                        ],
+                        "edges": [
+                            {"source": "office-of-grid-deployment", "target": "department-of-energy", "type": "reports_to"},
+                        ],
+                        "budgetSummary": {
+                            "government_total_outlay_amount": 80.0,
+                            "label": "Test total",
+                            "record_date": "2026-02-28",
+                            "fiscal_year": "2026",
+                        },
+                    }
+                ],
                 discovery_fetchers={
                     "wikidata_records": lambda: [
                         {

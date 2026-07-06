@@ -21,11 +21,14 @@ from data_pipeline.processors.normalize_nodes import (
     merge_node,
     verify_node_sources,
 )
+from data_pipeline.validators.cost_validator import CostValidator
+from data_pipeline.validators.node_requirements import NodeRequirements, generate_audit_report
 
 
 DEFAULT_BASE_GRAPH = PROJECT_ROOT / "data" / "federal_gov_complete_1.json"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "output"
 DEFAULT_GRAPH_OUTPUT = DEFAULT_OUTPUT_DIR / "graph.json"
+DEFAULT_MIN_GRAPH_OUTPUT = DEFAULT_OUTPUT_DIR / "graph.min.json"
 DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
 DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
@@ -58,6 +61,7 @@ class BuildResult:
     edges: list[dict[str, str]]
     graph: dict[str, Any]
     graph_path: Path
+    min_graph_path: Path | None
     nodes_path: Path
     edges_path: Path
     validation: dict[str, Any]
@@ -166,6 +170,28 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     return result
 
 
+MINIMAL_GRAPH_FIELDS = (
+    "id",
+    "name",
+    "type",
+    "color",
+    "children",
+    "resolved_total_amount",
+)
+
+
+def prune_graph_for_viewer(node: dict[str, Any]) -> dict[str, Any]:
+    result: dict[str, Any] = {
+        key: deepcopy(node[key]) for key in MINIMAL_GRAPH_FIELDS if key in node
+    }
+    children: list[dict[str, Any]] = []
+    for child in node.get("children", []):
+        if isinstance(child, dict):
+            children.append(prune_graph_for_viewer(child))
+    result["children"] = children
+    return result
+
+
 def is_placeholder_generated_node(node: dict[str, Any], *, existing_ids: set[str]) -> bool:
     node_id = str(node.get("id") or "").strip()
     node_name = str(node.get("name") or "").strip()
@@ -209,6 +235,10 @@ def safe_attach_child(
     if any(str(existing.get("id") or "") == child_id for existing in parent.get("children", [])):
         parent_map[child_id] = parent_id
         return True
+
+    existing_parent_id = parent_map.get(child_id)
+    if existing_parent_id and existing_parent_id != parent_id:
+        return False
 
     cursor_id = parent_id
     while cursor_id:
@@ -484,6 +514,198 @@ def classify_cost_verification(
         source_count = 1 if budget_amount is not None or official_total is not None else 0
         return "unverified", 0.35 if source_count else 0.2, "estimated_from_parent", source_count
     return "unverified", 0.0, cost_validation or "unknown_cost_verification", 0
+
+
+def prune_tree_to_allowed_ids(
+    node: dict[str, Any],
+    allowed_ids: set[str],
+    *,
+    is_root: bool = False,
+) -> list[dict[str, Any]]:
+    promoted_children: list[dict[str, Any]] = []
+    for child in list(node.get("children", [])):
+        if isinstance(child, dict):
+            promoted_children.extend(prune_tree_to_allowed_ids(child, allowed_ids, is_root=False))
+    node["children"] = promoted_children
+
+    if is_root or node.get("id") in allowed_ids:
+        return [node]
+    return promoted_children
+
+
+NAME_KEY_PARENTHETICAL_PATTERN = re.compile(r"\([^)]*\)")
+NAME_KEY_NON_ALNUM_PATTERN = re.compile(r"[^a-z0-9]+")
+NAME_KEY_US_PATTERN = re.compile(r"\bu s(?: a)?\b")
+
+
+def canonical_name_key(value: Any) -> str:
+    """Reduce a display name to a comparison key.
+
+    Treasury/crawler records and the curated base graph name the same entity
+    differently ("U.S. Fish & Wildlife Service (FWS)" vs "United States Fish
+    and Wildlife Service"), so parentheticals, punctuation, "U.S." spelling,
+    and leading articles must not affect equality.
+    """
+    text = str(value or "").casefold()
+    text = NAME_KEY_PARENTHETICAL_PATTERN.sub(" ", text)
+    text = text.replace("&", " and ")
+    text = NAME_KEY_NON_ALNUM_PATTERN.sub(" ", text).strip()
+    text = NAME_KEY_US_PATTERN.sub("united states", text)
+    for prefix in ("the ", "united states "):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+    return text.strip()
+
+
+def merge_source_provenance(target: dict[str, Any], source: dict[str, Any]) -> None:
+    for field_name in ("sourceUrls", "sourceTypes"):
+        merged = [str(value) for value in (target.get(field_name) or []) if str(value)]
+        for value in source.get(field_name) or []:
+            text = str(value)
+            if text and text not in merged:
+                merged.append(text)
+        if merged:
+            target[field_name] = merged
+
+
+REJECTED_NODE_SAMPLE_LIMIT = 200
+
+
+def summarize_export_policy(policy: dict[str, Any], *, sample_limit: int = REJECTED_NODE_SAMPLE_LIMIT) -> dict[str, Any]:
+    """Bound the per-node rejection detail kept in the published report.
+
+    Thousands of rejected candidates would otherwise dominate the committed
+    validity report; the counts stay exact while only a sample of node-level
+    detail is retained.
+    """
+    rejected = policy.get("rejected_nodes") or []
+    return {
+        "summary": deepcopy(policy.get("summary", {})),
+        "rejected_node_count": len(rejected),
+        "rejected_nodes_sample": deepcopy(rejected[:sample_limit]),
+    }
+
+
+def drop_duplicate_child_rollups(root: dict[str, Any]) -> int:
+    """Clear a node's Treasury rollup when an ancestor carries the same amount.
+
+    Name-based merging can stamp one Treasury row onto several nodes (an
+    agency and its same-named leadership position, or a branch total and the
+    appropriations subcommittee named after it). A cent-exact match with an
+    ancestor's rollup is that same row counted twice; the duplicate would
+    oversubscribe the ancestor's total and force every sibling's official
+    amount to be rescaled, so the descendant's copy is dropped before
+    annotation and the ancestor stays authoritative.
+    """
+    dropped = 0
+
+    def recurse(node: dict[str, Any], ancestor_rollups: frozenset[float]) -> None:
+        nonlocal dropped
+        rollup = parse_cost_amount(node.get("rollup_total_amount"))
+        if rollup is not None:
+            rollup = round(rollup, 2)
+            if rollup in ancestor_rollups:
+                node.pop("rollup_total_amount", None)
+                dropped += 1
+                rollup = None
+        child_ancestors = ancestor_rollups if rollup is None else ancestor_rollups | {rollup}
+        for child in node.get("children", []):
+            if isinstance(child, dict):
+                recurse(child, child_ancestors)
+
+    recurse(root, frozenset())
+    return dropped
+
+
+def resolve_root_orphans(
+    root: dict[str, Any],
+    *,
+    trusted_node_ids: set[str],
+) -> dict[str, Any]:
+    """Fold promoted crawler orphans at the root back into the canonical tree.
+
+    Pruning promotes children of culled nodes upward, so crawler-derived slugs
+    that duplicate base-graph entities (or belong beneath them) can land as
+    direct children of the root. Duplicates by canonical name are merged into
+    their counterpart; unmatched orphans are reattached under the canonical
+    parent inferred from their id prefix, keeping the root's children limited
+    to curated top-level structure.
+    """
+    root_id = str(root.get("id") or "")
+    orphans = [
+        child
+        for child in root.get("children", [])
+        if isinstance(child, dict)
+        and str(child.get("id") or "")
+        and str(child.get("id") or "") not in trusted_node_ids
+    ]
+    summary = {
+        "root_orphans_processed": len(orphans),
+        "duplicates_removed": 0,
+        "orphans_reattached": 0,
+    }
+    result = {"summary": summary, "duplicates_removed": [], "orphans_reattached": []}
+    if not orphans:
+        return result
+
+    orphan_ids = {str(child.get("id")) for child in orphans}
+    root["children"] = [
+        child
+        for child in root.get("children", [])
+        if not (isinstance(child, dict) and str(child.get("id") or "") in orphan_ids)
+    ]
+
+    node_map, parent_map = index_tree(root)
+    name_index: dict[str, dict[str, Any]] = {}
+    for node_id, node in node_map.items():
+        if node_id == root_id:
+            continue
+        name_key = canonical_name_key(node.get("name"))
+        if name_key and name_key not in name_index:
+            name_index[name_key] = node
+
+    def find_prefix_parent(node_id: str) -> dict[str, Any] | None:
+        tokens = [token for token in node_id.split("-") if token]
+        for cut in range(len(tokens) - 1, 1, -1):
+            counterpart = name_index.get(canonical_name_key(" ".join(tokens[:cut])))
+            if counterpart is not None:
+                return counterpart
+        return None
+
+    queue: list[tuple[dict[str, Any], dict[str, Any]]] = [(orphan, root) for orphan in orphans]
+    while queue:
+        node, fallback_parent = queue.pop(0)
+        node_id = str(node.get("id") or "")
+        name_key = canonical_name_key(node.get("name"))
+        counterpart = name_index.get(name_key) if name_key else None
+        if counterpart is not None and str(counterpart.get("id") or "") != node_id:
+            merge_source_provenance(counterpart, node)
+            for child in node.get("children", []):
+                if isinstance(child, dict):
+                    queue.append((child, counterpart))
+            node["children"] = []
+            result["duplicates_removed"].append(
+                {"id": node_id, "name": node.get("name"), "merged_into": counterpart.get("id")}
+            )
+            continue
+
+        parent = find_prefix_parent(node_id) or fallback_parent
+        if not safe_attach_child(parent, node, parent_map=parent_map):
+            parent = root
+            safe_attach_child(root, node, parent_map=parent_map)
+        parent_id = str(parent.get("id") or "")
+        node["parentId"] = parent_id
+        node_map[node_id] = node
+        if name_key and name_key not in name_index:
+            name_index[name_key] = node
+        if parent_id != root_id:
+            result["orphans_reattached"].append(
+                {"id": node_id, "name": node.get("name"), "attached_to": parent_id}
+            )
+
+    summary["duplicates_removed"] = len(result["duplicates_removed"])
+    summary["orphans_reattached"] = len(result["orphans_reattached"])
+    return result
 
 
 def annotate_resolved_costs(
@@ -817,6 +1039,7 @@ def build_graph(
     *,
     base_graph_path: str | Path = DEFAULT_BASE_GRAPH,
     graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
+    min_graph_output_path: str | Path | None = None,
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
@@ -867,6 +1090,7 @@ def build_graph(
     validation["pipeline_summary"] = pipeline_summary
 
     graph_path = Path(graph_output_path)
+    min_graph_path = Path(min_graph_output_path) if min_graph_output_path is not None else None
     nodes_path = Path(nodes_output_path)
     edges_path = Path(edges_output_path)
     validity_report_path = Path(validity_report_output_path)
@@ -874,6 +1098,8 @@ def build_graph(
     nodes_path.parent.mkdir(parents=True, exist_ok=True)
     edges_path.parent.mkdir(parents=True, exist_ok=True)
     validity_report_path.parent.mkdir(parents=True, exist_ok=True)
+    if min_graph_path is not None:
+        min_graph_path.parent.mkdir(parents=True, exist_ok=True)
 
     graph = build_graph_tree(
         base_graph_path=base_graph_path,
@@ -892,7 +1118,31 @@ def build_graph(
         graph["__budgetSummary"] = budget_summary
         validation["budget_summary"] = budget_summary
 
+    duplicate_child_rollups_dropped = drop_duplicate_child_rollups(graph)
+    annotate_resolved_costs(graph, budget_summary=budget_summary)
+    pre_export_graph_node_map, _ = index_tree(graph)
+    audit_report = generate_audit_report(pre_export_graph_node_map.values())
+    node_export_policy = NodeRequirements().evaluate_export_nodes(
+        pre_export_graph_node_map.values(),
+        trusted_node_ids=set(existing_ids),
+    )
+    cost_export_policy = CostValidator().evaluate_nodes(
+        pre_export_graph_node_map.values(),
+        trusted_node_ids=set(existing_ids),
+    )
+    allowed_graph_ids = (
+        set(cost_export_policy["allowed_ids"])
+        & set(node_export_policy["allowed_ids"])
+    )
+    pruned_roots = prune_tree_to_allowed_ids(graph, allowed_graph_ids, is_root=True)
+    graph = pruned_roots[0] if pruned_roots else graph
+    orphan_resolution = resolve_root_orphans(graph, trusted_node_ids=set(existing_ids))
+    filter_relationships_to_kept_nodes(graph)
     validity_report = annotate_resolved_costs(graph, budget_summary=budget_summary)
+    validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
+    validity_report["root_orphan_resolution"] = orphan_resolution
+    validity_report["cost_export_policy"] = summarize_export_policy(cost_export_policy)
+    validity_report["node_export_policy"] = summarize_export_policy(node_export_policy)
     graph_node_map, _ = index_tree(graph)
     kept_graph_ids = set(graph_node_map)
     export_nodes = [node for node in export_nodes if node["id"] in kept_graph_ids]
@@ -914,16 +1164,28 @@ def build_graph(
         node["proofSourceCount"] = deepcopy(graph_node.get("proofSourceCount"))
         node["existsProven"] = deepcopy(graph_node.get("existsProven"))
         node["parentProven"] = deepcopy(graph_node.get("parentProven"))
-    validation["export_verification_status_counts"] = deepcopy(validation.get("verification_status_counts", {}))
-    validation["export_verified_node_count"] = int(validation.get("verified_node_count", 0))
-    validation["export_average_confidence_score"] = validation.get("average_confidence_score")
     validation.update(validity_report["summary"])
     validation["graph_summary"] = deepcopy(validity_report["summary"])
+    validation["audit_report"] = deepcopy(audit_report)
+    validation["node_export_policy"] = deepcopy(node_export_policy["summary"])
+    validation["export_verification_status_counts"] = deepcopy(validity_report["summary"].get("verification_status_counts", {}))
+    validation["export_verified_node_count"] = int(validity_report["summary"].get("verification_status_counts", {}).get("verified", 0))
+    validation["export_average_confidence_score"] = validation.get("average_confidence_score")
+    validation["pre_export_audit_summary"] = deepcopy(audit_report["summary"])
+    validation["cost_export_policy"] = deepcopy(cost_export_policy["summary"])
+    validation["node_validation_rejected_nodes"] = int(node_export_policy["summary"].get("nodes_rejected", 0))
+    validation["cost_validation_rejected_nodes"] = int(cost_export_policy["summary"].get("nodes_rejected", 0))
+    validation["root_orphan_resolution"] = deepcopy(orphan_resolution["summary"])
+    validation["duplicate_child_rollups_dropped"] = duplicate_child_rollups_dropped
     validation["proof_status_counts_before_cull"] = proof_status_counts
     validation["exported_node_count"] = len(export_nodes)
     validation["exported_edge_count"] = len(export_edges)
+    validation["pipeline_summary"]["final_node_count"] = len(export_nodes)
+    validation["pipeline_summary"]["nodes_removed_cost_validation"] = int(cost_export_policy["summary"].get("nodes_rejected", 0))
 
     write_json_file(graph_path, graph)
+    if min_graph_path is not None:
+        write_json_file(min_graph_path, prune_graph_for_viewer(graph), compact=True)
     write_json_file(nodes_path, export_nodes)
     write_json_file(edges_path, export_edges)
     write_json_file(validity_report_path, validity_report)
@@ -933,6 +1195,7 @@ def build_graph(
         edges=export_edges,
         graph=graph,
         graph_path=graph_path,
+        min_graph_path=min_graph_path,
         nodes_path=nodes_path,
         edges_path=edges_path,
         validation=validation,

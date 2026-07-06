@@ -159,6 +159,7 @@ def run_pipeline(
     staged_frontier_path = staging_path(frontier_output_path)
     staged_state_path = staging_path(state_output_path)
     staged_graph_path = staging_path(graph_output_path)
+    staged_min_graph_path = staging_path(graph_output_path.with_name("graph.min.json"))
     staged_nodes_path = staging_path(nodes_output_path)
     staged_edges_path = staging_path(edges_output_path)
     staged_candidate_path = staging_path(candidate_output_path)
@@ -313,6 +314,7 @@ def run_pipeline(
         payloads,
         base_graph_path=base_graph_path,
         graph_output_path=staged_graph_path,
+        min_graph_output_path=staged_min_graph_path,
         nodes_output_path=staged_nodes_path,
         edges_output_path=staged_edges_path,
         validity_report_output_path=staged_validity_report_path,
@@ -323,10 +325,14 @@ def run_pipeline(
     timestamp = datetime.now(tz=timezone.utc).isoformat()
     publish_skipped = has_blocking_stage_errors(stage_errors)
     blocking_stage_errors = [error_message for error_message in stage_errors if stage_error_name(error_message) != "lobbying"]
-    audit_report = generate_audit_report(build_result.nodes)
+    audit_report = build_result.validation.get("audit_report") or generate_audit_report(build_result.nodes)
     audit_report["summary"]["timestamp"] = timestamp
     audit_report["summary"]["publish_skipped"] = publish_skipped
     audit_report["summary"]["blocking_stage_errors"] = blocking_stage_errors
+    if build_result.validation.get("cost_export_policy"):
+        audit_report["cost_export_policy"] = build_result.validation.get("cost_export_policy")
+    if build_result.validation.get("node_export_policy"):
+        audit_report["node_export_policy"] = build_result.validation.get("node_export_policy")
     budget_vs_actual_report = build_budget_vs_actual_report(build_result.nodes)
     budget_vs_actual_report["summary"]["timestamp"] = timestamp
     budget_vs_actual_report["summary"]["publish_skipped"] = publish_skipped
@@ -339,6 +345,7 @@ def run_pipeline(
             staged_frontier_path,
             staged_state_path,
             staged_graph_path,
+            staged_min_graph_path,
             staged_nodes_path,
             staged_edges_path,
             staged_candidate_path,
@@ -359,6 +366,7 @@ def run_pipeline(
         replace_file(staged_frontier_path, frontier_output_path)
         replace_file(staged_state_path, state_output_path)
         replace_file(staged_graph_path, graph_output_path)
+        replace_file(staged_min_graph_path, graph_output_path.with_name("graph.min.json"))
         replace_file(staged_nodes_path, nodes_output_path)
         replace_file(staged_edges_path, edges_output_path)
         replace_file(staged_candidate_path, candidate_output_path)
@@ -385,6 +393,8 @@ def run_pipeline(
             "nodes_with_errors": audit_report["summary"].get("nodes_with_errors", 0),
             "nodes_with_warnings": audit_report["summary"].get("nodes_with_warnings", 0),
             "warning_only_nodes": audit_report["summary"].get("warning_only_nodes", 0),
+            "node_validation_rejected_nodes": build_result.validation.get("node_validation_rejected_nodes", 0),
+            "cost_validation_rejected_nodes": build_result.validation.get("cost_validation_rejected_nodes", 0),
             "report_file": str(audit_output_path),
         },
         "budget_vs_actual": {

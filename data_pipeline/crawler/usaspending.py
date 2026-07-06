@@ -123,6 +123,7 @@ class USASpendingCrawler:
                 "budget_year": str(fiscal_year or date.today().year),
                 "color": "#4a8ac8",
                 "sourceUrls": [top_tier_source_url],
+                "sourceTypes": ["usaspending_direct"] if direct_budget else [],
             })
 
         return nodes, []

@@ -69,6 +69,10 @@ Crawlers (`crawler/`) hit USASpending, Treasury FiscalData, Wikidata SPARQL, Sen
 - Children with `rollup_total_amount` → `"official"` if it matches allocated, `"scaled_official"` if official rollups exceed parent total (rescaled to fit)
 - Remaining children → `"allocated"` using employee/budget/subtree-size weighting
 
+### Export gate (in `build_graph.py`)
+
+After cost annotation, only nodes passing both `NodeRequirements.evaluate_export_nodes()` and `CostValidator.evaluate_nodes()` are published; the rest are pruned by `prune_tree_to_allowed_ids()`, which promotes surviving children upward. Trusted base-graph nodes (proof status `root`, or base-graph IDs with structural types) are exempt. `resolve_root_orphans()` then folds crawler slugs stranded at the root back into the canonical hierarchy: duplicates by `canonical_name_key()` merge into their base-graph counterpart, unmatched orphans reattach under the parent inferred from their id prefix. Decisions are reported in `node_validity_report.json` under `cost_export_policy`, `node_export_policy`, and `root_orphan_resolution`.
+
 ### JavaScript Frontend (`js/`)
 
 No bundler, no npm. All ES modules loaded directly by the browser.

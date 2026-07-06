@@ -119,7 +119,7 @@ def parse_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
                 "budget_source": "Treasury MTS Table 5",
                 "allocation_basis": "treasury_rollup",
                 "sourceUrls": [DATASET_URL],
-                "sourceTypes": ["official_site"],
+                "sourceTypes": ["treasury_outlays"],
                 "sequence_level": int(str(row.get("sequence_level_nbr") or 0) or 0),
                 "print_order": int(str(row.get("print_order_nbr") or 0) or 0),
             }
