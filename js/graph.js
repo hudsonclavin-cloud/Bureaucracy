@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260312a";
+import { createLodManager } from "./lodManager.js?v=20260804a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -19,6 +19,8 @@ const REPULSION = -60;
 const LINK_DISTANCE = 30;
 const DAMPING = 0.9;
 const MIN_DISTANCE = 5;
+const RELAXATION_MAX_SIBLINGS = 320;
+const WEB_FORCE_SETTLE_EPSILON_SQ = 0.0001;
 const OUTWARD_FORCE = 0.02;
 const BASE_RADIUS = 16;
 const RADIUS_STEP = 40;
@@ -207,9 +209,9 @@ export function createGovernmentGraph({
     haloMeshes: [],
     haloLabels: [],
     edgeBatch: null,
-    allNodes: [],
-    allEdges: [],
-    visibleNodes: [],
+    allNodes: new Set(),
+    allEdges: new Set(),
+    visibleNodes: new Set(),
     visibleNodeCount: 0,
     screenSpaceBuckets: new Map(),
     activeClusters: [],
@@ -628,18 +630,20 @@ export function createGovernmentGraph({
     return score;
   }
 
-  function computeScreenSpaceBuckets(nodeObjs, tileSize = state.lod.tileSize) {
+  function computeScreenSpaceBuckets(nodeObjs, tileSize = state.lod.tileSize, useCachedProjection = false) {
     const buckets = new Map();
     for (const nodeObj of nodeObjs) {
-      const screen = projectWorldToScreen(nodeObj.pos);
-      nodeObj.screenX = screen.x;
-      nodeObj.screenY = screen.y;
-      nodeObj.screenZ = screen.z;
-      if (screen.z < -1 || screen.z > 1) {
+      if (!useCachedProjection) {
+        const screen = projectWorldToScreen(nodeObj.pos);
+        nodeObj.screenX = screen.x;
+        nodeObj.screenY = screen.y;
+        nodeObj.screenZ = screen.z;
+      }
+      if (nodeObj.screenZ < -1 || nodeObj.screenZ > 1) {
         continue;
       }
-      const tileX = Math.floor(screen.x / tileSize);
-      const tileY = Math.floor(screen.y / tileSize);
+      const tileX = Math.floor(nodeObj.screenX / tileSize);
+      const tileY = Math.floor(nodeObj.screenY / tileSize);
       const key = `${tileX}:${tileY}`;
       if (!buckets.has(key)) {
         buckets.set(key, []);
@@ -649,10 +653,11 @@ export function createGovernmentGraph({
     return buckets;
   }
 
-  function applyDensityCap(nodeObjs) {
-    const protectedIds = getProtectedNodeIds();
+  function applyDensityCap(nodeObjs, protectedIds = getProtectedNodeIds()) {
     const ancestorIds = state.selectedNode?.isCluster ? new Set() : getAncestorIds(state.selectedNode);
-    const buckets = computeScreenSpaceBuckets(nodeObjs);
+    // Reuse the screen projections computed earlier in the same visibility
+    // pass instead of projecting every node a second time.
+    const buckets = computeScreenSpaceBuckets(nodeObjs, state.lod.tileSize, true);
     state.screenSpaceBuckets = buckets;
     const allowed = new Set();
 
@@ -932,6 +937,7 @@ export function createGovernmentGraph({
     const mesh = new THREE.InstancedMesh(geometry, material, Math.max(capacity, 1));
     mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     mesh.frustumCulled = false;
+    mesh.count = 0;
     scene.add(mesh);
     return {
       depth,
@@ -967,10 +973,12 @@ export function createGovernmentGraph({
     const clusterMesh = new THREE.InstancedMesh(clusterGeometry, clusterMaterial, CLUSTER_CAPACITY);
     clusterMesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     clusterMesh.frustumCulled = false;
+    clusterMesh.count = 0;
     scene.add(clusterMesh);
     state.clusterBatch = {
       mesh: clusterMesh,
       clustersBySlot: new Array(CLUSTER_CAPACITY),
+      lastActiveCount: 0,
       dirty: true,
     };
 
@@ -1006,6 +1014,8 @@ export function createGovernmentGraph({
     nodeObj.batch = batch;
     nodeObj.slot = batch.freeSlots.length > 0 ? batch.freeSlots.pop() : batch.nextSlot++;
     batch.nodesBySlot[nodeObj.slot] = nodeObj;
+    // Draw/raycast only the slots ever assigned, not the full capacity.
+    batch.mesh.count = batch.nextSlot;
   }
 
   function createNodeObj(data, parent, depth) {
@@ -1045,15 +1055,28 @@ export function createGovernmentGraph({
     assignBatchSlot(nodeObj);
     state.nodeMap.set(data.id, nodeObj);
     state.nodeRenderMap.set(data.id, { mesh: nodeObj.batch.mesh, slot: nodeObj.slot });
-    state.allNodes.push(nodeObj);
+    state.allNodes.add(nodeObj);
     return nodeObj;
   }
 
-  function placeCandidateNode(nodeObj, index = 0) {
-    const baseDistance = shellRadiusForDepth(1) + 30 + index * 2.4;
+  function placeCandidateNode(nodeObj, index = 0, total = 1) {
+    // Pack candidates over a bounded shell band via a golden-angle sphere
+    // distribution so every candidate stays well inside the camera far plane
+    // (a linearly growing radius pushed ~80% of them past it).
+    const innerRadius = shellRadiusForDepth(1) + 30;
+    const count = Math.max(total, 1);
+    const t = (index + 0.5) / count;
+    const y = 1 - 2 * t;
+    const ringRadius = Math.sqrt(Math.max(0, 1 - y * y));
+    const theta = GOLDEN_ANGLE * (index + 1);
+    const direction = new THREE.Vector3(
+      Math.cos(theta) * ringRadius,
+      y,
+      Math.sin(theta) * ringRadius,
+    ).normalize();
     const seed = hashString(nodeObj.data.id);
-    const direction = directionFromSeed(seed, index + 1);
-    nodeObj.pos.copy(direction).multiplyScalar(baseDistance);
+    const radius = innerRadius + (seed % 8) * 22;
+    nodeObj.pos.copy(direction).multiplyScalar(radius);
     nodeObj.targetPos.copy(nodeObj.pos);
     nodeObj.branchDirection.copy(direction);
   }
@@ -1073,7 +1096,7 @@ export function createGovernmentGraph({
       return;
     }
     nodeObj.visible = true;
-    state.visibleNodes.push(nodeObj);
+    state.visibleNodes.add(nodeObj);
     state.visibleNodeCount += 1;
     state.renderDirty = true;
   }
@@ -1096,10 +1119,7 @@ export function createGovernmentGraph({
     nodeObj.clustered = false;
     nodeObj.clusterRef = null;
     state.visibleNodeCount -= 1;
-    const visibleIndex = state.visibleNodes.indexOf(nodeObj);
-    if (visibleIndex >= 0) {
-      state.visibleNodes.splice(visibleIndex, 1);
-    }
+    state.visibleNodes.delete(nodeObj);
     hideNodeInstance(nodeObj);
     state.renderDirty = true;
   }
@@ -1150,7 +1170,7 @@ export function createGovernmentGraph({
       type: options.type || "hierarchy",
       key: options.key || null,
     };
-    state.allEdges.push(edge);
+    state.allEdges.add(edge);
     fromObj.edges.push(edge);
     toObj.edges.push(edge);
     if (edge.type === "hierarchy") {
@@ -1213,14 +1233,20 @@ export function createGovernmentGraph({
     if (edge.highlightVersion !== state.highlightVersion) {
       setEdgeColor(edge);
     }
+    // Hierarchy edges keep the strict "<" on the parent side (the parent sits
+    // one level above the child); relationship endpoints are arbitrary, so
+    // both may legitimately sit at the max visible depth.
+    const depthAllowed =
+      edge.type === "relationship"
+        ? edge.from.depth <= state.maxVisibleDepth && edge.to.depth <= state.maxVisibleDepth
+        : edge.from.depth < state.maxVisibleDepth && edge.to.depth <= state.maxVisibleDepth;
     const show =
       zoomAllowed &&
       edge.from.renderVisible &&
       edge.to.renderVisible &&
       !edge.from.clustered &&
       !edge.to.clustered &&
-      edge.from.depth < state.maxVisibleDepth &&
-      edge.to.depth <= state.maxVisibleDepth;
+      depthAllowed;
     if (show) {
       updateEdge(edge);
     } else {
@@ -1263,6 +1289,12 @@ export function createGovernmentGraph({
   }
 
   function relaxSiblingPositions(positions, shellRadius) {
+    if (positions.length > RELAXATION_MAX_SIBLINGS) {
+      // The golden-angle spiral already spreads large broods evenly; skipping
+      // the O(k^2) pass keeps huge expansions (root: ~3.8K children) from
+      // freezing the main thread.
+      return;
+    }
     const minimumDistance = Math.max(MIN_DISTANCE, NODE_RADIUS * 2.2);
     const minimumDistanceSq = minimumDistance * minimumDistance;
 
@@ -1316,11 +1348,12 @@ export function createGovernmentGraph({
     const depth = parentObj.depth + 1;
     const shellRadius = shellRadiusForDepth(depth);
     const parentSeed = hashString(parentObj.data.id);
+    // Own vector: getLayoutDirectionForChild reuses tempVecA inside the loop,
+    // so aliasing the anchor to it would silently retarget the lerp below.
     const anchorDir =
       parentObj.pos.lengthSq() > 0.0001
-        ? tempVecA.copy(parentObj.pos).normalize()
+        ? parentObj.pos.clone().normalize()
         : directionFromSeed(parentSeed, depth);
-    getOrbitBasis(anchorDir);
 
     const count = children.length;
     const positions = new Array(count);
@@ -1433,6 +1466,7 @@ export function createGovernmentGraph({
       children,
       placements: getSpreadPositions(parentObj, children),
       index: 0,
+      seenChildIds: new Set(),
     });
   }
 
@@ -1449,6 +1483,26 @@ export function createGovernmentGraph({
       const { parentObj, children, placements, animate } = job;
       const childData = children[job.index];
       let childObj = state.nodeMap.get(childData.id);
+      const conflictingReuse =
+        childObj &&
+        (childObj.isCandidate ||
+          childObj === state.rootObj ||
+          (childObj.parent && childObj.parent !== parentObj));
+      if (conflictingReuse || job.seenChildIds.has(childData.id)) {
+        // Duplicate id already instantiated elsewhere (second placement in the
+        // data, or a candidate collision): keep the first render node instead
+        // of silently reparenting/teleporting the shared object.
+        job.seenChildIds.add(childData.id);
+        job.index += 1;
+        processedChildren += 1;
+        if (job.index >= children.length) {
+          parentObj.expanded = true;
+          parentObj.expanding = false;
+          state.pendingExpansions.shift();
+        }
+        continue;
+      }
+      job.seenChildIds.add(childData.id);
       if (!childObj) {
         childObj = createNodeObj(childData, parentObj, parentObj.depth + 1);
         setNodeColor(childObj);
@@ -1456,9 +1510,7 @@ export function createGovernmentGraph({
       }
 
       childObj.parent = parentObj;
-      if (!parentObj.childObjs.includes(childObj)) {
-        parentObj.childObjs.push(childObj);
-      }
+      parentObj.childObjs.push(childObj);
       markVisible(childObj);
 
       const placement = placements[job.index];
@@ -1526,20 +1578,14 @@ export function createGovernmentGraph({
     }
     state.nodeMap.delete(nodeObj.data.id);
     state.nodeRenderMap.delete(nodeObj.data.id);
-    const nodeIndex = state.allNodes.indexOf(nodeObj);
-    if (nodeIndex >= 0) {
-      state.allNodes.splice(nodeIndex, 1);
-    }
+    state.allNodes.delete(nodeObj);
     markHidden(nodeObj);
   }
 
   function removeEdge(edge) {
     hideEdge(edge);
     state.edgeBatch.freeSlots.push(edge.slot);
-    const edgeIndex = state.allEdges.indexOf(edge);
-    if (edgeIndex >= 0) {
-      state.allEdges.splice(edgeIndex, 1);
-    }
+    state.allEdges.delete(edge);
     const fromIndex = edge.from.edges.indexOf(edge);
     if (fromIndex >= 0) {
       edge.from.edges.splice(fromIndex, 1);
@@ -1570,8 +1616,17 @@ export function createGovernmentGraph({
   function collapseNode(parentObj) {
     state.pendingExpansions = state.pendingExpansions.filter((job) => !isDescendantOf(job.parentObj, parentObj));
 
-    for (const child of [...parentObj.childObjs]) {
-      collapseNode(child);
+    // Iterative subtree walk with a single counts notification: the recursive
+    // version re-filtered the queue and fired notifyCounts once per descendant.
+    const stack = [...parentObj.childObjs];
+    while (stack.length > 0) {
+      const child = stack.pop();
+      for (const grandChild of child.childObjs) {
+        stack.push(grandChild);
+      }
+      child.childObjs = [];
+      child.expanded = false;
+      child.expanding = false;
       for (const edge of [...child.edges]) {
         removeEdge(edge);
       }
@@ -1667,7 +1722,7 @@ export function createGovernmentGraph({
       protectedIds.add(state.rootObj.data.id);
     }
 
-    const candidates = state.allNodes
+    const candidates = [...state.allNodes]
       .filter((nodeObj) => nodeObj.expanded && nodeObj.childObjs.length > 0 && !protectedIds.has(nodeObj.data.id))
       .sort((a, b) => b.pos.distanceTo(state.camFocusTarget) - a.pos.distanceTo(state.camFocusTarget));
 
@@ -1774,6 +1829,10 @@ export function createGovernmentGraph({
     return pathIds;
   }
 
+  // Contract: the return value is deterministic. A node object means the node
+  // is materialized; null means it can never materialize (unknown id, or an
+  // ancestor could not be built) — callers such as ui.js revealAndSelect must
+  // treat null as terminal failure and stop retrying.
   function revealNodeById(id, animate = true) {
     if (!state.dataMap.has(id)) {
       return null;
@@ -1783,11 +1842,21 @@ export function createGovernmentGraph({
     state.lastUserDrillAt = performance.now();
     for (let i = 0; i < pathIds.length - 1; i += 1) {
       const ancestorId = pathIds[i];
-      const ancestorObj = state.nodeMap.get(ancestorId);
-      if (ancestorObj && ancestorObj.depth < MAX_DEPTH && !ancestorObj.expanded) {
+      let ancestorObj = state.nodeMap.get(ancestorId);
+      // The ancestor may still be waiting in the expansion queue (budgeted
+      // flushes can leave large parents partially built); drain the queue so
+      // the path cannot be silently skipped by an expansion-budget race.
+      while (!ancestorObj && state.pendingExpansions.length > 0) {
+        flushPendingExpansions(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
+        ancestorObj = state.nodeMap.get(ancestorId);
+      }
+      if (!ancestorObj) {
+        return null;
+      }
+      if (ancestorObj.depth < MAX_DEPTH && !ancestorObj.expanded) {
         expandNode(ancestorObj, animate);
       }
-      flushPendingExpansions(12, 1200);
+      flushPendingExpansions(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
     }
 
     return state.nodeMap.get(id) || null;
@@ -2144,9 +2213,8 @@ export function createGovernmentGraph({
     state.clusterBatch.dirty = true;
   }
 
-  function updateClusterLabels() {
+  function updateClusterLabels(protectedIds = getProtectedNodeIds()) {
     ensureClusterLabelPool(state.activeClusters.length);
-    const protectedIds = getProtectedNodeIds();
     const candidates = [];
     let labelIndex = 0;
     for (const clusterObj of state.activeClusters) {
@@ -2183,12 +2251,11 @@ export function createGovernmentGraph({
     return candidates;
   }
 
-  function updateHaloNodes() {
-    const haloCandidates = state.visibleNodes.filter(
+  function updateHaloNodes(protectedIds = getProtectedNodeIds()) {
+    const haloCandidates = [...state.visibleNodes].filter(
       (nodeObj) => nodeObj.renderVisible && lodManager.shouldRenderHalo(nodeObj, state.lod),
     );
     ensureHaloPool(haloCandidates.length);
-    const protectedIds = getProtectedNodeIds();
     const labelCandidates = [];
 
     for (let i = 0; i < haloCandidates.length; i += 1) {
@@ -2279,6 +2346,18 @@ export function createGovernmentGraph({
         state.clusterMap.delete(key);
       }
     }
+
+    // Report whether any cluster is still lerping toward its target so the
+    // caller can keep visibility passes running until the animation settles.
+    for (const clusterObj of nextClusters) {
+      if (
+        clusterObj.displayPos.distanceToSquared(clusterObj.targetPos) > 0.01 ||
+        Math.abs(clusterObj.displayRadius - clusterObj.targetRadius) > 0.05
+      ) {
+        return true;
+      }
+    }
+    return false;
   }
 
   function visibleNodeBudgetExceeded() {
@@ -2302,7 +2381,7 @@ export function createGovernmentGraph({
   }
 
   function ensureLodCoverage() {
-    if (!state.rootObj || state.pendingExpansions.length > 8) {
+    if (!state.rootObj || !state.lod.autoExpand || state.pendingExpansions.length > 8) {
       return;
     }
     if (visibleNodeBudgetExceeded()) {
@@ -2334,18 +2413,30 @@ export function createGovernmentGraph({
     }
   }
 
+  function isNodeRenderableAtCurrentLod(nodeObj) {
+    // The selected node is exempt from depth/tier filtering so search and
+    // selection can never point at an invisible node.
+    if (nodeObj === state.selectedNode && nodeObj.visible) {
+      return true;
+    }
+    return lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data);
+  }
+
   function applyRenderVisibility() {
     if (!state.clusterBatch) {
       return;
     }
     updateLodState();
     updateFrustum();
-    state.screenSpaceBuckets = computeScreenSpaceBuckets(
-      state.visibleNodes.filter(
-        (nodeObj) => lodManager.shouldRenderNode(nodeObj, state.lod) && shouldDisplayNodeByVerification(nodeObj.data),
-      ),
-    );
-    recomputeClusters();
+    const protectedIds = getProtectedNodeIds();
+    const lodVisibleNodes = [];
+    for (const nodeObj of state.visibleNodes) {
+      if (isNodeRenderableAtCurrentLod(nodeObj)) {
+        lodVisibleNodes.push(nodeObj);
+      }
+    }
+    state.screenSpaceBuckets = computeScreenSpaceBuckets(lodVisibleNodes);
+    const clustersSettling = recomputeClusters();
     const baseEdgeOpacity = state.lod.level <= 1 ? 0.34 : state.zoom <= 1 ? 0.24 : 0.3;
     state.edgeBatch.lines.material.opacity =
       state.highlightedPathEdgeSlots.size > 0 ? Math.max(baseEdgeOpacity, 0.42) : baseEdgeOpacity;
@@ -2353,11 +2444,7 @@ export function createGovernmentGraph({
 
     for (const nodeObj of state.allNodes) {
       nodeObj.renderVisible = false;
-      if (
-        !lodManager.shouldRenderNode(nodeObj, state.lod) ||
-        !shouldDisplayNodeByVerification(nodeObj.data) ||
-        nodeObj.clustered
-      ) {
+      if (!isNodeRenderableAtCurrentLod(nodeObj) || nodeObj.clustered) {
         hideNodeInstance(nodeObj);
         continue;
       }
@@ -2381,7 +2468,7 @@ export function createGovernmentGraph({
       }
     }
 
-    applyDensityCap(nodeCandidates);
+    applyDensityCap(nodeCandidates, protectedIds);
     for (const nodeObj of nodeCandidates) {
       if (nodeObj.densityCapped && nodeObj !== state.selectedNode && nodeObj !== state.rootObj) {
         hideNodeInstance(nodeObj);
@@ -2405,14 +2492,18 @@ export function createGovernmentGraph({
       setClusterSlot(clusterSlot, clusterObj);
       clusterSlot += 1;
     }
-    for (let i = clusterSlot; i < CLUSTER_CAPACITY; i += 1) {
+    for (let i = clusterSlot; i < state.clusterBatch.lastActiveCount; i += 1) {
       if (state.clusterBatch.clustersBySlot[i]) {
         hideClusterSlot(i);
       }
     }
+    // Only the live cluster slots are drawn and raycast; the remaining
+    // capacity (up to 16,384 instances) is skipped entirely.
+    state.clusterBatch.lastActiveCount = clusterSlot;
+    state.clusterBatch.mesh.count = clusterSlot;
 
-    const clusterLabelCandidates = updateClusterLabels();
-    const haloLabelCandidates = updateHaloNodes();
+    const clusterLabelCandidates = updateClusterLabels(protectedIds);
+    const haloLabelCandidates = updateHaloNodes(protectedIds);
     suppressOverlappingLabels([...clusterLabelCandidates, ...haloLabelCandidates]);
 
     for (const edge of state.allEdges) {
@@ -2421,7 +2512,7 @@ export function createGovernmentGraph({
 
     updatePathGlowMeshes();
 
-    state.renderDirty = false;
+    state.renderDirty = clustersSettling;
   }
 
   function refreshVisibility(force = false) {
@@ -2435,23 +2526,28 @@ export function createGovernmentGraph({
     notifyCounts();
   }
 
-  function updateDynamicInstances() {
+  function updateDynamicInstances(positionsChanged = false) {
     if (!state.clusterBatch) {
       return;
     }
-    for (const nodeObj of state.allNodes) {
-      if (nodeObj.animating && nodeObj.renderVisible && !nodeObj.clustered && !nodeObj.culled) {
-        setNodeMatrix(nodeObj, 1);
+    // Only rewrite instance matrices, edge positions, and glow meshes when
+    // node positions actually moved this frame; otherwise this forced a full
+    // edge-buffer reupload every frame.
+    if (positionsChanged) {
+      for (const nodeObj of state.allNodes) {
+        if (nodeObj.animating && nodeObj.renderVisible && !nodeObj.clustered && !nodeObj.culled) {
+          setNodeMatrix(nodeObj, 1);
+        }
       }
-    }
 
-    for (const edge of state.allEdges) {
-      if (edge.active) {
-        updateEdge(edge);
+      for (const edge of state.allEdges) {
+        if (edge.active) {
+          updateEdge(edge);
+        }
       }
-    }
 
-    updatePathGlowMeshes();
+      updatePathGlowMeshes();
+    }
 
     for (const batch of state.nodeBatches.values()) {
       if (batch.dirty) {
@@ -2499,11 +2595,12 @@ export function createGovernmentGraph({
     if (anyAnimating) {
       state.renderDirty = true;
     }
+    return anyAnimating;
   }
 
   function applyWebForces() {
     if (state.frame % 2 !== 0) {
-      return;
+      return false;
     }
 
     let updated = false;
@@ -2526,6 +2623,7 @@ export function createGovernmentGraph({
         continue;
       }
 
+      tempVecC.copy(nodeObj.pos);
       if (branchTarget) {
         nodeObj.pos.lerp(branchTarget, BRANCH_FORCE);
       }
@@ -2540,12 +2638,19 @@ export function createGovernmentGraph({
         }
       }
 
-      updated = true;
+      // Settle below an epsilon so the asymptotic lerp cannot keep the whole
+      // render pipeline dirty forever once nodes have effectively converged.
+      if (nodeObj.pos.distanceToSquared(tempVecC) > WEB_FORCE_SETTLE_EPSILON_SQ) {
+        updated = true;
+      } else {
+        nodeObj.pos.copy(tempVecC);
+      }
     }
 
     if (updated) {
       state.renderDirty = true;
     }
+    return updated;
   }
 
   function applyFlyMovement(deltaSeconds) {
@@ -2636,8 +2741,8 @@ export function createGovernmentGraph({
     updateLodState();
     ensureLodCoverage();
 
-    animateNodes();
-    applyWebForces();
+    const nodesAnimated = animateNodes();
+    const forcesUpdated = applyWebForces();
 
     const cameraSignature = [
       camera.position.x.toFixed(2),
@@ -2653,12 +2758,12 @@ export function createGovernmentGraph({
       state.renderDirty = true;
     }
 
-    if (state.clusterBatch && (state.renderDirty || state.forceFullRenderRefresh || state.frame % 4 === 0)) {
+    if (state.clusterBatch && (state.renderDirty || state.forceFullRenderRefresh)) {
       applyRenderVisibility();
       state.forceFullRenderRefresh = false;
     }
 
-    updateDynamicInstances();
+    updateDynamicInstances(nodesAnimated || forcesUpdated);
 
     if (state.rootObj) {
       rootHalo.visible = true;
@@ -2744,8 +2849,9 @@ export function createGovernmentGraph({
       }
     }
 
+    // mouseup only: binding the same handler to both mouseup and click made
+    // every selection run twice (double raycast, double onSelect).
     canvas.addEventListener("mouseup", handleSelection);
-    canvas.addEventListener("click", handleSelection);
 
     canvas.addEventListener(
       "wheel",
@@ -2756,7 +2862,8 @@ export function createGovernmentGraph({
           state.flyPosition.addScaledVector(forward, zoomStep);
           updateFlyLookTarget();
         } else {
-          state.targetZoom *= event.deltaY > 0 ? 1.1 : 0.9;
+          // Scroll down zooms out, scroll up zooms in (matches fly mode).
+          state.targetZoom *= event.deltaY > 0 ? 0.9 : 1.1;
           state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
         }
         state.renderDirty = true;
@@ -2827,10 +2934,15 @@ export function createGovernmentGraph({
     state.relationshipIndex = new Map();
     state.connectedRelationshipKeys.clear();
     const meta = registerDataNode(data);
-    for (const candidateNode of data.candidateNodes || []) {
+    // Drop candidates whose ids collide with real tree nodes so a hidden
+    // candidate stub can never alias (and hijack) an actual hierarchy node.
+    const candidateList = (data.candidateNodes || []).filter(
+      (candidateNode) => !state.dataMap.has(candidateNode.id),
+    );
+    for (const candidateNode of candidateList) {
       registerCandidateNode(candidateNode);
     }
-    state.totalNodeCount = meta.subtreeCount + (data.candidateNodes || []).length;
+    state.totalNodeCount = meta.subtreeCount + candidateList.length;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_NODES;
     state.manualDepthFilter = MAX_DEPTH;
@@ -2848,10 +2960,10 @@ export function createGovernmentGraph({
     setNodeMatrix(state.rootObj, 1);
     markVisible(state.rootObj);
     connectRelationshipsForNode(state.rootObj);
-    for (const [index, candidateData] of (data.candidateNodes || []).entries()) {
+    for (const [index, candidateData] of candidateList.entries()) {
       const candidateObj = createNodeObj(candidateData, null, 1);
       setNodeColor(candidateObj);
-      placeCandidateNode(candidateObj, index);
+      placeCandidateNode(candidateObj, index, candidateList.length);
       setNodeMatrix(candidateObj, 1);
       state.candidateNodes.push(candidateObj);
     }

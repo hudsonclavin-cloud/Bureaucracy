@@ -269,7 +269,27 @@ window.GRAPH_DATA_SOURCES = {
   base: "./data/federal_gov_complete_1.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
+window.__graphBootFailed = function (message) {
+  var status = document.getElementById("load-status");
+  var fill = document.querySelector("#loading .load-fill");
+  if (fill) {
+    fill.style.animation = "none";
+    fill.style.background = "#c85a4a";
+  }
+  if (status) {
+    status.textContent = message;
+    status.style.color = "#e09090";
+  }
+};
+// Watchdog: the module graph pulls Three.js from a CDN at runtime; if any module
+// fails to fetch/evaluate, ui.js never runs and no error handler exists. Surface it.
+window.setTimeout(function () {
+  if (!window.__bureaucracy_ui_loaded__ && document.getElementById("loading")) {
+    window.__graphBootFailed("Failed to start the explorer — scripts did not load (network or CDN unreachable). Check your connection and reload.");
+  }
+}, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260312c"></script>
+<script type="module" src="./js/ui.js?v=20260804a"
+  onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

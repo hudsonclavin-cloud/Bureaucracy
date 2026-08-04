@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260312c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260312c";
+import { createGovernmentGraph } from "./graph.js?v=20260804a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260804a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -63,6 +63,8 @@ const state = {
   expandFrame: 0,
   loaderTimer: null,
   tracedNodeId: null,
+  revealFrame: 0,
+  loadFailed: false,
 };
 
 function setText(element, value) {
@@ -98,21 +100,47 @@ function updateStats(stats) {
 }
 
 function hideLoadingOverlay(delay = 600) {
-  if (!dom.loading) {
+  if (!dom.loading || state.loadFailed) {
     return;
   }
   dom.loading.style.opacity = "0";
   window.setTimeout(() => {
-    if (dom.loading?.parentElement) {
+    if (dom.loading?.parentElement && !state.loadFailed) {
       dom.loading.remove();
     }
   }, delay);
 }
 
+function showLoadFailure(message) {
+  state.loadFailed = true;
+  if (!dom.loading || !dom.loading.parentElement) {
+    return;
+  }
+  dom.loading.style.opacity = "1";
+  const loadFill = dom.loading.querySelector(".load-fill");
+  if (loadFill) {
+    loadFill.style.animation = "none";
+    loadFill.style.background = "#c85a4a";
+  }
+  setText(dom.loadStatus, message);
+  dom.loadStatus.style.color = "#e09090";
+
+  if (!dom.loading.querySelector("[data-reload-button='true']")) {
+    const reloadButton = document.createElement("button");
+    reloadButton.dataset.reloadButton = "true";
+    reloadButton.className = "btn btn-expand";
+    reloadButton.textContent = "Reload";
+    reloadButton.style.width = "auto";
+    reloadButton.style.marginTop = "16px";
+    reloadButton.style.padding = "8px 22px";
+    reloadButton.addEventListener("click", () => window.location.reload());
+    dom.loading.appendChild(reloadButton);
+  }
+}
+
 function handleUiFailure(error, message = "UI failed to initialize. Open browser console for details.") {
   console.error(message, error);
-  setText(dom.loadStatus, message);
-  hideLoadingOverlay();
+  showLoadFailure(message);
 }
 
 function safeUiCall(label, callback, ...args) {
@@ -378,19 +406,30 @@ function renderVerificationPanel(data) {
   }
 
   sourceUrls.forEach((url, index) => {
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noreferrer noopener";
-    let host = url;
+    let parsed = null;
     try {
-      host = new URL(url).hostname;
+      parsed = new URL(url);
     } catch (_error) {
-      host = url;
+      parsed = null;
     }
-    link.textContent = `• ${host}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
-    link.style.color = "#d4c4a1";
-    dom.verificationSources.appendChild(link);
+    const isSafeLink = Boolean(parsed && (parsed.protocol === "http:" || parsed.protocol === "https:"));
+    const label = `• ${isSafeLink ? parsed.hostname : url}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
+
+    if (isSafeLink) {
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noreferrer noopener";
+      link.textContent = label;
+      link.style.color = "#d4c4a1";
+      dom.verificationSources.appendChild(link);
+      return;
+    }
+
+    const item = document.createElement("span");
+    item.textContent = label;
+    item.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(item);
   });
 }
 
@@ -535,12 +574,7 @@ function renderInfoPanel(nodeObj) {
           return;
         }
         state.graph.expandNode(nodeObj, true);
-        window.setTimeout(() => {
-          const revealed = state.graph.getNodeById(child.id);
-          if (revealed) {
-            state.graph.setSelectedNode(revealed);
-          }
-        }, 750);
+        pollForRevealedNode(child.id);
       });
 
       fragment.appendChild(item);
@@ -656,17 +690,48 @@ function renderSearchResults(matches) {
   dom.searchResults.style.display = "block";
 }
 
-function revealAndSelect(id) {
-  const nodeObj = state.graph.revealNodeById(id, true);
+const REVEAL_TIMEOUT_MS = 2000;
+
+function cancelRevealLoop() {
+  if (state.revealFrame) {
+    window.cancelAnimationFrame(state.revealFrame);
+    state.revealFrame = 0;
+  }
+}
+
+function pollForRevealedNode(id, timeoutMs = REVEAL_TIMEOUT_MS) {
+  cancelRevealLoop();
+  const deadline = performance.now() + timeoutMs;
   const settle = () => {
-    const revealed = nodeObj || state.graph.getNodeById(id);
+    state.revealFrame = 0;
+    const revealed = state.graph.getNodeById(id);
     if (revealed) {
       state.graph.setSelectedNode(revealed);
       return;
     }
-    window.requestAnimationFrame(settle);
+    if (performance.now() >= deadline) {
+      console.warn(`Reveal timed out for node "${id}".`);
+      return;
+    }
+    if (!state.graph.hasPendingExpansions()) {
+      console.warn(`Node "${id}" never materialized - abandoning reveal.`);
+      return;
+    }
+    state.revealFrame = window.requestAnimationFrame(settle);
   };
-  window.requestAnimationFrame(settle);
+  state.revealFrame = window.requestAnimationFrame(settle);
+}
+
+function revealAndSelect(id) {
+  cancelRevealLoop();
+  const revealed = state.graph.revealNodeById(id, true);
+  if (!revealed) {
+    // graph.js contract: a falsy return is deterministic failure (unknown id or
+    // unbuildable ancestor) - never retry it.
+    console.warn(`Node "${id}" could not be revealed.`);
+    return;
+  }
+  state.graph.setSelectedNode(revealed);
 }
 
 function stopProgressiveExpansion() {
@@ -916,6 +981,8 @@ function bindControls() {
 function initUI() {
   ensureOriginUi();
   ensureVerificationUi();
+  ensureVerificationToggles();
+  ensureVerificationLegend();
   bindControls();
   safeUiCall("updateStats", updateStats, state.graph.getStats());
 }
@@ -931,7 +998,10 @@ function safeInitUI() {
 async function initGraphApp() {
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
-    onSelect: (nodeObj) => safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj),
+    onSelect: (nodeObj) => {
+      cancelRevealLoop();
+      safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj);
+    },
     onHover: (payload) => safeUiCall("updateTooltip", updateTooltip, payload),
     onCountsChange: (stats) => safeUiCall("updateStats", updateStats, stats),
   });
@@ -950,7 +1020,6 @@ async function initGraphApp() {
 if (shouldBootUi) {
   initGraphApp().catch((error) => {
     console.error(error);
-    setText(dom.loadStatus, "Failed to load explorer data.");
-    hideLoadingOverlay();
+    showLoadFailure("Failed to load explorer data. Check your connection, then reload.");
   });
 }

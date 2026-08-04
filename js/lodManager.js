@@ -78,7 +78,7 @@ const LEVELS = [
   {
     level: 4,
     label: "Position View",
-    maxDepth: 5,
+    maxDepth: Infinity,
     showHierarchyEdges: true,
     showRelationshipEdges: true,
     showHalos: false,
@@ -178,11 +178,15 @@ export function createLodManager({ maxDepth = Infinity } = {}) {
     },
     updateLOD({ cameraDistance, rootNode, maxDepthFilter = Infinity }) {
       const levelConfig = getLevelForDistance(cameraDistance);
-      const visibleDepth = Math.min(
-        maxDepth,
-        Number.isFinite(maxDepthFilter) ? maxDepthFilter : maxDepth,
-        levelConfig.maxDepth,
-      );
+      const manualDepth = Number.isFinite(maxDepthFilter)
+        ? Math.min(maxDepthFilter, maxDepth)
+        : maxDepth;
+      // An explicit manual depth filter (set below the global max) overrides
+      // the tier's automatic cap so deep data stays reachable at any zoom;
+      // otherwise the tier cap provides the automatic default.
+      const visibleDepth = manualDepth < maxDepth
+        ? manualDepth
+        : Math.min(maxDepth, levelConfig.maxDepth);
       return {
         ...levelConfig,
         cameraDistance,

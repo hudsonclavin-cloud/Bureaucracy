@@ -87,6 +87,9 @@ function safeAddChild(parentNode, childNode, parentMap) {
     return false;
   }
   if (parentNode.children.some((child) => child.id === childNode.id)) {
+    // Already a child of this parent — record the relationship so later
+    // passes (e.g. attach-to-root) never see the node as unparented.
+    parentMap.set(childNode.id, parentNode.id);
     return false;
   }
 
@@ -127,20 +130,29 @@ function mergeNodeData(targetNode, sourceNode) {
 
 function normalizeCandidateNode(rawCandidate) {
   const name = String(rawCandidate?.name || "Unnamed Candidate");
-  const sourceUrl = rawCandidate?.sourceUrl ? String(rawCandidate.sourceUrl) : null;
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const sourceUrls = Array.isArray(rawCandidate?.sourceUrls)
+    ? rawCandidate.sourceUrls.map((value) => String(value))
+    : rawCandidate?.sourceUrl
+      ? [String(rawCandidate.sourceUrl)]
+      : [];
+  const sourceTypes = Array.isArray(rawCandidate?.sourceTypes) && rawCandidate.sourceTypes.length > 0
+    ? rawCandidate.sourceTypes.map((value) => String(value))
+    : ["candidate_discovery"];
   return normalizeNode({
     id: String(rawCandidate?.id || `candidate-${slug || "node"}`),
     name,
     type: String(rawCandidate?.type || "Candidate"),
     desc: String(rawCandidate?.desc || `Candidate node discovered via ${rawCandidate?.discoveryMethod || "automated discovery"}.`),
     color: typeof rawCandidate?.color === "string" ? rawCandidate.color : "#9b8bbd",
-    sourceUrls: sourceUrl ? [sourceUrl] : [],
-    sourceTypes: ["candidate_discovery"],
-    confidenceScore: Number(rawCandidate?.confidenceEstimate || 0),
-    verificationStatus: "unverified",
-    lastVerified: null,
-    sourceCount: sourceUrl ? 1 : 0,
+    sourceUrls,
+    sourceTypes,
+    confidenceScore: Number(rawCandidate?.confidenceScore ?? rawCandidate?.confidenceEstimate ?? 0),
+    verificationStatus: String(rawCandidate?.verificationStatus || "unverified"),
+    lastVerified: rawCandidate?.lastVerified || null,
+    sourceCount: rawCandidate?.sourceCount != null && Number.isFinite(Number(rawCandidate.sourceCount))
+      ? Number(rawCandidate.sourceCount)
+      : sourceUrls.length,
     isCandidate: true,
     possibleParent: rawCandidate?.possibleParent || null,
     discoveryMethod: rawCandidate?.discoveryMethod || null,
@@ -262,8 +274,10 @@ function mergeExpansionGraph(baseRoot, expansionData) {
   }
 
   for (const treeRoot of treeRoots) {
-    const existingRoot = baseNodeMap.get(treeRoot.id);
-    mergeExpansionTree(baseNodeMap, parentMap, existingRoot || treeRoot);
+    // Always walk the expansion subtree itself: mergeExpansionTree resolves
+    // each id against the base map, so an already-existing root has its
+    // expansion children grafted on instead of being silently skipped.
+    mergeExpansionTree(baseNodeMap, parentMap, treeRoot);
   }
 
   for (const node of flatNodes.values()) {
@@ -317,6 +331,15 @@ async function fetchJson(url) {
   return response.json();
 }
 
+function optionalFetchFallback(url, fallbackValue) {
+  return (error) => {
+    if (error.status !== 404) {
+      console.warn(`Optional data file ${url} failed to load - continuing without it.`, error);
+    }
+    return fallbackValue;
+  };
+}
+
 export async function loadMergedGraphData({
   baseUrl,
   corporateUrl,
@@ -328,32 +351,12 @@ export async function loadMergedGraphData({
   onStatus("Fetching federal hierarchy…");
   const basePromise = fetchJson(baseUrl);
   onStatus("Fetching corporate expansion…");
-  const corporatePromise = fetchJson(corporateUrl).catch((error) => {
-    if (error.status === 404) {
-      return null;
-    }
-    throw error;
-  });
+  const corporatePromise = fetchJson(corporateUrl).catch(optionalFetchFallback(corporateUrl, null));
   onStatus("Fetching pipeline-expanded nodes…");
-  const expandedNodesPromise = fetchJson(expandedNodesUrl).catch((error) => {
-    if (error.status === 404) {
-      return [];
-    }
-    throw error;
-  });
+  const expandedNodesPromise = fetchJson(expandedNodesUrl).catch(optionalFetchFallback(expandedNodesUrl, []));
   onStatus("Fetching pipeline-expanded edges…");
-  const expandedEdgesPromise = fetchJson(expandedEdgesUrl).catch((error) => {
-    if (error.status === 404) {
-      return [];
-    }
-    throw error;
-  });
-  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch((error) => {
-    if (error.status === 404) {
-      return [];
-    }
-    throw error;
-  });
+  const expandedEdgesPromise = fetchJson(expandedEdgesUrl).catch(optionalFetchFallback(expandedEdgesUrl, []));
+  const candidateNodesPromise = fetchJson(candidateNodesUrl).catch(optionalFetchFallback(candidateNodesUrl, []));
 
   const [baseRaw, corporateData, expandedNodes, expandedEdges, candidateNodes] = await Promise.all([
     basePromise,
@@ -378,8 +381,21 @@ export async function loadMergedGraphData({
   const mergedGraph = mergedPayload.nodes.length > 0 || mergedPayload.edges.length > 0
     ? mergeExpansionGraph(baseData, cloneValue(mergedPayload))
     : baseData;
-  mergedGraph.candidateNodes = candidateNodes.map(normalizeCandidateNode);
   trimDepth(mergedGraph);
+
+  // Drop candidates whose id already exists in the merged tree (or earlier in the
+  // candidate list) so they cannot alias/overwrite real graph nodes downstream.
+  const mergedNodeIds = new Set();
+  walkTree(mergedGraph, (node) => mergedNodeIds.add(node.id));
+  mergedGraph.candidateNodes = [];
+  for (const rawCandidate of candidateNodes) {
+    const candidateNode = normalizeCandidateNode(rawCandidate);
+    if (mergedNodeIds.has(candidateNode.id)) {
+      continue;
+    }
+    mergedNodeIds.add(candidateNode.id);
+    mergedGraph.candidateNodes.push(candidateNode);
+  }
 
   onStatus("Indexing hierarchy and preparing GPU batches…");
   return mergedGraph;
