@@ -1,9 +1,9 @@
 {
   "timestamp": "2026-03-12T19:32:08.132534+00:00",
   "nodes_before": 5170,
-  "nodes_after": 13551,
-  "new_nodes_added": 8381,
-  "candidate_nodes_written": 6335,
+  "nodes_after": 13359,
+  "new_nodes_added": 8189,
+  "candidate_nodes_written": 3812,
   "promoted_nodes_written": 2450,
   "promotion_stats": {
     "candidates_reviewed": 6335,
@@ -60,9 +60,10 @@
   },
   "stage_errors": [],
   "outputs": {
-    "graph": "C:\\Users\\hudso\\Bureaucracy\\output\\graph.json",
-    "expanded_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_nodes.json",
-    "expanded_edges": "C:\\Users\\hudso\\Bureaucracy\\output\\expanded_edges.json",
-    "candidate_nodes": "C:\\Users\\hudso\\Bureaucracy\\output\\candidate_nodes.json"
-  }
+    "graph": "/Users/hudsonclavin/Bureaucracy/output/graph.json",
+    "expanded_nodes": "/Users/hudsonclavin/Bureaucracy/output/expanded_nodes.json",
+    "expanded_edges": "/Users/hudsonclavin/Bureaucracy/output/expanded_edges.json",
+    "candidate_nodes": "/Users/hudsonclavin/Bureaucracy/output/candidate_nodes.json"
+  },
+  "note": "Repaired 2026-08-04: node counts recomputed over unique ids from the repaired output files (an exporter bug had re-attached 192 duplicate subtree copies, inflating occurrence-based counts); dropped duplicate graph.json subtree grafts, deduped expanded_nodes.json (OFAC subtree), restored 16 corrupted names from graph.json, removed already-promoted ids from candidate_nodes.json, and replaced stale Windows output paths with this machine's POSIX paths."
 }

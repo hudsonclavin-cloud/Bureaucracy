@@ -105091,7 +105091,7 @@
     "children": [
       {
         "id": "exec-dept-state-bureau-of-political-military-affairs-assistant-secretary-bureau-of-political-military-affairs",
-        "name": "Assistant SECretary, Bureau of Political-Military Affairs",
+        "name": "Assistant Secretary, Bureau of Political-Military Affairs",
         "type": "Position",
         "desc": "Federal position: Assistant Secretary, Bureau of Political-Military Affairs",
         "employees": null,
@@ -105107,7 +105107,7 @@
       },
       {
         "id": "exec-dept-state-bureau-of-political-military-affairs-deputy-assistant-secretary-2-4-bureau-of-political-military-affairs",
-        "name": "Deputy Assistant SECretary (\u00d72-4), Bureau of Political-Military Affairs",
+        "name": "Deputy Assistant Secretary (\u00d72-4), Bureau of Political-Military Affairs",
         "type": "Position",
         "desc": "Federal position: Deputy Assistant Secretary (\u00d72-4), Bureau of Political-Military Affairs",
         "employees": null,
@@ -119942,7 +119942,7 @@
     "children": [
       {
         "id": "exec-dept-treasury-secretary-of-department-of-the-treasury",
-        "name": "SECretary of Department of the Treasury",
+        "name": "Secretary of Department of the Treasury",
         "type": "Position",
         "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
         "employees": null,
@@ -119958,7 +119958,7 @@
       },
       {
         "id": "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury",
-        "name": "Deputy SECretary of Department of the Treasury",
+        "name": "Deputy Secretary of Department of the Treasury",
         "type": "Position",
         "desc": "Second-in-command; acts as Secretary when absent.",
         "employees": null,
@@ -119990,7 +119990,7 @@
       },
       {
         "id": "exec-dept-treasury-executive-secretary",
-        "name": "Executive SECretary",
+        "name": "Executive Secretary",
         "type": "Position",
         "desc": "Coordinates executive correspondence and department-wide communications.",
         "employees": null,
@@ -120086,7 +120086,7 @@
       },
       {
         "id": "exec-dept-treasury-deputy-cfo-controller",
-        "name": "Deputy CFO Controller",
+        "name": "Deputy CFO / Controller",
         "type": "Position",
         "desc": "Manages financial operations, grants management, and reporting.",
         "employees": null,
@@ -120367,7 +120367,7 @@
           },
           {
             "id": "exec-dept-treasury-irs-commissioner-small-business-self-employed-division",
-            "name": "Commissioner, Small Business Self-Employed Division",
+            "name": "Commissioner, Small Business/Self-Employed Division",
             "type": "Position",
             "desc": "Federal position: Commissioner, Small Business/Self-Employed Division",
             "employees": null,
@@ -120689,7 +120689,7 @@
           },
           {
             "id": "exec-dept-treasury-mint-cfo",
-            "name": "Cfo",
+            "name": "CFO",
             "type": "Position",
             "desc": "Federal position: CFO",
             "employees": null,
@@ -121213,11 +121213,31 @@
       {
         "id": "exec-dept-treasury-ofac",
         "name": "Office of Foreign Assets Control (OFAC)",
-        "type": "Bureau",
-        "desc": "Administers and enforces economic and trade sanctions. ~250 staff.",
-        "employees": 250,
+        "type": "Office",
+        "desc": "The Department of State is publishing the names of one or more persons that have been placed on the Department of the Treasury's List of Specially Designated Nationals and Blocked Persons (SDN List) administered by the Office of Foreign Assets Control (OFAC).",
+        "employees": "~250",
         "budget": null,
-        "color": "#c84a4a",
+        "color": "#666666",
+        "sourceUrls": [
+          "https://www.federalregister.gov/documents/2026/03/06/2026-04404/notice-of-department-of-state-sanctions-action"
+        ],
+        "sourceTypes": [
+          "official_site",
+          "candidate_discovery"
+        ],
+        "lastVerified": "2026-03-12",
+        "description": "The Department of State is publishing the names of one or more persons that have been placed on the Department of the Treasury's List of Specially Designated Nationals and Blocked Persons (SDN List) administered by the Office of Foreign Assets Control (OFAC).",
+        "attachToRoot": true,
+        "possibleParent": "State Department",
+        "discoveryMethod": "federal_register_listing_scan",
+        "sourceUrl": "https://www.federalregister.gov/documents/2026/03/06/2026-04404/notice-of-department-of-state-sanctions-action",
+        "wikidataId": null,
+        "discoveryConfidenceEstimate": 0.71,
+        "isCandidate": true,
+        "confidenceEstimate": 0.71,
+        "sourceCount": 1,
+        "confidenceScore": 0.7,
+        "verificationStatus": "partial",
         "children": [
           {
             "id": "exec-dept-treasury-ofac-director-ofac",
@@ -121315,13 +121335,7 @@
             "lastVerified": null,
             "sourceCount": 0
           }
-        ],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
+        ]
       },
       {
         "id": "exec-dept-treasury-ofr",
@@ -143555,133 +143569,6 @@
     "confidenceEstimate": 0.71
   },
   {
-    "id": "exec-dept-treasury-ofac",
-    "name": "Office of Foreign Assets Control (OFAC)",
-    "type": "Office",
-    "desc": "The Department of State is publishing the names of one or more persons that have been placed on the Department of the Treasury's List of Specially Designated Nationals and Blocked Persons (SDN List) administered by the Office of Foreign Assets Control (OFAC).",
-    "employees": 250,
-    "budget": null,
-    "color": "#666666",
-    "children": [
-      {
-        "id": "exec-dept-treasury-ofac-director-ofac",
-        "name": "Director, OFAC",
-        "type": "Position",
-        "desc": "Federal position: Director, OFAC",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      },
-      {
-        "id": "exec-dept-treasury-ofac-deputy-director",
-        "name": "Deputy Director",
-        "type": "Position",
-        "desc": "Federal position: Deputy Director",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      },
-      {
-        "id": "exec-dept-treasury-ofac-associate-director-compliance-enforcement",
-        "name": "Associate Director \u2014 Compliance & Enforcement",
-        "type": "Position",
-        "desc": "Federal position: Associate Director \u2014 Compliance & Enforcement",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      },
-      {
-        "id": "exec-dept-treasury-ofac-associate-director-global-targeting",
-        "name": "Associate Director \u2014 Global Targeting",
-        "type": "Position",
-        "desc": "Federal position: Associate Director \u2014 Global Targeting",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      },
-      {
-        "id": "exec-dept-treasury-ofac-chief-counsel",
-        "name": "Chief Counsel",
-        "type": "Position",
-        "desc": "Federal position: Chief Counsel",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      },
-      {
-        "id": "exec-dept-treasury-ofac-sanctions-program-officer-multiple",
-        "name": "Sanctions Program Officer (\u00d7multiple)",
-        "type": "Position",
-        "desc": "Federal position: Sanctions Program Officer (\u00d7multiple)",
-        "employees": null,
-        "budget": null,
-        "color": "#666666",
-        "children": [],
-        "sourceUrls": [],
-        "sourceTypes": [],
-        "confidenceScore": 0.0,
-        "verificationStatus": "unverified",
-        "lastVerified": null,
-        "sourceCount": 0
-      }
-    ],
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/03/06/2026-04404/notice-of-department-of-state-sanctions-action"
-    ],
-    "sourceTypes": [
-      "official_site",
-      "candidate_discovery"
-    ],
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-03-12",
-    "sourceCount": 1,
-    "description": "The Department of State is publishing the names of one or more persons that have been placed on the Department of the Treasury's List of Specially Designated Nationals and Blocked Persons (SDN List) administered by the Office of Foreign Assets Control (OFAC).",
-    "attachToRoot": true,
-    "possibleParent": "State Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/03/06/2026-04404/notice-of-department-of-state-sanctions-action",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.71,
-    "isCandidate": true,
-    "confidenceEstimate": 0.71
-  },
-  {
     "id": "treasury-department-office-of-foreign-assets-control-ofac-is-publishing-a-general-license-gl-issued-pursuant-to-multiple-regulations-including-the-syrian-sanctions-regulations",
     "name": "Office of Foreign Assets Control (OFAC) is publishing a general license (GL) issued pursuant to multiple regulations, including the Syrian Sanctions Regulations",
     "type": "Office",
@@ -144474,7 +144361,7 @@
         "children": [
           {
             "id": "exec-eop-omb-oira-office-of-information-regulatory-affairs-administrator-chief-oira",
-            "name": "Administrator Chief, OIRA",
+            "name": "Administrator / Chief, OIRA",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, OIRA",
             "employees": null,
@@ -144555,7 +144442,7 @@
         "children": [
           {
             "id": "exec-eop-omb-office-of-federal-procurement-policy-administrator-chief-office-of-federal-procurement-policy",
-            "name": "Administrator Chief, Office of Federal Procurement Policy",
+            "name": "Administrator / Chief, Office of Federal Procurement Policy",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Office of Federal Procurement Policy",
             "employees": null,
@@ -144636,7 +144523,7 @@
         "children": [
           {
             "id": "exec-eop-omb-office-of-federal-financial-management-administrator-chief-office-of-federal-financial-management",
-            "name": "Administrator Chief, Office of Federal Financial Management",
+            "name": "Administrator / Chief, Office of Federal Financial Management",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Office of Federal Financial Management",
             "employees": null,
@@ -144717,7 +144604,7 @@
         "children": [
           {
             "id": "exec-eop-omb-office-of-e-government-it-federal-cio-administrator-chief-office-of-e-government-it-federal-cio",
-            "name": "Administrator Chief, Office of E-Government & IT (Federal CIO)",
+            "name": "Administrator / Chief, Office of E-Government & IT (Federal CIO)",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Office of E-Government & IT (Federal CIO)",
             "employees": null,
@@ -144798,7 +144685,7 @@
         "children": [
           {
             "id": "exec-eop-omb-budget-review-division-administrator-chief-budget-review-division",
-            "name": "Administrator Chief, Budget Review Division",
+            "name": "Administrator / Chief, Budget Review Division",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Budget Review Division",
             "employees": null,
@@ -144879,7 +144766,7 @@
         "children": [
           {
             "id": "exec-eop-omb-legislative-reference-division-administrator-chief-legislative-reference-division",
-            "name": "Administrator Chief, Legislative Reference Division",
+            "name": "Administrator / Chief, Legislative Reference Division",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Legislative Reference Division",
             "employees": null,
@@ -144960,7 +144847,7 @@
         "children": [
           {
             "id": "exec-eop-omb-performance-personnel-management-administrator-chief-performance-personnel-management",
-            "name": "Administrator Chief, Performance & Personnel Management",
+            "name": "Administrator / Chief, Performance & Personnel Management",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Performance & Personnel Management",
             "employees": null,
@@ -145041,7 +144928,7 @@
         "children": [
           {
             "id": "exec-eop-omb-economic-policy-division-administrator-chief-economic-policy-division",
-            "name": "Administrator Chief, Economic Policy Division",
+            "name": "Administrator / Chief, Economic Policy Division",
             "type": "Position",
             "desc": "Federal position: Administrator / Chief, Economic Policy Division",
             "employees": null,
