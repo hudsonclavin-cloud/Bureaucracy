@@ -142,6 +142,9 @@ def safe_attach_child(
     if any(str(existing.get("id") or "") == child_id for existing in parent.get("children", [])):
         parent_map[child_id] = parent_id
         return True
+    if child_id in parent_map:
+        # Already attached elsewhere in the tree; attaching again would duplicate the subtree.
+        return False
 
     cursor_id = parent_id
     while cursor_id:
@@ -159,10 +162,12 @@ def build_graph_tree(
     base_graph_path: str | Path,
     nodes: list[dict[str, Any]],
     edges: list[dict[str, str]],
+    stats: dict[str, int] | None = None,
 ) -> dict[str, Any]:
     root = deepcopy(load_base_graph(base_graph_path))
     node_map, parent_map = index_tree(root)
     root_id = str(root.get("id") or "root")
+    cycle_fallback_root_attachments = 0
 
     for node in nodes:
         normalized_node = dict(node)
@@ -182,9 +187,21 @@ def build_graph_tree(
             if safe_attach_child(node_map[parent_id], attached_node, parent_map=parent_map):
                 attached_node["parentId"] = parent_id
                 attached_node.pop("attachToRoot", None)
+            elif node_id in parent_map:
+                # Node already lives in the tree; keep that placement and drop the stale hint.
+                attached_node.pop("parentId", None)
+                attached_node.pop("attachToRoot", None)
+            elif node_id != root_id and safe_attach_child(root, attached_node, parent_map=parent_map):
+                # Cycle detected: fall back to root so the whole cluster stays in the tree.
+                attached_node.pop("parentId", None)
+                attached_node.pop("attachToRoot", None)
+                cycle_fallback_root_attachments += 1
             continue
         if node.get("attachToRoot") and node_id != root_id:
             safe_attach_child(root, attached_node, parent_map=parent_map)
+
+    if stats is not None:
+        stats["cycle_fallback_root_attachments"] = cycle_fallback_root_attachments
 
     root["relationships"] = list(edges)
     return root
@@ -225,19 +242,32 @@ def validate_and_prepare_graph(
         related_node_ids.add(edge["target"])
 
     parent_by_child = build_parent_index(kept_edges)
+    assigned_parent_by_child: dict[str, str] = {}
     root_attached_missing_parent_nodes = 0
     explicitly_root_attached_nodes = 0
 
     for node in nodes:
         prepared = verify_node_sources(dict(node))
-        parent_id = parent_by_child.get(prepared["id"]) or prepared.get("parentId")
-        if parent_id:
+        node_already_in_tree = prepared["id"] in existing_ids
+        parent_id = prepared.get("parentId") or parent_by_child.get(prepared["id"])
+        if node_already_in_tree:
+            # The base tree already contains this node; keep its placement and leave
+            # any hierarchical edges in the exported relationships instead.
+            prepared.pop("parentId", None)
+        elif parent_id:
             if parent_id == prepared["id"] or parent_id not in all_known_ids:
                 orphaned_parent_ids += 1
                 orphan_nodes_detected += 1
                 prepared.pop("parentId", None)
+                # The primary parent reference is unusable; fall back to a kept
+                # hierarchical edge so a valid secondary parent is not lost.
+                fallback_parent = parent_by_child.get(prepared["id"])
+                if fallback_parent and fallback_parent != parent_id and fallback_parent != prepared["id"]:
+                    prepared["parentId"] = fallback_parent
+                    assigned_parent_by_child[prepared["id"]] = fallback_parent
             else:
                 prepared["parentId"] = parent_id
+                assigned_parent_by_child[prepared["id"]] = parent_id
         else:
             prepared.pop("parentId", None)
 
@@ -248,7 +278,10 @@ def validate_and_prepare_graph(
             if explicitly_attached_to_root:
                 explicitly_root_attached_nodes += 1
 
-        if "parentId" not in prepared:
+        if node_already_in_tree:
+            # Never re-attach an id that is already in the base tree to root.
+            prepared.pop("attachToRoot", None)
+        elif "parentId" not in prepared:
             if prepared["id"] in related_node_ids or explicitly_attached_to_root:
                 prepared["attachToRoot"] = True
             else:
@@ -258,6 +291,10 @@ def validate_and_prepare_graph(
         kept_nodes.append(prepared)
         status = prepared.get("verificationStatus", "unverified")
         verification_status_counts[status] = verification_status_counts.get(status, 0) + 1
+
+    # Primary hierarchical edges become parentId fields; split them out only after
+    # they have been counted and endpoint-validated above.
+    kept_edges = split_hierarchical_edges(kept_edges, assigned_parent_by_child)
 
     validation = {
         "initial_node_count": len(nodes),
@@ -317,10 +354,9 @@ def build_graph(
         if parent_id and parent_id != node["id"]:
             node["parentId"] = parent_id
 
-    export_edges = split_hierarchical_edges(raw_edges, parent_by_child)
     export_nodes, export_edges, validation = validate_and_prepare_graph(
         nodes,
-        export_edges,
+        raw_edges,
         existing_ids=existing_ids,
     )
     pipeline_summary = {
@@ -342,11 +378,14 @@ def build_graph(
     nodes_path.parent.mkdir(parents=True, exist_ok=True)
     edges_path.parent.mkdir(parents=True, exist_ok=True)
 
+    tree_stats: dict[str, int] = {}
     graph = build_graph_tree(
         base_graph_path=base_graph_path,
         nodes=export_nodes,
         edges=export_edges,
+        stats=tree_stats,
     )
+    validation["cycle_fallback_root_attachments"] = tree_stats.get("cycle_fallback_root_attachments", 0)
 
     with graph_path.open("w", encoding="utf-8") as handle:
         json.dump(graph, handle, indent=2)

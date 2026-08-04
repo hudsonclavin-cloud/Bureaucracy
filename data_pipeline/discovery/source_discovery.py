@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -88,7 +89,13 @@ def estimate_candidate_confidence(source_url: str, discovery_method: str) -> flo
 
 
 def normalize_candidate_name(value: Any) -> str:
-    return normalize_name(value).strip()
+    text = "" if value is None else str(value)
+    # Empty input must stay empty: normalize_name would coin "Unnamed Node",
+    # which defeats the emptiness guards in build_candidate_node and
+    # normalize_candidate_parent.
+    if not re.sub(r"[_/\s]+", " ", text).strip():
+        return ""
+    return normalize_name(text).strip()
 
 
 def normalize_candidate_parent(value: Any) -> str | None:
@@ -152,7 +159,14 @@ def iter_tree_nodes(root: dict[str, Any]) -> Iterable[dict[str, Any]]:
     while stack:
         current = stack.pop()
         yield current
-        stack.extend(reversed([child for child in current.get("children", []) if isinstance(child, dict)]))
+        children = [child for child in current.get("children", []) if isinstance(child, dict)]
+        for child in children:
+            # Base-graph nodes carry hierarchy only by nesting, never by
+            # parent fields; stamp the linkage so name+parent dedupe keys
+            # built from a tree walk are real instead of (name, None).
+            child.setdefault("parentId", current.get("id"))
+            child.setdefault("parentName", current.get("name"))
+        stack.extend(reversed(children))
 
 
 def load_existing_graph_nodes(base_graph_path: str | Path = DEFAULT_BASE_GRAPH) -> list[dict[str, Any]]:
@@ -170,43 +184,49 @@ def load_existing_graph_nodes(base_graph_path: str | Path = DEFAULT_BASE_GRAPH) 
 
 def build_existing_candidate_indexes(
     existing_nodes: Iterable[dict[str, Any]],
-) -> tuple[set[str], set[tuple[str, str | None]], dict[str, str | None]]:
+) -> tuple[set[str], set[tuple[str, str | None]], dict[str, str]]:
+    nodes = [node for node in existing_nodes if isinstance(node, dict)]
     existing_ids: set[str] = set()
     existing_name_parent_keys: set[tuple[str, str | None]] = set()
-    parent_name_by_id: dict[str, str | None] = {}
 
-    for node in existing_nodes:
+    name_lookup: dict[str, str] = {}
+    name_counts: dict[str, int] = {}
+    for node in nodes:
         node_id = str(node.get("id") or "").strip()
         if node_id:
             existing_ids.add(node_id)
-
-    for node in existing_nodes:
-        node_id = str(node.get("id") or "").strip()
-        parent_id = str(node.get("parent") or node.get("parentId") or "").strip() or None
-        parent_name = None
-        if parent_id:
-            parent_name = parent_name_by_id.get(parent_id)
-        parent_name_by_id[node_id] = parent_name
-
-    name_lookup = {
-        str(node.get("id") or "").strip(): normalize_candidate_name(node.get("name"))
-        for node in existing_nodes
-        if node.get("id")
-    }
-    for node in existing_nodes:
         node_name = normalize_candidate_name(node.get("name"))
-        parent_id = str(node.get("parent") or node.get("parentId") or "").strip() or None
-        parent_name = name_lookup.get(parent_id) if parent_id else None
-        existing_name_parent_keys.add(normalize_candidate_key(node_name, parent_name))
+        if node_id and node_name:
+            name_lookup[node_id] = node_name
+        if node_name:
+            key_name = node_name.casefold()
+            name_counts[key_name] = name_counts.get(key_name, 0) + 1
+
+    for node in nodes:
+        node_name = normalize_candidate_name(node.get("name"))
+        if not node_name:
+            continue
+        parent_name = normalize_candidate_name(node.get("parentName"))
+        if not parent_name:
+            parent_id = str(node.get("parent") or node.get("parentId") or "").strip() or None
+            parent_name = name_lookup.get(parent_id, "") if parent_id else ""
+        existing_name_parent_keys.add(normalize_candidate_key(node_name, parent_name or None))
+        # Bare-name fallback so a rediscovered unit still matches when the
+        # source phrases its parent differently than the base graph does.
+        # Only unambiguous names qualify: generic position names such as
+        # "Deputy Director" appear many times and must not bare-match.
+        if name_counts.get(node_name.casefold()) == 1:
+            existing_name_parent_keys.add(normalize_candidate_key(node_name, None))
 
     return existing_ids, existing_name_parent_keys, name_lookup
 
 
 def build_existing_node_maps(
     existing_nodes: Iterable[dict[str, Any]],
-) -> tuple[dict[str, str], dict[tuple[str, str | None], dict[str, Any]]]:
+) -> tuple[dict[str, str], dict[tuple[str, str | None], dict[str, Any]], dict[str, dict[str, Any]]]:
     name_to_id: dict[str, str] = {}
     name_parent_to_node: dict[tuple[str, str | None], dict[str, Any]] = {}
+    nodes_by_name: dict[str, list[dict[str, Any]]] = {}
     for raw_node in existing_nodes:
         if not isinstance(raw_node, dict):
             continue
@@ -215,9 +235,16 @@ def build_existing_node_maps(
         node_id = str(node.get("id") or "").strip()
         parent_id = str(node.get("parentId") or node.get("parent") or "").strip() or None
         if node_name and node_id:
-            name_to_id.setdefault(node_name.casefold(), node_id)
-            name_parent_to_node[(node_name.casefold(), parent_id)] = node
-    return name_to_id, name_parent_to_node
+            key_name = node_name.casefold()
+            name_to_id.setdefault(key_name, node_id)
+            name_parent_to_node[(key_name, parent_id)] = node
+            nodes_by_name.setdefault(key_name, []).append(node)
+    # Bare-name merge fallback, restricted to names that identify exactly one
+    # existing node so generic position names never swallow each other.
+    unique_name_to_node = {
+        key_name: found[0] for key_name, found in nodes_by_name.items() if len(found) == 1
+    }
+    return name_to_id, name_parent_to_node, unique_name_to_node
 
 
 def infer_candidate_type(name: str, description: str | None = None) -> str:
@@ -303,7 +330,7 @@ def promote_candidates(
     existing_nodes: Iterable[dict[str, Any]],
     min_confidence_score: float = 0.7,
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
-    existing_name_to_id, existing_name_parent_to_node = build_existing_node_maps(existing_nodes)
+    existing_name_to_id, existing_name_parent_to_node, existing_unique_name_to_node = build_existing_node_maps(existing_nodes)
     existing_keys = set(existing_name_parent_to_node.keys())
     promoted_by_key: dict[tuple[str, str | None], dict[str, Any]] = {}
     stats = {
@@ -324,17 +351,36 @@ def promote_candidates(
             if parent_id:
                 candidate["parentId"] = parent_id
                 candidate.pop("attachToRoot", None)
-        if float(candidate.get("confidenceScore") or 0.0) < min_confidence_score:
+        # Gate on the discovery-time estimate when one exists: normalize_node
+        # recomputes confidenceScore from source URLs alone, where any single
+        # .gov source scores exactly 0.7 and would bypass the review gate.
+        # Hand-reviewed candidates without an estimate keep their explicitly
+        # provided confidenceScore.
+        gate_score = raw_candidate.get("discoveryConfidenceEstimate")
+        if gate_score is None:
+            gate_score = raw_candidate.get("confidenceEstimate")
+        if gate_score is None:
+            gate_score = raw_candidate.get("confidenceScore")
+        if float(gate_score or 0.0) < min_confidence_score:
             stats["candidates_below_threshold"] += 1
             continue
 
         key = node_name_parent_key(candidate)
         duplicate = existing_name_parent_to_node.get(key)
+        if duplicate is None:
+            # Bare-name fallback: merge into the one existing node with this
+            # name instead of promoting a parallel duplicate with a new id.
+            duplicate = existing_unique_name_to_node.get(key[0])
         if duplicate:
             merged_candidate = dict(candidate)
             merged_candidate["id"] = duplicate["id"]
             merged_candidate["parentId"] = duplicate.get("parentId")
-            promoted_by_key[key] = merge_node(dict(duplicate), merged_candidate)
+            # Key by the base node's identity so several rediscoveries of the
+            # same node collapse into one merged record instead of emitting
+            # duplicate ids under their differing claimed parents.
+            key = (key[0], str(duplicate.get("parentId") or "").strip() or None)
+            merge_base = promoted_by_key.get(key) or dict(duplicate)
+            promoted_by_key[key] = merge_node(merge_base, merged_candidate)
             stats["merged_duplicates"] += 1
             continue
 
@@ -495,14 +541,15 @@ def dedupe_candidates(
 
     for candidate in candidates:
         key = normalize_candidate_key(candidate.name, candidate.possibleParent)
+        bare_name_key = normalize_candidate_key(candidate.name, None)
         candidate_parent_qualified_id = (
             generate_node_id(f"{candidate.possibleParent} {candidate.name}")
             if candidate.possibleParent
             else generate_node_id(candidate.name)
         )
-        if key in existing_name_parent_keys:
+        if key in existing_name_parent_keys or bare_name_key in existing_name_parent_keys:
             continue
-        if candidate_parent_qualified_id in existing_node_ids:
+        if candidate_parent_qualified_id in existing_node_ids or generate_node_id(candidate.name) in existing_node_ids:
             continue
 
         existing = deduped.get(key)
@@ -525,7 +572,7 @@ def discover_candidates(
         existing_nodes = load_existing_graph_nodes(base_graph_path)
     existing_node_list = [node for node in existing_nodes if isinstance(node, dict)]
     existing_ids, existing_name_parent_keys, _ = build_existing_candidate_indexes(existing_node_list)
-    existing_name_to_id, _ = build_existing_node_maps(existing_node_list)
+    existing_name_to_id, _, _ = build_existing_node_maps(existing_node_list)
 
     candidates = [
         *discover_from_wikidata(wikidata_records),

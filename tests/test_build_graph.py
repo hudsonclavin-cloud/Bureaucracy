@@ -20,12 +20,38 @@ BASE_GRAPH = {
             "name": "Agency Alpha",
             "type": "Agency",
             "color": "#4a8ac8",
-            "children": [],
+            "children": [
+                {
+                    "id": "office-base",
+                    "name": "Office Base",
+                    "type": "Office",
+                    "children": [],
+                }
+            ],
         }
     ],
 }
 
 TEST_TMP_ROOT = Path(__file__).resolve().parent / ".tmp"
+
+
+def count_id_occurrences(tree: dict, node_id: str) -> int:
+    count = 1 if tree.get("id") == node_id else 0
+    for child in tree.get("children", []):
+        if isinstance(child, dict):
+            count += count_id_occurrences(child, node_id)
+    return count
+
+
+def find_tree_node(tree: dict, node_id: str) -> dict | None:
+    if tree.get("id") == node_id:
+        return tree
+    for child in tree.get("children", []):
+        if isinstance(child, dict):
+            found = find_tree_node(child, node_id)
+            if found is not None:
+                return found
+    return None
 
 
 def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
@@ -169,6 +195,150 @@ class BuildGraphTests(unittest.TestCase):
         self.assertIn("pipeline_summary", result.validation)
         self.assertEqual(result.validation["pipeline_summary"]["final_node_count"], len(result.nodes))
         self.assertIn("relationships", result.graph)
+
+    def test_build_graph_does_not_duplicate_existing_nested_node_at_root(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "office-base", "name": "Office Base", "type": "Office"},
+                ],
+                "edges": [],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        self.assertEqual(count_id_occurrences(result.graph, "office-base"), 1)
+        agency = find_tree_node(result.graph, "agency-alpha")
+        self.assertTrue(any(child["id"] == "office-base" for child in agency["children"]))
+        office = next(node for node in result.nodes if node["id"] == "office-base")
+        self.assertNotIn("attachToRoot", office)
+        self.assertNotIn("office-base", {child.get("id") for child in result.graph["children"]})
+
+    def test_build_graph_does_not_duplicate_base_subtree_on_reports_to_edge(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "agency-alpha", "name": "Agency Alpha", "type": "Agency"},
+                    {"id": "new-parent", "name": "New Parent", "type": "Agency"},
+                ],
+                "edges": [
+                    {"source": "agency-alpha", "target": "new-parent", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        self.assertEqual(count_id_occurrences(result.graph, "agency-alpha"), 1)
+        self.assertEqual(count_id_occurrences(result.graph, "office-base"), 1)
+        self.assertEqual(count_id_occurrences(result.graph, "new-parent"), 1)
+        # The base placement stays authoritative for nodes already in the tree.
+        self.assertIn("agency-alpha", {child.get("id") for child in result.graph["children"]})
+        agency = find_tree_node(result.graph, "agency-alpha")
+        self.assertNotIn("parentId", agency)
+        # The hierarchical edge survives as an exported relationship instead.
+        self.assertIn(
+            {"source": "agency-alpha", "target": "new-parent", "type": "reports_to"},
+            result.edges,
+        )
+
+    def test_build_graph_reports_to_cycle_falls_back_to_root(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "cyc-a", "name": "Cycle A", "type": "Agency"},
+                    {"id": "cyc-b", "name": "Cycle B", "type": "Agency"},
+                ],
+                "edges": [
+                    {"source": "cyc-a", "target": "cyc-b", "type": "reports_to"},
+                    {"source": "cyc-b", "target": "cyc-a", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        self.assertEqual(count_id_occurrences(result.graph, "cyc-a"), 1)
+        self.assertEqual(count_id_occurrences(result.graph, "cyc-b"), 1)
+        self.assertEqual(result.validation["cycle_fallback_root_attachments"], 1)
+        # The cluster stays reachable from the root.
+        root_child_ids = {child.get("id") for child in result.graph["children"]}
+        self.assertIn("cyc-b", root_child_ids)
+        cycle_root = find_tree_node(result.graph, "cyc-b")
+        self.assertTrue(any(child["id"] == "cyc-a" for child in cycle_root["children"]))
+
+    def test_build_graph_duplicate_hierarchical_edges_keep_primary_parent(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "office-multi", "name": "Office Multi", "type": "Office"},
+                    {"id": "parent-two", "name": "Parent Two", "type": "Agency"},
+                ],
+                "edges": [
+                    {"source": "office-multi", "target": "agency-alpha", "type": "reports_to"},
+                    {"source": "office-multi", "target": "parent-two", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        office = next(node for node in result.nodes if node["id"] == "office-multi")
+        self.assertEqual(office["parentId"], "agency-alpha")
+        exported_pairs = [(edge["source"], edge["target"]) for edge in result.edges]
+        self.assertIn(("office-multi", "parent-two"), exported_pairs)
+        self.assertNotIn(("office-multi", "agency-alpha"), exported_pairs)
+        self.assertEqual(result.validation["relationship_counts"]["reports_to"], 2)
+        self.assertEqual(result.validation["input_edge_count"], 2)
+
+    def test_build_graph_falls_back_to_valid_secondary_parent_edge(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "office-fallback", "name": "Office Fallback", "type": "Office"},
+                ],
+                "edges": [
+                    {"source": "office-fallback", "target": "ghost-parent", "type": "reports_to"},
+                    {"source": "office-fallback", "target": "agency-alpha", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        office = next(node for node in result.nodes if node["id"] == "office-fallback")
+        # The primary edge target is unknown, so the kept secondary edge supplies the parent.
+        self.assertEqual(office["parentId"], "agency-alpha")
+        self.assertNotIn("attachToRoot", office)
+        self.assertEqual(result.validation["orphaned_parent_ids"], 1)
+        self.assertEqual(result.validation["dropped_edges_missing_target"], 1)
+        exported_pairs = [(edge["source"], edge["target"]) for edge in result.edges]
+        self.assertNotIn(("office-fallback", "agency-alpha"), exported_pairs)
+        agency = find_tree_node(result.graph, "agency-alpha")
+        self.assertTrue(any(child["id"] == "office-fallback" for child in agency["children"]))
+
+    def test_build_graph_counts_hierarchical_edges_in_validation_stats(self) -> None:
+        payloads = [
+            {
+                "nodes": [
+                    {"id": "office-ghost", "name": "Office Ghost", "type": "Office"},
+                ],
+                "edges": [
+                    {"source": "office-ghost", "target": "ghost-parent", "type": "reports_to"},
+                ],
+            }
+        ]
+
+        result = build_graph_with_paths(payloads)
+
+        self.assertEqual(result.validation["input_edge_count"], 1)
+        self.assertEqual(result.validation["relationship_counts"]["reports_to"], 1)
+        self.assertEqual(result.validation["dropped_edges_missing_target"], 1)
+        self.assertEqual(result.validation["orphaned_parent_ids"], 1)
+        office = next(node for node in result.nodes if node["id"] == "office-ghost")
+        self.assertTrue(office["attachToRoot"])
+        self.assertNotIn("parentId", office)
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ import json
 import re
 from copy import deepcopy
 from dataclasses import dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 from typing import Any, Iterable
@@ -62,13 +62,12 @@ def normalize_name(value: Any) -> str:
     if not text:
         return DEFAULT_NODE["name"]
 
-    if text.isupper():
+    if text.isupper() or text == text.lower():
         text = text.title()
-    elif text == text.lower():
-        text = text.title()
-
-    for source, target in ACRONYMS.items():
-        text = text.replace(source, target)
+        # Restore acronyms flattened by title-casing; match whole words only so
+        # names like "Homeland Security" or "Hudson" are never rewritten.
+        for source, target in ACRONYMS.items():
+            text = re.sub(rf"\b{re.escape(source)}\b", target, text)
     return text
 
 
@@ -100,6 +99,20 @@ def coerce_nullable_text(value: Any) -> str | None:
     return text or None
 
 
+NUMBER_TOKEN_PATTERN = re.compile(r"-?\d[\d,]*(?:\.\d+)?")
+MAGNITUDE_SUFFIX_PATTERN = re.compile(r"(thousand|million|billion|trillion|[kmbt])\b", re.IGNORECASE)
+MAGNITUDE_MULTIPLIERS = {
+    "k": 1_000,
+    "thousand": 1_000,
+    "m": 1_000_000,
+    "million": 1_000_000,
+    "b": 1_000_000_000,
+    "billion": 1_000_000_000,
+    "t": 1_000_000_000_000,
+    "trillion": 1_000_000_000_000,
+}
+
+
 def coerce_nullable_number(value: Any) -> int | float | None:
     if value is None or value == "":
         return None
@@ -110,14 +123,18 @@ def coerce_nullable_number(value: Any) -> int | float | None:
     if not text:
         return None
 
-    normalized = re.sub(r"[^0-9.\-]", "", text)
-    if not normalized:
+    match = NUMBER_TOKEN_PATTERN.search(text)
+    if not match:
         return None
 
     try:
-        number = float(normalized)
+        number = float(match.group().replace(",", ""))
     except ValueError:
         return None
+
+    magnitude = MAGNITUDE_SUFFIX_PATTERN.match(text[match.end():].lstrip())
+    if magnitude:
+        number = round(number * MAGNITUDE_MULTIPLIERS[magnitude.group(1).lower()], 6)
 
     if number.is_integer():
         return int(number)
@@ -198,7 +215,7 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
         last_verified = (
             str(last_verified).strip()
             if last_verified
-            else datetime.now(UTC).date().isoformat()
+            else datetime.now(timezone.utc).date().isoformat()
         )
 
     node["sourceUrls"] = source_urls
@@ -228,7 +245,7 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
     )
     node["employees"] = coerce_nullable_number(node.get("employees"))
     node["budget"] = coerce_nullable_text(node.get("budget"))
-    node["color"] = infer_color(node_type, node.get("color"))
+    node["color"] = infer_color(node_type, raw_node.get("color"))
     node["children"] = [
         normalize_node(child, fallback_type=fallback_type)
         for child in node.get("children", [])
@@ -252,9 +269,15 @@ def normalize_node(raw_node: dict[str, Any], *, fallback_type: str = "Organizati
 
 
 def merge_node(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
-    for key in ("name", "type", "color"):
+    for key in ("name", "type"):
         if incoming.get(key):
             existing[key] = incoming[key]
+
+    # Normalized nodes always carry a color, so only let the incoming one win
+    # when it says something (i.e. is not the fallback gray) or fills a gap.
+    incoming_color = incoming.get("color")
+    if incoming_color and (incoming_color != DEFAULT_NODE["color"] or not existing.get("color")):
+        existing["color"] = incoming_color
 
     incoming_desc = get_first_text(
         incoming.get("desc"),

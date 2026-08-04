@@ -22,7 +22,27 @@ DEFAULT_DIRECTORY_SOURCES = (
         "directoryUrl": "https://www.state.gov/bureaus-offices-reporting-directly-to-the-secretary/",
     },
 )
-ORG_KEYWORDS = ("office", "bureau", "division", "directorate", "administration", "service", "center")
+# Anchored pattern (mirrors federal_register.UNIT_PATTERN): the fragment must
+# BE an org-unit name, not merely contain a keyword somewhere in menu/JS text.
+ORG_UNIT_PATTERN = re.compile(
+    r"^(?:Office|Bureau|Division|Directorate|Administration|Service|Center)\s+(?:of|for)\s+[A-Z0-9]"
+)
+# Non-content containers whose text must never be harvested as org units.
+SKIP_TAGS = {
+    "script",
+    "style",
+    "noscript",
+    "template",
+    "head",
+    "title",
+    "nav",
+    "header",
+    "footer",
+    "form",
+    "button",
+    "select",
+    "svg",
+}
 NOISE_PATTERNS = (
     "privacy",
     "cookie",
@@ -40,8 +60,19 @@ class TextFragmentParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.fragments: list[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in SKIP_TAGS:
+            self._skip_depth += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in SKIP_TAGS and self._skip_depth > 0:
+            self._skip_depth -= 1
 
     def handle_data(self, data: str) -> None:
+        if self._skip_depth:
+            return
         text = " ".join(data.split())
         if text:
             self.fragments.append(text)
@@ -66,7 +97,7 @@ def looks_like_org_unit(text: str) -> bool:
         return False
     if any(noise in lowered for noise in NOISE_PATTERNS):
         return False
-    return any(keyword in lowered for keyword in ORG_KEYWORDS)
+    return bool(ORG_UNIT_PATTERN.match(text))
 
 
 def normalize_fragment(text: str) -> str:

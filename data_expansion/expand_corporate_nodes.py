@@ -1,11 +1,17 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Any
 
 
 GREEN = "#4ac88a"
 GRAY = "#666666"
+
+# Word-boundary matching keeps military and service corps ("Peace Corps",
+# "AmeriCorps", "Marine Corps") from being mistaken for corporations:
+# "corps" never matches because the trailing "s" continues the word.
+COMPANY_KEYWORD_PATTERN = re.compile(r"\b(?:corp(?:oration)?|company|postal service|finance)\b")
 
 
 def iter_nodes(root: dict[str, Any]):
@@ -20,13 +26,12 @@ def is_expandable_company(node: dict[str, Any]) -> bool:
     node_type = (node.get("type") or "").lower()
     node_name = (node.get("name") or "").lower()
     greenish = (node.get("color") or "").lower() == GREEN
-    keywords = ("corporation", "corp", "company", "postal service", "finance")
 
     return (
         "government corporation" in node_type
         or (
             greenish
-            and any(keyword in node_name for keyword in keywords)
+            and COMPANY_KEYWORD_PATTERN.search(node_name) is not None
             and node_type not in {"position", "office", "division"}
         )
     )

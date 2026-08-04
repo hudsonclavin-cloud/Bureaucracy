@@ -21,8 +21,10 @@ SPARQL_ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
 
 AGENCY_HIERARCHY_QUERY = """
-SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite WHERE {{
+SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite ?countryLabel WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
+  ?agency wdt:P17 ?country .
+  FILTER(?country = wd:Q30)
   OPTIONAL {{ ?agency wdt:P749 ?parent . }}
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
@@ -31,8 +33,10 @@ LIMIT {limit}
 """
 
 OFFICE_HOLDER_QUERY = """
-SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?officialWebsite WHERE {{
+SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?officialWebsite ?countryLabel WHERE {{
   ?agency wdt:P31/wdt:P279* wd:Q327333 .
+  ?agency wdt:P17 ?country .
+  FILTER(?country = wd:Q30)
   ?agency wdt:P2388 ?position .
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   OPTIONAL {{
@@ -45,14 +49,22 @@ LIMIT {limit}
 """
 
 SUBUNIT_QUERY = """
-SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite WHERE {{
+SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite ?countryLabel WHERE {{
   ?office wdt:P361 ?parent .
   ?parent wdt:P31/wdt:P279* wd:Q327333 .
+  ?parent wdt:P17 ?country .
+  FILTER(?country = wd:Q30)
   OPTIONAL {{ ?office wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 LIMIT {limit}
 """
+
+# SPARQL rows are cached briefly so crawl() and crawl_discovery_records()
+# within one pipeline run share a single set of queries instead of hitting
+# the public WDQS endpoint twice with the same heavy property paths.
+ROW_CACHE_TTL_SECONDS = 3600.0
+_ROW_CACHE: dict[tuple[int, int, int], tuple[float, tuple[list, list, list]]] = {}
 
 
 def run_sparql(query: str, *, timeout: int = 45) -> dict[str, Any]:
@@ -71,6 +83,10 @@ def run_sparql(query: str, *, timeout: int = 45) -> dict[str, Any]:
 
 def extract_label(binding: dict[str, Any], key: str) -> str:
     value = binding.get(key, {}).get("value", "")
+    if not value.strip():
+        # Unbound OPTIONAL bindings must stay empty so callers' emptiness
+        # guards work; normalize_name('') would return 'Unnamed Node'.
+        return ""
     return normalize_name(value)
 
 
@@ -102,6 +118,37 @@ class WikidataCrawler:
         payload = run_sparql(query_template.format(limit=limit))
         return payload.get("results", {}).get("bindings", [])
 
+    def fetch_bindings_safe(self, query_template: str, *, limit: int) -> list[dict[str, Any]]:
+        try:
+            return self.fetch_bindings(query_template, limit=limit)
+        except (OSError, ValueError) as error:  # URLError/HTTPError/timeouts, bad JSON
+            print(f"warning: wikidata SPARQL query failed: {error}", file=sys.stderr)
+            return []
+
+    def fetch_all_rows(
+        self,
+        *,
+        hierarchy_limit: int,
+        office_holder_limit: int,
+        subunit_limit: int,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+        cache_key = (hierarchy_limit, office_holder_limit, subunit_limit)
+        cached = _ROW_CACHE.get(cache_key)
+        if cached is not None and time.time() - cached[0] < ROW_CACHE_TTL_SECONDS:
+            return cached[1]
+
+        hierarchy_rows = self.fetch_bindings_safe(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
+        time.sleep(self.request_delay)
+        subunit_rows = self.fetch_bindings_safe(SUBUNIT_QUERY, limit=subunit_limit)
+        time.sleep(self.request_delay)
+        office_rows = self.fetch_bindings_safe(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+
+        rows = (hierarchy_rows, subunit_rows, office_rows)
+        if any(rows):
+            # Only cache runs that returned data so a total outage is retried.
+            _ROW_CACHE[cache_key] = (time.time(), rows)
+        return rows
+
     def build_records(
         self,
         *,
@@ -112,11 +159,11 @@ class WikidataCrawler:
         nodes: list[dict[str, Any]] = []
         edges: list[dict[str, Any]] = []
 
-        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
-        time.sleep(self.request_delay)
-        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
-        time.sleep(self.request_delay)
-        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+        hierarchy_rows, subunit_rows, office_rows = self.fetch_all_rows(
+            hierarchy_limit=hierarchy_limit,
+            office_holder_limit=office_holder_limit,
+            subunit_limit=subunit_limit,
+        )
 
         for row in hierarchy_rows:
             agency_name = extract_label(row, "agencyLabel")
@@ -250,11 +297,11 @@ class WikidataCrawler:
     ) -> list[dict[str, Any]]:
         records: list[dict[str, Any]] = []
 
-        hierarchy_rows = self.fetch_bindings(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
-        time.sleep(self.request_delay)
-        subunit_rows = self.fetch_bindings(SUBUNIT_QUERY, limit=subunit_limit)
-        time.sleep(self.request_delay)
-        office_rows = self.fetch_bindings(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
+        hierarchy_rows, subunit_rows, office_rows = self.fetch_all_rows(
+            hierarchy_limit=hierarchy_limit,
+            office_holder_limit=office_holder_limit,
+            subunit_limit=subunit_limit,
+        )
 
         for row in hierarchy_rows:
             agency_name = extract_label(row, "agencyLabel")
@@ -267,7 +314,7 @@ class WikidataCrawler:
                     "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
                     "wikidataId": extract_entity_id(row, "agency"),
                     "description": "Federal agency discovered through Wikidata organizational hierarchy.",
-                    "countryLabel": "United States",
+                    "countryLabel": extract_label(row, "countryLabel"),
                 }
             )
 
@@ -283,7 +330,7 @@ class WikidataCrawler:
                     "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
                     "wikidataId": extract_entity_id(row, "office"),
                     "description": f"Organizational unit associated with {parent_name or 'a federal agency'} via Wikidata.",
-                    "countryLabel": "United States",
+                    "countryLabel": extract_label(row, "countryLabel"),
                 }
             )
 
@@ -300,7 +347,7 @@ class WikidataCrawler:
                     "officialWebsite": row.get("officialWebsite", {}).get("value", ""),
                     "wikidataId": extract_entity_id(row, "position"),
                     "description": f"Leadership role associated with {agency_name or 'a federal agency'} via Wikidata.",
-                    "countryLabel": "United States",
+                    "countryLabel": extract_label(row, "countryLabel"),
                 }
             )
 

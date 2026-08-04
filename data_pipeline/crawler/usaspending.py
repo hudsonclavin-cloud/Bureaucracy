@@ -25,6 +25,15 @@ SPENDING_BY_AWARD_ENDPOINT = "search/spending_by_award/"
 USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
 
 
+def clean_name(value: Any) -> str:
+    """Normalize a display name, returning '' (rather than the 'Unnamed Node'
+    placeholder normalize_name produces) when the raw value is missing/blank."""
+    text = "" if value is None else str(value)
+    if not text.strip():
+        return ""
+    return normalize_name(text)
+
+
 def request_json(url: str, *, payload: dict[str, Any] | None = None, timeout: int = 30) -> dict[str, Any]:
     body = None
     method = "GET"
@@ -64,12 +73,15 @@ class USASpendingCrawler:
         fiscal_year: int | None = None,
     ) -> list[dict[str, Any]]:
         fiscal_year = fiscal_year or date.today().year
-        agency_name = normalize_name(
+        agency_name = clean_name(
             agency.get("agency_name")
             or agency.get("toptier_agency_name")
             or agency.get("name")
             or ""
         )
+        if not agency_name:
+            # Without an agency name the search would span all federal awards.
+            return []
 
         filters: dict[str, Any] = {
             "time_period": [
@@ -78,20 +90,13 @@ class USASpendingCrawler:
                     "end_date": f"{fiscal_year}-12-31",
                 }
             ],
+            # The endpoint rejects requests without an award_type_codes group;
+            # A-D covers contract awards.
+            "award_type_codes": ["A", "B", "C", "D"],
+            # The agencies filter object only supports name-based matching;
+            # sending agency_id or toptier_code here is rejected with HTTP 400.
+            "agencies": [{"type": "awarding", "tier": "toptier", "name": agency_name}],
         }
-
-        top_tier_code = agency.get("agency_id") or agency.get("toptier_code")
-        if top_tier_code:
-            filters["agencies"] = [
-                {
-                    "type": "awarding",
-                    "tier": "toptier",
-                    "name": agency_name,
-                    "toptier_code": str(top_tier_code),
-                }
-            ]
-        elif agency_name:
-            filters["agencies"] = [{"type": "awarding", "tier": "toptier", "name": agency_name}]
 
         payload = {
             "filters": filters,
@@ -102,7 +107,6 @@ class USASpendingCrawler:
                 "Award Amount",
                 "Awarding Agency",
                 "Funding Agency",
-                "recipient_name",
                 "Place of Performance State Code",
                 "Place of Performance City Code",
                 "NAICS Description",
@@ -131,8 +135,14 @@ class USASpendingCrawler:
         nodes: list[dict[str, Any]] = []
         edges: list[dict[str, Any]] = []
 
-        for agency in self.fetch_top_tier_agencies(limit=limit_agencies):
-            agency_name = normalize_name(
+        try:
+            agencies = self.fetch_top_tier_agencies(limit=limit_agencies)
+        except (HTTPError, URLError, TimeoutError, ValueError, OSError) as error:
+            print(f"warning: usaspending toptier agencies fetch failed: {error}", file=sys.stderr)
+            agencies = []
+
+        for agency in agencies:
+            agency_name = clean_name(
                 agency.get("agency_name")
                 or agency.get("toptier_agency_name")
                 or agency.get("name")
@@ -148,7 +158,12 @@ class USASpendingCrawler:
                     "name": agency_name,
                     "type": "Agency",
                     "desc": agency.get("abbreviation") or "Top-tier federal agency from USAspending.",
-                    "budget": str(agency.get("agency_total_obligated_amount") or "") or None,
+                    "budget": str(
+                        agency.get("obligated_amount")
+                        or agency.get("budget_authority_amount")
+                        or ""
+                    )
+                    or None,
                     "color": "#4a8ac8",
                 }
             )
@@ -159,11 +174,15 @@ class USASpendingCrawler:
                     limit=awards_per_agency,
                     fiscal_year=fiscal_year,
                 )
-            except (HTTPError, URLError, TimeoutError, ValueError):
+            except (HTTPError, URLError, TimeoutError, ValueError, OSError) as error:
+                print(
+                    f"warning: usaspending award fetch failed for {agency_name}: {error}",
+                    file=sys.stderr,
+                )
                 award_results = []
 
             for award in award_results:
-                contractor_name = normalize_name(
+                contractor_name = clean_name(
                     award.get("Recipient Name")
                     or award.get("recipient_name")
                     or award.get("Award Recipient Name")
@@ -172,7 +191,7 @@ class USASpendingCrawler:
                 if not contractor_name:
                     continue
 
-                contract_amount = award.get("Award Amount") or award.get("generated_internal_id")
+                contract_amount = award.get("Award Amount")
                 industry = award.get("NAICS Description") or award.get("naics_description")
                 location = award.get("Place of Performance State Code") or award.get("place_of_performance_code")
                 contractor_desc_bits = [f"Top USAspending contractor connected to {agency_name}."]

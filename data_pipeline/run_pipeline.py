@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
@@ -60,21 +61,28 @@ def safe_stage(stage_name: str, fn: Callable[[], Any]) -> tuple[Any, str | None]
     try:
         return fn(), None
     except Exception as error:  # noqa: BLE001
-        return None, f"{stage_name}: {error}"
+        print(f"Stage failed: {stage_name}", file=sys.stderr)
+        traceback.print_exc(file=sys.stderr)
+        return None, f"{stage_name}: {error.__class__.__name__}: {error}"
 
 
 def format_pipeline_summary(stats: dict[str, Any]) -> str:
     verification = stats.get("verification_breakdown", {})
-    return "\n".join(
-        [
-            "PIPELINE SUMMARY",
-            "----------------",
-            f"nodes_before: {stats['nodes_before']}",
-            f"nodes_after: {stats['nodes_after']}",
-            f"new_nodes_added: {stats['new_nodes_added']}",
-            f"verification_breakdown: {json.dumps(verification, sort_keys=True)}",
-        ]
-    )
+    lines = [
+        "PIPELINE SUMMARY",
+        "----------------",
+        f"nodes_before: {stats['nodes_before']}",
+        f"nodes_after: {stats['nodes_after']}",
+        f"new_nodes_added: {stats['new_nodes_added']}",
+        f"verification_breakdown: {json.dumps(verification, sort_keys=True)}",
+    ]
+    stage_errors = stats.get("stage_errors") or []
+    if stage_errors:
+        lines.append(f"stage_errors ({len(stage_errors)}):")
+        lines.extend(f"  - {error}" for error in stage_errors)
+    if stats.get("all_fetch_stages_failed"):
+        lines.append("ALL FETCH STAGES FAILED OR RETURNED NO DATA: existing outputs were left untouched")
+    return "\n".join(lines)
 
 
 def run_pipeline(
@@ -144,6 +152,48 @@ def run_pipeline(
             continue
         discovery_inputs[input_name] = records if isinstance(records, list) else []
 
+    total_fetch_stages = len(direct_fetchers) + len(raw_discovery_fetchers)
+    # The crawlers degrade gracefully on network failure: they log a warning and
+    # return empty results instead of raising, so a total outage can present as
+    # "no stage errors, no data" rather than as raised exceptions. Either signal
+    # means there is nothing to export beyond the base graph, so treat both as
+    # total fetch failure.
+    any_fetch_data = any(
+        payload.get("nodes") or payload.get("edges") for payload in payloads
+    ) or any(records for records in discovery_inputs.values())
+    all_fetch_stages_failed = total_fetch_stages > 0 and (
+        len(stage_errors) >= total_fetch_stages or not any_fetch_data
+    )
+    if all_fetch_stages_failed:
+        # Every fetcher failed (e.g. a network outage): refuse to overwrite the
+        # published outputs with a base-graph-only export and report the failure.
+        stats = {
+            "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+            "nodes_before": nodes_before,
+            "nodes_after": nodes_before,
+            "new_nodes_added": 0,
+            "candidate_nodes_written": 0,
+            "promoted_nodes_written": 0,
+            "promotion_stats": {},
+            "verification_breakdown": {},
+            "average_confidence_score": 0.0,
+            "verified_node_count": 0,
+            "build_validation": {"exported_edge_count": 0},
+            "stage_errors": stage_errors,
+            "all_fetch_stages_failed": True,
+            "outputs": {
+                "graph": str(graph_output_path),
+                "expanded_nodes": str(nodes_output_path),
+                "expanded_edges": str(edges_output_path),
+                "candidate_nodes": str(candidate_output_path),
+            },
+        }
+        stats_path = Path(stats_output_path)
+        stats_path.parent.mkdir(parents=True, exist_ok=True)
+        with stats_path.open("w", encoding="utf-8") as handle:
+            json.dump(stats, handle, indent=2)
+        return stats
+
     candidates = discover_candidates(
         existing_nodes=existing_nodes,
         base_graph_path=base_graph_path,
@@ -179,6 +229,7 @@ def run_pipeline(
         "verified_node_count": build_result.validation.get("verified_node_count", 0),
         "build_validation": build_result.validation,
         "stage_errors": stage_errors,
+        "all_fetch_stages_failed": False,
         "outputs": {
             "graph": str(build_result.graph_path),
             "expanded_nodes": str(build_result.nodes_path),
@@ -194,11 +245,12 @@ def run_pipeline(
     return stats
 
 
-def main() -> None:
+def main() -> int:
     stats = run_pipeline()
     print(format_pipeline_summary(stats))
     print(f"Wrote pipeline stats to {DEFAULT_STATS_OUTPUT}")
+    return 1 if stats.get("all_fetch_stages_failed") else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
