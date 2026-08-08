@@ -99,11 +99,17 @@ class CostValidator:
 
     def is_trusted_exception_node(self, node: Mapping[str, Any], trusted_node_ids: set[str]) -> bool:
         node_id = _as_text(node.get("id"))
-        node_type = _as_text(node.get("type"))
         proof_status = _as_text(node.get("proofStatus")).lower()
         if proof_status in TRUSTED_EXCEPTION_PROOF_STATUSES:
             return True
-        return node_id in trusted_node_ids and node_type in TRUSTED_BASE_EXCEPTION_TYPES
+        # Trust the curated base graph by identity. `trusted_node_ids` is the id set
+        # of data/federal_gov_complete_1.json — hand-maintained content. A node whose
+        # id appears there is curated by definition; its `type` string is not
+        # additional evidence, and gating on a fixed list of type names silently
+        # drops curated nodes whenever the base graph grows a type the list never
+        # learned. That is not hypothetical: it dropped "United States Senate"
+        # (type "Chamber") and 97% of the base graph with it.
+        return node_id in trusted_node_ids
 
     def is_suspicious_amount(self, amount: float | None) -> bool:
         if amount is None:

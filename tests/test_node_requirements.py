@@ -174,6 +174,29 @@ class NodeRequirementsTests(unittest.TestCase):
         self.assertIn("cost_unverified", finding["issue_codes"])
         self.assertIn("low_cost_confidence", finding["issue_codes"])
 
+    def test_trusted_exception_ignores_node_type(self) -> None:
+        """A curated node is trusted by id, whatever its type string says.
+
+        This previously required the type to appear in an 8-name allowlist,
+        which matched 152 of the base graph's 5,170 nodes and dropped
+        "United States Senate" because its type is "Chamber". Types are added
+        to the base graph freely; the allowlist was not maintained alongside
+        them, so the coupling was a silent data-loss mechanism.
+        """
+        trusted_ids = {"agency-alpha", "leg-senate"}
+        requirements = NodeRequirements()
+
+        on_old_allowlist = {"id": "agency-alpha", "name": "Alpha", "type": "Agency"}
+        never_on_allowlist = {"id": "leg-senate", "name": "United States Senate", "type": "Chamber"}
+
+        self.assertTrue(requirements.is_trusted_exception_node(on_old_allowlist, trusted_ids))
+        self.assertTrue(requirements.is_trusted_exception_node(never_on_allowlist, trusted_ids))
+        self.assertFalse(
+            requirements.is_trusted_exception_node(
+                {"id": "crawled-node", "name": "Crawled", "type": "Agency"}, trusted_ids
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
