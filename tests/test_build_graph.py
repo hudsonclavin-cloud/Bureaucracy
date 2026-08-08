@@ -54,7 +54,11 @@ def find_tree_node(tree: dict, node_id: str) -> dict | None:
     return None
 
 
-def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
+def build_graph_with_paths(
+    payloads: list[dict[str, object]],
+    *,
+    enforce_export_gate: bool = False,
+) -> object:
     tmp_path = TEST_TMP_ROOT / f"build-graph-{uuid.uuid4().hex}"
     tmp_path.mkdir(parents=True, exist_ok=True)
     try:
@@ -62,6 +66,7 @@ def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
         graph_path = tmp_path / "graph.json"
         nodes_path = tmp_path / "nodes.json"
         edges_path = tmp_path / "edges.json"
+        validity_report_path = tmp_path / "node_validity_report.json"
         base_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
         return build_graph(
             payloads,
@@ -69,13 +74,15 @@ def build_graph_with_paths(payloads: list[dict[str, object]]) -> object:
             graph_output_path=graph_path,
             nodes_output_path=nodes_path,
             edges_output_path=edges_path,
+            validity_report_output_path=validity_report_path,
+            enforce_export_gate=enforce_export_gate,
         )
     finally:
         shutil.rmtree(tmp_path, ignore_errors=True)
 
 
 class BuildGraphTests(unittest.TestCase):
-    def test_build_graph_attaches_related_and_unrelated_orphans_to_root(self) -> None:
+    def test_build_graph_keeps_related_orphans_and_drops_unplaceable_ones(self) -> None:
         payloads = [
             {
                 "nodes": [
@@ -92,16 +99,13 @@ class BuildGraphTests(unittest.TestCase):
 
         exported_ids = {node["id"] for node in result.nodes}
         self.assertIn("contractor-acme", exported_ids)
-        self.assertIn("floating-node", exported_ids)
+        self.assertNotIn("floating-node", exported_ids)
 
         contractor = next(node for node in result.nodes if node["id"] == "contractor-acme")
-        floating = next(node for node in result.nodes if node["id"] == "floating-node")
         self.assertTrue(contractor["attachToRoot"])
-        self.assertTrue(floating["attachToRoot"])
-        self.assertEqual(result.validation["attached_to_root"], 2)
         self.assertEqual(result.validation["nodes_removed_missing_parent"], 0)
         self.assertEqual(result.validation["root_attached_missing_parent_nodes"], 1)
-        self.assertEqual(result.validation["nodes_reattached_to_root"], 2)
+        self.assertEqual(result.validation["nodes_reattached_to_root"], 1)
 
     def test_build_graph_keeps_hierarchical_parent_references(self) -> None:
         payloads = [

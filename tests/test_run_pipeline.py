@@ -46,6 +46,7 @@ class RunPipelineTests(unittest.TestCase):
                 graph_output_path=graph_output_path,
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
+                validity_report_output_path=tmp_path / "node_validity_report.json",
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[
                     lambda: {
@@ -126,6 +127,7 @@ class RunPipelineTests(unittest.TestCase):
                 graph_output_path=graph_output_path,
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
+                validity_report_output_path=tmp_path / "node_validity_report.json",
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[fail],
                 discovery_fetchers={
@@ -185,6 +187,7 @@ class RunPipelineTests(unittest.TestCase):
                 graph_output_path=graph_output_path,
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
+                validity_report_output_path=tmp_path / "node_validity_report.json",
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[lambda: {"nodes": [], "edges": []}],
                 discovery_fetchers={
@@ -225,6 +228,7 @@ class RunPipelineTests(unittest.TestCase):
                 graph_output_path=graph_output_path,
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
+                validity_report_output_path=tmp_path / "node_validity_report.json",
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[
                     fail,

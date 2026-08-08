@@ -31,6 +31,7 @@ from data_pipeline.exporter.build_graph import (
     DEFAULT_GRAPH_OUTPUT,
     DEFAULT_NODES_OUTPUT,
     DEFAULT_EDGES_OUTPUT,
+    DEFAULT_VALIDITY_REPORT_OUTPUT,
     build_graph,
 )
 
@@ -92,6 +93,7 @@ def run_pipeline(
     graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
+    validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
     stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
     direct_payload_fetchers: list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
@@ -214,6 +216,7 @@ def run_pipeline(
         graph_output_path=graph_output_path,
         nodes_output_path=nodes_output_path,
         edges_output_path=edges_output_path,
+        validity_report_output_path=validity_report_output_path,
     )
     nodes_after = count_tree_nodes(build_result.graph)
     stats = {
