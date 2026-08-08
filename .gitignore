@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.tmp_pytest/
+.DS_Store
+.tmp_chrome_profile/
+output/
+saved_pages/
+*.json.gz
+*.ndjson
+file_sizes.json
