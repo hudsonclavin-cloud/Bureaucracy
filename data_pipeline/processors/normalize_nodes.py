@@ -27,6 +27,15 @@ DEFAULT_NODE = {
     "children": [],
 }
 
+SOURCE_TYPE_ALIASES = {
+    "official_http": "official_site",
+    "official_directory": "official_site",
+    "usaspending_direct": "official_financial_record",
+    "usaspending_parent": "official_financial_record",
+    "treasury_outlays": "official_financial_record",
+    "federal_register": "historical_documentation",
+}
+
 TYPE_COLORS = {
     "branch": "#c8a84a",
     "department": "#c84a4a",
@@ -184,10 +193,17 @@ def classify_source_url(url: str) -> str:
     return "unknown"
 
 
+def is_official_source_url(url: Any) -> bool:
+    text = coerce_nullable_text(url)
+    return bool(text and classify_source_url(text) == "official_site")
+
+
 def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
     source_urls = normalize_string_list(node.get("sourceUrls"))
     if not source_urls and node.get("source"):
         source_urls = normalize_string_list(node.get("source"))
+    if is_official_source_url(node.get("official_website")):
+        source_urls = normalize_string_list([*source_urls, node.get("official_website")])
 
     inferred_types = [classify_source_url(url) for url in source_urls]
     explicit_types = normalize_string_list(node.get("sourceTypes"))
@@ -218,12 +234,53 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
             else datetime.now(timezone.utc).date().isoformat()
         )
 
+    # Proof fields, read by build_graph.annotate_proof_tree. Scored off an
+    # alias-expanded view of the source types so the confidence scoring above
+    # keeps seeing exactly the types it was tuned against.
+    aliased_source_types = normalize_string_list(
+        [*source_types, *[SOURCE_TYPE_ALIASES.get(source_type, source_type) for source_type in source_types]]
+    )
+    proof_source_types = normalize_string_list(
+        [
+            source_type
+            for source_type in aliased_source_types
+            if source_type not in {"unknown", "candidate_discovery", "wikipedia"}
+        ]
+    )
+    proof_source_count = len(proof_source_types)
+
+    exists_proven = False
+    proof_status = "unproven"
+    proof_reason = "no_evidence_recorded" if proof_source_count == 0 and source_count == 0 else "insufficient_direct_proof"
+    if (
+        "official_site" in aliased_source_types
+        or "official_financial_record" in aliased_source_types
+        or "legislative_reference" in aliased_source_types
+    ):
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "official_source_recorded"
+    elif "historical_documentation" in aliased_source_types and source_count >= 1:
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "historical_documentation_recorded"
+    elif "wikidata" in aliased_source_types and proof_source_count >= 2:
+        exists_proven = True
+        proof_status = "proven"
+        proof_reason = "multi_source_corroborated"
+
     node["sourceUrls"] = source_urls
     node["sourceTypes"] = source_types
     node["sourceCount"] = source_count
     node["confidenceScore"] = confidence
     node["verificationStatus"] = verification_status
     node["lastVerified"] = last_verified
+    node["proofSourceCount"] = proof_source_count
+    node["proofSourceTypes"] = proof_source_types
+    node["existsProven"] = bool(exists_proven)
+    node["parentProven"] = bool(node.get("parentProven"))
+    node["proofStatus"] = proof_status
+    node["proofReason"] = proof_reason
     return node
 
 
