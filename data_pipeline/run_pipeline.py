@@ -83,6 +83,8 @@ def format_pipeline_summary(stats: dict[str, Any]) -> str:
         lines.extend(f"  - {error}" for error in stage_errors)
     if stats.get("all_fetch_stages_failed"):
         lines.append("ALL FETCH STAGES FAILED OR RETURNED NO DATA: existing outputs were left untouched")
+    elif stats.get("publication_blocked"):
+        lines.append("PUBLICATION BLOCKED: existing outputs were left untouched")
     return "\n".join(lines)
 
 
@@ -94,6 +96,7 @@ def run_pipeline(
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
+    enforce_export_gate: bool = True,
     stats_output_path: str | Path = DEFAULT_STATS_OUTPUT,
     direct_payload_fetchers: list[Callable[[], dict[str, list[dict[str, Any]]]]] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
@@ -166,7 +169,28 @@ def run_pipeline(
     all_fetch_stages_failed = total_fetch_stages > 0 and (
         len(stage_errors) >= total_fetch_stages or not any_fetch_data
     )
-    if all_fetch_stages_failed:
+    # A partial outage is more dangerous than a total one. If only the Treasury
+    # stage fails, all_fetch_stages_failed stays False and the run proceeds — but
+    # with no budget summary the cost cascade assigns nothing, CostValidator
+    # blocks every node on missing_cost, and the export gate prunes the entire
+    # tree. The result is a near-empty graph.json overwriting a good one and
+    # deploying. Refuse to publish a graph that lost effectively everything.
+    # Not reported when every stage already failed: there the Treasury summary is
+    # simply one more casualty, not an independent second cause.
+    cost_basis_missing = enforce_export_gate and not all_fetch_stages_failed and not any(
+        isinstance(payload, dict)
+        and isinstance(payload.get("budgetSummary"), dict)
+        and payload["budgetSummary"].get("government_total_outlay_amount") is not None
+        for payload in payloads
+    )
+    if cost_basis_missing:
+        stage_errors.append(
+            "No Treasury budget summary in any payload. With the export gate on, "
+            "the cost cascade would assign no cost and the gate would prune the "
+            "whole tree. Refusing to overwrite existing outputs."
+        )
+
+    if all_fetch_stages_failed or cost_basis_missing:
         # Every fetcher failed (e.g. a network outage): refuse to overwrite the
         # published outputs with a base-graph-only export and report the failure.
         stats = {
@@ -182,7 +206,8 @@ def run_pipeline(
             "verified_node_count": 0,
             "build_validation": {"exported_edge_count": 0},
             "stage_errors": stage_errors,
-            "all_fetch_stages_failed": True,
+            "all_fetch_stages_failed": all_fetch_stages_failed,
+            "publication_blocked": True,
             "outputs": {
                 "graph": str(graph_output_path),
                 "expanded_nodes": str(nodes_output_path),
@@ -217,6 +242,7 @@ def run_pipeline(
         nodes_output_path=nodes_output_path,
         edges_output_path=edges_output_path,
         validity_report_output_path=validity_report_output_path,
+        enforce_export_gate=enforce_export_gate,
     )
     nodes_after = count_tree_nodes(build_result.graph)
     stats = {
@@ -233,6 +259,7 @@ def run_pipeline(
         "build_validation": build_result.validation,
         "stage_errors": stage_errors,
         "all_fetch_stages_failed": False,
+        "publication_blocked": False,
         "outputs": {
             "graph": str(build_result.graph_path),
             "expanded_nodes": str(build_result.nodes_path),
@@ -252,7 +279,7 @@ def main() -> int:
     stats = run_pipeline()
     print(format_pipeline_summary(stats))
     print(f"Wrote pipeline stats to {DEFAULT_STATS_OUTPUT}")
-    return 1 if stats.get("all_fetch_stages_failed") else 0
+    return 1 if stats.get("all_fetch_stages_failed") or stats.get("publication_blocked") else 0
 
 
 if __name__ == "__main__":

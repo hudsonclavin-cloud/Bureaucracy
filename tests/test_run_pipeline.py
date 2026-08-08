@@ -47,6 +47,7 @@ class RunPipelineTests(unittest.TestCase):
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
                 validity_report_output_path=tmp_path / "node_validity_report.json",
+                enforce_export_gate=False,
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[
                     lambda: {
@@ -229,6 +230,7 @@ class RunPipelineTests(unittest.TestCase):
                 nodes_output_path=nodes_output_path,
                 edges_output_path=edges_output_path,
                 validity_report_output_path=tmp_path / "node_validity_report.json",
+                enforce_export_gate=False,
                 stats_output_path=stats_output_path,
                 direct_payload_fetchers=[
                     fail,
@@ -255,6 +257,111 @@ class RunPipelineTests(unittest.TestCase):
             self.assertIn("RuntimeError", stats["stage_errors"][0])
             self.assertTrue(graph_output_path.exists())
             self.assertIn("stage_errors", format_pipeline_summary(stats))
+        finally:
+            shutil.rmtree(tmp_path, ignore_errors=True)
+
+
+    def test_run_pipeline_export_gate_prunes_nodes_without_cost(self) -> None:
+        """With the gate on and no Treasury total, nothing is publishable.
+
+        This is the behaviour that makes the publication guard necessary: a node
+        can be fully sourced and proven and still be rejected, because
+        CostValidator requires a resolved cost and the cost cascade has nothing
+        to allocate from. Pinning it here so the coupling between the Treasury
+        fetch and the export gate is a documented contract rather than a
+        surprise discovered during a deploy.
+        """
+        tmp_path = TEST_TMP_ROOT / f"run-pipeline-{uuid.uuid4().hex}"
+        tmp_path.mkdir(parents=True, exist_ok=True)
+        try:
+            base_graph_path = tmp_path / "base.json"
+            graph_output_path = tmp_path / "graph.json"
+            base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
+
+            stats = run_pipeline(
+                base_graph_path=base_graph_path,
+                candidate_output_path=tmp_path / "candidate_nodes.json",
+                graph_output_path=graph_output_path,
+                nodes_output_path=tmp_path / "expanded_nodes.json",
+                edges_output_path=tmp_path / "expanded_edges.json",
+                validity_report_output_path=tmp_path / "node_validity_report.json",
+                enforce_export_gate=True,
+                stats_output_path=tmp_path / "pipeline_stats.json",
+                direct_payload_fetchers=[
+                    lambda: {
+                        "nodes": [
+                            {
+                                "id": "contractor-acme",
+                                "name": "Acme Corp",
+                                "type": "Corporation",
+                                "sourceUrls": ["https://www.usaspending.gov/recipient/acme"],
+                            }
+                        ],
+                        "edges": [
+                            {
+                                "source": "department-of-energy",
+                                "target": "contractor-acme",
+                                "type": "contracts_with",
+                            }
+                        ],
+                        "budgetSummary": {"government_total_outlay_amount": 3102409296183},
+                    }
+                ],
+                discovery_fetchers={
+                    "wikidata_records": lambda: [],
+                    "official_directory_records": lambda: [],
+                    "federal_register_records": lambda: [],
+                },
+            )
+
+            self.assertEqual(stats["new_nodes_added"], 0)
+        finally:
+            shutil.rmtree(tmp_path, ignore_errors=True)
+
+    def test_run_pipeline_refuses_to_publish_without_treasury_total(self) -> None:
+        """A partial outage must not overwrite a good graph with an empty one."""
+        tmp_path = TEST_TMP_ROOT / f"run-pipeline-{uuid.uuid4().hex}"
+        tmp_path.mkdir(parents=True, exist_ok=True)
+        try:
+            base_graph_path = tmp_path / "base.json"
+            graph_output_path = tmp_path / "graph.json"
+            base_graph_path.write_text(json.dumps(BASE_GRAPH), encoding="utf-8")
+            sentinel = "PUBLISHED-GRAPH-SENTINEL"
+            graph_output_path.write_text(sentinel, encoding="utf-8")
+
+            stats = run_pipeline(
+                base_graph_path=base_graph_path,
+                candidate_output_path=tmp_path / "candidate_nodes.json",
+                graph_output_path=graph_output_path,
+                nodes_output_path=tmp_path / "expanded_nodes.json",
+                edges_output_path=tmp_path / "expanded_edges.json",
+                validity_report_output_path=tmp_path / "node_validity_report.json",
+                enforce_export_gate=True,
+                stats_output_path=tmp_path / "pipeline_stats.json",
+                direct_payload_fetchers=[
+                    lambda: {
+                        "nodes": [
+                            {
+                                "id": "contractor-acme",
+                                "name": "Acme Corp",
+                                "type": "Corporation",
+                                "sourceUrls": ["https://www.usaspending.gov/recipient/acme"],
+                            }
+                        ],
+                        "edges": [],
+                    }
+                ],
+                discovery_fetchers={
+                    "wikidata_records": lambda: [],
+                    "official_directory_records": lambda: [],
+                    "federal_register_records": lambda: [],
+                },
+            )
+
+            self.assertEqual(graph_output_path.read_text(encoding="utf-8"), sentinel)
+            self.assertTrue(
+                any("Treasury budget summary" in error for error in stats["stage_errors"])
+            )
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 
