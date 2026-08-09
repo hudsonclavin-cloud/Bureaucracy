@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260809a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260809a";
+import { createGovernmentGraph } from "./graph.js?v=20260809b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260809b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1236,7 +1236,11 @@ async function initGraphApp() {
   });
 
   const data = await loadMergedGraphData({
-    baseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
+    baseUrl:
+      window.GRAPH_DATA_SOURCES?.primary ||
+      window.GRAPH_DATA_SOURCES?.base ||
+      "./data/federal_gov_complete_1.json",
+    fallbackBaseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
     corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });

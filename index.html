@@ -284,6 +284,9 @@ body.dragging{cursor:grabbing;}
 
 <script>
 window.GRAPH_DATA_SOURCES = {
+  // The exporter's gated tree is the site's base graph. `base` is the fallback
+  // the loader drops to if the pipeline artefact is missing or malformed.
+  primary: "./output/graph.json",
   base: "./data/federal_gov_complete_1.json",
   corporate: "./data_expansion/corporate_expansion.json",
 };
@@ -307,7 +310,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260809a"
+<script type="module" src="./js/ui.js?v=20260809b"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

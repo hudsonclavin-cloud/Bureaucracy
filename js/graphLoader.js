@@ -342,6 +342,7 @@ function optionalFetchFallback(url, fallbackValue) {
 
 export async function loadMergedGraphData({
   baseUrl,
+  fallbackBaseUrl = "./data/federal_gov_complete_1.json",
   corporateUrl,
   expandedNodesUrl = "./output/expanded_nodes.json",
   expandedEdgesUrl = "./output/expanded_edges.json",
@@ -349,7 +350,16 @@ export async function loadMergedGraphData({
   onStatus = () => {},
 } = {}) {
   onStatus("Fetching federal hierarchy…");
-  const basePromise = fetchJson(baseUrl);
+  // fetchJson has no catch of its own, so without this a missing or malformed
+  // pipeline artefact is a blank screen rather than a degraded one. Degrade to
+  // the curated hierarchy instead, and say so.
+  const basePromise =
+    fallbackBaseUrl && fallbackBaseUrl !== baseUrl
+      ? fetchJson(baseUrl).catch(() => {
+          onStatus("Pipeline graph unavailable — falling back to the base hierarchy…");
+          return fetchJson(fallbackBaseUrl);
+        })
+      : fetchJson(baseUrl);
   onStatus("Fetching corporate expansion…");
   const corporatePromise = fetchJson(corporateUrl).catch(optionalFetchFallback(corporateUrl, null));
   onStatus("Fetching pipeline-expanded nodes…");
