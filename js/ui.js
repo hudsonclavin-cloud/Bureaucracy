@@ -287,8 +287,13 @@ function isNeverChecked(data) {
   if (data.isCandidate) {
     return false;
   }
+  // Deliberately not keyed on verificationStatus: verify_node_sources stamps
+  // 'unverified' on every node it touches, so requiring the field to be absent
+  // meant this could never fire after a pipeline run. A node recorded with zero
+  // sources and no verification timestamp was not checked — that status string
+  // is a default, not a finding.
   const sourceCount = Number(data.sourceCount || (Array.isArray(data.sourceUrls) ? data.sourceUrls.length : 0));
-  return sourceCount === 0 && !data.lastVerified && !data.verificationStatus;
+  return sourceCount === 0 && !data.lastVerified;
 }
 
 function getVerificationBadgeConfig(data) {
@@ -526,7 +531,9 @@ const COST_STATUS_COPY = {
   root_total: {
     label: "Measured",
     tone: "measured",
-    note: "U.S. Treasury total outlays for the fiscal year.",
+    // Deliberately does not name a period: the anchor may be year-to-date, and
+    // the period line above this carries the actual timeframe.
+    note: "U.S. Treasury outlays, from the Monthly Treasury Statement.",
   },
   official: {
     label: "Reported",
@@ -545,6 +552,41 @@ const COST_STATUS_COPY = {
     note: "No cost figure could be traced to a source.",
   },
 };
+
+// The Treasury anchor's period lives on the graph root's __budgetSummary, not on
+// each node — but every figure below the root is apportioned from that same
+// total, so the period applies to all of them.
+let graphBudgetSummary = null;
+
+function setGraphBudgetSummary(summary) {
+  graphBudgetSummary = summary && typeof summary === "object" ? summary : null;
+}
+
+function getCostPeriod(node) {
+  const source =
+    (node && typeof node.__budgetSummary === "object" && node.__budgetSummary) ||
+    (node && (node.amount_kind || node.label || node.record_date) ? node : null) ||
+    graphBudgetSummary;
+  if (!source) {
+    return { label: "", amountKind: "" };
+  }
+  const label =
+    String(source.label || "").trim() ||
+    (source.record_date ? `As of ${String(source.record_date).trim()}` : "");
+  return { label, amountKind: String(source.amount_kind || "").trim().toLowerCase() };
+}
+
+// Full-year only when nothing says otherwise, or when it says so explicitly.
+// Anything year-to-date is not a year, whatever else the string contains.
+function coversFullYear(amountKind) {
+  if (!amountKind) {
+    return true;
+  }
+  if (/ytd/.test(amountKind)) {
+    return false;
+  }
+  return /annual|full[_\s-]?year|fiscal[_\s-]?year[_\s-]?total|fy[_\s-]?total/.test(amountKind);
+}
 
 function toFiniteAmount(value) {
   if (value === null || value === undefined || value === "") {
@@ -629,9 +671,10 @@ function buildCostBlock(node) {
   const head = document.createElement("div");
   head.className = "info-cost-head";
 
+  const period = getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
-  label.textContent = "ANNUAL COST";
+  label.textContent = coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
@@ -640,6 +683,19 @@ function buildCostBlock(node) {
   amount.textContent = amountText === null ? "Not available" : amountText;
   head.appendChild(amount);
   block.appendChild(head);
+
+  // Rendered verbatim, including a label this code does not recognise: an
+  // unmapped period must be visible rather than quietly dropped.
+  if (period.label && amountText !== null) {
+    const periodLine = document.createElement("div");
+    periodLine.className = "info-cost-period";
+    periodLine.style.fontSize = "9px";
+    periodLine.style.color = "#9a8a6a";
+    periodLine.style.lineHeight = "1.6";
+    periodLine.style.marginTop = "3px";
+    periodLine.textContent = period.label;
+    block.appendChild(periodLine);
+  }
 
   const copy = describeCost(node);
   const badge = document.createElement("span");
@@ -1184,6 +1240,7 @@ async function initGraphApp() {
     corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
+  setGraphBudgetSummary(data && data.__budgetSummary);
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
