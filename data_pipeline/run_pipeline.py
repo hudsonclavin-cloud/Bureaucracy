@@ -16,6 +16,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from data_pipeline.crawler.federal_register import crawl as crawl_federal_register
 from data_pipeline.crawler.lobbying import crawl as crawl_lobbying
 from data_pipeline.crawler.official_directory import crawl as crawl_official_directory
+from data_pipeline.crawler.treasury_outlays import crawl as crawl_treasury_outlays
 from data_pipeline.crawler.usaspending import crawl as crawl_usaspending
 from data_pipeline.crawler.wikidata import crawl as crawl_wikidata
 from data_pipeline.crawler.wikidata import crawl_discovery_records as crawl_wikidata_discovery_records
@@ -107,6 +108,13 @@ def run_pipeline(
     nodes_before = len(existing_nodes)
 
     direct_fetchers = direct_payload_fetchers or [
+        # First: this is the cost anchor. Without its budgetSummary the cost
+        # cascade has nothing to apportion, every node fails CostValidator on
+        # missing_cost, and the publication guard blocks the run outright.
+        lambda: crawl_treasury_outlays(
+            fiscal_year=fiscal_year,
+            timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 30),
+        ),
         lambda: crawl_usaspending(
             limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
             awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
