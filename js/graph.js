@@ -53,9 +53,14 @@ const branchColors = {
 };
 const branchSectorDirections = {
   constitution: new THREE.Vector3(0, 1, 0.08).normalize(),
-  legislative: new THREE.Vector3(-0.94, 0.24, 0.22).normalize(),
-  executive: new THREE.Vector3(0.95, 0.2, 0.18).normalize(),
-  judicial: new THREE.Vector3(0.08, 0.9, -0.42).normalize(),
+  // The three branches sit on an equilateral triangle in the screen plane
+  // (90 / 210 / 330 degrees). Fanning them around the Constitution's own +Y axis
+  // put the ring in the X-Z plane, which the camera flattens along Z: the
+  // branches landed at y = +0.655 / +0.635 / +0.970, a 4.4:1 arc that read as a
+  // horizontal line. The small +z tilt keeps them off a perfectly flat plane.
+  legislative: new THREE.Vector3(-0.866, -0.5, 0.1).normalize(),
+  executive: new THREE.Vector3(0.866, -0.5, 0.1).normalize(),
+  judicial: new THREE.Vector3(0, 1, 0.1).normalize(),
   independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
   regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
   position: new THREE.Vector3(-0.14, 0.18, 0.97).normalize(),
@@ -1339,7 +1344,10 @@ export function createGovernmentGraph({
 
     return tempVecC
       .copy(branchBase)
-      .lerp(parentDirection, parentObj.depth === 0 ? 1 - BRANCH_SECTOR_BLEND : BRANCH_PARENT_BLEND)
+      // No blend toward the parent at depth 0: the sector triangle IS the
+      // intended arrangement there, and pulling it toward the Constitution's +Y
+      // axis only collapses it back toward the flat arc it replaced.
+      .lerp(parentDirection, parentObj.depth === 0 ? 0 : BRANCH_PARENT_BLEND)
       .addScaledVector(seeded, childBranchKey === parentBranchKey ? 0.08 : 0.14)
       .normalize();
   }
