@@ -277,9 +277,26 @@ function ensureVerificationUi() {
   dom.verificationLastVerified = lastVerified;
 }
 
+// A node with no sources AND no verification timestamp was never checked at all.
+// That is a different claim from "checked and found wanting", and the harsher
+// wording is the misleading one: every node in the hand-compiled base graph —
+// the Constitution included — carries no sourceUrls, so all 5,170 of them read
+// as UNVERIFIED. Overstating doubt is an accuracy problem in the same way
+// overstating confidence is.
+function isNeverChecked(data) {
+  if (data.isCandidate) {
+    return false;
+  }
+  const sourceCount = Number(data.sourceCount || (Array.isArray(data.sourceUrls) ? data.sourceUrls.length : 0));
+  return sourceCount === 0 && !data.lastVerified && !data.verificationStatus;
+}
+
 function getVerificationBadgeConfig(data) {
   if (data.isCandidate) {
     return { label: "CANDIDATE", bg: "rgba(155,139,189,0.18)", border: "#9b8bbd", color: "#d6caef" };
+  }
+  if (isNeverChecked(data)) {
+    return { label: "NO SOURCE RECORDED", bg: "transparent", border: "#6a5a3a", color: "#9a8a6a" };
   }
   const status = String(data.verificationStatus || "unverified").toLowerCase();
   if (status === "verified") {
@@ -372,6 +389,7 @@ function renderVerificationPanel(data) {
     return;
   }
 
+  const neverChecked = isNeverChecked(data);
   const status = data.isCandidate ? "CANDIDATE" : String(data.verificationStatus || "unverified").toUpperCase();
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
@@ -383,12 +401,20 @@ function renderVerificationPanel(data) {
   dom.verificationBadge.style.border = `1px solid ${badge.border}`;
   dom.verificationBadge.style.color = badge.color;
 
-  setText(dom.verificationStatus, `Verification Status: ${status}`);
-  setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
-  setText(
-    dom.verificationLastVerified,
-    `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
-  );
+  if (neverChecked) {
+    setText(dom.verificationStatus, "This entry comes from the hand-compiled base graph.");
+    // No confidence line: a score of 0.00 on something that was never scored is
+    // a number impersonating a measurement.
+    setText(dom.verificationConfidence, "No source URL has been attached to it yet.");
+    setText(dom.verificationLastVerified, "");
+  } else {
+    setText(dom.verificationStatus, `Verification Status: ${status}`);
+    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
+    setText(
+      dom.verificationLastVerified,
+      `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
+    );
+  }
 
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
