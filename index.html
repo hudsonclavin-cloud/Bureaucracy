@@ -70,6 +70,22 @@ body.dragging{cursor:grabbing;}
 .info-stat{display:flex;justify-content:space-between;font-size:9px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
 .info-stat-label{color:var(--gold-dim);letter-spacing:0.1em;}
 .info-stat-val{color:var(--text);}
+.info-cost{padding:8px 0 10px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.info-cost-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+.info-cost-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.1em;}
+.info-cost-amount{font-size:12px;color:var(--text);white-space:nowrap;text-align:right;}
+.info-cost-badge{
+  font-size:8px;letter-spacing:0.12em;text-transform:uppercase;
+  padding:2px 6px;border:1px solid;display:inline-block;margin-top:7px;
+}
+/* Filled vs outline, not hue alone: green and amber measure 1.26:1 under
+   deuteranopia, so a colourblind reader cannot tell them apart by colour.
+   A measured figure is a solid block; a derived one is an empty outline. */
+.info-cost-badge.is-measured{color:#020408;border-color:#4ac88a;background:#4ac88a;font-weight:500;}
+.info-cost-badge.is-reported{color:#020408;border-color:#4a8ac8;background:#4a8ac8;font-weight:500;}
+.info-cost-badge.is-estimate{color:#c8884a;border-color:#c8884a;background:transparent;}
+.info-cost-badge.is-none{color:#7a6a4a;border-color:rgba(122,106,74,0.7);border-style:dashed;background:transparent;}
+.info-cost-note{font-size:9px;color:#9a8a6a;line-height:1.6;margin-top:6px;}
 #info-children-label{font-size:9px;color:var(--gold-dim);letter-spacing:0.15em;text-transform:uppercase;margin:12px 0 6px;}
 #info-children-list{display:flex;flex-direction:column;gap:3px;max-height:180px;overflow-y:auto;}
 #info-children-list::-webkit-scrollbar{width:2px;}
@@ -289,7 +305,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260804a"
+<script type="module" src="./js/ui.js?v=20260809a"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

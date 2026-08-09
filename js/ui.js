@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260804a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260804a";
+import { createGovernmentGraph } from "./graph.js?v=20260809a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260809a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -483,6 +483,152 @@ function renderOriginTrace(nodeObj) {
   dom.btnTraceOrigin.disabled = false;
 }
 
+const COST_MAGNITUDES = [
+  [1e12, "trillion"],
+  [1e9, "billion"],
+  [1e6, "million"],
+  [1e3, "thousand"],
+];
+
+const COST_BASIS_PHRASES = {
+  subtree_weight: "how many units sit beneath it",
+  employee_weight: "staff count",
+  budget_weight: "reported budget",
+};
+
+const COST_STATUS_COPY = {
+  root_total: {
+    label: "Measured",
+    tone: "measured",
+    note: "U.S. Treasury total outlays for the fiscal year.",
+  },
+  official: {
+    label: "Reported",
+    tone: "reported",
+    note: "Figure published by the organisation itself.",
+  },
+  scaled_official: {
+    label: "Reported, adjusted",
+    tone: "reported",
+    note: "Published figure, rescaled to fit within the parent total.",
+  },
+  allocated: { label: "Estimate", tone: "estimate", note: "" },
+  unavailable: {
+    label: "Not available",
+    tone: "none",
+    note: "No cost figure could be traced to a source.",
+  },
+};
+
+function toFiniteAmount(value) {
+  if (value === null || value === undefined || value === "") {
+    return null;
+  }
+  const amount = Number(value);
+  return Number.isFinite(amount) ? amount : null;
+}
+
+function roundToSignificant(value, digits) {
+  if (!value) {
+    return 0;
+  }
+  const magnitude = Math.floor(Math.log10(Math.abs(value)));
+  const factor = 10 ** (digits - 1 - magnitude);
+  return Math.round(value * factor) / factor;
+}
+
+// Rounded before the unit is chosen, so 999.9 million reads as $1.00 billion
+// rather than $1000 million.
+function formatApproximateCost(amount) {
+  const rounded = roundToSignificant(amount, 3);
+  const sign = rounded < 0 ? "-" : "";
+  const size = Math.abs(rounded);
+  for (const [unit, word] of COST_MAGNITUDES) {
+    if (size >= unit) {
+      const scaled = size / unit;
+      const decimals = scaled >= 100 ? 0 : scaled >= 10 ? 1 : 2;
+      return `${sign}$${scaled.toFixed(decimals)} ${word}`;
+    }
+  }
+  return `${sign}$${Math.round(size).toLocaleString()}`;
+}
+
+// Only a verified figure is printed in full. Everything else is a division
+// result, so it is rounded and marked approximate — printing it to the cent
+// would claim ten significant figures for a number that has about one.
+function formatCostAmount(node) {
+  const amount = toFiniteAmount(node.resolved_total_amount);
+  if (amount === null) {
+    return null;
+  }
+  if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
+    return `$${Math.round(amount).toLocaleString()}`;
+  }
+  return `≈ ${formatApproximateCost(amount)}`;
+}
+
+function describeCost(node) {
+  const status = String(node.cost_status || "").toLowerCase();
+  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null) {
+    return COST_STATUS_COPY.unavailable;
+  }
+
+  const copy = COST_STATUS_COPY[status];
+  if (!copy) {
+    // An enum the pipeline grew and this map never learned. Show it rather than
+    // falling back to something reassuring and wrong.
+    return {
+      label: status,
+      tone: "estimate",
+      note: `Unrecognised cost basis reported by the pipeline: ${status}.`,
+    };
+  }
+
+  if (status === "allocated") {
+    const basis = String(node.cost_basis || "").toLowerCase();
+    const phrase =
+      COST_BASIS_PHRASES[basis] || (node.cost_basis ? String(node.cost_basis) : "an unspecified weighting");
+    return {
+      ...copy,
+      note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.`,
+    };
+  }
+  return copy;
+}
+
+function buildCostBlock(node) {
+  const block = document.createElement("div");
+  block.className = "info-cost";
+
+  const head = document.createElement("div");
+  head.className = "info-cost-head";
+
+  const label = document.createElement("span");
+  label.className = "info-cost-label";
+  label.textContent = "ANNUAL COST";
+  head.appendChild(label);
+
+  const amountText = formatCostAmount(node);
+  const amount = document.createElement("span");
+  amount.className = "info-cost-amount";
+  amount.textContent = amountText === null ? "Not available" : amountText;
+  head.appendChild(amount);
+  block.appendChild(head);
+
+  const copy = describeCost(node);
+  const badge = document.createElement("span");
+  badge.className = `info-cost-badge is-${copy.tone}`;
+  badge.textContent = copy.label;
+  block.appendChild(badge);
+
+  const note = document.createElement("div");
+  note.className = "info-cost-note";
+  note.textContent = copy.note;
+  block.appendChild(note);
+
+  return block;
+}
+
 function renderInfoPanel(nodeObj) {
   if (!nodeObj) {
     return;
@@ -514,6 +660,7 @@ function renderInfoPanel(nodeObj) {
   }
 
   const statsFragment = document.createDocumentFragment();
+  statsFragment.appendChild(buildCostBlock(data));
   const statRows = [];
   if (data.employees) {
     statRows.push(["EMPLOYEES", data.employees]);
