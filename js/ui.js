@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260809b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260809b";
+import { createGovernmentGraph } from "./graph.js?v=20260810b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260810b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -866,7 +866,18 @@ function updateTooltip(payload) {
   dom.tooltip.style.display = "block";
   dom.tooltip.style.left = `${payload.x + 14}px`;
   dom.tooltip.style.top = `${payload.y - 10}px`;
-  setText(dom.tooltip, payload.node.data.name);
+  const node = payload.node;
+  const isCluster = node.isCluster || node.data?.type === "cluster";
+  if (!isCluster) {
+    setText(dom.tooltip, node.data.name);
+    return;
+  }
+
+  const count = Number(node.count || node.data?.count || 0);
+  const parentName = node.parent?.data?.name;
+  const title = parentName && parentName !== node.data.name ? `${parentName} — ${node.data.name}` : node.data.name;
+  const countLabel = node.data?.clusterCountLabel || `${count.toLocaleString()} nodes`;
+  setText(dom.tooltip, count > 0 ? `${title} — ${countLabel}` : title);
 }
 
 function closeSearch() {

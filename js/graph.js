@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260809b";
+import { createLodManager } from "./lodManager.js?v=20260810b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -35,6 +35,12 @@ const FLY_DAMPING = 0.85;
 const FLY_MAX_SPEED = 160;
 const MIN_ZOOM_NODE_SCALE = 0.35;
 const ORBIT_CAMERA_LERP = 0.08;
+// The zoom envelope the wheel has always enforced, named so reframing is
+// clamped to exactly the same range rather than inventing its own.
+const MIN_ZOOM = 0.28;
+const MAX_ZOOM = 10;
+const FRAME_MARGIN = 1.15;
+const FRAME_TIMEOUT_MS = 1500;
 const DENSITY_BUCKET_BUFFER = 1;
 const ALWAYS_VISIBLE_CLUSTER_NAMES = new Set([
   "constitution",
@@ -189,6 +195,7 @@ export function createGovernmentGraph({
   const hiddenVector = new THREE.Vector3(HIDDEN_OFFSET, HIDDEN_OFFSET, HIDDEN_OFFSET);
   const clusterColor = new THREE.Color(0xc8a84a);
   const clusterAccentColor = new THREE.Color(0x5a7bb8);
+  const clusterHoverColor = new THREE.Color(0xf2e3b0);
   const whiteColor = new THREE.Color(0xffffff);
   const desiredCameraPosition = new THREE.Vector3();
 
@@ -221,6 +228,8 @@ export function createGovernmentGraph({
     screenSpaceBuckets: new Map(),
     activeClusters: [],
     clusterMap: new Map(),
+    hoveredCluster: null,
+    pendingFrame: null,
     pendingExpansions: [],
     relationships: [],
     relationshipIndex: new Map(),
@@ -964,15 +973,18 @@ export function createGovernmentGraph({
       state.nodeBatches.set(batchKey, createNodeBatch(depth, color, styleKey, count));
     }
 
-    const clusterGeometry = new THREE.TorusGeometry(1, 0.18, 10, 28);
-    const clusterMaterial = new THREE.MeshStandardMaterial({
+    // A filled disc, not a torus. The instance is billboarded to the camera in
+    // setClusterSlot, so a torus rendered as a hollow annulus at every orbit
+    // angle — a proxy for 1,206 collapsed nodes that read as a hole. A disc also
+    // makes the proxy pickable across its whole face: raycasting a thin torus
+    // tube missed almost every click, which is why clusters ignored the mouse.
+    const clusterGeometry = new THREE.CircleGeometry(1, 48);
+    const clusterMaterial = new THREE.MeshBasicMaterial({
       color: 0xffffff,
-      emissive: 0xffffff,
-      emissiveIntensity: 0.18,
-      roughness: 0.5,
-      metalness: 0.04,
       transparent: true,
-      opacity: 0.9,
+      opacity: 0.42,
+      depthWrite: false,
+      side: THREE.DoubleSide,
       vertexColors: true,
     });
     const clusterMesh = new THREE.InstancedMesh(clusterGeometry, clusterMaterial, CLUSTER_CAPACITY);
@@ -1576,7 +1588,11 @@ export function createGovernmentGraph({
   }
 
   function expandNode(nodeObj, animate = true) {
-    return expandNodesBatch([nodeObj], animate);
+    const expandedParents = expandNodesBatch([nodeObj], animate);
+    if (expandedParents.includes(nodeObj) && nodeObj === state.selectedNode) {
+      armSelectionFrame(nodeObj);
+    }
+    return expandedParents;
   }
 
   function disposeNodeObject(nodeObj) {
@@ -1763,19 +1779,80 @@ export function createGovernmentGraph({
       return;
     }
 
-    const sourceNode = clusterObj.sourceNode;
-    if (state.flyMode) {
-      setFlyLookAt(clusterObj.pos);
-    } else {
-      state.camFocusTarget.copy(clusterObj.pos);
-      state.targetZoom = Math.max(state.targetZoom, 2.4);
-    }
+    selectAndExpand(clusterObj.sourceNode, true);
+  }
 
-    if (!sourceNode.expanded && !sourceNode.expanding) {
-      expandNode(sourceNode, true);
+  // Distance at which a sphere of `radius` fits the viewport with a margin.
+  // Uses the narrower of the vertical and horizontal half-angles so the fit
+  // holds on wide and tall windows alike.
+  function fitDistanceForRadius(radius) {
+    const verticalHalf = THREE.MathUtils.degToRad(camera.fov) * 0.5;
+    const horizontalHalf = Math.atan(Math.tan(verticalHalf) * camera.aspect);
+    const halfAngle = Math.max(0.0001, Math.min(verticalHalf, horizontalHalf));
+    return (radius * FRAME_MARGIN) / Math.sin(halfAngle);
+  }
+
+  // Bounding sphere of the selection plus whichever direct children are on
+  // screen, centred on the node itself so the selection stays the subject.
+  function selectionBoundingRadius(nodeObj) {
+    const center = nodeObj.targetPos || nodeObj.pos;
+    let radius = 0;
+    let hasChildren = false;
+    for (const childObj of nodeObj.childObjs || []) {
+      if (!childObj.visible) {
+        continue;
+      }
+      // targetPos is assigned synchronously when the expansion queue places a
+      // child, while pos may still be travelling outward. Framing against the
+      // target makes the shot stable even while the visual expansion animates.
+      const reach = center.distanceTo(childObj.targetPos || childObj.pos) + nodeRadiusForDepth(childObj.depth) * 2.2;
+      if (reach > radius) {
+        radius = reach;
+      }
+      hasChildren = true;
     }
-    state.lastUserDrillAt = performance.now();
-    setSelectedNode(sourceNode);
+    return hasChildren ? radius : null;
+  }
+
+  // Feeds the existing damped follow rather than adding a tween: only the
+  // destination changes, so the glide keeps its current feel.
+  function frameSelection(nodeObj) {
+    if (!nodeObj || state.flyMode) {
+      return false;
+    }
+    const radius = selectionBoundingRadius(nodeObj);
+    if (!radius) {
+      return false;
+    }
+    const distance = fitDistanceForRadius(radius);
+    const targetZoom = CAMERA_DISTANCE / Math.max(distance, 1);
+    // A fit at either boundary means the branch was too small or too large to
+    // measure meaningfully. Do not turn that bad measurement into a long,
+    // clamped camera flight.
+    if (targetZoom <= MIN_ZOOM || targetZoom >= MAX_ZOOM) {
+      return false;
+    }
+    state.targetZoom = targetZoom;
+    state.renderDirty = true;
+    return true;
+  }
+
+  function armSelectionFrame(nodeObj) {
+    if (!nodeObj || state.flyMode || (nodeObj.data.children || []).length === 0) {
+      return;
+    }
+    state.pendingFrame = {
+      nodeObj,
+      deadline: performance.now() + FRAME_TIMEOUT_MS,
+    };
+  }
+
+  function selectAndExpand(nodeObj, animate = true) {
+    if (!nodeObj) {
+      return [];
+    }
+    setSelectedNode(nodeObj);
+    return expandNode(nodeObj, animate);
   }
 
   function setSelectedNode(nodeObj) {
@@ -1784,6 +1861,9 @@ export function createGovernmentGraph({
     }
 
     state.selectedNode = nodeObj;
+    // A new selection owns the next reframe. It is armed only if this selected
+    // node is subsequently expanded, never merely because it was selected.
+    state.pendingFrame = null;
     state.lastUserDrillAt = performance.now();
     if (state.flyMode) {
       setFlyLookAt(nodeObj.pos);
@@ -2197,18 +2277,21 @@ export function createGovernmentGraph({
   }
 
   function setClusterSlot(slot, clusterObj) {
-    const scale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius);
+    const hovered = state.hoveredCluster === clusterObj;
+    const baseScale = Math.max(2.4, clusterObj.displayRadius || clusterObj.radius);
+    const scale = hovered ? baseScale * 1.12 : baseScale;
     tempQuat.copy(camera.quaternion);
-    tempMat4.compose(
-      clusterObj.displayPos || clusterObj.pos,
-      tempQuat,
-      tempScale.set(scale, scale, Math.max(0.7, clusterObj.tubeThickness || 1)),
-    );
+    // Uniform scale: the disc is flat, so the old z tube-thickness term has no
+    // meaning and squashing z only skewed the billboard.
+    tempMat4.compose(clusterObj.displayPos || clusterObj.pos, tempQuat, tempScale.set(scale, scale, scale));
     state.clusterBatch.mesh.setMatrixAt(slot, tempMat4);
-    state.clusterBatch.mesh.setColorAt(
-      slot,
-      tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08),
-    );
+    tempClusterColor.set(clusterObj.color || clusterColor).lerp(clusterAccentColor, 0.08);
+    if (hovered) {
+      // Hover highlight: clusters had no feedback at all, so a proxy was
+      // indistinguishable from scenery.
+      tempClusterColor.lerp(clusterHoverColor, 0.55);
+    }
+    state.clusterBatch.mesh.setColorAt(slot, tempClusterColor);
     state.clusterBatch.clustersBySlot[slot] = clusterObj;
     state.clusterBatch.dirty = true;
     clusterObj.slot = slot;
@@ -2727,6 +2810,18 @@ export function createGovernmentGraph({
 
     flushPendingExpansions();
 
+    // Frame once the selected node's own expansion has drained. Auto-expansion
+    // may keep the global queue busy, so this tracks only the selected node
+    // and gives up the arm after a bounded wait.
+    const pendingFrame = state.pendingFrame;
+    if (pendingFrame && (!pendingFrame.nodeObj.expanding || now >= pendingFrame.deadline)) {
+      state.pendingFrame = null;
+      frameSelection(pendingFrame.nodeObj);
+      if (state.selectedNode === pendingFrame.nodeObj) {
+        onSelect(pendingFrame.nodeObj);
+      }
+    }
+
     state.rotX += (state.targetRotX - state.rotX) * 0.07;
     state.rotY += (state.targetRotY - state.rotY) * 0.07;
     state.zoom += (state.targetZoom - state.zoom) * 0.07;
@@ -2827,8 +2922,18 @@ export function createGovernmentGraph({
     }
     state.prevMouse = { x: event.clientX, y: event.clientY };
 
-    const hit = getHit(event, { allowScreenSpaceFallback: false });
+    // Cluster discs can be visually present before Three's instanced raycast
+    // bounds have caught up. Clicks already use the screen-space fallback; use
+    // the same resolver for hover so a visible proxy is always hoverable.
+    const hit = getHit(event, { allowScreenSpaceFallback: true });
     state.hoveredNode = hit?.isCluster ? hit.sourceNode || null : hit || null;
+    const hoveredCluster = hit?.isCluster ? hit : null;
+    if (state.hoveredCluster !== hoveredCluster) {
+      state.hoveredCluster = hoveredCluster;
+      // The highlight lives in the instance colour, so the batch has to be
+      // rewritten for the change to reach the screen.
+      state.renderDirty = true;
+    }
     onHover(hit ? { node: hit, x: event.clientX, y: event.clientY } : null);
   }
 
@@ -2853,7 +2958,7 @@ export function createGovernmentGraph({
           activateCluster(hit);
           return;
         }
-        setSelectedNode(hit);
+        selectAndExpand(hit, true);
       }
     }
 
@@ -2870,9 +2975,12 @@ export function createGovernmentGraph({
           state.flyPosition.addScaledVector(forward, zoomStep);
           updateFlyLookTarget();
         } else {
+          // Wheel input is authoritative: a frame that has not fired yet must
+          // never overwrite this user-chosen zoom target on a later frame.
+          state.pendingFrame = null;
           // Scroll down zooms out, scroll up zooms in (matches fly mode).
           state.targetZoom *= event.deltaY > 0 ? 0.9 : 1.1;
-          state.targetZoom = Math.max(0.28, Math.min(10, state.targetZoom));
+          state.targetZoom = THREE.MathUtils.clamp(state.targetZoom, MIN_ZOOM, MAX_ZOOM);
         }
         state.renderDirty = true;
         event.preventDefault();
