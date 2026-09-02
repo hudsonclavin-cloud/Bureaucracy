@@ -1,12 +1,22 @@
 {
-  "timestamp": "2026-09-02T20:05:41.857518+00:00",
+  "timestamp": "2026-09-02T23:35:57.981756+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
   "nodes_after": 5170,
   "new_nodes_added": 0,
   "nodes_delta": 0,
-  "candidate_nodes_written": 0,
+  "candidate_nodes_written": 614,
+  "review_queue_repair": {
+    "input_records": 614,
+    "dropped": {},
+    "dropped_samples": {},
+    "renamed": 0,
+    "parents_resolved": 43,
+    "parents_cleared": 0,
+    "rescored": 0,
+    "output_records": 614
+  },
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
@@ -16,15 +26,15 @@
   "verified_node_count": 0,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 0,
-    "input_node_count": 0,
+    "initial_node_count": 5170,
+    "input_node_count": 5170,
     "input_edge_count": 0,
-    "exported_node_count": 0,
+    "exported_node_count": 5170,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 0,
+    "final_node_count": 5170,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -41,17 +51,27 @@
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.0,
     "pipeline_summary": {
-      "initial_node_count": 0,
-      "raw_nodes_loaded": 0,
-      "nodes_after_normalization": 0,
-      "nodes_after_merge": 0,
+      "initial_node_count": 5170,
+      "raw_nodes_loaded": 5170,
+      "nodes_after_normalization": 5170,
+      "nodes_after_merge": 5170,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 0,
+      "final_node_count": 5170,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
+    "treasury_outlay_rows": {
+      "rows": 0,
+      "rows_applied": 0,
+      "rows_unmatched": 0,
+      "rows_ambiguous": 0,
+      "rows_superseded": 0,
+      "stale_rollups_cleared": 0,
+      "unmatched_sample": [],
+      "ambiguous_sample": []
+    },
     "budget_summary_reused_from_previous_build": true,
     "budget_summary": {
       "government_total_outlay_amount": 5517917965556.91,
@@ -89,7 +109,7 @@
     "verified_cost_node_count": 1,
     "partial_cost_node_count": 0,
     "unverified_cost_node_count": 5169,
-    "mixed_weight_sibling_sets_downgraded": 20,
+    "mixed_weight_sibling_sets_implied": 20,
     "allocations_below_precision": 0,
     "graph_summary": {
       "verified_treasury_total": 5517917965556.91,
@@ -121,7 +141,7 @@
       "verified_cost_node_count": 1,
       "partial_cost_node_count": 0,
       "unverified_cost_node_count": 5169,
-      "mixed_weight_sibling_sets_downgraded": 20,
+      "mixed_weight_sibling_sets_implied": 20,
       "allocations_below_precision": 0
     },
     "audit_report": {
@@ -245,7 +265,7 @@
     "graph": "output/graph.json",
     "expanded_nodes": "output/expanded_nodes.json",
     "expanded_edges": "output/expanded_edges.json",
-    "candidate_nodes": null,
-    "audit_report": "output/audit_report.json"
+    "candidate_nodes": "output/candidate_nodes.json",
+    "audit_report": "output/audit_report.json (untracked diagnostic)"
   }
 }

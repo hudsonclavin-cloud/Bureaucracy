@@ -1,6 +1,7 @@
 __pycache__/
 .pytest_cache/
 .tmp_pytest/
+tests/.tmp/
 .DS_Store
 .tmp_chrome_profile/
 output/

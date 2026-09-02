@@ -21,7 +21,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -46,6 +48,7 @@ from data_pipeline.run_pipeline import (  # noqa: E402
     count_tree_nodes,
     usable_budget_total,
 )
+from scripts.repair_review_queue import load_published_names, repair as repair_review_queue  # noqa: E402
 from scripts.validate_published_graph import main as run_release_gate  # noqa: E402
 
 
@@ -68,27 +71,56 @@ def main(argv: list[str]) -> int:
 
     anchor = load_anchor(args.anchor)
     output_dir = args.output_dir
-    graph_path = output_dir / DEFAULT_GRAPH_OUTPUT.name
-    stats_path = output_dir / DEFAULT_STATS_OUTPUT.name
-    audit_path = output_dir / AUDIT_REPORT_FILENAME
+    output_dir.mkdir(parents=True, exist_ok=True)
+    candidate_path = output_dir / "candidate_nodes.json"
+    # Build somewhere else first. build_graph writes as it goes, so building
+    # straight into output/ left a gate-failing graph on disk next to the
+    # exit code that said not to publish it.
+    with tempfile.TemporaryDirectory(prefix="regen-", dir=str(output_dir)) as staging:
+        staging_dir = Path(staging)
+        graph_path = staging_dir / DEFAULT_GRAPH_OUTPUT.name
+        stats_path = staging_dir / DEFAULT_STATS_OUTPUT.name
+        audit_path = staging_dir / AUDIT_REPORT_FILENAME
+        result = build_graph(
+            [{"nodes": [], "edges": [], "budgetSummary": anchor}],
+            base_graph_path=args.base_graph,
+            graph_output_path=graph_path,
+            nodes_output_path=staging_dir / DEFAULT_NODES_OUTPUT.name,
+            edges_output_path=staging_dir / DEFAULT_EDGES_OUTPUT.name,
+            validity_report_output_path=staging_dir / DEFAULT_VALIDITY_REPORT_OUTPUT.name,
+            # The previous graph is re-fed so nodes a crawl earned survive a
+            # rebuild; base nodes without crawler provenance are not
+            # re-imported (build_graph drops them), the base file supplies those.
+            reuse_existing_graph_payload=True,
+            existing_graph_payload_path=args.anchor,
+            enforce_export_gate=True,
+        )
+        write_json_file(audit_path, result.validation.get("audit_report", {}))
+        queue_report = None
+        if candidate_path.exists():
+            # The queue is served next to the graph; a regeneration repairs it
+            # against the graph it will sit beside (see repair_review_queue.py).
+            records = json.loads(candidate_path.read_text(encoding="utf-8"))
+            published_names, ids_by_name = load_published_names(graph_path)
+            kept, queue_report = repair_review_queue(records, published_names=published_names, ids_by_name=ids_by_name)
+            write_json_file(staging_dir / candidate_path.name, kept)
+        code = _finish(args, result, anchor, staging_dir, output_dir, stats_path, audit_path, candidate_path, queue_report)
+    return code
 
-    result = build_graph(
-        [{"nodes": [], "edges": [], "budgetSummary": anchor}],
-        base_graph_path=args.base_graph,
-        graph_output_path=graph_path,
-        nodes_output_path=output_dir / DEFAULT_NODES_OUTPUT.name,
-        edges_output_path=output_dir / DEFAULT_EDGES_OUTPUT.name,
-        validity_report_output_path=output_dir / DEFAULT_VALIDITY_REPORT_OUTPUT.name,
-        # The base graph is the whole input here. Re-feeding the previous
-        # output would only re-import what this rebuild is replacing.
-        reuse_existing_graph_payload=False,
-        enforce_export_gate=True,
-    )
-    write_json_file(audit_path, result.validation.get("audit_report", {}))
+
+def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_path: Path, audit_path: Path, candidate_path: Path, queue_report) -> int:
 
     validation = dict(result.validation)
     validation["audit_report"] = {"summary": validation.get("audit_report", {}).get("summary", {})}
     validation["budget_summary_reused_from_previous_build"] = True
+    # build_graph counts payload nodes; here the payload is empty and the tree
+    # is the whole publication, so the counts a reader looks at say 5,170, not 0.
+    published_count = count_tree_nodes(result.graph)
+    for key in ("exported_node_count", "final_node_count", "initial_node_count", "input_node_count"):
+        validation[key] = published_count
+    validation.setdefault("pipeline_summary", {})
+    for key in ("initial_node_count", "raw_nodes_loaded", "nodes_after_normalization", "nodes_after_merge", "final_node_count"):
+        validation["pipeline_summary"][key] = published_count
 
     def relative(path: Path) -> str:
         # Paths in a committed file are for a reader, not this machine.
@@ -109,7 +141,8 @@ def main(argv: list[str]) -> int:
         "nodes_after": node_count,
         "new_nodes_added": max(0, node_count - base_count),
         "nodes_delta": node_count - base_count,
-        "candidate_nodes_written": 0,
+        "candidate_nodes_written": queue_report["output_records"] if queue_report else 0,
+        "review_queue_repair": queue_report,
         "promoted_nodes_written": 0,
         "promotion_stats": {},
         "verification_breakdown": validation.get("verification_status_counts", {}),
@@ -122,18 +155,27 @@ def main(argv: list[str]) -> int:
         "all_fetch_stages_failed": False,
         "publication_blocked": False,
         "outputs": {
-            "graph": relative(result.graph_path),
-            "expanded_nodes": relative(result.nodes_path),
-            "expanded_edges": relative(result.edges_path),
-            "candidate_nodes": None,
-            "audit_report": relative(audit_path),
+            "graph": relative(output_dir / result.graph_path.name),
+            "expanded_nodes": relative(output_dir / result.nodes_path.name),
+            "expanded_edges": relative(output_dir / result.edges_path.name),
+            "candidate_nodes": relative(candidate_path) if candidate_path.exists() else None,
+            "audit_report": relative(output_dir / audit_path.name) + " (untracked diagnostic)",
         },
     }
     write_json_file(stats_path, stats)
-    print(f"Rebuilt {node_count:,} nodes into {graph_path}")
+    print(f"Rebuilt {node_count:,} nodes (staged in {staging_dir})")
+    if queue_report:
+        print(f"Review queue: {queue_report['input_records']:,} -> {queue_report['output_records']:,} records; dropped {queue_report['dropped']}")
     print(f"Anchor: {anchor.get('label') or anchor.get('record_date')} (reused from {args.anchor})")
     print()
-    return run_release_gate(["validate_published_graph.py", str(graph_path)])
+    code = run_release_gate(["validate_published_graph.py", str(result.graph_path)])
+    if code != 0:
+        print(f"\nNot published: {output_dir} left untouched.")
+        return code
+    for staged in sorted(staging_dir.iterdir()):
+        os.replace(staged, output_dir / staged.name)
+    print(f"\nPublished to {output_dir}")
+    return 0
 
 
 if __name__ == "__main__":
