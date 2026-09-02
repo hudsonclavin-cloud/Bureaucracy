@@ -37,7 +37,7 @@ def _run(children: list[dict]) -> dict:
 
 
 class SiblingWeightUnitTests(unittest.TestCase):
-    def test_mixed_units_fall_back_to_subtree_size_for_the_whole_set(self) -> None:
+    def test_mixed_units_imply_the_missing_figures_at_the_reported_rate(self) -> None:
         tree = _run(
             [
                 {"id": "a", "name": "A", "budget": "$10B", "children": []},
@@ -46,14 +46,52 @@ class SiblingWeightUnitTests(unittest.TestCase):
             ]
         )
         bases = {child["id"]: child["cost_basis"] for child in tree["children"]}
-        self.assertEqual(set(bases.values()), {"subtree_weight"})
+        # Dollars are the best evidence present: a keeps its budget weight, the
+        # others are implied at a's rate per node ($10B per node): b = 1 node,
+        # c = 2 nodes, so 10 : 10 : 20.
+        self.assertEqual(bases, {"a": "budget_weight", "b": "implied_budget_weight", "c": "implied_budget_weight"})
         amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
-        # a and b are single nodes, c is two: 1:1:2 of the total.
         self.assertAlmostEqual(amounts["a"], TOTAL / 4, places=2)
         self.assertAlmostEqual(amounts["b"], TOTAL / 4, places=2)
         self.assertAlmostEqual(amounts["c"], TOTAL / 2, places=2)
-        self.assertEqual(tree["child_cost_basis"], "subtree")
-        self.assertTrue(tree["child_cost_basis_downgraded"])
+        self.assertEqual(tree["child_cost_basis"], "dollars")
+        self.assertTrue(tree["child_cost_basis_implied"])
+        self.assertNotIn("child_cost_basis_downgraded", tree)
+
+    def test_a_reported_budget_is_never_discarded_for_an_unreported_sibling(self) -> None:
+        tree = _run(
+            [
+                {"id": "big", "name": "Big", "budget": "~$1.4T", "children": []},
+                {"id": "small", "name": "Small", "budget": "~$27M", "children": []},
+                {"id": "many", "name": "Many", "children": [{"id": f"m{i}", "name": f"M{i}", "children": []} for i in range(50)]},
+            ]
+        )
+        amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
+        # Under size-only weighting "many" (51 nodes) took 96% of the total.
+        # Implied at the reported rate the ratio stays 1.4T : 27M : 51 * rate.
+        self.assertGreater(amounts["big"], amounts["many"])
+        self.assertGreater(amounts["many"], amounts["small"])
+        expected_ratio = 1.4e12 / 27e6
+        self.assertAlmostEqual(amounts["big"] / amounts["small"], expected_ratio, delta=expected_ratio * 0.01)
+        # The implied rate is the geometric mean of the reported per-node
+        # rates, so "many" sits between the two reported siblings per node.
+        per_node_many = amounts["many"] / 51
+        self.assertGreater(per_node_many, amounts["small"])
+        self.assertLess(per_node_many, amounts["big"])
+
+    def test_headcounts_beat_size_when_no_sibling_reports_dollars(self) -> None:
+        tree = _run(
+            [
+                {"id": "a", "name": "A", "employees": "3,000", "children": []},
+                {"id": "b", "name": "B", "children": [{"id": "b1", "name": "B1", "children": []}]},
+            ]
+        )
+        bases = {child["id"]: child["cost_basis"] for child in tree["children"]}
+        self.assertEqual(bases, {"a": "employee_weight", "b": "implied_employee_weight"})
+        amounts = {child["id"]: child["resolved_total_amount"] for child in tree["children"]}
+        # 3,000 per node: a = 3,000, b = 2 nodes * 3,000 = 6,000.
+        self.assertAlmostEqual(amounts["a"], TOTAL / 3, places=2)
+        self.assertAlmostEqual(amounts["b"], TOTAL * 2 / 3, places=2)
 
     def test_uniform_dollar_units_keep_the_budget_weighting(self) -> None:
         tree = _run(
@@ -135,7 +173,7 @@ class SiblingWeightUnitTests(unittest.TestCase):
             ]
         )
         report = annotate_resolved_costs(tree, budget_summary={"government_total_outlay_amount": TOTAL})
-        self.assertEqual(report["summary"]["mixed_weight_sibling_sets_downgraded"], 1)
+        self.assertEqual(report["summary"]["mixed_weight_sibling_sets_implied"], 1)
         self.assertEqual(report["summary"]["allocations_below_precision"], 0)
 
 
@@ -150,16 +188,21 @@ class ParseCostAmountTests(unittest.TestCase):
         self.assertEqual(parse_cost_amount("~$1.4T"), 1.4e12)
         self.assertEqual(parse_cost_amount("1.3M active"), 1.3e6)
         self.assertEqual(parse_cost_amount("$5 million"), 5e6)
+        self.assertEqual(parse_cost_amount("£2bn"), 2e9)
+        self.assertEqual(parse_cost_amount("3.5mn"), 3.5e6)
+        self.assertEqual(parse_cost_amount("1tn"), 1e12)
 
     def test_a_parenthetical_year_is_not_the_figure(self) -> None:
         self.assertEqual(parse_cost_amount("1,200 (2023 est.)"), 1200.0)
         # A bare year is still a number when nothing else was written.
         self.assertEqual(parse_cost_amount("2023"), 2023.0)
 
-    def test_compound_strings_keep_the_largest_component(self) -> None:
-        # Pinned so a future change to this rule is deliberate: the exporter
-        # weights DoD by its 1.3M active military, the larger of the two.
-        self.assertEqual(parse_cost_amount("~750,000 civilian + 1.3M active military"), 1.3e6)
+    def test_plus_joined_figures_are_summed_and_alternatives_keep_the_largest(self) -> None:
+        self.assertEqual(parse_cost_amount("~750,000 civilian + 1.3M active military"), 2.05e6)
+        self.assertEqual(parse_cost_amount("~2.9 million civilian + 1.4 million active military"), 4.3e6)
+        self.assertEqual(parse_cost_amount("~14,000 federal + 95,000 contractor"), 109000.0)
+        # A semicolon separates alternative readings, not parts of one total.
+        self.assertEqual(parse_cost_amount("~$14B (admin); ~$1.4T (benefits)"), 1.4e12)
 
 
 class CuratedNameTests(unittest.TestCase):

@@ -126,6 +126,28 @@ class RootOrphanTests(unittest.TestCase):
         self.assertEqual(orphan["parentId"], "department-b")
 
 
+    def test_two_same_named_crawler_orphans_stay_two_nodes(self) -> None:
+        root = {
+            "id": "root",
+            "name": "Root",
+            "children": [
+                {"id": "department-a", "name": "Department A", "children": []},
+                {"id": "department-b", "name": "Department B", "children": []},
+                {"id": "department-a-chief-of-staff", "name": "Chief of Staff", "sourceUrls": ["https://www.a.gov/x"], "children": []},
+                {"id": "department-b-chief-of-staff", "name": "Chief of Staff", "sourceUrls": ["https://www.b.gov/x"], "children": []},
+            ],
+        }
+        result = resolve_root_orphans(root, trusted_node_ids={"department-a", "department-b"})
+        self.assertEqual(result["summary"]["duplicates_removed"], 0)
+        a_cos, a_parent = _find(root, "department-a-chief-of-staff")
+        b_cos, b_parent = _find(root, "department-b-chief-of-staff")
+        self.assertEqual(a_parent["id"], "department-a")
+        self.assertEqual(b_parent["id"], "department-b")
+        # Reattached under a parent: no longer a root attachment.
+        self.assertNotIn("attachToRoot", a_cos)
+        self.assertEqual(a_cos["parentId"], "department-a")
+
+
 class RerunStabilityTests(unittest.TestCase):
     BASE = {
         "id": "root",
@@ -221,6 +243,47 @@ class RerunStabilityTests(unittest.TestCase):
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 
+    def test_expanded_nodes_carry_the_curated_name_not_the_payload_copy(self) -> None:
+        tmp_path, paths = _workspace(self.BASE)
+        try:
+            payload = {
+                "nodes": [
+                    # A crawler copy of a curated node with a mangled name, plus provenance.
+                    {"id": "agency-alpha", "name": "AGENCY ALPHA", "type": "Organization", "sourceUrls": ["https://www.alpha.gov/about"]}
+                ],
+                "edges": [],
+                "budgetSummary": dict(TREASURY),
+            }
+            result = build_graph([payload], enforce_export_gate=False, **paths)
+            tree_node, _ = _find(result.graph, "agency-alpha")
+            self.assertEqual(tree_node["name"], "Agency Alpha")
+            self.assertEqual(tree_node["type"], "Agency")
+            exported = {n["id"]: n for n in result.nodes}
+            self.assertEqual(exported["agency-alpha"]["name"], "Agency Alpha")
+            self.assertEqual(exported["agency-alpha"]["type"], "Agency")
+            self.assertEqual(exported["agency-alpha"]["sourceUrls"], ["https://www.alpha.gov/about"])
+        finally:
+            shutil.rmtree(tmp_path, ignore_errors=True)
+
+    def test_a_treasury_line_of_zero_is_not_a_measured_cost(self) -> None:
+        tmp_path, paths = _workspace(self.BASE)
+        try:
+            payload = {
+                "nodes": [],
+                "edges": [],
+                "outlayRows": [
+                    {"name": "Agency Alpha", "originalName": "Agency Alpha", "rollup_total_amount": 0, "sourceUrls": ["https://fiscaldata.treasury.gov/x"], "sourceTypes": ["treasury_outlays"]}
+                ],
+                "budgetSummary": dict(TREASURY),
+            }
+            result = build_graph([payload], enforce_export_gate=True, **paths)
+            alpha, _ = _find(result.graph, "agency-alpha")
+            self.assertEqual(alpha["cost_status"], "allocated")
+            self.assertGreater(alpha["resolved_total_amount"], 0)
+            self.assertEqual(result.validation["treasury_outlay_rows"]["rows"], 0)
+        finally:
+            shutil.rmtree(tmp_path, ignore_errors=True)
+
     def test_a_node_whose_parent_was_dropped_is_counted(self) -> None:
         tmp_path, paths = _workspace(self.BASE)
         try:
@@ -260,6 +323,21 @@ class ProofNeedsEvidenceTests(unittest.TestCase):
         real = verify_node_sources({"sourceUrls": ["https://www.energy.gov/about"]})
         self.assertTrue(real["existsProven"])
         self.assertEqual(real["proofReason"], "official_source_recorded")
+
+
+    def test_no_url_means_no_proof_sources_either(self) -> None:
+        scored = verify_node_sources({"sourceTypes": ["official_site"]})
+        self.assertEqual(scored["proofSourceCount"], 0)
+        self.assertEqual(scored["proofReason"], "no_evidence_recorded")
+
+    def test_a_federal_register_notice_is_documentation_not_an_official_site(self) -> None:
+        from data_pipeline.processors.normalize_nodes import classify_source_url as classify
+
+        self.assertEqual(classify("https://www.federalregister.gov/documents/2026/x"), "federal_register")
+        scored = verify_node_sources({"sourceUrls": ["https://www.federalregister.gov/documents/2026/x"]})
+        self.assertNotIn("official_site", scored["sourceTypes"])
+        self.assertTrue(scored["existsProven"])
+        self.assertEqual(scored["proofReason"], "historical_documentation_recorded")
 
 
 class DiscoveryScoringTests(unittest.TestCase):

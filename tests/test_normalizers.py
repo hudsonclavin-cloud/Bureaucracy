@@ -53,7 +53,7 @@ class NormalizerTests(unittest.TestCase):
 
         self.assertIsNone(edge)
 
-    def test_normalize_edge_normalizes_unknown_relationship_to_manages(self) -> None:
+    def test_normalize_edge_keeps_unknown_relationship_neutral(self) -> None:
         edge = normalize_edge(
             {
                 "source": "alpha",
@@ -62,7 +62,11 @@ class NormalizerTests(unittest.TestCase):
             }
         )
 
-        self.assertEqual(edge["type"], "manages")
+        # Not "manages": an unrecognised type must not become a claim.
+        self.assertEqual(edge["type"], "related_to")
+        self.assertEqual(normalize_edge({"source": "a", "target": "b", "type": "part_of"})["type"], "related_to")
+        self.assertEqual(normalize_edge({"source": "a", "target": "b"})["type"], "related_to")
+        self.assertEqual(normalize_edge({"source": "a", "target": "b", "type": "Reports To"})["type"], "reports_to")
 
     def test_normalize_name_does_not_rewrite_words_containing_acronyms(self) -> None:
         self.assertEqual(
@@ -74,14 +78,20 @@ class NormalizerTests(unittest.TestCase):
         self.assertEqual(normalize_name("Hudson Institute Liaison"), "Hudson Institute Liaison")
         self.assertEqual(
             normalize_name("DEPARTMENT OF HOMELAND SECURITY"),
-            "Department Of Homeland Security",
+            "Department of Homeland Security",
         )
+        self.assertEqual(normalize_name("DEPARTMENT OF HOMELAND SECURITY (DHS)"), "Department of Homeland Security (DHS)")
+        self.assertEqual(normalize_name("OFFICE OF THE SECRETARY"), "Office of the Secretary")
+        self.assertEqual(normalize_name("FBI"), "FBI")
+        # Lower-case input carries no evidence of an acronym: "ice" stays a word.
+        self.assertEqual(normalize_name("ice cream office"), "Ice Cream Office")
+        self.assertEqual(normalize_name("The Office"), "The Office")
 
     def test_normalize_name_restores_acronyms_after_title_casing(self) -> None:
         self.assertEqual(normalize_name("nasa"), "NASA")
         self.assertEqual(
             normalize_name("DEPARTMENT OF ENERGY (DOE)"),
-            "Department Of Energy (DOE)",
+            "Department of Energy (DOE)",
         )
 
     def test_normalize_node_infers_type_color_when_color_missing(self) -> None:

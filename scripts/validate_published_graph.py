@@ -66,6 +66,59 @@ class Gate:
             print("ok    {}{}".format(name, detail))
 
 
+def check_review_queue(gate, queue_path, graph, nodes):
+    """The review queue is served to the site too. A record the current
+    discovery code could not produce must not be there."""
+    try:
+        records = json.loads(queue_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as error:
+        gate.check("review queue is readable JSON", ["{}: {}".format(queue_path, error)])
+        return
+    if not isinstance(records, list):
+        gate.check("review queue is a list", ["{} holds a {}".format(queue_path, type(records).__name__)])
+        return
+    published = {canonical_key(n.get("name")) for n in nodes}
+    generated, duplicates, unchecked_dates, bad_parent_ids, duplicate_ids = [], [], [], [], []
+    ids = Counter()
+    node_ids = {str(n.get("id") or "") for n in nodes}
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        ids[str(record.get("id") or "")] += 1
+        urls = [record.get("sourceUrl"), *(record.get("sourceUrls") if isinstance(record.get("sourceUrls"), list) else [])]
+        if any(str(u or "").startswith("generated://") for u in urls):
+            generated.append(label(record))
+        if canonical_key(record.get("name")) in published:
+            duplicates.append(label(record))
+        if record.get("lastVerified") and not (record.get("sourceUrls") or []):
+            unchecked_dates.append(label(record))
+        parent_id = record.get("possibleParentId")
+        if parent_id and parent_id not in node_ids:
+            bad_parent_ids.append("{} names parent id {!r}".format(label(record), parent_id))
+    duplicate_ids = ["{} appears {} times".format(i, c) for i, c in ids.items() if c > 1]
+    gate.check("review queue has no template-generated records", generated)
+    gate.check("review queue has no records duplicating a published node", duplicates)
+    gate.check("review queue claims no verification date without a source", unchecked_dates)
+    gate.check("review queue parent ids exist in the graph", bad_parent_ids)
+    gate.check("review queue has no duplicate ids", duplicate_ids)
+    print("  review queue         : {:,} records".format(len(records)))
+
+
+def canonical_key(value):
+    # Same reduction the exporter uses (kept local so the gate stays stdlib-only).
+    import re
+
+    text = str(value or "").casefold()
+    text = re.sub(r"\([^)]*\)", " ", text)
+    text = text.replace("&", " and ")
+    text = re.sub(r"[^a-z0-9]+", " ", text).strip()
+    text = re.sub(r"\bu s\b", "united states", text)
+    for prefix in ("the ", "united states "):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+    return text.strip()
+
+
 def main(argv):
     graph_path = Path(argv[1]) if len(argv) > 1 else DEFAULT_GRAPH
     if not graph_path.exists():
@@ -86,17 +139,31 @@ def main(argv):
         [] if root_id == EXPECTED_ROOT_ID else ["root id is {!r}, expected {!r}".format(root_id, EXPECTED_ROOT_ID)],
     )
 
-    # 2. Exactly one measured cost. More than one means something other than the
-    #    Treasury anchor claimed measurement; zero means the anchor is missing.
+    # 2. A measured cost is the Treasury anchor on the root, or a Treasury
+    #    outlay line applied to the one node it names (an official rollup with
+    #    the FiscalData source on it). Anything else claiming measurement is an
+    #    estimate wearing the wrong badge; a root that does not is a missing anchor.
     verified = [n for n in nodes if str(n.get("costVerificationStatus") or "").lower() == "verified"]
-    if len(verified) == 1:
-        gate.check("exactly one measured cost", [], " — {}".format(label(verified[0])))
-    else:
-        gate.check(
-            "exactly one measured cost",
-            ["{} nodes claim costVerificationStatus 'verified'".format(len(verified))]
-            + [label(n) for n in verified],
+    illegitimate = []
+    for node in verified:
+        if node is graph:
+            continue
+        types = node.get("sourceTypes") if isinstance(node.get("sourceTypes"), list) else []
+        backed = (
+            str(node.get("cost_status") or "") == "official"
+            and node.get("rollup_total_amount") is not None
+            and "treasury_outlays" in types
         )
+        if not backed:
+            illegitimate.append("{} claims a measured cost without a Treasury line".format(label(node)))
+    measured_violations = list(illegitimate)
+    if graph not in verified:
+        measured_violations.insert(0, "root {} is not measured (no Treasury anchor)".format(label(graph)))
+    gate.check(
+        "measured costs are the root and Treasury lines only",
+        measured_violations,
+        " — root + {} Treasury line(s)".format(len(verified) - (1 if graph in verified else 0)) if not measured_violations else "",
+    )
 
     # 3. Every amount carries a provenance label.
     gate.check(
@@ -226,6 +293,11 @@ def main(argv):
         ["root has {} direct children".format(len(top_level))] if len(top_level) > MAX_TOP_LEVEL_CHILDREN else [],
         " — {}".format(len(top_level)),
     )
+
+    # 13. The review queue beside the graph, when there is one.
+    queue_path = graph_path.parent / "candidate_nodes.json"
+    if queue_path.exists():
+        check_review_queue(gate, queue_path, graph, nodes)
 
     # Reported, never fatal.
     verification = Counter(str(n.get("verificationStatus") or "none") for n in nodes)
