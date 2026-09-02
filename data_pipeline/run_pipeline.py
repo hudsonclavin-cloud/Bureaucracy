@@ -25,6 +25,7 @@ from data_pipeline.discovery.source_discovery import (
     DEFAULT_OUTPUT_PATH as DEFAULT_CANDIDATE_OUTPUT,
     discover_candidates,
     load_existing_graph_nodes,
+    pending_review_queue,
     promote_candidates,
     write_review_queue,
 )
@@ -71,12 +72,28 @@ def getenv_float(name: str, default: float) -> float:
     return value if math.isfinite(value) else default
 
 
+def federal_fiscal_year(moment: datetime) -> int:
+    """FY N runs 1 October N-1 to 30 September N."""
+    return moment.year + 1 if moment.month >= 10 else moment.year
+
+
 def count_tree_nodes(node: dict[str, Any]) -> int:
     total = 1
     for child in node.get("children", []):
         if isinstance(child, dict):
             total += count_tree_nodes(child)
     return total
+
+
+def _count_published_nodes(graph_output_path: str | Path) -> int | None:
+    path = Path(graph_output_path)
+    if not path.exists():
+        return None
+    try:
+        graph = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return count_tree_nodes(graph) if isinstance(graph, dict) and graph.get("id") else None
 
 
 def safe_stage(stage_name: str, fn: Callable[[], Any]) -> tuple[Any, str | None]:
@@ -123,6 +140,10 @@ def format_pipeline_summary(stats: dict[str, Any]) -> str:
     if stage_errors:
         lines.append(f"stage_errors ({len(stage_errors)}):")
         lines.extend(f"  - {error}" for error in stage_errors)
+    stage_warnings = stats.get("stage_warnings") or []
+    if stage_warnings:
+        lines.append(f"stage_warnings ({len(stage_warnings)}):")
+        lines.extend(f"  - {warning}" for warning in stage_warnings)
     if stats.get("all_fetch_stages_failed"):
         lines.append("ALL FETCH STAGES FAILED OR RETURNED NO DATA: existing outputs were left untouched")
     elif stats.get("publication_blocked"):
@@ -180,11 +201,17 @@ def run_pipeline(
     direct_payload_fetchers: list[NamedDirectFetcher | DirectFetcher] | None = None,
     discovery_fetchers: dict[str, Callable[[], list[dict[str, Any]]]] | None = None,
 ) -> dict[str, Any]:
-    fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", datetime.now(tz=timezone.utc).year)
-    lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", fiscal_year)
+    # The federal fiscal year, not the calendar year: FY N starts 1 October N-1.
+    fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", federal_fiscal_year(datetime.now(tz=timezone.utc)))
+    # Lobbying filings are calendar-year; default to the calendar year the FY started in.
+    lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", datetime.now(tz=timezone.utc).year)
+    http_timeout = getenv_int("PIPELINE_HTTP_TIMEOUT", 30)
     promotion_threshold = getenv_float("PIPELINE_PROMOTION_THRESHOLD", 0.7)
     existing_nodes = load_existing_graph_nodes(base_graph_path)
     nodes_before = len(existing_nodes)
+    # nodes_before is the curated base graph. The number a maintainer wants to
+    # compare against is what was published last time.
+    published_nodes_before = _count_published_nodes(graph_output_path)
     stats_path = Path(stats_output_path)
     audit_path = Path(audit_report_output_path) if audit_report_output_path else stats_path.parent / AUDIT_REPORT_FILENAME
 
@@ -197,10 +224,10 @@ def run_pipeline(
             # missing_cost, and the publication guard blocks the run outright.
             (
                 "treasury_outlays",
-                lambda: crawl_treasury_outlays(
-                    fiscal_year=fiscal_year,
-                    timeout=getenv_int("PIPELINE_HTTP_TIMEOUT", 30),
-                ),
+                # No fiscal-year filter: the anchor is the latest Monthly
+                # Treasury Statement, and the first one of a new FY only
+                # appears in November. Its own record_fiscal_year is reported.
+                lambda: crawl_treasury_outlays(timeout=http_timeout),
             ),
             (
                 "usaspending",
@@ -208,6 +235,7 @@ def run_pipeline(
                     limit_agencies=getenv_int("PIPELINE_USASPENDING_AGENCIES", 20),
                     awards_per_agency=getenv_int("PIPELINE_USASPENDING_AWARDS", 25),
                     fiscal_year=fiscal_year,
+                    timeout=http_timeout,
                 ),
             ),
             (
@@ -216,6 +244,7 @@ def run_pipeline(
                     hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
                     office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
                     subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+                    timeout=max(http_timeout, 45),
                 ),
             ),
             (
@@ -224,6 +253,7 @@ def run_pipeline(
                     year=lobbying_year,
                     pages=getenv_int("PIPELINE_LOBBYING_PAGES", 5),
                     page_size=getenv_int("PIPELINE_LOBBYING_PAGE_SIZE", 50),
+                    timeout=http_timeout,
                 ),
             ),
         ]
@@ -233,18 +263,22 @@ def run_pipeline(
             hierarchy_limit=getenv_int("PIPELINE_WIKIDATA_HIERARCHY_LIMIT", 500),
             office_holder_limit=getenv_int("PIPELINE_WIKIDATA_HOLDER_LIMIT", 250),
             subunit_limit=getenv_int("PIPELINE_WIKIDATA_SUBUNIT_LIMIT", 500),
+            timeout=max(http_timeout, 45),
         ),
         "official_directory_records": lambda: crawl_official_directory(
             max_records_per_source=getenv_int("PIPELINE_OFFICIAL_DIRECTORY_LIMIT", 150),
+            timeout=http_timeout,
         ),
         "federal_register_records": lambda: crawl_federal_register(
             pages=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGES", 3),
             per_page=getenv_int("PIPELINE_FEDERAL_REGISTER_PAGE_SIZE", 100),
+            timeout=http_timeout,
         ),
     }
 
     payloads: list[dict[str, list[dict[str, Any]]]] = []
     stage_errors: list[str] = []
+    stage_warnings: list[str] = []
     stage_results: dict[str, str] = {}
     for stage_name, fetcher in direct_fetchers:
         payload, error = safe_stage(stage_name, fetcher)
@@ -256,6 +290,10 @@ def run_pipeline(
             payloads.append(payload)
             has_data = bool(payload.get("nodes") or payload.get("edges") or usable_budget_total(payload) is not None)
             stage_results[stage_name] = "data" if has_data else "empty"
+            if payload.get("partial"):
+                # Degraded, not failed: some of the stage's queries returned nothing.
+                stage_results[stage_name] = "partial"
+                stage_warnings.append(f"{stage_name}: partial result, failed queries: {', '.join(map(str, payload['partial']))}")
         else:
             stage_results[stage_name] = "empty"
 
@@ -312,12 +350,17 @@ def run_pipeline(
     }
 
     def blocked_stats() -> dict[str, Any]:
+        # No audit is written on this path; naming the file would point at a
+        # stale one from an earlier success.
+        blocked_outputs = dict(outputs, audit_report=None)
         return {
             "timestamp": datetime.now(tz=timezone.utc).isoformat(),
             "nodes_before": nodes_before,
             "nodes_after": nodes_before,
             "new_nodes_added": 0,
             "nodes_delta": 0,
+            "published_nodes_before": published_nodes_before,
+            "nodes_delta_vs_published": 0,
             "candidate_nodes_written": 0,
             "promoted_nodes_written": 0,
             "promotion_stats": {},
@@ -327,10 +370,11 @@ def run_pipeline(
             "treasury_total_fetched": treasury_total is not None,
             "build_validation": {"exported_edge_count": 0},
             "stage_errors": list(stage_errors),
+            "stage_warnings": list(stage_warnings),
             "stage_results": dict(stage_results),
             "all_fetch_stages_failed": all_fetch_stages_failed,
             "publication_blocked": True,
-            "outputs": outputs,
+            "outputs": blocked_outputs,
         }
 
     if all_fetch_stages_failed or cost_basis_missing:
@@ -374,8 +418,10 @@ def run_pipeline(
         raise
 
     # The review queue is a file the site fetches; write it only once the graph
-    # it accompanies exists.
-    candidate_path = write_review_queue(candidates, output_path=candidate_output_path)
+    # it accompanies exists, and without the records this run already promoted
+    # or merged into it.
+    review_queue = pending_review_queue(candidates, promotion_stats)
+    candidate_path = write_review_queue(review_queue, output_path=candidate_output_path)
     write_json_file(audit_path, build_result.validation.get("audit_report", {}))
 
     nodes_after = count_tree_nodes(build_result.graph)
@@ -387,15 +433,19 @@ def run_pipeline(
         # Signed, so a shrinking graph is visible: the 13,359 -> 5,170
         # regeneration reported new_nodes_added 0 and nothing else.
         "nodes_delta": nodes_after - nodes_before,
-        "candidate_nodes_written": len(candidates),
+        "published_nodes_before": published_nodes_before,
+        "nodes_delta_vs_published": (nodes_after - published_nodes_before) if published_nodes_before is not None else None,
+        "candidate_nodes_written": len(review_queue),
+        "candidates_discovered": len(candidates),
         "promoted_nodes_written": len(promoted_nodes),
-        "promotion_stats": promotion_stats,
+        "promotion_stats": {key: value for key, value in promotion_stats.items() if key != "consumed_candidate_ids"},
         "verification_breakdown": build_result.validation.get("verification_status_counts", {}),
         "average_confidence_score": build_result.validation.get("average_confidence_score", 0.0),
         "verified_node_count": build_result.validation.get("verified_node_count", 0),
         "treasury_total_fetched": treasury_total is not None,
         "build_validation": _compact_validation(build_result.validation),
         "stage_errors": stage_errors,
+        "stage_warnings": stage_warnings,
         "stage_results": stage_results,
         "all_fetch_stages_failed": False,
         "publication_blocked": False,

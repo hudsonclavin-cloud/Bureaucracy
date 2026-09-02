@@ -180,8 +180,8 @@ class LobbyingCrawler:
         return nodes, edges
 
 
-def crawl(*, year: int, pages: int = 5, page_size: int = 50) -> dict[str, list[dict[str, Any]]]:
-    crawler = LobbyingCrawler()
+def crawl(*, year: int, pages: int = 5, page_size: int = 50, timeout: int = 30) -> dict[str, list[dict[str, Any]]]:
+    crawler = LobbyingCrawler(timeout=timeout)
     nodes, edges = crawler.build_records(year=year, pages=pages, page_size=page_size)
     return {"nodes": nodes, "edges": edges}
 

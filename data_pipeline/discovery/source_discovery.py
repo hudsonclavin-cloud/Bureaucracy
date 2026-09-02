@@ -54,8 +54,8 @@ def classify_source_url(url: str) -> str:
     host = urlparse(url).netloc.lower()
     # Specific hosts first: federalregister.gov and facadatabase.gov end in
     # .gov too, and the generic branch was swallowing them — a single Federal
-    # Register notice scored 0.71 and cleared the 0.7 promotion gate that the
-    # single-source bypass fix was meant to close.
+    # Register notice scored 0.70 (0.28 + 0.35 + 0.07) and cleared the 0.7
+    # promotion gate that the single-source bypass fix was meant to close.
     if "federalregister.gov" in host:
         return "federal_register"
     if "faca" in host or "advisory" in host:
@@ -344,12 +344,17 @@ def promote_candidates(
         "promoted_new_nodes": 0,
         "merged_duplicates": 0,
     }
+    # Records this pass promoted or merged are no longer awaiting review; the
+    # queue written afterwards leaves them out, so the site never shows the
+    # same entity once in the tree and again as a CANDIDATE stub.
+    consumed_candidate_ids: list[str] = []
 
     for raw_candidate in candidates:
         if not isinstance(raw_candidate, dict):
             continue
         stats["candidates_reviewed"] += 1
         candidate = normalize_node(raw_candidate)
+        raw_candidate_id = str(raw_candidate.get("id") or "").strip()
         parent_id = str(candidate.get("parentId") or "").strip() or None
         if not parent_id and candidate.get("possibleParent"):
             parent_id = resolve_parent_id(candidate.get("possibleParent"), name_to_id=existing_name_to_id)
@@ -387,19 +392,39 @@ def promote_candidates(
             merge_base = promoted_by_key.get(key) or dict(duplicate)
             promoted_by_key[key] = merge_node(merge_base, merged_candidate)
             stats["merged_duplicates"] += 1
+            if raw_candidate_id:
+                consumed_candidate_ids.append(raw_candidate_id)
             continue
 
         if key in promoted_by_key:
             promoted_by_key[key] = merge_node(promoted_by_key[key], candidate)
             stats["merged_duplicates"] += 1
+            if raw_candidate_id:
+                consumed_candidate_ids.append(raw_candidate_id)
             continue
 
         promoted_by_key[key] = candidate
         existing_keys.add(key)
         existing_name_to_id.setdefault(normalize_candidate_name(candidate["name"]).casefold(), candidate["id"])
         stats["promoted_new_nodes"] += 1
+        if raw_candidate_id:
+            consumed_candidate_ids.append(raw_candidate_id)
 
+    stats["consumed_candidate_ids"] = consumed_candidate_ids
     return sorted(promoted_by_key.values(), key=lambda item: (item.get("parentId") or "", item["name"])), stats
+
+
+def pending_review_queue(
+    candidates: Iterable[dict[str, Any]],
+    promotion_stats: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """The candidates still awaiting review after a promotion pass."""
+    consumed = set(promotion_stats.get("consumed_candidate_ids") or [])
+    return [
+        candidate
+        for candidate in candidates
+        if isinstance(candidate, dict) and str(candidate.get("id") or "").strip() not in consumed
+    ]
 
 
 def is_us_federal_record(record: dict[str, Any]) -> bool:

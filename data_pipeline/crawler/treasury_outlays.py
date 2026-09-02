@@ -104,6 +104,10 @@ def parse_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
             continue
         if amount is None or original_label in IGNORED_TOTAL_LABELS:
             continue
+        if "total outlays" in original_label.casefold() or original_label.casefold().startswith("total--outlays"):
+            # A relabelled grand total ("Total Outlays:", "Total outlays") must
+            # not be emitted as a $5.5T agency line; it is reported as missing.
+            continue
         normalized_name = normalize_row_name(original_label)
         if not normalized_name:
             continue
@@ -128,6 +132,10 @@ def parse_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
 
 
 def crawl(*, fiscal_year: int | None = None, timeout: int = 30) -> dict[str, Any]:
+    # The anchor is "the latest Monthly Treasury Statement", whatever fiscal
+    # year it falls in: the first statement of a new fiscal year arrives in
+    # November, so filtering on the current FY in October blocked every run,
+    # and the calendar year the pipeline used to pass was never a fiscal year.
     record_date = fetch_latest_record_date(fiscal_year=fiscal_year, timeout=timeout)
     if not record_date:
         return {"nodes": [], "edges": [], "outlayRows": [], "budgetSummary": None}
