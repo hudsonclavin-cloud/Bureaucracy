@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260809b";
+import { createLodManager } from "./lodManager.js?v=20260902a";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -197,6 +197,7 @@ export function createGovernmentGraph({
     rootObj: null,
     selectedNode: null,
     totalNodeCount: 0,
+    candidateNodeCount: 0,
     maxDataDepth: 0,
     maxNodes: 0,
     maxVisibleDepth: MAX_DEPTH,
@@ -987,7 +988,7 @@ export function createGovernmentGraph({
       dirty: true,
     };
 
-    const edgeCapacity = Math.max(state.totalNodeCount + state.relationships.length + 256, 1);
+    const edgeCapacity = Math.max(state.totalNodeCount + (state.candidateNodeCount || 0) + state.relationships.length + 256, 1);
     const edgePositions = new Float32Array(edgeCapacity * 6);
     const edgeColors = new Float32Array(edgeCapacity * 6);
     const edgeGeometry = new THREE.BufferGeometry();
@@ -2950,7 +2951,10 @@ export function createGovernmentGraph({
     for (const candidateNode of candidateList) {
       registerCandidateNode(candidateNode);
     }
-    state.totalNodeCount = meta.subtreeCount + candidateList.length;
+    // Candidates are the review queue, not the graph: 3,812 unreviewed
+    // records must not read as "9,042 total nodes" on a 5,170-node site.
+    state.totalNodeCount = meta.subtreeCount;
+    state.candidateNodeCount = candidateList.length;
     state.maxDataDepth = Math.min(data.__meta.maxDepth, MAX_DEPTH);
     state.maxNodes = MAX_NODES;
     state.manualDepthFilter = MAX_DEPTH;
@@ -3083,6 +3087,7 @@ export function createGovernmentGraph({
       return {
         visibleNodeCount: state.visibleNodeCount,
         totalNodeCount: state.totalNodeCount,
+        candidateNodeCount: state.candidateNodeCount,
         maxDataDepth: state.maxDataDepth,
         maxVisibleDepth: state.maxVisibleDepth,
         manualDepthFilter: state.manualDepthFilter,

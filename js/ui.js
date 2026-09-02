@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260809b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260809b";
+import { createGovernmentGraph } from "./graph.js?v=20260902a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260902a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -87,8 +87,17 @@ function hideLoader(delay = 200) {
 }
 
 function updateStats(stats) {
-  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
-  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  const candidateCount = Number(stats.candidateNodeCount || 0);
+  // With the candidate toggle on, the review queue is on screen too and the
+  // denominator says so; with it off, the count is the published graph alone.
+  const denominator = stats.showCandidateNodes ? stats.totalNodeCount + candidateCount : stats.totalNodeCount;
+  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${denominator.toLocaleString()} nodes rendered`);
+  setText(
+    dom.statsTotal,
+    candidateCount > 0
+      ? `${stats.totalNodeCount.toLocaleString()} published nodes · ${candidateCount.toLocaleString()} unreviewed candidates`
+      : `${stats.totalNodeCount.toLocaleString()} total nodes`,
+  );
   setText(
     dom.statsLoaded,
     `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
@@ -234,6 +243,11 @@ function ensureVerificationUi() {
   const verificationWrap = document.createElement("div");
   verificationWrap.style.marginTop = "10px";
   verificationWrap.style.padding = "10px";
+  // Every other line in the panel is 8-10px; without this the status,
+  // confidence and source lines inherit the browser's 16px default.
+  verificationWrap.style.fontSize = "9px";
+  verificationWrap.style.lineHeight = "1.6";
+  verificationWrap.style.color = "#9a8a6a";
   verificationWrap.style.border = "1px solid rgba(200,168,74,0.14)";
   verificationWrap.style.background = "rgba(20,16,12,0.72)";
   verificationWrap.style.borderRadius = "10px";
@@ -318,14 +332,21 @@ function ensureVerificationToggles() {
     return;
   }
 
+  // Lives inside the depth control so it flows below the buttons. A fixed
+  // position at top:130px was the same coordinate the depth control occupies,
+  // so the two checkboxes sat on top of the depth 1-5 buttons and hid them.
   const wrap = document.createElement("div");
-  wrap.style.position = "fixed";
-  wrap.style.top = "130px";
-  wrap.style.left = "32px";
-  wrap.style.zIndex = "20";
-  wrap.style.display = "flex";
-  wrap.style.flexDirection = "column";
-  wrap.style.gap = "6px";
+  wrap.id = "verification-toggles";
+  const depthExpandCtrl = document.getElementById("depth-expand-ctrl");
+  if (!depthExpandCtrl) {
+    wrap.style.position = "fixed";
+    wrap.style.top = "180px";
+    wrap.style.left = "32px";
+    wrap.style.zIndex = "20";
+    wrap.style.display = "flex";
+    wrap.style.flexDirection = "column";
+    wrap.style.gap = "6px";
+  }
 
   const makeToggle = (labelText) => {
     const label = document.createElement("label");
@@ -352,7 +373,7 @@ function ensureVerificationToggles() {
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
 
-  document.body.appendChild(wrap);
+  (depthExpandCtrl || document.body).appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
@@ -638,6 +659,12 @@ function formatCostAmount(node) {
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
   if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null) {
+    if (String(node.cost_validation || "").toLowerCase() === "allocation_below_precision") {
+      return {
+        ...COST_STATUS_COPY.unavailable,
+        note: "Its share of the parent's estimate rounds to less than one cent, so no figure is shown rather than $0.",
+      };
+    }
     return COST_STATUS_COPY.unavailable;
   }
 

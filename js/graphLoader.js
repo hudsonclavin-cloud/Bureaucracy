@@ -287,13 +287,29 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  baseRoot.relationships = rawEdges
-    .filter((edge) => edge && edge.source && edge.target)
-    .map((edge) => ({
+  // Merge, never replace: graph.json carries the exporter's relationships and
+  // the corporate overlay always loads, so an assignment here dropped every
+  // pipeline edge whenever expanded_edges.json was stale or missing.
+  const existingRelationships = Array.isArray(baseRoot.relationships) ? baseRoot.relationships : [];
+  const seenEdges = new Set();
+  const mergedRelationships = [];
+  for (const edge of [...existingRelationships, ...rawEdges]) {
+    if (!edge || !edge.source || !edge.target) {
+      continue;
+    }
+    const normalized = {
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
-    }));
+    };
+    const key = `${normalized.source}::${normalized.target}::${normalized.type}`;
+    if (seenEdges.has(key)) {
+      continue;
+    }
+    seenEdges.add(key);
+    mergedRelationships.push(normalized);
+  }
+  baseRoot.relationships = mergedRelationships;
 
   return baseRoot;
 }
