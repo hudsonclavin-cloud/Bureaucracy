@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -51,14 +52,18 @@ class CandidateNode:
 
 def classify_source_url(url: str) -> str:
     host = urlparse(url).netloc.lower()
-    if host.endswith(".gov") or host.endswith(".mil"):
-        return "official_site"
-    if "wikidata.org" in host:
-        return "wikidata"
+    # Specific hosts first: federalregister.gov and facadatabase.gov end in
+    # .gov too, and the generic branch was swallowing them — a single Federal
+    # Register notice scored 0.71 and cleared the 0.7 promotion gate that the
+    # single-source bypass fix was meant to close.
     if "federalregister.gov" in host:
         return "federal_register"
     if "faca" in host or "advisory" in host:
         return "advisory_directory"
+    if host.endswith(".gov") or host.endswith(".mil"):
+        return "official_site"
+    if "wikidata.org" in host:
+        return "wikidata"
     return "unknown"
 
 
@@ -574,13 +579,18 @@ def discover_candidates(
     existing_ids, existing_name_parent_keys, _ = build_existing_candidate_indexes(existing_node_list)
     existing_name_to_id, _, _ = build_existing_node_maps(existing_node_list)
 
+    # Template leadership positions are invented, not discovered: five generic
+    # roles stamped under every office with a generated:// "source". Off unless
+    # asked for, as it was before the 2026-08-04 merge dropped the flag — with
+    # it on, 1,855 of the 3,812 served candidates were these.
+    enable_template_leadership = os.environ.get("PIPELINE_ENABLE_TEMPLATE_LEADERSHIP", "0") == "1"
     candidates = [
         *discover_from_wikidata(wikidata_records),
         *discover_from_advisory_committees(advisory_committee_records),
         *discover_from_agency_org_charts(org_chart_records),
         *discover_from_official_directory(official_directory_records),
         *discover_from_federal_register(federal_register_records),
-        *discover_leadership_positions(existing_node_list),
+        *(discover_leadership_positions(existing_node_list) if enable_template_leadership else []),
     ]
     deduped_candidates = dedupe_candidates(
         candidates,
