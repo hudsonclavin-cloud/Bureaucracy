@@ -293,7 +293,11 @@ window.GRAPH_DATA_SOURCES = {
   // the loader drops to if the pipeline artefact is missing or malformed.
   primary: "./output/graph.json",
   base: "./data/federal_gov_complete_1.json",
-  corporate: "./data_expansion/corporate_expansion.json",
+  // data_expansion/corporate_expansion.json is currently the template output
+  // of expand_corporate_nodes.py (invented "Head of Finance & Risk" positions),
+  // not officers extracted from SEC EDGAR. It is not merged into the tree until
+  // extract_and_expand.py has produced real ones; set this to its path then.
+  corporate: null,
 };
 window.__graphBootFailed = function (message) {
   var status = document.getElementById("load-status");

@@ -420,6 +420,8 @@ function renderVerificationPanel(data) {
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
   const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+  // A generated:// placeholder is not a source; it must not be counted or listed.
+  const linkableSources = sourceUrls.filter((url) => isHttpUrl(url));
   const badge = getVerificationBadgeConfig(data);
 
   setText(dom.verificationBadge, badge.label);
@@ -435,10 +437,12 @@ function renderVerificationPanel(data) {
     setText(dom.verificationLastVerified, "");
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
-    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
+    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
     setText(
       dom.verificationLastVerified,
-      `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
+      data.lastVerified
+        ? `Last checked: ${new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}`
+        : "Not yet verified",
     );
   }
 
@@ -449,7 +453,7 @@ function renderVerificationPanel(data) {
   sourcesLabel.style.color = "#d4c4a1";
   dom.verificationSources.appendChild(sourcesLabel);
 
-  if (sourceUrls.length === 0) {
+  if (linkableSources.length === 0) {
     const empty = document.createElement("div");
     empty.textContent = "No confirming sources recorded.";
     empty.style.color = "#8f7a5d";
@@ -457,32 +461,33 @@ function renderVerificationPanel(data) {
     return;
   }
 
-  sourceUrls.forEach((url, index) => {
-    let parsed = null;
-    try {
-      parsed = new URL(url);
-    } catch (_error) {
-      parsed = null;
-    }
-    const isSafeLink = Boolean(parsed && (parsed.protocol === "http:" || parsed.protocol === "https:"));
-    const label = `• ${isSafeLink ? parsed.hostname : url}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
+  for (const url of linkableSources) {
+    const parsed = new URL(url);
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    link.textContent = `• ${parsed.hostname}`;
+    link.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(link);
+  }
+  // sourceTypes is a set of labels, not a list parallel to sourceUrls.
+  const typeLabels = sourceTypes.filter((label) => label && label !== "candidate_discovery" && label !== "unknown");
+  if (typeLabels.length > 0) {
+    const types = document.createElement("div");
+    types.textContent = `Source types: ${typeLabels.join(", ")}`;
+    types.style.color = "#8f7a5d";
+    dom.verificationSources.appendChild(types);
+  }
+}
 
-    if (isSafeLink) {
-      const link = document.createElement("a");
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noreferrer noopener";
-      link.textContent = label;
-      link.style.color = "#d4c4a1";
-      dom.verificationSources.appendChild(link);
-      return;
-    }
-
-    const item = document.createElement("span");
-    item.textContent = label;
-    item.style.color = "#d4c4a1";
-    dom.verificationSources.appendChild(item);
-  });
+function isHttpUrl(value) {
+  try {
+    const parsed = new URL(String(value));
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch (_error) {
+    return false;
+  }
 }
 
 function renderOriginTrace(nodeObj) {
@@ -546,6 +551,10 @@ const COST_BASIS_PHRASES = {
   subtree_weight: "how many units sit beneath it",
   employee_weight: "staff count",
   budget_weight: "reported budget",
+  annual_budget_weight: "reported annual budget",
+  direct_outlay_weight: "reported outlays",
+  implied_budget_weight: "a budget implied from its siblings' reported budgets and its size",
+  implied_employee_weight: "a staff count implied from its siblings' reported staff and its size",
 };
 
 const COST_STATUS_COPY = {
@@ -557,14 +566,14 @@ const COST_STATUS_COPY = {
     note: "U.S. Treasury outlays, from the Monthly Treasury Statement.",
   },
   official: {
-    label: "Reported",
-    tone: "reported",
-    note: "Figure published by the organisation itself.",
+    label: "Measured",
+    tone: "measured",
+    note: "U.S. Treasury outlays reported for this unit in the Monthly Treasury Statement (Table 5).",
   },
   scaled_official: {
-    label: "Reported, adjusted",
+    label: "Measured, adjusted",
     tone: "reported",
-    note: "Published figure, rescaled to fit within the parent total.",
+    note: "Treasury outlays for this unit, rescaled so its siblings fit within the parent's total.",
   },
   allocated: { label: "Estimate", tone: "estimate", note: "" },
   unavailable: {
@@ -591,9 +600,13 @@ function getCostPeriod(node) {
   if (!source) {
     return { label: "", amountKind: "" };
   }
+  // A Treasury line stamped on a node carries budget_as_of rather than a
+  // record_date; without this fallback a measured agency showed no period.
+  const asOf = source.record_date || source.budget_as_of;
   const label =
     String(source.label || "").trim() ||
-    (source.record_date ? `As of ${String(source.record_date).trim()}` : "");
+    (asOf ? `As of ${String(asOf).trim()}` : "") ||
+    (graphBudgetSummary && graphBudgetSummary !== source ? String(graphBudgetSummary.label || "").trim() : "");
   return { label, amountKind: String(source.amount_kind || "").trim().toLowerCase() };
 }
 
@@ -647,7 +660,7 @@ function formatApproximateCost(amount) {
 // would claim ten significant figures for a number that has about one.
 function formatCostAmount(node) {
   const amount = toFiniteAmount(node.resolved_total_amount);
-  if (amount === null) {
+  if (amount === null || isBelowPrecision(node)) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
@@ -656,13 +669,22 @@ function formatCostAmount(node) {
   return `≈ ${formatApproximateCost(amount)}`;
 }
 
+function isBelowPrecision(node) {
+  const amount = toFiniteAmount(node.resolved_total_amount);
+  const status = String(node.cost_status || "").toLowerCase();
+  return (
+    String(node.cost_validation || "").toLowerCase() === "allocation_below_precision" ||
+    (status === "allocated" && amount !== null && Math.abs(amount) < 0.5)
+  );
+}
+
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
-  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null) {
-    if (String(node.cost_validation || "").toLowerCase() === "allocation_below_precision") {
+  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node)) {
+    if (isBelowPrecision(node)) {
       return {
         ...COST_STATUS_COPY.unavailable,
-        note: "Its share of the parent's estimate rounds to less than one cent, so no figure is shown rather than $0.",
+        note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.",
       };
     }
     return COST_STATUS_COPY.unavailable;
@@ -775,7 +797,9 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
   if (data.budget) {
-    statRows.push(["BUDGET", data.budget]);
+    // A hand-typed note in the curated file, not a sourced figure. Unlabelled it
+    // read as a second, contradictory cost beneath the estimate.
+    statRows.push(["BUDGET NOTE (hand-compiled)", data.budget]);
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
@@ -927,7 +951,7 @@ function renderSearchResults(matches) {
 
     const type = document.createElement("span");
     type.className = "sr-type";
-    const status = match.isCandidate ? "CANDIDATE" : String(match.verificationStatus || "unverified").toUpperCase();
+    const status = getVerificationBadgeConfig(match).label;
     type.textContent = `${match.type} — ${status}`;
     type.style.color = match.color || "#666";
     type.style.borderColor = `${match.color || "#666"}40`;
@@ -1212,7 +1236,11 @@ function bindControls() {
       return;
     }
     const matches = [];
+    const showCandidates = Boolean(dom.toggleCandidates?.checked);
     for (const item of state.searchIndex) {
+      if (item.isCandidate && !showCandidates) {
+        continue;
+      }
       if (
         item.name.toLowerCase().includes(query) ||
         item.type.toLowerCase().includes(query) ||
@@ -1268,10 +1296,20 @@ async function initGraphApp() {
       window.GRAPH_DATA_SOURCES?.base ||
       "./data/federal_gov_complete_1.json",
     fallbackBaseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
-    corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
+    // null means "no overlay"; only an undefined key falls back to the default path.
+    corporateUrl:
+      window.GRAPH_DATA_SOURCES && "corporate" in window.GRAPH_DATA_SOURCES
+        ? window.GRAPH_DATA_SOURCES.corporate
+        : "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
+  if (data && data.__loadSource === "fallback") {
+    const provenance = document.getElementById("data-provenance");
+    if (provenance) {
+      provenance.textContent = "Pipeline graph unavailable — showing the hand-compiled hierarchy without cost data";
+    }
+  }
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();

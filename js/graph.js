@@ -49,7 +49,7 @@ const branchColors = {
   judicial: "#4a8ac8",
   independent: "#4ac88a",
   regulatory: "#c8884a",
-  position: "#888888",
+  position: "#666666",
 };
 const branchSectorDirections = {
   constitution: new THREE.Vector3(0, 1, 0.08).normalize(),
@@ -305,6 +305,21 @@ export function createGovernmentGraph({
     if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
       return "constitution";
     }
+    // The three branch nodes are "legislative-branch" / "executive-branch" /
+    // "judicial-branch" (type Branch); the prefix rules below only matched
+    // their descendants, so the branches themselves fell through to
+    // "position" and never reached the sector triangle.
+    if (type === "branch" || id.endsWith("-branch")) {
+      if (id.startsWith("legislative")) {
+        return "legislative";
+      }
+      if (id.startsWith("judicial")) {
+        return "judicial";
+      }
+      if (id.startsWith("executive")) {
+        return "executive";
+      }
+    }
     if (type === "position" || type.includes("office") || type.includes("officer")) {
       return "position";
     }
@@ -356,9 +371,25 @@ export function createGovernmentGraph({
     return branchColors[branchKey] || branchColors.position;
   }
 
+  // Mirrors ui.js isNeverChecked: zero sources and no verification timestamp
+  // means nothing was ever checked. That is not the checked-and-failed state
+  // the wireframe "unverified" material and the hide toggle exist for — with
+  // every curated node stamped "unverified" by default, the whole graph drew
+  // as 20% ghosts and the toggle blanked the Constitution.
+  function isNeverChecked(data) {
+    if (!data || data.isCandidate) {
+      return false;
+    }
+    const sourceCount = Number(data.sourceCount || (Array.isArray(data.sourceUrls) ? data.sourceUrls.length : 0));
+    return sourceCount === 0 && !data.lastVerified;
+  }
+
   function getVerificationStyleKey(data) {
     if (data?.isCandidate) {
       return "candidate";
+    }
+    if (isNeverChecked(data)) {
+      return "unsourced";
     }
     const status = String(data?.verificationStatus || "verified").toLowerCase();
     if (status === "partial") {
@@ -378,6 +409,9 @@ export function createGovernmentGraph({
     if (styleKey === "unverified") {
       return "#8e7d62";
     }
+    if (styleKey === "unsourced") {
+      return "#9a8a6a";
+    }
     if (styleKey === "candidate") {
       return "#9b8bbd";
     }
@@ -389,6 +423,11 @@ export function createGovernmentGraph({
       return state.showCandidateNodes;
     }
     if (state.showUnverifiedNodes) {
+      return true;
+    }
+    if (isNeverChecked(data)) {
+      // The toggle hides nodes that were checked and failed, not the curated
+      // hierarchy nothing has checked.
       return true;
     }
     return !(Number(data?.confidenceScore || 0) < 0.5 || String(data?.verificationStatus || "") === "unverified");
@@ -562,7 +601,10 @@ export function createGovernmentGraph({
 
   function getNavigationDistance() {
     if (state.flyMode) {
-      return Math.max(camera.position.distanceTo(state.flyLookTarget), 1);
+      // flyLookTarget is always FLY_LOOK_DISTANCE ahead of the camera, so
+      // measuring to it pinned the LOD at Position View from any range.
+      const anchor = state.selectedNode?.pos || state.rootObj?.pos;
+      return Math.max(anchor ? camera.position.distanceTo(anchor) : camera.position.length(), 1);
     }
     return Math.max(camera.position.distanceTo(state.camFocus), 1);
   }
@@ -577,11 +619,22 @@ export function createGovernmentGraph({
     return state.lod;
   }
 
+  // "Legislative Branch — The Congress" is not "legislative branch", so a
+  // name lookup protected two branches out of three. The type says what it is.
+  function isBranchRoot(data) {
+    if (!data) {
+      return false;
+    }
+    if (normalizeClusterKey(data.type).includes("branch")) {
+      return true;
+    }
+    return ALWAYS_VISIBLE_CLUSTER_NAMES.has(normalizeClusterKey(data.name || data.id));
+  }
+
   function getProtectedNodeIds() {
     const protectedIds = new Set([state.rootObj?.data?.id].filter(Boolean));
     for (const nodeObj of state.visibleNodes) {
-      const normalizedName = normalizeClusterKey(nodeObj.data?.name || nodeObj.data?.id);
-      if (ALWAYS_VISIBLE_CLUSTER_NAMES.has(normalizedName)) {
+      if (isBranchRoot(nodeObj.data)) {
         protectedIds.add(nodeObj.data.id);
       }
     }
@@ -840,6 +893,8 @@ export function createGovernmentGraph({
       type: node.type,
       color: node.color,
       verificationStatus: node.verificationStatus || "unverified",
+      sourceCount: Number(node.sourceCount || (Array.isArray(node.sourceUrls) ? node.sourceUrls.length : 0)),
+      lastVerified: node.lastVerified || null,
       isCandidate: Boolean(node.isCandidate),
       pathStr: path.join(" › "),
     });
@@ -906,6 +961,16 @@ export function createGovernmentGraph({
         emissiveIntensity: 0.05,
         opacity: 0.2,
         wireframe: true,
+      };
+    }
+    if (styleKey === "unsourced") {
+      // Solid and slightly dimmer than verified: present, not discredited.
+      return {
+        color: baseColor.clone().lerp(whiteColor, 0.1),
+        emissive: baseColor.clone().multiplyScalar(0.16),
+        emissiveIntensity: 0.1,
+        opacity: 0.78,
+        wireframe: false,
       };
     }
     if (styleKey === "candidate") {
@@ -994,8 +1059,11 @@ export function createGovernmentGraph({
     const edgeGeometry = new THREE.BufferGeometry();
     edgeGeometry.setAttribute("position", new THREE.BufferAttribute(edgePositions, 3));
     edgeGeometry.setAttribute("color", new THREE.BufferAttribute(edgeColors, 3));
+    // vertexColors, or the per-edge colour attribute above (and every
+    // setEdgeColor / origin-trace tint) is ignored and edges render flat grey.
     const edgeMaterial = new THREE.LineBasicMaterial({
-      color: 0x999999,
+      color: 0xffffff,
+      vertexColors: true,
       transparent: true,
       opacity: 0.3,
     });
@@ -1708,8 +1776,7 @@ export function createGovernmentGraph({
     if (!nodeObj || nodeObj.isCandidate || nodeObj === state.rootObj || nodeObj === state.selectedNode) {
       return true;
     }
-    const normalizedName = normalizeClusterKey(nodeObj.data?.name || nodeObj.data?.id);
-    if (ALWAYS_VISIBLE_CLUSTER_NAMES.has(normalizedName)) {
+    if (isBranchRoot(nodeObj.data)) {
       return true;
     }
     if (state.highlightedPathIds.has(nodeObj.data.id)) {
@@ -1844,6 +1911,11 @@ export function createGovernmentGraph({
   // treat null as terminal failure and stop retrying.
   function revealNodeById(id, animate = true) {
     if (!state.dataMap.has(id)) {
+      return null;
+    }
+    // A hidden candidate cannot be shown: selecting it flew the camera to an
+    // empty point. Deterministic failure, per this function's contract.
+    if (state.dataMap.get(id)?.isCandidate && !state.showCandidateNodes) {
       return null;
     }
 
@@ -2917,7 +2989,11 @@ export function createGovernmentGraph({
       state.renderDirty = true;
     });
 
+    const isTypingTarget = (event) => Boolean(event.target?.closest?.("input, textarea, select, [contenteditable]"));
     window.addEventListener("keydown", (event) => {
+      if (isTypingTarget(event)) {
+        return;
+      }
       if (event.code in state.keyState) {
         state.keyState[event.code] = true;
       }
@@ -2927,6 +3003,9 @@ export function createGovernmentGraph({
     });
 
     window.addEventListener("keyup", (event) => {
+      if (isTypingTarget(event)) {
+        return;
+      }
       if (event.code in state.keyState) {
         state.keyState[event.code] = false;
       }
