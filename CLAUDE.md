@@ -21,7 +21,9 @@ python data_pipeline/exporter/build_graph.py     # rebuild from base graph + las
 python -m pytest tests/                          # the suite; every gate is pinned in both directions
 python -m pytest tests/test_build_graph.py -v
 python scripts/validate_published_graph.py       # publish gate on output/graph.json, exit 1 on violation
-python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, then gate
+python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
+python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
+node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
 python -m http.server 8080                       # serve the site locally
 python data_expansion/extract_and_expand.py      # regenerate the corporate overlay (needs `requests`, SEC network)
 ```
@@ -72,8 +74,11 @@ Two halves that communicate only through committed JSON in `output/`.
 - `processors/normalize_nodes.py` — `NodeRegistry` dedups and merges nodes,
   recomputes confidence in `verify_node_sources`, and scores the proof fields
   (`existsProven`, `proofSourceCount`, ...) off official `.gov/.mil` sources.
-  `normalize_edges.py` — `EdgeRegistry`. `budget_reconciliation.py` — budget
-  vs actual reconciliation; present and tested, not yet wired into a run.
+  `normalize_edges.py` — `EdgeRegistry` (an unknown type is kept as
+  `related_to`, never rewritten to `manages`). `budget_reconciliation.py` —
+  the curated budget notes against the Treasury lines on the nodes; run by
+  `build_graph`, written to `output/budget_reconciliation.json` (untracked),
+  summary in the validity report and stats.
 - `discovery/source_discovery.py` — builds candidate nodes from the discovery
   crawlers, promotes candidates at or above the threshold, and the run then
   writes `output/candidate_nodes.json` (the review queue) without the

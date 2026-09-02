@@ -2141,8 +2141,7 @@ export function createGovernmentGraph({
       return false;
     }
 
-    const normalizedName = normalizeClusterKey(nodeObj.data?.name || nodeObj.data?.id);
-    if (ALWAYS_VISIBLE_CLUSTER_NAMES.has(normalizedName)) {
+    if (isBranchRoot(nodeObj.data)) {
       return false;
     }
 

@@ -56,6 +56,10 @@ python scripts/regenerate_published_graph.py
 python -m http.server 8080
 # open http://localhost:8080/index.html
 
+# Frontend smoke check (optional; needs Node plus a local playwright-core and three):
+#   npm install --no-save playwright-core three
+node scripts/frontend_smoke.mjs
+
 # Attempt to extract government-corporation officers from SEC EDGAR (network).
 # The committed data_expansion/corporate_expansion.json is NOT that: it is the
 # template output of expand_corporate_nodes.py (invented positions), which is
@@ -75,7 +79,12 @@ output/expanded_nodes.json            nodes the crawl added beyond the base grap
 output/expanded_edges.json            non-hierarchical relationships between published nodes
 output/candidate_nodes.json           discovery review queue; shown only behind "Show Candidate Nodes"
 output/pipeline_stats.json            summary of the last run
+output/budget_reconciliation.json     budget notes vs Treasury actuals per organisation (untracked diagnostic)
 scripts/validate_published_graph.py   publish-time gate
+scripts/regenerate_published_graph.py offline rebuild of output/ (graph, stats, repaired review queue), gated
+scripts/repair_review_queue.py        the review-queue repair rules, with a report
+scripts/frontend_smoke.mjs            headless-browser check of what the page tells a visitor
+ROADMAP.md                            where the project stands and what is worth doing next
 index.html, js/                       the explorer (vanilla ES modules + Three.js from unpkg, no build step)
 tests/                                pytest suite
 ```
