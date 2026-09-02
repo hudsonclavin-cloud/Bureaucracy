@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-02T23:35:57.981756+00:00",
+  "timestamp": "2026-09-02T23:42:52.181571+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -82,6 +82,27 @@
       "source_system": "Treasury Fiscal Data",
       "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
       "reused_from_previous_build": true
+    },
+    "budget_reconciliation": {
+      "nodes_seen": 5170,
+      "organisation_nodes_seen": 565,
+      "nodes_without_figures": 456,
+      "rows_emitted": 109,
+      "complete_rows": 0,
+      "budget_only_rows": 109,
+      "actual_only_rows": 0,
+      "unavailable_rows": 0,
+      "missing_budget_rows": 0,
+      "missing_actual_rows": 109,
+      "variance_status_counts": {
+        "unavailable": 109
+      },
+      "budget_source_counts": {
+        "curated budget note": 109
+      },
+      "actual_source_counts": {},
+      "reconciled_rows": 0,
+      "incomplete_rows": 109
     },
     "verified_treasury_total": 5517917965556.91,
     "cost_status_counts": {

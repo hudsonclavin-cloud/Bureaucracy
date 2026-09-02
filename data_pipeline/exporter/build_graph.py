@@ -16,6 +16,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from data_pipeline.processors.normalize_edges import EdgeRegistry
 from data_pipeline.json_io import load_json_file, write_json_file
+from data_pipeline.processors.budget_reconciliation import reconcile_nodes
 from data_pipeline.processors.normalize_nodes import (
     NodeRegistry,
     load_existing_node_ids,
@@ -1556,6 +1557,13 @@ def build_graph(
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats
+    # Budget vs actual (GitHub issue #1): the curated budget notes against the
+    # Treasury lines now on the nodes. Full rows go to their own file beside
+    # the validity report; the summary travels with the stats.
+    reconciliation = reconcile_nodes(list(index_tree(graph)[0].values()), amount_parser=parse_cost_amount)
+    validity_report["budget_reconciliation"] = reconciliation["summary"]
+    validation["budget_reconciliation"] = reconciliation["summary"]
+    reconciliation_path = Path(validity_report_output_path).parent / "budget_reconciliation.json"
     validity_report["cost_export_policy"] = summarize_export_policy(cost_export_policy)
     validity_report["node_export_policy"] = summarize_export_policy(node_export_policy)
     graph_node_map, graph_parent_map = index_tree(graph)
@@ -1621,6 +1629,7 @@ def build_graph(
     write_json_file(nodes_path, export_nodes)
     write_json_file(edges_path, export_edges)
     write_json_file(validity_report_path, validity_report)
+    write_json_file(reconciliation_path, reconciliation)
 
     return BuildResult(
         nodes=export_nodes,

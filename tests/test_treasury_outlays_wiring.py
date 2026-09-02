@@ -230,6 +230,18 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
         self.assertEqual(nodes["exec-dept-treasury"][0]["resolved_total_amount"], 300e9)
         self.assertGreaterEqual(second.validation["treasury_outlay_rows"]["stale_rollups_cleared"], 1)
 
+    def test_the_run_writes_a_budget_vs_actual_report(self) -> None:
+        result = self._build(ROWS)
+        summary = result.validation["budget_reconciliation"]
+        self.assertGreaterEqual(summary["actual_only_rows"] + summary["complete_rows"], 5)
+        report_path = self.tmp_path / "budget_reconciliation.json"
+        self.assertTrue(report_path.exists())
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+        rows = {row["id"]: row for row in report["rows"]}
+        self.assertEqual(rows["exec-dept-treasury"]["actual_amount"], 300e9)
+        self.assertEqual(rows["exec-dept-treasury"]["actual_as_of"], "2026-06-30")
+        self.assertNotIn("exec-dept-treasury-secretary", rows)
+
     def test_no_lines_means_no_change(self) -> None:
         result = self._build([])
         nodes = _index(result.graph)
