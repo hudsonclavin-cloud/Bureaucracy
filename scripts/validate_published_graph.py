@@ -168,6 +168,57 @@ def main(argv):
         ["{} appears {} times".format(node_id, count) for node_id, count in id_counts.items() if count > 1],
     )
 
+    # 10. An amount of zero (or less) is a claim that the thing is free. A share
+    #     the cascade could not resolve must say so with cost_status
+    #     'unavailable' and no amount, never with $0.00.
+    non_positive = []
+    unlabelled_missing = []
+    for node in nodes:
+        amount = amount_of(node)
+        if amount is not None and amount <= 0:
+            non_positive.append("{} = {:,.2f}".format(label(node), amount))
+        elif amount is None and str(node.get("cost_status") or "") != "unavailable":
+            unlabelled_missing.append("{} has no amount and cost_status {!r}".format(label(node), node.get("cost_status")))
+    gate.check("no zero or negative amounts", non_positive)
+    gate.check("a missing amount is labelled unavailable", unlabelled_missing)
+
+    # 11. Check 6, at every level: the parts of any node must fit inside it.
+    over_parent_sums = []
+    for parent, _ in pairs:
+        parent_amount = amount_of(parent)
+        if parent_amount is None:
+            continue
+        children = [c for c in (parent.get("children") or []) if isinstance(c, dict)]
+        child_amounts = [a for a in (amount_of(c) for c in children) if a is not None]
+        if not child_amounts:
+            continue
+        total = sum(child_amounts)
+        if total > parent_amount * (1 + CHILD_SUM_TOLERANCE) + 0.01:
+            over_parent_sums.append(
+                "children of {} sum to {:,.2f} > {:,.2f}".format(label(parent), total, parent_amount)
+            )
+    gate.check("children sum within every parent's total", over_parent_sums)
+
+    # 12. A cost source count is a claim of evidence for the figure. It needs a
+    #     source URL, an official rollup on the node, or — for the root only —
+    #     the Treasury summary the graph carries.
+    unsupported_cost_sources = []
+    for node in nodes:
+        try:
+            cost_sources = int(node.get("costSourceCount") or 0)
+        except (TypeError, ValueError):
+            cost_sources = 0
+        if cost_sources <= 0:
+            continue
+        urls = node.get("sourceUrls") if isinstance(node.get("sourceUrls"), list) else []
+        has_rollup = node.get("rollup_total_amount") is not None
+        is_anchor = node is graph and isinstance(graph.get("__budgetSummary"), dict)
+        if not (urls or has_rollup or is_anchor):
+            unsupported_cost_sources.append(
+                "{} claims {} cost source(s) with no sourceUrls and no rollup".format(label(node), cost_sources)
+            )
+    gate.check("costSourceCount is backed by evidence", unsupported_cost_sources)
+
     # 9. Root fan-out. 3,438 top-level children was the symptom that started this.
     top_level = graph.get("children") or []
     gate.check(
@@ -190,6 +241,11 @@ def main(argv):
     print("  verification         : {}".format(dict(verification.most_common())))
     print("  cost_status          : {}".format(dict(cost_status.most_common())))
     print("  no source recorded   : {:,}".format(no_source))
+    summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
+    print("  anchor               : {} {}".format(
+        summary.get("label") or "none",
+        "(reused from a previous build)" if summary.get("reused_from_previous_build") else "",
+    ).rstrip())
 
     print()
     if gate.failures:

@@ -108,7 +108,10 @@ class CostValidationTests(unittest.TestCase):
         self.assertEqual(result["exception_reason"], "trusted_base_graph_exception")
         self.assertIn("non_authoritative_cost_status", result["blocking_issue_codes"])
 
-    def test_missing_amount_is_rejected_even_when_trusted(self) -> None:
+    def test_missing_amount_is_waived_but_reported_when_trusted(self) -> None:
+        """Policy, stated plainly: a curated base-graph node is published even
+        without a cost (8dab251 trusts the base graph by id), so the exception
+        waives the missing amount. What it must never do is hide it."""
         validator = CostValidator()
         node = _costed_node(resolved_total_amount=None)
 
@@ -117,9 +120,10 @@ class CostValidationTests(unittest.TestCase):
         self.assertIn("missing_cost", untrusted["blocking_issue_codes"])
 
         trusted = validator.validate_node_cost(node, trusted_exception=True)
-        # The exception waives export, but the missing amount is still reported.
+        self.assertTrue(trusted["export_allowed"])
         self.assertIn("missing_cost", trusted["blocking_issue_codes"])
         self.assertTrue(trusted["exception_applied"])
+        self.assertEqual(trusted["exception_reason"], "trusted_base_graph_exception")
 
 
 class NodeRequirementsTrustTests(unittest.TestCase):

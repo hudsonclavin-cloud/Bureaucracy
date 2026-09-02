@@ -66,7 +66,9 @@ ACRONYMS = {
 
 def normalize_name(value: Any) -> str:
     text = "" if value is None else str(value)
-    text = re.sub(r"[_/]+", " ", text).strip()
+    # Underscores are slug residue; a slash is punctuation people write in
+    # names ("Deputy Director / COO") and must survive normalisation.
+    text = re.sub(r"_+", " ", text).strip()
     text = re.sub(r"\s+", " ", text)
     if not text:
         return DEFAULT_NODE["name"]
@@ -252,8 +254,16 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
     exists_proven = False
     proof_status = "unproven"
     proof_reason = "no_evidence_recorded" if proof_source_count == 0 and source_count == 0 else "insufficient_direct_proof"
-    if (
-        "official_site" in aliased_source_types
+    # A type label is a claim about a URL; with no URL recorded it proves
+    # nothing. And "official_site" in particular must be earned by a .gov/.mil
+    # URL that is actually present, not asserted alongside an unrelated one.
+    url_backed_types = normalize_string_list(
+        [*inferred_types, *[SOURCE_TYPE_ALIASES.get(source_type, source_type) for source_type in inferred_types]]
+    )
+    if source_count == 0:
+        proof_reason = "no_evidence_recorded"
+    elif (
+        "official_site" in url_backed_types
         or "official_financial_record" in aliased_source_types
         or "legislative_reference" in aliased_source_types
     ):

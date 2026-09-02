@@ -33,7 +33,11 @@ DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
 DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
 HIERARCHICAL_RELATIONSHIPS = {"reports_to", "subsidiary_of"}
-COST_NUMBER_PATTERN = re.compile(r"(-?\d[\d,]*(?:\.\d+)?)\s*(trillion|billion|million|thousand|t|b|m|k)?", re.IGNORECASE)
+# The optional suffix must end at a word boundary: without `\b`, "~2,000 total
+# staff" read as 2,000 *trillion* because the "t" of "total" matched, and that
+# node then took its parent's entire allocation.
+COST_NUMBER_PATTERN = re.compile(r"(-?\d[\d,]*(?:\.\d+)?)\s*(trillion|billion|million|thousand|t|b|m|k)?\b", re.IGNORECASE)
+YEAR_LIKE_PATTERN = re.compile(r"^(19|20)\d{2}$")
 COST_EXPORT_FIELDS = (
     "resolved_total_amount",
     "cost_status",
@@ -145,6 +149,10 @@ def load_base_graph(base_graph_path: str | Path) -> dict[str, Any]:
     }
 
 
+def carries_crawler_provenance(node: dict[str, Any]) -> bool:
+    return bool(node.get("sourceUrls")) or node.get("rollup_total_amount") is not None or bool(node.get("budget_source"))
+
+
 def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     path = Path(graph_path)
     if not path.exists():
@@ -158,6 +166,9 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     for node, parent in walk_tree(payload):
         normalized = deepcopy(node)
         normalized["children"] = []
+        # Tree-level fields of the root are not node fields.
+        normalized.pop("relationships", None)
+        normalized.pop("__budgetSummary", None)
         if parent and parent.get("id"):
             normalized["parentId"] = str(parent["id"])
         nodes.append(normalized)
@@ -261,7 +272,9 @@ def build_graph_tree(
     root = deepcopy(load_base_graph(base_graph_path))
     node_map, parent_map = index_tree(root)
     root_id = str(root.get("id") or "root")
+    curated_ids = set(node_map)
     cycle_fallback_root_attachments = 0
+    unattached_missing_parent = 0
 
     for node in nodes:
         normalized_node = dict(node)
@@ -269,7 +282,17 @@ def build_graph_tree(
         node_id = normalized_node["id"]
         existing = node_map.get(node_id)
         if existing:
+            # The curated file is the authority on what a base node is called
+            # and what it is. A payload copy has been through normalize_name —
+            # and every real run re-feeds the previous graph.json as a payload,
+            # so without this the merge rewrote "Deputy Director / COO" to
+            # "Deputy Director COO" on each rebuild (the 16 names 270ac18 had
+            # to restore by hand).
+            curated = {key: existing.get(key) for key in ("name", "type")} if node_id in curated_ids else {}
             merge_node(existing, normalized_node)
+            for key, value in curated.items():
+                if value:
+                    existing[key] = value
         else:
             node_map[node_id] = normalized_node
 
@@ -294,9 +317,16 @@ def build_graph_tree(
             continue
         if node.get("attachToRoot") and node_id != root_id:
             safe_attach_child(root, attached_node, parent_map=parent_map)
+            continue
+        if node_id != root_id and node_id not in parent_map:
+            # Its parent was itself dropped, so it names a parent no tree has.
+            # Validation kept it (the parent was a known input id); here it
+            # falls off silently unless counted.
+            unattached_missing_parent += 1
 
     if stats is not None:
         stats["cycle_fallback_root_attachments"] = cycle_fallback_root_attachments
+        stats["nodes_unattached_missing_parent"] = unattached_missing_parent
 
     root["relationships"] = list(edges)
     return root
@@ -321,6 +351,7 @@ def parse_cost_amount(value: Any) -> float | None:
     matches = COST_NUMBER_PATTERN.findall(text.replace("$", " "))
     if matches:
         parsed_values: list[float] = []
+        year_like_values: list[float] = []
         for number_text, suffix in matches:
             if not number_text:
                 continue
@@ -329,6 +360,11 @@ def parse_cost_amount(value: Any) -> float | None:
             except ValueError:
                 continue
             normalized_suffix = str(suffix or "").strip().lower()
+            if not normalized_suffix and YEAR_LIKE_PATTERN.match(number_text):
+                # "1,200 (2023 est.)" carries a year, not a second figure. Keep
+                # it only as a last resort, when nothing else was written.
+                year_like_values.append(number)
+                continue
             multiplier = {
                 "k": 1e3,
                 "thousand": 1e3,
@@ -342,6 +378,8 @@ def parse_cost_amount(value: Any) -> float | None:
             parsed_values.append(number * multiplier)
         if parsed_values:
             return max(parsed_values, key=abs)
+        if year_like_values:
+            return max(year_like_values, key=abs)
 
     normalized = re.sub(r"[^0-9.\-]", "", text)
     if not normalized:
@@ -463,6 +501,47 @@ def get_node_official_total(node: dict[str, Any]) -> float | None:
     return parse_cost_amount(node.get("rollup_total_amount"))
 
 
+# A weight only means something next to weights in the same unit. Dollars from a
+# `budget` string, a headcount and a subtree node count cannot share one
+# denominator: summed together, whichever sibling carried the dollar figure took
+# essentially the whole parent total (the IRS at $385B beside the Secretary of the
+# Treasury at $32; 120 published nodes at $0.00).
+WEIGHT_BASIS_CLASSES = {
+    "annual_budget_weight": "dollars",
+    "budget_weight": "dollars",
+    "direct_outlay_weight": "dollars",
+    "employee_weight": "employees",
+    "subtree_weight": "subtree",
+}
+
+
+def get_subtree_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> float:
+    node_id = str(node.get("id") or "").strip()
+    return float(max(subtree_sizes.get(node_id, 1), 1))
+
+
+def resolve_sibling_weights(
+    weighted_children: list[tuple[dict[str, Any], float, str]],
+    subtree_sizes: dict[str, int],
+) -> tuple[list[tuple[dict[str, Any], float, str]], str | None, bool]:
+    """Force every weighted sibling onto one unit before their weights are summed.
+
+    Returns the (possibly rewritten) sibling list, the unit class used, and
+    whether the set had to fall back to subtree size because its members
+    disagreed on units.
+    """
+    if not weighted_children:
+        return weighted_children, None, False
+    classes = {WEIGHT_BASIS_CLASSES.get(basis, "subtree") for _, _, basis in weighted_children}
+    if len(classes) == 1:
+        return weighted_children, next(iter(classes)), False
+    downgraded = [
+        (child, get_subtree_weight(child, subtree_sizes), "subtree_weight")
+        for child, _, _ in weighted_children
+    ]
+    return downgraded, "subtree", True
+
+
 def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tuple[float, str]:
     for key, basis in (
         ("annual_budget", "annual_budget_weight"),
@@ -477,9 +556,7 @@ def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tupl
     if employees is not None and employees > 0:
         return max(abs(employees), 1.0), "employee_weight"
 
-    node_id = str(node.get("id") or "").strip()
-    subtree_weight = float(max(subtree_sizes.get(node_id, 1), 1))
-    return subtree_weight, "subtree_weight"
+    return get_subtree_weight(node, subtree_sizes), "subtree_weight"
 
 
 def costs_nearly_equal(left: float | None, right: float | None, tolerance: float = 0.01) -> bool:
@@ -527,7 +604,10 @@ def classify_cost_verification(
         source_count = 1 if official_total is not None else 0
         return "partial", 0.72, "scaled_from_official_rollup", source_count
     if cost_status == "allocated":
-        source_count = 1 if budget_amount is not None or official_total is not None else 0
+        # A free-text `budget` string on the node is not a source for a figure
+        # the cascade computed without it — 110 published nodes claimed one cost
+        # source while carrying zero sourceUrls. Only an official rollup counts.
+        source_count = 1 if official_total is not None else 0
         return "unverified", 0.35 if source_count else 0.2, "estimated_from_parent", source_count
     return "unverified", 0.0, cost_validation or "unknown_cost_verification", 0
 
@@ -673,17 +753,29 @@ def resolve_root_orphans(
 
     node_map, parent_map = index_tree(root)
     name_index: dict[str, dict[str, Any]] = {}
+    # 267 display names are shared by 2,216 base nodes ("General Counsel" x92,
+    # "Chief of Staff" x71). A name that several nodes answer to identifies
+    # none of them, so it can never be a merge target: an orphan with that
+    # name falls through to its id-prefix parent, which the id does encode.
+    ambiguous_name_keys: set[str] = set()
     for node_id, node in node_map.items():
         if node_id == root_id:
             continue
         name_key = canonical_name_key(node.get("name"))
-        if name_key and name_key not in name_index:
+        if not name_key:
+            continue
+        if name_key in name_index:
+            ambiguous_name_keys.add(name_key)
+        else:
             name_index[name_key] = node
 
     def find_prefix_parent(node_id: str) -> dict[str, Any] | None:
         tokens = [token for token in node_id.split("-") if token]
         for cut in range(len(tokens) - 1, 1, -1):
-            counterpart = name_index.get(canonical_name_key(" ".join(tokens[:cut])))
+            prefix_key = canonical_name_key(" ".join(tokens[:cut]))
+            if prefix_key in ambiguous_name_keys:
+                continue
+            counterpart = name_index.get(prefix_key)
             if counterpart is not None:
                 return counterpart
         return None
@@ -693,9 +785,17 @@ def resolve_root_orphans(
         node, fallback_parent = queue.pop(0)
         node_id = str(node.get("id") or "")
         name_key = canonical_name_key(node.get("name"))
-        counterpart = name_index.get(name_key) if name_key else None
+        counterpart = name_index.get(name_key) if name_key and name_key not in ambiguous_name_keys else None
         if counterpart is not None and str(counterpart.get("id") or "") != node_id:
             merge_source_provenance(counterpart, node)
+            # The orphan's evidence moves with its provenance. Copying URLs
+            # alone left the counterpart with sourceUrls but sourceCount 0
+            # (the release gate rejects that) and silently discarded the one
+            # Treasury rollup the crawl had produced.
+            for field_name in ("rollup_total_amount", "budget_source", "employees", "budget", "official_website"):
+                if node.get(field_name) not in (None, "", []) and counterpart.get(field_name) in (None, "", []):
+                    counterpart[field_name] = deepcopy(node[field_name])
+            verify_node_sources(counterpart)
             for child in node.get("children", []):
                 if isinstance(child, dict):
                     queue.append((child, counterpart))
@@ -743,6 +843,8 @@ def annotate_resolved_costs(
         child_totals = [amount for amount in (get_node_official_total(child) for child in root.get("children", [])) if amount is not None]
         budget_total = sum(child_totals) if child_totals else None
 
+    counters = {"mixed_weight_sibling_sets_downgraded": 0, "allocations_below_precision": 0}
+
     def recurse(
         node: dict[str, Any],
         allocated_total: float | None,
@@ -776,7 +878,18 @@ def annotate_resolved_costs(
             node["cost_validation"] = inherited_validation or "estimated_from_parent"
 
         children = [child for child in node.get("children", []) if isinstance(child, dict)]
-        if not children or allocated_total is None:
+        if not children:
+            return
+        if allocated_total is None:
+            # Nothing to apportion, but every published node still carries an
+            # explicit cost status rather than silently lacking the fields.
+            for child in children:
+                recurse(
+                    child,
+                    None,
+                    inherited_basis=None if is_root else inherited_basis,
+                    inherited_validation="missing_cost" if is_root else node.get("cost_validation"),
+                )
             return
 
         anchored_children: list[tuple[dict[str, Any], float]] = []
@@ -788,6 +901,12 @@ def annotate_resolved_costs(
             else:
                 weight, weight_basis = get_node_weight(child, subtree_sizes)
                 weighted_children.append((child, weight, weight_basis))
+        weighted_children, weight_class, downgraded = resolve_sibling_weights(weighted_children, subtree_sizes)
+        if weight_class is not None:
+            node["child_cost_basis"] = weight_class
+            if downgraded:
+                node["child_cost_basis_downgraded"] = True
+                counters["mixed_weight_sibling_sets_downgraded"] += 1
 
         official_child_sum = sum(amount for _, amount in anchored_children)
         anchor_scale = 1.0
@@ -809,6 +928,17 @@ def annotate_resolved_costs(
             else:
                 child_total = remainder_total * (weight / total_weight)
                 remainder_left -= child_total
+            if allocated_total != 0 and abs(child_total) < 0.005:
+                # A share that rounds to $0.00 is not a cost of zero; publishing
+                # it as one asserts the Peace Corps is free. Say "not available".
+                counters["allocations_below_precision"] += 1
+                recurse(
+                    child,
+                    None,
+                    inherited_basis=weight_basis,
+                    inherited_validation="allocation_below_precision",
+                )
+                continue
             recurse(
                 child,
                 child_total,
@@ -948,6 +1078,8 @@ def annotate_resolved_costs(
             "verified_cost_node_count": verified_cost_node_count,
             "partial_cost_node_count": partial_cost_node_count,
             "unverified_cost_node_count": unverified_cost_node_count,
+            "mixed_weight_sibling_sets_downgraded": counters["mixed_weight_sibling_sets_downgraded"],
+            "allocations_below_precision": counters["allocations_below_precision"],
         },
         "nodes": validity_nodes,
     }
@@ -1105,12 +1237,25 @@ def build_graph(
     enforce_export_gate: bool = True,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
+    fresh_budget_summary = extract_budget_summary(payload_list)
+    existing_ids = load_existing_node_ids(base_graph_path)
+    reused_budget_summary: dict[str, Any] | None = None
     if reuse_existing_graph_payload:
         existing_graph_payload = load_existing_graph_payload(existing_graph_payload_path or graph_output_path)
+        # The curated file already supplies every base node. Re-importing
+        # them from the previous output only republished 5,170 copies of the
+        # tree into expanded_nodes.json (5 MB the site then merged into itself).
+        # A base node that gained crawler provenance is kept: that evidence
+        # lives nowhere else.
+        existing_graph_payload["nodes"] = [
+            node
+            for node in existing_graph_payload["nodes"]
+            if str(node.get("id") or "") not in existing_ids or carries_crawler_provenance(node)
+        ]
         if existing_graph_payload["nodes"] or existing_graph_payload["edges"]:
             payload_list.insert(0, existing_graph_payload)
+        reused_budget_summary = extract_budget_summary([existing_graph_payload])
     raw_nodes_loaded = count_payload_nodes(payload_list)
-    existing_ids = load_existing_node_ids(base_graph_path)
     node_registry = NodeRegistry(existing_ids=set(existing_ids))
     edge_registry = EdgeRegistry()
     normalized_node_count = 0
@@ -1126,7 +1271,11 @@ def build_graph(
     merged_node_count = len(nodes)
     for node in nodes:
         parent_id = parent_by_child.get(node["id"])
-        if parent_id and parent_id != node["id"]:
+        # A node that already names its parent keeps it. The re-fed previous
+        # graph contributes its NON-primary hierarchical edges first, so
+        # overriding here made a node with two reports_to targets swap parent
+        # on every rerun and lose the second edge by the third.
+        if parent_id and parent_id != node["id"] and not node.get("parentId"):
             node["parentId"] = parent_id
 
     # Hand validate_and_prepare_graph the RAW edges. Splitting the primary
@@ -1170,6 +1319,8 @@ def build_graph(
         stats=tree_stats,
     )
     validation["cycle_fallback_root_attachments"] = tree_stats.get("cycle_fallback_root_attachments", 0)
+    validation["nodes_removed_missing_parent"] = tree_stats.get("nodes_unattached_missing_parent", 0)
+    validation["pipeline_summary"]["nodes_removed_missing_parent"] = validation["nodes_removed_missing_parent"]
     proof_status_counts, _ = annotate_proof_tree(
         graph,
         parent_is_proven=True,
@@ -1178,7 +1329,18 @@ def build_graph(
         prune_unproven=enforce_export_gate,
     )
     filter_relationships_to_kept_nodes(graph)
-    budget_summary = extract_budget_summary(payload_list)
+    # The anchor comes from this run's payloads. The previous graph.json is
+    # re-fed as a payload too, and its copy used to be indistinguishable from a
+    # fresh fetch: a build with the Treasury stage down republished the old
+    # total as if fetched today. A carried-over anchor is still the Treasury
+    # measurement for its record_date, so it keeps its status — but it says so.
+    budget_summary = fresh_budget_summary
+    budget_summary_reused = False
+    if budget_summary is None and reused_budget_summary is not None:
+        budget_summary = dict(reused_budget_summary)
+        budget_summary["reused_from_previous_build"] = True
+        budget_summary_reused = True
+    validation["budget_summary_reused_from_previous_build"] = budget_summary_reused
     if budget_summary:
         graph["__budgetSummary"] = budget_summary
         validation["budget_summary"] = budget_summary
@@ -1209,9 +1371,10 @@ def build_graph(
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["cost_export_policy"] = summarize_export_policy(cost_export_policy)
     validity_report["node_export_policy"] = summarize_export_policy(node_export_policy)
-    graph_node_map, _ = index_tree(graph)
+    graph_node_map, graph_parent_map = index_tree(graph)
     kept_graph_ids = set(graph_node_map)
     export_nodes = [node for node in export_nodes if node["id"] in kept_graph_ids]
+    published_root_id = str(graph.get("id") or "")
     export_edges = [
         edge
         for edge in export_edges
@@ -1221,8 +1384,17 @@ def build_graph(
         graph_node = graph_node_map.get(node["id"])
         if not graph_node:
             continue
-        if graph_node.get("parentId"):
-            node["parentId"] = deepcopy(graph_node.get("parentId"))
+        # Pruning promotes a rejected node's children upward; the parentId they
+        # carried pointed at the node that is no longer published. The tree is
+        # the truth about placement, so both artefacts read it from there.
+        tree_parent_id = graph_parent_map.get(node["id"])
+        if tree_parent_id and tree_parent_id != published_root_id:
+            node["parentId"] = tree_parent_id
+            if graph_node.get("parentId") and graph_node["parentId"] != tree_parent_id:
+                graph_node["parentId"] = tree_parent_id
+        else:
+            node.pop("parentId", None)
+            graph_node.pop("parentId", None)
         for field_name in COST_EXPORT_FIELDS:
             node[field_name] = deepcopy(graph_node.get(field_name))
         node["proofStatus"] = deepcopy(graph_node.get("proofStatus"))
