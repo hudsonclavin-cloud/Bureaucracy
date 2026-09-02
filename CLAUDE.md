@@ -18,7 +18,7 @@ estimate apportioned from that one Treasury figure, and must read as one.
 ```bash
 python data_pipeline/run_once.py                 # full pipeline run
 python data_pipeline/exporter/build_graph.py     # rebuild from base graph + last output, no crawl
-python -m pytest tests/                          # suite (77 tests at time of writing)
+python -m pytest tests/                          # the suite; every gate is pinned in both directions
 python -m pytest tests/test_build_graph.py -v
 python scripts/validate_published_graph.py       # publish gate on output/graph.json, exit 1 on violation
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, then gate
@@ -29,9 +29,9 @@ python data_expansion/extract_and_expand.py      # regenerate the corporate over
 Environment variables actually read (all optional):
 
 ```
-PIPELINE_FISCAL_YEAR              default: current UTC calendar year
-PIPELINE_LOBBYING_YEAR            default: PIPELINE_FISCAL_YEAR
-PIPELINE_HTTP_TIMEOUT             default: 30 (Treasury crawler)
+PIPELINE_FISCAL_YEAR              default: the current federal fiscal year (FY N starts 1 Oct N-1); USASpending window
+PIPELINE_LOBBYING_YEAR            default: current calendar year (LDA filings are calendar-year)
+PIPELINE_HTTP_TIMEOUT             default: 30; every crawler (Wikidata uses max(this, 45))
 PIPELINE_PROMOTION_THRESHOLD      default: 0.7
 PIPELINE_USASPENDING_AGENCIES     default: 20
 PIPELINE_USASPENDING_AWARDS       default: 25
@@ -62,8 +62,10 @@ Two halves that communicate only through committed JSON in `output/`.
   carried a Treasury `budgetSummary` while the export gate is on). Either one
   writes a stats file with `publication_blocked: true` and leaves the outputs
   untouched; `main()` exits 1.
-- `crawler/` — `treasury_outlays.py` (FiscalData MTS table 5; produces the
-  `budgetSummary` the whole cost cascade hangs on; registered first),
+- `crawler/` — `treasury_outlays.py` (FiscalData MTS table 5; fetches the
+  latest statement regardless of fiscal year; produces the `budgetSummary`
+  the whole cost cascade hangs on, plus per-agency `outlayRows` that the
+  exporter stamps onto the nodes they name; registered first),
   `usaspending.py`, `wikidata.py` (US-scoped SPARQL), `lobbying.py` (Senate
   LDA), `federal_register.py`, `official_directory.py`, `common.py` (HTTP
   helpers). Crawlers degrade to empty results on network failure.
@@ -73,8 +75,9 @@ Two halves that communicate only through committed JSON in `output/`.
   `normalize_edges.py` — `EdgeRegistry`. `budget_reconciliation.py` — budget
   vs actual reconciliation; present and tested, not yet wired into a run.
 - `discovery/source_discovery.py` — builds candidate nodes from the discovery
-  crawlers, writes `output/candidate_nodes.json` (the review queue), and
-  promotes candidates at or above the threshold. Federal Register and
+  crawlers, promotes candidates at or above the threshold, and the run then
+  writes `output/candidate_nodes.json` (the review queue) without the
+  records it promoted or merged. Federal Register and
   advisory-committee hosts are classified before the generic `.gov` rule so a
   single notice cannot clear the promotion threshold on its own.
 - `validators/node_requirements.py` and `validators/cost_validator.py` — the
@@ -98,11 +101,16 @@ the parent). Everything else is `allocated`, split among siblings by
 `get_node_weight`: the first non-zero of `annual_budget`, `budget`,
 `direct_outlay_amount` (basis `*_weight`), else a parseable `employees`
 count (`employee_weight`), else subtree size (`subtree_weight`). Weights are
-only summed within one unit: if the siblings of a node do not all carry the
-same class of weight (dollars, headcount, subtree size), the whole set falls
-back to subtree size (`child_cost_basis_downgraded` on the parent). A share
-that rounds below one cent is published as `unavailable` with
-`cost_validation: allocation_below_precision`, never as $0.
+only summed within one unit. When siblings disagree, the best-evidenced
+class present wins (dollars, then headcount, then size) and a sibling that
+lacks it gets an implied weight: the geometric mean of the reported
+siblings' per-node rates times its own subtree size, stamped
+`implied_budget_weight` / `implied_employee_weight` (the parent carries
+`child_cost_basis_implied`). A share that rounds below one cent is
+published as `unavailable` with `cost_validation: allocation_below_precision`,
+never as $0. Treasury outlay lines applied to a node make it `official`
+(`costVerificationStatus: verified`, the FiscalData URL in `sourceUrls`);
+those are the only measured costs besides the root, and the gate checks it.
 `cost_validation: estimated_from_parent` and
 `costVerificationStatus: unverified` on every allocated node. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
@@ -114,7 +122,10 @@ figure.
 No bundler, no npm. ES modules loaded by the browser; Three.js comes from
 unpkg at runtime. `window.GRAPH_DATA_SOURCES` in `index.html` names the
 sources: `primary` (`output/graph.json`), `base` (the curated file, used
-only if the primary is missing or malformed), `corporate`.
+only if the primary is missing or malformed), `corporate` (null: the
+committed `data_expansion/corporate_expansion.json` is the template output
+of `expand_corporate_nodes.py` — invented positions — not EDGAR officers,
+so it is not merged until `extract_and_expand.py` has produced real ones).
 
 - `graphLoader.js` fetches primary/base, corporate, expanded nodes/edges and
   candidates, merges the overlays into the tree (`safeAddChild` refuses a
@@ -147,7 +158,11 @@ change, or users run stale modules against new data.
   payload copy. Anything a crawler adds to a base node merges around them.
 - A run that refuses to publish exits nonzero from every entry point
   (`run_pipeline.main`, `run_once.py`, the scheduler) and names the failed
-  stage in `stage_errors`.
+  stage in `stage_errors`; a crawler that returned part of its data
+  (Wikidata with one query failed) is `partial` in `stage_results` and
+  listed in `stage_warnings`.
+- `lastVerified` is never invented: a node carries a date only if a record
+  supplied one. The site's "No source recorded" state keys on that.
 - A run that lost its Treasury anchor or every fetch stage must not touch
   `output/`.
 - `output/` is gitignored for new files, but the files the site fetches are

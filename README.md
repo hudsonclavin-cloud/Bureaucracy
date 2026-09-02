@@ -13,11 +13,13 @@ Live site: https://hudsonclavin-cloud.github.io/Bureaucracy/
 Exactly one figure in the published graph is measured: the root's cost, which
 is the U.S. Treasury's fiscal-year-to-date net outlays from the Monthly
 Treasury Statement (FiscalData). Every other cost is that total apportioned
-downward through the tree. Siblings are split by reported budget when every
-one of them has one, by staff count when every one of them has one, and by
-subtree size otherwise; weights are never mixed across units. The site
-renders those as rounded estimates with an explicit "Estimate" badge; only
-the root carries "Measured".
+downward through the tree. Siblings are split by reported budget where
+budgets are reported, by staff count where that is the best evidence, and
+by subtree size otherwise; a sibling without the figure its siblings report
+is given one implied from their typical per-node rate, and the panel says
+so. The site renders those as rounded estimates with an explicit "Estimate"
+badge. Only the root — and, once a crawl has run, the agencies the Monthly
+Treasury Statement reports outlays for — carry "Measured".
 The period the figure covers (for example "FYTD net outlays through
 2026-06-30") is printed under every amount.
 
@@ -54,7 +56,11 @@ python scripts/regenerate_published_graph.py
 python -m http.server 8080
 # open http://localhost:8080/index.html
 
-# Regenerate the corporate (government-corporation) overlay from SEC EDGAR
+# Attempt to extract government-corporation officers from SEC EDGAR (network).
+# The committed data_expansion/corporate_expansion.json is NOT that: it is the
+# template output of expand_corporate_nodes.py (invented positions), which is
+# why index.html does not merge it. Point GRAPH_DATA_SOURCES.corporate at the
+# file once it holds extracted officers.
 python data_expansion/extract_and_expand.py
 ```
 
@@ -63,7 +69,7 @@ python data_expansion/extract_and_expand.py
 ```
 data/federal_gov_complete_1.json      hand-curated base graph (5,170 nodes) — the trusted source of structure
 data_pipeline/                        Python pipeline (crawlers, processors, discovery, validators, exporter)
-data_expansion/corporate_expansion.json  government-corporation leadership overlay, merged client-side
+data_expansion/corporate_expansion.json  template-generated corporation org chart; not served (see above)
 output/graph.json                     the gated, cost-annotated tree the site renders
 output/expanded_nodes.json            nodes the crawl added beyond the base graph (empty until one earns publication)
 output/expanded_edges.json            non-hierarchical relationships between published nodes
@@ -77,7 +83,8 @@ tests/                                pytest suite
 ## How a run works
 
 1. Direct crawlers fetch payloads: Treasury FiscalData outlays (the cost
-   anchor — it runs first), USASpending, Wikidata, Senate LDA lobbying.
+   anchor and the per-agency lines — it runs first), USASpending, Wikidata,
+   Senate LDA lobbying.
 2. Discovery crawlers (Wikidata, official directories, Federal Register) feed
    `discover_candidates`, which writes the review queue and promotes
    candidates above the confidence threshold.
