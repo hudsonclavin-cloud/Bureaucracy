@@ -24,6 +24,8 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
+python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
+python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
 python -m http.server 8080                       # serve the site locally
 python data_expansion/extract_and_expand.py      # regenerate the corporate overlay (needs `requests`, SEC network)
@@ -129,6 +131,23 @@ the anchor lives on the root's `__budgetSummary` (`amount_kind`,
 `record_date`, `label`) — the UI reads it there and applies it to every
 figure.
 
+### Existence evidence (`data_pipeline/verification/`, `data/verification/`)
+
+The curated file carries no sources. `scripts/verify_base_graph.py` fetches
+each organisation's candidate official page (`official_sites.json`: its own,
+else an ancestor's at most `--inherit-depth` levels up, default 1), looks
+for the node's canonical name in the page text (nav, script and footer text
+excluded), and writes one record per node to `evidence.json`: `confirmed`
+with the URLs and matched text, `not_found`, or `fetch_failed`, each with
+`checkedAt`. `build_graph` merges the sidecar (`evidence_path`) before the
+Treasury lines: confirmed → `sourceUrls`, `sourceTypes: official_site`,
+`lastVerified`, `verificationMethod`; failed → `lastVerified` and
+`verificationFailure` only, and never over a source another route recorded.
+The gate requires every `lastVerified` to be a past ISO date and every
+`verificationMethod` to have a URL behind it, and reports coverage.
+Positions are checked only with `--include-positions`, against their unit's
+page.
+
 ### Frontend (`index.html`, `js/`)
 
 No bundler, no npm. ES modules loaded by the browser; Three.js comes from
@@ -175,7 +194,10 @@ change, or users run stale modules against new data.
   (Wikidata with one query failed) is `partial` in `stage_results` and
   listed in `stage_warnings`.
 - `lastVerified` is never invented: a node carries a date only if a record
-  supplied one. The site's "No source recorded" state keys on that.
+  supplied one — a crawler record or a verifier fetch at that moment. The
+  site's "No source recorded" state keys on that. `data/verification/` is
+  written by the verifier only; a URL in `official_sites.json` is a
+  candidate to fetch, never evidence by itself.
 - A run that lost its Treasury anchor or every fetch stage must not touch any
   file the site fetches. It does rewrite `output/pipeline_stats.json`, which is
   the run record: that record is `mode: blocked_run`, carries

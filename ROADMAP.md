@@ -76,9 +76,16 @@ every fetch stage is missing.
    (SEC EDGAR, network) replaces the template overlay; only then set
    `GRAPH_DATA_SOURCES.corporate` in `index.html`.
 5. **Source the base graph.** 5,170 nodes with no URL is the largest
-   remaining honesty gap. The official-directory crawler and the Treasury
-   lines are the two routes that attach a URL to a curated node without a
-   human; a `sources` column in the base file is the manual one.
+   remaining honesty gap. As of 2026-09-03 the machinery exists:
+   `scripts/verify_base_graph.py` fetches official pages and records per
+   node whether its name is there, and the exporter and gate carry the
+   result. What it needs is a network that reaches the 53 hosts
+   `--list-hosts` prints. First run: the 63 candidate pages cover the 788
+   organisations (one level of inheritance); expect the departments and
+   agencies to confirm and many sub-units to come back `not_found` from a
+   parent's About page — those need a page of their own in
+   `official_sites.json`. Positions (4,382) come after, against their
+   unit's leadership page.
 6. **Headcount and budget as data, not notes.** The base file's
    `employees` / `budget` strings drive the apportionment. OPM FedScope
    headcounts per agency would replace the hand-typed ones with a sourced

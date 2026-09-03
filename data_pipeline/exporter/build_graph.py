@@ -34,6 +34,7 @@ DEFAULT_MIN_GRAPH_OUTPUT = DEFAULT_OUTPUT_DIR / "graph.min.json"
 DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
 DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
+DEFAULT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "evidence.json"
 HIERARCHICAL_RELATIONSHIPS = {"reports_to", "subsidiary_of"}
 # The optional suffix must end at a word boundary: without `\b`, "~2,000 total
 # staff" read as 2,000 *trillion* because the "t" of "total" matched, and that
@@ -1496,6 +1497,7 @@ def build_graph(
     reuse_existing_graph_payload: bool = True,
     existing_graph_payload_path: str | Path | None = None,
     enforce_export_gate: bool = True,
+    evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -1582,6 +1584,12 @@ def build_graph(
     validation["cycle_fallback_root_attachments"] = tree_stats.get("cycle_fallback_root_attachments", 0)
     validation["nodes_removed_missing_parent"] = tree_stats.get("nodes_unattached_missing_parent", 0)
     validation["pipeline_summary"]["nodes_removed_missing_parent"] = validation["nodes_removed_missing_parent"]
+    # Existence evidence gathered by scripts/verify_base_graph.py: an official
+    # page fetched on a date with the node's name on it. It is the only way a
+    # curated node gets a source and a lastVerified besides a Treasury line.
+    from data_pipeline.verification.evidence import apply_evidence_to_tree, load_evidence  # noqa: E402 — evidence imports this module
+
+    validation["verification_evidence"] = apply_evidence_to_tree(graph, load_evidence(evidence_path) if evidence_path else {})
     outlay_stats = apply_treasury_outlay_rows(
         graph,
         collect_treasury_outlay_rows(payload_list),

@@ -1,128 +1,5 @@
 [
   {
-    "id": "management-and-budget-office-office-of-management-and-budget-omb-circular-no",
-    "name": "Office of Management and Budget (OMB) Circular No",
-    "type": "Office",
-    "parentId": null,
-    "desc": "Office of Management and Budget (OMB) Circular No. A-94 specifies certain discount rates to be updated annually when the interest rate and inflation assumptions used to prepare the Budget of the United States Government are changed. These updated discount rates are found in Appendix C of the Circular and are to be used for cost- effectiveness analysis, including lease-purchase analysis, as specified in the Circular. These rates do not apply to regulatory analysis or benefit-cost analysis of public investment.",
-    "description": "Office of Management and Budget (OMB) Circular No. A-94 specifies certain discount rates to be updated annually when the interest rate and inflation assumptions used to prepare the Budget of the United States Government are changed. These updated discount rates are found in Appendix C of the Circular and are to be used for cost- effectiveness analysis, including lease-purchase analysis, as specified in the Circular. These rates do not apply to regulatory analysis or benefit-cost analysis of public investment.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/03/11/2026-04726/discount-rates-for-cost-effectiveness-analysis-of-federal-programs"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#666666",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "possibleParent": "Management and Budget Office",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/03/11/2026-04726/discount-rates-for-cost-effectiveness-analysis-of-federal-programs",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null,
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded"
-  },
-  {
-    "id": "small-business-administration-office-of-management-and-budget-review",
-    "name": "Office of Management and Budget Review",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Small Business Administration (SBA) will submit the information collection described below to the Office of Management and Budget (OMB) for review and clearance in accordance with the Paperwork Reduction Act of 1995, as amended, on or after the date of publication of this notice. SBA is publishing this notice to allow all interested members of the public an additional 30 days to provide comments on the collection of information.",
-    "description": "The Small Business Administration (SBA) will submit the information collection described below to the Office of Management and Budget (OMB) for review and clearance in accordance with the Paperwork Reduction Act of 1995, as amended, on or after the date of publication of this notice. SBA is publishing this notice to allow all interested members of the public an additional 30 days to provide comments on the collection of information.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/03/05/2026-04380/reporting-and-recordkeeping-requirements-under-office-of-management-and-budget-review"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#666666",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "possibleParent": "Small Business Administration",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/03/05/2026-04380/reporting-and-recordkeeping-requirements-under-office-of-management-and-budget-review",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": "exec-ind-sba",
-    "lastVerified": null,
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded"
-  },
-  {
-    "id": "treasury-department-office-of-management-and-budget-omb-circular-no",
-    "name": "Office of Management and Budget (OMB) Circular No",
-    "type": "Office",
-    "parentId": null,
-    "desc": "Pursuant to section 552a(e)(12) of the Privacy Act of 1974, as amended, and the Office of Management and Budget (OMB) Circular No. A- 108, Federal Agency Responsibilities for Review, Reporting, and Publication under the Privacy Act, notice is hereby given of the conduct of the Internal Revenue Service (IRS) Disclosure of Information to Federal, State and Local Agencies (DIFSLA) Computer Matching Program.",
-    "description": "Pursuant to section 552a(e)(12) of the Privacy Act of 1974, as amended, and the Office of Management and Budget (OMB) Circular No. A- 108, Federal Agency Responsibilities for Review, Reporting, and Publication under the Privacy Act, notice is hereby given of the conduct of the Internal Revenue Service (IRS) Disclosure of Information to Federal, State and Local Agencies (DIFSLA) Computer Matching Program.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/01/14/2026-00576/privacy-act-of-1974-matching-program"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#666666",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "possibleParent": "Treasury Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/01/14/2026-00576/privacy-act-of-1974-matching-program",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null,
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded"
-  },
-  {
     "id": "embassy-of-the-united-states-beijing-consulate-general-of-the-united-states-guangzhou",
     "name": "Consulate General of the United States, Guangzhou",
     "type": "Organization",
@@ -152,7 +29,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -160,7 +36,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-beijing-consulate-general-of-the-united-states-shenyang",
@@ -192,7 +69,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -200,7 +76,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-beijing-consulate-general-of-the-united-states-wuhan",
@@ -232,7 +109,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -240,7 +116,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-berlin-consulate-general-of-the-united-states-hamburg",
@@ -272,7 +149,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -280,7 +156,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-berlin-consulate-general-of-the-united-states-munich",
@@ -312,7 +189,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -320,7 +196,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-brasilia-consulate-general-of-the-united-states-in-porto-alegre",
@@ -352,7 +229,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -360,7 +236,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-tokyo-consulate-general-of-the-united-states-naha",
@@ -392,7 +269,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -400,7 +276,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-tokyo-consulate-general-of-the-united-states-osaka-kobe",
@@ -432,7 +309,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -440,7 +316,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-tokyo-consulate-general-of-the-united-states-sapporo",
@@ -472,7 +349,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -480,7 +356,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-administrative-court-joint-senate-of-the-supreme-courts-of-germany",
@@ -512,7 +389,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -520,7 +396,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-constitutional-court-justice-of-the-federal-constitutional-court",
@@ -552,7 +429,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -560,7 +436,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-court-chief-justice-of-the-federal-court-of-canada",
@@ -592,7 +469,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -600,7 +476,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-court-justice-of-the-federal-court-of-canada",
@@ -632,7 +509,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -640,7 +516,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-court-of-australia-chief-justice-of-the-federal-court-of-australia",
@@ -672,7 +549,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -680,7 +556,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-court-of-australia-justice-of-the-federal-court-of-australia",
@@ -712,7 +589,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -720,7 +596,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-court-of-australia-list-of-judges-of-the-federal-court-of-australia",
@@ -752,7 +629,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -760,7 +636,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-fiscal-court-joint-senate-of-the-supreme-courts-of-germany",
@@ -792,7 +669,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -800,7 +676,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-labour-court-of-germany-joint-senate-of-the-supreme-courts-of-germany",
@@ -832,7 +709,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -840,7 +716,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "federal-social-court-joint-senate-of-the-supreme-courts-of-germany",
@@ -872,7 +749,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -880,7 +756,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "legation-of-el-salvador-in-the-united-states-of-america-commercial-agent-of-the-legation-of-el-salvador-in-the-united-states-of-america",
@@ -912,7 +789,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -920,7 +796,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "secretariat-of-culture-of-argentina-belgranian-national-institute",
@@ -952,7 +829,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -960,7 +836,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-agriculture-united-states-department-of-agriculture-office-of-the-deputy-chief-for-management",
@@ -992,7 +869,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-usda",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1000,7 +876,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-commerce-white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
@@ -1032,7 +909,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-doc",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1040,7 +916,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-education-united-states-department-of-education-office-for-civil-rights",
@@ -1072,7 +949,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-ed",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1080,7 +956,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-education-united-states-deputy-secretary-of-education",
@@ -1112,7 +989,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-ed",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1120,7 +996,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-education-white-house-initiative-on-advancing-educational-equity-excellence-and-economic-opportunity-for-black-americans",
@@ -1152,7 +1029,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-ed",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1160,7 +1036,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-education-white-house-initiative-on-advancing-educational-equity-excellence-and-economic-opportunity-for-native-americans-and-strengthening-tribal-colleges-and-universities",
@@ -1192,7 +1069,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-ed",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1200,7 +1076,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-education-white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
@@ -1232,7 +1109,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-ed",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1240,7 +1116,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-health-and-human-services-white-house-initiative-on-asian-americans-native-hawaiians-and-pacific-islanders",
@@ -1272,7 +1149,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-hhs",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1280,7 +1156,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-housing-and-urban-development-assistant-secretary-for-the-office-of-housing-and-the-federal-housing-fha-commissioner",
@@ -1312,7 +1189,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-hud",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1320,7 +1196,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-state-united-states-committee-on-atomic-energy",
@@ -1352,7 +1229,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-state",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1360,7 +1236,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-state-united-states-foreign-service",
@@ -1392,7 +1269,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-state",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1400,7 +1276,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-state-united-states-global-aids-coordinator",
@@ -1432,7 +1309,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-state",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1440,7 +1316,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-veterans-affairs-guardians-of-the-national-cemetery",
@@ -1472,7 +1349,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-va",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1480,7 +1356,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-veterans-affairs-united-states-national-cemetery",
@@ -1512,7 +1389,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-va",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1520,7 +1396,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-war-united-states-principal-deputy-under-secretary-of-defense",
@@ -1552,7 +1429,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1560,7 +1436,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-department-of-the-treasury-united-states-revenue-cutter-service",
@@ -1592,7 +1469,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "exec-dept-treasury",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1600,7 +1476,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "united-states-foreign-intelligence-surveillance-court-judge-of-the-united-states-foreign-intelligence-surveillance-court",
@@ -1632,7 +1509,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": "jud-specialized-fisc",
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1640,7 +1516,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-1st-appeals-panel-of-the-special-civil-and-criminal-courts-of-the-federal-district",
@@ -1672,7 +1549,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1680,7 +1556,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-2nd-appeals-panel-of-the-special-civil-and-criminal-courts-of-the-federal-district",
@@ -1712,7 +1589,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1720,7 +1596,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-3rd-appeals-panel-of-the-special-civil-and-criminal-courts-of-the-federal-district",
@@ -1752,7 +1629,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1760,7 +1636,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-consulate-general-of-the-united-states-cura-ao",
@@ -1792,7 +1669,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1800,7 +1676,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-consulate-general-of-the-united-states-in-vladivostok",
@@ -1832,7 +1709,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1840,7 +1716,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-united-states-department-of-commerce-and-labor",
@@ -1872,7 +1749,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1880,7 +1756,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-united-states-department-of-health-education-and-welfare",
@@ -1912,7 +1789,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1920,7 +1796,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "unnamed-node-united-states-post-office-department",
@@ -1952,7 +1829,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -1960,7 +1836,8 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   },
   {
     "id": "embassy-of-the-united-states-in-the-united-arab-emirates-consulate-general-of-the-united-states-dubai",
@@ -1992,7 +1869,6 @@
     "isCandidate": true,
     "confidenceEstimate": 0.6,
     "possibleParentId": null,
-    "lastVerified": null,
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "wikidata"
@@ -2000,6 +1876,7 @@
     "existsProven": false,
     "parentProven": false,
     "proofStatus": "unproven",
-    "proofReason": "insufficient_direct_proof"
+    "proofReason": "insufficient_direct_proof",
+    "lastVerified": null
   }
 ]
