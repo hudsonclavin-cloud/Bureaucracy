@@ -179,9 +179,11 @@ def apply_evidence_to_tree(root: dict[str, Any], evidence: dict[str, dict[str, A
 
     A confirmed record adds its URLs as sources and its check time as
     lastVerified, and verify_node_sources then scores the node like any
-    other. A failed record stamps the check time only: the node was looked
-    for and not found, and the site must say that rather than "no source
-    recorded". Names and types are never touched."""
+    other. A not_found record stamps the check time only: the node was
+    looked for on a page that was read, and the site must say that rather
+    than "no source recorded". A fetch_failed record applies nothing at all
+    — it is a fact about the network, not about the node. Names and types
+    are never touched."""
     stats = {"confirmed": 0, "not_found": 0, "fetch_failed": 0, "unknown_node": 0, "urls_added": 0}
     if not evidence:
         return stats
@@ -210,12 +212,24 @@ def apply_evidence_to_tree(root: dict[str, Any], evidence: dict[str, dict[str, A
             node["verificationMethod"] = METHOD
             node.pop("verificationFailure", None)
             stats["confirmed"] += 1
-        elif status in (NOT_FOUND, FETCH_FAILED):
+        elif status == NOT_FOUND:
             stats[status] += 1
-            # A failed check never removes a source another route recorded.
+            # The page was fetched and the name was not on it. That is a check
+            # that happened, so the node carries its date and the site shows
+            # "checked, not found" instead of "no source recorded". It never
+            # removes a source another route recorded.
             if not node.get("sourceUrls") and checked_at:
                 node["lastVerified"] = checked_at
                 node["verificationFailure"] = status
+        elif status == FETCH_FAILED:
+            # Nothing was learned about this node: the page could not be
+            # fetched (a blocked network, a 404, a host that is not official),
+            # so no check of the node took place. Stamping a date here would
+            # publish "we checked and failed to find it" on the strength of
+            # our own connectivity. The node stays "no source recorded" —
+            # untouched, not even rescored.
+            stats[status] += 1
+            continue
         else:
             stats["unknown_node"] += 0  # unrecognised status: ignored, never applied
             continue

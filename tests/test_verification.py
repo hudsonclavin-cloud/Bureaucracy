@@ -158,11 +158,29 @@ class ApplyEvidenceTests(unittest.TestCase):
         self.assertEqual(nnsa["verificationFailure"], NOT_FOUND)
         self.assertFalse(nnsa.get("existsProven"))
 
+    def test_a_fetch_that_never_happened_is_not_a_failed_check(self) -> None:
+        """The most dangerous confusion in this module. A blocked network
+        would otherwise stamp "checked, not found" on every node in the
+        graph on the strength of our own connectivity."""
+        tree = self._tree()
+        stats = apply_evidence_to_tree(tree, {
+            "exec-dept-doe": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "failures": [{"url": "https://www.energy.gov/about-us", "reason": "URLError: blocked"}]},
+        })
+        node_map, _ = index_tree(tree)
+        doe = node_map["exec-dept-doe"]
+        self.assertEqual(stats["fetch_failed"], 1)
+        self.assertNotIn("lastVerified", doe)
+        self.assertNotIn("verificationFailure", doe)
+        self.assertFalse(doe.get("sourceUrls"))
+        # Untouched entirely: not even rescored, so it is byte-identical to a
+        # node no evidence mentions.
+        self.assertEqual(doe, index_tree(self._tree())[0]["exec-dept-doe"])
+
     def test_a_failed_check_never_removes_a_source_another_route_recorded(self) -> None:
         tree = self._tree()
         node_map, _ = index_tree(tree)
         node_map["doe-nnsa"]["sourceUrls"] = ["https://api.fiscaldata.treasury.gov/x"]
-        apply_evidence_to_tree(tree, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00"}})
+        apply_evidence_to_tree(tree, {"doe-nnsa": {"status": NOT_FOUND, "checkedAt": "2026-09-03T12:00:00+00:00"}})
         self.assertEqual(node_map["doe-nnsa"]["sourceUrls"], ["https://api.fiscaldata.treasury.gov/x"])
         self.assertNotIn("verificationFailure", node_map["doe-nnsa"])
 
