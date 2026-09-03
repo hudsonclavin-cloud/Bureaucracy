@@ -1,5 +1,5 @@
 {
-  "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch \u2014 usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse.",
+  "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch — usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse.",
   "legislative-branch": [
     "https://www.congress.gov/"
   ],
@@ -85,8 +85,16 @@
     "https://www.transportation.gov/about"
   ],
   "exec-dept-doe": [
-    "https://www.energy.gov/about-us",
-    "https://www.energy.gov/organization-chart"
+    "https://www.energy.gov/leadership-organization"
+  ],
+  "exec-dept-doe-nnsa": [
+    "https://www.energy.gov/nnsa/national-nuclear-security-administration"
+  ],
+  "exec-dept-doe-sc": [
+    "https://www.energy.gov/science/office-science"
+  ],
+  "exec-dept-doe-em": [
+    "https://www.energy.gov/em/office-environmental-management"
   ],
   "exec-dept-ed": [
     "https://www.ed.gov/about"
@@ -106,6 +114,33 @@
   "exec-ind-nasa": [
     "https://www.nasa.gov/about/",
     "https://www.nasa.gov/organization/"
+  ],
+  "exec-ind-nasa-kennedy-space-center-ksc": [
+    "https://www.nasa.gov/kennedy/"
+  ],
+  "exec-ind-nasa-johnson-space-center-jsc": [
+    "https://www.nasa.gov/johnson/"
+  ],
+  "exec-ind-nasa-goddard-space-flight-center-gsfc": [
+    "https://www.nasa.gov/goddard/"
+  ],
+  "exec-ind-nasa-marshall-space-flight-center-msfc": [
+    "https://www.nasa.gov/marshall/"
+  ],
+  "exec-ind-nasa-ames-research-center-arc": [
+    "https://www.nasa.gov/ames/"
+  ],
+  "exec-ind-nasa-glenn-research-center-grc": [
+    "https://www.nasa.gov/glenn/"
+  ],
+  "exec-ind-nasa-langley-research-center-larc": [
+    "https://www.nasa.gov/langley/"
+  ],
+  "exec-ind-nasa-stennis-space-center-ssc": [
+    "https://www.nasa.gov/stennis/"
+  ],
+  "exec-ind-nasa-armstrong-flight-research-center-afrc": [
+    "https://www.nasa.gov/armstrong/"
   ],
   "exec-ind-ssa": [
     "https://www.ssa.gov/agency/"

@@ -178,8 +178,15 @@ The gate requires: every `lastVerified` a past ISO date; every
 `verificationMethod` backed by a URL and one this pipeline can produce; no
 node claiming a failed check beside a source; an `official_site` type backed
 by a `.gov`/`.mil` URL. Coverage is reported. The verifier obeys `robots.txt`
-(failing open only when it cannot be read) and sends a User-Agent naming the
-project. Positions are checked only with `--include-positions`.
+(failing open only when it cannot be fetched at all) and sends a User-Agent
+naming the project. A host that answers `robots.txt` itself with 401 or 403 is
+the one case that looks like "unreadable" but is not treated as such:
+`RobotFileParser` swallows that status and sets a blanket disallow with no
+rules parsed, and RFC 9309 says to obey it. The path stays refused; what the
+record may not do is quote a rule nobody read, so the reason distinguishes
+"could not be read (401/403)" from "disallows <path>". `www.state.gov` did
+exactly this on the first live run. Positions are checked only with
+`--include-positions`.
 
 ### Frontend (`index.html`, `js/`)
 

@@ -36,6 +36,8 @@ from data_pipeline.verification.evidence import (
     uncheckable_reason,
     verify_node,
 )
+from urllib.robotparser import RobotFileParser
+
 from data_pipeline.verification.politeness import RobotsPolicy
 from scripts import verify_base_graph
 from scripts.validate_published_graph import main as gate_main
@@ -150,6 +152,55 @@ class CandidatePageTests(unittest.TestCase):
         self.assertEqual(candidate_urls("doe-science", parent_map, sites), (["https://www.energy.gov/about-us"], "exec-dept-doe", 1))
         self.assertEqual(candidate_urls("doe-science-director", parent_map, sites)[2], 2)
         self.assertEqual(candidate_urls("legislative-branch", parent_map, sites), ([], None, 2))
+
+    def test_a_name_many_agencies_share_is_scoped_by_ancestry_not_by_the_matcher(self) -> None:
+        """The guard against confirming the wrong agency's office is ancestry.
+
+        Found by sweeping every curated name over the pages the first live run
+        fetched: NASA's real organization page labels "Office of the Inspector
+        General", and the House's OIG is curated under exactly that name. The
+        matcher cannot tell them apart -- both are the same string, and it is
+        a true label on that page -- so nothing about find_label will ever
+        prevent it. What prevents it is that candidate_urls walks only the
+        node's OWN ancestors, so nasa.gov is never offered to a House office.
+        If that ever changes, this test fails and a false VERIFIED with a live
+        nasa.gov URL ships on a legislative-branch node.
+        """
+        tree = json.loads(json.dumps(BASE))
+        tree["children"][0]["children"].append(
+            {"id": "leg-house-ig", "name": "Office of the Inspector General", "type": "Office", "children": []}
+        )
+        _, parent_map = index_tree(tree)
+        sites = {
+            "exec-dept-doe": ["https://www.energy.gov/leadership-organization"],
+            "legislative-branch": ["https://www.house.gov/"],
+        }
+
+        # The page really does label the name: the matcher offers no defence.
+        nasa_page = "<h1>Organization</h1><ul><li>Office of the Inspector General</li></ul>"
+        self.assertEqual(
+            find_label("Office of the Inspector General", page_fragments(nasa_page)),
+            "Office of the Inspector General",
+        )
+
+        # The defence is that NASA's page is never a candidate for this node.
+        urls, site_from, _ = candidate_urls("leg-house-ig", parent_map, sites)
+        self.assertEqual(urls, ["https://www.house.gov/"])
+        self.assertEqual(site_from, "legislative-branch")
+        for url in urls:
+            self.assertNotIn("nasa.gov", url)
+
+        # Other direction: a node inside NASA's subtree may use NASA's page.
+        tree["children"][1]["children"].append(
+            {"id": "exec-ind-nasa", "name": "NASA", "type": "Agency", "children": [
+                {"id": "exec-ind-nasa-ig", "name": "Office of the Inspector General", "type": "Office", "children": []},
+            ]}
+        )
+        _, parent_map = index_tree(tree)
+        sites["exec-ind-nasa"] = ["https://www.nasa.gov/organization/"]
+        urls, site_from, distance = candidate_urls("exec-ind-nasa-ig", parent_map, sites)
+        self.assertEqual(urls, ["https://www.nasa.gov/organization/"])
+        self.assertEqual((site_from, distance), ("exec-ind-nasa", 1))
 
     def test_candidate_file_keeps_only_urls_and_ignores_its_note(self) -> None:
         path = TEST_TMP_ROOT / f"sites-{uuid.uuid4().hex}.json"
@@ -346,6 +397,43 @@ class RobotsTests(unittest.TestCase):
         disabled = RobotsPolicy(user_agent="x", enabled=False)
         with mock.patch.object(RobotsPolicy, "_parser", return_value=Denies()):
             self.assertTrue(disabled.allows("https://www.energy.gov/private")[0])
+
+    def test_a_refused_robots_file_is_obeyed_but_not_quoted_as_a_rule(self) -> None:
+        """A host that answers robots.txt with 403 is still refused, but the
+        record must not claim the site published a rule nobody could read.
+
+        RobotFileParser.read() swallows a 401/403 and sets disallow_all with
+        no entries parsed. www.state.gov did exactly this on the first live
+        run, and the evidence file went out saying
+        "www.state.gov/robots.txt disallows /about/" -- a claim about State's
+        crawl policy that no fetch supports.
+        """
+        policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0")
+
+        class Refused(RobotFileParser):
+            """What read() leaves behind on a 403: a blanket deny, no rules."""
+
+            def __init__(self) -> None:
+                super().__init__()
+                self.disallow_all = True
+
+        with mock.patch.object(RobotsPolicy, "_parser", return_value=Refused()):
+            allowed, why = policy.allows("https://www.state.gov/about/")
+        self.assertFalse(allowed, "an unreadable robots.txt is still obeyed")
+        self.assertIn("could not be read", why)
+        self.assertNotIn("disallows /about/", why)
+
+        # The other direction: a robots.txt that WAS read and does disallow
+        # the path still says so, and still names the path.
+        parsed = RobotFileParser()
+        parsed.parse(["User-agent: *", "Disallow: /about/"])
+        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
+            allowed, why = policy.allows("https://www.state.gov/about/")
+            self.assertFalse(allowed)
+            self.assertIn("disallows /about/", why)
+            self.assertNotIn("could not be read", why)
+            # and a path it does not cover is still allowed
+            self.assertTrue(policy.allows("https://www.state.gov/bureaus/")[0])
 
 
 class BuildAndGateTests(unittest.TestCase):

@@ -84832,18 +84832,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.energy.gov/nnsa/national-nuclear-security-administration"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-03T23:04:46+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationSiteFrom": "exec-dept-doe-nnsa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 3953559749.59,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -85104,18 +85112,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.energy.gov/science/office-science"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-03T23:04:46+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationSiteFrom": "exec-dept-doe-sc",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 1581423899.84,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -89781,18 +89797,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.energy.gov/em/office-environmental-management"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-03T23:04:46+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationSiteFrom": "exec-dept-doe-em",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 1383745912.36,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -89805,7 +89829,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.energy.gov/leadership-organization"
               ],
               "sourceTypes": [
                 "official_site",
@@ -89838,10 +89863,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null,
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-03T23:04:46+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-dept-doe",
               "child_cost_basis_implied": true
             },
             {
@@ -119677,18 +119704,27 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nasa.gov/about/",
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-03T22:59:01+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nasa",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 569897977.1,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -120476,18 +120512,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/kennedy/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-kennedy-space-center-ksc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -120778,18 +120822,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/johnson/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-johnson-space-center-jsc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -121080,18 +121132,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/goddard/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-goddard-space-flight-center-gsfc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -121684,18 +121744,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/marshall/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-marshall-space-flight-center-msfc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -121986,18 +122054,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/ames/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -122288,18 +122364,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/glenn/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-glenn-research-center-grc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -122590,18 +122674,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/langley/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-langley-research-center-larc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -122892,18 +122984,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/stennis/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-stennis-space-center-ssc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -123194,18 +123294,26 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.nasa.gov/armstrong/"
+                      ],
+                      "sourceTypes": [
+                        "official_site"
+                      ],
+                      "lastVerified": "2026-09-03T23:07:55+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 1,
+                      "proofSourceTypes": [
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": 1438992392.18,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -123241,7 +123349,9 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.nasa.gov/about/",
+                "https://www.nasa.gov/organization/"
               ],
               "sourceTypes": [
                 "official_site",
@@ -123274,10 +123384,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-03T22:59:01+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-ind-nasa"
             },
             {
               "id": "exec-ind-ssa",
