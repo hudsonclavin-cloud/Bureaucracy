@@ -10,8 +10,10 @@ A browsable, data-backed 3D organizational graph of the U.S. federal
 government, from the Constitution down to offices and positions, with a cost
 on every node and an honest statement of how that cost was obtained. The
 project's standing rule: never let the data or the UI claim more than the
-evidence supports. Only the root's cost is measured; everything below it is an
-estimate apportioned from that one Treasury figure, and must read as one.
+evidence supports. Measured costs are the root's Treasury anchor and the
+Monthly Treasury Statement Table 5 lines that name a node — 103 of the
+statement's 644 lines as of 2026-09-03. Every other node is an estimate
+apportioned from those figures, and must read as one.
 
 ## Commands
 
@@ -188,6 +190,34 @@ change, or users run stale modules against new data.
   `pipeline_stats.json` with the per-node audit embedded.
 - `enforce_export_gate` is threaded from `run_pipeline` to `build_graph` so
   tests can exercise plumbing with the gate off; production keeps it on.
+- A Treasury line is applied to a node only when the name identifies one line
+  and one node. A name several lines carry (Table 5 prints "Department of the
+  Navy" eight times, once per budget category) is reported ambiguous, never
+  resolved by picking the largest — the exception is a unit's header line
+  beside its own `Total--` line, which is one unit reported twice.
+- An alias is added to `TREASURY_ROW_ALIASES` only when the line fits inside
+  its parent's resolved amount. A line that does not fit (Office of Federal
+  Student Aid at $76B inside a $53B Education total, the Coast Guard's $10.9B
+  inside DHS) turns measured siblings into scaled estimates and publishes
+  itself below its own line; leaving it unmatched keeps the siblings exact and
+  the money in the apportioned remainder.
+
+## Known base-graph gaps
+
+Table 5 lines whose unit the curated graph has no node for at all, so no alias
+can reach them. Adding the nodes is curation work, not pipeline work:
+
+    General Services Administration          Agency for International Development
+    Railroad Retirement Board                Administration for Children and Families
+    Corps of Engineers                       Administration for Community Living
+    Agricultural Marketing Service           Corporation for National and Community Service
+    Foreign Agricultural Service             Legal Services Corporation
+    Economic Development Administration      Millennium Challenge Corporation
+    Federal Housing Finance Agency           Bureau of Consumer Financial Protection
+    Institute of Museum and Library Services Corporation for Public Broadcasting
+
+("Other Defense Civil Programs" and "International Assistance Programs" are
+Treasury groupings rather than organisations; those stay unmatched by design.)
 
 ## Things that have bitten this repo
 

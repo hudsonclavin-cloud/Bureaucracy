@@ -4,6 +4,7 @@ import json
 import math
 import re
 import sys
+from collections import Counter
 from copy import deepcopy
 from dataclasses import dataclass
 from pathlib import Path
@@ -755,9 +756,49 @@ def drop_duplicate_child_rollups(root: dict[str, Any]) -> int:
 
 
 # Rows whose names are not the names of the nodes they belong to.
+#
+# Fitted on 2026-09-03 against the real statement (FYTD through 2026-07-31,
+# 644 lines). Every entry below was checked three ways before it was written:
+# the Treasury line's name occurs exactly once among the positive lines, so
+# the ranker cannot pick a different row for it; the graph holds exactly one
+# node that is that same organisation; and the build was run with and without
+# the entry to confirm no sibling that publishes a measured figure today is
+# turned into a scaled estimate by it. That last check is why the Office of
+# Federal Student Aid ($76B inside a $53B Education total) and the Coast
+# Guard ($10.9B inside DHS) are absent: each would cost its siblings their
+# measured status and still publish itself at about half its own line.
+#
+# Lines that name a Treasury grouping rather than an organisation ("Total--
+# Fish and Wildlife and Parks", "Total--Operation and Maintenance"), a trust
+# fund, or an appropriation account with no single spender are deliberately
+# absent: their amounts stay in the remainder the cascade apportions, which
+# is the honest outcome. So are lines whose unit the graph does not carry at
+# all (GSA, the Railroad Retirement Board, the Corps of Engineers) — an alias
+# cannot point at a node that does not exist.
 TREASURY_ROW_ALIASES = {
     "legislative branch": "legislative-branch",
     "judicial branch": "judicial-branch",
+    # The graph spells these with "&", an abbreviation, or a leading acronym;
+    # the statement spells them out. Same organisation either way.
+    "national oceanic and atmospheric administration": "exec-dept-doc-noaa",
+    "national institute of standards and technology": "exec-dept-doc-nist",
+    "bureau of the census": "exec-dept-doc-census",
+    "national telecommunications and information administration": "exec-dept-doc-ntia",
+    "national highway traffic safety administration": "exec-dept-dot-nhtsa",
+    "federal motor carrier safety administration": "exec-dept-dot-fmcsa",
+    "substance abuse and mental health services administration": "exec-dept-hhs-samhsa",
+    "comptroller of the currency": "exec-dept-treasury-occ",
+    # "United States Attorneys" loses its leading "united states " to
+    # canonical_name_key; the graph node is "U.S. Attorneys Office".
+    "attorneys": "exec-dept-doj-usao",
+    "bureau of indian affairs and bureau of indian education": "exec-dept-doi-bia",
+    # The statement names the appropriation account; one office spends it and
+    # the graph has that office.
+    "federal prison system": "exec-dept-doj-bop",
+    "public and indian housing programs": "exec-dept-hud-pih",
+    "community planning and development": "exec-dept-hud-cpd",
+    "energy efficiency and renewable energy": "exec-dept-doe-eere",
+    "white house": "exec-eop-who",
 }
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
@@ -881,6 +922,26 @@ def apply_treasury_outlay_rows(
         if trusted and len(trusted) < len(candidates):
             by_key[key] = trusted
 
+    # A name several lines carry usually cannot identify one organisation.
+    # Table 5 repeats "Department of the Navy" under Military Personnel,
+    # Operation and Maintenance, Procurement and RDT&E; every one is a slice
+    # of the Navy's spending, so treasury_row_rank's tie-break (the largest)
+    # would publish one slice as the Navy's measured total, on whichever node
+    # answered to the name, with nothing in the output saying so.
+    #
+    # The exception is the shape treasury_row_rank was written for: a unit's
+    # header line beside its own "Total--" line. One "Total--" line for a name
+    # is that name's total and the rank already prefers it; none, or several,
+    # means the lines are siblings and only an explicit alias can choose.
+    key_line_counts: Counter[str] = Counter()
+    key_total_line_counts: Counter[str] = Counter()
+    for candidate_row in rows:
+        is_total = str(candidate_row.get("originalName") or "").startswith("Total--")
+        for row_key in treasury_row_keys(candidate_row):
+            key_line_counts[row_key] += 1
+            if is_total:
+                key_total_line_counts[row_key] += 1
+
     chosen: dict[str, tuple[dict[str, Any], dict[str, Any]]] = {}
     for row in sorted(rows, key=treasury_row_rank):
         target: dict[str, Any] | None = None
@@ -891,12 +952,17 @@ def apply_treasury_outlay_rows(
                 target = node_map[alias_id]
                 break
             candidates = by_key.get(key) or []
+            if not candidates:
+                continue
+            if key_line_counts[key] > 1 and key_total_line_counts[key] != 1:
+                # Sibling lines sharing a name: reported, never guessed at.
+                ambiguous = True
+                break
             if len(candidates) == 1:
                 target = candidates[0]
                 break
-            if len(candidates) > 1:
-                ambiguous = True
-                break
+            ambiguous = True
+            break
         if target is None:
             if ambiguous:
                 stats["rows_ambiguous"] += 1

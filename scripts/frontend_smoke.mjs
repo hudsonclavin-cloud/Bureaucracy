@@ -7,13 +7,18 @@
  * the network), loads index.html, and checks what a visitor is told: the
  * published-node count excludes the review queue, hidden candidates are not
  * searchable, hiding "unverified" nodes does not blank the curated graph, a
- * curated node reads "NO SOURCE RECORDED", and the cost block carries its
- * period line and an Estimate badge.
+ * curated node without a source reads "NO SOURCE RECORDED" over an Estimate
+ * badge, and a node the Monthly Treasury Statement names reads Measured over
+ * the statement it came from. Both are asserted: a badge that cannot tell the
+ * two apart is the failure this guards against.
  *
  * Not part of the pytest suite: it needs Node, `playwright-core` (with a
  * Chromium it can launch) and a local `three` package.
  *
- *   npm install --no-save playwright-core three
+ * Install the Three.js version js/graph.js imports, not the latest: the page
+ * pins one and the vendored copy has to match it.
+ *
+ *   npm install --no-save playwright-core three@0.160.1
  *   node scripts/frontend_smoke.mjs [--chromium /path/to/chrome] [--port 8123]
  *
  * Exit code 0 when every assertion holds, 1 otherwise; the findings are
@@ -45,13 +50,13 @@ const MODULE_PATHS = [
 
 const resolveModule = (name) => require.resolve(name, { paths: MODULE_PATHS });
 // three's package "exports" forbids deep requires, so find the file on disk.
-const threeModule = MODULE_PATHS.map((dir) => path.join(dir, "node_modules", "three", "build", "three.module.js")).find((file) => fs.existsSync(file));
+const threeBuild = MODULE_PATHS.map((dir) => path.join(dir, "node_modules", "three", "build")).find((dir) => fs.existsSync(path.join(dir, "three.module.js")));
 let chromium;
 try {
-  if (!threeModule) throw new Error("three not found");
+  if (!threeBuild) throw new Error("three not found");
   ({ chromium } = require(resolveModule("playwright-core")));
 } catch (error) {
-  console.error("Install the two dependencies locally first: npm install --no-save three playwright-core");
+  console.error("Install the two dependencies locally first: npm install --no-save playwright-core three@0.160.1");
   console.error(`(or point --modules at a directory containing node_modules; looked in ${MODULE_PATHS.join(", ")})`);
   process.exit(2);
 }
@@ -59,9 +64,17 @@ try {
 const MIME = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".css": "text/css" };
 const server = http.createServer((req, res) => {
   let pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
-  if (pathname === "/vendor/three.module.js") {
+  // The whole build directory is served, not just three.module.js: since
+  // r163 that file is a shim that imports ./three.core.js beside it, so
+  // serving one file alone leaves the page waiting on a 404 for ever.
+  if (pathname.startsWith("/vendor/")) {
+    const vendored = path.join(threeBuild, path.basename(pathname));
+    if (!fs.existsSync(vendored)) {
+      res.writeHead(404);
+      return res.end("not found");
+    }
     res.writeHead(200, { "content-type": "text/javascript" });
-    return fs.createReadStream(threeModule).pipe(res);
+    return fs.createReadStream(vendored).pipe(res);
   }
   if (pathname === "/") pathname = "/index.html";
   const file = path.join(ROOT, pathname);
@@ -118,7 +131,12 @@ try {
   check("hiding unverified nodes keeps the curated graph", !/^0 \//.test(counterHidden), counterHidden);
   await toggles.nth(0).check();
 
-  await page.fill("#search-input", "United States Senate");
+  // A node with no source of its own. The Senate used to serve here, but the
+  // Treasury statement names it, so it is measured now; the unsourced state
+  // has to be read off a node that really lacks one or the check passes on
+  // nothing. Both states are asserted below, which is the point: the badge
+  // must distinguish them.
+  await page.fill("#search-input", "Senate Leadership");
   await page.waitForTimeout(500);
   const rowLabel = await text("#search-results .sr-item .sr-type");
   check("search rows use the never-checked badge", /NO SOURCE RECORDED/.test(rowLabel), rowLabel);
@@ -127,8 +145,24 @@ try {
   const info = await text("#info-stats");
   check("estimate is labelled", /ESTIMATE/.test(info), info);
   check("period line is printed", /through|As of/.test(info), info);
+  check("an apportioned share is not called measured", !/MEASURED/.test(info), info);
   const panel = await text("#info-panel");
   check("curated node reads no source recorded", /NO SOURCE RECORDED/.test(panel), panel.slice(0, 200));
+
+  // The other direction: a node the Monthly Treasury Statement names carries
+  // a measured cost and says where it came from. If this ever reads ESTIMATE
+  // the Treasury lines have stopped reaching the graph.
+  await page.fill("#search-input", "Bureau of Prisons");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const measured = await text("#info-stats");
+  check("a Treasury line is labelled measured", /MEASURED/.test(measured), measured);
+  check("a measured cost is not also called an estimate", !/ESTIMATE/.test(measured), measured);
+  check("the measured cost names its statement", /Monthly Treasury Statement/.test(measured), measured);
+  const measuredPanel = await text("#info-panel");
+  check("a measured node does not read no source recorded", !/NO SOURCE RECORDED/.test(measuredPanel), measuredPanel.slice(0, 200));
+  await page.fill("#search-input", "");
   check("no page errors", pageErrors.length === 0, pageErrors.join(" | "));
   await browser.close();
 } catch (error) {

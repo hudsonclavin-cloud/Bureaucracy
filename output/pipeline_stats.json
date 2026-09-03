@@ -1,276 +1,340 @@
 {
-  "timestamp": "2026-09-03T00:01:15.357113+00:00",
-  "mode": "offline_regeneration",
-  "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
+  "timestamp": "2026-09-03T19:48:41.624664+00:00",
   "nodes_before": 5170,
-  "nodes_after": 5170,
-  "new_nodes_added": 0,
-  "nodes_delta": 0,
-  "published_nodes_before": 5170,
-  "nodes_delta_vs_published": 0,
-  "candidate_nodes_written": 50,
-  "review_queue_repair": {
-    "input_records": 3812,
-    "dropped": {
-      "duplicates_published_node": 18,
-      "federal_register_fragment": 11,
-      "no_us_federal_evidence": 355,
-      "non_us_public_body": 1338,
-      "unlabelled_wikidata_item": 185,
-      "template_generated_source": 1855
-    },
-    "dropped_samples": {
-      "duplicates_published_node": [
-        "United States Department of Homeland Security ‹ United States Cabinet",
-        "Bureau of Land Management (BLM) ‹ Agriculture Department",
-        "Office of Management and Budget (OMB) ‹ Agriculture Department",
-        "Office of Management and Budget (OMB) ‹ Energy Department",
-        "Office of Management and Budget ‹ Health and Human Services Department",
-        "Office of Management and Budget (OMB) ‹ Health and Human Services Department",
-        "Bureau of Political-Military Affairs ‹ State Department",
-        "Office of Foreign Assets Control (OFAC) ‹ State Department"
-      ],
-      "federal_register_fragment": [
-        "Office of Management and Budget for Review and Approval ‹ Education Department",
-        "Office of Management and Budget for Review and Approval ‹ Environmental Protection Agency",
-        "Office of Management and Budget ( ‹ Federal Trade Commission",
-        "Office of Management and Budget (OMB) for review and approval ‹ Health and Human Services Department",
-        "Office of Management and Budget for Review and Approval ‹ Interior Department",
-        "Office of Management and Budget (OMB) for review and clearance under the Paperwork Reduction Act of 1995 ‹ National Science Foundation",
-        "Office of Management and Budget (OMB) for review ‹ Nuclear Regulatory Commission",
-        "Office of Management and Budget ( ‹ SECurities and Exchange Commission"
-      ],
-      "no_us_federal_evidence": [
-        "Prairie Farm Rehabilitation Administration ‹ Agriculture and Agri-Food Canada",
-        "Arbeitsamt Karl-Grillenberger-Straße; Dr.-Kurt-Schumacher-Straße; Karl-Grillenberger-Straße in Nürnberg ‹ Arbeitsamt",
-        "Chief Justice of the Calcutta High Court ‹ Calcutta High Court",
-        "Colonial Service ‹ Colonial Office",
-        "People's Commissariat for Trade of the BSSR ‹ Council of People's Commissars of Byelorussian SSR",
-        "Court of First Instance ‹ Court of Justice of the European Union",
-        "Rules of Procedure of the Court of Justice ‹ Court of Justice of the European Union",
-        "Patenträttsråd ‹ Court of Patent Appeals"
-      ],
-      "non_us_public_body": [
-        "Q48759685 ‹ Air Ministry of France",
-        "Q28738968 ‹ Bavarian Ministry for Finance and Homeland Affairs",
-        "Ministerium ‹ Bavarian Ministry of Economic Affairs, Regional Development and Energy",
-        "Bavarian State Office for Water Management ‹ Bavarian Ministry of the Environment and Consumer Protection",
-        "Q28738994 ‹ Bavarian State Ministry for Housing, Construction and Transport",
-        "Ministry of Finance ‹ Cabinet of Yemen",
-        "Local Legal library of the Chamber Court in the Ministry of Justice and Consumer Protection ‹ Chamber Court",
-        "Office of the Consulate-General of Russia in Sapporo in Hakodate ‹ Consulate-General of Russia, Sapporo"
-      ],
-      "unlabelled_wikidata_item": [
-        "Q114272063 ‹ Caisse d'allocations familiales",
-        "Q114272064 ‹ Caisse d'allocations familiales",
-        "Q114272065 ‹ Caisse d'allocations familiales",
-        "Q114272066 ‹ Caisse d'allocations familiales",
-        "Q114272067 ‹ Caisse d'allocations familiales",
-        "Q114272068 ‹ Caisse d'allocations familiales",
-        "Q114272069 ‹ Caisse d'allocations familiales",
-        "Q114272070 ‹ Caisse d'allocations familiales"
-      ],
-      "template_generated_source": [
-        "Chief of Staff ‹ 18 VA Integrated Service Networks (VISNs)",
-        "Deputy Director ‹ 18 VA Integrated Service Networks (VISNs)",
-        "Director ‹ 18 VA Integrated Service Networks (VISNs)",
-        "Division Chief ‹ 18 VA Integrated Service Networks (VISNs)",
-        "Program Manager ‹ 18 VA Integrated Service Networks (VISNs)",
-        "Chief of Staff ‹ Administrative Office of U.S. Courts (AOUSC)",
-        "Director ‹ Administrative Office of U.S. Courts (AOUSC)",
-        "Division Chief ‹ Administrative Office of U.S. Courts (AOUSC)"
-      ]
-    },
-    "renamed": 4,
-    "parents_resolved": 17,
-    "parents_cleared": 8,
-    "rescored": 3,
-    "output_records": 50
+  "nodes_after": 5171,
+  "new_nodes_added": 1,
+  "nodes_delta": 1,
+  "published_nodes_before": 5172,
+  "nodes_delta_vs_published": -1,
+  "candidate_nodes_written": 206,
+  "candidates_discovered": 206,
+  "promoted_nodes_written": 31,
+  "promotion_stats": {
+    "candidates_reviewed": 206,
+    "candidates_below_threshold": 175,
+    "promoted_new_nodes": 31,
+    "merged_duplicates": 0,
+    "consumed_candidate_targets": {
+      "arkansas-department-of-public-safety-secretary-of-the-department-of-public-safety": "arkansas-department-of-public-safety-secretary-of-the-department-of-public-safety",
+      "boston-fire-department-fire-commissioner-and-chief-of-boston-fire-department": "boston-fire-department-fire-commissioner-and-chief-of-boston-fire-department",
+      "bureau-of-engraving-and-printing-director-of-the-bureau-of-engraving-and-printing": "bureau-of-engraving-and-printing-director-of-the-bureau-of-engraving-and-printing",
+      "bureau-of-indian-affairs-united-states-assistant-secretary-of-the-interior-for-indian-affairs": "bureau-of-indian-affairs-united-states-assistant-secretary-of-the-interior-for-indian-affairs",
+      "california-state-assembly-speaker-of-the-california-state-assembly": "california-state-assembly-speaker-of-the-california-state-assembly",
+      "consumer-financial-protection-bureau-director-of-the-consumer-financial-protection-bureau": "consumer-financial-protection-bureau-director-of-the-consumer-financial-protection-bureau",
+      "exec-eop-cea-chair-of-the-council-of-economic-advisers": "exec-eop-cea-chair-of-the-council-of-economic-advisers",
+      "delaware-department-of-agriculture-delaware-secretary-of-agriculture": "delaware-department-of-agriculture-delaware-secretary-of-agriculture",
+      "delaware-department-of-state-secretary-of-state-of-delaware": "delaware-department-of-state-secretary-of-state-of-delaware",
+      "erie-county-sheriff-s-office-sheriff-of-erie-county": "erie-county-sheriff-s-office-sheriff-of-erie-county",
+      "federal-communications-commission-chair-of-the-federal-communications-commission": "federal-communications-commission-chair-of-the-federal-communications-commission",
+      "hamilton-county-coroner-s-office-hamilton-county-coroner": "hamilton-county-coroner-s-office-hamilton-county-coroner",
+      "loveland-city-council-mayor-of-loveland": "loveland-city-council-mayor-of-loveland",
+      "maryland-department-of-the-environment-maryland-secretary-of-environment": "maryland-department-of-the-environment-maryland-secretary-of-environment",
+      "montana-house-of-representatives-speaker-of-the-montana-house-of-representatives": "montana-house-of-representatives-speaker-of-the-montana-house-of-representatives",
+      "national-counterterrorism-center-director-of-the-national-counterterrorism-center": "national-counterterrorism-center-director-of-the-national-counterterrorism-center",
+      "national-security-agency-director-of-the-national-security-agency": "national-security-agency-director-of-the-national-security-agency",
+      "national-transportation-safety-board-chair-of-the-national-transportation-safety-board": "national-transportation-safety-board-chair-of-the-national-transportation-safety-board",
+      "new-mexico-department-of-justice-attorney-general-of-new-mexico": "new-mexico-department-of-justice-attorney-general-of-new-mexico",
+      "new-york-court-of-appeals-chief-judge-of-the-new-york-court-of-appeals": "new-york-court-of-appeals-chief-judge-of-the-new-york-court-of-appeals",
+      "north-carolina-office-of-the-commissioner-of-banks-north-carolina-commissioner-of-banks": "north-carolina-office-of-the-commissioner-of-banks-north-carolina-commissioner-of-banks",
+      "office-of-the-assistant-secretary-of-defense-for-legislative-affairs-assistant-secretary-of-defense-for-legislative-affairs": "office-of-the-assistant-secretary-of-defense-for-legislative-affairs-assistant-secretary-of-defense-for-legislative-affairs",
+      "office-of-the-national-cyber-director-national-cyber-director": "office-of-the-national-cyber-director-national-cyber-director",
+      "office-of-the-under-secretary-of-defense-for-personnel-readiness-under-secretary-of-defense-for-personnel-and-readiness": "office-of-the-under-secretary-of-defense-for-personnel-readiness-under-secretary-of-defense-for-personnel-and-readiness",
+      "office-of-the-under-secretary-of-defense-for-policy-under-secretary-of-defense-for-policy": "office-of-the-under-secretary-of-defense-for-policy-under-secretary-of-defense-for-policy",
+      "san-jose-city-manager-s-office-san-jose-city-manager": "san-jose-city-manager-s-office-san-jose-city-manager",
+      "santa-clara-county-office-of-the-county-executive-chief-executive-officer-of-santa-clara-county": "santa-clara-county-office-of-the-county-executive-chief-executive-officer-of-santa-clara-county",
+      "state-of-ohio-office-of-the-inspector-general-ohio-inspector-general": "state-of-ohio-office-of-the-inspector-general-ohio-inspector-general",
+      "united-states-mint-director-of-the-united-states-mint": "united-states-mint-director-of-the-united-states-mint",
+      "united-states-national-agricultural-library-director-of-the-united-states-national-agricultural-library": "united-states-national-agricultural-library-director-of-the-united-states-national-agricultural-library",
+      "virginia-department-of-taxation-virginia-secretary-of-finance": "virginia-department-of-taxation-virginia-secretary-of-finance"
+    }
   },
-  "promoted_nodes_written": 0,
-  "promotion_stats": {},
   "verification_breakdown": {
-    "unverified": 5170
+    "unverified": 5068,
+    "partial": 103
   },
-  "average_confidence_score": 0.0,
-  "verified_node_count": 0,
-  "treasury_total_fetched": false,
+  "average_confidence_score": 0.77,
+  "verified_node_count": 31,
+  "treasury_total_fetched": true,
   "build_validation": {
-    "initial_node_count": 0,
-    "input_node_count": 0,
+    "initial_node_count": 135,
+    "input_node_count": 135,
     "input_edge_count": 0,
-    "exported_node_count": 0,
+    "exported_node_count": 103,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 0,
+    "nodes_reattached_to_root": 32,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 0,
+    "final_node_count": 135,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 0,
-    "explicitly_root_attached_nodes": 0,
+    "attached_to_root": 32,
+    "explicitly_root_attached_nodes": 32,
     "relationship_counts": {},
     "verification_status_counts": {
-      "unverified": 5170
+      "unverified": 5068,
+      "partial": 103
     },
-    "verified_node_count": 0,
+    "verified_node_count": 31,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.0,
+    "average_confidence_score": 0.77,
     "pipeline_summary": {
-      "initial_node_count": 0,
-      "raw_nodes_loaded": 0,
-      "nodes_after_normalization": 0,
-      "nodes_after_merge": 0,
+      "initial_node_count": 135,
+      "raw_nodes_loaded": 135,
+      "nodes_after_normalization": 135,
+      "nodes_after_merge": 135,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 0,
+      "nodes_reattached_to_root": 32,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 0,
-      "nodes_removed_cost_validation": 0
+      "final_node_count": 103,
+      "nodes_removed_cost_validation": 31
     },
     "cycle_fallback_root_attachments": 0,
     "treasury_outlay_rows": {
-      "rows": 0,
-      "rows_applied": 0,
-      "rows_unmatched": 0,
-      "rows_ambiguous": 0,
+      "rows": 644,
+      "rows_applied": 103,
+      "rows_unmatched": 380,
+      "rows_ambiguous": 9,
       "rows_superseded": 0,
-      "rows_negative_skipped": 0,
-      "negative_sample": [],
-      "stale_rollups_cleared": 0,
-      "unmatched_sample": [],
-      "ambiguous_sample": []
+      "rows_negative_skipped": 152,
+      "negative_sample": [
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Offsetting Governmental Receipts",
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Agricultural Disaster Relief Fund",
+        "Proprietary Receipts from the Public",
+        "Other",
+        "Proprietary Receipts from the Public",
+        "Offsetting Governmental Receipts",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Proprietary Receipts from the Public",
+        "Proprietary Receipts from the Public"
+      ],
+      "stale_rollups_cleared": 104,
+      "unmatched_sample": [
+        "Total--Other Defense Civil Programs",
+        "Total--International Assistance Programs",
+        "Total--Corps of Engineers",
+        "Total--Independent Agencies",
+        "Total--Federal Old-Age and Survivors Insurance Trust Fund (Off-Budget)",
+        "Total--Interest on the Public Debt",
+        "Total--Operation and Maintenance",
+        "Total--Benefits Programs",
+        "Total--Military Personnel",
+        "Total--Procurement",
+        "Total--Federal Disability Insurance Trust Fund (Off-Budget)",
+        "Total--Research, Development, Test, and Evaluation",
+        "Total--Office of Federal Student Aid",
+        "Total--Administration for Children and Families",
+        "Total--Energy Programs",
+        "Total--Administration of Foreign Affairs",
+        "Total--Military Construction",
+        "Total--International Security Assistance",
+        "Total--Departmental Offices",
+        "Total--Fish and Wildlife and Parks",
+        "Total--Agency for International Development",
+        "Total--Water and Science",
+        "Total--Housing Programs",
+        "Total--Railroad Retirement Board",
+        "Total--Office of Postsecondary Education",
+        "Total--Land and Minerals Management",
+        "Total--Indian Affairs",
+        "Total--Multilateral Assistance",
+        "Total--Overseas Private Investment Corporation",
+        "Total--Interest on Treasury Debt Securities (Gross)",
+        "Total--Federal Supplementary Medical Insurance Trust Fund",
+        "Total--Federal Hospital Insurance Trust Fund",
+        "Total--Unemployment Trust Fund",
+        "Total--Airport and Airway Trust Fund",
+        "Civil Service Retirement and Disability Fund",
+        "Supplemental Security Income Program",
+        "Payments to Social Security Trust Funds",
+        "Other",
+        "Government Payment for Annuitants, Employees Health and Life Insurance Benefits",
+        "Disaster Loans Program"
+      ],
+      "ambiguous_sample": [
+        "United States Coast Guard",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy",
+        "Department of the Navy"
+      ]
     },
-    "budget_summary_reused_from_previous_build": true,
+    "budget_summary_reused_from_previous_build": false,
     "budget_summary": {
-      "government_total_outlay_amount": 5517917965556.91,
+      "government_total_outlay_amount": 6284235715734.18,
       "amount_kind": "fytd_net_outlays",
       "fiscal_year": "2026",
-      "record_date": "2026-06-30",
-      "label": "FYTD net outlays through 2026-06-30",
+      "record_date": "2026-07-31",
+      "label": "FYTD net outlays through 2026-07-31",
       "source_system": "Treasury Fiscal Data",
-      "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-      "reused_from_previous_build": true
+      "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     },
     "budget_reconciliation": {
-      "nodes_seen": 5170,
-      "organisation_nodes_seen": 565,
-      "nodes_without_figures": 456,
-      "rows_emitted": 109,
-      "complete_rows": 0,
-      "budget_only_rows": 109,
-      "actual_only_rows": 0,
+      "nodes_seen": 5171,
+      "organisation_nodes_seen": 566,
+      "nodes_without_figures": 431,
+      "rows_emitted": 135,
+      "complete_rows": 77,
+      "budget_only_rows": 32,
+      "actual_only_rows": 26,
       "unavailable_rows": 0,
-      "missing_budget_rows": 0,
-      "missing_actual_rows": 109,
+      "missing_budget_rows": 26,
+      "missing_actual_rows": 32,
       "variance_status_counts": {
-        "unavailable": 109
+        "unavailable": 58,
+        "under_budget": 53,
+        "over_budget": 24
       },
       "budget_source_counts": {
         "curated budget note": 109
       },
-      "actual_source_counts": {},
-      "reconciled_rows": 0,
-      "incomplete_rows": 109
+      "actual_source_counts": {
+        "Treasury MTS Table 5": 103
+      },
+      "reconciled_rows": 77,
+      "incomplete_rows": 58
     },
-    "verified_treasury_total": 5517917965556.91,
+    "verified_treasury_total": 6284235715734.18,
     "cost_status_counts": {
       "root_total": 1,
-      "allocated": 5169
+      "official": 56,
+      "allocated": 4500,
+      "unavailable": 573,
+      "scaled_official": 41
     },
     "cost_validation_counts": {
       "verified_with_treasury_total": 1,
-      "estimated_from_parent": 5169
+      "matched_official_rollup": 56,
+      "estimated_from_parent": 4500,
+      "allocation_below_precision": 573,
+      "scaled_to_parent_total": 41
     },
     "cost_verification_status_counts": {
-      "verified": 1,
-      "unverified": 5169
+      "verified": 57,
+      "unverified": 5073,
+      "partial": 41
     },
     "proof_status_counts": {
       "root": 1,
-      "baseline": 5169
+      "proven": 103,
+      "baseline": 5067
     },
-    "nodes_with_sources": 0,
-    "nodes_without_sources": 5170,
-    "resolved_cost_node_count": 5170,
-    "unresolved_cost_node_count": 0,
-    "estimated_cost_node_count": 5169,
-    "official_cost_node_count": 1,
-    "verified_cost_node_count": 1,
-    "partial_cost_node_count": 0,
-    "unverified_cost_node_count": 5169,
-    "mixed_weight_sibling_sets_implied": 20,
-    "allocations_below_precision": 0,
-    "sibling_sets_scaled_to_official_floors": 0,
+    "nodes_with_sources": 103,
+    "nodes_without_sources": 5068,
+    "resolved_cost_node_count": 4598,
+    "unresolved_cost_node_count": 573,
+    "estimated_cost_node_count": 4541,
+    "official_cost_node_count": 57,
+    "verified_cost_node_count": 57,
+    "partial_cost_node_count": 41,
+    "unverified_cost_node_count": 5073,
+    "mixed_weight_sibling_sets_implied": 15,
+    "allocations_below_precision": 54,
+    "sibling_sets_scaled_to_official_floors": 2,
     "graph_summary": {
-      "verified_treasury_total": 5517917965556.91,
+      "verified_treasury_total": 6284235715734.18,
       "verification_status_counts": {
-        "unverified": 5170
+        "unverified": 5068,
+        "partial": 103
       },
       "cost_status_counts": {
         "root_total": 1,
-        "allocated": 5169
+        "official": 56,
+        "allocated": 4500,
+        "unavailable": 573,
+        "scaled_official": 41
       },
       "cost_validation_counts": {
         "verified_with_treasury_total": 1,
-        "estimated_from_parent": 5169
+        "matched_official_rollup": 56,
+        "estimated_from_parent": 4500,
+        "allocation_below_precision": 573,
+        "scaled_to_parent_total": 41
       },
       "cost_verification_status_counts": {
-        "verified": 1,
-        "unverified": 5169
+        "verified": 57,
+        "unverified": 5073,
+        "partial": 41
       },
       "proof_status_counts": {
         "root": 1,
-        "baseline": 5169
+        "proven": 103,
+        "baseline": 5067
       },
-      "nodes_with_sources": 0,
-      "nodes_without_sources": 5170,
-      "resolved_cost_node_count": 5170,
-      "unresolved_cost_node_count": 0,
-      "estimated_cost_node_count": 5169,
-      "official_cost_node_count": 1,
-      "verified_cost_node_count": 1,
-      "partial_cost_node_count": 0,
-      "unverified_cost_node_count": 5169,
-      "mixed_weight_sibling_sets_implied": 20,
-      "allocations_below_precision": 0,
-      "sibling_sets_scaled_to_official_floors": 0
+      "nodes_with_sources": 103,
+      "nodes_without_sources": 5068,
+      "resolved_cost_node_count": 4598,
+      "unresolved_cost_node_count": 573,
+      "estimated_cost_node_count": 4541,
+      "official_cost_node_count": 57,
+      "verified_cost_node_count": 57,
+      "partial_cost_node_count": 41,
+      "unverified_cost_node_count": 5073,
+      "mixed_weight_sibling_sets_implied": 15,
+      "allocations_below_precision": 54,
+      "sibling_sets_scaled_to_official_floors": 2
     },
     "audit_report": {
       "summary": {
-        "total_nodes": 5170,
-        "nodes_with_errors": 5170,
-        "nodes_with_warnings": 5170,
-        "warning_only_nodes": 0,
+        "total_nodes": 5202,
+        "nodes_with_errors": 5105,
+        "nodes_with_warnings": 5113,
+        "warning_only_nodes": 41,
         "severity_counts": {
-          "error": 5170,
-          "warning": 25847
+          "error": 6276,
+          "warning": 23722
         },
         "issue_counts": {
-          "missing_source_urls": 5170,
-          "low_confidence": 5170,
-          "unverified": 5170,
-          "estimated_cost": 5169,
-          "cost_unverified": 5169,
-          "low_cost_confidence": 5169
+          "missing_source_urls": 5068,
+          "low_confidence": 5068,
+          "unverified": 5068,
+          "estimated_cost": 4541,
+          "cost_unverified": 4500,
+          "low_cost_confidence": 4500,
+          "missing_cost": 604,
+          "unavailable_cost_status": 604,
+          "cost_partially_verified": 41,
+          "generic_or_missing_type": 4
         },
         "cost_status_counts": {
           "root_total": 1,
-          "allocated": 5169
+          "official": 56,
+          "allocated": 4500,
+          "unavailable": 604,
+          "scaled_official": 41
         },
         "cost_verification_status_counts": {
-          "verified": 1,
-          "unverified": 5169
+          "verified": 57,
+          "unverified": 5104,
+          "partial": 41
         },
         "verification_status_counts": {
-          "unverified": 5170
+          "unverified": 5068,
+          "partial": 103,
+          "verified": 31
         },
         "proof_status_counts": {
           "root": 1,
-          "baseline": 5169
+          "proven": 134,
+          "baseline": 5067
         },
         "warning_cost_statuses": [
           "allocated",
@@ -279,47 +343,59 @@
       }
     },
     "node_export_policy": {
-      "nodes_checked": 5170,
-      "nodes_allowed": 5170,
-      "nodes_rejected": 0,
-      "trusted_exceptions_applied": 5170
+      "nodes_checked": 5202,
+      "nodes_allowed": 5171,
+      "nodes_rejected": 31,
+      "trusted_exceptions_applied": 5074
     },
     "export_verification_status_counts": {
-      "unverified": 5170
+      "unverified": 5068,
+      "partial": 103
     },
     "export_verified_node_count": 0,
-    "export_average_confidence_score": 0.0,
+    "export_average_confidence_score": 0.77,
     "pre_export_audit_summary": {
-      "total_nodes": 5170,
-      "nodes_with_errors": 5170,
-      "nodes_with_warnings": 5170,
-      "warning_only_nodes": 0,
+      "total_nodes": 5202,
+      "nodes_with_errors": 5105,
+      "nodes_with_warnings": 5113,
+      "warning_only_nodes": 41,
       "severity_counts": {
-        "error": 5170,
-        "warning": 25847
+        "error": 6276,
+        "warning": 23722
       },
       "issue_counts": {
-        "missing_source_urls": 5170,
-        "low_confidence": 5170,
-        "unverified": 5170,
-        "estimated_cost": 5169,
-        "cost_unverified": 5169,
-        "low_cost_confidence": 5169
+        "missing_source_urls": 5068,
+        "low_confidence": 5068,
+        "unverified": 5068,
+        "estimated_cost": 4541,
+        "cost_unverified": 4500,
+        "low_cost_confidence": 4500,
+        "missing_cost": 604,
+        "unavailable_cost_status": 604,
+        "cost_partially_verified": 41,
+        "generic_or_missing_type": 4
       },
       "cost_status_counts": {
         "root_total": 1,
-        "allocated": 5169
+        "official": 56,
+        "allocated": 4500,
+        "unavailable": 604,
+        "scaled_official": 41
       },
       "cost_verification_status_counts": {
-        "verified": 1,
-        "unverified": 5169
+        "verified": 57,
+        "unverified": 5104,
+        "partial": 41
       },
       "verification_status_counts": {
-        "unverified": 5170
+        "unverified": 5068,
+        "partial": 103,
+        "verified": 31
       },
       "proof_status_counts": {
         "root": 1,
-        "baseline": 5169
+        "proven": 134,
+        "baseline": 5067
       },
       "warning_cost_statuses": [
         "allocated",
@@ -327,42 +403,54 @@
       ]
     },
     "cost_export_policy": {
-      "nodes_checked": 5170,
-      "nodes_allowed": 5170,
-      "nodes_rejected": 0,
-      "trusted_exceptions_applied": 5169,
+      "nodes_checked": 5202,
+      "nodes_allowed": 5171,
+      "nodes_rejected": 31,
+      "trusted_exceptions_applied": 5073,
       "blocking_issue_counts": {
-        "non_authoritative_cost_status": 5169,
-        "cost_not_verified": 5169,
-        "missing_verifiable_cost_source": 5169
+        "non_authoritative_cost_status": 5104,
+        "cost_not_verified": 5104,
+        "missing_verifiable_cost_source": 5098,
+        "missing_cost": 604,
+        "missing_cost_confidence": 604
       }
     },
-    "node_validation_rejected_nodes": 0,
-    "cost_validation_rejected_nodes": 0,
+    "node_validation_rejected_nodes": 31,
+    "cost_validation_rejected_nodes": 31,
     "root_orphan_resolution": {
-      "root_orphans_processed": 0,
+      "root_orphans_processed": 1,
       "duplicates_removed": 0,
       "orphans_reattached": 0
     },
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "baseline": 5169
-    },
-    "published_node_count": 5170,
-    "treasury_lines_carried_forward": 0
+      "proven": 134,
+      "baseline": 5067,
+      "unproven": 1
+    }
   },
   "stage_errors": [],
+  "stage_warnings": [
+    "wikidata: all queries failed (hierarchy, subunit, office_holder), no data",
+    "wikidata_records: partial result, failed queries: hierarchy, subunit"
+  ],
   "stage_results": {
-    "offline_regeneration": "data"
+    "treasury_outlays": "data",
+    "usaspending": "empty",
+    "wikidata": "empty",
+    "lobbying": "empty",
+    "wikidata_records": "partial",
+    "official_directory_records": "data",
+    "federal_register_records": "data"
   },
   "all_fetch_stages_failed": false,
   "publication_blocked": false,
   "outputs": {
-    "graph": "output/graph.json",
-    "expanded_nodes": "output/expanded_nodes.json",
-    "expanded_edges": "output/expanded_edges.json",
-    "candidate_nodes": "output/candidate_nodes.json",
-    "audit_report": "output/audit_report.json (untracked diagnostic)"
+    "graph": "/home/user/Bureaucracy/output/graph.json",
+    "expanded_nodes": "/home/user/Bureaucracy/output/expanded_nodes.json",
+    "expanded_edges": "/home/user/Bureaucracy/output/expanded_edges.json",
+    "candidate_nodes": "/home/user/Bureaucracy/output/candidate_nodes.json",
+    "audit_report": "/home/user/Bureaucracy/output/audit_report.json"
   }
 }

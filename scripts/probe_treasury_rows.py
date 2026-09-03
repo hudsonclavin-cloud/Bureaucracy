@@ -3,7 +3,8 @@
 Nothing in output/ is read or written. This is the diagnostic to run before
 touching TREASURY_ROW_ALIASES: it fetches Table 5 (or reads a saved copy),
 runs the same matcher build_graph runs, and prints every line that found no
-node, every name several nodes claim, and every match it did make.
+node, every name that does not identify one line and one node, and every
+match it did make.
 
     python scripts/probe_treasury_rows.py                     # live fetch
     python scripts/probe_treasury_rows.py --save rows.json    # live, keep the payload
@@ -116,17 +117,37 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  ... {len(items) - len(shown)} more")
 
     # These two are the alias table's to-do list: a line no node claims, and a
-    # name too many nodes claim. Each needs a canonical name -> node id entry.
-    by_name = {str(row.get("originalName") or row.get("name")): row for row in rows}
+    # name that does not pin down one line and one node. Each needs a
+    # canonical name -> node id entry.
+    #
+    # One name can be several lines (Table 5 repeats "Department of the Navy"
+    # under four budget categories). Keying a single row by name would print
+    # whichever one happened to be last — including a negative line under a
+    # positive name — and the alias table is edited off this output.
+    by_name: dict[str, list[dict[str, Any]]] = {}
+    for row in rows:
+        by_name.setdefault(str(row.get("originalName") or row.get("name")), []).append(row)
+
+    def amount_of(name: str) -> str:
+        matches = by_name.get(name) or []
+        if len(matches) == 1:
+            return money(matches[0].get("rollup_total_amount"))
+        if not matches:
+            return "-"
+        total = sum(parse_cost_amount(row.get("rollup_total_amount")) or 0.0 for row in matches)
+        return f"{money(total)} /{len(matches)}"
+
     show(
         "unmatched — no node carries this name",
         stats["unmatched_sample"],
-        lambda name: f"{money((by_name.get(name) or {}).get('rollup_total_amount')):>10}  {name}",
+        lambda name: f"{amount_of(name):>14}  {name}",
     )
     show(
-        "ambiguous — several nodes carry this name",
+        # Either several nodes answer to the name, or several lines carry it;
+        # both need an explicit alias to resolve, and "/n" marks the second.
+        "ambiguous — the name does not identify one line and one node",
         stats["ambiguous_sample"],
-        lambda name: f"{money((by_name.get(name) or {}).get('rollup_total_amount')):>10}  {name}",
+        lambda name: f"{amount_of(name):>14}  {name}",
     )
     show("negative — net receipts, set aside", stats["negative_sample"], str)
     show(

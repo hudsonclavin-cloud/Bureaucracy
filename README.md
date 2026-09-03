@@ -12,16 +12,21 @@ Live site: https://hudsonclavin-cloud.github.io/Bureaucracy/
 
 The measured figures in the published graph are the root's cost — the U.S.
 Treasury's fiscal-year-to-date net outlays from the Monthly Treasury
-Statement (FiscalData) — and, once a crawl has run, the per-agency lines of
-that statement applied to the units they name. Every other cost is the total
+Statement (FiscalData) — and the per-agency lines of that statement applied
+to the units they name: 103 of the statement's 644 lines, covering the
+cabinet departments, the major independent agencies and 60-odd bureaus and
+offices beneath them. Every other cost is the total
 apportioned downward through the tree, with a Treasury line beneath a unit
 acting as a floor on that unit's share. Siblings are split by reported budget where
 budgets are reported, by staff count where that is the best evidence, and
 by subtree size otherwise; a sibling without the figure its siblings report
 is given one implied from their typical per-node rate, and the panel says
 so. The site renders those as rounded estimates with an explicit "Estimate"
-badge. Only the root — and, once a crawl has run, the agencies the Monthly
-Treasury Statement reports outlays for — carry "Measured".
+badge. Only the root and the units the Monthly Treasury Statement names carry
+"Measured". A line whose unit the graph does not have, or whose name the
+statement gives to several different lines, is left unmatched on purpose: its
+money stays in the remainder that is apportioned, which is a smaller claim
+than putting it on the wrong unit.
 The period the figure covers (for example "FYTD net outlays through
 2026-06-30") is printed under every amount.
 
@@ -66,7 +71,8 @@ python -m http.server 8080
 # open http://localhost:8080/index.html
 
 # Frontend smoke check (optional; needs Node plus a local playwright-core and three):
-#   npm install --no-save playwright-core three
+#   npm install --no-save playwright-core three@0.160.1
+# (the three version has to match the one js/graph.js imports)
 node scripts/frontend_smoke.mjs
 
 # Attempt to extract government-corporation officers from SEC EDGAR (network).
