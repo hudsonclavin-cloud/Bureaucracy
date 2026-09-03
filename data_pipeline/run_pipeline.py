@@ -183,6 +183,35 @@ def _compact_validation(validation: dict[str, Any]) -> dict[str, Any]:
     return compact
 
 
+PREVIOUS_RUN_CARRIED_KEYS = (
+    "timestamp",
+    "mode",
+    "nodes_after",
+    "verification_breakdown",
+    "average_confidence_score",
+    "verified_node_count",
+    "treasury_total_fetched",
+)
+
+
+def _previous_run_summary(stats_output_path: str | Path) -> dict[str, Any] | None:
+    """What the served output/ actually is, carried into a blocked run's record.
+
+    A refused run leaves graph.json alone but still rewrites the stats file, so
+    without this the only description of the published graph is replaced by a
+    description of a build that never happened, while outputs.graph still points
+    at the older file. Only a run that published is carried forward.
+    """
+    path = Path(stats_output_path)
+    try:
+        previous = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if not isinstance(previous, dict) or previous.get("publication_blocked"):
+        return previous.get("previous_run") if isinstance(previous, dict) else None
+    return {key: previous.get(key) for key in PREVIOUS_RUN_CARRIED_KEYS if key in previous}
+
+
 def _write_stats(stats_output_path: str | Path, stats: dict[str, Any]) -> None:
     write_json_file(stats_output_path, stats)
 
@@ -372,6 +401,12 @@ def run_pipeline(
         blocked_outputs = dict(outputs, audit_report=None)
         return {
             "timestamp": datetime.now(tz=timezone.utc).isoformat(),
+            "mode": "blocked_run",
+            # nodes_before/after are the graph already on disk, unchanged by
+            # this run. Fields that would describe a build - the verification
+            # breakdown, the confidence average, the promotion counts - are
+            # absent rather than zeroed: this run built nothing, and a zero
+            # reads as a measurement of the served graph.
             "nodes_before": nodes_before,
             "nodes_after": nodes_before,
             "new_nodes_added": 0,
@@ -380,17 +415,16 @@ def run_pipeline(
             "nodes_delta_vs_published": 0,
             "candidate_nodes_written": 0,
             "promoted_nodes_written": 0,
-            "promotion_stats": {},
-            "verification_breakdown": {},
-            "average_confidence_score": 0.0,
-            "verified_node_count": 0,
             "treasury_total_fetched": treasury_total is not None,
             "build_validation": {"exported_edge_count": 0},
             "stage_errors": list(stage_errors),
             "stage_warnings": list(stage_warnings),
             "stage_results": dict(stage_results),
             "all_fetch_stages_failed": all_fetch_stages_failed,
+            "cost_basis_missing": cost_basis_missing,
             "publication_blocked": True,
+            "published_artifacts": "unchanged",
+            "previous_run": _previous_run_summary(stats_path),
             "outputs": blocked_outputs,
         }
 

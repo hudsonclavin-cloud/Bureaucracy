@@ -175,8 +175,13 @@ change, or users run stale modules against new data.
   listed in `stage_warnings`.
 - `lastVerified` is never invented: a node carries a date only if a record
   supplied one. The site's "No source recorded" state keys on that.
-- A run that lost its Treasury anchor or every fetch stage must not touch
-  `output/`.
+- A run that lost its Treasury anchor or every fetch stage must not touch any
+  file the site fetches. It does rewrite `output/pipeline_stats.json`, which is
+  the run record: that record is `mode: blocked_run`, carries
+  `published_artifacts: "unchanged"` and a `previous_run` block describing the
+  graph still on disk, and omits `verification_breakdown`,
+  `average_confidence_score` and `verified_node_count` rather than zeroing
+  them — this run measured no graph, and a zero would read as if it had.
 - `output/` is gitignored for new files, but the files the site fetches are
   tracked and must stay committed (GitHub Pages serves them). Never commit
   `pipeline_stats.json` with the per-node audit embedded.

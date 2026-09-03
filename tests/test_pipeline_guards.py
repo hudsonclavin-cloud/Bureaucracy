@@ -208,6 +208,64 @@ class StageReportingTests(unittest.TestCase):
             ws.cleanup()
 
 
+class BlockedRunRecordTests(unittest.TestCase):
+    """A refused run rewrites pipeline_stats.json while leaving the served
+    graph alone. Its record must not read as a measurement of that graph."""
+
+    def _blocked(self, ws):
+        return ws.run([("treasury_outlays", lambda: {"nodes": [], "edges": []})])
+
+    def test_a_blocked_record_omits_the_fields_it_did_not_measure(self) -> None:
+        ws = _Workspace()
+        try:
+            stats = self._blocked(ws)
+            self.assertTrue(stats["publication_blocked"])
+            self.assertTrue(ws.graph_untouched())
+            self.assertEqual(stats["mode"], "blocked_run")
+            self.assertEqual(stats["published_artifacts"], "unchanged")
+            for absent in ("verification_breakdown", "average_confidence_score", "verified_node_count"):
+                self.assertNotIn(absent, stats)
+            written = json.loads((ws.path / "pipeline_stats.json").read_text(encoding="utf-8"))
+            self.assertEqual(written["mode"], "blocked_run")
+            self.assertIsNone(written["previous_run"])
+        finally:
+            ws.cleanup()
+
+    def test_the_last_published_record_is_carried_forward(self) -> None:
+        ws = _Workspace()
+        try:
+            good = ws.run([("treasury_outlays", lambda: _acme_payload(budgetSummary={"government_total_outlay_amount": 100}))])
+            self.assertFalse(good["publication_blocked"])
+            self.assertIn("verification_breakdown", good)
+
+            blocked = self._blocked(ws)
+            carried = blocked["previous_run"]
+            self.assertEqual(carried["timestamp"], good["timestamp"])
+            self.assertEqual(carried["nodes_after"], good["nodes_after"])
+            self.assertEqual(carried["verification_breakdown"], good["verification_breakdown"])
+
+            # A second consecutive failure keeps describing the same published
+            # graph rather than the first failure.
+            again = self._blocked(ws)
+            self.assertEqual(again["previous_run"], carried)
+        finally:
+            ws.cleanup()
+
+    def test_which_guard_fired_is_recorded(self) -> None:
+        ws = _Workspace()
+        try:
+            stats = ws.run(
+                [
+                    ("treasury_outlays", lambda: {"nodes": [], "edges": []}),
+                    ("usaspending", lambda: _acme_payload()),
+                ]
+            )
+            self.assertTrue(stats["cost_basis_missing"])
+            self.assertFalse(stats["all_fetch_stages_failed"])
+        finally:
+            ws.cleanup()
+
+
 class SchedulerTests(unittest.TestCase):
     def _blocked_result(self):
         return {
