@@ -813,6 +813,7 @@ def apply_treasury_outlay_rows(
     *,
     root_id: str,
     trusted_node_ids: set[str] | None = None,
+    sample_limit: int | None = None,
 ) -> dict[str, Any]:
     """Stamp the Treasury per-agency outlay lines onto the nodes they name.
 
@@ -826,6 +827,13 @@ def apply_treasury_outlay_rows(
     stay in the remainder the cascade apportions.
     """
     trusted_node_ids = trusted_node_ids or set()
+    # The samples are capped because these stats are embedded in
+    # pipeline_stats.json, which is committed. scripts/probe_treasury_rows.py
+    # raises the cap to read the whole list without publishing it.
+    unmatched_cap = sample_limit if sample_limit is not None else 40
+    ambiguous_cap = sample_limit if sample_limit is not None else 20
+    negative_cap = sample_limit if sample_limit is not None else 20
+    applied_cap = sample_limit if sample_limit is not None else 400
     rows, negative_rows = split_negative_outlay_rows(rows)
     stats: dict[str, Any] = {
         "rows": len(rows) + len(negative_rows),
@@ -834,7 +842,7 @@ def apply_treasury_outlay_rows(
         "rows_ambiguous": 0,
         "rows_superseded": 0,
         "rows_negative_skipped": len(negative_rows),
-        "negative_sample": [str(row.get("originalName") or row.get("name")) for row in negative_rows[:20]],
+        "negative_sample": [str(row.get("originalName") or row.get("name")) for row in negative_rows[:negative_cap]],
         "stale_rollups_cleared": 0,
         "unmatched_sample": [],
         "ambiguous_sample": [],
@@ -892,11 +900,11 @@ def apply_treasury_outlay_rows(
         if target is None:
             if ambiguous:
                 stats["rows_ambiguous"] += 1
-                if len(stats["ambiguous_sample"]) < 20:
+                if len(stats["ambiguous_sample"]) < ambiguous_cap:
                     stats["ambiguous_sample"].append(str(row.get("originalName") or row.get("name")))
             else:
                 stats["rows_unmatched"] += 1
-                if len(stats["unmatched_sample"]) < 40:
+                if len(stats["unmatched_sample"]) < unmatched_cap:
                     stats["unmatched_sample"].append(str(row.get("originalName") or row.get("name")))
             continue
         target_id = str(target.get("id") or "")
@@ -915,7 +923,7 @@ def apply_treasury_outlay_rows(
         merge_source_provenance(node, row)
         verify_node_sources(node)
         stats["rows_applied"] += 1
-        if len(stats["applied"]) < 400:
+        if len(stats["applied"]) < applied_cap:
             stats["applied"].append({"id": target_id, "row": node["treasury_row_name"], "amount": node["rollup_total_amount"]})
     return stats
 

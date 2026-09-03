@@ -54,6 +54,13 @@ python scripts/validate_published_graph.py
 # anchor), then run the gate. Use after changing the exporter or the base graph.
 python scripts/regenerate_published_graph.py
 
+# Which Monthly Treasury Statement lines match a node and which do not.
+# Reads and writes nothing in output/; contacts only the FiscalData host.
+# Run this before editing TREASURY_ROW_ALIASES.
+python scripts/probe_treasury_rows.py
+python scripts/probe_treasury_rows.py --save rows.json   # keep the payload
+python scripts/probe_treasury_rows.py --rows rows.json   # offline, from a copy
+
 # Serve the frontend locally
 python -m http.server 8080
 # open http://localhost:8080/index.html
@@ -85,6 +92,7 @@ output/budget_reconciliation.json     budget notes vs Treasury actuals per organ
 scripts/validate_published_graph.py   publish-time gate
 scripts/regenerate_published_graph.py offline rebuild of output/ (graph, stats, repaired review queue), gated
 scripts/repair_review_queue.py        the review-queue repair rules, with a report
+scripts/probe_treasury_rows.py        Treasury line -> node match report (read-only diagnostic)
 scripts/frontend_smoke.mjs            headless-browser check of what the page tells a visitor
 ROADMAP.md                            where the project stands and what is worth doing next
 index.html, js/                       the explorer (vanilla ES modules + Three.js from unpkg, no build step)

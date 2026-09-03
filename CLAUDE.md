@@ -23,6 +23,7 @@ python -m pytest tests/test_build_graph.py -v
 python scripts/validate_published_graph.py       # publish gate on output/graph.json, exit 1 on violation
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
+python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
 python -m http.server 8080                       # serve the site locally
 python data_expansion/extract_and_expand.py      # regenerate the corporate overlay (needs `requests`, SEC network)
