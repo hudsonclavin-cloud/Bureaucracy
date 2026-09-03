@@ -33,6 +33,7 @@ from data_pipeline.exporter.build_graph import (
     canonical_name_key,
     index_tree,
     load_base_graph,
+    payloads_carry_treasury_statement,
 )
 
 
@@ -269,6 +270,72 @@ class RepeatedLineNameTests(unittest.TestCase):
         self.assertEqual(node_map["navy"]["rollup_total_amount"], 73_356_816_090.14)
         self.assertEqual(stats["rows_applied"], 1)
         self.assertEqual(stats["rows_superseded"], 1)
+
+
+class CarryForwardTests(unittest.TestCase):
+    """A rebuild that fetched no statement must not un-measure the graph.
+
+    scripts/regenerate_published_graph.py rebuilds output/ offline from the
+    base graph and the anchor already in the published graph; it hands the
+    exporter no outlay rows. The stale-rollup sweep ran anyway and stripped
+    every measured cost, and the release gate passed the result — a graph with
+    no Treasury lines breaks no rule it checks. Both directions below: no
+    statement carries the lines forward, a statement replaces them.
+    """
+
+    GRAPH = {
+        "id": "root",
+        "name": "Root",
+        "type": "Foundation",
+        "children": [{"id": "agency", "name": "Bureau of One Line", "type": "Bureau", "children": []}],
+    }
+
+    def tree(self) -> dict:
+        path = TEST_TMP_ROOT / f"carry-{uuid.uuid4().hex}"
+        path.mkdir(parents=True, exist_ok=True)
+        self.addCleanup(shutil.rmtree, path, True)
+        base = path / "base.json"
+        base.write_text(json.dumps(self.GRAPH), encoding="utf-8")
+        root = build_graph_tree(base_graph_path=base, nodes=[], edges=[])
+        node_map, _ = index_tree(root)
+        node_map["agency"].update(
+            {
+                "rollup_total_amount": 900_000_000.0,
+                "budget_source": "Treasury MTS Table 5",
+                "treasury_row_name": "Bureau of One Line",
+                "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"],
+                "sourceTypes": ["treasury_outlays"],
+            }
+        )
+        return root, node_map
+
+    def test_no_statement_leaves_the_published_lines_alone(self) -> None:
+        root, node_map = self.tree()
+        stats = apply_treasury_outlay_rows(root, [], root_id="root", statement_present=False)
+        self.assertEqual(node_map["agency"]["rollup_total_amount"], 900_000_000.0)
+        self.assertEqual(node_map["agency"]["budget_source"], "Treasury MTS Table 5")
+        self.assertEqual(stats["stale_rollups_cleared"], 0)
+
+    def test_a_statement_that_no_longer_names_the_node_clears_it(self) -> None:
+        # The other direction: a real statement is authoritative, so a node it
+        # has stopped reporting must not keep last month's figure.
+        root, node_map = self.tree()
+        stats = apply_treasury_outlay_rows(
+            root, [row("Some Other Bureau", 5_000.0)], root_id="root", statement_present=True
+        )
+        self.assertNotIn("rollup_total_amount", node_map["agency"])
+        self.assertNotIn("budget_source", node_map["agency"])
+        self.assertEqual(stats["stale_rollups_cleared"], 1)
+
+    def test_the_default_reads_the_rows_it_was_given(self) -> None:
+        root, node_map = self.tree()
+        apply_treasury_outlay_rows(root, [], root_id="root")
+        self.assertEqual(node_map["agency"]["rollup_total_amount"], 900_000_000.0)
+
+    def test_a_payload_declaring_an_empty_statement_still_counts_as_one(self) -> None:
+        self.assertTrue(payloads_carry_treasury_statement([{"outlayRows": []}]))
+        self.assertFalse(payloads_carry_treasury_statement([{"nodes": [], "budgetSummary": {}}]))
+        self.assertFalse(payloads_carry_treasury_statement([]))
 
 
 class DeadAliasTests(unittest.TestCase):

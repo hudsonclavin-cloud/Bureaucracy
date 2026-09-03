@@ -11,7 +11,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 
 from scripts.repair_review_queue import is_foreign, is_generated, repair, unmangle_name
-from scripts.validate_published_graph import main as gate_main
+from scripts.validate_published_graph import extends_published_name, main as gate_main
 
 
 TEST_TMP_ROOT = Path(__file__).resolve().parent / ".tmp"
@@ -92,6 +92,68 @@ class RepairRulesTests(unittest.TestCase):
         fr = kept[2]
         self.assertLess(fr["confidenceEstimate"], 0.7)
         self.assertGreaterEqual(report["rescored"], 1)
+
+
+class FederalRegisterFragmentTests(unittest.TestCase):
+    """A notice names the agency it concerns and goes on talking. The old
+    extractor kept "Office of Management and Budget Review" and
+    "... (OMB) Circular No" as units; both extend a published node's name
+    with words that open no unit of their own."""
+
+    def _fr(self, name, parent="Small Business Administration"):
+        return _record(
+            name,
+            parent=parent,
+            url="https://www.federalregister.gov/documents/2026/x",
+            method="federal_register_listing_scan",
+            confidenceEstimate=0.71,
+        )
+
+    def test_repair_drops_an_extension_of_a_published_name_but_keeps_a_real_sub_unit(self) -> None:
+        published = {"office of management and budget", "department of energy"}
+        kept, report = repair(
+            [
+                self._fr("Office of Management and Budget Review"),
+                self._fr("Office of Management and Budget (OMB) Circular No"),
+                self._fr("Office of Grid Deployment"),
+            ],
+            published_names=published,
+            ids_by_name={},
+        )
+        self.assertEqual([r["name"] for r in kept], ["Office of Grid Deployment"])
+        self.assertEqual(report["dropped"], {"federal_register_fragment": 2})
+        # The other direction: trailing words that open a unit of their own
+        # are a sub-unit, not a sentence.
+        self.assertIsNone(extends_published_name("department of energy office of science", published))
+        self.assertEqual(extends_published_name("office of management and budget review", published), "office of management and budget")
+        self.assertEqual(extends_published_name("office of management and budget circular no", published), "office of management and budget")
+
+    def test_the_gate_names_the_fragment(self) -> None:
+        tmp = TEST_TMP_ROOT / f"fr-gate-{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            graph = {
+                "id": "the-constitution-of-the-united-states",
+                "name": "The Constitution of the United States",
+                "resolved_total_amount": 100.0,
+                "cost_status": "root_total",
+                "costVerificationStatus": "verified",
+                "costSourceCount": 1,
+                "__budgetSummary": {"government_total_outlay_amount": 100.0},
+                "children": [{"id": "exec-eop-omb", "name": "Office of Management and Budget (OMB)", "resolved_total_amount": 100.0, "cost_status": "allocated", "children": []}],
+            }
+            (tmp / "graph.json").write_text(json.dumps(graph), encoding="utf-8")
+            for name, expect in (("Office of Management and Budget Review", 1), ("Office of Management and Budget Office of Federal Procurement Policy", 0)):
+                with self.subTest(name=name):
+                    record = self._fr(name)
+                    record.pop("lastVerified")
+                    (tmp / "candidate_nodes.json").write_text(json.dumps([record]), encoding="utf-8")
+                    out = io.StringIO()
+                    with redirect_stdout(out):
+                        code = gate_main(["gate", str(tmp / "graph.json")])
+                    self.assertEqual(code, expect, out.getvalue())
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
 
 
 class ReviewQueueGateTests(unittest.TestCase):

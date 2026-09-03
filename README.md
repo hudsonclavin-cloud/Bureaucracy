@@ -35,6 +35,16 @@ Nodes with no source URL attached say "No source recorded" rather than
 "unverified" — they were never checked, which is a different claim from
 checked-and-failed.
 
+A curated node earns a source one way: `scripts/verify_base_graph.py`
+fetches an official `.gov`/`.mil` page on a date and finds the node's name
+in its text. The outcome — confirmed, not found, or fetch failed — is
+recorded in `data/verification/evidence.json` with the URL, the moment and
+the matched text, and the exporter stamps it onto the node at build time.
+A confirmed check is a source and a "Last checked" date; a failed check is
+the date alone, which the site shows as checked-and-failed. The candidate
+pages to fetch live in `data/verification/official_sites.json`; a URL there
+is something to check, not a claim.
+
 ## Commands
 
 Python 3.9+ and the standard library are enough for the pipeline and its
@@ -58,6 +68,11 @@ python scripts/validate_published_graph.py
 # Rebuild output/ without the network (base graph + the published Treasury
 # anchor), then run the gate. Use after changing the exporter or the base graph.
 python scripts/regenerate_published_graph.py
+
+# Verify curated nodes against official pages (network: the hosts that
+# `--list-hosts` prints). Resumable; writes data/verification/evidence.json only.
+python scripts/verify_base_graph.py --dry-run
+python scripts/verify_base_graph.py
 
 # Which Monthly Treasury Statement lines match a node and which do not.
 # Reads and writes nothing in output/; contacts only the FiscalData host.
@@ -99,6 +114,9 @@ scripts/validate_published_graph.py   publish-time gate
 scripts/regenerate_published_graph.py offline rebuild of output/ (graph, stats, repaired review queue), gated
 scripts/repair_review_queue.py        the review-queue repair rules, with a report
 scripts/probe_treasury_rows.py        Treasury line -> node match report (read-only diagnostic)
+scripts/verify_base_graph.py          fetch official pages, record existence evidence per node
+data/verification/official_sites.json candidate official pages per node id (to check, not claims)
+data/verification/evidence.json       what the verifier found, per node: URL, time, matched text
 scripts/frontend_smoke.mjs            headless-browser check of what the page tells a visitor
 ROADMAP.md                            where the project stands and what is worth doing next
 index.html, js/                       the explorer (vanilla ES modules + Three.js from unpkg, no build step)

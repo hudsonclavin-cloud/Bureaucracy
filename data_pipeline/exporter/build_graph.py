@@ -35,6 +35,7 @@ DEFAULT_MIN_GRAPH_OUTPUT = DEFAULT_OUTPUT_DIR / "graph.min.json"
 DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
 DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
+DEFAULT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "evidence.json"
 HIERARCHICAL_RELATIONSHIPS = {"reports_to", "subsidiary_of"}
 # The optional suffix must end at a word boundary: without `\b`, "~2,000 total
 # staff" read as 2,000 *trillion* because the "t" of "total" matched, and that
@@ -806,6 +807,16 @@ NON_ORGANISATION_TYPE_KEYWORDS = ("committee", "subcommittee", "position", "role
 TREASURY_ROW_FIELDS = ("budget_as_of", "budget_year", "amount_kind", "source_system", "allocation_basis")
 
 
+def payloads_carry_treasury_statement(payloads: Iterable[dict[str, Any]]) -> bool:
+    """Did a crawl of Table 5 reach this build at all?
+
+    Distinct from "did it yield usable rows": a statement that reported
+    nothing for a node is a reason to clear that node's old figure, while no
+    statement at all is a reason to leave every figure where it is.
+    """
+    return any(isinstance(payload, dict) and isinstance(payload.get("outlayRows"), list) for payload in payloads)
+
+
 def collect_treasury_outlay_rows(payloads: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for payload in payloads:
@@ -855,6 +866,7 @@ def apply_treasury_outlay_rows(
     root_id: str,
     trusted_node_ids: set[str] | None = None,
     sample_limit: int | None = None,
+    statement_present: bool | None = None,
 ) -> dict[str, Any]:
     """Stamp the Treasury per-agency outlay lines onto the nodes they name.
 
@@ -868,6 +880,11 @@ def apply_treasury_outlay_rows(
     stay in the remainder the cascade apportions.
     """
     trusted_node_ids = trusted_node_ids or set()
+    # Whether this build was handed a Monthly Treasury Statement at all, as
+    # opposed to one that named no usable line. The caller knows; a caller
+    # that does not say is taken to mean the rows it passed.
+    if statement_present is None:
+        statement_present = bool(rows)
     # The samples are capped because these stats are embedded in
     # pipeline_stats.json, which is committed. scripts/probe_treasury_rows.py
     # raises the cap to read the whole list without publishing it.
@@ -890,10 +907,17 @@ def apply_treasury_outlay_rows(
         "applied": [],
     }
     node_map, _ = index_tree(root)
-    # Whatever this run carries, last run's lines are cleared first: a node
-    # the Treasury no longer reports must not keep an old figure, nor the
-    # period, source and URL that came with it.
-    for node in node_map.values():
+    # Whatever statement this run carries, last run's lines are cleared first:
+    # a node the Treasury no longer reports must not keep an old figure, nor
+    # the period, source and URL that came with it.
+    #
+    # Only when there is a statement, though. scripts/regenerate_published_graph.py
+    # rebuilds offline from the base graph and the published anchor and hands
+    # over no outlay rows at all; clearing there stripped every measured cost
+    # from the graph it republished, and the release gate passed the result
+    # because a graph with no Treasury lines breaks no rule. The lines it
+    # cannot re-fetch are carried forward instead.
+    for node in (node_map.values() if statement_present else ()):
         if not str(node.get("budget_source") or "").startswith("Treasury"):
             continue
         stats["stale_rollups_cleared"] += 1
@@ -1562,6 +1586,7 @@ def build_graph(
     reuse_existing_graph_payload: bool = True,
     existing_graph_payload_path: str | Path | None = None,
     enforce_export_gate: bool = True,
+    evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -1648,9 +1673,16 @@ def build_graph(
     validation["cycle_fallback_root_attachments"] = tree_stats.get("cycle_fallback_root_attachments", 0)
     validation["nodes_removed_missing_parent"] = tree_stats.get("nodes_unattached_missing_parent", 0)
     validation["pipeline_summary"]["nodes_removed_missing_parent"] = validation["nodes_removed_missing_parent"]
+    # Existence evidence gathered by scripts/verify_base_graph.py: an official
+    # page fetched on a date with the node's name on it. It is the only way a
+    # curated node gets a source and a lastVerified besides a Treasury line.
+    from data_pipeline.verification.evidence import apply_evidence_to_tree, load_evidence  # noqa: E402 — evidence imports this module
+
+    validation["verification_evidence"] = apply_evidence_to_tree(graph, load_evidence(evidence_path) if evidence_path else {})
     outlay_stats = apply_treasury_outlay_rows(
         graph,
         collect_treasury_outlay_rows(payload_list),
+        statement_present=payloads_carry_treasury_statement(payload_list),
         root_id=str(graph.get("id") or ""),
         trusted_node_ids=set(existing_ids),
     )

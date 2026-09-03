@@ -8,29 +8,17 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 5836998774.43,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Legislative Branch",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -45,7 +33,19 @@
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
-    "costSourceCount": 1
+    "costSourceCount": 1,
+    "rollup_total_amount": 5836998774.43,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Legislative Branch",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null
   },
   {
     "id": "leg-senate",
@@ -56,29 +56,17 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 1087689291.06,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Senate",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -94,6 +82,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1087689291.06,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Senate",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "legislative-branch"
   },
   {
@@ -105,29 +105,17 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 1671237203.62,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "House of Representatives",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -143,6 +131,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1671237203.62,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "House of Representatives",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "legislative-branch"
   },
   {
@@ -154,29 +154,17 @@
     "budget": "~$800M",
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 678655238.13,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Government Accountability Office",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -192,6 +180,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 678655238.13,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Government Accountability Office",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -203,29 +203,17 @@
     "budget": "~$60M",
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 57506741.9,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Congressional Budget Office",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -241,6 +229,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 57506741.9,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Congressional Budget Office",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -252,29 +252,17 @@
     "budget": "~$900M",
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 732193774.42,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Library of Congress",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -290,6 +278,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 732193774.42,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Library of Congress",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -301,29 +301,17 @@
     "budget": "~$120M",
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 122380168.98,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Government Publishing Office",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -339,6 +327,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 122380168.98,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Government Publishing Office",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -350,29 +350,17 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 735681009.22,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Architect of the Capitol",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -388,6 +376,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 735681009.22,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Architect of the Capitol",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -399,29 +399,17 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
-    "rollup_total_amount": 675627352.77,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Capitol Police",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -437,6 +425,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 675627352.77,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Capitol Police",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "leg-support"
   },
   {
@@ -448,29 +448,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 55670464.76,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "The White House",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -486,6 +474,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 55670464.76,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "The White House",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-eop"
   },
   {
@@ -497,29 +497,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 93254266.7,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Office of Management and Budget",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -535,6 +523,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 93254266.7,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Office of Management and Budget",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-eop"
   },
   {
@@ -546,29 +546,17 @@
     "budget": "~$60B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 22560808102.86,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of State",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -584,6 +572,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 22560808102.86,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of State",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-cabinet"
   },
   {
@@ -595,29 +595,17 @@
     "budget": "~$740B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1407363818653.21,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of the Treasury",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -633,6 +621,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1407363818653.21,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of the Treasury",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -645,29 +645,17 @@
     "budget": "~$12B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 246207359582.86,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Internal Revenue Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -683,6 +671,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 246207359582.86,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Internal Revenue Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-treasury"
   },
   {
@@ -694,29 +694,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 10201297.89,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of Engraving and Printing",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -732,6 +720,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 10201297.89,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Engraving and Printing",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-treasury"
   },
   {
@@ -743,29 +743,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 8200443023.04,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Bureau of the Fiscal Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -781,6 +769,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 8200443023.04,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Bureau of the Fiscal Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-treasury"
   },
   {
@@ -792,29 +792,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 313040142.9,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Comptroller of the Currency",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -830,6 +818,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 313040142.9,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Comptroller of the Currency",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-treasury"
   },
   {
@@ -841,29 +841,17 @@
     "budget": "~$860B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 764710153765.82,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Defense--Military Programs",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -879,6 +867,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 764710153765.82,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Defense--Military Programs",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-cabinet"
   },
   {
@@ -890,29 +890,17 @@
     "budget": "~$38B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 36669643774.69,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Justice",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -928,6 +916,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 36669643774.69,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Justice",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-cabinet"
   },
   {
@@ -939,29 +939,17 @@
     "budget": "~$11B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 8666025201.8,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Federal Bureau of Investigation",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -977,6 +965,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 8666025201.8,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Federal Bureau of Investigation",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -988,29 +988,17 @@
     "budget": "~$3.1B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2624638971.33,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Drug Enforcement Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1026,6 +1014,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2624638971.33,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Drug Enforcement Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -1037,29 +1037,17 @@
     "budget": "~$1.6B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1346657615.3,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1075,6 +1063,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1346657615.3,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -1086,29 +1086,17 @@
     "budget": "~$8.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 6902593064.22,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Federal Prison System",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1124,6 +1112,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 6902593064.22,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Federal Prison System",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -1135,29 +1135,17 @@
     "budget": "~$1.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1400494094.97,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Marshals Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1173,6 +1161,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1400494094.97,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Marshals Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -1184,29 +1184,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2121685024.04,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Attorneys",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1222,6 +1210,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2121685024.04,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Attorneys",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doj"
   },
   {
@@ -1233,29 +1233,17 @@
     "budget": "~$18B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 13678033128.75,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of the Interior",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1271,6 +1259,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 13678033128.75,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of the Interior",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -1283,29 +1283,17 @@
     "budget": "~$3.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 4028885585.72,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Park Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1321,6 +1309,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 4028885585.72,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Park Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1332,29 +1332,17 @@
     "budget": "~$1.4B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1227358189.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Geological Survey",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1370,6 +1358,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1227358189.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Geological Survey",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1381,29 +1381,17 @@
     "budget": "~$3.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2905449328.7,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Fish and Wildlife Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1419,6 +1407,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2905449328.7,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Fish and Wildlife Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1430,29 +1430,17 @@
     "budget": "~$2.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2212335415.1,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of Indian Affairs and Bureau of Indian Education",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1468,6 +1456,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2212335415.1,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Indian Affairs and Bureau of Indian Education",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1479,29 +1479,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 110999674.06,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of Ocean Energy Management",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1517,6 +1505,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 110999674.06,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Ocean Energy Management",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1528,29 +1528,17 @@
     "budget": "~$200B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 188233199434.7,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Agriculture",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1566,6 +1554,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 188233199434.7,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Agriculture",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -1578,29 +1578,17 @@
     "budget": "~$20B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 9741460068.95,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Farm Service Agency",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1616,6 +1604,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 9741460068.95,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Farm Service Agency",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1627,29 +1627,17 @@
     "budget": "~$7B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 9122359099.35,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Forest Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1665,6 +1653,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 9122359099.35,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Forest Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1676,29 +1676,17 @@
     "budget": "~$150B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 117174961882.55,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Food and Nutrition Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1714,6 +1702,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 117174961882.55,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Food and Nutrition Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1725,29 +1725,17 @@
     "budget": "~$1.3B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1845033545.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Animal and Plant Health Inspection Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1763,6 +1751,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1845033545.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Animal and Plant Health Inspection Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1774,29 +1774,17 @@
     "budget": "~$1.8B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1464483892.87,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Agricultural Research Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1812,6 +1800,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1464483892.87,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Agricultural Research Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1823,29 +1823,17 @@
     "budget": "~$1.1B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 933183885.13,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Food Safety and Inspection Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1861,6 +1849,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 933183885.13,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Food Safety and Inspection Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-usda"
   },
   {
@@ -1872,29 +1872,17 @@
     "budget": "~$12B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 11469278897.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Commerce",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1910,6 +1898,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 11469278897.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Commerce",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -1922,29 +1922,17 @@
     "budget": "~$1.6B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1136520149.51,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of the Census",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -1960,6 +1948,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1136520149.51,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of the Census",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -1971,29 +1971,17 @@
     "budget": "~$6.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 5621196879.58,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Oceanic and Atmospheric Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2009,6 +1997,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 5621196879.58,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Oceanic and Atmospheric Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -2020,29 +2020,17 @@
     "budget": "~$1.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2716222306.17,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Institute of Standards and Technology",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2058,6 +2046,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2716222306.17,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Institute of Standards and Technology",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -2069,29 +2069,17 @@
     "budget": "~$550M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 406606066.11,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "International Trade Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2107,6 +2095,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 406606066.11,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "International Trade Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -2118,29 +2118,17 @@
     "budget": "~$75M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 883979805.69,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Telecommunications and Information Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2156,6 +2144,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 883979805.69,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Telecommunications and Information Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -2167,29 +2167,17 @@
     "budget": "~$15B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 47306925733.82,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Labor",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2205,6 +2193,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 47306925733.82,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Labor",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -2217,29 +2217,17 @@
     "budget": "~$650M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 485006912.9,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Occupational Safety and Health Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2255,6 +2243,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 485006912.9,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Occupational Safety and Health Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2266,29 +2266,17 @@
     "budget": "~$680M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 396905212.34,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Bureau of Labor Statistics",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2304,6 +2292,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 396905212.34,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Bureau of Labor Statistics",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2315,29 +2315,17 @@
     "budget": "~$250M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 243244418.9,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Wage and Hour Division",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2353,6 +2341,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 243244418.9,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Wage and Hour Division",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2364,29 +2364,17 @@
     "budget": "~$10B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 40234996645.84,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Employment and Training Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2402,6 +2390,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 40234996645.84,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Employment and Training Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2413,29 +2413,17 @@
     "budget": "~$430M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 309234362.63,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Mine Safety and Health Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2451,6 +2439,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 309234362.63,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Mine Safety and Health Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2462,29 +2462,17 @@
     "budget": "~$1.8T",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1724888110533.0,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Health and Human Services",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2500,6 +2488,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1724888110533.0,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Health and Human Services",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-cabinet"
   },
   {
@@ -2511,29 +2511,17 @@
     "budget": "~$6.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2960213477.45,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Food and Drug Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2549,6 +2537,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2960213477.45,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Food and Drug Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2560,29 +2560,17 @@
     "budget": "~$9B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 8054724302.65,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Centers for Disease Control and Prevention",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2598,6 +2586,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 8054724302.65,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Centers for Disease Control and Prevention",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2609,29 +2609,17 @@
     "budget": "~$48B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 37555056794.16,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Institutes of Health",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2647,6 +2635,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 37555056794.16,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Institutes of Health",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2658,29 +2658,17 @@
     "budget": "~$1.4T (program spending)",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2328205320351.0,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2696,6 +2684,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2328205320351.0,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2707,29 +2707,17 @@
     "budget": "~$450M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 229049055.06,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Agency for Healthcare Research and Quality",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2745,6 +2733,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 229049055.06,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Agency for Healthcare Research and Quality",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2756,29 +2756,17 @@
     "budget": "~$6.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 6476066397.41,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Substance Abuse and Mental Health Services Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2794,6 +2782,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 6476066397.41,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Substance Abuse and Mental Health Services Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2805,29 +2805,17 @@
     "budget": "~$14B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 12175725845.16,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Health Resources and Services Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2843,6 +2831,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 12175725845.16,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Health Resources and Services Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2854,29 +2854,17 @@
     "budget": "~$6B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 8822870503.88,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Indian Health Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2892,6 +2880,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 8822870503.88,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Indian Health Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -2903,29 +2903,17 @@
     "budget": "~$70B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 56813533464.05,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Housing and Urban Development",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2941,6 +2929,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 56813533464.05,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Housing and Urban Development",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -2953,29 +2953,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 40488970019.37,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Public and Indian Housing Programs",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -2991,6 +2979,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 40488970019.37,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Public and Indian Housing Programs",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hud"
   },
   {
@@ -3002,29 +3002,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 13054839218.67,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Community Planning and Development",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3040,6 +3028,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 13054839218.67,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Community Planning and Development",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-hud"
   },
   {
@@ -3051,29 +3051,17 @@
     "budget": "~$100B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 97995857073.27,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Transportation",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3089,6 +3077,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 97995857073.27,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Transportation",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -3101,29 +3101,17 @@
     "budget": "~$18B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 20356780367.92,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Federal Aviation Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3139,6 +3127,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 20356780367.92,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Federal Aviation Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3150,29 +3150,17 @@
     "budget": "~$60B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 51281932207.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Federal Highway Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3188,6 +3176,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 51281932207.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Federal Highway Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3199,29 +3199,17 @@
     "budget": "~$1.1B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 1209189952.6,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Highway Traffic Safety Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3237,6 +3225,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1209189952.6,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Highway Traffic Safety Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3248,29 +3248,17 @@
     "budget": "~$3B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 6655355597.9,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Federal Railroad Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3286,6 +3274,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 6655355597.9,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Federal Railroad Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3297,29 +3297,17 @@
     "budget": "~$650M",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 772379003.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Federal Motor Carrier Safety Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3335,6 +3323,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 772379003.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Federal Motor Carrier Safety Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3346,29 +3346,17 @@
     "budget": "~$20B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 16880076728.0,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Federal Transit Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3384,6 +3372,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 16880076728.0,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Federal Transit Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -3395,29 +3395,17 @@
     "budget": "~$50B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 42979199644.55,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Energy",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3433,6 +3421,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 42979199644.55,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Energy",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -3445,29 +3445,17 @@
     "budget": "~$3B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 3009533357.01,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Energy Efficiency and Renewable Energy",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3483,6 +3471,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 3009533357.01,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Energy Efficiency and Renewable Energy",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-doe"
   },
   {
@@ -3494,29 +3494,17 @@
     "budget": "~$215B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 52938105799.5,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Education",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3532,6 +3520,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 52938105799.5,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Education",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -3544,29 +3544,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 25382904757.84,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Office of Elementary and Secondary Education",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3582,6 +3570,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 25382904757.84,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Office of Elementary and Secondary Education",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-ed"
   },
   {
@@ -3593,29 +3593,17 @@
     "budget": null,
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 439172894.04,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Institute of Education Sciences",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3631,6 +3619,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 439172894.04,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Institute of Education Sciences",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-ed"
   },
   {
@@ -3642,29 +3642,17 @@
     "budget": "~$330B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 360049162129.07,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Veterans Affairs",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3680,6 +3668,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 360049162129.07,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Veterans Affairs",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -3692,29 +3692,17 @@
     "budget": "~$60B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 87523833437.83,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Department of Homeland Security",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3730,6 +3718,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 87523833437.83,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Department of Homeland Security",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -3742,29 +3742,17 @@
     "budget": "~$19B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 22163637285.17,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "U.S. Customs and Border Protection",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3780,6 +3768,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 22163637285.17,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "U.S. Customs and Border Protection",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -3791,29 +3791,17 @@
     "budget": "~$9B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 18711776979.42,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Immigration and Customs Enforcement",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3829,6 +3817,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 18711776979.42,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Immigration and Customs Enforcement",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -3840,29 +3840,17 @@
     "budget": "~$9.5B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 6691147128.56,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Transportation Security Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3878,6 +3866,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 6691147128.56,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Transportation Security Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -3889,29 +3889,17 @@
     "budget": "~$30B (including disaster relief fund)",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 25655049044.02,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Federal Emergency Management Agency",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3927,6 +3915,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 25655049044.02,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Federal Emergency Management Agency",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -3938,29 +3938,17 @@
     "budget": "~$4.9B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 4675774387.6,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Citizenship and Immigration Services",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -3976,6 +3964,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 4675774387.6,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Citizenship and Immigration Services",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -3987,29 +3987,17 @@
     "budget": "~$3.1B",
     "color": "#c84a4a",
     "children": [],
-    "rollup_total_amount": 2978095395.53,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Secret Service",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4025,6 +4013,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 2978095395.53,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Secret Service",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-dept-dhs"
   },
   {
@@ -4036,29 +4036,17 @@
     "budget": "~$9.5B",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 13938855973.04,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Environmental Protection Agency",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4074,6 +4062,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 13938855973.04,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Environmental Protection Agency",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4085,29 +4085,17 @@
     "budget": "~$25B",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 19407504274.99,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--National Aeronautics and Space Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4123,6 +4111,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 19407504274.99,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--National Aeronautics and Space Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4134,29 +4134,17 @@
     "budget": "~$14B (admin); ~$1.4T (benefits)",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 1444993847336.67,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Social Security Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4172,6 +4160,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1444993847336.67,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Social Security Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4183,29 +4183,17 @@
     "budget": "~$900M",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 11509168516.3,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Small Business Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4221,6 +4209,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 11509168516.3,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Small Business Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4232,29 +4232,17 @@
     "budget": "~$9B",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 7044450851.39,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--National Science Foundation",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4270,6 +4258,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 7044450851.39,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--National Science Foundation",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4281,29 +4281,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 889454271.88,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Education and Human Resources",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4319,6 +4307,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 889454271.88,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Education and Human Resources",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-nsf"
   },
   {
@@ -4330,29 +4330,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 113687741429.64,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Office of Personnel Management",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4368,6 +4356,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 113687741429.64,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Office of Personnel Management",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4379,29 +4379,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 1029016720.27,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Smithsonian Institution",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4417,6 +4405,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1029016720.27,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Smithsonian Institution",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4428,29 +4428,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 368483544.32,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Archives and Records Administration",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4466,6 +4454,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 368483544.32,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Archives and Records Administration",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-independent"
   },
   {
@@ -4477,29 +4477,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 335797574.1,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Peace Corps",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4514,6 +4502,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 335797574.1,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Peace Corps",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4525,29 +4525,17 @@
     "budget": "~$207M",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 124234286.91,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Endowment for the Arts",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4562,6 +4550,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 124234286.91,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Endowment for the Arts",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4573,29 +4573,17 @@
     "budget": "~$180M",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 52197425.96,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Endowment for the Humanities",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4610,6 +4598,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 52197425.96,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Endowment for the Humanities",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4621,29 +4621,17 @@
     "budget": "~$274M",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 228712355.85,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "National Labor Relations Board",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4658,6 +4646,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 228712355.85,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "National Labor Relations Board",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4669,29 +4669,17 @@
     "budget": "~$455M",
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 351117249.28,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Equal Employment Opportunity Commission",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4706,6 +4694,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 351117249.28,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Equal Employment Opportunity Commission",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4717,29 +4717,17 @@
     "budget": null,
     "color": "#4ac88a",
     "children": [],
-    "rollup_total_amount": 1992636236.68,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Pension Benefit Guaranty Corporation",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4754,6 +4742,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "rollup_total_amount": 1992636236.68,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Pension Benefit Guaranty Corporation",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-ind-misc"
   },
   {
@@ -4765,29 +4765,17 @@
     "budget": "~$2.2B (fee-funded)",
     "color": "#c8884a",
     "children": [],
-    "rollup_total_amount": 1646343264.31,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Securities and Exchange Commission",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4803,6 +4791,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 1646343264.31,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Securities and Exchange Commission",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-regulatory"
   },
   {
@@ -4814,29 +4814,17 @@
     "budget": "~$900M",
     "color": "#c8884a",
     "children": [],
-    "rollup_total_amount": 179950579.66,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Nuclear Regulatory Commission",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4852,6 +4840,18 @@
     "costConfidenceScore": 0.72,
     "costVerificationReason": "scaled_from_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 179950579.66,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Nuclear Regulatory Commission",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "exec-regulatory"
   },
   {
@@ -4863,29 +4863,17 @@
     "budget": null,
     "color": "#4a8ac8",
     "children": [],
-    "rollup_total_amount": 8375236264.3,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Total--Judicial Branch",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4900,7 +4888,19 @@
     "costVerificationStatus": "verified",
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
-    "costSourceCount": 1
+    "costSourceCount": 1,
+    "rollup_total_amount": 8375236264.3,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Total--Judicial Branch",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null
   },
   {
     "id": "jud-scotus",
@@ -4911,29 +4911,17 @@
     "budget": null,
     "color": "#4a8ac8",
     "children": [],
-    "rollup_total_amount": 147833433.46,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "Supreme Court of the United States",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4949,6 +4937,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 147833433.46,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "Supreme Court of the United States",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "judicial-branch"
   },
   {
@@ -4960,29 +4960,17 @@
     "budget": null,
     "color": "#4a8ac8",
     "children": [],
-    "rollup_total_amount": 61717264.29,
-    "budget_source": "Treasury MTS Table 5",
-    "treasury_row_name": "United States Tax Court",
-    "budget_as_of": "2026-07-31",
-    "budget_year": "2026",
-    "amount_kind": "fytd_net_outlays",
-    "source_system": "Treasury Fiscal Data",
-    "allocation_basis": "treasury_rollup",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -4998,6 +4986,18 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "rollup_total_amount": 61717264.29,
+    "budget_source": "Treasury MTS Table 5",
+    "treasury_row_name": "United States Tax Court",
+    "budget_as_of": "2026-07-31",
+    "budget_year": "2026",
+    "amount_kind": "fytd_net_outlays",
+    "source_system": "Treasury Fiscal Data",
+    "allocation_basis": "treasury_rollup",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": null,
     "parentId": "jud-specialized"
   },
   {
@@ -5012,8 +5012,8 @@
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     ],
     "sourceTypes": [
-      "treasury_outlays",
-      "official_site"
+      "official_site",
+      "treasury_outlays"
     ],
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
@@ -5022,15 +5022,22 @@
     "children": [],
     "proofSourceCount": 3,
     "proofSourceTypes": [
-      "treasury_outlays",
       "official_site",
+      "treasury_outlays",
       "official_financial_record"
     ],
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "attachToRoot": true,
+    "resolved_total_amount": 837119445.81,
+    "cost_status": "official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "matched_official_rollup",
+    "costVerificationStatus": "verified",
+    "costConfidenceScore": 0.95,
+    "costVerificationReason": "matched_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 837119445.81,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Corporation for National and Community Service",
@@ -5039,13 +5046,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "resolved_total_amount": 837119445.81,
-    "cost_status": "official",
-    "cost_basis": "treasury_rollup",
-    "cost_validation": "matched_official_rollup",
-    "costVerificationStatus": "verified",
-    "costConfidenceScore": 0.95,
-    "costVerificationReason": "matched_official_rollup",
-    "costSourceCount": 1
+    "attachToRoot": true
   }
 ]

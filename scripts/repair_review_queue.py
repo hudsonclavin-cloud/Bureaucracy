@@ -39,6 +39,7 @@ from data_pipeline.discovery.source_discovery import classify_source_url, estima
 from data_pipeline.exporter.build_graph import DEFAULT_GRAPH_OUTPUT, canonical_name_key, walk_tree  # noqa: E402
 from data_pipeline.json_io import load_json_file, write_json_file  # noqa: E402
 from data_pipeline.processors.normalize_nodes import normalize_name, verify_node_sources  # noqa: E402
+from scripts.validate_published_graph import extends_published_name  # noqa: E402
 
 DEFAULT_QUEUE = PROJECT_ROOT / "output" / "candidate_nodes.json"
 
@@ -179,6 +180,11 @@ def repair(records: list[dict[str, Any]], *, published_names: set[str], ids_by_n
             # The current extractor must produce this exact name; the old
             # pattern emitted sentence fragments.
             if str(record.get("name") or "").strip() not in extract_units(str(record.get("name") or "")):
+                drop("federal_register_fragment", record)
+                continue
+            # "Office of Management and Budget Review" is a sentence about
+            # OMB, not a unit of it.
+            if extends_published_name(canonical_name_key(record.get("name")), published_names):
                 drop("federal_register_fragment", record)
                 continue
         name = unmangle_name(normalize_name(record.get("name")))

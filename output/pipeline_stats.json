@@ -1,103 +1,78 @@
 {
-  "timestamp": "2026-09-03T19:48:41.624664+00:00",
+  "timestamp": "2026-09-03T19:54:50.760754+00:00",
   "nodes_before": 5170,
   "nodes_after": 5171,
   "new_nodes_added": 1,
   "nodes_delta": 1,
-  "published_nodes_before": 5172,
-  "nodes_delta_vs_published": -1,
-  "candidate_nodes_written": 206,
-  "candidates_discovered": 206,
-  "promoted_nodes_written": 31,
+  "published_nodes_before": 5171,
+  "nodes_delta_vs_published": 0,
+  "candidate_nodes_written": 103,
+  "candidates_discovered": 103,
+  "promoted_nodes_written": 0,
   "promotion_stats": {
-    "candidates_reviewed": 206,
-    "candidates_below_threshold": 175,
-    "promoted_new_nodes": 31,
+    "candidates_reviewed": 103,
+    "candidates_below_threshold": 103,
+    "promoted_new_nodes": 0,
     "merged_duplicates": 0,
-    "consumed_candidate_targets": {
-      "arkansas-department-of-public-safety-secretary-of-the-department-of-public-safety": "arkansas-department-of-public-safety-secretary-of-the-department-of-public-safety",
-      "boston-fire-department-fire-commissioner-and-chief-of-boston-fire-department": "boston-fire-department-fire-commissioner-and-chief-of-boston-fire-department",
-      "bureau-of-engraving-and-printing-director-of-the-bureau-of-engraving-and-printing": "bureau-of-engraving-and-printing-director-of-the-bureau-of-engraving-and-printing",
-      "bureau-of-indian-affairs-united-states-assistant-secretary-of-the-interior-for-indian-affairs": "bureau-of-indian-affairs-united-states-assistant-secretary-of-the-interior-for-indian-affairs",
-      "california-state-assembly-speaker-of-the-california-state-assembly": "california-state-assembly-speaker-of-the-california-state-assembly",
-      "consumer-financial-protection-bureau-director-of-the-consumer-financial-protection-bureau": "consumer-financial-protection-bureau-director-of-the-consumer-financial-protection-bureau",
-      "exec-eop-cea-chair-of-the-council-of-economic-advisers": "exec-eop-cea-chair-of-the-council-of-economic-advisers",
-      "delaware-department-of-agriculture-delaware-secretary-of-agriculture": "delaware-department-of-agriculture-delaware-secretary-of-agriculture",
-      "delaware-department-of-state-secretary-of-state-of-delaware": "delaware-department-of-state-secretary-of-state-of-delaware",
-      "erie-county-sheriff-s-office-sheriff-of-erie-county": "erie-county-sheriff-s-office-sheriff-of-erie-county",
-      "federal-communications-commission-chair-of-the-federal-communications-commission": "federal-communications-commission-chair-of-the-federal-communications-commission",
-      "hamilton-county-coroner-s-office-hamilton-county-coroner": "hamilton-county-coroner-s-office-hamilton-county-coroner",
-      "loveland-city-council-mayor-of-loveland": "loveland-city-council-mayor-of-loveland",
-      "maryland-department-of-the-environment-maryland-secretary-of-environment": "maryland-department-of-the-environment-maryland-secretary-of-environment",
-      "montana-house-of-representatives-speaker-of-the-montana-house-of-representatives": "montana-house-of-representatives-speaker-of-the-montana-house-of-representatives",
-      "national-counterterrorism-center-director-of-the-national-counterterrorism-center": "national-counterterrorism-center-director-of-the-national-counterterrorism-center",
-      "national-security-agency-director-of-the-national-security-agency": "national-security-agency-director-of-the-national-security-agency",
-      "national-transportation-safety-board-chair-of-the-national-transportation-safety-board": "national-transportation-safety-board-chair-of-the-national-transportation-safety-board",
-      "new-mexico-department-of-justice-attorney-general-of-new-mexico": "new-mexico-department-of-justice-attorney-general-of-new-mexico",
-      "new-york-court-of-appeals-chief-judge-of-the-new-york-court-of-appeals": "new-york-court-of-appeals-chief-judge-of-the-new-york-court-of-appeals",
-      "north-carolina-office-of-the-commissioner-of-banks-north-carolina-commissioner-of-banks": "north-carolina-office-of-the-commissioner-of-banks-north-carolina-commissioner-of-banks",
-      "office-of-the-assistant-secretary-of-defense-for-legislative-affairs-assistant-secretary-of-defense-for-legislative-affairs": "office-of-the-assistant-secretary-of-defense-for-legislative-affairs-assistant-secretary-of-defense-for-legislative-affairs",
-      "office-of-the-national-cyber-director-national-cyber-director": "office-of-the-national-cyber-director-national-cyber-director",
-      "office-of-the-under-secretary-of-defense-for-personnel-readiness-under-secretary-of-defense-for-personnel-and-readiness": "office-of-the-under-secretary-of-defense-for-personnel-readiness-under-secretary-of-defense-for-personnel-and-readiness",
-      "office-of-the-under-secretary-of-defense-for-policy-under-secretary-of-defense-for-policy": "office-of-the-under-secretary-of-defense-for-policy-under-secretary-of-defense-for-policy",
-      "san-jose-city-manager-s-office-san-jose-city-manager": "san-jose-city-manager-s-office-san-jose-city-manager",
-      "santa-clara-county-office-of-the-county-executive-chief-executive-officer-of-santa-clara-county": "santa-clara-county-office-of-the-county-executive-chief-executive-officer-of-santa-clara-county",
-      "state-of-ohio-office-of-the-inspector-general-ohio-inspector-general": "state-of-ohio-office-of-the-inspector-general-ohio-inspector-general",
-      "united-states-mint-director-of-the-united-states-mint": "united-states-mint-director-of-the-united-states-mint",
-      "united-states-national-agricultural-library-director-of-the-united-states-national-agricultural-library": "united-states-national-agricultural-library-director-of-the-united-states-national-agricultural-library",
-      "virginia-department-of-taxation-virginia-secretary-of-finance": "virginia-department-of-taxation-virginia-secretary-of-finance"
-    }
+    "consumed_candidate_targets": {}
   },
   "verification_breakdown": {
     "unverified": 5068,
     "partial": 103
   },
-  "average_confidence_score": 0.77,
-  "verified_node_count": 31,
+  "average_confidence_score": 0.7,
+  "verified_node_count": 0,
   "treasury_total_fetched": true,
   "build_validation": {
-    "initial_node_count": 135,
-    "input_node_count": 135,
+    "initial_node_count": 103,
+    "input_node_count": 103,
     "input_edge_count": 0,
     "exported_node_count": 103,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
-    "nodes_reattached_to_root": 32,
+    "nodes_reattached_to_root": 1,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 135,
+    "final_node_count": 103,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
     "dropped_edges_missing_source": 0,
     "dropped_edges_missing_target": 0,
     "orphaned_parent_ids": 0,
-    "attached_to_root": 32,
-    "explicitly_root_attached_nodes": 32,
+    "attached_to_root": 1,
+    "explicitly_root_attached_nodes": 1,
     "relationship_counts": {},
     "verification_status_counts": {
       "unverified": 5068,
       "partial": 103
     },
-    "verified_node_count": 31,
+    "verified_node_count": 0,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.77,
+    "average_confidence_score": 0.7,
     "pipeline_summary": {
-      "initial_node_count": 135,
-      "raw_nodes_loaded": 135,
-      "nodes_after_normalization": 135,
-      "nodes_after_merge": 135,
+      "initial_node_count": 103,
+      "raw_nodes_loaded": 103,
+      "nodes_after_normalization": 103,
+      "nodes_after_merge": 103,
       "nodes_removed_missing_parent": 0,
-      "nodes_reattached_to_root": 32,
+      "nodes_reattached_to_root": 1,
       "nodes_removed_structural_errors": 0,
       "final_node_count": 103,
-      "nodes_removed_cost_validation": 31
+      "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
+    "verification_evidence": {
+      "confirmed": 0,
+      "not_found": 0,
+      "fetch_failed": 0,
+      "unknown_node": 0,
+      "urls_added": 0
+    },
     "treasury_outlay_rows": {
       "rows": 644,
       "rows_applied": 103,
-      "rows_unmatched": 380,
-      "rows_ambiguous": 9,
+      "rows_unmatched": 388,
+      "rows_ambiguous": 1,
       "rows_superseded": 0,
       "rows_negative_skipped": 152,
       "negative_sample": [
@@ -122,7 +97,7 @@
         "Proprietary Receipts from the Public",
         "Proprietary Receipts from the Public"
       ],
-      "stale_rollups_cleared": 104,
+      "stale_rollups_cleared": 103,
       "unmatched_sample": [
         "Total--Other Defense Civil Programs",
         "Total--International Assistance Programs",
@@ -166,15 +141,7 @@
         "Disaster Loans Program"
       ],
       "ambiguous_sample": [
-        "United States Coast Guard",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy",
-        "Department of the Navy"
+        "United States Coast Guard"
       ]
     },
     "budget_summary_reused_from_previous_build": false,
@@ -294,13 +261,13 @@
     },
     "audit_report": {
       "summary": {
-        "total_nodes": 5202,
-        "nodes_with_errors": 5105,
-        "nodes_with_warnings": 5113,
+        "total_nodes": 5171,
+        "nodes_with_errors": 5074,
+        "nodes_with_warnings": 5109,
         "warning_only_nodes": 41,
         "severity_counts": {
-          "error": 6276,
-          "warning": 23722
+          "error": 6214,
+          "warning": 23718
         },
         "issue_counts": {
           "missing_source_urls": 5068,
@@ -309,31 +276,29 @@
           "estimated_cost": 4541,
           "cost_unverified": 4500,
           "low_cost_confidence": 4500,
-          "missing_cost": 604,
-          "unavailable_cost_status": 604,
-          "cost_partially_verified": 41,
-          "generic_or_missing_type": 4
+          "missing_cost": 573,
+          "unavailable_cost_status": 573,
+          "cost_partially_verified": 41
         },
         "cost_status_counts": {
           "root_total": 1,
           "official": 56,
           "allocated": 4500,
-          "unavailable": 604,
+          "unavailable": 573,
           "scaled_official": 41
         },
         "cost_verification_status_counts": {
           "verified": 57,
-          "unverified": 5104,
+          "unverified": 5073,
           "partial": 41
         },
         "verification_status_counts": {
           "unverified": 5068,
-          "partial": 103,
-          "verified": 31
+          "partial": 103
         },
         "proof_status_counts": {
           "root": 1,
-          "proven": 134,
+          "proven": 103,
           "baseline": 5067
         },
         "warning_cost_statuses": [
@@ -343,9 +308,9 @@
       }
     },
     "node_export_policy": {
-      "nodes_checked": 5202,
+      "nodes_checked": 5171,
       "nodes_allowed": 5171,
-      "nodes_rejected": 31,
+      "nodes_rejected": 0,
       "trusted_exceptions_applied": 5074
     },
     "export_verification_status_counts": {
@@ -353,15 +318,15 @@
       "partial": 103
     },
     "export_verified_node_count": 0,
-    "export_average_confidence_score": 0.77,
+    "export_average_confidence_score": 0.7,
     "pre_export_audit_summary": {
-      "total_nodes": 5202,
-      "nodes_with_errors": 5105,
-      "nodes_with_warnings": 5113,
+      "total_nodes": 5171,
+      "nodes_with_errors": 5074,
+      "nodes_with_warnings": 5109,
       "warning_only_nodes": 41,
       "severity_counts": {
-        "error": 6276,
-        "warning": 23722
+        "error": 6214,
+        "warning": 23718
       },
       "issue_counts": {
         "missing_source_urls": 5068,
@@ -370,31 +335,29 @@
         "estimated_cost": 4541,
         "cost_unverified": 4500,
         "low_cost_confidence": 4500,
-        "missing_cost": 604,
-        "unavailable_cost_status": 604,
-        "cost_partially_verified": 41,
-        "generic_or_missing_type": 4
+        "missing_cost": 573,
+        "unavailable_cost_status": 573,
+        "cost_partially_verified": 41
       },
       "cost_status_counts": {
         "root_total": 1,
         "official": 56,
         "allocated": 4500,
-        "unavailable": 604,
+        "unavailable": 573,
         "scaled_official": 41
       },
       "cost_verification_status_counts": {
         "verified": 57,
-        "unverified": 5104,
+        "unverified": 5073,
         "partial": 41
       },
       "verification_status_counts": {
         "unverified": 5068,
-        "partial": 103,
-        "verified": 31
+        "partial": 103
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 134,
+        "proven": 103,
         "baseline": 5067
       },
       "warning_cost_statuses": [
@@ -403,20 +366,20 @@
       ]
     },
     "cost_export_policy": {
-      "nodes_checked": 5202,
+      "nodes_checked": 5171,
       "nodes_allowed": 5171,
-      "nodes_rejected": 31,
+      "nodes_rejected": 0,
       "trusted_exceptions_applied": 5073,
       "blocking_issue_counts": {
-        "non_authoritative_cost_status": 5104,
-        "cost_not_verified": 5104,
-        "missing_verifiable_cost_source": 5098,
-        "missing_cost": 604,
-        "missing_cost_confidence": 604
+        "non_authoritative_cost_status": 5073,
+        "cost_not_verified": 5073,
+        "missing_verifiable_cost_source": 5067,
+        "missing_cost": 573,
+        "missing_cost_confidence": 573
       }
     },
-    "node_validation_rejected_nodes": 31,
-    "cost_validation_rejected_nodes": 31,
+    "node_validation_rejected_nodes": 0,
+    "cost_validation_rejected_nodes": 0,
     "root_orphan_resolution": {
       "root_orphans_processed": 1,
       "duplicates_removed": 0,
@@ -425,22 +388,21 @@
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "proven": 134,
-      "baseline": 5067,
-      "unproven": 1
+      "proven": 103,
+      "baseline": 5067
     }
   },
   "stage_errors": [],
   "stage_warnings": [
     "wikidata: all queries failed (hierarchy, subunit, office_holder), no data",
-    "wikidata_records: partial result, failed queries: hierarchy, subunit"
+    "wikidata_records: all queries failed (hierarchy, subunit, office_holder), no data"
   ],
   "stage_results": {
     "treasury_outlays": "data",
     "usaspending": "empty",
     "wikidata": "empty",
     "lobbying": "empty",
-    "wikidata_records": "partial",
+    "wikidata_records": "empty",
     "official_directory_records": "data",
     "federal_register_records": "data"
   },

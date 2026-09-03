@@ -13,6 +13,8 @@ The gate never writes. Run it before every push that touches output/.
 from __future__ import annotations
 
 import json
+import re
+from datetime import datetime, timezone
 import sys
 from collections import Counter
 from pathlib import Path
@@ -78,7 +80,7 @@ def check_review_queue(gate, queue_path, graph, nodes):
         gate.check("review queue is a list", ["{} holds a {}".format(queue_path, type(records).__name__)])
         return
     published = {canonical_key(n.get("name")) for n in nodes}
-    generated, duplicates, unchecked_dates, bad_parent_ids, duplicate_ids = [], [], [], [], []
+    generated, duplicates, unchecked_dates, bad_parent_ids, duplicate_ids, fragments = [], [], [], [], [], []
     ids = Counter()
     node_ids = {str(n.get("id") or "") for n in nodes}
     for record in records:
@@ -90,6 +92,10 @@ def check_review_queue(gate, queue_path, graph, nodes):
             generated.append(label(record))
         if canonical_key(record.get("name")) in published:
             duplicates.append(label(record))
+        elif is_federal_register_only(urls):
+            extended = extends_published_name(canonical_key(record.get("name")), published)
+            if extended:
+                fragments.append("{} extends {!r}".format(label(record), extended))
         if record.get("lastVerified") and not (record.get("sourceUrls") or []):
             unchecked_dates.append(label(record))
         parent_id = record.get("possibleParentId")
@@ -98,10 +104,40 @@ def check_review_queue(gate, queue_path, graph, nodes):
     duplicate_ids = ["{} appears {} times".format(i, c) for i, c in ids.items() if c > 1]
     gate.check("review queue has no template-generated records", generated)
     gate.check("review queue has no records duplicating a published node", duplicates)
+    gate.check("review queue has no Federal Register fragments extending a published name", fragments)
     gate.check("review queue claims no verification date without a source", unchecked_dates)
     gate.check("review queue parent ids exist in the graph", bad_parent_ids)
     gate.check("review queue has no duplicate ids", duplicate_ids)
     print("  review queue         : {:,} records".format(len(records)))
+
+
+# A Federal Register notice names the agency it concerns and then goes on:
+# "Office of Management and Budget Review", "... (OMB) Circular No". The old
+# extractor kept such fragments. A name that is a published node's name plus
+# trailing words is one, unless the trailing words open a unit of their own
+# ("Department of Energy Office of Science").
+ORG_UNIT_LEADING_WORDS = frozenset(
+    "office bureau division directorate service administration center centre agency board "
+    "commission institute laboratory program programme council corps command department".split()
+)
+
+
+def extends_published_name(name_key, published_keys):
+    for published in published_keys:
+        if published and name_key.startswith(published + " "):
+            remainder = name_key[len(published) + 1 :].split()
+            if remainder and remainder[0] not in ORG_UNIT_LEADING_WORDS:
+                return published
+    return None
+
+
+def is_federal_register_only(urls):
+    hosts = []
+    for url in urls:
+        text = str(url or "")
+        if text.startswith(("http://", "https://")):
+            hosts.append(text.split("/")[2].lower())
+    return bool(hosts) and all(h.endswith("federalregister.gov") for h in hosts)
 
 
 def canonical_key(value):
@@ -294,7 +330,26 @@ def main(argv):
         " — {}".format(len(top_level)),
     )
 
-    # 13. The review queue beside the graph, when there is one.
+    # 13. A verification claim is a fetch that happened: a check date must be a
+    # real, past ISO date, and a node that says how it was verified must carry
+    # the URL it was verified against. The site draws "checked and failed"
+    # from a date without a URL, so that pairing is allowed; a method without
+    # a URL is not.
+    today = datetime.now(timezone.utc).date().isoformat()
+    bad_dates, method_without_url = [], []
+    for node in nodes:
+        stamp = node.get("lastVerified")
+        if stamp is not None:
+            text = str(stamp).strip()
+            iso_ok = bool(re.match(r"^\d{4}-\d{2}-\d{2}", text))
+            if not iso_ok or text[:10] > today:
+                bad_dates.append("{} lastVerified {!r}".format(label(node), stamp))
+        if node.get("verificationMethod") and not (node.get("sourceUrls") if isinstance(node.get("sourceUrls"), list) else []):
+            method_without_url.append(label(node))
+    gate.check("every lastVerified is a past ISO date", bad_dates)
+    gate.check("every verification method is backed by a source URL", method_without_url)
+
+    # 14. The review queue beside the graph, when there is one.
     queue_path = graph_path.parent / "candidate_nodes.json"
     if queue_path.exists():
         check_review_queue(gate, queue_path, graph, nodes)
@@ -313,6 +368,13 @@ def main(argv):
     print("  verification         : {}".format(dict(verification.most_common())))
     print("  cost_status          : {}".format(dict(cost_status.most_common())))
     print("  no source recorded   : {:,}".format(no_source))
+    official = sum(
+        1 for n in nodes
+        if any(str(u).split("/")[2].lower().endswith((".gov", ".mil")) for u in (n.get("sourceUrls") or []) if str(u).startswith("http"))
+    )
+    checked_failed = sum(1 for n in nodes if n.get("lastVerified") and not (n.get("sourceUrls") or []))
+    print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
+    print("  checked, not found   : {:,}".format(checked_failed))
     summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
     print("  anchor               : {} {}".format(
         summary.get("label") or "none",

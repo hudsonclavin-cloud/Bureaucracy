@@ -1,0 +1,4 @@
+{
+  "_note": "Written by scripts/verify_base_graph.py. Each record is the outcome of fetching the URLs listed at checkedAt; nothing here was typed by hand. Empty until a verification run has reached the official hosts.",
+  "nodes": {}
+}
