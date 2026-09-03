@@ -32,7 +32,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from data_pipeline.discovery.source_discovery import estimate_candidate_confidence  # noqa: E402
+from urllib.parse import urlparse  # noqa: E402
+
+from data_pipeline.crawler.federal_register import extract_units  # noqa: E402
+from data_pipeline.discovery.source_discovery import classify_source_url, estimate_candidate_confidence  # noqa: E402
 from data_pipeline.exporter.build_graph import DEFAULT_GRAPH_OUTPUT, canonical_name_key, walk_tree  # noqa: E402
 from data_pipeline.json_io import load_json_file, write_json_file  # noqa: E402
 from data_pipeline.processors.normalize_nodes import normalize_name, verify_node_sources  # noqa: E402
@@ -52,6 +55,21 @@ FOREIGN_NAME_MARKERS = (
     "Cantonal", "Federal Court of Justice of Germany", "Foreign, Commonwealth and Development Office",
     "Department for ",  # UK departments ("Department for Education"); U.S. ones are "Department of"
 )
+# Country and foreign-jurisdiction words in a name. A U.S. federal body can
+# carry one ("Japan-United States Friendship Commission"), so a name also
+# carrying a U.S. marker is kept.
+FOREIGN_COUNTRY_WORDS = (
+    "Australia", "Australian", "Canada", "Canadian", "United Kingdom", "British", "Britain", "England", "Scotland",
+    "Wales", "Ireland", "Irish", "European Union", "Europe", "France", "French", "Germany", "German", "Bavaria",
+    "Bavarian", "Italy", "Italian", "Spain", "Spanish", "Netherlands", "Dutch", "Belgium", "Sweden", "Swedish",
+    "Norway", "Denmark", "Finland", "Poland", "Polish", "Russia", "Russian", "Soviet", "Ukraine", "Japan",
+    "Japanese", "Tokyo", "China", "Chinese", "Korea", "Korean", "India", "Indian Government", "Pakistan",
+    "Brazil", "Brazilian", "Mexico", "Mexican", "Argentina", "Chile", "South Africa", "Nigeria", "Kenya",
+    "Israel", "Israeli", "Turkey", "Turkish", "Iran", "Iraq", "Yemen", "Saudi", "Egypt", "Philippines",
+    "Indonesia", "Malaysia", "Singapore", "Thailand", "Vietnam", "New Zealand", "Victoria", "Queensland",
+    "Ontario", "Quebec", "Tribunal", "Bundes", "Landes", "Ministère", "Ministerium", "Ministerio",
+)
+US_MARKERS = ("United States", "U.S.", "US ", "Federal", "National", "American", "Congress", "Senate", "White House")
 MANGLED_ACRONYM = re.compile(r"\b(SEC|DOE|HUD|DoD|USA|NASA|FDIC|USPS)([a-z]+)\b")
 # A record whose "name" is a bare Wikidata item id had no English label.
 WIKIDATA_ID_NAME = re.compile(r"^Q\d+$")
@@ -81,9 +99,36 @@ def is_generated(record: dict[str, Any]) -> bool:
     return any(str(url or "").startswith("generated://") for url in urls)
 
 
+def _http_urls(record: dict[str, Any]) -> list[str]:
+    urls = [record.get("sourceUrl"), *(record.get("sourceUrls") or [])]
+    seen: list[str] = []
+    for url in urls:
+        text = str(url or "")
+        if text.startswith(("http://", "https://")) and text not in seen:
+            seen.append(text)
+    return seen
+
+
+def has_us_marker(text: str) -> bool:
+    return any(marker in text for marker in US_MARKERS)
+
+
+def has_us_federal_evidence(record: dict[str, Any]) -> bool:
+    """Positive evidence that this is a U.S. federal body: an official
+    .gov/.mil website, or U.S. wording in its own name."""
+    for url in _http_urls(record):
+        host = urlparse(url).netloc.lower()
+        if host.endswith(".gov") or host.endswith(".mil"):
+            return True
+    return has_us_marker(str(record.get("name") or ""))
+
+
 def is_foreign(record: dict[str, Any]) -> bool:
+    name = str(record.get("name") or "")
     haystack = " ".join(str(record.get(field) or "") for field in ("name", "possibleParent", "desc"))
-    return any(marker in haystack for marker in FOREIGN_NAME_MARKERS)
+    if any(marker in haystack for marker in FOREIGN_NAME_MARKERS):
+        return True
+    return any(word in name for word in FOREIGN_COUNTRY_WORDS) and not has_us_marker(name)
 
 
 def unmangle_name(name: str) -> str:
@@ -125,6 +170,17 @@ def repair(records: list[dict[str, Any]], *, published_names: set[str], ids_by_n
         if WIKIDATA_ID_NAME.match(str(record.get("name") or "").strip()):
             drop("unlabelled_wikidata_item", record)
             continue
+        if str(record.get("discoveryMethod") or "") == "wikidata_government_entity_scan" and not has_us_federal_evidence(record):
+            # The March crawl had no country filter. Without a .gov/.mil site
+            # or U.S. wording there is nothing that says this body is federal.
+            drop("no_us_federal_evidence", record)
+            continue
+        if str(record.get("discoveryMethod") or "") == "federal_register_listing_scan":
+            # The current extractor must produce this exact name; the old
+            # pattern emitted sentence fragments.
+            if str(record.get("name") or "").strip() not in extract_units(str(record.get("name") or "")):
+                drop("federal_register_fragment", record)
+                continue
         name = unmangle_name(normalize_name(record.get("name")))
         if name != record.get("name"):
             report["renamed"] += 1
@@ -159,6 +215,11 @@ def repair(records: list[dict[str, Any]], *, published_names: set[str], ids_by_n
             record["confidenceEstimate"] = estimate
             record["discoveryConfidenceEstimate"] = estimate
         record.pop("lastVerified", None)
+        # Source types are recomputed from the URLs that exist; the March
+        # labels ("official_site" on a Federal Register notice) are not kept.
+        urls = _http_urls(record)
+        record["sourceUrls"] = urls
+        record["sourceTypes"] = sorted({classify_source_url(url) for url in urls} | {"candidate_discovery"})
         verify_node_sources(record)
         record["confidenceScore"] = record.get("confidenceEstimate", record.get("confidenceScore"))
         kept.append(record)

@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 import re
 import sys
+from http.client import HTTPException
 from html.parser import HTMLParser
 from typing import Any
 from urllib.request import Request, urlopen
@@ -147,7 +148,7 @@ def crawl(
             continue
         try:
             html = request_text(directory_url, timeout=timeout)
-        except (OSError, ValueError, TimeoutError) as error:
+        except (OSError, ValueError, TimeoutError, HTTPException) as error:
             print(f"warning: official directory fetch failed for {directory_url}: {error}", file=sys.stderr)
             continue
         records.extend(

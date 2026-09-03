@@ -4,6 +4,7 @@ import json
 import os
 import re
 import sys
+from http.client import HTTPException
 from typing import Any
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -22,10 +23,17 @@ UNIT_PATTERN = re.compile(
     rf"\b({UNIT_KEYWORDS}\s+(?:of|for)\s+(?:the\s+)?"
     # A connector followed by another unit keyword starts the next unit
     # ("Bureau of X and Office of Y" is two units).
-    rf"[A-Z][A-Za-z0-9&'\-]*(?:\s+(?:(?:and|of|the|for|&)\s+)?(?!{UNIT_KEYWORDS}\b)[A-Z][A-Za-z0-9&'\-]*(?:\s+\([A-Z][A-Za-z0-9&'\-]*\))?){{0,7}})"
+    rf"[A-Z][A-Za-z0-9&'\-]*(?:,?\s+(?:(?:and|of|the|for|&)\s+)?(?!{UNIT_KEYWORDS}\b)[A-Z][A-Za-z0-9&'\-]*(?:\s+\([A-Z][A-Za-z0-9&'\-]*\))?){{0,7}})"
     r"(?![A-Za-z0-9])",
 )
 TRAILING_CONNECTORS = re.compile(r"\s+(?:and|of|the|for|&)$", re.IGNORECASE)
+# "... Budget for Review and Approval" is a sentence continuing past the unit;
+# "Office of the Assistant Secretary for Health" is the unit. Only a "for"
+# followed by notice vocabulary ends the name.
+SENTENCE_AFTER_FOR = re.compile(
+    r"\s+for\s+(?=(?:Review|Approval|Comment|Comments|Clearance|Public|Emergency|Extension|Renewal|"
+    r"Reinstatement|Revision|Publication|Consideration|Its|Their|This|That|The\s+Purpose|Purposes|Use|Further)\b)"
+)
 MAX_UNIT_NAME_LENGTH = 80
 
 
@@ -47,8 +55,14 @@ def extract_units(text: str) -> list[str]:
     units: list[str] = []
     for match in UNIT_PATTERN.findall(text or ""):
         unit = TRAILING_CONNECTORS.sub("", match.strip())
-        # A name that keeps going after "for" is a sentence, not a unit.
-        unit = re.split(r"\s+for\s+(?=[A-Z])", unit, maxsplit=1)[0]
+        # A name that keeps going after a second "for" is a sentence
+        # ("... Budget for Review and Approval"); the unit's own connector
+        # ("Administration for Children and Families") is kept.
+        parts = re.match(rf"({UNIT_KEYWORDS}\s+(?:of|for)\s+)(.*)$", unit)
+        if parts:
+            head, tail = parts.groups()
+            unit = head + SENTENCE_AFTER_FOR.split(tail, maxsplit=1)[0]
+        unit = TRAILING_CONNECTORS.sub("", unit).rstrip(",")
         if len(unit) <= MAX_UNIT_NAME_LENGTH and unit not in units:
             units.append(unit)
     return units
@@ -76,7 +90,7 @@ def crawl(
                     },
                     timeout=timeout,
                 )
-            except (OSError, ValueError, TimeoutError) as error:
+            except (OSError, ValueError, TimeoutError, HTTPException) as error:
                 # Say so: a silent break made an outage look like an empty page.
                 print(f"warning: federal register fetch failed for term={term} page={page}: {error}", file=sys.stderr)
                 break

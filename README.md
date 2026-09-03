@@ -10,10 +10,12 @@ Live site: https://hudsonclavin-cloud.github.io/Bureaucracy/
 
 ## What the numbers mean
 
-Exactly one figure in the published graph is measured: the root's cost, which
-is the U.S. Treasury's fiscal-year-to-date net outlays from the Monthly
-Treasury Statement (FiscalData). Every other cost is that total apportioned
-downward through the tree. Siblings are split by reported budget where
+The measured figures in the published graph are the root's cost — the U.S.
+Treasury's fiscal-year-to-date net outlays from the Monthly Treasury
+Statement (FiscalData) — and, once a crawl has run, the per-agency lines of
+that statement applied to the units they name. Every other cost is the total
+apportioned downward through the tree, with a Treasury line beneath a unit
+acting as a floor on that unit's share. Siblings are split by reported budget where
 budgets are reported, by staff count where that is the best evidence, and
 by subtree size otherwise; a sibling without the figure its siblings report
 is given one implied from their typical per-node rate, and the panel says
@@ -95,8 +97,9 @@ tests/                                pytest suite
    anchor and the per-agency lines — it runs first), USASpending, Wikidata,
    Senate LDA lobbying.
 2. Discovery crawlers (Wikidata, official directories, Federal Register) feed
-   `discover_candidates`, which writes the review queue and promotes
-   candidates above the confidence threshold.
+   `discover_candidates`; the run promotes candidates above the confidence
+   threshold, builds the graph, then writes the review queue without the
+   records that were promoted and actually published.
 3. `build_graph` merges the previously published graph, the base graph and
    the new payloads; annotates proof and cost; then applies the export gate
    (`NodeRequirements` and `CostValidator`), prunes what fails, and writes

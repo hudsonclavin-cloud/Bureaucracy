@@ -571,9 +571,11 @@ const COST_STATUS_COPY = {
     note: "U.S. Treasury outlays reported for this unit in the Monthly Treasury Statement (Table 5).",
   },
   scaled_official: {
-    label: "Measured, adjusted",
-    tone: "reported",
-    note: "Treasury outlays for this unit, rescaled so its siblings fit within the parent's total.",
+    // The figure shown is the parent's cap, not the Treasury figure, so it is
+    // an estimate; the note carries the measured number.
+    label: "Estimate (Treasury line capped)",
+    tone: "estimate",
+    note: "The Treasury reported more than fits within the parent's estimated share; the figure shown is that cap.",
   },
   allocated: { label: "Estimate", tone: "estimate", note: "" },
   unavailable: {
@@ -701,6 +703,15 @@ function describeCost(node) {
     };
   }
 
+  if (status === "scaled_official") {
+    const reported = toFiniteAmount(node.rollup_total_amount);
+    return {
+      ...copy,
+      note: reported === null
+        ? copy.note
+        : `The Treasury reported ${formatApproximateCost(reported)} for this unit, more than fits within the parent's estimated share; the figure shown is that cap.`,
+    };
+  }
   if (status === "allocated") {
     const basis = String(node.cost_basis || "").toLowerCase();
     const phrase =
@@ -1139,6 +1150,8 @@ function bindControls() {
 
   if (dom.toggleCandidates) {
     dom.toggleCandidates.addEventListener("change", () => {
+    // An open results list may hold candidate rows the toggle now hides.
+    closeSearch();
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
     });

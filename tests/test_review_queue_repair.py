@@ -62,16 +62,23 @@ class RepairRulesTests(unittest.TestCase):
                 method="federal_register_listing_scan",
                 confidenceEstimate=0.71,
             ),
+            _record(
+                "Office of Management and Budget",
+                url="https://www.federalregister.gov/documents/2026/y",
+                method="federal_register_listing_scan",
+                confidenceEstimate=0.71,
+            ),
         ]
         kept, report = repair(records, published_names=published, ids_by_name=ids_by_name)
         names = [r["name"] for r in kept]
-        self.assertEqual(names, ["Office of Grid Deployment", "Energy and Climate Security Panel", "Office of Management and Budget for Review"])
+        self.assertEqual(names, ["Office of Grid Deployment", "Energy and Climate Security Panel", "Office of Management and Budget"])
         self.assertEqual(report["dropped"], {
             "template_generated_source": 1,
             "non_us_public_body": 1,
             "duplicates_published_node": 1,
             "duplicate_name_and_parent": 1,
             "unlabelled_wikidata_item": 1,
+            "federal_register_fragment": 1,
         })
         self.assertEqual(report["renamed"], 1)
         grid = kept[0]

@@ -625,7 +625,8 @@ export function createGovernmentGraph({
     if (!data) {
       return false;
     }
-    if (normalizeClusterKey(data.type).includes("branch")) {
+    // Exactly "branch": "Military Branch" (Army, Navy, ...) is not a branch of government.
+    if (normalizeClusterKey(data.type) === "branch") {
       return true;
     }
     return ALWAYS_VISIBLE_CLUSTER_NAMES.has(normalizeClusterKey(data.name || data.id));

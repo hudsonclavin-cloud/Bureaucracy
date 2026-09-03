@@ -112,7 +112,7 @@ def canonical_key(value):
     text = re.sub(r"\([^)]*\)", " ", text)
     text = text.replace("&", " and ")
     text = re.sub(r"[^a-z0-9]+", " ", text).strip()
-    text = re.sub(r"\bu s\b", "united states", text)
+    text = re.sub(r"\bu s(?: a)?\b", "united states", text)
     for prefix in ("the ", "united states "):
         if text.startswith(prefix):
             text = text[len(prefix):]

@@ -203,7 +203,7 @@ def run_pipeline(
 ) -> dict[str, Any]:
     # The federal fiscal year, not the calendar year: FY N starts 1 October N-1.
     fiscal_year = getenv_int("PIPELINE_FISCAL_YEAR", federal_fiscal_year(datetime.now(tz=timezone.utc)))
-    # Lobbying filings are calendar-year; default to the calendar year the FY started in.
+    # Lobbying filings are calendar-year; default to the current calendar year.
     lobbying_year = getenv_int("PIPELINE_LOBBYING_YEAR", datetime.now(tz=timezone.utc).year)
     http_timeout = getenv_int("PIPELINE_HTTP_TIMEOUT", 30)
     promotion_threshold = getenv_float("PIPELINE_PROMOTION_THRESHOLD", 0.7)
@@ -291,9 +291,13 @@ def run_pipeline(
             has_data = bool(payload.get("nodes") or payload.get("edges") or usable_budget_total(payload) is not None)
             stage_results[stage_name] = "data" if has_data else "empty"
             if payload.get("partial"):
-                # Degraded, not failed: some of the stage's queries returned nothing.
-                stage_results[stage_name] = "partial"
-                stage_warnings.append(f"{stage_name}: partial result, failed queries: {', '.join(map(str, payload['partial']))}")
+                failed = ", ".join(map(str, payload["partial"]))
+                if has_data:
+                    # Degraded, not failed: some of the stage's queries returned nothing.
+                    stage_results[stage_name] = "partial"
+                    stage_warnings.append(f"{stage_name}: partial result, failed queries: {failed}")
+                else:
+                    stage_warnings.append(f"{stage_name}: all queries failed ({failed}), no data")
         else:
             stage_results[stage_name] = "empty"
 
@@ -305,8 +309,21 @@ def run_pipeline(
             stage_results[input_name] = "error"
             discovery_inputs[input_name] = []
             continue
+        partial: list[str] = []
+        if isinstance(records, dict):
+            # A discovery crawler may answer {"records": [...], "partial": [...]}
+            # when some of its queries failed.
+            partial = [str(item) for item in (records.get("partial") or [])]
+            records = records.get("records")
         discovery_inputs[input_name] = records if isinstance(records, list) else []
         stage_results[input_name] = "data" if discovery_inputs[input_name] else "empty"
+        if partial:
+            failed = ", ".join(partial)
+            if discovery_inputs[input_name]:
+                stage_results[input_name] = "partial"
+                stage_warnings.append(f"{input_name}: partial result, failed queries: {failed}")
+            else:
+                stage_warnings.append(f"{input_name}: all queries failed ({failed}), no data")
 
     treasury_total = next((total for total in (usable_budget_total(payload) for payload in payloads) if total is not None), None)
     total_fetch_stages = len(direct_fetchers) + len(raw_discovery_fetchers)
@@ -420,7 +437,13 @@ def run_pipeline(
     # The review queue is a file the site fetches; write it only once the graph
     # it accompanies exists, and without the records this run already promoted
     # or merged into it.
-    review_queue = pending_review_queue(candidates, promotion_stats)
+    published_ids: set[str] = set()
+    stack = [build_result.graph]
+    while stack:
+        node = stack.pop()
+        published_ids.add(str(node.get("id") or ""))
+        stack.extend(child for child in node.get("children", []) if isinstance(child, dict))
+    review_queue = pending_review_queue(candidates, promotion_stats, published_ids=published_ids)
     candidate_path = write_review_queue(review_queue, output_path=candidate_output_path)
     write_json_file(audit_path, build_result.validation.get("audit_report", {}))
 

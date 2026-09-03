@@ -1,21 +1,91 @@
 {
-  "timestamp": "2026-09-02T23:42:52.181571+00:00",
+  "timestamp": "2026-09-03T00:01:15.357113+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
   "nodes_after": 5170,
   "new_nodes_added": 0,
   "nodes_delta": 0,
-  "candidate_nodes_written": 614,
+  "published_nodes_before": 5170,
+  "nodes_delta_vs_published": 0,
+  "candidate_nodes_written": 50,
   "review_queue_repair": {
-    "input_records": 614,
-    "dropped": {},
-    "dropped_samples": {},
-    "renamed": 0,
-    "parents_resolved": 43,
-    "parents_cleared": 0,
-    "rescored": 0,
-    "output_records": 614
+    "input_records": 3812,
+    "dropped": {
+      "duplicates_published_node": 18,
+      "federal_register_fragment": 11,
+      "no_us_federal_evidence": 355,
+      "non_us_public_body": 1338,
+      "unlabelled_wikidata_item": 185,
+      "template_generated_source": 1855
+    },
+    "dropped_samples": {
+      "duplicates_published_node": [
+        "United States Department of Homeland Security ‹ United States Cabinet",
+        "Bureau of Land Management (BLM) ‹ Agriculture Department",
+        "Office of Management and Budget (OMB) ‹ Agriculture Department",
+        "Office of Management and Budget (OMB) ‹ Energy Department",
+        "Office of Management and Budget ‹ Health and Human Services Department",
+        "Office of Management and Budget (OMB) ‹ Health and Human Services Department",
+        "Bureau of Political-Military Affairs ‹ State Department",
+        "Office of Foreign Assets Control (OFAC) ‹ State Department"
+      ],
+      "federal_register_fragment": [
+        "Office of Management and Budget for Review and Approval ‹ Education Department",
+        "Office of Management and Budget for Review and Approval ‹ Environmental Protection Agency",
+        "Office of Management and Budget ( ‹ Federal Trade Commission",
+        "Office of Management and Budget (OMB) for review and approval ‹ Health and Human Services Department",
+        "Office of Management and Budget for Review and Approval ‹ Interior Department",
+        "Office of Management and Budget (OMB) for review and clearance under the Paperwork Reduction Act of 1995 ‹ National Science Foundation",
+        "Office of Management and Budget (OMB) for review ‹ Nuclear Regulatory Commission",
+        "Office of Management and Budget ( ‹ SECurities and Exchange Commission"
+      ],
+      "no_us_federal_evidence": [
+        "Prairie Farm Rehabilitation Administration ‹ Agriculture and Agri-Food Canada",
+        "Arbeitsamt Karl-Grillenberger-Straße; Dr.-Kurt-Schumacher-Straße; Karl-Grillenberger-Straße in Nürnberg ‹ Arbeitsamt",
+        "Chief Justice of the Calcutta High Court ‹ Calcutta High Court",
+        "Colonial Service ‹ Colonial Office",
+        "People's Commissariat for Trade of the BSSR ‹ Council of People's Commissars of Byelorussian SSR",
+        "Court of First Instance ‹ Court of Justice of the European Union",
+        "Rules of Procedure of the Court of Justice ‹ Court of Justice of the European Union",
+        "Patenträttsråd ‹ Court of Patent Appeals"
+      ],
+      "non_us_public_body": [
+        "Q48759685 ‹ Air Ministry of France",
+        "Q28738968 ‹ Bavarian Ministry for Finance and Homeland Affairs",
+        "Ministerium ‹ Bavarian Ministry of Economic Affairs, Regional Development and Energy",
+        "Bavarian State Office for Water Management ‹ Bavarian Ministry of the Environment and Consumer Protection",
+        "Q28738994 ‹ Bavarian State Ministry for Housing, Construction and Transport",
+        "Ministry of Finance ‹ Cabinet of Yemen",
+        "Local Legal library of the Chamber Court in the Ministry of Justice and Consumer Protection ‹ Chamber Court",
+        "Office of the Consulate-General of Russia in Sapporo in Hakodate ‹ Consulate-General of Russia, Sapporo"
+      ],
+      "unlabelled_wikidata_item": [
+        "Q114272063 ‹ Caisse d'allocations familiales",
+        "Q114272064 ‹ Caisse d'allocations familiales",
+        "Q114272065 ‹ Caisse d'allocations familiales",
+        "Q114272066 ‹ Caisse d'allocations familiales",
+        "Q114272067 ‹ Caisse d'allocations familiales",
+        "Q114272068 ‹ Caisse d'allocations familiales",
+        "Q114272069 ‹ Caisse d'allocations familiales",
+        "Q114272070 ‹ Caisse d'allocations familiales"
+      ],
+      "template_generated_source": [
+        "Chief of Staff ‹ 18 VA Integrated Service Networks (VISNs)",
+        "Deputy Director ‹ 18 VA Integrated Service Networks (VISNs)",
+        "Director ‹ 18 VA Integrated Service Networks (VISNs)",
+        "Division Chief ‹ 18 VA Integrated Service Networks (VISNs)",
+        "Program Manager ‹ 18 VA Integrated Service Networks (VISNs)",
+        "Chief of Staff ‹ Administrative Office of U.S. Courts (AOUSC)",
+        "Director ‹ Administrative Office of U.S. Courts (AOUSC)",
+        "Division Chief ‹ Administrative Office of U.S. Courts (AOUSC)"
+      ]
+    },
+    "renamed": 4,
+    "parents_resolved": 17,
+    "parents_cleared": 8,
+    "rescored": 3,
+    "output_records": 50
   },
   "promoted_nodes_written": 0,
   "promotion_stats": {},
@@ -26,15 +96,15 @@
   "verified_node_count": 0,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 5170,
-    "input_node_count": 5170,
+    "initial_node_count": 0,
+    "input_node_count": 0,
     "input_edge_count": 0,
-    "exported_node_count": 5170,
+    "exported_node_count": 0,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 5170,
+    "final_node_count": 0,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -51,14 +121,14 @@
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.0,
     "pipeline_summary": {
-      "initial_node_count": 5170,
-      "raw_nodes_loaded": 5170,
-      "nodes_after_normalization": 5170,
-      "nodes_after_merge": 5170,
+      "initial_node_count": 0,
+      "raw_nodes_loaded": 0,
+      "nodes_after_normalization": 0,
+      "nodes_after_merge": 0,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 5170,
+      "final_node_count": 0,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
@@ -68,6 +138,8 @@
       "rows_unmatched": 0,
       "rows_ambiguous": 0,
       "rows_superseded": 0,
+      "rows_negative_skipped": 0,
+      "negative_sample": [],
       "stale_rollups_cleared": 0,
       "unmatched_sample": [],
       "ambiguous_sample": []
@@ -132,6 +204,7 @@
     "unverified_cost_node_count": 5169,
     "mixed_weight_sibling_sets_implied": 20,
     "allocations_below_precision": 0,
+    "sibling_sets_scaled_to_official_floors": 0,
     "graph_summary": {
       "verified_treasury_total": 5517917965556.91,
       "verification_status_counts": {
@@ -163,7 +236,8 @@
       "partial_cost_node_count": 0,
       "unverified_cost_node_count": 5169,
       "mixed_weight_sibling_sets_implied": 20,
-      "allocations_below_precision": 0
+      "allocations_below_precision": 0,
+      "sibling_sets_scaled_to_official_floors": 0
     },
     "audit_report": {
       "summary": {
@@ -274,7 +348,9 @@
     "proof_status_counts_before_cull": {
       "root": 1,
       "baseline": 5169
-    }
+    },
+    "published_node_count": 5170,
+    "treasury_lines_carried_forward": 0
   },
   "stage_errors": [],
   "stage_results": {

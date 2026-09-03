@@ -348,6 +348,9 @@ def promote_candidates(
     # queue written afterwards leaves them out, so the site never shows the
     # same entity once in the tree and again as a CANDIDATE stub.
     consumed_candidate_ids: list[str] = []
+    # raw candidate id -> the node id it was promoted as or merged into, so the
+    # caller can check that node actually survived the export gate.
+    consumed_candidate_targets: dict[str, str] = {}
 
     for raw_candidate in candidates:
         if not isinstance(raw_candidate, dict):
@@ -394,6 +397,7 @@ def promote_candidates(
             stats["merged_duplicates"] += 1
             if raw_candidate_id:
                 consumed_candidate_ids.append(raw_candidate_id)
+                consumed_candidate_targets[raw_candidate_id] = str(duplicate["id"])
             continue
 
         if key in promoted_by_key:
@@ -401,6 +405,7 @@ def promote_candidates(
             stats["merged_duplicates"] += 1
             if raw_candidate_id:
                 consumed_candidate_ids.append(raw_candidate_id)
+                consumed_candidate_targets[raw_candidate_id] = str(promoted_by_key[key]["id"])
             continue
 
         promoted_by_key[key] = candidate
@@ -409,22 +414,42 @@ def promote_candidates(
         stats["promoted_new_nodes"] += 1
         if raw_candidate_id:
             consumed_candidate_ids.append(raw_candidate_id)
+            consumed_candidate_targets[raw_candidate_id] = str(candidate["id"])
 
     stats["consumed_candidate_ids"] = consumed_candidate_ids
+    stats["consumed_candidate_targets"] = consumed_candidate_targets
     return sorted(promoted_by_key.values(), key=lambda item: (item.get("parentId") or "", item["name"])), stats
 
 
 def pending_review_queue(
     candidates: Iterable[dict[str, Any]],
     promotion_stats: dict[str, Any],
+    *,
+    published_ids: set[str] | None = None,
 ) -> list[dict[str, Any]]:
-    """The candidates still awaiting review after a promotion pass."""
-    consumed = set(promotion_stats.get("consumed_candidate_ids") or [])
-    return [
-        candidate
-        for candidate in candidates
-        if isinstance(candidate, dict) and str(candidate.get("id") or "").strip() not in consumed
-    ]
+    """The candidates still awaiting review after a promotion pass.
+
+    A record leaves the queue only when the node it became is actually
+    published. A candidate that cleared the threshold and was then pruned by
+    the export gate (an allocated cost is never authoritative) is still
+    awaiting a human, not gone; without this check it vanished from every
+    served file at once.
+    """
+    targets = promotion_stats.get("consumed_candidate_targets")
+    if not isinstance(targets, dict):
+        targets = {raw_id: raw_id for raw_id in (promotion_stats.get("consumed_candidate_ids") or [])}
+    kept: list[dict[str, Any]] = []
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        raw_id = str(candidate.get("id") or "").strip()
+        target = targets.get(raw_id)
+        if target is None:
+            kept.append(candidate)
+            continue
+        if published_ids is not None and target not in published_ids:
+            kept.append(candidate)
+    return kept
 
 
 def is_us_federal_record(record: dict[str, Any]) -> bool:

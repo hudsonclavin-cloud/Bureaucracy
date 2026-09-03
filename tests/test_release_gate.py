@@ -157,7 +157,9 @@ class OfflineRegenerationTests(unittest.TestCase):
             self.assertEqual(stats["mode"], "offline_regeneration")
             self.assertFalse(stats["treasury_total_fetched"])
             self.assertEqual(stats["nodes_after"], 5)
-            self.assertEqual(stats["build_validation"]["exported_node_count"], 5)
+            self.assertEqual(stats["build_validation"]["published_node_count"], 5)
+            self.assertEqual(stats["build_validation"]["exported_node_count"], 0)  # payload nodes: none
+            self.assertEqual(stats["nodes_delta_vs_published"], 5 - 1)
             self.assertTrue(stats["build_validation"]["budget_summary"]["reused_from_previous_build"])
             self.assertNotIn("nodes", stats["build_validation"]["audit_report"])
             self.assertIsNone(stats["outputs"]["candidate_nodes"])

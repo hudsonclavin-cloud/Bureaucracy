@@ -29,7 +29,7 @@ SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite ?countryLabel 
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
-ORDER BY ?agency ?parent
+ORDER BY ?agency
 LIMIT {limit}
 """
 
@@ -49,7 +49,7 @@ SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?offic
   }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
-ORDER BY ?agency ?position ?person
+ORDER BY ?agency
 LIMIT {limit}
 """
 
@@ -62,7 +62,7 @@ SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite ?countryLabel 
   OPTIONAL {{ ?office wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
-ORDER BY ?office ?parent
+ORDER BY ?office
 LIMIT {limit}
 """
 
@@ -402,11 +402,16 @@ def crawl_discovery_records(
     timeout: int = 45,
 ) -> list[dict[str, Any]]:
     crawler = WikidataCrawler(timeout=timeout)
-    return crawler.build_discovery_records(
+    records = crawler.build_discovery_records(
         hierarchy_limit=hierarchy_limit,
         office_holder_limit=office_holder_limit,
         subunit_limit=subunit_limit,
     )
+    if crawler.partial_queries:
+        # Same marker as crawl(): the discovery pass re-runs the queries when
+        # the direct fetch was partial (and so not cached), and can fail too.
+        return {"records": records, "partial": list(crawler.partial_queries)}
+    return records
 
 
 if __name__ == "__main__":

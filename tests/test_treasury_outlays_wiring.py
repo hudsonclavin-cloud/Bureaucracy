@@ -173,9 +173,11 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
         self.assertEqual(stats["rows_applied"], 5)
         self.assertEqual(stats["rows_superseded"], 1)
         self.assertEqual(stats["rows_ambiguous"], 1)
-        self.assertEqual(stats["rows_unmatched"], 2)
+        self.assertEqual(stats["rows_unmatched"], 1)
+        self.assertEqual(stats["rows_negative_skipped"], 1)
         self.assertEqual(stats["ambiguous_sample"], ["Office of the Secretary"])
-        self.assertEqual(set(stats["unmatched_sample"]), {"Undistributed Offsetting Receipts", "Interest on Treasury Debt Securities (Gross)"})
+        self.assertEqual(stats["unmatched_sample"], ["Interest on Treasury Debt Securities (Gross)"])
+        self.assertEqual(stats["negative_sample"], ["Undistributed Offsetting Receipts"])
 
     def test_applied_lines_are_measured_and_carry_their_source(self) -> None:
         result = self._build(ROWS)

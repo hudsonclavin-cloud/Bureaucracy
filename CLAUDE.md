@@ -116,6 +116,12 @@ published as `unavailable` with `cost_validation: allocation_below_precision`,
 never as $0. Treasury outlay lines applied to a node make it `official`
 (`costVerificationStatus: verified`, the FiscalData URL in `sourceUrls`);
 those are the only measured costs besides the root, and the gate checks it.
+A line beneath a weighted node is a floor on that node's share (the fifteen
+department lines under the unlined "Cabinet" grouping are paid before the
+excess is apportioned by weight); only when floors exceed what is left are
+they scaled, and the lines beneath publish as `scaled_official`, which the
+UI labels an estimate. Negative lines (net receipts) are set aside and
+counted, never anchored on.
 `cost_validation: estimated_from_parent` and
 `costVerificationStatus: unverified` on every allocated node. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
@@ -152,7 +158,8 @@ change, or users run stale modules against new data.
 
 - Root id is `the-constitution-of-the-united-states`; it has exactly the
   three branch children.
-- One measured cost in the published graph (the root). Every amount carries
+- Measured costs are the root anchor and the Treasury Table 5 lines applied
+  to the nodes they name; nothing else is `verified`. Every amount carries
   a `cost_status` and is positive; a missing amount is labelled
   `unavailable`. Children never sum past their parent. No node has both
   `attachToRoot` and a `parentId`. `sourceCount` equals `len(sourceUrls)`;

@@ -40,8 +40,9 @@ from data_pipeline.exporter.build_graph import (  # noqa: E402
     build_graph,
     extract_budget_summary,
     load_existing_graph_payload,
+    walk_tree,
 )
-from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.json_io import load_json_file, write_json_file  # noqa: E402
 from data_pipeline.run_pipeline import (  # noqa: E402
     AUDIT_REPORT_FILENAME,
     DEFAULT_STATS_OUTPUT,
@@ -113,14 +114,13 @@ def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_pat
     validation = dict(result.validation)
     validation["audit_report"] = {"summary": validation.get("audit_report", {}).get("summary", {})}
     validation["budget_summary_reused_from_previous_build"] = True
-    # build_graph counts payload nodes; here the payload is empty and the tree
-    # is the whole publication, so the counts a reader looks at say 5,170, not 0.
+    # build_graph's counters describe the payload (crawler-earned nodes only);
+    # the published tree gets its own explicit keys rather than relabelled ones.
     published_count = count_tree_nodes(result.graph)
-    for key in ("exported_node_count", "final_node_count", "initial_node_count", "input_node_count"):
-        validation[key] = published_count
-    validation.setdefault("pipeline_summary", {})
-    for key in ("initial_node_count", "raw_nodes_loaded", "nodes_after_normalization", "nodes_after_merge", "final_node_count"):
-        validation["pipeline_summary"][key] = published_count
+    validation["published_node_count"] = published_count
+    validation["treasury_lines_carried_forward"] = sum(
+        1 for node, _ in walk_tree(result.graph) if str(node.get("budget_source") or "").startswith("Treasury")
+    )
 
     def relative(path: Path) -> str:
         # Paths in a committed file are for a reader, not this machine.
@@ -130,6 +130,8 @@ def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_pat
             return str(path)
     node_count = count_tree_nodes(result.graph)
     base_count = count_tree_nodes(json.loads(Path(args.base_graph).read_text(encoding="utf-8")))
+    previous = load_json_file(args.anchor, default_factory=dict)
+    published_before = count_tree_nodes(previous) if isinstance(previous, dict) and previous.get("id") else None
     stats = {
         "timestamp": datetime.now(tz=timezone.utc).isoformat(),
         "mode": "offline_regeneration",
@@ -141,6 +143,8 @@ def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_pat
         "nodes_after": node_count,
         "new_nodes_added": max(0, node_count - base_count),
         "nodes_delta": node_count - base_count,
+        "published_nodes_before": published_before,
+        "nodes_delta_vs_published": (node_count - published_before) if published_before is not None else None,
         "candidate_nodes_written": queue_report["output_records"] if queue_report else 0,
         "review_queue_repair": queue_report,
         "promoted_nodes_written": 0,
@@ -172,7 +176,10 @@ def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_pat
     if code != 0:
         print(f"\nNot published: {output_dir} left untouched.")
         return code
-    for staged in sorted(staging_dir.iterdir()):
+    # The graph and the queue the site fetches go last, together; if the
+    # loop dies on a diagnostic file the served pair is still the old pair.
+    staged_files = sorted(staging_dir.iterdir(), key=lambda p: (p.name in {"graph.json", "candidate_nodes.json"}, p.name))
+    for staged in staged_files:
         os.replace(staged, output_dir / staged.name)
     print(f"\nPublished to {output_dir}")
     return 0
