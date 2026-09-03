@@ -137,18 +137,49 @@ figure.
 
 The curated file carries no sources. `scripts/verify_base_graph.py` fetches
 each organisation's candidate official page (`official_sites.json`: its own,
-else an ancestor's at most `--inherit-depth` levels up, default 1), looks
-for the node's canonical name in the page text (nav, script and footer text
-excluded), and writes one record per node to `evidence.json`: `confirmed`
-with the URLs and matched text, `not_found`, or `fetch_failed`, each with
-`checkedAt`. `build_graph` merges the sidecar (`evidence_path`) before the
-Treasury lines: confirmed → `sourceUrls`, `sourceTypes: official_site`,
-`lastVerified`, `verificationMethod`; failed → `lastVerified` and
-`verificationFailure` only, and never over a source another route recorded.
-The gate requires every `lastVerified` to be a past ISO date and every
-`verificationMethod` to have a URL behind it, and reports coverage.
-Positions are checked only with `--include-positions`, against their unit's
-page.
+else an ancestor's at most `--inherit-depth` levels up, default 1) and looks
+for the node's name **as a label of its own** — a heading, a link, a list
+item whose text is the name. Not a substring of the page: an earlier version
+searched the whole page as one canonicalised string and an adversarial review
+found three ways that manufactures confirmations (a one-word name like
+"Energy" matching prose; "Office of Science" matching inside "Office of
+Science and Technology Policy"; a phrase spanning two DOM elements). Label
+equality closes all three. `LabelParser` keeps nav, header, title and footer
+— the directory crawler's parser skips them, which is where agencies list
+their offices.
+
+Five statuses in `evidence.json`, and only the first two are applied:
+
+- `confirmed` — a fragment is the name. Gives `sourceUrls`, `sourceTypes:
+  official_site`, `lastVerified`, and `verificationMethod`, which is
+  `name_labelled_on_own_official_page` or `..._parent_official_page` — a
+  different claim, and the panel says which.
+- `not_found` — the unit's **own** page was read and no fragment named it.
+  Gives `lastVerified` + `verificationFailure` only, and only if no other
+  route gave the node a source. The site shows checked-and-failed.
+- `inconclusive` — only an ancestor's page was read, and a parent's About
+  page is not obliged to list its children. Applies nothing.
+- `fetch_failed` — no page was read: blocked network, 404, robots.txt
+  disallow, a 200 with under 400 characters of readable text (a JS shell or
+  a bot challenge). Applies nothing; it is a fact about the network.
+- `not_checkable` — the curated name could never be evidence: a count label
+  ("Individual Senator Offices (100)", 44 of them) or a name too generic to
+  distinguish anything ("Energy", "Defense", 16). Never fetched.
+
+`apply_evidence_to_tree` **clears every field it owns before applying** the
+current evidence, so a withdrawn or downgraded record stops being published
+even though the exporter re-feeds the previous `graph.json` as a payload; a
+retraction that could never reach the site was the second failure the review
+found. It runs *after* `apply_treasury_outlay_rows`, which rewrites
+`sourceUrls` on the nodes it stamps. `matchedText` is text as it appears on
+the page, so a claim can be audited against the live site.
+
+The gate requires: every `lastVerified` a past ISO date; every
+`verificationMethod` backed by a URL and one this pipeline can produce; no
+node claiming a failed check beside a source; an `official_site` type backed
+by a `.gov`/`.mil` URL. Coverage is reported. The verifier obeys `robots.txt`
+(failing open only when it cannot be read) and sends a User-Agent naming the
+project. Positions are checked only with `--include-positions`.
 
 ### Frontend (`index.html`, `js/`)
 

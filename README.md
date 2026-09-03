@@ -37,13 +37,22 @@ checked-and-failed.
 
 A curated node earns a source one way: `scripts/verify_base_graph.py`
 fetches an official `.gov`/`.mil` page on a date and finds the node's name
-in its text. The outcome — confirmed, not found, or fetch failed — is
-recorded in `data/verification/evidence.json` with the URL, the moment and
-the matched text, and the exporter stamps it onto the node at build time.
-A confirmed check is a source and a "Last checked" date; a failed check is
-the date alone, which the site shows as checked-and-failed. The candidate
-pages to fetch live in `data/verification/official_sites.json`; a URL there
-is something to check, not a claim.
+on it **as a label of its own** — a heading, a link, a list item whose text
+is the name, not the name buried in a sentence. The outcome is recorded in
+`data/verification/evidence.json` with the URL, the moment, and the page
+text that matched, and the exporter stamps it onto the node at build time.
+
+Five outcomes, and only two of them say anything about a node: `confirmed`
+(a source and a "checked" date, saying whether it was the unit's own page or
+its parent's), `not_found` (its own page was read and did not name it — the
+date alone, shown as checked-and-failed), `inconclusive` (only a parent's
+page was read, which is not obliged to list it), `fetch_failed` (no page was
+read — a fact about the network, not the node), and `not_checkable` (the
+curated name is a count label like "Individual Senator Offices (100)" or a
+word like "Energy" that could match anything). The last three change
+nothing. A record that is withdrawn stops being published on the next build.
+The candidate pages live in `data/verification/official_sites.json`; a URL
+there is something to check, not a claim.
 
 ## Commands
 

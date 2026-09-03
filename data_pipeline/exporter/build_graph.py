@@ -1673,12 +1673,6 @@ def build_graph(
     validation["cycle_fallback_root_attachments"] = tree_stats.get("cycle_fallback_root_attachments", 0)
     validation["nodes_removed_missing_parent"] = tree_stats.get("nodes_unattached_missing_parent", 0)
     validation["pipeline_summary"]["nodes_removed_missing_parent"] = validation["nodes_removed_missing_parent"]
-    # Existence evidence gathered by scripts/verify_base_graph.py: an official
-    # page fetched on a date with the node's name on it. It is the only way a
-    # curated node gets a source and a lastVerified besides a Treasury line.
-    from data_pipeline.verification.evidence import apply_evidence_to_tree, load_evidence  # noqa: E402 — evidence imports this module
-
-    validation["verification_evidence"] = apply_evidence_to_tree(graph, load_evidence(evidence_path) if evidence_path else {})
     outlay_stats = apply_treasury_outlay_rows(
         graph,
         collect_treasury_outlay_rows(payload_list),
@@ -1687,6 +1681,17 @@ def build_graph(
         trusted_node_ids=set(existing_ids),
     )
     validation["treasury_outlay_rows"] = {key: value for key, value in outlay_stats.items() if key != "applied"}
+    # Existence evidence gathered by scripts/verify_base_graph.py: an official
+    # page read on a date that names the node as a label of its own. It is the
+    # only way a curated node gets a source besides a Treasury line, and it
+    # runs AFTER them: the Treasury pass rewrites sourceUrls on the nodes it
+    # stamps, and "this node has no source, so record the failed check"
+    # has to read the final list rather than one about to change under it.
+    from data_pipeline.verification.evidence import apply_evidence_to_tree, load_evidence  # noqa: E402 — evidence imports this module
+
+    validation["verification_evidence"] = apply_evidence_to_tree(
+        graph, load_evidence(evidence_path) if evidence_path else {}, index_tree=index_tree
+    )
     proof_status_counts, _ = annotate_proof_tree(
         graph,
         parent_is_proven=True,

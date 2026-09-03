@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260902a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260902a";
+import { createGovernmentGraph } from "./graph.js?v=20260903a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260903a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -438,12 +438,26 @@ function renderVerificationPanel(data) {
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
     setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
-    setText(
-      dom.verificationLastVerified,
-      data.lastVerified
-        ? `Last checked: ${new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}`
-        : "Not yet verified",
-    );
+    // What kind of check this was, not just when. "Its own official page
+    // names it" and "its parent's page lists it" are different claims, and a
+    // failed check is a third; the panel must not collapse them into a date.
+    const checkedOn = data.lastVerified
+      ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+      : null;
+    const METHOD_TEXT = {
+      name_labelled_on_own_official_page: "Its own official page names it",
+      name_labelled_on_parent_official_page: "Its parent's official page lists it",
+    };
+    let checkLine = "Not yet verified";
+    if (data.verificationFailure === "not_found") {
+      checkLine = checkedOn
+        ? `Checked ${checkedOn}: its official page did not name it`
+        : "Its official page did not name it";
+    } else if (checkedOn) {
+      const how = METHOD_TEXT[String(data.verificationMethod || "")];
+      checkLine = how ? `${how} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+    }
+    setText(dom.verificationLastVerified, checkLine);
   }
 
   dom.verificationSources.replaceChildren();

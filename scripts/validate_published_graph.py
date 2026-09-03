@@ -18,6 +18,7 @@ from datetime import datetime, timezone
 import sys
 from collections import Counter
 from pathlib import Path
+from urllib.parse import urlparse
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_GRAPH = PROJECT_ROOT / "output" / "graph.json"
@@ -349,6 +350,26 @@ def main(argv):
     gate.check("every lastVerified is a past ISO date", bad_dates)
     gate.check("every verification method is backed by a source URL", method_without_url)
 
+    # A failed existence check and a source are contradictory claims about the
+    # same node; the merge order between the evidence pass and the Treasury
+    # pass is exactly what could produce both. And a node is only allowed to
+    # call a source official when a .gov/.mil URL is actually there.
+    KNOWN_METHODS = {"name_labelled_on_own_official_page", "name_labelled_on_parent_official_page"}
+    failure_beside_source, unofficial_official, unknown_method = [], [], []
+    for node in nodes:
+        urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
+        official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
+        if node.get("verificationFailure") and urls:
+            failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
+        if "official_site" in (node.get("sourceTypes") or []) and not official:
+            unofficial_official.append("{} claims an official source with no .gov/.mil URL".format(label(node)))
+        method = node.get("verificationMethod")
+        if method and str(method) not in KNOWN_METHODS:
+            unknown_method.append("{} verificationMethod {!r}".format(label(node), method))
+    gate.check("no node claims a failed check beside a source", failure_beside_source)
+    gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
+    gate.check("every verification method is one this pipeline can produce", unknown_method)
+
     # 14. The review queue beside the graph, when there is one.
     queue_path = graph_path.parent / "candidate_nodes.json"
     if queue_path.exists():
@@ -370,10 +391,16 @@ def main(argv):
     print("  no source recorded   : {:,}".format(no_source))
     official = sum(
         1 for n in nodes
-        if any(str(u).split("/")[2].lower().endswith((".gov", ".mil")) for u in (n.get("sourceUrls") or []) if str(u).startswith("http"))
+        if any(
+            urlparse(str(u)).netloc.lower().endswith((".gov", ".mil"))
+            for u in (n.get("sourceUrls") or [])
+            if str(u).startswith(("http://", "https://"))
+        )
     )
-    checked_failed = sum(1 for n in nodes if n.get("lastVerified") and not (n.get("sourceUrls") or []))
+    methods = Counter(str(n.get("verificationMethod")) for n in nodes if n.get("verificationMethod"))
+    checked_failed = sum(1 for n in nodes if n.get("verificationFailure"))
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
+    print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
     summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
     print("  anchor               : {} {}".format(

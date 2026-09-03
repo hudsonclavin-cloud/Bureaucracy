@@ -35,7 +35,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from data_pipeline.crawler.official_directory import request_text  # noqa: E402
+from data_pipeline.crawler.official_directory import USER_AGENT, request_text  # noqa: E402
 from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, index_tree, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification.evidence import (  # noqa: E402
@@ -43,12 +43,15 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     DEFAULT_EVIDENCE_PATH,
     DEFAULT_SITES_PATH,
     FETCH_FAILED,
+    NOT_CHECKABLE,
     candidate_urls,
     load_evidence,
     load_official_sites,
-    page_text,
+    uncheckable_reason,
+    utc_now_iso,
     verify_node,
 )
+from data_pipeline.verification.politeness import RobotsPolicy  # noqa: E402
 
 
 def select_nodes(node_map: dict[str, dict[str, Any]], *, ids: list[str], include_positions: bool) -> list[dict[str, Any]]:
@@ -78,6 +81,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--sleep", type=float, default=1.0, help="seconds between fetches of distinct pages")
     parser.add_argument("--timeout", type=int, default=30)
+    parser.add_argument("--ignore-robots", action="store_true", help="do not read robots.txt (use only with the site owner's agreement)")
     parser.add_argument("--dry-run", action="store_true", help="print the plan; fetch nothing; write nothing")
     parser.add_argument("--list-hosts", action="store_true", help="print the hosts the candidate URLs use, one per line")
     args = parser.parse_args(argv[1:] if argv else None)
@@ -93,13 +97,24 @@ def main(argv: list[str] | None = None) -> int:
     evidence = load_evidence(args.evidence) if args.evidence.exists() else {}
     nodes = select_nodes(node_map, ids=args.ids, include_positions=args.include_positions)
 
-    plan: list[tuple[dict[str, Any], list[str], str | None]] = []
+    now = utc_now_iso()
+    plan: list[tuple[dict[str, Any], list[str], str | None, bool]] = []
     skipped = Counter()
     for node in nodes:
         node_id = str(node.get("id") or "")
         prior = evidence.get(node_id)
         if prior and prior.get("status") == CONFIRMED and not args.recheck:
             skipped["already_confirmed"] += 1
+            continue
+        reason = uncheckable_reason(node.get("name"))
+        if reason:
+            # Recorded, not fetched: a curator's label ("Individual Senator
+            # Offices (100)") or a name too generic to distinguish anything
+            # ("Energy"). Neither a hit nor a miss would mean anything.
+            evidence[node_id] = {
+                "name": node.get("name"), "status": NOT_CHECKABLE, "reason": reason, "checkedAt": now,
+            }
+            skipped[reason] += 1
             continue
         urls, site_from, distance = candidate_urls(node_id, parent_map, sites)
         if not urls:
@@ -108,15 +123,15 @@ def main(argv: list[str] | None = None) -> int:
         if distance > args.inherit_depth:
             skipped["ancestor_page_too_far"] += 1
             continue
-        plan.append((node, urls, site_from))
+        plan.append((node, urls, site_from, distance == 0))
         if args.limit and len(plan) >= args.limit:
             break
 
-    distinct_pages = {u for _, urls, _ in plan for u in urls}
+    distinct_pages = {u for _, urls, _, _ in plan for u in urls}
     print(f"nodes selected {len(nodes)}  to check {len(plan)}  distinct pages {len(distinct_pages)}  skipped {dict(skipped)}")
     if args.dry_run:
-        for node, urls, site_from in plan[:50]:
-            print(f"  {node.get('id')}  <-  {', '.join(urls)}  (site of {site_from})")
+        for node, urls, site_from, own in plan[:50]:
+            print(f"  {node.get('id')}  <-  {', '.join(urls)}  ({'own page' if own else 'page of ' + str(site_from)})")
         if len(plan) > 50:
             print(f"  ... {len(plan) - 50} more")
         return 0
@@ -125,35 +140,56 @@ def main(argv: list[str] | None = None) -> int:
     # what gets cached; a fetch error is cached too, as the exception.
     page_cache: dict[str, str | Exception] = {}
     last_fetch = 0.0
+    robots = RobotsPolicy(user_agent=USER_AGENT, timeout=args.timeout, enabled=not args.ignore_robots)
 
     def fetch(url: str) -> str:
         nonlocal last_fetch
         if url not in page_cache:
-            wait = args.sleep - (time.monotonic() - last_fetch)
-            if wait > 0:
-                time.sleep(wait)
-            try:
-                page_cache[url] = page_text(request_text(url, timeout=args.timeout))
-            except Exception as error:  # noqa: BLE001
-                page_cache[url] = error
-            last_fetch = time.monotonic()
+            allowed, why = robots.allows(url)
+            if not allowed:
+                page_cache[url] = PermissionError(f"robots.txt disallows this path ({why})")
+            else:
+                wait = max(args.sleep, robots.crawl_delay(url)) - (time.monotonic() - last_fetch)
+                if wait > 0:
+                    time.sleep(wait)
+                try:
+                    page_cache[url] = request_text(url, timeout=args.timeout)
+                except Exception as error:  # noqa: BLE001
+                    page_cache[url] = error
+                last_fetch = time.monotonic()
         cached = page_cache[url]
         if isinstance(cached, Exception):
             raise cached
         return cached
 
-    outcomes = Counter()
-    store = {"_note": "Written by scripts/verify_base_graph.py. Each record is the outcome of fetching the URLs listed at checkedAt; nothing here was typed by hand.", "nodes": evidence}
-    for index, (node, urls, site_from) in enumerate(plan, 1):
-        record = verify_node(node, urls, fetch=fetch, site_from=site_from, timeout=args.timeout)
+    outcomes = Counter(r["status"] for r in evidence.values() if r.get("status") == NOT_CHECKABLE)
+    store = {
+        "_note": (
+            "Written by scripts/verify_base_graph.py. Each record is the outcome of looking for the node's "
+            "name as a label on the URLs listed, at checkedAt; nothing here was typed by hand. "
+            "confirmed = a fragment of the page is the name; not_found = the unit's own page was read and "
+            "did not name it; inconclusive = only an ancestor's page was read, which is not obliged to; "
+            "fetch_failed = no page was read; not_checkable = the curated name could not be evidence."
+        ),
+        "nodes": evidence,
+    }
+    for index, (node, urls, site_from, own_page) in enumerate(plan, 1):
+        record = verify_node(node, urls, fetch=fetch, now=now, site_from=site_from, is_own_page=own_page)
         evidence[str(node["id"])] = record
         outcomes[record["status"]] += 1
         write_json_file(args.evidence, store)
         if record["status"] != CONFIRMED or index % 25 == 0:
-            print(f"[{index}/{len(plan)}] {record['status']:<13} {node.get('id')}")
+            print(f"[{index}/{len(plan)}] {record['status']:<14} {node.get('id')}")
 
+    write_json_file(args.evidence, store)
     print(f"\ndone: {dict(outcomes)}  evidence records now {len(evidence)}  -> {args.evidence}")
-    return 0 if outcomes.get(FETCH_FAILED, 0) < len(plan) or not plan else 2
+    # Nonzero when the run learned nothing it set out to learn, so a wrapper
+    # cannot mistake a blocked network for "checked everything, found nothing".
+    attempted = len(plan)
+    if attempted and outcomes.get(FETCH_FAILED, 0) == attempted:
+        print("every fetch failed: nothing was checked, and nothing was recorded about any node.")
+        return 2
+    return 0
 
 
 if __name__ == "__main__":

@@ -2,30 +2,53 @@
 
 The base graph names 5,170 units and positions and carries no source for any
 of them. This module is the one route by which a curated node earns a source
-without a human: an official .gov/.mil page is fetched on a date, the node's
-name is looked for in its text, and the outcome — confirmed, not found, or
-fetch failed — is recorded in a sidecar file keyed by node id.
+without a human: an official .gov/.mil page is fetched on a date, the page is
+searched for the node's name, and the outcome is recorded in a sidecar file
+keyed by node id.
 
-Three rules hold throughout:
+The evidence standard is deliberately strict: the page must name the unit as
+a LABEL OF ITS OWN — a heading, a link, a list item whose text is the name —
+not merely contain the name somewhere in prose. An earlier version searched
+the whole page as one canonicalised string, and an adversarial review found
+three independent ways that manufactures false confirmations:
 
-* The curated file is never written. Evidence lives in
-  data/verification/evidence.json and is merged onto nodes at build time.
-* Nothing is claimed that was not fetched. A record carries the URL that
-  was fetched, the moment it was fetched, and the text that matched.
-* A failed check is recorded as a failed check. The exporter stamps the
-  date without a URL, which the site renders as checked-and-failed
-  ("UNVERIFIED") rather than never-checked ("NO SOURCE RECORDED").
+  * "Engineering (ENG)" canonicalises to "engineering", which appears in
+    any sentence about NSF's mission. 22 curated organisations reduce to a
+    single common word ("Defense", "Energy", "Personnel").
+  * "Office of Science" is a word-bounded prefix of "Office of Science and
+    Technology Policy", so a page about OSTP confirmed the DOE office.
+  * The page text was joined with spaces across DOM elements, so a phrase
+    spanning two unrelated elements matched a string that is nowhere on the
+    page.
+
+Label equality answers all three: prose is not a label, a longer name is not
+equal to a shorter one, and a fragment is one element's text.
+
+Four statuses, and what each is allowed to claim:
+
+  confirmed     a fragment of the fetched page is this unit's name
+  not_found     the unit's OWN page was read and no fragment named it
+  inconclusive  only an ancestor's page was read and it did not name the
+                unit — which is no evidence either way, because a parent's
+                About page is not required to list its children
+  fetch_failed  no page was read: blocked network, 404, a 200 with no
+                readable body, a host that is not official
+  not_checkable the curated name cannot be evidence of anything (a curator's
+                label like "Individual Senator Offices (100)")
+
+Only `confirmed` and `not_found` are applied to a node. The other three
+record what was attempted and change nothing, because nothing was learned.
 """
 
 from __future__ import annotations
 
 import re
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Callable
 
-from data_pipeline.crawler.official_directory import TextFragmentParser
-from data_pipeline.exporter.build_graph import canonical_name_key, index_tree
+from data_pipeline.exporter.build_graph import canonical_name_key
 from data_pipeline.json_io import load_json_file
 from data_pipeline.processors.normalize_nodes import classify_source_url, verify_node_sources
 
@@ -36,10 +59,84 @@ DEFAULT_SITES_PATH = PROJECT_ROOT / "data" / "verification" / "official_sites.js
 
 CONFIRMED = "confirmed"
 NOT_FOUND = "not_found"
+INCONCLUSIVE = "inconclusive"
 FETCH_FAILED = "fetch_failed"
-METHOD = "name_on_official_page"
+NOT_CHECKABLE = "not_checkable"
+APPLIED_STATUSES = (CONFIRMED, NOT_FOUND)
+
+METHOD_OWN_PAGE = "name_labelled_on_own_official_page"
+METHOD_PARENT_PAGE = "name_labelled_on_parent_official_page"
+# Fields this module owns. They are cleared from every node before the current
+# evidence is applied, so a record that is withdrawn, downgraded or deleted
+# stops being published. Without this the previously published graph.json —
+# which the exporter re-feeds as a payload on every run — made any claim
+# permanent and no retraction could ever reach the site.
+EVIDENCE_OWNED_FIELDS = ("verificationMethod", "verificationFailure", "verificationSiteFrom")
+
+# A fetched page has to yield some readable text before "we read it and the
+# name was not there" is an honest thing to say. A JS-only shell, an empty
+# body and a bot-challenge interstitial all return 200 with nearly nothing.
+MIN_READABLE_CHARS = 400
+
+# Text nodes are split on these before comparison, so "Office of Science —
+# Advancing discovery" offers "Office of Science" as a label.
+LABEL_SEPARATORS = re.compile(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+")
+# Bounded scaffolding a real heading may wrap a name in: "About the U.S.
+# Department of Energy" is the Department's own H1, not a sentence about it.
+SCAFFOLD_TOKENS = frozenset(
+    "about the a an our welcome to home homepage official website site page of us u s united states usa gov "
+    "overview mission history contact leadership organization organisation".split()
+)
+MAX_SCAFFOLD_TOKENS = 5
+# A curated label rather than an organisation's name: no official page can
+# contain "Individual Senator Offices (100)", and publishing "we read the page
+# and it was not there" about one asserts a failed existence check against a
+# body that plainly exists.
+COUNT_LABEL_PATTERN = re.compile(r"\(\s*[≈~]?\d[\d,]*\s*\+?\s*(?:[A-Za-z .&-]{0,30})?\)|\(\s*\d+\s*\)|\b\d+\s*\+")
+GENERIC_SINGLE_TOKENS = frozenset(
+    "defense energy personnel cybersecurity seapower airland constitution security policy operations "
+    "administration management leadership committees districts offices staff research development "
+    "science engineering geosciences education health justice labor commerce interior state treasury".split()
+)
 
 Fetcher = Callable[[str], str]
+
+
+class LabelParser(HTMLParser):
+    """Collect each element's text separately.
+
+    Not the directory crawler's TextFragmentParser: that one skips nav,
+    header, footer and title, which on an agency site is exactly where the
+    sub-office list and the page's own H1 live — it would have made the
+    evidence reader systematically unable to see the evidence. Only markup
+    that is never displayed text is skipped here.
+    """
+
+    SKIP_TAGS = {"script", "style", "noscript", "template", "svg"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.fragments: list[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in self.SKIP_TAGS:
+            self._skip_depth += 1
+        # A link's accessible name is a label even when its text is an icon.
+        for key, value in attrs:
+            if key in ("title", "aria-label") and value and value.strip():
+                self.fragments.append(" ".join(value.split()))
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in self.SKIP_TAGS and self._skip_depth > 0:
+            self._skip_depth -= 1
+
+    def handle_data(self, data: str) -> None:
+        if self._skip_depth:
+            return
+        text = " ".join(data.split())
+        if text:
+            self.fragments.append(text)
 
 
 def utc_now_iso() -> str:
@@ -80,11 +177,10 @@ def candidate_urls(
 ) -> tuple[list[str], str | None, int]:
     """The node's own official site, else the nearest ancestor's.
 
-    Returns (urls, id of the node whose site was used, how many levels up
-    it was found). A department's About page plausibly lists its bureaus;
-    a chamber's homepage does not list every subcommittee, so callers cap
-    the distance rather than record hundreds of "not found" checks that
-    never had a chance."""
+    Returns (urls, id of the node whose site was used, how many levels up it
+    was found). The distance matters to what a miss means: a unit absent from
+    its own page is a real negative; a unit absent from its parent's About
+    page is nothing at all."""
     current: str | None = node_id
     distance = 0
     while current:
@@ -95,34 +191,66 @@ def candidate_urls(
     return [], None, distance
 
 
-def page_text(html: str) -> str:
-    parser = TextFragmentParser()
+def page_fragments(html: str) -> list[str]:
+    parser = LabelParser()
     parser.feed(html)
-    return " ".join(parser.fragments)
+    return parser.fragments
 
 
-def find_name(name: str, text: str) -> str | None:
-    """The fragment of the page text that names the node, or None.
+def uncheckable_reason(name: str) -> str | None:
+    """Why this curated name could never be evidence, or None if it can be."""
+    text = str(name or "").strip()
+    if not text:
+        return "empty_name"
+    if COUNT_LABEL_PATTERN.search(text):
+        return "curated_count_label"
+    key = canonical_name_key(text)
+    if not key:
+        return "no_canonical_key"
+    tokens = key.split()
+    if any(any(ch.isdigit() for ch in token) for token in tokens):
+        return "curated_count_label"
+    if len(tokens) == 1 and (len(key) < 4 or key in GENERIC_SINGLE_TOKENS):
+        # "Energy", "Defense", "Personnel": a page using the word is not a
+        # page naming the unit, and a bare word cannot distinguish them.
+        return "name_too_generic"
+    return None
 
-    Comparison is on canonical keys (case, punctuation, "&" vs "and", "U.S."
-    spelling and a trailing acronym do not matter), and the whole name has
-    to be there: an acronym alone matches far too much."""
+
+def label_matches(key: str, fragment: str) -> bool:
+    """Is this fragment the name, rather than text that contains the name?"""
+    for part in LABEL_SEPARATORS.split(fragment):
+        candidate = canonical_name_key(part)
+        if not candidate:
+            continue
+        if candidate == key:
+            return True
+        # A heading may wrap the name in bounded scaffolding, but nothing else.
+        if candidate.endswith(" " + key):
+            prefix = candidate[: -len(key) - 1].split()
+            if prefix and len(prefix) <= MAX_SCAFFOLD_TOKENS and all(t in SCAFFOLD_TOKENS for t in prefix):
+                return True
+        if candidate.startswith(key + " "):
+            suffix = candidate[len(key) + 1 :].split()
+            if suffix and len(suffix) <= MAX_SCAFFOLD_TOKENS and all(t in SCAFFOLD_TOKENS for t in suffix):
+                return True
+    return False
+
+
+def find_label(name: str, fragments: list[str]) -> str | None:
+    """The page fragment that is this node's name, verbatim, or None.
+
+    The returned string is text as it appears on the page — not a
+    canonicalised slice — so a human auditing evidence.json can search for it
+    on the live page.
+    """
+    if uncheckable_reason(name):
+        return None
     key = canonical_name_key(name)
-    # A three-letter key would match an acronym anywhere on the page; that is
-    # not evidence that the unit is what the page is about.
-    if not key or len(key) < 4:
-        return None
-    canonical_text = canonical_name_key(text)
-    if not canonical_text:
-        return None
-    # canonical_name_key strips parentheticals, so a "(DOE)" in the name is
-    # already gone; word-bounded search on the canonical text.
-    match = re.search(r"(?<![a-z0-9])" + re.escape(key) + r"(?![a-z0-9])", canonical_text)
-    if not match:
-        return None
-    start = max(0, match.start() - 40)
-    end = min(len(canonical_text), match.end() + 40)
-    return canonical_text[start:end].strip()
+    for fragment in fragments:
+        if label_matches(key, fragment):
+            return fragment[:200]
+    return None
 
 
 def verify_node(
@@ -132,62 +260,143 @@ def verify_node(
     fetch: Fetcher,
     now: str | None = None,
     site_from: str | None = None,
-    timeout: int = 30,
+    is_own_page: bool = False,
 ) -> dict[str, Any]:
-    """Fetch each candidate URL and look for the node's name.
+    """Fetch each candidate URL and look for the node's name as a label.
 
     The record is the outcome of the checks that were actually made. Every
-    URL that named the node is kept (two official pages are two sources);
-    the first failure reason is kept when none did."""
+    URL whose page labelled the node is kept; when none did, the status says
+    which of the four negative cases happened rather than collapsing them.
+    """
     checked_at = now or utc_now_iso()
+    name = str(node.get("name") or "")
+    record: dict[str, Any] = {
+        "name": name,
+        "checkedAt": checked_at,
+        "siteFrom": site_from,
+        "ownPage": bool(is_own_page),
+    }
+    reason = uncheckable_reason(name)
+    if reason:
+        record["status"] = NOT_CHECKABLE
+        record["reason"] = reason
+        return record
+
     confirmed: list[dict[str, str]] = []
     failures: list[dict[str, str]] = []
+    pages_read = 0
     for url in urls:
         if classify_source_url(url) != "official_site":
             failures.append({"url": url, "reason": "not_an_official_host"})
             continue
         try:
             html = fetch(url)
-        except Exception as error:  # noqa: BLE001 — every failure is evidence of a failed fetch
+        except Exception as error:  # noqa: BLE001 — any failure is evidence of a failed fetch
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
-        matched = find_name(str(node.get("name") or ""), html if "<" not in html else page_text(html))
+        fragments = page_fragments(html)
+        if sum(len(f) for f in fragments) < MIN_READABLE_CHARS:
+            # 200 OK with no readable body: a JS shell, a bot challenge, a
+            # soft 404. Nobody read this page, so nothing may be concluded.
+            failures.append({"url": url, "reason": "no_readable_text"})
+            continue
+        pages_read += 1
+        matched = find_label(name, fragments)
         if matched:
             confirmed.append({"url": url, "matchedText": matched})
         else:
-            failures.append({"url": url, "reason": "name_not_on_page"})
-    record: dict[str, Any] = {
-        "name": node.get("name"),
-        "checkedAt": checked_at,
-        "method": METHOD,
-        "siteFrom": site_from,
-    }
+            failures.append({"url": url, "reason": "name_not_labelled_on_page"})
+
     if confirmed:
         record["status"] = CONFIRMED
         record["sources"] = confirmed
-    elif urls and all(f["reason"] == "name_not_on_page" for f in failures):
+        record["method"] = METHOD_OWN_PAGE if is_own_page else METHOD_PARENT_PAGE
+    elif pages_read == 0:
+        record["status"] = FETCH_FAILED
+    elif is_own_page:
         record["status"] = NOT_FOUND
     else:
-        record["status"] = FETCH_FAILED
+        # An ancestor's page is not obliged to list this unit. Its silence is
+        # not evidence that the unit does not exist.
+        record["status"] = INCONCLUSIVE
+    record["pagesRead"] = pages_read
     if failures:
         record["failures"] = failures
     return record
 
 
-def apply_evidence_to_tree(root: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    """Stamp evidence onto the nodes it names. Returns counts.
+def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
+    """Remove what a previous run's evidence put on this node. Returns True
+    if anything was removed."""
+    touched = False
+    for field in EVIDENCE_OWNED_FIELDS:
+        if field in node:
+            node.pop(field, None)
+            touched = True
+    urls = [str(u) for u in (node.get("sourceUrls") or [])]
+    kept = [u for u in urls if u not in official_urls]
+    if len(kept) != len(urls):
+        node["sourceUrls"] = kept
+        touched = True
+    # The type is a claim about the URLs. Withdrawing the last official URL
+    # has to withdraw the label too, or the node goes on asserting an official
+    # source with nothing behind it — which is exactly what the release gate
+    # now refuses, and it caught this.
+    if not any(classify_source_url(u) == "official_site" for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t != "official_site"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
+    return touched
 
-    A confirmed record adds its URLs as sources and its check time as
-    lastVerified, and verify_node_sources then scores the node like any
-    other. A not_found record stamps the check time only: the node was
-    looked for on a page that was read, and the site must say that rather
-    than "no source recorded". A fetch_failed record applies nothing at all
-    — it is a fact about the network, not about the node. Names and types
-    are never touched."""
-    stats = {"confirmed": 0, "not_found": 0, "fetch_failed": 0, "unknown_node": 0, "urls_added": 0}
-    if not evidence:
-        return stats
+
+def apply_evidence_to_tree(
+    root: dict[str, Any], evidence: dict[str, dict[str, Any]], *, index_tree=None
+) -> dict[str, Any]:
+    """Stamp evidence onto the nodes it names, and only what was observed.
+
+    Every node is first stripped of the fields this module owns, so a claim
+    the current evidence no longer supports stops being published even though
+    the previously published graph is re-fed as a payload on every build.
+
+    confirmed  -> sourceUrls, sourceTypes official_site, lastVerified,
+                  verificationMethod (own page or parent page — a different
+                  claim, and the node says which).
+    not_found  -> lastVerified and verificationFailure only, and only when no
+                  other route gave the node a source. The site renders that as
+                  checked-and-failed, distinct from never-checked.
+    everything else -> counted, applied to nothing. No page was read, or the
+                  page that was read was not obliged to name this unit, or the
+                  curated name could never have been found.
+    """
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    stats = {
+        CONFIRMED: 0, NOT_FOUND: 0, INCONCLUSIVE: 0, FETCH_FAILED: 0, NOT_CHECKABLE: 0,
+        "own_page_confirmations": 0, "parent_page_confirmations": 0,
+        "unknown_node": 0, "unknown_status": 0, "urls_added": 0, "stale_claims_cleared": 0,
+    }
     node_map, _ = index_tree(root)
+    # Withdraw every claim this module previously published before applying
+    # the current evidence. The URL set is exactly the URLs the current
+    # evidence file confirms, plus any this module could have written before.
+    official_urls = {
+        str(source.get("url"))
+        for record in evidence.values()
+        for source in (record.get("sources") or [])
+        if isinstance(source, dict) and source.get("url")
+    }
+    for node in node_map.values():
+        if node.get("verificationMethod") in (METHOD_OWN_PAGE, METHOD_PARENT_PAGE) or node.get("verificationFailure"):
+            urls = [str(u) for u in (node.get("sourceUrls") or [])]
+            if clear_evidence_fields(node, official_urls | set(urls)):
+                stats["stale_claims_cleared"] += 1
+            if not node.get("sourceUrls"):
+                node.pop("lastVerified", None)
+            verify_node_sources(node)
+
     for node_id, record in evidence.items():
         node = node_map.get(node_id)
         if node is None:
@@ -195,43 +404,42 @@ def apply_evidence_to_tree(root: dict[str, Any], evidence: dict[str, dict[str, A
             continue
         status = str(record.get("status") or "")
         checked_at = str(record.get("checkedAt") or "").strip()
-        if status == CONFIRMED:
-            urls = [str(s.get("url")) for s in record.get("sources", []) if isinstance(s, dict) and s.get("url")]
-            existing = [str(u) for u in (node.get("sourceUrls") or [])]
-            for url in urls:
-                if url not in existing:
-                    existing.append(url)
-                    stats["urls_added"] += 1
-            node["sourceUrls"] = existing
-            types = [str(t) for t in (node.get("sourceTypes") or [])]
-            if "official_site" not in types:
-                types.append("official_site")
-            node["sourceTypes"] = types
-            if checked_at and (not node.get("lastVerified") or checked_at > str(node.get("lastVerified"))):
-                node["lastVerified"] = checked_at
-            node["verificationMethod"] = METHOD
-            node.pop("verificationFailure", None)
-            stats["confirmed"] += 1
-        elif status == NOT_FOUND:
-            stats[status] += 1
-            # The page was fetched and the name was not on it. That is a check
-            # that happened, so the node carries its date and the site shows
-            # "checked, not found" instead of "no source recorded". It never
-            # removes a source another route recorded.
-            if not node.get("sourceUrls") and checked_at:
-                node["lastVerified"] = checked_at
-                node["verificationFailure"] = status
-        elif status == FETCH_FAILED:
-            # Nothing was learned about this node: the page could not be
-            # fetched (a blocked network, a 404, a host that is not official),
-            # so no check of the node took place. Stamping a date here would
-            # publish "we checked and failed to find it" on the strength of
-            # our own connectivity. The node stays "no source recorded" —
-            # untouched, not even rescored.
-            stats[status] += 1
+        if status not in (CONFIRMED, NOT_FOUND, INCONCLUSIVE, FETCH_FAILED, NOT_CHECKABLE):
+            stats["unknown_status"] += 1
             continue
-        else:
-            stats["unknown_node"] += 0  # unrecognised status: ignored, never applied
+        if status != CONFIRMED:
+            # Nothing was learned that can be published, except that a unit
+            # absent from its own page is a real negative.
+            stats[status] += 1
+            if status == NOT_FOUND and not node.get("sourceUrls") and checked_at:
+                node["lastVerified"] = checked_at
+                node["verificationFailure"] = NOT_FOUND
+                node["verificationSiteFrom"] = record.get("siteFrom")
+                verify_node_sources(node)
             continue
+
+        urls = [str(s.get("url")) for s in record.get("sources", []) if isinstance(s, dict) and s.get("url")]
+        urls = [u for u in urls if classify_source_url(u) == "official_site"]
+        if not urls:
+            # A confirmation with no official URL behind it is not one.
+            stats["unknown_status"] += 1
+            continue
+        existing = [str(u) for u in (node.get("sourceUrls") or [])]
+        for url in urls:
+            if url not in existing:
+                existing.append(url)
+                stats["urls_added"] += 1
+        node["sourceUrls"] = existing
+        types = [str(t) for t in (node.get("sourceTypes") or [])]
+        if "official_site" not in types:
+            types.append("official_site")
+        node["sourceTypes"] = types
+        if checked_at and (not node.get("lastVerified") or checked_at > str(node.get("lastVerified"))):
+            node["lastVerified"] = checked_at
+        method = str(record.get("method") or (METHOD_OWN_PAGE if record.get("ownPage") else METHOD_PARENT_PAGE))
+        node["verificationMethod"] = method
+        node["verificationSiteFrom"] = record.get("siteFrom")
+        stats[CONFIRMED] += 1
+        stats["own_page_confirmations" if method == METHOD_OWN_PAGE else "parent_page_confirmations"] += 1
         verify_node_sources(node)
     return stats

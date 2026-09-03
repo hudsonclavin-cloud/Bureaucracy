@@ -9,7 +9,12 @@ from typing import Any
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
+# A site owner who sees this in their logs can find out what it is and who
+# to complain to. Override with BUREAUCRACY_PIPELINE_UA.
+USER_AGENT = os.environ.get(
+    "BUREAUCRACY_PIPELINE_UA",
+    "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+)
 DEFAULT_DIRECTORY_SOURCES = (
     {
         "agencyName": "Department of Energy",
