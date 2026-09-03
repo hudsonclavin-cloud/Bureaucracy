@@ -4,6 +4,10 @@ __pycache__/
 tests/.tmp/
 .DS_Store
 .tmp_chrome_profile/
+# scripts/frontend_smoke.mjs needs playwright-core + three installed locally
+# (npm install --no-save playwright-core three@0.160.1); the install is a local
+# tool, never part of the site GitHub Pages serves.
+node_modules/
 output/
 saved_pages/
 *.json.gz
