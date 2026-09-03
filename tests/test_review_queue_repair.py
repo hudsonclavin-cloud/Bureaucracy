@@ -140,7 +140,13 @@ class FederalRegisterFragmentTests(unittest.TestCase):
                 "costVerificationStatus": "verified",
                 "costSourceCount": 1,
                 "__budgetSummary": {"government_total_outlay_amount": 100.0},
-                "children": [{"id": "exec-eop-omb", "name": "Office of Management and Budget (OMB)", "resolved_total_amount": 100.0, "cost_status": "allocated", "children": []}],
+                "children": [
+                    {"id": "legislative-branch", "name": "Legislative Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
+                    {"id": "executive-branch", "name": "Executive Branch", "resolved_total_amount": 98.0, "cost_status": "allocated", "children": [
+                        {"id": "exec-eop-omb", "name": "Office of Management and Budget (OMB)", "resolved_total_amount": 98.0, "cost_status": "allocated", "children": []}
+                    ]},
+                    {"id": "judicial-branch", "name": "Judicial Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
+                ],
             }
             (tmp / "graph.json").write_text(json.dumps(graph), encoding="utf-8")
             for name, expect in (("Office of Management and Budget Review", 1), ("Office of Management and Budget Office of Federal Procurement Policy", 0)):
@@ -172,7 +178,11 @@ class ReviewQueueGateTests(unittest.TestCase):
                     "costSourceCount": 1,
                     "__budgetSummary": {"government_total_outlay_amount": 100.0},
                     "children": [
-                        {"id": "exec-dept-doe", "name": "Department of Energy", "resolved_total_amount": 100.0, "cost_status": "allocated", "children": []}
+                        {"id": "legislative-branch", "name": "Legislative Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
+                        {"id": "executive-branch", "name": "Executive Branch", "resolved_total_amount": 98.0, "cost_status": "allocated", "children": [
+                            {"id": "exec-dept-doe", "name": "Department of Energy", "resolved_total_amount": 98.0, "cost_status": "allocated", "children": []}
+                        ]},
+                        {"id": "judicial-branch", "name": "Judicial Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
                     ],
                 }
             ),

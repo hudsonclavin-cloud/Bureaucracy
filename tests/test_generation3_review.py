@@ -10,10 +10,12 @@ own "for".
 
 from __future__ import annotations
 
+import io
 import json
 import shutil
 import unittest
 import uuid
+from contextlib import redirect_stdout
 from pathlib import Path
 
 from data_pipeline.crawler import federal_register
@@ -21,6 +23,7 @@ from data_pipeline.discovery.source_discovery import pending_review_queue
 from data_pipeline.exporter.build_graph import build_graph, resolve_root_orphans
 from data_pipeline.run_pipeline import run_pipeline
 from scripts.repair_review_queue import has_us_federal_evidence, is_foreign, repair
+from scripts.validate_published_graph import main as gate_main
 
 
 TEST_TMP_ROOT = Path(__file__).resolve().parent / ".tmp"
@@ -170,6 +173,113 @@ class OfficialFloorTests(unittest.TestCase):
         self.assertNotIn("treasury_outlays", alpha.get("sourceTypes", []))
         self.assertFalse(any("fiscaldata" in url for url in alpha.get("sourceUrls", [])))
         self.assertEqual(second.validation["treasury_outlay_rows"]["stale_rollups_cleared"], 1)
+
+
+class RootIsTheThreeBranchesTests(unittest.TestCase):
+    """Nothing a crawler finds may be published as a fourth branch.
+
+    The Corporation for National and Community Service reached the published
+    graph this way: no id prefix matched a curated node, so the orphan
+    resolver fell back to the root and set attachToRoot, and because the
+    previous graph.json is re-fed as a payload the flag came back on every
+    later build. The release gate only checked that the root had at most ten
+    children, which a fourth one passes.
+    """
+
+    FEDERAL_BASE = {
+        "id": "the-constitution-of-the-united-states",
+        "name": "The Constitution of the United States",
+        "type": "Foundation",
+        "children": [
+            {"id": "legislative-branch", "name": "Legislative Branch", "type": "Branch", "children": []},
+            {"id": "executive-branch", "name": "Executive Branch", "type": "Branch", "children": [
+                {"id": "exec-dept-doe", "name": "Department of Energy", "type": "Cabinet Department", "children": []},
+            ]},
+            {"id": "judicial-branch", "name": "Judicial Branch", "type": "Branch", "children": []},
+        ],
+    }
+
+    def _tree(self, extra_children):
+        tree = json.loads(json.dumps(self.FEDERAL_BASE))
+        tree["children"].extend(extra_children)
+        return tree
+
+    def _trusted(self):
+        ids = set()
+        stack = [json.loads(json.dumps(self.FEDERAL_BASE))]
+        while stack:
+            node = stack.pop()
+            ids.add(str(node.get("id")))
+            stack.extend(node.get("children", []))
+        return ids
+
+    def test_an_unplaceable_orphan_is_dropped_rather_than_published_as_a_branch(self) -> None:
+        tree = self._tree([
+            {"id": "corporation-for-national-and-community-service", "name": "Corporation for National and Community Service",
+             "type": "Agency", "attachToRoot": True, "children": []},
+        ])
+        report = resolve_root_orphans(tree, trusted_node_ids=self._trusted())
+        self.assertEqual([c["id"] for c in tree["children"]], ["legislative-branch", "executive-branch", "judicial-branch"])
+        self.assertEqual(report["summary"]["orphans_unplaced"], 1)
+        self.assertEqual(report["orphans_unplaced"][0]["id"], "corporation-for-national-and-community-service")
+
+    def test_an_orphan_whose_prefix_names_a_curated_node_is_still_placed(self) -> None:
+        """The other direction: refusing the root must not refuse everything."""
+        tree = self._tree([
+            # find_prefix_parent reads the id as words and looks them up by
+            # NAME, so the prefix that places this one is the department's name.
+            {"id": "department-of-energy-office-of-science", "name": "Office of Science", "type": "Office", "attachToRoot": True, "children": []},
+        ])
+        report = resolve_root_orphans(tree, trusted_node_ids=self._trusted())
+        self.assertEqual([c["id"] for c in tree["children"]], ["legislative-branch", "executive-branch", "judicial-branch"])
+        self.assertEqual(report["summary"]["orphans_unplaced"], 0)
+        self.assertEqual(report["orphans_reattached"][0]["attached_to"], "exec-dept-doe")
+
+    def test_root_attachment_still_works_where_the_top_level_is_not_branches(self) -> None:
+        """A graph whose curated top level is agencies, not branches of
+        government, has no such claim to protect, and the fallback stands."""
+        tree = {
+            "id": "root", "name": "Root", "type": "Foundation",
+            "children": [
+                {"id": "agency-alpha", "name": "Agency Alpha", "type": "Agency", "children": []},
+                {"id": "loose-node", "name": "Loose Node", "type": "Office", "children": []},
+            ],
+        }
+        report = resolve_root_orphans(tree, trusted_node_ids={"root", "agency-alpha"})
+        self.assertEqual(report["summary"]["orphans_unplaced"], 0)
+        self.assertIn("loose-node", [c["id"] for c in tree["children"]])
+        self.assertTrue(next(c for c in tree["children"] if c["id"] == "loose-node")["attachToRoot"])
+
+    def test_the_gate_refuses_a_fourth_child_of_the_root(self) -> None:
+        tmp = Path(__file__).resolve().parent / ".tmp" / f"branches-{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            def graph(children):
+                return {
+                    "id": "the-constitution-of-the-united-states", "name": "The Constitution of the United States",
+                    "resolved_total_amount": 100.0, "cost_status": "root_total", "costVerificationStatus": "verified",
+                    "costSourceCount": 1, "__budgetSummary": {"government_total_outlay_amount": 100.0},
+                    "children": children,
+                }
+            branches = [
+                {"id": "legislative-branch", "name": "Legislative Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
+                {"id": "executive-branch", "name": "Executive Branch", "resolved_total_amount": 98.0, "cost_status": "allocated", "children": []},
+                {"id": "judicial-branch", "name": "Judicial Branch", "resolved_total_amount": 1.0, "cost_status": "allocated", "children": []},
+            ]
+            for label_text, children, expect in (
+                ("three branches", branches, 0),
+                ("a fourth child", branches + [{"id": "cncs", "name": "CNCS", "resolved_total_amount": 0.5, "cost_status": "allocated", "children": []}], 1),
+                ("a branch missing", branches[:2], 1),
+            ):
+                with self.subTest(case=label_text):
+                    path = tmp / f"{uuid.uuid4().hex}.json"
+                    path.write_text(json.dumps(graph(json.loads(json.dumps(children)))), encoding="utf-8")
+                    out = io.StringIO()
+                    with redirect_stdout(out):
+                        code = gate_main(["gate", str(path)])
+                    self.assertEqual(code, expect, out.getvalue())
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
 
 
 class OrphanChainTests(unittest.TestCase):

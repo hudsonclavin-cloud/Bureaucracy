@@ -1044,11 +1044,29 @@ def resolve_root_orphans(
         "root_orphans_processed": len(orphans),
         "duplicates_removed": 0,
         "orphans_reattached": 0,
+        "orphans_unplaced": 0,
     }
-    result = {"summary": summary, "duplicates_removed": [], "orphans_reattached": []}
+    result = {"summary": summary, "duplicates_removed": [], "orphans_reattached": [], "orphans_unplaced": []}
     if not orphans:
         return result
 
+    # May anything at all be published as a child of this root? In the federal
+    # graph the root's curated children are the three branches of government,
+    # so a node beside them claims to be a fourth — a structural assertion no
+    # crawler has the standing to make, and one that survives rebuilds because
+    # the previous graph is re-fed as a payload and carries its own
+    # attachToRoot back in. (That is how the Corporation for National and
+    # Community Service, a real agency the base graph is missing, came to be
+    # published as a peer of the Congress.) Where the curated top level is not
+    # branches of government, root attachment stays available.
+    curated_top = [
+        child
+        for child in root.get("children", [])
+        if isinstance(child, dict) and str(child.get("id") or "") in trusted_node_ids
+    ]
+    root_is_branches = len(curated_top) >= 2 and all(
+        str(child.get("type") or "").casefold() == "branch" for child in curated_top
+    )
     orphan_ids = {str(child.get("id")) for child in orphans}
     root["children"] = [
         child
@@ -1117,7 +1135,21 @@ def resolve_root_orphans(
             continue
 
         parent = find_prefix_parent(node_id) or fallback_parent
+        if parent is root and root_is_branches:
+            # It is named in pipeline_stats.json under
+            # root_orphan_resolution.unplaced, and in full in the validity
+            # report: something a crawl found that the curated hierarchy has
+            # no home for, and which a human should place in the base graph.
+            result["orphans_unplaced"].append(
+                {"id": node_id, "name": node.get("name"), "reason": "no_parent_in_curated_hierarchy"}
+            )
+            continue
         if not safe_attach_child(parent, node, parent_map=parent_map):
+            if root_is_branches:
+                result["orphans_unplaced"].append(
+                    {"id": node_id, "name": node.get("name"), "reason": "no_parent_in_curated_hierarchy"}
+                )
+                continue
             parent = root
             safe_attach_child(root, node, parent_map=parent_map)
         parent_id = str(parent.get("id") or "")
@@ -1141,6 +1173,7 @@ def resolve_root_orphans(
 
     summary["duplicates_removed"] = len(result["duplicates_removed"])
     summary["orphans_reattached"] = len(result["orphans_reattached"])
+    summary["orphans_unplaced"] = len(result["orphans_unplaced"])
     return result
 
 
@@ -1800,6 +1833,13 @@ def build_graph(
     validation["node_validation_rejected_nodes"] = int(node_export_policy["summary"].get("nodes_rejected", 0))
     validation["cost_validation_rejected_nodes"] = int(cost_export_policy["summary"].get("nodes_rejected", 0))
     validation["root_orphan_resolution"] = deepcopy(orphan_resolution["summary"])
+    # The names, not just the count. An unplaced orphan is usually a real
+    # federal body the curated hierarchy is missing (the Corporation for
+    # National and Community Service was the first), and this is the committed
+    # run record — the list belongs where a human will see it.
+    validation["root_orphan_resolution"]["unplaced"] = [
+        entry.get("name") for entry in orphan_resolution.get("orphans_unplaced", [])
+    ][:50]
     validation["duplicate_child_rollups_dropped"] = duplicate_child_rollups_dropped
     validation["proof_status_counts_before_cull"] = proof_status_counts
     validation["exported_node_count"] = len(export_nodes)

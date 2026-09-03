@@ -325,9 +325,14 @@ def main(argv):
 
     # 9. Root fan-out. 3,438 top-level children was the symptom that started this.
     top_level = graph.get("children") or []
+    # The root's children are the three branches of the federal government.
+    # A node published beside them claims to be a fourth. "At most 10" was a
+    # size check, not a structural one, and it let one through.
+    BRANCH_IDS = ("legislative-branch", "executive-branch", "judicial-branch")
+    actual_top = tuple(str(c.get("id") or "") for c in top_level)
     gate.check(
-        "root has at most {} direct children".format(MAX_TOP_LEVEL_CHILDREN),
-        ["root has {} direct children".format(len(top_level))] if len(top_level) > MAX_TOP_LEVEL_CHILDREN else [],
+        "root's children are exactly the three branches",
+        ["root has {}, expected {}".format(list(actual_top), list(BRANCH_IDS))] if actual_top != BRANCH_IDS else [],
         " — {}".format(len(top_level)),
     )
 
