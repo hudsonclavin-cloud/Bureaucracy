@@ -182,10 +182,13 @@ by a `.gov`/`.mil` URL. Coverage is reported. The verifier obeys `robots.txt`
 naming the project. A host that answers `robots.txt` itself with 401 or 403 is
 the one case that looks like "unreadable" but is not treated as such:
 `RobotFileParser` swallows that status and sets a blanket disallow with no
-rules parsed, and RFC 9309 says to obey it. The path stays refused; what the
+rules parsed. The path stays refused — by this project's choice, not by the
+standard: RFC 9309 [likely; unverified from this environment] treats 4xx as
+"Unavailable" and permits access, reserving complete-disallow for 5xx, while
+Python implements the older 401/403-means-disallow convention. What the
 record may not do is quote a rule nobody read, so the reason distinguishes
-"could not be read (401/403)" from "disallows <path>". `www.state.gov` did
-exactly this on the first live run. Positions are checked only with
+"could not be read (401/403); refused by policy" from "disallows <path>".
+`www.state.gov` did exactly this on the first live run. Positions are checked only with
 `--include-positions`.
 
 ### Frontend (`index.html`, `js/`)
