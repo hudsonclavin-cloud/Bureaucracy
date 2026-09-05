@@ -3396,7 +3396,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.energy.gov/leadership-organization"
     ],
     "sourceTypes": [
       "official_site",
@@ -3429,12 +3430,94 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe",
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
+  },
+  {
+    "id": "exec-dept-doe-nnsa",
+    "name": "National Nuclear Security Administration (NNSA)",
+    "type": "Agency",
+    "desc": "Semi-autonomous agency. Manages nuclear weapons stockpile, naval reactors, and nonproliferation. ~17,000 employees.",
+    "employees": 17000,
+    "budget": "~$20B",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.energy.gov/nnsa/national-nuclear-security-administration"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-nnsa",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet"
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 3953559749.59,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doe"
+  },
+  {
+    "id": "exec-dept-doe-sc",
+    "name": "Office of Science (SC)",
+    "type": "Office",
+    "desc": "Largest federal funder of basic research in the physical sciences. Manages 10 of 17 national laboratories. ~$8B budget.",
+    "employees": null,
+    "budget": "~$8B",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.energy.gov/science/office-science"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-sc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1581423899.84,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doe"
   },
   {
     "id": "exec-dept-doe-eere",
@@ -3483,6 +3566,46 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "parentId": "exec-dept-doe"
+  },
+  {
+    "id": "exec-dept-doe-em",
+    "name": "Office of Environmental Management (EM)",
+    "type": "Office",
+    "desc": "Cleans up nuclear weapons production legacy — largest environmental cleanup program in the world. ~$7B/year.",
+    "employees": null,
+    "budget": "~$7B",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.energy.gov/em/office-environmental-management"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-em",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1383745912.36,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-dept-doe"
   },
   {
@@ -4086,7 +4209,9 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.nasa.gov/about/",
+      "https://www.nasa.gov/organization/"
     ],
     "sourceTypes": [
       "official_site",
@@ -4119,11 +4244,414 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-03T22:59:01+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa",
+    "parentId": "exec-independent"
+  },
+  {
+    "id": "exec-ind-nasa-science-mission-directorate",
+    "name": "Science Mission Directorate",
+    "type": "Mission Directorate",
+    "desc": "Earth science, planetary science, heliophysics, astrophysics.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/about/",
+      "https://www.nasa.gov/organization/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T22:59:01+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nasa",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 569897977.1,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa"
+  },
+  {
+    "id": "exec-ind-nasa-kennedy-space-center-ksc",
+    "name": "Kennedy Space Center (KSC)",
+    "type": "NASA Center",
+    "desc": "Located in Cape Canaveral, FL. Launch operations; processing spacecraft for launch.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/kennedy/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-kennedy-space-center-ksc",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
-    "parentId": "exec-independent"
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-johnson-space-center-jsc",
+    "name": "Johnson Space Center (JSC)",
+    "type": "NASA Center",
+    "desc": "Located in Houston, TX. Human spaceflight operations; Mission Control; astronaut training.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/johnson/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-johnson-space-center-jsc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-goddard-space-flight-center-gsfc",
+    "name": "Goddard Space Flight Center (GSFC)",
+    "type": "NASA Center",
+    "desc": "Located in Greenbelt, MD. Earth science, astrophysics; Hubble & Webb telescope operations.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/goddard/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-goddard-space-flight-center-gsfc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-marshall-space-flight-center-msfc",
+    "name": "Marshall Space Flight Center (MSFC)",
+    "type": "NASA Center",
+    "desc": "Located in Huntsville, AL. Propulsion systems; Space Launch System (SLS) development.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/marshall/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-marshall-space-flight-center-msfc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-ames-research-center-arc",
+    "name": "Ames Research Center (ARC)",
+    "type": "NASA Center",
+    "desc": "Located in Mountain View, CA. Aeronautics, astrobiology, information technology research.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/ames/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-glenn-research-center-grc",
+    "name": "Glenn Research Center (GRC)",
+    "type": "NASA Center",
+    "desc": "Located in Cleveland, OH. Aerospace propulsion and power technology.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/glenn/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-glenn-research-center-grc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-langley-research-center-larc",
+    "name": "Langley Research Center (LaRC)",
+    "type": "NASA Center",
+    "desc": "Located in Hampton, VA. Aeronautics research; airspace systems; atmospheric science.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/langley/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-langley-research-center-larc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-stennis-space-center-ssc",
+    "name": "Stennis Space Center (SSC)",
+    "type": "NASA Center",
+    "desc": "Located in Bay St. Louis, MS. Rocket propulsion testing facility.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/stennis/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-stennis-space-center-ssc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
+  },
+  {
+    "id": "exec-ind-nasa-armstrong-flight-research-center-afrc",
+    "name": "Armstrong Flight Research Center (AFRC)",
+    "type": "NASA Center",
+    "desc": "Located in Edwards, CA. Atmospheric flight research; X-plane programs.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nasa.gov/armstrong/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1438992392.18,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-ssa",

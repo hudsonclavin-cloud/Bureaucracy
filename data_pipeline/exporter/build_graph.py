@@ -1198,6 +1198,51 @@ def compute_official_floors(root: dict[str, Any]) -> dict[str, float]:
     return floors
 
 
+def summarize_scaled_official(root: dict[str, Any]) -> dict[str, Any]:
+    """How much measured money the published graph withholds, in total.
+
+    Each capped node already tells a visitor its own story ("the Treasury
+    reported $43.0 billion for this unit ... the figure shown is that cap"),
+    but nothing added them up, so a systematic haircut read as isolated caps.
+
+    Only the top-most capped node in any branch is counted. A capped
+    department and its capped bureaus describe the same dollars, and summing
+    both reported $1.01T withheld where the real figure is $259B — an
+    overstatement four times the size of the thing being reported.
+
+    The cause is structural rather than a bug in the cascade: Table 5's
+    negative rows (152 of 644 — proprietary receipts, intrabudgetary
+    transactions, offsetting governmental receipts) are set aside, so the
+    positive lines that remain sum past the net anchor, and every measured
+    figure beneath a weighted parent is scaled to fit inside an estimate.
+    """
+    reported = published = 0.0
+    nodes = 0
+
+    def visit(node: dict[str, Any], inside_capped: bool) -> None:
+        nonlocal reported, published, nodes
+        capped = str(node.get("cost_status") or "") == "scaled_official"
+        if capped and not inside_capped:
+            line = parse_cost_amount(node.get("rollup_total_amount"))
+            shown = parse_cost_amount(node.get("resolved_total_amount"))
+            if line and line > 0:
+                nodes += 1
+                reported += float(line)
+                published += float(shown or 0.0)
+        for child in node.get("children", []):
+            if isinstance(child, dict):
+                visit(child, inside_capped or capped)
+
+    visit(root, False)
+    return {
+        "top_most_nodes": nodes,
+        "reported_total": round_currency(reported),
+        "published_total": round_currency(published),
+        "withheld_total": round_currency(reported - published),
+        "published_share_of_reported": round(published / reported, 6) if reported else None,
+    }
+
+
 def annotate_resolved_costs(
     root: dict[str, Any],
     *,
@@ -1210,7 +1255,11 @@ def annotate_resolved_costs(
         child_totals = [amount for amount in (get_node_official_total(child) for child in root.get("children", [])) if amount is not None]
         budget_total = sum(child_totals) if child_totals else None
 
-    counters = {"mixed_weight_sibling_sets_implied": 0, "allocations_below_precision": 0, "sibling_sets_scaled_to_official_floors": 0}
+    counters = {
+        "mixed_weight_sibling_sets_implied": 0,
+        "allocations_below_precision": 0,
+        "sibling_sets_scaled_to_official_floors": 0,
+    }
     official_floors = compute_official_floors(root)
 
     def recurse(
@@ -1240,6 +1289,16 @@ def annotate_resolved_costs(
             node["cost_status"] = "scaled_official"
             node["cost_basis"] = "treasury_rollup"
             node["cost_validation"] = inherited_validation or "scaled_to_parent_total"
+            # How far below its own Treasury line this unit is published. The
+            # panel already tells a visitor per node ("the Treasury reported
+            # $43.0 billion ... the figure shown is that cap"), but nothing
+            # aggregated it, so a systematic haircut looked like 41 isolated
+            # caps. The cause is structural: Table 5's negative rows (152 of
+            # 644 - proprietary receipts, intrabudgetary transactions,
+            # offsetting governmental receipts) are set aside, so the positive
+            # lines that remain sum past the net anchor and every measured
+            # figure beneath a weighted parent is scaled to fit.
+
         else:
             node["cost_status"] = "allocated"
             node["cost_basis"] = inherited_basis or "equal_split"
@@ -1464,6 +1523,7 @@ def annotate_resolved_costs(
             "mixed_weight_sibling_sets_implied": counters["mixed_weight_sibling_sets_implied"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
+            "treasury_lines_scaled": summarize_scaled_official(root),
         },
         "nodes": validity_nodes,
     }

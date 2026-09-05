@@ -407,6 +407,31 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    # A capped Treasury line publishes below the figure the statement reported.
+    # Each node says so in the panel; this is the total, which nothing showed.
+    # Only the top-most capped node in a branch: a capped department and its
+    # capped bureaus are the same dollars, and adding both overstates it ~4x.
+    cap_nodes = cap_reported = cap_published = 0
+    def walk_capped(node, inside):
+        nonlocal cap_nodes, cap_reported, cap_published
+        capped = str(node.get("cost_status") or "") == "scaled_official"
+        if capped and not inside:
+            line = node.get("rollup_total_amount")
+            try:
+                line = float(line)
+            except (TypeError, ValueError):
+                line = 0.0
+            if line > 0:
+                cap_nodes += 1
+                cap_reported += line
+                cap_published += amount_of(node) or 0.0
+        for child in node.get("children", []) or []:
+            if isinstance(child, dict):
+                walk_capped(child, inside or capped)
+    walk_capped(graph, False)
+    if cap_reported:
+        print("  Treasury lines capped: {:,} top-most nodes · ${:,.0f} reported vs ${:,.0f} published · {:.1%} shown, ${:,.0f} withheld".format(
+            cap_nodes, cap_reported, cap_published, cap_published / cap_reported, cap_reported - cap_published))
     summary = graph.get("__budgetSummary") if isinstance(graph.get("__budgetSummary"), dict) else {}
     print("  anchor               : {} {}".format(
         summary.get("label") or "none",

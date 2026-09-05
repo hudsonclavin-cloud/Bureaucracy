@@ -126,7 +126,22 @@ department lines under the unlined "Cabinet" grouping are paid before the
 excess is apportioned by weight); only when floors exceed what is left are
 they scaled, and the lines beneath publish as `scaled_official`, which the
 UI labels an estimate. Negative lines (net receipts) are set aside and
-counted, never anchored on.
+counted, never anchored on — and that has a systematic consequence worth
+knowing. 152 of Table 5's 644 lines are negative (proprietary receipts,
+intrabudgetary transactions, offsetting governmental receipts). Setting them
+aside leaves the positive lines summing past the *net* anchor, so measured
+figures beneath a weighted parent are scaled down to fit inside an estimate:
+as of 2026-09-05, 27 top-most capped nodes report $6.529T and publish
+$6.270T — 96.0% shown, $259.1B withheld, including all fifteen cabinet
+departments. Each capped node says so in its own panel ("the Treasury
+reported $43.0 billion for this unit ... the figure shown is that cap"), and
+`summarize_scaled_official` puts the total in `build_validation.
+treasury_lines_scaled` and in the gate's report. It counts only the top-most
+capped node per branch: a capped department and its capped bureaus are the
+same dollars, and adding both reported $1.01T against a real $259B. Netting
+an agency's negative rows against its own positive ones — rather than
+discarding them globally — is the fix, and it needs a live statement to
+validate.
 `cost_validation: estimated_from_parent` and
 `costVerificationStatus: unverified` on every allocated node. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
@@ -216,6 +231,16 @@ so it is not merged until `extract_and_expand.py` has produced real ones).
 Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
+
+GitHub Pages serves the repository root from `main`. Everything the page
+fetches is tracked: `index.html`, `js/`, `data/federal_gov_complete_1.json`,
+and the five `output/*.json` files. `.nojekyll` stops Pages running the
+content through Jekyll. The favicon is an inline `data:` URI rather than a
+file, so no request 404s. Two things load from outside the repo and are
+outside its control: Three.js from unpkg and the fonts from Google Fonts —
+neither is reachable from the pipeline's own sandbox, so
+`scripts/frontend_smoke.mjs` rewrites the Three.js import to a local copy and
+that one import is the only thing the smoke check cannot prove.
 
 ## Invariants
 

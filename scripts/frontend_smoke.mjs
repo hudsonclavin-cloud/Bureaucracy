@@ -162,6 +162,43 @@ try {
   check("the measured cost names its statement", /Monthly Treasury Statement/.test(measured), measured);
   const measuredPanel = await text("#info-panel");
   check("a measured node does not read no source recorded", !/NO SOURCE RECORDED/.test(measuredPanel), measuredPanel.slice(0, 200));
+  // A capped line is the subtlest claim on the page: the figure shown is
+  // BELOW the one the Treasury reported, because it did not fit inside an
+  // estimated parent. 27 top-most nodes publish $259B less than their own
+  // lines. If this text ever regresses to a plain "ESTIMATE" the site
+  // understates measured spending without saying so.
+  await page.fill("#search-input", "Department of Energy");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const capped = await text("#info-stats");
+  check("a capped Treasury line says it is capped", /TREASURY LINE CAPPED/.test(capped), capped);
+  check("a capped node names the figure the Treasury reported", /Treasury reported \$/.test(capped), capped);
+  check("a capped figure is not called measured", !/\bMEASURED\b/.test(capped), capped);
+  const cappedPanel = await text("#info-panel");
+  check(
+    "an existence-verified node says which page named it",
+    /official page names it|official page lists it/i.test(cappedPanel),
+    cappedPanel.slice(0, 300),
+  );
+
+  // A share that rounds below a cent is published as unavailable, never as
+  // $0.00 — a zero would read as "this costs nothing".
+  await page.fill("#search-input", "President of the United States");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const unavailable = await text("#info-stats");
+  check("a sub-cent share reads as unavailable", /Not available|NOT AVAILABLE/.test(unavailable), unavailable);
+  // The COST VALUE must not be a zero. The explanation below it is allowed to
+  // say the words "rather than $0" — that sentence is the honesty, not a bug.
+  check(
+    "a sub-cent share is never rendered as a zero cost",
+    !/COST\s*[\n\r]*\s*[≈~]?\s*\$0(\.00)?\b/.test(unavailable),
+    unavailable,
+  );
+  check("a sub-cent share explains itself", /less than one cent/i.test(unavailable), unavailable);
+
   await page.fill("#search-input", "");
   check("no page errors", pageErrors.length === 0, pageErrors.join(" | "));
   await browser.close();

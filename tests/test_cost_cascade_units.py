@@ -18,6 +18,7 @@ from data_pipeline.exporter.build_graph import (
     annotate_resolved_costs,
     build_graph,
     parse_cost_amount,
+    summarize_scaled_official,
 )
 from data_pipeline.processors.normalize_nodes import generate_node_id, normalize_name
 
@@ -270,3 +271,65 @@ class CuratedNameTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ScaledOfficialSummaryTests(unittest.TestCase):
+    """A capped node publishes below its own Treasury line. The panel says so
+    per node; this is the total, and it must not count the same money twice.
+
+    A first version summed every node with cost_status scaled_official and
+    reported $1.01T withheld against a real figure of $259B — a capped
+    department and its capped bureaus are the same dollars.
+    """
+
+    def _tree(self):
+        return {
+            "id": "root", "cost_status": "root_total", "resolved_total_amount": 1000.0,
+            "children": [
+                {   # capped department: line 500, published 400
+                    "id": "dept", "cost_status": "scaled_official",
+                    "rollup_total_amount": 500.0, "resolved_total_amount": 400.0,
+                    "children": [
+                        {   # capped bureau INSIDE it — the same money, must not be added
+                            "id": "bureau", "cost_status": "scaled_official",
+                            "rollup_total_amount": 300.0, "resolved_total_amount": 240.0,
+                            "children": [],
+                        },
+                    ],
+                },
+                {   # a second, independent capped branch: counted
+                    "id": "agency", "cost_status": "scaled_official",
+                    "rollup_total_amount": 200.0, "resolved_total_amount": 180.0, "children": [],
+                },
+                {   # measured in full, and an estimate: neither is a cap
+                    "id": "measured", "cost_status": "official",
+                    "rollup_total_amount": 100.0, "resolved_total_amount": 100.0, "children": [],
+                },
+                {"id": "guess", "cost_status": "allocated", "resolved_total_amount": 50.0, "children": []},
+            ],
+        }
+
+    def test_only_the_top_most_capped_node_in_a_branch_is_counted(self) -> None:
+        summary = summarize_scaled_official(self._tree())
+        self.assertEqual(summary["top_most_nodes"], 2)          # dept and agency, not bureau
+        self.assertEqual(summary["reported_total"], 700.0)      # 500 + 200, not 1000
+        self.assertEqual(summary["published_total"], 580.0)     # 400 + 180
+        self.assertEqual(summary["withheld_total"], 120.0)
+        self.assertAlmostEqual(summary["published_share_of_reported"], 580.0 / 700.0, places=6)
+
+    def test_a_graph_with_nothing_capped_reports_nothing(self) -> None:
+        summary = summarize_scaled_official({"id": "root", "cost_status": "root_total", "children": [
+            {"id": "a", "cost_status": "official", "rollup_total_amount": 10.0, "resolved_total_amount": 10.0, "children": []},
+        ]})
+        self.assertEqual(summary["top_most_nodes"], 0)
+        self.assertEqual(summary["withheld_total"], 0.0)
+        self.assertIsNone(summary["published_share_of_reported"])
+
+    def test_a_cap_without_a_usable_line_is_not_counted(self) -> None:
+        """No line means nothing to be capped against; counting it would make
+        the withheld figure a subtraction from zero."""
+        summary = summarize_scaled_official({"id": "root", "children": [
+            {"id": "a", "cost_status": "scaled_official", "rollup_total_amount": None, "resolved_total_amount": 5.0, "children": []},
+            {"id": "b", "cost_status": "scaled_official", "rollup_total_amount": 0, "resolved_total_amount": 5.0, "children": []},
+        ]})
+        self.assertEqual(summary["top_most_nodes"], 0)
