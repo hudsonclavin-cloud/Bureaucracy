@@ -12,10 +12,22 @@ run. A robots.txt that IS fetched and disallows the path is obeyed.
 One case is neither, and it must not be reported as though it were the
 second: a host that answers robots.txt itself with 401 or 403.
 `RobotFileParser.read()` swallows that error and sets `disallow_all` with no
-rules parsed, so the path is refused -- correctly, that is what RFC 9309
-requires -- but the file was never read, and saying "the site's robots.txt
-disallows this path" asserts a published rule nobody has seen. The refusal
-stands; the reason says which of the two it was.
+rules parsed, so the path is refused -- but the file was never read, and
+saying "the site's robots.txt disallows this path" asserts a published rule
+nobody has seen.
+
+We keep the refusal, as a deliberate conservative choice rather than a
+requirement: a host that will not show us its robots.txt is a host we do not
+have permission from, and the cost of stopping is a few unchecked nodes.
+That is NOT what the current standard mandates. RFC 9309 section 2.3.1.3
+puts 4xx under "Unavailable" and permits a crawler to access any resource;
+it is 5xx ("Unreachable", section 2.3.1.4) that requires assuming a complete
+disallow. Python's parser implements the older pre-RFC convention, in which
+401 and 403 alone mean disallow-all. [Likely, from memory: rfc-editor.org is
+not reachable from the environment this was written in, so the section
+numbers above are unverified -- check them before citing this comment.] If a
+later run wants the standard's behaviour rather than ours, that is a
+deliberate policy change here, not a bug fix.
 """
 
 from __future__ import annotations
@@ -57,9 +69,9 @@ class RobotsPolicy:
             return True, "allowed by robots.txt"
         host = urlparse(url).netloc
         if self._refused_robots(parser):
-            # 401/403 on robots.txt itself. Still a refusal, per RFC 9309,
-            # but no rule was read and none may be quoted.
-            return False, f"{host}/robots.txt could not be read (401/403); refused per RFC 9309"
+            # 401/403 on robots.txt itself: no rule was read, so none may be
+            # quoted. Refused by this project's choice, not by the standard.
+            return False, f"{host}/robots.txt could not be read (401/403); refused by policy, no rule was seen"
         return False, f"{host}/robots.txt disallows {urlparse(url).path or '/'}"
 
     @staticmethod

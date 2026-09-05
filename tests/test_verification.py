@@ -38,6 +38,8 @@ from data_pipeline.verification.evidence import (
 )
 from urllib.robotparser import RobotFileParser
 
+from urllib.robotparser import RobotFileParser
+
 from data_pipeline.verification.politeness import RobotsPolicy
 from scripts import verify_base_graph
 from scripts.validate_published_graph import main as gate_main
@@ -434,6 +436,38 @@ class RobotsTests(unittest.TestCase):
             self.assertNotIn("could not be read", why)
             # and a path it does not cover is still allowed
             self.assertTrue(policy.allows("https://www.state.gov/bureaus/")[0])
+
+
+class RobotsRefusalReasonTests(unittest.TestCase):
+    """A refusal must say which of the two things happened, and must not cite
+    a rule nobody read. Python's parser sets disallow_all on a 401/403 to
+    robots.txt itself — the pre-RFC-9309 convention — and the first live run
+    published "www.state.gov/robots.txt disallows /about/", which is a
+    statement about a file the run never saw."""
+
+    def test_an_unreadable_robots_is_refused_without_quoting_a_rule(self) -> None:
+        policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0")
+
+        unreadable = RobotFileParser()
+        unreadable.disallow_all = True  # what read() sets on a 401/403
+
+        parsed = RobotFileParser()
+        parsed.parse(["User-agent: *", "Disallow: /about/"])
+
+        with mock.patch.object(RobotsPolicy, "_parser", return_value=unreadable):
+            allowed, why = policy.allows("https://www.state.gov/about/")
+        self.assertFalse(allowed)
+        self.assertIn("could not be read", why)
+        self.assertNotIn("disallows", why)
+        self.assertNotIn("RFC", why, "the standard does not require this refusal; do not cite it")
+
+        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
+            allowed, why = policy.allows("https://www.state.gov/about/")
+        self.assertFalse(allowed)
+        self.assertIn("disallows /about/", why)
+
+        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
+            self.assertTrue(policy.allows("https://www.state.gov/other/")[0])
 
 
 class BuildAndGateTests(unittest.TestCase):
