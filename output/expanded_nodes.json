@@ -65,7 +65,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -96,13 +95,14 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "leg-senate",
-    "parentId": "legislative-branch",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.senate.gov/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-senate",
+    "parentId": "legislative-branch"
   },
   {
     "id": "leg-house",
@@ -121,7 +121,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -152,13 +151,14 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "leg-house",
-    "parentId": "legislative-branch",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.house.gov/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-house",
+    "parentId": "legislative-branch"
   },
   {
     "id": "leg-support-gao",
@@ -207,8 +207,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "leg-support",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "leg-support-cbo",
@@ -257,8 +257,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "leg-support",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "leg-support-loc",
@@ -307,8 +307,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "leg-support",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "leg-support-gpo",
@@ -357,8 +357,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "leg-support",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "leg-support-aoc",
@@ -407,8 +407,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "leg-support",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "leg-support-uscp",
@@ -427,7 +427,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -458,14 +457,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "leg-support-uscp",
-    "parentId": "leg-support",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.uscp.gov/the-department"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-support-uscp",
+    "placementCheckable": false,
+    "parentId": "leg-support"
   },
   {
     "id": "executive-branch",
@@ -503,14 +503,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:09:18+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "executive-branch",
-    "child_cost_basis_implied": true,
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.whitehouse.gov/government/executive-branch/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00"
+    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "executive-branch",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true
   },
   {
     "id": "exec-eop",
@@ -548,14 +548,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-eop",
-    "child_cost_basis_implied": true,
-    "parentId": "executive-branch",
     "evidenceUrls": [
       "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop",
+    "child_cost_basis_implied": true,
+    "parentId": "executive-branch"
   },
   {
     "id": "exec-eop-who",
@@ -623,7 +623,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -654,13 +653,14 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-eop-omb",
-    "parentId": "exec-eop",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.whitehouse.gov/omb/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-omb",
+    "parentId": "exec-eop"
   },
   {
     "id": "exec-eop-ostp",
@@ -697,13 +697,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-eop-ostp",
-    "parentId": "exec-eop",
     "evidenceUrls": [
       "https://www.whitehouse.gov/ostp/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-ostp",
+    "parentId": "exec-eop"
   },
   {
     "id": "exec-eop-ondcp",
@@ -740,13 +740,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-eop-ondcp",
-    "parentId": "exec-eop",
     "evidenceUrls": [
       "https://www.whitehouse.gov/ondcp/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-ondcp",
+    "parentId": "exec-eop"
   },
   {
     "id": "exec-eop-cea",
@@ -783,13 +783,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-eop-cea",
-    "parentId": "exec-eop",
     "evidenceUrls": [
       "https://www.whitehouse.gov/cea/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-cea",
+    "parentId": "exec-eop"
   },
   {
     "id": "exec-dept-state",
@@ -838,8 +838,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-treasury",
@@ -858,7 +858,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -889,15 +888,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-treasury",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T16:02:48+00:00",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information"
     ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-treasury",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-treasury-irs",
@@ -916,7 +916,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -947,6 +946,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -954,12 +958,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Internal Revenue Service (IRS)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-bep",
@@ -978,7 +978,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1009,6 +1008,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1016,12 +1020,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Bureau of Engraving & Printing (BEP)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-mint",
@@ -1059,6 +1059,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1066,12 +1070,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "U.S. Mint",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-fiscal",
@@ -1090,7 +1090,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1121,6 +1120,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1128,12 +1132,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Bureau of the Fiscal Service (BFS)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-fincen",
@@ -1171,6 +1171,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1178,12 +1182,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Financial Crimes Enforcement Network (FinCEN)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-occ",
@@ -1202,7 +1202,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1233,6 +1232,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1240,12 +1244,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Office of the Comptroller of the Currency (OCC)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury-ttb",
@@ -1283,6 +1283,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://home.treasury.gov/about/general-information"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-treasury",
     "placementVerified": true,
@@ -1290,12 +1294,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Alcohol and Tobacco Tax and Trade Bureau (TTB)",
-    "parentId": "exec-dept-treasury",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://home.treasury.gov/about/general-information"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-defense",
@@ -1344,8 +1344,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doj",
@@ -1364,7 +1364,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1395,14 +1394,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doj",
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.justice.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doj",
+    "placementCheckable": false,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doj-fbi",
@@ -1715,7 +1715,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1746,15 +1745,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doi",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doi-nps",
@@ -1773,7 +1773,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1804,6 +1803,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -1811,12 +1815,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "National Park Service",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-blm",
@@ -1854,6 +1854,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -1861,12 +1865,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "Bureau of Land Management",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-usgs",
@@ -1885,7 +1885,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1916,6 +1915,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -1923,12 +1927,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "U.S. Geological Survey",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-fws",
@@ -1947,7 +1947,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -1978,6 +1977,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -1985,12 +1989,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "U.S. Fish & Wildlife Service",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-bia",
@@ -2009,7 +2009,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -2040,6 +2039,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -2047,12 +2051,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "Bureau of Indian Affairs",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-bor",
@@ -2090,6 +2090,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -2097,12 +2101,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "Bureau of Reclamation",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-bsee",
@@ -2140,6 +2140,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -2147,12 +2151,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "Bureau of Safety & Environmental Enforcement",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-doi-boem",
@@ -2171,7 +2171,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -2202,6 +2201,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-doi",
     "placementVerified": true,
@@ -2209,12 +2213,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-doi",
     "placementMatchedText": "Bureau of Ocean Energy Management",
-    "parentId": "exec-dept-doi",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.doi.gov/whoweare"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-doi"
   },
   {
     "id": "exec-dept-usda",
@@ -2263,9 +2263,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "placementCheckable": false,
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-usda-fsa",
@@ -2608,9 +2608,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "placementCheckable": false,
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doc-census",
@@ -2874,7 +2874,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -2905,15 +2904,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-dol",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-dol-osha",
@@ -2932,7 +2932,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -2963,6 +2962,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -2970,12 +2974,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Occupational Safety and Health Administration (OSHA)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-bls",
@@ -2994,7 +2994,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -3025,6 +3024,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3032,12 +3036,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Bureau of Labor Statistics (BLS)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-whd",
@@ -3056,7 +3056,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -3087,6 +3086,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3094,12 +3098,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Wage and Hour Division (WHD)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-eta",
@@ -3118,7 +3118,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -3149,6 +3148,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3156,12 +3160,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Employment and Training Administration (ETA)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-ebsa",
@@ -3199,6 +3199,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3206,12 +3210,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Employee Benefits Security Administration (EBSA)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-msha",
@@ -3230,7 +3230,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -3261,6 +3260,11 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3268,12 +3272,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Mine Safety and Health Administration (MSHA)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-ofccp",
@@ -3311,6 +3311,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-dol",
     "placementVerified": true,
@@ -3318,12 +3322,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-dept-dol",
     "placementMatchedText": "Office of Federal Contract Compliance Programs (OFCCP)",
-    "parentId": "exec-dept-dol",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.dol.gov/general/aboutdol"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-hhs",
@@ -3372,8 +3372,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-hhs-fda",
@@ -3784,7 +3784,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -3815,15 +3814,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-hud",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.hud.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-hud",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-hud-pih",
@@ -3970,9 +3970,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "placementCheckable": false,
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-dot-faa",
@@ -4316,15 +4316,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-03T23:04:46+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doe",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.energy.gov/leadership-organization"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doe-nnsa",
@@ -4362,13 +4362,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:04:46+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doe-nnsa",
-    "parentId": "exec-dept-doe",
     "evidenceUrls": [
       "https://www.energy.gov/nnsa/national-nuclear-security-administration"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-nnsa",
+    "parentId": "exec-dept-doe"
   },
   {
     "id": "exec-dept-doe-sc",
@@ -4406,13 +4406,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:04:46+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doe-sc",
-    "parentId": "exec-dept-doe",
     "evidenceUrls": [
       "https://www.energy.gov/science/office-science"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-sc",
+    "parentId": "exec-dept-doe"
   },
   {
     "id": "exec-dept-doe-eere",
@@ -4499,13 +4499,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:04:46+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-doe-em",
-    "parentId": "exec-dept-doe",
     "evidenceUrls": [
       "https://www.energy.gov/em/office-environmental-management"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doe-em",
+    "parentId": "exec-dept-doe"
   },
   {
     "id": "exec-dept-ed",
@@ -4554,9 +4554,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "placementCheckable": false,
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-ed-oese",
@@ -4673,7 +4673,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:02:48+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -4704,15 +4703,16 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-va",
-    "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T16:02:48+00:00",
     "evidenceUrls": [
       "https://www.va.gov/about_va/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-va",
+    "placementCheckable": false,
+    "child_cost_basis_implied": true,
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-va-vha",
@@ -4750,6 +4750,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-va",
     "placementVerified": true,
@@ -4757,12 +4761,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-va",
     "placementMatchedText": "Veterans Health Administration",
-    "parentId": "exec-dept-va",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.va.gov/about_va/"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-va"
   },
   {
     "id": "exec-dept-va-vba",
@@ -4800,6 +4800,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-va",
     "placementVerified": true,
@@ -4807,12 +4811,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-va",
     "placementMatchedText": "Veterans Benefits Administration",
-    "parentId": "exec-dept-va",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.va.gov/about_va/"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-va"
   },
   {
     "id": "exec-dept-va-nca",
@@ -4850,6 +4850,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-va",
     "placementVerified": true,
@@ -4857,12 +4861,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-va",
     "placementMatchedText": "National Cemetery Administration",
-    "parentId": "exec-dept-va",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.va.gov/about_va/"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-va"
   },
   {
     "id": "exec-dept-va-bva",
@@ -4900,6 +4900,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:02:48+00:00",
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-dept-va",
     "placementVerified": true,
@@ -4907,12 +4911,8 @@
     "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
     "placementParentId": "exec-dept-va",
     "placementMatchedText": "Board of Veterans’ Appeals",
-    "parentId": "exec-dept-va",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.va.gov/about_va/"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T16:02:48+00:00"
+    "parentId": "exec-dept-va"
   },
   {
     "id": "exec-dept-dhs",
@@ -4961,9 +4961,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
+    "placementCheckable": false,
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet",
-    "placementCheckable": false
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-dhs-cbp",
@@ -5285,7 +5285,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 13404970417.05,
+    "resolved_total_amount": 13379367559.83,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -5306,8 +5306,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-independent",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-epa-office-of-air-radiation-oar",
@@ -5332,7 +5332,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5345,6 +5345,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5352,12 +5356,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Air and Radiation (OAR)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-water-ow",
@@ -5382,7 +5382,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5395,6 +5395,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5402,12 +5406,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Water (OW)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-land-emergency-management-olem",
@@ -5432,7 +5432,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5445,6 +5445,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5452,12 +5456,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Land and Emergency Management (OLEM)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp",
@@ -5482,7 +5482,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5495,6 +5495,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5502,12 +5506,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Chemical Safety and Pollution Prevention (OCSPP)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-research-development-ord",
@@ -5532,7 +5532,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5545,6 +5545,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5552,12 +5556,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Research and Development (ORD)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-enforcement-compliance-assurance-oeca",
@@ -5582,7 +5582,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5595,6 +5595,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5602,12 +5606,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of Enforcement and Compliance Assurance (OECA)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-epa-office-of-international-tribal-affairs-oita",
@@ -5632,7 +5632,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 728531000.93,
+    "resolved_total_amount": 727139541.3,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5645,6 +5645,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-epa",
     "placementVerified": true,
@@ -5652,12 +5656,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-epa",
     "placementMatchedText": "Office of International and Tribal Affairs (OITA)",
-    "parentId": "exec-ind-epa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-epa"
   },
   {
     "id": "exec-ind-nasa",
@@ -5687,7 +5687,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 18664158750.06,
+    "resolved_total_amount": 18628511092.76,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -5708,15 +5708,15 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-03T22:59:01+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa",
-    "parentId": "exec-independent",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/about/",
       "https://www.nasa.gov/organization/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T22:59:01+00:00"
+    "evidenceVerifiedAt": "2026-09-03T22:59:01+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa",
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-nasa-science-mission-directorate",
@@ -5742,7 +5742,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 569897977.1,
+    "resolved_total_amount": 568809499.02,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5755,6 +5755,11 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-03T22:59:01+00:00",
+    "evidenceUrls": [
+      "https://www.nasa.gov/about/",
+      "https://www.nasa.gov/organization/"
+    ],
+    "evidenceVerifiedAt": "2026-09-03T22:59:01+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nasa",
     "placementVerified": true,
@@ -5762,13 +5767,8 @@
     "placementVerifiedAt": "2026-09-03T22:59:01+00:00",
     "placementParentId": "exec-ind-nasa",
     "placementMatchedText": "Science Mission Directorate",
-    "parentId": "exec-ind-nasa",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nasa.gov/about/",
-      "https://www.nasa.gov/organization/"
-    ],
-    "evidenceVerifiedAt": "2026-09-03T22:59:01+00:00"
+    "parentId": "exec-ind-nasa"
   },
   {
     "id": "exec-ind-nasa-kennedy-space-center-ksc",
@@ -5793,7 +5793,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5806,14 +5806,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-kennedy-space-center-ksc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/kennedy/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-kennedy-space-center-ksc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-johnson-space-center-jsc",
@@ -5838,7 +5838,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5851,14 +5851,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-johnson-space-center-jsc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/johnson/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-johnson-space-center-jsc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-goddard-space-flight-center-gsfc",
@@ -5883,7 +5883,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5896,14 +5896,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-goddard-space-flight-center-gsfc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/goddard/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-goddard-space-flight-center-gsfc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-marshall-space-flight-center-msfc",
@@ -5928,7 +5928,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5941,14 +5941,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-marshall-space-flight-center-msfc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/marshall/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-marshall-space-flight-center-msfc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-ames-research-center-arc",
@@ -5973,7 +5973,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -5986,14 +5986,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/ames/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-glenn-research-center-grc",
@@ -6018,7 +6018,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6031,14 +6031,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-glenn-research-center-grc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/glenn/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-glenn-research-center-grc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-langley-research-center-larc",
@@ -6063,7 +6063,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6076,14 +6076,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-langley-research-center-larc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/langley/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-langley-research-center-larc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-stennis-space-center-ssc",
@@ -6108,7 +6108,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6121,14 +6121,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-stennis-space-center-ssc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/stennis/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-stennis-space-center-ssc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-nasa-armstrong-flight-research-center-afrc",
@@ -6153,7 +6153,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1438992392.18,
+    "resolved_total_amount": 1436243985.01,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6166,14 +6166,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-03T23:07:55+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
-    "parentId": "exec-ind-nasa-centers",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nasa.gov/armstrong/"
     ],
-    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00"
+    "evidenceVerifiedAt": "2026-09-03T23:07:55+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
+    "placementCheckable": false,
+    "parentId": "exec-ind-nasa-centers"
   },
   {
     "id": "exec-ind-ssa",
@@ -6201,7 +6201,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1389647745398.63,
+    "resolved_total_amount": 1386993584165.43,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6222,8 +6222,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-independent",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-sba",
@@ -6242,7 +6242,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -6253,7 +6252,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 11068344761.17,
+    "resolved_total_amount": 11047204748.04,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6273,14 +6272,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-sba",
-    "parentId": "exec-independent",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.sba.gov/about-sba"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-sba",
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-nsf",
@@ -6299,7 +6299,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -6310,7 +6309,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 6774634550.35,
+    "resolved_total_amount": 6761695319.92,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6330,14 +6329,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nsf",
-    "parentId": "exec-independent",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.nsf.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-nsf-biological-sciences-bio",
@@ -6362,7 +6362,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 834465860.38,
+    "resolved_total_amount": 832631193.38,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6375,6 +6375,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nsf",
     "placementVerified": true,
@@ -6382,12 +6386,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-nsf",
     "placementMatchedText": "Biological Sciences (BIO)",
-    "parentId": "exec-ind-nsf",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nsf.gov/about"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-nsf-computer-information-science-engineering-cise",
@@ -6412,7 +6412,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 834465860.38,
+    "resolved_total_amount": 832631193.38,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6425,6 +6425,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nsf",
     "placementVerified": true,
@@ -6432,12 +6436,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-nsf",
     "placementMatchedText": "Computer & Information Science & Engineering (CISE)",
-    "parentId": "exec-ind-nsf",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nsf.gov/about"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-nsf-education-human-resources-ehr",
@@ -6511,7 +6511,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 1010142883.62,
+    "resolved_total_amount": 1007921970.93,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6524,6 +6524,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nsf",
     "placementVerified": true,
@@ -6531,12 +6535,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-nsf",
     "placementMatchedText": "Mathematical & Physical Sciences (MPS)",
-    "parentId": "exec-ind-nsf",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nsf.gov/about"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
@@ -6561,7 +6561,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 658788837.14,
+    "resolved_total_amount": 657340415.83,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6574,6 +6574,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nsf",
     "placementVerified": true,
@@ -6581,12 +6585,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-nsf",
     "placementMatchedText": "Social, Behavioral & Economic Sciences (SBE)",
-    "parentId": "exec-ind-nsf",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nsf.gov/about"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-nsf-technology-innovation-partnerships-tip",
@@ -6611,7 +6611,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 483111813.9,
+    "resolved_total_amount": 482049638.27,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
     "cost_validation": "estimated_from_parent",
@@ -6624,6 +6624,10 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationSiteFrom": "exec-ind-nsf",
     "placementVerified": true,
@@ -6631,12 +6635,8 @@
     "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
     "placementParentId": "exec-ind-nsf",
     "placementMatchedText": "Technology, Innovation & Partnerships (TIP)",
-    "parentId": "exec-ind-nsf",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "evidenceUrls": [
-      "https://www.nsf.gov/about"
-    ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-opm",
@@ -6655,7 +6655,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -6666,7 +6665,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 109333277680.28,
+    "resolved_total_amount": 109124456309.49,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6686,14 +6685,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-opm",
-    "parentId": "exec-independent",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.opm.gov/about-us/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-opm",
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-smithsonian",
@@ -6721,7 +6721,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 989603359.17,
+    "resolved_total_amount": 987713263.72,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6742,8 +6742,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-independent",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-nara",
@@ -6762,7 +6762,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -6773,7 +6772,7 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": 354369900.97,
+    "resolved_total_amount": 353693071.28,
     "cost_status": "scaled_official",
     "cost_basis": "treasury_rollup",
     "cost_validation": "scaled_to_parent_total",
@@ -6793,14 +6792,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-nara",
-    "parentId": "exec-independent",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.archives.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nara",
+    "placementCheckable": false,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-ind-misc-peace-corps",
@@ -6828,14 +6828,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 322319075.42,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 335797574.1,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Peace Corps",
@@ -6848,8 +6848,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-arts-nea",
@@ -6877,14 +6878,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 119247676.52,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 124234286.91,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Endowment for the Arts",
@@ -6897,8 +6898,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-humanities-neh",
@@ -6926,14 +6928,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 50102285.94,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 52197425.96,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Endowment for the Humanities",
@@ -6946,8 +6948,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
@@ -6975,14 +6978,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 219532125.18,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 228712355.85,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Labor Relations Board",
@@ -6995,8 +6998,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
@@ -7024,14 +7028,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 337023837.81,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 351117249.28,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Equal Employment Opportunity Commission",
@@ -7044,8 +7048,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
@@ -7073,14 +7078,14 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "resolved_total_amount": null,
-    "cost_status": "unavailable",
-    "cost_basis": "implied_employee_weight",
-    "cost_validation": "allocation_below_precision",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.0,
-    "costVerificationReason": "missing_cost",
-    "costSourceCount": 0,
+    "resolved_total_amount": 1912654286.34,
+    "cost_status": "scaled_official",
+    "cost_basis": "treasury_rollup",
+    "cost_validation": "scaled_to_parent_total",
+    "costVerificationStatus": "partial",
+    "costConfidenceScore": 0.72,
+    "costVerificationReason": "scaled_from_official_rollup",
+    "costSourceCount": 1,
     "rollup_total_amount": 1992636236.68,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Pension Benefit Guaranty Corporation",
@@ -7093,8 +7098,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-ind-misc",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "child_cost_basis": "subtree",
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-regulatory-sec",
@@ -7143,8 +7149,8 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": null,
-    "parentId": "exec-regulatory",
-    "placementCheckable": false
+    "placementCheckable": false,
+    "parentId": "exec-regulatory"
   },
   {
     "id": "exec-regulatory-nrc",
@@ -7163,7 +7169,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -7194,14 +7199,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-regulatory-nrc",
-    "parentId": "exec-regulatory",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.nrc.gov/about-nrc.html"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-nrc",
+    "placementCheckable": false,
+    "parentId": "exec-regulatory"
   },
   {
     "id": "exec-regulatory-cpsc",
@@ -7238,14 +7244,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-regulatory-cpsc",
-    "parentId": "exec-regulatory",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.cpsc.gov/About-CPSC"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-cpsc",
+    "placementCheckable": false,
+    "parentId": "exec-regulatory"
   },
   {
     "id": "exec-regulatory-fmc",
@@ -7282,14 +7288,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-regulatory-fmc",
-    "parentId": "exec-regulatory",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.fmc.gov/about-the-fmc/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-fmc",
+    "placementCheckable": false,
+    "parentId": "exec-regulatory"
   },
   {
     "id": "judicial-branch",
@@ -7357,7 +7363,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T15:33:00+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -7388,13 +7393,14 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-scotus",
-    "parentId": "judicial-branch",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
     "evidenceUrls": [
       "https://www.supremecourt.gov/about/about.aspx"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-scotus",
+    "parentId": "judicial-branch"
   },
   {
     "id": "jud-specialized-tax",
@@ -7413,7 +7419,6 @@
       "official_site",
       "treasury_outlays"
     ],
-    "lastVerified": "2026-09-06T16:09:18+00:00",
     "proofSourceCount": 3,
     "proofSourceTypes": [
       "official_site",
@@ -7444,14 +7449,15 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-specialized-tax",
-    "parentId": "jud-specialized",
-    "placementCheckable": false,
+    "lastVerified": "2026-09-06T16:09:18+00:00",
     "evidenceUrls": [
       "https://www.ustaxcourt.gov/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00"
+    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-specialized-tax",
+    "placementCheckable": false,
+    "parentId": "jud-specialized"
   },
   {
     "id": "jud-specialized-claims",
@@ -7489,14 +7495,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T16:09:18+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-specialized-claims",
-    "parentId": "jud-specialized",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.uscfc.uscourts.gov/"
     ],
-    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00"
+    "evidenceVerifiedAt": "2026-09-06T16:09:18+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-specialized-claims",
+    "placementCheckable": false,
+    "parentId": "jud-specialized"
   },
   {
     "id": "jud-specialized-intl-trade",
@@ -7534,14 +7540,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-specialized-intl-trade",
-    "parentId": "jud-specialized",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.cit.uscourts.gov/about-court"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-specialized-intl-trade",
+    "placementCheckable": false,
+    "parentId": "jud-specialized"
   },
   {
     "id": "jud-support-fjc",
@@ -7579,14 +7585,14 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-support-fjc",
-    "parentId": "jud-support",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.fjc.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-support-fjc",
+    "placementCheckable": false,
+    "parentId": "jud-support"
   },
   {
     "id": "jud-support-ussc",
@@ -7624,13 +7630,13 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-06T15:33:00+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "jud-support-ussc",
-    "parentId": "jud-support",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.ussc.gov/about"
     ],
-    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00"
+    "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-support-ussc",
+    "placementCheckable": false,
+    "parentId": "jud-support"
   }
 ]

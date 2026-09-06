@@ -291,6 +291,20 @@ def main(argv):
             unlabelled_missing.append("{} has no amount and cost_status {!r}".format(label(node), node.get("cost_status")))
     gate.check("no zero or negative amounts", non_positive)
     gate.check("a missing amount is labelled unavailable", unlabelled_missing)
+    # A Treasury line is a measured figure; while the root is anchored, every
+    # one is published, in full or capped, never as "not available". Six lines
+    # under the independent-agencies grouping ($3.08B, the Peace Corps among
+    # them) were hidden this way once, and the cap summary never counted them
+    # because it counts only scaled_official nodes.
+    hidden_lines = []
+    if str(graph.get("cost_status") or "") == "root_total" and graph.get("resolved_total_amount") is not None:
+        for node in nodes:
+            if node is graph:
+                continue
+            line = node.get("rollup_total_amount")
+            if isinstance(line, (int, float)) and line > 0 and str(node.get("cost_status") or "") == "unavailable":
+                hidden_lines.append("{} carries a Treasury line of {:,.2f} but is published unavailable".format(label(node), line))
+    gate.check("no Treasury line is hidden as unavailable", hidden_lines)
 
     # 11. Check 6, at every level: the parts of any node must fit inside it.
     over_parent_sums = []

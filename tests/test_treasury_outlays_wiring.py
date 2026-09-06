@@ -227,6 +227,31 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
         self.assertEqual(code, 1)
         self.assertIn("Department of Health and Human Services", out.getvalue())
 
+    def test_a_treasury_line_hidden_as_unavailable_fails_the_gate(self) -> None:
+        """Six lines under the independent-agencies grouping once published as
+        "not available" while carrying their measured figure; nothing refused
+        it, and the cap summary did not count them either."""
+        result = self._build(ROWS)
+        out = io.StringIO()
+        with redirect_stdout(out):
+            self.assertEqual(gate_main(["gate", str(result.graph_path)]), 0)
+        self.assertIn("ok    no Treasury line is hidden as unavailable", out.getvalue())
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        irs = _index(graph)["exec-dept-treasury-irs"][0]
+        self.assertGreater(irs["rollup_total_amount"], 0)
+        irs["cost_status"] = "unavailable"
+        irs["cost_validation"] = "allocation_below_precision"
+        irs["resolved_total_amount"] = None
+        irs["costVerificationStatus"] = "unverified"
+        corrupted = self.tmp_path / "hidden.json"
+        corrupted.write_text(json.dumps(graph), encoding="utf-8")
+        out = io.StringIO()
+        with redirect_stdout(out):
+            code = gate_main(["gate", str(corrupted)])
+        self.assertEqual(code, 1, out.getvalue())
+        self.assertIn("no Treasury line is hidden as unavailable", out.getvalue())
+        self.assertIn("Internal Revenue Service", out.getvalue())
+
     def test_fresh_lines_replace_stale_rollups(self) -> None:
         self._build(ROWS)
         fewer = [row for row in ROWS if row["name"] != "Internal Revenue Service"]

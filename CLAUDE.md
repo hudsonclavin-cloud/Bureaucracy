@@ -123,17 +123,33 @@ never as $0. Treasury outlay lines applied to a node make it `official`
 those are the only measured costs besides the root, and the gate checks it.
 A line beneath a weighted node is a floor on that node's share (the fifteen
 department lines under the unlined "Cabinet" grouping are paid before the
-excess is apportioned by weight); only when floors exceed what is left are
-they scaled, and the lines beneath publish as `scaled_official`, which the
-UI labels an estimate. Negative lines (net receipts) are set aside and
+excess is apportioned by weight). A direct line is a measurement of that
+child and a floor only a lower bound on an unmeasured one, so measurements
+that fit are honoured in full and floors are paid from the remainder, scaled
+if they do not fit — the Legislative and Judicial section totals fit the net
+anchor and publish as measured; the executive floor takes the cap. When the
+direct lines alone exceed the parent, nothing beneath can be honoured and
+every line, direct or deeper, takes one haircut and publishes as
+`scaled_official`, which the UI labels an estimate. The first version paid
+the direct lines first in that case too and the deeper floors from what was
+left, which under the independent-agencies grouping was nothing: SSA, OPM
+and NASA took the whole allocation and six measured lines two levels down
+(PBGC, EEOC, the Peace Corps, $3.08B) published as "not available" —
+uncounted by the cap summary, which counts only `scaled_official`. A fully
+even haircut was tried and rejected: at the root it cut the two section
+totals to 96% and starved the joint committees. The gate now refuses a
+Treasury line published `unavailable` while the root is anchored. Negative lines (net receipts) are set aside and
 counted, never anchored on — and that has a systematic consequence worth
 knowing. 152 of Table 5's 644 lines are negative (proprietary receipts,
 intrabudgetary transactions, offsetting governmental receipts). Setting them
 aside leaves the positive lines summing past the *net* anchor, so measured
 figures beneath a weighted parent are scaled down to fit inside an estimate:
-as of 2026-09-05, 27 top-most capped nodes report $6.529T and publish
-$6.270T — 96.0% shown, $259.1B withheld, including all fifteen cabinet
-departments. Each capped node says so in its own panel ("the Treasury
+as of 2026-09-06, 33 top-most capped nodes report $6.532T and publish
+$6.270T — 96.0% shown, $262.2B withheld, including all fifteen cabinet
+departments (27 nodes and $259.1B the day before: the six lines rescued
+under the independent-agencies grouping are now counted, and their $2.96B
+came out of their measured siblings' capped shares, the grouping's own
+allocation being fixed). Each capped node says so in its own panel ("the Treasury
 reported $43.0 billion for this unit ... the figure shown is that cap"), and
 `summarize_scaled_official` puts the total in `build_validation.
 treasury_lines_scaled` and in the gate's report. It counts only the top-most
@@ -368,7 +384,9 @@ that one import is the only thing the smoke check cannot prove.
 ## Known base-graph gaps
 
 Table 5 lines whose unit the curated graph has no node for at all, so no alias
-can reach them. Adding the nodes is curation work, not pipeline work:
+can reach them. Adding the nodes is curation work, not pipeline work;
+`CURATION.md` carries the proposal (parent, type, candidate page) for each,
+plus the AmeriCorps alias case, the Coast Guard duplicate and the cap:
 
     General Services Administration          Agency for International Development
     Railroad Retirement Board                Administration for Children and Families

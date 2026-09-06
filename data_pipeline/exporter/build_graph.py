@@ -1364,28 +1364,50 @@ def annotate_resolved_costs(
                 counters["mixed_weight_sibling_sets_implied"] += 1
 
         official_child_sum = sum(amount for _, amount in anchored_children)
+        # A Treasury line somewhere beneath a weighted child is a floor on
+        # that child's share: fifteen department lines under an unlined
+        # "Cabinet" grouping must not be rescaled to fit a subtree-size
+        # guess. Floors are paid first and only the excess is apportioned by
+        # weight.
+        floors = [official_floors.get(str(child.get("id") or ""), 0.0) for child, _, _ in weighted_children]
+        floor_sum = sum(floors)
+        # A direct line is a measurement of that child; a floor is only a
+        # lower bound on an unmeasured child's share. Measurements that fit
+        # are honoured in full and the floors are paid from what is left,
+        # scaled if they do not fit (the Legislative and Judicial section
+        # totals fit the net anchor exactly and publish as measured; the
+        # executive floor, a sum of positive lines with the receipts set
+        # aside, takes the whole cap). When the direct lines alone exceed the
+        # parent, no measurement beneath can be honoured and nothing is
+        # privileged: every line, direct or deeper, takes one haircut. The
+        # first version paid the direct lines first in that case too and the
+        # deeper floors from what was left, which under the independent-
+        # agencies grouping was nothing: SSA, OPM and NASA took the whole
+        # allocation, and six measured lines two levels down (PBGC, EEOC, the
+        # Peace Corps ...) published as "not available" — $3.08B measured and
+        # shown to nobody, uncounted by the cap summary because they were
+        # never scaled_official, although the grouping's own allocation had
+        # been computed from a floor that included them.
         anchor_scale = 1.0
         scaled_to_fit_parent = False
         if anchored_children and official_rollups_exceed_total(official_child_sum, allocated_total):
-            anchor_scale = abs(allocated_total) / abs(official_child_sum) if official_child_sum else 1.0
+            measured_sum = official_child_sum + floor_sum
+            anchor_scale = abs(allocated_total) / abs(measured_sum) if measured_sum else 1.0
             scaled_to_fit_parent = True
 
         assigned_anchor_total = sum(amount * anchor_scale for _, amount in anchored_children)
         remainder_total = allocated_total - assigned_anchor_total
 
         total_weight = sum(weight for _, weight, _ in weighted_children) or float(len(weighted_children) or 1)
-        # A Treasury line somewhere beneath a weighted child is a floor on
-        # that child's share: fifteen department lines under an unlined
-        # "Cabinet" grouping must not be rescaled to fit a subtree-size
-        # guess. Floors are paid first and only the excess is apportioned by
-        # weight; when the floors alone exceed what is left, they are scaled
-        # and the lines beneath publish as scaled_official.
-        floors = [official_floors.get(str(child.get("id") or ""), 0.0) for child, _, _ in weighted_children]
-        floor_sum = sum(floors)
-        floor_scale = 1.0
-        if floor_sum > 0 and remainder_total >= 0 and floor_sum > remainder_total:
-            floor_scale = remainder_total / floor_sum
-            counters["sibling_sets_scaled_to_official_floors"] += 1
+        if scaled_to_fit_parent:
+            floor_scale = anchor_scale
+            if floor_sum > 0:
+                counters["sibling_sets_scaled_to_official_floors"] += 1
+        else:
+            floor_scale = 1.0
+            if floor_sum > 0 and remainder_total >= 0 and floor_sum > remainder_total:
+                floor_scale = remainder_total / floor_sum
+                counters["sibling_sets_scaled_to_official_floors"] += 1
         excess_total = max(remainder_total - floor_sum * floor_scale, 0.0)
         weighted_remaining = len(weighted_children)
         remainder_left = remainder_total
