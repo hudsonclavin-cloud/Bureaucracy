@@ -205,7 +205,36 @@ try {
   const provenance = await text("#data-provenance");
   check("provenance line is computed, not the old hardcoded string", !/Structure hand-compiled/.test(provenance), provenance);
   check("provenance counts the measured costs", /\d+ costs measured from the Monthly Treasury Statement/.test(provenance), provenance);
-  check("provenance says the hierarchy is unsourced", /hierarchy and descriptions carry none/.test(provenance), provenance);
+  check("provenance counts evidenced placements", /\d+ of [\d,]+ organisation placements evidenced/.test(provenance), provenance);
+  check("provenance says the descriptions are uncited", /descriptions carry no citation/.test(provenance), provenance);
+
+  // Placement is a claim about the edge, separate from existence. The Science
+  // Mission Directorate was confirmed on NASA's own About page, which is the
+  // parent's page naming the child: evidenced. A unit nobody has checked
+  // against its parent's page must say so, not stay silent.
+  await page.fill("#search-input", "Science Mission Directorate");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const placed = await text("#verification-placement");
+  check("an evidenced placement says the parent's page lists it", /Placement: its parent's official page lists it/.test(placed), placed);
+  check("an evidenced placement never says 'reports to'", !/reports to/i.test(placed), placed);
+  await page.fill("#search-input", "Senate Leadership");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const unplaced = await text("#verification-placement");
+  check("an unchecked placement says no evidence is recorded", /Placement: no evidence recorded/.test(unplaced), unplaced);
+  // A cluster's text is written by this UI, so no label there. On a real
+  // leaf the description is prose nobody has checked, and must say so.
+  const clusterNote = await text("#info-desc-provenance");
+  check("a cluster's generated text carries no citation label", clusterNote === "", clusterNote);
+  await page.fill("#search-input", "President of the United States");
+  await page.waitForTimeout(500);
+  await page.locator("#search-results .sr-item").first().click();
+  await page.waitForTimeout(2000);
+  const descNote = await text("#info-desc-provenance");
+  check("a description is labelled as uncited", /uncited prose/i.test(descNote), descNote);
   check("provenance does not call every cost an estimate", !/^costs are estimates/.test(provenance), provenance);
 
   await page.fill("#search-input", "");

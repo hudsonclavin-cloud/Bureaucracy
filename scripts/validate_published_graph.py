@@ -371,6 +371,33 @@ def main(argv):
         method = node.get("verificationMethod")
         if method and str(method) not in KNOWN_METHODS:
             unknown_method.append("{} verificationMethod {!r}".format(label(node), method))
+    # Placement: evidence for the parent -> child edge. A True claim must carry
+    # an official URL and a date, and must name the parent the published tree
+    # actually gives the node — evidence for a different edge is not evidence.
+    placement_unbacked, placement_wrong_parent = [], []
+    parent_of = {}
+    stack_p = [(graph, None)]
+    while stack_p:
+        n, p = stack_p.pop()
+        parent_of[str(n.get("id") or "")] = p
+        for c in n.get("children", []) or []:
+            if isinstance(c, dict):
+                stack_p.append((c, str(n.get("id") or "")))
+    for node in nodes:
+        if node.get("placementVerified") is not True:
+            continue
+        url = str(node.get("placementUrl") or "")
+        host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+        stamp = str(node.get("placementVerifiedAt") or "")
+        if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp):
+            placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))
+        claimed = str(node.get("placementParentId") or "")
+        actual = parent_of.get(str(node.get("id") or ""))
+        if not claimed or claimed != actual:
+            placement_wrong_parent.append("{} claims parent {!r}, tree has {!r}".format(label(node), claimed, actual))
+    gate.check("every placement claim has an official URL and a date", placement_unbacked)
+    gate.check("every placement claim names the parent the tree actually has", placement_wrong_parent)
+
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
@@ -407,6 +434,11 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    org_edges = [n for n in nodes if n is not graph and "position" not in str(n.get("type") or "").lower()]
+    placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
+    placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
+    print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed".format(
+        placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no))
     # A capped Treasury line publishes below the figure the statement reported.
     # Each node says so in the panel; this is the total, which nothing showed.
     # Only the top-most capped node in a branch: a capped department and its

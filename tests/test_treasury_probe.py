@@ -124,3 +124,53 @@ class ProbeOutputTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReconciliationTests(unittest.TestCase):
+    """The report explains the anchor-vs-lines gap in the statement's own
+    terms and decides nothing. It must attribute the gap to the right level
+    and must not lose the negatives the cascade sets aside."""
+
+    def test_the_gap_is_attributed_to_top_level_lines_the_graph_cannot_place(self) -> None:
+        from scripts.probe_treasury_rows import reconcile_rows
+
+        rows = [
+            {"originalName": "Total--Department A", "rollup_total_amount": 600.0, "sequence_level": 1, "print_order": 10},
+            {"originalName": "Bureau A1", "rollup_total_amount": 700.0, "sequence_level": 2, "print_order": 11},
+            {"originalName": "Proprietary Receipts from the Public", "rollup_total_amount": -100.0, "sequence_level": 2, "print_order": 12},
+            {"originalName": "Total--Department B", "rollup_total_amount": 400.0, "sequence_level": 1, "print_order": 20},
+            {"originalName": "Interest on Treasury Debt Securities (Gross)", "rollup_total_amount": 300.0, "sequence_level": 1, "print_order": 30},
+            {"originalName": "Undistributed Offsetting Receipts", "rollup_total_amount": -250.0, "sequence_level": 1, "print_order": 40},
+        ]
+        report = reconcile_rows(rows, anchor=1050.0)  # 600 + 400 + 300 - 250
+        self.assertEqual(report["shallowest_total_level"], 1)
+        self.assertEqual(report["top_level_totals"], 2)
+        self.assertEqual(report["top_level_totals_sum"], 1000.0)
+        self.assertEqual(report["anchor_minus_top_totals"], 50.0)          # = interest 300 + undistributed -250
+        self.assertEqual([i["name"] for i in report["top_level_other_positive"]], ["Interest on Treasury Debt Securities (Gross)"])
+        self.assertEqual(report["largest_negatives"][0]["name"], "Undistributed Offsetting Receipts")
+        self.assertEqual(report["negative_total"], -350.0)
+        self.assertEqual(report["by_level"]["2"]["negative"], -100.0)
+
+    def test_the_flag_prints_without_a_network(self) -> None:
+        import io
+        from contextlib import redirect_stdout
+        from scripts import probe_treasury_rows
+
+        tmp = TEST_TMP_ROOT / f"reconcile-{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            base = tmp / "base.json"; base.write_text(json.dumps(BASE), encoding="utf-8")
+            rows = tmp / "rows.json"
+            rows.write_text(json.dumps({"outlayRows": ROWS + [
+                {"name": "Undistributed Offsetting Receipts", "originalName": "Undistributed Offsetting Receipts",
+                 "rollup_total_amount": -1_000_000_000, "sequence_level": 1, "budget_source": "Treasury MTS Table 5"}],
+                "budgetSummary": {"government_total_outlay_amount": 5e12, "label": "x"}}), encoding="utf-8")
+            out = io.StringIO()
+            with redirect_stdout(out):
+                code = probe_treasury_rows.main(["probe", "--rows", str(rows), "--base-graph", str(base), "--reconcile"])
+            self.assertEqual(code, 0)
+            self.assertIn("reconciliation", out.getvalue())
+            self.assertIn("Undistributed Offsetting Receipts", out.getvalue())
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)

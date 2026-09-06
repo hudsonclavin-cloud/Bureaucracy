@@ -44,12 +44,14 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     DEFAULT_SITES_PATH,
     FETCH_FAILED,
     NOT_CHECKABLE,
+    PLACEMENT_LISTED,
     candidate_urls,
     load_evidence,
     load_official_sites,
     uncheckable_reason,
     utc_now_iso,
     verify_node,
+    verify_placement,
 )
 from data_pipeline.verification.politeness import RobotsPolicy  # noqa: E402
 
@@ -82,6 +84,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--sleep", type=float, default=1.0, help="seconds between fetches of distinct pages")
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--ignore-robots", action="store_true", help="do not read robots.txt (use only with the site owner's agreement)")
+    parser.add_argument("--no-placement", action="store_true", help="skip the placement pass (parent pages naming their children)")
     parser.add_argument("--dry-run", action="store_true", help="print the plan; fetch nothing; write nothing")
     parser.add_argument("--list-hosts", action="store_true", help="print the hosts the candidate URLs use, one per line")
     args = parser.parse_args(argv[1:] if argv else None)
@@ -127,8 +130,30 @@ def main(argv: list[str] | None = None) -> int:
         if args.limit and len(plan) >= args.limit:
             break
 
-    distinct_pages = {u for _, urls, _, _ in plan for u in urls}
-    print(f"nodes selected {len(nodes)}  to check {len(plan)}  distinct pages {len(distinct_pages)}  skipped {dict(skipped)}")
+    # Placement pass: every organisation whose PARENT has a page of its own is
+    # checked against that page, whether or not the child has one too. That
+    # is a different question from existence — "does the department's own
+    # page list this bureau?" is evidence for the edge, which is the site's
+    # central claim and the one thing nothing had checked.
+    placement_plan: list[tuple[dict[str, Any], str, list[str]]] = []
+    if not args.no_placement:
+        for node in nodes:
+            node_id = str(node.get("id") or "")
+            parent_id = parent_map.get(node_id)
+            if not parent_id or parent_id not in sites or uncheckable_reason(node.get("name")):
+                continue
+            prior = evidence.get(node_id) or {}
+            existing = prior.get("placement") if isinstance(prior.get("placement"), dict) else None
+            if existing and existing.get("status") == PLACEMENT_LISTED and existing.get("parentId") == parent_id and not args.recheck:
+                skipped["placement_already_listed"] += 1
+                continue
+            placement_plan.append((node, parent_id, list(sites[parent_id])))
+
+    distinct_pages = {u for _, urls, _, _ in plan for u in urls} | {u for _, _, urls in placement_plan for u in urls}
+    print(
+        f"nodes selected {len(nodes)}  to check {len(plan)}  placements to check {len(placement_plan)}  "
+        f"distinct pages {len(distinct_pages)}  skipped {dict(skipped)}"
+    )
     if args.dry_run:
         for node, urls, site_from, own in plan[:50]:
             print(f"  {node.get('id')}  <-  {', '.join(urls)}  ({'own page' if own else 'page of ' + str(site_from)})")
@@ -181,8 +206,22 @@ def main(argv: list[str] | None = None) -> int:
         if record["status"] != CONFIRMED or index % 25 == 0:
             print(f"[{index}/{len(plan)}] {record['status']:<14} {node.get('id')}")
 
+    placements = Counter()
+    for index, (node, parent_id, parent_urls) in enumerate(placement_plan, 1):
+        block = verify_placement(node, parent_id, parent_urls, fetch=fetch, now=now)
+        node_id = str(node["id"])
+        if block is None:
+            placements["parent_page_unreadable"] += 1
+            continue
+        record = evidence.setdefault(node_id, {"name": node.get("name"), "checkedAt": now})
+        record["placement"] = block
+        placements[block["status"]] += 1
+        write_json_file(args.evidence, store)
+        if index % 25 == 0:
+            print(f"[placement {index}/{len(placement_plan)}] {block['status']:<11} {node_id}")
+
     write_json_file(args.evidence, store)
-    print(f"\ndone: {dict(outcomes)}  evidence records now {len(evidence)}  -> {args.evidence}")
+    print(f"\ndone: {dict(outcomes)}  placements: {dict(placements)}  evidence records now {len(evidence)}  -> {args.evidence}")
     # Nonzero when the run learned nothing it set out to learn, so a wrapper
     # cannot mistake a blocked network for "checked everything, found nothing".
     attempted = len(plan)

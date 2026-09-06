@@ -60,6 +60,76 @@ def fetch_payload(timeout: int) -> dict[str, Any]:
         raise SystemExit(2) from error
 
 
+def reconcile_rows(rows: list[dict[str, Any]], anchor: float | None) -> dict[str, Any]:
+    """Where the anchor's net figure and the sum of the agency lines part ways.
+
+    The published graph scales every measured department to 96% of its line.
+    The cascade is not wrong about arithmetic: the positive lines really do
+    sum past the net anchor. What this report shows is WHY, in the statement's
+    own terms — which negative lines carry the difference, and at what level
+    of the table they sit. A negative that belongs to a department is netted
+    inside that department's "Total--" line already; a negative that belongs
+    to nobody (undistributed offsetting receipts) is netted only at the grand
+    total, and the cascade has no node to put it on. Report, do not decide.
+    """
+    def amt(row: dict[str, Any]) -> float:
+        value = parse_cost_amount(row.get("rollup_total_amount"))
+        return float(value) if value is not None else 0.0
+
+    by_level: dict[int, dict[str, float]] = {}
+    for row in rows:
+        level = int(row.get("sequence_level") or 0)
+        bucket = by_level.setdefault(level, {"positive": 0.0, "negative": 0.0, "rows": 0})
+        bucket["rows"] += 1
+        bucket["positive" if amt(row) >= 0 else "negative"] += amt(row)
+    negatives = sorted((r for r in rows if amt(r) < 0), key=amt)
+    totals = [r for r in rows if str(r.get("originalName") or "").startswith("Total--")]
+    shallowest = min((int(r.get("sequence_level") or 0) for r in totals), default=None)
+    top_totals = [r for r in totals if int(r.get("sequence_level") or 0) == shallowest] if shallowest is not None else []
+    top_total_sum = sum(amt(r) for r in top_totals)
+    # Positive lines at the shallowest level that are NOT a department total:
+    # interest on the debt, and the groupings the curated graph has no node for.
+    top_positive_other = [
+        r for r in rows
+        if int(r.get("sequence_level") or 0) == shallowest and amt(r) > 0 and r not in top_totals
+    ] if shallowest is not None else []
+    return {
+        "anchor": anchor,
+        "rows": len(rows),
+        "by_level": {str(k): v for k, v in sorted(by_level.items())},
+        "shallowest_total_level": shallowest,
+        "top_level_totals": len(top_totals),
+        "top_level_totals_sum": top_total_sum,
+        "top_level_other_positive": [
+            {"name": r.get("originalName"), "amount": amt(r)} for r in sorted(top_positive_other, key=amt, reverse=True)
+        ],
+        "anchor_minus_top_totals": (anchor - top_total_sum) if anchor is not None else None,
+        "largest_negatives": [
+            {"name": r.get("originalName"), "amount": amt(r), "level": int(r.get("sequence_level") or 0),
+             "print_order": int(r.get("print_order") or 0)}
+            for r in negatives[:15]
+        ],
+        "negative_total": sum(amt(r) for r in negatives),
+    }
+
+
+def print_reconciliation(report: dict[str, Any]) -> None:
+    print("\n=== reconciliation: the net anchor vs the agency lines ===")
+    print(f"anchor (FYTD net outlays)           : {money(report['anchor'])}")
+    for level, bucket in report["by_level"].items():
+        print(f"level {level:<3} rows {bucket['rows']:>4}   +{money(bucket['positive']):>10}   {money(bucket['negative']):>11}")
+    print(f"shallowest 'Total--' level          : {report['shallowest_total_level']}")
+    print(f"sum of those {report['top_level_totals']} totals              : {money(report['top_level_totals_sum'])}")
+    print(f"anchor minus those totals           : {money(report['anchor_minus_top_totals'])}")
+    print("other positive lines at that level  :")
+    for item in report["top_level_other_positive"][:12]:
+        print(f"    {money(item['amount']):>10}  {item['name']}")
+    print(f"all negative lines sum to           : {money(report['negative_total'])}")
+    print("largest negatives (level, print order):")
+    for item in report["largest_negatives"]:
+        print(f"    {money(item['amount']):>11}  L{item['level']} #{item['print_order']:<4} {item['name']}")
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--rows", type=Path, help="a saved Treasury payload to read instead of fetching")
@@ -67,6 +137,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--limit", type=int, default=0, help="cap each list (0 = every line)")
+    parser.add_argument("--reconcile", action="store_true", help="also explain the gap between the net anchor and the agency lines")
     args = parser.parse_args(argv[1:] if argv else None)
 
     if args.rows:
@@ -155,6 +226,10 @@ def main(argv: list[str] | None = None) -> int:
         stats["applied"],
         lambda hit: f"{money(hit.get('amount')):>10}  {hit.get('row')}  ->  {hit.get('id')}",
     )
+    if args.reconcile:
+        all_rows = [r for r in (payload.get("outlayRows") or []) if isinstance(r, dict)]
+        anchor_value = parse_cost_amount(summary.get("government_total_outlay_amount"))
+        print_reconciliation(reconcile_rows(all_rows, float(anchor_value) if anchor_value is not None else None))
     print("\nAdd an entry to TREASURY_ROW_ALIASES in data_pipeline/exporter/build_graph.py")
     print("for each line above that names a unit the graph really has.")
     return 0

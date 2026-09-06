@@ -30,14 +30,18 @@ from data_pipeline.verification.evidence import (
     METHOD_PARENT_PAGE,
     NOT_CHECKABLE,
     NOT_FOUND,
+    PLACEMENT_LISTED,
+    PLACEMENT_NOT_LISTED,
     apply_evidence_to_tree,
     candidate_urls,
     find_label,
     name_appears_unlabelled,
+    placement_from_record,
     load_official_sites,
     page_fragments,
     uncheckable_reason,
     verify_node,
+    verify_placement,
 )
 from urllib.robotparser import RobotFileParser
 
@@ -761,3 +765,131 @@ class VerifierScriptTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PlacementTests(unittest.TestCase):
+    """Evidence for the parent -> child EDGE, the site's central claim and the
+    one thing nothing had checked. The only accepted evidence is the parent's
+    own official page naming the child as a label; its silence claims nothing."""
+
+    DOE_ORG_PAGE = "<h1>Leadership &amp; Organization</h1><ul><li><a href='/science'>Office of Science</a></li><li>Office of Environmental Management</li></ul><p>" + ("filler " * 90) + "</p>"
+
+    def _fetch(self, pages):
+        def fetch(url):
+            if url not in pages:
+                raise OSError("connect_rejected")
+            return pages[url]
+        return fetch
+
+    def test_the_parent_page_naming_the_child_is_edge_evidence(self) -> None:
+        block = verify_placement({"id": "doe-science", "name": "Office of Science"}, "exec-dept-doe",
+                                 ["https://www.energy.gov/leadership-organization"],
+                                 fetch=self._fetch({"https://www.energy.gov/leadership-organization": self.DOE_ORG_PAGE}),
+                                 now="2026-09-06T12:00:00+00:00")
+        self.assertEqual(block["status"], PLACEMENT_LISTED)
+        self.assertEqual(block["parentId"], "exec-dept-doe")
+        self.assertEqual(block["matchedText"], "Office of Science")
+        self.assertIn(block["matchedText"], self.DOE_ORG_PAGE)
+
+    def test_silence_on_the_parent_page_is_recorded_and_claims_nothing(self) -> None:
+        block = verify_placement({"id": "doe-nnsa", "name": "National Nuclear Security Administration"}, "exec-dept-doe",
+                                 ["https://www.energy.gov/leadership-organization"],
+                                 fetch=self._fetch({"https://www.energy.gov/leadership-organization": self.DOE_ORG_PAGE}))
+        self.assertEqual(block["status"], PLACEMENT_NOT_LISTED)
+        self.assertNotIn("url", block)
+
+    def test_an_unreadable_parent_page_concludes_nothing_at_all(self) -> None:
+        self.assertIsNone(verify_placement({"id": "x", "name": "Office of Science"}, "p", ["https://www.energy.gov/nope"], fetch=self._fetch({})))
+        blank = self._fetch({"https://www.energy.gov/js": "<div id='root'></div>"})
+        self.assertIsNone(verify_placement({"id": "x", "name": "Office of Science"}, "p", ["https://www.energy.gov/js"], fetch=blank))
+        self.assertIsNone(verify_placement({"id": "x", "name": "Energy"}, "p", ["https://www.energy.gov/"], fetch=self._fetch({"https://www.energy.gov/": self.DOE_ORG_PAGE})), "a generic name is never checked")
+
+    def test_a_parent_page_confirmation_already_is_placement_evidence(self) -> None:
+        """The 28 existing parent-page confirmations were the same fetch and
+        the same fact. They count without being fetched again — but only for
+        the parent whose page it actually was."""
+        record = {"status": CONFIRMED, "method": METHOD_PARENT_PAGE, "siteFrom": "exec-ind-nasa", "checkedAt": "2026-09-03T12:00:00+00:00",
+                  "sources": [{"url": "https://www.nasa.gov/about/", "matchedText": "Science Mission Directorate"}]}
+        derived = placement_from_record(record, "exec-ind-nasa")
+        self.assertEqual(derived["status"], PLACEMENT_LISTED)
+        self.assertEqual(derived["url"], "https://www.nasa.gov/about/")
+        self.assertEqual(derived["derivedFrom"], "parent_page_confirmation")
+        self.assertIsNone(placement_from_record(record, "some-other-parent"), "a different parent is a different edge")
+        own = dict(record, method=METHOD_OWN_PAGE, siteFrom="doe-science")
+        self.assertIsNone(placement_from_record(own, "exec-dept-doe"), "an own-page confirmation proves existence, not the edge")
+
+    def _tree(self):
+        return json.loads(json.dumps(BASE))
+
+    def test_apply_stamps_a_listed_placement_for_the_tree_s_actual_parent_only(self) -> None:
+        tree = self._tree()
+        listed = {"status": PLACEMENT_LISTED, "parentId": "exec-dept-doe", "url": "https://www.energy.gov/leadership-organization",
+                  "matchedText": "Office of Science", "checkedAt": "2026-09-06T12:00:00+00:00"}
+        stats = apply_evidence_to_tree(tree, {
+            "doe-science": {"status": INCONCLUSIVE, "checkedAt": "2026-09-06T12:00:00+00:00", "placement": listed},
+            # Evidence for an edge the tree does not have: NNSA's parent is DOE, not the Legislative Branch.
+            "doe-nnsa": {"status": INCONCLUSIVE, "checkedAt": "2026-09-06T12:00:00+00:00",
+                         "placement": dict(listed, parentId="legislative-branch")},
+        })
+        node_map, _ = index_tree(tree)
+        science = node_map["doe-science"]
+        self.assertTrue(science["placementVerified"])
+        self.assertEqual(science["placementParentId"], "exec-dept-doe")
+        self.assertEqual(science["placementUrl"], "https://www.energy.gov/leadership-organization")
+        self.assertFalse(science.get("sourceUrls"), "placement is not an existence source")
+        self.assertNotIn("placementVerified", node_map["doe-nnsa"])
+        self.assertEqual(stats["placements_evidenced"], 1)
+        self.assertEqual(stats["placements_stale_parent"], 1)
+
+    def test_not_listed_is_recorded_as_false_and_a_withdrawal_clears_it(self) -> None:
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-science": {"status": INCONCLUSIVE, "checkedAt": "2026-09-06",
+                                                     "placement": {"status": PLACEMENT_NOT_LISTED, "parentId": "exec-dept-doe", "urls": ["https://www.energy.gov/x"], "checkedAt": "2026-09-06T12:00:00+00:00"}}})
+        node = index_tree(tree)[0]["doe-science"]
+        self.assertIs(node["placementVerified"], False)
+        self.assertNotIn("placementUrl", node)
+        apply_evidence_to_tree(tree, {})
+        node = index_tree(tree)[0]["doe-science"]
+        self.assertNotIn("placementVerified", node)
+        self.assertNotIn("placementParentId", node)
+
+    def test_the_gate_refuses_an_unbacked_or_misplaced_placement_claim(self) -> None:
+        tmp = TEST_TMP_ROOT / f"placement-gate-{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            base = tmp / "base.json"; base.write_text(json.dumps(BASE), encoding="utf-8")
+            evidence_path = tmp / "evidence.json"
+            good = {"doe-science": {"status": INCONCLUSIVE, "checkedAt": "2026-09-06T12:00:00+00:00",
+                    "placement": {"status": PLACEMENT_LISTED, "parentId": "exec-dept-doe", "url": "https://www.energy.gov/leadership-organization", "matchedText": "Office of Science", "checkedAt": "2026-09-06T12:00:00+00:00"}}}
+            evidence_path.write_text(json.dumps({"nodes": good}), encoding="utf-8")
+            result = build_graph(
+                [{"nodes": [], "edges": [], "budgetSummary": {"government_total_outlay_amount": 1_000_000, "record_date": "2026-06-30"}}],
+                base_graph_path=base, graph_output_path=tmp / "graph.json", nodes_output_path=tmp / "n.json",
+                edges_output_path=tmp / "e.json", validity_report_output_path=tmp / "v.json",
+                reuse_existing_graph_payload=False, enforce_export_gate=True, evidence_path=evidence_path,
+            )
+            out = io.StringIO()
+            with redirect_stdout(out):
+                code = gate_main(["gate", str(result.graph_path)])
+            self.assertEqual(code, 0, out.getvalue())
+            self.assertIn("placement evidenced  : 1 of", out.getvalue())
+
+            graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+            cases = {
+                "wrong parent": lambda n: n.__setitem__("placementParentId", "legislative-branch"),
+                "no url": lambda n: n.__setitem__("placementUrl", ""),
+                "unofficial url": lambda n: n.__setitem__("placementUrl", "https://en.wikipedia.org/x"),
+                "no date": lambda n: n.__setitem__("placementVerifiedAt", None),
+            }
+            for name, mutate in cases.items():
+                with self.subTest(case=name):
+                    corrupted = json.loads(json.dumps(graph))
+                    mutate(index_tree(corrupted)[0]["doe-science"])
+                    path = tmp / f"{uuid.uuid4().hex}.json"
+                    path.write_text(json.dumps(corrupted), encoding="utf-8")
+                    out = io.StringIO()
+                    with redirect_stdout(out):
+                        code = gate_main(["gate", str(path)])
+                    self.assertEqual(code, 1, f"{name}:\n{out.getvalue()}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)

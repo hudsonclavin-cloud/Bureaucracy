@@ -83,7 +83,24 @@ METHOD_PARENT_PAGE = "name_labelled_on_parent_official_page"
 # stops being published. Without this the previously published graph.json —
 # which the exporter re-feeds as a payload on every run — made any claim
 # permanent and no retraction could ever reach the site.
-EVIDENCE_OWNED_FIELDS = ("verificationMethod", "verificationFailure", "verificationSiteFrom")
+EVIDENCE_OWNED_FIELDS = (
+    "verificationMethod",
+    "verificationFailure",
+    "verificationSiteFrom",
+    "placementVerified",
+    "placementUrl",
+    "placementVerifiedAt",
+    "placementParentId",
+    "placementMatchedText",
+)
+# Placement: evidence for the parent -> child EDGE, which is a different claim
+# from either node's existence. A hierarchy is the site's central assertion
+# and the one thing nothing had ever checked. The only evidence this module
+# accepts for an edge is the parent's own official page naming the child as a
+# label. Silence on that page is recorded (auditable) and claims nothing: a
+# department's About page is not obliged to list every bureau.
+PLACEMENT_LISTED = "listed"
+PLACEMENT_NOT_LISTED = "not_listed"
 
 # A fetched page has to yield some readable text before "we read it and the
 # name was not there" is an honest thing to say. A JS-only shell, an empty
@@ -382,6 +399,85 @@ def verify_node(
     return record
 
 
+def verify_placement(
+    node: dict[str, Any],
+    parent_id: str,
+    parent_urls: list[str],
+    *,
+    fetch: Fetcher,
+    now: str | None = None,
+) -> dict[str, Any] | None:
+    """Does the parent's official page name this unit as a label?
+
+    Returns a placement block, or None when nothing could be concluded
+    because no parent page was readable — an unreadable page is a fact about
+    the network and must not be recorded as "the parent does not list it".
+    The block names the parent it was checked against, so a later re-parenting
+    of the node in the curated file cannot inherit evidence for a different
+    edge; apply_evidence_to_tree and the gate both compare it to the tree.
+    """
+    name = str(node.get("name") or "")
+    if uncheckable_reason(name):
+        return None
+    checked_at = now or utc_now_iso()
+    read_any = False
+    for url in parent_urls:
+        if classify_source_url(url) != "official_site":
+            continue
+        try:
+            html = fetch(url)
+        except Exception:  # noqa: BLE001 — a failed fetch concludes nothing
+            continue
+        fragments = page_fragments(html)
+        if sum(len(f) for f in fragments) < MIN_READABLE_CHARS:
+            continue
+        read_any = True
+        matched = find_label(name, fragments)
+        if matched:
+            return {
+                "status": PLACEMENT_LISTED,
+                "parentId": parent_id,
+                "url": url,
+                "matchedText": matched,
+                "checkedAt": checked_at,
+            }
+    if not read_any:
+        return None
+    return {"status": PLACEMENT_NOT_LISTED, "parentId": parent_id, "urls": list(parent_urls), "checkedAt": checked_at}
+
+
+def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict[str, Any] | None:
+    """The placement evidence a record carries for the given parent, if any.
+
+    An explicit `placement` block wins. Failing that, a confirmation made on
+    the parent's own page (method parent, siteFrom == parent) is the same
+    fetch and the same fact — the parent's page named the child — and counts
+    without being fetched again. Anything checked against a different parent
+    is not evidence for this edge and is ignored.
+    """
+    if not parent_id:
+        return None
+    block = record.get("placement")
+    if isinstance(block, dict) and block.get("status") == PLACEMENT_LISTED:
+        return block if str(block.get("parentId") or "") == parent_id else None
+    if (
+        record.get("status") == CONFIRMED
+        and str(record.get("method") or "") == METHOD_PARENT_PAGE
+        and str(record.get("siteFrom") or "") == parent_id
+    ):
+        sources = [src for src in (record.get("sources") or []) if isinstance(src, dict) and src.get("url")]
+        if sources:
+            return {
+                "status": PLACEMENT_LISTED,
+                "parentId": parent_id,
+                "url": str(sources[0]["url"]),
+                "matchedText": sources[0].get("matchedText"),
+                "checkedAt": record.get("checkedAt"),
+                "derivedFrom": "parent_page_confirmation",
+            }
+    return None
+
+
 def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
     """Remove what a previous run's evidence put on this node. Returns True
     if anything was removed."""
@@ -435,7 +531,8 @@ def apply_evidence_to_tree(
         "own_page_confirmations": 0, "parent_page_confirmations": 0,
         "unknown_node": 0, "unknown_status": 0, "urls_added": 0, "stale_claims_cleared": 0,
     }
-    node_map, _ = index_tree(root)
+    node_map, parent_map = index_tree(root)
+    stats.update({"placements_evidenced": 0, "placements_checked_not_listed": 0, "placements_stale_parent": 0})
     # Withdraw every claim this module previously published before applying
     # the current evidence. The URL set is exactly the URLs the current
     # evidence file confirms, plus any this module could have written before.
@@ -446,7 +543,11 @@ def apply_evidence_to_tree(
         if isinstance(source, dict) and source.get("url")
     }
     for node in node_map.values():
-        if node.get("verificationMethod") in (METHOD_OWN_PAGE, METHOD_PARENT_PAGE) or node.get("verificationFailure"):
+        if (
+            node.get("verificationMethod") in (METHOD_OWN_PAGE, METHOD_PARENT_PAGE)
+            or node.get("verificationFailure")
+            or node.get("placementVerified") is not None
+        ):
             urls = [str(u) for u in (node.get("sourceUrls") or [])]
             if clear_evidence_fields(node, official_urls | set(urls)):
                 stats["stale_claims_cleared"] += 1
@@ -499,4 +600,32 @@ def apply_evidence_to_tree(
         stats[CONFIRMED] += 1
         stats["own_page_confirmations" if method == METHOD_OWN_PAGE else "parent_page_confirmations"] += 1
         verify_node_sources(node)
+
+    # Placement is applied in its own pass: a unit's existence and its
+    # position in the hierarchy are separate claims, and a record may carry
+    # evidence for the edge (the parent's page lists it) while the unit's own
+    # page was never read.
+    for node_id, record in evidence.items():
+        node = node_map.get(node_id)
+        if node is None:
+            continue
+        actual_parent = parent_map.get(node_id)
+        block = record.get("placement") if isinstance(record.get("placement"), dict) else None
+        if block and block.get("status") == PLACEMENT_LISTED and str(block.get("parentId") or "") != str(actual_parent or ""):
+            # Evidence for an edge the tree no longer has. Never inherited.
+            stats["placements_stale_parent"] += 1
+        listed = placement_from_record(record, actual_parent)
+        if listed and classify_source_url(str(listed.get("url") or "")) == "official_site":
+            node["placementVerified"] = True
+            node["placementUrl"] = str(listed["url"])
+            node["placementVerifiedAt"] = listed.get("checkedAt")
+            node["placementParentId"] = actual_parent
+            node["placementMatchedText"] = listed.get("matchedText")
+            stats["placements_evidenced"] += 1
+        elif block and block.get("status") == PLACEMENT_NOT_LISTED and str(block.get("parentId") or "") == str(actual_parent or ""):
+            # Read and not listed. Recorded so it is auditable; claims nothing.
+            node["placementVerified"] = False
+            node["placementParentId"] = actual_parent
+            node["placementVerifiedAt"] = block.get("checkedAt")
+            stats["placements_checked_not_listed"] += 1
     return stats

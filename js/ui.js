@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260906a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260906a";
+import { createGovernmentGraph } from "./graph.js?v=20260906b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260906b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -50,6 +50,7 @@ const dom = {
   verificationConfidence: null,
   verificationSources: null,
   verificationLastVerified: null,
+  verificationPlacement: null,
   verificationBadge: null,
   togglesWrap: null,
   toggleUnverified: null,
@@ -120,6 +121,8 @@ function describeProvenance(root) {
   let measured = 0;
   let capped = 0;
   let sourced = 0;
+  let placed = 0;
+  let orgEdges = 0;
   const stack = [root];
   while (stack.length) {
     const node = stack.pop();
@@ -129,6 +132,8 @@ function describeProvenance(root) {
     if (status === "official" || status === "root_total") measured += 1;
     else if (status === "scaled_official") capped += 1;
     if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
+    if (node.placementVerified === true) placed += 1;
+    if (node !== root && !/position/i.test(String(node.type || ""))) orgEdges += 1;
     for (const child of node.children || []) stack.push(child);
   }
   const estimated = Math.max(nodes - measured - capped, 0);
@@ -137,7 +142,8 @@ function describeProvenance(root) {
     `${capped.toLocaleString()} capped to fit an estimated parent`,
     `${estimated.toLocaleString()} apportioned estimates`,
     `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
-    "the hierarchy and descriptions carry none",
+    `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page`,
+    "the descriptions carry no citation",
   ].join(" · ");
 }
 
@@ -322,6 +328,14 @@ function ensureVerificationUi() {
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+  // Placement is a claim about the EDGE above this node, separate from
+  // whether the node itself exists. It gets its own line so the two cannot be
+  // read as one.
+  const placement = lastVerified.cloneNode(false);
+  placement.id = "verification-placement";
+  placement.textContent = "";
+  lastVerified.insertAdjacentElement("afterend", placement);
+  dom.verificationPlacement = placement;
 }
 
 // A node with no sources AND no verification timestamp was never checked at all.
@@ -443,6 +457,55 @@ function ensureVerificationLegend() {
   });
 }
 
+// "The parent's official page lists it" is exactly the claim, and no more:
+// a page can list partner agencies too, so this never says "reports to".
+// Every one of the 5,170 descriptions is prose from the base graph with no
+// citation behind it. It reads as fact, so it has to say what it is — the
+// same way a cost says "estimate" and a source box says "no source
+// recorded". A cluster's text is written by this UI and is not a claim; a
+// candidate's text came from a crawler record and is labelled there.
+function renderDescriptionProvenance(data, isClusteredView) {
+  let line = document.getElementById("info-desc-provenance");
+  if (!line && dom.infoDesc) {
+    line = document.createElement("div");
+    line.id = "info-desc-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.08em";
+    line.style.margin = "4px 0 8px";
+    dom.infoDesc.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  if (isClusteredView || data.isCandidate || !data.desc) {
+    line.textContent = "";
+    return;
+  }
+  line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
+}
+
+function renderPlacementLine(data) {
+  if (!dom.verificationPlacement) return;
+  if (data.isCandidate) {
+    setText(dom.verificationPlacement, "");
+    return;
+  }
+  const isPosition = /position/i.test(String(data.type || ""));
+  const checked = data.placementVerifiedAt
+    ? new Date(data.placementVerifiedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  let line;
+  if (data.placementVerified === true) {
+    line = `Placement: its parent's official page lists it${checked ? ` · checked ${checked}` : ""}`;
+  } else if (data.placementVerified === false) {
+    line = `Placement: its parent's official page was read${checked ? ` ${checked}` : ""} and does not list it as a heading or link — no claim either way`;
+  } else if (isPosition) {
+    line = "Placement: not checked (positions are not checked against a page)";
+  } else {
+    line = "Placement: no evidence recorded for where this sits in the hierarchy";
+  }
+  setText(dom.verificationPlacement, line);
+}
+
 function renderVerificationPanel(data) {
   if (!dom.verificationWrap) {
     return;
@@ -468,6 +531,7 @@ function renderVerificationPanel(data) {
     // a number impersonating a measurement.
     setText(dom.verificationConfidence, "No source URL has been attached to it yet.");
     setText(dom.verificationLastVerified, "");
+    renderPlacementLine(data);
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
     setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
@@ -492,6 +556,7 @@ function renderVerificationPanel(data) {
     }
     setText(dom.verificationLastVerified, checkLine);
   }
+  renderPlacementLine(data);
 
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
@@ -836,6 +901,7 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoName, data.name);
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
+  renderDescriptionProvenance(data, isClusteredView);
 
   if (isClusteredView) {
     setText(dom.infoType, `${data.type || "Group"} Cluster`);

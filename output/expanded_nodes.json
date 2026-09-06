@@ -57,7 +57,8 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.senate.gov/"
     ],
     "sourceTypes": [
       "official_site",
@@ -90,10 +91,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-senate",
     "parentId": "legislative-branch"
   },
   {
@@ -106,7 +109,8 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.house.gov/"
     ],
     "sourceTypes": [
       "official_site",
@@ -139,10 +143,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-house",
     "parentId": "legislative-branch"
   },
   {
@@ -400,7 +406,8 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.uscp.gov/the-department"
     ],
     "sourceTypes": [
       "official_site",
@@ -433,11 +440,54 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "leg-support-uscp",
+    "parentId": "leg-support"
+  },
+  {
+    "id": "exec-eop",
+    "name": "Executive Office of the President (EOP)",
+    "type": "Office",
+    "desc": "The central policy and management apparatus of the U.S. government. Comprises ~1,800 staff serving the President across multiple offices and councils.",
+    "employees": 1800,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
-    "parentId": "leg-support"
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 142947077.21,
+    "cost_status": "allocated",
+    "cost_basis": "employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "employees",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "child_cost_basis_implied": true,
+    "parentId": "executive-branch"
   },
   {
     "id": "exec-eop-who",
@@ -498,7 +548,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.whitehouse.gov/omb/"
     ],
     "sourceTypes": [
       "official_site",
@@ -531,10 +582,129 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-omb",
+    "parentId": "exec-eop"
+  },
+  {
+    "id": "exec-eop-ostp",
+    "name": "Office of Science & Technology Policy",
+    "type": "Office",
+    "desc": "Advises the President on science, technology, and innovation policy. Director serves as Presidential Science Advisor. ~130 staff.",
+    "employees": 130,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.whitehouse.gov/ostp/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-ostp",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "employee_weight",
+    "cost_validation": "allocation_below_precision",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-eop"
+  },
+  {
+    "id": "exec-eop-ondcp",
+    "name": "Office of National Drug Control Policy",
+    "type": "Office",
+    "desc": "Coordinates federal drug control programs. Director known as the 'Drug Czar.' ~90 staff.",
+    "employees": 90,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.whitehouse.gov/ondcp/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-ondcp",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "employee_weight",
+    "cost_validation": "allocation_below_precision",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-eop"
+  },
+  {
+    "id": "exec-eop-cea",
+    "name": "Council of Economic Advisers",
+    "type": "Office",
+    "desc": "Provides economic analysis and forecasting to the President. Three Senate-confirmed members. ~30 staff.",
+    "employees": 30,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.whitehouse.gov/cea/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-eop-cea",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "employee_weight",
+    "cost_validation": "allocation_below_precision",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
     "parentId": "exec-eop"
   },
   {
@@ -891,7 +1061,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.justice.gov/about"
     ],
     "sourceTypes": [
       "official_site",
@@ -924,10 +1095,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doj",
     "parentId": "exec-cabinet"
   },
   {
@@ -1234,7 +1407,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1267,10 +1441,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -1284,7 +1460,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1317,10 +1494,52 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
+    "parentId": "exec-dept-doi"
+  },
+  {
+    "id": "exec-dept-doi-blm",
+    "name": "Bureau of Land Management (BLM)",
+    "type": "Bureau",
+    "desc": "Manages 245M surface acres of public land — 10% of U.S. 'Multiple use' mandate. ~9,000 employees.",
+    "employees": 9000,
+    "budget": "~$1.3B",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 534051524.9,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1333,7 +1552,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1366,10 +1586,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "parentId": "exec-dept-doi"
   },
   {
@@ -1382,7 +1604,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1415,10 +1638,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "parentId": "exec-dept-doi"
   },
   {
@@ -1431,7 +1656,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1464,10 +1690,92 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
+    "parentId": "exec-dept-doi"
+  },
+  {
+    "id": "exec-dept-doi-bor",
+    "name": "Bureau of Reclamation (BOR)",
+    "type": "Bureau",
+    "desc": "Manages water resources in 17 western states. Operates 338 reservoirs and 53 power plants. ~5,500 employees.",
+    "employees": 5500,
+    "budget": "~$1.6B",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 657294184.49,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doi"
+  },
+  {
+    "id": "exec-dept-doi-bsee",
+    "name": "Bureau of Safety & Environmental Enforcement (BSEE)",
+    "type": "Bureau",
+    "desc": "Regulates offshore oil and gas operations on the OCS. ~800 employees.",
+    "employees": 800,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.doi.gov/whoweare"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 442107801.48,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-dept-doi"
   },
   {
@@ -1480,7 +1788,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.doi.gov/whoweare"
     ],
     "sourceTypes": [
       "official_site",
@@ -1513,10 +1822,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-doi",
     "parentId": "exec-dept-doi"
   },
   {
@@ -2168,7 +2479,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2201,10 +2513,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -2218,7 +2532,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2251,10 +2566,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "parentId": "exec-dept-dol"
   },
   {
@@ -2267,7 +2584,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2300,10 +2618,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "parentId": "exec-dept-dol"
   },
   {
@@ -2316,7 +2636,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2349,10 +2670,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "parentId": "exec-dept-dol"
   },
   {
@@ -2365,7 +2688,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2398,10 +2722,52 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
+    "parentId": "exec-dept-dol"
+  },
+  {
+    "id": "exec-dept-dol-ebsa",
+    "name": "Employee Benefits Security Administration (EBSA)",
+    "type": "Agency",
+    "desc": "Enforces ERISA; protects pension and health benefits of 150M Americans.",
+    "employees": 900,
+    "budget": "~$200M",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1059825570.69,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2414,7 +2780,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.dol.gov/general/aboutdol"
     ],
     "sourceTypes": [
       "official_site",
@@ -2447,10 +2814,52 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
+    "parentId": "exec-dept-dol"
+  },
+  {
+    "id": "exec-dept-dol-ofccp",
+    "name": "Office of Federal Contract Compliance Programs (OFCCP)",
+    "type": "Agency",
+    "desc": "Ensures federal contractors provide equal employment opportunity.",
+    "employees": 550,
+    "budget": "~$110M",
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-dept-dol",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 582904063.88,
+    "cost_status": "allocated",
+    "cost_basis": "budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
     "parentId": "exec-dept-dol"
   },
   {
@@ -2904,7 +3313,8 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.hud.gov/about"
     ],
     "sourceTypes": [
       "official_site",
@@ -2937,10 +3347,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-hud",
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
   },
@@ -4199,6 +4611,286 @@
     "parentId": "exec-independent"
   },
   {
+    "id": "exec-ind-epa-office-of-air-radiation-oar",
+    "name": "Office of Air & Radiation (OAR)",
+    "type": "Office",
+    "desc": "Develops standards for air quality, climate change, and radiation protection.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-water-ow",
+    "name": "Office of Water (OW)",
+    "type": "Office",
+    "desc": "Protects human health and the environment relative to water quality.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-land-emergency-management-olem",
+    "name": "Office of Land & Emergency Management (OLEM)",
+    "type": "Office",
+    "desc": "Manages solid and hazardous waste; responds to environmental emergencies.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp",
+    "name": "Office of Chemical Safety & Pollution Prevention (OCSPP)",
+    "type": "Office",
+    "desc": "Regulates pesticides and toxic chemicals under TSCA and FIFRA.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-research-development-ord",
+    "name": "Office of Research & Development (ORD)",
+    "type": "Office",
+    "desc": "Conducts scientific research to support EPA regulatory decisions.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-enforcement-compliance-assurance-oeca",
+    "name": "Office of Enforcement & Compliance Assurance (OECA)",
+    "type": "Office",
+    "desc": "Monitors and enforces compliance with environmental laws.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
+    "id": "exec-ind-epa-office-of-international-tribal-affairs-oita",
+    "name": "Office of International & Tribal Affairs (OITA)",
+    "type": "Office",
+    "desc": "Manages EPA's international engagement and tribal relationships.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.epa.gov/aboutepa"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-epa",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 728531000.93,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-epa"
+  },
+  {
     "id": "exec-ind-nasa",
     "name": "National Aeronautics & Space Administration (NASA)",
     "type": "Agency",
@@ -4710,7 +5402,8 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.sba.gov/about-sba"
     ],
     "sourceTypes": [
       "official_site",
@@ -4743,10 +5436,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-sba",
     "parentId": "exec-independent"
   },
   {
@@ -4759,7 +5454,8 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.nsf.gov/about"
     ],
     "sourceTypes": [
       "official_site",
@@ -4792,11 +5488,93 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "parentId": "exec-independent"
+  },
+  {
+    "id": "exec-ind-nsf-biological-sciences-bio",
+    "name": "Biological Sciences (BIO)",
+    "type": "Directorate",
+    "desc": "Supports research on living systems.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
-    "parentId": "exec-independent"
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 834465860.38,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nsf"
+  },
+  {
+    "id": "exec-ind-nsf-computer-information-science-engineering-cise",
+    "name": "Computer & Information Science & Engineering (CISE)",
+    "type": "Directorate",
+    "desc": "Advances computing and information research.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 834465860.38,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nsf"
   },
   {
     "id": "exec-ind-nsf-education-human-resources-ehr",
@@ -4848,6 +5626,126 @@
     "parentId": "exec-ind-nsf"
   },
   {
+    "id": "exec-ind-nsf-mathematical-physical-sciences-mps",
+    "name": "Mathematical & Physical Sciences (MPS)",
+    "type": "Directorate",
+    "desc": "Supports fundamental research in mathematics and physics.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1010142883.62,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nsf"
+  },
+  {
+    "id": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
+    "name": "Social, Behavioral & Economic Sciences (SBE)",
+    "type": "Directorate",
+    "desc": "Supports research on human behavior and social systems.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 658788837.14,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nsf"
+  },
+  {
+    "id": "exec-ind-nsf-technology-innovation-partnerships-tip",
+    "name": "Technology, Innovation & Partnerships (TIP)",
+    "type": "Directorate",
+    "desc": "Translates NSF research to real-world applications.",
+    "employees": null,
+    "budget": null,
+    "color": "#4ac88a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.nsf.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationSiteFrom": "exec-ind-nsf",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 483111813.9,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-nsf"
+  },
+  {
     "id": "exec-ind-opm",
     "name": "Office of Personnel Management (OPM)",
     "type": "Agency",
@@ -4857,7 +5755,8 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.opm.gov/about-us/"
     ],
     "sourceTypes": [
       "official_site",
@@ -4890,10 +5789,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-opm",
     "parentId": "exec-independent"
   },
   {
@@ -4955,7 +5856,8 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.archives.gov/about"
     ],
     "sourceTypes": [
       "official_site",
@@ -4988,10 +5890,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-ind-nara",
     "parentId": "exec-independent"
   },
   {
@@ -5341,7 +6245,8 @@
     "color": "#c8884a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.nrc.gov/about-nrc.html"
     ],
     "sourceTypes": [
       "official_site",
@@ -5374,10 +6279,90 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-nrc",
+    "parentId": "exec-regulatory"
+  },
+  {
+    "id": "exec-regulatory-cpsc",
+    "name": "Consumer Product Safety Commission (CPSC)",
+    "type": "Independent Regulatory Commission",
+    "desc": "Protects consumers from unreasonable risks of injury or death from consumer products. Recall authority.",
+    "employees": 600,
+    "budget": "~$140M",
+    "color": "#c8884a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.cpsc.gov/About-CPSC"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-cpsc",
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": null,
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "budget_weight",
+    "cost_validation": "allocation_below_precision",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-regulatory"
+  },
+  {
+    "id": "exec-regulatory-fmc",
+    "name": "Federal Maritime Commission (FMC)",
+    "type": "Independent Regulatory Commission",
+    "desc": "Regulates international ocean shipping; ensures U.S. competitiveness in ocean trade.",
+    "employees": 120,
+    "budget": null,
+    "color": "#c8884a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.fmc.gov/about-the-fmc/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-regulatory-fmc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "allocation_below_precision",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
     "parentId": "exec-regulatory"
   },
   {
@@ -5438,7 +6423,8 @@
     "color": "#4a8ac8",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.supremecourt.gov/about/about.aspx"
     ],
     "sourceTypes": [
       "official_site",
@@ -5471,10 +6457,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-scotus",
     "parentId": "judicial-branch"
   },
   {
@@ -5525,5 +6513,125 @@
     "verificationStatus": "partial",
     "lastVerified": null,
     "parentId": "jud-specialized"
+  },
+  {
+    "id": "jud-specialized-intl-trade",
+    "name": "U.S. Court of International Trade (CIT)",
+    "type": "Specialized Court",
+    "desc": "Exclusive jurisdiction over trade and customs law. 9 judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.cit.uscourts.gov/about-court"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-specialized-intl-trade",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 189423426.94,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-specialized"
+  },
+  {
+    "id": "jud-support-fjc",
+    "name": "Federal Judicial Center (FJC)",
+    "type": "Agency",
+    "desc": "Research and education agency for the federal courts. ~180 staff.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.fjc.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-support-fjc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 304748073.78,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-support"
+  },
+  {
+    "id": "jud-support-ussc",
+    "name": "U.S. Sentencing Commission (USSC)",
+    "type": "Agency",
+    "desc": "Establishes sentencing policies and practices for federal courts. 7 commissioners. ~100 staff.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.ussc.gov/about"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-06T15:33:00+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "jud-support-ussc",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 266654564.55,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-support"
   }
 ]

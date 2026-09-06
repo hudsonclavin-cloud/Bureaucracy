@@ -196,6 +196,25 @@ Five statuses in `evidence.json`, and only the first two are applied:
   ("Individual Senator Offices (100)", 44 of them) or a name too generic to
   distinguish anything ("Energy", "Defense", 16). Never fetched.
 
+**Placement — evidence for the edge, not the node.** A hierarchy is the
+site's central assertion, and until 2026-09-06 nothing had checked a single
+parent→child edge. The verifier's placement pass takes every organisation
+whose parent has an official page (259 edges under 36 parents at the time)
+and asks whether the parent's page names the child as a label. `listed` is
+recorded with the URL, the matched text and the parent it was checked
+against, and the exporter stamps `placementVerified: true`,
+`placementUrl`, `placementVerifiedAt`, `placementParentId` — but only when
+that parent is the one the published tree actually gives the node, so a
+re-parenting in the curated file can never inherit evidence for a different
+edge; the gate checks the same thing. `not_listed` is recorded so it is
+auditable and publishes `placementVerified: false`, which claims nothing: a
+department's About page is not obliged to list every bureau. An unreadable
+parent page records nothing at all. A confirmation already made on the
+parent's page (`method` parent, `siteFrom` == parent) is the same fetch and
+the same fact and counts as placement without being fetched again. The
+claim the site makes is exactly "the parent's official page lists it" — not
+"reports to", which a page listing partner agencies could not support.
+
 `apply_evidence_to_tree` **clears every field it owns before applying** the
 current evidence, so a withdrawn or downgraded record stops being published
 even though the exporter re-feeds the previous `graph.json` as a payload; a
@@ -240,7 +259,11 @@ so it is not merged until `extract_and_expand.py` has produced real ones).
   raycast selection, fly mode.
 - `ui.js` owns the DOM: search, breadcrumb, info panel (cost with
   measured/estimate badge and period line; verification box with the
-  "No source recorded" state), depth controls, verification toggles, expand
+  "No source recorded" state and a separate Placement line for the edge
+  above the node; every base-graph description labelled "uncited prose —
+  not checked against any source", because all 5,170 read as fact and none
+  has a citation; the provenance line under the title computed from the
+  graph, never hardcoded), depth controls, verification toggles, expand
   batching.
 
 Cache busting is manual: bump the `?v=` query string in `index.html` and in
