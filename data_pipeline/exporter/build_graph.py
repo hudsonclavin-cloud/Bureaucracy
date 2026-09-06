@@ -15,6 +15,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+from data_pipeline.crawler.treasury_outlays import DATASET_URL as TREASURY_DATASET_URL
 from data_pipeline.processors.normalize_edges import EdgeRegistry
 from data_pipeline.json_io import load_json_file, write_json_file
 from data_pipeline.processors.budget_reconciliation import reconcile_nodes
@@ -36,6 +37,7 @@ DEFAULT_NODES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_nodes.json"
 DEFAULT_EDGES_OUTPUT = DEFAULT_OUTPUT_DIR / "expanded_edges.json"
 DEFAULT_VALIDITY_REPORT_OUTPUT = DEFAULT_OUTPUT_DIR / "node_validity_report.json"
 DEFAULT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "evidence.json"
+DEFAULT_SITES_PATH = PROJECT_ROOT / "data" / "verification" / "official_sites.json"
 HIERARCHICAL_RELATIONSHIPS = {"reports_to", "subsidiary_of"}
 # The optional suffix must end at a word boundary: without `\b`, "~2,000 total
 # staff" read as 2,000 *trillion* because the "t" of "total" matched, and that
@@ -902,6 +904,7 @@ def apply_treasury_outlay_rows(
         "rows_negative_skipped": len(negative_rows),
         "negative_sample": [str(row.get("originalName") or row.get("name")) for row in negative_rows[:negative_cap]],
         "stale_rollups_cleared": 0,
+        "carried_forward_citations_restored": 0,
         "unmatched_sample": [],
         "ambiguous_sample": [],
         "applied": [],
@@ -926,6 +929,29 @@ def apply_treasury_outlay_rows(
         node["sourceUrls"] = [url for url in (node.get("sourceUrls") or []) if "fiscaldata.treasury.gov" not in str(url)]
         node["sourceTypes"] = [t for t in (node.get("sourceTypes") or []) if t != "treasury_outlays"]
         verify_node_sources(node)
+    if not statement_present:
+        # A line carried forward is carried with its citation. The verification
+        # module once stripped the dataset URL from 26 measured nodes while
+        # leaving the line itself (name, period, amount) in place, and an
+        # offline rebuild had no row to re-stamp it from; the release gate now
+        # refuses a measured cost without the URL. The URL is the one constant
+        # the crawler emits for every line, so restoring it asserts nothing
+        # the node's `treasury_row_name` and `budget_source` do not already.
+        for node in node_map.values():
+            if not str(node.get("budget_source") or "").startswith("Treasury") or node.get("rollup_total_amount") is None:
+                continue
+            urls = [str(u) for u in (node.get("sourceUrls") or [])]
+            types = [str(t) for t in (node.get("sourceTypes") or [])]
+            if any("fiscaldata.treasury.gov" in u for u in urls) and "treasury_outlays" in types:
+                continue
+            if not any("fiscaldata.treasury.gov" in u for u in urls):
+                urls.append(TREASURY_DATASET_URL)
+            if "treasury_outlays" not in types:
+                types.append("treasury_outlays")
+            node["sourceUrls"] = urls
+            node["sourceTypes"] = types
+            verify_node_sources(node)
+            stats["carried_forward_citations_restored"] += 1
     if not rows:
         return stats
     by_key: dict[str, list[dict[str, Any]]] = {}
@@ -1680,6 +1706,7 @@ def build_graph(
     existing_graph_payload_path: str | Path | None = None,
     enforce_export_gate: bool = True,
     evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
+    sites_path: str | Path | None = DEFAULT_SITES_PATH,
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -1780,10 +1807,17 @@ def build_graph(
     # runs AFTER them: the Treasury pass rewrites sourceUrls on the nodes it
     # stamps, and "this node has no source, so record the failed check"
     # has to read the final list rather than one about to change under it.
-    from data_pipeline.verification.evidence import apply_evidence_to_tree, load_evidence  # noqa: E402 — evidence imports this module
+    from data_pipeline.verification.evidence import (  # noqa: E402 — evidence imports this module
+        apply_evidence_to_tree,
+        load_evidence,
+        load_official_sites,
+    )
 
     validation["verification_evidence"] = apply_evidence_to_tree(
-        graph, load_evidence(evidence_path) if evidence_path else {}, index_tree=index_tree
+        graph,
+        load_evidence(evidence_path) if evidence_path else {},
+        index_tree=index_tree,
+        sites=load_official_sites(sites_path) if sites_path else None,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,
@@ -1869,6 +1903,19 @@ def build_graph(
         else:
             node.pop("parentId", None)
             graph_node.pop("parentId", None)
+        # The tree is the authority on evidence too. expanded_nodes.json is
+        # re-fed as a payload on the next run, so a claim withdrawn from the
+        # tree but left in this file came back on its own: the fields the
+        # evidence module owns, and the source fields it edits, are synced
+        # from the tree node and dropped when the tree node lacks them.
+        from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS  # noqa: E402 — evidence imports this module
+
+        for field_name in (*EVIDENCE_OWNED_FIELDS, "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
+                           "verificationStatus", "confidenceScore", "existsProven", "proofSourceCount", "proofSourceTypes"):
+            if field_name in graph_node:
+                node[field_name] = deepcopy(graph_node[field_name])
+            else:
+                node.pop(field_name, None)
         # The tree is the authority on what the node is called (a curated name
         # survives the merge there; the payload copy went through normalize_name).
         for field_name in ("name", "type"):

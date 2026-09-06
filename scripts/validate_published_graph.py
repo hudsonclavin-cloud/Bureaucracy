@@ -186,13 +186,19 @@ def main(argv):
         if node is graph:
             continue
         types = node.get("sourceTypes") if isinstance(node.get("sourceTypes"), list) else []
+        urls_here = node.get("sourceUrls") if isinstance(node.get("sourceUrls"), list) else []
         backed = (
             str(node.get("cost_status") or "") == "official"
             and node.get("rollup_total_amount") is not None
             and "treasury_outlays" in types
+            # The type is a label; the URL is the evidence. The evidence module
+            # once stripped the FiscalData URL from 26 measured nodes and this
+            # check, keyed on the type alone, let the Supreme Court cite a court
+            # About page as the source of its outlays.
+            and any("fiscaldata.treasury.gov" in str(u) for u in urls_here)
         )
         if not backed:
-            illegitimate.append("{} claims a measured cost without a Treasury line".format(label(node)))
+            illegitimate.append("{} claims a measured cost without a Treasury line and its URL".format(label(node)))
     measured_violations = list(illegitimate)
     if graph not in verified:
         measured_violations.insert(0, "root {} is not measured (no Treasury anchor)".format(label(graph)))
@@ -384,13 +390,31 @@ def main(argv):
             if isinstance(c, dict):
                 stack_p.append((c, str(n.get("id") or "")))
     for node in nodes:
+        if node.get("placementVerified") is False:
+            # "Read and not listed" is a statement about one parent's page on
+            # one date; it must name the parent the tree has and a real date.
+            stamp = str(node.get("placementVerifiedAt") or "")
+            if not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
+                placement_unbacked.append("{} placementVerified false at {!r}".format(label(node), stamp))
+            claimed = str(node.get("placementParentId") or "")
+            actual = parent_of.get(str(node.get("id") or ""))
+            if not claimed or claimed != actual:
+                placement_wrong_parent.append("{} not-listed claims parent {!r}, tree has {!r}".format(label(node), claimed, actual))
+        if node.get("placementVerified") is not None and node.get("placementCheckable") is False:
+            placement_unbacked.append("{} says its placement could not be checked beside a placement result".format(label(node)))
         if node.get("placementVerified") is not True:
             continue
         url = str(node.get("placementUrl") or "")
         host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
         stamp = str(node.get("placementVerifiedAt") or "")
-        if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp):
+        if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
             placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))
+        if str(node.get("placementMethod") or "") != "name_labelled_on_parent_official_page":
+            placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
+        matched = canonical_key(node.get("placementMatchedText"))
+        name_key = canonical_key(node.get("name"))
+        if matched and name_key and name_key not in matched:
+            placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         claimed = str(node.get("placementParentId") or "")
         actual = parent_of.get(str(node.get("id") or ""))
         if not claimed or claimed != actual:
@@ -437,8 +461,9 @@ def main(argv):
     org_edges = [n for n in nodes if n is not graph and "position" not in str(n.get("type") or "").lower()]
     placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
     placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
-    print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed".format(
-        placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no))
+    unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
+    print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
+        placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.
     # Each node says so in the panel; this is the total, which nothing showed.
     # Only the top-most capped node in a branch: a capped department and its

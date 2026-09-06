@@ -203,17 +203,41 @@ whose parent has an official page (259 edges under 36 parents at the time)
 and asks whether the parent's page names the child as a label. `listed` is
 recorded with the URL, the matched text and the parent it was checked
 against, and the exporter stamps `placementVerified: true`,
-`placementUrl`, `placementVerifiedAt`, `placementParentId` — but only when
-that parent is the one the published tree actually gives the node, so a
-re-parenting in the curated file can never inherit evidence for a different
-edge; the gate checks the same thing. `not_listed` is recorded so it is
-auditable and publishes `placementVerified: false`, which claims nothing: a
-department's About page is not obliged to list every bureau. An unreadable
-parent page records nothing at all. A confirmation already made on the
-parent's page (`method` parent, `siteFrom` == parent) is the same fetch and
-the same fact and counts as placement without being fetched again. The
-claim the site makes is exactly "the parent's official page lists it" — not
-"reports to", which a page listing partner agencies could not support.
+`placementUrl`, `placementVerifiedAt`, `placementParentId`,
+`placementMatchedText` (the label as it appears on the page) and
+`placementMethod: name_labelled_on_parent_official_page` — but only when
+that parent is the one the published tree actually gives the node and the
+label still names the node as it is now called, so a re-parenting or a
+rename in the curated file can never inherit evidence for a different edge
+or a different name; the gate checks both, plus the date and the method.
+`not_listed` is recorded with `urlsRead` — only the pages actually read,
+never one that 404ed — and publishes `placementVerified: false`, which
+claims nothing: a department's About page is not obliged to list every
+bureau. An unreadable parent page records nothing at all. A confirmation
+already made on the parent's page (`method` parent, `siteFrom` == parent)
+is the same fetch and the same fact and counts as placement without being
+fetched again — unless an explicit block for that parent says `not_listed`,
+which wins whichever is older: a retraction found by re-reading the very
+page the claim rested on must reach the site. A node whose parent has no
+entry in `official_sites.json` gets `placementCheckable: false` ("could not
+be checked", most of the graph: the fifteen departments sit under a curated
+"Cabinet" grouping) rather than "no evidence recorded", and the gate reports
+the three counts separately. A record the verifier wrote for the edge alone
+carries `status: placement_only`; the existence pass replaces such a record
+and carries the block along. The claim the site makes is exactly "the
+parent's official page lists it" — not "reports to", which a page listing
+partner agencies could not support. Known limitation, documented rather
+than fixed: the standard is nav-blind — a link in a department's footer to
+an unrelated agency would count — and host-blind within `.gov`; the
+sites file is what scopes it, one page per parent.
+
+Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
+`evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
+`evidenceVerifiedAt` (the date it set as `lastVerified`), so the next build
+withdraws exactly those and nothing else. The first version cleared the
+node's whole URL list and stripped the FiscalData URL from 26 measured
+nodes; the gate now requires a `fiscaldata.treasury.gov` URL on every
+measured node, not just the `treasury_outlays` type.
 
 `apply_evidence_to_tree` **clears every field it owns before applying** the
 current evidence, so a withdrawn or downgraded record stops being published

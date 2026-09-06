@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260906b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260906b";
+import { createGovernmentGraph } from "./graph.js?v=20260906c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260906c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -122,6 +122,7 @@ function describeProvenance(root) {
   let capped = 0;
   let sourced = 0;
   let placed = 0;
+  let unreachable = 0;
   let orgEdges = 0;
   const stack = [root];
   while (stack.length) {
@@ -133,6 +134,7 @@ function describeProvenance(root) {
     else if (status === "scaled_official") capped += 1;
     if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
     if (node.placementVerified === true) placed += 1;
+    if (node.placementCheckable === false) unreachable += 1;
     if (node !== root && !/position/i.test(String(node.type || ""))) orgEdges += 1;
     for (const child of node.children || []) stack.push(child);
   }
@@ -142,7 +144,7 @@ function describeProvenance(root) {
     `${capped.toLocaleString()} capped to fit an estimated parent`,
     `${estimated.toLocaleString()} apportioned estimates`,
     `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
-    `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page`,
+    `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${unreachable.toLocaleString()} unreachable: parent has no page)`,
     "the descriptions carry no citation",
   ].join(" · ");
 }
@@ -483,6 +485,14 @@ function renderDescriptionProvenance(data, isClusteredView) {
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
 }
 
+function hostnameOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch (error) {
+    return String(url);
+  }
+}
+
 function renderPlacementLine(data) {
   if (!dom.verificationPlacement) return;
   if (data.isCandidate) {
@@ -493,17 +503,36 @@ function renderPlacementLine(data) {
   const checked = data.placementVerifiedAt
     ? new Date(data.placementVerifiedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
     : null;
-  let line;
+  dom.verificationPlacement.replaceChildren();
+  const add = (text) => dom.verificationPlacement.appendChild(document.createTextNode(text));
   if (data.placementVerified === true) {
-    line = `Placement: its parent's official page lists it${checked ? ` · checked ${checked}` : ""}`;
+    // The claim carries its own audit trail: the page, and the label on it.
+    // When it is the same page and the same read as the existence line above,
+    // say so — one fetch must not read as two independent checks.
+    const sameRead =
+      Array.isArray(data.sourceUrls) && data.sourceUrls.includes(data.placementUrl) && data.lastVerified === data.placementVerifiedAt;
+    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"` : "";
+    add(sameRead ? `Placement: the same page read above lists it${label} on ` : `Placement: its parent's official page lists it${label} on `);
+    if (isHttpUrl(data.placementUrl)) {
+      const link = document.createElement("a");
+      link.href = data.placementUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = hostnameOf(data.placementUrl);
+      dom.verificationPlacement.appendChild(link);
+    } else {
+      add("an official page");
+    }
+    if (checked) add(` · checked ${checked}`);
   } else if (data.placementVerified === false) {
-    line = `Placement: its parent's official page was read${checked ? ` ${checked}` : ""} and does not list it as a heading or link — no claim either way`;
+    add(`Placement: its parent's official page was read${checked ? ` ${checked}` : ""} and does not list it as a heading or link — no claim either way`);
   } else if (isPosition) {
-    line = "Placement: not checked (positions are not checked against a page)";
+    add("Placement: not checked (positions are not checked against a page)");
+  } else if (data.placementCheckable === false) {
+    add("Placement: could not be checked — its parent is a curated grouping with no official page of its own");
   } else {
-    line = "Placement: no evidence recorded for where this sits in the hierarchy";
+    add("Placement: no evidence recorded for where this sits in the hierarchy");
   }
-  setText(dom.verificationPlacement, line);
 }
 
 function renderVerificationPanel(data) {

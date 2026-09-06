@@ -92,7 +92,22 @@ EVIDENCE_OWNED_FIELDS = (
     "placementVerifiedAt",
     "placementParentId",
     "placementMatchedText",
+    "placementMethod",
+    "placementCheckable",
+    # Exactly the URLs this module put on the node, so the next build can
+    # remove exactly those and nothing else. The first version cleared the
+    # node's whole list, which stripped the Treasury FiscalData URL from 26
+    # measured nodes and left the Supreme Court citing a court About page as
+    # the source of its outlays.
+    "evidenceUrls",
+    # The date this module set as lastVerified, so a withdrawal can take back
+    # exactly that date and leave one a crawler record supplied.
+    "evidenceVerifiedAt",
 )
+PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
+# A record created by the placement pass for a node whose own page was never
+# read. It carries no existence claim and the existence pass applies nothing.
+PLACEMENT_ONLY = "placement_only"
 # Placement: evidence for the parent -> child EDGE, which is a different claim
 # from either node's existence. A hierarchy is the site's central assertion
 # and the one thing nothing had ever checked. The only evidence this module
@@ -420,18 +435,22 @@ def verify_placement(
     if uncheckable_reason(name):
         return None
     checked_at = now or utc_now_iso()
-    read_any = False
+    urls_read: list[str] = []
+    failures: list[dict[str, str]] = []
     for url in parent_urls:
         if classify_source_url(url) != "official_site":
+            failures.append({"url": url, "reason": "not_an_official_host"})
             continue
         try:
             html = fetch(url)
-        except Exception:  # noqa: BLE001 — a failed fetch concludes nothing
+        except Exception as error:  # noqa: BLE001 — a failed fetch concludes nothing
+            failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
         fragments = page_fragments(html)
         if sum(len(f) for f in fragments) < MIN_READABLE_CHARS:
+            failures.append({"url": url, "reason": "no_readable_text"})
             continue
-        read_any = True
+        urls_read.append(url)
         matched = find_label(name, fragments)
         if matched:
             return {
@@ -441,9 +460,14 @@ def verify_placement(
                 "matchedText": matched,
                 "checkedAt": checked_at,
             }
-    if not read_any:
+    if not urls_read:
         return None
-    return {"status": PLACEMENT_NOT_LISTED, "parentId": parent_id, "urls": list(parent_urls), "checkedAt": checked_at}
+    # Only the pages actually read are named: an auditor must not be told a
+    # page that 404ed "was read and does not list it".
+    block: dict[str, Any] = {"status": PLACEMENT_NOT_LISTED, "parentId": parent_id, "urlsRead": urls_read, "checkedAt": checked_at}
+    if failures:
+        block["failures"] = failures
+    return block
 
 
 def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict[str, Any] | None:
@@ -458,8 +482,12 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
     if not parent_id:
         return None
     block = record.get("placement")
-    if isinstance(block, dict) and block.get("status") == PLACEMENT_LISTED:
-        return block if str(block.get("parentId") or "") == parent_id else None
+    if isinstance(block, dict) and str(block.get("parentId") or "") == parent_id:
+        # An explicit block for this parent decides, whichever way it went.
+        # The first version let an older parent-page confirmation override a
+        # NEWER not_listed block, so a retraction found by re-reading the very
+        # page the claim rested on could never reach the site.
+        return block if block.get("status") == PLACEMENT_LISTED else None
     if (
         record.get("status") == CONFIRMED
         and str(record.get("method") or "") == METHOD_PARENT_PAGE
@@ -478,10 +506,29 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
     return None
 
 
+def evidence_names_this_node(node_name: str, matched_text: Any) -> bool:
+    """Does the recorded label still name the node as it is now called?
+
+    Records are keyed by id and never re-fetched once confirmed. A curator
+    renaming a node while keeping its id would otherwise carry a green badge
+    earned by a different name. When no text was recorded (older records)
+    there is nothing to compare and the record stands."""
+    if not matched_text:
+        return True
+    key = canonical_name_key(node_name)
+    return bool(key) and label_matches(key, str(matched_text))
+
+
 def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
     """Remove what a previous run's evidence put on this node. Returns True
     if anything was removed."""
     touched = False
+    # The date is withdrawn with the fetch that supplied it. A node that
+    # keeps a Treasury URL keeps its sources, but "last verified" must not go
+    # on quoting a check whose record is gone.
+    if node.get("evidenceVerifiedAt") and str(node.get("lastVerified") or "") == str(node.get("evidenceVerifiedAt")):
+        node.pop("lastVerified", None)
+        touched = True
     for field in EVIDENCE_OWNED_FIELDS:
         if field in node:
             node.pop(field, None)
@@ -504,7 +551,11 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
 
 
 def apply_evidence_to_tree(
-    root: dict[str, Any], evidence: dict[str, dict[str, Any]], *, index_tree=None
+    root: dict[str, Any],
+    evidence: dict[str, dict[str, Any]],
+    *,
+    index_tree=None,
+    sites: dict[str, list[str]] | None = None,
 ) -> dict[str, Any]:
     """Stamp evidence onto the nodes it names, and only what was observed.
 
@@ -532,7 +583,11 @@ def apply_evidence_to_tree(
         "unknown_node": 0, "unknown_status": 0, "urls_added": 0, "stale_claims_cleared": 0,
     }
     node_map, parent_map = index_tree(root)
-    stats.update({"placements_evidenced": 0, "placements_checked_not_listed": 0, "placements_stale_parent": 0})
+    stats.update({
+        "placements_evidenced": 0, "placements_checked_not_listed": 0, "placements_stale_parent": 0,
+        "placements_stale_name": 0, "existence_stale_name": 0, "placements_not_checkable_no_parent_page": 0,
+        PLACEMENT_ONLY: 0,
+    })
     # Withdraw every claim this module previously published before applying
     # the current evidence. The URL set is exactly the URLs the current
     # evidence file confirms, plus any this module could have written before.
@@ -543,13 +598,16 @@ def apply_evidence_to_tree(
         if isinstance(source, dict) and source.get("url")
     }
     for node in node_map.values():
-        if (
-            node.get("verificationMethod") in (METHOD_OWN_PAGE, METHOD_PARENT_PAGE)
-            or node.get("verificationFailure")
-            or node.get("placementVerified") is not None
-        ):
-            urls = [str(u) for u in (node.get("sourceUrls") or [])]
-            if clear_evidence_fields(node, official_urls | set(urls)):
+        # Any field this module owns marks a node it wrote to. The first
+        # version keyed on four of them and left `placementCheckable: False`
+        # standing on a node whose parent had since gained a page.
+        if any(field in node for field in EVIDENCE_OWNED_FIELDS):
+            # Strip only what this module put there: the node's own record of
+            # it, falling back to the current evidence file's URLs for nodes
+            # published before that record existed. Never the node's whole
+            # list — that took the Treasury URL off 26 measured nodes.
+            mine = {str(u) for u in (node.get("evidenceUrls") or [])} or set(official_urls)
+            if clear_evidence_fields(node, mine):
                 stats["stale_claims_cleared"] += 1
             if not node.get("sourceUrls"):
                 node.pop("lastVerified", None)
@@ -562,8 +620,11 @@ def apply_evidence_to_tree(
             continue
         status = str(record.get("status") or "")
         checked_at = str(record.get("checkedAt") or "").strip()
-        if status not in (CONFIRMED, NOT_FOUND, INCONCLUSIVE, FETCH_FAILED, NOT_CHECKABLE):
+        if status not in (CONFIRMED, NOT_FOUND, INCONCLUSIVE, FETCH_FAILED, NOT_CHECKABLE, PLACEMENT_ONLY):
             stats["unknown_status"] += 1
+            continue
+        if status == PLACEMENT_ONLY:
+            stats[PLACEMENT_ONLY] += 1
             continue
         if status != CONFIRMED:
             # Nothing was learned that can be published, except that a unit
@@ -571,29 +632,39 @@ def apply_evidence_to_tree(
             stats[status] += 1
             if status == NOT_FOUND and not node.get("sourceUrls") and checked_at:
                 node["lastVerified"] = checked_at
+                node["evidenceVerifiedAt"] = checked_at
                 node["verificationFailure"] = NOT_FOUND
                 node["verificationSiteFrom"] = record.get("siteFrom")
                 verify_node_sources(node)
             continue
 
-        urls = [str(s.get("url")) for s in record.get("sources", []) if isinstance(s, dict) and s.get("url")]
-        urls = [u for u in urls if classify_source_url(u) == "official_site"]
-        if not urls:
-            # A confirmation with no official URL behind it is not one.
+        sources = [s for s in record.get("sources", []) if isinstance(s, dict) and s.get("url")]
+        official = [s for s in sources if classify_source_url(str(s["url"])) == "official_site"]
+        if not official:
+            # No official URL behind it: not a confirmation at all.
             stats["unknown_status"] += 1
             continue
+        sources = [s for s in official if evidence_names_this_node(str(node.get("name") or ""), s.get("matchedText"))]
+        if not sources:
+            # The label recorded names a unit this node is no longer called.
+            stats["existence_stale_name"] += 1
+            continue
+        urls = [str(s["url"]) for s in sources]
         existing = [str(u) for u in (node.get("sourceUrls") or [])]
         for url in urls:
             if url not in existing:
                 existing.append(url)
                 stats["urls_added"] += 1
         node["sourceUrls"] = existing
+        node["evidenceUrls"] = list(urls)
         types = [str(t) for t in (node.get("sourceTypes") or [])]
         if "official_site" not in types:
             types.append("official_site")
         node["sourceTypes"] = types
         if checked_at and (not node.get("lastVerified") or checked_at > str(node.get("lastVerified"))):
             node["lastVerified"] = checked_at
+        if checked_at:
+            node["evidenceVerifiedAt"] = checked_at
         method = str(record.get("method") or (METHOD_OWN_PAGE if record.get("ownPage") else METHOD_PARENT_PAGE))
         node["verificationMethod"] = method
         node["verificationSiteFrom"] = record.get("siteFrom")
@@ -615,12 +686,18 @@ def apply_evidence_to_tree(
             # Evidence for an edge the tree no longer has. Never inherited.
             stats["placements_stale_parent"] += 1
         listed = placement_from_record(record, actual_parent)
+        if listed and not evidence_names_this_node(str(node.get("name") or ""), listed.get("matchedText")):
+            stats["placements_stale_name"] += 1
+            listed = None
         if listed and classify_source_url(str(listed.get("url") or "")) == "official_site":
             node["placementVerified"] = True
             node["placementUrl"] = str(listed["url"])
             node["placementVerifiedAt"] = listed.get("checkedAt")
             node["placementParentId"] = actual_parent
             node["placementMatchedText"] = listed.get("matchedText")
+            # The claim named, beside the boolean, so the data product says
+            # what was tested without needing the UI's wording.
+            node["placementMethod"] = PLACEMENT_METHOD
             stats["placements_evidenced"] += 1
         elif block and block.get("status") == PLACEMENT_NOT_LISTED and str(block.get("parentId") or "") == str(actual_parent or ""):
             # Read and not listed. Recorded so it is auditable; claims nothing.
@@ -628,4 +705,19 @@ def apply_evidence_to_tree(
             node["placementParentId"] = actual_parent
             node["placementVerifiedAt"] = block.get("checkedAt")
             stats["placements_checked_not_listed"] += 1
+
+    # "No evidence recorded" and "could not be checked" are different states.
+    # Most organisations sit under a curated grouping ("The Cabinet") that
+    # has no page of its own, so their edge is unreachable by this method;
+    # saying so keeps the coverage number from reading as a failure to try.
+    if sites is not None:
+        for node_id, node in node_map.items():
+            if node is root or node.get("placementVerified") is not None:
+                continue
+            if "position" in str(node.get("type") or "").casefold():
+                continue
+            parent = parent_map.get(node_id)
+            if parent and parent not in sites:
+                node["placementCheckable"] = False
+                stats["placements_not_checkable_no_parent_page"] += 1
     return stats

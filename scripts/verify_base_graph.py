@@ -45,6 +45,7 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     FETCH_FAILED,
     NOT_CHECKABLE,
     PLACEMENT_LISTED,
+    PLACEMENT_ONLY,
     candidate_urls,
     load_evidence,
     load_official_sites,
@@ -144,9 +145,17 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             prior = evidence.get(node_id) or {}
             existing = prior.get("placement") if isinstance(prior.get("placement"), dict) else None
-            if existing and existing.get("status") == PLACEMENT_LISTED and existing.get("parentId") == parent_id and not args.recheck:
+            if (
+                existing
+                and existing.get("status") == PLACEMENT_LISTED
+                and existing.get("parentId") == parent_id
+                and str(existing.get("url") or "") in sites[parent_id]
+                and not args.recheck
+            ):
                 skipped["placement_already_listed"] += 1
                 continue
+            if args.limit and len(plan) + len(placement_plan) >= args.limit:
+                break
             placement_plan.append((node, parent_id, list(sites[parent_id])))
 
     distinct_pages = {u for _, urls, _, _ in plan for u in urls} | {u for _, _, urls in placement_plan for u in urls}
@@ -159,6 +168,10 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  {node.get('id')}  <-  {', '.join(urls)}  ({'own page' if own else 'page of ' + str(site_from)})")
         if len(plan) > 50:
             print(f"  ... {len(plan) - 50} more")
+        for node, parent_id, urls in placement_plan[:20]:
+            print(f"  placement: {node.get('id')}  under {parent_id}  <-  {', '.join(urls)}")
+        if len(placement_plan) > 20:
+            print(f"  ... {len(placement_plan) - 20} more placements")
         return 0
 
     # One fetch per page per run. The text is what the checker sees, so it is
@@ -194,12 +207,21 @@ def main(argv: list[str] | None = None) -> int:
             "name as a label on the URLs listed, at checkedAt; nothing here was typed by hand. "
             "confirmed = a fragment of the page is the name; not_found = the unit's own page was read and "
             "did not name it; inconclusive = only an ancestor's page was read, which is not obliged to; "
-            "fetch_failed = no page was read; not_checkable = the curated name could not be evidence."
+            "fetch_failed = no page was read; not_checkable = the curated name could not be evidence; "
+            "placement_only = only the parent's page was read, for the edge above the node. "
+            "placement.listed = the parent's page names the unit as a label; placement.not_listed = the pages in "
+            "urlsRead were read and none does."
         ),
         "nodes": evidence,
     }
     for index, (node, urls, site_from, own_page) in enumerate(plan, 1):
         record = verify_node(node, urls, fetch=fetch, now=now, site_from=site_from, is_own_page=own_page)
+        prior_block = (evidence.get(str(node["id"])) or {}).get("placement")
+        if isinstance(prior_block, dict):
+            # The existence record is replaced wholesale; the edge evidence
+            # gathered by a previous placement pass rides along, and only the
+            # placement pass below may replace it.
+            record["placement"] = prior_block
         evidence[str(node["id"])] = record
         outcomes[record["status"]] += 1
         write_json_file(args.evidence, store)
@@ -213,7 +235,7 @@ def main(argv: list[str] | None = None) -> int:
         if block is None:
             placements["parent_page_unreadable"] += 1
             continue
-        record = evidence.setdefault(node_id, {"name": node.get("name"), "checkedAt": now})
+        record = evidence.setdefault(node_id, {"name": node.get("name"), "checkedAt": now, "status": PLACEMENT_ONLY})
         record["placement"] = block
         placements[block["status"]] += 1
         write_json_file(args.evidence, store)
