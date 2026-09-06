@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141414'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23c8a84a'/%3E%3Ccircle cx='8' cy='23' r='3' fill='%234a8ac8'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%23c84a4a'/%3E%3Cpath d='M16 11v6M14 19l-4 2M18 19l4 2' stroke='%236a6a6a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
 <title>U.S. Federal Government — 3D Explorer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
@@ -27,7 +28,11 @@ body.dragging{cursor:grabbing;}
 .load-fill{height:100%;background:var(--gold);width:0;animation:loadAnim 1.8s cubic-bezier(.4,0,.2,1) forwards;}
 @keyframes loadAnim{to{width:100%;}}
 #load-status{font-size:9px;color:var(--gold-dim);margin-top:12px;letter-spacing:0.15em;}
-#title-panel{position:fixed;top:28px;left:32px;pointer-events:none;z-index:10;}
+/* The title block and the depth control share the top-left corner. Stacking them in one
+   flex column means the control always sits below the title, however many lines the
+   provenance note wraps to — a fixed top offset assumed a height it did not control. */
+#left-stack{position:fixed;top:28px;left:32px;z-index:20;display:flex;flex-direction:column;gap:14px;pointer-events:none;}
+#title-panel{pointer-events:none;}
 #title-panel h1{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--text);line-height:1.4;text-shadow:0 0 60px rgba(200,168,74,0.3);}
 #title-panel p{font-size:9px;color:var(--gold-dim);letter-spacing:0.25em;text-transform:uppercase;margin-top:4px;}
 #node-counter{font-size:9px;color:var(--gold-dim);margin-top:2px;letter-spacing:0.1em;}
@@ -162,9 +167,8 @@ body.dragging{cursor:grabbing;}
   backdrop-filter:blur(10px);animation:expandPulse 0.9s ease infinite alternate;
 }
 @keyframes expandPulse{to{border-color:rgba(200,168,74,0.8);color:var(--gold-bright);}}
-#depth-expand-ctrl{
-  position:fixed;top:130px;left:32px;z-index:20;pointer-events:auto;
-}
+#depth-expand-ctrl{pointer-events:auto;}
+#verification-toggles{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 #depth-expand-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:5px;}
 #depth-expand-btns{display:flex;gap:4px;}
 .depth-expand-btn{
@@ -183,7 +187,7 @@ body.dragging{cursor:grabbing;}
   #depth-ctrl.panel-open{right:16px;}
   #legend{display:none;}
   #stats{display:none;}
-  #title-panel,#depth-expand-ctrl,#breadcrumb{left:16px;}
+  #left-stack,#breadcrumb{left:16px;}
   #search-wrap{top:16px;width:calc(100vw - 32px);}
   #search-input{width:100%;}
   #controls-hint{display:none;}
@@ -195,11 +199,12 @@ body.dragging{cursor:grabbing;}
   <h1>The Federal Government</h1>
   <p>United States of America</p>
   <div class="load-bar"><div class="load-fill"></div></div>
-  <div id="load-status">Loading government and corporate hierarchy…</div>
+  <div id="load-status">Loading government hierarchy…</div>
 </div>
 
 <canvas id="canvas"></canvas>
 
+<div id="left-stack">
 <div id="title-panel">
   <h1>Government of the<br>United States</h1>
   <p>3D Organizational Explorer</p>
@@ -219,6 +224,7 @@ body.dragging{cursor:grabbing;}
     <button class="depth-expand-btn" data-target="8" title="Show depth 8">8</button>
     <button class="depth-expand-btn" data-target="12" title="Show depth 12">12</button>
   </div>
+</div>
 </div>
 
 <div id="search-wrap">
@@ -288,7 +294,11 @@ window.GRAPH_DATA_SOURCES = {
   // the loader drops to if the pipeline artefact is missing or malformed.
   primary: "./output/graph.json",
   base: "./data/federal_gov_complete_1.json",
-  corporate: "./data_expansion/corporate_expansion.json",
+  // data_expansion/corporate_expansion.json is currently the template output
+  // of expand_corporate_nodes.py (invented "Head of Finance & Risk" positions),
+  // not officers extracted from SEC EDGAR. It is not merged into the tree until
+  // extract_and_expand.py has produced real ones; set this to its path then.
+  corporate: null,
 };
 window.__graphBootFailed = function (message) {
   var status = document.getElementById("load-status");
@@ -310,7 +320,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260809b"
+<script type="module" src="./js/ui.js?v=20260903a"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

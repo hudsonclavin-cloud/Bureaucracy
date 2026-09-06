@@ -11,13 +11,18 @@ ALLOWED_RELATIONSHIPS = {
     "lobbies",
     "funds",
     "manages",
+    "related_to",
 }
+UNKNOWN_RELATIONSHIP = "related_to"
 
 
 def normalize_relationship(value: Any) -> str:
-    relationship = str(value or "manages").strip().lower().replace(" ", "_")
+    # A type this registry does not know is kept as a neutral link. Rewriting
+    # "part_of" or "advises" to "manages" asserted a management relation — in
+    # the wrong direction, for "part_of" — that no source stated.
+    relationship = str(value or UNKNOWN_RELATIONSHIP).strip().lower().replace(" ", "_")
     if relationship not in ALLOWED_RELATIONSHIPS:
-        return "manages"
+        return UNKNOWN_RELATIONSHIP
     return relationship
 
 

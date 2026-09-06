@@ -72,7 +72,7 @@ class USASpendingCrawler:
         limit: int = 25,
         fiscal_year: int | None = None,
     ) -> list[dict[str, Any]]:
-        fiscal_year = fiscal_year or date.today().year
+        fiscal_year = fiscal_year or federal_fiscal_year(date.today())
         agency_name = clean_name(
             agency.get("agency_name")
             or agency.get("toptier_agency_name")
@@ -86,8 +86,10 @@ class USASpendingCrawler:
         filters: dict[str, Any] = {
             "time_period": [
                 {
-                    "start_date": f"{fiscal_year}-01-01",
-                    "end_date": f"{fiscal_year}-12-31",
+                    # Federal FY N runs 1 October N-1 to 30 September N. A
+                    # calendar-year window straddled two fiscal years.
+                    "start_date": f"{fiscal_year - 1}-10-01",
+                    "end_date": f"{fiscal_year}-09-30",
                 }
             ],
             # The endpoint rejects requests without an award_type_codes group;
@@ -227,13 +229,18 @@ class USASpendingCrawler:
         return nodes, edges
 
 
+def federal_fiscal_year(today: date) -> int:
+    return today.year + 1 if today.month >= 10 else today.year
+
+
 def crawl(
     *,
     limit_agencies: int = 20,
     awards_per_agency: int = 25,
     fiscal_year: int | None = None,
+    timeout: int = 30,
 ) -> dict[str, list[dict[str, Any]]]:
-    crawler = USASpendingCrawler()
+    crawler = USASpendingCrawler(timeout=timeout)
     nodes, edges = crawler.build_records(
         limit_agencies=limit_agencies,
         awards_per_agency=awards_per_agency,

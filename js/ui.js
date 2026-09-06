@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260809b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260809b";
+import { createGovernmentGraph } from "./graph.js?v=20260903a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260903a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -87,8 +87,17 @@ function hideLoader(delay = 200) {
 }
 
 function updateStats(stats) {
-  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${stats.totalNodeCount.toLocaleString()} nodes rendered`);
-  setText(dom.statsTotal, `${stats.totalNodeCount.toLocaleString()} total nodes`);
+  const candidateCount = Number(stats.candidateNodeCount || 0);
+  // With the candidate toggle on, the review queue is on screen too and the
+  // denominator says so; with it off, the count is the published graph alone.
+  const denominator = stats.showCandidateNodes ? stats.totalNodeCount + candidateCount : stats.totalNodeCount;
+  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${denominator.toLocaleString()} nodes rendered`);
+  setText(
+    dom.statsTotal,
+    candidateCount > 0
+      ? `${stats.totalNodeCount.toLocaleString()} published nodes · ${candidateCount.toLocaleString()} unreviewed candidates`
+      : `${stats.totalNodeCount.toLocaleString()} total nodes`,
+  );
   setText(
     dom.statsLoaded,
     `${stats.visibleNodeCount.toLocaleString()} currently loaded | ${stats.lodLabel || "Universe View"} | ${(stats.densityHiddenNodeCount || 0).toLocaleString()} density-hidden`,
@@ -234,6 +243,11 @@ function ensureVerificationUi() {
   const verificationWrap = document.createElement("div");
   verificationWrap.style.marginTop = "10px";
   verificationWrap.style.padding = "10px";
+  // Every other line in the panel is 8-10px; without this the status,
+  // confidence and source lines inherit the browser's 16px default.
+  verificationWrap.style.fontSize = "9px";
+  verificationWrap.style.lineHeight = "1.6";
+  verificationWrap.style.color = "#9a8a6a";
   verificationWrap.style.border = "1px solid rgba(200,168,74,0.14)";
   verificationWrap.style.background = "rgba(20,16,12,0.72)";
   verificationWrap.style.borderRadius = "10px";
@@ -318,14 +332,21 @@ function ensureVerificationToggles() {
     return;
   }
 
+  // Lives inside the depth control so it flows below the buttons. A fixed
+  // position at top:130px was the same coordinate the depth control occupies,
+  // so the two checkboxes sat on top of the depth 1-5 buttons and hid them.
   const wrap = document.createElement("div");
-  wrap.style.position = "fixed";
-  wrap.style.top = "130px";
-  wrap.style.left = "32px";
-  wrap.style.zIndex = "20";
-  wrap.style.display = "flex";
-  wrap.style.flexDirection = "column";
-  wrap.style.gap = "6px";
+  wrap.id = "verification-toggles";
+  const depthExpandCtrl = document.getElementById("depth-expand-ctrl");
+  if (!depthExpandCtrl) {
+    wrap.style.position = "fixed";
+    wrap.style.top = "180px";
+    wrap.style.left = "32px";
+    wrap.style.zIndex = "20";
+    wrap.style.display = "flex";
+    wrap.style.flexDirection = "column";
+    wrap.style.gap = "6px";
+  }
 
   const makeToggle = (labelText) => {
     const label = document.createElement("label");
@@ -352,7 +373,7 @@ function ensureVerificationToggles() {
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
 
-  document.body.appendChild(wrap);
+  (depthExpandCtrl || document.body).appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
@@ -399,6 +420,8 @@ function renderVerificationPanel(data) {
   const confidence = Number(data.confidenceScore || 0);
   const sourceUrls = Array.isArray(data.sourceUrls) ? data.sourceUrls : [];
   const sourceTypes = Array.isArray(data.sourceTypes) ? data.sourceTypes : [];
+  // A generated:// placeholder is not a source; it must not be counted or listed.
+  const linkableSources = sourceUrls.filter((url) => isHttpUrl(url));
   const badge = getVerificationBadgeConfig(data);
 
   setText(dom.verificationBadge, badge.label);
@@ -414,11 +437,27 @@ function renderVerificationPanel(data) {
     setText(dom.verificationLastVerified, "");
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
-    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${Number(data.sourceCount || sourceUrls.length)}`);
-    setText(
-      dom.verificationLastVerified,
-      `Last Verified: ${data.lastVerified ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "Not yet verified"}`,
-    );
+    setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
+    // What kind of check this was, not just when. "Its own official page
+    // names it" and "its parent's page lists it" are different claims, and a
+    // failed check is a third; the panel must not collapse them into a date.
+    const checkedOn = data.lastVerified
+      ? new Date(data.lastVerified).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+      : null;
+    const METHOD_TEXT = {
+      name_labelled_on_own_official_page: "Its own official page names it",
+      name_labelled_on_parent_official_page: "Its parent's official page lists it",
+    };
+    let checkLine = "Not yet verified";
+    if (data.verificationFailure === "not_found") {
+      checkLine = checkedOn
+        ? `Checked ${checkedOn}: its official page did not name it`
+        : "Its official page did not name it";
+    } else if (checkedOn) {
+      const how = METHOD_TEXT[String(data.verificationMethod || "")];
+      checkLine = how ? `${how} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+    }
+    setText(dom.verificationLastVerified, checkLine);
   }
 
   dom.verificationSources.replaceChildren();
@@ -428,7 +467,7 @@ function renderVerificationPanel(data) {
   sourcesLabel.style.color = "#d4c4a1";
   dom.verificationSources.appendChild(sourcesLabel);
 
-  if (sourceUrls.length === 0) {
+  if (linkableSources.length === 0) {
     const empty = document.createElement("div");
     empty.textContent = "No confirming sources recorded.";
     empty.style.color = "#8f7a5d";
@@ -436,32 +475,33 @@ function renderVerificationPanel(data) {
     return;
   }
 
-  sourceUrls.forEach((url, index) => {
-    let parsed = null;
-    try {
-      parsed = new URL(url);
-    } catch (_error) {
-      parsed = null;
-    }
-    const isSafeLink = Boolean(parsed && (parsed.protocol === "http:" || parsed.protocol === "https:"));
-    const label = `• ${isSafeLink ? parsed.hostname : url}${sourceTypes[index] ? ` (${sourceTypes[index]})` : ""}`;
+  for (const url of linkableSources) {
+    const parsed = new URL(url);
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noreferrer noopener";
+    link.textContent = `• ${parsed.hostname}`;
+    link.style.color = "#d4c4a1";
+    dom.verificationSources.appendChild(link);
+  }
+  // sourceTypes is a set of labels, not a list parallel to sourceUrls.
+  const typeLabels = sourceTypes.filter((label) => label && label !== "candidate_discovery" && label !== "unknown");
+  if (typeLabels.length > 0) {
+    const types = document.createElement("div");
+    types.textContent = `Source types: ${typeLabels.join(", ")}`;
+    types.style.color = "#8f7a5d";
+    dom.verificationSources.appendChild(types);
+  }
+}
 
-    if (isSafeLink) {
-      const link = document.createElement("a");
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noreferrer noopener";
-      link.textContent = label;
-      link.style.color = "#d4c4a1";
-      dom.verificationSources.appendChild(link);
-      return;
-    }
-
-    const item = document.createElement("span");
-    item.textContent = label;
-    item.style.color = "#d4c4a1";
-    dom.verificationSources.appendChild(item);
-  });
+function isHttpUrl(value) {
+  try {
+    const parsed = new URL(String(value));
+    return parsed.protocol === "http:" || parsed.protocol === "https:";
+  } catch (_error) {
+    return false;
+  }
 }
 
 function renderOriginTrace(nodeObj) {
@@ -525,6 +565,10 @@ const COST_BASIS_PHRASES = {
   subtree_weight: "how many units sit beneath it",
   employee_weight: "staff count",
   budget_weight: "reported budget",
+  annual_budget_weight: "reported annual budget",
+  direct_outlay_weight: "reported outlays",
+  implied_budget_weight: "a budget implied from its siblings' reported budgets and its size",
+  implied_employee_weight: "a staff count implied from its siblings' reported staff and its size",
 };
 
 const COST_STATUS_COPY = {
@@ -536,14 +580,16 @@ const COST_STATUS_COPY = {
     note: "U.S. Treasury outlays, from the Monthly Treasury Statement.",
   },
   official: {
-    label: "Reported",
-    tone: "reported",
-    note: "Figure published by the organisation itself.",
+    label: "Measured",
+    tone: "measured",
+    note: "U.S. Treasury outlays reported for this unit in the Monthly Treasury Statement (Table 5).",
   },
   scaled_official: {
-    label: "Reported, adjusted",
-    tone: "reported",
-    note: "Published figure, rescaled to fit within the parent total.",
+    // The figure shown is the parent's cap, not the Treasury figure, so it is
+    // an estimate; the note carries the measured number.
+    label: "Estimate (Treasury line capped)",
+    tone: "estimate",
+    note: "The Treasury reported more than fits within the parent's estimated share; the figure shown is that cap.",
   },
   allocated: { label: "Estimate", tone: "estimate", note: "" },
   unavailable: {
@@ -570,9 +616,13 @@ function getCostPeriod(node) {
   if (!source) {
     return { label: "", amountKind: "" };
   }
+  // A Treasury line stamped on a node carries budget_as_of rather than a
+  // record_date; without this fallback a measured agency showed no period.
+  const asOf = source.record_date || source.budget_as_of;
   const label =
     String(source.label || "").trim() ||
-    (source.record_date ? `As of ${String(source.record_date).trim()}` : "");
+    (asOf ? `As of ${String(asOf).trim()}` : "") ||
+    (graphBudgetSummary && graphBudgetSummary !== source ? String(graphBudgetSummary.label || "").trim() : "");
   return { label, amountKind: String(source.amount_kind || "").trim().toLowerCase() };
 }
 
@@ -626,7 +676,7 @@ function formatApproximateCost(amount) {
 // would claim ten significant figures for a number that has about one.
 function formatCostAmount(node) {
   const amount = toFiniteAmount(node.resolved_total_amount);
-  if (amount === null) {
+  if (amount === null || isBelowPrecision(node)) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
@@ -635,9 +685,24 @@ function formatCostAmount(node) {
   return `≈ ${formatApproximateCost(amount)}`;
 }
 
+function isBelowPrecision(node) {
+  const amount = toFiniteAmount(node.resolved_total_amount);
+  const status = String(node.cost_status || "").toLowerCase();
+  return (
+    String(node.cost_validation || "").toLowerCase() === "allocation_below_precision" ||
+    (status === "allocated" && amount !== null && Math.abs(amount) < 0.5)
+  );
+}
+
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
-  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null) {
+  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node)) {
+    if (isBelowPrecision(node)) {
+      return {
+        ...COST_STATUS_COPY.unavailable,
+        note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.",
+      };
+    }
     return COST_STATUS_COPY.unavailable;
   }
 
@@ -652,6 +717,15 @@ function describeCost(node) {
     };
   }
 
+  if (status === "scaled_official") {
+    const reported = toFiniteAmount(node.rollup_total_amount);
+    return {
+      ...copy,
+      note: reported === null
+        ? copy.note
+        : `The Treasury reported ${formatApproximateCost(reported)} for this unit, more than fits within the parent's estimated share; the figure shown is that cap.`,
+    };
+  }
   if (status === "allocated") {
     const basis = String(node.cost_basis || "").toLowerCase();
     const phrase =
@@ -748,7 +822,9 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["EMPLOYEES", data.employees]);
   }
   if (data.budget) {
-    statRows.push(["BUDGET", data.budget]);
+    // A hand-typed note in the curated file, not a sourced figure. Unlabelled it
+    // read as a second, contradictory cost beneath the estimate.
+    statRows.push(["BUDGET NOTE (hand-compiled)", data.budget]);
   }
   if ((data.children || []).length > 0) {
     statRows.push(["SUB-UNITS", String(data.children.length)]);
@@ -900,7 +976,7 @@ function renderSearchResults(matches) {
 
     const type = document.createElement("span");
     type.className = "sr-type";
-    const status = match.isCandidate ? "CANDIDATE" : String(match.verificationStatus || "unverified").toUpperCase();
+    const status = getVerificationBadgeConfig(match).label;
     type.textContent = `${match.type} — ${status}`;
     type.style.color = match.color || "#666";
     type.style.borderColor = `${match.color || "#666"}40`;
@@ -1088,6 +1164,8 @@ function bindControls() {
 
   if (dom.toggleCandidates) {
     dom.toggleCandidates.addEventListener("change", () => {
+    // An open results list may hold candidate rows the toggle now hides.
+    closeSearch();
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
     });
@@ -1185,7 +1263,11 @@ function bindControls() {
       return;
     }
     const matches = [];
+    const showCandidates = Boolean(dom.toggleCandidates?.checked);
     for (const item of state.searchIndex) {
+      if (item.isCandidate && !showCandidates) {
+        continue;
+      }
       if (
         item.name.toLowerCase().includes(query) ||
         item.type.toLowerCase().includes(query) ||
@@ -1241,10 +1323,20 @@ async function initGraphApp() {
       window.GRAPH_DATA_SOURCES?.base ||
       "./data/federal_gov_complete_1.json",
     fallbackBaseUrl: window.GRAPH_DATA_SOURCES?.base || "./data/federal_gov_complete_1.json",
-    corporateUrl: window.GRAPH_DATA_SOURCES?.corporate || "./data_expansion/corporate_expansion.json",
+    // null means "no overlay"; only an undefined key falls back to the default path.
+    corporateUrl:
+      window.GRAPH_DATA_SOURCES && "corporate" in window.GRAPH_DATA_SOURCES
+        ? window.GRAPH_DATA_SOURCES.corporate
+        : "./data_expansion/corporate_expansion.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
+  if (data && data.__loadSource === "fallback") {
+    const provenance = document.getElementById("data-provenance");
+    if (provenance) {
+      provenance.textContent = "Pipeline graph unavailable — showing the hand-compiled hierarchy without cost data";
+    }
+  }
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();

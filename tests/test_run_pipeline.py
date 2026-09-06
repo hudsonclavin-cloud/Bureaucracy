@@ -93,7 +93,11 @@ class RunPipelineTests(unittest.TestCase):
             self.assertTrue(stats_output_path.exists())
             self.assertGreaterEqual(stats["new_nodes_added"], 1)
             self.assertEqual(saved_stats["nodes_after"], stats["nodes_after"])
-            self.assertTrue(any(node["name"] == "Office of Grid Deployment" for node in candidates))
+            # Promoted into the graph, so no longer awaiting review: the queue
+            # the site fetches must not carry it as a CANDIDATE stub as well.
+            self.assertFalse(any(node["name"] == "Office of Grid Deployment" for node in candidates))
+            self.assertGreaterEqual(stats["candidates_discovered"], 1)
+            self.assertEqual(stats["candidate_nodes_written"], len(candidates))
             department = next(child for child in graph["children"] if child["id"] == "department-of-energy")
             self.assertTrue(any(child["id"] == "department-of-energy-office-of-grid-deployment" for child in department["children"]))
             self.assertIn("verification_breakdown", stats)
@@ -262,14 +266,15 @@ class RunPipelineTests(unittest.TestCase):
 
 
     def test_run_pipeline_export_gate_prunes_nodes_without_cost(self) -> None:
-        """With the gate on and no Treasury total, nothing is publishable.
+        """With the gate on, a crawled node is pruned while the curated node
+        beside it is published under the Treasury anchor.
 
-        This is the behaviour that makes the publication guard necessary: a node
-        can be fully sourced and proven and still be rejected, because
-        CostValidator requires a resolved cost and the cost cascade has nothing
-        to allocate from. Pinning it here so the coupling between the Treasury
-        fetch and the export gate is a documented contract rather than a
-        surprise discovered during a deploy.
+        The crawled node is not uncosted — the cascade allocates it a share —
+        but an allocated cost is never authoritative, so CostValidator rejects
+        it (non_authoritative_cost_status) and, untrusted, it is pruned. Asserted
+        on the written graph and the validity report rather than on
+        new_nodes_added, which max(0, ...) makes zero for every outcome from
+        "one crawler node pruned" to "whole tree pruned".
         """
         tmp_path = TEST_TMP_ROOT / f"run-pipeline-{uuid.uuid4().hex}"
         tmp_path.mkdir(parents=True, exist_ok=True)
@@ -315,6 +320,23 @@ class RunPipelineTests(unittest.TestCase):
             )
 
             self.assertEqual(stats["new_nodes_added"], 0)
+            self.assertEqual(stats["nodes_delta"], 0)
+            graph = json.loads(graph_output_path.read_text(encoding="utf-8"))
+            ids = set()
+            stack = [graph]
+            while stack:
+                node = stack.pop()
+                ids.add(node["id"])
+                stack.extend(node.get("children", []))
+            self.assertIn("department-of-energy", ids)
+            self.assertNotIn("contractor-acme", ids)
+            self.assertEqual(graph["resolved_total_amount"], 3102409296183)
+            self.assertEqual(graph["cost_status"], "root_total")
+            report = json.loads((tmp_path / "node_validity_report.json").read_text(encoding="utf-8"))
+            rejected = {item["id"]: item for item in report["cost_export_policy"]["rejected_nodes_sample"]}
+            self.assertIn("contractor-acme", rejected)
+            self.assertIn("non_authoritative_cost_status", rejected["contractor-acme"]["blocking_issue_codes"])
+            self.assertIsNotNone(rejected["contractor-acme"]["resolved_total_amount"])
         finally:
             shutil.rmtree(tmp_path, ignore_errors=True)
 

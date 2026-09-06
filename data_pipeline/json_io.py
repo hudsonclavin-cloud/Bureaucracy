@@ -44,6 +44,13 @@ def write_json_file(path: str | Path, payload: Any, *, compact: bool = False) ->
         handle.flush()
         os.fsync(handle.fileno())
 
+    # NamedTemporaryFile creates 0600; the replaced file must be readable the
+    # way a normally created one would be, or a web server running as another
+    # user cannot serve it.
+    current_umask = os.umask(0)
+    os.umask(current_umask)
+    os.chmod(temp_path, 0o666 & ~current_umask)
+
     try:
         os.replace(temp_path, output_path)
     finally:

@@ -29,6 +29,7 @@ SELECT ?agency ?agencyLabel ?parent ?parentLabel ?officialWebsite ?countryLabel 
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
+ORDER BY ?agency
 LIMIT {limit}
 """
 
@@ -41,10 +42,14 @@ SELECT ?agency ?agencyLabel ?position ?positionLabel ?person ?personLabel ?offic
   OPTIONAL {{ ?agency wdt:P856 ?officialWebsite . }}
   OPTIONAL {{
     ?person p:P39 ?statement .
-    ?statement ps:P39 ?position .
+    ?statement ps:P39 ?position ;
+               wikibase:rank ?rank .
+    FILTER(?rank != wikibase:DeprecatedRank)
+    FILTER NOT EXISTS {{ ?statement pq:P582 ?endTime . }}
   }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
+ORDER BY ?agency
 LIMIT {limit}
 """
 
@@ -57,6 +62,7 @@ SELECT ?office ?officeLabel ?parent ?parentLabel ?officialWebsite ?countryLabel 
   OPTIONAL {{ ?office wdt:P856 ?officialWebsite . }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
+ORDER BY ?office
 LIMIT {limit}
 """
 
@@ -110,12 +116,23 @@ def classify_parent_type(name: str) -> str:
     return "Agency"
 
 
+QUERY_NAMES = {
+    AGENCY_HIERARCHY_QUERY: "hierarchy",
+    SUBUNIT_QUERY: "subunit",
+    OFFICE_HOLDER_QUERY: "office_holder",
+}
+
+
 class WikidataCrawler:
-    def __init__(self, *, request_delay: float = 1.0) -> None:
+    def __init__(self, *, request_delay: float = 1.0, timeout: int = 45) -> None:
         self.request_delay = request_delay
+        self.timeout = timeout
+        # Queries that failed on the most recent fetch; a payload built from
+        # them is partial and says so.
+        self.partial_queries: list[str] = []
 
     def fetch_bindings(self, query_template: str, *, limit: int) -> list[dict[str, Any]]:
-        payload = run_sparql(query_template.format(limit=limit))
+        payload = run_sparql(query_template.format(limit=limit), timeout=self.timeout)
         return payload.get("results", {}).get("bindings", [])
 
     def fetch_bindings_safe(self, query_template: str, *, limit: int) -> list[dict[str, Any]]:
@@ -123,6 +140,7 @@ class WikidataCrawler:
             return self.fetch_bindings(query_template, limit=limit)
         except (OSError, ValueError) as error:  # URLError/HTTPError/timeouts, bad JSON
             print(f"warning: wikidata SPARQL query failed: {error}", file=sys.stderr)
+            self.partial_queries.append(QUERY_NAMES.get(query_template, "query"))
             return []
 
     def fetch_all_rows(
@@ -137,6 +155,7 @@ class WikidataCrawler:
         if cached is not None and time.time() - cached[0] < ROW_CACHE_TTL_SECONDS:
             return cached[1]
 
+        self.partial_queries = []
         hierarchy_rows = self.fetch_bindings_safe(AGENCY_HIERARCHY_QUERY, limit=hierarchy_limit)
         time.sleep(self.request_delay)
         subunit_rows = self.fetch_bindings_safe(SUBUNIT_QUERY, limit=subunit_limit)
@@ -144,8 +163,10 @@ class WikidataCrawler:
         office_rows = self.fetch_bindings_safe(OFFICE_HOLDER_QUERY, limit=office_holder_limit)
 
         rows = (hierarchy_rows, subunit_rows, office_rows)
-        if any(rows):
-            # Only cache runs that returned data so a total outage is retried.
+        if not self.partial_queries and any(rows):
+            # Only a complete fetch is worth an hour of reuse. Caching a
+            # partial one served the same missing query to the discovery pass
+            # with zero further calls and no error anywhere.
             _ROW_CACHE[cache_key] = (time.time(), rows)
         return rows
 
@@ -359,14 +380,18 @@ def crawl(
     hierarchy_limit: int = 500,
     office_holder_limit: int = 250,
     subunit_limit: int = 500,
-) -> dict[str, list[dict[str, Any]]]:
-    crawler = WikidataCrawler()
+    timeout: int = 45,
+) -> dict[str, Any]:
+    crawler = WikidataCrawler(timeout=timeout)
     nodes, edges = crawler.build_records(
         hierarchy_limit=hierarchy_limit,
         office_holder_limit=office_holder_limit,
         subunit_limit=subunit_limit,
     )
-    return {"nodes": nodes, "edges": edges}
+    payload: dict[str, Any] = {"nodes": nodes, "edges": edges}
+    if crawler.partial_queries:
+        payload["partial"] = list(crawler.partial_queries)
+    return payload
 
 
 def crawl_discovery_records(
@@ -374,13 +399,19 @@ def crawl_discovery_records(
     hierarchy_limit: int = 500,
     office_holder_limit: int = 250,
     subunit_limit: int = 500,
+    timeout: int = 45,
 ) -> list[dict[str, Any]]:
-    crawler = WikidataCrawler()
-    return crawler.build_discovery_records(
+    crawler = WikidataCrawler(timeout=timeout)
+    records = crawler.build_discovery_records(
         hierarchy_limit=hierarchy_limit,
         office_holder_limit=office_holder_limit,
         subunit_limit=subunit_limit,
     )
+    if crawler.partial_queries:
+        # Same marker as crawl(): the discovery pass re-runs the queries when
+        # the direct fetch was partial (and so not cached), and can fail too.
+        return {"records": records, "partial": list(crawler.partial_queries)}
+    return records
 
 
 if __name__ == "__main__":

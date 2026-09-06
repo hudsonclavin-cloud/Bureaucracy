@@ -1,0 +1,220 @@
+{
+  "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch — usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse.",
+  "legislative-branch": [
+    "https://www.congress.gov/"
+  ],
+  "leg-senate": [
+    "https://www.senate.gov/"
+  ],
+  "leg-house": [
+    "https://www.house.gov/"
+  ],
+  "leg-support-gao": [
+    "https://www.gao.gov/about"
+  ],
+  "leg-support-cbo": [
+    "https://www.cbo.gov/about/overview"
+  ],
+  "leg-support-loc": [
+    "https://www.loc.gov/about/"
+  ],
+  "leg-support-gpo": [
+    "https://www.gpo.gov/who-we-are"
+  ],
+  "leg-support-aoc": [
+    "https://www.aoc.gov/about-us"
+  ],
+  "leg-support-uscp": [
+    "https://www.uscp.gov/the-department"
+  ],
+  "executive-branch": [
+    "https://www.whitehouse.gov/administration/"
+  ],
+  "exec-eop": [
+    "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+  ],
+  "exec-eop-omb": [
+    "https://www.whitehouse.gov/omb/"
+  ],
+  "exec-eop-ustr": [
+    "https://ustr.gov/about-us"
+  ],
+  "exec-eop-ostp": [
+    "https://www.whitehouse.gov/ostp/"
+  ],
+  "exec-eop-ondcp": [
+    "https://www.whitehouse.gov/ondcp/"
+  ],
+  "exec-eop-nsc": [
+    "https://www.whitehouse.gov/nsc/"
+  ],
+  "exec-eop-cea": [
+    "https://www.whitehouse.gov/cea/"
+  ],
+  "exec-dept-state": [
+    "https://www.state.gov/about/"
+  ],
+  "exec-dept-treasury": [
+    "https://home.treasury.gov/about/general-information"
+  ],
+  "exec-dept-defense": [
+    "https://www.defense.gov/About/"
+  ],
+  "exec-dept-doj": [
+    "https://www.justice.gov/about"
+  ],
+  "exec-dept-doi": [
+    "https://www.doi.gov/whoweare"
+  ],
+  "exec-dept-usda": [
+    "https://www.usda.gov/about-usda"
+  ],
+  "exec-dept-doc": [
+    "https://www.commerce.gov/about"
+  ],
+  "exec-dept-dol": [
+    "https://www.dol.gov/general/aboutdol"
+  ],
+  "exec-dept-hhs": [
+    "https://www.hhs.gov/about/index.html"
+  ],
+  "exec-dept-hud": [
+    "https://www.hud.gov/about"
+  ],
+  "exec-dept-dot": [
+    "https://www.transportation.gov/about"
+  ],
+  "exec-dept-doe": [
+    "https://www.energy.gov/leadership-organization"
+  ],
+  "exec-dept-doe-nnsa": [
+    "https://www.energy.gov/nnsa/national-nuclear-security-administration"
+  ],
+  "exec-dept-doe-sc": [
+    "https://www.energy.gov/science/office-science"
+  ],
+  "exec-dept-doe-em": [
+    "https://www.energy.gov/em/office-environmental-management"
+  ],
+  "exec-dept-ed": [
+    "https://www.ed.gov/about"
+  ],
+  "exec-dept-va": [
+    "https://www.va.gov/about_va/"
+  ],
+  "exec-dept-dhs": [
+    "https://www.dhs.gov/about-dhs"
+  ],
+  "exec-ind-cia": [
+    "https://www.cia.gov/about/"
+  ],
+  "exec-ind-epa": [
+    "https://www.epa.gov/aboutepa"
+  ],
+  "exec-ind-nasa": [
+    "https://www.nasa.gov/about/",
+    "https://www.nasa.gov/organization/"
+  ],
+  "exec-ind-nasa-kennedy-space-center-ksc": [
+    "https://www.nasa.gov/kennedy/"
+  ],
+  "exec-ind-nasa-johnson-space-center-jsc": [
+    "https://www.nasa.gov/johnson/"
+  ],
+  "exec-ind-nasa-goddard-space-flight-center-gsfc": [
+    "https://www.nasa.gov/goddard/"
+  ],
+  "exec-ind-nasa-marshall-space-flight-center-msfc": [
+    "https://www.nasa.gov/marshall/"
+  ],
+  "exec-ind-nasa-ames-research-center-arc": [
+    "https://www.nasa.gov/ames/"
+  ],
+  "exec-ind-nasa-glenn-research-center-grc": [
+    "https://www.nasa.gov/glenn/"
+  ],
+  "exec-ind-nasa-langley-research-center-larc": [
+    "https://www.nasa.gov/langley/"
+  ],
+  "exec-ind-nasa-stennis-space-center-ssc": [
+    "https://www.nasa.gov/stennis/"
+  ],
+  "exec-ind-nasa-armstrong-flight-research-center-afrc": [
+    "https://www.nasa.gov/armstrong/"
+  ],
+  "exec-ind-ssa": [
+    "https://www.ssa.gov/agency/"
+  ],
+  "exec-ind-sba": [
+    "https://www.sba.gov/about-sba"
+  ],
+  "exec-ind-nsf": [
+    "https://www.nsf.gov/about"
+  ],
+  "exec-ind-opm": [
+    "https://www.opm.gov/about-us/"
+  ],
+  "exec-ind-nara": [
+    "https://www.archives.gov/about"
+  ],
+  "exec-regulatory-fed": [
+    "https://www.federalreserve.gov/aboutthefed.htm"
+  ],
+  "exec-regulatory-sec": [
+    "https://www.sec.gov/about"
+  ],
+  "exec-regulatory-fcc": [
+    "https://www.fcc.gov/about-fcc/what-we-do"
+  ],
+  "exec-regulatory-ftc": [
+    "https://www.ftc.gov/about-ftc"
+  ],
+  "exec-regulatory-nrc": [
+    "https://www.nrc.gov/about-nrc.html"
+  ],
+  "exec-regulatory-ferc": [
+    "https://www.ferc.gov/about/what-ferc"
+  ],
+  "exec-regulatory-cpsc": [
+    "https://www.cpsc.gov/About-CPSC"
+  ],
+  "exec-regulatory-fdic": [
+    "https://www.fdic.gov/about"
+  ],
+  "exec-regulatory-cftc": [
+    "https://www.cftc.gov/About/AboutTheCommission"
+  ],
+  "exec-regulatory-fmc": [
+    "https://www.fmc.gov/about-the-fmc/"
+  ],
+  "judicial-branch": [
+    "https://www.uscourts.gov/about-federal-courts"
+  ],
+  "jud-scotus": [
+    "https://www.supremecourt.gov/about/about.aspx"
+  ],
+  "jud-appeals": [
+    "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+  ],
+  "jud-district": [
+    "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+  ],
+  "jud-specialized-tax": [
+    "https://www.ustaxcourt.gov/about_the_court.html"
+  ],
+  "jud-specialized-claims": [
+    "https://www.uscfc.uscourts.gov/about-court"
+  ],
+  "jud-specialized-intl-trade": [
+    "https://www.cit.uscourts.gov/about-court"
+  ],
+  "jud-support-aousc": [
+    "https://www.uscourts.gov/about-federal-courts/governance-judicial-conference/administrative-office-us-courts"
+  ],
+  "jud-support-fjc": [
+    "https://www.fjc.gov/about"
+  ],
+  "jud-support-ussc": [
+    "https://www.ussc.gov/about"
+  ]
+}

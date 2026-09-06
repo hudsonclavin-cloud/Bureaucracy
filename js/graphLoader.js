@@ -287,13 +287,29 @@ function mergeExpansionGraph(baseRoot, expansionData) {
     }
   }
 
-  baseRoot.relationships = rawEdges
-    .filter((edge) => edge && edge.source && edge.target)
-    .map((edge) => ({
+  // Merge, never replace: graph.json carries the exporter's relationships and
+  // the corporate overlay always loads, so an assignment here dropped every
+  // pipeline edge whenever expanded_edges.json was stale or missing.
+  const existingRelationships = Array.isArray(baseRoot.relationships) ? baseRoot.relationships : [];
+  const seenEdges = new Set();
+  const mergedRelationships = [];
+  for (const edge of [...existingRelationships, ...rawEdges]) {
+    if (!edge || !edge.source || !edge.target) {
+      continue;
+    }
+    const normalized = {
       source: String(edge.source),
       target: String(edge.target),
       type: String(edge.type || edge.relationship || "relationship"),
-    }));
+    };
+    const key = `${normalized.source}::${normalized.target}::${normalized.type}`;
+    if (seenEdges.has(key)) {
+      continue;
+    }
+    seenEdges.add(key);
+    mergedRelationships.push(normalized);
+  }
+  baseRoot.relationships = mergedRelationships;
 
   return baseRoot;
 }
@@ -353,15 +369,19 @@ export async function loadMergedGraphData({
   // fetchJson has no catch of its own, so without this a missing or malformed
   // pipeline artefact is a blank screen rather than a degraded one. Degrade to
   // the curated hierarchy instead, and say so.
+  let loadSource = "primary";
   const basePromise =
     fallbackBaseUrl && fallbackBaseUrl !== baseUrl
       ? fetchJson(baseUrl).catch(() => {
           onStatus("Pipeline graph unavailable — falling back to the base hierarchy…");
+          loadSource = "fallback";
           return fetchJson(fallbackBaseUrl);
         })
       : fetchJson(baseUrl);
   onStatus("Fetching corporate expansion…");
-  const corporatePromise = fetchJson(corporateUrl).catch(optionalFetchFallback(corporateUrl, null));
+  const corporatePromise = corporateUrl
+    ? fetchJson(corporateUrl).catch(optionalFetchFallback(corporateUrl, null))
+    : Promise.resolve(null);
   onStatus("Fetching pipeline-expanded nodes…");
   const expandedNodesPromise = fetchJson(expandedNodesUrl).catch(optionalFetchFallback(expandedNodesUrl, []));
   onStatus("Fetching pipeline-expanded edges…");
@@ -407,6 +427,9 @@ export async function loadMergedGraphData({
     mergedGraph.candidateNodes.push(candidateNode);
   }
 
+  // The status line that announced the fallback is overwritten in the same
+  // tick; the flag lets the page say so where the visitor can read it.
+  mergedGraph.__loadSource = loadSource;
   onStatus("Indexing hierarchy and preparing GPU batches…");
   return mergedGraph;
 }

@@ -2,12 +2,19 @@ from __future__ import annotations
 
 import os
 import re
+import sys
+from http.client import HTTPException
 from html.parser import HTMLParser
 from typing import Any
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = os.environ.get("BUREAUCRACY_PIPELINE_UA", "bureaucracy-data-pipeline/1.0")
+# A site owner who sees this in their logs can find out what it is and who
+# to complain to. Override with BUREAUCRACY_PIPELINE_UA.
+USER_AGENT = os.environ.get(
+    "BUREAUCRACY_PIPELINE_UA",
+    "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+)
 DEFAULT_DIRECTORY_SOURCES = (
     {
         "agencyName": "Department of Energy",
@@ -136,6 +143,7 @@ def crawl(
     *,
     sources: list[dict[str, str]] | None = None,
     max_records_per_source: int = 150,
+    timeout: int = 30,
 ) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for source in sources or list(DEFAULT_DIRECTORY_SOURCES):
@@ -144,8 +152,9 @@ def crawl(
         if not directory_url or not agency_name:
             continue
         try:
-            html = request_text(directory_url)
-        except Exception:  # noqa: BLE001
+            html = request_text(directory_url, timeout=timeout)
+        except (OSError, ValueError, TimeoutError, HTTPException) as error:
+            print(f"warning: official directory fetch failed for {directory_url}: {error}", file=sys.stderr)
             continue
         records.extend(
             extract_directory_records(

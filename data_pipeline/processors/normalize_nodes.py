@@ -4,7 +4,6 @@ import json
 import re
 from copy import deepcopy
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 from typing import Any, Iterable
@@ -64,19 +63,50 @@ ACRONYMS = {
 }
 
 
+# Agency acronyms that only an all-caps source can be trusted to have meant:
+# in "DEPARTMENT OF HOMELAND SECURITY (DHS)" every token was upper-case, so
+# restoring these after title-casing cannot invent a reading. They are not
+# applied to lower-case input, where "ice" may simply be a word.
+UPPERCASE_SOURCE_ACRONYMS = {
+    "Fbi": "FBI", "Epa": "EPA", "Irs": "IRS", "Gsa": "GSA", "Opm": "OPM", "Dhs": "DHS",
+    "Cia": "CIA", "Nsa": "NSA", "Fema": "FEMA", "Faa": "FAA", "Fcc": "FCC", "Ftc": "FTC",
+    "Fda": "FDA", "Cdc": "CDC", "Nih": "NIH", "Cms": "CMS", "Va": "VA", "Doj": "DOJ",
+    "Dol": "DOL", "Dot": "DOT", "Doi": "DOI", "Hhs": "HHS", "Omb": "OMB", "Ssa": "SSA",
+    "Sba": "SBA", "Nsf": "NSF", "Tsa": "TSA", "Ice": "ICE", "Cbp": "CBP", "Usda": "USDA",
+    "Usaid": "USAID", "Nrc": "NRC", "Nasa": "NASA", "Nara": "NARA", "Gao": "GAO",
+    "Cbo": "CBO", "Gpo": "GPO", "Eop": "EOP", "Dea": "DEA", "Atf": "ATF", "Bop": "BOP",
+    "Cfpb": "CFPB", "Ntsb": "NTSB", "Osha": "OSHA", "Fhwa": "FHWA", "Fra": "FRA",
+    "Fta": "FTA", "Nhtsa": "NHTSA", "Noaa": "NOAA", "Nist": "NIST", "Uspto": "USPTO",
+    "Ustr": "USTR", "Ondcp": "ONDCP", "Ostp": "OSTP", "Oira": "OIRA",
+}
+SMALL_WORDS = {"of", "the", "and", "for", "in", "on", "to", "at", "by", "or", "a", "an"}
+
+
 def normalize_name(value: Any) -> str:
     text = "" if value is None else str(value)
-    text = re.sub(r"[_/]+", " ", text).strip()
+    # Underscores are slug residue; a slash is punctuation people write in
+    # names ("Deputy Director / COO") and must survive normalisation.
+    text = re.sub(r"_+", " ", text).strip()
     text = re.sub(r"\s+", " ", text)
     if not text:
         return DEFAULT_NODE["name"]
 
-    if text.isupper() or text == text.lower():
+    was_upper = text.isupper()
+    if was_upper or text == text.lower():
         text = text.title()
         # Restore acronyms flattened by title-casing; match whole words only so
         # names like "Homeland Security" or "Hudson" are never rewritten.
         for source, target in ACRONYMS.items():
             text = re.sub(rf"\b{re.escape(source)}\b", target, text)
+        if was_upper:
+            for source, target in UPPERCASE_SOURCE_ACRONYMS.items():
+                text = re.sub(rf"\b{re.escape(source)}\b", target, text)
+        # "Department Of Homeland Security" is nobody's spelling.
+        words = text.split(" ")
+        text = " ".join(
+            word.lower() if index > 0 and word.lower() in SMALL_WORDS else word
+            for index, word in enumerate(words)
+        )
     return text
 
 
@@ -184,6 +214,10 @@ def get_first_text(*values: Any) -> str:
 
 def classify_source_url(url: str) -> str:
     host = urlparse(url).netloc.lower()
+    # Same order as discovery: the Register is a .gov host, but a notice is
+    # documentation of an office, not the office's own site.
+    if "federalregister.gov" in host:
+        return "federal_register"
     if host.endswith(".gov") or host.endswith(".mil"):
         return "official_site"
     if "wikidata.org" in host:
@@ -226,13 +260,11 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
     else:
         verification_status = "unverified"
 
-    last_verified = node.get("lastVerified")
-    if source_count > 0:
-        last_verified = (
-            str(last_verified).strip()
-            if last_verified
-            else datetime.now(timezone.utc).date().isoformat()
-        )
+    # A recorded source is not a verification. This used to stamp today's date
+    # on every node that merely carried a URL — "Last Verified: Mar 12, 2026"
+    # on 3,812 records nothing had checked — and made two identical runs on
+    # different days produce different bytes.
+    last_verified = str(node.get("lastVerified")).strip() if node.get("lastVerified") else None
 
     # Proof fields, read by build_graph.annotate_proof_tree. Scored off an
     # alias-expanded view of the source types so the confidence scoring above
@@ -247,13 +279,22 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
             if source_type not in {"unknown", "candidate_discovery", "wikipedia"}
         ]
     )
-    proof_source_count = len(proof_source_types)
+    # A type label with no URL behind it is not a proof source either.
+    proof_source_count = len(proof_source_types) if source_count > 0 else 0
 
     exists_proven = False
     proof_status = "unproven"
     proof_reason = "no_evidence_recorded" if proof_source_count == 0 and source_count == 0 else "insufficient_direct_proof"
-    if (
-        "official_site" in aliased_source_types
+    # A type label is a claim about a URL; with no URL recorded it proves
+    # nothing. And "official_site" in particular must be earned by a .gov/.mil
+    # URL that is actually present, not asserted alongside an unrelated one.
+    url_backed_types = normalize_string_list(
+        [*inferred_types, *[SOURCE_TYPE_ALIASES.get(source_type, source_type) for source_type in inferred_types]]
+    )
+    if source_count == 0:
+        proof_reason = "no_evidence_recorded"
+    elif (
+        "official_site" in url_backed_types
         or "official_financial_record" in aliased_source_types
         or "legislative_reference" in aliased_source_types
     ):
