@@ -13899,7 +13899,8 @@
             }
           ],
           "sourceUrls": [
-            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+            "https://www.senate.gov/"
           ],
           "sourceTypes": [
             "official_site",
@@ -13932,10 +13933,12 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
-          "sourceCount": 1,
-          "confidenceScore": 0.7,
-          "verificationStatus": "partial",
-          "lastVerified": null
+          "sourceCount": 2,
+          "confidenceScore": 0.8,
+          "verificationStatus": "verified",
+          "lastVerified": "2026-09-06T15:33:00+00:00",
+          "verificationMethod": "name_labelled_on_own_official_page",
+          "verificationSiteFrom": "leg-senate"
         },
         {
           "id": "leg-house",
@@ -29068,7 +29071,8 @@
             }
           ],
           "sourceUrls": [
-            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+            "https://www.house.gov/"
           ],
           "sourceTypes": [
             "official_site",
@@ -29101,10 +29105,12 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
-          "sourceCount": 1,
-          "confidenceScore": 0.7,
-          "verificationStatus": "partial",
-          "lastVerified": null
+          "sourceCount": 2,
+          "confidenceScore": 0.8,
+          "verificationStatus": "verified",
+          "lastVerified": "2026-09-06T15:33:00+00:00",
+          "verificationMethod": "name_labelled_on_own_official_page",
+          "verificationSiteFrom": "leg-house"
         },
         {
           "id": "leg-joint",
@@ -36827,7 +36833,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.uscp.gov/the-department"
               ],
               "sourceTypes": [
                 "official_site",
@@ -36860,10 +36867,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "leg-support-uscp"
             }
           ],
           "sourceUrls": [],
@@ -41479,7 +41488,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.whitehouse.gov/omb/"
               ],
               "sourceTypes": [
                 "official_site",
@@ -41512,10 +41522,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-eop-omb"
             },
             {
               "id": "exec-eop-ustr",
@@ -41947,12 +41959,14 @@
                   "costSourceCount": 0
                 }
               ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "exec-eop-ustr",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
@@ -42188,18 +42202,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.whitehouse.gov/ostp/"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-eop-ostp",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "employee_weight",
@@ -42459,18 +42481,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.whitehouse.gov/ondcp/"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-eop-ondcp",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "employee_weight",
@@ -42971,18 +43001,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.whitehouse.gov/cea/"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-eop-cea",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "employee_weight",
@@ -43264,18 +43302,26 @@
               "costSourceCount": 0
             }
           ],
-          "sourceUrls": [],
-          "sourceTypes": [],
-          "sourceCount": 0,
-          "confidenceScore": 0.0,
-          "verificationStatus": "unverified",
-          "lastVerified": null,
-          "proofSourceCount": 0,
-          "proofSourceTypes": [],
-          "existsProven": false,
+          "sourceUrls": [
+            "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+          ],
+          "sourceTypes": [
+            "official_site"
+          ],
+          "lastVerified": "2026-09-06T15:33:00+00:00",
+          "verificationMethod": "name_labelled_on_own_official_page",
+          "verificationSiteFrom": "exec-eop",
+          "sourceCount": 1,
+          "confidenceScore": 0.7,
+          "verificationStatus": "partial",
+          "proofSourceCount": 1,
+          "proofSourceTypes": [
+            "official_site"
+          ],
+          "existsProven": true,
           "parentProven": true,
-          "proofStatus": "baseline",
-          "proofReason": "trusted_base_graph",
+          "proofStatus": "proven",
+          "proofReason": "official_source_recorded",
           "resolved_total_amount": 142947077.21,
           "cost_status": "allocated",
           "cost_basis": "employee_weight",
@@ -66009,7 +66055,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.justice.gov/about"
               ],
               "sourceTypes": [
                 "official_site",
@@ -66042,10 +66089,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-dept-doj"
             },
             {
               "id": "exec-dept-doi",
@@ -66937,7 +66986,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.doi.gov/whoweare"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -66970,10 +67020,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi"
                 },
                 {
                   "id": "exec-dept-doi-blm",
@@ -67285,18 +67337,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.doi.gov/whoweare"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 534051524.9,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -67618,7 +67678,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.doi.gov/whoweare"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -67651,10 +67712,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi"
                 },
                 {
                   "id": "exec-dept-doi-fws",
@@ -67877,7 +67940,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.doi.gov/whoweare"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -67910,10 +67974,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi"
                 },
                 {
                   "id": "exec-dept-doi-bia",
@@ -68136,7 +68202,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.doi.gov/whoweare"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -68169,10 +68236,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi"
                 },
                 {
                   "id": "exec-dept-doi-bor",
@@ -68394,18 +68463,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.doi.gov/whoweare"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 657294184.49,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -68606,18 +68683,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.doi.gov/whoweare"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 442107801.48,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -68819,7 +68904,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.doi.gov/whoweare"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -68852,14 +68938,17 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-doi"
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.doi.gov/whoweare"
               ],
               "sourceTypes": [
                 "official_site",
@@ -68892,10 +68981,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null,
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-dept-doi",
               "child_cost_basis_implied": true
             },
             {
@@ -74063,7 +74154,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.dol.gov/general/aboutdol"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -74096,10 +74188,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol"
                 },
                 {
                   "id": "exec-dept-dol-bls",
@@ -74322,7 +74416,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.dol.gov/general/aboutdol"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -74355,10 +74450,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol"
                 },
                 {
                   "id": "exec-dept-dol-whd",
@@ -74521,7 +74618,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.dol.gov/general/aboutdol"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -74554,10 +74652,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol"
                 },
                 {
                   "id": "exec-dept-dol-eta",
@@ -74720,7 +74820,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.dol.gov/general/aboutdol"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -74753,10 +74854,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol"
                 },
                 {
                   "id": "exec-dept-dol-ebsa",
@@ -74918,18 +75021,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.dol.gov/general/aboutdol"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 1059825570.69,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -75131,7 +75242,8 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.dol.gov/general/aboutdol"
                   ],
                   "sourceTypes": [
                     "official_site",
@@ -75164,10 +75276,12 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol"
                 },
                 {
                   "id": "exec-dept-dol-ofccp",
@@ -75329,18 +75443,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.dol.gov/general/aboutdol"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-dept-dol",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 582904063.88,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -75353,7 +75475,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.dol.gov/general/aboutdol"
               ],
               "sourceTypes": [
                 "official_site",
@@ -75386,10 +75509,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null,
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-dept-dol",
               "child_cost_basis_implied": true
             },
             {
@@ -81458,7 +81583,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.hud.gov/about"
               ],
               "sourceTypes": [
                 "official_site",
@@ -81491,10 +81617,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null,
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-dept-hud",
               "child_cost_basis_implied": true
             },
             {
@@ -116430,12 +116558,14 @@
                   "costSourceCount": 0
                 }
               ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "exec-ind-cia",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
@@ -116800,18 +116930,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -116952,18 +117090,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -117104,18 +117250,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -117256,18 +117410,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -117408,18 +117570,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -117560,18 +117730,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -117712,18 +117890,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-epa",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 728531000.93,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -127310,7 +127496,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.sba.gov/about-sba"
               ],
               "sourceTypes": [
                 "official_site",
@@ -127343,10 +127530,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-ind-sba"
             },
             {
               "id": "exec-ind-nsf",
@@ -128185,18 +128374,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nsf.gov/about"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nsf",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 834465860.38,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -128765,18 +128962,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nsf.gov/about"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nsf",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 834465860.38,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -131224,18 +131429,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nsf.gov/about"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nsf",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 1010142883.62,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -131682,18 +131895,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nsf.gov/about"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nsf",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 658788837.14,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -132018,18 +132239,26 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.nsf.gov/about"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-06T15:33:00+00:00",
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationSiteFrom": "exec-ind-nsf",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 483111813.9,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -132042,7 +132271,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.nsf.gov/about"
               ],
               "sourceTypes": [
                 "official_site",
@@ -132075,10 +132305,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-ind-nsf"
             },
             {
               "id": "exec-ind-opm",
@@ -132511,7 +132743,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.opm.gov/about-us/"
               ],
               "sourceTypes": [
                 "official_site",
@@ -132544,10 +132777,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-ind-opm"
             },
             {
               "id": "exec-ind-smithsonian",
@@ -141859,7 +142094,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.archives.gov/about"
               ],
               "sourceTypes": [
                 "official_site",
@@ -141892,10 +142128,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-ind-nara"
             },
             {
               "id": "exec-ind-misc",
@@ -149623,7 +149861,8 @@
                 }
               ],
               "sourceUrls": [
-                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                "https://www.nrc.gov/about-nrc.html"
               ],
               "sourceTypes": [
                 "official_site",
@@ -149656,10 +149895,12 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
-              "lastVerified": null
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-regulatory-nrc"
             },
             {
               "id": "exec-regulatory-ferc",
@@ -150272,18 +150513,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.cpsc.gov/About-CPSC"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-regulatory-cpsc",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "budget_weight",
@@ -150693,12 +150942,14 @@
                   "costSourceCount": 0
                 }
               ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "exec-regulatory-fdic",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
@@ -151024,12 +151275,14 @@
                   "costSourceCount": 0
                 }
               ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "exec-regulatory-cftc",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
@@ -151205,18 +151458,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.fmc.gov/about-the-fmc/"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "exec-regulatory-fmc",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "implied_budget_weight",
@@ -151251,12 +151512,14 @@
           "child_cost_basis_implied": true
         }
       ],
+      "lastVerified": "2026-09-06T15:33:00+00:00",
+      "verificationFailure": "not_found",
+      "verificationSiteFrom": "executive-branch",
       "sourceUrls": [],
       "sourceTypes": [],
       "sourceCount": 0,
       "confidenceScore": 0.0,
       "verificationStatus": "unverified",
-      "lastVerified": null,
       "proofSourceCount": 0,
       "proofSourceTypes": [],
       "existsProven": false,
@@ -151624,7 +151887,8 @@
             }
           ],
           "sourceUrls": [
-            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+            "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+            "https://www.supremecourt.gov/about/about.aspx"
           ],
           "sourceTypes": [
             "official_site",
@@ -151657,10 +151921,12 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
-          "sourceCount": 1,
-          "confidenceScore": 0.7,
-          "verificationStatus": "partial",
-          "lastVerified": null
+          "sourceCount": 2,
+          "confidenceScore": 0.8,
+          "verificationStatus": "verified",
+          "lastVerified": "2026-09-06T15:33:00+00:00",
+          "verificationMethod": "name_labelled_on_own_official_page",
+          "verificationSiteFrom": "jud-scotus"
         },
         {
           "id": "jud-appeals",
@@ -156566,18 +156832,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.cit.uscourts.gov/about-court"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "jud-specialized-intl-trade",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": 189423426.94,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -157838,18 +158112,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.fjc.gov/about"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "jud-support-fjc",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": 304748073.78,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -158050,18 +158332,26 @@
                   "costSourceCount": 0
                 }
               ],
-              "sourceUrls": [],
-              "sourceTypes": [],
-              "sourceCount": 0,
-              "confidenceScore": 0.0,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
-              "proofSourceCount": 0,
-              "proofSourceTypes": [],
-              "existsProven": false,
+              "sourceUrls": [
+                "https://www.ussc.gov/about"
+              ],
+              "sourceTypes": [
+                "official_site"
+              ],
+              "lastVerified": "2026-09-06T15:33:00+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationSiteFrom": "jud-support-ussc",
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "proofSourceCount": 1,
+              "proofSourceTypes": [
+                "official_site"
+              ],
+              "existsProven": true,
               "parentProven": true,
-              "proofStatus": "baseline",
-              "proofReason": "trusted_base_graph",
+              "proofStatus": "proven",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": 266654564.55,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",

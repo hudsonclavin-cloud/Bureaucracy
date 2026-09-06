@@ -72,6 +72,13 @@ class ReleaseGateTests(unittest.TestCase):
             validity_report_output_path=self.tmp_path / "node_validity_report.json",
             reuse_existing_graph_payload=False,
             enforce_export_gate=True,
+            # This fixture is a gate test, not a crawl test. With the real
+            # evidence file the fixture's own leg-senate picked up the source
+            # www.senate.gov earned on 2026-09-06, and "costSourceCount with
+            # nothing behind it" stopped being a corruption — the gate was
+            # right and the test was stale. What the gate does with real
+            # evidence is asserted in tests/test_verification.py.
+            evidence_path=None,
         )
         self.graph_path = result.graph_path
         self.graph = json.loads(self.graph_path.read_text(encoding="utf-8"))

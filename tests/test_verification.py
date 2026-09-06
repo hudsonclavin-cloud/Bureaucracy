@@ -118,6 +118,36 @@ class LabelMatchingTests(unittest.TestCase):
         self.assertIsNone(find_label("National Nuclear Security Administration", frags))  # only in a <script>
         self.assertEqual(find_label("Office of Science", page_fragments("<a title='Office of Science'><img/></a>")), "Office of Science")
 
+    def test_metadata_that_renders_nothing_is_not_a_label(self) -> None:
+        """The exact head markup www.fmc.gov and www.sba.gov serve.
+
+        The separator split turns the feed title into the unit's name, so
+        before this the page confirmed the Commission out of <head> — markup
+        no visitor sees, and text no auditor can find on the live page.
+        """
+        head_only = (
+            "<html><head><title>Page not about anyone</title>"
+            "<link rel='alternate' type='application/rss+xml' "
+            "title='Federal Maritime Commission &raquo; Feed' href='/feed/' />"
+            "<meta name='application-name' aria-label='Federal Maritime Commission' />"
+            "</head><body><p>Nothing here names it.</p></body></html>"
+        )
+        self.assertIsNone(find_label("Federal Maritime Commission (FMC)", page_fragments(head_only)))
+        # The same name in something a reader can see is still evidence.
+        self.assertEqual(
+            find_label("Federal Maritime Commission (FMC)", page_fragments(head_only.replace(
+                "<p>Nothing here names it.</p>", "<h1>Federal Maritime Commission</h1>"))),
+            "Federal Maritime Commission",
+        )
+
+    def test_an_attribute_inside_skipped_markup_is_not_a_label(self) -> None:
+        for markup in (
+            "<svg><path aria-label='Office of Science'/></svg>",
+            "<script><a title='Office of Science'>x</a></script>",
+        ):
+            with self.subTest(markup=markup):
+                self.assertIsNone(find_label("Office of Science", page_fragments(markup)))
+
     def test_bounded_scaffolding_around_a_heading_still_matches(self) -> None:
         for heading in ("About the U.S. Department of Energy", "Department of Energy — Home", "Welcome to the Department of Energy"):
             with self.subTest(heading=heading):

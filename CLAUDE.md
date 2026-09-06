@@ -161,7 +161,12 @@ found three ways that manufactures confirmations (a one-word name like
 Science and Technology Policy"; a phrase spanning two DOM elements). Label
 equality closes all three. `LabelParser` keeps nav, header, title and footer
 — the directory crawler's parser skips them, which is where agencies list
-their offices.
+their offices. It reads `title`/`aria-label` only off elements that render:
+the 2026-09-06 run found `<link rel="alternate" title="Federal Maritime
+Commission » Feed">` in the head of www.fmc.gov and www.sba.gov, which the
+separator split turns into exactly the unit's name — a label out of markup
+no visitor sees. No published confirmation rested on it; both pages also
+carry a real heading.
 
 Five statuses in `evidence.json`, and only the first two are applied:
 

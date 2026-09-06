@@ -24,6 +24,15 @@ three independent ways that manufactures false confirmations:
 Label equality answers all three: prose is not a label, a longer name is not
 equal to a shorter one, and a fragment is one element's text.
 
+A fourth was found on the 2026-09-06 run, when 48 more hosts became
+reachable: `title` and `aria-label` were harvested from every element,
+including ones that render nothing. www.fmc.gov and www.sba.gov both ship
+<link rel="alternate" title="Federal Maritime Commission » Feed"> in <head>,
+and the separator split leaves exactly the unit's name — a label from markup
+no visitor can see. Both pages happened to carry a real heading too, so no
+published confirmation rested on it; the harvest is now limited to elements
+that render (see LabelParser.METADATA_TAGS).
+
 Four statuses, and what each is allowed to claim:
 
   confirmed     a fragment of the fetched page is this unit's name
@@ -113,6 +122,19 @@ class LabelParser(HTMLParser):
     """
 
     SKIP_TAGS = {"script", "style", "noscript", "template", "svg"}
+    # `title`/`aria-label` name a thing a reader can see. On these elements
+    # they name nothing: the element renders no box at all. www.fmc.gov and
+    # www.sba.gov both carry <link rel="alternate" title="Federal Maritime
+    # Commission » Feed"> in <head>, and LABEL_SEPARATORS splits that at "»"
+    # into exactly the unit's name — a confirmation out of head metadata no
+    # visitor ever sees. Worse, find_label returns the FIRST match in
+    # document order, so on a page whose head precedes its visible heading
+    # the recorded matchedText would be text an auditor cannot find on the
+    # live page, which is the one thing that field exists to make possible.
+    METADATA_TAGS = {
+        "link", "meta", "base", "head", "html", "title",
+        "script", "style", "noscript", "template", "param", "source", "track",
+    }
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -122,7 +144,10 @@ class LabelParser(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         if tag in self.SKIP_TAGS:
             self._skip_depth += 1
-        # A link's accessible name is a label even when its text is an icon.
+        # A link's accessible name is a label even when its text is an icon —
+        # but only where there is something on the page to label.
+        if tag in self.METADATA_TAGS or self._skip_depth:
+            return
         for key, value in attrs:
             if key in ("title", "aria-label") and value and value.strip():
                 self.fragments.append(" ".join(value.split()))
