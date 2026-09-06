@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T19:18:24.093848+00:00",
+  "timestamp": "2026-09-06T19:23:21.803120+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -27,7 +27,7 @@
     "verified": 34
   },
   "average_confidence_score": 0.72,
-  "verified_node_count": 33,
+  "verified_node_count": 34,
   "treasury_total_fetched": false,
   "build_validation": {
     "initial_node_count": 150,
@@ -53,7 +53,7 @@
       "partial": 116,
       "verified": 34
     },
-    "verified_node_count": 33,
+    "verified_node_count": 34,
     "dropped_placeholder_nodes": 0,
     "average_confidence_score": 0.72,
     "pipeline_summary": {
@@ -77,24 +77,24 @@
       "rows_negative_skipped": 0,
       "negative_sample": [],
       "stale_rollups_cleared": 0,
-      "carried_forward_citations_restored": 2,
+      "carried_forward_citations_restored": 0,
       "unmatched_sample": [],
       "ambiguous_sample": []
     },
     "verification_evidence": {
       "confirmed": 81,
       "not_found": 2,
-      "inconclusive": 102,
-      "fetch_failed": 131,
+      "inconclusive": 103,
+      "fetch_failed": 130,
       "not_checkable": 60,
       "own_page_confirmations": 42,
       "parent_page_confirmations": 39,
       "unknown_node": 0,
       "unknown_status": 0,
       "urls_added": 83,
-      "stale_claims_cleared": 81,
-      "placements_evidenced": 39,
-      "placements_checked_not_listed": 0,
+      "stale_claims_cleared": 106,
+      "placements_evidenced": 43,
+      "placements_checked_not_listed": 105,
       "placements_stale_parent": 0,
       "placements_stale_name": 0,
       "existence_stale_name": 0,

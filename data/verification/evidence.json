@@ -1,369 +1,369 @@
 {
-  "_note": "Written by scripts/verify_base_graph.py. Each record is the outcome of looking for the node's name as a label on the URLs listed, at checkedAt; nothing here was typed by hand. confirmed = a fragment of the page is the name; not_found = the unit's own page was read and did not name it; inconclusive = only an ancestor's page was read, which is not obliged to; fetch_failed = no page was read; not_checkable = the curated name could not be evidence.",
+  "_note": "Written by scripts/verify_base_graph.py. Each record is the outcome of looking for the node's name as a label on the URLs listed, at checkedAt; nothing here was typed by hand. confirmed = a fragment of the page is the name; not_found = the unit's own page was read and did not name it; inconclusive = only an ancestor's page was read, which is not obliged to; fetch_failed = no page was read; not_checkable = the curated name could not be evidence; placement_only = only the parent's page was read, for the edge above the node. placement.listed = the parent's page names the unit as a label; placement.not_listed = the pages in urlsRead were read and none does.",
   "nodes": {
     "leg-senate-cmte-appropriations-sub-defense": {
       "name": "Defense",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-armed-services-sub-airland": {
       "name": "Airland",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-armed-services-sub-cybersecurity": {
       "name": "Cybersecurity",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-armed-services-sub-personnel": {
       "name": "Personnel",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-armed-services-sub-seapower": {
       "name": "Seapower",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-energy-natural-resources-sub-energy": {
       "name": "Energy",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-cmte-judiciary-sub-constitution": {
       "name": "Constitution",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-senate-offices": {
       "name": "Individual Senator Offices (100)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-house-offices": {
       "name": "Individual Representative Offices (435)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-support-gao-mission-teams": {
       "name": "Mission Teams (15)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "leg-support-uscp-k-9-unit": {
       "name": "K-9 Unit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-state-embassy": {
       "name": "U.S. Embassies & Consulates (180+)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-defense-cocoms": {
       "name": "Unified Combatant Commands (11)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-doe-natl-labs": {
       "name": "National Laboratories (17)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visns": {
       "name": "18 VA Integrated Service Networks (VISNs)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-1-new-england": {
       "name": "VISN 1 — New England",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-2-mid-atlantic": {
       "name": "VISN 2 — Mid-Atlantic",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-4-visn-4": {
       "name": "VISN 4 — VISN 4",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-5-capitol-health-care-network": {
       "name": "VISN 5 — Capitol Health Care Network",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-6-mid-atlantic-health-care": {
       "name": "VISN 6 — Mid-Atlantic Health Care",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-7-southeast": {
       "name": "VISN 7 — Southeast",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-8-sunshine-fl": {
       "name": "VISN 8 — Sunshine (FL)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-9-mid-south": {
       "name": "VISN 9 — Mid South",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-10-great-lakes": {
       "name": "VISN 10 — Great Lakes",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-12-great-lakes": {
       "name": "VISN 12 — Great Lakes",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-15-heartland": {
       "name": "VISN 15 — Heartland",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-16-south-central": {
       "name": "VISN 16 — South Central",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-17-texas": {
       "name": "VISN 17 — Texas",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-19-rocky-mountain": {
       "name": "VISN 19 — Rocky Mountain",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-20-northwest": {
       "name": "VISN 20 — Northwest",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-21-sierra-pacific": {
       "name": "VISN 21 — Sierra Pacific",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-22-desert-pacific": {
       "name": "VISN 22 — Desert Pacific",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-dept-va-vha-visn-23-midwest": {
       "name": "VISN 23 — Midwest",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-nasa-centers": {
       "name": "NASA Field Centers (10)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-capital-metro-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-great-lakes-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-northeast-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-pacific-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-southern-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-western-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-usps-eastern-area-districts": {
       "name": "Districts (multiple)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-sba-districts": {
       "name": "District Offices (68)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-nsf-engineering-eng": {
       "name": "Engineering (ENG)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-nsf-geosciences-geo": {
       "name": "Geosciences (GEO)",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "exec-ind-misc": {
       "name": "Other Independent Agencies (25+)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-appeals": {
       "name": "U.S. Courts of Appeals (13 Circuits)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-1st-circuit": {
       "name": "U.S. Court of Appeals for the 1st Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-2nd-circuit": {
       "name": "U.S. Court of Appeals for the 2nd Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-3rd-circuit": {
       "name": "U.S. Court of Appeals for the 3rd Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-4th-circuit": {
       "name": "U.S. Court of Appeals for the 4th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-5th-circuit": {
       "name": "U.S. Court of Appeals for the 5th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-6th-circuit": {
       "name": "U.S. Court of Appeals for the 6th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-7th-circuit": {
       "name": "U.S. Court of Appeals for the 7th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-8th-circuit": {
       "name": "U.S. Court of Appeals for the 8th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-9th-circuit": {
       "name": "U.S. Court of Appeals for the 9th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-10th-circuit": {
       "name": "U.S. Court of Appeals for the 10th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-circuit-11th-circuit": {
       "name": "U.S. Court of Appeals for the 11th Circuit",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-district": {
       "name": "U.S. District Courts (94 Districts)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-district-structure": {
       "name": "All 94 District Courts — Standard Structure",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "jud-support-fpd": {
       "name": "Federal Public Defender Offices (82)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-06T15:33:00+00:00"
+      "checkedAt": "2026-09-06T19:21:46+00:00"
     },
     "legislative-branch": {
       "name": "Legislative Branch — The Congress",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "legislative-branch",
       "ownPage": true,
       "status": "fetch_failed",
@@ -392,45 +392,72 @@
     },
     "leg-senate-leadership": {
       "name": "Senate Leadership",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-senate",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.senate.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-senate",
+        "urlsRead": [
+          "https://www.senate.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-senate-committees": {
       "name": "Senate Committees",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-senate",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.senate.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-senate",
+        "urlsRead": [
+          "https://www.senate.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-senate-admin": {
       "name": "Senate Administrative Offices",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-senate",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.senate.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-senate",
+        "urlsRead": [
+          "https://www.senate.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-house": {
       "name": "United States House of Representatives",
@@ -449,49 +476,76 @@
     },
     "leg-house-leadership": {
       "name": "House Leadership",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-house",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.house.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-house",
+        "urlsRead": [
+          "https://www.house.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-house-committees": {
       "name": "House Committees",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-house",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.house.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-house",
+        "urlsRead": [
+          "https://www.house.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-house-admin": {
       "name": "House Administrative Offices",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-house",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.house.gov/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-house",
+        "urlsRead": [
+          "https://www.house.gov/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-joint": {
       "name": "Joint Congressional Bodies",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "legislative-branch",
       "ownPage": false,
       "status": "fetch_failed",
@@ -505,7 +559,7 @@
     },
     "leg-support": {
       "name": "Congressional Support Agencies",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "legislative-branch",
       "ownPage": false,
       "status": "fetch_failed",
@@ -519,7 +573,7 @@
     },
     "leg-support-gao": {
       "name": "Government Accountability Office (GAO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-gao",
       "ownPage": true,
       "status": "fetch_failed",
@@ -533,7 +587,7 @@
     },
     "leg-support-cbo": {
       "name": "Congressional Budget Office (CBO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-cbo",
       "ownPage": true,
       "status": "fetch_failed",
@@ -547,7 +601,7 @@
     },
     "leg-support-cbo-divisions": {
       "name": "Analytical Divisions",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-cbo",
       "ownPage": false,
       "status": "fetch_failed",
@@ -561,7 +615,7 @@
     },
     "leg-support-loc": {
       "name": "Library of Congress",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -575,7 +629,7 @@
     },
     "leg-support-loc-crs": {
       "name": "Congressional Research Service",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -589,7 +643,7 @@
     },
     "leg-support-loc-copyright": {
       "name": "Copyright Office",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -603,7 +657,7 @@
     },
     "leg-support-loc-law": {
       "name": "Law Library of Congress",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -617,7 +671,7 @@
     },
     "leg-support-loc-nls": {
       "name": "National Library Service for Blind & Print Disabled",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -631,7 +685,7 @@
     },
     "leg-support-loc-folklife": {
       "name": "American Folklife Center",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-loc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -645,7 +699,7 @@
     },
     "leg-support-gpo": {
       "name": "Government Publishing Office (GPO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-gpo",
       "ownPage": true,
       "status": "fetch_failed",
@@ -659,7 +713,7 @@
     },
     "leg-support-gpo-journals": {
       "name": "Official Journals of Government",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-gpo",
       "ownPage": false,
       "status": "fetch_failed",
@@ -673,7 +727,7 @@
     },
     "leg-support-gpo-plant": {
       "name": "Plant Operations",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-gpo",
       "ownPage": false,
       "status": "fetch_failed",
@@ -687,7 +741,7 @@
     },
     "leg-support-gpo-security": {
       "name": "Security & Intelligent Documents",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-gpo",
       "ownPage": false,
       "status": "fetch_failed",
@@ -701,7 +755,7 @@
     },
     "leg-support-aoc": {
       "name": "Architect of the Capitol",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -715,7 +769,7 @@
     },
     "leg-support-aoc-capitol-building": {
       "name": "Capitol Building",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -729,7 +783,7 @@
     },
     "leg-support-aoc-senate-office-buildings": {
       "name": "Senate Office Buildings",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -743,7 +797,7 @@
     },
     "leg-support-aoc-house-office-buildings": {
       "name": "House Office Buildings",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -757,7 +811,7 @@
     },
     "leg-support-aoc-capitol-power-plant": {
       "name": "Capitol Power Plant",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -771,7 +825,7 @@
     },
     "leg-support-aoc-capitol-grounds": {
       "name": "Capitol Grounds",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -785,7 +839,7 @@
     },
     "leg-support-aoc-library-of-congress-buildings": {
       "name": "Library of Congress Buildings",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -799,7 +853,7 @@
     },
     "leg-support-aoc-capitol-visitor-center": {
       "name": "Capitol Visitor Center",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-aoc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -828,101 +882,164 @@
     },
     "leg-support-uscp-patrol-mobile-response-bureau": {
       "name": "Patrol & Mobile Response Bureau",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-protective-services-bureau": {
       "name": "Protective Services Bureau",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-hazardous-incident-response-division": {
       "name": "Hazardous Incident Response Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-intelligence-interagency-coordination-division": {
       "name": "Intelligence & Interagency Coordination Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-criminal-investigative-division": {
       "name": "Criminal Investigative Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-communications-division": {
       "name": "Communications Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "leg-support-uscp-office-of-professional-responsibility": {
       "name": "Office of Professional Responsibility",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-support-uscp",
+        "urlsRead": [
+          "https://www.uscp.gov/the-department"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "executive-branch": {
       "name": "Executive Branch",
@@ -952,35 +1069,60 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "executive-branch",
+        "url": "https://www.whitehouse.gov/government/executive-branch/",
+        "matchedText": "Executive Office of The President",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-who": {
       "name": "White House Office",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-nsc": {
       "name": "National Security Council",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
-      "siteFrom": "exec-eop-nsc",
-      "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "checkedAt": "2026-09-06T19:21:46+00:00",
+      "siteFrom": "exec-eop",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.whitehouse.gov/nsc/",
-          "reason": "HTTPError: HTTP Error 404: Not Found"
+          "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+          "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-nsc-counter-terrorism": {
       "name": "NSC Directorate: Counter-Terrorism",
@@ -1233,123 +1375,202 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+        "matchedText": "Office of Management and Budget",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-oira-office-of-information-regulatory-affairs": {
       "name": "OIRA — Office of Information & Regulatory Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-office-of-federal-procurement-policy": {
       "name": "Office of Federal Procurement Policy",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-office-of-federal-financial-management": {
       "name": "Office of Federal Financial Management",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-office-of-e-government-it-federal-cio": {
       "name": "Office of E-Government & IT (Federal CIO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-budget-review-division": {
       "name": "Budget Review Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-legislative-reference-division": {
       "name": "Legislative Reference Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-performance-personnel-management": {
       "name": "Performance & Personnel Management",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-omb-economic-policy-division": {
       "name": "Economic Policy Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-omb",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/omb/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop-omb",
+        "urlsRead": [
+          "https://www.whitehouse.gov/omb/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-ustr": {
       "name": "Office of the U.S. Trade Representative",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop-ustr",
       "ownPage": true,
       "status": "inconclusive",
@@ -1360,7 +1581,15 @@
           "url": "https://ustr.gov/about-us",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-ostp": {
       "name": "Office of Science & Technology Policy",
@@ -1375,7 +1604,14 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+        "matchedText": "Office of Science and Technology Policy",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-ondcp": {
       "name": "Office of National Drug Control Policy",
@@ -1390,21 +1626,37 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+        "matchedText": "Office of National Drug Control Policy",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-nec": {
       "name": "National Economic Council",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-cea": {
       "name": "Council of Economic Advisers",
@@ -1419,39 +1671,65 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-eop-onadm": {
       "name": "Office of Administration",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-eop",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-eop",
+        "urlsRead": [
+          "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-cabinet": {
       "name": "The Cabinet — Executive Departments",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "executive-branch",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.whitehouse.gov/administration/",
+          "url": "https://www.whitehouse.gov/government/executive-branch/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "executive-branch",
+        "urlsRead": [
+          "https://www.whitehouse.gov/government/executive-branch/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-state": {
       "name": "Department of State",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": true,
       "status": "fetch_failed",
@@ -1465,7 +1743,7 @@
     },
     "exec-dept-state-bureau-of-african-affairs": {
       "name": "Bureau of African Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1479,7 +1757,7 @@
     },
     "exec-dept-state-bureau-of-east-asian-pacific-affairs": {
       "name": "Bureau of East Asian & Pacific Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1493,7 +1771,7 @@
     },
     "exec-dept-state-bureau-of-european-eurasian-affairs": {
       "name": "Bureau of European & Eurasian Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1507,7 +1785,7 @@
     },
     "exec-dept-state-bureau-of-near-eastern-affairs": {
       "name": "Bureau of Near Eastern Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1521,7 +1799,7 @@
     },
     "exec-dept-state-bureau-of-south-central-asian-affairs": {
       "name": "Bureau of South & Central Asian Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1535,7 +1813,7 @@
     },
     "exec-dept-state-bureau-of-western-hemisphere-affairs": {
       "name": "Bureau of Western Hemisphere Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1549,7 +1827,7 @@
     },
     "exec-dept-state-bureau-of-international-organization-affairs": {
       "name": "Bureau of International Organization Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1563,7 +1841,7 @@
     },
     "exec-dept-state-bureau-of-arms-control-verification-compliance": {
       "name": "Bureau of Arms Control, Verification & Compliance",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1577,7 +1855,7 @@
     },
     "exec-dept-state-bureau-of-international-security-nonproliferation": {
       "name": "Bureau of International Security & Nonproliferation",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1591,7 +1869,7 @@
     },
     "exec-dept-state-bureau-of-political-military-affairs": {
       "name": "Bureau of Political-Military Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1605,7 +1883,7 @@
     },
     "exec-dept-state-bureau-of-consular-affairs": {
       "name": "Bureau of Consular Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1619,7 +1897,7 @@
     },
     "exec-dept-state-bureau-of-diplomatic-security": {
       "name": "Bureau of Diplomatic Security",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1633,7 +1911,7 @@
     },
     "exec-dept-state-bureau-of-global-public-affairs": {
       "name": "Bureau of Global Public Affairs",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1647,7 +1925,7 @@
     },
     "exec-dept-state-foreign-service-institute": {
       "name": "Foreign Service Institute",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1661,7 +1939,7 @@
     },
     "exec-dept-state-office-of-the-chief-of-protocol": {
       "name": "Office of the Chief of Protocol",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1675,7 +1953,7 @@
     },
     "exec-dept-state-u-s-mission-to-the-united-nations": {
       "name": "U.S. Mission to the United Nations",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1715,7 +1993,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Internal Revenue Service (IRS)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-bep": {
       "name": "Bureau of Engraving & Printing",
@@ -1730,7 +2015,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Bureau of Engraving & Printing (BEP)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-mint": {
       "name": "U.S. Mint",
@@ -1745,7 +2037,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "U.S. Mint",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-fiscal": {
       "name": "Bureau of the Fiscal Service",
@@ -1760,7 +2059,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Bureau of the Fiscal Service (BFS)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-fincen": {
       "name": "Financial Crimes Enforcement Network (FinCEN)",
@@ -1775,7 +2081,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Financial Crimes Enforcement Network (FinCEN)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-occ": {
       "name": "Office of the Comptroller of the Currency (OCC)",
@@ -1790,11 +2103,18 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Office of the Comptroller of the Currency (OCC)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-ofac": {
       "name": "Office of Foreign Assets Control (OFAC)",
-      "checkedAt": "2026-09-06T16:02:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-treasury",
       "ownPage": false,
       "status": "inconclusive",
@@ -1805,11 +2125,19 @@
           "url": "https://home.treasury.gov/about/general-information",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-treasury",
+        "urlsRead": [
+          "https://home.treasury.gov/about/general-information"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-ofr": {
       "name": "Office of Financial Research (OFR)",
-      "checkedAt": "2026-09-06T16:02:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-treasury",
       "ownPage": false,
       "status": "inconclusive",
@@ -1820,7 +2148,15 @@
           "url": "https://home.treasury.gov/about/general-information",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-treasury",
+        "urlsRead": [
+          "https://home.treasury.gov/about/general-information"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-treasury-ttb": {
       "name": "Alcohol & Tobacco Tax & Trade Bureau (TTB)",
@@ -1835,11 +2171,18 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "url": "https://home.treasury.gov/about/general-information",
+        "matchedText": "Alcohol and Tobacco Tax and Trade Bureau (TTB)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-defense": {
       "name": "Department of Defense (DoD)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-defense",
       "ownPage": true,
       "status": "fetch_failed",
@@ -1853,7 +2196,7 @@
     },
     "exec-dept-defense-jcs": {
       "name": "Joint Chiefs of Staff",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-defense",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1867,7 +2210,7 @@
     },
     "exec-dept-defense-branches": {
       "name": "Military Departments & Services",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-defense",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1881,7 +2224,7 @@
     },
     "exec-dept-defense-agencies": {
       "name": "Defense Agencies & Field Activities",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-defense",
       "ownPage": false,
       "status": "fetch_failed",
@@ -1910,199 +2253,325 @@
     },
     "exec-dept-doj-fbi": {
       "name": "Federal Bureau of Investigation (FBI)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-dea": {
       "name": "Drug Enforcement Administration (DEA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-atf": {
       "name": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-bop": {
       "name": "Bureau of Prisons (BOP)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-usms": {
       "name": "U.S. Marshals Service (USMS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-usao": {
       "name": "U.S. Attorneys Office (USAO — 94 Districts)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-antitrust": {
       "name": "Antitrust Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-civil": {
       "name": "Civil Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-civil-rights": {
       "name": "Civil Rights Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-criminal": {
       "name": "Criminal Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-enrd": {
       "name": "Environment & Natural Resources Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-nsd": {
       "name": "National Security Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-div-tax": {
       "name": "Tax Division",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doj-solicitor": {
       "name": "Office of the Solicitor General",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi": {
       "name": "Department of the Interior (DOI)",
@@ -2132,7 +2601,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "National Park Service",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-blm": {
       "name": "Bureau of Land Management (BLM)",
@@ -2147,7 +2623,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Bureau of Land Management",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-usgs": {
       "name": "U.S. Geological Survey (USGS)",
@@ -2162,7 +2645,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "U.S. Geological Survey",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-fws": {
       "name": "U.S. Fish & Wildlife Service (FWS)",
@@ -2177,7 +2667,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "U.S. Fish & Wildlife Service",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-bia": {
       "name": "Bureau of Indian Affairs (BIA)",
@@ -2192,7 +2689,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Bureau of Indian Affairs",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-bor": {
       "name": "Bureau of Reclamation (BOR)",
@@ -2207,7 +2711,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Bureau of Reclamation",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-bsee": {
       "name": "Bureau of Safety & Environmental Enforcement (BSEE)",
@@ -2222,7 +2733,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Bureau of Safety & Environmental Enforcement",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doi-boem": {
       "name": "Bureau of Ocean Energy Management (BOEM)",
@@ -2237,11 +2755,18 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Bureau of Ocean Energy Management",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-usda": {
       "name": "Department of Agriculture (USDA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2255,7 +2780,7 @@
     },
     "exec-dept-usda-fsa": {
       "name": "Farm Service Agency (FSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2269,7 +2794,7 @@
     },
     "exec-dept-usda-nrcs": {
       "name": "Natural Resources Conservation Service (NRCS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2283,7 +2808,7 @@
     },
     "exec-dept-usda-fs": {
       "name": "Forest Service (USFS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2297,7 +2822,7 @@
     },
     "exec-dept-usda-fns": {
       "name": "Food & Nutrition Service (FNS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2311,7 +2836,7 @@
     },
     "exec-dept-usda-aphis": {
       "name": "Animal & Plant Health Inspection Service (APHIS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2325,7 +2850,7 @@
     },
     "exec-dept-usda-ars": {
       "name": "Agricultural Research Service (ARS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2339,7 +2864,7 @@
     },
     "exec-dept-usda-fsis": {
       "name": "Food Safety & Inspection Service (FSIS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2353,7 +2878,7 @@
     },
     "exec-dept-doc": {
       "name": "Department of Commerce",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2367,7 +2892,7 @@
     },
     "exec-dept-doc-census": {
       "name": "Census Bureau",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2381,7 +2906,7 @@
     },
     "exec-dept-doc-noaa": {
       "name": "NOAA — National Oceanic & Atmospheric Administration",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2395,7 +2920,7 @@
     },
     "exec-dept-doc-nist": {
       "name": "NIST — National Institute of Standards & Technology",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2409,7 +2934,7 @@
     },
     "exec-dept-doc-uspto": {
       "name": "USPTO — Patent & Trademark Office",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2423,7 +2948,7 @@
     },
     "exec-dept-doc-ita": {
       "name": "International Trade Administration (ITA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2437,7 +2962,7 @@
     },
     "exec-dept-doc-bea": {
       "name": "Bureau of Economic Analysis (BEA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2451,7 +2976,7 @@
     },
     "exec-dept-doc-ntia": {
       "name": "National Telecommunications & Information Admin (NTIA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doc",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2491,7 +3016,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Occupational Safety and Health Administration (OSHA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-bls": {
       "name": "Bureau of Labor Statistics (BLS)",
@@ -2506,7 +3038,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Bureau of Labor Statistics (BLS)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-whd": {
       "name": "Wage & Hour Division (WHD)",
@@ -2521,7 +3060,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Wage and Hour Division (WHD)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-eta": {
       "name": "Employment & Training Administration (ETA)",
@@ -2536,7 +3082,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Employment and Training Administration (ETA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-ebsa": {
       "name": "Employee Benefits Security Administration (EBSA)",
@@ -2551,7 +3104,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Employee Benefits Security Administration (EBSA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-msha": {
       "name": "Mine Safety & Health Administration (MSHA)",
@@ -2566,7 +3126,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Mine Safety and Health Administration (MSHA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dol-ofccp": {
       "name": "Office of Federal Contract Compliance Programs (OFCCP)",
@@ -2581,11 +3148,18 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Office of Federal Contract Compliance Programs (OFCCP)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hhs": {
       "name": "Department of Health & Human Services (HHS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2599,7 +3173,7 @@
     },
     "exec-dept-hhs-fda": {
       "name": "Food & Drug Administration (FDA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2613,7 +3187,7 @@
     },
     "exec-dept-hhs-cdc": {
       "name": "Centers for Disease Control & Prevention (CDC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2627,7 +3201,7 @@
     },
     "exec-dept-hhs-nih": {
       "name": "National Institutes of Health (NIH)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2641,7 +3215,7 @@
     },
     "exec-dept-hhs-cms": {
       "name": "Centers for Medicare & Medicaid Services (CMS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2655,7 +3229,7 @@
     },
     "exec-dept-hhs-ahrq": {
       "name": "Agency for Healthcare Research & Quality (AHRQ)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2669,7 +3243,7 @@
     },
     "exec-dept-hhs-samhsa": {
       "name": "Substance Abuse & Mental Health Services Admin (SAMHSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2683,7 +3257,7 @@
     },
     "exec-dept-hhs-hrsa": {
       "name": "Health Resources & Services Administration (HRSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2697,7 +3271,7 @@
     },
     "exec-dept-hhs-ihs": {
       "name": "Indian Health Service (IHS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2726,217 +3300,352 @@
     },
     "exec-dept-hud-fha": {
       "name": "Federal Housing Administration (FHA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-ginnie": {
       "name": "Ginnie Mae",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-pih": {
       "name": "Office of Public & Indian Housing (PIH)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-cpd": {
       "name": "Office of Community Planning & Development (CPD)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-fheo": {
       "name": "Office of Fair Housing & Equal Opportunity (FHEO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-i-new-england": {
       "name": "HUD Region I — New England",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-ii-new-york": {
       "name": "HUD Region II — New York",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-iii-mid-atlantic": {
       "name": "HUD Region III — Mid-Atlantic",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-iv-southeast": {
       "name": "HUD Region IV — Southeast",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-v-midwest": {
       "name": "HUD Region V — Midwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-vi-south-central": {
       "name": "HUD Region VI — South Central",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-vii-plains": {
       "name": "HUD Region VII — Plains",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-viii-mountain": {
       "name": "HUD Region VIII — Mountain",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-ix-pacific": {
       "name": "HUD Region IX — Pacific",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-hud-region-x-northwest": {
       "name": "HUD Region X — Northwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-hud",
+        "urlsRead": [
+          "https://www.hud.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dot": {
       "name": "Department of Transportation (DOT)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2950,7 +3659,7 @@
     },
     "exec-dept-dot-faa": {
       "name": "Federal Aviation Administration (FAA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2964,7 +3673,7 @@
     },
     "exec-dept-dot-fhwa": {
       "name": "Federal Highway Administration (FHWA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2978,7 +3687,7 @@
     },
     "exec-dept-dot-nhtsa": {
       "name": "National Highway Traffic Safety Admin (NHTSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -2992,7 +3701,7 @@
     },
     "exec-dept-dot-fra": {
       "name": "Federal Railroad Administration (FRA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3006,7 +3715,7 @@
     },
     "exec-dept-dot-fmcsa": {
       "name": "Federal Motor Carrier Safety Admin (FMCSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3020,7 +3729,7 @@
     },
     "exec-dept-dot-fta": {
       "name": "Federal Transit Administration (FTA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3034,7 +3743,7 @@
     },
     "exec-dept-dot-phmsa": {
       "name": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3048,7 +3757,7 @@
     },
     "exec-dept-dot-marad": {
       "name": "Maritime Administration (MARAD)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dot",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3088,7 +3797,15 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doe",
+        "urlsRead": [
+          "https://www.energy.gov/leadership-organization"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doe-sc": {
       "name": "Office of Science (SC)",
@@ -3103,21 +3820,38 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doe",
+        "urlsRead": [
+          "https://www.energy.gov/leadership-organization"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doe-eere": {
       "name": "Office of Energy Efficiency & Renewable Energy (EERE)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-doe",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.energy.gov/leadership-organization",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doe",
+        "urlsRead": [
+          "https://www.energy.gov/leadership-organization"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-doe-em": {
       "name": "Office of Environmental Management (EM)",
@@ -3132,11 +3866,19 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doe",
+        "urlsRead": [
+          "https://www.energy.gov/leadership-organization"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-ed": {
       "name": "Department of Education",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3150,7 +3892,7 @@
     },
     "exec-dept-ed-fsa": {
       "name": "Federal Student Aid (FSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3164,7 +3906,7 @@
     },
     "exec-dept-ed-ocr": {
       "name": "Office for Civil Rights (OCR)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3178,7 +3920,7 @@
     },
     "exec-dept-ed-oese": {
       "name": "Office of Elementary & Secondary Education (OESE)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3192,7 +3934,7 @@
     },
     "exec-dept-ed-ies": {
       "name": "Institute of Education Sciences (IES)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3206,7 +3948,7 @@
     },
     "exec-dept-ed-region-i-new-england": {
       "name": "Dept of Education Region I — New England",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3220,7 +3962,7 @@
     },
     "exec-dept-ed-region-ii-new-york": {
       "name": "Dept of Education Region II — New York",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3234,7 +3976,7 @@
     },
     "exec-dept-ed-region-iii-mid-atlantic": {
       "name": "Dept of Education Region III — Mid-Atlantic",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3248,7 +3990,7 @@
     },
     "exec-dept-ed-region-iv-southeast": {
       "name": "Dept of Education Region IV — Southeast",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3262,7 +4004,7 @@
     },
     "exec-dept-ed-region-v-midwest": {
       "name": "Dept of Education Region V — Midwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3276,7 +4018,7 @@
     },
     "exec-dept-ed-region-vi-south-central": {
       "name": "Dept of Education Region VI — South Central",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3290,7 +4032,7 @@
     },
     "exec-dept-ed-region-vii-plains": {
       "name": "Dept of Education Region VII — Plains",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3304,7 +4046,7 @@
     },
     "exec-dept-ed-region-viii-mountain": {
       "name": "Dept of Education Region VIII — Mountain",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3318,7 +4060,7 @@
     },
     "exec-dept-ed-region-ix-pacific": {
       "name": "Dept of Education Region IX — Pacific",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3332,7 +4074,7 @@
     },
     "exec-dept-ed-region-x-northwest": {
       "name": "Dept of Education Region X — Northwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-ed",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3372,7 +4114,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-va",
+        "url": "https://www.va.gov/about_va/",
+        "matchedText": "Veterans Health Administration",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-va-vba": {
       "name": "Veterans Benefits Administration (VBA)",
@@ -3387,7 +4136,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-va",
+        "url": "https://www.va.gov/about_va/",
+        "matchedText": "Veterans Benefits Administration",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-va-nca": {
       "name": "National Cemetery Administration (NCA)",
@@ -3402,7 +4158,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-va",
+        "url": "https://www.va.gov/about_va/",
+        "matchedText": "National Cemetery Administration",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-va-bva": {
       "name": "Board of Veterans Appeals (BVA)",
@@ -3417,11 +4180,18 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-va",
+        "url": "https://www.va.gov/about_va/",
+        "matchedText": "Board of Veterans’ Appeals",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-dept-dhs": {
       "name": "Department of Homeland Security (DHS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3435,7 +4205,7 @@
     },
     "exec-dept-dhs-cbp": {
       "name": "Customs & Border Protection (CBP)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3449,7 +4219,7 @@
     },
     "exec-dept-dhs-ice": {
       "name": "Immigration & Customs Enforcement (ICE)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3463,7 +4233,7 @@
     },
     "exec-dept-dhs-tsa": {
       "name": "Transportation Security Administration (TSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3477,7 +4247,7 @@
     },
     "exec-dept-dhs-fema": {
       "name": "Federal Emergency Management Agency (FEMA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3491,7 +4261,7 @@
     },
     "exec-dept-dhs-uscis": {
       "name": "U.S. Citizenship & Immigration Services (USCIS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3505,7 +4275,7 @@
     },
     "exec-dept-dhs-usss": {
       "name": "U.S. Secret Service (USSS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3519,7 +4289,7 @@
     },
     "exec-dept-dhs-cisa": {
       "name": "Cybersecurity & Infrastructure Security Agency (CISA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3533,7 +4303,7 @@
     },
     "exec-dept-dhs-uscg": {
       "name": "U.S. Coast Guard",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3547,7 +4317,7 @@
     },
     "exec-dept-dhs-fletc": {
       "name": "Federal Law Enforcement Training Centers (FLETC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "status": "fetch_failed",
@@ -3561,21 +4331,30 @@
     },
     "exec-independent": {
       "name": "Independent Establishments & Government Corporations",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "executive-branch",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.whitehouse.gov/administration/",
+          "url": "https://www.whitehouse.gov/government/executive-branch/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "executive-branch",
+        "urlsRead": [
+          "https://www.whitehouse.gov/government/executive-branch/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-cia": {
       "name": "Central Intelligence Agency (CIA)",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": true,
       "status": "not_found",
@@ -3589,77 +4368,122 @@
     },
     "exec-ind-cia-directorate-of-operations-do": {
       "name": "Directorate of Operations (DO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-cia",
+        "urlsRead": [
+          "https://www.cia.gov/about/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-cia-directorate-of-analysis-da": {
       "name": "Directorate of Analysis (DA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-cia",
+        "urlsRead": [
+          "https://www.cia.gov/about/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-cia-directorate-of-science-technology-dst": {
       "name": "Directorate of Science & Technology (DS&T)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-cia",
+        "urlsRead": [
+          "https://www.cia.gov/about/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-cia-directorate-of-digital-innovation-ddi": {
       "name": "Directorate of Digital Innovation (DDI)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-cia",
+        "urlsRead": [
+          "https://www.cia.gov/about/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-cia-directorate-of-support-ds": {
       "name": "Directorate of Support (DS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-cia",
+        "urlsRead": [
+          "https://www.cia.gov/about/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa": {
       "name": "Environmental Protection Agency (EPA)",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": true,
       "status": "not_found",
@@ -3684,7 +4508,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Air and Radiation (OAR)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-water-ow": {
       "name": "Office of Water (OW)",
@@ -3699,7 +4530,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Water (OW)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-land-emergency-management-olem": {
       "name": "Office of Land & Emergency Management (OLEM)",
@@ -3714,7 +4552,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Land and Emergency Management (OLEM)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-chemical-safety-pollution-prevention-ocspp": {
       "name": "Office of Chemical Safety & Pollution Prevention (OCSPP)",
@@ -3729,7 +4574,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Chemical Safety and Pollution Prevention (OCSPP)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-research-development-ord": {
       "name": "Office of Research & Development (ORD)",
@@ -3744,7 +4596,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Research and Development (ORD)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-enforcement-compliance-assurance-oeca": {
       "name": "Office of Enforcement & Compliance Assurance (OECA)",
@@ -3759,7 +4618,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of Enforcement and Compliance Assurance (OECA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-office-of-international-tribal-affairs-oita": {
       "name": "Office of International & Tribal Affairs (OITA)",
@@ -3774,147 +4640,244 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-epa",
+        "url": "https://www.epa.gov/aboutepa",
+        "matchedText": "Office of International and Tribal Affairs (OITA)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-i-new-england": {
       "name": "EPA Region I — New England",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-ii-new-york": {
       "name": "EPA Region II — New York",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-iii-mid-atlantic": {
       "name": "EPA Region III — Mid-Atlantic",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-iv-southeast": {
       "name": "EPA Region IV — Southeast",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-v-midwest": {
       "name": "EPA Region V — Midwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-vi-south-central": {
       "name": "EPA Region VI — South Central",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-vii-plains": {
       "name": "EPA Region VII — Plains",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-viii-mountain": {
       "name": "EPA Region VIII — Mountain",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-ix-pacific": {
       "name": "EPA Region IX — Pacific",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-epa-region-x-northwest": {
       "name": "EPA Region X — Northwest",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-epa",
+        "urlsRead": [
+          "https://www.epa.gov/aboutepa"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nasa": {
       "name": "National Aeronautics & Space Administration (NASA)",
@@ -3952,14 +4915,22 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 2
+      "pagesRead": 2,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa",
+        "url": "https://www.nasa.gov/about/",
+        "matchedText": "Science Mission Directorate",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nasa-exploration-systems-development-mission-directorate": {
       "name": "Exploration Systems Development Mission Directorate",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nasa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 2,
       "failures": [
         {
@@ -3970,14 +4941,24 @@
           "url": "https://www.nasa.gov/organization/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nasa",
+        "urlsRead": [
+          "https://www.nasa.gov/about/",
+          "https://www.nasa.gov/organization/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nasa-space-operations-mission-directorate": {
       "name": "Space Operations Mission Directorate",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nasa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 2,
       "failures": [
         {
@@ -3988,14 +4969,24 @@
           "url": "https://www.nasa.gov/organization/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nasa",
+        "urlsRead": [
+          "https://www.nasa.gov/about/",
+          "https://www.nasa.gov/organization/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nasa-aeronautics-research-mission-directorate": {
       "name": "Aeronautics Research Mission Directorate",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nasa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 2,
       "failures": [
         {
@@ -4006,14 +4997,24 @@
           "url": "https://www.nasa.gov/organization/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nasa",
+        "urlsRead": [
+          "https://www.nasa.gov/about/",
+          "https://www.nasa.gov/organization/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nasa-space-technology-mission-directorate": {
       "name": "Space Technology Mission Directorate",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nasa",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 2,
       "failures": [
         {
@@ -4024,11 +5025,20 @@
           "url": "https://www.nasa.gov/organization/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nasa",
+        "urlsRead": [
+          "https://www.nasa.gov/about/",
+          "https://www.nasa.gov/organization/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-ssa": {
       "name": "Social Security Administration (SSA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-ssa",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4042,7 +5052,7 @@
     },
     "exec-ind-ssa-field-ops": {
       "name": "Office of Operations — Field Structure",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-ssa",
       "ownPage": false,
       "status": "fetch_failed",
@@ -4056,7 +5066,7 @@
     },
     "exec-ind-ssa-oho": {
       "name": "Office of Hearings Operations (OHO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-ssa",
       "ownPage": false,
       "status": "fetch_failed",
@@ -4111,7 +5121,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf",
+        "url": "https://www.nsf.gov/about",
+        "matchedText": "Biological Sciences (BIO)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nsf-computer-information-science-engineering-cise": {
       "name": "Computer & Information Science & Engineering (CISE)",
@@ -4126,21 +5143,37 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf",
+        "url": "https://www.nsf.gov/about",
+        "matchedText": "Computer & Information Science & Engineering (CISE)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nsf-education-human-resources-ehr": {
       "name": "Education & Human Resources (EHR)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nsf",
+        "urlsRead": [
+          "https://www.nsf.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nsf-mathematical-physical-sciences-mps": {
       "name": "Mathematical & Physical Sciences (MPS)",
@@ -4155,7 +5188,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf",
+        "url": "https://www.nsf.gov/about",
+        "matchedText": "Mathematical & Physical Sciences (MPS)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nsf-social-behavioral-economic-sciences-sbe": {
       "name": "Social, Behavioral & Economic Sciences (SBE)",
@@ -4170,7 +5210,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf",
+        "url": "https://www.nsf.gov/about",
+        "matchedText": "Social, Behavioral & Economic Sciences (SBE)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nsf-technology-innovation-partnerships-tip": {
       "name": "Technology, Innovation & Partnerships (TIP)",
@@ -4185,7 +5232,14 @@
         }
       ],
       "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf",
+        "url": "https://www.nsf.gov/about",
+        "matchedText": "Technology, Innovation & Partnerships (TIP)",
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-opm": {
       "name": "Office of Personnel Management (OPM)",
@@ -4219,217 +5273,352 @@
     },
     "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": {
       "name": "Herbert Hoover Presidential Library (West Branch, IA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": {
       "name": "Franklin D. Roosevelt Presidential Library (Hyde Park, NY)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
       "name": "Harry S. Truman Presidential Library (Independence, MO)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
       "name": "Dwight D. Eisenhower Presidential Library (Abilene, KS)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": {
       "name": "John F. Kennedy Presidential Library (Boston, MA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx": {
       "name": "Lyndon B. Johnson Presidential Library (Austin, TX)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca": {
       "name": "Richard Nixon Presidential Library (Yorba Linda, CA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi": {
       "name": "Gerald R. Ford Presidential Library (Ann Arbor, MI)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga": {
       "name": "Jimmy Carter Presidential Library (Atlanta, GA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": {
       "name": "Ronald Reagan Presidential Library (Simi Valley, CA)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": {
       "name": "George H.W. Bush Presidential Library (College Station, TX)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
       "name": "William J. Clinton Presidential Library (Little Rock, AR)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": {
       "name": "George W. Bush Presidential Library (Dallas, TX)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-ind-nara-barack-obama-presidential-library-chicago-il": {
       "name": "Barack Obama Presidential Library (Chicago, IL)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nara",
+        "urlsRead": [
+          "https://www.archives.gov/about"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-regulatory": {
       "name": "Independent Regulatory Commissions",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "executive-branch",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.whitehouse.gov/administration/",
+          "url": "https://www.whitehouse.gov/government/executive-branch/",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "executive-branch",
+        "urlsRead": [
+          "https://www.whitehouse.gov/government/executive-branch/"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "exec-regulatory-fed": {
       "name": "Federal Reserve System",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-fed",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4443,7 +5632,7 @@
     },
     "exec-regulatory-sec": {
       "name": "Securities & Exchange Commission (SEC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-sec",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4457,7 +5646,7 @@
     },
     "exec-regulatory-fcc": {
       "name": "Federal Communications Commission (FCC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-fcc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4471,7 +5660,7 @@
     },
     "exec-regulatory-ftc": {
       "name": "Federal Trade Commission (FTC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-ftc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4500,7 +5689,7 @@
     },
     "exec-regulatory-ferc": {
       "name": "Federal Energy Regulatory Commission (FERC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-ferc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -4529,7 +5718,7 @@
     },
     "exec-regulatory-fdic": {
       "name": "Federal Deposit Insurance Corporation (FDIC)",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": true,
       "status": "inconclusive",
@@ -4544,7 +5733,7 @@
     },
     "exec-regulatory-cftc": {
       "name": "Commodity Futures Trading Commission (CFTC)",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "exec-regulatory-cftc",
       "ownPage": true,
       "status": "inconclusive",
@@ -4574,7 +5763,7 @@
     },
     "judicial-branch": {
       "name": "Judicial Branch",
-      "checkedAt": "2026-09-06T15:58:48+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "judicial-branch",
       "ownPage": true,
       "status": "inconclusive",
@@ -4600,63 +5789,107 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "judicial-branch",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-circuit-d-c-circuit": {
       "name": "U.S. Court of Appeals for the D.C. Circuit",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "jud-appeals",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-circuit-federal-circuit": {
       "name": "U.S. Court of Appeals for the Federal Circuit",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "jud-appeals",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-district-sdny": {
       "name": "S.D.N.Y. — Southern District of New York",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "jud-district",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-district",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-specialized": {
       "name": "Specialized Federal Courts",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "judicial-branch",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "judicial-branch",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-specialized-tax": {
       "name": "U.S. Tax Court",
@@ -4705,21 +5938,30 @@
     },
     "jud-support": {
       "name": "Judicial Support Organizations",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "judicial-branch",
       "ownPage": false,
       "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
       "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "judicial-branch",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts"
+        ],
+        "checkedAt": "2026-09-06T19:21:46+00:00"
+      }
     },
     "jud-support-aousc": {
       "name": "Administrative Office of U.S. Courts (AOUSC)",
-      "checkedAt": "2026-09-06T15:33:00+00:00",
+      "checkedAt": "2026-09-06T19:21:46+00:00",
       "siteFrom": "jud-support-aousc",
       "ownPage": true,
       "status": "fetch_failed",
