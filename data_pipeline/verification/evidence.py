@@ -69,6 +69,9 @@ DEFAULT_SITES_PATH = PROJECT_ROOT / "data" / "verification" / "official_sites.js
 CONFIRMED = "confirmed"
 NOT_FOUND = "not_found"
 INCONCLUSIVE = "inconclusive"
+# Why a check came back inconclusive rather than negative.
+REASON_ANCESTOR_PAGE = "only_an_ancestor_page_was_read"
+REASON_NAMED_NOT_LABELLED = "named_on_the_page_but_not_as_a_label"
 FETCH_FAILED = "fetch_failed"
 NOT_CHECKABLE = "not_checkable"
 APPLIED_STATUSES = (CONFIRMED, NOT_FOUND)
@@ -262,6 +265,21 @@ def label_matches(key: str, fragment: str) -> bool:
     return False
 
 
+def name_appears_unlabelled(name: str, fragments: list[str]) -> bool:
+    """Is the unit's name anywhere in this page's text, even if not as a label?
+
+    Deliberately loose — it joins fragments, so it will match a phrase that
+    spans two elements. That looseness is safe here and nowhere else: this
+    answers "may we say the page does not name it?", and a false positive
+    only makes the record more cautious. It must never be used to confirm.
+    """
+    key = canonical_name_key(name)
+    if not key:
+        return False
+    haystack = canonical_name_key(" ".join(fragments))
+    return bool(haystack) and key in haystack
+
+
 def find_label(name: str, fragments: list[str]) -> str | None:
     """The page fragment that is this node's name, verbatim, or None.
 
@@ -309,6 +327,7 @@ def verify_node(
 
     confirmed: list[dict[str, str]] = []
     failures: list[dict[str, str]] = []
+    pages_fragments: list[list[str]] = []
     pages_read = 0
     for url in urls:
         if classify_source_url(url) != "official_site":
@@ -326,6 +345,7 @@ def verify_node(
             failures.append({"url": url, "reason": "no_readable_text"})
             continue
         pages_read += 1
+        pages_fragments.append(fragments)
         matched = find_label(name, fragments)
         if matched:
             confirmed.append({"url": url, "matchedText": matched})
@@ -338,12 +358,24 @@ def verify_node(
         record["method"] = METHOD_OWN_PAGE if is_own_page else METHOD_PARENT_PAGE
     elif pages_read == 0:
         record["status"] = FETCH_FAILED
-    elif is_own_page:
-        record["status"] = NOT_FOUND
-    else:
+    elif not is_own_page:
         # An ancestor's page is not obliged to list this unit. Its silence is
         # not evidence that the unit does not exist.
         record["status"] = INCONCLUSIVE
+        record["reason"] = REASON_ANCESTOR_PAGE
+    elif any(name_appears_unlabelled(name, frags) for frags in pages_fragments):
+        # The unit's own page names it, just not as a heading, link or list
+        # item. That is a fact about this matcher, not about the unit, and
+        # publishing "its official page did not name it" would overstate it:
+        # cia.gov/about does say "Central Intelligence Agency", in a sentence.
+        # The loose test is used ONLY to withhold a negative claim, never to
+        # make a positive one, so it can lower the count and never raise it.
+        record["status"] = INCONCLUSIVE
+        record["reason"] = REASON_NAMED_NOT_LABELLED
+    else:
+        # The name is nowhere on the page in any form. epa.gov/aboutepa calls
+        # itself "US EPA" throughout and never spells the agency out.
+        record["status"] = NOT_FOUND
     record["pagesRead"] = pages_read
     if failures:
         record["failures"] = failures

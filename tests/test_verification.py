@@ -24,6 +24,8 @@ from data_pipeline.verification.evidence import (
     CONFIRMED,
     FETCH_FAILED,
     INCONCLUSIVE,
+    REASON_ANCESTOR_PAGE,
+    REASON_NAMED_NOT_LABELLED,
     METHOD_OWN_PAGE,
     METHOD_PARENT_PAGE,
     NOT_CHECKABLE,
@@ -31,6 +33,7 @@ from data_pipeline.verification.evidence import (
     apply_evidence_to_tree,
     candidate_urls,
     find_label,
+    name_appears_unlabelled,
     load_official_sites,
     page_fragments,
     uncheckable_reason,
@@ -311,6 +314,53 @@ class VerifyNodeTests(unittest.TestCase):
         record = verify_node({"id": "x", "name": "Department of Energy"}, list(pages), fetch=self._fetch(pages), is_own_page=True)
         self.assertEqual([s["url"] for s in record["sources"]], list(pages))
         self.assertEqual(record["pagesRead"], 2)
+
+
+class NotFoundMeansNotOnThePageTests(unittest.TestCase):
+    """"Its official page did not name it" is a positive claim, and the first
+    live run published it about the CIA — whose About page does say "Central
+    Intelligence Agency", in a sentence. What the check actually tested was
+    whether the name appears as a LABEL. A page that names the unit in prose
+    is evidence about this matcher, not about the unit."""
+
+    def _page(self, body):
+        return body + "<p>" + ("filler " * 90) + "</p>"
+
+    def _fetch(self, html):
+        return lambda url: html
+
+    def test_named_in_prose_is_inconclusive_not_a_failed_check(self) -> None:
+        html = self._page("<h1>About Us</h1><p>The Central Intelligence Agency collects foreign intelligence.</p>")
+        record = verify_node({"id": "cia", "name": "Central Intelligence Agency (CIA)"}, ["https://www.cia.gov/about/"],
+                             fetch=self._fetch(html), is_own_page=True)
+        self.assertEqual(record["status"], INCONCLUSIVE)
+        self.assertEqual(record["reason"], REASON_NAMED_NOT_LABELLED)
+        self.assertNotIn("sources", record)
+
+    def test_a_name_nowhere_on_the_page_is_still_a_real_negative(self) -> None:
+        """epa.gov/aboutepa calls itself "US EPA" and never spells it out."""
+        html = self._page("<h1>About US EPA</h1><p>US EPA protects human health and the environment.</p>")
+        record = verify_node({"id": "epa", "name": "Environmental Protection Agency (EPA)"}, ["https://www.epa.gov/aboutepa"],
+                             fetch=self._fetch(html), is_own_page=True)
+        self.assertEqual(record["status"], NOT_FOUND)
+        self.assertNotIn("reason", record)
+
+    def test_an_ancestor_page_says_which_kind_of_inconclusive_it_is(self) -> None:
+        html = self._page("<h1>Department of Energy</h1>")
+        record = verify_node({"id": "x", "name": "Office of Grid Deployment"}, ["https://www.energy.gov/about-us"],
+                             fetch=self._fetch(html), is_own_page=False)
+        self.assertEqual((record["status"], record["reason"]), (INCONCLUSIVE, REASON_ANCESTOR_PAGE))
+
+    def test_the_loose_test_can_only_withhold_a_claim_never_make_one(self) -> None:
+        """It joins fragments, so it matches across elements on purpose. That
+        is safe only because nothing positive is ever built on it."""
+        self.assertTrue(name_appears_unlabelled("Office of Science", ["Office of", "Science"]))
+        self.assertIsNone(find_label("Office of Science", ["Office of", "Science"]))
+        # And a page that labels the unit still confirms, unaffected.
+        html = self._page("<h1>Office of Science</h1>")
+        record = verify_node({"id": "x", "name": "Office of Science"}, ["https://www.energy.gov/science"],
+                             fetch=self._fetch(html), is_own_page=True)
+        self.assertEqual(record["status"], CONFIRMED)
 
 
 class ApplyEvidenceTests(unittest.TestCase):

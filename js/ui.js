@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260903a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260903a";
+import { createGovernmentGraph } from "./graph.js?v=20260906a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260906a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -451,8 +451,8 @@ function renderVerificationPanel(data) {
     let checkLine = "Not yet verified";
     if (data.verificationFailure === "not_found") {
       checkLine = checkedOn
-        ? `Checked ${checkedOn}: its official page did not name it`
-        : "Its official page did not name it";
+        ? `Checked ${checkedOn}: its official page does not name it as a heading or link`
+        : "Its official page does not name it as a heading or link";
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       checkLine = how ? `${how} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;

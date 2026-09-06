@@ -174,11 +174,21 @@ Five statuses in `evidence.json`, and only the first two are applied:
   official_site`, `lastVerified`, and `verificationMethod`, which is
   `name_labelled_on_own_official_page` or `..._parent_official_page` — a
   different claim, and the panel says which.
-- `not_found` — the unit's **own** page was read and no fragment named it.
-  Gives `lastVerified` + `verificationFailure` only, and only if no other
-  route gave the node a source. The site shows checked-and-failed.
-- `inconclusive` — only an ancestor's page was read, and a parent's About
-  page is not obliged to list its children. Applies nothing.
+- `not_found` — the unit's **own** page was read and its name is not on it
+  in any form. Gives `lastVerified` + `verificationFailure` only, and only if
+  no other route gave the node a source. The site shows checked-and-failed,
+  worded as "does not name it as a heading or link" — what was actually
+  tested.
+- `inconclusive` — nothing was learned, for one of two reasons carried in
+  `reason`. `only_an_ancestor_page_was_read`: a parent's About page is not
+  obliged to list its children. `named_on_the_page_but_not_as_a_label`: the
+  unit's own page does name it, in prose rather than as a heading or link —
+  `cia.gov/about` says "Central Intelligence Agency" in a sentence, and the
+  first live run published "its official page did not name it" about the CIA
+  on the strength of that. `name_appears_unlabelled` makes that distinction
+  with a deliberately loose match that joins fragments; it is used ONLY to
+  withhold a negative claim, never to make a positive one, so it can lower
+  the confirmation count and never raise it. Applies nothing either way.
 - `fetch_failed` — no page was read: blocked network, 404, robots.txt
   disallow, a 200 with under 400 characters of readable text (a JS shell or
   a bot challenge). Applies nothing; it is a fact about the network.
