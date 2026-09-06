@@ -485,6 +485,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-senate",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -12187,6 +12190,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-senate",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -13970,6 +13976,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-senate",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -14598,6 +14607,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-house",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -27947,6 +27959,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-house",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -29283,6 +29298,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "leg-house",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -36017,6 +36035,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -36169,6 +36190,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -36321,6 +36345,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -36473,6 +36500,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -36625,6 +36655,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -36929,6 +36962,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -37081,6 +37117,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-uscp",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -38149,7 +38188,10 @@
               "sourceCount": 1,
               "confidenceScore": 0.7,
               "verificationStatus": "partial",
-              "lastVerified": null
+              "lastVerified": null,
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
             },
             {
               "id": "exec-eop-nsc",
@@ -40385,6 +40427,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -40695,6 +40740,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -40847,6 +40895,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -40999,6 +41050,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41151,6 +41205,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41303,6 +41360,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41455,6 +41515,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41607,6 +41670,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41759,6 +41825,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-eop-omb",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41826,7 +41895,13 @@
               ],
               "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
               "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationSiteFrom": "exec-eop-omb"
+              "verificationSiteFrom": "exec-eop-omb",
+              "placementVerified": true,
+              "placementUrl": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
+              "placementParentId": "exec-eop",
+              "placementMatchedText": "Office of Management and Budget",
+              "placementMethod": "name_labelled_on_parent_official_page"
             },
             {
               "id": "exec-eop-ustr",
@@ -42258,6 +42333,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -42530,7 +42608,13 @@
               ],
               "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
               "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationSiteFrom": "exec-eop-ostp"
+              "verificationSiteFrom": "exec-eop-ostp",
+              "placementVerified": true,
+              "placementUrl": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
+              "placementParentId": "exec-eop",
+              "placementMatchedText": "Office of Science and Technology Policy",
+              "placementMethod": "name_labelled_on_parent_official_page"
             },
             {
               "id": "exec-eop-ondcp",
@@ -42813,7 +42897,13 @@
               ],
               "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
               "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationSiteFrom": "exec-eop-ondcp"
+              "verificationSiteFrom": "exec-eop-ondcp",
+              "placementVerified": true,
+              "placementUrl": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
+              "placementParentId": "exec-eop",
+              "placementMatchedText": "Office of National Drug Control Policy",
+              "placementMethod": "name_labelled_on_parent_official_page"
             },
             {
               "id": "exec-eop-nec",
@@ -43065,6 +43155,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -43337,7 +43430,10 @@
               ],
               "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
               "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationSiteFrom": "exec-eop-cea"
+              "verificationSiteFrom": "exec-eop-cea",
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
             },
             {
               "id": "exec-eop-onadm",
@@ -43589,6 +43685,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "exec-eop",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -43644,6 +43743,12 @@
           "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
           "verificationMethod": "name_labelled_on_own_official_page",
           "verificationSiteFrom": "exec-eop",
+          "placementVerified": true,
+          "placementUrl": "https://www.whitehouse.gov/government/executive-branch/",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
+          "placementParentId": "executive-branch",
+          "placementMatchedText": "Executive Office of The President",
+          "placementMethod": "name_labelled_on_parent_official_page",
           "child_cost_basis_implied": true
         },
         {
@@ -48155,7 +48260,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Internal Revenue Service (IRS)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -48457,7 +48562,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Bureau of Engraving & Printing (BEP)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -48777,7 +48882,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "U.S. Mint",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -49049,7 +49154,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Bureau of the Fiscal Service (BFS)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -49339,7 +49444,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Financial Crimes Enforcement Network (FinCEN)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -49671,7 +49776,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Office of the Comptroller of the Currency (OCC)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -49866,6 +49971,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-treasury",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -50078,6 +50186,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-treasury",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -50325,7 +50436,7 @@
                   "verificationSiteFrom": "exec-dept-treasury",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-treasury",
                   "placementMatchedText": "Alcohol and Tobacco Tax and Trade Bureau (TTB)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -63192,7 +63303,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-dea",
@@ -63631,7 +63745,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-atf",
@@ -63950,7 +64067,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-bop",
@@ -64539,7 +64659,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-usms",
@@ -64978,7 +65101,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-usao",
@@ -65297,7 +65423,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doj-div-antitrust",
@@ -65429,6 +65558,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -65581,6 +65713,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -65733,6 +65868,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -65885,6 +66023,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -66037,6 +66178,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -66189,6 +66333,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -66341,6 +66488,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -66493,6 +66643,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -67499,7 +67652,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "National Park Service",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -67849,7 +68002,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "Bureau of Land Management",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -68211,7 +68364,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "U.S. Geological Survey",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -68483,7 +68636,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "U.S. Fish & Wildlife Service",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -68755,7 +68908,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "Bureau of Indian Affairs",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -69015,7 +69168,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "Bureau of Reclamation",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -69245,7 +69398,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "Bureau of Safety & Environmental Enforcement",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -69487,7 +69640,7 @@
                   "verificationSiteFrom": "exec-dept-doi",
                   "placementVerified": true,
                   "placementUrl": "https://www.doi.gov/whoweare",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-doi",
                   "placementMatchedText": "Bureau of Ocean Energy Management",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -74754,7 +74907,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Occupational Safety and Health Administration (OSHA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -75026,7 +75179,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Bureau of Labor Statistics (BLS)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -75238,7 +75391,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Wage and Hour Division (WHD)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -75450,7 +75603,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Employment and Training Administration (ETA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -75650,7 +75803,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Employee Benefits Security Administration (EBSA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -75892,7 +76045,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Mine Safety and Health Administration (MSHA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -76092,7 +76245,7 @@
                   "verificationSiteFrom": "exec-dept-dol",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-dol",
                   "placementMatchedText": "Office of Federal Contract Compliance Programs (OFCCP)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -80027,6 +80180,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -80179,6 +80335,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -80368,7 +80527,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-hud-cpd",
@@ -80537,7 +80699,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-hud-fheo",
@@ -80669,6 +80834,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -80821,6 +80989,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -80973,6 +81144,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81125,6 +81299,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81277,6 +81454,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81429,6 +81609,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81581,6 +81764,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81733,6 +81919,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -81885,6 +82074,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -82037,6 +82229,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -82189,6 +82384,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-hud",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -85628,7 +85826,10 @@
                   ],
                   "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
                   "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationSiteFrom": "exec-dept-doe-nnsa"
+                  "verificationSiteFrom": "exec-dept-doe-nnsa",
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doe",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doe-sc",
@@ -85912,7 +86113,10 @@
                   ],
                   "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
                   "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationSiteFrom": "exec-dept-doe-sc"
+                  "verificationSiteFrom": "exec-dept-doe-sc",
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doe",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doe-eere",
@@ -86201,7 +86405,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doe",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-dept-doe-natl-labs",
@@ -90618,7 +90825,10 @@
                   ],
                   "evidenceVerifiedAt": "2026-09-03T23:04:46+00:00",
                   "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationSiteFrom": "exec-dept-doe-em"
+                  "verificationSiteFrom": "exec-dept-doe-em",
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doe",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 }
               ],
               "sourceUrls": [
@@ -111167,7 +111377,7 @@
                   "verificationSiteFrom": "exec-dept-va",
                   "placementVerified": true,
                   "placementUrl": "https://www.va.gov/about_va/",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-va",
                   "placementMatchedText": "Veterans Health Administration",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -111607,7 +111817,7 @@
                   "verificationSiteFrom": "exec-dept-va",
                   "placementVerified": true,
                   "placementUrl": "https://www.va.gov/about_va/",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-va",
                   "placementMatchedText": "Veterans Benefits Administration",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -111807,7 +112017,7 @@
                   "verificationSiteFrom": "exec-dept-va",
                   "placementVerified": true,
                   "placementUrl": "https://www.va.gov/about_va/",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-va",
                   "placementMatchedText": "National Cemetery Administration",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -111977,7 +112187,7 @@
                   "verificationSiteFrom": "exec-dept-va",
                   "placementVerified": true,
                   "placementUrl": "https://www.va.gov/about_va/",
-                  "placementVerifiedAt": "2026-09-06T16:02:48+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-dept-va",
                   "placementMatchedText": "Board of Veterans’ Appeals",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -116253,6 +116463,9 @@
               "child_cost_basis_implied": true
             }
           ],
+          "placementVerified": false,
+          "placementParentId": "executive-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,
@@ -116722,6 +116935,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -116873,6 +117089,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -117024,6 +117243,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -117175,6 +117397,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -117326,6 +117551,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -117348,8 +117576,8 @@
                   "costSourceCount": 0
                 }
               ],
-              "lastVerified": "2026-09-06T15:58:48+00:00",
-              "evidenceVerifiedAt": "2026-09-06T15:58:48+00:00",
+              "lastVerified": "2026-09-06T19:21:46+00:00",
+              "evidenceVerifiedAt": "2026-09-06T19:21:46+00:00",
               "verificationFailure": "not_found",
               "verificationSiteFrom": "exec-ind-cia",
               "sourceUrls": [],
@@ -117757,7 +117985,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Air and Radiation (OAR)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -117927,7 +118155,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Water (OW)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118097,7 +118325,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Land and Emergency Management (OLEM)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118267,7 +118495,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Chemical Safety and Pollution Prevention (OCSPP)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118437,7 +118665,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Research and Development (ORD)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118607,7 +118835,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of Enforcement and Compliance Assurance (OECA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118777,7 +119005,7 @@
                   "verificationSiteFrom": "exec-ind-epa",
                   "placementVerified": true,
                   "placementUrl": "https://www.epa.gov/aboutepa",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-epa",
                   "placementMatchedText": "Office of International and Tribal Affairs (OITA)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -118912,6 +119140,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119064,6 +119295,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119216,6 +119450,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119368,6 +119605,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119520,6 +119760,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119672,6 +119915,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119824,6 +120070,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -119976,6 +120225,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -120128,6 +120380,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -120280,6 +120535,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-epa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -120789,7 +121047,7 @@
                   "verificationSiteFrom": "exec-ind-nasa",
                   "placementVerified": true,
                   "placementUrl": "https://www.nasa.gov/about/",
-                  "placementVerifiedAt": "2026-09-03T22:59:01+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nasa",
                   "placementMatchedText": "Science Mission Directorate",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -120894,6 +121152,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121016,6 +121277,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121138,6 +121402,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121260,6 +121527,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -129361,7 +129631,7 @@
                   "verificationSiteFrom": "exec-ind-nsf",
                   "placementVerified": true,
                   "placementUrl": "https://www.nsf.gov/about",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nsf",
                   "placementMatchedText": "Biological Sciences (BIO)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -129963,7 +130233,7 @@
                   "verificationSiteFrom": "exec-ind-nsf",
                   "placementVerified": true,
                   "placementUrl": "https://www.nsf.gov/about",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nsf",
                   "placementMatchedText": "Computer & Information Science & Engineering (CISE)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -130567,7 +130837,10 @@
                   "sourceCount": 1,
                   "confidenceScore": 0.7,
                   "verificationStatus": "partial",
-                  "lastVerified": null
+                  "lastVerified": null,
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nsf",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
                 },
                 {
                   "id": "exec-ind-nsf-engineering-eng",
@@ -132457,7 +132730,7 @@
                   "verificationSiteFrom": "exec-ind-nsf",
                   "placementVerified": true,
                   "placementUrl": "https://www.nsf.gov/about",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nsf",
                   "placementMatchedText": "Mathematical & Physical Sciences (MPS)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -132936,7 +133209,7 @@
                   "verificationSiteFrom": "exec-ind-nsf",
                   "placementVerified": true,
                   "placementUrl": "https://www.nsf.gov/about",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nsf",
                   "placementMatchedText": "Social, Behavioral & Economic Sciences (SBE)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -133292,7 +133565,7 @@
                   "verificationSiteFrom": "exec-ind-nsf",
                   "placementVerified": true,
                   "placementUrl": "https://www.nsf.gov/about",
-                  "placementVerifiedAt": "2026-09-06T15:33:00+00:00",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "placementParentId": "exec-ind-nsf",
                   "placementMatchedText": "Technology, Innovation & Partnerships (TIP)",
                   "placementMethod": "name_labelled_on_parent_official_page"
@@ -140374,6 +140647,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -140586,6 +140862,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -140798,6 +141077,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141010,6 +141292,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141222,6 +141507,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141434,6 +141722,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141646,6 +141937,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141858,6 +142152,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -142070,6 +142367,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -142282,6 +142582,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -142494,6 +142797,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -142706,6 +143012,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -142918,6 +143227,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -143130,6 +143442,9 @@
                       "costSourceCount": 0
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nara",
+                  "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -148257,6 +148572,9 @@
               "child_cost_basis_implied": true
             }
           ],
+          "placementVerified": false,
+          "placementParentId": "executive-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,
@@ -152607,6 +152925,9 @@
               "placementCheckable": false
             }
           ],
+          "placementVerified": false,
+          "placementParentId": "executive-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,
@@ -153060,7 +153381,10 @@
           ],
           "evidenceVerifiedAt": "2026-09-06T15:33:00+00:00",
           "verificationMethod": "name_labelled_on_own_official_page",
-          "verificationSiteFrom": "jud-scotus"
+          "verificationSiteFrom": "jud-scotus",
+          "placementVerified": false,
+          "placementParentId": "judicial-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00"
         },
         {
           "id": "jud-appeals",
@@ -156313,6 +156637,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -156585,6 +156912,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -156979,6 +157309,9 @@
                   "costSourceCount": 0
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "jud-district",
+              "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -158572,6 +158905,9 @@
               "costSourceCount": 0
             }
           ],
+          "placementVerified": false,
+          "placementParentId": "judicial-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,
@@ -159780,6 +160116,9 @@
               "costSourceCount": 0
             }
           ],
+          "placementVerified": false,
+          "placementParentId": "judicial-branch",
+          "placementVerifiedAt": "2026-09-06T19:21:46+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,

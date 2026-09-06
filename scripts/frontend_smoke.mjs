@@ -181,6 +181,15 @@ try {
     /official page names it|official page lists it/i.test(cappedPanel),
     cappedPanel.slice(0, 300),
   );
+  // A department sits under the curated "Cabinet" grouping, which has no
+  // page of its own: its edge cannot be checked by this method, and the
+  // panel must say that rather than "no evidence recorded".
+  const cabinetPlacement = await text("#verification-placement");
+  check(
+    "a unit under a curated grouping says its placement could not be checked",
+    /Placement: could not be checked — its parent is a curated grouping with no official page of its own/.test(cabinetPlacement),
+    cabinetPlacement,
+  );
 
   // A share that rounds below a cent is published as unavailable, never as
   // $0.00 — a zero would read as "this costs nothing".
@@ -227,7 +236,16 @@ try {
   await page.locator("#search-results .sr-item").first().click();
   await page.waitForTimeout(2000);
   const unplaced = await text("#verification-placement");
-  check("an unchecked placement says no evidence is recorded", /Placement: no evidence recorded/.test(unplaced), unplaced);
+  // Which of the three non-evidenced states this node is in depends on the
+  // last live run (the Senate's page has been read and does not list this
+  // grouping); what must hold is that the panel names one of them, and
+  // never claims a listing.
+  check(
+    "a placement without evidence names its state — unchecked, unreachable, or read and not listed",
+    /Placement: (no evidence recorded|its parent's official page was read .*does not list it as a heading or link — no claim either way|could not be checked)/.test(unplaced),
+    unplaced,
+  );
+  check("a placement without evidence never claims the page lists it", !/lists it/.test(unplaced), unplaced);
   // A cluster's text is written by this UI, so no label there. On a real
   // leaf the description is prose nobody has checked, and must say so.
   const clusterNote = await text("#info-desc-provenance");
