@@ -367,6 +367,9 @@ class NotFoundMeansNotOnThePageTests(unittest.TestCase):
         self.assertEqual(record["status"], CONFIRMED)
 
 
+TREASURY_URL = "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+
+
 class ApplyEvidenceTests(unittest.TestCase):
     def _tree(self):
         return json.loads(json.dumps(BASE))
@@ -446,6 +449,39 @@ class ApplyEvidenceTests(unittest.TestCase):
         nnsa = index_tree(tree)[0]["doe-nnsa"]
         self.assertEqual(nnsa["sourceUrls"], ["https://api.fiscaldata.treasury.gov/x"])
         self.assertNotIn("verificationFailure", nnsa)
+
+    def test_a_measured_cost_keeps_its_treasury_url_across_rebuilds(self) -> None:
+        """The sweep that withdraws a stale claim must not withdraw another
+        stage's source. It only trips on a node that already carries a
+        verificationMethod, so the loss appeared one build after a
+        confirmation, not on the build that made it."""
+        tree = self._tree()
+        node_map, _ = index_tree(tree)
+        node_map["exec-dept-doe"]["sourceUrls"] = [TREASURY_URL]
+        node_map["exec-dept-doe"]["sourceTypes"] = ["treasury_outlays"]
+
+        apply_evidence_to_tree(tree, {"exec-dept-doe": self._confirmed()})
+        doe = index_tree(tree)[0]["exec-dept-doe"]
+        self.assertEqual(sorted(doe["sourceUrls"]), sorted([TREASURY_URL, "https://www.energy.gov/about-us"]))
+
+        # The rebuild: the same evidence, applied to the graph it produced.
+        apply_evidence_to_tree(tree, {"exec-dept-doe": self._confirmed()})
+        doe = index_tree(tree)[0]["exec-dept-doe"]
+        self.assertIn(TREASURY_URL, doe["sourceUrls"], "the measured cost lost its source")
+        self.assertIn("https://www.energy.gov/about-us", doe["sourceUrls"])
+        self.assertEqual(doe["sourceCount"], 2)
+
+    def test_a_withdrawal_takes_back_the_page_and_leaves_the_treasury_url(self) -> None:
+        tree = self._tree()
+        node_map, _ = index_tree(tree)
+        node_map["exec-dept-doe"]["sourceUrls"] = [TREASURY_URL]
+        node_map["exec-dept-doe"]["sourceTypes"] = ["treasury_outlays"]
+        apply_evidence_to_tree(tree, {"exec-dept-doe": self._confirmed()})
+
+        apply_evidence_to_tree(tree, {})  # the record is gone
+        doe = index_tree(tree)[0]["exec-dept-doe"]
+        self.assertEqual(doe["sourceUrls"], [TREASURY_URL])
+        self.assertNotIn("verificationMethod", doe)
 
     def test_unknown_ids_statuses_and_unofficial_urls_touch_nothing(self) -> None:
         tree = self._tree()
