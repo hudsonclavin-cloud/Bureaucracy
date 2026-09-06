@@ -199,6 +199,15 @@ try {
   );
   check("a sub-cent share explains itself", /less than one cent/i.test(unavailable), unavailable);
 
+  // The first line a visitor reads. It was hardcoded and both halves went
+  // stale — it called every cost an estimate after 55 became measured, and
+  // called the hierarchy "hand-compiled" when nothing records its origin.
+  const provenance = await text("#data-provenance");
+  check("provenance line is computed, not the old hardcoded string", !/Structure hand-compiled/.test(provenance), provenance);
+  check("provenance counts the measured costs", /\d+ costs measured from the Monthly Treasury Statement/.test(provenance), provenance);
+  check("provenance says the hierarchy is unsourced", /hierarchy and descriptions carry none/.test(provenance), provenance);
+  check("provenance does not call every cost an estimate", !/^costs are estimates/.test(provenance), provenance);
+
   await page.fill("#search-input", "");
   check("no page errors", pageErrors.length === 0, pageErrors.join(" | "));
   await browser.close();

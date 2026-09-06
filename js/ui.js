@@ -108,6 +108,39 @@ function updateStats(stats) {
   );
 }
 
+// The line every visitor reads first. It used to be a hardcoded string in
+// index.html saying "Structure hand-compiled · costs are estimates
+// apportioned from the Treasury total". Both halves went stale: 55 costs are
+// now measured from the Monthly Treasury Statement, and nothing in the
+// repository records where the hierarchy or its 5,170 descriptions came
+// from, so "hand-compiled" asserts more than is known. Computing it from the
+// graph means it cannot drift from the data again.
+function describeProvenance(root) {
+  let nodes = 0;
+  let measured = 0;
+  let capped = 0;
+  let sourced = 0;
+  const stack = [root];
+  while (stack.length) {
+    const node = stack.pop();
+    if (!node || typeof node !== "object") continue;
+    nodes += 1;
+    const status = String(node.cost_status || "");
+    if (status === "official" || status === "root_total") measured += 1;
+    else if (status === "scaled_official") capped += 1;
+    if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
+    for (const child of node.children || []) stack.push(child);
+  }
+  const estimated = Math.max(nodes - measured - capped, 0);
+  return [
+    `${measured.toLocaleString()} costs measured from the Monthly Treasury Statement`,
+    `${capped.toLocaleString()} capped to fit an estimated parent`,
+    `${estimated.toLocaleString()} apportioned estimates`,
+    `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
+    "the hierarchy and descriptions carry none",
+  ].join(" · ");
+}
+
 function hideLoadingOverlay(delay = 600) {
   if (!dom.loading || state.loadFailed) {
     return;
@@ -1331,11 +1364,12 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
-  if (data && data.__loadSource === "fallback") {
-    const provenance = document.getElementById("data-provenance");
-    if (provenance) {
-      provenance.textContent = "Pipeline graph unavailable — showing the hand-compiled hierarchy without cost data";
-    }
+  const provenance = document.getElementById("data-provenance");
+  if (provenance) {
+    provenance.textContent =
+      data && data.__loadSource === "fallback"
+        ? "Pipeline graph unavailable — showing the uncited hierarchy, with no cost data at all"
+        : describeProvenance(data);
   }
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
