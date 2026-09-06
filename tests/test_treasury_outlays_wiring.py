@@ -132,6 +132,11 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
             edges_output_path=self.tmp_path / "expanded_edges.json",
             validity_report_output_path=self.tmp_path / "node_validity_report.json",
             enforce_export_gate=True,
+            # The fixture reuses real node ids, so the production evidence file
+            # would stamp its own sources and lastVerified onto them and this
+            # test would assert on whichever pages happened to answer that day.
+            # What is under test here is the outlay wiring, nothing else.
+            evidence_path=None,
         )
 
     def tearDown(self) -> None:

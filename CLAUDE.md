@@ -244,7 +244,13 @@ current evidence, so a withdrawn or downgraded record stops being published
 even though the exporter re-feeds the previous `graph.json` as a payload; a
 retraction that could never reach the site was the second failure the review
 found. It runs *after* `apply_treasury_outlay_rows`, which rewrites
-`sourceUrls` on the nodes it stamps. `matchedText` is text as it appears on
+`sourceUrls` on the nodes it stamps — and the sweep must leave that URL
+alone: it swept the node's whole URL list, and because it only trips on a
+node that already carries a claim of this module's, a confirmed node kept its
+FiscalData URL on the build that confirmed it and lost it on the next one,
+dropping from `verified` to `partial` and publishing a measured cost with no
+source behind it. `claimed_by_another_stage` keeps a URL a surviving
+`sourceType` still answers to. `matchedText` is text as it appears on
 the page, so a claim can be audited against the live site.
 
 The gate requires: every `lastVerified` a past ISO date; every

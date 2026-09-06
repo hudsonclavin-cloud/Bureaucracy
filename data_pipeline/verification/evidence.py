@@ -116,6 +116,11 @@ PLACEMENT_ONLY = "placement_only"
 # department's About page is not obliged to list every bureau.
 PLACEMENT_LISTED = "listed"
 PLACEMENT_NOT_LISTED = "not_listed"
+# apply_treasury_outlay_rows stamps this host on every node it measures and
+# keeps "treasury_outlays" in sourceTypes to say so. It is a .gov host, so it
+# classifies as an official site and looked, to the sweep below, exactly like
+# a URL this module had written.
+TREASURY_DATASET_HOST = "fiscaldata.treasury.gov"
 
 # A fetched page has to yield some readable text before "we read it and the
 # name was not there" is an honest thing to say. A JS-only shell, an empty
@@ -519,6 +524,31 @@ def evidence_names_this_node(node_name: str, matched_text: Any) -> bool:
     return bool(key) and label_matches(key, str(matched_text))
 
 
+def claimed_by_another_stage(node: dict[str, Any], url: str) -> bool:
+    """Did some other stage put this URL here and still vouch for it?
+
+    The sweep below takes back everything on a node that carries one of this
+    module's claims, because a record deleted from evidence.json leaves no
+    other trace of the URL it used to publish. That over-collects: a node can
+    hold URLs no evidence run ever fetched. The Treasury dataset URL is the
+    one that bit — it went onto every node with a measured outlay line, and
+    the sweep only trips on a node that already carries a verificationMethod,
+    so the URL survived the build that first confirmed the node and vanished
+    on the next one, taking the node from verified to partial and dropping the
+    provenance of a measured cost. A sourceType a URL still answers to is the
+    evidence that another stage owns it.
+
+    Only types this module never writes count. An official_site URL on a .gov
+    host is indistinguishable from one this module wrote, so those are still
+    swept and re-applied from the current evidence.
+    """
+    types = {str(t) for t in (node.get("sourceTypes") or [])}
+    if TREASURY_DATASET_HOST in url and "treasury_outlays" in types:
+        return True
+    kind = classify_source_url(url)
+    return kind != "official_site" and kind in types
+
+
 def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
     """Remove what a previous run's evidence put on this node. Returns True
     if anything was removed."""
@@ -534,7 +564,7 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
             node.pop(field, None)
             touched = True
     urls = [str(u) for u in (node.get("sourceUrls") or [])]
-    kept = [u for u in urls if u not in official_urls]
+    kept = [u for u in urls if u not in official_urls or claimed_by_another_stage(node, u)]
     if len(kept) != len(urls):
         node["sourceUrls"] = kept
         touched = True
