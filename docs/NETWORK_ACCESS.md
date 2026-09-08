@@ -88,9 +88,7 @@ from another page; `--recheck` would fetch them.
 
 ## Regenerating this note
 
-    python - <<'PY'
-    # groups official_sites.json hosts by the failure reason evidence.json records
-    PY
+    python scripts/report_unreachable_hosts.py
 
 The counts above are a snapshot; the causes are stable. A host that moves
 from group 1 to "reached" is the only change that raises coverage.
