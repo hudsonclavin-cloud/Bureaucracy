@@ -2004,6 +2004,7 @@ def build_graph(
     enforce_export_gate: bool = True,
     evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
     sites_path: str | Path | None = DEFAULT_SITES_PATH,
+    directory_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2121,6 +2122,21 @@ def build_graph(
         load_evidence(evidence_path) if evidence_path else {},
         index_tree=index_tree,
         sites=load_official_sites(sites_path) if sites_path else None,
+    )
+    # The government's own directories, applied after the page evidence has
+    # withdrawn and re-applied its claims: a listing is added beside a page
+    # claim, never over it, and withdrawn with it on the next build.
+    from data_pipeline.verification.directories import (  # noqa: E402 — directories imports this module
+        DEFAULT_DIRECTORY_EVIDENCE_PATH,
+        apply_directory_evidence,
+        load_directory_evidence,
+    )
+
+    resolved_directory_path = DEFAULT_DIRECTORY_EVIDENCE_PATH if directory_evidence_path == "default" else directory_evidence_path
+    validation["directory_evidence"] = apply_directory_evidence(
+        graph,
+        load_directory_evidence(resolved_directory_path) if resolved_directory_path else {},
+        index_tree=index_tree,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,

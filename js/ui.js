@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908b";
+import { createGovernmentGraph } from "./graph.js?v=20260908c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -517,6 +517,26 @@ function renderPlacementLine(data) {
     add("Placement: a Treasury accounting line, placed beneath the unit whose published total it reconciles; not an organisation and not checked against any page");
     return;
   }
+  const disagreement = data.placementDirectoryDisagreement;
+  const addDisagreement = () => {
+    if (!disagreement || typeof disagreement !== "object") return;
+    dom.verificationPlacement.appendChild(document.createElement("br"));
+    add(`The Federal Register's agency directory files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);
+  };
+  if (data.placementVerified === true && String(data.placementMethod || "") === "listed_under_parent_in_federal_register_agency_directory") {
+    add(`Placement: the Federal Register's agency directory files it under its parent here, as "${data.placementMatchedText || ""}" on `);
+    if (isHttpUrl(data.placementUrl)) {
+      const link = document.createElement("a");
+      link.href = data.placementUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = hostnameOf(data.placementUrl);
+      dom.verificationPlacement.appendChild(link);
+    }
+    if (checked) add(` · directory fetched ${checked}`);
+    addDisagreement();
+    return;
+  }
   if (data.placementVerified === true) {
     // The claim carries its own audit trail: the page, and the label on it.
     // When it is the same page and the same read as the existence line above,
@@ -549,6 +569,7 @@ function renderPlacementLine(data) {
   } else {
     add("Placement: no evidence recorded for where this sits in the hierarchy");
   }
+  addDisagreement();
 }
 
 function renderVerificationPanel(data) {
@@ -589,6 +610,7 @@ function renderVerificationPanel(data) {
     const METHOD_TEXT = {
       name_labelled_on_own_official_page: "Its own official page names it",
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
+      listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
     };
     let checkLine = "Not yet verified";
     if (data.verificationFailure === "not_found") {
@@ -599,6 +621,16 @@ function renderVerificationPanel(data) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
       checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+    }
+    // A directory listing beside a page claim: a second, weaker claim, said
+    // as itself, with the name and the parent exactly as the directory has them.
+    const listing = data.directoryListing;
+    if (listing && typeof listing === "object" && String(data.verificationMethod || "") !== "listed_in_federal_register_agency_directory") {
+      checkLine += ` · also listed in the Federal Register's agency directory as "${listing.listedName}"${
+        listing.parentListedName ? ` under "${listing.parentListedName}"` : ""
+      }`;
+    } else if (listing && typeof listing === "object") {
+      checkLine += ` as "${listing.listedName}"${listing.parentListedName ? ` under "${listing.parentListedName}"` : ""}`;
     }
     setText(dom.verificationLastVerified, checkLine);
   }

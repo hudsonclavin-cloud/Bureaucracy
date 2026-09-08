@@ -106,6 +106,9 @@ EVIDENCE_OWNED_FIELDS = (
     # The date this module set as lastVerified, so a withdrawal can take back
     # exactly that date and leave one a crawler record supplied.
     "evidenceVerifiedAt",
+    # Written by directories.py, withdrawn here with the rest.
+    "directoryListing",
+    "placementDirectoryDisagreement",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never
@@ -664,10 +667,11 @@ def claimed_by_another_stage(node: dict[str, Any], url: str) -> bool:
     swept and re-applied from the current evidence.
     """
     types = {str(t) for t in (node.get("sourceTypes") or [])}
-    if TREASURY_DATASET_HOST in url and "treasury_outlays" in types:
-        return True
-    kind = classify_source_url(url)
-    return kind != "official_site" and kind in types
+    # Only the Treasury case. A first version also kept any URL whose
+    # classified kind appeared in sourceTypes — circular for a host like
+    # federalregister.gov, whose kind verify_node_sources infers from that
+    # very URL, so a withdrawn directory listing could never be withdrawn.
+    return TREASURY_DATASET_HOST in url and "treasury_outlays" in types
 
 
 def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
@@ -695,6 +699,12 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
     # now refuses, and it caught this.
     if not any(classify_source_url(u) == "official_site" for u in kept):
         types = [str(t) for t in (node.get("sourceTypes") or []) if t != "official_site"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
+    # The directory's own label goes with its URL (directories.py writes it).
+    if not any("federalregister.gov/agencies/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t not in ("federal_register_directory", "federal_register")]
         if len(types) != len(node.get("sourceTypes") or []):
             node["sourceTypes"] = types
             touched = True
