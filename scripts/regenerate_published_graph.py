@@ -68,9 +68,24 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--anchor", type=Path, default=DEFAULT_GRAPH_OUTPUT, help="graph.json to take the Treasury anchor from")
     parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_GRAPH_OUTPUT.parent)
+    parser.add_argument(
+        "--treasury-rows", type=Path, default=None,
+        help="a verbatim FiscalData Table 5 response (tests/fixtures/mts_table5_latest.json): rebuild as if this statement "
+             "had just been fetched — its Total Outlays becomes the anchor and its lines are applied and netted",
+    )
     args = parser.parse_args(argv[1:])
 
-    anchor = load_anchor(args.anchor)
+    statement_payload: dict | None = None
+    if args.treasury_rows is not None:
+        from data_pipeline.crawler.treasury_outlays import parse_outlay_rows  # noqa: E402
+
+        raw = json.loads(args.treasury_rows.read_text(encoding="utf-8"))
+        rows, summary = parse_outlay_rows(raw.get("rows") or [])
+        if summary is None or usable_budget_total({"budgetSummary": summary}) is None:
+            raise SystemExit(f"{args.treasury_rows} carries no Total Outlays line; nothing to anchor on.")
+        summary["statement_file"] = str(args.treasury_rows)
+        statement_payload = {"nodes": [], "edges": [], "budgetSummary": summary, "outlayRows": rows}
+    anchor = statement_payload["budgetSummary"] if statement_payload else load_anchor(args.anchor)
     output_dir = args.output_dir
     output_dir.mkdir(parents=True, exist_ok=True)
     candidate_path = output_dir / "candidate_nodes.json"
@@ -83,7 +98,7 @@ def main(argv: list[str]) -> int:
         stats_path = staging_dir / DEFAULT_STATS_OUTPUT.name
         audit_path = staging_dir / AUDIT_REPORT_FILENAME
         result = build_graph(
-            [{"nodes": [], "edges": [], "budgetSummary": anchor}],
+            [statement_payload] if statement_payload else [{"nodes": [], "edges": [], "budgetSummary": anchor}],
             base_graph_path=args.base_graph,
             graph_output_path=graph_path,
             nodes_output_path=staging_dir / DEFAULT_NODES_OUTPUT.name,
@@ -113,7 +128,7 @@ def _finish(args, result, anchor, staging_dir: Path, output_dir: Path, stats_pat
 
     validation = dict(result.validation)
     validation["audit_report"] = {"summary": validation.get("audit_report", {}).get("summary", {})}
-    validation["budget_summary_reused_from_previous_build"] = True
+    validation["budget_summary_reused_from_previous_build"] = not bool(anchor.get("statement_file"))
     # build_graph's counters describe the payload (crawler-earned nodes only);
     # the published tree gets its own explicit keys rather than relabelled ones.
     published_count = count_tree_nodes(result.graph)

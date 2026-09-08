@@ -106,58 +106,81 @@ Two halves that communicate only through committed JSON in `output/`.
 
 Root gets `cost_status: root_total` anchored to
 `budgetSummary.government_total_outlay_amount`. Children with an official
-`rollup_total_amount` get `official` (or `scaled_official` if rollups exceed
-the parent). Everything else is `allocated`, split among siblings by
-`get_node_weight`: the first non-zero of `annual_budget`, `budget`,
-`direct_outlay_amount` (basis `*_weight`), else a parseable `employees`
-count (`employee_weight`), else subtree size (`subtree_weight`). Weights are
-only summed within one unit. When siblings disagree, the best-evidenced
-class present wins (dollars, then headcount, then size) and a sibling that
-lacks it gets an implied weight: the geometric mean of the reported
-siblings' per-node rates times its own subtree size, stamped
-`implied_budget_weight` / `implied_employee_weight` (the parent carries
-`child_cost_basis_implied`). A share that rounds below one cent is
-published as `unavailable` with `cost_validation: allocation_below_precision`,
-never as $0. Treasury outlay lines applied to a node make it `official`
-(`costVerificationStatus: verified`, the FiscalData URL in `sourceUrls`);
-those are the only measured costs besides the root, and the gate checks it.
-A line beneath a weighted node is a floor on that node's share (the fifteen
-department lines under the unlined "Cabinet" grouping are paid before the
-excess is apportioned by weight). A direct line is a measurement of that
-child and a floor only a lower bound on an unmeasured one, so measurements
-that fit are honoured in full and floors are paid from the remainder, scaled
-if they do not fit — the Legislative and Judicial section totals fit the net
-anchor and publish as measured; the executive floor takes the cap. When the
-direct lines alone exceed the parent, nothing beneath can be honoured and
-every line, direct or deeper, takes one haircut and publishes as
-`scaled_official`, which the UI labels an estimate. The first version paid
-the direct lines first in that case too and the deeper floors from what was
-left, which under the independent-agencies grouping was nothing: SSA, OPM
-and NASA took the whole allocation and six measured lines two levels down
-(PBGC, EEOC, the Peace Corps, $3.08B) published as "not available" —
-uncounted by the cap summary, which counts only `scaled_official`. A fully
-even haircut was tried and rejected: at the root it cut the two section
-totals to 96% and starved the joint committees. The gate now refuses a
-Treasury line published `unavailable` while the root is anchored. Negative lines (net receipts) are set aside and
-counted, never anchored on — and that has a systematic consequence worth
-knowing. 152 of Table 5's 644 lines are negative (proprietary receipts,
-intrabudgetary transactions, offsetting governmental receipts). Setting them
-aside leaves the positive lines summing past the *net* anchor, so measured
-figures beneath a weighted parent are scaled down to fit inside an estimate:
-as of 2026-09-06, 33 top-most capped nodes report $6.532T and publish
-$6.270T — 96.0% shown, $262.2B withheld, including all fifteen cabinet
-departments (27 nodes and $259.1B the day before: the six lines rescued
-under the independent-agencies grouping are now counted, and their $2.96B
-came out of their measured siblings' capped shares, the grouping's own
-allocation being fixed). Each capped node says so in its own panel ("the Treasury
-reported $43.0 billion for this unit ... the figure shown is that cap"), and
-`summarize_scaled_official` puts the total in `build_validation.
-treasury_lines_scaled` and in the gate's report. It counts only the top-most
-capped node per branch: a capped department and its capped bureaus are the
-same dollars, and adding both reported $1.01T against a real $259B. Netting
-an agency's negative rows against its own positive ones — rather than
-discarding them globally — is the fix, and it needs a live statement to
-validate.
+`rollup_total_amount` get `official`. Everything else is `allocated`, split
+among siblings by `get_node_weight`: the first non-zero of `annual_budget`,
+`budget`, `direct_outlay_amount` (basis `*_weight`), else a parseable
+`employees` count (`employee_weight`), else subtree size
+(`subtree_weight`). Weights are only summed within one unit. When siblings
+disagree, the best-evidenced class present wins (dollars, then headcount,
+then size) and a sibling that lacks it gets an implied weight: the
+geometric mean of the reported siblings' per-node rates times its own
+subtree size, stamped `implied_budget_weight` / `implied_employee_weight`
+(the parent carries `child_cost_basis_implied`). A share that rounds below
+one cent is published as `unavailable` with `cost_validation:
+allocation_below_precision`, never as $0. Treasury outlay lines applied to
+a node make it `official` (`costVerificationStatus: verified`, the
+FiscalData URL in `sourceUrls`); those are the only measured costs besides
+the root, and the gate checks it.
+
+**The statement's own arithmetic, since 2026-09-08.** Table 5 prints each
+agency as a section: lines beneath a header, the section's receipts-type
+lines (proprietary receipts from the public, intrabudgetary transactions,
+offsetting governmental receipts), and a `Total--` line that is the net
+figure. The identity the statement itself prints — every top-level section
+total, plus the government-wide "Undistributed Offsetting Receipts", summing
+to Total Outlays — holds to the cent on the 2026-07-31 statement
+(`tests/fixtures/mts_table5_latest.json`, the API response verbatim;
+`SectionTree.identity`). The exporter publishes it as it is:
+
+- Every matched unit publishes the Treasury's own net figure, `official`,
+  exact. Nothing is capped: `summarize_scaled_official` reports zero
+  top-most nodes, where it reported 33 nodes and $262.2B withheld the day
+  before.
+- Each netted section's receipts are one explicit child of the unit whose
+  total they reduce: `type: Treasury accounting line`, `synthetic:
+  treasury_receipts`, a negative measured amount, the component lines by
+  name and amount in `treasury_component_rows`, and a generated
+  description (`descriptionSource: generated_from_treasury_lines`). With
+  it, a unit's lines, its receipts and the estimate for its unlined
+  children sum to its published total; CMS's $2.33T sits inside HHS's
+  $1.72T beside −$749B of Medicare premiums and transfers, and the gate
+  bounds a child by the parent less its negative lines.
+- The government-wide receipts (−$343.3B) sit beside the three branches as
+  `treasury-undistributed-offsetting-receipts`, the one node the root may
+  carry besides them; the exporter's root guard and the gate name it.
+- A negative line is published as the Treasury prints it — the Mint, the
+  FDIC, the Executive Office of the President (−$1.24B) — and a grouping
+  whose measured members net below zero publishes a negative estimate,
+  stamped `measured_net_beneath`, rather than a positive one nothing
+  beneath it supports. Floors are signed for the same reason. Nothing can
+  be apportioned from a negative figure: such a unit's unlined children are
+  `unavailable` with `cost_validation: treasury_pool_negative`, and a unit
+  whose lines exceed its net total by a negative line the graph has no
+  node for declares the exact excess in `treasury_pool_negative`, which the
+  gate allows to the cent and nothing else.
+- A line the Treasury files under a different section from the node's
+  ancestors (the Tax Court, printed under the Legislative Branch, curated
+  under the judiciary) is measured, `treasury_external_section: true`,
+  outside its parent's arithmetic, and the panel says so.
+- A netted unit with no unlined child carries `treasury_unapportioned`: the
+  statement's lines this graph has no node for, going nowhere.
+- Rows inside a receipts-type subtree ("Department of the Navy" under
+  "Proprietary Receipts from the Public:") are receipts *of* an agency,
+  never matched to a node (`receipts_component_ids`).
+
+The whole construction is gated on the identity. When it fails for the
+rows in hand — or no anchor came with them — no receipts line is created,
+`treasury_netting.reason` says why, and the older rule applies: negatives
+set aside, floors paid from the remainder, and when the direct lines alone
+exceed a parent every line beneath takes one haircut and publishes as
+`scaled_official`, which the UI labels an estimate (a fully even haircut
+was tried and rejected: at the root it cut the two section totals, net
+figures that fit the anchor, to 96%). The crawler keeps every row of the
+statement, headers included (`is_header`, `classification_id`,
+`parent_id`), so the tree can be rebuilt; a build handed no statement
+carries the receipts lines forward with the other Treasury lines, and a
+fresh statement replaces them (`remove_synthetic_receipts`), so re-feeding
+the published graph never duplicates one.
 `cost_validation: estimated_from_parent` and
 `costVerificationStatus: unverified` on every allocated node. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
@@ -344,11 +367,17 @@ that one import is the only thing the smoke check cannot prove.
 ## Invariants
 
 - Root id is `the-constitution-of-the-united-states`; it has exactly the
-  three branch children.
+  three branch children, plus at most the one Treasury accounting line for
+  the government-wide offsetting receipts.
 - Measured costs are the root anchor and the Treasury Table 5 lines applied
-  to the nodes they name; nothing else is `verified`. Every amount carries
-  a `cost_status` and is positive; a missing amount is labelled
-  `unavailable`. Children never sum past their parent. No node has both
+  to the nodes they name, the receipts lines the exporter carries
+  explicitly included; nothing else is `verified`. Every amount carries a
+  `cost_status`; a missing amount is labelled `unavailable`; zero is never
+  published; a negative amount is only ever a Treasury line, a receipts
+  line, or an estimate for a grouping whose measured members net below zero
+  (`measured_net_beneath`). Children never sum past their parent, signed,
+  except by a declared `treasury_pool_negative`, and a line filed under
+  another Treasury section is outside its parent's sum. No node has both
   `attachToRoot` and a `parentId`. `sourceCount` equals `len(sourceUrls)`;
   `costSourceCount` needs a URL, a rollup, or (root only) the anchor. No
   duplicate ids. `scripts/validate_published_graph.py` enforces all of these
@@ -389,12 +418,13 @@ that one import is the only thing the smoke check cannot prove.
   run anyway and republished a graph with every measured cost stripped, which
   the release gate passed because no rule forbids a graph without Treasury
   lines. A statement that has stopped reporting a node still clears it.
-- An alias is added to `TREASURY_ROW_ALIASES` only when the line fits inside
-  its parent's resolved amount. A line that does not fit (Office of Federal
-  Student Aid at $76B inside a $53B Education total, the Coast Guard's $10.9B
-  inside DHS) turns measured siblings into scaled estimates and publishes
-  itself below its own line; leaving it unmatched keeps the siblings exact and
-  the money in the apportioned remainder.
+- An alias is added to `TREASURY_ROW_ALIASES` only when the line belongs to
+  the section of the node's ancestors, or the node is placed where the
+  statement files it. Since the receipts are carried explicitly a line
+  always fits inside its own section's total — Federal Student Aid's $76B
+  inside Education's $53B net beside the section's receipts — so "fits" is
+  no longer the test; "the same section" is. A line from another section
+  publishes as external, measured, outside the parent's sum.
 
 ## Known base-graph gaps
 

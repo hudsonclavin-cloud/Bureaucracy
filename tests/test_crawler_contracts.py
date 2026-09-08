@@ -75,7 +75,7 @@ class TreasuryOutlaysCrawlerTests(unittest.TestCase):
                 rows = [dict(r, classification_desc=label) if r["classification_desc"] == "Total Outlays" else r for r in _mts_rows()]
                 parsed, summary = treasury_outlays.parse_outlay_rows(rows)
                 self.assertIsNone(summary)
-                self.assertFalse(any(abs(row["rollup_total_amount"]) > 1e12 for row in parsed))
+                self.assertFalse(any(abs(row["rollup_total_amount"]) > 1e12 for row in parsed if not row["is_header"]))
 
     def test_crawl_returns_the_latest_statement_and_follows_pagination(self) -> None:
         calls = []
@@ -93,7 +93,10 @@ class TreasuryOutlaysCrawlerTests(unittest.TestCase):
         with mock.patch.object(treasury_outlays, "request_json", fake_request_json):
             payload = treasury_outlays.crawl(timeout=7)
         self.assertEqual(payload["budgetSummary"]["government_total_outlay_amount"], 5517917965556.91)
-        self.assertEqual(len(payload["outlayRows"]), 4)
+        # Four priced lines and the Treasury header, kept (amount None) so the
+        # exporter can rebuild the statement's tree.
+        self.assertEqual(len(payload["outlayRows"]), 5)
+        self.assertEqual(sum(1 for r in payload["outlayRows"] if r["is_header"]), 1)
         self.assertEqual([c["page[number]"] for c in calls if "page[number]" in c], [1, 2])
         self.assertTrue(all(c.get("filter", "").startswith("record_date:eq:") for c in calls if "page[number]" in c))
 

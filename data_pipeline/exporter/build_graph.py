@@ -16,6 +16,12 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from data_pipeline.crawler.treasury_outlays import DATASET_URL as TREASURY_DATASET_URL
+from data_pipeline.exporter.treasury_sections import (
+    SectionTree,
+    UNDISTRIBUTED_LABEL,
+    is_total_row,
+    plain_label,
+)
 from data_pipeline.processors.normalize_edges import EdgeRegistry
 from data_pipeline.json_io import load_json_file, write_json_file
 from data_pipeline.processors.budget_reconciliation import reconcile_nodes
@@ -834,6 +840,99 @@ def collect_treasury_outlay_rows(payloads: Iterable[dict[str, Any]]) -> list[dic
     return rows
 
 
+def collect_treasury_rows_all(payloads: Iterable[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Every row the statement printed, headers included, for the section tree."""
+    rows: list[dict[str, Any]] = []
+    for payload in payloads:
+        if not isinstance(payload, dict) or not isinstance(payload.get("outlayRows"), list):
+            continue
+        rows.extend(row for row in payload["outlayRows"] if isinstance(row, dict) and str(row.get("name") or "").strip())
+    return rows
+
+
+SYNTHETIC_RECEIPTS = "treasury_receipts"
+TREASURY_LINE_TYPE = "Treasury accounting line"
+UNDISTRIBUTED_NODE_ID = "treasury-undistributed-offsetting-receipts"
+
+
+def is_synthetic_receipts(node: dict[str, Any]) -> bool:
+    return isinstance(node, dict) and str(node.get("synthetic") or "") == SYNTHETIC_RECEIPTS
+
+
+def remove_synthetic_receipts(root: dict[str, Any]) -> int:
+    """Drop every receipts line a previous statement put in the tree. The
+    published graph is re-fed as a payload, so last month's lines come back
+    on their own; a statement in hand replaces them, one that is absent
+    leaves them (carry-forward, like every other Treasury line)."""
+    removed = 0
+    for node, _ in walk_tree(root):
+        kids = node.get("children")
+        if not isinstance(kids, list):
+            continue
+        kept = [k for k in kids if not is_synthetic_receipts(k)]
+        removed += len(kids) - len(kept)
+        node["children"] = kept
+    return removed
+
+
+def make_receipts_node(
+    *,
+    node_id: str,
+    name: str,
+    parent_label: str,
+    components: list[dict[str, Any]],
+    template: dict[str, Any],
+    government_wide: bool = False,
+) -> dict[str, Any]:
+    """One explicit, negative, measured line: the receipts and transfers the
+    Treasury nets inside a section's total. Not an organisation, and the
+    node says so in every field a reader or the gate might look at."""
+    amount = round_currency(sum(float(c["amount"]) for c in components))
+    listed = "; ".join(f"{c['name']} ({format_money(c['amount'])})" for c in components)
+    if government_wide:
+        description = (
+            "Not an organisation. The Monthly Treasury Statement nets these receipts against total outlays "
+            "without assigning them to any agency or branch, so this line sits beside the three branches: "
+            f"{listed}. Total Outlays is the branches' figures plus this line, to the cent."
+        )
+    else:
+        description = (
+            f"Not an organisation. The Monthly Treasury Statement's net figure for {parent_label} is its lines "
+            f"less these receipts and transfers, which this line carries so the units above sum to the figure "
+            f"the Treasury published: {listed}."
+        )
+    node = {
+        "id": node_id,
+        "name": name,
+        "type": TREASURY_LINE_TYPE,
+        "synthetic": SYNTHETIC_RECEIPTS,
+        # The curated file's field is `desc`, and the page reads that one.
+        "desc": description,
+        "descriptionSource": "generated_from_treasury_lines",
+        "rollup_total_amount": amount,
+        "budget_source": str(template.get("budget_source") or "Treasury MTS Table 5"),
+        "treasury_row_name": f"{parent_label}: offsetting receipts and intrabudgetary transactions" if not government_wide else f"Total--{UNDISTRIBUTED_LABEL}",
+        "treasury_component_rows": [{"name": c["name"], "amount": round_currency(c["amount"])} for c in components],
+        "sourceUrls": [TREASURY_DATASET_URL],
+        "sourceTypes": ["treasury_outlays"],
+        "children": [],
+    }
+    for field_name in TREASURY_ROW_FIELDS:
+        if template.get(field_name) not in (None, ""):
+            node[field_name] = deepcopy(template[field_name])
+    verify_node_sources(node)
+    return node
+
+
+def format_money(amount: float) -> str:
+    sign = "-" if amount < 0 else ""
+    value = abs(float(amount))
+    for unit, word in ((1e12, "T"), (1e9, "B"), (1e6, "M"), (1e3, "K")):
+        if value >= unit:
+            return f"{sign}${value / unit:,.2f}{word}"
+    return f"{sign}${value:,.0f}"
+
+
 def split_negative_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     """Net outlays below zero (USPS, FDIC, Ex-Im Bank in a good year) are a
     fact about receipts, not a cost the cascade can anchor on: published, a
@@ -869,6 +968,8 @@ def apply_treasury_outlay_rows(
     trusted_node_ids: set[str] | None = None,
     sample_limit: int | None = None,
     statement_present: bool | None = None,
+    all_rows: list[dict[str, Any]] | None = None,
+    anchor: float | None = None,
 ) -> dict[str, Any]:
     """Stamp the Treasury per-agency outlay lines onto the nodes they name.
 
@@ -894,22 +995,47 @@ def apply_treasury_outlay_rows(
     ambiguous_cap = sample_limit if sample_limit is not None else 20
     negative_cap = sample_limit if sample_limit is not None else 20
     applied_cap = sample_limit if sample_limit is not None else 400
-    rows, negative_rows = split_negative_outlay_rows(rows)
+    # The statement's own tree, when the crawler handed it over (older
+    # payloads carry no ids). With it, a negative line is matched like any
+    # other — the Mint's net outlays are the Mint's — except the rows inside a
+    # receipts-type subtree, which are receipts *of* an agency, not agencies,
+    # and are netted into an explicit line beneath the unit whose total
+    # they reduce. Without it, the old rule stands: negatives set aside.
+    tree = SectionTree.from_rows(all_rows if all_rows is not None else rows)
+    if tree.complete:
+        components = tree.receipts_component_ids()
+        undistributed = tree.undistributed_section()
+        undistributed_ids = {str(k.get("classification_id") or "") for k in ([undistributed] if undistributed else [])}
+        skipped_rows = [r for r in rows if str(r.get("classification_id") or "") in components | undistributed_ids]
+        rows = [r for r in rows if str(r.get("classification_id") or "") not in components | undistributed_ids]
+        negative_rows = [r for r in skipped_rows if (parse_cost_amount(r.get("rollup_total_amount")) or 0) < 0]
+    else:
+        rows, negative_rows = split_negative_outlay_rows(rows)
     stats: dict[str, Any] = {
         "rows": len(rows) + len(negative_rows),
         "rows_applied": 0,
+        "rows_negative_applied": 0,
         "rows_unmatched": 0,
         "rows_ambiguous": 0,
         "rows_superseded": 0,
         "rows_negative_skipped": len(negative_rows),
         "negative_sample": [str(row.get("originalName") or row.get("name")) for row in negative_rows[:negative_cap]],
         "stale_rollups_cleared": 0,
+        "synthetic_receipts_cleared": 0,
         "carried_forward_citations_restored": 0,
         "unmatched_sample": [],
         "ambiguous_sample": [],
         "applied": [],
+        "synthetic_ids": [],
+        "treasury_netting": {"applied": False, "reason": "no_statement_tree" if not tree.complete else "not_run"},
     }
+    if statement_present:
+        stats["synthetic_receipts_cleared"] = remove_synthetic_receipts(root)
     node_map, _ = index_tree(root)
+    if not statement_present:
+        stats["synthetic_ids"] = [str(n.get("id")) for n, _ in walk_tree(root) if is_synthetic_receipts(n)]
+        if stats["synthetic_ids"]:
+            stats["treasury_netting"] = {"applied": True, "reason": "carried_forward", "receipts_lines": len(stats["synthetic_ids"])}
     # Whatever statement this run carries, last run's lines are cleared first:
     # a node the Treasury no longer reports must not keep an old figure, nor
     # the period, source and URL that came with it.
@@ -1039,8 +1165,80 @@ def apply_treasury_outlay_rows(
         merge_source_provenance(node, row)
         verify_node_sources(node)
         stats["rows_applied"] += 1
+        if (node["rollup_total_amount"] or 0) < 0:
+            stats["rows_negative_applied"] += 1
         if len(stats["applied"]) < applied_cap:
             stats["applied"].append({"id": target_id, "row": node["treasury_row_name"], "amount": node["rollup_total_amount"]})
+
+    # Netting: publish the true lines and carry what the Treasury nets
+    # against them explicitly. Only when the statement's own identity holds
+    # for the rows in hand — every top-level section total, plus the
+    # government-wide receipts, summing to Total Outlays — because the
+    # whole construction rests on it; when it fails, nothing is created, the
+    # cap stays, and the stats say why.
+    if tree.complete:
+        identity = tree.identity(anchor)
+        netting: dict[str, Any] = {
+            "applied": False,
+            "identity": identity,
+            "section_mismatches": tree.section_mismatches(),
+            "receipts_lines": 0,
+            "receipts_total": 0.0,
+            "sections_netted": [],
+            "government_wide": None,
+        }
+        if identity["holds"]:
+            for target_id, (node, row) in chosen.items():
+                top = tree.top_section_of(row)
+                node["treasury_section"] = plain_label(top) if top else None
+                node["treasury_classification_id"] = row.get("classification_id")
+                header = tree.rows.get(str(row.get("parent_id") or "")) if is_total_row(row) else row
+                if header is None:
+                    continue
+                receipts = tree.receipts_rows(header)
+                if not receipts:
+                    continue
+                components = [{"name": plain_label(r), "amount": tree.amount(r)} for r in receipts]
+                if not any(c["amount"] for c in components):
+                    continue
+                child = make_receipts_node(
+                    node_id=f"{target_id}--treasury-receipts",
+                    name="Offsetting receipts and intrabudgetary transactions",
+                    parent_label=str(node.get("name") or plain_label(header)),
+                    components=components,
+                    template=row,
+                )
+                child["parentId"] = target_id
+                child["treasury_section"] = node["treasury_section"]
+                node.setdefault("children", []).append(child)
+                node["treasury_netted"] = True
+                node["treasury_receipts_child_id"] = child["id"]
+                netting["receipts_lines"] += 1
+                netting["receipts_total"] += float(child["rollup_total_amount"])
+                netting["sections_netted"].append({"id": target_id, "section": node["treasury_section"], "amount": child["rollup_total_amount"]})
+                stats["synthetic_ids"].append(child["id"])
+            undistributed = tree.undistributed_section()
+            if undistributed is not None and root_id:
+                components = [{"name": plain_label(r), "amount": tree.amount(r)} for r in tree.receipts_rows(undistributed)]
+                template = tree.total_row(undistributed) or undistributed
+                child = make_receipts_node(
+                    node_id=UNDISTRIBUTED_NODE_ID,
+                    name="Undistributed offsetting receipts",
+                    parent_label="the United States Government",
+                    components=components,
+                    template=template,
+                    government_wide=True,
+                )
+                child["attachToRoot"] = True
+                child["treasury_section"] = UNDISTRIBUTED_LABEL
+                root.setdefault("children", []).append(child)
+                netting["government_wide"] = {"id": child["id"], "amount": child["rollup_total_amount"], "printed_total": tree.section_total(undistributed)}
+                stats["synthetic_ids"].append(child["id"])
+            netting["applied"] = True
+            netting["receipts_total"] = round_currency(netting["receipts_total"])
+        else:
+            netting["reason"] = "identity_failed" if anchor is not None else "no_anchor"
+        stats["treasury_netting"] = netting
     return stats
 
 
@@ -1091,7 +1289,7 @@ def resolve_root_orphans(
         if isinstance(child, dict) and str(child.get("id") or "") in trusted_node_ids
     ]
     root_is_branches = len(curated_top) >= 2 and all(
-        str(child.get("type") or "").casefold() == "branch" for child in curated_top
+        str(child.get("type") or "").casefold() == "branch" or is_synthetic_receipts(child) for child in curated_top
     )
     orphan_ids = {str(child.get("id")) for child in orphans}
     root["children"] = [
@@ -1204,13 +1402,21 @@ def resolve_root_orphans(
 
 
 def compute_official_floors(root: dict[str, Any]) -> dict[str, float]:
-    """For every node, the sum of the top-most official totals in its subtree
-    (its own line if it has one, else its children's floors)."""
+    """For every node, the signed sum of the top-most official totals in its
+    subtree (its own line if it has one, else its children's floors).
+
+    Signed, since 2026-09-08: a negative line (the FDIC's net receipts, the
+    Mint's) is part of what its grouping's members measure. Counting it as
+    zero let the grouping's estimate pool absorb the receipt — the Fed, off
+    the statement entirely, was estimated at $17B out of the FDIC's −$18.6B.
+    A grouping whose measured members net below zero now publishes that
+    negative estimate and says why, rather than a positive one nothing
+    beneath it supports."""
     floors: dict[str, float] = {}
 
     def visit(node: dict[str, Any]) -> float:
         own = get_node_official_total(node)
-        if own is not None and own > 0:
+        if own is not None and own != 0:
             floor = float(own)
             for child in node.get("children", []):
                 if isinstance(child, dict):
@@ -1285,6 +1491,8 @@ def annotate_resolved_costs(
         "mixed_weight_sibling_sets_implied": 0,
         "allocations_below_precision": 0,
         "sibling_sets_scaled_to_official_floors": 0,
+        "treasury_pools_negative": 0,
+        "treasury_external_lines": 0,
     }
     official_floors = compute_official_floors(root)
 
@@ -1295,9 +1503,13 @@ def annotate_resolved_costs(
         inherited_basis: str | None,
         inherited_validation: str | None,
         is_root: bool = False,
+        section: str | None = None,
     ) -> None:
         official_total = get_node_official_total(node)
         node["resolved_total_amount"] = round_currency(allocated_total)
+        # The Table 5 section this node's figures come from: its own line's
+        # section, else the nearest lined ancestor's.
+        current_section = str(node.get("treasury_section") or "") or section
 
         if is_root:
             node["cost_status"] = "root_total" if allocated_total is not None else "unavailable"
@@ -1342,13 +1554,24 @@ def annotate_resolved_costs(
                     None,
                     inherited_basis=None if is_root else inherited_basis,
                     inherited_validation="missing_cost" if is_root else node.get("cost_validation"),
+                    section=current_section,
                 )
             return
 
         anchored_children: list[tuple[dict[str, Any], float]] = []
         weighted_children: list[tuple[dict[str, Any], float, str]] = []
+        # A line the Treasury files under a different section from this
+        # node's (the Tax Court, printed under the Legislative Branch and
+        # curated under the judiciary) is measured — it is that unit's
+        # outlay — but it is not part of this node's total, so it is
+        # published exactly and left out of the arithmetic here, flagged.
+        external_children: list[tuple[dict[str, Any], float]] = []
         for child in children:
             official_child_total = get_node_official_total(child)
+            child_section = str(child.get("treasury_section") or "")
+            if official_child_total is not None and child_section and current_section and child_section != current_section:
+                external_children.append((child, official_child_total))
+                continue
             if official_child_total is not None:
                 anchored_children.append((child, official_child_total))
             else:
@@ -1390,9 +1613,25 @@ def annotate_resolved_costs(
         # been computed from a floor that included them.
         anchor_scale = 1.0
         scaled_to_fit_parent = False
-        if anchored_children and official_rollups_exceed_total(official_child_sum, allocated_total):
-            measured_sum = official_child_sum + floor_sum
-            anchor_scale = abs(allocated_total) / abs(measured_sum) if measured_sum else 1.0
+        # A netted node's lines are exact by the statement's own identity;
+        # if they still exceed its total, the difference is a negative line
+        # the graph has no node for, and no line is cut to hide that.
+        netted = bool(node.get("treasury_netted")) or bool(node.get("treasury_section"))
+        # Signed, since the lines can be negative: the measured money beneath
+        # this node exceeds its allocation when it sums past it, not when its
+        # magnitude does — a grouping whose lines net −$16.8B inside an
+        # allocation of −$12.7B has $4.1B left for its unlined members, not a
+        # shortfall. A haircut is only meaningful between two positive figures;
+        # anything else that overruns is a negative pool, declared below.
+        measured_sum = official_child_sum + floor_sum
+        if (
+            anchored_children
+            and not netted
+            and official_child_sum > allocated_total + 0.005
+            and allocated_total > 0
+            and measured_sum > 0
+        ):
+            anchor_scale = allocated_total / measured_sum
             scaled_to_fit_parent = True
 
         assigned_anchor_total = sum(amount * anchor_scale for _, amount in anchored_children)
@@ -1405,14 +1644,37 @@ def annotate_resolved_costs(
                 counters["sibling_sets_scaled_to_official_floors"] += 1
         else:
             floor_scale = 1.0
-            if floor_sum > 0 and remainder_total >= 0 and floor_sum > remainder_total:
+            if floor_sum > 0 and remainder_total >= 0 and floor_sum > remainder_total + 0.005:
                 floor_scale = remainder_total / floor_sum
                 counters["sibling_sets_scaled_to_official_floors"] += 1
         excess_total = max(remainder_total - floor_sum * floor_scale, 0.0)
         weighted_remaining = len(weighted_children)
         remainder_left = remainder_total
+        # Nothing left for the unlined children — or less than nothing: the
+        # measured lines under this unit exceed its net total, which after
+        # netting means a negative line the graph has no node for. No share
+        # can be apportioned from a negative pool, and the unit says so.
+        pool_negative = remainder_total < -0.005 and bool(weighted_children)
+        node.pop("treasury_pool_negative", None)
+        node.pop("treasury_unapportioned", None)
+        if not weighted_children and abs(remainder_total) > 0.005 and node.get("treasury_section"):
+            # A netted unit with no unlined child: the statement's lines this
+            # graph has no node for go nowhere, and the panel can say how much.
+            node["treasury_unapportioned"] = round_currency(remainder_total)
+        if pool_negative:
+            node["treasury_pool_negative"] = round_currency(remainder_total)
+            counters["treasury_pools_negative"] += 1
         for (child, weight, weight_basis), floor in zip(weighted_children, floors):
             weighted_remaining -= 1
+            # A grouping whose measured members net below zero publishes a
+            # negative estimate; the stamp is what the gate and the panel
+            # read to know that figure is what the lines beneath support.
+            child.pop("measured_net_beneath", None)
+            if floor < 0:
+                child["measured_net_beneath"] = round_currency(floor)
+            if pool_negative:
+                recurse(child, None, inherited_basis=weight_basis, inherited_validation="treasury_pool_negative", section=current_section)
+                continue
             if weighted_remaining <= 0:
                 child_total = remainder_left
             else:
@@ -1427,6 +1689,7 @@ def annotate_resolved_costs(
                     None,
                     inherited_basis=weight_basis,
                     inherited_validation="allocation_below_precision",
+                    section=current_section,
                 )
                 continue
             recurse(
@@ -1434,6 +1697,7 @@ def annotate_resolved_costs(
                 child_total,
                 inherited_basis=weight_basis,
                 inherited_validation="estimated_from_parent",
+                section=current_section,
             )
 
         for child, official_child_total in anchored_children:
@@ -1442,6 +1706,17 @@ def annotate_resolved_costs(
                 official_child_total * anchor_scale,
                 inherited_basis="treasury_rollup",
                 inherited_validation="scaled_to_parent_total" if scaled_to_fit_parent else "matched_official_rollup",
+                section=current_section,
+            )
+        for child, official_child_total in external_children:
+            child["treasury_external_section"] = True
+            counters["treasury_external_lines"] += 1
+            recurse(
+                child,
+                official_child_total,
+                inherited_basis="treasury_rollup",
+                inherited_validation="matched_official_rollup",
+                section=str(child.get("treasury_section") or ""),
             )
 
     recurse(
@@ -1821,7 +2096,13 @@ def build_graph(
         statement_present=payloads_carry_treasury_statement(payload_list),
         root_id=str(graph.get("id") or ""),
         trusted_node_ids=set(existing_ids),
+        all_rows=collect_treasury_rows_all(payload_list),
+        anchor=parse_cost_amount((fresh_budget_summary or {}).get("government_total_outlay_amount")),
     )
+    # The receipts lines the statement nets are this build's, and trusted by
+    # id exactly as curated nodes are: the gate keeps them, and the root
+    # guard below knows the government-wide one is not a fourth branch.
+    existing_ids = set(existing_ids) | {str(i) for i in outlay_stats.pop("synthetic_ids", [])}
     validation["treasury_outlay_rows"] = {key: value for key, value in outlay_stats.items() if key != "applied"}
     # Existence evidence gathered by scripts/verify_base_graph.py: an official
     # page read on a date that names the node as a label of its own. It is the

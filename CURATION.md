@@ -16,30 +16,29 @@ the site can say so.
 ## 1. Units the Monthly Treasury Statement reports and the graph lacks
 
 Table 5 prints a line for each of these and no node carries the name, so
-no alias can reach the money. Amounts are not in this repository: the last
-live statement's per-line figures are printed by
-`python scripts/probe_treasury_rows.py --reconcile` in the Treasury
-environment, and the table below leaves the column blank rather than quote
-a figure nobody in this session read. Placement is the proposal; the
-Treasury line names the unit, not its parent.
+no alias can reach the money. Amounts are FYTD net outlays through
+2026-07-31, read off `tests/fixtures/mts_table5_latest.json` — the
+statement verbatim, committed 2026-09-08. A negative figure is what the
+Treasury prints: net receipts exceeded spending (GSA's rents, for one).
+Placement is the proposal; the Treasury line names the unit, not its parent.
 
-| Unit, as Table 5 prints it | Proposed parent (id) | Proposed type | FYTD outlays | Candidate official page |
+| Unit, as Table 5 prints it | Proposed parent (id) | Proposed type | FYTD net outlays (2026-07-31) | Candidate official page |
 |---|---|---|---|---|
-| General Services Administration | `exec-independent` (a peer of NASA, OPM) | Independent Agency | — | https://www.gsa.gov/about-us |
-| Agency for International Development | `exec-independent` | Independent Agency | — | https://www.usaid.gov/ |
-| Railroad Retirement Board | `exec-ind-misc` | Independent Agency | — | https://www.rrb.gov/ |
-| Corps of Engineers | see note (a) | Component Agency | — | https://www.usace.army.mil/About/ |
-| Agricultural Marketing Service | `exec-dept-usda` | Component Agency | — | https://www.ams.usda.gov/about-ams |
-| Foreign Agricultural Service | `exec-dept-usda` | Component Agency | — | https://www.fas.usda.gov/about-fas |
-| Economic Development Administration | `exec-dept-commerce` | Component Agency | — | https://www.eda.gov/about |
-| Federal Housing Finance Agency | `exec-regulatory` | Regulatory Agency | — | https://www.fhfa.gov/about |
-| Institute of Museum and Library Services | `exec-ind-misc` | Independent Agency | — | https://www.imls.gov/about |
-| Administration for Children and Families | `exec-dept-hhs` | Component Agency | — | https://www.acf.hhs.gov/about |
-| Administration for Community Living | `exec-dept-hhs` | Component Agency | — | https://acl.gov/about-acl |
-| Legal Services Corporation | `exec-ind-misc` | Government Corporation | — | https://www.lsc.gov/about-lsc |
-| Millennium Challenge Corporation | `exec-ind-misc` | Government Corporation | — | https://www.mcc.gov/about-us/ |
-| Bureau of Consumer Financial Protection | `exec-regulatory` | Regulatory Agency | — | https://www.consumerfinance.gov/about-us/ |
-| Corporation for Public Broadcasting | `exec-ind-misc` | Government Corporation (federally chartered, private) | — | see note (b) |
+| General Services Administration | `exec-independent` (a peer of NASA, OPM) | Independent Agency | -$836.73M | https://www.gsa.gov/about-us |
+| Agency for International Development | `exec-independent` | Independent Agency | $6.33B | https://www.usaid.gov/ |
+| Railroad Retirement Board | `exec-ind-misc` | Independent Agency | $3.33B | https://www.rrb.gov/ |
+| Corps of Engineers | see note (a) | Component Agency | $9.70B | https://www.usace.army.mil/About/ |
+| Agricultural Marketing Service | `exec-dept-usda` | Component Agency | $1.45B | https://www.ams.usda.gov/about-ams |
+| Foreign Agricultural Service | `exec-dept-usda` | Component Agency | $1.20B | https://www.fas.usda.gov/about-fas |
+| Economic Development Administration | `exec-dept-commerce` | Component Agency | $941.23M | https://www.eda.gov/about |
+| Federal Housing Finance Agency | `exec-regulatory` | Regulatory Agency | $231.49M | https://www.fhfa.gov/about |
+| Institute of Museum and Library Services | `exec-ind-misc` | Independent Agency | $179.50M | https://www.imls.gov/about |
+| Administration for Children and Families | `exec-dept-hhs` | Component Agency | $59.94B | https://www.acf.hhs.gov/about |
+| Administration for Community Living | `exec-dept-hhs` | Component Agency | $1.98B | https://acl.gov/about-acl |
+| Legal Services Corporation | `exec-ind-misc` | Government Corporation | $540.00M | https://www.lsc.gov/about-lsc |
+| Millennium Challenge Corporation | `exec-ind-misc` | Government Corporation | $505.55M | https://www.mcc.gov/about-us/ |
+| Bureau of Consumer Financial Protection | `exec-regulatory` | Regulatory Agency | $361.69M | https://www.consumerfinance.gov/about-us/ |
+| Corporation for Public Broadcasting | `exec-ind-misc` | Government Corporation (federally chartered, private) | $8.02M | see note (b) |
 | Corporation for National and Community Service | **not a gap — see §2** | | | |
 
 Notes.
@@ -81,6 +80,12 @@ parent carries a positive figure; the earlier attempt to publish this unit
 as a fourth child of the root came from the crawler, not from the base
 graph, and is the reason `resolve_root_orphans` refuses root attachment.
 
+**U.S. Postal Service** (`exec-ind-usps`) is estimated at ≈ $19B while Table
+5 prints the Postal Service's own off-budget line. The curated name is
+"U.S. Postal Service (USPS)" and the statement's label differs; a probe
+(`scripts/probe_treasury_rows.py`) will say which label it prints and
+whether one node answers to it. An alias candidate, once confirmed.
+
 ## 3. One unit, two subtrees: the Coast Guard
 
 `exec-dept-dhs-uscg` (under Homeland Security) and `exec-dept-defense-cg`
@@ -104,28 +109,23 @@ call:
 An earlier session deleted one copy and was reverted; that was the right
 reversal — the choice is curatorial.
 
-## 4. Not curation, but found while preparing this: measured lines hidden as "not available"
+## 4. Resolved since this document was first written
 
-Six Treasury lines under `exec-ind-misc` publish as `unavailable`
-(`allocation_below_precision`): PBGC $1.99B, EEOC $351M, Peace Corps
-$336M, NLRB $229M, NEA $124M, NEH $52M — $3.08B measured and shown to
-nobody, and not counted in the "$259B withheld" figure either, because
-that figure counts only `scaled_official` nodes. The mechanism is in the
-cost cascade: the grouping's parent (`exec-independent`) is allocated
-$1.550T, which is exactly the measured lines beneath it ($1.615T,
-*including* these six) after the branch-wide 96% cap; but inside it the
-directly-measured children (SSA $1.445T, OPM, NASA, …) are scaled to fit
-first and leave nothing for the weighted siblings, so the six lines two
-levels down get a share of zero. The fix — one common haircut for every
-measured line beneath a node, direct or deeper — is a pipeline change,
-tracked separately from this document.
+Two things this proposal used to point at are fixed in the pipeline, not
+in curation:
 
-## 5. The cap itself
+- Six measured Treasury lines under `exec-ind-misc` (PBGC, EEOC, the Peace
+  Corps, NLRB, NEA, NEH, $3.08B) were published as "not available"; the
+  cascade now pays every measured line beneath a unit one haircut when
+  they exceed it, never zero to some.
+- The cap itself is gone. Every measured unit publishes the Treasury's own
+  net figure, each section's receipts are carried as an explicit negative
+  line beneath the unit whose total they reduce, and the government-wide
+  offsetting receipts (−$343.3B) sit beside the three branches. CLAUDE.md
+  ("Cost cascade") has the design and the identity it rests on.
 
-Every measured figure beneath a weighted parent is published at ~96% of
-what the Treasury reported, all fifteen cabinet departments included,
-because Table 5's negative lines (offsetting receipts, intrabudgetary
-transactions) are set aside and the positive lines then sum past the net
-anchor. Whether to keep capping or to publish true lines and carry the
-negatives explicitly is an invariant change and a decision for the owner,
-written up separately with the reconciliation numbers.
+What that leaves for curation is only what this document lists: the
+sixteen units above (their lines now sit, unapportioned, inside their
+sections' estimates), the AmeriCorps and Postal Service aliases, and the
+Coast Guard duplicate — whose $9.6B, ambiguous between two nodes, is still
+the largest single line the graph cannot place.

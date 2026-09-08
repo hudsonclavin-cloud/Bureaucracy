@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260908a";
+import { createLodManager } from "./lodManager.js?v=20260908b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -49,6 +49,7 @@ const branchColors = {
   judicial: "#4a8ac8",
   independent: "#4ac88a",
   regulatory: "#c8884a",
+  receipts: "#8a8aa8",
   position: "#666666",
 };
 const branchSectorDirections = {
@@ -63,6 +64,9 @@ const branchSectorDirections = {
   judicial: new THREE.Vector3(0, 1, 0.1).normalize(),
   independent: new THREE.Vector3(-0.46, -0.68, 0.57).normalize(),
   regulatory: new THREE.Vector3(0.58, -0.54, -0.61).normalize(),
+  // The government-wide receipts line the Treasury nets against Total
+  // Outlays sits beside the three branches, below the Constitution.
+  receipts: new THREE.Vector3(0, -1, 0.1).normalize(),
   position: new THREE.Vector3(-0.14, 0.18, 0.97).normalize(),
 };
 
@@ -304,6 +308,9 @@ export function createGovernmentGraph({
 
     if (type.includes("constitution") || id === "constitution" || id.startsWith("const")) {
       return "constitution";
+    }
+    if (type.includes("treasury accounting")) {
+      return "receipts";
     }
     // The three branch nodes are "legislative-branch" / "executive-branch" /
     // "judicial-branch" (type Branch); the prefix rules below only matched

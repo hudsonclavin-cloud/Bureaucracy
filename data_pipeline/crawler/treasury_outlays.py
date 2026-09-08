@@ -102,7 +102,7 @@ def parse_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
                 "source_url": DATASET_URL,
             }
             continue
-        if amount is None or original_label in IGNORED_TOTAL_LABELS:
+        if original_label in IGNORED_TOTAL_LABELS or original_label.startswith("Total Surplus"):
             continue
         if "total outlays" in original_label.casefold() or original_label.casefold().startswith("total--outlays"):
             # A relabelled grand total ("Total Outlays:", "Total outlays") must
@@ -111,11 +111,20 @@ def parse_outlay_rows(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]],
         normalized_name = normalize_row_name(original_label)
         if not normalized_name:
             continue
+        # A header ("Department of Agriculture:") carries no amount of its own:
+        # its children do, and its "Total--" child nets them. Headers are kept,
+        # flagged, so the exporter can rebuild the statement's tree and net
+        # each section's receipts against its own lines; every consumer that
+        # wants a figure skips a row whose amount is None.
         outlay_rows.append(
             {
                 "name": normalized_name,
                 "originalName": original_label,
                 "rollup_total_amount": amount,
+                "is_header": amount is None,
+                "classification_id": str(row.get("classification_id") or "").strip() or None,
+                "parent_id": str(row.get("parent_id") or "").strip() or None,
+                "line_code": str(row.get("line_code_nbr") or "").strip() or None,
                 "amount_kind": "fytd_net_outlays",
                 "budget_year": str(row.get("record_fiscal_year") or "").strip() or None,
                 "budget_as_of": str(row.get("record_date") or "").strip() or None,
