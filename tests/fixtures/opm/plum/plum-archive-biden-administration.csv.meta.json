@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:49:47Z",
+ "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+ "status": 200,
+ "final_url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+ "content_type": "application/octet-stream",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 3792279,
+ "sha256": "2a77f8ca82e4e4077db4d923f77d5bc8812eecd9a8b86b9baf231e22a848fd3d",
+ "error": null,
+ "file": "plum-archive-biden-administration.csv"
+}
