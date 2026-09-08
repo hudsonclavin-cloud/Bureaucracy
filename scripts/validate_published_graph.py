@@ -221,22 +221,36 @@ def main(argv):
         [label(n) for n in nodes if n.get("attachToRoot") and n.get("parentId")],
     )
 
-    # 5. A part cannot cost more than the whole.
+    # 5. A part cannot cost more than the whole — less the whole's negative
+    #    parts. Since the statement's receipts are carried as explicit
+    #    negative lines, a positive child may reach the parent's figure plus
+    #    what its negative siblings take back (CMS's $2.3T sits inside HHS's
+    #    $1.7T net beside −$749B of Medicare premiums and transfers), and no
+    #    further. A line the Treasury files under another section is outside
+    #    the parent's total altogether and is checked in the report instead.
+    def is_external(node):
+        return node.get("treasury_external_section") is True
+
     over_parent = []
-    for node, parent in pairs:
-        if parent is None:
-            continue
-        child_amount = amount_of(node)
+    for parent, _ in pairs:
         parent_amount = amount_of(parent)
-        if child_amount is None or parent_amount is None:
+        if parent_amount is None:
             continue
-        if child_amount > parent_amount * (1 + 1e-9):
-            over_parent.append(
-                "{} = {:,.2f} > parent {} = {:,.2f}".format(
-                    label(node), child_amount, label(parent), parent_amount
+        kids = [c for c in (parent.get("children") or []) if isinstance(c, dict) and not is_external(c)]
+        negatives = sum(a for a in (amount_of(c) for c in kids) if a is not None and a < 0)
+        pool = parent.get("treasury_pool_negative")
+        capacity = parent_amount - negatives + (-float(pool) if isinstance(pool, (int, float)) and pool < 0 else 0.0)
+        for child in kids:
+            child_amount = amount_of(child)
+            if child_amount is None or child_amount <= 0:
+                continue
+            if child_amount > capacity * (1 + 1e-9) + 0.01:
+                over_parent.append(
+                    "{} = {:,.2f} > parent {} = {:,.2f} less its negative lines {:,.2f}".format(
+                        label(child), child_amount, label(parent), parent_amount, negatives
+                    )
                 )
-            )
-    gate.check("no child costs more than its parent", over_parent)
+    gate.check("no child costs more than its parent less the parent's negative lines", over_parent)
 
     # 6. Direct children must not sum past the root total.
     root_amount = amount_of(graph)
@@ -281,15 +295,29 @@ def main(argv):
     # 10. An amount of zero (or less) is a claim that the thing is free. A share
     #     the cascade could not resolve must say so with cost_status
     #     'unavailable' and no amount, never with $0.00.
+    #     A negative figure is a different thing: net outlays below zero are
+    #     what the Treasury reports for the Mint, the FDIC, the Executive
+    #     Office of the President, and for the receipts it nets inside every
+    #     section. Those may be negative — a Treasury line, a receipts line
+    #     the exporter carries explicitly, or an estimate for a grouping whose
+    #     measured members net below zero (stamped measured_net_beneath) —
+    #     and nothing else may.
     non_positive = []
     unlabelled_missing = []
     for node in nodes:
         amount = amount_of(node)
-        if amount is not None and amount <= 0:
-            non_positive.append("{} = {:,.2f}".format(label(node), amount))
+        if amount is not None and amount == 0:
+            non_positive.append("{} = 0.00".format(label(node)))
+        elif amount is not None and amount < 0:
+            measured_line = node.get("rollup_total_amount") is not None and str(node.get("treasury_row_name") or "")
+            receipts_line = str(node.get("synthetic") or "") == "treasury_receipts"
+            net_beneath = node.get("measured_net_beneath")
+            negative_grouping = isinstance(net_beneath, (int, float)) and net_beneath < 0 and str(node.get("cost_status") or "") == "allocated"
+            if not (measured_line or receipts_line or negative_grouping):
+                non_positive.append("{} = {:,.2f} is negative without a Treasury line behind it".format(label(node), amount))
         elif amount is None and str(node.get("cost_status") or "") != "unavailable":
             unlabelled_missing.append("{} has no amount and cost_status {!r}".format(label(node), node.get("cost_status")))
-    gate.check("no zero or negative amounts", non_positive)
+    gate.check("no zero amounts, and no negative amount without a Treasury line behind it", non_positive)
     gate.check("a missing amount is labelled unavailable", unlabelled_missing)
     # A Treasury line is a measured figure; while the root is anchored, every
     # one is published, in full or capped, never as "not available". Six lines
@@ -302,24 +330,40 @@ def main(argv):
             if node is graph:
                 continue
             line = node.get("rollup_total_amount")
-            if isinstance(line, (int, float)) and line > 0 and str(node.get("cost_status") or "") == "unavailable":
+            if isinstance(line, (int, float)) and line != 0 and str(node.get("cost_status") or "") == "unavailable":
                 hidden_lines.append("{} carries a Treasury line of {:,.2f} but is published unavailable".format(label(node), line))
     gate.check("no Treasury line is hidden as unavailable", hidden_lines)
 
-    # 11. Check 6, at every level: the parts of any node must fit inside it.
+    # 11. Check 6, at every level: the parts of any node must fit inside it —
+    #     signed, with two named exceptions the node itself declares. A line
+    #     the Treasury files under another section is not part of this
+    #     parent's total (treasury_external_section). And a netted unit whose
+    #     lines exceed its net total by a negative line the graph has no node
+    #     for carries treasury_pool_negative, the exact excess, and its
+    #     unlined children publish nothing; the excess is allowed, to the cent.
     over_parent_sums = []
+    external_lines = []
+    negative_pools = []
     for parent, _ in pairs:
         parent_amount = amount_of(parent)
         if parent_amount is None:
             continue
         children = [c for c in (parent.get("children") or []) if isinstance(c, dict)]
-        child_amounts = [a for a in (amount_of(c) for c in children) if a is not None]
+        external_lines.extend(c for c in children if is_external(c))
+        child_amounts = [a for a in (amount_of(c) for c in children if not is_external(c)) if a is not None]
         if not child_amounts:
             continue
         total = sum(child_amounts)
-        if total > parent_amount * (1 + CHILD_SUM_TOLERANCE) + 0.01:
+        allowance = 0.0
+        pool = parent.get("treasury_pool_negative")
+        if isinstance(pool, (int, float)) and pool < 0:
+            allowance = -float(pool)
+            negative_pools.append(parent)
+        if total > parent_amount + abs(parent_amount) * CHILD_SUM_TOLERANCE + allowance + 0.01:
             over_parent_sums.append(
-                "children of {} sum to {:,.2f} > {:,.2f}".format(label(parent), total, parent_amount)
+                "children of {} sum to {:,.2f} > {:,.2f}{}".format(
+                    label(parent), total, parent_amount, " + declared negative pool {:,.2f}".format(allowance) if allowance else ""
+                )
             )
     gate.check("children sum within every parent's total", over_parent_sums)
 
@@ -349,7 +393,18 @@ def main(argv):
     # A node published beside them claims to be a fourth. "At most 10" was a
     # size check, not a structural one, and it let one through.
     BRANCH_IDS = ("legislative-branch", "executive-branch", "judicial-branch")
-    actual_top = tuple(str(c.get("id") or "") for c in top_level)
+    # One exception, by design: the government-wide offsetting receipts the
+    # Treasury nets against Total Outlays without assigning them to any
+    # branch. It is a Treasury accounting line, not a fourth branch, and it
+    # is the only thing allowed beside the three.
+    receipts_at_root = [
+        c for c in top_level
+        if isinstance(c, dict) and str(c.get("synthetic") or "") == "treasury_receipts"
+        and str(c.get("id") or "") == "treasury-undistributed-offsetting-receipts"
+    ]
+    actual_top = tuple(str(c.get("id") or "") for c in top_level if c not in receipts_at_root)
+    if len(receipts_at_root) > 1:
+        actual_top = actual_top + ("treasury-undistributed-offsetting-receipts",) * (len(receipts_at_root) - 1)
     gate.check(
         "root's children are exactly the three branches",
         ["root has {}, expected {}".format(list(actual_top), list(BRANCH_IDS))] if actual_top != BRANCH_IDS else [],

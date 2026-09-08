@@ -1264,6 +1264,45 @@ class PlacementScriptTests(unittest.TestCase):
         for record in self._records().values():
             self.assertNotIn("placement", record)
 
+    def test_an_unreadable_parent_page_withdraws_the_block_it_set_out_to_replace(self) -> None:
+        """www.hud.gov/about was "checked and not listed" fifteen times under
+        the old whole-page floor. The recheck found the page unreadable and,
+        because an unreadable page records nothing, left every old block in
+        place to be published under today's record. A block the run tried to
+        re-read and could not is withdrawn; one the run did not plan to touch
+        (an edge already listed, without --recheck) is left alone."""
+        self._run()
+        records = self._records()
+        self.assertEqual(records["doe-nnsa"]["placement"]["status"], PLACEMENT_NOT_LISTED)
+        listed_at = records["doe-science"]["placement"]["checkedAt"]
+
+        def blocked(url, timeout=30):
+            raise OSError("Tunnel connection failed: 403 Forbidden")
+
+        out = io.StringIO()
+        with mock.patch.object(verify_base_graph, "request_text", blocked), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             redirect_stdout(out):
+            verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
+                                    "--evidence", str(self.evidence), "--sleep", "0"])
+        self.assertIn("'parent_page_unreadable': 1", out.getvalue())
+        self.assertIn("'prior_block_withdrawn': 1", out.getvalue())
+        records = self._records()
+        self.assertEqual(records["doe-nnsa"]["status"], FETCH_FAILED)
+        self.assertNotIn("placement", records["doe-nnsa"], "the page it rested on could not be re-read")
+        self.assertEqual(records["doe-science"]["placement"]["checkedAt"], listed_at, "not in the plan: untouched")
+
+        # With --recheck the listed edge is in the plan too, and the same
+        # unreadable page withdraws it — the run could not stand behind it.
+        with mock.patch.object(verify_base_graph, "request_text", blocked), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             redirect_stdout(io.StringIO()):
+            verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
+                                    "--evidence", str(self.evidence), "--sleep", "0", "--recheck"])
+        records = self._records()
+        self.assertEqual(records["doe-science"]["status"], FETCH_FAILED)
+        self.assertNotIn("placement", records["doe-science"])
+
 
 class FrontendWordingTests(unittest.TestCase):
     """The page's placement wording is the claim the data supports and no

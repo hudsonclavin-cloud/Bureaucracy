@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908a";
+import { createGovernmentGraph } from "./graph.js?v=20260908b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -120,6 +120,7 @@ function describeProvenance(root) {
   let nodes = 0;
   let measured = 0;
   let capped = 0;
+  let receipts = 0;
   let sourced = 0;
   let placed = 0;
   let unreachable = 0;
@@ -130,7 +131,8 @@ function describeProvenance(root) {
     if (!node || typeof node !== "object") continue;
     nodes += 1;
     const status = String(node.cost_status || "");
-    if (status === "official" || status === "root_total") measured += 1;
+    if (String(node.synthetic || "") === "treasury_receipts") receipts += 1;
+    else if (status === "official" || status === "root_total") measured += 1;
     else if (status === "scaled_official") capped += 1;
     if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
     if (node.placementVerified === true) placed += 1;
@@ -138,9 +140,11 @@ function describeProvenance(root) {
     if (node !== root && !/position/i.test(String(node.type || ""))) orgEdges += 1;
     for (const child of node.children || []) stack.push(child);
   }
-  const estimated = Math.max(nodes - measured - capped, 0);
+  const estimated = Math.max(nodes - measured - capped - receipts, 0);
   return [
-    `${measured.toLocaleString()} costs measured from the Monthly Treasury Statement`,
+    `${measured.toLocaleString()} costs measured from the Monthly Treasury Statement${
+      receipts ? `, with its receipts carried as ${receipts.toLocaleString()} explicit lines` : ""
+    }`,
     `${capped.toLocaleString()} capped to fit an estimated parent`,
     `${estimated.toLocaleString()} apportioned estimates`,
     `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
@@ -482,6 +486,10 @@ function renderDescriptionProvenance(data, isClusteredView) {
     line.textContent = "";
     return;
   }
+  if (String(data.descriptionSource || "") === "generated_from_treasury_lines") {
+    line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement lines it names";
+    return;
+  }
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
 }
 
@@ -505,6 +513,10 @@ function renderPlacementLine(data) {
     : null;
   dom.verificationPlacement.replaceChildren();
   const add = (text) => dom.verificationPlacement.appendChild(document.createTextNode(text));
+  if (String(data.synthetic || "") === "treasury_receipts") {
+    add("Placement: a Treasury accounting line, placed beneath the unit whose published total it reconciles; not an organisation and not checked against any page");
+    return;
+  }
   if (data.placementVerified === true) {
     // The claim carries its own audit trail: the page, and the label on it.
     // When it is the same page and the same read as the existence line above,
@@ -812,7 +824,9 @@ function formatCostAmount(node) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
-    return `$${Math.round(amount).toLocaleString()}`;
+    // A Treasury line can be below zero (net receipts); the sign leads.
+    const whole = Math.round(Math.abs(amount)).toLocaleString();
+    return `${amount < 0 ? "-" : ""}$${whole}`;
   }
   return `≈ ${formatApproximateCost(amount)}`;
 }
@@ -828,14 +842,51 @@ function isBelowPrecision(node) {
 
 function describeCost(node) {
   const status = String(node.cost_status || "").toLowerCase();
-  if (!status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node)) {
+  const amount = toFiniteAmount(node.resolved_total_amount);
+  const validation = String(node.cost_validation || "").toLowerCase();
+  if (!status || status === "unavailable" || amount === null || isBelowPrecision(node)) {
     if (isBelowPrecision(node)) {
       return {
         ...COST_STATUS_COPY.unavailable,
         note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.",
       };
     }
+    if (validation === "treasury_pool_negative") {
+      return {
+        ...COST_STATUS_COPY.unavailable,
+        note:
+          "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it — its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no figure is shown rather than a guess.",
+      };
+    }
     return COST_STATUS_COPY.unavailable;
+  }
+  if (String(node.synthetic || "") === "treasury_receipts") {
+    return {
+      label: "Measured (Treasury accounting line)",
+      tone: "measured",
+      note: "Not an organisation. The receipts and transfers the Treasury nets inside the published total above, carried here as the statement prints them so the units above sum to that figure to the cent.",
+    };
+  }
+  if (status === "official" && amount < 0) {
+    return {
+      ...COST_STATUS_COPY.official,
+      note: `Net outlays below zero for the period: the Monthly Treasury Statement (Table 5) reports more receipts than spending for this unit.${
+        node.treasury_external_section ? ` The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.` : ""
+      }`,
+    };
+  }
+  if (status === "official" && node.treasury_external_section) {
+    return {
+      ...COST_STATUS_COPY.official,
+      note: `${COST_STATUS_COPY.official.note} The Treasury files this line under its "${node.treasury_section}" section, so it is measured but not part of its parent's total here.`,
+    };
+  }
+  if (status === "allocated" && amount < 0) {
+    const net = toFiniteAmount(node.measured_net_beneath);
+    return {
+      ...COST_STATUS_COPY.allocated,
+      note: `Its measured members' Treasury lines net below zero (${net === null ? "receipts exceeded spending" : formatApproximateCost(net)}); the estimate for its unmeasured members is added to that, and the total stays negative.`,
+    };
   }
 
   const copy = COST_STATUS_COPY[status];

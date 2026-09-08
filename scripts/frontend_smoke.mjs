@@ -162,51 +162,115 @@ try {
   check("the measured cost names its statement", /Monthly Treasury Statement/.test(measured), measured);
   const measuredPanel = await text("#info-panel");
   check("a measured node does not read no source recorded", !/NO SOURCE RECORDED/.test(measuredPanel), measuredPanel.slice(0, 200));
-  // A capped line is the subtlest claim on the page: the figure shown is
-  // BELOW the one the Treasury reported, because it did not fit inside an
-  // estimated parent. 27 top-most nodes publish $259B less than their own
-  // lines. If this text ever regresses to a plain "ESTIMATE" the site
-  // understates measured spending without saying so.
-  await page.fill("#search-input", "Department of Energy");
-  await page.waitForTimeout(500);
-  await page.locator("#search-results .sr-item").first().click();
-  await page.waitForTimeout(2000);
-  const capped = await text("#info-stats");
-  check("a capped Treasury line says it is capped", /TREASURY LINE CAPPED/.test(capped), capped);
-  check("a capped node names the figure the Treasury reported", /Treasury reported \$/.test(capped), capped);
-  check("a capped figure is not called measured", !/\bMEASURED\b/.test(capped), capped);
-  const cappedPanel = await text("#info-panel");
-  check(
-    "an existence-verified node says which page named it",
-    /official page names it|official page lists it/i.test(cappedPanel),
-    cappedPanel.slice(0, 300),
-  );
-  // A department sits under the curated "Cabinet" grouping, which has no
-  // page of its own: its edge cannot be checked by this method, and the
-  // panel must say that rather than "no evidence recorded".
-  const cabinetPlacement = await text("#verification-placement");
-  check(
-    "a unit under a curated grouping says its placement could not be checked",
-    /Placement: could not be checked — its parent is a curated grouping with no official page of its own/.test(cabinetPlacement),
-    cabinetPlacement,
-  );
+  // The figures are read off the served graph, not hard-coded: the day the
+  // cap was removed, a fixed "Department of Energy reads capped" assertion
+  // would have failed for the right reason and taught nothing.
+  const graphJson = JSON.parse(fs.readFileSync(path.join(ROOT, "output", "graph.json"), "utf8"));
+  const allNodes = [];
+  const walk = (node) => {
+    if (!node || typeof node !== "object") return;
+    allNodes.push(node);
+    for (const child of node.children || []) walk(child);
+  };
+  walk(graphJson);
+  const byId = (id) => allNodes.find((n) => n.id === id);
+  const openByName = async (name) => {
+    await page.fill("#search-input", name);
+    await page.waitForTimeout(500);
+    await page.locator("#search-results .sr-item", { hasText: name }).first().click();
+    await page.waitForTimeout(2000);
+  };
+  const exactDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
 
-  // A share that rounds below a cent is published as unavailable, never as
-  // $0.00 — a zero would read as "this costs nothing".
-  await page.fill("#search-input", "President of the United States");
-  await page.waitForTimeout(500);
-  await page.locator("#search-results .sr-item").first().click();
-  await page.waitForTimeout(2000);
-  const unavailable = await text("#info-stats");
-  check("a sub-cent share reads as unavailable", /Not available|NOT AVAILABLE/.test(unavailable), unavailable);
-  // The COST VALUE must not be a zero. The explanation below it is allowed to
-  // say the words "rather than $0" — that sentence is the honesty, not a bug.
-  check(
-    "a sub-cent share is never rendered as a zero cost",
-    !/COST\s*[\n\r]*\s*[≈~]?\s*\$0(\.00)?\b/.test(unavailable),
-    unavailable,
-  );
-  check("a sub-cent share explains itself", /less than one cent/i.test(unavailable), unavailable);
+  // A measured department publishes the Treasury's own net figure, exact.
+  const energy = byId("exec-dept-doe");
+  check("the Department of Energy carries a Treasury line", Boolean(energy && energy.cost_status === "official"), JSON.stringify(energy && energy.cost_status));
+  if (energy && energy.cost_status === "official") {
+    await openByName(energy.name);
+    const measuredDept = await text("#info-stats");
+    check("a measured department reads MEASURED", /\bMEASURED\b/.test(measuredDept), measuredDept);
+    check("a measured department shows the Treasury's exact figure", measuredDept.includes(exactDollars(energy.resolved_total_amount)), measuredDept);
+    check("a measured department is not called capped or an estimate", !/CAPPED|\bESTIMATE\b/.test(measuredDept), measuredDept);
+    const cappedPanel = await text("#info-panel");
+    check(
+      "an existence-verified node says which page named it",
+      /official page names it|official page lists it/i.test(cappedPanel),
+      cappedPanel.slice(0, 300),
+    );
+    const cabinetPlacement = await text("#verification-placement");
+    check(
+      "a unit under a curated grouping says its placement could not be checked",
+      /Placement: could not be checked — its parent is a curated grouping with no official page of its own/.test(cabinetPlacement),
+      cabinetPlacement,
+    );
+  }
+  // If anything is still capped, its panel must say so; nothing is today.
+  const cappedNode = allNodes.find((n) => n.cost_status === "scaled_official");
+  if (cappedNode) {
+    await openByName(cappedNode.name);
+    const capped = await text("#info-stats");
+    check("a capped Treasury line says it is capped", /TREASURY LINE CAPPED/.test(capped), capped);
+    check("a capped node names the figure the Treasury reported", /Treasury reported \$/.test(capped), capped);
+  }
+
+  // A negative Treasury line is published as the statement prints it, with
+  // the sign leading and the reason stated — never rounded up to zero.
+  const negativeLine = allNodes.find((n) => n.cost_status === "official" && !n.synthetic && n.resolved_total_amount < 0 && n.id === "exec-dept-treasury-mint") || allNodes.find((n) => n.cost_status === "official" && !n.synthetic && n.resolved_total_amount < 0);
+  check("a negative measured line exists in the graph", Boolean(negativeLine), "none");
+  if (negativeLine) {
+    await openByName(negativeLine.name);
+    const negative = await text("#info-stats");
+    check("a negative line shows its sign and exact figure", negative.includes(exactDollars(negativeLine.resolved_total_amount)), negative);
+    check("a negative line reads MEASURED", /\bMEASURED\b/.test(negative), negative);
+    check("a negative line says receipts exceeded spending", /Net outlays below zero/.test(negative), negative);
+  }
+
+  // The receipts the Treasury nets inside a section are an explicit line,
+  // labelled as an accounting line and never as an organisation.
+  const receiptsLine = allNodes.find((n) => n.synthetic === "treasury_receipts" && n.parentId === "exec-dept-hhs") || allNodes.find((n) => n.synthetic === "treasury_receipts" && n.id !== "treasury-undistributed-offsetting-receipts");
+  check("a receipts line exists beneath a netted department", Boolean(receiptsLine), "none");
+  if (receiptsLine) {
+    await openByName(receiptsLine.name);
+    const receipts = await text("#info-stats");
+    check("a receipts line is labelled a Treasury accounting line", /Treasury accounting line/i.test(receipts), receipts);
+    check("a receipts line says it is not an organisation", /Not an organisation/.test(receipts), receipts);
+    const receiptsDesc = await text("#info-desc-provenance");
+    check("a receipts line's description says it was generated from the statement", /generated from the Monthly Treasury Statement/.test(receiptsDesc), receiptsDesc);
+    const receiptsPlacement = await text("#verification-placement");
+    check("a receipts line's placement says it reconciles a total, not an org chart", /reconciles/.test(receiptsPlacement), receiptsPlacement);
+  }
+  const governmentWide = byId("treasury-undistributed-offsetting-receipts");
+  check("the government-wide receipts sit beside the three branches", Boolean(governmentWide) && graphJson.children.length === 4, JSON.stringify(graphJson.children.map((c) => c.id)));
+  if (governmentWide) {
+    await openByName(governmentWide.name);
+    const gov = await text("#info-stats");
+    check("the government-wide line shows its exact negative figure", gov.includes(exactDollars(governmentWide.resolved_total_amount)), gov);
+  }
+
+  // A share nobody can estimate is published as unavailable, never as $0.00
+  // — below a cent, or beneath a unit whose net outlays are negative.
+  const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))
+    || allNodes.find((n) => n.cost_validation === "allocation_below_precision");
+  const poolNegative = allNodes.find((n) => n.cost_validation === "treasury_pool_negative");
+  const unavailableNode = belowPrecision || poolNegative;
+  check("some node is published unavailable for a stated reason", Boolean(unavailableNode), "none");
+  if (unavailableNode) {
+    await openByName(unavailableNode.name);
+    const unavailable = await text("#info-stats");
+    check("an unapportionable share reads as unavailable", /Not available|NOT AVAILABLE/.test(unavailable), unavailable);
+    // The COST VALUE must not be a zero. The explanation below it is allowed to
+    // say the words "rather than $0" — that sentence is the honesty, not a bug.
+    check(
+      "an unapportionable share is never rendered as a zero cost",
+      !/COST\s*[\n\r]*\s*[≈~]?\s*-?\$0(\.00)?\b/.test(unavailable),
+      unavailable,
+    );
+    check(
+      "an unapportionable share explains itself",
+      unavailableNode === belowPrecision ? /less than one cent/i.test(unavailable) : /Nothing remains to apportion/i.test(unavailable),
+      unavailable,
+    );
+  }
 
   // The first line a visitor reads. It was hardcoded and both halves went
   // stale — it called every cost an estimate after 55 became measured, and
@@ -228,8 +292,9 @@ try {
   const placed = await text("#verification-placement");
   // Either wording: a separate read of the parent's page, or the same read
   // that confirmed existence (one fetch must not present as two checks).
-  check("an evidenced placement says the parent's page lists it", /Placement: (its parent's official page|the same page read above) lists it as "/.test(placed), placed);
-  check("an evidenced placement quotes the label and links the page", /lists it as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
+  // A listing from the site-wide navigation says so between the verb and the label.
+  check("an evidenced placement says the parent's page lists it", /Placement: (its parent's official page|the same page read above) lists it( in its site-wide navigation)? as "/.test(placed), placed);
+  check("an evidenced placement quotes the label and links the page", /lists it( in its site-wide navigation)? as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
   check("an evidenced placement never says 'reports to'", !/reports to/i.test(placed), placed);
   await page.fill("#search-input", "Senate Leadership");
   await page.waitForTimeout(500);
