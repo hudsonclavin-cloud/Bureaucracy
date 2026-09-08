@@ -247,6 +247,34 @@ try {
     check("the government-wide line shows its exact negative figure", gov.includes(exactDollars(governmentWide.resolved_total_amount)), gov);
   }
 
+  // The government's own lists, said as themselves: a directory listing is a
+  // weaker claim than a page and is worded as one; a complete list's
+  // absence is a checked negative naming the list.
+  const directoryPlaced = allNodes.find((n) => n.placementMethod === "listed_under_parent_in_federal_register_agency_directory");
+  check("some placement comes from the Federal Register's directory", Boolean(directoryPlaced), "none");
+  if (directoryPlaced) {
+    await openByName(directoryPlaced.name);
+    const line = await text("#verification-placement");
+    check("a directory placement names the directory, not a page", /Federal Register's agency directory files it under its parent here/.test(line), line);
+    check("a directory placement never claims a page lists it", !/official page lists it/.test(line), line);
+  }
+  const senateListed = allNodes.find((n) => n.placementMethod === "listed_under_committee_in_senate_committee_list");
+  check("some subcommittee is placed by the Senate's list", Boolean(senateListed), "none");
+  if (senateListed) {
+    await openByName(senateListed.name);
+    const line = await text("#verification-placement");
+    check("a Senate-list placement names the list", /Senate's official committee list carries it under its committee here/.test(line), line);
+    const existence = await text("#info-panel");
+    check("a Senate-list existence line names the list", /Senate's official committee list carries it/.test(existence), existence);
+  }
+  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list");
+  check("some curated name is checked against the Senate's list and absent", Boolean(staleName), "none");
+  if (staleName) {
+    await openByName(staleName.name);
+    const existence = await text("#info-panel");
+    check("an absence from a complete list says which list and which committee", /against the Senate's official committee list: it carries no unit of this name under "/.test(existence), existence);
+  }
+
   // A share nobody can estimate is published as unavailable, never as $0.00
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))

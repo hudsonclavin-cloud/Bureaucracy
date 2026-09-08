@@ -313,9 +313,28 @@ disagree; nothing is resolved either way, and the gate reports the three
 counts. A top-level directory entry (a department) claims nothing about
 the curated grouping above it. Withdrawal is the page module's: every
 field here is in `EVIDENCE_OWNED_FIELDS`, and the URL rides in
-`evidenceUrls`. Next in this line, in order of evidence value: the House
-Clerk's and Senate's committee XML (223 committee nodes, placement by
-structure), OPM's Plum Book for positions, OPM FedScope for the headcounts
+`evidenceUrls`. The second directory is the Senate's own committee list
+(`data_pipeline/verification/congress.py`): one XML file per committee at
+senate.gov/general/committee_membership/, naming the committee and each
+subcommittee. Fetched verbatim (24 files, `tests/fixtures/directories/
+senate/`), it is the *complete* list, so — unlike a page — absence is
+evidence: a curated subcommittee its committee's file does not carry
+publishes `verificationFailure: not_in_official_list` with
+`verificationFailureSource` (the list, the committee, the date, the names
+it does carry), and the panel says "checked against the Senate's official
+committee list: it carries no unit of this name under <committee>"; the
+current names the graph lacks go to CURATION.md, never fuzzy-matched. A
+listed subcommittee is placed under its committee by the list's own
+structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
+`committee_key` folds the graph's artifacts ("Senate Committee on Select
+Committee on Ethics", "Committee on Judiciary") onto the Senate's names
+and nothing else. First run: all 20 curated Senate committees listed, 43
+subcommittees listed and placed, 27 curated names the Senate no longer
+carries. The House Clerk's list could not be fetched from the pipeline's
+network (proxy refusal, recorded in the fixtures README); house.gov lists
+committees only.
+Next in this line, in order of evidence value: the House Clerk's
+committee XML once the host is reachable, OPM's Plum Book for positions, OPM FedScope for the headcounts
 the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
 obtains a key.
 
