@@ -1,11 +1,19 @@
 {
   "_note": "Derived by scripts/derive_directory_evidence.py from a verbatim fetch of the Federal Register agency directory; each record says what the directory lists for the node — name, parent, page — and nothing else. checkedAt is the directory's fetch time. Regenerate by re-running the script; never edit by hand.",
-  "source": {
-    "kind": "federal_register_agency_directory",
-    "file": "tests/fixtures/directories/federal_register_agencies.json",
-    "url": "https://www.federalregister.gov/api/v1/agencies.json",
-    "fetched_at": "2026-09-08T19:19:15Z"
-  },
+  "sources": [
+    {
+      "kind": "federal_register_agency_directory",
+      "file": "tests/fixtures/directories/federal_register_agencies.json",
+      "url": "https://www.federalregister.gov/api/v1/agencies.json",
+      "fetched_at": "2026-09-08T19:19:15Z"
+    },
+    {
+      "kind": "senate_committee_list",
+      "dir": "tests/fixtures/directories/senate",
+      "files": 24,
+      "fetched_at": "2026-09-08T19:21:13Z"
+    }
+  ],
   "report": {
     "source": "federal_register_agency_directory",
     "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
@@ -96,6 +104,268 @@
       "Council of the Inspectors General on Integrity and Efficiency",
       "Council on Environmental Quality"
     ]
+  },
+  "senate_report": {
+    "source": "senate_committee_list",
+    "committees_in_list": 24,
+    "committees_matched": 20,
+    "committees_not_in_graph": [
+      "Joint Economic Committee",
+      "Joint Committee of Congress on the Library",
+      "Joint Committee on Printing",
+      "Joint Committee on Taxation"
+    ],
+    "graph_committees_not_in_list": [],
+    "ambiguous": [],
+    "subcommittees_matched": 43,
+    "subcommittees_not_in_list": [
+      {
+        "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade",
+        "name": "Commodities, Risk Management & Trade",
+        "committee": "Committee on Agriculture, Nutrition, and Forestry"
+      },
+      {
+        "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources",
+        "name": "Conservation, Climate, Forestry & Natural Resources",
+        "committee": "Committee on Agriculture, Nutrition, and Forestry"
+      },
+      {
+        "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research",
+        "name": "Food & Nutrition, Specialty Crops & Agricultural Research",
+        "committee": "Committee on Agriculture, Nutrition, and Forestry"
+      },
+      {
+        "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security",
+        "name": "Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security",
+        "committee": "Committee on Agriculture, Nutrition, and Forestry"
+      },
+      {
+        "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy",
+        "name": "Rural Development & Energy",
+        "committee": "Committee on Agriculture, Nutrition, and Forestry"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
+        "name": "Agriculture, Rural Development, FDA & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-defense",
+        "name": "Defense",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-homeland-security",
+        "name": "Homeland Security",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-interior-environment-related-agencies",
+        "name": "Interior, Environment & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies",
+        "name": "Labor, HHS, Education & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies",
+        "name": "Transportation, HUD & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation",
+        "name": "Aviation Safety, Operations & Innovation",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband",
+        "name": "Communications, Media & Broadband",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security",
+        "name": "Consumer Protection, Product Safety & Data Security",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing",
+        "name": "Oceans, Fisheries, Climate Change & Manufacturing",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-science-space",
+        "name": "Science & Space",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports",
+        "name": "Surface Transportation, Maritime, Freight & Ports",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion",
+        "name": "Tourism, Trade & Export Promotion",
+        "committee": "Committee on Commerce, Science, and Transportation"
+      },
+      {
+        "id": "leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety",
+        "name": "Clean Air, Climate & Nuclear Safety",
+        "committee": "Committee on Environment and Public Works"
+      },
+      {
+        "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight",
+        "name": "Emerging Threats & Spending Oversight",
+        "committee": "Committee on Homeland Security and Governmental Affairs"
+      },
+      {
+        "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management",
+        "name": "Government Operations & Border Management",
+        "committee": "Committee on Homeland Security and Governmental Affairs"
+      },
+      {
+        "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations",
+        "name": "Investigations & Subcommittee on Permanent Investigations",
+        "committee": "Committee on Homeland Security and Governmental Affairs"
+      },
+      {
+        "id": "leg-senate-cmte-health-education-labor-pensions-sub-children-families",
+        "name": "Children & Families",
+        "committee": "Committee on Health, Education, Labor, and Pensions"
+      },
+      {
+        "id": "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights",
+        "name": "Competition Policy, Antitrust & Consumer Rights",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism",
+        "name": "Criminal Justice & Counterterrorism",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-senate-cmte-judiciary-sub-human-rights-the-law",
+        "name": "Human Rights & the Law",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety",
+        "name": "Immigration, Citizenship & Border Safety",
+        "committee": "Committee on the Judiciary"
+      }
+    ],
+    "subcommittees_not_in_graph": [
+      {
+        "committee": "Committee on Agriculture, Nutrition, and Forestry",
+        "subcommittee": "Subcommittee on Commodities, Derivatives, Risk Management, and Trade"
+      },
+      {
+        "committee": "Committee on Agriculture, Nutrition, and Forestry",
+        "subcommittee": "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology"
+      },
+      {
+        "committee": "Committee on Agriculture, Nutrition, and Forestry",
+        "subcommittee": "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research"
+      },
+      {
+        "committee": "Committee on Agriculture, Nutrition, and Forestry",
+        "subcommittee": "Subcommittee on Livestock, Dairy, Poultry, and Food Safety"
+      },
+      {
+        "committee": "Committee on Agriculture, Nutrition, and Forestry",
+        "subcommittee": "Subcommittee on Rural Development, Energy, and Credit"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Department of Defense"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Department of Homeland Security"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Department of Interior, Environment, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Banking, Housing, and Urban Affairs",
+        "subcommittee": "Subcommittee on Digital Assets"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Aviation, Space, and Innovation"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Coast Guard, Maritime, and Fisheries"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Consumer Protection, Technology, and Data Privacy"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Science, Manufacturing, and Competitiveness"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety"
+      },
+      {
+        "committee": "Committee on Commerce, Science, and Transportation",
+        "subcommittee": "Subcommittee on Telecommunications and Media"
+      },
+      {
+        "committee": "Committee on Environment and Public Works",
+        "subcommittee": "Subcommittee on Clean Air, Climate, and Nuclear Innovation and Safety"
+      },
+      {
+        "committee": "Committee on Homeland Security and Governmental Affairs",
+        "subcommittee": "Permanent Subcommittee on Investigations"
+      },
+      {
+        "committee": "Committee on Homeland Security and Governmental Affairs",
+        "subcommittee": "Subcommittee on Border Management, Federal Workforce, and Regulatory Affairs"
+      },
+      {
+        "committee": "Committee on Homeland Security and Governmental Affairs",
+        "subcommittee": "Subcommittee on Disaster Management, District of Columbia, and Census"
+      },
+      {
+        "committee": "Committee on Health, Education, Labor, and Pensions",
+        "subcommittee": "Subcommittee on Education and the American Family"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Subcommittee on Antitrust, Competition Policy, and Consumer Rights"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Subcommittee on Border Security and Immigration"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Subcommittee on Crime and Counterterrorism"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights"
+      }
+    ],
+    "placements_disagree": []
   },
   "nodes": {
     "exec-eop-onadm": {
@@ -1914,6 +2184,1194 @@
         "parentId": "exec-dept-dol",
         "parentListedName": "Labor Department"
       }
+    },
+    "leg-senate-cmte-select-committee-on-ethics": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Select Committee on Ethics",
+      "code": "SLET00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml",
+      "checkedAt": "2026-09-08T19:20:48Z"
+    },
+    "leg-senate-cmte-indian-affairs": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Indian Affairs",
+      "code": "SLIA00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml",
+      "checkedAt": "2026-09-08T19:20:49Z"
+    },
+    "leg-senate-cmte-select-committee-on-intelligence": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Select Committee on Intelligence",
+      "code": "SLIN00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml",
+      "checkedAt": "2026-09-08T19:20:51Z"
+    },
+    "leg-senate-cmte-special-committee-on-aging": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Special Committee on Aging",
+      "code": "SPAG00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml",
+      "checkedAt": "2026-09-08T19:20:52Z"
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Agriculture, Nutrition, and Forestry",
+      "code": "SSAF00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z"
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z",
+      "listedSubcommittees": [
+        "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "Subcommittee on Rural Development, Energy, and Credit"
+      ]
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z",
+      "listedSubcommittees": [
+        "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "Subcommittee on Rural Development, Energy, and Credit"
+      ]
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z",
+      "listedSubcommittees": [
+        "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "Subcommittee on Rural Development, Energy, and Credit"
+      ]
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z",
+      "listedSubcommittees": [
+        "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "Subcommittee on Rural Development, Energy, and Credit"
+      ]
+    },
+    "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+      "checkedAt": "2026-09-08T19:20:53Z",
+      "listedSubcommittees": [
+        "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "Subcommittee on Rural Development, Energy, and Credit"
+      ]
+    },
+    "leg-senate-cmte-appropriations": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Appropriations",
+      "code": "SSAP00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z"
+    },
+    "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+      "code": "SSAP16",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-energy-water-development": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Energy and Water Development",
+      "code": "SSAP22",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-financial-services-general-government": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Financial Services and General Government",
+      "code": "SSAP23",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-legislative-branch": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Legislative Branch",
+      "code": "SSAP08",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+      "code": "SSAP19",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on State, Foreign Operations, and Related Programs",
+      "code": "SSAP20",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-appropriations-sub-defense": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-appropriations-sub-homeland-security": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-appropriations-sub-interior-environment-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+      "checkedAt": "2026-09-08T19:20:55Z",
+      "listedSubcommittees": [
+        "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+        "Subcommittee on Department of Defense",
+        "Subcommittee on Department of Homeland Security",
+        "Subcommittee on Department of Interior, Environment, and Related Agencies",
+        "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+        "Subcommittee on Energy and Water Development",
+        "Subcommittee on Financial Services and General Government",
+        "Subcommittee on Legislative Branch",
+        "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+        "Subcommittee on State, Foreign Operations, and Related Programs",
+        "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-senate-cmte-armed-services": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Armed Services",
+      "code": "SSAS00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z"
+    },
+    "leg-senate-cmte-armed-services-sub-airland": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Airland",
+      "code": "SSAS14",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-cybersecurity": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Cybersecurity",
+      "code": "SSAS21",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Emerging Threats and Capabilities",
+      "code": "SSAS20",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-personnel": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Personnel",
+      "code": "SSAS17",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-readiness-management-support": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Readiness and Management Support",
+      "code": "SSAS15",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-seapower": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Seapower",
+      "code": "SSAS13",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-armed-services-sub-strategic-forces": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Strategic Forces",
+      "code": "SSAS16",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+      "checkedAt": "2026-09-08T19:20:56Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Banking, Housing, and Urban Affairs",
+      "code": "SSBK00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z"
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Economic Policy",
+      "code": "SSBK12",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z",
+      "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+        "parentListedName": "Committee on Banking, Housing, and Urban Affairs"
+      }
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Financial Institutions and Consumer Protection",
+      "code": "SSBK08",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z",
+      "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+        "parentListedName": "Committee on Banking, Housing, and Urban Affairs"
+      }
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Housing, Transportation, and Community Development",
+      "code": "SSBK09",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z",
+      "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+        "parentListedName": "Committee on Banking, Housing, and Urban Affairs"
+      }
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on National Security and  International Trade and Finance",
+      "code": "SSBK05",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z",
+      "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+        "parentListedName": "Committee on Banking, Housing, and Urban Affairs"
+      }
+    },
+    "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Securities, Insurance, and Investment",
+      "code": "SSBK04",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
+      "checkedAt": "2026-09-08T19:20:57Z",
+      "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+        "parentListedName": "Committee on Banking, Housing, and Urban Affairs"
+      }
+    },
+    "leg-senate-cmte-budget": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on the Budget",
+      "code": "SSBU00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml",
+      "checkedAt": "2026-09-08T19:20:59Z"
+    },
+    "leg-senate-cmte-commerce-science-transportation": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Commerce, Science, and Transportation",
+      "code": "SSCM00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z"
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-science-space": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-maritime-freight-ports": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-commerce-science-transportation-sub-tourism-trade-export-promotion": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Commerce, Science, and Transportation",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
+      "checkedAt": "2026-09-08T19:21:00Z",
+      "listedSubcommittees": [
+        "Subcommittee on Aviation, Space, and Innovation",
+        "Subcommittee on Coast Guard, Maritime, and Fisheries",
+        "Subcommittee on Consumer Protection, Technology, and Data Privacy",
+        "Subcommittee on Science, Manufacturing, and Competitiveness",
+        "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
+        "Subcommittee on Telecommunications and Media"
+      ]
+    },
+    "leg-senate-cmte-energy-natural-resources": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Energy and Natural Resources",
+      "code": "SSEG00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
+      "checkedAt": "2026-09-08T19:21:01Z"
+    },
+    "leg-senate-cmte-energy-natural-resources-sub-energy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Energy",
+      "code": "SSEG01",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
+      "checkedAt": "2026-09-08T19:21:01Z",
+      "parentListedName": "Committee on Energy and Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-energy-natural-resources",
+        "parentListedName": "Committee on Energy and Natural Resources"
+      }
+    },
+    "leg-senate-cmte-energy-natural-resources-sub-national-parks": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on National Parks",
+      "code": "SSEG04",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
+      "checkedAt": "2026-09-08T19:21:01Z",
+      "parentListedName": "Committee on Energy and Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-energy-natural-resources",
+        "parentListedName": "Committee on Energy and Natural Resources"
+      }
+    },
+    "leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Public Lands, Forests, and Mining",
+      "code": "SSEG03",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
+      "checkedAt": "2026-09-08T19:21:01Z",
+      "parentListedName": "Committee on Energy and Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-energy-natural-resources",
+        "parentListedName": "Committee on Energy and Natural Resources"
+      }
+    },
+    "leg-senate-cmte-energy-natural-resources-sub-water-power": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Water and Power",
+      "code": "SSEG07",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
+      "checkedAt": "2026-09-08T19:21:01Z",
+      "parentListedName": "Committee on Energy and Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-energy-natural-resources",
+        "parentListedName": "Committee on Energy and Natural Resources"
+      }
+    },
+    "leg-senate-cmte-environment-public-works": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Environment and Public Works",
+      "code": "SSEV00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml",
+      "checkedAt": "2026-09-08T19:21:02Z"
+    },
+    "leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
+      "code": "SSEV09",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml",
+      "checkedAt": "2026-09-08T19:21:02Z",
+      "parentListedName": "Committee on Environment and Public Works",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-environment-public-works",
+        "parentListedName": "Committee on Environment and Public Works"
+      }
+    },
+    "leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Fisheries, Water, and Wildlife",
+      "code": "SSEV15",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml",
+      "checkedAt": "2026-09-08T19:21:02Z",
+      "parentListedName": "Committee on Environment and Public Works",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-environment-public-works",
+        "parentListedName": "Committee on Environment and Public Works"
+      }
+    },
+    "leg-senate-cmte-environment-public-works-sub-transportation-infrastructure": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Transportation and Infrastructure",
+      "code": "SSEV08",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml",
+      "checkedAt": "2026-09-08T19:21:02Z",
+      "parentListedName": "Committee on Environment and Public Works",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-environment-public-works",
+        "parentListedName": "Committee on Environment and Public Works"
+      }
+    },
+    "leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Environment and Public Works",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml",
+      "checkedAt": "2026-09-08T19:21:02Z",
+      "listedSubcommittees": [
+        "Subcommittee on Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight",
+        "Subcommittee on Clean Air, Climate, and Nuclear Innovation and Safety",
+        "Subcommittee on Fisheries, Water, and Wildlife",
+        "Subcommittee on Transportation and Infrastructure"
+      ]
+    },
+    "leg-senate-cmte-finance": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Finance",
+      "code": "SSFI00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z"
+    },
+    "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Energy, Natural Resources, and Infrastructure",
+      "code": "SSFI12",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Fiscal Responsibility and Economic Growth",
+      "code": "SSFI14",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-finance-sub-health-care": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Health Care",
+      "code": "SSFI10",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on International Trade, Customs, and Global Competitiveness",
+      "code": "SSFI13",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-finance-sub-social-security-pensions-family-policy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Social Security, Pensions, and Family Policy",
+      "code": "SSFI02",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-finance-sub-taxation-irs-oversight": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Taxation and IRS Oversight",
+      "code": "SSFI11",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
+      "checkedAt": "2026-09-08T19:21:04Z",
+      "parentListedName": "Committee on Finance",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-finance",
+        "parentListedName": "Committee on Finance"
+      }
+    },
+    "leg-senate-cmte-foreign-relations": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Foreign Relations",
+      "code": "SSFR00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z"
+    },
+    "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Africa and Global Health Policy",
+      "code": "SSFR09",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on East Asia, the Pacific, and International Cybersecurity Policy",
+      "code": "SSFR02",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Europe and Regional Security Cooperation",
+      "code": "SSFR01",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy",
+      "code": "SSFR15",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Near East, South Asia, Central Asia, and Counterterrorism",
+      "code": "SSFR07",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on State Department and USAID Management, International Operations, and Bilateral International Development",
+      "code": "SSFR14",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues",
+      "code": "SSFR06",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+      "checkedAt": "2026-09-08T19:21:05Z",
+      "parentListedName": "Committee on Foreign Relations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-foreign-relations",
+        "parentListedName": "Committee on Foreign Relations"
+      }
+    },
+    "leg-senate-cmte-homeland-security-governmental-affairs": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Homeland Security and Governmental Affairs",
+      "code": "SSGA00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml",
+      "checkedAt": "2026-09-08T19:21:06Z"
+    },
+    "leg-senate-cmte-homeland-security-governmental-affairs-sub-emerging-threats-spending-oversight": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Homeland Security and Governmental Affairs",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml",
+      "checkedAt": "2026-09-08T19:21:06Z",
+      "listedSubcommittees": [
+        "Permanent Subcommittee on Investigations",
+        "Subcommittee on Border Management, Federal Workforce, and Regulatory Affairs",
+        "Subcommittee on Disaster Management, District of Columbia, and Census"
+      ]
+    },
+    "leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Homeland Security and Governmental Affairs",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml",
+      "checkedAt": "2026-09-08T19:21:06Z",
+      "listedSubcommittees": [
+        "Permanent Subcommittee on Investigations",
+        "Subcommittee on Border Management, Federal Workforce, and Regulatory Affairs",
+        "Subcommittee on Disaster Management, District of Columbia, and Census"
+      ]
+    },
+    "leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Homeland Security and Governmental Affairs",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml",
+      "checkedAt": "2026-09-08T19:21:06Z",
+      "listedSubcommittees": [
+        "Permanent Subcommittee on Investigations",
+        "Subcommittee on Border Management, Federal Workforce, and Regulatory Affairs",
+        "Subcommittee on Disaster Management, District of Columbia, and Census"
+      ]
+    },
+    "leg-senate-cmte-health-education-labor-pensions": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Health, Education, Labor, and Pensions",
+      "code": "SSHR00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+      "checkedAt": "2026-09-08T19:21:07Z"
+    },
+    "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Employment and Workplace Safety",
+      "code": "SSHR11",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+      "checkedAt": "2026-09-08T19:21:07Z",
+      "parentListedName": "Committee on Health, Education, Labor, and Pensions",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-health-education-labor-pensions",
+        "parentListedName": "Committee on Health, Education, Labor, and Pensions"
+      }
+    },
+    "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Primary Health and Retirement Security",
+      "code": "SSHR12",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+      "checkedAt": "2026-09-08T19:21:07Z",
+      "parentListedName": "Committee on Health, Education, Labor, and Pensions",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-health-education-labor-pensions",
+        "parentListedName": "Committee on Health, Education, Labor, and Pensions"
+      }
+    },
+    "leg-senate-cmte-health-education-labor-pensions-sub-children-families": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Health, Education, Labor, and Pensions",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+      "checkedAt": "2026-09-08T19:21:07Z",
+      "listedSubcommittees": [
+        "Subcommittee on Education and the American Family",
+        "Subcommittee on Employment and Workplace Safety",
+        "Subcommittee on Primary Health and Retirement Security"
+      ]
+    },
+    "leg-senate-cmte-judiciary": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on the Judiciary",
+      "code": "SSJU00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z"
+    },
+    "leg-senate-cmte-judiciary-sub-intellectual-property": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Intellectual Property",
+      "code": "SSJU26",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-senate-cmte-judiciary-sub-privacy-technology-the-law": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on Privacy, Technology, and the Law",
+      "code": "SSJU28",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-senate-cmte-judiciary-sub-constitution": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Subcommittee on the Constitution",
+      "code": "SSJU21",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-senate-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "listedSubcommittees": [
+        "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+        "Subcommittee on Border Security and Immigration",
+        "Subcommittee on Crime and Counterterrorism",
+        "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+        "Subcommittee on Intellectual Property",
+        "Subcommittee on Privacy, Technology, and the Law",
+        "Subcommittee on the Constitution"
+      ]
+    },
+    "leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "listedSubcommittees": [
+        "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+        "Subcommittee on Border Security and Immigration",
+        "Subcommittee on Crime and Counterterrorism",
+        "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+        "Subcommittee on Intellectual Property",
+        "Subcommittee on Privacy, Technology, and the Law",
+        "Subcommittee on the Constitution"
+      ]
+    },
+    "leg-senate-cmte-judiciary-sub-human-rights-the-law": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "listedSubcommittees": [
+        "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+        "Subcommittee on Border Security and Immigration",
+        "Subcommittee on Crime and Counterterrorism",
+        "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+        "Subcommittee on Intellectual Property",
+        "Subcommittee on Privacy, Technology, and the Law",
+        "Subcommittee on the Constitution"
+      ]
+    },
+    "leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety": {
+      "source": "senate_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "checkedAt": "2026-09-08T19:21:09Z",
+      "listedSubcommittees": [
+        "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+        "Subcommittee on Border Security and Immigration",
+        "Subcommittee on Crime and Counterterrorism",
+        "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+        "Subcommittee on Intellectual Property",
+        "Subcommittee on Privacy, Technology, and the Law",
+        "Subcommittee on the Constitution"
+      ]
+    },
+    "leg-senate-cmte-rules-administration": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Rules and Administration",
+      "code": "SSRA00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSRA.xml",
+      "checkedAt": "2026-09-08T19:21:10Z"
+    },
+    "leg-senate-cmte-small-business-entrepreneurship": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Small Business and Entrepreneurship",
+      "code": "SSSB00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml",
+      "checkedAt": "2026-09-08T19:21:11Z"
+    },
+    "leg-senate-cmte-veterans-affairs": {
+      "source": "senate_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Veterans' Affairs",
+      "code": "SSVA00",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml",
+      "checkedAt": "2026-09-08T19:21:13Z"
     }
   }
 }

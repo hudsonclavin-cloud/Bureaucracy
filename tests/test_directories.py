@@ -259,10 +259,11 @@ class ScriptAndGateTests(unittest.TestCase):
     def test_the_script_derives_records_and_the_build_publishes_them(self) -> None:
         buf = io.StringIO()
         with redirect_stdout(buf):
-            code = derive_directory_evidence.main(["d", "--base-graph", str(self.base), "--federal-register", str(self.fr), "--out", str(self.out)])
+            code = derive_directory_evidence.main(["d", "--base-graph", str(self.base), "--federal-register", str(self.fr), "--out", str(self.out),
+                                                   "--senate-dir", str(self.tmp / "no-senate")])
         self.assertEqual(code, 0, buf.getvalue())
         store = json.loads(self.out.read_text(encoding="utf-8"))
-        self.assertEqual(store["source"]["fetched_at"], DIRECTORY["fetched_at"])
+        self.assertEqual(store["sources"][0]["fetched_at"], DIRECTORY["fetched_at"])
         self.assertEqual(len(store["nodes"]), 6)
         result = build_graph(
             [{"nodes": [], "edges": [], "budgetSummary": {"government_total_outlay_amount": 1_000_000, "record_date": "2026-06-30"}}],
@@ -293,7 +294,8 @@ class ScriptAndGateTests(unittest.TestCase):
     def test_dry_run_writes_nothing(self) -> None:
         buf = io.StringIO()
         with redirect_stdout(buf):
-            code = derive_directory_evidence.main(["d", "--base-graph", str(self.base), "--federal-register", str(self.fr), "--out", str(self.out), "--dry-run"])
+            code = derive_directory_evidence.main(["d", "--base-graph", str(self.base), "--federal-register", str(self.fr), "--out", str(self.out), "--dry-run",
+                                                   "--senate-dir", str(self.tmp / "no-senate")])
         self.assertEqual(code, 0)
         self.assertFalse(self.out.exists())
         self.assertIn("matched 6", buf.getvalue())

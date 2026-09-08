@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908c";
+import { createGovernmentGraph } from "./graph.js?v=20260908d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -528,8 +528,12 @@ function renderPlacementLine(data) {
     dom.verificationPlacement.appendChild(document.createElement("br"));
     add(`The Federal Register's agency directory files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);
   };
-  if (data.placementVerified === true && String(data.placementMethod || "") === "listed_under_parent_in_federal_register_agency_directory") {
-    add(`Placement: the Federal Register's agency directory files it under its parent here, as "${data.placementMatchedText || ""}" on `);
+  const directoryPlacement = {
+    listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
+    listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
+  }[String(data.placementMethod || "")];
+  if (data.placementVerified === true && directoryPlacement) {
+    add(`Placement: ${directoryPlacement}, as "${data.placementMatchedText || ""}" on `);
     if (isHttpUrl(data.placementUrl)) {
       const link = document.createElement("a");
       link.href = data.placementUrl;
@@ -538,7 +542,7 @@ function renderPlacementLine(data) {
       link.textContent = hostnameOf(data.placementUrl);
       dom.verificationPlacement.appendChild(link);
     }
-    if (checked) add(` · directory fetched ${checked}`);
+    if (checked) add(` · list fetched ${checked}`);
     addDisagreement();
     return;
   }
@@ -616,9 +620,17 @@ function renderVerificationPanel(data) {
       name_labelled_on_own_official_page: "Its own official page names it",
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
+      listed_in_senate_committee_list: "The Senate's official committee list carries it",
+    };
+    const SOURCE_TEXT = {
+      federal_register_agency_directory: "the Federal Register's agency directory",
+      senate_committee_list: "the Senate's official committee list",
     };
     let checkLine = "Not yet verified";
-    if (data.verificationFailure === "not_found") {
+    const failureSource = data.verificationFailureSource;
+    if (data.verificationFailure === "not_in_official_list" && failureSource && typeof failureSource === "object") {
+      checkLine = `Checked${checkedOn ? ` ${checkedOn}` : ""} against ${SOURCE_TEXT[failureSource.source] || "an official list"}: it carries no unit of this name under "${failureSource.listedUnder}"`;
+    } else if (data.verificationFailure === "not_found") {
       checkLine = checkedOn
         ? `Checked ${checkedOn}: its official page does not name it as a heading or link`
         : "Its official page does not name it as a heading or link";
@@ -630,8 +642,9 @@ function renderVerificationPanel(data) {
     // A directory listing beside a page claim: a second, weaker claim, said
     // as itself, with the name and the parent exactly as the directory has them.
     const listing = data.directoryListing;
-    if (listing && typeof listing === "object" && String(data.verificationMethod || "") !== "listed_in_federal_register_agency_directory") {
-      checkLine += ` · also listed in the Federal Register's agency directory as "${listing.listedName}"${
+    const listingIsTheMethod = listing && typeof listing === "object" && /^listed_in_/.test(String(data.verificationMethod || ""));
+    if (listing && typeof listing === "object" && !listingIsTheMethod) {
+      checkLine += ` · also listed in ${SOURCE_TEXT[listing.source] || "an official directory"} as "${listing.listedName}"${
         listing.parentListedName ? ` under "${listing.parentListedName}"` : ""
       }`;
     } else if (listing && typeof listing === "object") {

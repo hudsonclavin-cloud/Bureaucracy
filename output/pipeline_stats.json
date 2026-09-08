@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T19:33:48.722076+00:00",
+  "timestamp": "2026-09-08T19:40:55.597114+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -22,23 +22,23 @@
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
-    "unverified": 5015,
-    "partial": 72,
+    "unverified": 4952,
+    "partial": 135,
     "verified": 108
   },
-  "average_confidence_score": 0.72,
-  "verified_node_count": 36,
+  "average_confidence_score": 0.71,
+  "verified_node_count": 108,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 180,
-    "input_node_count": 180,
+    "initial_node_count": 217,
+    "input_node_count": 217,
     "input_edge_count": 0,
-    "exported_node_count": 180,
+    "exported_node_count": 217,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 1,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 180,
+    "final_node_count": 217,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -49,22 +49,22 @@
     "explicitly_root_attached_nodes": 1,
     "relationship_counts": {},
     "verification_status_counts": {
-      "unverified": 5015,
-      "partial": 72,
+      "unverified": 4952,
+      "partial": 135,
       "verified": 108
     },
-    "verified_node_count": 36,
+    "verified_node_count": 108,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.72,
+    "average_confidence_score": 0.71,
     "pipeline_summary": {
-      "initial_node_count": 180,
-      "raw_nodes_loaded": 180,
-      "nodes_after_normalization": 180,
-      "nodes_after_merge": 180,
+      "initial_node_count": 217,
+      "raw_nodes_loaded": 217,
+      "nodes_after_normalization": 217,
+      "nodes_after_merge": 217,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 1,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 180,
+      "final_node_count": 217,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
@@ -304,7 +304,7 @@
       "unknown_node": 0,
       "unknown_status": 0,
       "urls_added": 83,
-      "stale_claims_cleared": 118,
+      "stale_claims_cleared": 182,
       "placements_evidenced": 43,
       "placements_checked_not_listed": 82,
       "placements_stale_parent": 0,
@@ -314,14 +314,16 @@
       "placement_only": 0
     },
     "directory_evidence": {
-      "listed": 139,
+      "listed": 202,
       "unknown_node": 0,
       "stale_name": 0,
-      "placements_listed": 41,
+      "placements_listed": 84,
       "placements_ancestor": 5,
       "placements_disagree": 1,
       "placements_stale_parent": 0,
-      "urls_added": 139
+      "urls_added": 202,
+      "not_in_list": 27,
+      "unknown_source": 0
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {
@@ -378,11 +380,11 @@
     },
     "proof_status_counts": {
       "root": 1,
-      "proven": 217,
-      "baseline": 4977
+      "proven": 280,
+      "baseline": 4914
     },
-    "nodes_with_sources": 217,
-    "nodes_without_sources": 4978,
+    "nodes_with_sources": 280,
+    "nodes_without_sources": 4915,
     "resolved_cost_node_count": 5021,
     "unresolved_cost_node_count": 174,
     "estimated_cost_node_count": 4886,
@@ -403,8 +405,8 @@
     "graph_summary": {
       "verified_treasury_total": 6284235715734.18,
       "verification_status_counts": {
-        "unverified": 5015,
-        "partial": 72,
+        "unverified": 4952,
+        "partial": 135,
         "verified": 108
       },
       "cost_status_counts": {
@@ -425,11 +427,11 @@
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 217,
-        "baseline": 4977
+        "proven": 280,
+        "baseline": 4914
       },
-      "nodes_with_sources": 217,
-      "nodes_without_sources": 4978,
+      "nodes_with_sources": 280,
+      "nodes_without_sources": 4915,
       "resolved_cost_node_count": 5021,
       "unresolved_cost_node_count": 174,
       "estimated_cost_node_count": 4886,
@@ -451,17 +453,17 @@
     "audit_report": {
       "summary": {
         "total_nodes": 5195,
-        "nodes_with_errors": 4984,
+        "nodes_with_errors": 4921,
         "nodes_with_warnings": 5058,
-        "warning_only_nodes": 77,
+        "warning_only_nodes": 140,
         "severity_counts": {
-          "error": 5326,
-          "warning": 24651
+          "error": 5263,
+          "warning": 24525
         },
         "issue_counts": {
-          "missing_source_urls": 4978,
-          "low_confidence": 4978,
-          "unverified": 5015,
+          "missing_source_urls": 4915,
+          "low_confidence": 4915,
+          "unverified": 4952,
           "estimated_cost": 4886,
           "cost_unverified": 4886,
           "low_cost_confidence": 4886,
@@ -479,14 +481,14 @@
           "unverified": 5060
         },
         "verification_status_counts": {
-          "unverified": 5015,
-          "partial": 72,
+          "unverified": 4952,
+          "partial": 135,
           "verified": 108
         },
         "proof_status_counts": {
           "root": 1,
-          "proven": 217,
-          "baseline": 4977
+          "proven": 280,
+          "baseline": 4914
         },
         "warning_cost_statuses": [
           "allocated",
@@ -498,28 +500,28 @@
       "nodes_checked": 5195,
       "nodes_allowed": 5195,
       "nodes_rejected": 0,
-      "trusted_exceptions_applied": 4984
+      "trusted_exceptions_applied": 4921
     },
     "export_verification_status_counts": {
-      "unverified": 5015,
-      "partial": 72,
+      "unverified": 4952,
+      "partial": 135,
       "verified": 108
     },
     "export_verified_node_count": 108,
-    "export_average_confidence_score": 0.72,
+    "export_average_confidence_score": 0.71,
     "pre_export_audit_summary": {
       "total_nodes": 5195,
-      "nodes_with_errors": 4984,
+      "nodes_with_errors": 4921,
       "nodes_with_warnings": 5058,
-      "warning_only_nodes": 77,
+      "warning_only_nodes": 140,
       "severity_counts": {
-        "error": 5326,
-        "warning": 24651
+        "error": 5263,
+        "warning": 24525
       },
       "issue_counts": {
-        "missing_source_urls": 4978,
-        "low_confidence": 4978,
-        "unverified": 5015,
+        "missing_source_urls": 4915,
+        "low_confidence": 4915,
+        "unverified": 4952,
         "estimated_cost": 4886,
         "cost_unverified": 4886,
         "low_cost_confidence": 4886,
@@ -537,14 +539,14 @@
         "unverified": 5060
       },
       "verification_status_counts": {
-        "unverified": 5015,
-        "partial": 72,
+        "unverified": 4952,
+        "partial": 135,
         "verified": 108
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 217,
-        "baseline": 4977
+        "proven": 280,
+        "baseline": 4914
       },
       "warning_cost_statuses": [
         "allocated",
@@ -576,8 +578,8 @@
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "proven": 217,
-      "baseline": 4977
+      "proven": 280,
+      "baseline": 4914
     },
     "published_node_count": 5195,
     "treasury_lines_carried_forward": 134

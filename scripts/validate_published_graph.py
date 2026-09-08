@@ -469,13 +469,21 @@ def main(argv):
         "name_labelled_on_own_official_page",
         "name_labelled_on_parent_official_page",
         "listed_in_federal_register_agency_directory",
+        "listed_in_senate_committee_list",
     }
+    KNOWN_FAILURES = {"not_found", "not_in_official_list"}
     failure_beside_source, unofficial_official, unknown_method = [], [], []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
         if node.get("verificationFailure") and urls:
             failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
+        if node.get("verificationFailure") and str(node.get("verificationFailure")) not in KNOWN_FAILURES:
+            unknown_method.append("{} verificationFailure {!r}".format(label(node), node.get("verificationFailure")))
+        if str(node.get("verificationFailure") or "") == "not_in_official_list":
+            src = node.get("verificationFailureSource") if isinstance(node.get("verificationFailureSource"), dict) else {}
+            if not str(src.get("url") or "").startswith("https://www.senate.gov/") or not src.get("checkedAt"):
+                unknown_method.append("{} claims not_in_official_list without the list's URL and date".format(label(node)))
         if "official_site" in (node.get("sourceTypes") or []) and not official:
             unofficial_official.append("{} claims an official source with no .gov/.mil URL".format(label(node)))
         method = node.get("verificationMethod")
@@ -519,10 +527,14 @@ def main(argv):
         if str(node.get("placementMethod") or "") not in (
             "name_labelled_on_parent_official_page",
             "listed_under_parent_in_federal_register_agency_directory",
+            "listed_under_committee_in_senate_committee_list",
         ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
+        if str(node.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list":
+            matched = re.sub(r"^subcommittee on (the )?", "", matched)
+            name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
         if matched and name_key and name_key not in matched and name_key not in directory_name_keys(node.get("placementMatchedText")):
             placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
@@ -574,12 +586,17 @@ def main(argv):
     placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
     placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
     unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
-    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict))
+    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") != "senate_committee_list")
     directory_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_parent_in_federal_register_agency_directory")
     directory_disagree = sum(1 for n in nodes if isinstance(n.get("placementDirectoryDisagreement"), dict))
     directory_ancestor = sum(1 for n in nodes if isinstance(n.get("placementDirectoryAncestor"), dict))
     print("  directory-listed     : {:,} in the Federal Register's agency directory; {:,} placements from it; {:,} filed under an ancestor here; {:,} filed elsewhere by it".format(
         directory_listed, directory_placed, directory_ancestor, directory_disagree))
+    senate_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "senate_committee_list")
+    senate_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list")
+    senate_missing = sum(1 for n in nodes if str(n.get("verificationFailure") or "") == "not_in_official_list")
+    print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
+        senate_listed, senate_placed, senate_missing))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
         placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.

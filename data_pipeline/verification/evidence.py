@@ -110,6 +110,7 @@ EVIDENCE_OWNED_FIELDS = (
     "directoryListing",
     "placementDirectoryDisagreement",
     "placementDirectoryAncestor",
+    "verificationFailureSource",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never
@@ -704,6 +705,11 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
             node["sourceTypes"] = types
             touched = True
     # The directory's own label goes with its URL (directories.py writes it).
+    if not any("senate.gov/general/committee_membership/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t != "senate_committee_list"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
     if not any("federalregister.gov/agencies/" in u for u in kept):
         types = [str(t) for t in (node.get("sourceTypes") or []) if t not in ("federal_register_directory", "federal_register")]
         if len(types) != len(node.get("sourceTypes") or []):

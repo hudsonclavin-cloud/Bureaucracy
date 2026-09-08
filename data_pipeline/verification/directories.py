@@ -53,6 +53,19 @@ DEFAULT_DIRECTORY_EVIDENCE_PATH = Path(__file__).resolve().parents[2] / "data" /
 STATUS_LISTED = "listed"
 STATUS_ANCESTOR = "ancestor"
 STATUS_DISAGREES = "disagrees"
+STATUS_NOT_IN_LIST = "not_in_list"
+FAILURE_NOT_IN_LIST = "not_in_official_list"
+
+# Every directory this module applies, with the words each one's claims are
+# published under. A record names its source; nothing else tells them apart.
+SOURCES: dict[str, dict[str, str]] = {
+    FR_SOURCE: {"method": FR_METHOD, "placement_method": FR_PLACEMENT_METHOD, "source_type": FR_SOURCE_TYPE},
+    "senate_committee_list": {
+        "method": "listed_in_senate_committee_list",
+        "placement_method": "listed_under_committee_in_senate_committee_list",
+        "source_type": "senate_committee_list",
+    },
+}
 
 
 # The directory writes the head noun last: "Energy Department", "Civil
@@ -272,7 +285,13 @@ def _ancestors_of(node_id: str, parent_map: dict[str, str | None]) -> list[str]:
     return chain
 
 
-def listed_name_still_names(node_name: Any, listed_name: Any) -> bool:
+def listed_name_still_names(node_name: Any, listed_name: Any, source: str = FR_SOURCE) -> bool:
+    if source == "senate_committee_list":
+        from data_pipeline.verification.congress import committee_key, subcommittee_key
+
+        return bool(canonical_name_key(node_name)) and (
+            committee_key(node_name) == committee_key(listed_name) or subcommittee_key(node_name) == subcommittee_key(listed_name)
+        )
     key = canonical_name_key(node_name)
     core = str(listed_name or "").rpartition(",")[0].strip() if "," in str(listed_name or "") else str(listed_name or "")
     return bool(key) and (key in federal_register_name_keys(listed_name) or key in federal_register_name_keys(core))
@@ -297,15 +316,37 @@ def apply_directory_evidence(
         index_tree = _index_tree
     node_map, parent_map = index_tree(root)
     stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "placements_listed": 0, "placements_ancestor": 0,
-             "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0}
+             "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0, "not_in_list": 0, "unknown_source": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
             stats["unknown_node"] += 1
             continue
-        if str(record.get("status") or "") != STATUS_LISTED or not record.get("url"):
+        source = str(record.get("source") or FR_SOURCE)
+        words = SOURCES.get(source)
+        if words is None:
+            stats["unknown_source"] += 1
             continue
-        if not listed_name_still_names(node.get("name"), record.get("listedName")):
+        status = str(record.get("status") or "")
+        checked_at = str(record.get("checkedAt") or "").strip()
+        if status == STATUS_NOT_IN_LIST:
+            # A complete official list that does not carry the name: a
+            # checked negative, published only where nothing else vouches for
+            # the node, and never beside a page's own failed check.
+            if not node.get("sourceUrls") and not node.get("verificationFailure") and record.get("url") and checked_at:
+                node["verificationFailure"] = FAILURE_NOT_IN_LIST
+                node["verificationFailureSource"] = {
+                    "source": source, "listedUnder": record.get("listedUnder"), "url": str(record["url"]),
+                    "checkedAt": checked_at, "listedNames": list(record.get("listedSubcommittees") or [])[:80],
+                }
+                node["lastVerified"] = checked_at
+                node["evidenceVerifiedAt"] = checked_at
+                verify_node_sources(node)
+                stats["not_in_list"] += 1
+            continue
+        if status != STATUS_LISTED or not record.get("url"):
+            continue
+        if not listed_name_still_names(node.get("name"), record.get("listedName"), source):
             stats["stale_name"] += 1
             continue
         url = str(record["url"])
@@ -319,20 +360,19 @@ def apply_directory_evidence(
             mine.append(url)
         node["evidenceUrls"] = mine
         types = [str(t) for t in (node.get("sourceTypes") or [])]
-        if FR_SOURCE_TYPE not in types:
-            types.append(FR_SOURCE_TYPE)
+        if words["source_type"] not in types:
+            types.append(words["source_type"])
         node["sourceTypes"] = types
         node["directoryListing"] = {
-            "source": FR_SOURCE, "listedName": record.get("listedName"), "url": url,
+            "source": source, "listedName": record.get("listedName"), "url": url,
             "agencyUrl": record.get("agencyUrl"), "parentListedName": record.get("parentListedName"),
             "checkedAt": record.get("checkedAt"),
         }
-        checked_at = str(record.get("checkedAt") or "").strip()
         if checked_at and (not node.get("lastVerified") or checked_at > str(node.get("lastVerified"))):
             node["lastVerified"] = checked_at
             node["evidenceVerifiedAt"] = checked_at
         if not node.get("verificationMethod"):
-            node["verificationMethod"] = FR_METHOD
+            node["verificationMethod"] = words["method"]
         stats["listed"] += 1
 
         placement = record.get("placement") if isinstance(record.get("placement"), dict) else None
@@ -345,13 +385,13 @@ def apply_directory_evidence(
                 node["placementVerifiedAt"] = checked_at or None
                 node["placementParentId"] = parent_map.get(node_id)
                 node["placementMatchedText"] = record.get("listedName")
-                node["placementMethod"] = FR_PLACEMENT_METHOD
+                node["placementMethod"] = words["placement_method"]
                 node.pop("placementCheckable", None)
                 stats["placements_listed"] += 1
         elif placement and placement.get("status") == STATUS_ANCESTOR:
             if placement.get("ancestorId") in _ancestors_of(node_id, parent_map):
                 node["placementDirectoryAncestor"] = {
-                    "source": FR_SOURCE, "listedUnder": placement.get("parentListedName"), "ancestorId": placement.get("ancestorId"),
+                    "source": source, "listedUnder": placement.get("parentListedName"), "ancestorId": placement.get("ancestorId"),
                     "distance": placement.get("distance"), "url": url, "checkedAt": checked_at or None,
                 }
                 stats["placements_ancestor"] += 1
@@ -360,7 +400,7 @@ def apply_directory_evidence(
         elif placement and placement.get("status") == STATUS_DISAGREES:
             if str(placement.get("treeParentId") or "") == str(parent_map.get(node_id) or ""):
                 node["placementDirectoryDisagreement"] = {
-                    "source": FR_SOURCE, "listedUnder": placement.get("parentListedName"),
+                    "source": source, "listedUnder": placement.get("parentListedName"),
                     "directoryParentId": placement.get("directoryParentId"), "url": url, "checkedAt": checked_at or None,
                 }
                 stats["placements_disagree"] += 1
