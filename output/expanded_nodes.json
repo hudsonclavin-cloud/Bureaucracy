@@ -5002,6 +5002,10 @@
     "sourceCount": 1,
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
+    "pageReadNotNamed": {
+      "url": "https://www.whitehouse.gov",
+      "checkedAt": "2026-09-08T19:58:40+00:00"
+    },
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/administration-office-executive-office-of-the-president"
     ],
@@ -5022,11 +5026,7 @@
     "placementParentId": "exec-eop",
     "placementMatchedText": "Administration Office, Executive Office of the President",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-eop",
-    "pageReadNotNamed": {
-      "url": "https://www.whitehouse.gov",
-      "checkedAt": "2026-09-08T19:58:40+00:00"
-    }
+    "parentId": "exec-eop"
   },
   {
     "id": "exec-eop--treasury-receipts",

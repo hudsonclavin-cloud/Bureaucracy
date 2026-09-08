@@ -348,6 +348,54 @@ committee XML once the host is reachable, OPM's Plum Book for positions, OPM Fed
 the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
 obtains a key.
 
+**Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
+official sources, derived and audited but **not yet wired into the
+exporter**: `data/verification/headcount_evidence.json` (133 records) and
+`position_evidence.json` (91) exist, and nothing reads them, so nothing of
+this reaches the site yet.
+
+FedScope is OPM's civilian employment table by agency and sub-agency
+(March 2025, September 2024 beside it). Every record carries the data
+dictionary's own coverage sentence, because the population is the whole
+point: it is Executive-Branch civilians in an active pay status, excluding
+the Postal Service and the intelligence agencies — so it is *not* the
+number the curated `employees` fields hold, which mix civilians, uniformed
+members and contractors. That mismatch is the reason to have it: 124 of
+the matched nodes carry a curated figure, and only 55 of those are within
+10% of what OPM reports. Matching is scoped as the Federal Register's is —
+a sub-agency row only reaches a node beneath the node its agency matched —
+and three refusals were added after the first derivation published things
+that were false:
+
+- an "agency" whose whole table entry is one row for a differently-named
+  unit is refused (`agency_is_one_other_unit`). FedScope files the U.S.
+  Tax Court alone under an agency it calls "JUDICIAL BRANCH" and the
+  Bureau of Consumer Financial Protection alone under "FEDERAL RESERVE
+  SYSTEM"; the first derivation published 165 as the judicial branch's
+  staff and the CFPB's 1,661 as the Federal Reserve's;
+- a row whose agency matched no node is refused however unique its name
+  (`unscoped_refused`): a name being unique in the graph is not evidence
+  of placement, and it had stamped a civilians-only Marine Corps count on
+  the node meaning the uniformed service;
+- a record its own descendants' records already exceed is marked
+  (`subtreeRecordsExceedIt`), so nothing weights a sibling set by a figure
+  missing most of its subtree.
+
+The table's own truncation of a leading "NATIONAL" is undone, which is not
+a guess about which unit is meant but the file's abbreviation reversed; it
+is what lets NASA and NARA match at all. FedScope's "DEPARTMENT OF THE
+ARMY" is deliberately *not* matched to the graph's "U.S. Army": the first
+is a civilian department, the second the uniformed service, and they are
+different populations — a curation gap, in `CURATION.md`, not a matcher
+bug.
+
+The PLUM archive is the previous administration's reported positions
+(the current export is on escs.opm.gov, which the proxy refuses), so every
+record and every proposed panel sentence names the archive and its period
+and says nothing about who holds a post now: the incumbent columns are
+never read. 91 of the graph's 4,382 position nodes matched a listed title
+under their own organisation; none matched across organisations.
+
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
 `evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
 `evidenceVerifiedAt` (the date it set as `lastVerified`), so the next build
