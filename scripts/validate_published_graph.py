@@ -434,7 +434,11 @@ def main(argv):
     # same node; the merge order between the evidence pass and the Treasury
     # pass is exactly what could produce both. And a node is only allowed to
     # call a source official when a .gov/.mil URL is actually there.
-    KNOWN_METHODS = {"name_labelled_on_own_official_page", "name_labelled_on_parent_official_page"}
+    KNOWN_METHODS = {
+        "name_labelled_on_own_official_page",
+        "name_labelled_on_parent_official_page",
+        "listed_in_federal_register_agency_directory",
+    }
     failure_beside_source, unofficial_official, unknown_method = [], [], []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
@@ -481,7 +485,10 @@ def main(argv):
         stamp = str(node.get("placementVerifiedAt") or "")
         if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
             placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))
-        if str(node.get("placementMethod") or "") != "name_labelled_on_parent_official_page":
+        if str(node.get("placementMethod") or "") not in (
+            "name_labelled_on_parent_official_page",
+            "listed_under_parent_in_federal_register_agency_directory",
+        ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
@@ -536,6 +543,11 @@ def main(argv):
     placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
     placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
     unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
+    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict))
+    directory_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_parent_in_federal_register_agency_directory")
+    directory_disagree = sum(1 for n in nodes if isinstance(n.get("placementDirectoryDisagreement"), dict))
+    print("  directory-listed     : {:,} in the Federal Register's agency directory; {:,} placements from it; {:,} filed elsewhere by it".format(
+        directory_listed, directory_placed, directory_disagree))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
         placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.

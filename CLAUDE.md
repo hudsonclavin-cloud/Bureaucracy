@@ -285,6 +285,40 @@ documented rather than fixed: within the chrome the standard is host-blind
 inside `.gov` — a footer link to an unrelated agency would count; the
 sites file is what scopes it, one page per parent.
 
+**Directories — the government's own lists of itself.** The page method is
+near its ceiling: 71 organisations have a page of their own, twelve of the
+largest hosts refuse `robots.txt` and are refused in turn, 4,382 positions
+and 223 committees are never checked, and 520 edges hang under curated
+groupings with no page. `data_pipeline/verification/directories.py` adds
+a second, weaker, honestly-labelled kind of evidence from structured
+official directories, the first being the Federal Register's agency
+directory (`api/v1/agencies.json`: every agency that publishes in the
+Register, with its parent and its own site). The directory is fetched
+verbatim and committed (`tests/fixtures/directories/`, refreshed only by
+re-fetching); `scripts/derive_directory_evidence.py` matches its entries
+to the curated organisations by canonical name — with the one rule the
+directory needs, "Energy Department" answering to "Department of Energy"
+— one entry to one node or nothing, and writes
+`data/verification/directory_evidence.json`, each record saying what the
+directory lists: the name, the parent, the entry's page, dated by the
+directory's fetch time. The exporter applies it after the page evidence,
+beside a page claim and never over it: `verificationMethod:
+listed_in_federal_register_agency_directory` only where no page method
+exists, `directoryListing` always, and `placementMethod:
+listed_under_parent_in_federal_register_agency_directory` only when the
+directory's parent is the node the tree gives it. When the directory files
+a unit under a different parent the node carries
+`placementDirectoryDisagreement` and the panel says the two sources
+disagree; nothing is resolved either way, and the gate reports the three
+counts. A top-level directory entry (a department) claims nothing about
+the curated grouping above it. Withdrawal is the page module's: every
+field here is in `EVIDENCE_OWNED_FIELDS`, and the URL rides in
+`evidenceUrls`. Next in this line, in order of evidence value: the House
+Clerk's and Senate's committee XML (223 committee nodes, placement by
+structure), OPM's Plum Book for positions, OPM FedScope for the headcounts
+the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
+obtains a key.
+
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
 `evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
 `evidenceVerifiedAt` (the date it set as `lastVerified`), so the next build
