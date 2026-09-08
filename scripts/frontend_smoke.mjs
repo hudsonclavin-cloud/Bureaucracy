@@ -292,8 +292,9 @@ try {
   const placed = await text("#verification-placement");
   // Either wording: a separate read of the parent's page, or the same read
   // that confirmed existence (one fetch must not present as two checks).
-  check("an evidenced placement says the parent's page lists it", /Placement: (its parent's official page|the same page read above) lists it as "/.test(placed), placed);
-  check("an evidenced placement quotes the label and links the page", /lists it as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
+  // A listing from the site-wide navigation says so between the verb and the label.
+  check("an evidenced placement says the parent's page lists it", /Placement: (its parent's official page|the same page read above) lists it( in its site-wide navigation)? as "/.test(placed), placed);
+  check("an evidenced placement quotes the label and links the page", /lists it( in its site-wide navigation)? as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
   check("an evidenced placement never says 'reports to'", !/reports to/i.test(placed), placed);
   await page.fill("#search-input", "Senate Leadership");
   await page.waitForTimeout(500);

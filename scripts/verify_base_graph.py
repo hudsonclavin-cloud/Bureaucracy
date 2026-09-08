@@ -236,6 +236,22 @@ def main(argv: list[str] | None = None) -> int:
         node_id = str(node["id"])
         if block is None:
             placements["parent_page_unreadable"] += 1
+            prior = evidence.get(node_id)
+            prior_block = prior.get("placement") if isinstance(prior, dict) and isinstance(prior.get("placement"), dict) else None
+            if prior_block is not None and str(prior_block.get("parentId") or "") == parent_id:
+                # This run set out to re-read the page that block rests on
+                # and could not, so the block is withdrawn rather than carried
+                # under today's record with its old date. The first recheck
+                # kept it: www.hud.gov/about had been "checked and not listed"
+                # fifteen times under the old whole-page floor, the recheck
+                # found the page unreadable, and every one of those claims
+                # would have been published unchanged.
+                del prior["placement"]
+                placements["prior_block_withdrawn"] += 1
+                if prior.get("status") == PLACEMENT_ONLY:
+                    # Nothing else was ever recorded about this node.
+                    del evidence[node_id]
+                write_json_file(args.evidence, store)
             continue
         record = evidence.setdefault(node_id, {"name": node.get("name"), "checkedAt": now, "status": PLACEMENT_ONLY})
         record["placement"] = block
