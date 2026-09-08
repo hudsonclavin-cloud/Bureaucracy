@@ -316,7 +316,8 @@ def apply_directory_evidence(
         index_tree = _index_tree
     node_map, parent_map = index_tree(root)
     stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "placements_listed": 0, "placements_ancestor": 0,
-             "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0, "not_in_list": 0, "unknown_source": 0}
+             "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0, "not_in_list": 0, "unknown_source": 0,
+             "failed_checks_withdrawn": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
@@ -350,6 +351,22 @@ def apply_directory_evidence(
             stats["stale_name"] += 1
             continue
         url = str(record["url"])
+        if node.get("verificationFailure"):
+            # A checked negative — the page module's not_found, or an earlier
+            # list's not_in_official_list — is published only where nothing
+            # gives the node a source, and this listing is about to. The first
+            # live run with seeded pages found the White House homepage does
+            # not label the Office of Administration while the Federal
+            # Register lists it; the gate refused the graph that said both.
+            # The failure goes, with the date that fetch supplied; the listing's
+            # own date is set below.
+            if str(node.get("lastVerified") or "") == str(node.get("evidenceVerifiedAt") or ""):
+                node.pop("lastVerified", None)
+            node.pop("evidenceVerifiedAt", None)
+            node.pop("verificationFailure", None)
+            node.pop("verificationFailureSource", None)
+            node.pop("verificationSiteFrom", None)
+            stats["failed_checks_withdrawn"] += 1
         urls = [str(u) for u in (node.get("sourceUrls") or [])]
         if url not in urls:
             urls.append(url)

@@ -223,6 +223,41 @@ class ApplyTests(unittest.TestCase):
         self.assertEqual(science["directoryListing"]["listedName"], "Office of Science")
         self.assertEqual(sorted(science["sourceUrls"]), sorted(["https://science.osti.gov/", "https://www.federalregister.gov/agencies/science-office"]))
 
+    def test_a_listing_withdraws_the_page_s_failed_check_on_the_same_node(self) -> None:
+        # The page module recorded that the unit's own page does not name it;
+        # the directory lists it. "Checked, not found" beside a source is what
+        # the gate forbids, and the documented rule is that the negative is
+        # published only where no other route gave the node a source.
+        tree = self._tree()
+        page = {"doe-science": {"status": "not_found", "checkedAt": "2026-09-09T00:00:00+00:00", "siteFrom": "doe-science",
+                                "ownPage": True, "pagesRead": 1,
+                                "failures": [{"url": "https://science.osti.gov/", "reason": "name_not_labelled_on_page"}]}}
+        apply_evidence_to_tree(tree, page)
+        science = index_tree(tree)[0]["doe-science"]
+        self.assertEqual(science["verificationFailure"], "not_found")
+        stats = apply_directory_evidence(tree, self._records())
+        self.assertEqual(stats["failed_checks_withdrawn"], 1)
+        self.assertNotIn("verificationFailure", science)
+        self.assertNotIn("verificationSiteFrom", science)
+        self.assertEqual(science["sourceUrls"], ["https://www.federalregister.gov/agencies/science-office"])
+        self.assertEqual(science["verificationMethod"], FR_METHOD)
+        self.assertEqual(science["lastVerified"], "2026-09-08T19:30:00+00:00", "the date is the listing's, not the withdrawn fetch's")
+        self.assertEqual(science["evidenceVerifiedAt"], "2026-09-08T19:30:00+00:00")
+
+    def test_a_failed_check_stands_where_the_directory_lists_nothing(self) -> None:
+        tree = self._tree()
+        page = {"doe-gc": {"status": "not_found", "checkedAt": "2026-09-09T00:00:00+00:00", "siteFrom": "doe-gc",
+                           "ownPage": True, "pagesRead": 1,
+                           "failures": [{"url": "https://www.energy.gov/gc", "reason": "name_not_labelled_on_page"}]}}
+        apply_evidence_to_tree(tree, page)
+        records = {k: v for k, v in self._records().items() if k != "doe-gc"}
+        stats = apply_directory_evidence(tree, records)
+        gc = index_tree(tree)[0]["doe-gc"]
+        self.assertEqual(stats["failed_checks_withdrawn"], 0)
+        self.assertEqual(gc["verificationFailure"], "not_found")
+        self.assertEqual(gc["lastVerified"], "2026-09-09T00:00:00+00:00")
+        self.assertFalse(gc.get("sourceUrls"))
+
     def test_a_withdrawn_listing_leaves_nothing_behind(self) -> None:
         tree = self._tree()
         apply_evidence_to_tree(tree, {})
