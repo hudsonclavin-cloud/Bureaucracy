@@ -51,21 +51,59 @@ FR_DIRECTORY_URL = "https://www.federalregister.gov/api/v1/agencies.json"
 DEFAULT_DIRECTORY_EVIDENCE_PATH = Path(__file__).resolve().parents[2] / "data" / "verification" / "directory_evidence.json"
 
 STATUS_LISTED = "listed"
+STATUS_ANCESTOR = "ancestor"
 STATUS_DISAGREES = "disagrees"
 
 
+# The directory writes the head noun last: "Energy Department", "Civil
+# Rights Commission", "Inspector General Office". The curated file writes
+# "Department of Energy", "Commission on Civil Rights", "Office of Inspector
+# General". These are the head nouns that convention applies to, and the
+# prepositions the curated file uses after them; nothing else is rewritten.
+HEAD_NOUNS = (
+    "department", "office", "bureau", "administration", "agency", "service", "commission", "board",
+    "corporation", "council", "institute", "center", "division", "foundation", "authority", "committee",
+)
+HEAD_PREPOSITIONS = ("of", "of the", "for", "on")
+
+
 def federal_register_name_keys(name: Any) -> set[str]:
-    """The canonical keys a directory name may answer to. "Energy
-    Department" is the curated file's "Department of Energy"; "Army
-    Department" its "Department of the Army"."""
+    """The canonical keys a directory name may answer to: itself; the
+    "Department of Energy" form of "Energy Department" (and the same
+    inversion for every head noun in HEAD_NOUNS); and the same without a
+    leading "United States", which the directory often drops ("Coast Guard",
+    "Mint"). Each form is a rewrite the curated file demonstrably uses, and
+    a match still needs exactly one node to answer to exactly one entry."""
     key = canonical_name_key(name)
+    if not key:
+        return set()
     keys = {key}
-    if key.endswith(" department"):
-        rest = key[: -len(" department")].strip()
-        if rest:
-            keys.add(f"department of {rest}")
-            keys.add(f"department of the {rest}")
+    tokens = key.split()
+    if len(tokens) > 1 and tokens[-1] in HEAD_NOUNS:
+        head, rest = tokens[-1], " ".join(tokens[:-1])
+        for prep in HEAD_PREPOSITIONS:
+            keys.add(f"{head} {prep} {rest}")
+    for k in list(keys):
+        if k.startswith("united states "):
+            keys.add(k[len("united states "):])
+        else:
+            keys.add(f"united states {k}")
     return {k for k in keys if k}
+
+
+def split_qualifier(name: Any, entry_names: set[str]) -> tuple[str, str | None]:
+    """"Inspector General Office, Energy Department" is a unit named by its
+    parent, not a unit with a comma in its name; "Alcohol, Tobacco, Firearms,
+    and Explosives Bureau" is the opposite. The tail after the last comma is
+    a qualifier only when it is itself an entry of the directory."""
+    text = str(name or "")
+    if "," not in text:
+        return text.strip(), None
+    core, _, tail = text.rpartition(",")
+    tail = tail.strip()
+    if tail and tail in entry_names and core.strip():
+        return core.strip(), tail
+    return text.strip(), None
 
 
 def load_directory_file(path: str | Path) -> dict[str, Any]:
@@ -119,15 +157,39 @@ def match_federal_register(
 
     valid = [e for e in entries if isinstance(e, dict) and e.get("name") and e.get("id") is not None]
     by_entry_id = {str(e["id"]): e for e in valid}
-    # Entry -> candidate node ids (across its keys), and node -> entries.
+    entry_names = {str(e["name"]).strip() for e in valid}
+
+    def ancestors(node_id: str) -> list[str]:
+        chain: list[str] = []
+        current = parent_map.get(node_id)
+        while current:
+            chain.append(current)
+            current = parent_map.get(current)
+        return chain
+
+    # Entry -> candidate node ids (across its keys), and node -> entries. A
+    # qualified entry ("Inspector General Office, Energy Department") is
+    # scoped to the nodes beneath a node answering to the qualifier, which is
+    # how the same-named offices of different departments stay apart.
     entry_nodes: dict[str, set[str]] = {}
     node_entries: dict[str, set[str]] = {}
+    entry_core: dict[str, str] = {}
+    entry_qualifier: dict[str, str | None] = {}
     for entry in valid:
+        core, qualifier = split_qualifier(entry["name"], entry_names)
+        entry_core[str(entry["id"])] = core
+        entry_qualifier[str(entry["id"])] = qualifier
         found: set[str] = set()
-        for key in federal_register_name_keys(entry["name"]):
-            if key in ambiguous_node_keys:
-                continue
+        for key in federal_register_name_keys(core):
             found.update(by_key.get(key, []))
+        if qualifier:
+            scope: set[str] = set()
+            for key in federal_register_name_keys(qualifier):
+                scope.update(by_key.get(key, []))
+            found = {n for n in found if scope & set(ancestors(n))}
+        else:
+            # Without a qualifier, a name several nodes share identifies none.
+            found = {n for n in found if canonical_name_key(node_map[n].get("name")) not in ambiguous_node_keys}
         entry_nodes[str(entry["id"])] = found
         for node_id in found:
             node_entries.setdefault(node_id, set()).add(str(entry["id"]))
@@ -136,7 +198,7 @@ def match_federal_register(
         "source": FR_SOURCE, "directory_url": directory_url, "fetched_at": fetched_at,
         "entries": len(valid), "matched": 0, "unmatched_entries": [], "ambiguous_entries": [],
         "ambiguous_names_in_graph": sorted(ambiguous_node_keys)[:40],
-        "placements_listed": 0, "placements_disagree": [], "placements_parent_unmatched": 0, "top_level_entries": 0,
+        "placements_listed": 0, "placements_ancestor": 0, "placements_disagree": [], "placements_parent_unmatched": 0, "top_level_entries": 0,
     }
     entry_to_node: dict[str, str] = {}
     for entry in valid:
@@ -180,6 +242,15 @@ def match_federal_register(
             elif parent_map.get(node_id) == parent_node:
                 record["placement"] = {"status": STATUS_LISTED, "parentId": parent_node, "parentListedName": record["parentListedName"]}
                 report["placements_listed"] += 1
+            elif parent_node in ancestors(node_id):
+                # The directory names an ancestor: the tree has a curated
+                # grouping between ("Defense Agencies" under Defense). Not a
+                # contradiction, and not evidence for the direct edge either.
+                record["placement"] = {
+                    "status": STATUS_ANCESTOR, "ancestorId": parent_node, "parentListedName": record["parentListedName"],
+                    "distance": ancestors(node_id).index(parent_node) + 1, "treeParentId": parent_map.get(node_id),
+                }
+                report["placements_ancestor"] += 1
             else:
                 record["placement"] = {
                     "status": STATUS_DISAGREES, "directoryParentId": parent_node,
@@ -192,9 +263,19 @@ def match_federal_register(
     return records, report
 
 
+def _ancestors_of(node_id: str, parent_map: dict[str, str | None]) -> list[str]:
+    chain: list[str] = []
+    current = parent_map.get(node_id)
+    while current:
+        chain.append(current)
+        current = parent_map.get(current)
+    return chain
+
+
 def listed_name_still_names(node_name: Any, listed_name: Any) -> bool:
     key = canonical_name_key(node_name)
-    return bool(key) and key in federal_register_name_keys(listed_name)
+    core = str(listed_name or "").rpartition(",")[0].strip() if "," in str(listed_name or "") else str(listed_name or "")
+    return bool(key) and (key in federal_register_name_keys(listed_name) or key in federal_register_name_keys(core))
 
 
 def apply_directory_evidence(
@@ -215,7 +296,7 @@ def apply_directory_evidence(
 
         index_tree = _index_tree
     node_map, parent_map = index_tree(root)
-    stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "placements_listed": 0,
+    stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "placements_listed": 0, "placements_ancestor": 0,
              "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
@@ -267,6 +348,15 @@ def apply_directory_evidence(
                 node["placementMethod"] = FR_PLACEMENT_METHOD
                 node.pop("placementCheckable", None)
                 stats["placements_listed"] += 1
+        elif placement and placement.get("status") == STATUS_ANCESTOR:
+            if placement.get("ancestorId") in _ancestors_of(node_id, parent_map):
+                node["placementDirectoryAncestor"] = {
+                    "source": FR_SOURCE, "listedUnder": placement.get("parentListedName"), "ancestorId": placement.get("ancestorId"),
+                    "distance": placement.get("distance"), "url": url, "checkedAt": checked_at or None,
+                }
+                stats["placements_ancestor"] += 1
+            else:
+                stats["placements_stale_parent"] += 1
         elif placement and placement.get("status") == STATUS_DISAGREES:
             if str(placement.get("treeParentId") or "") == str(parent_map.get(node_id) or ""):
                 node["placementDirectoryDisagreement"] = {

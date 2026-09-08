@@ -518,7 +518,12 @@ function renderPlacementLine(data) {
     return;
   }
   const disagreement = data.placementDirectoryDisagreement;
+  const ancestorListing = data.placementDirectoryAncestor;
   const addDisagreement = () => {
+    if (ancestorListing && typeof ancestorListing === "object") {
+      dom.verificationPlacement.appendChild(document.createElement("br"));
+      add(`The Federal Register's agency directory files it under "${ancestorListing.listedUnder}", an ancestor here; the grouping between is curated, and the directory says nothing about it`);
+    }
     if (!disagreement || typeof disagreement !== "object") return;
     dom.verificationPlacement.appendChild(document.createElement("br"));
     add(`The Federal Register's agency directory files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);

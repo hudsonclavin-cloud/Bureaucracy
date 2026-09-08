@@ -137,6 +137,7 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
             # test would assert on whichever pages happened to answer that day.
             # What is under test here is the outlay wiring, nothing else.
             evidence_path=None,
+            directory_evidence_path=None,
         )
 
     def tearDown(self) -> None:

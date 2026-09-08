@@ -1,0 +1,1919 @@
+{
+  "_note": "Derived by scripts/derive_directory_evidence.py from a verbatim fetch of the Federal Register agency directory; each record says what the directory lists for the node — name, parent, page — and nothing else. checkedAt is the directory's fetch time. Regenerate by re-running the script; never edit by hand.",
+  "source": {
+    "kind": "federal_register_agency_directory",
+    "file": "tests/fixtures/directories/federal_register_agencies.json",
+    "url": "https://www.federalregister.gov/api/v1/agencies.json",
+    "fetched_at": "2026-09-08T19:19:15Z"
+  },
+  "report": {
+    "source": "federal_register_agency_directory",
+    "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
+    "fetched_at": "2026-09-08T19:19:15Z",
+    "entries": 472,
+    "matched": 139,
+    "ambiguous_entries": [],
+    "ambiguous_names_in_graph": [
+      "budget review division",
+      "coast guard",
+      "districts",
+      "health care",
+      "national security division",
+      "subcommittee on health",
+      "subcommittee on oversight and investigations",
+      "va medical centers"
+    ],
+    "placements_listed": 63,
+    "placements_ancestor": 5,
+    "placements_disagree": [
+      {
+        "id": "exec-regulatory-ferc",
+        "directory_parent": "exec-dept-doe",
+        "tree_parent": "exec-regulatory"
+      }
+    ],
+    "placements_parent_unmatched": 2,
+    "top_level_entries": 68,
+    "unmatched_sample": [
+      "ACTION",
+      "Administrative Conference of the United States",
+      "Advisory Council on Historic Preservation",
+      "Advocacy and Outreach Office",
+      "Agency for International Development",
+      "Agency for Toxic Substances and Disease Registry",
+      "Aging Administration",
+      "Agricultural Marketing Service",
+      "Air Force Department",
+      "Air Quality National Commission",
+      "Air Transportation Stabilization Board",
+      "Alaska Power Administration",
+      "Amtrak Reform Council",
+      "Antitrust Modernization Commission",
+      "Appalachian States Low-Level Radioactive Waste Commission",
+      "Appraisal Subcommittee of the Federal Financial Institutions Examination Council",
+      "Architectural and Transportation Barriers Compliance Board",
+      "Arctic Research Commission",
+      "Armed Forces Retirement Home",
+      "Arms Control and Disarmament Agency",
+      "Army Department",
+      "Assassination Records Review Board",
+      "Barry M. Goldwater Scholarship and Excellence in Education Foundation",
+      "Benefits Review Board",
+      "Bipartisan Commission on Entitlement and Tax Reform",
+      "Board of Directors of the Hope for Homeowners Program",
+      "Bonneville Power Administration",
+      "Broadcasting Board of Governors",
+      "Census Monitoring Board",
+      "Child Support Enforcement Office",
+      "Children and Families Administration",
+      "Christopher Columbus Quincentenary Jubilee Commission",
+      "Civil Rights Cold Case Records Review Board",
+      "Civil Rights Commission",
+      "Coast Guard",
+      "Commercial Space Transportation Office",
+      "Commission of Fine Arts",
+      "Commission on Immigration Reform",
+      "Commission on Protecting and Reducing Government Secrecy",
+      "Commission on Review of Overseas Military Facility Structure of the United States",
+      "Commission on Structural Alternatives for the Federal Courts of Appeals",
+      "Commission on the Advancement of Federal Law Enforcement",
+      "Commission on the Bicentennial of the United States Constitution",
+      "Commission on the Future of the United States Aerospace Industry",
+      "Commission on the Social Security Notch Issue",
+      "Committee for Purchase From People Who Are Blind or Severely Disabled",
+      "Committee for the Implementation of Textile Agreements",
+      "Commodity Credit Corporation",
+      "Community Development Financial Institutions Fund",
+      "Community Living Administration",
+      "Competitiveness Policy Council",
+      "Comptroller of the Currency",
+      "Consumer Financial Protection Bureau",
+      "Cooperative State Research, Education, and Extension Service",
+      "Coordinating Council on Juvenile Justice and Delinquency Prevention",
+      "Copyright Royalty Board",
+      "Copyright Royalty Judges",
+      "Corporation for National and Community Service",
+      "Council of the Inspectors General on Integrity and Efficiency",
+      "Council on Environmental Quality"
+    ]
+  },
+  "nodes": {
+    "exec-eop-onadm": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 2,
+      "listedName": "Administration Office, Executive Office of the President",
+      "url": "https://www.federalregister.gov/agencies/administration-office-executive-office-of-the-president",
+      "agencyUrl": "https://www.whitehouse.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Executive Office of the President",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "parentListedName": "Executive Office of the President"
+      }
+    },
+    "jud-support-aousc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 3,
+      "listedName": "Administrative Office of United States Courts",
+      "url": "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts",
+      "agencyUrl": "http://www.uscourts.gov/FederalCourts/UnderstandingtheFederalCourts/AdministrativeOffice.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-hhs-ahrq": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 5,
+      "listedName": "Agency for Healthcare Research and Quality",
+      "url": "https://www.federalregister.gov/agencies/agency-for-healthcare-research-and-quality",
+      "agencyUrl": "http://www.ahrq.gov/about/ahrqfact.htm",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-dept-usda-ars": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 10,
+      "listedName": "Agricultural Research Service",
+      "url": "https://www.federalregister.gov/agencies/agricultural-research-service",
+      "agencyUrl": "http://www.ars.usda.gov/main/main.htm",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-usda": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 12,
+      "listedName": "Agriculture Department",
+      "url": "https://www.federalregister.gov/agencies/agriculture-department",
+      "agencyUrl": "http://www.usda.gov/wps/portal/usda/usdahome",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-treasury-ttb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 18,
+      "listedName": "Alcohol and Tobacco Tax and Trade Bureau",
+      "url": "https://www.federalregister.gov/agencies/alcohol-and-tobacco-tax-and-trade-bureau",
+      "agencyUrl": "http://www.ttb.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-doj-atf": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 19,
+      "listedName": "Alcohol, Tobacco, Firearms, and Explosives Bureau",
+      "url": "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau",
+      "agencyUrl": "http://www.atf.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-ind-misc-american-battle-monuments-commission-abmc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 20,
+      "listedName": "American Battle Monuments Commission",
+      "url": "https://www.federalregister.gov/agencies/american-battle-monuments-commission",
+      "agencyUrl": "http://www.abmc.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-usda-aphis": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 22,
+      "listedName": "Animal and Plant Health Inspection Service",
+      "url": "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service",
+      "agencyUrl": "http://www.aphis.usda.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-doj-div-antitrust": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 23,
+      "listedName": "Antitrust Division",
+      "url": "https://www.federalregister.gov/agencies/antitrust-division",
+      "agencyUrl": "http://www.justice.gov/atr/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-ind-misc-appalachian-regional-commission-arc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 25,
+      "listedName": "Appalachian Regional Commission",
+      "url": "https://www.federalregister.gov/agencies/appalachian-regional-commission",
+      "agencyUrl": "http://www.arc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "leg-support-aoc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 27,
+      "listedName": "Architect of the Capitol",
+      "url": "https://www.federalregister.gov/agencies/architect-of-the-capitol",
+      "agencyUrl": "http://www.aoc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-treasury-fiscal": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 196,
+      "listedName": "Bureau of the Fiscal Service",
+      "url": "https://www.federalregister.gov/agencies/bureau-of-the-fiscal-service",
+      "agencyUrl": "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-doc-census": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 42,
+      "listedName": "Census Bureau",
+      "url": "https://www.federalregister.gov/agencies/census-bureau",
+      "agencyUrl": "http://www.census.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
+    "exec-dept-hhs-cdc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 44,
+      "listedName": "Centers for Disease Control and Prevention",
+      "url": "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention",
+      "agencyUrl": "http://www.cdc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-dept-hhs-cms": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 45,
+      "listedName": "Centers for Medicare & Medicaid Services",
+      "url": "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services",
+      "agencyUrl": "http://www.cms.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-ind-cia": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 46,
+      "listedName": "Central Intelligence Agency",
+      "url": "https://www.federalregister.gov/agencies/central-intelligence-agency",
+      "agencyUrl": "https://www.cia.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 47,
+      "listedName": "Chemical Safety and Hazard Investigation Board",
+      "url": "https://www.federalregister.gov/agencies/chemical-safety-and-hazard-investigation-board",
+      "agencyUrl": "http://www.csb.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 54,
+      "listedName": "Commerce Department",
+      "url": "https://www.federalregister.gov/agencies/commerce-department",
+      "agencyUrl": "http://www.commerce.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-regulatory-cftc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 77,
+      "listedName": "Commodity Futures Trading Commission",
+      "url": "https://www.federalregister.gov/agencies/commodity-futures-trading-commission",
+      "agencyUrl": "http://www.cftc.gov/index.htm",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "leg-support-cbo": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 81,
+      "listedName": "Congressional Budget Office",
+      "url": "https://www.federalregister.gov/agencies/congressional-budget-office",
+      "agencyUrl": "http://www.cbo.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-regulatory-cpsc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 84,
+      "listedName": "Consumer Product Safety Commission",
+      "url": "https://www.federalregister.gov/agencies/consumer-product-safety-commission",
+      "agencyUrl": "http://www.cpsc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "leg-support-loc-copyright": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 87,
+      "listedName": "Copyright Office, Library of Congress",
+      "url": "https://www.federalregister.gov/agencies/copyright-office-library-of-congress",
+      "agencyUrl": "http://www.copyright.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Library of Congress",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-support-loc",
+        "parentListedName": "Library of Congress"
+      }
+    },
+    "exec-dept-defense-agency-dcaa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 101,
+      "listedName": "Defense Contract Audit Agency",
+      "url": "https://www.federalregister.gov/agencies/defense-contract-audit-agency",
+      "agencyUrl": "http://www.dcaa.mil/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
+    "exec-dept-defense": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 103,
+      "listedName": "Defense Department",
+      "url": "https://www.federalregister.gov/agencies/defense-department",
+      "agencyUrl": "http://www.defense.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-defense-agency-disa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 104,
+      "listedName": "Defense Information Systems Agency",
+      "url": "https://www.federalregister.gov/agencies/defense-information-systems-agency",
+      "agencyUrl": "http://disa.mil/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
+    "exec-dept-defense-agency-dia": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 105,
+      "listedName": "Defense Intelligence Agency",
+      "url": "https://www.federalregister.gov/agencies/defense-intelligence-agency",
+      "agencyUrl": "http://www.dia.mil",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
+    "exec-dept-defense-agency-dla": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 107,
+      "listedName": "Defense Logistics Agency",
+      "url": "https://www.federalregister.gov/agencies/defense-logistics-agency",
+      "agencyUrl": "http://www.dla.mil/Pages/default.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
+    "exec-dept-doj-dea": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 116,
+      "listedName": "Drug Enforcement Administration",
+      "url": "https://www.federalregister.gov/agencies/drug-enforcement-administration",
+      "agencyUrl": "http://www.justice.gov/dea/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-dept-doc-bea": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 118,
+      "listedName": "Economic Analysis Bureau",
+      "url": "https://www.federalregister.gov/agencies/economic-analysis-bureau",
+      "agencyUrl": "http://www.bea.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
+    "exec-dept-ed": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 126,
+      "listedName": "Education Department",
+      "url": "https://www.federalregister.gov/agencies/education-department",
+      "agencyUrl": "http://www.ed.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-election-assistance-commission-eac": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 127,
+      "listedName": "Election Assistance Commission",
+      "url": "https://www.federalregister.gov/agencies/election-assistance-commission",
+      "agencyUrl": "http://www.eac.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-ebsa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 131,
+      "listedName": "Employee Benefits Security Administration",
+      "url": "https://www.federalregister.gov/agencies/employee-benefits-security-administration",
+      "agencyUrl": "http://www.dol.gov/ebsa/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-dept-dol-eta": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 133,
+      "listedName": "Employment and Training Administration",
+      "url": "https://www.federalregister.gov/agencies/employment-and-training-administration",
+      "agencyUrl": "http://www.doleta.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-dept-doe": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 136,
+      "listedName": "Energy Department",
+      "url": "https://www.federalregister.gov/agencies/energy-department",
+      "agencyUrl": "http://www.doe.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doe-eere": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 137,
+      "listedName": "Energy Efficiency and Renewable Energy Office",
+      "url": "https://www.federalregister.gov/agencies/energy-efficiency-and-renewable-energy-office",
+      "agencyUrl": "http://www.eere.energy.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Energy Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe",
+        "parentListedName": "Energy Department"
+      }
+    },
+    "exec-dept-treasury-bep": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 143,
+      "listedName": "Engraving and Printing Bureau",
+      "url": "https://www.federalregister.gov/agencies/engraving-and-printing-bureau",
+      "agencyUrl": "http://www.moneyfactory.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-ind-epa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 145,
+      "listedName": "Environmental Protection Agency",
+      "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+      "agencyUrl": "http://www.epa.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-equal-employment-opportunity-commission-eeoc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 147,
+      "listedName": "Equal Employment Opportunity Commission",
+      "url": "https://www.federalregister.gov/agencies/equal-employment-opportunity-commission",
+      "agencyUrl": "http://www.eeoc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 538,
+      "listedName": "Executive Office of the President",
+      "url": "https://www.federalregister.gov/agencies/executive-office-of-the-president",
+      "agencyUrl": "https://www.whitehouse.gov/eop/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-farm-credit-administration": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 154,
+      "listedName": "Farm Credit Administration",
+      "url": "https://www.federalregister.gov/agencies/farm-credit-administration",
+      "agencyUrl": "http://www.fca.gov/index.html",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-usda-fsa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 157,
+      "listedName": "Farm Service Agency",
+      "url": "https://www.federalregister.gov/agencies/farm-service-agency",
+      "agencyUrl": "http://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-dot-faa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 159,
+      "listedName": "Federal Aviation Administration",
+      "url": "https://www.federalregister.gov/agencies/federal-aviation-administration",
+      "agencyUrl": "http://www.faa.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Transportation Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot",
+        "parentListedName": "Transportation Department"
+      }
+    },
+    "exec-dept-doj-fbi": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 160,
+      "listedName": "Federal Bureau of Investigation",
+      "url": "https://www.federalregister.gov/agencies/federal-bureau-of-investigation",
+      "agencyUrl": "http://www.fbi.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-regulatory-fcc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 161,
+      "listedName": "Federal Communications Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-communications-commission",
+      "agencyUrl": "http://www.fcc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-ofccp": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 162,
+      "listedName": "Federal Contract Compliance Programs Office",
+      "url": "https://www.federalregister.gov/agencies/federal-contract-compliance-programs-office",
+      "agencyUrl": "http://www.dol.gov/ofccp/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-regulatory-fdic": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 164,
+      "listedName": "Federal Deposit Insurance Corporation",
+      "url": "https://www.federalregister.gov/agencies/federal-deposit-insurance-corporation",
+      "agencyUrl": "http://www.fdic.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-federal-election-commission-fec": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 165,
+      "listedName": "Federal Election Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-election-commission",
+      "agencyUrl": "http://www.fec.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dhs-fema": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 166,
+      "listedName": "Federal Emergency Management Agency",
+      "url": "https://www.federalregister.gov/agencies/federal-emergency-management-agency",
+      "agencyUrl": "http://www.fema.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "exec-regulatory-ferc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 167,
+      "listedName": "Federal Energy Regulatory Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+      "agencyUrl": "http://www.ferc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Energy Department",
+      "placement": {
+        "status": "disagrees",
+        "directoryParentId": "exec-dept-doe",
+        "parentListedName": "Energy Department",
+        "treeParentId": "exec-regulatory"
+      }
+    },
+    "exec-dept-dot-fhwa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 170,
+      "listedName": "Federal Highway Administration",
+      "url": "https://www.federalregister.gov/agencies/federal-highway-administration",
+      "agencyUrl": "http://www.fhwa.dot.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Transportation Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot",
+        "parentListedName": "Transportation Department"
+      }
+    },
+    "exec-ind-misc-federal-labor-relations-authority-flra": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 176,
+      "listedName": "Federal Labor Relations Authority",
+      "url": "https://www.federalregister.gov/agencies/federal-labor-relations-authority",
+      "agencyUrl": "http://www.flra.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-regulatory-fmc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 178,
+      "listedName": "Federal Maritime Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-maritime-commission",
+      "agencyUrl": "http://www.fmc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-omb-office-of-federal-procurement-policy": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 184,
+      "listedName": "Federal Procurement Policy Office",
+      "url": "https://www.federalregister.gov/agencies/federal-procurement-policy-office",
+      "agencyUrl": "http://www.whitehouse.gov/omb/procurement_default/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Management and Budget Office",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop-omb",
+        "parentListedName": "Management and Budget Office"
+      }
+    },
+    "exec-dept-dot-fra": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 185,
+      "listedName": "Federal Railroad Administration",
+      "url": "https://www.federalregister.gov/agencies/federal-railroad-administration",
+      "agencyUrl": "http://www.fra.dot.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Transportation Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot",
+        "parentListedName": "Transportation Department"
+      }
+    },
+    "exec-regulatory-fed": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 188,
+      "listedName": "Federal Reserve System",
+      "url": "https://www.federalregister.gov/agencies/federal-reserve-system",
+      "agencyUrl": "http://www.federalreserve.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-regulatory-ftc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 192,
+      "listedName": "Federal Trade Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-trade-commission",
+      "agencyUrl": "http://ftc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dot-fta": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 193,
+      "listedName": "Federal Transit Administration",
+      "url": "https://www.federalregister.gov/agencies/federal-transit-administration",
+      "agencyUrl": "http://www.fta.dot.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Transportation Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot",
+        "parentListedName": "Transportation Department"
+      }
+    },
+    "exec-dept-treasury-fincen": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 194,
+      "listedName": "Financial Crimes Enforcement Network",
+      "url": "https://www.federalregister.gov/agencies/financial-crimes-enforcement-network",
+      "agencyUrl": "http://www.fincen.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-treasury-ofr": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 574,
+      "listedName": "Financial Research Office",
+      "url": "https://www.federalregister.gov/agencies/financial-research-office",
+      "agencyUrl": "http://www.treasury.gov/initiatives/Pages/ofr.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-doi-fws": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 197,
+      "listedName": "Fish and Wildlife Service",
+      "url": "https://www.federalregister.gov/agencies/fish-and-wildlife-service",
+      "agencyUrl": "http://www.fws.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-dept-hhs-fda": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 199,
+      "listedName": "Food and Drug Administration",
+      "url": "https://www.federalregister.gov/agencies/food-and-drug-administration",
+      "agencyUrl": "http://www.fda.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-dept-usda-fns": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 200,
+      "listedName": "Food and Nutrition Service",
+      "url": "https://www.federalregister.gov/agencies/food-and-nutrition-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-usda-fsis": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 201,
+      "listedName": "Food Safety and Inspection Service",
+      "url": "https://www.federalregister.gov/agencies/food-safety-and-inspection-service",
+      "agencyUrl": "http://www.fsis.usda.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-treasury-ofac": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 203,
+      "listedName": "Foreign Assets Control Office",
+      "url": "https://www.federalregister.gov/agencies/foreign-assets-control-office",
+      "agencyUrl": "http://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-usda-fs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 209,
+      "listedName": "Forest Service",
+      "url": "https://www.federalregister.gov/agencies/forest-service",
+      "agencyUrl": "https://www.fs.usda.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-dept-doi-usgs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 212,
+      "listedName": "Geological Survey",
+      "url": "https://www.federalregister.gov/agencies/geological-survey",
+      "agencyUrl": "http://www.usgs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "leg-support-gao": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 213,
+      "listedName": "Government Accountability Office",
+      "url": "https://www.federalregister.gov/agencies/government-accountability-office",
+      "agencyUrl": "http://www.gao.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "leg-support-gpo": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 217,
+      "listedName": "Government Publishing Office",
+      "url": "https://www.federalregister.gov/agencies/government-publishing-office",
+      "agencyUrl": "http://www.gpo.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-hhs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 221,
+      "listedName": "Health and Human Services Department",
+      "url": "https://www.federalregister.gov/agencies/health-and-human-services-department",
+      "agencyUrl": "http://www.hhs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-hhs-hrsa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 222,
+      "listedName": "Health Resources and Services Administration",
+      "url": "https://www.federalregister.gov/agencies/health-resources-and-services-administration",
+      "agencyUrl": "http://www.hrsa.gov/index.html",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-dept-dhs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 227,
+      "listedName": "Homeland Security Department",
+      "url": "https://www.federalregister.gov/agencies/homeland-security-department",
+      "agencyUrl": "http://www.dhs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-hud": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 228,
+      "listedName": "Housing and Urban Development Department",
+      "url": "https://www.federalregister.gov/agencies/housing-and-urban-development-department",
+      "agencyUrl": "http://portal.hud.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doi-bia": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 234,
+      "listedName": "Indian Affairs Bureau",
+      "url": "https://www.federalregister.gov/agencies/indian-affairs-bureau",
+      "agencyUrl": "http://www.bia.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-dept-hhs-ihs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 237,
+      "listedName": "Indian Health Service",
+      "url": "https://www.federalregister.gov/agencies/indian-health-service",
+      "agencyUrl": "http://www.ihs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-dept-doi": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 253,
+      "listedName": "Interior Department",
+      "url": "https://www.federalregister.gov/agencies/interior-department",
+      "agencyUrl": "http://www.doi.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-treasury-irs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 254,
+      "listedName": "Internal Revenue Service",
+      "url": "https://www.federalregister.gov/agencies/internal-revenue-service",
+      "agencyUrl": "http://www.irs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "exec-dept-doc-ita": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 261,
+      "listedName": "International Trade Administration",
+      "url": "https://www.federalregister.gov/agencies/international-trade-administration",
+      "agencyUrl": "http://trade.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
+    "exec-dept-doj": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 268,
+      "listedName": "Justice Department",
+      "url": "https://www.federalregister.gov/agencies/justice-department",
+      "agencyUrl": "http://www.justice.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 271,
+      "listedName": "Labor Department",
+      "url": "https://www.federalregister.gov/agencies/labor-department",
+      "agencyUrl": "http://www.dol.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-bls": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 272,
+      "listedName": "Labor Statistics Bureau",
+      "url": "https://www.federalregister.gov/agencies/labor-statistics-bureau",
+      "agencyUrl": "http://www.bls.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-dept-doi-blm": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 275,
+      "listedName": "Land Management Bureau",
+      "url": "https://www.federalregister.gov/agencies/land-management-bureau",
+      "agencyUrl": "http://www.blm.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "leg-support-loc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 277,
+      "listedName": "Library of Congress",
+      "url": "https://www.federalregister.gov/agencies/library-of-congress",
+      "agencyUrl": "http://www.loc.gov/index.html",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-omb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 280,
+      "listedName": "Management and Budget Office",
+      "url": "https://www.federalregister.gov/agencies/management-and-budget-office",
+      "agencyUrl": "http://www.whitehouse.gov/omb/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dot-marad": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 282,
+      "listedName": "Maritime Administration",
+      "url": "https://www.federalregister.gov/agencies/maritime-administration",
+      "agencyUrl": "http://www.marad.dot.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Transportation Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot",
+        "parentListedName": "Transportation Department"
+      }
+    },
+    "exec-ind-misc-merit-systems-protection-board-mspb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 285,
+      "listedName": "Merit Systems Protection Board",
+      "url": "https://www.federalregister.gov/agencies/merit-systems-protection-board",
+      "agencyUrl": "http://www.mspb.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-msha": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 288,
+      "listedName": "Mine Safety and Health Administration",
+      "url": "https://www.federalregister.gov/agencies/mine-safety-and-health-administration",
+      "agencyUrl": "http://www.msha.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-ind-nasa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 301,
+      "listedName": "National Aeronautics and Space Administration",
+      "url": "https://www.federalregister.gov/agencies/national-aeronautics-and-space-administration",
+      "agencyUrl": "http://www.nasa.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-nara": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 304,
+      "listedName": "National Archives and Records Administration",
+      "url": "https://www.federalregister.gov/agencies/national-archives-and-records-administration",
+      "agencyUrl": "http://www.archives.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-capital-planning-commission-ncpc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 308,
+      "listedName": "National Capital Planning Commission",
+      "url": "https://www.federalregister.gov/agencies/national-capital-planning-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-credit-union-administration-ncua": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 335,
+      "listedName": "National Credit Union Administration",
+      "url": "https://www.federalregister.gov/agencies/national-credit-union-administration",
+      "agencyUrl": "https://www.ncua.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-nec": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 340,
+      "listedName": "National Economic Council",
+      "url": "https://www.federalregister.gov/agencies/national-economic-council",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-endowment-for-the-arts-nea": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 588,
+      "listedName": "National Endowment for the Arts",
+      "url": "https://www.federalregister.gov/agencies/national-endowment-for-the-arts",
+      "agencyUrl": "http://arts.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "National Foundation on the Arts and the Humanities"
+    },
+    "exec-ind-misc-national-endowment-for-the-humanities-neh": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 589,
+      "listedName": "National Endowment for the Humanities",
+      "url": "https://www.federalregister.gov/agencies/national-endowment-for-the-humanities",
+      "agencyUrl": "http://www.neh.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "National Foundation on the Arts and the Humanities"
+    },
+    "exec-dept-defense-agency-nga": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 344,
+      "listedName": "National Geospatial-Intelligence Agency",
+      "url": "https://www.federalregister.gov/agencies/national-geospatial-intelligence-agency",
+      "agencyUrl": "https://www.nga.mil/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
+    "exec-dept-hhs-nih": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 353,
+      "listedName": "National Institutes of Health",
+      "url": "https://www.federalregister.gov/agencies/national-institutes-of-health",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
+    "exec-ind-misc-national-labor-relations-board-nlrb-independent": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 355,
+      "listedName": "National Labor Relations Board",
+      "url": "https://www.federalregister.gov/agencies/national-labor-relations-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-mediation-board-nmb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 357,
+      "listedName": "National Mediation Board",
+      "url": "https://www.federalregister.gov/agencies/national-mediation-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doe-nnsa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 359,
+      "listedName": "National Nuclear Security Administration",
+      "url": "https://www.federalregister.gov/agencies/national-nuclear-security-administration",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Energy Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe",
+        "parentListedName": "Energy Department"
+      }
+    },
+    "exec-dept-doi-nps": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 362,
+      "listedName": "National Park Service",
+      "url": "https://www.federalregister.gov/agencies/national-park-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-ind-nsf": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 366,
+      "listedName": "National Science Foundation",
+      "url": "https://www.federalregister.gov/agencies/national-science-foundation",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-nsc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 368,
+      "listedName": "National Security Council",
+      "url": "https://www.federalregister.gov/agencies/national-security-council",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-national-transportation-safety-board-ntsb": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 374,
+      "listedName": "National Transportation Safety Board",
+      "url": "https://www.federalregister.gov/agencies/national-transportation-safety-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-usda-nrcs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 376,
+      "listedName": "Natural Resources Conservation Service",
+      "url": "https://www.federalregister.gov/agencies/natural-resources-conservation-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
+    "exec-regulatory-nrc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 383,
+      "listedName": "Nuclear Regulatory Commission",
+      "url": "https://www.federalregister.gov/agencies/nuclear-regulatory-commission",
+      "agencyUrl": "https://www.nrc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-osha": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 386,
+      "listedName": "Occupational Safety and Health Administration",
+      "url": "https://www.federalregister.gov/agencies/occupational-safety-and-health-administration",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    },
+    "exec-dept-doi-boem": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 575,
+      "listedName": "Ocean Energy Management Bureau",
+      "url": "https://www.federalregister.gov/agencies/ocean-energy-management-bureau",
+      "agencyUrl": "http://www.boem.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-eop-ondcp": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 390,
+      "listedName": "Office of National Drug Control Policy",
+      "url": "https://www.federalregister.gov/agencies/office-of-national-drug-control-policy",
+      "agencyUrl": "https://www.whitehouse.gov/ondcp/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Executive Office of the President",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "parentListedName": "Executive Office of the President"
+      }
+    },
+    "exec-ind-misc-peace-corps": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 403,
+      "listedName": "Peace Corps",
+      "url": "https://www.federalregister.gov/agencies/peace-corps",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 405,
+      "listedName": "Pension Benefit Guaranty Corporation",
+      "url": "https://www.federalregister.gov/agencies/pension-benefit-guaranty-corporation",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-opm": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 406,
+      "listedName": "Personnel Management Office",
+      "url": "https://www.federalregister.gov/agencies/personnel-management-office",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-usps": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 410,
+      "listedName": "Postal Service",
+      "url": "https://www.federalregister.gov/agencies/postal-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doj-bop": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 437,
+      "listedName": "Prisons Bureau",
+      "url": "https://www.federalregister.gov/agencies/prisons-bureau",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 438,
+      "listedName": "Privacy and Civil Liberties Oversight Board",
+      "url": "https://www.federalregister.gov/agencies/privacy-and-civil-liberties-oversight-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doi-bor": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 446,
+      "listedName": "Reclamation Bureau",
+      "url": "https://www.federalregister.gov/agencies/reclamation-bureau",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-dept-doi-bsee": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 576,
+      "listedName": "Safety and Environmental Enforcement Bureau",
+      "url": "https://www.federalregister.gov/agencies/safety-and-environmental-enforcement-bureau",
+      "agencyUrl": "http://www.bsee.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
+    "exec-eop-ostp": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 464,
+      "listedName": "Science and Technology Policy Office",
+      "url": "https://www.federalregister.gov/agencies/science-and-technology-policy-office",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dhs-usss": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 465,
+      "listedName": "Secret Service",
+      "url": "https://www.federalregister.gov/agencies/secret-service",
+      "agencyUrl": "http://www.secretservice.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "exec-regulatory-sec": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 466,
+      "listedName": "Securities and Exchange Commission",
+      "url": "https://www.federalregister.gov/agencies/securities-and-exchange-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-selective-service-system": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 467,
+      "listedName": "Selective Service System",
+      "url": "https://www.federalregister.gov/agencies/selective-service-system",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-sba": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 468,
+      "listedName": "Small Business Administration",
+      "url": "https://www.federalregister.gov/agencies/small-business-administration",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-smithsonian": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 469,
+      "listedName": "Smithsonian Institution",
+      "url": "https://www.federalregister.gov/agencies/smithsonian-institution",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-ssa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 470,
+      "listedName": "Social Security Administration",
+      "url": "https://www.federalregister.gov/agencies/social-security-administration",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-office-of-special-counsel-osc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 473,
+      "listedName": "Special Counsel Office",
+      "url": "https://www.federalregister.gov/agencies/special-counsel-office",
+      "agencyUrl": "http://www.osc.gov/Intro.htm",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-state": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 476,
+      "listedName": "State Department",
+      "url": "https://www.federalregister.gov/agencies/state-department",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 486,
+      "listedName": "Tennessee Valley Authority",
+      "url": "https://www.federalregister.gov/agencies/tennessee-valley-authority",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-eop-who": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 487,
+      "listedName": "The White House Office",
+      "url": "https://www.federalregister.gov/agencies/the-white-house-office",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dot": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 492,
+      "listedName": "Transportation Department",
+      "url": "https://www.federalregister.gov/agencies/transportation-department",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dhs-tsa": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 494,
+      "listedName": "Transportation Security Administration",
+      "url": "https://www.federalregister.gov/agencies/transportation-security-administration",
+      "agencyUrl": "http://www.tsa.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "exec-dept-treasury": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 497,
+      "listedName": "Treasury Department",
+      "url": "https://www.federalregister.gov/agencies/treasury-department",
+      "agencyUrl": "https://home.treasury.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dhs-uscis": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 499,
+      "listedName": "U.S. Citizenship and Immigration Services",
+      "url": "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "exec-dept-dhs-cbp": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 501,
+      "listedName": "U.S. Customs and Border Protection",
+      "url": "https://www.federalregister.gov/agencies/u-s-customs-and-border-protection",
+      "agencyUrl": "http://www.cbp.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "leg-house": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 502,
+      "listedName": "U.S. House of Representatives",
+      "url": "https://www.federalregister.gov/agencies/u-s-house-of-representatives",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dhs-ice": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 503,
+      "listedName": "U.S. Immigration and Customs Enforcement",
+      "url": "https://www.federalregister.gov/agencies/u-s-immigration-and-customs-enforcement",
+      "agencyUrl": "http://www.ice.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Homeland Security Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs",
+        "parentListedName": "Homeland Security Department"
+      }
+    },
+    "exec-dept-doj-usms": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 512,
+      "listedName": "United States Marshals Service",
+      "url": "https://www.federalregister.gov/agencies/united-states-marshals-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
+    "exec-dept-treasury-mint": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 513,
+      "listedName": "United States Mint",
+      "url": "https://www.federalregister.gov/agencies/united-states-mint",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Treasury Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury",
+        "parentListedName": "Treasury Department"
+      }
+    },
+    "jud-support-ussc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 515,
+      "listedName": "United States Sentencing Commission",
+      "url": "https://www.federalregister.gov/agencies/united-states-sentencing-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-va": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 520,
+      "listedName": "Veterans Affairs Department",
+      "url": "https://www.federalregister.gov/agencies/veterans-affairs-department",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-whd": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 524,
+      "listedName": "Wage and Hour Division",
+      "url": "https://www.federalregister.gov/agencies/wage-and-hour-division",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
+    }
+  }
+}

@@ -109,6 +109,7 @@ EVIDENCE_OWNED_FIELDS = (
     # Written by directories.py, withdrawn here with the rest.
     "directoryListing",
     "placementDirectoryDisagreement",
+    "placementDirectoryAncestor",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never

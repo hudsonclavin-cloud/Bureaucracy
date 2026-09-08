@@ -15,12 +15,14 @@ from data_pipeline.exporter.build_graph import build_graph, index_tree
 from data_pipeline.verification.directories import (
     FR_METHOD,
     FR_PLACEMENT_METHOD,
+    STATUS_ANCESTOR,
     STATUS_DISAGREES,
     STATUS_LISTED,
     apply_directory_evidence,
     federal_register_name_keys,
     load_directory_file,
     match_federal_register,
+    split_qualifier,
 )
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS, apply_evidence_to_tree
 from scripts import derive_directory_evidence
@@ -39,10 +41,10 @@ BASE = {
                         {"id": "doe-science-director", "name": "Director", "type": "Position", "children": []},
                     ]},
                     {"id": "doe-nnsa", "name": "National Nuclear Security Administration", "type": "Component Agency", "children": []},
-                    {"id": "doe-gc", "name": "General Counsel", "type": "Office", "children": []},
+                    {"id": "doe-gc", "name": "Office of General Counsel", "type": "Office", "children": []},
                 ]},
                 {"id": "exec-dept-army", "name": "Department of the Army", "type": "Military Department", "children": [
-                    {"id": "army-gc", "name": "General Counsel", "type": "Office", "children": []},
+                    {"id": "army-gc", "name": "Office of General Counsel", "type": "Office", "children": []},
                     {"id": "army-corps", "name": "Corps of Engineers", "type": "Component Agency", "children": []},
                 ]},
             ]},
@@ -62,7 +64,8 @@ DIRECTORY = {
         {"id": 5, "parent_id": None, "name": "Army Department", "slug": "army-department"},
         {"id": 6, "parent_id": 7, "name": "Corps of Engineers", "slug": "engineers-corps"},
         {"id": 7, "parent_id": None, "name": "Defense Department", "slug": "defense-department"},
-        {"id": 8, "parent_id": 1, "name": "General Counsel", "slug": "general-counsel"},
+        {"id": 8, "parent_id": 1, "name": "General Counsel Office", "slug": "general-counsel-office"},
+        {"id": 9, "parent_id": 5, "name": "General Counsel Office, Army Department", "slug": "general-counsel-office-army-department"},
     ],
 }
 
@@ -71,8 +74,25 @@ class NameKeyTests(unittest.TestCase):
     def test_a_department_answers_to_the_curated_spelling(self) -> None:
         self.assertIn("department of energy", federal_register_name_keys("Energy Department"))
         self.assertIn("department of the army", federal_register_name_keys("Army Department"))
-        self.assertEqual(federal_register_name_keys("Office of Science"), {"office of science"})
+        self.assertIn("office of science", federal_register_name_keys("Office of Science"))
         self.assertEqual(federal_register_name_keys(""), set())
+
+    def test_the_head_noun_last_convention_is_inverted_for_the_curated_prepositions(self) -> None:
+        self.assertIn("commission on civil rights", federal_register_name_keys("Civil Rights Commission"))
+        self.assertIn("bureau of alcohol tobacco firearms and explosives", federal_register_name_keys("Alcohol, Tobacco, Firearms, and Explosives Bureau"))
+        self.assertIn("office of inspector general", federal_register_name_keys("Inspector General Office"))
+        self.assertIn("agency for international development", federal_register_name_keys("International Development Agency"))
+        # A name whose last word is not a head noun is not rewritten.
+        self.assertEqual({k for k in federal_register_name_keys("Architect of the Capitol") if "of" in k}, {"architect of the capitol", "united states architect of the capitol"})
+
+    def test_a_dropped_united_states_is_tolerated_both_ways(self) -> None:
+        self.assertIn("united states coast guard", federal_register_name_keys("Coast Guard"))
+        self.assertIn("mint", federal_register_name_keys("United States Mint"))
+
+    def test_a_comma_is_a_qualifier_only_when_the_tail_is_itself_an_entry(self) -> None:
+        names = {"Energy Department", "Inspector General Office, Energy Department", "Alcohol, Tobacco, Firearms, and Explosives Bureau"}
+        self.assertEqual(split_qualifier("Inspector General Office, Energy Department", names), ("Inspector General Office", "Energy Department"))
+        self.assertEqual(split_qualifier("Alcohol, Tobacco, Firearms, and Explosives Bureau", names), ("Alcohol, Tobacco, Firearms, and Explosives Bureau", None))
 
 
 class MatchTests(unittest.TestCase):
@@ -83,7 +103,7 @@ class MatchTests(unittest.TestCase):
 
     def test_one_entry_to_one_node_and_the_directory_s_own_words(self) -> None:
         records, report = self._match()
-        self.assertEqual(report["matched"], 5)   # DOE, Science, NNSA, Army, Corps
+        self.assertEqual(report["matched"], 6)   # DOE, Science, NNSA, Army, Corps, the Army's General Counsel
         doe = records["exec-dept-doe"]
         self.assertEqual((doe["status"], doe["listedName"], doe["url"]), (STATUS_LISTED, "Energy Department", "https://www.federalregister.gov/agencies/energy-department"))
         self.assertEqual(doe["agencyUrl"], "https://www.energy.gov")
@@ -95,7 +115,7 @@ class MatchTests(unittest.TestCase):
         records, report = self._match()
         science = records["doe-science"]
         self.assertEqual(science["placement"], {"status": STATUS_LISTED, "parentId": "exec-dept-doe", "parentListedName": "Energy Department"})
-        self.assertEqual(report["placements_listed"], 2)   # Science and NNSA under DOE
+        self.assertEqual(report["placements_listed"], 3)   # Science and NNSA under DOE, the Army's General Counsel under the Army
         # The Corps' directory parent, "Defense Department", has no node in this
         # graph: the directory's word about the edge is recorded, but no claim
         # is made either way — that is "parent unmatched", not a disagreement.
@@ -104,12 +124,34 @@ class MatchTests(unittest.TestCase):
         self.assertEqual(corps["parentListedName"], "Defense Department")
         self.assertEqual(report["placements_parent_unmatched"], 1)
 
-    def test_a_name_several_nodes_share_matches_nothing(self) -> None:
+    def test_a_name_several_nodes_share_matches_nothing_unless_the_directory_qualifies_it(self) -> None:
         records, report = self._match()
-        self.assertNotIn("doe-gc", records)
-        self.assertNotIn("army-gc", records)
-        self.assertIn("General Counsel", report["unmatched_entries"])
-        self.assertIn("general counsel", report["ambiguous_names_in_graph"])
+        self.assertNotIn("doe-gc", records, "the unqualified entry could be either General Counsel")
+        self.assertIn("General Counsel Office", report["unmatched_entries"])
+        self.assertIn("office of general counsel", report["ambiguous_names_in_graph"])
+        # "General Counsel Office, Army Department" is scoped by its qualifier to the Army's.
+        army_gc = records["army-gc"]
+        self.assertEqual(army_gc["listedName"], "General Counsel Office, Army Department")
+        self.assertEqual(army_gc["placement"], {"status": STATUS_LISTED, "parentId": "exec-dept-army", "parentListedName": "Army Department"})
+
+    def test_a_directory_parent_that_is_an_ancestor_here_is_neither_agreement_nor_contradiction(self) -> None:
+        tree = json.loads(json.dumps(BASE))
+        doe = index_tree(tree)[0]["exec-dept-doe"]
+        # Put a curated grouping between DOE and NNSA, as the base graph does for the Defense agencies.
+        nnsa = next(c for c in doe["children"] if c["id"] == "doe-nnsa")
+        doe["children"] = [c for c in doe["children"] if c["id"] != "doe-nnsa"] + [{"id": "doe-agencies", "name": "Semi-autonomous agencies", "type": "Division", "children": [nnsa]}]
+        node_map, parent_map = index_tree(tree)
+        records, report = match_federal_register(DIRECTORY["data"], node_map, parent_map, root_id=ROOT_ID, fetched_at=DIRECTORY["fetched_at"])
+        self.assertEqual(records["doe-nnsa"]["placement"]["status"], STATUS_ANCESTOR)
+        self.assertEqual(records["doe-nnsa"]["placement"]["ancestorId"], "exec-dept-doe")
+        self.assertEqual(records["doe-nnsa"]["placement"]["distance"], 2)
+        self.assertEqual(report["placements_ancestor"], 1)
+        apply_evidence_to_tree(tree, {})
+        stats = apply_directory_evidence(tree, records)
+        nnsa = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(stats["placements_ancestor"], 1)
+        self.assertNotIn("placementVerified", nnsa)
+        self.assertEqual(nnsa["placementDirectoryAncestor"]["listedUnder"], "Energy Department")
 
     def test_two_entries_for_one_node_match_nothing(self) -> None:
         directory = json.loads(json.dumps(DIRECTORY))
@@ -134,8 +176,8 @@ class ApplyTests(unittest.TestCase):
         stats = apply_directory_evidence(tree, self._records())
         nodes = index_tree(tree)[0]
         science = nodes["doe-science"]
-        self.assertEqual(stats["listed"], 5)
-        self.assertEqual(stats["placements_listed"], 2)
+        self.assertEqual(stats["listed"], 6)
+        self.assertEqual(stats["placements_listed"], 3)
         self.assertEqual(science["sourceUrls"], ["https://www.federalregister.gov/agencies/science-office"])
         self.assertIn("federal_register_directory", science["sourceTypes"])
         self.assertEqual(science["verificationMethod"], FR_METHOD)
@@ -221,7 +263,7 @@ class ScriptAndGateTests(unittest.TestCase):
         self.assertEqual(code, 0, buf.getvalue())
         store = json.loads(self.out.read_text(encoding="utf-8"))
         self.assertEqual(store["source"]["fetched_at"], DIRECTORY["fetched_at"])
-        self.assertEqual(len(store["nodes"]), 5)
+        self.assertEqual(len(store["nodes"]), 6)
         result = build_graph(
             [{"nodes": [], "edges": [], "budgetSummary": {"government_total_outlay_amount": 1_000_000, "record_date": "2026-06-30"}}],
             base_graph_path=self.base, graph_output_path=self.tmp / "graph.json", nodes_output_path=self.tmp / "n.json",
@@ -229,7 +271,7 @@ class ScriptAndGateTests(unittest.TestCase):
             reuse_existing_graph_payload=False, enforce_export_gate=True, evidence_path=None, sites_path=None,
             directory_evidence_path=self.out,
         )
-        self.assertEqual(result.validation["directory_evidence"]["listed"], 5)
+        self.assertEqual(result.validation["directory_evidence"]["listed"], 6)
         graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
         nodes = index_tree(graph)[0]
         self.assertEqual(nodes["doe-nnsa"]["verificationMethod"], FR_METHOD)
@@ -238,7 +280,7 @@ class ScriptAndGateTests(unittest.TestCase):
         with redirect_stdout(out):
             code = gate_main(["gate", str(result.graph_path)])
         self.assertEqual(code, 0, out.getvalue())
-        self.assertIn("directory-listed     : 5 in the Federal Register's agency directory; 2 placements from it", out.getvalue())
+        self.assertIn("directory-listed     : 6 in the Federal Register's agency directory; 3 placements from it", out.getvalue())
         # And an invented directory method still fails the gate.
         corrupted = json.loads(json.dumps(graph))
         index_tree(corrupted)[0]["doe-nnsa"]["placementMethod"] = "listed_in_a_directory_i_made_up"
@@ -254,4 +296,19 @@ class ScriptAndGateTests(unittest.TestCase):
             code = derive_directory_evidence.main(["d", "--base-graph", str(self.base), "--federal-register", str(self.fr), "--out", str(self.out), "--dry-run"])
         self.assertEqual(code, 0)
         self.assertFalse(self.out.exists())
-        self.assertIn("matched 5", buf.getvalue())
+        self.assertIn("matched 6", buf.getvalue())
+
+
+class GateMirrorsTheMatcherTests(unittest.TestCase):
+    """The gate keeps a stdlib copy of the directory's naming rule; the two
+    must agree, or a placement the matcher accepts would fail the gate."""
+
+    def test_the_gate_s_copy_of_the_naming_rule_agrees_with_the_matcher(self) -> None:
+        from scripts.validate_published_graph import directory_name_keys
+
+        for name in ("Prisons Bureau", "Energy Department", "Civil Rights Commission", "Coast Guard", "United States Mint",
+                     "Alcohol, Tobacco, Firearms, and Explosives Bureau", "Inspector General Office, Energy Department",
+                     "Administration Office, Executive Office of the President", "Architect of the Capitol"):
+            with self.subTest(name=name):
+                expected = federal_register_name_keys(split_qualifier(name, {"Energy Department", "Executive Office of the President"})[0])
+                self.assertEqual(directory_name_keys(name), expected)

@@ -141,6 +141,37 @@ def is_federal_register_only(urls):
     return bool(hosts) and all(h.endswith("federalregister.gov") for h in hosts)
 
 
+def directory_name_keys(value):
+    """The Federal Register's agency directory writes the head noun last
+    ("Prisons Bureau", "Energy Department", "Inspector General Office, Energy
+    Department"); the curated file writes "Bureau of Prisons". The same
+    rewrite data_pipeline/verification/directories.py matches by, mirrored
+    here so the gate stays stdlib-only; tests pin the two together."""
+    text = str(value or "")
+    if "," in text:
+        core, _, tail = text.rpartition(",")
+        # A qualifier ("…, Energy Department") is a scope, not part of the name.
+        if tail.strip().endswith(("Department", "President", "Congress", "Agency", "Administration", "Commission")):
+            text = core
+    key = canonical_key(text)
+    if not key:
+        return set()
+    keys = {key}
+    tokens = key.split()
+    heads = ("department", "office", "bureau", "administration", "agency", "service", "commission", "board",
+             "corporation", "council", "institute", "center", "division", "foundation", "authority", "committee")
+    if len(tokens) > 1 and tokens[-1] in heads:
+        head, rest = tokens[-1], " ".join(tokens[:-1])
+        for prep in ("of", "of the", "for", "on"):
+            keys.add("{} {} {}".format(head, prep, rest))
+    for k in list(keys):
+        if k.startswith("united states "):
+            keys.add(k[len("united states "):])
+        else:
+            keys.add("united states " + k)
+    return keys
+
+
 def canonical_key(value):
     # Same reduction the exporter uses (kept local so the gate stays stdlib-only).
     import re
@@ -492,7 +523,7 @@ def main(argv):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
-        if matched and name_key and name_key not in matched:
+        if matched and name_key and name_key not in matched and name_key not in directory_name_keys(node.get("placementMatchedText")):
             placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
             placement_unbacked.append("{} placementMatchedIn {!r}".format(label(node), node.get("placementMatchedIn")))
@@ -546,8 +577,9 @@ def main(argv):
     directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict))
     directory_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_parent_in_federal_register_agency_directory")
     directory_disagree = sum(1 for n in nodes if isinstance(n.get("placementDirectoryDisagreement"), dict))
-    print("  directory-listed     : {:,} in the Federal Register's agency directory; {:,} placements from it; {:,} filed elsewhere by it".format(
-        directory_listed, directory_placed, directory_disagree))
+    directory_ancestor = sum(1 for n in nodes if isinstance(n.get("placementDirectoryAncestor"), dict))
+    print("  directory-listed     : {:,} in the Federal Register's agency directory; {:,} placements from it; {:,} filed under an ancestor here; {:,} filed elsewhere by it".format(
+        directory_listed, directory_placed, directory_ancestor, directory_disagree))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
         placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.

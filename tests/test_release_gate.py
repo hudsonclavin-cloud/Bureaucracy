@@ -79,6 +79,7 @@ class ReleaseGateTests(unittest.TestCase):
             # right and the test was stale. What the gate does with real
             # evidence is asserted in tests/test_verification.py.
             evidence_path=None,
+            directory_evidence_path=None,
         )
         self.graph_path = result.graph_path
         self.graph = json.loads(self.graph_path.read_text(encoding="utf-8"))

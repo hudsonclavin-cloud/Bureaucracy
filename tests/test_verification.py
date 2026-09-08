@@ -627,6 +627,7 @@ class BuildAndGateTests(unittest.TestCase):
             existing_graph_payload_path=self.tmp / "graph.json",
             enforce_export_gate=True,
             evidence_path=self.evidence_path,
+            directory_evidence_path=None,
         )
 
     def _gate(self, path):
