@@ -52,9 +52,15 @@ from scripts import verify_base_graph
 from scripts.validate_published_graph import main as gate_main
 from data_pipeline.verification.evidence import (  # noqa: E402
     EVIDENCE_OWNED_FIELDS,
+    KNOWN_REGIONS,
+    MIN_READABLE_CHARS,
     PLACEMENT_METHOD,
     PLACEMENT_ONLY,
+    REGION_CONTENT,
+    REGION_NAVIGATION,
     evidence_names_this_node,
+    find_label_region,
+    parse_page,
 )
 
 
@@ -1141,6 +1147,7 @@ class PlacementRetractionTests(unittest.TestCase):
                 "no method": ("doe-science", lambda n: n.pop("placementMethod")),
                 "text names another unit": ("doe-science", lambda n: n.__setitem__("placementMatchedText", "Office of Environmental Management")),
                 "unreachable beside a result": ("doe-science", lambda n: n.__setitem__("placementCheckable", False)),
+                "invented region": ("doe-science", lambda n: n.__setitem__("placementMatchedIn", "vibes")),
                 "not listed for a different parent": ("doe-nnsa", lambda n: n.__setitem__("placementParentId", "legislative-branch")),
                 "not listed without a date": ("doe-nnsa", lambda n: n.pop("placementVerifiedAt")),
             }
@@ -1276,6 +1283,7 @@ class FrontendWordingTests(unittest.TestCase):
         for state, phrase in {
             "listed": "its parent's official page lists it",
             "listed, same read": "the same page read above lists it",
+            "listed in the site chrome": "in its site-wide navigation",
             "not listed": "does not list it as a heading or link — no claim either way",
             "position": "positions are not checked against a page",
             "unreachable": "its parent is a curated grouping with no official page of its own",
@@ -1299,3 +1307,82 @@ class FrontendWordingTests(unittest.TestCase):
             self.assertTrue(found, rel)
             versions.update(found)
         self.assertEqual(len(versions), 1, f"modules would load against each other's stale copies: {versions}")
+
+
+class RegionAndReadabilityTests(unittest.TestCase):
+    """Where on the page a label sits, and what counts as having read a page.
+    Both come from the 2026-09-06 live run: five sites' listings came from
+    site-wide menus, and www.hud.gov/about served a .gov banner and a footer
+    around no body and was recorded as read fifteen times."""
+
+    BANNER = ("<section class='usa-banner'><p>An official website of the United States government. Here's how you "
+              "know: official websites use .gov; secure .gov websites use HTTPS. A lock or https:// means you've safely "
+              "connected to the .gov website. Share sensitive information only on official, secure websites.</p></section>")
+    FOOTER = ("<footer><p>U.S. Department of Housing and Urban Development, 451 7th Street S.W., Washington, DC 20410. "
+              "Telephone: (202) 708-1112. TTY: (202) 708-1455. Find the address of the HUD office near you. "
+              "Privacy policy, accessibility, FOIA, No FEAR Act, Inspector General, USA.gov, Web management.</p></footer>")
+
+    def test_a_shell_of_banner_and_footer_is_not_a_page_anyone_read(self) -> None:
+        html = "<html><body>" + self.BANNER + "<header><nav><a href='/'>Home</a></nav></header><main></main>" + self.FOOTER + "</body></html>"
+        page = parse_page(html)
+        self.assertGreater(sum(len(f) for f in page.fragments), MIN_READABLE_CHARS, "the old floor would have passed it")
+        self.assertEqual(page.content_chars, 0)
+        self.assertFalse(page.readable)
+        record = verify_node({"id": "hud-x", "name": "Office of Housing"}, ["https://www.hud.gov/about"], fetch=lambda u: html, is_own_page=True)
+        self.assertEqual(record["status"], FETCH_FAILED)
+        self.assertEqual(record["failures"][0]["reason"], "no_readable_text")
+        self.assertEqual(record["failures"][0]["contentChars"], 0)
+        self.assertIsNone(verify_placement({"id": "hud-x", "name": "Office of Housing"}, "exec-dept-hud", ["https://www.hud.gov/about"], fetch=lambda u: html),
+                          "read-and-not-listed may not be said of a page nobody read")
+
+    def test_a_label_in_the_site_chrome_still_counts_and_says_where_it_sat(self) -> None:
+        nav_only = "<html><body><header><nav><ul><li><a href='/bureaus/bep'>Bureau of Engraving and Printing</a></li></ul></nav></header><main><div id='app'></div></main></body></html>"
+        page = parse_page(nav_only)
+        self.assertFalse(page.readable)
+        self.assertEqual(find_label_region("Bureau of Engraving & Printing (BEP)", page), ("Bureau of Engraving and Printing", REGION_NAVIGATION))
+        block = verify_placement({"id": "bep", "name": "Bureau of Engraving & Printing (BEP)"}, "exec-dept-treasury",
+                                 ["https://home.treasury.gov/about"], fetch=lambda u: nav_only, now="2026-09-08T00:00:00+00:00")
+        self.assertEqual((block["status"], block["matchedIn"]), (PLACEMENT_LISTED, REGION_NAVIGATION))
+        record = verify_node({"id": "bep", "name": "Bureau of Engraving & Printing (BEP)"}, ["https://home.treasury.gov/about"], fetch=lambda u: nav_only, is_own_page=False)
+        self.assertEqual(record["status"], CONFIRMED)
+        self.assertEqual(record["sources"][0]["matchedIn"], REGION_NAVIGATION)
+
+    def test_body_content_is_recorded_as_content_and_wins_over_a_menu(self) -> None:
+        html = ("<html><body><nav role='navigation'><a href='/x'>Office of Water</a></nav>"
+                "<main><h2>Office of Water</h2><p>" + ("filler " * 90) + "</p></main></body></html>")
+        page = parse_page(html)
+        self.assertTrue(page.readable)
+        self.assertEqual(page.regions[page.fragments.index("Office of Water")], REGION_NAVIGATION, "first in document order is the nav link")
+        # Both regions carry the label; the record keeps the first match (nav) but
+        # apply_evidence_to_tree publishes the strongest region across sources.
+        tree = json.loads(json.dumps(BASE))
+        apply_evidence_to_tree(tree, {"doe-science": {
+            "status": CONFIRMED, "checkedAt": "2026-09-08T00:00:00+00:00", "method": METHOD_OWN_PAGE, "siteFrom": "doe-science",
+            "sources": [{"url": "https://www.energy.gov/science", "matchedText": "Office of Science", "matchedIn": REGION_NAVIGATION},
+                        {"url": "https://www.energy.gov/science/about", "matchedText": "Office of Science", "matchedIn": REGION_CONTENT}]}})
+        self.assertEqual(index_tree(tree)[0]["doe-science"]["verificationMatchedIn"], REGION_CONTENT)
+        stamped = {"status": PLACEMENT_LISTED, "parentId": "exec-dept-doe", "url": "https://www.energy.gov/", "matchedText": "Office of Science",
+                   "matchedIn": REGION_NAVIGATION, "checkedAt": "2026-09-08T00:00:00+00:00"}
+        apply_evidence_to_tree(tree, {"doe-science": {"status": PLACEMENT_ONLY, "checkedAt": "2026-09-08", "placement": stamped}})
+        science = index_tree(tree)[0]["doe-science"]
+        self.assertEqual(science["placementMatchedIn"], REGION_NAVIGATION)
+        self.assertNotIn("verificationMatchedIn", science, "withdrawn with the existence record")
+        apply_evidence_to_tree(tree, {})
+        self.assertNotIn("placementMatchedIn", index_tree(tree)[0]["doe-science"])
+
+    def test_a_logo_naming_the_agency_withholds_the_negative_and_confirms_nothing(self) -> None:
+        for markup in (
+            "<img src='/logo.png' alt='Central Intelligence Agency'>",
+            "<svg role='img'><title>Central Intelligence Agency</title><path d='M0 0'/></svg>",
+        ):
+            with self.subTest(markup=markup[:20]):
+                html = "<html><body><header>" + markup + "</header><main><h1>About Us</h1><p>" + ("We collect foreign intelligence. " * 20) + "</p></main></body></html>"
+                page = parse_page(html)
+                self.assertNotIn("Central Intelligence Agency", page.fragments, "never a label")
+                self.assertIn("Central Intelligence Agency", page.loose_fragments)
+                record = verify_node({"id": "cia", "name": "Central Intelligence Agency (CIA)"}, ["https://www.cia.gov/about/"], fetch=lambda u: html, is_own_page=True)
+                self.assertEqual((record["status"], record["reason"]), (INCONCLUSIVE, REASON_NAMED_NOT_LABELLED))
+                self.assertNotIn("sources", record)
+
+    def test_the_regions_are_the_only_two_the_gate_accepts(self) -> None:
+        self.assertEqual(set(KNOWN_REGIONS), {"navigation", "content"})

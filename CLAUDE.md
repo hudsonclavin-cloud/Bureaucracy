@@ -242,9 +242,24 @@ the three counts separately. A record the verifier wrote for the edge alone
 carries `status: placement_only`; the existence pass replaces such a record
 and carries the block along. The claim the site makes is exactly "the
 parent's official page lists it" — not "reports to", which a page listing
-partner agencies could not support. Known limitation, documented rather
-than fixed: the standard is nav-blind — a link in a department's footer to
-an unrelated agency would count — and host-blind within `.gov`; the
+partner agencies could not support. The parser tags every fragment with its region — `content`, or
+`navigation` for the site-wide nav, header, banner and footer — and the
+record carries `matchedIn`; the exporter stamps `placementMatchedIn` /
+`verificationMatchedIn` and the panel says "in its site-wide navigation"
+when that is where the label sat, because a listing in Treasury's About
+mega-menu holds for every page on home.treasury.gov equally (the first
+live run's DOI, DOL, Treasury, NSF and NASA listings were all of this
+kind). A page counts as *read* only when it carries 400+ characters of
+text outside that chrome: www.hud.gov/about served a .gov banner and a
+footer address around no body, cleared the old whole-page floor on
+boilerplate, and was recorded as "checked and not listed" fifteen times.
+A positive label anywhere a visitor can see it still stands — the floor
+governs negatives only. A logo's alt text or an SVG title is never a
+label, but it does withhold "its own page does not name it": cia.gov/about
+and epa.gov/aboutepa name the agency in the logo and nowhere else
+readable, and both were published as not found. Known limitation, still
+documented rather than fixed: within the chrome the standard is host-blind
+inside `.gov` — a footer link to an unrelated agency would count; the
 sites file is what scopes it, one page per parent.
 
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with

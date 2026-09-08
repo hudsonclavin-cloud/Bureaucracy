@@ -210,7 +210,9 @@ def main(argv: list[str] | None = None) -> int:
             "fetch_failed = no page was read; not_checkable = the curated name could not be evidence; "
             "placement_only = only the parent's page was read, for the edge above the node. "
             "placement.listed = the parent's page names the unit as a label; placement.not_listed = the pages in "
-            "urlsRead were read and none does."
+            "urlsRead were read and none does. matchedIn says where the label sat: content, or navigation for the "
+            "site-wide nav, header, banner or footer, which every page of the site carries. A page counts as read "
+            "only if it has 400+ characters of text outside that chrome; a positive label anywhere visible stands."
         ),
         "nodes": evidence,
     }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T19:33:48.316001+00:00",
+  "timestamp": "2026-09-08T16:25:31.467181+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,

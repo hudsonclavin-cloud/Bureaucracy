@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260906c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260906c";
+import { createGovernmentGraph } from "./graph.js?v=20260908a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -512,7 +512,11 @@ function renderPlacementLine(data) {
     const sameRead =
       Array.isArray(data.sourceUrls) && data.sourceUrls.includes(data.placementUrl) && data.lastVerified === data.placementVerifiedAt;
     const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"` : "";
-    add(sameRead ? `Placement: the same page read above lists it${label} on ` : `Placement: its parent's official page lists it${label} on `);
+    // A listing in the site-wide navigation (nav, header, footer) holds for
+    // every page of the parent's site: real evidence, but not the page's own
+    // account of itself, and the panel says which.
+    const where = data.placementMatchedIn === "navigation" ? " in its site-wide navigation" : "";
+    add(sameRead ? `Placement: the same page read above lists it${where}${label} on ` : `Placement: its parent's official page lists it${where}${label} on `);
     if (isHttpUrl(data.placementUrl)) {
       const link = document.createElement("a");
       link.href = data.placementUrl;
@@ -581,7 +585,8 @@ function renderVerificationPanel(data) {
         : "Its official page does not name it as a heading or link";
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
-      checkLine = how ? `${how} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+      const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
+      checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     setText(dom.verificationLastVerified, checkLine);
   }

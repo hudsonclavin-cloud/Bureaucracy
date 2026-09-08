@@ -52,6 +52,7 @@ record what was attempted and change nothing, because nothing was learned.
 from __future__ import annotations
 
 import re
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -93,7 +94,9 @@ EVIDENCE_OWNED_FIELDS = (
     "placementParentId",
     "placementMatchedText",
     "placementMethod",
+    "placementMatchedIn",
     "placementCheckable",
+    "verificationMatchedIn",
     # Exactly the URLs this module put on the node, so the next build can
     # remove exactly those and nothing else. The first version cleared the
     # node's whole list, which stripped the Treasury FiscalData URL from 26
@@ -151,8 +154,38 @@ GENERIC_SINGLE_TOKENS = frozenset(
 Fetcher = Callable[[str], str]
 
 
+# Site chrome: the navigation, banner and footer every page of a site
+# carries. A label found there is real — it is where agencies list their
+# bureaus — but it is a fact about the site, not about the page, and the
+# record says which. Text there also does not make a page "read": the
+# 2026-09-06 live run recorded fifteen HUD units as "checked and not
+# listed" against www.hud.gov/about, which served 690 characters of .gov
+# banner and footer address and no body at all.
+CHROME_TAGS = {"nav", "header", "footer", "aside"}
+CHROME_ROLES = {"navigation", "banner", "contentinfo", "complementary"}
+CHROME_CLASS_HINTS = ("usa-banner", "usa-header", "usa-footer", "usa-nav", "site-header", "site-footer", "skip-link")
+VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
+REGION_NAVIGATION = "navigation"
+REGION_CONTENT = "content"
+KNOWN_REGIONS = (REGION_NAVIGATION, REGION_CONTENT)
+
+
+@dataclass
+class PageText:
+    """What a visitor could read on a page, kept apart by where it sits."""
+
+    fragments: list[str] = field(default_factory=list)
+    regions: list[str] = field(default_factory=list)          # parallel to fragments
+    loose_fragments: list[str] = field(default_factory=list)  # a logo's alt text, an SVG title: never a label
+    content_chars: int = 0                                    # readable text outside the site chrome
+
+    @property
+    def readable(self) -> bool:
+        return self.content_chars >= MIN_READABLE_CHARS
+
+
 class LabelParser(HTMLParser):
-    """Collect each element's text separately.
+    """Collect each element's text separately, tagged by region.
 
     Not the directory crawler's TextFragmentParser: that one skips nav,
     header, footer and title, which on an agency site is exactly where the
@@ -178,33 +211,104 @@ class LabelParser(HTMLParser):
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
-        self.fragments: list[str] = []
+        self.page = PageText()
         self._skip_depth = 0
+        self._svg_depth = 0
+        self._in_svg_title = False
+        self._open: list[tuple[str, bool]] = []   # (tag, opened chrome)
+
+    @property
+    def fragments(self) -> list[str]:
+        return self.page.fragments
+
+    @property
+    def _in_chrome(self) -> bool:
+        return any(is_chrome for _, is_chrome in self._open)
+
+    @staticmethod
+    def _is_chrome(tag: str, attrs: list[tuple[str, str | None]]) -> bool:
+        if tag in CHROME_TAGS:
+            return True
+        for key, value in attrs:
+            if not value:
+                continue
+            if key == "role" and value.strip().lower() in CHROME_ROLES:
+                return True
+            if key in ("class", "id") and any(hint in value.lower() for hint in CHROME_CLASS_HINTS):
+                return True
+        return False
+
+    def _add(self, text: str, *, from_data: bool) -> None:
+        text = " ".join(text.split())
+        if not text:
+            return
+        region = REGION_NAVIGATION if self._in_chrome else REGION_CONTENT
+        self.page.fragments.append(text)
+        self.page.regions.append(region)
+        if from_data and region == REGION_CONTENT:
+            self.page.content_chars += len(text)
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "svg":
+            self._svg_depth += 1
         if tag in self.SKIP_TAGS:
             self._skip_depth += 1
+        if self._svg_depth and tag == "title":
+            self._in_svg_title = True
+        if tag == "img":
+            # The logo's alt text names the agency on cia.gov/about and
+            # epa.gov/aboutepa and nowhere else readable. It is not a label —
+            # nothing is confirmed by it — but it is enough to withhold "its
+            # own page does not name it".
+            for key, value in attrs:
+                if key == "alt" and value and value.strip():
+                    self.page.loose_fragments.append(" ".join(value.split()))
+        if tag not in VOID_TAGS:
+            self._open.append((tag, self._is_chrome(tag, attrs)))
         # A link's accessible name is a label even when its text is an icon —
         # but only where there is something on the page to label.
         if tag in self.METADATA_TAGS or self._skip_depth:
             return
         for key, value in attrs:
             if key in ("title", "aria-label") and value and value.strip():
-                self.fragments.append(" ".join(value.split()))
+                self._add(value, from_data=False)
+
+    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.handle_starttag(tag, attrs)
+        if tag not in VOID_TAGS:
+            self.handle_endtag(tag)
 
     def handle_endtag(self, tag: str) -> None:
         if tag in self.SKIP_TAGS and self._skip_depth > 0:
             self._skip_depth -= 1
+        if tag == "svg" and self._svg_depth > 0:
+            self._svg_depth -= 1
+        if tag == "title":
+            self._in_svg_title = False
+        for index in range(len(self._open) - 1, -1, -1):
+            if self._open[index][0] == tag:
+                del self._open[index:]
+                break
 
     def handle_data(self, data: str) -> None:
+        if self._in_svg_title:
+            text = " ".join(data.split())
+            if text:
+                self.page.loose_fragments.append(text)
+            return
         if self._skip_depth:
             return
-        text = " ".join(data.split())
-        if text:
-            self.fragments.append(text)
+        self._add(data, from_data=True)
+
+
+def parse_page(html: str) -> PageText:
+    parser = LabelParser()
+    parser.feed(html)
+    return parser.page
 
 
 def utc_now_iso() -> str:
+
     return datetime.now(tz=timezone.utc).replace(microsecond=0).isoformat()
 
 
@@ -257,9 +361,7 @@ def candidate_urls(
 
 
 def page_fragments(html: str) -> list[str]:
-    parser = LabelParser()
-    parser.feed(html)
-    return parser.fragments
+    return parse_page(html).fragments
 
 
 def uncheckable_reason(name: str) -> str | None:
@@ -324,12 +426,22 @@ def find_label(name: str, fragments: list[str]) -> str | None:
     canonicalised slice — so a human auditing evidence.json can search for it
     on the live page.
     """
+    found = find_label_region(name, fragments)
+    return found[0] if found else None
+
+
+def find_label_region(name: str, fragments: list[str] | PageText) -> tuple[str, str] | None:
+    """The matching fragment and the region it sits in: `content`, or
+    `navigation` for the site-wide chrome (nav, header, footer, banner) —
+    a listing there holds for every page of the site, and the record says
+    so. A bare fragment list is all content."""
     if uncheckable_reason(name):
         return None
     key = canonical_name_key(name)
-    for fragment in fragments:
+    page = fragments if isinstance(fragments, PageText) else PageText(fragments=list(fragments), regions=[REGION_CONTENT] * len(fragments))
+    for fragment, region in zip(page.fragments, page.regions):
         if label_matches(key, fragment):
-            return fragment[:200]
+            return fragment[:200], region
     return None
 
 
@@ -375,19 +487,24 @@ def verify_node(
         except Exception as error:  # noqa: BLE001 — any failure is evidence of a failed fetch
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
-        fragments = page_fragments(html)
-        if sum(len(f) for f in fragments) < MIN_READABLE_CHARS:
+        page = parse_page(html)
+        found = find_label_region(name, page)
+        if found:
+            # A label a visitor can see is a confirmation wherever it sits;
+            # the region is recorded so a site-wide menu is not presented as
+            # the page's own account of itself.
+            pages_read += 1
+            confirmed.append({"url": url, "matchedText": found[0], "matchedIn": found[1]})
+            continue
+        if not page.readable:
             # 200 OK with no readable body: a JS shell, a bot challenge, a
-            # soft 404. Nobody read this page, so nothing may be concluded.
-            failures.append({"url": url, "reason": "no_readable_text"})
+            # soft 404 — or a real site's banner and footer around nothing.
+            # Nobody read this page, so no negative may be concluded.
+            failures.append({"url": url, "reason": "no_readable_text", "contentChars": page.content_chars})
             continue
         pages_read += 1
-        pages_fragments.append(fragments)
-        matched = find_label(name, fragments)
-        if matched:
-            confirmed.append({"url": url, "matchedText": matched})
-        else:
-            failures.append({"url": url, "reason": "name_not_labelled_on_page"})
+        pages_fragments.append(page.fragments + page.loose_fragments)
+        failures.append({"url": url, "reason": "name_not_labelled_on_page"})
 
     if confirmed:
         record["status"] = CONFIRMED
@@ -451,20 +568,23 @@ def verify_placement(
         except Exception as error:  # noqa: BLE001 — a failed fetch concludes nothing
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
-        fragments = page_fragments(html)
-        if sum(len(f) for f in fragments) < MIN_READABLE_CHARS:
-            failures.append({"url": url, "reason": "no_readable_text"})
-            continue
-        urls_read.append(url)
-        matched = find_label(name, fragments)
-        if matched:
+        page = parse_page(html)
+        found = find_label_region(name, page)
+        if found:
             return {
                 "status": PLACEMENT_LISTED,
                 "parentId": parent_id,
                 "url": url,
-                "matchedText": matched,
+                "matchedText": found[0],
+                "matchedIn": found[1],
                 "checkedAt": checked_at,
             }
+        if not page.readable:
+            # Banner, header and footer around no body: the page was not
+            # read, and "read and does not list it" may not be said of it.
+            failures.append({"url": url, "reason": "no_readable_text", "contentChars": page.content_chars})
+            continue
+        urls_read.append(url)
     if not urls_read:
         return None
     # Only the pages actually read are named: an auditor must not be told a
@@ -505,6 +625,7 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
                 "parentId": parent_id,
                 "url": str(sources[0]["url"]),
                 "matchedText": sources[0].get("matchedText"),
+                "matchedIn": sources[0].get("matchedIn"),
                 "checkedAt": record.get("checkedAt"),
                 "derivedFrom": "parent_page_confirmation",
             }
@@ -697,6 +818,11 @@ def apply_evidence_to_tree(
             node["evidenceVerifiedAt"] = checked_at
         method = str(record.get("method") or (METHOD_OWN_PAGE if record.get("ownPage") else METHOD_PARENT_PAGE))
         node["verificationMethod"] = method
+        regions = [str(s.get("matchedIn")) for s in sources if s.get("matchedIn") in KNOWN_REGIONS]
+        if regions:
+            # Content beats navigation: if any page named it in its body,
+            # that is the stronger claim and the one shown.
+            node["verificationMatchedIn"] = REGION_CONTENT if REGION_CONTENT in regions else REGION_NAVIGATION
         node["verificationSiteFrom"] = record.get("siteFrom")
         stats[CONFIRMED] += 1
         stats["own_page_confirmations" if method == METHOD_OWN_PAGE else "parent_page_confirmations"] += 1
@@ -728,6 +854,8 @@ def apply_evidence_to_tree(
             # The claim named, beside the boolean, so the data product says
             # what was tested without needing the UI's wording.
             node["placementMethod"] = PLACEMENT_METHOD
+            if listed.get("matchedIn") in KNOWN_REGIONS:
+                node["placementMatchedIn"] = str(listed["matchedIn"])
             stats["placements_evidenced"] += 1
         elif block and block.get("status") == PLACEMENT_NOT_LISTED and str(block.get("parentId") or "") == str(actual_parent or ""):
             # Read and not listed. Recorded so it is auditable; claims nothing.

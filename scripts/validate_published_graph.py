@@ -391,6 +391,9 @@ def main(argv):
         method = node.get("verificationMethod")
         if method and str(method) not in KNOWN_METHODS:
             unknown_method.append("{} verificationMethod {!r}".format(label(node), method))
+        region = node.get("verificationMatchedIn")
+        if region is not None and str(region) not in ("navigation", "content"):
+            unknown_method.append("{} verificationMatchedIn {!r}".format(label(node), region))
     # Placement: evidence for the parent -> child edge. A True claim must carry
     # an official URL and a date, and must name the parent the published tree
     # actually gives the node — evidence for a different edge is not evidence.
@@ -429,6 +432,8 @@ def main(argv):
         name_key = canonical_key(node.get("name"))
         if matched and name_key and name_key not in matched:
             placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
+        if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
+            placement_unbacked.append("{} placementMatchedIn {!r}".format(label(node), node.get("placementMatchedIn")))
         claimed = str(node.get("placementParentId") or "")
         actual = parent_of.get(str(node.get("id") or ""))
         if not claimed or claimed != actual:
