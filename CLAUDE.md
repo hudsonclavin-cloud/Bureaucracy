@@ -333,6 +333,16 @@ subcommittees listed and placed, 27 curated names the Senate no longer
 carries. The House Clerk's list could not be fetched from the pipeline's
 network (proxy refusal, recorded in the fixtures README); house.gov lists
 committees only.
+OPM's data landed on 2026-09-08 (`tests/fixtures/opm/`, README there):
+FedScope civilian employment by agency and sub-agency for March 2025 and
+September 2024 — the official counts the cost cascade's headcount weights
+should answer to, where today's `employees` fields are uncited — and the
+PLUM archive of the previous administration's reported positions. The
+current PLUM export is served by escs.opm.gov, which the pipeline's
+egress proxy refuses (CONNECT 403), as it refuses clerk.house.gov,
+www.usa.gov, api.sam.gov, data.opm.gov and govinfo.gov; those are facts
+about the environment's network policy, recorded in the fixtures'
+`.meta.json` files, never worked around.
 Next in this line, in order of evidence value: the House Clerk's
 committee XML once the host is reachable, OPM's Plum Book for positions, OPM FedScope for the headcounts
 the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
