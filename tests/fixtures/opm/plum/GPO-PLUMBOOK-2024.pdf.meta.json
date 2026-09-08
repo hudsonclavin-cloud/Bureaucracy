@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-08T19:53:45Z",
+ "url": "https://www.govinfo.gov/content/pkg/GPO-PLUMBOOK-2024/pdf/GPO-PLUMBOOK-2024.pdf",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt",
+ "bytes": null,
+ "sha256": null,
+ "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+}
