@@ -178,6 +178,86 @@ class SiblingWeightUnitTests(unittest.TestCase):
         self.assertEqual(report["summary"]["allocations_below_precision"], 0)
 
 
+class MeasuredLinesShareOneHaircutTests(unittest.TestCase):
+    """A direct line is a measurement of that child; a floor is a lower bound
+    on an unmeasured child's share. Measurements that fit are honoured in
+    full and floors are paid from the remainder. When the direct lines alone
+    exceed the parent, nothing beneath can be honoured and every line -
+    direct or deeper - takes the same haircut. The first version paid the
+    direct lines first in that case too and the deeper floors from what was
+    left; under the independent-agencies grouping that was nothing, and six
+    measured lines (the Peace Corps among them, $3.08B) published as "not
+    available". A fully even haircut was tried and rejected: at the root it
+    cut the Legislative and Judicial section totals, which are net figures
+    that fit the anchor, to 96% and starved the joint committees."""
+
+    def _children(self, direct_line, deep_line):
+        return [
+            {"id": "direct", "name": "Directly measured", "rollup_total_amount": direct_line, "children": []},
+            {
+                "id": "grouping", "name": "Other agencies", "employees": "100",
+                "children": [
+                    {"id": "deep", "name": "Measured two levels down", "rollup_total_amount": deep_line, "children": []},
+                    {"id": "guess", "name": "Unmeasured sibling", "children": []},
+                ],
+            },
+            {"id": "unlined", "name": "Nothing measured beneath", "employees": "100", "children": []},
+        ]
+
+    def _pick(self, tree, node_id):
+        stack = [tree]
+        while stack:
+            node = stack.pop()
+            if node["id"] == node_id:
+                return node
+            stack.extend(node.get("children", []))
+        raise KeyError(node_id)
+
+    def test_a_deep_line_is_scaled_with_the_direct_lines_not_zeroed(self) -> None:
+        # Direct line alone exceeds the parent; with the deep line, 1.3x.
+        tree = _run(self._children(direct_line=1_100_000.0, deep_line=200_000.0))
+        direct, deep, grouping = self._pick(tree, "direct"), self._pick(tree, "deep"), self._pick(tree, "grouping")
+        self.assertEqual(direct["cost_status"], "scaled_official")
+        self.assertEqual(deep["cost_status"], "scaled_official", "a measured line must never be hidden as unavailable")
+        self.assertEqual(grouping["cost_status"], "allocated")
+        scale = TOTAL / 1_300_000.0
+        self.assertAlmostEqual(direct["resolved_total_amount"], 1_100_000.0 * scale, places=2)
+        self.assertAlmostEqual(deep["resolved_total_amount"], 200_000.0 * scale, places=2)
+        # Resolved totals are rounded to the cent, so the two ratios agree to
+        # about 1e-7 and no better; anything coarser would be a second factor.
+        self.assertAlmostEqual(
+            direct["resolved_total_amount"] / 1_100_000.0, deep["resolved_total_amount"] / 200_000.0, places=6,
+            msg="one haircut for every measured line beneath the parent",
+        )
+        # Nothing is left over for the unmeasured siblings, and that is said, not zeroed.
+        self.assertEqual(self._pick(tree, "unlined")["cost_status"], "unavailable")
+        self.assertEqual(self._pick(tree, "guess")["cost_status"], "unavailable")
+        summary = summarize_scaled_official(tree)
+        self.assertEqual(summary["top_most_nodes"], 2)
+        self.assertAlmostEqual(summary["reported_total"], 1_300_000.0, places=2)
+
+    def test_a_direct_line_that_fits_is_honoured_even_when_the_floors_do_not(self) -> None:
+        # The direct line fits (500k of 1M); the deep line (800k) does not fit
+        # in what is left. The measurement stands; the floor is scaled.
+        tree = _run(self._children(direct_line=500_000.0, deep_line=800_000.0))
+        direct, deep, grouping = self._pick(tree, "direct"), self._pick(tree, "deep"), self._pick(tree, "grouping")
+        self.assertEqual((direct["cost_status"], direct["resolved_total_amount"]), ("official", 500_000.0))
+        self.assertEqual(deep["cost_status"], "scaled_official")
+        self.assertAlmostEqual(deep["resolved_total_amount"], 500_000.0, places=2)
+        self.assertAlmostEqual(grouping["resolved_total_amount"], 500_000.0, places=2)
+        self.assertEqual(self._pick(tree, "unlined")["cost_status"], "unavailable")
+
+    def test_lines_that_fit_are_published_in_full_and_the_excess_is_apportioned(self) -> None:
+        tree = _run(self._children(direct_line=500_000.0, deep_line=200_000.0))
+        direct, deep, grouping, unlined = (self._pick(tree, i) for i in ("direct", "deep", "grouping", "unlined"))
+        self.assertEqual((direct["cost_status"], direct["resolved_total_amount"]), ("official", 500_000.0))
+        self.assertEqual((deep["cost_status"], deep["resolved_total_amount"]), ("official", 200_000.0))
+        # The grouping gets its floor plus a weighted share of the 300,000 excess.
+        self.assertGreater(grouping["resolved_total_amount"], 200_000.0)
+        self.assertGreater(unlined["resolved_total_amount"], 0.0)
+        self.assertAlmostEqual(direct["resolved_total_amount"] + grouping["resolved_total_amount"] + unlined["resolved_total_amount"], TOTAL, places=2)
+
+
 class ParseCostAmountTests(unittest.TestCase):
     def test_magnitude_suffix_needs_a_word_boundary(self) -> None:
         self.assertEqual(parse_cost_amount("~2,000 total staff"), 2000.0)

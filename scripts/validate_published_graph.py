@@ -186,13 +186,19 @@ def main(argv):
         if node is graph:
             continue
         types = node.get("sourceTypes") if isinstance(node.get("sourceTypes"), list) else []
+        urls_here = node.get("sourceUrls") if isinstance(node.get("sourceUrls"), list) else []
         backed = (
             str(node.get("cost_status") or "") == "official"
             and node.get("rollup_total_amount") is not None
             and "treasury_outlays" in types
+            # The type is a label; the URL is the evidence. The evidence module
+            # once stripped the FiscalData URL from 26 measured nodes and this
+            # check, keyed on the type alone, let the Supreme Court cite a court
+            # About page as the source of its outlays.
+            and any("fiscaldata.treasury.gov" in str(u) for u in urls_here)
         )
         if not backed:
-            illegitimate.append("{} claims a measured cost without a Treasury line".format(label(node)))
+            illegitimate.append("{} claims a measured cost without a Treasury line and its URL".format(label(node)))
     measured_violations = list(illegitimate)
     if graph not in verified:
         measured_violations.insert(0, "root {} is not measured (no Treasury anchor)".format(label(graph)))
@@ -285,6 +291,20 @@ def main(argv):
             unlabelled_missing.append("{} has no amount and cost_status {!r}".format(label(node), node.get("cost_status")))
     gate.check("no zero or negative amounts", non_positive)
     gate.check("a missing amount is labelled unavailable", unlabelled_missing)
+    # A Treasury line is a measured figure; while the root is anchored, every
+    # one is published, in full or capped, never as "not available". Six lines
+    # under the independent-agencies grouping ($3.08B, the Peace Corps among
+    # them) were hidden this way once, and the cap summary never counted them
+    # because it counts only scaled_official nodes.
+    hidden_lines = []
+    if str(graph.get("cost_status") or "") == "root_total" and graph.get("resolved_total_amount") is not None:
+        for node in nodes:
+            if node is graph:
+                continue
+            line = node.get("rollup_total_amount")
+            if isinstance(line, (int, float)) and line > 0 and str(node.get("cost_status") or "") == "unavailable":
+                hidden_lines.append("{} carries a Treasury line of {:,.2f} but is published unavailable".format(label(node), line))
+    gate.check("no Treasury line is hidden as unavailable", hidden_lines)
 
     # 11. Check 6, at every level: the parts of any node must fit inside it.
     over_parent_sums = []
@@ -371,6 +391,56 @@ def main(argv):
         method = node.get("verificationMethod")
         if method and str(method) not in KNOWN_METHODS:
             unknown_method.append("{} verificationMethod {!r}".format(label(node), method))
+        region = node.get("verificationMatchedIn")
+        if region is not None and str(region) not in ("navigation", "content"):
+            unknown_method.append("{} verificationMatchedIn {!r}".format(label(node), region))
+    # Placement: evidence for the parent -> child edge. A True claim must carry
+    # an official URL and a date, and must name the parent the published tree
+    # actually gives the node — evidence for a different edge is not evidence.
+    placement_unbacked, placement_wrong_parent = [], []
+    parent_of = {}
+    stack_p = [(graph, None)]
+    while stack_p:
+        n, p = stack_p.pop()
+        parent_of[str(n.get("id") or "")] = p
+        for c in n.get("children", []) or []:
+            if isinstance(c, dict):
+                stack_p.append((c, str(n.get("id") or "")))
+    for node in nodes:
+        if node.get("placementVerified") is False:
+            # "Read and not listed" is a statement about one parent's page on
+            # one date; it must name the parent the tree has and a real date.
+            stamp = str(node.get("placementVerifiedAt") or "")
+            if not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
+                placement_unbacked.append("{} placementVerified false at {!r}".format(label(node), stamp))
+            claimed = str(node.get("placementParentId") or "")
+            actual = parent_of.get(str(node.get("id") or ""))
+            if not claimed or claimed != actual:
+                placement_wrong_parent.append("{} not-listed claims parent {!r}, tree has {!r}".format(label(node), claimed, actual))
+        if node.get("placementVerified") is not None and node.get("placementCheckable") is False:
+            placement_unbacked.append("{} says its placement could not be checked beside a placement result".format(label(node)))
+        if node.get("placementVerified") is not True:
+            continue
+        url = str(node.get("placementUrl") or "")
+        host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+        stamp = str(node.get("placementVerifiedAt") or "")
+        if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
+            placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))
+        if str(node.get("placementMethod") or "") != "name_labelled_on_parent_official_page":
+            placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
+        matched = canonical_key(node.get("placementMatchedText"))
+        name_key = canonical_key(node.get("name"))
+        if matched and name_key and name_key not in matched:
+            placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
+        if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
+            placement_unbacked.append("{} placementMatchedIn {!r}".format(label(node), node.get("placementMatchedIn")))
+        claimed = str(node.get("placementParentId") or "")
+        actual = parent_of.get(str(node.get("id") or ""))
+        if not claimed or claimed != actual:
+            placement_wrong_parent.append("{} claims parent {!r}, tree has {!r}".format(label(node), claimed, actual))
+    gate.check("every placement claim has an official URL and a date", placement_unbacked)
+    gate.check("every placement claim names the parent the tree actually has", placement_wrong_parent)
+
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
@@ -407,6 +477,12 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    org_edges = [n for n in nodes if n is not graph and "position" not in str(n.get("type") or "").lower()]
+    placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
+    placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
+    unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
+    print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
+        placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.
     # Each node says so in the panel; this is the total, which nothing showed.
     # Only the top-most capped node in a branch: a capped department and its

@@ -123,17 +123,33 @@ never as $0. Treasury outlay lines applied to a node make it `official`
 those are the only measured costs besides the root, and the gate checks it.
 A line beneath a weighted node is a floor on that node's share (the fifteen
 department lines under the unlined "Cabinet" grouping are paid before the
-excess is apportioned by weight); only when floors exceed what is left are
-they scaled, and the lines beneath publish as `scaled_official`, which the
-UI labels an estimate. Negative lines (net receipts) are set aside and
+excess is apportioned by weight). A direct line is a measurement of that
+child and a floor only a lower bound on an unmeasured one, so measurements
+that fit are honoured in full and floors are paid from the remainder, scaled
+if they do not fit — the Legislative and Judicial section totals fit the net
+anchor and publish as measured; the executive floor takes the cap. When the
+direct lines alone exceed the parent, nothing beneath can be honoured and
+every line, direct or deeper, takes one haircut and publishes as
+`scaled_official`, which the UI labels an estimate. The first version paid
+the direct lines first in that case too and the deeper floors from what was
+left, which under the independent-agencies grouping was nothing: SSA, OPM
+and NASA took the whole allocation and six measured lines two levels down
+(PBGC, EEOC, the Peace Corps, $3.08B) published as "not available" —
+uncounted by the cap summary, which counts only `scaled_official`. A fully
+even haircut was tried and rejected: at the root it cut the two section
+totals to 96% and starved the joint committees. The gate now refuses a
+Treasury line published `unavailable` while the root is anchored. Negative lines (net receipts) are set aside and
 counted, never anchored on — and that has a systematic consequence worth
 knowing. 152 of Table 5's 644 lines are negative (proprietary receipts,
 intrabudgetary transactions, offsetting governmental receipts). Setting them
 aside leaves the positive lines summing past the *net* anchor, so measured
 figures beneath a weighted parent are scaled down to fit inside an estimate:
-as of 2026-09-05, 27 top-most capped nodes report $6.529T and publish
-$6.270T — 96.0% shown, $259.1B withheld, including all fifteen cabinet
-departments. Each capped node says so in its own panel ("the Treasury
+as of 2026-09-06, 33 top-most capped nodes report $6.532T and publish
+$6.270T — 96.0% shown, $262.2B withheld, including all fifteen cabinet
+departments (27 nodes and $259.1B the day before: the six lines rescued
+under the independent-agencies grouping are now counted, and their $2.96B
+came out of their measured siblings' capped shares, the grouping's own
+allocation being fixed). Each capped node says so in its own panel ("the Treasury
 reported $43.0 billion for this unit ... the figure shown is that cap"), and
 `summarize_scaled_official` puts the total in `build_validation.
 treasury_lines_scaled` and in the gate's report. It counts only the top-most
@@ -161,7 +177,12 @@ found three ways that manufactures confirmations (a one-word name like
 Science and Technology Policy"; a phrase spanning two DOM elements). Label
 equality closes all three. `LabelParser` keeps nav, header, title and footer
 — the directory crawler's parser skips them, which is where agencies list
-their offices.
+their offices. It reads `title`/`aria-label` only off elements that render:
+the 2026-09-06 run found `<link rel="alternate" title="Federal Maritime
+Commission » Feed">` in the head of www.fmc.gov and www.sba.gov, which the
+separator split turns into exactly the unit's name — a label out of markup
+no visitor sees. No published confirmation rested on it; both pages also
+carry a real heading.
 
 Five statuses in `evidence.json`, and only the first two are applied:
 
@@ -169,11 +190,21 @@ Five statuses in `evidence.json`, and only the first two are applied:
   official_site`, `lastVerified`, and `verificationMethod`, which is
   `name_labelled_on_own_official_page` or `..._parent_official_page` — a
   different claim, and the panel says which.
-- `not_found` — the unit's **own** page was read and no fragment named it.
-  Gives `lastVerified` + `verificationFailure` only, and only if no other
-  route gave the node a source. The site shows checked-and-failed.
-- `inconclusive` — only an ancestor's page was read, and a parent's About
-  page is not obliged to list its children. Applies nothing.
+- `not_found` — the unit's **own** page was read and its name is not on it
+  in any form. Gives `lastVerified` + `verificationFailure` only, and only if
+  no other route gave the node a source. The site shows checked-and-failed,
+  worded as "does not name it as a heading or link" — what was actually
+  tested.
+- `inconclusive` — nothing was learned, for one of two reasons carried in
+  `reason`. `only_an_ancestor_page_was_read`: a parent's About page is not
+  obliged to list its children. `named_on_the_page_but_not_as_a_label`: the
+  unit's own page does name it, in prose rather than as a heading or link —
+  `cia.gov/about` says "Central Intelligence Agency" in a sentence, and the
+  first live run published "its official page did not name it" about the CIA
+  on the strength of that. `name_appears_unlabelled` makes that distinction
+  with a deliberately loose match that joins fragments; it is used ONLY to
+  withhold a negative claim, never to make a positive one, so it can lower
+  the confirmation count and never raise it. Applies nothing either way.
 - `fetch_failed` — no page was read: blocked network, 404, robots.txt
   disallow, a 200 with under 400 characters of readable text (a JS shell or
   a bot challenge). Applies nothing; it is a fact about the network.
@@ -181,12 +212,76 @@ Five statuses in `evidence.json`, and only the first two are applied:
   ("Individual Senator Offices (100)", 44 of them) or a name too generic to
   distinguish anything ("Energy", "Defense", 16). Never fetched.
 
+**Placement — evidence for the edge, not the node.** A hierarchy is the
+site's central assertion, and until 2026-09-06 nothing had checked a single
+parent→child edge. The verifier's placement pass takes every organisation
+whose parent has an official page (259 edges under 36 parents at the time)
+and asks whether the parent's page names the child as a label. `listed` is
+recorded with the URL, the matched text and the parent it was checked
+against, and the exporter stamps `placementVerified: true`,
+`placementUrl`, `placementVerifiedAt`, `placementParentId`,
+`placementMatchedText` (the label as it appears on the page) and
+`placementMethod: name_labelled_on_parent_official_page` — but only when
+that parent is the one the published tree actually gives the node and the
+label still names the node as it is now called, so a re-parenting or a
+rename in the curated file can never inherit evidence for a different edge
+or a different name; the gate checks both, plus the date and the method.
+`not_listed` is recorded with `urlsRead` — only the pages actually read,
+never one that 404ed — and publishes `placementVerified: false`, which
+claims nothing: a department's About page is not obliged to list every
+bureau. An unreadable parent page records nothing at all. A confirmation
+already made on the parent's page (`method` parent, `siteFrom` == parent)
+is the same fetch and the same fact and counts as placement without being
+fetched again — unless an explicit block for that parent says `not_listed`,
+which wins whichever is older: a retraction found by re-reading the very
+page the claim rested on must reach the site. A node whose parent has no
+entry in `official_sites.json` gets `placementCheckable: false` ("could not
+be checked", most of the graph: the fifteen departments sit under a curated
+"Cabinet" grouping) rather than "no evidence recorded", and the gate reports
+the three counts separately. A record the verifier wrote for the edge alone
+carries `status: placement_only`; the existence pass replaces such a record
+and carries the block along. The claim the site makes is exactly "the
+parent's official page lists it" — not "reports to", which a page listing
+partner agencies could not support. The parser tags every fragment with its region — `content`, or
+`navigation` for the site-wide nav, header, banner and footer — and the
+record carries `matchedIn`; the exporter stamps `placementMatchedIn` /
+`verificationMatchedIn` and the panel says "in its site-wide navigation"
+when that is where the label sat, because a listing in Treasury's About
+mega-menu holds for every page on home.treasury.gov equally (the first
+live run's DOI, DOL, Treasury, NSF and NASA listings were all of this
+kind). A page counts as *read* only when it carries 400+ characters of
+text outside that chrome: www.hud.gov/about served a .gov banner and a
+footer address around no body, cleared the old whole-page floor on
+boilerplate, and was recorded as "checked and not listed" fifteen times.
+A positive label anywhere a visitor can see it still stands — the floor
+governs negatives only. A logo's alt text or an SVG title is never a
+label, but it does withhold "its own page does not name it": cia.gov/about
+and epa.gov/aboutepa name the agency in the logo and nowhere else
+readable, and both were published as not found. Known limitation, still
+documented rather than fixed: within the chrome the standard is host-blind
+inside `.gov` — a footer link to an unrelated agency would count; the
+sites file is what scopes it, one page per parent.
+
+Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
+`evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
+`evidenceVerifiedAt` (the date it set as `lastVerified`), so the next build
+withdraws exactly those and nothing else. The first version cleared the
+node's whole URL list and stripped the FiscalData URL from 26 measured
+nodes; the gate now requires a `fiscaldata.treasury.gov` URL on every
+measured node, not just the `treasury_outlays` type.
+
 `apply_evidence_to_tree` **clears every field it owns before applying** the
 current evidence, so a withdrawn or downgraded record stops being published
 even though the exporter re-feeds the previous `graph.json` as a payload; a
 retraction that could never reach the site was the second failure the review
 found. It runs *after* `apply_treasury_outlay_rows`, which rewrites
-`sourceUrls` on the nodes it stamps. `matchedText` is text as it appears on
+`sourceUrls` on the nodes it stamps — and the sweep must leave that URL
+alone: it swept the node's whole URL list, and because it only trips on a
+node that already carries a claim of this module's, a confirmed node kept its
+FiscalData URL on the build that confirmed it and lost it on the next one,
+dropping from `verified` to `partial` and publishing a measured cost with no
+source behind it. `claimed_by_another_stage` keeps a URL a surviving
+`sourceType` still answers to. `matchedText` is text as it appears on
 the page, so a claim can be audited against the live site.
 
 The gate requires: every `lastVerified` a past ISO date; every
@@ -225,7 +320,11 @@ so it is not merged until `extract_and_expand.py` has produced real ones).
   raycast selection, fly mode.
 - `ui.js` owns the DOM: search, breadcrumb, info panel (cost with
   measured/estimate badge and period line; verification box with the
-  "No source recorded" state), depth controls, verification toggles, expand
+  "No source recorded" state and a separate Placement line for the edge
+  above the node; every base-graph description labelled "uncited prose —
+  not checked against any source", because all 5,170 read as fact and none
+  has a citation; the provenance line under the title computed from the
+  graph, never hardcoded), depth controls, verification toggles, expand
   batching.
 
 Cache busting is manual: bump the `?v=` query string in `index.html` and in
@@ -300,7 +399,9 @@ that one import is the only thing the smoke check cannot prove.
 ## Known base-graph gaps
 
 Table 5 lines whose unit the curated graph has no node for at all, so no alias
-can reach them. Adding the nodes is curation work, not pipeline work:
+can reach them. Adding the nodes is curation work, not pipeline work;
+`CURATION.md` carries the proposal (parent, type, candidate page) for each,
+plus the AmeriCorps alias case, the Coast Guard duplicate and the cap:
 
     General Services Administration          Agency for International Development
     Railroad Retirement Board                Administration for Children and Families

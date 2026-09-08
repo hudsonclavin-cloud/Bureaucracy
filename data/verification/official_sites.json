@@ -28,7 +28,7 @@
     "https://www.uscp.gov/the-department"
   ],
   "executive-branch": [
-    "https://www.whitehouse.gov/administration/"
+    "https://www.whitehouse.gov/government/executive-branch/"
   ],
   "exec-eop": [
     "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
@@ -44,9 +44,6 @@
   ],
   "exec-eop-ondcp": [
     "https://www.whitehouse.gov/ondcp/"
-  ],
-  "exec-eop-nsc": [
-    "https://www.whitehouse.gov/nsc/"
   ],
   "exec-eop-cea": [
     "https://www.whitehouse.gov/cea/"
@@ -200,10 +197,10 @@
     "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
   ],
   "jud-specialized-tax": [
-    "https://www.ustaxcourt.gov/about_the_court.html"
+    "https://www.ustaxcourt.gov/"
   ],
   "jud-specialized-claims": [
-    "https://www.uscfc.uscourts.gov/about-court"
+    "https://www.uscfc.uscourts.gov/"
   ],
   "jud-specialized-intl-trade": [
     "https://www.cit.uscourts.gov/about-court"

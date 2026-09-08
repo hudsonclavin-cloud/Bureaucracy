@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260903a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260903a";
+import { createGovernmentGraph } from "./graph.js?v=20260908a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -50,6 +50,7 @@ const dom = {
   verificationConfidence: null,
   verificationSources: null,
   verificationLastVerified: null,
+  verificationPlacement: null,
   verificationBadge: null,
   togglesWrap: null,
   toggleUnverified: null,
@@ -106,6 +107,46 @@ function updateStats(stats) {
     dom.statsDepth,
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
+}
+
+// The line every visitor reads first. It used to be a hardcoded string in
+// index.html saying "Structure hand-compiled · costs are estimates
+// apportioned from the Treasury total". Both halves went stale: 55 costs are
+// now measured from the Monthly Treasury Statement, and nothing in the
+// repository records where the hierarchy or its 5,170 descriptions came
+// from, so "hand-compiled" asserts more than is known. Computing it from the
+// graph means it cannot drift from the data again.
+function describeProvenance(root) {
+  let nodes = 0;
+  let measured = 0;
+  let capped = 0;
+  let sourced = 0;
+  let placed = 0;
+  let unreachable = 0;
+  let orgEdges = 0;
+  const stack = [root];
+  while (stack.length) {
+    const node = stack.pop();
+    if (!node || typeof node !== "object") continue;
+    nodes += 1;
+    const status = String(node.cost_status || "");
+    if (status === "official" || status === "root_total") measured += 1;
+    else if (status === "scaled_official") capped += 1;
+    if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
+    if (node.placementVerified === true) placed += 1;
+    if (node.placementCheckable === false) unreachable += 1;
+    if (node !== root && !/position/i.test(String(node.type || ""))) orgEdges += 1;
+    for (const child of node.children || []) stack.push(child);
+  }
+  const estimated = Math.max(nodes - measured - capped, 0);
+  return [
+    `${measured.toLocaleString()} costs measured from the Monthly Treasury Statement`,
+    `${capped.toLocaleString()} capped to fit an estimated parent`,
+    `${estimated.toLocaleString()} apportioned estimates`,
+    `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
+    `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${unreachable.toLocaleString()} unreachable: parent has no page)`,
+    "the descriptions carry no citation",
+  ].join(" · ");
 }
 
 function hideLoadingOverlay(delay = 600) {
@@ -289,6 +330,14 @@ function ensureVerificationUi() {
   dom.verificationConfidence = confidence;
   dom.verificationSources = sources;
   dom.verificationLastVerified = lastVerified;
+  // Placement is a claim about the EDGE above this node, separate from
+  // whether the node itself exists. It gets its own line so the two cannot be
+  // read as one.
+  const placement = lastVerified.cloneNode(false);
+  placement.id = "verification-placement";
+  placement.textContent = "";
+  lastVerified.insertAdjacentElement("afterend", placement);
+  dom.verificationPlacement = placement;
 }
 
 // A node with no sources AND no verification timestamp was never checked at all.
@@ -410,6 +459,86 @@ function ensureVerificationLegend() {
   });
 }
 
+// "The parent's official page lists it" is exactly the claim, and no more:
+// a page can list partner agencies too, so this never says "reports to".
+// Every one of the 5,170 descriptions is prose from the base graph with no
+// citation behind it. It reads as fact, so it has to say what it is — the
+// same way a cost says "estimate" and a source box says "no source
+// recorded". A cluster's text is written by this UI and is not a claim; a
+// candidate's text came from a crawler record and is labelled there.
+function renderDescriptionProvenance(data, isClusteredView) {
+  let line = document.getElementById("info-desc-provenance");
+  if (!line && dom.infoDesc) {
+    line = document.createElement("div");
+    line.id = "info-desc-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.08em";
+    line.style.margin = "4px 0 8px";
+    dom.infoDesc.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  if (isClusteredView || data.isCandidate || !data.desc) {
+    line.textContent = "";
+    return;
+  }
+  line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
+}
+
+function hostnameOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch (error) {
+    return String(url);
+  }
+}
+
+function renderPlacementLine(data) {
+  if (!dom.verificationPlacement) return;
+  if (data.isCandidate) {
+    setText(dom.verificationPlacement, "");
+    return;
+  }
+  const isPosition = /position/i.test(String(data.type || ""));
+  const checked = data.placementVerifiedAt
+    ? new Date(data.placementVerifiedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  dom.verificationPlacement.replaceChildren();
+  const add = (text) => dom.verificationPlacement.appendChild(document.createTextNode(text));
+  if (data.placementVerified === true) {
+    // The claim carries its own audit trail: the page, and the label on it.
+    // When it is the same page and the same read as the existence line above,
+    // say so — one fetch must not read as two independent checks.
+    const sameRead =
+      Array.isArray(data.sourceUrls) && data.sourceUrls.includes(data.placementUrl) && data.lastVerified === data.placementVerifiedAt;
+    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"` : "";
+    // A listing in the site-wide navigation (nav, header, footer) holds for
+    // every page of the parent's site: real evidence, but not the page's own
+    // account of itself, and the panel says which.
+    const where = data.placementMatchedIn === "navigation" ? " in its site-wide navigation" : "";
+    add(sameRead ? `Placement: the same page read above lists it${where}${label} on ` : `Placement: its parent's official page lists it${where}${label} on `);
+    if (isHttpUrl(data.placementUrl)) {
+      const link = document.createElement("a");
+      link.href = data.placementUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = hostnameOf(data.placementUrl);
+      dom.verificationPlacement.appendChild(link);
+    } else {
+      add("an official page");
+    }
+    if (checked) add(` · checked ${checked}`);
+  } else if (data.placementVerified === false) {
+    add(`Placement: its parent's official page was read${checked ? ` ${checked}` : ""} and does not list it as a heading or link — no claim either way`);
+  } else if (isPosition) {
+    add("Placement: not checked (positions are not checked against a page)");
+  } else if (data.placementCheckable === false) {
+    add("Placement: could not be checked — its parent is a curated grouping with no official page of its own");
+  } else {
+    add("Placement: no evidence recorded for where this sits in the hierarchy");
+  }
+}
+
 function renderVerificationPanel(data) {
   if (!dom.verificationWrap) {
     return;
@@ -435,6 +564,7 @@ function renderVerificationPanel(data) {
     // a number impersonating a measurement.
     setText(dom.verificationConfidence, "No source URL has been attached to it yet.");
     setText(dom.verificationLastVerified, "");
+    renderPlacementLine(data);
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
     setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
@@ -451,14 +581,16 @@ function renderVerificationPanel(data) {
     let checkLine = "Not yet verified";
     if (data.verificationFailure === "not_found") {
       checkLine = checkedOn
-        ? `Checked ${checkedOn}: its official page did not name it`
-        : "Its official page did not name it";
+        ? `Checked ${checkedOn}: its official page does not name it as a heading or link`
+        : "Its official page does not name it as a heading or link";
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
-      checkLine = how ? `${how} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+      const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
+      checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     setText(dom.verificationLastVerified, checkLine);
   }
+  renderPlacementLine(data);
 
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
@@ -803,6 +935,7 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoName, data.name);
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
+  renderDescriptionProvenance(data, isClusteredView);
 
   if (isClusteredView) {
     setText(dom.infoType, `${data.type || "Group"} Cluster`);
@@ -1331,11 +1464,12 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
-  if (data && data.__loadSource === "fallback") {
-    const provenance = document.getElementById("data-provenance");
-    if (provenance) {
-      provenance.textContent = "Pipeline graph unavailable — showing the hand-compiled hierarchy without cost data";
-    }
+  const provenance = document.getElementById("data-provenance");
+  if (provenance) {
+    provenance.textContent =
+      data && data.__loadSource === "fallback"
+        ? "Pipeline graph unavailable — showing the uncited hierarchy, with no cost data at all"
+        : describeProvenance(data);
   }
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();

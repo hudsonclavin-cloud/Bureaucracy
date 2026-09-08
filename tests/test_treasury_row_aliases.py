@@ -316,6 +316,30 @@ class CarryForwardTests(unittest.TestCase):
         self.assertEqual(node_map["agency"]["budget_source"], "Treasury MTS Table 5")
         self.assertEqual(stats["stale_rollups_cleared"], 0)
 
+    def test_a_line_carried_forward_is_carried_with_its_citation(self) -> None:
+        """The evidence module once stripped the FiscalData URL from 26 measured
+        nodes and left the line itself; offline, nothing could put it back."""
+        root, node_map = self.tree()
+        node_map["agency"]["sourceUrls"] = ["https://www.example.gov/about"]
+        node_map["agency"]["sourceTypes"] = ["official_site"]
+        stats = apply_treasury_outlay_rows(root, [], root_id="root", statement_present=False)
+        agency = node_map["agency"]
+        self.assertEqual(stats["carried_forward_citations_restored"], 1)
+        self.assertIn("https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government", agency["sourceUrls"])
+        self.assertIn("https://www.example.gov/about", agency["sourceUrls"], "the other source is not this pass's to touch")
+        self.assertIn("treasury_outlays", agency["sourceTypes"])
+        self.assertEqual(agency["sourceCount"], 2)
+        # A node with the citation already, and one with no line, are left alone.
+        stats = apply_treasury_outlay_rows(root, [], root_id="root", statement_present=False)
+        self.assertEqual(stats["carried_forward_citations_restored"], 0)
+        self.assertEqual(agency["sourceCount"], 2)
+        node_map["root"].pop("budget_source", None)
+        self.assertFalse(node_map["root"].get("sourceUrls"))
+        # And a real statement is still authoritative: it clears, never restores.
+        stats = apply_treasury_outlay_rows(root, [row("Some Other Bureau", 5_000.0)], root_id="root", statement_present=True)
+        self.assertEqual(stats["carried_forward_citations_restored"], 0)
+        self.assertEqual(agency["sourceUrls"], ["https://www.example.gov/about"])
+
     def test_a_statement_that_no_longer_names_the_node_clears_it(self) -> None:
         # The other direction: a real statement is authoritative, so a node it
         # has stopped reporting must not keep last month's figure.
