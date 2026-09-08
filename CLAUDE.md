@@ -446,7 +446,13 @@ that one import is the only thing the smoke check cannot prove.
   supplied one — a crawler record or a verifier fetch at that moment. The
   site's "No source recorded" state keys on that. `data/verification/` is
   written by the verifier only; a URL in `official_sites.json` is a
-  candidate to fetch, never evidence by itself.
+  candidate to fetch, never evidence by itself. Candidates may be seeded from an
+  official directory by `scripts/seed_official_sites.py` (the Federal
+  Register's `agency_url`, the chambers' committee pages); every seeded
+  URL is marked in `official_sites_provenance.json` with the directory's
+  own listing, and an `http://` listing on a `.gov`/`.mil` host is used as
+  `https://` with the listed URL kept beside it — the scheme is transport,
+  not a claim, and the verifier still has to find the label.
 - A run that lost its Treasury anchor or every fetch stage must not touch any
   file the site fetches. It does rewrite `output/pipeline_stats.json`, which is
   the run record: that record is `mode: blocked_run`, carries
