@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:51:00Z",
+ "url": "https://www.opm.gov/data/datasets/Files/758/18693acd-e0d7-4cb5-b15b-bd455a3a432c.zip",
+ "status": 200,
+ "final_url": "https://www.opm.gov/data/datasets/Files/758/18693acd-e0d7-4cb5-b15b-bd455a3a432c.zip",
+ "content_type": "application/x-zip-compressed",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 12914548,
+ "sha256": "5b843f6174e51d56625ee77ccab7c5b15535ef2fb8abb183fecada1f0df42b84",
+ "error": null,
+ "file": "fedscope_employment_file2_2025-03.zip"
+}

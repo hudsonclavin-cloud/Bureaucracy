@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:46:15Z",
+ "url": "https://www.opm.gov/data/datasets/",
+ "status": 200,
+ "final_url": "https://www.opm.gov/data/datasets/",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 294191,
+ "sha256": "9be7b7c36d72cb45973a63c76f1413c6f625cb6a39681247eef8c23b0304fdcc",
+ "error": null,
+ "file": "opm_datasets_index.html"
+}
