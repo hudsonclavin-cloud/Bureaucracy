@@ -111,6 +111,9 @@ EVIDENCE_OWNED_FIELDS = (
     "placementDirectoryDisagreement",
     "placementDirectoryAncestor",
     "verificationFailureSource",
+    # A page read that did not name the node, kept beside a directory listing
+    # that did: both are true, and suppressing the read loses a fact.
+    "pageReadNotNamed",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never
@@ -799,10 +802,29 @@ def apply_evidence_to_tree(
             # absent from its own page is a real negative.
             stats[status] += 1
             if status == NOT_FOUND and not node.get("sourceUrls") and checked_at:
+                # The page that was read, so the claim can be checked. Without
+                # it the panel said "its official page does not name it"
+                # while naming no page — a negative a reader could not audit,
+                # where every positive carries its URL. The URL is recorded as
+                # the subject of a failed check, never as a source.
+                read = [
+                    str(f.get("url")) for f in (record.get("failures") or [])
+                    if isinstance(f, dict) and f.get("reason") == "name_not_labelled_on_page" and f.get("url")
+                ]
+                if not read:
+                    # A record that cannot say which page was read cannot
+                    # support the claim the panel would print. Nothing is
+                    # applied, exactly as for the statuses that learned
+                    # nothing; the record still counts in the stats.
+                    stats["not_found_without_a_page"] = stats.get("not_found_without_a_page", 0) + 1
+                    continue
                 node["lastVerified"] = checked_at
                 node["evidenceVerifiedAt"] = checked_at
                 node["verificationFailure"] = NOT_FOUND
                 node["verificationSiteFrom"] = record.get("siteFrom")
+                node["verificationFailureSource"] = {
+                    "source": "own_official_page", "url": read[0], "urlsRead": read, "checkedAt": checked_at,
+                }
                 verify_node_sources(node)
             continue
 

@@ -349,3 +349,56 @@ class GateMirrorsTheMatcherTests(unittest.TestCase):
             with self.subTest(name=name):
                 expected = federal_register_name_keys(split_qualifier(name, {"Energy Department", "Executive Office of the President"})[0])
                 self.assertEqual(directory_name_keys(name), expected)
+
+
+class WithdrawnFailureKeepsTheFactTests(unittest.TestCase):
+    """A directory listing withdraws the page module's failed-check badge —
+    the node has a source now, and the gate forbids both — but the read
+    itself still happened, and the panel says so. Dropping it answered "was
+    its own page checked?" with silence when the answer was "yes, and it did
+    not name it"."""
+
+    def _tree(self):
+        return json.loads(json.dumps(BASE))
+
+    NOT_FOUND_RECORD = {
+        "status": "not_found", "checkedAt": "2026-09-08T19:00:00+00:00", "siteFrom": "doe-science",
+        "failures": [{"url": "https://www.energy.gov/", "reason": "name_not_labelled_on_page"}],
+    }
+
+    def _listing(self):
+        tree = self._tree()
+        node_map, parent_map = index_tree(tree)
+        return match_federal_register(DIRECTORY["data"], node_map, parent_map, root_id=ROOT_ID, fetched_at=DIRECTORY["fetched_at"])[0]
+
+    def test_the_badge_goes_and_the_read_stays(self) -> None:
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-science": self.NOT_FOUND_RECORD})
+        science = index_tree(tree)[0]["doe-science"]
+        self.assertEqual(science["verificationFailure"], "not_found")
+        stats = apply_directory_evidence(tree, self._listing())
+        science = index_tree(tree)[0]["doe-science"]
+        self.assertEqual(stats["failed_checks_withdrawn"], 1)
+        self.assertNotIn("verificationFailure", science, "a failed check may not stand beside a source")
+        self.assertEqual(science["pageReadNotNamed"], {"url": "https://www.energy.gov/", "checkedAt": "2026-09-08T19:00:00+00:00"})
+        self.assertEqual(science["verificationMethod"], FR_METHOD)
+        self.assertIn("https://www.federalregister.gov/agencies/science-office", science["sourceUrls"])
+        # And it is withdrawn with everything else on the next build.
+        apply_evidence_to_tree(tree, {})
+        self.assertNotIn("pageReadNotNamed", index_tree(tree)[0]["doe-science"])
+
+    def test_a_failure_the_directory_does_not_answer_still_stands(self) -> None:
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-nnsa": dict(self.NOT_FOUND_RECORD, siteFrom="doe-nnsa")})
+        listing = {k: v for k, v in self._listing().items() if k != "doe-nnsa"}
+        stats = apply_directory_evidence(tree, listing)
+        nnsa = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(stats["failed_checks_withdrawn"], 0)
+        self.assertEqual(nnsa["verificationFailure"], "not_found")
+        self.assertNotIn("pageReadNotNamed", nnsa)
+
+    def test_the_panel_prints_the_page_for_a_negative_and_for_a_withdrawn_one(self) -> None:
+        ui = (Path(__file__).resolve().parent.parent / "js" / "ui.js").read_text(encoding="utf-8")
+        self.assertIn("its official page${where} does not name it as a heading or link", ui)
+        self.assertIn("hostnameOf(failureSource.url)", ui, "the negative names the page it was checked against")
+        self.assertIn("its own page (${hostnameOf(readNotNamed.url)}) was read", ui)

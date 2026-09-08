@@ -363,9 +363,18 @@ def apply_directory_evidence(
             if str(node.get("lastVerified") or "") == str(node.get("evidenceVerifiedAt") or ""):
                 node.pop("lastVerified", None)
             node.pop("evidenceVerifiedAt", None)
-            node.pop("verificationFailure", None)
-            node.pop("verificationFailureSource", None)
+            failed_kind = str(node.pop("verificationFailure", None) or "")
+            failed_source = node.pop("verificationFailureSource", None)
             node.pop("verificationSiteFrom", None)
+            # The badge goes; the fact does not. A page read that did not name
+            # the unit is still true beside a directory that lists it, and the
+            # panel says both — dropping it would answer "was its own page
+            # checked?" with silence when the answer is "yes, and it did not
+            # name it".
+            if failed_kind == "not_found" and isinstance(failed_source, dict) and failed_source.get("url"):
+                node["pageReadNotNamed"] = {
+                    "url": str(failed_source["url"]), "checkedAt": failed_source.get("checkedAt"),
+                }
             stats["failed_checks_withdrawn"] += 1
         urls = [str(u) for u in (node.get("sourceUrls") or [])]
         if url not in urls:

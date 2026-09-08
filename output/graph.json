@@ -45936,6 +45936,10 @@
               "sourceCount": 1,
               "confidenceScore": 0.4,
               "verificationStatus": "unverified",
+              "pageReadNotNamed": {
+                "url": "https://www.whitehouse.gov",
+                "checkedAt": "2026-09-08T19:58:40+00:00"
+              },
               "evidenceUrls": [
                 "https://www.federalregister.gov/agencies/administration-office-executive-office-of-the-president"
               ],

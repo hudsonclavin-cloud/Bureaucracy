@@ -480,10 +480,32 @@ def main(argv):
             failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
         if node.get("verificationFailure") and str(node.get("verificationFailure")) not in KNOWN_FAILURES:
             unknown_method.append("{} verificationFailure {!r}".format(label(node), node.get("verificationFailure")))
-        if str(node.get("verificationFailure") or "") == "not_in_official_list":
+        # A negative must be as auditable as a positive: it names the page or
+        # the list it was checked against, and when. The panel prints that URL.
+        failure_kind = str(node.get("verificationFailure") or "")
+        if failure_kind:
             src = node.get("verificationFailureSource") if isinstance(node.get("verificationFailureSource"), dict) else {}
-            if not str(src.get("url") or "").startswith("https://www.senate.gov/") or not src.get("checkedAt"):
-                unknown_method.append("{} claims not_in_official_list without the list's URL and date".format(label(node)))
+            src_url = str(src.get("url") or "")
+            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_date = str(src.get("checkedAt") or "")
+            if failure_kind == "not_in_official_list" and not src_url.startswith("https://www.senate.gov/"):
+                unknown_method.append("{} claims not_in_official_list without the list's URL".format(label(node)))
+            elif failure_kind == "not_found" and not src_host.endswith((".gov", ".mil")):
+                unknown_method.append("{} claims its own page did not name it, without naming the page".format(label(node)))
+            if not re.match(r"^\d{4}-\d{2}-\d{2}", src_date) or src_date[:10] > today:
+                unknown_method.append("{} claims a failed check without a past date ({!r})".format(label(node), src_date))
+        # The same, for a page read that did not name the node and stands
+        # beside a directory listing that did.
+        read_not_named = node.get("pageReadNotNamed")
+        if read_not_named is not None:
+            if not isinstance(read_not_named, dict):
+                unknown_method.append("{} pageReadNotNamed {!r}".format(label(node), read_not_named))
+            else:
+                rn_url = str(read_not_named.get("url") or "")
+                rn_host = rn_url.split("/")[2].lower() if rn_url.startswith("http") and rn_url.count("/") >= 2 else ""
+                rn_date = str(read_not_named.get("checkedAt") or "")
+                if not rn_host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", rn_date) or rn_date[:10] > today:
+                    unknown_method.append("{} records a page read that did not name it, without a .gov URL and a past date".format(label(node)))
         if "official_site" in (node.get("sourceTypes") or []) and not official:
             unofficial_official.append("{} claims an official source with no .gov/.mil URL".format(label(node)))
         method = node.get("verificationMethod")

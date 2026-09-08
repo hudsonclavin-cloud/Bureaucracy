@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908d";
+import { createGovernmentGraph } from "./graph.js?v=20260908e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260908e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -631,9 +631,13 @@ function renderVerificationPanel(data) {
     if (data.verificationFailure === "not_in_official_list" && failureSource && typeof failureSource === "object") {
       checkLine = `Checked${checkedOn ? ` ${checkedOn}` : ""} against ${SOURCE_TEXT[failureSource.source] || "an official list"}: it carries no unit of this name under "${failureSource.listedUnder}"`;
     } else if (data.verificationFailure === "not_found") {
+      // Name the page. A negative a reader cannot check is worth no more
+      // than a positive without a URL, and every positive here carries one.
+      const failedOn = failureSource && typeof failureSource === "object" ? hostnameOf(failureSource.url) : "";
+      const where = failedOn ? ` (${failedOn})` : "";
       checkLine = checkedOn
-        ? `Checked ${checkedOn}: its official page does not name it as a heading or link`
-        : "Its official page does not name it as a heading or link";
+        ? `Checked ${checkedOn}: its official page${where} does not name it as a heading or link`
+        : `Its official page${where} does not name it as a heading or link`;
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
@@ -649,6 +653,16 @@ function renderVerificationPanel(data) {
       }`;
     } else if (listing && typeof listing === "object") {
       checkLine += ` as "${listing.listedName}"${listing.parentListedName ? ` under "${listing.parentListedName}"` : ""}`;
+    }
+    // Both facts, where both are true: a directory lists it, and its own
+    // page was read and did not name it. Withdrawing the badge is right —
+    // the node has a source — but the read still happened.
+    const readNotNamed = data.pageReadNotNamed;
+    if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {
+      const on = readNotNamed.checkedAt
+        ? new Date(readNotNamed.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+        : null;
+      checkLine += ` · its own page (${hostnameOf(readNotNamed.url)}) was read${on ? ` ${on}` : ""} and does not name it`;
     }
     setText(dom.verificationLastVerified, checkLine);
   }
