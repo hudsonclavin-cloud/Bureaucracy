@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:19:17Z",
+ "url": "https://www.house.gov/committees",
+ "status": 200,
+ "final_url": "https://www.house.gov/committees",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 23801,
+ "sha256": "0d4b5a72cd5d2581f533f637cf2e873605a9e1701c43e0afdfa4c9e25692cbc2",
+ "error": null,
+ "file": "house_gov_committees.html"
+}

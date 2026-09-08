@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:53Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 12778,
+ "sha256": "418f43d565fda0a3dccb56b6a163150be60334b08e15c09b1752eb7bb8935170",
+ "error": null,
+ "file": "committee_memberships_SSAF.xml"
+}

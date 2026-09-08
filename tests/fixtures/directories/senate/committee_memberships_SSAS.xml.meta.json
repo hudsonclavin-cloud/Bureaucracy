@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:56Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 16978,
+ "sha256": "4d16dfb7f129b1a54904a534bba96f881df17672a91fc1ba1e582bf826e232d4",
+ "error": null,
+ "file": "committee_memberships_SSAS.xml"
+}

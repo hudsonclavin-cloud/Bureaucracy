@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:19:19Z",
+ "url": "https://www.senate.gov/committees/",
+ "status": 200,
+ "final_url": "https://www.senate.gov/committees/",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 57666,
+ "sha256": "73784a33e38af095717b7c18d97eccce75f244e132d4f08952a80b3aecb98bd1",
+ "error": null,
+ "file": "senate_committees_page.html"
+}

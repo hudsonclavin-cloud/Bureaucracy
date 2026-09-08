@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:49Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 1700,
+ "sha256": "cc88a8dd860f5163dee22d7eb163bf45cc2a7a99dadf293847a3bcfecdbee4a5",
+ "error": null,
+ "file": "committee_memberships_SLIA.xml"
+}

@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:52Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 1966,
+ "sha256": "877d4725384426e7827d65abf4f7cdb916ff5b58f79c7b3d04e7578a4bfd34d2",
+ "error": null,
+ "file": "committee_memberships_SPAG.xml"
+}

@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:21:13Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 2745,
+ "sha256": "d09a72adf1e1182ff4453e122db471db49ec1e21348df09781756079bcb02d63",
+ "error": null,
+ "file": "committee_memberships_SSVA.xml"
+}

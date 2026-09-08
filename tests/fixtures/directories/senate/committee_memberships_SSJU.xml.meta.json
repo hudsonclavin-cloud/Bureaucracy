@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:21:09Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 14942,
+ "sha256": "5d301532a82f663abee73fe2a8924afc91e8b06f247dd32f39c69d11b94b93e0",
+ "error": null,
+ "file": "committee_memberships_SSJU.xml"
+}
