@@ -13,6 +13,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 
 from data_pipeline.exporter.build_graph import index_tree, load_base_graph
+from data_pipeline.exporter.build_graph import canonical_name_key
 from data_pipeline.verification.positions import (
     DEFAULT_ARCHIVE_CSV,
     DEFAULT_ARCHIVE_PAGE,
@@ -21,6 +22,7 @@ from data_pipeline.verification.positions import (
     PLUM_PLACEMENT_METHOD,
     PLUM_SOURCE,
     apply_position_evidence,
+    listed_title_still_names,
     load_plum_archive,
     load_position_evidence,
     match_positions,
@@ -466,3 +468,35 @@ class RealFixtureTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GateAgreesWithTheMatcherTests(unittest.TestCase):
+    """The publish gate keeps a stdlib copy of this module's name rule. If the
+    two drift, a placement the matcher accepts fails the gate — and 25 of the
+    91 real matches carry a parent qualifier the plain substring test refuses."""
+
+    def test_the_gate_s_copy_accepts_every_name_this_module_accepts(self) -> None:
+        from scripts.validate_published_graph import position_title_keys as gate_keys
+
+        cases = [
+            ("Director, AHRQ", "Agency for Healthcare Research and Quality (AHRQ)", "DIRECTOR"),
+            ("Administrator, NASA", "National Aeronautics & Space Administration (NASA)", "ADMINISTRATOR"),
+            ("Director / Administrator / Chair, AmeriCorps", "AmeriCorps", "CHAIR"),
+            ("Chief of Staff", "Department of Energy (DOE)", "CHIEF OF STAFF"),
+            ("Secretary, ABMC", "American Battle Monuments Commission (ABMC)", "THE SECRETARY"),
+        ]
+        for name, parent, listed in cases:
+            with self.subTest(name=name):
+                keys = gate_keys(name, parent)
+                listed_key = canonical_name_key(listed)
+                accepted = any(k and (k in listed_key or listed_key in k) for k in keys)
+                self.assertTrue(accepted, f"the gate would refuse {name!r} against {listed!r}: {sorted(keys)}")
+                # And the module itself accepts it, so the two agree.
+                self.assertTrue(listed_title_still_names(name, [parent], listed), f"the module refuses {name!r}")
+
+    def test_the_gate_s_copy_refuses_a_title_that_names_another_post(self) -> None:
+        from scripts.validate_published_graph import position_title_keys as gate_keys
+
+        keys = gate_keys("Chief Financial Officer", "Department of Energy (DOE)")
+        self.assertFalse(any(k in canonical_name_key("INSPECTOR GENERAL") for k in keys if k))
+        self.assertFalse(listed_title_still_names("Chief Financial Officer", ["Department of Energy (DOE)"], "INSPECTOR GENERAL"))

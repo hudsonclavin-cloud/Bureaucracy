@@ -574,3 +574,85 @@ def listed_name_still_names(node_name: Any, listed_name: Any) -> bool:
     rename in the curated file cannot inherit another unit's count."""
     key = canonical_name_key(node_name)
     return bool(key) and key in headcount_name_keys(listed_name)
+
+
+HEADCOUNT_FIELDS = ("employeesOfficial", "employeesOfficialSource")
+
+
+def apply_headcount_evidence(
+    root: dict[str, Any],
+    records: dict[str, dict[str, Any]],
+    *,
+    index_tree=None,
+) -> dict[str, Any]:
+    """Stamp OPM's count beside the curated one, never over it.
+
+    The curated `employees` field stays exactly as it is: it is what the
+    cost cascade weights by, and changing that is a separate decision with
+    its own risk (OPM's coverage is not tree-shaped for this graph — the
+    Army, Navy and Air Force civilians land nowhere, so Defense would swing
+    fourfold for want of a node rather than for want of evidence). What this
+    adds is a sourced, dated number the panel can print beside the uncited
+    one, and the fact that they disagree where they do.
+
+    Every record carries the data dictionary's own coverage sentence,
+    because the population is the point: Executive-Branch civilians in an
+    active pay status. A curated "~175,000" counting uniformed members is
+    not a worse measurement of the same thing; it is a different thing, and
+    the panel says so rather than calling one of them wrong.
+    """
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    node_map, _ = index_tree(root)
+    stats = {"listed": 0, "unknown_node": 0, "not_an_organisation": 0, "stale_name": 0, "undated": 0,
+             "outside_stated_coverage": 0, "below_its_subtree": 0}
+    for node_id, record in records.items():
+        node = node_map.get(node_id)
+        if node is None:
+            stats["unknown_node"] += 1
+            continue
+        if not _is_organisation(node):
+            stats["not_an_organisation"] += 1
+            continue
+        url = str(record.get("url") or "").strip()
+        checked_at = str(record.get("checkedAt") or "").strip()
+        employees = record.get("employees")
+        if record.get("source") != FEDSCOPE_SOURCE or not url or not checked_at or not isinstance(employees, int):
+            stats["undated"] += 1
+            continue
+        if not listed_name_still_names(node.get("name"), record.get("listedName")):
+            # Keyed by id and never re-derived on a rename: a count earned by
+            # a different name is not this node's.
+            stats["stale_name"] += 1
+            continue
+        node["employeesOfficial"] = employees
+        source: dict[str, Any] = {
+            "source": FEDSCOPE_SOURCE,
+            "listedName": record.get("listedName"),
+            "level": record.get("level"),
+            "agencyCode": record.get("agencyCode"),
+            "subagencyCode": record.get("subagencyCode"),
+            "period": record.get("period"),
+            "coverage": record.get("coverage"),
+            "coverageSource": record.get("coverageSource"),
+            "url": url,
+            "checkedAt": checked_at,
+        }
+        if record.get("previous"):
+            source["previous"] = record["previous"]
+        if record.get("components"):
+            # What the agency total is made of, so a reader can see when it
+            # is one unit rather than the whole department.
+            source["components"] = record["components"]
+        for flag in ("outsideStatedCoverage", "subtreeRecordsExceedIt", "wholeAgency", "agencyMatched"):
+            if record.get(flag) is not None:
+                source[flag] = record[flag]
+        if record.get("outsideStatedCoverage"):
+            stats["outside_stated_coverage"] += 1
+        if record.get("subtreeRecordsExceedIt"):
+            stats["below_its_subtree"] += 1
+        node["employeesOfficialSource"] = source
+        stats["listed"] += 1
+    return stats

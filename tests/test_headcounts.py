@@ -15,6 +15,8 @@ from pathlib import Path
 
 from data_pipeline.exporter.build_graph import index_tree
 from data_pipeline.verification.headcounts import (
+    FEDSCOPE_SOURCE,
+    apply_headcount_evidence,
     COVERAGE_STATEMENT,
     DEFAULT_FEDSCOPE_ZIP,
     LEVEL_AGENCY,
@@ -464,3 +466,78 @@ class RealFixturePinTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ApplyToTheTreeTests(unittest.TestCase):
+    """OPM's count is stamped beside the curated one, never over it, and is
+    withdrawn with everything else the evidence modules own."""
+
+    URL = "https://www.opm.gov/data/datasets/Files/753/x.zip"
+
+    def _tree(self):
+        return json.loads(json.dumps(BASE))
+
+    def _record(self, **kw):
+        base = {
+            "source": FEDSCOPE_SOURCE, "status": "listed", "level": LEVEL_AGENCY, "listedName": "DEPARTMENT OF TREASURY",
+            "agencyCode": "TR", "subagencyCode": None, "employees": 104512, "period": "2025-03",
+            "coverage": "civilians in an active pay status", "coverageSource": "the dictionary",
+            "url": self.URL, "checkedAt": "2026-09-08T19:50:51Z",
+        }
+        base.update(kw)
+        return base
+
+    def test_the_official_count_sits_beside_the_curated_one(self) -> None:
+        tree = self._tree()
+        before = index_tree(self._tree())[0]["exec-dept-treasury"].get("employees")
+        stats = apply_headcount_evidence(tree, {"exec-dept-treasury": self._record()})
+        node = index_tree(tree)[0]["exec-dept-treasury"]
+        self.assertEqual(stats["listed"], 1)
+        self.assertEqual(node["employeesOfficial"], 104512)
+        self.assertEqual(node["employees"], before, "the curated figure is what the cascade weights by and is not touched")
+        source = node["employeesOfficialSource"]
+        self.assertEqual((source["listedName"], source["period"], source["url"]), ("DEPARTMENT OF TREASURY", "2025-03", self.URL))
+        self.assertTrue(source["coverage"], "the population is what makes the number comparable")
+        self.assertNotIn(self.URL, node.get("sourceUrls") or [], "a headcount is not evidence that the unit exists")
+
+    def test_a_record_that_cannot_be_dated_or_sourced_publishes_nothing(self) -> None:
+        for missing in ("url", "checkedAt", "employees"):
+            with self.subTest(missing=missing):
+                tree = self._tree()
+                stats = apply_headcount_evidence(tree, {"exec-dept-treasury": self._record(**{missing: None})})
+                node = index_tree(tree)[0]["exec-dept-treasury"]
+                self.assertEqual(stats["undated"], 1)
+                self.assertNotIn("employeesOfficial", node)
+
+    def test_a_renamed_node_keeps_no_count_earned_by_its_old_name(self) -> None:
+        tree = self._tree()
+        index_tree(tree)[0]["exec-dept-treasury"]["name"] = "Department of Revenue"
+        stats = apply_headcount_evidence(tree, {"exec-dept-treasury": self._record()})
+        self.assertEqual(stats["stale_name"], 1)
+        self.assertNotIn("employeesOfficial", index_tree(tree)[0]["exec-dept-treasury"])
+
+    def test_a_position_node_never_carries_an_agency_headcount(self) -> None:
+        tree = self._tree()
+        position = next(i for i, n in index_tree(tree)[0].items() if "position" in str(n.get("type") or "").lower())
+        stats = apply_headcount_evidence(tree, {position: self._record()})
+        self.assertEqual(stats["not_an_organisation"], 1)
+        self.assertNotIn("employeesOfficial", index_tree(tree)[0][position])
+
+    def test_the_flags_that_qualify_a_count_reach_the_node(self) -> None:
+        tree = self._tree()
+        apply_headcount_evidence(tree, {"exec-dept-treasury": self._record(outsideStatedCoverage=True, subtreeRecordsExceedIt=999)})
+        source = index_tree(tree)[0]["exec-dept-treasury"]["employeesOfficialSource"]
+        self.assertIs(source["outsideStatedCoverage"], True)
+        self.assertEqual(source["subtreeRecordsExceedIt"], 999)
+
+    def test_it_is_withdrawn_with_everything_else_the_modules_own(self) -> None:
+        from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS, apply_evidence_to_tree
+
+        self.assertIn("employeesOfficial", EVIDENCE_OWNED_FIELDS)
+        self.assertIn("employeesOfficialSource", EVIDENCE_OWNED_FIELDS)
+        tree = self._tree()
+        apply_headcount_evidence(tree, {"exec-dept-treasury": self._record()})
+        apply_evidence_to_tree(tree, {})
+        node = index_tree(tree)[0]["exec-dept-treasury"]
+        self.assertNotIn("employeesOfficial", node)
+        self.assertNotIn("employeesOfficialSource", node)

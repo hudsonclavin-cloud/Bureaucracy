@@ -349,10 +349,23 @@ the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
 obtains a key.
 
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
-official sources, derived and audited but **not yet wired into the
-exporter**: `data/verification/headcount_evidence.json` (133 records) and
-`position_evidence.json` (91) exist, and nothing reads them, so nothing of
-this reaches the site yet.
+official sources, applied by the exporter since 2026-09-09 from
+`data/verification/headcount_evidence.json` (133 records) and
+`position_evidence.json` (91). Both are applied *beside* the curated
+figure, never over it: `apply_headcount_evidence` stamps
+`employeesOfficial` and `employeesOfficialSource` (the listed name, the
+level, the agency/sub-agency codes, the period, OPM's own coverage
+sentence and the URL it came from, the previous period's count, the
+component rows, and the matcher's flags) and leaves the base graph's
+`employees` field exactly as it was; the panel shows both rows and says
+they count different populations. `apply_position_evidence` stamps
+`positionListing` plus the PLUM placement method. The exporter refuses a
+record whose node is not of the right kind, whose name has since changed,
+or that carries no date or URL — and, for a headcount, one its own
+descendants' records already exceed. The gate checks every field (a
+`.gov` URL, a period, a coverage sentence, a past date, a non-negative
+integer) and reports how many nodes carry each and how far the curated
+figures are from OPM's: **66 of the 133 differ by more than 10%.**
 
 FedScope is OPM's civilian employment table by agency and sub-agency
 (March 2025, September 2024 beside it). Every record carries the data

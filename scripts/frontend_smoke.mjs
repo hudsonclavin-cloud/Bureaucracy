@@ -275,6 +275,32 @@ try {
     check("an absence from a complete list says which list and which committee", /against the Senate's official committee list: it carries no unit of this name under "/.test(existence), existence);
   }
 
+  // OPM's own numbers, each said as itself: a sourced headcount beside an
+  // uncited one, and a position listing that is a record of a past period.
+  const withOfficial = allNodes.find((n) => typeof n.employeesOfficial === "number" && n.employees)
+    || allNodes.find((n) => typeof n.employeesOfficial === "number");
+  check("some node carries an official headcount", Boolean(withOfficial), "none");
+  if (withOfficial) {
+    await openByName(withOfficial.name);
+    const stats = await text("#info-stats");
+    check("the official headcount is shown and named as OPM's", /EMPLOYEES — OPM FedScope/.test(stats), stats.slice(0, 400));
+    const note = await text("#info-headcount-provenance");
+    check("the headcount names the file and its coverage", /OPM's FedScope employment file lists .* Coverage: /.test(note), note);
+    if (withOfficial.employees) {
+      check("the curated figure is labelled uncited beside it", /EMPLOYEES \(uncited, from the base graph\)/.test(stats), stats.slice(0, 400));
+      check("the panel says the two count different populations", /count different populations/.test(note), note);
+    }
+  }
+  const withListing = allNodes.find((n) => n.positionListing && typeof n.positionListing === "object");
+  check("some position carries a PLUM archive listing", Boolean(withListing), "none");
+  if (withListing) {
+    await openByName(withListing.name);
+    const listing = await text("#info-position-listing");
+    check("the listing names the archive and its edition", /OPM's PLUM archive — /.test(listing), listing);
+    check("the listing disclaims any current holder", /says nothing about who holds this post now/.test(listing), listing);
+    check("the listing never names an incumbent", !/incumbent/i.test(listing), listing);
+  }
+
   // A share nobody can estimate is published as unavailable, never as $0.00
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))

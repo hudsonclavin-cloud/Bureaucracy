@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908e";
+import { createGovernmentGraph } from "./graph.js?v=20260909a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -470,6 +470,83 @@ function ensureVerificationLegend() {
 // same way a cost says "estimate" and a source box says "no source
 // recorded". A cluster's text is written by this UI and is not a claim; a
 // candidate's text came from a crawler record and is labelled there.
+// What OPM's number is, and is not. The coverage sentence is the data
+// dictionary's own; the disagreement line exists because the two figures are
+// usually measuring different populations, not because one is wrong.
+function renderHeadcountProvenance(data) {
+  let line = document.getElementById("info-headcount-provenance");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-headcount-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const source = data.employeesOfficialSource;
+  if (!source || typeof source !== "object" || typeof data.employeesOfficial !== "number") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const on = source.checkedAt
+    ? new Date(source.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  add(`OPM's FedScope employment file lists ${data.employeesOfficial.toLocaleString()} for "${source.listedName}"`);
+  if (source.level === "subagency" && source.agencyCode) add(` (a sub-agency of ${source.agencyCode})`);
+  if (on) add(`, fetched ${on}`);
+  add(". ");
+  if (source.coverage) add(`Coverage: ${source.coverage} `);
+  if (source.components && source.components.length > 1) {
+    add(`The figure is the sum of ${source.components.length} rows the file lists under this agency. `);
+  }
+  if (source.outsideStatedCoverage) {
+    add("This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+  }
+  if (source.subtreeRecordsExceedIt) {
+    add(`Units beneath this one already account for ${source.subtreeRecordsExceedIt.toLocaleString()} in the same file, so this figure does not cover its own subtree. `);
+  }
+  if (data.employees) {
+    add(`The figure above it is prose from the base graph with no citation, and the two often count different populations — OPM counts federal civilians in an active pay status, not uniformed members or contractors. Neither is corrected against the other.`);
+  }
+}
+
+function renderPositionListing(data) {
+  let line = document.getElementById("info-position-listing");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-position-listing";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const listing = data.positionListing;
+  if (!listing || typeof listing !== "object") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const on = listing.checkedAt
+    ? new Date(listing.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  add(`OPM's PLUM archive — ${listing.edition}${on ? `, fetched ${on}` : ""} — lists "${listing.listedTitle}"`);
+  if (listing.listedOrganization) add(` under ${listing.listedOrganization}`);
+  if (listing.status) add(`, recorded as ${String(listing.status).toLowerCase()} when the archive closed`);
+  add(". ");
+  if (listing.appointmentType) add(`Appointment type ${listing.appointmentType}. `);
+  if (listing.valuesFrom === "past_incumbencies") {
+    add("Those details come from a past incumbency, not a standing listing. ");
+  }
+  add("It is a record of that period and says nothing about who holds this post now.");
+}
+
 function renderDescriptionProvenance(data, isClusteredView) {
   let line = document.getElementById("info-desc-provenance");
   if (!line && dom.infoDesc) {
@@ -1051,6 +1128,8 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
   renderDescriptionProvenance(data, isClusteredView);
+  renderHeadcountProvenance(data);
+  renderPositionListing(data);
 
   if (isClusteredView) {
     setText(dom.infoType, `${data.type || "Group"} Cluster`);
@@ -1066,8 +1145,17 @@ function renderInfoPanel(nodeObj) {
   const statsFragment = document.createDocumentFragment();
   statsFragment.appendChild(buildCostBlock(data));
   const statRows = [];
+  // The curated figure is uncited and mixes populations (civilians, uniformed
+  // members, contractors); OPM's is sourced, dated, and civilians only. Both
+  // are shown, each labelled for what it is, and where they disagree the panel
+  // says so rather than picking one.
+  const official = data.employeesOfficialSource;
   if (data.employees) {
-    statRows.push(["EMPLOYEES", data.employees]);
+    statRows.push([official ? "EMPLOYEES (uncited, from the base graph)" : "EMPLOYEES", data.employees]);
+  }
+  if (typeof data.employeesOfficial === "number" && official && typeof official === "object") {
+    const period = official.period ? ` (${official.period})` : "";
+    statRows.push([`EMPLOYEES — OPM FedScope${period}`, data.employeesOfficial.toLocaleString()]);
   }
   if (data.budget) {
     // A hand-typed note in the curated file, not a sourced figure. Unlabelled it

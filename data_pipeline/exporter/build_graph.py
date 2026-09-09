@@ -2005,6 +2005,8 @@ def build_graph(
     evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
     sites_path: str | Path | None = DEFAULT_SITES_PATH,
     directory_evidence_path: str | Path | None = "default",
+    headcount_evidence_path: str | Path | None = "default",
+    position_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2137,6 +2139,29 @@ def build_graph(
         graph,
         load_directory_evidence(resolved_directory_path) if resolved_directory_path else {},
         index_tree=index_tree,
+    )
+    # OPM's own numbers, last and beside everything else: a headcount is
+    # stamped next to the curated figure and never over it, and a position
+    # listing is the archive's record of a period, never a claim about who
+    # holds a post now.
+    from data_pipeline.verification.headcounts import (  # noqa: E402 — headcounts imports this module
+        DEFAULT_HEADCOUNT_EVIDENCE_PATH,
+        apply_headcount_evidence,
+        load_headcount_evidence,
+    )
+    from data_pipeline.verification.positions import (  # noqa: E402 — positions imports this module
+        DEFAULT_POSITION_EVIDENCE_PATH,
+        apply_position_evidence,
+        load_position_evidence,
+    )
+
+    resolved_headcount_path = DEFAULT_HEADCOUNT_EVIDENCE_PATH if headcount_evidence_path == "default" else headcount_evidence_path
+    validation["headcount_evidence"] = apply_headcount_evidence(
+        graph, load_headcount_evidence(resolved_headcount_path) if resolved_headcount_path else {}, index_tree=index_tree,
+    )
+    resolved_position_path = DEFAULT_POSITION_EVIDENCE_PATH if position_evidence_path == "default" else position_evidence_path
+    validation["position_evidence"] = apply_position_evidence(
+        graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,

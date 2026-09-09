@@ -141,6 +141,67 @@ def is_federal_register_only(urls):
     return bool(hosts) and all(h.endswith("federalregister.gov") for h in hosts)
 
 
+def _within(curated, official, tolerance):
+    """Is the curated string within `tolerance` of the official count? The
+    same first-number-with-magnitudes reading the cascade uses, kept local so
+    the gate stays stdlib-only; a wildly different figure is the finding, not
+    a violation, so this only feeds the report."""
+    import re as _re
+
+    text = str(curated or "").replace(",", "")
+    match = _re.search(r"(\d+(?:\.\d+)?)\s*(million|thousand|k|m)?", text, _re.I)
+    if not match or not official:
+        return True
+    value = float(match.group(1))
+    suffix = (match.group(2) or "").lower()
+    value *= {"million": 1e6, "m": 1e6, "thousand": 1e3, "k": 1e3}.get(suffix, 1)
+    if not value:
+        return True
+    return abs(value - official) <= tolerance * max(value, official)
+
+
+def parent_name_of(node, parent_of, by_id):
+    parent = by_id.get(parent_of.get(str(node.get("id") or "")))
+    return (parent or {}).get("name")
+
+
+def position_title_keys(name, parent_name):
+    """The keys a curated position name answers to: itself, itself without a
+    trailing qualifier that is the parent's own name or acronym, and each
+    slash-separated alternative. The same reduction
+    data_pipeline/verification/positions.py makes, mirrored here so the gate
+    stays stdlib-only; tests/test_positions.py pins the two together."""
+    text = str(name or "").strip()
+    parent_keys = set()
+    parent_text = str(parent_name or "").strip()
+    if parent_text:
+        parent_keys.add(canonical_key(parent_text))
+        acronyms = re.findall(r"\(([^)]+)\)", parent_text)
+        parent_keys.update(canonical_key(a) for a in acronyms)
+        without = canonical_key(re.sub(r"\([^)]*\)", " ", parent_text))
+        if without:
+            parent_keys.add(without)
+    core = text
+    if "," in text:
+        for index, char in enumerate(text):
+            if char != ",":
+                continue
+            head, tail = text[:index].strip(), text[index + 1:].strip()
+            if head and tail and canonical_key(tail) in parent_keys:
+                core = head
+                break
+    keys = set()
+    for candidate in (text, core):
+        key = canonical_key(candidate)
+        if key:
+            keys.add(key)
+        for part in str(candidate).split("/"):
+            part_key = canonical_key(part)
+            if part_key:
+                keys.add(part_key)
+    return keys or {canonical_key(text)}
+
+
 def directory_name_keys(value):
     """The Federal Register's agency directory writes the head noun last
     ("Prisons Bureau", "Energy Department", "Inspector General Office, Energy
@@ -470,6 +531,7 @@ def main(argv):
         "name_labelled_on_parent_official_page",
         "listed_in_federal_register_agency_directory",
         "listed_in_senate_committee_list",
+        "listed_in_opm_plum_archive",
     }
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
     failure_beside_source, unofficial_official, unknown_method = [], [], []
@@ -494,6 +556,35 @@ def main(argv):
                 unknown_method.append("{} claims its own page did not name it, without naming the page".format(label(node)))
             if not re.match(r"^\d{4}-\d{2}-\d{2}", src_date) or src_date[:10] > today:
                 unknown_method.append("{} claims a failed check without a past date ({!r})".format(label(node), src_date))
+        # An official headcount is a sourced number beside an uncited one; it
+        # needs the file, the period and a past date, or it is just another
+        # uncited number with a better name. The coverage sentence is
+        # required too: the population is what makes it comparable at all.
+        official_headcount = node.get("employeesOfficial")
+        if official_headcount is not None:
+            src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
+            src_url = str(src.get("url") or "")
+            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_date = str(src.get("checkedAt") or "")
+            if not isinstance(official_headcount, int) or official_headcount < 0:
+                unknown_method.append("{} employeesOfficial {!r}".format(label(node), official_headcount))
+            if not src_host.endswith((".gov", ".mil")) or not src.get("period") or not src.get("coverage"):
+                unknown_method.append("{} claims an official headcount without a .gov file, a period and its coverage".format(label(node)))
+            if not re.match(r"^\d{4}-\d{2}-\d{2}", src_date) or src_date[:10] > today:
+                unknown_method.append("{} claims an official headcount without a past date ({!r})".format(label(node), src_date))
+        # A position listing is a record of the archive's period, never of now.
+        listing = node.get("positionListing")
+        if listing is not None:
+            if not isinstance(listing, dict):
+                unknown_method.append("{} positionListing {!r}".format(label(node), listing))
+            else:
+                l_url = str(listing.get("url") or "")
+                l_host = l_url.split("/")[2].lower() if l_url.startswith("http") and l_url.count("/") >= 2 else ""
+                l_date = str(listing.get("checkedAt") or "")
+                if not l_host.endswith((".gov", ".mil")) or not listing.get("edition"):
+                    unknown_method.append("{} claims a position listing without a .gov file and the edition it came from".format(label(node)))
+                if not re.match(r"^\d{4}-\d{2}-\d{2}", l_date) or l_date[:10] > today:
+                    unknown_method.append("{} claims a position listing without a past date ({!r})".format(label(node), l_date))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -519,10 +610,12 @@ def main(argv):
     # actually gives the node — evidence for a different edge is not evidence.
     placement_unbacked, placement_wrong_parent = [], []
     parent_of = {}
+    by_id = {}
     stack_p = [(graph, None)]
     while stack_p:
         n, p = stack_p.pop()
         parent_of[str(n.get("id") or "")] = p
+        by_id[str(n.get("id") or "")] = n
         for c in n.get("children", []) or []:
             if isinstance(c, dict):
                 stack_p.append((c, str(n.get("id") or "")))
@@ -550,6 +643,7 @@ def main(argv):
             "name_labelled_on_parent_official_page",
             "listed_under_parent_in_federal_register_agency_directory",
             "listed_under_committee_in_senate_committee_list",
+            "listed_under_organization_in_opm_plum_archive",
         ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
@@ -557,6 +651,13 @@ def main(argv):
         if str(node.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list":
             matched = re.sub(r"^subcommittee on (the )?", "", matched)
             name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
+        if str(node.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive":
+            # A curated position name legitimately carries the parent's own
+            # name or acronym ("Director, AHRQ" under AHRQ), and may offer
+            # alternatives ("Director / Administrator / Chair"). The plain
+            # substring test would refuse 25 of the 91 real matches, so the
+            # gate mirrors the module's rule; a test pins the two together.
+            name_key = min(position_title_keys(node.get("name"), parent_name_of(node, parent_of, by_id)), key=len, default=name_key)
         if matched and name_key and name_key not in matched and name_key not in directory_name_keys(node.get("placementMatchedText")):
             placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
@@ -617,6 +718,16 @@ def main(argv):
     senate_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "senate_committee_list")
     senate_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list")
     senate_missing = sum(1 for n in nodes if str(n.get("verificationFailure") or "") == "not_in_official_list")
+    official_counts = [n for n in nodes if n.get("employeesOfficial") is not None]
+    disagree = sum(
+        1 for n in official_counts
+        if str(n.get("employees") or "").strip() and not _within(n.get("employees"), n["employeesOfficial"], 0.10)
+    )
+    listings = [n for n in nodes if isinstance(n.get("positionListing"), dict)]
+    print("  OPM headcounts       : {:,} nodes carry one; {:,} differ from the curated figure by more than 10%".format(
+        len(official_counts), disagree))
+    print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
+        len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
         senate_listed, senate_placed, senate_missing))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(

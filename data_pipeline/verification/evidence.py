@@ -114,6 +114,11 @@ EVIDENCE_OWNED_FIELDS = (
     # A page read that did not name the node, kept beside a directory listing
     # that did: both are true, and suppressing the read loses a fact.
     "pageReadNotNamed",
+    # Written by positions.py and headcounts.py, withdrawn here with the rest,
+    # so a record dropped from either file stops being published.
+    "positionListing",
+    "employeesOfficial",
+    "employeesOfficialSource",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never
