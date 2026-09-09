@@ -4,6 +4,14 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 This file was lost in the 2026-08-04 merge and rewritten from the code on
 2026-09-02; where it disagrees with older commit messages, the code wins.
 
+## Start here
+
+`docs/GO.md` is the standing instruction for agent work on this repository.
+When the owner says **go**, read it and follow it from Step 0; it decides
+which of the three phases the work is currently in by reading state off disk,
+so a fresh session resumes exactly where the last one stopped. `/go` is the
+same thing as a slash command.
+
 ## Project goal
 
 A browsable, data-backed 3D organizational graph of the U.S. federal

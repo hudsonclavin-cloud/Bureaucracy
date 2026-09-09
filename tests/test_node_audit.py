@@ -40,7 +40,7 @@ CHECKS_OK = {
     "name_currency": "no_evidence_in_repo",
     "node_type": "fits",
     "description": "no_description",
-    "cost": "no_cost_published",
+    "cost": "estimate_only",
     "duplication": "distinct",
 }
 

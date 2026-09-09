@@ -113,8 +113,18 @@ name? `confirmed_by_repo_evidence` · `no_evidence_in_repo` ·
 **`description`** — does the prose assert anything the repository's evidence
 contradicts? `no_contradiction_found` · `contradicted` · `no_description`
 
-**`cost`** — is the published figure the right kind of number from the right
-source? `sound` · `wrong_source` · `wrong_kind` · `no_cost_published`
+**`cost`** — what kind of figure is this, and is it sound?
+`measured_and_sound` (official or root_total, from the right record) ·
+`estimate_only` (allocated or scaled_official — a share of an ancestor's
+total, which is the expected state for 4,885 of the 5,195 nodes and is **not**
+a finding) · `wrong_source` (measured, but that record is not this node's) ·
+`wrong_kind` (the wrong kind of number — a salary presented as a unit's cost)
+· `unavailable` (no figure published at all)
+
+Read it straight off `cost.cost_status` in the dossier: `official` and
+`root_total` → `measured_and_sound` unless you can show the source is wrong;
+`allocated` and `scaled_official` → `estimate_only`; `unavailable` →
+`unavailable`.
 
 **`duplication`** — is this the same unit as another node? `distinct` ·
 `duplicates_another_node` · `unclear`

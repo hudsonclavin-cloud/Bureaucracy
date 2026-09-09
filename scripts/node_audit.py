@@ -80,8 +80,17 @@ CHECKS = {
     # "It has no citation" is NOT a finding — that is true of all 5,170 and is
     # already labelled on every panel. Only a contradiction counts.
     "description": ("no_contradiction_found", "contradicted", "no_description"),
-    # Is the cost the right kind of number, from the right source?
-    "cost": ("sound", "wrong_source", "wrong_kind", "no_cost_published"),
+    # Is the cost the right kind of number, from the right source? The values
+    # map onto cost_status, because the first draft's "sound" and
+    # "no_cost_published" left no way to say "this is an apportioned estimate,
+    # which is the expected state" — and that is 4,885 of the 5,195 nodes.
+    "cost": (
+        "measured_and_sound",  # official or root_total, from the right record
+        "estimate_only",       # allocated or scaled_official: a share of an ancestor's total
+        "wrong_source",        # measured, but that record is not this node's
+        "wrong_kind",          # the wrong kind of number (a salary as a unit's cost)
+        "unavailable",         # no figure published at all
+    ),
     # Is this node the same unit as another node?
     "duplication": ("distinct", "duplicates_another_node", "unclear"),
 }
@@ -169,11 +178,41 @@ def ancestors_of(node_id, parents, by_id):
     return chain
 
 
-def dossier(node_id, order, parents, by_id, evidence, name_index):
+def source_context(node_id, node, parents, by_id, sites, tried):
+    """What phase 1b needs to nominate a page, added to the same dossier.
+
+    Reading a node's evidence and then reading it again in a separate pass to
+    ask "and which page should we fetch for it?" is 5,195 dossiers read twice
+    for nothing. The agent that has just formed a view of what this unit is is
+    the cheapest one to ask where its page would be.
+    """
+    chain, current, seen = [], parents.get(node_id), set()
+    while current and current not in seen:
+        seen.add(current)
+        if parent := by_id.get(current):
+            chain.append({"id": current, "name": parent.get("name"), "candidatePages": sites.get(current) or []})
+        current = parents.get(current)
+    existing = sites.get(node_id) or []
+    return {
+        "eligible": is_organisation(node) and not existing,
+        "existingCandidatePages": existing,
+        "ancestorCandidatePages": chain,
+        "urlsAlreadyTried": {url: why for url, why in tried.items() if url in existing},
+    }
+
+
+def is_organisation(node) -> bool:
+    type_text = str(node.get("type") or "").casefold()
+    return not node.get("synthetic") and not any(
+        word in type_text for word in ("position", "role", "caucus", "office holder")
+    )
+
+
+def dossier(node_id, order, parents, by_id, evidence, name_index, sources=None):
     node = by_id[node_id]
     children = [c for c in (node.get("children") or []) if isinstance(c, dict)]
     same_name = [i for i in name_index.get(str(node.get("name") or "").casefold(), []) if i != node_id]
-    return {
+    entry = {
         "id": node_id,
         "name": node.get("name"),
         "type": node.get("type"),
@@ -215,12 +254,24 @@ def dossier(node_id, order, parents, by_id, evidence, name_index):
             if (record := records.get(node_id)) is not None
         },
     }
+    if sources is not None:
+        entry["source_nomination"] = source_context(node_id, node, parents, by_id, *sources)
+    return entry
 
 
 def cmd_next(args):
     _, order, parents, by_id = load_graph()
     evidence = load_evidence()
     done = set(read_ledger())
+    sources = None
+    if getattr(args, "with_sources", False):
+        # Run as a script, the repository root is not on sys.path.
+        if str(PROJECT_ROOT) not in sys.path:
+            sys.path.insert(0, str(PROJECT_ROOT))
+        from scripts.nominate import urls_already_tried
+
+        sites = {k: v for k, v in load_json(EVIDENCE_DIR / "official_sites.json").items() if not k.startswith("_")}
+        sources = (sites, urls_already_tried(evidence["evidence"]))
     name_index: dict[str, list[str]] = {}
     for node_id in order:
         name_index.setdefault(str(by_id[node_id].get("name") or "").casefold(), []).append(node_id)
@@ -231,12 +282,17 @@ def cmd_next(args):
             i for i in pending
             if any(a["id"] == args.branch for a in ancestors_of(i, parents, by_id)) or i == args.branch
         ]
+    if getattr(args, "shard", None):
+        index, total = (int(part) for part in args.shard.split("/"))
+        if not 1 <= index <= total:
+            raise SystemExit(f"--shard {args.shard} is out of range")
+        pending = [node_id for position, node_id in enumerate(pending) if position % total == index - 1]
     batch = pending[: args.count]
     print(json.dumps({
         "run": args.run,
         "generated": now(),
         "remaining_after_this_batch": max(len(pending) - len(batch), 0),
-        "nodes": [dossier(i, order, parents, by_id, evidence, name_index) for i in batch],
+        "nodes": [dossier(i, order, parents, by_id, evidence, name_index, sources) for i in batch],
     }, indent=1, ensure_ascii=False))
     return 0
 
@@ -458,6 +514,9 @@ def main(argv=None):
     p = sub.add_parser("next", help="emit the next batch of unaudited nodes, with their evidence")
     p.add_argument("--count", type=int, default=25)
     p.add_argument("--branch", help="only nodes beneath this node id")
+    p.add_argument("--shard", help="k/N — take every Nth node, so N agents can run without colliding")
+    p.add_argument("--with-sources", action="store_true",
+                   help="also carry what phase 1b needs to nominate a page, so each dossier is read once")
     p.add_argument("--run", default=f"audit-{datetime.now(timezone.utc):%Y-%m-%d}")
     p.set_defaults(func=cmd_next)
 
