@@ -15989,13 +15989,15 @@
             "https://www.senate.gov/"
           ],
           "sourceTypes": [
-            "official_site",
-            "treasury_outlays"
-          ],
-          "proofSourceCount": 3,
-          "proofSourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site"
+          ],
+          "proofSourceCount": 4,
+          "proofSourceTypes": [
+            "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "official_financial_record"
           ],
           "existsProven": true,
@@ -31245,15 +31247,17 @@
             "https://www.federalregister.gov/agencies/u-s-house-of-representatives"
           ],
           "sourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "federal_register_directory",
             "federal_register"
           ],
-          "proofSourceCount": 6,
+          "proofSourceCount": 7,
           "proofSourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "federal_register_directory",
             "federal_register",
             "official_financial_record",
@@ -34721,15 +34725,15 @@
                 "https://www.federalregister.gov/agencies/government-accountability-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -34751,8 +34755,8 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59083801",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 678655238.13,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Government Accountability Office",
@@ -36308,15 +36312,15 @@
                 "https://www.federalregister.gov/agencies/congressional-budget-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -36338,8 +36342,8 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59083782",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 57506741.9,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Congressional Budget Office",
@@ -37236,15 +37240,15 @@
                 "https://www.federalregister.gov/agencies/library-of-congress"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -37266,8 +37270,8 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59083792",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 732193774.42,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Library of Congress",
@@ -37577,15 +37581,15 @@
                 "https://www.federalregister.gov/agencies/government-publishing-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -37607,8 +37611,8 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59083798",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 122380168.98,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Government Publishing Office",
@@ -37978,15 +37982,15 @@
                 "https://www.federalregister.gov/agencies/architect-of-the-capitol"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -38008,8 +38012,8 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59083788",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 735681009.22,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Architect of the Capitol",
@@ -39586,13 +39590,15 @@
                 "https://www.uscp.gov/the-department"
               ],
               "sourceTypes": [
-                "official_site",
-                "treasury_outlays"
-              ],
-              "proofSourceCount": 3,
-              "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site"
+              ],
+              "proofSourceCount": 4,
+              "proofSourceTypes": [
+                "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "official_financial_record"
               ],
               "existsProven": true,
@@ -39682,7 +39688,7 @@
           ],
           "sourceTypes": [
             "treasury_outlays",
-            "official_site"
+            "government_dataset"
           ],
           "children": [],
           "budget_as_of": "2026-07-31",
@@ -39691,13 +39697,13 @@
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
           "sourceCount": 1,
-          "confidenceScore": 0.7,
-          "verificationStatus": "partial",
+          "confidenceScore": 0.4,
+          "verificationStatus": "unverified",
           "lastVerified": null,
           "proofSourceCount": 3,
           "proofSourceTypes": [
             "treasury_outlays",
-            "official_site",
+            "government_dataset",
             "official_financial_record"
           ],
           "existsProven": true,
@@ -39720,13 +39726,13 @@
         "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
       ],
       "sourceTypes": [
-        "official_site",
-        "treasury_outlays"
+        "treasury_outlays",
+        "government_dataset"
       ],
       "proofSourceCount": 3,
       "proofSourceTypes": [
-        "official_site",
         "treasury_outlays",
+        "government_dataset",
         "official_financial_record"
       ],
       "existsProven": true,
@@ -39747,8 +39753,8 @@
       "treasury_netted": true,
       "treasury_receipts_child_id": "legislative-branch--treasury-receipts",
       "sourceCount": 1,
-      "confidenceScore": 0.7,
-      "verificationStatus": "partial",
+      "confidenceScore": 0.4,
+      "verificationStatus": "unverified",
       "lastVerified": null,
       "rollup_total_amount": 5836998774.43,
       "budget_source": "Treasury MTS Table 5",
@@ -40693,15 +40699,15 @@
                 "https://www.federalregister.gov/agencies/the-white-house-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -40723,8 +40729,8 @@
               "treasury_section": "Executive Office of the President",
               "treasury_classification_id": "59085131",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 55670464.76,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "The White House",
@@ -44650,15 +44656,17 @@
                 "https://www.federalregister.gov/agencies/management-and-budget-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -46782,7 +46790,7 @@
               ],
               "sourceTypes": [
                 "treasury_outlays",
-                "official_site"
+                "government_dataset"
               ],
               "children": [],
               "budget_as_of": "2026-07-31",
@@ -46791,13 +46799,13 @@
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
               "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
               "lastVerified": null,
               "proofSourceCount": 3,
               "proofSourceTypes": [
                 "treasury_outlays",
-                "official_site",
+                "government_dataset",
                 "official_financial_record"
               ],
               "existsProven": true,
@@ -46822,15 +46830,17 @@
             "https://www.federalregister.gov/agencies/executive-office-of-the-president"
           ],
           "sourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "federal_register_directory",
             "federal_register"
           ],
-          "proofSourceCount": 6,
+          "proofSourceCount": 7,
           "proofSourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "federal_register_directory",
             "federal_register",
             "official_financial_record",
@@ -51235,7 +51245,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -51244,13 +51254,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -51274,15 +51284,15 @@
                 "https://www.federalregister.gov/agencies/state-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -51306,8 +51316,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-state--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 22560808102.86,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of State",
@@ -52463,15 +52473,17 @@
                     "https://www.federalregister.gov/agencies/internal-revenue-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -52802,15 +52814,17 @@
                     "https://www.federalregister.gov/agencies/engraving-and-printing-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -53171,15 +53185,17 @@
                     "https://www.federalregister.gov/agencies/united-states-mint"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -53481,15 +53497,17 @@
                     "https://www.federalregister.gov/agencies/bureau-of-the-fiscal-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -54271,13 +54289,15 @@
                     "https://home.treasury.gov/about/general-information"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
-                  ],
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -55154,7 +55174,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -55163,13 +55183,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -55194,15 +55214,17 @@
                 "https://www.federalregister.gov/agencies/treasury-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -67376,7 +67398,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -67385,13 +67407,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -67415,15 +67437,15 @@
                 "https://www.federalregister.gov/agencies/defense-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -67447,8 +67469,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-defense--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 764710153765.82,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Defense--Military Programs",
@@ -68914,15 +68936,15 @@
                     "https://www.federalregister.gov/agencies/federal-bureau-of-investigation"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -68944,8 +68966,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084592",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 8666025201.8,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Bureau of Investigation",
@@ -69486,15 +69508,15 @@
                     "https://www.federalregister.gov/agencies/drug-enforcement-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -69516,8 +69538,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084594",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 2624638971.33,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Drug Enforcement Administration",
@@ -70055,15 +70077,15 @@
                     "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -70085,8 +70107,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084596",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1346657615.3,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
@@ -70704,15 +70726,15 @@
                     "https://www.federalregister.gov/agencies/prisons-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -70734,8 +70756,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084598",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 6902593064.22,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Prison System",
@@ -71336,15 +71358,15 @@
                     "https://www.federalregister.gov/agencies/united-states-marshals-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -71366,8 +71388,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084585",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1400494094.97,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Marshals Service",
@@ -71719,13 +71741,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -71744,8 +71766,8 @@
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59084583",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 2121685024.04,
                   "budget_source": "Treasury MTS Table 5",
@@ -73558,7 +73580,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -73567,13 +73589,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -73598,15 +73620,17 @@
                 "https://www.federalregister.gov/agencies/justice-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -74677,15 +74701,17 @@
                     "https://www.federalregister.gov/agencies/national-park-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -75510,15 +75536,17 @@
                     "https://www.federalregister.gov/agencies/geological-survey"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -75902,15 +75930,17 @@
                     "https://www.federalregister.gov/agencies/fish-and-wildlife-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -76294,15 +76324,17 @@
                     "https://www.federalregister.gov/agencies/indian-affairs-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -77315,15 +77347,17 @@
                     "https://www.federalregister.gov/agencies/ocean-energy-management-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -77423,7 +77457,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -77432,13 +77466,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -77463,15 +77497,17 @@
                 "https://www.federalregister.gov/agencies/interior-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -78337,15 +78373,15 @@
                     "https://www.federalregister.gov/agencies/farm-service-agency"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -78367,8 +78403,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083893",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 9741460068.95,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Farm Service Agency",
@@ -78973,15 +79009,15 @@
                     "https://www.federalregister.gov/agencies/forest-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -79003,8 +79039,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083967",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 9122359099.35,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Forest Service",
@@ -79321,15 +79357,15 @@
                     "https://www.federalregister.gov/agencies/food-and-nutrition-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -79351,8 +79387,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083944",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 117174961882.55,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Food and Nutrition Service",
@@ -79674,15 +79710,15 @@
                     "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -79704,8 +79740,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083870",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1845033545.32,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Animal and Plant Health Inspection Service",
@@ -79972,15 +80008,15 @@
                     "https://www.federalregister.gov/agencies/agricultural-research-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -80002,8 +80038,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083853",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1464483892.87,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Agricultural Research Service",
@@ -80334,15 +80370,15 @@
                     "https://www.federalregister.gov/agencies/food-safety-and-inspection-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -80364,8 +80400,8 @@
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59083872",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 933183885.13,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Food Safety and Inspection Service",
@@ -80438,7 +80474,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -80447,13 +80483,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -80477,15 +80513,15 @@
                 "https://www.federalregister.gov/agencies/agriculture-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -80509,8 +80545,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-usda--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 188233199434.7,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Agriculture",
@@ -81414,15 +81450,15 @@
                     "https://www.federalregister.gov/agencies/census-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -81444,8 +81480,8 @@
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59083990",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1136520149.51,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of the Census",
@@ -81877,13 +81913,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -81902,8 +81938,8 @@
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59083997",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 5621196879.58,
                   "budget_source": "Treasury MTS Table 5",
@@ -82203,13 +82239,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -82228,8 +82264,8 @@
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59084000",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 2716222306.17,
                   "budget_source": "Treasury MTS Table 5",
@@ -82722,15 +82758,15 @@
                     "https://www.federalregister.gov/agencies/international-trade-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -82752,8 +82788,8 @@
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59083993",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 406606066.11,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "International Trade Administration",
@@ -83147,13 +83183,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -83172,8 +83208,8 @@
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59084003",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 883979805.69,
                   "budget_source": "Treasury MTS Table 5",
@@ -83213,7 +83249,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -83222,13 +83258,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -83252,15 +83288,15 @@
                 "https://www.federalregister.gov/agencies/commerce-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -83284,8 +83320,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-doc--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 11469278897.32,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Commerce",
@@ -84055,15 +84091,17 @@
                     "https://www.federalregister.gov/agencies/occupational-safety-and-health-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -84374,15 +84412,17 @@
                     "https://www.federalregister.gov/agencies/labor-statistics-bureau"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -84667,15 +84707,17 @@
                     "https://www.federalregister.gov/agencies/wage-and-hour-division"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -84999,15 +85041,17 @@
                     "https://www.federalregister.gov/agencies/employment-and-training-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -85611,15 +85655,17 @@
                     "https://www.federalregister.gov/agencies/mine-safety-and-health-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "proofSourceCount": 6,
+                  "proofSourceCount": 7,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -86042,7 +86088,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -86051,13 +86097,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -86082,15 +86128,17 @@
                 "https://www.federalregister.gov/agencies/labor-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -87197,15 +87245,15 @@
                     "https://www.federalregister.gov/agencies/food-and-drug-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -87227,8 +87275,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084251",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 2960213477.45,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Food and Drug Administration",
@@ -87730,15 +87778,15 @@
                     "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -87760,8 +87808,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084257",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 8054724302.65,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Centers for Disease Control and Prevention",
@@ -88418,15 +88466,15 @@
                     "https://www.federalregister.gov/agencies/national-institutes-of-health"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -88448,8 +88496,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084259",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 37555056794.16,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Institutes of Health",
@@ -88921,15 +88969,15 @@
                     "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -88951,8 +88999,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084306",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 2328205320351.0,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
@@ -89144,15 +89192,15 @@
                     "https://www.federalregister.gov/agencies/agency-for-healthcare-research-and-quality"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -89174,8 +89222,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084263",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 229049055.06,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Agency for Healthcare Research and Quality",
@@ -89417,13 +89465,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -89442,8 +89490,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084261",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 6476066397.41,
                   "budget_source": "Treasury MTS Table 5",
@@ -89757,15 +89805,15 @@
                     "https://www.federalregister.gov/agencies/health-resources-and-services-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -89787,8 +89835,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084253",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 12175725845.16,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Health Resources and Services Administration",
@@ -90079,15 +90127,15 @@
                     "https://www.federalregister.gov/agencies/indian-health-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -90109,8 +90157,8 @@
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59084255",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 8822870503.88,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Indian Health Service",
@@ -90183,7 +90231,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -90192,13 +90240,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -90222,15 +90270,15 @@
                 "https://www.federalregister.gov/agencies/health-and-human-services-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -90254,8 +90302,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-hhs--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 1724888110533.0,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Health and Human Services",
@@ -91355,13 +91403,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -91380,8 +91428,8 @@
                   "treasury_section": "Department of Housing and Urban Development",
                   "treasury_classification_id": "59084430",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 40488970019.37,
                   "budget_source": "Treasury MTS Table 5",
@@ -91565,13 +91613,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -91590,8 +91638,8 @@
                   "treasury_section": "Department of Housing and Urban Development",
                   "treasury_classification_id": "59084446",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 13054839218.67,
                   "budget_source": "Treasury MTS Table 5",
@@ -93347,7 +93395,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -93356,13 +93404,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -93387,15 +93435,17 @@
                 "https://www.federalregister.gov/agencies/housing-and-urban-development-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -94368,15 +94418,15 @@
                     "https://www.federalregister.gov/agencies/federal-aviation-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -94398,8 +94448,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084825",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 20356780367.92,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Aviation Administration",
@@ -94677,15 +94727,15 @@
                     "https://www.federalregister.gov/agencies/federal-highway-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -94707,8 +94757,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084846",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 51281932207.32,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Highway Administration",
@@ -94985,13 +95035,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -95010,8 +95060,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084852",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 1209189952.6,
                   "budget_source": "Treasury MTS Table 5",
@@ -95192,15 +95242,15 @@
                     "https://www.federalregister.gov/agencies/federal-railroad-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -95222,8 +95272,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084868",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 6655355597.9,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Railroad Administration",
@@ -95440,13 +95490,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -95465,8 +95515,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084849",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 772379003.32,
                   "budget_source": "Treasury MTS Table 5",
@@ -95647,15 +95697,15 @@
                     "https://www.federalregister.gov/agencies/federal-transit-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -95677,8 +95727,8 @@
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59084886",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 16880076728.0,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Transit Administration",
@@ -96083,15 +96133,15 @@
                     "https://www.federalregister.gov/agencies/maritime-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -96113,8 +96163,8 @@
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": -971530606.26,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Maritime Administration",
@@ -96192,7 +96242,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -96201,13 +96251,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -96231,15 +96281,15 @@
                 "https://www.federalregister.gov/agencies/transportation-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -96263,8 +96313,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-dot--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 97995857073.27,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Transportation",
@@ -97930,15 +97980,15 @@
                     "https://www.federalregister.gov/agencies/energy-efficiency-and-renewable-energy-office"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -97960,8 +98010,8 @@
                   "treasury_section": "Department of Energy",
                   "treasury_classification_id": "59084222",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 3009533357.01,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Energy Efficiency and Renewable Energy",
@@ -102779,7 +102829,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -102788,13 +102838,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -102819,15 +102869,17 @@
                 "https://www.federalregister.gov/agencies/energy-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -103753,29 +103805,17 @@
                       }
                     }
                   ],
-                  "rollup_total_amount": 76054364353.4,
-                  "budget_source": "Treasury MTS Table 5",
-                  "treasury_row_name": "Total--Office of Federal Student Aid",
-                  "budget_as_of": "2026-07-31",
-                  "budget_year": "2026",
-                  "amount_kind": "fytd_net_outlays",
-                  "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup",
                   "sourceUrls": [
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -103784,6 +103824,27 @@
                   "proofReason": "official_source_recorded",
                   "treasury_section": "Department of Education",
                   "treasury_classification_id": "59084178",
+                  "resolved_total_amount": 76054364353.4,
+                  "cost_status": "official",
+                  "cost_basis": "treasury_rollup",
+                  "cost_validation": "matched_official_rollup",
+                  "child_cost_basis": "subtree",
+                  "costVerificationStatus": "verified",
+                  "costConfidenceScore": 0.95,
+                  "costVerificationReason": "matched_official_rollup",
+                  "costSourceCount": 1,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
+                  "rollup_total_amount": 76054364353.4,
+                  "budget_source": "Treasury MTS Table 5",
+                  "treasury_row_name": "Total--Office of Federal Student Aid",
+                  "budget_as_of": "2026-07-31",
+                  "budget_year": "2026",
+                  "amount_kind": "fytd_net_outlays",
+                  "source_system": "Treasury Fiscal Data",
+                  "allocation_basis": "treasury_rollup",
                   "employeesOfficial": 1413,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -103801,16 +103862,7 @@
                       "employees": 1440
                     },
                     "agencyMatched": "exec-dept-ed"
-                  },
-                  "resolved_total_amount": 76054364353.4,
-                  "cost_status": "official",
-                  "cost_basis": "treasury_rollup",
-                  "cost_validation": "matched_official_rollup",
-                  "child_cost_basis": "subtree",
-                  "costVerificationStatus": "verified",
-                  "costConfidenceScore": 0.95,
-                  "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  }
                 },
                 {
                   "id": "exec-dept-ed-ocr",
@@ -104234,13 +104286,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -104259,8 +104311,8 @@
                   "treasury_section": "Department of Education",
                   "treasury_classification_id": "59084136",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 25382904757.84,
                   "budget_source": "Treasury MTS Table 5",
@@ -104527,13 +104579,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -104552,8 +104604,8 @@
                   "treasury_section": "Department of Education",
                   "treasury_classification_id": "59084181",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 439172894.04,
                   "budget_source": "Treasury MTS Table 5",
@@ -106127,7 +106179,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -106136,13 +106188,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -106166,15 +106218,15 @@
                 "https://www.federalregister.gov/agencies/education-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -106198,8 +106250,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-ed--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 52938105799.5,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Education",
@@ -125340,7 +125392,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -125349,13 +125401,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -125380,15 +125432,17 @@
                 "https://www.federalregister.gov/agencies/veterans-affairs-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -126697,15 +126751,15 @@
                     "https://www.federalregister.gov/agencies/u-s-customs-and-border-protection"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -126727,8 +126781,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084372",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 22163637285.17,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "U.S. Customs and Border Protection",
@@ -127233,15 +127287,15 @@
                     "https://www.federalregister.gov/agencies/u-s-immigration-and-customs-enforcement"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -127263,8 +127317,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084370",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 18711776979.42,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Immigration and Customs Enforcement",
@@ -127844,15 +127898,15 @@
                     "https://www.federalregister.gov/agencies/transportation-security-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -127874,8 +127928,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084368",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 6691147128.56,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Transportation Security Administration",
@@ -128312,15 +128366,15 @@
                     "https://www.federalregister.gov/agencies/federal-emergency-management-agency"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -128342,8 +128396,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084391",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 25655049044.02,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Emergency Management Agency",
@@ -128946,15 +129000,15 @@
                     "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -128976,8 +129030,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084364",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 4675774387.6,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Citizenship and Immigration Services",
@@ -129484,15 +129538,15 @@
                     "https://www.federalregister.gov/agencies/secret-service"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -129514,8 +129568,8 @@
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084366",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 2978095395.53,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Secret Service",
@@ -130994,7 +131048,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -131003,13 +131057,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -131033,15 +131087,15 @@
                 "https://www.federalregister.gov/agencies/homeland-security-department"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -131065,8 +131119,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-dhs--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 87523833437.83,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Homeland Security",
@@ -135462,7 +135516,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -135471,13 +135525,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -135501,15 +135555,15 @@
                 "https://www.federalregister.gov/agencies/environmental-protection-agency"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -135533,8 +135587,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-epa--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 13938855973.04,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Environmental Protection Agency",
@@ -140116,7 +140170,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -140125,13 +140179,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -140157,15 +140211,17 @@
                 "https://www.federalregister.gov/agencies/national-aeronautics-and-space-administration"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -141141,7 +141197,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -141150,13 +141206,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -141180,15 +141236,15 @@
                 "https://www.federalregister.gov/agencies/social-security-administration"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -141212,8 +141268,8 @@
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-ssa--treasury-receipts",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 1444993847336.67,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Social Security Administration",
@@ -144651,7 +144707,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -144660,13 +144716,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -144691,15 +144747,17 @@
                 "https://www.federalregister.gov/agencies/small-business-administration"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -146949,13 +147007,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -146974,8 +147032,8 @@
                   "treasury_section": "National Science Foundation",
                   "treasury_classification_id": "59085194",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": 889454271.88,
                   "budget_source": "Treasury MTS Table 5",
@@ -149924,7 +149982,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -149933,13 +149991,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -149964,15 +150022,17 @@
                 "https://www.federalregister.gov/agencies/national-science-foundation"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -150503,7 +150563,7 @@
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "official_site"
+                    "government_dataset"
                   ],
                   "children": [],
                   "budget_as_of": "2026-07-31",
@@ -150512,13 +150572,13 @@
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
-                    "official_site",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -150543,15 +150603,17 @@
                 "https://www.federalregister.gov/agencies/personnel-management-office"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -156826,15 +156888,15 @@
                 "https://www.federalregister.gov/agencies/smithsonian-institution"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -156856,8 +156918,8 @@
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59085316",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 1029016720.27,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Smithsonian Institution",
@@ -160347,15 +160409,17 @@
                 "https://www.federalregister.gov/agencies/national-archives-and-records-administration"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -160604,15 +160668,15 @@
                     "https://www.federalregister.gov/agencies/peace-corps"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -160634,8 +160698,8 @@
                   "treasury_section": "International Assistance Programs",
                   "treasury_classification_id": "59085173",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 335797574.1,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Peace Corps",
@@ -161260,13 +161324,13 @@
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "treasury_outlays"
+                    "treasury_outlays",
+                    "government_dataset"
                   ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -161285,8 +161349,8 @@
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
                   "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
                   "lastVerified": null,
                   "rollup_total_amount": -36529457.88,
                   "budget_source": "Treasury MTS Table 5",
@@ -161749,15 +161813,15 @@
                     "https://www.federalregister.gov/agencies/national-endowment-for-the-arts"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -161779,8 +161843,8 @@
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59085279",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 124234286.91,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Endowment for the Arts",
@@ -162009,15 +162073,15 @@
                     "https://www.federalregister.gov/agencies/national-endowment-for-the-humanities"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -162039,8 +162103,8 @@
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59085280",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 52197425.96,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Endowment for the Humanities",
@@ -162681,15 +162745,15 @@
                     "https://www.federalregister.gov/agencies/national-labor-relations-board"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -162711,8 +162775,8 @@
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59085281",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 228712355.85,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Labor Relations Board",
@@ -162926,15 +162990,15 @@
                     "https://www.federalregister.gov/agencies/equal-employment-opportunity-commission"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -162956,8 +163020,8 @@
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59085257",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 351117249.28,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Equal Employment Opportunity Commission",
@@ -165601,15 +165665,15 @@
                     "https://www.federalregister.gov/agencies/national-credit-union-administration"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -165631,8 +165695,8 @@
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": -1083957571.33,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Credit Union Administration",
@@ -165847,15 +165911,15 @@
                     "https://www.federalregister.gov/agencies/pension-benefit-guaranty-corporation"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -165877,8 +165941,8 @@
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59084686",
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": 1992636236.68,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Pension Benefit Guaranty Corporation",
@@ -166092,15 +166156,15 @@
                     "https://www.federalregister.gov/agencies/tennessee-valley-authority"
                   ],
                   "sourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register"
                   ],
                   "proofSourceCount": 6,
                   "proofSourceTypes": [
-                    "official_site",
                     "treasury_outlays",
+                    "government_dataset",
                     "federal_register_directory",
                     "federal_register",
                     "official_financial_record",
@@ -166122,8 +166186,8 @@
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
                   "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "rollup_total_amount": -1182145210.54,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Tennessee Valley Authority",
@@ -168313,15 +168377,15 @@
                 "https://www.federalregister.gov/agencies/securities-and-exchange-commission"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -168343,8 +168407,8 @@
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59085315",
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": 1646343264.31,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Securities and Exchange Commission",
@@ -169777,15 +169841,17 @@
                 "https://www.federalregister.gov/agencies/nuclear-regulatory-commission"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "proofSourceCount": 6,
+              "proofSourceCount": 7,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -171012,15 +171078,15 @@
                 "https://www.federalregister.gov/agencies/federal-deposit-insurance-corporation"
               ],
               "sourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register"
               ],
               "proofSourceCount": 6,
               "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
                 "federal_register_directory",
                 "federal_register",
                 "official_financial_record",
@@ -171042,8 +171108,8 @@
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
               "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "rollup_total_amount": -18643789566.77,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Federal Deposit Insurance Corporation",
@@ -172151,13 +172217,15 @@
             "https://www.supremecourt.gov/about/about.aspx"
           ],
           "sourceTypes": [
-            "official_site",
-            "treasury_outlays"
-          ],
-          "proofSourceCount": 3,
-          "proofSourceTypes": [
-            "official_site",
             "treasury_outlays",
+            "government_dataset",
+            "official_site"
+          ],
+          "proofSourceCount": 4,
+          "proofSourceTypes": [
+            "treasury_outlays",
+            "government_dataset",
+            "official_site",
             "official_financial_record"
           ],
           "existsProven": true,
@@ -177030,13 +177098,15 @@
                 "https://www.ustaxcourt.gov/"
               ],
               "sourceTypes": [
-                "official_site",
-                "treasury_outlays"
-              ],
-              "proofSourceCount": 3,
-              "proofSourceTypes": [
-                "official_site",
                 "treasury_outlays",
+                "government_dataset",
+                "official_site"
+              ],
+              "proofSourceCount": 4,
+              "proofSourceTypes": [
+                "treasury_outlays",
+                "government_dataset",
+                "official_site",
                 "official_financial_record"
               ],
               "existsProven": true,
@@ -179396,7 +179466,7 @@
           ],
           "sourceTypes": [
             "treasury_outlays",
-            "official_site"
+            "government_dataset"
           ],
           "children": [],
           "budget_as_of": "2026-07-31",
@@ -179405,13 +179475,13 @@
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
           "sourceCount": 1,
-          "confidenceScore": 0.7,
-          "verificationStatus": "partial",
+          "confidenceScore": 0.4,
+          "verificationStatus": "unverified",
           "lastVerified": null,
           "proofSourceCount": 3,
           "proofSourceTypes": [
             "treasury_outlays",
-            "official_site",
+            "government_dataset",
             "official_financial_record"
           ],
           "existsProven": true,
@@ -179434,13 +179504,13 @@
         "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
       ],
       "sourceTypes": [
-        "official_site",
-        "treasury_outlays"
+        "treasury_outlays",
+        "government_dataset"
       ],
       "proofSourceCount": 3,
       "proofSourceTypes": [
-        "official_site",
         "treasury_outlays",
+        "government_dataset",
         "official_financial_record"
       ],
       "existsProven": true,
@@ -179461,8 +179531,8 @@
       "treasury_netted": true,
       "treasury_receipts_child_id": "judicial-branch--treasury-receipts",
       "sourceCount": 1,
-      "confidenceScore": 0.7,
-      "verificationStatus": "partial",
+      "confidenceScore": 0.4,
+      "verificationStatus": "unverified",
       "lastVerified": null,
       "rollup_total_amount": 8375236264.3,
       "budget_source": "Treasury MTS Table 5",
@@ -179511,7 +179581,7 @@
       ],
       "sourceTypes": [
         "treasury_outlays",
-        "official_site"
+        "government_dataset"
       ],
       "children": [],
       "budget_as_of": "2026-07-31",
@@ -179520,13 +179590,13 @@
       "source_system": "Treasury Fiscal Data",
       "allocation_basis": "treasury_rollup",
       "sourceCount": 1,
-      "confidenceScore": 0.7,
-      "verificationStatus": "partial",
+      "confidenceScore": 0.4,
+      "verificationStatus": "unverified",
       "lastVerified": null,
       "proofSourceCount": 3,
       "proofSourceTypes": [
         "treasury_outlays",
-        "official_site",
+        "government_dataset",
         "official_financial_record"
       ],
       "existsProven": true,

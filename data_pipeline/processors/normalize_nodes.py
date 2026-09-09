@@ -212,12 +212,30 @@ def get_first_text(*values: Any) -> str:
     return ""
 
 
+# Government hosts that are data services rather than any unit's own site.
+# Same reasoning the Federal Register already gets: a .gov host is not
+# automatically the website of the organisation a record is about.
+# Everything classify_source_url can return. Membership here means "this
+# type is derived from a URL", which is what makes it unsafe to carry forward.
+URL_CLASSIFICATIONS = frozenset({"federal_register", "government_dataset", "official_site", "wikidata", "wikipedia", "unknown"})
+
+GOVERNMENT_DATASET_HOSTS = ("fiscaldata.treasury.gov", "api.fiscaldata.treasury.gov", "api.usaspending.gov")
+
+
 def classify_source_url(url: str) -> str:
     host = urlparse(url).netloc.lower()
     # Same order as discovery: the Register is a .gov host, but a notice is
     # documentation of an office, not the office's own site.
     if "federalregister.gov" in host:
         return "federal_register"
+    # Nor is a dataset. Every measured node carries the FiscalData URL for the
+    # Monthly Treasury Statement, and calling that an "official_site" told 41
+    # nodes they had an official website when the verifier's own record showed
+    # no page had ever been read — congress.gov answered 403 for the
+    # Legislative Branch, and the unsupported label still fed a 0.7 confidence
+    # score. The URL is real and stays; the claim about what it is was wrong.
+    if any(host == dataset or host.endswith("." + dataset) for dataset in GOVERNMENT_DATASET_HOSTS):
+        return "government_dataset"
     if host.endswith(".gov") or host.endswith(".mil"):
         return "official_site"
     if "wikidata.org" in host:
@@ -240,7 +258,19 @@ def verify_node_sources(node: dict[str, Any]) -> dict[str, Any]:
         source_urls = normalize_string_list([*source_urls, node.get("official_website")])
 
     inferred_types = [classify_source_url(url) for url in source_urls]
-    explicit_types = normalize_string_list(node.get("sourceTypes"))
+    # A type that classify_source_url produces is a claim *about the URLs*, so
+    # it has to be re-derived from the URLs the node has now — never carried
+    # over from a payload. The union used to keep whatever the previous
+    # graph.json said, which is how eight Treasury-alias nodes went on
+    # asserting an "official_site" after the only URL supporting it was gone.
+    # Stage labels (treasury_outlays, opm_fedscope_employment,
+    # senate_committee_list, ...) are not URL classifications and are kept:
+    # they say which pass wrote the record, not what the host is.
+    explicit_types = [
+        source_type
+        for source_type in normalize_string_list(node.get("sourceTypes"))
+        if source_type not in URL_CLASSIFICATIONS or source_type in inferred_types
+    ]
     source_types = normalize_string_list([*explicit_types, *inferred_types])
     source_count = len(source_urls)
 

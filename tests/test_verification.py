@@ -948,6 +948,78 @@ class PlacementTests(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+from data_pipeline.processors.normalize_nodes import (  # noqa: E402
+    URL_CLASSIFICATIONS,
+    classify_source_url,
+    verify_node_sources,
+)
+
+
+class SourceTypeIsAClaimAboutTheUrlsTests(unittest.TestCase):
+    """A type classify_source_url can produce must be re-derived from the URLs
+    the node has now, never carried over from a payload.
+
+    Both halves are pinned. The union used to keep whatever the previous
+    graph.json said, and eight Treasury-alias nodes went on asserting an
+    official_site after the only URL supporting it was gone.
+    """
+
+    def test_a_dataset_url_is_not_an_official_site(self) -> None:
+        self.assertEqual(
+            classify_source_url("https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/x"),
+            "government_dataset",
+        )
+        self.assertEqual(classify_source_url("https://api.usaspending.gov/api/v2/x"), "government_dataset")
+        # An agency's own host is still its official site.
+        self.assertEqual(classify_source_url("https://www.senate.gov/"), "official_site")
+
+    def test_a_stale_url_derived_type_is_dropped(self) -> None:
+        node = {
+            "id": "x", "name": "X",
+            "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/x"],
+            "sourceTypes": ["official_site", "treasury_outlays"],
+        }
+        verify_node_sources(node)
+        self.assertNotIn("official_site", node["sourceTypes"])
+        self.assertIn("government_dataset", node["sourceTypes"])
+
+    def test_a_stage_label_is_kept(self) -> None:
+        # treasury_outlays says which pass wrote the record, not what the host
+        # is, so it survives a sweep that has no URL to re-derive it from.
+        node = {
+            "id": "x", "name": "X",
+            "sourceUrls": ["https://fiscaldata.treasury.gov/datasets/x"],
+            "sourceTypes": ["treasury_outlays", "opm_fedscope_employment", "senate_committee_list"],
+        }
+        verify_node_sources(node)
+        for label in ("treasury_outlays", "opm_fedscope_employment", "senate_committee_list"):
+            self.assertIn(label, node["sourceTypes"])
+
+    def test_a_real_official_site_survives(self) -> None:
+        node = {
+            "id": "x", "name": "X",
+            "sourceUrls": ["https://www.senate.gov/", "https://fiscaldata.treasury.gov/datasets/x"],
+            "sourceTypes": ["official_site", "treasury_outlays"],
+        }
+        verify_node_sources(node)
+        self.assertIn("official_site", node["sourceTypes"])
+
+    def test_the_published_graph_holds_the_invariant(self) -> None:
+        graph = json.loads((Path(__file__).resolve().parents[1] / "output" / "graph.json").read_text(encoding="utf-8"))
+        offenders = []
+
+        def walk(node):
+            inferred = {classify_source_url(str(u)) for u in (node.get("sourceUrls") or [])}
+            for source_type in node.get("sourceTypes") or []:
+                if source_type in URL_CLASSIFICATIONS and source_type not in inferred:
+                    offenders.append((node.get("id"), source_type))
+            for child in node.get("children") or []:
+                walk(child)
+
+        walk(graph)
+        self.assertEqual(offenders, [])
+
+
 class EvidenceScopeTests(unittest.TestCase):
     """What the evidence module may touch on a node, and what it must leave
     alone. The first placement build stripped the FiscalData URL from 26
@@ -992,9 +1064,15 @@ class EvidenceScopeTests(unittest.TestCase):
         apply_evidence_to_tree(tree, {})
         nnsa = index_tree(tree)[0]["doe-nnsa"]
         self.assertEqual(nnsa["sourceUrls"], ["https://api.fiscaldata.treasury.gov/mts/table-5"])
-        # FiscalData is a .gov host, so the pipeline's own classifier keeps
-        # calling it an official site; that label is not this module's.
-        self.assertEqual(nnsa["sourceTypes"], ["treasury_outlays", "official_site"])
+        # FiscalData is a .gov host but it is nobody's official website, so
+        # since 2026-09-09 the classifier calls it a government_dataset. This
+        # test used to assert "official_site" here and its comment said the
+        # label was not this module's to fix — which was true, and the label
+        # was still wrong: 41 published nodes claimed an official website whose
+        # only URL was the Treasury dataset, and the Legislative Branch scored
+        # 0.7 confidence on it while the verifier's own record showed
+        # congress.gov had answered 403 and no page had ever been read.
+        self.assertEqual(nnsa["sourceTypes"], ["treasury_outlays", "government_dataset"])
         for field in EVIDENCE_OWNED_FIELDS:
             self.assertNotIn(field, nnsa)
         self.assertFalse(nnsa.get("lastVerified"), "the date belonged to the withdrawn fetch")
