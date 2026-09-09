@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909b";
+import { createGovernmentGraph } from "./graph.js?v=20260909c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -541,6 +541,21 @@ function renderPositionListing(data) {
   if (listing.status) add(`, recorded as ${String(listing.status).toLowerCase()} when the archive closed`);
   add(". ");
   if (listing.appointmentType) add(`Appointment type ${listing.appointmentType}. `);
+  // Pay, as the archive states it and no further. The column it comes from
+  // holds two different things — a rank ("IV", "15") and, for 983 rows, a
+  // rate of basic pay ("$225,700") — so a dollar figure is never printed as
+  // a level. Nothing converts a level into a rate: that needs the Executive
+  // Schedule table, which this pipeline has not been able to fetch.
+  if (listing.payPlan) add(`Pay plan ${listing.payPlan}`);
+  if (listing.payLevel) {
+    add(`${listing.payPlan ? ", " : ""}${listing.payPlan === "EX" ? "Executive Schedule level" : "level or grade"} ${listing.payLevel}`);
+    add(". The archive gives the rank, not a rate of pay. ");
+  } else if (listing.payPlan) {
+    add(". ");
+  }
+  if (typeof listing.reportedPay === "number") {
+    add(`It reports basic pay of ${listing.reportedPayText || `$${listing.reportedPay.toLocaleString()}`} for that period — not this unit's cost, and not necessarily what the post pays now. `);
+  }
   if (listing.valuesFrom === "past_incumbencies") {
     add("Those details come from a past incumbency, not a standing listing. ");
   }

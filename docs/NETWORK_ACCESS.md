@@ -10,6 +10,34 @@ Counted from `data/verification/official_sites.json` (149 candidate hosts)
 against the failure reasons in `data/verification/evidence.json`, after the
 live run of 2026-09-08.
 
+## 0. The allowlist is per session, and it changed on 2026-09-09
+
+The counts below describe the 2026-09-08 environment. On 2026-09-09 the
+session's proxy refused, with the same `403 Forbidden` on the `CONNECT`,
+four hosts that had been fetched successfully the day before:
+
+| Host | 2026-09-08 | 2026-09-09 |
+|---|---|---|
+| `www.opm.gov` | 200; FedScope and the PLUM archive fetched (`tests/fixtures/opm/README.md` records the sizes and hashes) | 403 at the proxy, on `robots.txt` and on every path |
+| `www.senate.gov` | 200; 24 committee-membership XML files fetched | 403 at the proxy |
+| `fiscaldata.treasury.gov` | 200; the Monthly Treasury Statement | 403 at the proxy |
+| `www.federalregister.gov`, `api.federalregister.gov` | 200; the agency directory | 403 at the proxy |
+
+So an unreachable host is a fact about **this session**, not a standing
+property of the project, and a fixture that exists is not evidence that its
+source is reachable now. Two consequences, both already true of the code:
+
+- every committed fixture is the only copy of its source the pipeline can
+  count on, which is why they are committed at all;
+- `scripts/fetch_fixture.py` writes a `.meta.json` for a refused fetch and no
+  fixture, so a refusal is recorded with its date rather than looking like a
+  source nobody thought to try. `tests/fixtures/opm/pay/` is the first entry
+  made that way: OPM's Executive Schedule salary table, which would give 30
+  matched positions an official rate of pay, refused on 2026-09-09.
+
+Before concluding a host is blocked, try it — the list below is dated, not
+permanent.
+
 ## 1. Denied by the environment's network policy — 85 hosts, fixable
 
 Every one of these answers a `CONNECT` with `403 Forbidden` at the egress

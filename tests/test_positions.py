@@ -29,6 +29,7 @@ from data_pipeline.verification.positions import (
     match_positions,
     organisation_name_keys,
     position_name_alternatives,
+    split_level_grade_pay,
     read_archive_edition,
     strip_parent_qualifier,
 )
@@ -566,3 +567,52 @@ class ArchiveTitleQualifierTests(unittest.TestCase):
             "Deputy Commissioner, CBP",
             ["U.S. Customs & Border Protection (CBP)", "U.S. CUSTOMS AND BORDER PROTECTION"],
             "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION"))
+
+
+class ReportedPayTests(unittest.TestCase):
+    """The archive's LevelGradePay column holds a rank for some rows and a
+    rate of basic pay for others. A dollar figure published under a heading
+    that reads "Level" is the wrong claim about the right number."""
+
+    def test_a_rate_is_read_as_a_rate(self) -> None:
+        for text, amount in (("$225,700 ", 225_700.0), ("$132,455", 132_455.0), ("$1,000.00", 1_000.0)):
+            with self.subTest(text=text):
+                level, pay, printed = split_level_grade_pay(text)
+                self.assertIsNone(level, "a dollar figure must not be published as a level")
+                self.assertEqual(pay, amount)
+                self.assertEqual(printed, text.strip())
+
+    def test_a_rank_stays_a_rank(self) -> None:
+        # Nothing is inferred from the pay plan: "IV" and "15" are what the
+        # archive prints, and neither is a number of dollars.
+        for text in ("IV", "III", "15", "ES-00"):
+            with self.subTest(text=text):
+                level, pay, printed = split_level_grade_pay(text)
+                self.assertEqual(level, text)
+                self.assertIsNone(pay)
+                self.assertIsNone(printed)
+
+    def test_an_empty_column_says_nothing(self) -> None:
+        self.assertEqual(split_level_grade_pay(""), (None, None, None))
+        self.assertEqual(split_level_grade_pay(None), (None, None, None))
+
+    def test_a_figure_that_is_not_one_is_not_invented(self) -> None:
+        # A malformed cell must not become a rate of pay; it is published as
+        # the text it is, and the gate refuses a "$" inside a level.
+        level, pay, _ = split_level_grade_pay("$ see note")
+        self.assertEqual(level, "$ see note")
+        self.assertIsNone(pay)
+
+    def test_the_real_archive_splits_into_rates_and_ranks(self) -> None:
+        node_map, parent_map = index_tree(load_base_graph(PROJECT_ROOT / "data" / "federal_gov_complete_1.json"))
+        archive = load_plum_archive(PROJECT_ROOT / "tests/fixtures/opm/plum/plum-archive-biden-administration.csv")
+        records, _ = match_positions(archive, node_map, parent_map, root_id=ROOT_ID)
+        rates = [r for r in records.values() if r.get("reportedPay")]
+        ranks = [r for r in records.values() if r.get("payLevel")]
+        self.assertEqual((len(rates), len(ranks)), (44, 30))
+        for record in rates:
+            self.assertIsNone(record["payLevel"], "a rate was published as a level")
+            self.assertIn("$", record["reportedPayText"])
+        for record in ranks:
+            self.assertNotIn("$", record["payLevel"])
+            self.assertIsNone(record["reportedPay"])

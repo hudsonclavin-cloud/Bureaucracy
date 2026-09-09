@@ -393,6 +393,36 @@ def _single_or_counts(values: list[str]) -> tuple[str | None, dict[str, int] | N
     return None, dict(counts.most_common())
 
 
+_LISTED_RATE = re.compile(r"^\s*\$\s*([0-9][0-9,]*)(?:\.\d{2})?\s*$")
+
+
+def split_level_grade_pay(value: Any) -> tuple[str | None, float | None, str | None]:
+    """The archive's LevelGradePay column holds two different kinds of thing.
+
+    For an Executive Schedule row it is a level ("IV"), for a General
+    Schedule row a grade ("15"), and for 983 rows a rate of basic pay
+    ("$225,700 "). A dollar amount published under a heading that reads
+    "Level" is the wrong claim about the right number, so the two are split
+    here: the rank as printed, and the rate as a number beside the text the
+    archive actually shows. Anything that is not unambiguously a dollar
+    figure stays a rank — nothing is inferred from the pay plan, which the
+    panel prints separately.
+
+    Returns (payLevel, reportedPay, reportedPayText).
+    """
+    text = str(value or "").strip()
+    if not text:
+        return None, None, None
+    match = _LISTED_RATE.match(text)
+    if not match:
+        return text, None, None
+    try:
+        amount = float(match.group(1).replace(",", ""))
+    except ValueError:
+        return text, None, None
+    return None, (amount if amount > 0 else None), text
+
+
 def describe_listing(rows: list[dict[str, Any]]) -> dict[str, Any]:
     """What the archive's rows for one title say, said once: status off the
     standing rows (no vacate date); appointment type, pay plan and level off
@@ -411,6 +441,13 @@ def describe_listing(rows: list[dict[str, Any]]) -> dict[str, Any]:
         out[field] = value
         if counts:
             out[f"{field}Counts"] = counts
+    # Only when the rows agree on one value: a title whose incumbencies were
+    # paid differently has no one rate, and `levelCounts` beside it already
+    # says the rows disagreed.
+    level, pay, pay_text = split_level_grade_pay(out.get("level"))
+    out["payLevel"] = level
+    out["reportedPay"] = pay
+    out["reportedPayText"] = pay_text
     return out
 
 
@@ -617,6 +654,9 @@ def apply_position_evidence(
             "status": record.get("status"),
             "payPlan": record.get("payPlan"),
             "level": record.get("level"),
+            "payLevel": record.get("payLevel"),
+            "reportedPay": record.get("reportedPay"),
+            "reportedPayText": record.get("reportedPayText"),
             "incumbencies": record.get("incumbencies"),
             "standing": record.get("standing"),
             # Which rows the type, pay plan and level were read off: with no

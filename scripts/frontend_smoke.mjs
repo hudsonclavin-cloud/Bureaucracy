@@ -323,6 +323,30 @@ try {
     check("the listing never names an incumbent", !/incumbent/i.test(listing), listing);
   }
 
+  // Pay, as the archive states it: a rank is never printed as a rate, and a
+  // rate is never presented as this unit's cost or as current.
+  // Pick a uniquely named one: 80 nodes are called "Inspector General", and
+  // opening by name would land on somebody else's.
+  const nameCounts = new Map();
+  for (const n of allNodes) nameCounts.set(n.name, (nameCounts.get(n.name) || 0) + 1);
+  const unique = (n) => nameCounts.get(n.name) === 1;
+  const withRate = allNodes.find((n) => n.positionListing && typeof n.positionListing.reportedPay === "number" && unique(n));
+  check("some position carries the pay the archive reports", Boolean(withRate), "none");
+  if (withRate) {
+    await openByName(withRate.name);
+    const listing = await text("#info-position-listing");
+    check("the reported rate is shown as the archive prints it", /It reports basic pay of \$[\d,]+ for that period/.test(listing), listing);
+    check("the rate is not presented as the unit's cost", /not this unit's cost/.test(listing), listing);
+  }
+  const withLevel = allNodes.find((n) => n.positionListing && n.positionListing.payLevel && unique(n));
+  check("some position carries a level rather than a rate", Boolean(withLevel), "none");
+  if (withLevel) {
+    await openByName(withLevel.name);
+    const listing = await text("#info-position-listing");
+    check("a level is never printed as a dollar figure", !/level [^.]*\$/i.test(listing), listing);
+    check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
+  }
+
   // A share nobody can estimate is published as unavailable, never as $0.00
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))

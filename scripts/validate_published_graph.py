@@ -585,6 +585,20 @@ def main(argv):
                     unknown_method.append("{} claims a position listing without a .gov file and the edition it came from".format(label(node)))
                 if not re.match(r"^\d{4}-\d{2}-\d{2}", l_date) or l_date[:10] > today:
                     unknown_method.append("{} claims a position listing without a past date ({!r})".format(label(node), l_date))
+                # The archive's LevelGradePay column is a rank for some rows
+                # and a rate of basic pay for others. Once split, neither may
+                # hold the other's kind of value: a rank that is a dollar
+                # figure was the wrong claim about the right number, and a
+                # rate that is not a positive number is not a rate at all.
+                pay_level = listing.get("payLevel")
+                if pay_level is not None and (not isinstance(pay_level, str) or "$" in pay_level):
+                    unknown_method.append("{} publishes {!r} as a pay level".format(label(node), pay_level))
+                reported_pay = listing.get("reportedPay")
+                if reported_pay is not None:
+                    if isinstance(reported_pay, bool) or not isinstance(reported_pay, (int, float)) or reported_pay <= 0:
+                        unknown_method.append("{} publishes {!r} as a reported rate of pay".format(label(node), reported_pay))
+                    elif "$" not in str(listing.get("reportedPayText") or ""):
+                        unknown_method.append("{} reports pay without the text the archive prints".format(label(node)))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -761,6 +775,10 @@ def main(argv):
         len(official_counts), disagree))
     print("  weights disputed     : {:,} allocated shares were apportioned by a headcount OPM's file contradicts".format(
         len(disputed)))
+    with_rate = sum(1 for n in listings if isinstance(n["positionListing"].get("reportedPay"), (int, float)))
+    with_level = sum(1 for n in listings if n["positionListing"].get("payLevel"))
+    print("  archive pay          : {:,} positions carry a rate of basic pay the archive reports; {:,} carry a level or grade only".format(
+        with_rate, with_level))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(

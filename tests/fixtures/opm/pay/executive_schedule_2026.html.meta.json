@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-09T18:01:51Z",
+ "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (URLError); failing open",
+ "bytes": null,
+ "sha256": null,
+ "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+}

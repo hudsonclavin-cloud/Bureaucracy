@@ -4107,6 +4107,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4131,6 +4134,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4155,6 +4161,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$221,900",
+      "payLevel": null,
+      "reportedPay": 221900.0,
+      "reportedPayText": "$221,900",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4179,6 +4188,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4203,6 +4215,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4227,6 +4242,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "II",
+      "payLevel": "II",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4251,6 +4269,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4275,6 +4296,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4299,6 +4323,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4323,6 +4350,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4347,6 +4377,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "II",
+      "payLevel": "II",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4371,6 +4404,9 @@
       "appointmentType": "XS",
       "payPlan": "OT",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4395,6 +4431,9 @@
       "appointmentType": "PA",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4419,6 +4458,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$172,410",
+      "payLevel": null,
+      "reportedPay": 172410.0,
+      "reportedPayText": "$172,410",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4443,6 +4485,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": "$132,455",
+      "payLevel": null,
+      "reportedPay": 132455.0,
+      "reportedPayText": "$132,455",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4467,6 +4512,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4491,6 +4539,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4515,6 +4566,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4539,6 +4593,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4563,6 +4620,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$191,119",
+      "payLevel": null,
+      "reportedPay": 191119.0,
+      "reportedPayText": "$191,119",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4587,6 +4647,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4611,6 +4674,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4635,6 +4701,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4659,6 +4728,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4683,6 +4755,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4707,6 +4782,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4731,6 +4809,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4755,6 +4836,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4779,6 +4863,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4803,6 +4890,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4827,6 +4917,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4851,6 +4944,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4875,6 +4971,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4899,6 +4998,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4923,6 +5025,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4947,6 +5052,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$222,195",
+      "payLevel": null,
+      "reportedPay": 222195.0,
+      "reportedPayText": "$222,195",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4971,6 +5079,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4995,6 +5106,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5019,6 +5133,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5043,6 +5160,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5067,6 +5187,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5095,6 +5218,9 @@
       },
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5123,6 +5249,9 @@
       },
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5155,6 +5284,9 @@
       },
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5183,6 +5315,9 @@
       },
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5207,6 +5342,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5235,6 +5373,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5259,6 +5400,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5283,6 +5427,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "II",
+      "payLevel": "II",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5315,6 +5462,9 @@
       },
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5339,6 +5489,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5363,6 +5516,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5387,6 +5543,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5411,6 +5570,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5435,6 +5597,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5459,6 +5624,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5483,6 +5651,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5507,6 +5678,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5531,6 +5705,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5555,6 +5732,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5579,6 +5759,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5603,6 +5786,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5627,6 +5813,9 @@
       "appointmentType": "XS",
       "payPlan": "OT",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5651,6 +5840,9 @@
       "appointmentType": "XS",
       "payPlan": "AD",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5675,6 +5867,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5699,6 +5894,9 @@
       "appointmentType": "SC",
       "payPlan": "GS",
       "level": "15",
+      "payLevel": "15",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5723,6 +5921,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5747,6 +5948,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5771,6 +5975,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5795,6 +6002,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5819,6 +6029,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5843,6 +6056,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5867,6 +6083,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5891,6 +6110,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5915,6 +6137,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5939,6 +6164,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5963,6 +6191,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5987,6 +6218,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6011,6 +6245,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$194,190",
+      "payLevel": null,
+      "reportedPay": 194190.0,
+      "reportedPayText": "$194,190",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6035,6 +6272,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$209,964",
+      "payLevel": null,
+      "reportedPay": 209964.0,
+      "reportedPayText": "$209,964",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6059,6 +6299,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6083,6 +6326,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6107,6 +6353,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$223,451",
+      "payLevel": null,
+      "reportedPay": 223451.0,
+      "reportedPayText": "$223,451",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6131,6 +6380,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6163,6 +6415,9 @@
         "$225,700": 1,
         "$210,512": 1
       },
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6195,6 +6450,9 @@
       },
       "payPlan": "ES",
       "level": "$213,539",
+      "payLevel": null,
+      "reportedPay": 213539.0,
+      "reportedPayText": "$213,539",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6223,6 +6481,9 @@
         "$222,534": 1,
         "$196,973": 1
       },
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6255,6 +6516,9 @@
       },
       "payPlan": "ES",
       "level": "$198,322",
+      "payLevel": null,
+      "reportedPay": 198322.0,
+      "reportedPayText": "$198,322",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6283,6 +6547,9 @@
         "$219,081": 1,
         "$201,940": 1
       },
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6311,6 +6578,9 @@
       },
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6335,6 +6605,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6359,6 +6632,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6383,6 +6659,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6407,6 +6686,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6431,6 +6713,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$215,632",
+      "payLevel": null,
+      "reportedPay": 215632.0,
+      "reportedPayText": "$215,632",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6455,6 +6740,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$215,922",
+      "payLevel": null,
+      "reportedPay": 215922.0,
+      "reportedPayText": "$215,922",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6479,6 +6767,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$215,922",
+      "payLevel": null,
+      "reportedPay": 215922.0,
+      "reportedPayText": "$215,922",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6503,6 +6794,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6527,6 +6821,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6551,6 +6848,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6575,6 +6875,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6599,6 +6902,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6623,6 +6929,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "payLevel": null,
+      "reportedPay": 225700.0,
+      "reportedPayText": "$225,700",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6647,6 +6956,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6671,6 +6983,9 @@
       "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6695,6 +7010,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6719,6 +7037,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6743,6 +7064,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6767,6 +7091,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6791,6 +7118,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6815,6 +7145,9 @@
       "appointmentType": "XS",
       "payPlan": "AD",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6839,6 +7172,9 @@
       "appointmentType": "XS",
       "payPlan": "AD",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6863,6 +7199,9 @@
       "appointmentType": "XS",
       "payPlan": "SL",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6887,6 +7226,9 @@
       "appointmentType": "XS",
       "payPlan": "EX",
       "level": "V",
+      "payLevel": "V",
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6911,6 +7253,9 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6936,6 +7281,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6960,6 +7308,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$204,000",
+      "payLevel": null,
+      "reportedPay": 204000.0,
+      "reportedPayText": "$204,000",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -6984,6 +7335,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$220,032",
+      "payLevel": null,
+      "reportedPay": 220032.0,
+      "reportedPayText": "$220,032",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7008,6 +7362,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$204,000",
+      "payLevel": null,
+      "reportedPay": 204000.0,
+      "reportedPayText": "$204,000",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7032,6 +7389,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$289,400",
+      "payLevel": null,
+      "reportedPay": 289400.0,
+      "reportedPayText": "$289,400",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7056,6 +7416,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7080,6 +7443,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$289,400",
+      "payLevel": null,
+      "reportedPay": 289400.0,
+      "reportedPayText": "$289,400",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7104,6 +7470,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$289,400",
+      "payLevel": null,
+      "reportedPay": 289400.0,
+      "reportedPayText": "$289,400",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7128,6 +7497,9 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$289,400",
+      "payLevel": null,
+      "reportedPay": 289400.0,
+      "reportedPayText": "$289,400",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7152,6 +7524,9 @@
       "appointmentType": "XS",
       "payPlan": "OT",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -7176,6 +7551,9 @@
       "appointmentType": "XS",
       "payPlan": "OT",
       "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {

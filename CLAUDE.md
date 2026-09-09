@@ -438,6 +438,38 @@ is a civilian department, the second the uniformed service, and they are
 different populations — a curation gap, in `CURATION.md`, not a matcher
 bug.
 
+**Pay, as the archive states it and no further.** The archive's
+`LevelGradePay` column holds two different things — a rank ("IV" for an
+Executive Schedule row, "15" for a General Schedule one) and, for 983 rows,
+a rate of basic pay ("$225,700") — so `split_level_grade_pay` separates
+them into `payLevel` and `reportedPay` (with `reportedPayText`, the text
+the archive prints, so the figure can be audited against the file). 44 of
+the matched positions carry a rate, 30 a level only. A dollar figure is
+never published under a heading that reads "Level", the gate refuses each
+holding the other's kind of value, and the panel says a level is the rank,
+not a rate of pay, and that a rate is neither this unit's cost nor
+necessarily what the post pays now.
+
+Nothing converts a level into a rate. That needs OPM's Salary Table
+2026-EX, and `www.opm.gov` is refused by this session's egress proxy —
+along with `www.federalregister.gov` (the Executive Order setting the rates
+would have been a second route), `www.senate.gov` and
+`fiscaldata.treasury.gov`, all four of which were fetched successfully on
+2026-09-08. The allowlist is per session; `docs/NETWORK_ACCESS.md` §0
+records the change with dates. `scripts/fetch_fixture.py` fetches a file
+verbatim into `tests/fixtures/` with a `.meta.json` carrying the status,
+the sha256 and the robots verdict, and on a refusal writes the meta and no
+fixture — so a blocked source is recorded rather than looking untried.
+`tests/fixtures/opm/pay/` is that record and holds no table: five numbers
+are easy to transcribe from a screenshot and impossible to audit, and a
+hand-entered table under an `opm.gov` URL would read on the site exactly
+like a fetched one. The parser and the level-to-rate matcher are
+deliberately unwritten until the page has been fetched; the README there
+says what they will have to be honest about (the level is from the
+2021–2025 archive, the table is effective January 2026, basic pay is not
+the node's share of outlays, and the table's own pay-freeze note must
+carry through).
+
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every
 record and every proposed panel sentence names the archive and its period

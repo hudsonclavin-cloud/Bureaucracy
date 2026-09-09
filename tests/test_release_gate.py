@@ -212,6 +212,51 @@ class WeightDisputeGateTests(ReleaseGateTests):
         self.assertIn("no curated figure", out)
 
 
+class ReportedPayGateTests(ReleaseGateTests):
+    """A rank and a rate are different claims; neither may hold the other's
+    kind of value once they have been split apart."""
+
+    def _with_listing(self, **overrides):
+        def mutate(graph):
+            node = _find(graph, "leg-senate")
+            node["positionListing"] = {
+                "source": "opm_plum_archive",
+                "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                "listedTitle": "UNITED STATES SENATE",
+                "payPlan": "ES",
+                "payLevel": None,
+                "reportedPay": 225_700.0,
+                "reportedPayText": "$225,700",
+                "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/x.csv",
+                "checkedAt": "2026-09-08T19:49:47Z",
+                **overrides,
+            }
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_rate_passes(self) -> None:
+        code, out = _gate(self._with_listing())
+        self.assertEqual(code, 0, out)
+        self.assertIn("archive pay          : 1 positions carry a rate", out)
+
+    def test_a_dollar_figure_published_as_a_level_fails(self) -> None:
+        code, out = _gate(self._with_listing(payLevel="$225,700", reportedPay=None, reportedPayText=None))
+        self.assertEqual(code, 1)
+        self.assertIn("as a pay level", out)
+
+    def test_a_rate_that_is_not_a_positive_number_fails(self) -> None:
+        for bad in ("225700", 0, -1):
+            with self.subTest(bad=bad):
+                code, out = _gate(self._with_listing(reportedPay=bad))
+                self.assertEqual(code, 1)
+                self.assertIn("as a reported rate of pay", out)
+
+    def test_a_rate_without_the_text_the_archive_prints_fails(self) -> None:
+        # The printed text is what makes the figure auditable against the file.
+        code, out = _gate(self._with_listing(reportedPayText=""))
+        self.assertEqual(code, 1)
+        self.assertIn("without the text the archive prints", out)
+
+
 class OfflineRegenerationTests(unittest.TestCase):
     def test_rebuild_reports_what_it_did_and_gates_the_result(self) -> None:
         tmp_path = TEST_TMP_ROOT / f"regen-{uuid.uuid4().hex}"
