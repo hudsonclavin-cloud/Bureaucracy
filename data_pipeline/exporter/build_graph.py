@@ -1520,6 +1520,82 @@ def summarize_scaled_official(root: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# A curated name that states how many things it stands for.
+#   "Individual Senator Offices (100)"        — a grouping, 100 offices
+#   "Senior Legislative Assistant (\u00d73)"       — one node, three posts
+#   "Deputy Assistant Secretary (\u00d72-4)"       — one node, two to four
+#   "Cybersecurity Advisor (\u00d7multiple)"       — one node, an unstated number
+STATED_GROUP_COUNT = re.compile(r"\(\s*(\d+)\s*\)\s*$")
+STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECASE)
+MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
+
+
+def annotate_stated_counts(root: dict[str, Any]) -> dict[str, Any]:
+    """Say when a node's own name states that it stands for more than it shows.
+
+    Eight curated groupings state a count: four carry exactly what they claim
+    ("Mission Teams (15)" has fifteen children), and four do not — "Individual
+    Senator Offices (100)" carries eighteen, "Individual Representative
+    Offices (435)" fifteen, "District Offices (68)" four, "Federal Public
+    Defender Offices (82)" seven. A reader who expands one sees what is there
+    and nothing says the rest are absent, while every figure beneath is for
+    the ones shown.
+
+    742 position nodes carry a multiplicity in the name instead — 35 an exact
+    count, 23 a range, 684 an unstated "multiple" — and each is drawn as one
+    node, typed Position, with one apportioned figure.
+
+    Neither is corrected here, because the correction is curation and this
+    file is not the curator: what is published is the count the name states
+    beside the count the graph carries. Where the name gives no number
+    ("multiple") none is invented. Every field is recomputed on each build and
+    cleared first, so a rename or a filled-in grouping withdraws the claim.
+    """
+    stats = {"groupings_stating_a_count": 0, "groupings_short_of_it": 0,
+             "positions_standing_for_several": 0, "multiplicity_unstated": 0}
+    for node, _ in walk_tree(root):
+        for field in ("statedChildCount", "carriedChildCount", "childrenIncomplete", "representsPosts"):
+            node.pop(field, None)
+        name = str(node.get("name") or "")
+        is_position = "position" in str(node.get("type") or "").casefold()
+
+        if not is_position:
+            match = STATED_GROUP_COUNT.search(name)
+            if match:
+                stated = int(match.group(1))
+                # Synthetic Treasury lines are the exporter's own bookkeeping,
+                # not members of the group the name counts.
+                carried = sum(1 for c in (node.get("children") or []) if not c.get("synthetic"))
+                node["statedChildCount"] = stated
+                node["carriedChildCount"] = carried
+                stats["groupings_stating_a_count"] += 1
+                if carried < stated:
+                    node["childrenIncomplete"] = True
+                    stats["groupings_short_of_it"] += 1
+            continue
+
+        match = STATED_MULTIPLICITY.search(name)
+        if not match:
+            continue
+        text = match.group(1).strip()
+        represents: dict[str, Any] = {"text": match.group(0).strip("() ")}
+        span = MULTIPLICITY_RANGE.match(text)
+        if text.isdigit():
+            represents.update({"kind": "exact", "count": int(text)})
+        elif span:
+            low, high = int(span.group(1)), int(span.group(2))
+            represents.update({"kind": "range", "low": min(low, high), "high": max(low, high)})
+        else:
+            # "multiple", "several", "20 Border Patrol Sectors" — the name
+            # says there is more than one and does not say how many. Guessing
+            # a number here would be the graph inventing a figure nobody wrote.
+            represents.update({"kind": "unstated", "as_written": text})
+            stats["multiplicity_unstated"] += 1
+        node["representsPosts"] = represents
+        stats["positions_standing_for_several"] += 1
+    return stats
+
+
 def annotate_resolved_costs(
     root: dict[str, Any],
     *,
@@ -2278,6 +2354,9 @@ def build_graph(
     orphan_resolution = resolve_root_orphans(graph, trusted_node_ids=set(existing_ids))
     filter_relationships_to_kept_nodes(graph)
     validity_report = annotate_resolved_costs(graph, budget_summary=budget_summary)
+    # After the tree is final and pruned: the count a name states is only
+    # comparable with the children the published graph actually carries.
+    validity_report["stated_counts"] = annotate_stated_counts(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

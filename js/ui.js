@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909c";
+import { createGovernmentGraph } from "./graph.js?v=20260909d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -55,9 +55,16 @@ const dom = {
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
+  toggleExactCosts: null,
 };
 
 const state = {
+  // "Show only costs identified for the node itself": with it on, an
+  // apportioned share is not shown as a figure at all. 2.6% of nodes carry a
+  // cost a record names for them, and those cover 98.4% of the anchor — the
+  // estimates subdivide measured money rather than invent it, and this is the
+  // view that shows exactly which is which.
+  exactCostsOnly: false,
   graph: null,
   searchIndex: [],
   expandCancelled: false,
@@ -425,11 +432,14 @@ function ensureVerificationToggles() {
   const toggleUnverified = makeToggle("Show Unverified Nodes");
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
+  const toggleExactCosts = makeToggle("Show only costs identified for the node itself");
+  toggleExactCosts.checked = false;
 
   (depthExpandCtrl || document.body).appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
+  dom.toggleExactCosts = toggleExactCosts;
 }
 
 function ensureVerificationLegend() {
@@ -511,6 +521,42 @@ function renderHeadcountProvenance(data) {
   }
   if (data.employees) {
     add(`The figure above it is prose from the base graph with no citation, and the two often count different populations — OPM counts federal civilians in an active pay status, not uniformed members or contractors. Neither is corrected against the other.`);
+  }
+}
+
+function renderCountProvenance(data) {
+  let line = document.getElementById("info-count-provenance");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-count-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  if (data.childrenIncomplete) {
+    const missing = Number(data.statedChildCount) - Number(data.carriedChildCount);
+    add(
+      `This node's own name states ${Number(data.statedChildCount).toLocaleString()}; the graph carries ` +
+      `${Number(data.carriedChildCount).toLocaleString()}. The other ${missing.toLocaleString()} are not in this graph at all, ` +
+      "so every figure beneath is for the ones shown and nothing here estimates the rest.",
+    );
+    return;
+  }
+  const represents = data.representsPosts;
+  if (represents && typeof represents === "object") {
+    if (represents.kind === "exact") {
+      add(`Its name states that it stands for ${represents.count} posts of this title, drawn as one node. `);
+    } else if (represents.kind === "range") {
+      add(`Its name states that it stands for ${represents.low} to ${represents.high} posts of this title, drawn as one node. `);
+    } else {
+      add(`Its name states that it stands for several posts of this title ("${represents.as_written}") without saying how many, and no number is invented here. `);
+    }
+    add("Any figure above is for the group, not for one holder.");
   }
 }
 
@@ -987,9 +1033,19 @@ function formatApproximateCost(amount) {
 // Only a verified figure is printed in full. Everything else is a division
 // result, so it is rounded and marked approximate — printing it to the cent
 // would claim ten significant figures for a number that has about one.
+// Is this figure the node's own, or its share of an ancestor's total? Only a
+// Treasury line naming the node, and the root's anchor, are the node's own.
+function isCostIdentifiedForTheNode(node) {
+  return ["official", "root_total"].includes(String(node.cost_status || "").toLowerCase());
+}
+
+function isCostHiddenAsEstimate(node) {
+  return state.exactCostsOnly && !isCostIdentifiedForTheNode(node);
+}
+
 function formatCostAmount(node) {
   const amount = toFiniteAmount(node.resolved_total_amount);
-  if (amount === null || isBelowPrecision(node)) {
+  if (amount === null || isBelowPrecision(node) || isCostHiddenAsEstimate(node)) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
@@ -1010,6 +1066,16 @@ function isBelowPrecision(node) {
 }
 
 function describeCost(node) {
+  if (isCostHiddenAsEstimate(node)) {
+    return {
+      label: "Not identified for this node",
+      tone: "unavailable",
+      note:
+        "No record names this node's own cost. The figure this graph would otherwise show is its share of an ancestor's " +
+        "measured total, divided among siblings by budget, headcount or subtree size — an estimate, not a measurement. " +
+        "Turn off \u201cShow only costs identified for the node itself\u201d to see it, labelled as the estimate it is.",
+    };
+  }
   const status = String(node.cost_status || "").toLowerCase();
   const amount = toFiniteAmount(node.resolved_total_amount);
   const validation = String(node.cost_validation || "").toLowerCase();
@@ -1173,6 +1239,7 @@ function renderInfoPanel(nodeObj) {
   renderDescriptionProvenance(data, isClusteredView);
   renderHeadcountProvenance(data);
   renderPositionListing(data);
+  renderCountProvenance(data);
 
   if (isClusteredView) {
     setText(dom.infoType, `${data.type || "Group"} Cluster`);
@@ -1206,7 +1273,25 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["BUDGET NOTE (hand-compiled)", data.budget]);
   }
   if ((data.children || []).length > 0) {
-    statRows.push(["SUB-UNITS", String(data.children.length)]);
+    // A name that states a count is a claim about how many there are. Where
+    // the graph carries fewer, the row says so: "Individual Senator Offices
+    // (100)" carries eighteen, and a reader who expands it would otherwise
+    // have nothing telling them the other eighty-two are absent.
+    statRows.push([
+      data.childrenIncomplete ? `SUB-UNITS (of the ${data.statedChildCount} its name states)` : "SUB-UNITS",
+      String(data.children.length),
+    ]);
+  }
+  // A position node whose name stands for several posts is drawn as one.
+  const represents = data.representsPosts;
+  if (represents && typeof represents === "object") {
+    const value =
+      represents.kind === "exact"
+        ? String(represents.count)
+        : represents.kind === "range"
+          ? `${represents.low}–${represents.high}`
+          : `unstated (\u201c${represents.as_written}\u201d)`;
+    statRows.push(["POSTS THIS NODE STANDS FOR", value]);
   }
   if (isClusteredView) {
     statRows.push(["CLUSTER SIZE", clusterCount.toLocaleString()]);
@@ -1538,6 +1623,17 @@ function bindControls() {
     dom.toggleUnverified.addEventListener("change", () => {
       state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
       updateStats(state.graph.getStats());
+    });
+  }
+
+  if (dom.toggleExactCosts) {
+    dom.toggleExactCosts.addEventListener("change", () => {
+      state.exactCostsOnly = dom.toggleExactCosts.checked;
+      // Re-render the open panel so the figure changes with the switch.
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        renderInfoPanel(selected);
+      }
     });
   }
 

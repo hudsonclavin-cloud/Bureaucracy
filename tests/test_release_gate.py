@@ -257,6 +257,90 @@ class ReportedPayGateTests(ReleaseGateTests):
         self.assertIn("without the text the archive prints", out)
 
 
+class MeasuredCostBelongsToAnOrganisationTests(ReleaseGateTests):
+    """An outside review of an older checkout reported $463.2M of Treasury
+    outlays published on a node typed Position. It is not true of this graph,
+    and now it cannot become true silently."""
+
+    def test_a_measured_cost_on_a_position_fails(self) -> None:
+        for kind in ("Position", "Committee", "Role", "Caucus"):
+            with self.subTest(kind=kind):
+                def mutate(graph, kind=kind):
+                    node = _find(graph, "leg-senate")
+                    node["type"] = kind
+                    node["cost_status"] = "official"
+                code, out = _gate(self._write_corrupted(mutate))
+                self.assertEqual(code, 1)
+                self.assertIn("carrying a measured cost", out)
+
+    def test_the_published_graph_has_none(self) -> None:
+        code, out = _gate(self.graph_path)
+        self.assertEqual(code, 0, out)
+        self.assertIn("a measured cost sits only on an organisation", out)
+
+
+class StatedCountGateTests(ReleaseGateTests):
+    """The claim is only ever "the name says N, we carry M". It has to be the
+    name's number and the tree's count, or it is a third thing nobody wrote."""
+
+    def _with_counts(self, name="Individual Senator Offices (100)", **fields):
+        def mutate(graph):
+            node = _find(graph, "legislative-branch")
+            node["name"] = name
+            node.update({"statedChildCount": 100, "carriedChildCount": 1, "childrenIncomplete": True, **fields})
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_count_passes(self) -> None:
+        code, out = _gate(self._with_counts())
+        self.assertEqual(code, 0, out)
+
+    def test_a_carried_count_the_tree_contradicts_fails(self) -> None:
+        code, out = _gate(self._with_counts(carriedChildCount=40))
+        self.assertEqual(code, 1)
+        self.assertIn("says it carries 40 children, the tree has 1", out)
+
+    def test_a_stated_count_the_name_does_not_carry_fails(self) -> None:
+        code, out = _gate(self._with_counts(name="Individual Senator Offices"))
+        self.assertEqual(code, 1)
+        self.assertIn("claims a stated count its name does not carry", out)
+
+    def test_an_incomplete_flag_that_disagrees_with_the_arithmetic_fails(self) -> None:
+        code, out = _gate(self._with_counts(name="Individual Senator Offices (1)", statedChildCount=1))
+        self.assertEqual(code, 1)
+        self.assertIn("flags incomplete=True with 1 of 1", out)
+
+
+class MultiplicityGateTests(ReleaseGateTests):
+    """Where the name gives no number, none may be published."""
+
+    def _with_multiplicity(self, name, represents):
+        def mutate(graph):
+            node = _find(graph, "leg-senate")
+            node["name"] = name
+            node["representsPosts"] = represents
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_multiplicity_passes(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst (\u00d73)", {"kind": "exact", "count": 3, "text": "\u00d73"}))
+        self.assertEqual(code, 0, out)
+
+    def test_a_number_invented_for_an_unstated_multiplicity_fails(self) -> None:
+        code, out = _gate(self._with_multiplicity(
+            "Senior Analyst (\u00d7multiple)", {"kind": "unstated", "as_written": "multiple", "count": 7, "text": "\u00d7multiple"}))
+        self.assertEqual(code, 1)
+        self.assertIn("invents a number for an unstated multiplicity", out)
+
+    def test_a_quoted_text_that_is_not_in_the_name_fails(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst", {"kind": "exact", "count": 3, "text": "\u00d73"}))
+        self.assertEqual(code, 1)
+        self.assertIn("which is not in its name", out)
+
+    def test_a_count_of_one_is_not_a_multiplicity(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst (\u00d71)", {"kind": "exact", "count": 1, "text": "\u00d71"}))
+        self.assertEqual(code, 1)
+        self.assertIn("states 1 posts", out)
+
+
 class OfflineRegenerationTests(unittest.TestCase):
     def test_rebuild_reports_what_it_did_and_gates_the_result(self) -> None:
         tmp_path = TEST_TMP_ROOT / f"regen-{uuid.uuid4().hex}"

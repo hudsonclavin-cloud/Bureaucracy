@@ -556,6 +556,52 @@ neither is reachable from the pipeline's own sandbox, so
 `scripts/frontend_smoke.mjs` rewrites the Three.js import to a local copy and
 that one import is the only thing the smoke check cannot prove.
 
+### Exact-node costs, and what the graph does not claim
+
+`docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
+graph an estimate". 135 of 5,195 nodes (2.6%) carry a cost a record names
+for them; those cover **98.4% of the anchor**, so the apportioned figures
+subdivide measured money rather than invent it — which does not make a
+subdivision a measurement, and every one is labelled `allocated` /
+`estimated_from_parent` / `unverified`. The gate prints both numbers on
+every run so "5,021 nodes with a cost" cannot be read as 5,021 known
+costs, and the site carries a **"Show only costs identified for the node
+itself"** switch that blanks every apportioned figure and says why.
+
+A measured cost may sit only on an organisation: an external review of an
+older checkout reported Treasury outlays published on a node typed
+Position, which is not true here (the exporter has always excluded
+position, committee, role and caucus types from name matching) but was not
+forbidden by anything. It is now. That document also records which of that
+review's findings survive a check against this branch — most do not, it
+was run against a different tree — and the achievable route to more
+exact-node costs: a reviewed identifier crosswalk first (CGAC, TAS,
+toptier and OMB codes, names proposing candidates and never publishing
+facts), then USAspending File A/B at TAS level, then agency AFR Statements
+of Net Cost. 84% of the nodes are positions, which no federal financial
+system reports on; the target is not full coverage but that every figure
+says which of outlays, obligations, budget authority, audited net cost or
+salary it is.
+
+### Names that state a count
+
+Eight curated groupings state a number in their own name. Four carry it
+("Mission Teams (15)"); four do not — Individual Senator Offices (100)
+carries 18, Individual Representative Offices (435) carries 15, District
+Offices (68) carries 4, Federal Public Defender Offices (82) carries 7 —
+and a reader who expanded one had nothing telling them the rest were
+absent. 742 position nodes carry a multiplicity instead (35 exact, 23 a
+range, 684 an unstated "×multiple"), each drawn as one node with one
+apportioned figure. `annotate_stated_counts` publishes the name's number
+beside the graph's (`statedChildCount`, `carriedChildCount`,
+`childrenIncomplete`, `representsPosts`); the panel says the rest are not
+in this graph at all, and that a multi-post node's figure is for the group
+and not one holder. Nothing is corrected — that is curation — and where
+the name gives no number none is invented, which the gate enforces along
+with the arithmetic and the requirement that the quoted text really is in
+the node's name. Every field is cleared and recomputed each build, so a
+rename withdraws the claim.
+
 ## Invariants
 
 - Root id is `the-constitution-of-the-united-states`; it has exactly the

@@ -5398,6 +5398,12 @@
     "placementParentId": "exec-dept-state-bureau-of-african-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-african-affairs"
   },
   {
@@ -5468,6 +5474,12 @@
     "placementParentId": "exec-dept-state-bureau-of-east-asian-pacific-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-east-asian-pacific-affairs"
   },
   {
@@ -5538,6 +5550,12 @@
     "placementParentId": "exec-dept-state-bureau-of-european-eurasian-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-european-eurasian-affairs"
   },
   {
@@ -5608,6 +5626,11 @@
     "placementParentId": "exec-dept-state-bureau-of-european-eurasian-affairs",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-european-eurasian-affairs"
   },
   {
@@ -5686,6 +5709,12 @@
     "placementParentId": "exec-dept-state-bureau-of-near-eastern-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-near-eastern-affairs"
   },
   {
@@ -5760,6 +5789,11 @@
     "placementParentId": "exec-dept-state-bureau-of-near-eastern-affairs",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-near-eastern-affairs"
   },
   {
@@ -5834,6 +5868,12 @@
     "placementParentId": "exec-dept-state-bureau-of-south-central-asian-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-south-central-asian-affairs"
   },
   {
@@ -5904,6 +5944,12 @@
     "placementParentId": "exec-dept-state-bureau-of-western-hemisphere-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-western-hemisphere-affairs"
   },
   {
@@ -5974,6 +6020,11 @@
     "placementParentId": "exec-dept-state-bureau-of-western-hemisphere-affairs",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-western-hemisphere-affairs"
   },
   {
@@ -6044,6 +6095,12 @@
     "placementParentId": "exec-dept-state-bureau-of-international-security-nonproliferation",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-international-security-nonproliferation"
   },
   {
@@ -6122,6 +6179,11 @@
     "placementParentId": "exec-dept-state-bureau-of-international-security-nonproliferation",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-international-security-nonproliferation"
   },
   {
@@ -6200,6 +6262,12 @@
     "placementParentId": "exec-dept-state-bureau-of-political-military-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-political-military-affairs"
   },
   {
@@ -6274,6 +6342,11 @@
     "placementParentId": "exec-dept-state-bureau-of-political-military-affairs",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-political-military-affairs"
   },
   {
@@ -6344,6 +6417,12 @@
     "placementParentId": "exec-dept-state-bureau-of-consular-affairs",
     "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×2-4",
+      "kind": "range",
+      "low": 2,
+      "high": 4
+    },
     "parentId": "exec-dept-state-bureau-of-consular-affairs"
   },
   {
@@ -6414,6 +6493,11 @@
     "placementParentId": "exec-dept-state-bureau-of-diplomatic-security",
     "placementMatchedText": "OFFICE DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×multiple",
+      "kind": "unstated",
+      "as_written": "multiple"
+    },
     "parentId": "exec-dept-state-bureau-of-diplomatic-security"
   },
   {
@@ -10298,6 +10382,12 @@
     "placementParentId": "exec-dept-doj-div-civil",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-civil"
   },
   {
@@ -10372,6 +10462,12 @@
     "placementParentId": "exec-dept-doj-div-civil-rights",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-civil-rights"
   },
   {
@@ -10450,6 +10546,12 @@
     "placementParentId": "exec-dept-doj-div-criminal",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-criminal"
   },
   {
@@ -10524,6 +10626,12 @@
     "placementParentId": "exec-dept-doj-div-enrd",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-enrd"
   },
   {
@@ -10668,6 +10776,12 @@
     "placementParentId": "exec-dept-doj-div-nsd",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-nsd"
   },
   {
@@ -10738,6 +10852,12 @@
     "placementParentId": "exec-dept-doj-div-tax",
     "placementMatchedText": "DEPUTY ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×3-5",
+      "kind": "range",
+      "low": 3,
+      "high": 5
+    },
     "parentId": "exec-dept-doj-div-tax"
   },
   {
@@ -10886,6 +11006,11 @@
     "placementParentId": "exec-dept-doj-solicitor",
     "placementMatchedText": "DEPUTY SOLICITOR GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "representsPosts": {
+      "text": "×4",
+      "kind": "exact",
+      "count": 4
+    },
     "parentId": "exec-dept-doj-solicitor"
   },
   {

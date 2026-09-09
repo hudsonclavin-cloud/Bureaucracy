@@ -347,6 +347,55 @@ try {
     check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
   }
 
+  // The exact-costs-only view: with it on, an apportioned share is not shown
+  // as a figure at all, and the panel says why.
+  const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6 && nameCounts.get(n.name) === 1);
+  check("some node carries an apportioned share", Boolean(allocatedNode), "none");
+  if (allocatedNode) {
+    await openByName(allocatedNode.name);
+    const before = await text("#info-stats");
+    check("its estimate is shown by default", /≈\s*\$/.test(before), before.slice(0, 300));
+    const toggled = await page.evaluate(() => {
+      const label = [...document.querySelectorAll("#verification-toggles label")]
+        .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
+      if (!label) return false;
+      label.querySelector("input").click();
+      return true;
+    });
+    check("the exact-costs-only toggle exists", toggled, "no such toggle");
+    if (toggled) {
+      const after = await text("#info-stats");
+      check("the estimate is withdrawn, not restated", /not identified for this node/i.test(after), after.slice(0, 400));
+      check("no dollar figure survives the switch", !/≈\s*\$/.test(after), after.slice(0, 400));
+      check("the panel says what the hidden figure would have been", /share of an ancestor's measured total/.test(after), after.slice(0, 500));
+      await page.evaluate(() => {
+        const label = [...document.querySelectorAll("#verification-toggles label")]
+          .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
+        label.querySelector("input").click();
+      });
+    }
+  }
+
+  // A node whose name states a count says how many it actually carries.
+  const short = allNodes.find((n) => n.childrenIncomplete);
+  check("some grouping carries fewer than its name states", Boolean(short), "none");
+  if (short) {
+    await openByName(short.name);
+    const stats = await text("#info-stats");
+    const note = await text("#info-count-provenance");
+    check("the sub-unit row names the stated count", /SUB-UNITS \(of the \d+ its name states\)/.test(stats), stats.slice(0, 400));
+    check("the panel says the rest are absent from the graph", /are not in this graph at all/.test(note), note);
+  }
+  const several = allNodes.find((n) => n.representsPosts && n.representsPosts.kind === "exact" && nameCounts.get(n.name) === 1)
+    || allNodes.find((n) => n.representsPosts && nameCounts.get(n.name) === 1);
+  check("some position stands for several posts", Boolean(several), "none");
+  if (several) {
+    await openByName(several.name);
+    const note = await text("#info-count-provenance");
+    check("the panel says it stands for more than one post", /stands for/.test(note), note);
+    check("the panel says the figure is for the group", /for the group, not for one holder/.test(note), note);
+  }
+
   // A share nobody can estimate is published as unavailable, never as $0.00
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))

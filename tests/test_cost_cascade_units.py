@@ -489,3 +489,107 @@ class HeadcountDisputeTests(unittest.TestCase):
             self._child("b", "2,500", None),
         ])
         self.assertNotIn("cost_weight_dispute", tree["children"][0])
+
+
+class StatedCountTests(unittest.TestCase):
+    """A curated name that states how many things it stands for is a claim.
+    The graph publishes that claim beside what it actually carries, and never
+    invents a number the name does not give."""
+
+    @staticmethod
+    def _annotate(tree):
+        from data_pipeline.exporter.build_graph import annotate_stated_counts
+
+        return annotate_stated_counts(tree)
+
+    def test_a_grouping_short_of_its_stated_count_says_so(self) -> None:
+        tree = _tree([{
+            "id": "senators", "name": "Individual Senator Offices (100)", "type": "Group",
+            "children": [{"id": f"s{i}", "name": f"Office {i}", "type": "Office", "children": []} for i in range(18)],
+        }])
+        stats = self._annotate(tree)
+        node = tree["children"][0]
+        self.assertEqual((node["statedChildCount"], node["carriedChildCount"], node["childrenIncomplete"]), (100, 18, True))
+        self.assertEqual((stats["groupings_stating_a_count"], stats["groupings_short_of_it"]), (1, 1))
+
+    def test_a_grouping_that_carries_what_it_states_flags_nothing(self) -> None:
+        tree = _tree([{
+            "id": "teams", "name": "Mission Teams (15)", "type": "Group",
+            "children": [{"id": f"t{i}", "name": f"Team {i}", "type": "Team", "children": []} for i in range(15)],
+        }])
+        stats = self._annotate(tree)
+        self.assertNotIn("childrenIncomplete", tree["children"][0])
+        self.assertEqual(stats["groupings_short_of_it"], 0)
+
+    def test_a_synthetic_treasury_line_is_not_a_member_of_the_group(self) -> None:
+        # The exporter's own bookkeeping is not one of the things the name counts.
+        tree = _tree([{
+            "id": "labs", "name": "National Laboratories (2)", "type": "Group",
+            "children": [
+                {"id": "l1", "name": "Lab 1", "type": "Lab", "children": []},
+                {"id": "l2", "name": "Lab 2", "type": "Lab", "children": []},
+                {"id": "r", "name": "Receipts", "synthetic": "treasury_receipts", "children": []},
+            ],
+        }])
+        self._annotate(tree)
+        self.assertEqual(tree["children"][0]["carriedChildCount"], 2)
+        self.assertNotIn("childrenIncomplete", tree["children"][0])
+
+    def test_an_exact_multiplicity_is_read_from_the_name(self) -> None:
+        tree = _tree([{"id": "p", "name": "Senior Legislative Assistant (×3)", "type": "Position", "children": []}])
+        self._annotate(tree)
+        self.assertEqual(tree["children"][0]["representsPosts"]["kind"], "exact")
+        self.assertEqual(tree["children"][0]["representsPosts"]["count"], 3)
+
+    def test_a_range_keeps_both_ends(self) -> None:
+        tree = _tree([{"id": "p", "name": "Deputy Assistant Secretary (×2-4)", "type": "Position", "children": []}])
+        self._annotate(tree)
+        represents = tree["children"][0]["representsPosts"]
+        self.assertEqual((represents["kind"], represents["low"], represents["high"]), ("range", 2, 4))
+
+    def test_an_unstated_multiplicity_invents_no_number(self) -> None:
+        tree = _tree([{"id": "p", "name": "Cybersecurity Advisor (×multiple)", "type": "Position", "children": []}])
+        self._annotate(tree)
+        represents = tree["children"][0]["representsPosts"]
+        self.assertEqual(represents["kind"], "unstated")
+        self.assertEqual(represents["as_written"], "multiple")
+        for field in ("count", "low", "high"):
+            self.assertNotIn(field, represents, "a number was invented for a name that gives none")
+
+    def test_a_position_naming_one_post_says_nothing(self) -> None:
+        tree = _tree([{"id": "p", "name": "Deputy Commissioner", "type": "Position", "children": []}])
+        self._annotate(tree)
+        self.assertNotIn("representsPosts", tree["children"][0])
+
+    def test_a_rename_withdraws_the_claim(self) -> None:
+        # The previous graph.json is re-fed as a payload; a stale count that
+        # could outlive the name that stated it would be unretractable.
+        tree = _tree([{
+            "id": "g", "name": "District Offices (68)", "type": "Group",
+            "children": [{"id": "d1", "name": "One", "type": "Office", "children": []}],
+        }])
+        self._annotate(tree)
+        self.assertTrue(tree["children"][0]["childrenIncomplete"])
+        tree["children"][0]["name"] = "District Offices"
+        self._annotate(tree)
+        for field in ("statedChildCount", "carriedChildCount", "childrenIncomplete"):
+            self.assertNotIn(field, tree["children"][0])
+
+    def test_the_real_graph_has_four_short_groupings_and_742_multi_post_nodes(self) -> None:
+        graph = json.loads((Path(__file__).resolve().parents[1] / "output" / "graph.json").read_text(encoding="utf-8"))
+        nodes = []
+
+        def walk(node):
+            nodes.append(node)
+            for child in node.get("children") or []:
+                walk(child)
+
+        walk(graph)
+        short = [n["name"] for n in nodes if n.get("childrenIncomplete")]
+        self.assertEqual(sorted(short), [
+            "District Offices (68)",
+            "Federal Public Defender Offices (82)",
+            "Individual Representative Offices (435)",
+            "Individual Senator Offices (100)",
+        ])
+        self.assertEqual(sum(1 for n in nodes if n.get("representsPosts")), 742)

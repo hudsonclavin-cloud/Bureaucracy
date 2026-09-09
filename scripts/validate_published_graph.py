@@ -719,6 +719,68 @@ def main(argv):
             bad_dispute.append("{} dispute has no source URL".format(label(node)))
     gate.check("every published weight dispute names both figures and is one", bad_dispute)
 
+    # A measured cost belongs to an organisation. An outside review of an
+    # older checkout of this project reported $463.2M of the Comptroller of
+    # the Currency's outlays published on a node typed Position; that is not
+    # true on this graph — apply_treasury_outlay_rows has excluded position,
+    # committee, role and caucus types from name matching, and none of the
+    # measured nodes is one — but nothing here forbade it, so a re-fed payload
+    # or a future change could reintroduce exactly that. A Treasury line names
+    # an organisation's outlays; publishing one as a post's cost would be a
+    # measured figure about the wrong kind of thing.
+    non_org_measured = []
+    for node in nodes:
+        if str(node.get("cost_status") or "") not in ("official", "scaled_official"):
+            continue
+        type_text = str(node.get("type") or "").casefold()
+        if any(word in type_text for word in ("position", "role", "committee", "caucus", "office holder")):
+            non_org_measured.append("{} is a {!r} carrying a measured cost".format(label(node), node.get("type")))
+    gate.check("a measured cost sits only on an organisation", non_org_measured)
+
+    # A name that states how many things it stands for, against what the
+    # graph carries. The claim is only ever "the name says N, we carry M";
+    # it must be arithmetic, and it must not appear where it is not true.
+    bad_counts = []
+    for node, parent in walk(graph):
+        stated, carried = node.get("statedChildCount"), node.get("carriedChildCount")
+        if stated is None and carried is None and not node.get("childrenIncomplete"):
+            continue
+        if not isinstance(stated, int) or not isinstance(carried, int) or stated < 0 or carried < 0:
+            bad_counts.append("{} states {!r} and carries {!r}".format(label(node), stated, carried))
+            continue
+        real = sum(1 for c in (node.get("children") or []) if isinstance(c, dict) and not c.get("synthetic"))
+        if carried != real:
+            bad_counts.append("{} says it carries {} children, the tree has {}".format(label(node), carried, real))
+        if bool(node.get("childrenIncomplete")) != (carried < stated):
+            bad_counts.append("{} flags incomplete={!r} with {} of {}".format(
+                label(node), node.get("childrenIncomplete"), carried, stated))
+        if str(stated) not in str(node.get("name") or ""):
+            bad_counts.append("{} claims a stated count its name does not carry".format(label(node)))
+    gate.check("a stated child count is the name's and the tree's", bad_counts)
+
+    # A position standing for several posts. Where the name gives no number,
+    # none may be published: an invented count is a figure nobody wrote.
+    bad_multiplicity = []
+    for node in nodes:
+        represents = node.get("representsPosts")
+        if represents is None:
+            continue
+        if not isinstance(represents, dict) or represents.get("kind") not in ("exact", "range", "unstated"):
+            bad_multiplicity.append("{} representsPosts {!r}".format(label(node), represents))
+            continue
+        kind = represents["kind"]
+        if kind == "exact" and not (isinstance(represents.get("count"), int) and represents["count"] > 1):
+            bad_multiplicity.append("{} states {!r} posts".format(label(node), represents.get("count")))
+        if kind == "range":
+            low, high = represents.get("low"), represents.get("high")
+            if not (isinstance(low, int) and isinstance(high, int) and 0 < low <= high):
+                bad_multiplicity.append("{} states a range {!r}-{!r}".format(label(node), low, high))
+        if kind == "unstated" and any(k in represents for k in ("count", "low", "high")):
+            bad_multiplicity.append("{} invents a number for an unstated multiplicity".format(label(node)))
+        if str(represents.get("text") or "") not in str(node.get("name") or ""):
+            bad_multiplicity.append("{} quotes {!r}, which is not in its name".format(label(node), represents.get("text")))
+    gate.check("a multiplicity is read from the name and never invented", bad_multiplicity)
+
     # 14. The review queue beside the graph, when there is one.
     queue_path = graph_path.parent / "candidate_nodes.json"
     if queue_path.exists():
@@ -734,6 +796,37 @@ def main(argv):
     )
     print("\n--- reported, not enforced ---")
     print("  nodes                : {:,}".format(len(nodes)))
+    # "with a cost" is not "with a known cost". A record naming the node is
+    # the only thing that makes a figure that node's own; everything else is
+    # its share of an ancestor's total, divided by a weight. Reported as
+    # nodes and as dollars, because the two say different things: a handful
+    # of measured nodes can cover most of the money, and usually do.
+    exact = [n for n in nodes if str(n.get("cost_status") or "") in ("official", "root_total")]
+    estimated = [n for n in nodes if str(n.get("cost_status") or "") in ("allocated", "scaled_official")]
+    anchor_total = amount_of(graph) or 0.0
+    top_exact, seen_exact = [], set()
+
+    def collect_exact(node, inside):
+        node_id = str(node.get("id") or "")
+        measured = str(node.get("cost_status") or "") == "official"
+        if measured and not inside and node_id not in seen_exact:
+            seen_exact.add(node_id)
+            top_exact.append(node)
+        for child in node.get("children") or []:
+            if isinstance(child, dict):
+                collect_exact(child, inside or measured)
+
+    for branch in graph.get("children") or []:
+        if isinstance(branch, dict):
+            collect_exact(branch, False)
+    # Signed: the government-wide offsetting receipts are a measured, negative
+    # top-most line, and taking its magnitude would count $343B of receipts as
+    # $343B of covered spending and push the coverage past 100%.
+    exact_dollars = sum(amount_of(n) or 0.0 for n in top_exact)
+    print("  cost identified for the node itself: {:,} of {:,} nodes ({:.1%}); {:,} are a share of an ancestor's total".format(
+        len(exact), len(nodes), len(exact) / len(nodes) if nodes else 0, len(estimated)))
+    print("  the measured nodes cover {:.1%} of the anchor ({:,.0f} of {:,.0f}), counting each only once".format(
+        exact_dollars / anchor_total if anchor_total else 0, exact_dollars, anchor_total))
     print("  with a cost          : {:,}".format(sum(1 for n in nodes if amount_of(n) is not None)))
     print("  verification         : {}".format(dict(verification.most_common())))
     print("  cost_status          : {}".format(dict(cost_status.most_common())))
