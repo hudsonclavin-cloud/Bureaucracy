@@ -391,5 +391,49 @@ class DeadAliasTests(unittest.TestCase):
         self.assertNotIn("rollup_total_amount", node_map["kept"])
 
 
+class StudentAidAliasTests(unittest.TestCase):
+    """The one line added on 2026-09-09, pinned in both directions.
+
+    The statement calls Education's largest office "Office of Federal Student
+    Aid" and reports $76.05B for it; the graph calls it "Federal Student Aid
+    (FSA)" and was publishing a $13.37B share of its parent. The size is not
+    what makes the alias legal — $76.05B is larger than Education's own
+    $52.94B net figure, which is only possible because the section's receipts
+    are carried explicitly beside it — the section is: Table 5 files the row
+    under the Department of Education and the graph puts the node there.
+    """
+
+    def test_the_alias_is_present_and_points_at_the_curated_office(self) -> None:
+        self.assertEqual(TREASURY_ROW_ALIASES.get("office of federal student aid"), "exec-dept-ed-fsa")
+
+    def test_the_published_graph_carries_the_measured_figure(self) -> None:
+        graph = json.loads((Path(__file__).resolve().parents[1] / "output" / "graph.json").read_text(encoding="utf-8"))
+
+        def find(node):
+            if node.get("id") == "exec-dept-ed-fsa":
+                return node
+            for child in node.get("children") or []:
+                hit = find(child)
+                if hit:
+                    return hit
+            return None
+
+        fsa = find(graph)
+        self.assertIsNotNone(fsa, "the curated office is not in the published graph")
+        self.assertEqual(fsa["cost_status"], "official")
+        self.assertEqual(fsa["costVerificationStatus"], "verified")
+        self.assertEqual(round(fsa["resolved_total_amount"]), 76_054_364_353)
+        self.assertEqual(fsa["treasury_row_name"], "Total--Office of Federal Student Aid")
+        self.assertTrue(any("fiscaldata.treasury.gov" in str(u) for u in fsa["sourceUrls"]))
+
+    def test_the_node_is_under_education_where_the_statement_files_the_row(self) -> None:
+        # The same-section rule is what licenses this alias, so a re-parenting
+        # of the office in the curated file must break this test rather than
+        # quietly leave a line applied across sections.
+        root = load_base_graph(DEFAULT_BASE_GRAPH)
+        _, parent_map = index_tree(root)
+        self.assertEqual(parent_map.get("exec-dept-ed-fsa"), "exec-dept-ed")
+
+
 if __name__ == "__main__":
     unittest.main()

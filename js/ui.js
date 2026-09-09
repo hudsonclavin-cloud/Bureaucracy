@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909d";
+import { createGovernmentGraph } from "./graph.js?v=20260909e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -59,12 +59,14 @@ const dom = {
 };
 
 const state = {
-  // "Show only costs identified for the node itself": with it on, an
-  // apportioned share is not shown as a figure at all. 2.6% of nodes carry a
-  // cost a record names for them, and those cover 98.4% of the anchor — the
-  // estimates subdivide measured money rather than invent it, and this is the
-  // view that shows exactly which is which.
-  exactCostsOnly: false,
+  // On by default since 2026-09-09, by the owner's decision: an apportioned
+  // share is not a cost this project knows, and a number nobody measured must
+  // not be the thing a reader sees first. 2.6% of nodes carry a cost a record
+  // names for them — those cover 98.4% of the anchor — and a position may
+  // additionally show a rate of basic pay an official source reports. Every
+  // other node shows no figure at all until the reader asks for the estimate
+  // by name.
+  exactCostsOnly: true,
   graph: null,
   searchIndex: [],
   expandCancelled: false,
@@ -153,7 +155,10 @@ function describeProvenance(root) {
       receipts ? `, with its receipts carried as ${receipts.toLocaleString()} explicit lines` : ""
     }`,
     `${capped.toLocaleString()} capped to fit an estimated parent`,
-    `${estimated.toLocaleString()} apportioned estimates`,
+    // The estimates are no longer shown by default, and the line a visitor
+    // reads first must say so rather than counting them as if they were on
+    // screen.
+    `${estimated.toLocaleString()} apportioned estimates, withheld unless asked for`,
     `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
     `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${unreachable.toLocaleString()} unreachable: parent has no page)`,
     "the descriptions carry no citation",
@@ -432,7 +437,10 @@ function ensureVerificationToggles() {
   const toggleUnverified = makeToggle("Show Unverified Nodes");
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
-  const toggleExactCosts = makeToggle("Show only costs identified for the node itself");
+  // Worded as opting *in* to the estimates: the default is the honest view,
+  // and turning this on is a request to see a derived number, not a setting
+  // that hides something the reader was entitled to.
+  const toggleExactCosts = makeToggle("Also show estimated shares of a parent's total");
   toggleExactCosts.checked = false;
 
   (depthExpandCtrl || document.body).appendChild(wrap);
@@ -1043,9 +1051,26 @@ function isCostHiddenAsEstimate(node) {
   return state.exactCostsOnly && !isCostIdentifiedForTheNode(node);
 }
 
+// A rate of basic pay an official source reports for this post. Not the
+// node's cost and never presented as one — it is what the archive says the
+// post was paid, and it is the one figure a position node can honestly show
+// when its apportioned share is withheld.
+function reportedPayOf(node) {
+  const listing = node.positionListing;
+  if (!listing || typeof listing !== "object") return null;
+  const pay = listing.reportedPay;
+  return typeof pay === "number" && pay > 0 ? listing : null;
+}
+
 function formatCostAmount(node) {
+  if (isCostHiddenAsEstimate(node)) {
+    // The estimate is withheld; a real salary is not, and it is labelled as
+    // pay rather than as a cost by the head the cost block draws beside it.
+    const pay = reportedPayOf(node);
+    return pay ? pay.reportedPayText || `$${Math.round(pay.reportedPay).toLocaleString()}` : null;
+  }
   const amount = toFiniteAmount(node.resolved_total_amount);
-  if (amount === null || isBelowPrecision(node) || isCostHiddenAsEstimate(node)) {
+  if (amount === null || isBelowPrecision(node)) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
@@ -1067,13 +1092,18 @@ function isBelowPrecision(node) {
 
 function describeCost(node) {
   if (isCostHiddenAsEstimate(node)) {
+    const pay = reportedPayOf(node);
     return {
-      label: "Not identified for this node",
+      label: pay ? "No cost known; a reported rate of pay is shown" : "No cost known for this node",
       tone: "unavailable",
       note:
-        "No record names this node's own cost. The figure this graph would otherwise show is its share of an ancestor's " +
-        "measured total, divided among siblings by budget, headcount or subtree size — an estimate, not a measurement. " +
-        "Turn off \u201cShow only costs identified for the node itself\u201d to see it, labelled as the estimate it is.",
+        "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
+        "measured total, divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is " +
+        "not shown here. Tick \u201cAlso show estimated shares of a parent's total\u201d to see it, labelled as the estimate it is." +
+        (pay
+          ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
+            `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
+          : ""),
     };
   }
   const status = String(node.cost_status || "").toLowerCase();
@@ -1178,10 +1208,18 @@ function buildCostBlock(node) {
   const head = document.createElement("div");
   head.className = "info-cost-head";
 
-  const period = getCostPeriod(node);
+  // When the estimate is withheld and a salary is shown in its place, the
+  // heading must not read COST: a rate of basic pay for one post is not what
+  // a unit costs, and the label is the first thing a reader takes as the
+  // claim. The period line below is the Treasury anchor's and is suppressed
+  // for the same reason.
+  const showingPay = isCostHiddenAsEstimate(node) && reportedPayOf(node) !== null;
+  const period = showingPay ? { label: null, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
-  label.textContent = coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+  label.textContent = showingPay
+    ? "REPORTED RATE OF BASIC PAY"
+    : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
@@ -1628,7 +1666,7 @@ function bindControls() {
 
   if (dom.toggleExactCosts) {
     dom.toggleExactCosts.addEventListener("change", () => {
-      state.exactCostsOnly = dom.toggleExactCosts.checked;
+      state.exactCostsOnly = !dom.toggleExactCosts.checked;
       // Re-render the open panel so the figure changes with the switch.
       const selected = state.graph.getSelectedNode();
       if (selected) {
