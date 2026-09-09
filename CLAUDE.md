@@ -619,6 +619,52 @@ with the arithmetic and the requirement that the quoted text really is in
 the node's name. Every field is cleared and recomputed each build, so a
 rename withdraws the claim.
 
+### The three agent phases
+
+Three runbooks, run in order over the same 5,195 nodes, each with a harness
+that refuses what it cannot adjudicate. All three write **only** to
+`data/audit/`; none edits the curated file, the published graph or any
+evidence file, which is what makes it safe to point many agents at the whole
+tree.
+
+| Phase | Runbook | Harness | Writes | Asks |
+|---|---|---|---|---|
+| 1a | `NODE_AUDIT_RUNBOOK.md` | `node_audit.py` | `node_audit.jsonl` | Is what the site says about this node supported? |
+| 1b | `SOURCE_NOMINATION_RUNBOOK.md` | `nominate.py --kind source` | `nominations/source-*.jsonl` | Which page should the verifier fetch for it? |
+| 2 | `COST_NOMINATION_RUNBOOK.md` | `nominate.py --kind cost` | `nominations/cost-*.jsonl` | Which record would give it its own cost? |
+
+Phase 2 reads phase 1's ledger before nominating and skips any node the audit
+called a duplicate, not a real unit, wrongly parented or stale-named: a
+financial identifier on a node about to be merged or moved looks like
+evidence for the wrong thing. It feeds back the other way too — an identity
+problem found while chasing money goes into the audit ledger with `--force`.
+
+**Phases 1b and 2 are deliberately weaker than 1a, and that is the design.**
+A nomination is not a claim: `official_sites.json` has always said a URL there
+is "something to check, not evidence", so an agent may propose a page it
+cannot read and the verifier adjudicates by label equality. The worst a wrong
+nomination does is waste one fetch. Both refuse `confidence: certain`
+outright — an agent that cannot read the source has no way to earn it — and
+both refuse what could never be adjudicated at all: a host the verifier will
+not fetch, a dataset URL offered as a unit's own page, a URL already tried and
+failed, a metric outside the five (`net_outlays`, `audited_net_cost`,
+`obligations`, `budget_authority`, `basic_pay`), an identifier with no basis.
+`nominate.py promote` is the only command that writes outside `data/audit/`:
+it adds candidates to the verifier's fetch queue and records each one's run,
+basis and confidence in `official_sites_provenance.json`.
+
+**Many agents at once.** `--shard k/N` partitions the work deterministically
+(disjoint and complete, pinned by a test) and each run writes its own ledger
+file under `data/audit/nominations/`, so N agents never touch the same file
+and their branches merge without conflict. Positions and synthetic lines are
+never handed out for page nomination — 4,382 positions would produce 4,382
+identical refusals — but a position *can* carry a cost nomination, its rate of
+basic pay, which is never the unit's cost.
+
+The standing numbers this work exists to move: 611 of 788 organisations have
+no candidate page at all, so the verifier can never reach them; and 136 of
+5,195 nodes carry a cost identified for themselves.
+
 ### The node-by-node audit
 
 `docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,195

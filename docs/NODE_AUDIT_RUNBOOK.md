@@ -329,3 +329,32 @@ that out on its own.
 Do not summarise the audit as "all clean" if the honest answer is "most nodes
 have no evidence either way". That is the actual finding, and it is the one
 the project most needs to hear.
+
+---
+
+## What runs after you
+
+You are phase 1a of three. What you record is read by the two that follow, so
+a finding you leave vague costs someone else a pass.
+
+**Phase 1b — `docs/SOURCE_NOMINATION_RUNBOOK.md`.** Nominates a page for the
+verifier to fetch, for the 611 organisations that have none. Your
+`existence: no_evidence_in_repo` verdicts are exactly its work list. Where you
+concluded a node is an editorial grouping the government does not name, say so
+in a finding: phase 1b can then record `noCandidate` instead of hunting for a
+page that cannot exist.
+
+**Phase 2 — `docs/COST_NOMINATION_RUNBOOK.md`.** Proposes which record would
+give each node its own cost. It reads your ledger *before* nominating, and
+skips any node you marked a duplicate, not a real unit, wrongly parented or
+stale-named — because a financial identifier attached to a node that is about
+to be merged or moved looks like evidence for the wrong thing.
+
+So three of your finding kinds carry more weight than the rest, because a
+later phase acts on them: `duplicate`, `not_a_real_unit`, `wrong_parent`. When
+you raise one, make the `claim` specific enough that phase 2 can act on it
+without re-deriving your reasoning.
+
+Phase 2 also feeds back. If it learns something about a node's *identity*
+while chasing its money, it appends to this same ledger with `--force`. So a
+node may be audited twice; that is intended, and `verify` still holds.
