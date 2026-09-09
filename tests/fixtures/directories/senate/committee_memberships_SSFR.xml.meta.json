@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:21:05Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 14737,
+ "sha256": "f8b6bac4c40e4933515ac5bb6aa97a2f88fde02ca13ce29522f97b67acdd5565",
+ "error": null,
+ "file": "committee_memberships_SSFR.xml"
+}

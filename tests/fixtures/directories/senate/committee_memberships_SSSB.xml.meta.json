@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:21:11Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 2758,
+ "sha256": "d9a62b83a76a08f14b48c1865fed7e4ea337983f3933482fc4f7113c62104a2a",
+ "error": null,
+ "file": "committee_memberships_SSSB.xml"
+}

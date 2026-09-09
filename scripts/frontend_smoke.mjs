@@ -247,6 +247,155 @@ try {
     check("the government-wide line shows its exact negative figure", gov.includes(exactDollars(governmentWide.resolved_total_amount)), gov);
   }
 
+  // The government's own lists, said as themselves: a directory listing is a
+  // weaker claim than a page and is worded as one; a complete list's
+  // absence is a checked negative naming the list.
+  const directoryPlaced = allNodes.find((n) => n.placementMethod === "listed_under_parent_in_federal_register_agency_directory");
+  check("some placement comes from the Federal Register's directory", Boolean(directoryPlaced), "none");
+  if (directoryPlaced) {
+    await openByName(directoryPlaced.name);
+    const line = await text("#verification-placement");
+    check("a directory placement names the directory, not a page", /Federal Register's agency directory files it under its parent here/.test(line), line);
+    check("a directory placement never claims a page lists it", !/official page lists it/.test(line), line);
+  }
+  const senateListed = allNodes.find((n) => n.placementMethod === "listed_under_committee_in_senate_committee_list");
+  check("some subcommittee is placed by the Senate's list", Boolean(senateListed), "none");
+  if (senateListed) {
+    await openByName(senateListed.name);
+    const line = await text("#verification-placement");
+    check("a Senate-list placement names the list", /Senate's official committee list carries it under its committee here/.test(line), line);
+    const existence = await text("#info-panel");
+    check("a Senate-list existence line names the list", /Senate's official committee list carries it/.test(existence), existence);
+  }
+  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list");
+  check("some curated name is checked against the Senate's list and absent", Boolean(staleName), "none");
+  if (staleName) {
+    await openByName(staleName.name);
+    const existence = await text("#info-panel");
+    check("an absence from a complete list says which list and which committee", /against the Senate's official committee list: it carries no unit of this name under "/.test(existence), existence);
+  }
+
+  // OPM's own numbers, each said as itself: a sourced headcount beside an
+  // uncited one, and a position listing that is a record of a past period.
+  const withOfficial = allNodes.find((n) => typeof n.employeesOfficial === "number" && n.employees)
+    || allNodes.find((n) => typeof n.employeesOfficial === "number");
+  check("some node carries an official headcount", Boolean(withOfficial), "none");
+  if (withOfficial) {
+    await openByName(withOfficial.name);
+    const stats = await text("#info-stats");
+    check("the official headcount is shown and named as OPM's", /EMPLOYEES — OPM FedScope/.test(stats), stats.slice(0, 400));
+    const note = await text("#info-headcount-provenance");
+    check("the headcount names the file and its coverage", /OPM's FedScope employment file lists .* Coverage: /.test(note), note);
+    if (withOfficial.employees) {
+      check("the curated figure is labelled uncited beside it", /EMPLOYEES \(uncited, from the base graph\)/.test(stats), stats.slice(0, 400));
+      check("the panel says the two count different populations", /count different populations/.test(note), note);
+    }
+  }
+  // A node with an OPM figure and nothing else must not be told it has no
+  // source at all: the provenance block right below shows an opm.gov URL.
+  const officialNoSources = allNodes.find(
+    (n) => typeof n.employeesOfficial === "number" && !(n.sourceUrls || []).length && !n.lastVerified,
+  );
+  if (officialNoSources) {
+    await openByName(officialNoSources.name);
+    const panel = await text("#info-panel");
+    check("a node with only an OPM figure is not told it has no source", !/No source URL has been attached to it yet/.test(panel), panel.slice(0, 600));
+    check("the panel says which claim is the one missing", /No source has been attached for its existence/.test(panel), panel.slice(0, 600));
+  }
+
+  // The headcount an estimate was divided by, where OPM contradicts it.
+  const disputed = allNodes.find((n) => n.cost_weight_dispute && typeof n.cost_weight_dispute === "object");
+  check("some estimate was weighted by a headcount OPM contradicts", Boolean(disputed), "none");
+  if (disputed) {
+    await openByName(disputed.name);
+    const stats = await text("#info-stats");
+    check("the estimate names both headcounts", /The headcount used is the base graph's uncited .*OPM's employment file.*reports/s.test(stats), stats.slice(0, 900));
+    check("the estimate says the share was not recomputed", /The share was not recomputed from OPM's number/.test(stats), stats.slice(0, 900));
+  }
+
+  const withListing = allNodes.find((n) => n.positionListing && typeof n.positionListing === "object");
+  check("some position carries a PLUM archive listing", Boolean(withListing), "none");
+  if (withListing) {
+    await openByName(withListing.name);
+    const listing = await text("#info-position-listing");
+    check("the listing names the archive and its edition", /OPM's PLUM archive — /.test(listing), listing);
+    check("the listing disclaims any current holder", /says nothing about who holds this post now/.test(listing), listing);
+    check("the listing never names an incumbent", !/incumbent/i.test(listing), listing);
+  }
+
+  // Pay, as the archive states it: a rank is never printed as a rate, and a
+  // rate is never presented as this unit's cost or as current.
+  // Pick a uniquely named one: 80 nodes are called "Inspector General", and
+  // opening by name would land on somebody else's.
+  const nameCounts = new Map();
+  for (const n of allNodes) nameCounts.set(n.name, (nameCounts.get(n.name) || 0) + 1);
+  const unique = (n) => nameCounts.get(n.name) === 1;
+  const withRate = allNodes.find((n) => n.positionListing && typeof n.positionListing.reportedPay === "number" && unique(n));
+  check("some position carries the pay the archive reports", Boolean(withRate), "none");
+  if (withRate) {
+    await openByName(withRate.name);
+    const listing = await text("#info-position-listing");
+    check("the reported rate is shown as the archive prints it", /It reports basic pay of \$[\d,]+ for that period/.test(listing), listing);
+    check("the rate is not presented as the unit's cost", /not this unit's cost/.test(listing), listing);
+  }
+  const withLevel = allNodes.find((n) => n.positionListing && n.positionListing.payLevel && unique(n));
+  check("some position carries a level rather than a rate", Boolean(withLevel), "none");
+  if (withLevel) {
+    await openByName(withLevel.name);
+    const listing = await text("#info-position-listing");
+    check("a level is never printed as a dollar figure", !/level [^.]*\$/i.test(listing), listing);
+    check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
+  }
+
+  // The exact-costs-only view: with it on, an apportioned share is not shown
+  // as a figure at all, and the panel says why.
+  const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6 && nameCounts.get(n.name) === 1);
+  check("some node carries an apportioned share", Boolean(allocatedNode), "none");
+  if (allocatedNode) {
+    await openByName(allocatedNode.name);
+    const before = await text("#info-stats");
+    check("its estimate is shown by default", /≈\s*\$/.test(before), before.slice(0, 300));
+    const toggled = await page.evaluate(() => {
+      const label = [...document.querySelectorAll("#verification-toggles label")]
+        .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
+      if (!label) return false;
+      label.querySelector("input").click();
+      return true;
+    });
+    check("the exact-costs-only toggle exists", toggled, "no such toggle");
+    if (toggled) {
+      const after = await text("#info-stats");
+      check("the estimate is withdrawn, not restated", /not identified for this node/i.test(after), after.slice(0, 400));
+      check("no dollar figure survives the switch", !/≈\s*\$/.test(after), after.slice(0, 400));
+      check("the panel says what the hidden figure would have been", /share of an ancestor's measured total/.test(after), after.slice(0, 500));
+      await page.evaluate(() => {
+        const label = [...document.querySelectorAll("#verification-toggles label")]
+          .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
+        label.querySelector("input").click();
+      });
+    }
+  }
+
+  // A node whose name states a count says how many it actually carries.
+  const short = allNodes.find((n) => n.childrenIncomplete);
+  check("some grouping carries fewer than its name states", Boolean(short), "none");
+  if (short) {
+    await openByName(short.name);
+    const stats = await text("#info-stats");
+    const note = await text("#info-count-provenance");
+    check("the sub-unit row names the stated count", /SUB-UNITS \(of the \d+ its name states\)/.test(stats), stats.slice(0, 400));
+    check("the panel says the rest are absent from the graph", /are not in this graph at all/.test(note), note);
+  }
+  const several = allNodes.find((n) => n.representsPosts && n.representsPosts.kind === "exact" && nameCounts.get(n.name) === 1)
+    || allNodes.find((n) => n.representsPosts && nameCounts.get(n.name) === 1);
+  check("some position stands for several posts", Boolean(several), "none");
+  if (several) {
+    await openByName(several.name);
+    const note = await text("#info-count-provenance");
+    check("the panel says it stands for more than one post", /stands for/.test(note), note);
+    check("the panel says the figure is for the group", /for the group, not for one holder/.test(note), note);
+  }
+
   // A share nobody can estimate is published as unavailable, never as $0.00
   // — below a cent, or beneath a unit whose net outlays are negative.
   const belowPrecision = allNodes.find((n) => n.cost_validation === "allocation_below_precision" && !/position/i.test(n.type || ""))

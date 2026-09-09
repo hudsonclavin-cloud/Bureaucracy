@@ -1,0 +1,14 @@
+{
+ "fetched_at": "2026-09-08T19:19:18Z",
+ "url": "https://www.senate.gov/general/committee_membership/",
+ "status": 200,
+ "final_url": "https://www.senate.gov/pagelayout/general/one_item_and_teasers/waf.htm",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 33637,
+ "sha256": "b327c1720baa9dfcbe70de1bfa2d4369c0c31c9448a89ecbdb22add7e9edbb20",
+ "error": null,
+ "file": "committee_membership_index.waf_response.html",
+ "note": "The request for the directory listing was redirected to a WAF page titled 'U.S. Senate: Request not Accepted - Security Risk Detected'. The body saved here is that page, verbatim; it is not the directory. Committee codes were enumerated from senate_committees_page.html instead."
+}

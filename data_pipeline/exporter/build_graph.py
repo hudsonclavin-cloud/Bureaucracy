@@ -593,6 +593,51 @@ def resolve_sibling_weights(
     return resolved, dominant, True
 
 
+HEADCOUNT_DISPUTE_TOLERANCE = 0.10
+
+
+def note_headcount_dispute(child: dict[str, Any], basis: str) -> bool:
+    """Say when the headcount an estimate was apportioned by is contradicted
+    by OPM's own count of the same unit.
+
+    The share stays where it is. Swapping the weight to OPM's figure was
+    tried and rejected: seven sibling sets have a FedScope record on every
+    headcount-bearing member, but one of them is Homeland Security, where the
+    Coast Guard's curated 55,000 sits beside FedScope's 9,583 — the same
+    civilian-versus-uniformed mismatch CLAUDE.md already refuses for the
+    Army. The curated figures are uncited, so nothing here can tell a wrong
+    number from a different population, and a rule that cannot tell them
+    apart would cut a uniformed service's share fivefold on a guess.
+
+    What can be said truthfully is that the two disagree, so the node carries
+    both and the panel prints them. The tolerance decides only what is worth
+    mentioning, never what is true.
+    """
+    child.pop("cost_weight_dispute", None)
+    if basis != "employee_weight":
+        return False
+    official = child.get("employeesOfficial")
+    if not isinstance(official, (int, float)) or isinstance(official, bool) or official <= 0:
+        return False
+    curated = parse_cost_amount(child.get("employees"))
+    if curated is None or curated <= 0:
+        return False
+    if abs(curated - official) / official <= HEADCOUNT_DISPUTE_TOLERANCE:
+        return False
+    source = child.get("employeesOfficialSource")
+    source = source if isinstance(source, dict) else {}
+    child["cost_weight_dispute"] = {
+        "basis": basis,
+        "curatedEmployees": child.get("employees"),
+        "curatedEmployeesParsed": curated,
+        "officialEmployees": official,
+        "source": source.get("source"),
+        "period": source.get("period"),
+        "url": source.get("url"),
+    }
+    return True
+
+
 def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tuple[float, str]:
     for key, basis in (
         ("annual_budget", "annual_budget_weight"),
@@ -1475,6 +1520,82 @@ def summarize_scaled_official(root: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# A curated name that states how many things it stands for.
+#   "Individual Senator Offices (100)"        — a grouping, 100 offices
+#   "Senior Legislative Assistant (\u00d73)"       — one node, three posts
+#   "Deputy Assistant Secretary (\u00d72-4)"       — one node, two to four
+#   "Cybersecurity Advisor (\u00d7multiple)"       — one node, an unstated number
+STATED_GROUP_COUNT = re.compile(r"\(\s*(\d+)\s*\)\s*$")
+STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECASE)
+MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
+
+
+def annotate_stated_counts(root: dict[str, Any]) -> dict[str, Any]:
+    """Say when a node's own name states that it stands for more than it shows.
+
+    Eight curated groupings state a count: four carry exactly what they claim
+    ("Mission Teams (15)" has fifteen children), and four do not — "Individual
+    Senator Offices (100)" carries eighteen, "Individual Representative
+    Offices (435)" fifteen, "District Offices (68)" four, "Federal Public
+    Defender Offices (82)" seven. A reader who expands one sees what is there
+    and nothing says the rest are absent, while every figure beneath is for
+    the ones shown.
+
+    742 position nodes carry a multiplicity in the name instead — 35 an exact
+    count, 23 a range, 684 an unstated "multiple" — and each is drawn as one
+    node, typed Position, with one apportioned figure.
+
+    Neither is corrected here, because the correction is curation and this
+    file is not the curator: what is published is the count the name states
+    beside the count the graph carries. Where the name gives no number
+    ("multiple") none is invented. Every field is recomputed on each build and
+    cleared first, so a rename or a filled-in grouping withdraws the claim.
+    """
+    stats = {"groupings_stating_a_count": 0, "groupings_short_of_it": 0,
+             "positions_standing_for_several": 0, "multiplicity_unstated": 0}
+    for node, _ in walk_tree(root):
+        for field in ("statedChildCount", "carriedChildCount", "childrenIncomplete", "representsPosts"):
+            node.pop(field, None)
+        name = str(node.get("name") or "")
+        is_position = "position" in str(node.get("type") or "").casefold()
+
+        if not is_position:
+            match = STATED_GROUP_COUNT.search(name)
+            if match:
+                stated = int(match.group(1))
+                # Synthetic Treasury lines are the exporter's own bookkeeping,
+                # not members of the group the name counts.
+                carried = sum(1 for c in (node.get("children") or []) if not c.get("synthetic"))
+                node["statedChildCount"] = stated
+                node["carriedChildCount"] = carried
+                stats["groupings_stating_a_count"] += 1
+                if carried < stated:
+                    node["childrenIncomplete"] = True
+                    stats["groupings_short_of_it"] += 1
+            continue
+
+        match = STATED_MULTIPLICITY.search(name)
+        if not match:
+            continue
+        text = match.group(1).strip()
+        represents: dict[str, Any] = {"text": match.group(0).strip("() ")}
+        span = MULTIPLICITY_RANGE.match(text)
+        if text.isdigit():
+            represents.update({"kind": "exact", "count": int(text)})
+        elif span:
+            low, high = int(span.group(1)), int(span.group(2))
+            represents.update({"kind": "range", "low": min(low, high), "high": max(low, high)})
+        else:
+            # "multiple", "several", "20 Border Patrol Sectors" — the name
+            # says there is more than one and does not say how many. Guessing
+            # a number here would be the graph inventing a figure nobody wrote.
+            represents.update({"kind": "unstated", "as_written": text})
+            stats["multiplicity_unstated"] += 1
+        node["representsPosts"] = represents
+        stats["positions_standing_for_several"] += 1
+    return stats
+
+
 def annotate_resolved_costs(
     root: dict[str, Any],
     *,
@@ -1483,12 +1604,20 @@ def annotate_resolved_costs(
     subtree_sizes = compute_subtree_sizes(root)
     budget_total = parse_cost_amount((budget_summary or {}).get("government_total_outlay_amount"))
 
+    # The previous graph.json comes back through as a payload, so a dispute
+    # noted on the last build would otherwise outlive the figures that
+    # produced it. It is recomputed below for every node it can apply to;
+    # clearing it here is what makes a withdrawn OPM record actually withdraw.
+    for _node, _ in walk_tree(root):
+        _node.pop("cost_weight_dispute", None)
+
     if budget_total is None:
         child_totals = [amount for amount in (get_node_official_total(child) for child in root.get("children", [])) if amount is not None]
         budget_total = sum(child_totals) if child_totals else None
 
     counters = {
         "mixed_weight_sibling_sets_implied": 0,
+        "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
@@ -1578,6 +1707,9 @@ def annotate_resolved_costs(
                 weight, weight_basis = get_node_weight(child, subtree_sizes)
                 weighted_children.append((child, weight, weight_basis))
         weighted_children, weight_class, implied = resolve_sibling_weights(weighted_children, subtree_sizes)
+        for weighted_child, _, weighted_basis in weighted_children:
+            if note_headcount_dispute(weighted_child, weighted_basis):
+                counters["headcount_weights_disputed_by_opm"] += 1
         if weight_class is not None:
             node["child_cost_basis"] = weight_class
             node.pop("child_cost_basis_downgraded", None)
@@ -1727,6 +1859,18 @@ def annotate_resolved_costs(
         is_root=True,
     )
 
+    # A dispute is about an estimate, and four EOP offices have none: the
+    # Treasury nets the Executive Office of the President to −$1.24B, so
+    # nothing is apportioned to its unlined children and they publish as
+    # unavailable. Noting "the headcount this share was divided by is
+    # contradicted" on a node with no share is a caveat about nothing. The
+    # weight is only known to have been used once the recursion has finished
+    # with the node, so the withdrawal happens here rather than at the stamp.
+    for _node, _ in walk_tree(root):
+        if _node.get("cost_weight_dispute") is not None and str(_node.get("cost_status") or "") != "allocated":
+            _node.pop("cost_weight_dispute", None)
+            counters["headcount_weights_disputed_by_opm"] -= 1
+
     validity_nodes: list[dict[str, Any]] = []
     verification_status_counts: dict[str, int] = {}
     cost_status_counts: dict[str, int] = {}
@@ -1844,6 +1988,7 @@ def annotate_resolved_costs(
             "partial_cost_node_count": partial_cost_node_count,
             "unverified_cost_node_count": unverified_cost_node_count,
             "mixed_weight_sibling_sets_implied": counters["mixed_weight_sibling_sets_implied"],
+            "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_scaled": summarize_scaled_official(root),
@@ -2004,6 +2149,9 @@ def build_graph(
     enforce_export_gate: bool = True,
     evidence_path: str | Path | None = DEFAULT_EVIDENCE_PATH,
     sites_path: str | Path | None = DEFAULT_SITES_PATH,
+    directory_evidence_path: str | Path | None = "default",
+    headcount_evidence_path: str | Path | None = "default",
+    position_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2122,6 +2270,44 @@ def build_graph(
         index_tree=index_tree,
         sites=load_official_sites(sites_path) if sites_path else None,
     )
+    # The government's own directories, applied after the page evidence has
+    # withdrawn and re-applied its claims: a listing is added beside a page
+    # claim, never over it, and withdrawn with it on the next build.
+    from data_pipeline.verification.directories import (  # noqa: E402 — directories imports this module
+        DEFAULT_DIRECTORY_EVIDENCE_PATH,
+        apply_directory_evidence,
+        load_directory_evidence,
+    )
+
+    resolved_directory_path = DEFAULT_DIRECTORY_EVIDENCE_PATH if directory_evidence_path == "default" else directory_evidence_path
+    validation["directory_evidence"] = apply_directory_evidence(
+        graph,
+        load_directory_evidence(resolved_directory_path) if resolved_directory_path else {},
+        index_tree=index_tree,
+    )
+    # OPM's own numbers, last and beside everything else: a headcount is
+    # stamped next to the curated figure and never over it, and a position
+    # listing is the archive's record of a period, never a claim about who
+    # holds a post now.
+    from data_pipeline.verification.headcounts import (  # noqa: E402 — headcounts imports this module
+        DEFAULT_HEADCOUNT_EVIDENCE_PATH,
+        apply_headcount_evidence,
+        load_headcount_evidence,
+    )
+    from data_pipeline.verification.positions import (  # noqa: E402 — positions imports this module
+        DEFAULT_POSITION_EVIDENCE_PATH,
+        apply_position_evidence,
+        load_position_evidence,
+    )
+
+    resolved_headcount_path = DEFAULT_HEADCOUNT_EVIDENCE_PATH if headcount_evidence_path == "default" else headcount_evidence_path
+    validation["headcount_evidence"] = apply_headcount_evidence(
+        graph, load_headcount_evidence(resolved_headcount_path) if resolved_headcount_path else {}, index_tree=index_tree,
+    )
+    resolved_position_path = DEFAULT_POSITION_EVIDENCE_PATH if position_evidence_path == "default" else position_evidence_path
+    validation["position_evidence"] = apply_position_evidence(
+        graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,
+    )
     proof_status_counts, _ = annotate_proof_tree(
         graph,
         parent_is_proven=True,
@@ -2168,6 +2354,9 @@ def build_graph(
     orphan_resolution = resolve_root_orphans(graph, trusted_node_ids=set(existing_ids))
     filter_relationships_to_kept_nodes(graph)
     validity_report = annotate_resolved_costs(graph, budget_summary=budget_summary)
+    # After the tree is final and pruned: the count a name states is only
+    # comparable with the children the published graph actually carries.
+    validity_report["stated_counts"] = annotate_stated_counts(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

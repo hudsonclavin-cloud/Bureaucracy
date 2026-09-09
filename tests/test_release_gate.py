@@ -79,6 +79,7 @@ class ReleaseGateTests(unittest.TestCase):
             # right and the test was stale. What the gate does with real
             # evidence is asserted in tests/test_verification.py.
             evidence_path=None,
+            directory_evidence_path=None,
         )
         self.graph_path = result.graph_path
         self.graph = json.loads(self.graph_path.read_text(encoding="utf-8"))
@@ -139,6 +140,205 @@ class ReleaseGateTests(unittest.TestCase):
     def test_missing_file_is_a_distinct_exit_code(self) -> None:
         code, _ = _gate(self.tmp_path / "nope.json")
         self.assertEqual(code, 2)
+
+
+class WeightDisputeGateTests(ReleaseGateTests):
+    """A published disagreement is a claim, so the gate must refuse a
+    malformed one. Every check here is pinned in both directions: the honest
+    block passes, each broken one fails."""
+
+    def _with_dispute(self, **overrides):
+        def mutate(graph):
+            node = _find(graph, "executive-branch")
+            node["employeesOfficial"] = 2_000_000
+            node["employeesOfficialSource"] = {
+                "source": "opm_fedscope_employment",
+                "listedName": "EXECUTIVE BRANCH",
+                "level": "agency",
+                "period": "2025-03",
+                "coverage": "Federal civilian employees in the Executive Branch in an active pay status.",
+                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
+                "checkedAt": "2026-09-08T19:50:51Z",
+            }
+            node["cost_weight_dispute"] = {
+                "basis": "employee_weight",
+                "curatedEmployees": "4,000,000",
+                "curatedEmployeesParsed": 4_000_000.0,
+                "officialEmployees": 2_000_000,
+                "source": "opm_fedscope_employment",
+                "period": "2025-03",
+                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
+                **overrides,
+            }
+            for key, value in overrides.items():
+                if key in ("cost_status", "cost_basis"):
+                    node[key] = value
+                    node["cost_weight_dispute"].pop(key, None)
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_dispute_passes(self) -> None:
+        code, out = _gate(self._with_dispute())
+        self.assertEqual(code, 0, out)
+        self.assertIn("every published weight dispute names both figures and is one", out)
+        self.assertIn("weights disputed     : 1", out)
+
+    def test_a_dispute_citing_a_figure_the_node_does_not_carry_fails(self) -> None:
+        code, out = _gate(self._with_dispute(officialEmployees=999))
+        self.assertEqual(code, 1)
+        self.assertIn("the node carries", out)
+
+    def test_a_dispute_that_is_not_one_fails(self) -> None:
+        # Within 10% is agreement; presenting it as a contradiction would
+        # manufacture doubt the figures do not support.
+        code, out = _gate(self._with_dispute(officialEmployees=4_000_000, curatedEmployeesParsed=4_000_000.0))
+        self.assertEqual(code, 1)
+        self.assertIn("within 10%", out)
+
+    def test_a_dispute_with_no_source_url_fails(self) -> None:
+        code, out = _gate(self._with_dispute(url=""))
+        self.assertEqual(code, 1)
+        self.assertIn("no source URL", out)
+
+    def test_a_dispute_on_a_measured_cost_fails(self) -> None:
+        # A measured figure was not divided by anything; a caveat about the
+        # weighting would be false.
+        code, out = _gate(self._with_dispute(cost_status="official"))
+        self.assertEqual(code, 1)
+        self.assertIn("dispute on a", out)
+
+    def test_a_dispute_missing_its_curated_figure_fails(self) -> None:
+        code, out = _gate(self._with_dispute(curatedEmployeesParsed=None))
+        self.assertEqual(code, 1)
+        self.assertIn("no curated figure", out)
+
+
+class ReportedPayGateTests(ReleaseGateTests):
+    """A rank and a rate are different claims; neither may hold the other's
+    kind of value once they have been split apart."""
+
+    def _with_listing(self, **overrides):
+        def mutate(graph):
+            node = _find(graph, "leg-senate")
+            node["positionListing"] = {
+                "source": "opm_plum_archive",
+                "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+                "listedTitle": "UNITED STATES SENATE",
+                "payPlan": "ES",
+                "payLevel": None,
+                "reportedPay": 225_700.0,
+                "reportedPayText": "$225,700",
+                "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/x.csv",
+                "checkedAt": "2026-09-08T19:49:47Z",
+                **overrides,
+            }
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_rate_passes(self) -> None:
+        code, out = _gate(self._with_listing())
+        self.assertEqual(code, 0, out)
+        self.assertIn("archive pay          : 1 positions carry a rate", out)
+
+    def test_a_dollar_figure_published_as_a_level_fails(self) -> None:
+        code, out = _gate(self._with_listing(payLevel="$225,700", reportedPay=None, reportedPayText=None))
+        self.assertEqual(code, 1)
+        self.assertIn("as a pay level", out)
+
+    def test_a_rate_that_is_not_a_positive_number_fails(self) -> None:
+        for bad in ("225700", 0, -1):
+            with self.subTest(bad=bad):
+                code, out = _gate(self._with_listing(reportedPay=bad))
+                self.assertEqual(code, 1)
+                self.assertIn("as a reported rate of pay", out)
+
+    def test_a_rate_without_the_text_the_archive_prints_fails(self) -> None:
+        # The printed text is what makes the figure auditable against the file.
+        code, out = _gate(self._with_listing(reportedPayText=""))
+        self.assertEqual(code, 1)
+        self.assertIn("without the text the archive prints", out)
+
+
+class MeasuredCostBelongsToAnOrganisationTests(ReleaseGateTests):
+    """An outside review of an older checkout reported $463.2M of Treasury
+    outlays published on a node typed Position. It is not true of this graph,
+    and now it cannot become true silently."""
+
+    def test_a_measured_cost_on_a_position_fails(self) -> None:
+        for kind in ("Position", "Committee", "Role", "Caucus"):
+            with self.subTest(kind=kind):
+                def mutate(graph, kind=kind):
+                    node = _find(graph, "leg-senate")
+                    node["type"] = kind
+                    node["cost_status"] = "official"
+                code, out = _gate(self._write_corrupted(mutate))
+                self.assertEqual(code, 1)
+                self.assertIn("carrying a measured cost", out)
+
+    def test_the_published_graph_has_none(self) -> None:
+        code, out = _gate(self.graph_path)
+        self.assertEqual(code, 0, out)
+        self.assertIn("a measured cost sits only on an organisation", out)
+
+
+class StatedCountGateTests(ReleaseGateTests):
+    """The claim is only ever "the name says N, we carry M". It has to be the
+    name's number and the tree's count, or it is a third thing nobody wrote."""
+
+    def _with_counts(self, name="Individual Senator Offices (100)", **fields):
+        def mutate(graph):
+            node = _find(graph, "legislative-branch")
+            node["name"] = name
+            node.update({"statedChildCount": 100, "carriedChildCount": 1, "childrenIncomplete": True, **fields})
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_count_passes(self) -> None:
+        code, out = _gate(self._with_counts())
+        self.assertEqual(code, 0, out)
+
+    def test_a_carried_count_the_tree_contradicts_fails(self) -> None:
+        code, out = _gate(self._with_counts(carriedChildCount=40))
+        self.assertEqual(code, 1)
+        self.assertIn("says it carries 40 children, the tree has 1", out)
+
+    def test_a_stated_count_the_name_does_not_carry_fails(self) -> None:
+        code, out = _gate(self._with_counts(name="Individual Senator Offices"))
+        self.assertEqual(code, 1)
+        self.assertIn("claims a stated count its name does not carry", out)
+
+    def test_an_incomplete_flag_that_disagrees_with_the_arithmetic_fails(self) -> None:
+        code, out = _gate(self._with_counts(name="Individual Senator Offices (1)", statedChildCount=1))
+        self.assertEqual(code, 1)
+        self.assertIn("flags incomplete=True with 1 of 1", out)
+
+
+class MultiplicityGateTests(ReleaseGateTests):
+    """Where the name gives no number, none may be published."""
+
+    def _with_multiplicity(self, name, represents):
+        def mutate(graph):
+            node = _find(graph, "leg-senate")
+            node["name"] = name
+            node["representsPosts"] = represents
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_multiplicity_passes(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst (\u00d73)", {"kind": "exact", "count": 3, "text": "\u00d73"}))
+        self.assertEqual(code, 0, out)
+
+    def test_a_number_invented_for_an_unstated_multiplicity_fails(self) -> None:
+        code, out = _gate(self._with_multiplicity(
+            "Senior Analyst (\u00d7multiple)", {"kind": "unstated", "as_written": "multiple", "count": 7, "text": "\u00d7multiple"}))
+        self.assertEqual(code, 1)
+        self.assertIn("invents a number for an unstated multiplicity", out)
+
+    def test_a_quoted_text_that_is_not_in_the_name_fails(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst", {"kind": "exact", "count": 3, "text": "\u00d73"}))
+        self.assertEqual(code, 1)
+        self.assertIn("which is not in its name", out)
+
+    def test_a_count_of_one_is_not_a_multiplicity(self) -> None:
+        code, out = _gate(self._with_multiplicity("Senior Analyst (\u00d71)", {"kind": "exact", "count": 1, "text": "\u00d71"}))
+        self.assertEqual(code, 1)
+        self.assertIn("states 1 posts", out)
 
 
 class OfflineRegenerationTests(unittest.TestCase):

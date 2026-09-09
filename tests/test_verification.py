@@ -419,7 +419,8 @@ class ApplyEvidenceTests(unittest.TestCase):
             with self.subTest(status=status):
                 tree = self._tree()
                 untouched = index_tree(self._tree())[0]["doe-nnsa"]
-                stats = apply_evidence_to_tree(tree, {"doe-nnsa": {"status": status, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "exec-dept-doe"}})
+                stats = apply_evidence_to_tree(tree, {"doe-nnsa": {"status": status, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "exec-dept-doe",
+                                                                   "failures": [{"url": "https://www.energy.gov/x", "reason": "name_not_labelled_on_page"}]}})
                 node = index_tree(tree)[0]["doe-nnsa"]
                 self.assertEqual(stats[status], 1)
                 if expect_stamp:
@@ -448,7 +449,8 @@ class ApplyEvidenceTests(unittest.TestCase):
     def test_a_later_not_found_retracts_an_earlier_confirmation(self) -> None:
         tree = self._tree()
         apply_evidence_to_tree(tree, {"exec-dept-doe": self._confirmed()})
-        apply_evidence_to_tree(tree, {"exec-dept-doe": {"status": NOT_FOUND, "checkedAt": "2026-11-01T00:00:00+00:00", "siteFrom": "exec-dept-doe"}})
+        apply_evidence_to_tree(tree, {"exec-dept-doe": {"status": NOT_FOUND, "checkedAt": "2026-11-01T00:00:00+00:00", "siteFrom": "exec-dept-doe",
+                                                        "failures": [{"url": "https://www.energy.gov/x", "reason": "name_not_labelled_on_page"}]}})
         doe = index_tree(tree)[0]["exec-dept-doe"]
         self.assertFalse(doe.get("sourceUrls"), "the withdrawn URL must not survive")
         self.assertEqual(doe["verificationFailure"], NOT_FOUND)
@@ -627,6 +629,7 @@ class BuildAndGateTests(unittest.TestCase):
             existing_graph_payload_path=self.tmp / "graph.json",
             enforce_export_gate=True,
             evidence_path=self.evidence_path,
+            directory_evidence_path=None,
         )
 
     def _gate(self, path):
@@ -642,7 +645,8 @@ class BuildAndGateTests(unittest.TestCase):
         result = self._build({
             "exec-dept-doe": {"status": CONFIRMED, "checkedAt": "2026-09-03T12:00:00+00:00", "method": METHOD_OWN_PAGE,
                               "sources": [{"url": "https://www.energy.gov/about-us", "matchedText": "About the U.S. Department of Energy"}]},
-            "doe-nnsa": {"status": NOT_FOUND, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa"},
+            "doe-nnsa": {"status": NOT_FOUND, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+                         "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "name_not_labelled_on_page"}]},
             "doe-science": {"status": INCONCLUSIVE, "checkedAt": "2026-09-03T12:00:00+00:00"},
         })
         self.assertEqual(result.validation["verification_evidence"][CONFIRMED], 1)
@@ -1425,3 +1429,84 @@ class RegionAndReadabilityTests(unittest.TestCase):
 
     def test_the_regions_are_the_only_two_the_gate_accepts(self) -> None:
         self.assertEqual(set(KNOWN_REGIONS), {"navigation", "content"})
+
+
+class AnAuditableNegativeTests(unittest.TestCase):
+    """A negative claim must name the page it was checked against. Every
+    positive on this site carries its URL; a "its official page does not
+    name it" that names no page is a claim a reader cannot check, and the
+    panel printed exactly that until 2026-09-08."""
+
+    def _tree(self):
+        return json.loads(json.dumps(BASE))
+
+    def _record(self, **kw):
+        base = {"status": NOT_FOUND, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+                "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "name_not_labelled_on_page"}]}
+        base.update(kw)
+        return base
+
+    def test_a_published_negative_names_the_page_and_the_date(self) -> None:
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-nnsa": self._record()})
+        node = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(node["verificationFailure"], NOT_FOUND)
+        self.assertEqual(node["verificationFailureSource"], {
+            "source": "own_official_page", "url": "https://www.energy.gov/nnsa",
+            "urlsRead": ["https://www.energy.gov/nnsa"], "checkedAt": "2026-03-09T12:00:00+00:00".replace("2026-03-09", "2026-09-03"),
+        })
+        self.assertFalse(node.get("sourceUrls"), "the page read is the subject of the check, never a source")
+
+    def test_a_negative_that_cannot_name_a_page_is_not_published_at_all(self) -> None:
+        tree = self._tree()
+        untouched = index_tree(self._tree())[0]["doe-nnsa"]
+        stats = apply_evidence_to_tree(tree, {"doe-nnsa": self._record(failures=[])})
+        node = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(stats["not_found_without_a_page"], 1)
+        self.assertEqual(stats[NOT_FOUND], 1, "still counted; just not published")
+        self.assertEqual(node, untouched)
+
+    def test_only_the_pages_that_failed_to_label_are_named(self) -> None:
+        """A 404 and a robots refusal are not pages that "did not name it"."""
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-nnsa": self._record(failures=[
+            {"url": "https://www.energy.gov/gone", "reason": "HTTPError: 404"},
+            {"url": "https://www.energy.gov/nnsa", "reason": "name_not_labelled_on_page"},
+            {"url": "https://www.energy.gov/blocked", "reason": "robots.txt disallows /blocked"},
+        ])})
+        node = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(node["verificationFailureSource"]["urlsRead"], ["https://www.energy.gov/nnsa"])
+
+    def test_the_gate_refuses_a_negative_without_a_page_or_with_a_future_date(self) -> None:
+        tmp = TEST_TMP_ROOT / f"negative-gate-{uuid.uuid4().hex}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        try:
+            base = tmp / "base.json"; base.write_text(json.dumps(BASE), encoding="utf-8")
+            evidence_path = tmp / "evidence.json"
+            evidence_path.write_text(json.dumps({"nodes": {"doe-nnsa": self._record()}}), encoding="utf-8")
+            result = build_graph(
+                [{"nodes": [], "edges": [], "budgetSummary": {"government_total_outlay_amount": 1_000_000, "record_date": "2026-06-30"}}],
+                base_graph_path=base, graph_output_path=tmp / "graph.json", nodes_output_path=tmp / "n.json",
+                edges_output_path=tmp / "e.json", validity_report_output_path=tmp / "v.json",
+                reuse_existing_graph_payload=False, enforce_export_gate=True, evidence_path=evidence_path,
+                sites_path=None, directory_evidence_path=None,
+            )
+            out = io.StringIO()
+            with redirect_stdout(out):
+                self.assertEqual(gate_main(["gate", str(result.graph_path)]), 0, out.getvalue())
+            graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+            for name, mutate in {
+                "no page named": lambda n: n.pop("verificationFailureSource"),
+                "an unofficial page": lambda n: n["verificationFailureSource"].__setitem__("url", "https://example.com/x"),
+                "a future check": lambda n: n["verificationFailureSource"].__setitem__("checkedAt", "2999-01-01T00:00:00+00:00"),
+            }.items():
+                with self.subTest(case=name):
+                    corrupted = json.loads(json.dumps(graph))
+                    mutate(index_tree(corrupted)[0]["doe-nnsa"])
+                    path = tmp / f"{uuid.uuid4().hex}.json"
+                    path.write_text(json.dumps(corrupted), encoding="utf-8")
+                    out = io.StringIO()
+                    with redirect_stdout(out):
+                        self.assertEqual(gate_main(["gate", str(path)]), 1, f"{name}:\n{out.getvalue()}")
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)

@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:48Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 1056,
+ "sha256": "bc96fdd15db421a5491bdc6f02ae875838ee69bd40f12578f5047cd7cec1c13b",
+ "error": null,
+ "file": "committee_memberships_SLET.xml"
+}

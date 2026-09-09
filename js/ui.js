@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260908b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260908b";
+import { createGovernmentGraph } from "./graph.js?v=20260909d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -55,9 +55,16 @@ const dom = {
   togglesWrap: null,
   toggleUnverified: null,
   toggleCandidates: null,
+  toggleExactCosts: null,
 };
 
 const state = {
+  // "Show only costs identified for the node itself": with it on, an
+  // apportioned share is not shown as a figure at all. 2.6% of nodes carry a
+  // cost a record names for them, and those cover 98.4% of the anchor — the
+  // estimates subdivide measured money rather than invent it, and this is the
+  // view that shows exactly which is which.
+  exactCostsOnly: false,
   graph: null,
   searchIndex: [],
   expandCancelled: false,
@@ -425,11 +432,14 @@ function ensureVerificationToggles() {
   const toggleUnverified = makeToggle("Show Unverified Nodes");
   const toggleCandidates = makeToggle("Show Candidate Nodes");
   toggleCandidates.checked = false;
+  const toggleExactCosts = makeToggle("Show only costs identified for the node itself");
+  toggleExactCosts.checked = false;
 
   (depthExpandCtrl || document.body).appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
+  dom.toggleExactCosts = toggleExactCosts;
 }
 
 function ensureVerificationLegend() {
@@ -470,6 +480,134 @@ function ensureVerificationLegend() {
 // same way a cost says "estimate" and a source box says "no source
 // recorded". A cluster's text is written by this UI and is not a claim; a
 // candidate's text came from a crawler record and is labelled there.
+// What OPM's number is, and is not. The coverage sentence is the data
+// dictionary's own; the disagreement line exists because the two figures are
+// usually measuring different populations, not because one is wrong.
+function renderHeadcountProvenance(data) {
+  let line = document.getElementById("info-headcount-provenance");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-headcount-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const source = data.employeesOfficialSource;
+  if (!source || typeof source !== "object" || typeof data.employeesOfficial !== "number") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const on = source.checkedAt
+    ? new Date(source.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  add(`OPM's FedScope employment file lists ${data.employeesOfficial.toLocaleString()} for "${source.listedName}"`);
+  if (source.level === "subagency" && source.agencyCode) add(` (a sub-agency of ${source.agencyCode})`);
+  if (on) add(`, fetched ${on}`);
+  add(". ");
+  if (source.coverage) add(`Coverage: ${source.coverage} `);
+  if (source.components && source.components.length > 1) {
+    add(`The figure is the sum of ${source.components.length} rows the file lists under this agency. `);
+  }
+  if (source.outsideStatedCoverage) {
+    add("This unit sits outside the Executive Branch the file says it covers, so the number may not describe it at all. ");
+  }
+  if (source.subtreeRecordsExceedIt) {
+    add(`Units beneath this one already account for ${source.subtreeRecordsExceedIt.toLocaleString()} in the same file, so this figure does not cover its own subtree. `);
+  }
+  if (data.employees) {
+    add(`The figure above it is prose from the base graph with no citation, and the two often count different populations — OPM counts federal civilians in an active pay status, not uniformed members or contractors. Neither is corrected against the other.`);
+  }
+}
+
+function renderCountProvenance(data) {
+  let line = document.getElementById("info-count-provenance");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-count-provenance";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  if (data.childrenIncomplete) {
+    const missing = Number(data.statedChildCount) - Number(data.carriedChildCount);
+    add(
+      `This node's own name states ${Number(data.statedChildCount).toLocaleString()}; the graph carries ` +
+      `${Number(data.carriedChildCount).toLocaleString()}. The other ${missing.toLocaleString()} are not in this graph at all, ` +
+      "so every figure beneath is for the ones shown and nothing here estimates the rest.",
+    );
+    return;
+  }
+  const represents = data.representsPosts;
+  if (represents && typeof represents === "object") {
+    if (represents.kind === "exact") {
+      add(`Its name states that it stands for ${represents.count} posts of this title, drawn as one node. `);
+    } else if (represents.kind === "range") {
+      add(`Its name states that it stands for ${represents.low} to ${represents.high} posts of this title, drawn as one node. `);
+    } else {
+      add(`Its name states that it stands for several posts of this title ("${represents.as_written}") without saying how many, and no number is invented here. `);
+    }
+    add("Any figure above is for the group, not for one holder.");
+  }
+}
+
+function renderPositionListing(data) {
+  let line = document.getElementById("info-position-listing");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-position-listing";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const listing = data.positionListing;
+  if (!listing || typeof listing !== "object") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const on = listing.checkedAt
+    ? new Date(listing.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  add(`OPM's PLUM archive — ${listing.edition}${on ? `, fetched ${on}` : ""} — lists "${listing.listedTitle}"`);
+  if (listing.listedOrganization) add(` under ${listing.listedOrganization}`);
+  if (listing.status) add(`, recorded as ${String(listing.status).toLowerCase()} when the archive closed`);
+  add(". ");
+  if (listing.appointmentType) add(`Appointment type ${listing.appointmentType}. `);
+  // Pay, as the archive states it and no further. The column it comes from
+  // holds two different things — a rank ("IV", "15") and, for 983 rows, a
+  // rate of basic pay ("$225,700") — so a dollar figure is never printed as
+  // a level. Nothing converts a level into a rate: that needs the Executive
+  // Schedule table, which this pipeline has not been able to fetch.
+  if (listing.payPlan) add(`Pay plan ${listing.payPlan}`);
+  if (listing.payLevel) {
+    add(`${listing.payPlan ? ", " : ""}${listing.payPlan === "EX" ? "Executive Schedule level" : "level or grade"} ${listing.payLevel}`);
+    add(". The archive gives the rank, not a rate of pay. ");
+  } else if (listing.payPlan) {
+    add(". ");
+  }
+  if (typeof listing.reportedPay === "number") {
+    add(`It reports basic pay of ${listing.reportedPayText || `$${listing.reportedPay.toLocaleString()}`} for that period — not this unit's cost, and not necessarily what the post pays now. `);
+  }
+  if (listing.valuesFrom === "past_incumbencies") {
+    add("Those details come from a past incumbency, not a standing listing. ");
+  }
+  add("It is a record of that period and says nothing about who holds this post now.");
+}
+
 function renderDescriptionProvenance(data, isClusteredView) {
   let line = document.getElementById("info-desc-provenance");
   if (!line && dom.infoDesc) {
@@ -517,6 +655,35 @@ function renderPlacementLine(data) {
     add("Placement: a Treasury accounting line, placed beneath the unit whose published total it reconciles; not an organisation and not checked against any page");
     return;
   }
+  const disagreement = data.placementDirectoryDisagreement;
+  const ancestorListing = data.placementDirectoryAncestor;
+  const addDisagreement = () => {
+    if (ancestorListing && typeof ancestorListing === "object") {
+      dom.verificationPlacement.appendChild(document.createElement("br"));
+      add(`The Federal Register's agency directory files it under "${ancestorListing.listedUnder}", an ancestor here; the grouping between is curated, and the directory says nothing about it`);
+    }
+    if (!disagreement || typeof disagreement !== "object") return;
+    dom.verificationPlacement.appendChild(document.createElement("br"));
+    add(`The Federal Register's agency directory files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);
+  };
+  const directoryPlacement = {
+    listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
+    listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
+  }[String(data.placementMethod || "")];
+  if (data.placementVerified === true && directoryPlacement) {
+    add(`Placement: ${directoryPlacement}, as "${data.placementMatchedText || ""}" on `);
+    if (isHttpUrl(data.placementUrl)) {
+      const link = document.createElement("a");
+      link.href = data.placementUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = hostnameOf(data.placementUrl);
+      dom.verificationPlacement.appendChild(link);
+    }
+    if (checked) add(` · list fetched ${checked}`);
+    addDisagreement();
+    return;
+  }
   if (data.placementVerified === true) {
     // The claim carries its own audit trail: the page, and the label on it.
     // When it is the same page and the same read as the existence line above,
@@ -549,6 +716,7 @@ function renderPlacementLine(data) {
   } else {
     add("Placement: no evidence recorded for where this sits in the hierarchy");
   }
+  addDisagreement();
 }
 
 function renderVerificationPanel(data) {
@@ -574,7 +742,20 @@ function renderVerificationPanel(data) {
     setText(dom.verificationStatus, "This entry comes from the hand-compiled base graph.");
     // No confidence line: a score of 0.00 on something that was never scored is
     // a number impersonating a measurement.
-    setText(dom.verificationConfidence, "No source URL has been attached to it yet.");
+    //
+    // "No source URL has been attached to it yet" was flatly false on the
+    // fourteen nodes that carry an OPM headcount: the provenance block
+    // directly below this one shows an opm.gov URL. The two are not the same
+    // claim — OPM's employment table is evidence about how many civilians
+    // work in a unit of this name, not that this unit exists as the graph
+    // draws it — so the panel says which one is missing rather than denying
+    // the one it has.
+    setText(
+      dom.verificationConfidence,
+      data.employeesOfficial === undefined || data.employeesOfficial === null
+        ? "No source URL has been attached to it yet."
+        : "No source has been attached for its existence. OPM's employment table, linked below, names a unit of this name — evidence about its staffing, not about whether it exists as drawn."
+    );
     setText(dom.verificationLastVerified, "");
     renderPlacementLine(data);
   } else {
@@ -589,16 +770,50 @@ function renderVerificationPanel(data) {
     const METHOD_TEXT = {
       name_labelled_on_own_official_page: "Its own official page names it",
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
+      listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
+      listed_in_senate_committee_list: "The Senate's official committee list carries it",
+    };
+    const SOURCE_TEXT = {
+      federal_register_agency_directory: "the Federal Register's agency directory",
+      senate_committee_list: "the Senate's official committee list",
     };
     let checkLine = "Not yet verified";
-    if (data.verificationFailure === "not_found") {
+    const failureSource = data.verificationFailureSource;
+    if (data.verificationFailure === "not_in_official_list" && failureSource && typeof failureSource === "object") {
+      checkLine = `Checked${checkedOn ? ` ${checkedOn}` : ""} against ${SOURCE_TEXT[failureSource.source] || "an official list"}: it carries no unit of this name under "${failureSource.listedUnder}"`;
+    } else if (data.verificationFailure === "not_found") {
+      // Name the page. A negative a reader cannot check is worth no more
+      // than a positive without a URL, and every positive here carries one.
+      const failedOn = failureSource && typeof failureSource === "object" ? hostnameOf(failureSource.url) : "";
+      const where = failedOn ? ` (${failedOn})` : "";
       checkLine = checkedOn
-        ? `Checked ${checkedOn}: its official page does not name it as a heading or link`
-        : "Its official page does not name it as a heading or link";
+        ? `Checked ${checkedOn}: its official page${where} does not name it as a heading or link`
+        : `Its official page${where} does not name it as a heading or link`;
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
       checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+    }
+    // A directory listing beside a page claim: a second, weaker claim, said
+    // as itself, with the name and the parent exactly as the directory has them.
+    const listing = data.directoryListing;
+    const listingIsTheMethod = listing && typeof listing === "object" && /^listed_in_/.test(String(data.verificationMethod || ""));
+    if (listing && typeof listing === "object" && !listingIsTheMethod) {
+      checkLine += ` · also listed in ${SOURCE_TEXT[listing.source] || "an official directory"} as "${listing.listedName}"${
+        listing.parentListedName ? ` under "${listing.parentListedName}"` : ""
+      }`;
+    } else if (listing && typeof listing === "object") {
+      checkLine += ` as "${listing.listedName}"${listing.parentListedName ? ` under "${listing.parentListedName}"` : ""}`;
+    }
+    // Both facts, where both are true: a directory lists it, and its own
+    // page was read and did not name it. Withdrawing the badge is right —
+    // the node has a source — but the read still happened.
+    const readNotNamed = data.pageReadNotNamed;
+    if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {
+      const on = readNotNamed.checkedAt
+        ? new Date(readNotNamed.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+        : null;
+      checkLine += ` · its own page (${hostnameOf(readNotNamed.url)}) was read${on ? ` ${on}` : ""} and does not name it`;
     }
     setText(dom.verificationLastVerified, checkLine);
   }
@@ -818,9 +1033,19 @@ function formatApproximateCost(amount) {
 // Only a verified figure is printed in full. Everything else is a division
 // result, so it is rounded and marked approximate — printing it to the cent
 // would claim ten significant figures for a number that has about one.
+// Is this figure the node's own, or its share of an ancestor's total? Only a
+// Treasury line naming the node, and the root's anchor, are the node's own.
+function isCostIdentifiedForTheNode(node) {
+  return ["official", "root_total"].includes(String(node.cost_status || "").toLowerCase());
+}
+
+function isCostHiddenAsEstimate(node) {
+  return state.exactCostsOnly && !isCostIdentifiedForTheNode(node);
+}
+
 function formatCostAmount(node) {
   const amount = toFiniteAmount(node.resolved_total_amount);
-  if (amount === null || isBelowPrecision(node)) {
+  if (amount === null || isBelowPrecision(node) || isCostHiddenAsEstimate(node)) {
     return null;
   }
   if (String(node.costVerificationStatus || "").toLowerCase() === "verified") {
@@ -841,6 +1066,16 @@ function isBelowPrecision(node) {
 }
 
 function describeCost(node) {
+  if (isCostHiddenAsEstimate(node)) {
+    return {
+      label: "Not identified for this node",
+      tone: "unavailable",
+      note:
+        "No record names this node's own cost. The figure this graph would otherwise show is its share of an ancestor's " +
+        "measured total, divided among siblings by budget, headcount or subtree size — an estimate, not a measurement. " +
+        "Turn off \u201cShow only costs identified for the node itself\u201d to see it, labelled as the estimate it is.",
+    };
+  }
   const status = String(node.cost_status || "").toLowerCase();
   const amount = toFiniteAmount(node.resolved_total_amount);
   const validation = String(node.cost_validation || "").toLowerCase();
@@ -913,9 +1148,24 @@ function describeCost(node) {
     const basis = String(node.cost_basis || "").toLowerCase();
     const phrase =
       COST_BASIS_PHRASES[basis] || (node.cost_basis ? String(node.cost_basis) : "an unspecified weighting");
+    // A reader looking at the money has no way to see that the headcount it
+    // was divided by is contradicted by OPM's own count of the same unit.
+    // The share is not moved — the curated figures are uncited, so nothing
+    // here can tell a wrong number from a different population (the Coast
+    // Guard's 55,000 uniformed against FedScope's 9,583 civilians) — but the
+    // disagreement is a fact and belongs beside the figure it produced.
+    const dispute = node.cost_weight_dispute;
+    let caveat = "";
+    if (dispute && typeof dispute === "object" && typeof dispute.officialEmployees === "number") {
+      const period = dispute.period ? ` (${dispute.period})` : "";
+      caveat =
+        ` The headcount used is the base graph's uncited ${Number(dispute.curatedEmployeesParsed).toLocaleString()};` +
+        ` OPM's employment file${period} reports ${dispute.officialEmployees.toLocaleString()} for the same unit.` +
+        " The share was not recomputed from OPM's number: the two can count different populations, and neither figure is corrected against the other.";
+    }
     return {
       ...copy,
-      note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.`,
+      note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.${caveat}`,
     };
   }
   return copy;
@@ -987,6 +1237,9 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
   renderDescriptionProvenance(data, isClusteredView);
+  renderHeadcountProvenance(data);
+  renderPositionListing(data);
+  renderCountProvenance(data);
 
   if (isClusteredView) {
     setText(dom.infoType, `${data.type || "Group"} Cluster`);
@@ -1002,8 +1255,17 @@ function renderInfoPanel(nodeObj) {
   const statsFragment = document.createDocumentFragment();
   statsFragment.appendChild(buildCostBlock(data));
   const statRows = [];
+  // The curated figure is uncited and mixes populations (civilians, uniformed
+  // members, contractors); OPM's is sourced, dated, and civilians only. Both
+  // are shown, each labelled for what it is, and where they disagree the panel
+  // says so rather than picking one.
+  const official = data.employeesOfficialSource;
   if (data.employees) {
-    statRows.push(["EMPLOYEES", data.employees]);
+    statRows.push([official ? "EMPLOYEES (uncited, from the base graph)" : "EMPLOYEES", data.employees]);
+  }
+  if (typeof data.employeesOfficial === "number" && official && typeof official === "object") {
+    const period = official.period ? ` (${official.period})` : "";
+    statRows.push([`EMPLOYEES — OPM FedScope${period}`, data.employeesOfficial.toLocaleString()]);
   }
   if (data.budget) {
     // A hand-typed note in the curated file, not a sourced figure. Unlabelled it
@@ -1011,7 +1273,25 @@ function renderInfoPanel(nodeObj) {
     statRows.push(["BUDGET NOTE (hand-compiled)", data.budget]);
   }
   if ((data.children || []).length > 0) {
-    statRows.push(["SUB-UNITS", String(data.children.length)]);
+    // A name that states a count is a claim about how many there are. Where
+    // the graph carries fewer, the row says so: "Individual Senator Offices
+    // (100)" carries eighteen, and a reader who expands it would otherwise
+    // have nothing telling them the other eighty-two are absent.
+    statRows.push([
+      data.childrenIncomplete ? `SUB-UNITS (of the ${data.statedChildCount} its name states)` : "SUB-UNITS",
+      String(data.children.length),
+    ]);
+  }
+  // A position node whose name stands for several posts is drawn as one.
+  const represents = data.representsPosts;
+  if (represents && typeof represents === "object") {
+    const value =
+      represents.kind === "exact"
+        ? String(represents.count)
+        : represents.kind === "range"
+          ? `${represents.low}–${represents.high}`
+          : `unstated (\u201c${represents.as_written}\u201d)`;
+    statRows.push(["POSTS THIS NODE STANDS FOR", value]);
   }
   if (isClusteredView) {
     statRows.push(["CLUSTER SIZE", clusterCount.toLocaleString()]);
@@ -1343,6 +1623,17 @@ function bindControls() {
     dom.toggleUnverified.addEventListener("change", () => {
       state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
       updateStats(state.graph.getStats());
+    });
+  }
+
+  if (dom.toggleExactCosts) {
+    dom.toggleExactCosts.addEventListener("change", () => {
+      state.exactCostsOnly = dom.toggleExactCosts.checked;
+      // Re-render the open panel so the figure changes with the switch.
+      const selected = state.graph.getSelectedNode();
+      if (selected) {
+        renderInfoPanel(selected);
+      }
     });
   }
 

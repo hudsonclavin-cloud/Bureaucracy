@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:51:08Z",
+ "url": "https://www.opm.gov/data/datasets/Files/721/cf6137df-539e-4f18-8a91-21740000ce46.pdf",
+ "status": 200,
+ "final_url": "https://www.opm.gov/data/datasets/Files/721/cf6137df-539e-4f18-8a91-21740000ce46.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 539748,
+ "sha256": "e4c6d5c4be8b9a32057c4f4aa4a51a371bdef5554f24c6f62c9f037e6a6b7a23",
+ "error": null,
+ "file": "fedscope_employment_cube_2024-09_data_dictionary.pdf"
+}

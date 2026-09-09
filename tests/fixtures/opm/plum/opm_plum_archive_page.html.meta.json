@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:48:51Z",
+ "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/",
+ "status": 200,
+ "final_url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 91016,
+ "sha256": "0ffa3e924d8a8c9bd584d8b6050b86c3da3e53defec32f2f06c2bb1fcb203a65",
+ "error": null,
+ "file": "opm_plum_archive_page.html"
+}

@@ -106,6 +106,19 @@ EVIDENCE_OWNED_FIELDS = (
     # The date this module set as lastVerified, so a withdrawal can take back
     # exactly that date and leave one a crawler record supplied.
     "evidenceVerifiedAt",
+    # Written by directories.py, withdrawn here with the rest.
+    "directoryListing",
+    "placementDirectoryDisagreement",
+    "placementDirectoryAncestor",
+    "verificationFailureSource",
+    # A page read that did not name the node, kept beside a directory listing
+    # that did: both are true, and suppressing the read loses a fact.
+    "pageReadNotNamed",
+    # Written by positions.py and headcounts.py, withdrawn here with the rest,
+    # so a record dropped from either file stops being published.
+    "positionListing",
+    "employeesOfficial",
+    "employeesOfficialSource",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never
@@ -664,10 +677,11 @@ def claimed_by_another_stage(node: dict[str, Any], url: str) -> bool:
     swept and re-applied from the current evidence.
     """
     types = {str(t) for t in (node.get("sourceTypes") or [])}
-    if TREASURY_DATASET_HOST in url and "treasury_outlays" in types:
-        return True
-    kind = classify_source_url(url)
-    return kind != "official_site" and kind in types
+    # Only the Treasury case. A first version also kept any URL whose
+    # classified kind appeared in sourceTypes — circular for a host like
+    # federalregister.gov, whose kind verify_node_sources infers from that
+    # very URL, so a withdrawn directory listing could never be withdrawn.
+    return TREASURY_DATASET_HOST in url and "treasury_outlays" in types
 
 
 def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool:
@@ -695,6 +709,17 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
     # now refuses, and it caught this.
     if not any(classify_source_url(u) == "official_site" for u in kept):
         types = [str(t) for t in (node.get("sourceTypes") or []) if t != "official_site"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
+    # The directory's own label goes with its URL (directories.py writes it).
+    if not any("senate.gov/general/committee_membership/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t != "senate_committee_list"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
+    if not any("federalregister.gov/agencies/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t not in ("federal_register_directory", "federal_register")]
         if len(types) != len(node.get("sourceTypes") or []):
             node["sourceTypes"] = types
             touched = True
@@ -782,10 +807,29 @@ def apply_evidence_to_tree(
             # absent from its own page is a real negative.
             stats[status] += 1
             if status == NOT_FOUND and not node.get("sourceUrls") and checked_at:
+                # The page that was read, so the claim can be checked. Without
+                # it the panel said "its official page does not name it"
+                # while naming no page — a negative a reader could not audit,
+                # where every positive carries its URL. The URL is recorded as
+                # the subject of a failed check, never as a source.
+                read = [
+                    str(f.get("url")) for f in (record.get("failures") or [])
+                    if isinstance(f, dict) and f.get("reason") == "name_not_labelled_on_page" and f.get("url")
+                ]
+                if not read:
+                    # A record that cannot say which page was read cannot
+                    # support the claim the panel would print. Nothing is
+                    # applied, exactly as for the statuses that learned
+                    # nothing; the record still counts in the stats.
+                    stats["not_found_without_a_page"] = stats.get("not_found_without_a_page", 0) + 1
+                    continue
                 node["lastVerified"] = checked_at
                 node["evidenceVerifiedAt"] = checked_at
                 node["verificationFailure"] = NOT_FOUND
                 node["verificationSiteFrom"] = record.get("siteFrom")
+                node["verificationFailureSource"] = {
+                    "source": "own_official_page", "url": read[0], "urlsRead": read, "checkedAt": checked_at,
+                }
                 verify_node_sources(node)
             continue
 

@@ -285,6 +285,198 @@ documented rather than fixed: within the chrome the standard is host-blind
 inside `.gov` — a footer link to an unrelated agency would count; the
 sites file is what scopes it, one page per parent.
 
+**Directories — the government's own lists of itself.** The page method is
+near its ceiling: 71 organisations have a page of their own, twelve of the
+largest hosts refuse `robots.txt` and are refused in turn, 4,382 positions
+and 223 committees are never checked, and 520 edges hang under curated
+groupings with no page. `data_pipeline/verification/directories.py` adds
+a second, weaker, honestly-labelled kind of evidence from structured
+official directories, the first being the Federal Register's agency
+directory (`api/v1/agencies.json`: every agency that publishes in the
+Register, with its parent and its own site). The directory is fetched
+verbatim and committed (`tests/fixtures/directories/`, refreshed only by
+re-fetching); `scripts/derive_directory_evidence.py` matches its entries
+to the curated organisations by canonical name — with the one rule the
+directory needs, "Energy Department" answering to "Department of Energy"
+— one entry to one node or nothing, and writes
+`data/verification/directory_evidence.json`, each record saying what the
+directory lists: the name, the parent, the entry's page, dated by the
+directory's fetch time. The exporter applies it after the page evidence,
+beside a page claim and never over it: `verificationMethod:
+listed_in_federal_register_agency_directory` only where no page method
+exists, `directoryListing` always, and `placementMethod:
+listed_under_parent_in_federal_register_agency_directory` only when the
+directory's parent is the node the tree gives it. When the directory files
+a unit under a different parent the node carries
+`placementDirectoryDisagreement` and the panel says the two sources
+disagree; nothing is resolved either way, and the gate reports the three
+counts. A top-level directory entry (a department) claims nothing about
+the curated grouping above it. Withdrawal is the page module's: every
+field here is in `EVIDENCE_OWNED_FIELDS`, and the URL rides in
+`evidenceUrls`. The second directory is the Senate's own committee list
+(`data_pipeline/verification/congress.py`): one XML file per committee at
+senate.gov/general/committee_membership/, naming the committee and each
+subcommittee. Fetched verbatim (24 files, `tests/fixtures/directories/
+senate/`), it is the *complete* list, so — unlike a page — absence is
+evidence: a curated subcommittee its committee's file does not carry
+publishes `verificationFailure: not_in_official_list` with
+`verificationFailureSource` (the list, the committee, the date, the names
+it does carry), and the panel says "checked against the Senate's official
+committee list: it carries no unit of this name under <committee>"; the
+current names the graph lacks go to CURATION.md, never fuzzy-matched. A
+listed subcommittee is placed under its committee by the list's own
+structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
+`committee_key` folds the graph's artifacts ("Senate Committee on Select
+Committee on Ethics", "Committee on Judiciary") onto the Senate's names
+and nothing else. First run: all 20 curated Senate committees listed, 43
+subcommittees listed and placed, 27 curated names the Senate no longer
+carries. The House Clerk's list could not be fetched from the pipeline's
+network (proxy refusal, recorded in the fixtures README); house.gov lists
+committees only.
+OPM's data landed on 2026-09-08 (`tests/fixtures/opm/`, README there):
+FedScope civilian employment by agency and sub-agency for March 2025 and
+September 2024 — the official counts the cost cascade's headcount weights
+should answer to, where today's `employees` fields are uncited — and the
+PLUM archive of the previous administration's reported positions. The
+current PLUM export is served by escs.opm.gov, which the pipeline's
+egress proxy refuses (CONNECT 403), as it refuses clerk.house.gov,
+www.usa.gov, api.sam.gov, data.opm.gov and govinfo.gov; those are facts
+about the environment's network policy, recorded in the fixtures'
+`.meta.json` files, never worked around.
+Next in this line, in order of evidence value: the House Clerk's
+committee XML once the host is reachable, OPM's Plum Book for positions, OPM FedScope for the headcounts
+the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
+obtains a key.
+
+**Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
+official sources, applied by the exporter since 2026-09-09 from
+`data/verification/headcount_evidence.json` (133 records) and
+`position_evidence.json` (126). Both are applied *beside* the curated
+figure, never over it: `apply_headcount_evidence` stamps
+`employeesOfficial` and `employeesOfficialSource` (the listed name, the
+level, the agency/sub-agency codes, the period, OPM's own coverage
+sentence and the URL it came from, the previous period's count, the
+component rows, and the matcher's flags) and leaves the base graph's
+`employees` field exactly as it was; the panel shows both rows and says
+they count different populations. `apply_position_evidence` stamps
+`positionListing` plus the PLUM placement method. A title the archive
+spells with the organisation it has already filed the row under —
+"COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION" under CBP,
+"DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY" under
+CISA — is read back through the same strip the curated side has always had
+(`archive_title_keys`), which took the matches from 91 to 126 of the 1,084
+positions sitting under a matched organisation; the archive's own spelling
+stays a key, so nothing that matched before stops, and two rows that
+collapse onto one key claim neither (three more refusals, the Labor
+department's two "Deputy Assistant Secretary" rows among them). Nothing
+without a comma is stripped: "CHIEF COUNSEL FOR CYBERSECURITY AND
+INFRASTRUCTURE SECURITY AGENCY" stays whole. The exporter refuses a
+record whose node is not of the right kind, whose name has since changed,
+or that carries no date or URL — and, for a headcount, one its own
+descendants' records already exceed. The gate checks every field (a
+`.gov` URL, a period, a coverage sentence, a past date, a non-negative
+integer) and reports how many nodes carry each and how far the curated
+figures are from OPM's: **66 of the 133 differ by more than 10%.**
+
+**The cascade is not reweighted by them, and says so.** Seven sibling sets
+carry a FedScope record on every headcount-bearing member, so a swap was
+possible; it was rejected. One of the seven is Homeland Security, where the
+Coast Guard's curated 55,000 sits beside FedScope's 9,583 — the same
+civilian-versus-uniformed mismatch this file already refuses for the Army,
+and a swap would have cut a uniformed service's share fivefold. The curated
+figures are uncited, so nothing in the pipeline can tell a wrong number from
+a different population. What is true is that the two disagree, so a node
+whose allocated share was divided by a curated headcount an OPM figure
+contradicts by more than 10% carries `cost_weight_dispute` — both figures,
+the period and the URL — and the panel prints them under the estimate with
+"the share was not recomputed from OPM's number". 11 shares carry one. It is
+withdrawn on every build before it is recomputed, and dropped from any node
+that ends up with no share at all (the four EOP offices beneath a negative
+Treasury pool): a caveat about an estimate that does not exist is a claim
+about nothing, and the gate refuses it, along with a dispute that cites a
+figure the node does not carry, that is within the tolerance, that sits on a
+measured cost, or that has no source URL.
+
+A node carrying an OPM headcount and nothing else is no longer told "no
+source URL has been attached to it yet" — the provenance block directly
+below that sentence shows an `opm.gov` URL. The panel says which claim is
+the missing one instead: the employment file is evidence about a unit's
+staffing, not that the unit exists as the graph draws it.
+
+FedScope is OPM's civilian employment table by agency and sub-agency
+(March 2025, September 2024 beside it). Every record carries the data
+dictionary's own coverage sentence, because the population is the whole
+point: it is Executive-Branch civilians in an active pay status, excluding
+the Postal Service and the intelligence agencies — so it is *not* the
+number the curated `employees` fields hold, which mix civilians, uniformed
+members and contractors. That mismatch is the reason to have it: 124 of
+the matched nodes carry a curated figure, and only 55 of those are within
+10% of what OPM reports. Matching is scoped as the Federal Register's is —
+a sub-agency row only reaches a node beneath the node its agency matched —
+and three refusals were added after the first derivation published things
+that were false:
+
+- an "agency" whose whole table entry is one row for a differently-named
+  unit is refused (`agency_is_one_other_unit`). FedScope files the U.S.
+  Tax Court alone under an agency it calls "JUDICIAL BRANCH" and the
+  Bureau of Consumer Financial Protection alone under "FEDERAL RESERVE
+  SYSTEM"; the first derivation published 165 as the judicial branch's
+  staff and the CFPB's 1,661 as the Federal Reserve's;
+- a row whose agency matched no node is refused however unique its name
+  (`unscoped_refused`): a name being unique in the graph is not evidence
+  of placement, and it had stamped a civilians-only Marine Corps count on
+  the node meaning the uniformed service;
+- a record its own descendants' records already exceed is marked
+  (`subtreeRecordsExceedIt`), so nothing weights a sibling set by a figure
+  missing most of its subtree.
+
+The table's own truncation of a leading "NATIONAL" is undone, which is not
+a guess about which unit is meant but the file's abbreviation reversed; it
+is what lets NASA and NARA match at all. FedScope's "DEPARTMENT OF THE
+ARMY" is deliberately *not* matched to the graph's "U.S. Army": the first
+is a civilian department, the second the uniformed service, and they are
+different populations — a curation gap, in `CURATION.md`, not a matcher
+bug.
+
+**Pay, as the archive states it and no further.** The archive's
+`LevelGradePay` column holds two different things — a rank ("IV" for an
+Executive Schedule row, "15" for a General Schedule one) and, for 983 rows,
+a rate of basic pay ("$225,700") — so `split_level_grade_pay` separates
+them into `payLevel` and `reportedPay` (with `reportedPayText`, the text
+the archive prints, so the figure can be audited against the file). 44 of
+the matched positions carry a rate, 30 a level only. A dollar figure is
+never published under a heading that reads "Level", the gate refuses each
+holding the other's kind of value, and the panel says a level is the rank,
+not a rate of pay, and that a rate is neither this unit's cost nor
+necessarily what the post pays now.
+
+Nothing converts a level into a rate. That needs OPM's Salary Table
+2026-EX, and `www.opm.gov` is refused by this session's egress proxy —
+along with `www.federalregister.gov` (the Executive Order setting the rates
+would have been a second route), `www.senate.gov` and
+`fiscaldata.treasury.gov`, all four of which were fetched successfully on
+2026-09-08. The allowlist is per session; `docs/NETWORK_ACCESS.md` §0
+records the change with dates. `scripts/fetch_fixture.py` fetches a file
+verbatim into `tests/fixtures/` with a `.meta.json` carrying the status,
+the sha256 and the robots verdict, and on a refusal writes the meta and no
+fixture — so a blocked source is recorded rather than looking untried.
+`tests/fixtures/opm/pay/` is that record and holds no table: five numbers
+are easy to transcribe from a screenshot and impossible to audit, and a
+hand-entered table under an `opm.gov` URL would read on the site exactly
+like a fetched one. The parser and the level-to-rate matcher are
+deliberately unwritten until the page has been fetched; the README there
+says what they will have to be honest about (the level is from the
+2021–2025 archive, the table is effective January 2026, basic pay is not
+the node's share of outlays, and the table's own pay-freeze note must
+carry through).
+
+The PLUM archive is the previous administration's reported positions
+(the current export is on escs.opm.gov, which the proxy refuses), so every
+record and every proposed panel sentence names the archive and its period
+and says nothing about who holds a post now: the incumbent columns are
+never read. 91 of the graph's 4,382 position nodes matched a listed title
+under their own organisation; none matched across organisations.
+
 Everything this module writes is listed in `EVIDENCE_OWNED_FIELDS`, with
 `evidenceUrls` (exactly the URLs it added to `sourceUrls`) and
 `evidenceVerifiedAt` (the date it set as `lastVerified`), so the next build
@@ -364,6 +556,52 @@ neither is reachable from the pipeline's own sandbox, so
 `scripts/frontend_smoke.mjs` rewrites the Three.js import to a local copy and
 that one import is the only thing the smoke check cannot prove.
 
+### Exact-node costs, and what the graph does not claim
+
+`docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
+graph an estimate". 135 of 5,195 nodes (2.6%) carry a cost a record names
+for them; those cover **98.4% of the anchor**, so the apportioned figures
+subdivide measured money rather than invent it — which does not make a
+subdivision a measurement, and every one is labelled `allocated` /
+`estimated_from_parent` / `unverified`. The gate prints both numbers on
+every run so "5,021 nodes with a cost" cannot be read as 5,021 known
+costs, and the site carries a **"Show only costs identified for the node
+itself"** switch that blanks every apportioned figure and says why.
+
+A measured cost may sit only on an organisation: an external review of an
+older checkout reported Treasury outlays published on a node typed
+Position, which is not true here (the exporter has always excluded
+position, committee, role and caucus types from name matching) but was not
+forbidden by anything. It is now. That document also records which of that
+review's findings survive a check against this branch — most do not, it
+was run against a different tree — and the achievable route to more
+exact-node costs: a reviewed identifier crosswalk first (CGAC, TAS,
+toptier and OMB codes, names proposing candidates and never publishing
+facts), then USAspending File A/B at TAS level, then agency AFR Statements
+of Net Cost. 84% of the nodes are positions, which no federal financial
+system reports on; the target is not full coverage but that every figure
+says which of outlays, obligations, budget authority, audited net cost or
+salary it is.
+
+### Names that state a count
+
+Eight curated groupings state a number in their own name. Four carry it
+("Mission Teams (15)"); four do not — Individual Senator Offices (100)
+carries 18, Individual Representative Offices (435) carries 15, District
+Offices (68) carries 4, Federal Public Defender Offices (82) carries 7 —
+and a reader who expanded one had nothing telling them the rest were
+absent. 742 position nodes carry a multiplicity instead (35 exact, 23 a
+range, 684 an unstated "×multiple"), each drawn as one node with one
+apportioned figure. `annotate_stated_counts` publishes the name's number
+beside the graph's (`statedChildCount`, `carriedChildCount`,
+`childrenIncomplete`, `representsPosts`); the panel says the rest are not
+in this graph at all, and that a multi-post node's figure is for the group
+and not one holder. Nothing is corrected — that is curation — and where
+the name gives no number none is invented, which the gate enforces along
+with the arithmetic and the requirement that the quoted text really is in
+the node's name. Every field is cleared and recomputed each build, so a
+rename withdraws the claim.
+
 ## Invariants
 
 - Root id is `the-constitution-of-the-united-states`; it has exactly the
@@ -393,7 +631,13 @@ that one import is the only thing the smoke check cannot prove.
   supplied one — a crawler record or a verifier fetch at that moment. The
   site's "No source recorded" state keys on that. `data/verification/` is
   written by the verifier only; a URL in `official_sites.json` is a
-  candidate to fetch, never evidence by itself.
+  candidate to fetch, never evidence by itself. Candidates may be seeded from an
+  official directory by `scripts/seed_official_sites.py` (the Federal
+  Register's `agency_url`, the chambers' committee pages); every seeded
+  URL is marked in `official_sites_provenance.json` with the directory's
+  own listing, and an `http://` listing on a `.gov`/`.mil` host is used as
+  `https://` with the listed URL kept beside it — the scheme is transport,
+  not a claim, and the verifier still has to find the label.
 - A run that lost its Treasury anchor or every fetch stage must not touch any
   file the site fetches. It does rewrite `output/pipeline_stats.json`, which is
   the run record: that record is `mode: blocked_run`, carries

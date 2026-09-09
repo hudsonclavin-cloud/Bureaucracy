@@ -1,0 +1,13 @@
+{
+ "fetched_at": "2026-09-08T19:20:45Z",
+ "url": "https://www.senate.gov/general/committee_membership/committee_memberships_JSPR.xml",
+ "status": 200,
+ "final_url": "https://www.senate.gov/general/committee_membership/committee_memberships_JSPR.xml",
+ "content_type": "text/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allowed by robots.txt",
+ "bytes": 909,
+ "sha256": "8bc6a965d3096f2565cd244b5d7d11a98da2fefe4104312bfd323dbb5132b143",
+ "error": null,
+ "file": "committee_memberships_JSPR.xml"
+}
