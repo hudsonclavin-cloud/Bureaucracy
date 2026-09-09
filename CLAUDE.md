@@ -619,6 +619,34 @@ with the arithmetic and the requirement that the quoted text really is in
 the node's name. Every field is cleared and recomputed each build, so a
 rename withdraws the claim.
 
+### The node-by-node audit
+
+`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,195
+nodes one at a time; `scripts/node_audit.py` is the harness. `next` hands
+over a batch of nodes with every claim the site makes about each and every
+evidence record keyed to its id; `record` validates findings and appends
+them to `data/audit/node_audit.jsonl`, which is the audit's **only** output
+— nothing in this path edits the curated file, the published graph or any
+evidence file, so an agent turned loose on the whole tree cannot damage it.
+
+The harness exists for one reason: an agent 400 nodes into a mechanical
+sweep stops reading and starts pattern-matching, and writes down a
+quotation that is not on the page. So `record` re-reads every cited file
+and **rejects the whole batch** if a quoted string is not in it — whole
+batch, not the bad record, because letting the good half through teaches
+that some invented citations survive. Whitespace is normalised (these files
+are hard-wrapped and an honest sentence-length quote crosses a newline);
+nothing else is. A `certain` or `likely` finding must carry evidence;
+`speculative` is the one level that may stand alone, and is how a question
+gets raised without being dressed as a fact. Citable sources are the
+repository's own published files and `.gov`/`.mil` URLs. Seven checks per
+node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
+most common — answer, not a failure: 4,762 nodes carry no source at all.
+`verify` re-checks every citation in the ledger against its source, since a
+file can change after a finding was accepted. The runbook's "do not report
+these" list matters as much as the rest: without it the sweep returns
+"description is uncited" 5,170 times and buries the real findings.
+
 ## Invariants
 
 - Root id is `the-constitution-of-the-united-states`; it has exactly the
