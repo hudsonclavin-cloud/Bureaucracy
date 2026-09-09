@@ -291,6 +291,28 @@ try {
       check("the panel says the two count different populations", /count different populations/.test(note), note);
     }
   }
+  // A node with an OPM figure and nothing else must not be told it has no
+  // source at all: the provenance block right below shows an opm.gov URL.
+  const officialNoSources = allNodes.find(
+    (n) => typeof n.employeesOfficial === "number" && !(n.sourceUrls || []).length && !n.lastVerified,
+  );
+  if (officialNoSources) {
+    await openByName(officialNoSources.name);
+    const panel = await text("#info-panel");
+    check("a node with only an OPM figure is not told it has no source", !/No source URL has been attached to it yet/.test(panel), panel.slice(0, 600));
+    check("the panel says which claim is the one missing", /No source has been attached for its existence/.test(panel), panel.slice(0, 600));
+  }
+
+  // The headcount an estimate was divided by, where OPM contradicts it.
+  const disputed = allNodes.find((n) => n.cost_weight_dispute && typeof n.cost_weight_dispute === "object");
+  check("some estimate was weighted by a headcount OPM contradicts", Boolean(disputed), "none");
+  if (disputed) {
+    await openByName(disputed.name);
+    const stats = await text("#info-stats");
+    check("the estimate names both headcounts", /The headcount used is the base graph's uncited .*OPM's employment file.*reports/s.test(stats), stats.slice(0, 900));
+    check("the estimate says the share was not recomputed", /The share was not recomputed from OPM's number/.test(stats), stats.slice(0, 900));
+  }
+
   const withListing = allNodes.find((n) => n.positionListing && typeof n.positionListing === "object");
   check("some position carries a PLUM archive listing", Boolean(withListing), "none");
   if (withListing) {

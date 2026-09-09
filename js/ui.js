@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909a";
+import { createGovernmentGraph } from "./graph.js?v=20260909b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260909b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -681,7 +681,20 @@ function renderVerificationPanel(data) {
     setText(dom.verificationStatus, "This entry comes from the hand-compiled base graph.");
     // No confidence line: a score of 0.00 on something that was never scored is
     // a number impersonating a measurement.
-    setText(dom.verificationConfidence, "No source URL has been attached to it yet.");
+    //
+    // "No source URL has been attached to it yet" was flatly false on the
+    // fourteen nodes that carry an OPM headcount: the provenance block
+    // directly below this one shows an opm.gov URL. The two are not the same
+    // claim — OPM's employment table is evidence about how many civilians
+    // work in a unit of this name, not that this unit exists as the graph
+    // draws it — so the panel says which one is missing rather than denying
+    // the one it has.
+    setText(
+      dom.verificationConfidence,
+      data.employeesOfficial === undefined || data.employeesOfficial === null
+        ? "No source URL has been attached to it yet."
+        : "No source has been attached for its existence. OPM's employment table, linked below, names a unit of this name — evidence about its staffing, not about whether it exists as drawn."
+    );
     setText(dom.verificationLastVerified, "");
     renderPlacementLine(data);
   } else {
@@ -1054,9 +1067,24 @@ function describeCost(node) {
     const basis = String(node.cost_basis || "").toLowerCase();
     const phrase =
       COST_BASIS_PHRASES[basis] || (node.cost_basis ? String(node.cost_basis) : "an unspecified weighting");
+    // A reader looking at the money has no way to see that the headcount it
+    // was divided by is contradicted by OPM's own count of the same unit.
+    // The share is not moved — the curated figures are uncited, so nothing
+    // here can tell a wrong number from a different population (the Coast
+    // Guard's 55,000 uniformed against FedScope's 9,583 civilians) — but the
+    // disagreement is a fact and belongs beside the figure it produced.
+    const dispute = node.cost_weight_dispute;
+    let caveat = "";
+    if (dispute && typeof dispute === "object" && typeof dispute.officialEmployees === "number") {
+      const period = dispute.period ? ` (${dispute.period})` : "";
+      caveat =
+        ` The headcount used is the base graph's uncited ${Number(dispute.curatedEmployeesParsed).toLocaleString()};` +
+        ` OPM's employment file${period} reports ${dispute.officialEmployees.toLocaleString()} for the same unit.` +
+        " The share was not recomputed from OPM's number: the two can count different populations, and neither figure is corrected against the other.";
+    }
     return {
       ...copy,
-      note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.`,
+      note: `Not a measured budget. Derived by dividing the parent's total, weighted by ${phrase}.${caveat}`,
     };
   }
   return copy;

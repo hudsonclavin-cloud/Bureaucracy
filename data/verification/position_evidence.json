@@ -3736,7 +3736,7 @@
     "positions_in_graph": 4382,
     "positions_under_matched_agency_node": 584,
     "positions_under_matched_organization": 1084,
-    "positions_matched": 91,
+    "positions_matched": 126,
     "positions_shared_title": [],
     "positions_ambiguous_alternatives": [],
     "positions_title_ambiguous_in_archive": [
@@ -3749,6 +3749,22 @@
         ]
       },
       {
+        "id": "exec-dept-dol-eta-deputy-assistant-secretary",
+        "name": "Deputy Assistant Secretary",
+        "titles": [
+          "DEPUTY ASSISTANT SECRETARY",
+          "DEPUTY ASSISTANT SECRETARY, EMPLOYMENT AND TRAINING ADMINISTRATION"
+        ]
+      },
+      {
+        "id": "exec-dept-dol-osha-deputy-assistant-secretary",
+        "name": "Deputy Assistant Secretary",
+        "titles": [
+          "DEPUTY ASSISTANT SECRETARY",
+          "DEPUTY ASSISTANT SECRETARY, OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION"
+        ]
+      },
+      {
         "id": "exec-dept-state-bureau-of-global-public-affairs-deputy-assistant-secretary-2-4-bureau-of-global-public-affairs",
         "name": "Deputy Assistant Secretary (×2-4), Bureau of Global Public Affairs",
         "titles": [
@@ -3756,9 +3772,17 @@
           "DEPUTY ASSISTANT SECRETARY (STRATEGY, OUTREACH, AND EVENTS)",
           "Deputy Assistant Secretary (Digital Strategy)"
         ]
+      },
+      {
+        "id": "exec-dept-va-vha-chief-of-staff-vha",
+        "name": "Chief of Staff, VHA",
+        "titles": [
+          "CHIEF OF STAFF",
+          "CHIEF OF STAFF, VETERANS HEALTH ADMINISTRATION"
+        ]
       }
     ],
-    "positions_unmatched": 991,
+    "positions_unmatched": 953,
     "positions_unmatched_sample": [
       {
         "id": "exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations",
@@ -3806,11 +3830,6 @@
         "listed_under": "U.S. CUSTOMS AND BORDER PROTECTION"
       },
       {
-        "id": "exec-dept-dhs-cbp-commissioner-cbp",
-        "name": "Commissioner, CBP",
-        "listed_under": "U.S. CUSTOMS AND BORDER PROTECTION"
-      },
-      {
         "id": "exec-dept-dhs-cbp-deputy-chief-of-the-border-patrol",
         "name": "Deputy Chief of the Border Patrol",
         "listed_under": "U.S. CUSTOMS AND BORDER PROTECTION"
@@ -3828,16 +3847,6 @@
       {
         "id": "exec-dept-dhs-cisa-cybersecurity-advisor-multiple",
         "name": "Cybersecurity Advisor (×multiple)",
-        "listed_under": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
-      },
-      {
-        "id": "exec-dept-dhs-cisa-deputy-director",
-        "name": "Deputy Director",
-        "listed_under": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
-      },
-      {
-        "id": "exec-dept-dhs-cisa-director-cisa",
-        "name": "Director, CISA",
         "listed_under": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
       },
       {
@@ -3926,16 +3935,6 @@
         "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
       },
       {
-        "id": "exec-dept-dhs-ice-deputy-director",
-        "name": "Deputy Director",
-        "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
-      },
-      {
-        "id": "exec-dept-dhs-ice-director-ice",
-        "name": "Director, ICE",
-        "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
-      },
-      {
         "id": "exec-dept-dhs-ice-executive-associate-director-ero",
         "name": "Executive Associate Director — ERO",
         "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
@@ -3959,6 +3958,31 @@
         "id": "exec-dept-dhs-ice-special-agent-in-charge-hsi-30-domestic",
         "name": "Special Agent in Charge — HSI (×30 domestic)",
         "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
+      },
+      {
+        "id": "exec-dept-dhs-ice-special-agent-multiple",
+        "name": "Special Agent (×multiple)",
+        "listed_under": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-assistant-administrator-human-capital",
+        "name": "Assistant Administrator — Human Capital",
+        "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-assistant-administrator-law-enforcement-federal-air-marshal-service",
+        "name": "Assistant Administrator — Law Enforcement / Federal Air Marshal Service",
+        "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-assistant-administrator-operations-support",
+        "name": "Assistant Administrator — Operations Support",
+        "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-assistant-administrator-security-operations",
+        "name": "Assistant Administrator — Security Operations",
+        "listed_under": "TRANSPORTATION SECURITY ADMINISTRATION"
       }
     ],
     "samples": [
@@ -3968,6 +3992,13 @@
         "listedTitle": "CHIEF OPERATING OFFICER",
         "appointmentType": "CA",
         "status": "Filled"
+      },
+      {
+        "id": "exec-dept-dhs-cbp-commissioner-cbp",
+        "name": "Commissioner, CBP",
+        "listedTitle": "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION",
+        "appointmentType": "PAS",
+        "status": "Vacant"
       },
       {
         "id": "exec-dept-dhs-cbp-deputy-commissioner",
@@ -3984,10 +4015,38 @@
         "status": "Vacant"
       },
       {
+        "id": "exec-dept-dhs-cisa-deputy-director",
+        "name": "Deputy Director",
+        "listedTitle": "DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+        "appointmentType": "NA",
+        "status": "Vacant"
+      },
+      {
+        "id": "exec-dept-dhs-cisa-director-cisa",
+        "name": "Director, CISA",
+        "listedTitle": "DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+        "appointmentType": "PAS",
+        "status": "Vacant"
+      },
+      {
         "id": "exec-dept-dhs-fema-chief-of-staff",
         "name": "Chief of Staff",
         "listedTitle": "CHIEF OF STAFF",
         "appointmentType": "NA",
+        "status": "Vacant"
+      },
+      {
+        "id": "exec-dept-dhs-ice-deputy-director",
+        "name": "Deputy Director",
+        "listedTitle": "DEPUTY DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
+        "appointmentType": "CA",
+        "status": "Vacant"
+      },
+      {
+        "id": "exec-dept-dhs-ice-director-ice",
+        "name": "Director, ICE",
+        "listedTitle": "DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
+        "appointmentType": "PAS",
         "status": "Vacant"
       },
       {
@@ -3998,10 +4057,24 @@
         "status": "Vacant"
       },
       {
+        "id": "exec-dept-dhs-tsa-administrator-tsa",
+        "name": "Administrator, TSA",
+        "listedTitle": "ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+        "appointmentType": "PAS",
+        "status": "Vacant"
+      },
+      {
         "id": "exec-dept-dhs-tsa-chief-of-staff",
         "name": "Chief of Staff",
         "listedTitle": "CHIEF OF STAFF",
         "appointmentType": "XS",
+        "status": "Vacant"
+      },
+      {
+        "id": "exec-dept-dhs-tsa-deputy-administrator",
+        "name": "Deputy Administrator",
+        "listedTitle": "DEPUTY ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+        "appointmentType": "PA",
         "status": "Vacant"
       },
       {
@@ -4016,55 +4089,6 @@
         "name": "Chief of Staff",
         "listedTitle": "CHIEF OF STAFF",
         "appointmentType": "NA",
-        "status": "Filled"
-      },
-      {
-        "id": "exec-dept-dhs-uscis-chief-office-of-policy-strategy",
-        "name": "Chief, Office of Policy & Strategy",
-        "listedTitle": "CHIEF, OFFICE OF POLICY AND STRATEGY",
-        "appointmentType": "NA",
-        "status": "Vacant"
-      },
-      {
-        "id": "exec-dept-dhs-usss-chief-of-staff",
-        "name": "Chief of Staff",
-        "listedTitle": "CHIEF OF STAFF",
-        "appointmentType": "CA",
-        "status": "Vacant"
-      },
-      {
-        "id": "exec-dept-doe-sc-deputy-director-for-science-programs",
-        "name": "Deputy Director for Science Programs",
-        "listedTitle": "DEPUTY DIRECTOR FOR SCIENCE PROGRAMS",
-        "appointmentType": "CA",
-        "status": "Filled"
-      },
-      {
-        "id": "exec-dept-doi-bia-deputy-director-field-operations",
-        "name": "Deputy Director — Field Operations",
-        "listedTitle": "DEPUTY DIRECTOR, FIELD OPERATIONS",
-        "appointmentType": "CA",
-        "status": "Filled"
-      },
-      {
-        "id": "exec-dept-doi-boem-deputy-director",
-        "name": "Deputy Director",
-        "listedTitle": "DEPUTY DIRECTOR",
-        "appointmentType": "CA",
-        "status": "Filled"
-      },
-      {
-        "id": "exec-dept-doi-bor-deputy-commissioner",
-        "name": "Deputy Commissioner",
-        "listedTitle": "DEPUTY COMMISSIONER",
-        "appointmentType": "NA",
-        "status": "Vacant"
-      },
-      {
-        "id": "exec-dept-doi-bsee-deputy-director",
-        "name": "Deputy Director",
-        "listedTitle": "DEPUTY DIRECTOR",
-        "appointmentType": "CA",
         "status": "Filled"
       }
     ]
@@ -4083,6 +4107,30 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-cbp",
+        "parentListedName": "U.S. CUSTOMS AND BORDER PROTECTION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-cbp-commissioner-cbp": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "U.S. CUSTOMS AND BORDER PROTECTION",
+      "incumbencies": 4,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4142,6 +4190,54 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-dhs-cisa-deputy-director": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+      "incumbencies": 4,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-cisa",
+        "parentListedName": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-cisa-director-cisa": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "II",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-cisa",
+        "parentListedName": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-dhs-fema-chief-of-staff": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4161,6 +4257,54 @@
         "status": "listed",
         "parentId": "exec-dept-dhs-fema",
         "parentListedName": "FEDERAL EMERGENCY MANAGEMENT AGENCY"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-ice-deputy-director": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT",
+      "incumbencies": 4,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-ice",
+        "parentListedName": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-ice-director-ice": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-ice",
+        "parentListedName": "U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -4190,6 +4334,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-dhs-tsa-administrator-tsa": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "TRANSPORTATION SECURITY ADMINISTRATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "II",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-tsa",
+        "parentListedName": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-dhs-tsa-chief-of-staff": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4203,6 +4371,30 @@
       "appointmentType": "XS",
       "payPlan": "OT",
       "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-tsa",
+        "parentListedName": "TRANSPORTATION SECURITY ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-tsa-deputy-administrator": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "TRANSPORTATION SECURITY ADMINISTRATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PA",
+      "payPlan": "EX",
+      "level": "III",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4286,6 +4478,54 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-dhs-uscis-deputy-director": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY DIRECTOR, CITIZENSHIP AND IMMIGRATION SERVICES",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "U.S. CITIZENSHIP AND IMMIGRATION SERVICES",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-uscis",
+        "parentListedName": "U.S. CITIZENSHIP AND IMMIGRATION SERVICES"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-dhs-uscis-director-uscis": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, UNITED STATES  CITIZENSHIP AND IMMIGRATION SERVICES",
+      "listedAgency": "DEPARTMENT OF HOMELAND SECURITY",
+      "listedOrganization": "U.S. CITIZENSHIP AND IMMIGRATION SERVICES",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dhs-uscis",
+        "parentListedName": "U.S. CITIZENSHIP AND IMMIGRATION SERVICES"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-dhs-usss-chief-of-staff": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4310,6 +4550,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-doc-bea-director-bea": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF ECONOMIC ANALYSIS",
+      "listedAgency": "DEPARTMENT OF COMMERCE",
+      "listedOrganization": "BUREAU OF ECONOMIC ANALYSIS",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$191,119",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc-bea",
+        "parentListedName": "BUREAU OF ECONOMIC ANALYSIS"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-doe-sc-deputy-director-for-science-programs": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4323,6 +4587,30 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doe-sc",
+        "parentListedName": "OFFICE OF SCIENCE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doe-sc-director-office-of-science": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, OFFICE OF SCIENCE",
+      "listedAgency": "DEPARTMENT OF ENERGY",
+      "listedOrganization": "OFFICE OF SCIENCE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4358,6 +4646,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-doi-bia-director-bia": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF INDIAN AFFAIRS",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "BUREAU OF INDIAN AFFAIRS",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-bia",
+        "parentListedName": "BUREAU OF INDIAN AFFAIRS"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-doi-boem-deputy-director": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4371,6 +4683,30 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-boem",
+        "parentListedName": "BUREAU OF OCEAN ENERGY MANAGEMENT"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doi-boem-director-boem": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF OCEAN ENERGY MANAGEMENT",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "BUREAU OF OCEAN ENERGY MANAGEMENT",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -4430,6 +4766,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-doi-bsee-director-bsee": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF SAFETY AND ENVIRONMENTAL ENFORCEMENT",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "BUREAU OF SAFETY AND ENVIRONMENTAL ENFORCEMENT",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-bsee",
+        "parentListedName": "BUREAU OF SAFETY AND ENVIRONMENTAL ENFORCEMENT"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-doi-fws-deputy-director": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4449,6 +4809,78 @@
         "status": "listed",
         "parentId": "exec-dept-doi-fws",
         "parentListedName": "UNITED STATES FISH AND WILDLIFE SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doi-fws-director-fws": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, UNITED STATES FISH AND WILDLIFE SERVICE",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "UNITED STATES FISH AND WILDLIFE SERVICE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-fws",
+        "parentListedName": "UNITED STATES FISH AND WILDLIFE SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doi-nps-director-nps": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, NATIONAL PARK SERVICE",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "NATIONAL PARK SERVICE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-nps",
+        "parentListedName": "NATIONAL PARK SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doi-usgs-director-usgs": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, U.S. GEOLOGICAL SURVEY",
+      "listedAgency": "DEPARTMENT OF THE INTERIOR",
+      "listedOrganization": "UNITED STATES GEOLOGICAL SURVEY",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi-usgs",
+        "parentListedName": "UNITED STATES GEOLOGICAL SURVEY"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -4569,6 +5001,78 @@
         "status": "listed",
         "parentId": "exec-dept-doj-atf",
         "parentListedName": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doj-atf-director-atf": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, BUREAU OF ALCOHOL, TOBACCO, FIREARMS, AND EXPLOSIVES",
+      "listedAgency": "DEPARTMENT OF JUSTICE",
+      "listedOrganization": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj-atf",
+        "parentListedName": "BUREAU OF ALCOHOL, TOBACCO, FIREARMS AND EXPLOSIVES"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doj-dea-administrator-dea": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF JUSTICE",
+      "listedOrganization": "DRUG ENFORCEMENT ADMINISTRATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj-dea",
+        "parentListedName": "DRUG ENFORCEMENT ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-doj-dea-deputy-administrator": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF JUSTICE",
+      "listedOrganization": "DRUG ENFORCEMENT ADMINISTRATION",
+      "incumbencies": 9,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj-dea",
+        "parentListedName": "DRUG ENFORCEMENT ADMINISTRATION"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -4766,6 +5270,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-doj-fbi-director-fbi": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, FEDERAL BUREAU OF INVESTIGATION",
+      "listedAgency": "DEPARTMENT OF JUSTICE",
+      "listedOrganization": "FEDERAL BUREAU OF INVESTIGATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "II",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj-fbi",
+        "parentListedName": "FEDERAL BUREAU OF INVESTIGATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-doj-solicitor-deputy-solicitor-general-4": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4918,6 +5446,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-dol-ebsa-deputy-assistant-secretary": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ASSISTANT SECRETARY, EMPLOYEE BENEFITS SECURITY ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF LABOR",
+      "listedOrganization": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol-ebsa",
+        "parentListedName": "EMPLOYEE BENEFITS SECURITY ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-dol-eta-administrator-office-of-unemployment-insurance": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -4955,34 +5507,6 @@
       "appointmentType": "PAS",
       "payPlan": "EX",
       "level": "IV",
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z",
-      "placement": {
-        "status": "listed",
-        "parentId": "exec-dept-dol-eta",
-        "parentListedName": "EMPLOYMENT AND TRAINING ADMINISTRATION"
-      },
-      "period": "January 21, 2021 - January 20, 2025",
-      "periodStart": "2021-01-21",
-      "periodEnd": "2025-01-20"
-    },
-    "exec-dept-dol-eta-deputy-assistant-secretary": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "listedTitle": "DEPUTY ASSISTANT SECRETARY",
-      "listedAgency": "DEPARTMENT OF LABOR",
-      "listedOrganization": "EMPLOYMENT AND TRAINING ADMINISTRATION",
-      "incumbencies": 4,
-      "standing": 2,
-      "status": "Vacant",
-      "valuesFrom": "standing_listings",
-      "appointmentType": null,
-      "appointmentTypeCounts": {
-        "CA": 1,
-        "NA": 1
-      },
-      "payPlan": "ES",
-      "level": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5042,25 +5566,25 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
-    "exec-dept-dol-osha-deputy-assistant-secretary": {
+    "exec-dept-dol-ofccp-director-ofccp": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "listedTitle": "DEPUTY ASSISTANT SECRETARY",
+      "listedTitle": "DIRECTOR, OFFICE OF FEDERAL CONTRACT COMPLIANCE PROGRAMS",
       "listedAgency": "DEPARTMENT OF LABOR",
-      "listedOrganization": "OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION",
-      "incumbencies": 2,
-      "standing": 1,
-      "status": "Vacant",
-      "valuesFrom": "standing_listings",
-      "appointmentType": "CA",
+      "listedOrganization": "OFFICE OF FEDERAL CONTRACT COMPLIANCE PROGRAMS",
+      "incumbencies": 1,
+      "standing": 0,
+      "status": null,
+      "valuesFrom": "past_incumbencies",
+      "appointmentType": "NA",
       "payPlan": "ES",
       "level": null,
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
         "status": "listed",
-        "parentId": "exec-dept-dol-osha",
-        "parentListedName": "OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION"
+        "parentId": "exec-dept-dol-ofccp",
+        "parentListedName": "OFFICE OF FEDERAL CONTRACT COMPLIANCE PROGRAMS"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -5234,6 +5758,54 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-hhs-cms-chief-of-staff": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "CHIEF OF STAFF, CENTERS FOR MEDICARE AND MEDICAID SERVICES",
+      "listedAgency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "listedOrganization": "CENTERS FOR MEDICARE AND MEDICAID SERVICES",
+      "incumbencies": 4,
+      "standing": 0,
+      "status": null,
+      "valuesFrom": "past_incumbencies",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs-cms",
+        "parentListedName": "CENTERS FOR MEDICARE AND MEDICAID SERVICES"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-hhs-hrsa-administrator-hrsa": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ADMINISTRATOR, HEALTH RESOURCES AND SERVICES ADMINISTRATION",
+      "listedAgency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "listedOrganization": "HEALTH RESOURCES AND SERVICES ADMINISTRATION",
+      "incumbencies": 4,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs-hrsa",
+        "parentListedName": "HEALTH RESOURCES AND SERVICES ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-hhs-hrsa-deputy-administrator": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -5277,6 +5849,54 @@
         "status": "listed",
         "parentId": "exec-dept-hhs-ihs",
         "parentListedName": "INDIAN HEALTH SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-hhs-ihs-director-ihs": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, INDIAN HEALTH SERVICE",
+      "listedAgency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "listedOrganization": "INDIAN HEALTH SERVICE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "V",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs-ihs",
+        "parentListedName": "INDIAN HEALTH SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-hhs-nih-director-nih": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, NATIONAL INSTITUTES OF HEALTH",
+      "listedAgency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "listedOrganization": "NATIONAL INSTITUTES OF HEALTH",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs-nih",
+        "parentListedName": "NATIONAL INSTITUTES OF HEALTH"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -5774,6 +6394,30 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-treasury-fincen-director-fincen": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DIRECTOR, FINANCIAL CRIMES ENFORCEMENT NETWORK",
+      "listedAgency": "DEPARTMENT OF THE TREASURY",
+      "listedOrganization": "FINANCIAL CRIMES ENFORCEMENT NETWORK",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury-fincen",
+        "parentListedName": "FINANCIAL CRIMES ENFORCEMENT NETWORK"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-treasury-irs-chief-criminal-investigation-ci": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -5787,6 +6431,30 @@
       "appointmentType": "CA",
       "payPlan": "ES",
       "level": "$215,632",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury-irs",
+        "parentListedName": "INTERNAL REVENUE SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-treasury-irs-chief-financial-officer": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "CHIEF FINANCIAL OFFICER, INTERNAL REVENUE SERVICE",
+      "listedAgency": "DEPARTMENT OF THE TREASURY",
+      "listedOrganization": "INTERNAL REVENUE SERVICE",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$215,922",
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z",
       "placement": {
@@ -5817,6 +6485,54 @@
         "status": "listed",
         "parentId": "exec-dept-treasury-irs",
         "parentListedName": "INTERNAL REVENUE SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-treasury-ttb-deputy-administrator": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ADMINISTRATOR, ALCOHOL AND TOBACCO TAX AND TRADE BUREAU",
+      "listedAgency": "DEPARTMENT OF THE TREASURY",
+      "listedOrganization": "ALCOHOL AND TOBACCO TAX AND TRADE BUREAU",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-treasury-ttb",
+        "parentListedName": "ALCOHOL AND TOBACCO TAX AND TRADE BUREAU"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-usda-aphis-administrator-aphis": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ADMINISTRATOR, ANIMAL AND PLANT HEALTH INSPECTION SERVICE",
+      "listedAgency": "DEPARTMENT OF AGRICULTURE",
+      "listedOrganization": "ANIMAL AND PLANT HEALTH INSPECTION SERVICE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$225,700",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda-aphis",
+        "parentListedName": "ANIMAL AND PLANT HEALTH INSPECTION SERVICE"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -5942,6 +6658,54 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-usda-nrcs-chief-nrcs": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "CHIEF, NATURAL RESOURCES CONSERVATION SERVICE",
+      "listedAgency": "DEPARTMENT OF AGRICULTURE",
+      "listedOrganization": "NATURAL RESOURCES CONSERVATION SERVICE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda-nrcs",
+        "parentListedName": "NATURAL RESOURCES CONSERVATION SERVICE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-dept-va-bva-chairman-board-of-veterans-appeals": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "CHAIRMAN, BOARD OF VETERANS APPEALS",
+      "listedAgency": "DEPARTMENT OF VETERANS AFFAIRS",
+      "listedOrganization": "BOARD OF VETERANS' APPEALS",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-va-bva",
+        "parentListedName": "BOARD OF VETERANS' APPEALS"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-va-nca-under-secretary-for-memorial-affairs": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -5985,30 +6749,6 @@
         "status": "listed",
         "parentId": "exec-dept-va-vba",
         "parentListedName": "VETERANS BENEFITS ADMINISTRATION"
-      },
-      "period": "January 21, 2021 - January 20, 2025",
-      "periodStart": "2021-01-21",
-      "periodEnd": "2025-01-20"
-    },
-    "exec-dept-va-vha-chief-of-staff-vha": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "listedTitle": "CHIEF OF STAFF",
-      "listedAgency": "DEPARTMENT OF VETERANS AFFAIRS",
-      "listedOrganization": "VETERANS HEALTH ADMINISTRATION",
-      "incumbencies": 1,
-      "standing": 0,
-      "status": null,
-      "valuesFrom": "past_incumbencies",
-      "appointmentType": "CA",
-      "payPlan": "ES",
-      "level": null,
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z",
-      "placement": {
-        "status": "listed",
-        "parentId": "exec-dept-va-vha",
-        "parentListedName": "VETERANS HEALTH ADMINISTRATION"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -6274,6 +7014,126 @@
         "status": "listed",
         "parentId": "exec-ind-misc-national-mediation-board-nmb",
         "parentListedName": "NATIONAL MEDIATION BOARD"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nasa-aeronautics-research-mission-directorate-associate-administrator-aeronautics-research-mission-directorate": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE ADMINISTRATOR, AERONAUTICS RESEARCH MISSION DIRECTORATE",
+      "listedAgency": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "listedOrganization": "AERONAUTICS RESEARCH MISSION DIRECTORATE",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$289,400",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa-aeronautics-research-mission-directorate",
+        "parentListedName": "AERONAUTICS RESEARCH MISSION DIRECTORATE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nasa-exploration-systems-development-mission-directorate-associate-administrator-exploration-systems-development-mission-directorate": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE ADMINISTRATOR, EXPLORATION SYSTEMS DEVELOPMENT MISSION DIRECTORATE",
+      "listedAgency": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "listedOrganization": "EXPLORATION SYSTEMS DEVELOPMENT MISSION DIRECTORATE",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa-exploration-systems-development-mission-directorate",
+        "parentListedName": "EXPLORATION SYSTEMS DEVELOPMENT MISSION DIRECTORATE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nasa-science-mission-directorate-associate-administrator-science-mission-directorate": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE ADMINISTRATOR, SCIENCE MISSION DIRECTORATE",
+      "listedAgency": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "listedOrganization": "SCIENCE MISSION DIRECTORATE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$289,400",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa-science-mission-directorate",
+        "parentListedName": "SCIENCE MISSION DIRECTORATE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nasa-space-operations-mission-directorate-associate-administrator-space-operations-mission-directorate": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE ADMINISTRATOR, SPACE OPERATIONS MISSION DIRECTORATE",
+      "listedAgency": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "listedOrganization": "SPACE OPERATIONS MISSION DIRECTORATE",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$289,400",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa-space-operations-mission-directorate",
+        "parentListedName": "SPACE OPERATIONS MISSION DIRECTORATE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nasa-space-technology-mission-directorate-associate-administrator-space-technology-mission-directorate": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSOCIATE ADMINISTRATOR, SPACE TECHNOLOGY MISSION DIRECTORATE",
+      "listedAgency": "NATIONAL AERONAUTICS AND SPACE ADMINISTRATION",
+      "listedOrganization": "SPACE TECHNOLOGY MISSION DIRECTORATE",
+      "incumbencies": 3,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$289,400",
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nasa-space-technology-mission-directorate",
+        "parentListedName": "SPACE TECHNOLOGY MISSION DIRECTORATE"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",

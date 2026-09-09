@@ -351,7 +351,7 @@ obtains a key.
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from
 `data/verification/headcount_evidence.json` (133 records) and
-`position_evidence.json` (91). Both are applied *beside* the curated
+`position_evidence.json` (126). Both are applied *beside* the curated
 figure, never over it: `apply_headcount_evidence` stamps
 `employeesOfficial` and `employeesOfficialSource` (the listed name, the
 level, the agency/sub-agency codes, the period, OPM's own coverage
@@ -359,13 +359,49 @@ sentence and the URL it came from, the previous period's count, the
 component rows, and the matcher's flags) and leaves the base graph's
 `employees` field exactly as it was; the panel shows both rows and says
 they count different populations. `apply_position_evidence` stamps
-`positionListing` plus the PLUM placement method. The exporter refuses a
+`positionListing` plus the PLUM placement method. A title the archive
+spells with the organisation it has already filed the row under —
+"COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION" under CBP,
+"DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY" under
+CISA — is read back through the same strip the curated side has always had
+(`archive_title_keys`), which took the matches from 91 to 126 of the 1,084
+positions sitting under a matched organisation; the archive's own spelling
+stays a key, so nothing that matched before stops, and two rows that
+collapse onto one key claim neither (three more refusals, the Labor
+department's two "Deputy Assistant Secretary" rows among them). Nothing
+without a comma is stripped: "CHIEF COUNSEL FOR CYBERSECURITY AND
+INFRASTRUCTURE SECURITY AGENCY" stays whole. The exporter refuses a
 record whose node is not of the right kind, whose name has since changed,
 or that carries no date or URL — and, for a headcount, one its own
 descendants' records already exceed. The gate checks every field (a
 `.gov` URL, a period, a coverage sentence, a past date, a non-negative
 integer) and reports how many nodes carry each and how far the curated
 figures are from OPM's: **66 of the 133 differ by more than 10%.**
+
+**The cascade is not reweighted by them, and says so.** Seven sibling sets
+carry a FedScope record on every headcount-bearing member, so a swap was
+possible; it was rejected. One of the seven is Homeland Security, where the
+Coast Guard's curated 55,000 sits beside FedScope's 9,583 — the same
+civilian-versus-uniformed mismatch this file already refuses for the Army,
+and a swap would have cut a uniformed service's share fivefold. The curated
+figures are uncited, so nothing in the pipeline can tell a wrong number from
+a different population. What is true is that the two disagree, so a node
+whose allocated share was divided by a curated headcount an OPM figure
+contradicts by more than 10% carries `cost_weight_dispute` — both figures,
+the period and the URL — and the panel prints them under the estimate with
+"the share was not recomputed from OPM's number". 11 shares carry one. It is
+withdrawn on every build before it is recomputed, and dropped from any node
+that ends up with no share at all (the four EOP offices beneath a negative
+Treasury pool): a caveat about an estimate that does not exist is a claim
+about nothing, and the gate refuses it, along with a dispute that cites a
+figure the node does not carry, that is within the tolerance, that sits on a
+measured cost, or that has no source URL.
+
+A node carrying an OPM headcount and nothing else is no longer told "no
+source URL has been attached to it yet" — the provenance block directly
+below that sentence shows an `opm.gov` URL. The panel says which claim is
+the missing one instead: the employment file is evidence about a unit's
+staffing, not that the unit exists as the graph draws it.
 
 FedScope is OPM's civilian employment table by agency and sub-agency
 (March 2025, September 2024 beside it). Every record carries the data

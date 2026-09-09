@@ -142,6 +142,76 @@ class ReleaseGateTests(unittest.TestCase):
         self.assertEqual(code, 2)
 
 
+class WeightDisputeGateTests(ReleaseGateTests):
+    """A published disagreement is a claim, so the gate must refuse a
+    malformed one. Every check here is pinned in both directions: the honest
+    block passes, each broken one fails."""
+
+    def _with_dispute(self, **overrides):
+        def mutate(graph):
+            node = _find(graph, "executive-branch")
+            node["employeesOfficial"] = 2_000_000
+            node["employeesOfficialSource"] = {
+                "source": "opm_fedscope_employment",
+                "listedName": "EXECUTIVE BRANCH",
+                "level": "agency",
+                "period": "2025-03",
+                "coverage": "Federal civilian employees in the Executive Branch in an active pay status.",
+                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
+                "checkedAt": "2026-09-08T19:50:51Z",
+            }
+            node["cost_weight_dispute"] = {
+                "basis": "employee_weight",
+                "curatedEmployees": "4,000,000",
+                "curatedEmployeesParsed": 4_000_000.0,
+                "officialEmployees": 2_000_000,
+                "source": "opm_fedscope_employment",
+                "period": "2025-03",
+                "url": "https://www.opm.gov/data/datasets/Files/753/example.zip",
+                **overrides,
+            }
+            for key, value in overrides.items():
+                if key in ("cost_status", "cost_basis"):
+                    node[key] = value
+                    node["cost_weight_dispute"].pop(key, None)
+        return self._write_corrupted(mutate)
+
+    def test_an_honest_dispute_passes(self) -> None:
+        code, out = _gate(self._with_dispute())
+        self.assertEqual(code, 0, out)
+        self.assertIn("every published weight dispute names both figures and is one", out)
+        self.assertIn("weights disputed     : 1", out)
+
+    def test_a_dispute_citing_a_figure_the_node_does_not_carry_fails(self) -> None:
+        code, out = _gate(self._with_dispute(officialEmployees=999))
+        self.assertEqual(code, 1)
+        self.assertIn("the node carries", out)
+
+    def test_a_dispute_that_is_not_one_fails(self) -> None:
+        # Within 10% is agreement; presenting it as a contradiction would
+        # manufacture doubt the figures do not support.
+        code, out = _gate(self._with_dispute(officialEmployees=4_000_000, curatedEmployeesParsed=4_000_000.0))
+        self.assertEqual(code, 1)
+        self.assertIn("within 10%", out)
+
+    def test_a_dispute_with_no_source_url_fails(self) -> None:
+        code, out = _gate(self._with_dispute(url=""))
+        self.assertEqual(code, 1)
+        self.assertIn("no source URL", out)
+
+    def test_a_dispute_on_a_measured_cost_fails(self) -> None:
+        # A measured figure was not divided by anything; a caveat about the
+        # weighting would be false.
+        code, out = _gate(self._with_dispute(cost_status="official"))
+        self.assertEqual(code, 1)
+        self.assertIn("dispute on a", out)
+
+    def test_a_dispute_missing_its_curated_figure_fails(self) -> None:
+        code, out = _gate(self._with_dispute(curatedEmployeesParsed=None))
+        self.assertEqual(code, 1)
+        self.assertIn("no curated figure", out)
+
+
 class OfflineRegenerationTests(unittest.TestCase):
     def test_rebuild_reports_what_it_did_and_gates_the_result(self) -> None:
         tmp_path = TEST_TMP_ROOT / f"regen-{uuid.uuid4().hex}"

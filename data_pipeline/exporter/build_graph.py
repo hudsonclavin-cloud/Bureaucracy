@@ -593,6 +593,51 @@ def resolve_sibling_weights(
     return resolved, dominant, True
 
 
+HEADCOUNT_DISPUTE_TOLERANCE = 0.10
+
+
+def note_headcount_dispute(child: dict[str, Any], basis: str) -> bool:
+    """Say when the headcount an estimate was apportioned by is contradicted
+    by OPM's own count of the same unit.
+
+    The share stays where it is. Swapping the weight to OPM's figure was
+    tried and rejected: seven sibling sets have a FedScope record on every
+    headcount-bearing member, but one of them is Homeland Security, where the
+    Coast Guard's curated 55,000 sits beside FedScope's 9,583 — the same
+    civilian-versus-uniformed mismatch CLAUDE.md already refuses for the
+    Army. The curated figures are uncited, so nothing here can tell a wrong
+    number from a different population, and a rule that cannot tell them
+    apart would cut a uniformed service's share fivefold on a guess.
+
+    What can be said truthfully is that the two disagree, so the node carries
+    both and the panel prints them. The tolerance decides only what is worth
+    mentioning, never what is true.
+    """
+    child.pop("cost_weight_dispute", None)
+    if basis != "employee_weight":
+        return False
+    official = child.get("employeesOfficial")
+    if not isinstance(official, (int, float)) or isinstance(official, bool) or official <= 0:
+        return False
+    curated = parse_cost_amount(child.get("employees"))
+    if curated is None or curated <= 0:
+        return False
+    if abs(curated - official) / official <= HEADCOUNT_DISPUTE_TOLERANCE:
+        return False
+    source = child.get("employeesOfficialSource")
+    source = source if isinstance(source, dict) else {}
+    child["cost_weight_dispute"] = {
+        "basis": basis,
+        "curatedEmployees": child.get("employees"),
+        "curatedEmployeesParsed": curated,
+        "officialEmployees": official,
+        "source": source.get("source"),
+        "period": source.get("period"),
+        "url": source.get("url"),
+    }
+    return True
+
+
 def get_node_weight(node: dict[str, Any], subtree_sizes: dict[str, int]) -> tuple[float, str]:
     for key, basis in (
         ("annual_budget", "annual_budget_weight"),
@@ -1483,12 +1528,20 @@ def annotate_resolved_costs(
     subtree_sizes = compute_subtree_sizes(root)
     budget_total = parse_cost_amount((budget_summary or {}).get("government_total_outlay_amount"))
 
+    # The previous graph.json comes back through as a payload, so a dispute
+    # noted on the last build would otherwise outlive the figures that
+    # produced it. It is recomputed below for every node it can apply to;
+    # clearing it here is what makes a withdrawn OPM record actually withdraw.
+    for _node, _ in walk_tree(root):
+        _node.pop("cost_weight_dispute", None)
+
     if budget_total is None:
         child_totals = [amount for amount in (get_node_official_total(child) for child in root.get("children", [])) if amount is not None]
         budget_total = sum(child_totals) if child_totals else None
 
     counters = {
         "mixed_weight_sibling_sets_implied": 0,
+        "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
@@ -1578,6 +1631,9 @@ def annotate_resolved_costs(
                 weight, weight_basis = get_node_weight(child, subtree_sizes)
                 weighted_children.append((child, weight, weight_basis))
         weighted_children, weight_class, implied = resolve_sibling_weights(weighted_children, subtree_sizes)
+        for weighted_child, _, weighted_basis in weighted_children:
+            if note_headcount_dispute(weighted_child, weighted_basis):
+                counters["headcount_weights_disputed_by_opm"] += 1
         if weight_class is not None:
             node["child_cost_basis"] = weight_class
             node.pop("child_cost_basis_downgraded", None)
@@ -1727,6 +1783,18 @@ def annotate_resolved_costs(
         is_root=True,
     )
 
+    # A dispute is about an estimate, and four EOP offices have none: the
+    # Treasury nets the Executive Office of the President to −$1.24B, so
+    # nothing is apportioned to its unlined children and they publish as
+    # unavailable. Noting "the headcount this share was divided by is
+    # contradicted" on a node with no share is a caveat about nothing. The
+    # weight is only known to have been used once the recursion has finished
+    # with the node, so the withdrawal happens here rather than at the stamp.
+    for _node, _ in walk_tree(root):
+        if _node.get("cost_weight_dispute") is not None and str(_node.get("cost_status") or "") != "allocated":
+            _node.pop("cost_weight_dispute", None)
+            counters["headcount_weights_disputed_by_opm"] -= 1
+
     validity_nodes: list[dict[str, Any]] = []
     verification_status_counts: dict[str, int] = {}
     cost_status_counts: dict[str, int] = {}
@@ -1844,6 +1912,7 @@ def annotate_resolved_costs(
             "partial_cost_node_count": partial_cost_node_count,
             "unverified_cost_node_count": unverified_cost_node_count,
             "mixed_weight_sibling_sets_implied": counters["mixed_weight_sibling_sets_implied"],
+            "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_scaled": summarize_scaled_official(root),

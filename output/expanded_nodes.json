@@ -13841,22 +13841,18 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
+    "sourceUrls": [],
     "sourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 0,
     "proofSourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "existsProven": true,
+    "existsProven": false,
     "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
+    "proofStatus": "baseline",
+    "proofReason": "trusted_base_graph",
     "resolved_total_amount": 97001382.58,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -13865,38 +13861,10 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
-    "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
-    "positionListing": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "period": "January 21, 2021 - January 20, 2025",
-      "listedTitle": "DEPUTY ASSISTANT SECRETARY",
-      "listedAgency": "DEPARTMENT OF LABOR",
-      "listedOrganization": "OCCUPATIONAL SAFETY AND HEALTH ADMINISTRATION",
-      "appointmentType": "CA",
-      "status": "Vacant",
-      "payPlan": "ES",
-      "level": null,
-      "incumbencies": 2,
-      "standing": 1,
-      "valuesFrom": "standing_listings",
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z"
-    },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
-    "placementVerified": true,
-    "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-    "placementVerifiedAt": "2026-09-08T19:49:47Z",
-    "placementParentId": "exec-dept-dol-osha",
-    "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
-    "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "sourceCount": 0,
+    "confidenceScore": 0.0,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "parentId": "exec-dept-dol-osha"
   },
   {
@@ -14339,22 +14307,18 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
+    "sourceUrls": [],
     "sourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 0,
     "proofSourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "existsProven": true,
+    "existsProven": false,
     "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
+    "proofStatus": "baseline",
+    "proofReason": "trusted_base_graph",
     "resolved_total_amount": 8046999329.17,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -14363,42 +14327,10 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
-    "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
-    "positionListing": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "period": "January 21, 2021 - January 20, 2025",
-      "listedTitle": "DEPUTY ASSISTANT SECRETARY",
-      "listedAgency": "DEPARTMENT OF LABOR",
-      "listedOrganization": "EMPLOYMENT AND TRAINING ADMINISTRATION",
-      "appointmentType": null,
-      "status": "Vacant",
-      "payPlan": "ES",
-      "level": null,
-      "incumbencies": 4,
-      "standing": 2,
-      "valuesFrom": "standing_listings",
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z",
-      "appointmentTypeCounts": {
-        "CA": 1,
-        "NA": 1
-      }
-    },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
-    "placementVerified": true,
-    "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-    "placementVerifiedAt": "2026-09-08T19:49:47Z",
-    "placementParentId": "exec-dept-dol-eta",
-    "placementMatchedText": "DEPUTY ASSISTANT SECRETARY",
-    "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "sourceCount": 0,
+    "confidenceScore": 0.0,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "parentId": "exec-dept-dol-eta"
   },
   {
@@ -18895,22 +18827,18 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
+    "sourceUrls": [],
     "sourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 0,
     "proofSourceTypes": [
-      "opm_plum_archive",
-      "official_site"
+      "opm_plum_archive"
     ],
-    "existsProven": true,
+    "existsProven": false,
     "parentProven": true,
-    "proofStatus": "proven",
-    "proofReason": "official_source_recorded",
+    "proofStatus": "baseline",
+    "proofReason": "trusted_base_graph",
     "resolved_total_amount": 234154711.98,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -18919,38 +18847,10 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
-    "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
-    ],
-    "positionListing": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "period": "January 21, 2021 - January 20, 2025",
-      "listedTitle": "CHIEF OF STAFF",
-      "listedAgency": "DEPARTMENT OF VETERANS AFFAIRS",
-      "listedOrganization": "VETERANS HEALTH ADMINISTRATION",
-      "appointmentType": "CA",
-      "status": null,
-      "payPlan": "ES",
-      "level": null,
-      "incumbencies": 1,
-      "standing": 0,
-      "valuesFrom": "past_incumbencies",
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z"
-    },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
-    "placementVerified": true,
-    "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-    "placementVerifiedAt": "2026-09-08T19:49:47Z",
-    "placementParentId": "exec-dept-va-vha",
-    "placementMatchedText": "CHIEF OF STAFF",
-    "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "sourceCount": 0,
+    "confidenceScore": 0.0,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "parentId": "exec-dept-va-vha"
   },
   {

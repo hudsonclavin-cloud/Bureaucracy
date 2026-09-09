@@ -241,6 +241,36 @@ def strip_parent_qualifier(name: Any, parent_name: Any) -> tuple[str, str | None
     return text, None
 
 
+def archive_title_keys(title: Any, organisation_name: Any) -> list[str]:
+    """The keys an archive title answers to: its own, and — when the tail
+    after a comma is the organisation the archive already files the row
+    under — the key of what is left.
+
+    The archive prints "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER
+    PROTECTION" as a row of the organisation U.S. Customs and Border
+    Protection, and "DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE
+    SECURITY AGENCY" as a row of CISA. That tail is the same redundancy
+    `strip_parent_qualifier` already removes from the curated side of the
+    comparison ("Administrator, NASA" under NASA); removing it from this
+    side is not a guess about which post is meant but the archive's own
+    filing read back. Nothing else is stripped: "CHIEF COUNSEL FOR
+    CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY" has no comma and is
+    left whole, and "CHIEF (EXECUTIVE ASSISTANT COMMISSIONER), UNITED
+    STATES BORDER PATROL" keeps a core no curated name answers to rather
+    than being talked into one.
+
+    Both keys are returned, so a title that matched before still matches;
+    the caller indexes the row under each and its existing refusals decide
+    what a collision means.
+    """
+    keys: list[str] = []
+    for text in (title, strip_parent_qualifier(title, organisation_name)[0]):
+        key = canonical_name_key(text)
+        if key and key not in keys:
+            keys.append(key)
+    return keys
+
+
 def position_name_alternatives(name: Any, parent_name: Any) -> list[str]:
     """The canonical keys a curated position name may answer to, after the
     qualifier is stripped and "A / B / C" is split; the key already drops a
@@ -428,8 +458,7 @@ def match_positions(
         # distinct spellings collapse onto identifies none of them.
         titles: dict[str, dict[str, list[dict[str, Any]]]] = {}
         for row in groups[group]:
-            key = canonical_name_key(row["title"])
-            if key:
+            for key in archive_title_keys(row["title"], organization):
                 titles.setdefault(key, {}).setdefault(row["title"], []).append(row)
         # The graph's names, by key; a key two siblings share names neither.
         alternatives = {i: position_name_alternatives(positions[i].get("name"), org_node.get("name")) for i in children}
@@ -511,11 +540,12 @@ def listed_title_still_names(node_name: Any, parent_names: Any, listed_title: An
     that never changed — and only for the names that happen to carry a
     qualifier, which is no rule at all.
     """
-    key = canonical_name_key(listed_title)
-    if not key:
-        return False
     names = [parent_names] if parent_names is None or isinstance(parent_names, str) else list(parent_names)
-    return any(key in position_name_alternatives(node_name, name) for name in (names or [None]))
+    names = names or [None]
+    keys = {k for name in names for k in archive_title_keys(listed_title, name)}
+    if not keys:
+        return False
+    return any(k in position_name_alternatives(node_name, name) for name in names for k in keys)
 
 
 def apply_position_evidence(

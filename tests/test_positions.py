@@ -22,6 +22,7 @@ from data_pipeline.verification.positions import (
     PLUM_PLACEMENT_METHOD,
     PLUM_SOURCE,
     apply_position_evidence,
+    archive_title_keys,
     listed_title_still_names,
     load_plum_archive,
     load_position_evidence,
@@ -459,9 +460,16 @@ class RealFixtureTests(unittest.TestCase):
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
                          (154, 27, 894, 0, 429))
         self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4382, 584, 1084))
+        # 126, not the 91 of 2026-09-08: reading the organisation's own name
+        # back off the archive's own title recovers 35 posts the archive
+        # spells "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION".
+        # The three extra archive-ambiguous refusals are the same change
+        # declining to guess: "DEPUTY ASSISTANT SECRETARY" and "DEPUTY
+        # ASSISTANT SECRETARY, EMPLOYMENT AND TRAINING ADMINISTRATION" are
+        # two rows that now collapse onto one key, so neither is claimed.
         self.assertEqual((r["positions_matched"], r["positions_unmatched"], len(r["positions_shared_title"]), len(r["positions_ambiguous_alternatives"]), len(r["positions_title_ambiguous_in_archive"])),
-                         (91, 991, 0, 0, 2))
-        self.assertEqual(len(self.records), 91)
+                         (126, 953, 0, 0, 5))
+        self.assertEqual(len(self.records), 126)
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["listedTitle"], "CHIEF OF STAFF")
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["placement"]["parentId"], "exec-dept-dhs-cisa")
 
@@ -500,3 +508,61 @@ class GateAgreesWithTheMatcherTests(unittest.TestCase):
         keys = gate_keys("Chief Financial Officer", "Department of Energy (DOE)")
         self.assertFalse(any(k in canonical_name_key("INSPECTOR GENERAL") for k in keys if k))
         self.assertFalse(listed_title_still_names("Chief Financial Officer", ["Department of Energy (DOE)"], "INSPECTOR GENERAL"))
+
+
+class ArchiveTitleQualifierTests(unittest.TestCase):
+    """The archive repeats the organisation it has already filed a row
+    under; reading that back is the mirror of the strip the curated side
+    has always had. Both directions are pinned: what it recovers, and what
+    it still refuses."""
+
+    def test_the_tail_that_is_the_organisation_is_read_back(self) -> None:
+        for title, org, core in (
+            ("COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION", "U.S. Customs & Border Protection (CBP)", "commissioner"),
+            ("DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY", "Cybersecurity & Infrastructure Security Agency (CISA)", "deputy director"),
+            ("ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION", "Transportation Security Administration (TSA)", "administrator"),
+        ):
+            with self.subTest(title=title):
+                keys = archive_title_keys(title, org)
+                self.assertIn(core, keys, "the organisation's own name was not read back")
+                self.assertIn(canonical_name_key(title), keys, "the archive's own spelling must still be a key")
+
+    def test_a_tail_that_is_not_the_organisation_is_left_whole(self) -> None:
+        # The tail names a different unit, so nothing may be stripped: the
+        # claim would be that this row is the Border Patrol's chief when the
+        # archive says it is CBP's, filed under CBP.
+        keys = archive_title_keys("CHIEF (EXECUTIVE ASSISTANT COMMISSIONER), UNITED STATES BORDER PATROL",
+                                  "U.S. Customs & Border Protection (CBP)")
+        self.assertEqual(keys, [canonical_name_key("CHIEF (EXECUTIVE ASSISTANT COMMISSIONER), UNITED STATES BORDER PATROL")])
+
+    def test_no_comma_is_never_stripped(self) -> None:
+        # "for X" is a prepositional phrase, not the archive's own filing
+        # repeated, and reducing it would invent a post called "Chief Counsel".
+        title = "CHIEF COUNSEL FOR CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"
+        self.assertEqual(archive_title_keys(title, "Cybersecurity & Infrastructure Security Agency (CISA)"),
+                         [canonical_name_key(title)])
+
+    def test_two_rows_collapsing_onto_one_key_claim_neither(self) -> None:
+        """The refusal that pays for the recovery: the Labor department's
+        archive carries both "DEPUTY ASSISTANT SECRETARY" and "DEPUTY
+        ASSISTANT SECRETARY, EMPLOYMENT AND TRAINING ADMINISTRATION" under
+        ETA. Both now answer to one key, so the matcher names neither."""
+        node_map, parent_map = index_tree(load_base_graph(PROJECT_ROOT / "data" / "federal_gov_complete_1.json"))
+        archive = load_plum_archive(PROJECT_ROOT / "tests/fixtures/opm/plum/plum-archive-biden-administration.csv")
+        records, report = match_positions(archive, node_map, parent_map, root_id=ROOT_ID)
+        refused = {r["id"] for r in report["positions_title_ambiguous_in_archive"]}
+        self.assertIn("exec-dept-dol-eta-deputy-assistant-secretary", refused)
+        self.assertNotIn("exec-dept-dol-eta-deputy-assistant-secretary", records)
+
+    def test_a_recovered_listing_survives_the_stale_name_guard(self) -> None:
+        # The guard is the same comparison, so a title the matcher reached
+        # by reading the qualifier back must not then be withdrawn by it.
+        self.assertTrue(listed_title_still_names(
+            "Commissioner, CBP",
+            ["U.S. Customs & Border Protection (CBP)", "U.S. CUSTOMS AND BORDER PROTECTION"],
+            "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION"))
+        # and a renamed node must still lose it
+        self.assertFalse(listed_title_still_names(
+            "Deputy Commissioner, CBP",
+            ["U.S. Customs & Border Protection (CBP)", "U.S. CUSTOMS AND BORDER PROTECTION"],
+            "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION"))

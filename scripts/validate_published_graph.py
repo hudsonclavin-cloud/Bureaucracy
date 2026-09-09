@@ -673,6 +673,38 @@ def main(argv):
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
 
+    # A published disagreement is a claim like any other: it must name both
+    # figures, sit on the estimate it actually affected, and be a real
+    # disagreement. An empty or self-agreeing dispute block would read as a
+    # caveat where there is none.
+    bad_dispute = []
+    for node in nodes:
+        dispute = node.get("cost_weight_dispute")
+        if dispute is None:
+            continue
+        if not isinstance(dispute, dict):
+            bad_dispute.append("{} cost_weight_dispute is a {}".format(label(node), type(dispute).__name__))
+            continue
+        curated = dispute.get("curatedEmployeesParsed")
+        official = dispute.get("officialEmployees")
+        if not isinstance(curated, (int, float)) or isinstance(curated, bool) or curated <= 0:
+            bad_dispute.append("{} dispute has no curated figure".format(label(node)))
+            continue
+        if not isinstance(official, (int, float)) or isinstance(official, bool) or official <= 0:
+            bad_dispute.append("{} dispute has no official figure".format(label(node)))
+            continue
+        if official != node.get("employeesOfficial"):
+            bad_dispute.append("{} dispute cites {!r}, the node carries {!r}".format(
+                label(node), official, node.get("employeesOfficial")))
+        if abs(curated - official) / official <= 0.10:
+            bad_dispute.append("{} dispute between {} and {} is within 10%".format(label(node), curated, official))
+        if str(node.get("cost_status") or "") != "allocated" or str(node.get("cost_basis") or "") != "employee_weight":
+            bad_dispute.append("{} dispute on a {!r} cost with basis {!r}".format(
+                label(node), node.get("cost_status"), node.get("cost_basis")))
+        if not str(dispute.get("url") or "").startswith("https://"):
+            bad_dispute.append("{} dispute has no source URL".format(label(node)))
+    gate.check("every published weight dispute names both figures and is one", bad_dispute)
+
     # 14. The review queue beside the graph, when there is one.
     queue_path = graph_path.parent / "candidate_nodes.json"
     if queue_path.exists():
@@ -724,8 +756,11 @@ def main(argv):
         if str(n.get("employees") or "").strip() and not _within(n.get("employees"), n["employeesOfficial"], 0.10)
     )
     listings = [n for n in nodes if isinstance(n.get("positionListing"), dict)]
+    disputed = [n for n in nodes if isinstance(n.get("cost_weight_dispute"), dict)]
     print("  OPM headcounts       : {:,} nodes carry one; {:,} differ from the curated figure by more than 10%".format(
         len(official_counts), disagree))
+    print("  weights disputed     : {:,} allocated shares were apportioned by a headcount OPM's file contradicts".format(
+        len(disputed)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
