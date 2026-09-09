@@ -136,16 +136,34 @@ try {
   // has to be read off a node that really lacks one or the check passes on
   // nothing. Both states are asserted below, which is the point: the badge
   // must distinguish them.
+  // Estimates are withheld by default now, so any assertion about how an
+  // estimate reads has to opt in first and opt back out after. The helper is
+  // defined once, here, because the first such assertion is only a few lines
+  // below.
+  const setEstimatesShown = (shown) =>
+    page.evaluate((want) => {
+      const label = [...document.querySelectorAll("#verification-toggles label")]
+        .find((l) => /Also show estimated shares/i.test(l.textContent || ""));
+      if (!label) return false;
+      const box = label.querySelector("input");
+      if (box.checked !== want) box.click();
+      return true;
+    }, shown);
+
   await page.fill("#search-input", "Senate Leadership");
   await page.waitForTimeout(500);
   const rowLabel = await text("#search-results .sr-item .sr-type");
   check("search rows use the never-checked badge", /NO SOURCE RECORDED/.test(rowLabel), rowLabel);
   await page.locator("#search-results .sr-item").first().click();
   await page.waitForTimeout(2000);
+  const withheld = await text("#info-stats");
+  check("an estimate is withheld until asked for", /no cost known/i.test(withheld), withheld.slice(0, 300));
+  await setEstimatesShown(true);
   const info = await text("#info-stats");
   check("estimate is labelled", /ESTIMATE/.test(info), info);
   check("period line is printed", /through|As of/.test(info), info);
   check("an apportioned share is not called measured", !/MEASURED/.test(info), info);
+  await setEstimatesShown(false);
   const panel = await text("#info-panel");
   check("curated node reads no source recorded", /NO SOURCE RECORDED/.test(panel), panel.slice(0, 200));
 
@@ -308,9 +326,11 @@ try {
   check("some estimate was weighted by a headcount OPM contradicts", Boolean(disputed), "none");
   if (disputed) {
     await openByName(disputed.name);
+    await setEstimatesShown(true);
     const stats = await text("#info-stats");
     check("the estimate names both headcounts", /The headcount used is the base graph's uncited .*OPM's employment file.*reports/s.test(stats), stats.slice(0, 900));
     check("the estimate says the share was not recomputed", /The share was not recomputed from OPM's number/.test(stats), stats.slice(0, 900));
+    await setEstimatesShown(false);
   }
 
   const withListing = allNodes.find((n) => n.positionListing && typeof n.positionListing === "object");
@@ -349,31 +369,49 @@ try {
 
   // The exact-costs-only view: with it on, an apportioned share is not shown
   // as a figure at all, and the panel says why.
-  const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6 && nameCounts.get(n.name) === 1);
+  const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6
+    && !n.positionListing && nameCounts.get(n.name) === 1);
   check("some node carries an apportioned share", Boolean(allocatedNode), "none");
+  const clickEstimateToggle = () => setEstimatesShown(true);
   if (allocatedNode) {
     await openByName(allocatedNode.name);
     const before = await text("#info-stats");
-    check("its estimate is shown by default", /≈\s*\$/.test(before), before.slice(0, 300));
-    const toggled = await page.evaluate(() => {
-      const label = [...document.querySelectorAll("#verification-toggles label")]
-        .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
-      if (!label) return false;
-      label.querySelector("input").click();
-      return true;
-    });
-    check("the exact-costs-only toggle exists", toggled, "no such toggle");
+    // The default is the honest view: an estimate is not the first thing shown.
+    check("an estimate is withheld by default", /no cost known for this node/i.test(before), before.slice(0, 400));
+    check("no dollar figure is shown by default", !/≈\s*\$/.test(before), before.slice(0, 400));
+    check("the panel says what the withheld figure would have been", /share of an ancestor's measured total/.test(before), before.slice(0, 600));
+    check("the panel names the opt-in rather than blaming a hidden setting", /Also show estimated shares/.test(before), before.slice(0, 600));
+    const toggled = await clickEstimateToggle();
+    check("the estimate opt-in exists", toggled, "no such toggle");
     if (toggled) {
       const after = await text("#info-stats");
-      check("the estimate is withdrawn, not restated", /not identified for this node/i.test(after), after.slice(0, 400));
-      check("no dollar figure survives the switch", !/≈\s*\$/.test(after), after.slice(0, 400));
-      check("the panel says what the hidden figure would have been", /share of an ancestor's measured total/.test(after), after.slice(0, 500));
-      await page.evaluate(() => {
-        const label = [...document.querySelectorAll("#verification-toggles label")]
-          .find((l) => /only costs identified for the node itself/i.test(l.textContent || ""));
-        label.querySelector("input").click();
-      });
+      check("opting in shows the estimate, labelled", /≈\s*\$/.test(after), after.slice(0, 400));
+      check("the estimate still reads as derived", /Not a measured budget/.test(after), after.slice(0, 500));
+      await setEstimatesShown(false);
     }
+  }
+
+  // A measured cost is unaffected by the default: it is the node's own.
+  const measuredNode = allNodes.find((n) => n.cost_status === "official" && nameCounts.get(n.name) === 1);
+  check("some node carries a measured cost", Boolean(measuredNode), "none");
+  if (measuredNode) {
+    await openByName(measuredNode.name);
+    const stats = await text("#info-stats");
+    check("a measured cost is shown by default", /\$[\d,]+/.test(stats), stats.slice(0, 300));
+    check("a measured cost is not withheld", !/no cost known/i.test(stats), stats.slice(0, 300));
+  }
+
+  // A position with a real reported rate of pay shows it in place of the
+  // withheld estimate, under a heading that is not the word COST.
+  const paid = allNodes.find((n) => n.positionListing && typeof n.positionListing.reportedPay === "number"
+    && nameCounts.get(n.name) === 1);
+  check("some position carries a reported rate of pay", Boolean(paid), "none");
+  if (paid) {
+    await openByName(paid.name);
+    const stats = await text("#info-stats");
+    check("the rate of pay is shown by default", /REPORTED RATE OF BASIC PAY/.test(stats), stats.slice(0, 400));
+    check("the rate is not headed as a cost", !/^COST|ANNUAL COST/m.test(stats.split("REPORTED")[0]), stats.slice(0, 400));
+    check("the panel says a salary is not the unit's cost", /compensation for one post, not what this unit costs/.test(stats), stats.slice(0, 700));
   }
 
   // A node whose name states a count says how many it actually carries.
@@ -405,6 +443,7 @@ try {
   check("some node is published unavailable for a stated reason", Boolean(unavailableNode), "none");
   if (unavailableNode) {
     await openByName(unavailableNode.name);
+    await setEstimatesShown(true);
     const unavailable = await text("#info-stats");
     check("an unapportionable share reads as unavailable", /Not available|NOT AVAILABLE/.test(unavailable), unavailable);
     // The COST VALUE must not be a zero. The explanation below it is allowed to
@@ -419,6 +458,7 @@ try {
       unavailableNode === belowPrecision ? /less than one cent/i.test(unavailable) : /Nothing remains to apportion/i.test(unavailable),
       unavailable,
     );
+    await setEstimatesShown(false);
   }
 
   // The first line a visitor reads. It was hardcoded and both halves went

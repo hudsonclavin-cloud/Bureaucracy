@@ -142,6 +142,17 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.rows:
         payload = json.loads(args.rows.read_text(encoding="utf-8"))
+        # Two shapes reach this flag. A crawler payload already carries
+        # `outlayRows` and `budgetSummary`; a verbatim FiscalData response —
+        # which is what tests/fixtures/mts_table5_latest.json is, and what
+        # regenerate_published_graph.py takes — carries only `rows`, and
+        # reading it as the first shape reported "0 of 0 fetched" while
+        # silently probing nothing. Parse it the way the crawler would.
+        if "rows" in payload and not payload.get("outlayRows"):
+            from data_pipeline.crawler.treasury_outlays import parse_outlay_rows
+
+            parsed, summary = parse_outlay_rows(payload.get("rows") or [])
+            payload = {"nodes": [], "edges": [], "budgetSummary": summary or {}, "outlayRows": parsed}
     else:
         payload = fetch_payload(args.timeout)
         if args.save:

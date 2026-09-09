@@ -559,14 +559,31 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 135 of 5,195 nodes (2.6%) carry a cost a record names
+graph an estimate". 136 of 5,195 nodes (2.6%) carry a cost a record names
 for them; those cover **98.4% of the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
-subdivision a measurement, and every one is labelled `allocated` /
-`estimated_from_parent` / `unverified`. The gate prints both numbers on
-every run so "5,021 nodes with a cost" cannot be read as 5,021 known
-costs, and the site carries a **"Show only costs identified for the node
-itself"** switch that blanks every apportioned figure and says why.
+subdivision a measurement. **Since 2026-09-09 the site does not show one by
+default**, by the owner's decision: a node with no measured cost of its own
+shows no figure and says why, and ticking "Also show estimated shares of a
+parent's total" opts back in. The exception is a real salary — the 44
+positions carrying a PLUM-reported rate of basic pay show it in the cost
+block under REPORTED RATE OF BASIC PAY, never headed COST. The estimates
+stay in `graph.json` because the cascade's arithmetic and the gate's
+child-sum checks are built on them, so a consumer of the JSON must read
+`cost_status`, not `resolved_total_amount` alone. The gate prints both
+coverage numbers on every run so "5,021 nodes with a cost" cannot be read
+as 5,021 known costs.
+
+That document also works through **every one of Table 5's 78 section
+totals** and says why each does or does not reach a node, so the analysis
+need not be redone: 41 reach one, 17 are Treasury's own funds and
+groupings, 5 are object-class slices of a DoD total already applied, 9 are
+intermediate groupings covering several curated nodes each, and 5 name
+units the graph has no node for (curation, ~$78B). Exactly one alias was
+addable and is added: `Office of Federal Student Aid` → `exec-dept-ed-fsa`,
+replacing a $13.37B apportioned share with the statement's measured
+$76.05B — a 5.7× correction on a real node, licensed by the same-section
+rule and not by size, since $76.05B exceeds Education's own $52.94B net.
 
 A measured cost may sit only on an organisation: an external review of an
 older checkout reported Treasury outlays published on a node typed

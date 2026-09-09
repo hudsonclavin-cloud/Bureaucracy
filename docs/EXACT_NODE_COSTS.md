@@ -9,33 +9,40 @@ achievable route to more exact-node costs actually is.
 
 ## Where the graph stands
 
-    cost identified for the node itself:  135 of 5,195 nodes (2.6%)
-    a share of an ancestor's total:     4,886 nodes
+    cost identified for the node itself:  136 of 5,195 nodes (2.6%)
+    a share of an ancestor's total:     4,885 nodes
     unavailable:                          174 nodes
     the measured nodes cover 98.4% of the anchor, counting each only once
 
 Those two numbers are the whole picture and they point in opposite
 directions. **2.6% of nodes** carry a figure a record names for them: the
-root's Treasury anchor, and the 134 Monthly Treasury Statement Table 5 lines
+root's Treasury anchor, and the 135 Monthly Treasury Statement Table 5 lines
 applied to the nodes they name (25 of which are the receipts lines the
 exporter carries explicitly). But those nodes account for **98.4% of the
 money**. The apportioned figures are a subdivision of measured totals, not
 invented money — every one of them is some measured ancestor's dollars split
-among its children. That does not make a subdivision a measurement, and the
-site has never said it did: every one is `cost_status: allocated`,
-`cost_validation: estimated_from_parent`, `costVerificationStatus:
-unverified`, and badged as an estimate in the panel.
+among its children.
 
-Both figures are printed by `scripts/validate_published_graph.py` on every
-run, so "5,021 nodes with a cost" can never be read as 5,021 known costs.
+That does not make a subdivision a measurement, and **since 2026-09-09 the
+site does not show one by default.** The owner's decision, and the right
+one: a number nobody measured must not be the first thing a reader sees. A
+node with no measured cost of its own shows no figure at all and says why;
+ticking **"Also show estimated shares of a parent's total"** opts back in to
+the estimate, still labelled `cost_status: allocated`,
+`cost_validation: estimated_from_parent` and `costVerificationStatus:
+unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
+and the gate's child-sum checks are built on them — so a consumer of the
+JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The site now also carries a switch — **"Show only costs identified for the
-node itself"** — that blanks every apportioned figure and says why. That is
-the view the review asks for, available without deleting the estimates. If
-the estimates should go entirely, that is the owner's decision and it is one
-line in the exporter; this note is not arguing against it, only recording
-that the choice is between two honest presentations rather than between an
-honest one and a dishonest one.
+The one exception is a real salary. 44 position nodes carry a rate of basic
+pay OPM's PLUM archive reports, and those show it in place of the withheld
+estimate, under the heading REPORTED RATE OF BASIC PAY rather than COST,
+with the panel saying it is compensation for one post and not what the unit
+costs.
+
+Both coverage figures are printed by `scripts/validate_published_graph.py`
+on every run, so "5,021 nodes with a cost" can never be read as 5,021 known
+costs.
 
 ## The review's findings, checked against this branch
 
@@ -117,6 +124,70 @@ egress proxy, having worked on 2026-09-08):
 
 5. **OMB Public Budget Database** for budget authority, again as its own
    metric.
+
+## Every Treasury section total, and why it does or does not reach a node
+
+Worked through on 2026-09-09 against the committed 2026-07-31 statement
+(`tests/fixtures/mts_table5_latest.json`). Table 5 prints 78 `Total--`
+section lines. 41 reach a node; the other 37 are accounted for here, so
+nobody has to re-derive this list. **Only one was an alias this pipeline
+could add**, and it is now added.
+
+**Added (1).** `Office of Federal Student Aid`, $76.05B → `exec-dept-ed-fsa`,
+which the graph calls "Federal Student Aid (FSA)" and was publishing as a
+$13.37B share of its parent — a 5.7× correction on a real node. The statement
+files the row under the Department of Education and the graph puts the office
+there, which is the same-section test. Size is not the test and could not be:
+$76.05B exceeds Education's own $52.94B net figure, which is possible only
+because the section's receipts are carried explicitly beside it.
+
+**Not organisations — Treasury's own accounts and groupings (17).** Matching
+any of these would put a fund's or a category's money on an org-chart box.
+
+    Federal Old-Age and Survivors Insurance Trust Fund   $1,249.20B
+    Interest on Treasury Debt Securities (Gross)         $1,169.59B
+    Interest on the Public Debt                          $1,169.59B
+    Federal Supplementary Medical Insurance Trust Fund     $721.07B
+    Federal Hospital Insurance Trust Fund                  $407.64B
+    Interest Received by Trust Funds                      -$206.69B
+    Federal Disability Insurance Trust Fund                $135.60B
+    Employer Share, Employee Retirement                   -$125.57B
+    Unemployment Trust Fund                                 $35.70B
+    Airport and Airway Trust Fund                           $15.31B
+    Other Defense Civil Programs                            $58.41B
+    International Assistance Programs                       $17.34B
+    Independent Agencies                                     $4.20B
+
+**Budget categories inside a section already measured (5).** Operation and
+Maintenance ($275.87B), Military Personnel ($196.64B), Procurement
+($143.48B), Research, Development, Test and Evaluation ($130.05B) and
+Military Construction ($11.71B) are object-class slices of the Department of
+Defense, whose section total ($764.71B) is already applied to the DoD node.
+Matching them would double-count the same dollars.
+
+**Treasury's intermediate groupings, which are not the units beneath them
+(9).** Benefits Programs, Energy Programs, Administration of Foreign
+Affairs, International Security Assistance, Departmental Offices, Fish and
+Wildlife and Parks, Water and Science, Housing Programs, Land and Minerals
+Management. Each covers several curated nodes — "Fish and Wildlife and
+Parks" is the Fish and Wildlife Service *and* the National Park Service —
+so no one node is the thing the line measures. A name-overlap search
+proposes a node for every one of them, which is exactly why names may only
+propose.
+
+**Units the graph has no node for (5), which is curation, not pipeline
+work.** Administration for Children and Families ($59.94B), Corps of
+Engineers ($9.70B), Agency for International Development ($6.33B), General
+Services Administration (−$836.7M), Railroad Retirement Board ($3.30B).
+These are in `CLAUDE.md`'s known base-graph gaps with proposals in
+`CURATION.md`. Adding the nodes would make five more measured costs
+reachable, worth roughly **$78B**.
+
+`python scripts/probe_treasury_rows.py --rows tests/fixtures/mts_table5_latest.json`
+reproduces the raw lists. It previously reported "0 of 0 fetched" when
+handed a verbatim FiscalData response rather than a crawler payload, which
+made it look as though there was nothing to find; it now parses either
+shape.
 
 ## The limit, stated plainly
 

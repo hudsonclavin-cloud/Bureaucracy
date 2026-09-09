@@ -853,6 +853,14 @@ TREASURY_ROW_ALIASES = {
     "community planning and development": "exec-dept-hud-cpd",
     "energy efficiency and renewable energy": "exec-dept-doe-eere",
     "white house": "exec-eop-who",
+    # The statement's own name for the office the graph calls "Federal Student
+    # Aid (FSA)". Table 5 files it under the Department of Education, which is
+    # where the graph puts it, so it passes the same-section test; the size is
+    # not the test and could not be — its $76.05B sits inside Education's
+    # $52.94B net figure precisely because the section's receipts are carried
+    # explicitly beside it. Worth one more measured node than any other line
+    # left unapplied that names a unit this graph actually has.
+    "office of federal student aid": "exec-dept-ed-fsa",
 }
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
