@@ -57,11 +57,18 @@ LEDGER_DIR = PROJECT_ROOT / "data" / "audit" / "nominations"
 # Run as a script, the repository root is not on sys.path.
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
+# Imported under a distinct name on purpose. This module already defines its
+# own `is_organisation` further down, and the two tests are deliberately
+# different: for PAGE nomination a committee is an organisation (the Senate's
+# committees have real pages and the repo has nominated them), while for a
+# MEASURED COST the release gate refuses a committee outright. Importing the
+# stricter one as `is_organisation` silently shadowed it — the guard below
+# then ran the looser local test and let a committee through.
 from data_pipeline.verification.financial_evidence import (  # noqa: E402
     BASES as FINANCIAL_BASES,
     NON_MONETARY_BASES as FINANCIAL_NON_MONETARY_BASES,
     POSITION_ONLY_BASES as FINANCIAL_POSITION_ONLY_BASES,
-    is_organisation,
+    is_organisation as may_carry_a_measured_cost,
 )
 
 KINDS = ("source", "cost")
@@ -333,7 +340,7 @@ def validate_cost(record, node):
     # post, an organisation's money is not, and a headcount is not a cost at
     # all. A nomination is only a proposal, but proposing to look up a
     # department's "rate of basic pay" wastes the fetch it earns.
-    node_is_org = is_organisation(node)
+    node_is_org = may_carry_a_measured_cost(node)
     metric = record["metric"]
     if metric in FINANCIAL_POSITION_ONLY_BASES and node_is_org:
         raise Rejected(f"{node_id}: {metric!r} is one post's pay and cannot be nominated for an organisation")

@@ -252,11 +252,46 @@ class SourceAndBasisTestCase(unittest.TestCase):
     def test_a_headcount_printed_in_thousands_has_a_unit_for_it(self):
         out = fe.validate_record(
             rec(costBasis="full_time_equivalents", units="thousands_count",
-                normalizedMultiplier=1000, unitsEvidence="FTE in thousands",
-                amountRaw="10,248", amount=10248000.0),
+                normalizedMultiplier=1000, unitsEvidence="Staffing (FTE in thousands)",
+                amountRaw="10.2", amount=10200.0,
+                quote="Civilian Board of Contract Appeals .......... 10.2"),
             ORG,
         )
-        self.assertEqual(out["amount"], 10248000.0)
+        self.assertEqual(out["amount"], 10200.0)
+
+    def test_the_same_fte_heading_cannot_also_pass_as_a_bare_count(self):
+        # "FTE in thousands" contains "fte"; longest match decides, so the
+        # heading states thousands_count and only that. Declaring `count`
+        # over it would publish 10.2 staff instead of 10,200.
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(
+                rec(costBasis="full_time_equivalents", units="count",
+                    normalizedMultiplier=1, unitsEvidence="Staffing (FTE in thousands)",
+                    amountRaw="10.2", amount=10.2,
+                    quote="Civilian Board of Contract Appeals .......... 10.2"),
+                ORG,
+            )
+
+    def test_a_headcount_has_a_plausibility_bound_too(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(
+                rec(costBasis="full_time_equivalents", units="thousands_count",
+                    normalizedMultiplier=1000, unitsEvidence="Staffing (FTE in thousands)",
+                    amountRaw="99,999", amount=99999000.0,
+                    quote="Civilian Board of Contract Appeals .......... 99,999"),
+                ORG,
+            )
+
+    def test_a_heading_stating_no_scale_does_not_satisfy_a_count(self):
+        # "fte" occurs inside "after"; a bare substring test accepted this
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(
+                rec(costBasis="full_time_equivalents", units="count",
+                    normalizedMultiplier=1, unitsEvidence="Staffing after reorganisation",
+                    amountRaw="10.2", amount=10.2,
+                    quote="Civilian Board of Contract Appeals .......... 10.2"),
+                ORG,
+            )
 
 
 class PeriodTestCase(unittest.TestCase):
@@ -446,11 +481,20 @@ class DoubleCountingTestCase(unittest.TestCase):
         findings = fe.double_counted([GOOD, rec(rollupRole="total", amount=20000000.0)])
         self.assertEqual(findings[0]["shape"], "total_beside_its_lines")
 
-    def test_the_same_role_recorded_twice_is_flagged(self):
-        # the shape that actually happens when a figure is re-extracted
-        twice = rec(sourceUrl="https://www.gsa.gov/revised-cj.pdf", documentSha256="c" * 64)
-        findings = fe.double_counted([GOOD, twice])
-        self.assertEqual(findings[0]["shape"], "same_role_recorded_twice")
+    def test_the_same_row_of_the_same_document_recorded_twice_is_flagged(self):
+        findings = fe.double_counted([GOOD, rec()])
+        self.assertEqual(findings[0]["shape"], "same_row_recorded_twice")
+
+    def test_two_documents_agreeing_is_corroboration_not_double_counting(self):
+        # an earlier fix flagged this, which fires on ordinary good evidence
+        second = rec(sourceUrl="https://www.gsa.gov/other.pdf", documentSha256="c" * 64,
+                     locator={"pdfPage": 9, "table": "Detail", "row": "Civilian Board"})
+        self.assertEqual(fe.double_counted([GOOD, second]), [])
+
+    def test_two_appropriation_lines_of_one_unit_are_not_double_counting(self):
+        other_line = rec(documentSha256="c" * 64,
+                         locator={"pdfPage": 7, "table": "Detail", "row": "Salaries and Expenses"})
+        self.assertEqual(fe.double_counted([GOOD, other_line]), [])
 
     def test_one_record_is_not_double_counted(self):
         self.assertEqual(fe.double_counted([GOOD]), [])

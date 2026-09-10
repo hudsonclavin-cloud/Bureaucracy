@@ -47,6 +47,7 @@ discipline `evidence.py` uses to decide whether a page names a unit.
 
 from __future__ import annotations
 
+import json
 import math
 import re
 from dataclasses import dataclass
@@ -106,14 +107,22 @@ COUNT_UNITS = {"count", "thousands_count"}
 #: must carry one of the declared unit's phrases and none of a conflicting
 #: unit's — that is what turns the units claim from a free-text declaration
 #: into something a reviewer can check against the page.
+#: Phrases are matched on word boundaries, not as bare substrings: "fte"
+#: occurs inside "after", so a heading stating no scale at all used to satisfy
+#: a count declaration.
 UNIT_PHRASES = {
     "usd": ("in dollars", "whole dollars", "(dollars)", "in actual dollars"),
     "thousands_usd": ("in thousands", "(thousands)", "$000", "thousands of dollars"),
     "millions_usd": ("in millions", "(millions)", "millions of dollars"),
     "billions_usd": ("in billions", "(billions)", "billions of dollars"),
     "count": ("full-time equivalent", "full time equivalent", "fte", "positions", "staff years"),
-    "thousands_count": ("fte in thousands", "positions in thousands"),
+    "thousands_count": ("fte in thousands", "positions in thousands", "full-time equivalent in thousands"),
 }
+
+#: A headcount has a plausibility bound too. The whole federal civilian
+#: workforce is about three million; the ceiling used to be skipped for every
+#: non-monetary basis, so a headcount had no bound at all.
+DEFAULT_COUNT_CEILING = 10_000_000.0
 
 #: How the period is bounded. Free text here was a real defect: re-wording
 #: "full fiscal year" as "Full Fiscal Year" made two records incomparable, so
@@ -178,6 +187,41 @@ _DIGITS = re.compile(r"[\d.]+")
 
 def _text(value: Any) -> str:
     return "" if value is None else str(value).strip()
+
+
+def _matched_phrase(heading: str, units: str) -> str:
+    """The longest phrase of `units` this heading states, on word boundaries.
+
+    Word boundaries because a bare substring test read "fte" out of the
+    ordinary word "after", so a heading stating no scale at all satisfied a
+    count declaration.
+    """
+    best = ""
+    for phrase in UNIT_PHRASES[units]:
+        if len(phrase) > len(best) and re.search(
+            rf"(?<![a-z0-9]){re.escape(phrase)}(?![a-z0-9])", heading
+        ):
+            best = phrase
+    return best
+
+
+def scale_stated_by(heading: str, kind: str) -> tuple[str | None, str]:
+    """Which unit of `kind` this heading actually states, and the phrase.
+
+    Longest match wins, and that is the whole point. "FTE in thousands"
+    contains "fte", so a rule of "matches mine and none of the others" made
+    that heading self-contradictory and refused an honest record. It also, in
+    the other direction, let the heading satisfy a bare `count` declaration —
+    two readings 1000x apart off one line of text. The most specific phrase
+    the heading contains is the scale it states.
+    """
+    units_of_kind = COUNT_UNITS if kind == "count" else MONETARY_UNITS
+    best_unit, best_phrase = None, ""
+    for unit in sorted(units_of_kind):
+        phrase = _matched_phrase(heading, unit)
+        if len(phrase) > len(best_phrase):
+            best_unit, best_phrase = unit, phrase
+    return best_unit, best_phrase
 
 
 def _is_real_number(value: Any) -> bool:
@@ -395,18 +439,18 @@ def validate_record(
             f"{node_id}: unitsEvidence is required — the verbatim heading or note in which the "
             "document states its scale. Without it the units check only compares the record to itself."
         )
-    if not any(phrase in units_evidence for phrase in UNIT_PHRASES[units]):
+    kind = "count" if units in COUNT_UNITS else "money"
+    stated, phrase = scale_stated_by(units_evidence, kind)
+    if stated is None:
         raise Rejected(
-            f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} does not state {units!r} "
+            f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
             f"(expected one of {UNIT_PHRASES[units]})"
         )
-    for other, phrases in UNIT_PHRASES.items():
-        if other == units or other in COUNT_UNITS or units in COUNT_UNITS:
-            continue
-        if any(phrase in units_evidence for phrase in phrases):
-            raise Rejected(
-                f"{node_id}: unitsEvidence states {other!r} but the record declares {units!r}"
-            )
+    if stated != units:
+        raise Rejected(
+            f"{node_id}: unitsEvidence states {stated!r} (on {phrase!r}) but the record "
+            f"declares {units!r}"
+        )
 
     quote = _text(record.get("quote"))
     if len(quote) < 8:
@@ -436,8 +480,11 @@ def validate_record(
         raise Rejected(f"{node_id}: amount is zero; zero is never published as a measurement")
     # The ceiling is the caller's, never the record's. Reading it off the
     # record would let a record grant itself an exemption from the one check
-    # that catches a units error surviving everything else.
-    if basis not in NON_MONETARY_BASES and abs(float(amount)) > amount_ceiling:
+    # that catches a units error surviving everything else. A headcount gets
+    # its own bound rather than no bound: exempting every non-monetary basis
+    # left a staff count with nothing to exceed.
+    ceiling = DEFAULT_COUNT_CEILING if basis in NON_MONETARY_BASES else amount_ceiling
+    if abs(float(amount)) > ceiling:
         raise Rejected(
             f"{node_id}: amount {amount!r} exceeds the whole government's outlays; "
             "a figure this size is a units error, not a unit's budget"
@@ -621,10 +668,17 @@ def detect_conflicts(records: Iterable[Mapping[str, Any]]) -> list[dict[str, Any
 def double_counted(records: Iterable[Mapping[str, Any]]) -> list[dict[str, Any]]:
     """The same money stored twice for one unit and period.
 
-    Two shapes, both of which the first draft missed one of: a total row kept
-    beside the lines it totals, and the same role recorded twice from two
-    documents. The second is the one that actually happens when a figure is
-    re-extracted from a revised PDF.
+    Two shapes. A total row kept beside the lines it totals; and the same row
+    of the *same document* recorded twice, which is what happens when an
+    extractor runs again.
+
+    Deliberately NOT flagged: two same-role records from two different
+    documents. That is corroboration, or a genuine disagreement — and
+    `detect_conflicts` is what reports the second. An earlier version flagged
+    it as double counting, which fired on ordinary good evidence: a unit
+    funded from two appropriation accounts, and a figure confirmed by a second
+    source. A validator that refuses honest data gets worked around, and the
+    workaround is where the real damage happens.
     """
     groups: dict[tuple, list[Mapping[str, Any]]] = {}
     for record in records:
@@ -642,7 +696,10 @@ def double_counted(records: Iterable[Mapping[str, Any]]) -> list[dict[str, Any]]
     for (node_id, basis, year, coverage, as_of), group in groups.items():
         roles = [_text(r.get("rollupRole")) for r in group]
         mixed = len(set(roles)) > 1 and set(roles) & {"total", "subtotal"}
-        repeated = len(group) > 1 and len(set(roles)) == 1
+        # the same row of the same document, recorded twice
+        stamps = [(_text(r.get("documentSha256")), json.dumps(r.get("locator"), sort_keys=True, default=str))
+                  for r in group]
+        repeated = len(stamps) != len(set(stamps))
         if mixed or repeated:
             findings.append(
                 {
@@ -652,7 +709,7 @@ def double_counted(records: Iterable[Mapping[str, Any]]) -> list[dict[str, Any]]
                     "periodCoverage": coverage,
                     "periodAsOf": as_of,
                     "roles": sorted(set(roles)),
-                    "shape": "total_beside_its_lines" if mixed else "same_role_recorded_twice",
+                    "shape": "total_beside_its_lines" if mixed else "same_row_recorded_twice",
                 }
             )
     return findings
