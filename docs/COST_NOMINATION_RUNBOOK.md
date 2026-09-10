@@ -39,22 +39,39 @@ this node yet, skip it — do not run ahead.
 
 ---
 
-## The five numbers, and never confusing them
+## The numbers, and never confusing them
 
-This is the single most important thing in this runbook. "Cost" is five
+This is the single most important thing in this runbook. "Cost" is many
 different measurements and the graph must never let one stand in for another.
+
+The list is defined once, in `data_pipeline/verification/financial_evidence.py`
+as `BASES`, and imported here — one vocabulary, so a figure the evidence side
+can record is always a figure the nomination side can name.
 
 | `metric` | What it answers | Source system | Notes |
 |---|---|---|---|
 | `audited_net_cost` | What did this entity cost? | `agency_afr` | Audited, accrual basis. The best answer and the only audited one. |
-| `net_outlays` | What cash went out? | `treasury_mts`, `usaspending_file_ab` | What this graph already publishes. Not cost. |
+| `net_outlays` | What cash went out, net of receipts? | `treasury_mts`, `usaspending_file_ab` | What this graph already publishes. Not cost. |
+| `gross_outlays` | What cash went out, before receipts? | `treasury_mts` | The statement prints both. On a large agency they differ by billions. |
 | `obligations` | What was committed? | `usaspending_file_ab` | A commitment, not spending. |
 | `budget_authority` | What was made available? | `usaspending_file_ab`, `omb_public_budget` | A plan, not an outcome. |
+| `appropriations` | What did Congress enact? | `appropriations_act`, `omb_public_budget` | Enacted, but not yet spent, and often keyed by account rather than by organisation. |
+| `budget_request` | What did the agency ask for? | `congressional_justification` | **Not spending, and not even funding.** A request made before the year began, which Congress may cut, ignore, or supersede. It is the most granular figure available by organisation, and the least authoritative. |
+| `payroll` | What does this unit's staff cost? | `agency_afr`, `congressional_justification` | An input to cost, not cost. |
 | `basic_pay` | What does this post pay? | `opm_pay_table` | Compensation for one post. **Never** an organisation's cost. |
+| `full_time_equivalents` | How many staff-years? | `congressional_justification` | Not money at all. Carried because budget tables report it beside the dollars, and because it is the honest answer when a unit's money cannot be separated but its staffing can. Never rendered with a currency symbol. |
 
 Nominate the metric that source actually reports. Do not nominate
 `audited_net_cost` and point at a Treasury outlay line; they are different
 numbers about different things and the difference is often large.
+
+**On `budget_request` in particular.** Congressional Justifications are the
+only source that reports by office and budget activity *with organisation
+names attached*, which makes them the most promising route past 136 measured
+nodes. They are also the weakest basis in this table. Nominating one is
+correct; letting the site render it under a heading a reader parses as
+"what this costs" is not. The basis and the fiscal period travel with the
+figure everywhere, or the figure does not travel.
 
 ---
 

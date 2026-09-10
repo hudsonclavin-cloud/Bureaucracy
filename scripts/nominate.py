@@ -54,6 +54,11 @@ SITES = EVIDENCE_DIR / "official_sites.json"
 PROVENANCE = EVIDENCE_DIR / "official_sites_provenance.json"
 LEDGER_DIR = PROJECT_ROOT / "data" / "audit" / "nominations"
 
+# Run as a script, the repository root is not on sys.path.
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+from data_pipeline.verification.financial_evidence import BASES as FINANCIAL_BASES  # noqa: E402
+
 KINDS = ("source", "cost")
 
 # A page nomination must be somewhere the verifier will agree to fetch and
@@ -65,7 +70,15 @@ SOURCE_ROLES = ("own_site", "parent_listing", "official_list")
 
 # What a cost nomination may name. Each is a different measurement and the
 # graph must never let one stand in for another.
-COST_METRICS = ("net_outlays", "audited_net_cost", "obligations", "budget_authority", "basic_pay")
+#
+# One vocabulary, defined once. This list used to be five names written here
+# and a different, longer list written in the evidence module — two spellings
+# of one concept, which is how a nomination for a Congressional Justification
+# (which reports a budget *request*) became inexpressible while the evidence
+# side could record it happily. Nothing is lost by widening it: every one of
+# the 5,195 cost nominations on file is a noCandidate carrying no metric at
+# all, so there is no stored value to migrate.
+COST_METRICS = tuple(sorted(FINANCIAL_BASES))
 COST_SYSTEMS = ("treasury_mts", "usaspending_file_ab", "agency_afr", "omb_public_budget", "opm_pay_table")
 
 CONFIDENCES = ("likely", "speculative")
