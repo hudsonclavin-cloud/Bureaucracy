@@ -57,7 +57,12 @@ LEDGER_DIR = PROJECT_ROOT / "data" / "audit" / "nominations"
 # Run as a script, the repository root is not on sys.path.
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
-from data_pipeline.verification.financial_evidence import BASES as FINANCIAL_BASES  # noqa: E402
+from data_pipeline.verification.financial_evidence import (  # noqa: E402
+    BASES as FINANCIAL_BASES,
+    NON_MONETARY_BASES as FINANCIAL_NON_MONETARY_BASES,
+    POSITION_ONLY_BASES as FINANCIAL_POSITION_ONLY_BASES,
+    is_organisation,
+)
 
 KINDS = ("source", "cost")
 
@@ -322,6 +327,23 @@ def validate_cost(record, node):
         raise Rejected(f"{node_id}: no identifiers and noCandidate is not set")
     if record.get("metric") not in COST_METRICS:
         raise Rejected(f"{node_id}: metric {record.get('metric')!r} is not one of {COST_METRICS}")
+    # The same node-kind rule the release gate and the evidence validator both
+    # apply. It was missing here before the vocabulary was widened and the
+    # widening made it reachable in more ways: a rate of pay is a fact about a
+    # post, an organisation's money is not, and a headcount is not a cost at
+    # all. A nomination is only a proposal, but proposing to look up a
+    # department's "rate of basic pay" wastes the fetch it earns.
+    node_is_org = is_organisation(node)
+    metric = record["metric"]
+    if metric in FINANCIAL_POSITION_ONLY_BASES and node_is_org:
+        raise Rejected(f"{node_id}: {metric!r} is one post's pay and cannot be nominated for an organisation")
+    if metric not in FINANCIAL_POSITION_ONLY_BASES and not node_is_org:
+        raise Rejected(f"{node_id}: {metric!r} is an organisation's measure and cannot be nominated for a {node.get('type')!r}")
+    if metric in FINANCIAL_NON_MONETARY_BASES:
+        raise Rejected(
+            f"{node_id}: {metric!r} is a headcount, not a cost. It is a valid financial-evidence "
+            "basis but not something to nominate as a node's cost identifier."
+        )
     for identifier in identifiers:
         if not isinstance(identifier, dict):
             raise Rejected(f"{node_id}: an identifier is not an object")

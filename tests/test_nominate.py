@@ -215,11 +215,51 @@ class CostNominationTests(HarnessTestCase):
         }], kind="cost"), 0)
 
     def test_an_unknown_metric_is_refused(self) -> None:
-        # The five numbers are different measurements; a sixth is a category
-        # error waiting to be published.
+        # Each name is a different measurement; one that is not in the
+        # vocabulary is a category error waiting to be published.
         self.assertEqual(self.record([{
             "id": "bureau", "metric": "spending",
             "identifiers": [{"system": "treasury_mts", "key": "x", "basis": "y", "confidence": "likely"}],
+        }], kind="cost"), 1)
+
+    def test_a_budget_request_is_nominable_now_the_vocabulary_carries_it(self) -> None:
+        # Congressional Justifications report requests, and a request used to
+        # be inexpressible here while the evidence side could record it.
+        self.assertEqual(self.record([{
+            "id": "bureau", "metric": "budget_request",
+            "identifiers": [{"system": "omb_public_budget", "key": "015-10",
+                             "basis": "the CJ prints this bureau as its own row",
+                             "confidence": "likely"}],
+        }], kind="cost"), 0)
+
+    def test_a_rate_of_pay_is_refused_for_an_organisation(self) -> None:
+        # The same node-kind rule the release gate and the evidence validator
+        # apply. Widening the vocabulary made this reachable more ways.
+        self.assertEqual(self.record([{
+            "id": "bureau", "metric": "basic_pay",
+            "identifiers": [{"system": "opm_pay_table", "key": "EX-II", "basis": "y", "confidence": "likely"}],
+        }], kind="cost"), 1)
+
+    def test_an_organisations_measure_is_refused_for_a_position(self) -> None:
+        self.assertEqual(self.record([{
+            "id": "post", "metric": "net_outlays",
+            "identifiers": [{"system": "treasury_mts", "key": "x", "basis": "y", "confidence": "likely"}],
+        }], kind="cost"), 1)
+
+    def test_a_rate_of_pay_is_accepted_for_a_position(self) -> None:
+        self.assertEqual(self.record([{
+            "id": "post", "metric": "basic_pay",
+            "identifiers": [{"system": "opm_pay_table", "key": "EX-II",
+                             "basis": "the archive reports this post at Level II",
+                             "confidence": "likely"}],
+        }], kind="cost"), 0)
+
+    def test_a_headcount_is_not_a_cost_identifier(self) -> None:
+        # A valid financial-evidence basis, but not something to nominate as
+        # a node's cost.
+        self.assertEqual(self.record([{
+            "id": "bureau", "metric": "full_time_equivalents",
+            "identifiers": [{"system": "omb_public_budget", "key": "x", "basis": "y", "confidence": "likely"}],
         }], kind="cost"), 1)
 
     def test_an_unknown_system_is_refused(self) -> None:
