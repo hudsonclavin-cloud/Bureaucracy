@@ -198,6 +198,17 @@ def table_pay_violations(node, pay, listing, today, label):
         say("verifies its own existence with a salary table that names no post")
     if method and str(node.get("placementMethod") or "") == method:
         say("places itself with a salary table that names no post")
+    # And the table's URL must not be among the node's sources. pay_tables
+    # deliberately writes no sourceUrls, but that was abstinence with nothing
+    # enforcing it: `verify_node_sources` counts URLs and classifies hosts, so
+    # one more .gov URL adds `official_site` and carries confidence 0.5 -> 0.8.
+    # It happened — 29 posts published `verified` on a five-row table naming no
+    # post, and the graph went 49 -> 78 verified with the gate reporting clean.
+    # Worse, it would have been unwithdrawable: the sweep in evidence.py takes
+    # back only the URLs a module recorded in `evidenceUrls`, and this module
+    # records none. Checked from the artefact so the rule survives the module.
+    if str(pay.get("url") or "") in [str(u) for u in (node.get("sourceUrls") or [])]:
+        say("cites the salary table among the sources that it exists; five rank rates name no post")
     return out
 
 

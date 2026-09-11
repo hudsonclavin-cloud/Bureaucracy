@@ -43,7 +43,14 @@ from scripts.validate_published_graph import (
 from scripts.validate_published_graph import main as gate_main
 
 TEST_TMP_ROOT = Path(__file__).resolve().parent / ".tmp"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ROOT_ID = "the-constitution-of-the-united-states"
+
+
+def _walk(node):
+    yield node
+    for child in node.get("children") or []:
+        yield from _walk(child)
 
 PAGE = """
 <html><body>
@@ -720,6 +727,34 @@ class ScriptAndGateTestCase(unittest.TestCase):
         path.write_text(json.dumps(graph), encoding="utf-8")
         code, out = self._gate(path)
         self.assertEqual(code, 1, out)
+
+    def test_the_gate_refuses_the_salary_table_counted_as_proof_the_post_exists(self):
+        # The regression that actually happened: one more .gov URL in
+        # sourceUrls adds `official_site` and carries confidence 0.5 -> 0.8, so
+        # 29 posts published `verified` on a table naming no post and the
+        # graph went 49 -> 78 verified. pay_tables not writing the URL is not
+        # enough on its own — nothing recorded it in evidenceUrls, so if it
+        # ever arrived it could not be withdrawn either.
+        self._derive()
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        node = index_tree(graph)[0]["cisa-director"]
+        node["sourceUrls"] = [*(node.get("sourceUrls") or []), node["positionPayRate"]["url"]]
+        node["sourceCount"] = len(node["sourceUrls"])
+        path = self.tmp / "bad.json"
+        path.write_text(json.dumps(graph), encoding="utf-8")
+        code, out = self._gate(path)
+        self.assertEqual(code, 1, out)
+        self.assertIn("five rank rates name no post", out)
+
+    def test_the_published_graph_does_not_cite_the_table_as_a_source_of_existence(self):
+        # The other direction, against the real artefact rather than a fixture.
+        graph = json.loads((PROJECT_ROOT / "output" / "graph.json").read_text(encoding="utf-8"))
+        priced = [n for n in _walk(graph) if isinstance(n.get("positionPayRate"), dict)]
+        self.assertTrue(priced, "no node carries a salary-table rate")
+        for node in priced:
+            self.assertNotIn(node["positionPayRate"]["url"], [str(u) for u in (node.get("sourceUrls") or [])],
+                             node.get("id"))
 
     def test_the_gate_refuses_a_rate_of_pay_dressed_as_a_measured_cost(self):
         self._derive()
