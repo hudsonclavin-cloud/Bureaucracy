@@ -669,6 +669,13 @@ def apply_position_evidence(
             "payLevel": record.get("payLevel"),
             "reportedPay": record.get("reportedPay"),
             "reportedPayText": record.get("reportedPayText"),
+            # Whether one archive row carried this pay plan and this level
+            # together. Published rather than kept in the evidence file so the
+            # exporter and the release gate can both check it: pay_tables
+            # refuses a pair the archive never printed on one row, and a rule
+            # only the deriver can see is a rule a stale or hand-edited
+            # evidence file walks straight past.
+            "payPlanAndLevelOnOneRow": record.get("payPlanAndLevelOnOneRow"),
             "incumbencies": record.get("incumbencies"),
             "standing": record.get("standing"),
             # Which rows the type, pay plan and level were read off: with no

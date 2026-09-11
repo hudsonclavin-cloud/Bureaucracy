@@ -152,11 +152,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.agriculture.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Agriculture, Nutrition, and Forestry",
@@ -165,11 +169,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:53Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-appropriations",
@@ -210,11 +210,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Appropriations",
@@ -223,11 +227,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies",
@@ -272,6 +272,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Commerce, Justice, Science, and Related Agencies",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Commerce, Justice, Science, and Related Agencies",
@@ -280,18 +291,7 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.appropriations.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Commerce, Justice, Science, and Related Agencies",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-energy-water-development",
@@ -336,6 +336,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Energy and Water Development",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Energy and Water Development",
@@ -344,18 +355,7 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.appropriations.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Energy and Water Development",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-financial-services-general-government",
@@ -400,6 +400,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Financial Services and General Government",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Financial Services and General Government",
@@ -408,18 +419,111 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
+    "parentId": "leg-senate-cmte-appropriations"
+  },
+  {
+    "id": "leg-senate-cmte-appropriations-sub-homeland-security",
+    "name": "Homeland Security",
+    "type": "Subcommittee",
+    "desc": "Subcommittee of the Senate Appropriations Committee.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.appropriations.senate.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.appropriations.senate.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
     "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
     "placementVerified": true,
     "placementUrl": "https://www.appropriations.senate.gov/",
     "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Financial Services and General Government",
+    "placementMatchedText": "Homeland Security",
     "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
     "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "resolved_total_amount": 9750208.58,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-senate-cmte-appropriations"
+  },
+  {
+    "id": "leg-senate-cmte-appropriations-sub-interior-environment-related-agencies",
+    "name": "Interior, Environment & Related Agencies",
+    "type": "Subcommittee",
+    "desc": "Subcommittee of the Senate Appropriations Committee.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.appropriations.senate.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.appropriations.senate.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Interior, Environment, and Related Agencies",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9750208.58,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-legislative-branch",
@@ -464,6 +568,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Legislative Branch",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Legislative Branch",
@@ -472,18 +587,7 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.appropriations.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Legislative Branch",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies",
@@ -528,6 +632,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "Military Construction, Veterans Affairs, and Related Agencies",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
@@ -536,18 +651,7 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.appropriations.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Military Construction, Veterans Affairs, and Related Agencies",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs",
@@ -592,6 +696,17 @@
       "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementVerified": true,
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-appropriations",
+    "placementMatchedText": "State, Foreign Operations, and Related Programs",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on State, Foreign Operations, and Related Programs",
@@ -600,18 +715,7 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.appropriations.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "State, Foreign Operations, and Related Programs",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-appropriations",
-    "verificationSiteFrom": "leg-senate-cmte-appropriations",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-appropriations"
   },
   {
     "id": "leg-senate-cmte-armed-services",
@@ -652,11 +756,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.armed-services.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-armed-services",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Armed Services",
@@ -665,11 +773,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:56Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-armed-services",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-armed-services-sub-airland",
@@ -827,6 +931,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:56Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-armed-services",
+    "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
@@ -840,10 +947,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:56Z",
-    "placementParentId": "leg-senate-cmte-armed-services",
     "placementMatchedText": "Subcommittee on Emerging Threats and Capabilities",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-armed-services"
@@ -945,6 +1049,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:56Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-armed-services",
+    "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
@@ -958,10 +1065,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:56Z",
-    "placementParentId": "leg-senate-cmte-armed-services",
     "placementMatchedText": "Subcommittee on Readiness and Management Support",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-armed-services"
@@ -1063,6 +1167,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:56Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-armed-services",
+    "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
@@ -1076,10 +1183,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:56Z",
-    "placementParentId": "leg-senate-cmte-armed-services",
     "placementMatchedText": "Subcommittee on Strategic Forces",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-armed-services"
@@ -1176,6 +1280,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:57Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
@@ -1189,10 +1296,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:57Z",
-    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementMatchedText": "Subcommittee on Economic Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
@@ -1235,6 +1339,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:57Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
@@ -1248,10 +1355,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:57Z",
-    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementMatchedText": "Subcommittee on Financial Institutions and Consumer Protection",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
@@ -1294,6 +1398,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:57Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
@@ -1307,10 +1414,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:57Z",
-    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementMatchedText": "Subcommittee on Housing, Transportation, and Community Development",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
@@ -1353,6 +1457,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:57Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
@@ -1366,10 +1473,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:57Z",
-    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementMatchedText": "Subcommittee on National Security and  International Trade and Finance",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
@@ -1412,6 +1516,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:20:57Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
@@ -1425,10 +1532,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:57Z",
-    "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementMatchedText": "Subcommittee on Securities, Insurance, and Investment",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
@@ -1470,8 +1574,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:59Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.budget.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
     ],
@@ -1483,13 +1590,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:59Z"
     },
+    "lastVerified": "2026-09-08T19:20:59Z",
     "evidenceVerifiedAt": "2026-09-08T19:20:59Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-commerce-science-transportation",
@@ -1530,11 +1634,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.commerce.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Commerce, Science, and Transportation",
@@ -1543,11 +1651,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:00Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources",
@@ -1588,11 +1692,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Energy and Natural Resources",
@@ -1601,11 +1709,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-energy",
@@ -1709,6 +1813,17 @@
       "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementVerified": true,
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedText": "National Parks",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on National Parks",
@@ -1717,18 +1832,7 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.energy.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "National Parks",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-energy-natural-resources",
-    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-energy-natural-resources"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining",
@@ -1773,6 +1877,17 @@
       "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementVerified": true,
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedText": "Public Lands, Forests & Mining",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Public Lands, Forests, and Mining",
@@ -1781,18 +1896,7 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.energy.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "Public Lands, Forests & Mining",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-energy-natural-resources",
-    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-energy-natural-resources"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-water-power",
@@ -1837,6 +1941,17 @@
       "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementVerified": true,
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedText": "Water & Power",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Subcommittee on Water and Power",
@@ -1845,18 +1960,7 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_parent_official_page",
-    "placementVerified": true,
-    "placementUrl": "https://www.energy.senate.gov/",
-    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "Water & Power",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "parentId": "leg-senate-cmte-energy-natural-resources",
-    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedIn": "content",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-cmte-energy-natural-resources"
   },
   {
     "id": "leg-senate-cmte-environment-public-works",
@@ -2128,11 +2232,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.finance.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-finance",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Finance",
@@ -2141,11 +2249,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-finance",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure",
@@ -2185,6 +2289,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2198,10 +2305,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on Energy, Natural Resources, and Infrastructure",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2244,6 +2348,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2257,10 +2364,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on Fiscal Responsibility and Economic Growth",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2303,6 +2407,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2316,10 +2423,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on Health Care",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2362,6 +2466,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2375,10 +2482,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on International Trade, Customs, and Global Competitiveness",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2421,6 +2525,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2434,10 +2541,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on Social Security, Pensions, and Family Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2480,6 +2584,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:04Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-finance",
+    "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
@@ -2493,10 +2600,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:04Z",
-    "placementParentId": "leg-senate-cmte-finance",
     "placementMatchedText": "Subcommittee on Taxation and IRS Oversight",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-finance"
@@ -2540,11 +2644,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.foreign.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Foreign Relations",
@@ -2553,11 +2661,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-foreign-relations",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy",
@@ -2597,6 +2701,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2610,10 +2717,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on Africa and Global Health Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2656,6 +2760,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2669,10 +2776,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on East Asia, the Pacific, and International Cybersecurity Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2715,6 +2819,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2728,10 +2835,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on Europe and Regional Security Cooperation",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2774,6 +2878,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2787,10 +2894,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2833,6 +2937,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2846,10 +2953,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on Near East, South Asia, Central Asia, and Counterterrorism",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2892,6 +2996,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2905,10 +3012,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on State Department and USAID Management, International Operations, and Bilateral International Development",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -2951,6 +3055,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:05Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-foreign-relations",
+    "placementVerifiedAt": "2026-09-08T19:21:05Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
@@ -2964,10 +3071,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
-    "placementParentId": "leg-senate-cmte-foreign-relations",
     "placementMatchedText": "Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-foreign-relations"
@@ -3011,11 +3115,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.help.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-health-education-labor-pensions",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Health, Education, Labor, and Pensions",
@@ -3024,11 +3132,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:07Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-health-education-labor-pensions",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety",
@@ -3068,6 +3172,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:07Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-health-education-labor-pensions",
+    "placementVerifiedAt": "2026-09-08T19:21:07Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml"
     ],
@@ -3081,10 +3188,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:07Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:07Z",
-    "placementParentId": "leg-senate-cmte-health-education-labor-pensions",
     "placementMatchedText": "Subcommittee on Employment and Workplace Safety",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-health-education-labor-pensions"
@@ -3127,6 +3231,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:07Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-health-education-labor-pensions",
+    "placementVerifiedAt": "2026-09-08T19:21:07Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml"
     ],
@@ -3140,10 +3247,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:07Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:07Z",
-    "placementParentId": "leg-senate-cmte-health-education-labor-pensions",
     "placementMatchedText": "Subcommittee on Primary Health and Retirement Security",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-health-education-labor-pensions"
@@ -3187,11 +3291,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.hsgac.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-homeland-security-governmental-affairs",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Homeland Security and Governmental Affairs",
@@ -3200,11 +3308,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:06Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-homeland-security-governmental-affairs",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-judiciary",
@@ -3243,8 +3347,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:09Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.judiciary.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
     ],
@@ -3256,13 +3363,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:09Z"
     },
+    "lastVerified": "2026-09-08T19:21:09Z",
     "evidenceVerifiedAt": "2026-09-08T19:21:09Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-judiciary-sub-constitution",
@@ -3361,6 +3465,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:09Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-judiciary",
+    "placementVerifiedAt": "2026-09-08T19:21:09Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
     ],
@@ -3374,10 +3481,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:09Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:09Z",
-    "placementParentId": "leg-senate-cmte-judiciary",
     "placementMatchedText": "Subcommittee on Intellectual Property",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-judiciary"
@@ -3420,6 +3524,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:09Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-judiciary",
+    "placementVerifiedAt": "2026-09-08T19:21:09Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
     ],
@@ -3433,10 +3540,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:09Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:09Z",
-    "placementParentId": "leg-senate-cmte-judiciary",
     "placementMatchedText": "Subcommittee on Privacy, Technology, and the Law",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-judiciary"
@@ -3480,11 +3584,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.rules.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSRA.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-rules-administration",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Rules and Administration",
@@ -3493,11 +3601,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:10Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-rules-administration",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-small-business-entrepreneurship",
@@ -3592,11 +3696,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.veterans.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-veterans-affairs",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Veterans' Affairs",
@@ -3605,11 +3713,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:13Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-veterans-affairs",
-    "verificationMatchedIn": "content"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-select-committee-on-intelligence",
@@ -3648,8 +3752,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:51Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.intelligence.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
     ],
@@ -3661,13 +3768,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:51Z"
     },
+    "lastVerified": "2026-09-08T19:20:51Z",
     "evidenceVerifiedAt": "2026-09-08T19:20:51Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-special-committee-on-aging",
@@ -3706,8 +3810,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:52Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.aging.senate.gov",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
     ],
@@ -3719,13 +3826,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:52Z"
     },
+    "lastVerified": "2026-09-08T19:20:52Z",
     "evidenceVerifiedAt": "2026-09-08T19:20:52Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-select-committee-on-ethics",
@@ -3764,8 +3868,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:48Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.ethics.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
     ],
@@ -3777,13 +3884,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:48Z"
     },
+    "lastVerified": "2026-09-08T19:20:48Z",
     "evidenceVerifiedAt": "2026-09-08T19:20:48Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-indian-affairs",
@@ -3822,8 +3926,11 @@
     "sourceCount": 1,
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:49Z",
     "placementCheckable": false,
+    "pageReadNotNamed": {
+      "url": "https://www.indian.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml"
     ],
@@ -3835,13 +3942,10 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:49Z"
     },
+    "lastVerified": "2026-09-08T19:20:49Z",
     "evidenceVerifiedAt": "2026-09-08T19:20:49Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees",
-    "pageReadNotNamed": {
-      "url": "https://www.indian.senate.gov/",
-      "checkedAt": "2026-09-11T04:01:57+00:00"
-    }
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-house",
@@ -3918,6 +4022,582 @@
       "checkedAt": "2026-09-08T19:19:15Z"
     },
     "parentId": "legislative-branch"
+  },
+  {
+    "id": "leg-house-cmte-agriculture",
+    "name": "House Committee on Agriculture",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering agriculture.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://agriculture.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://agriculture.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-agriculture",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 77833616.23,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-appropriations",
+    "name": "House Committee on Appropriations",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering appropriations.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://appropriations.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://appropriations.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-appropriations",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 138746881.11,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-energy-commerce",
+    "name": "House Committee on Energy & Commerce",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering energy & commerce.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://energycommerce.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://energycommerce.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-energy-commerce",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 77833616.23,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-financial-services",
+    "name": "House Committee on Financial Services",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering financial services.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://financialservices.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://financialservices.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-financial-services",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 77833616.23,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-natural-resources",
+    "name": "House Committee on Natural Resources",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering natural resources.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-natural-resources",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 67681405.42,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-natural-resources-sub-energy-mineral-resources",
+    "name": "Subcommittee on Energy & Mineral Resources",
+    "type": "Subcommittee",
+    "desc": "House subcommittee with jurisdiction over energy & mineral resources.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-natural-resources",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://naturalresources.house.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-house-cmte-natural-resources",
+    "placementMatchedText": "Subcommittee on Energy and Mineral Resources",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 10686537.7,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-cmte-natural-resources"
+  },
+  {
+    "id": "leg-house-cmte-natural-resources-sub-federal-lands",
+    "name": "Subcommittee on Federal Lands",
+    "type": "Subcommittee",
+    "desc": "House subcommittee with jurisdiction over federal lands.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-natural-resources",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://naturalresources.house.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-house-cmte-natural-resources",
+    "placementMatchedText": "Subcommittee on Federal Lands",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 10686537.7,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-cmte-natural-resources"
+  },
+  {
+    "id": "leg-house-cmte-natural-resources-sub-indian-insular-affairs",
+    "name": "Subcommittee on Indian & Insular Affairs",
+    "type": "Subcommittee",
+    "desc": "House subcommittee with jurisdiction over indian & insular affairs.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-natural-resources",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://naturalresources.house.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-house-cmte-natural-resources",
+    "placementMatchedText": "Subcommittee on Indian and Insular Affairs",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 10686537.7,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-cmte-natural-resources"
+  },
+  {
+    "id": "leg-house-cmte-natural-resources-sub-oversight-investigations",
+    "name": "Subcommittee on Oversight & Investigations",
+    "type": "Subcommittee",
+    "desc": "House subcommittee with jurisdiction over oversight & investigations.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://naturalresources.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-natural-resources",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://naturalresources.house.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "placementParentId": "leg-house-cmte-natural-resources",
+    "placementMatchedText": "Subcommittee on Oversight and Investigations",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 10686537.7,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-cmte-natural-resources"
+  },
+  {
+    "id": "leg-house-cmte-small-business",
+    "name": "House Committee on Small Business",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering small business.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://smallbusiness.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://smallbusiness.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-small-business",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 67681405.42,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-cmte-veterans-affairs",
+    "name": "House Committee on Veterans' Affairs",
+    "type": "Committee",
+    "desc": "Standing committee of the U.S. House of Representatives covering veterans' affairs.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://veterans.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://veterans.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cmte-veterans-affairs",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 77833616.23,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-committees"
+  },
+  {
+    "id": "leg-house-clerk",
+    "name": "Clerk of the House",
+    "type": "Office",
+    "desc": "Official record keeper; certifies legislation; manages election-related records.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://clerk.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://clerk.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "leg-house-clerk",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 31511543.23,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-admin"
   },
   {
     "id": "leg-support-gao",
@@ -4886,9 +5566,6 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-eop-omb",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-procurement-policy-office"
     ],
@@ -4902,7 +5579,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/federal-procurement-policy-office",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-eop-omb",
     "placementMatchedText": "Federal Procurement Policy Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "parentId": "exec-eop-omb"
@@ -5245,6 +5925,7 @@
     "sourceCount": 1,
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
+    "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/administration-office-executive-office-of-the-president"
     ],
@@ -5256,7 +5937,6 @@
       "parentListedName": "Executive Office of the President",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
     "placementVerified": true,
@@ -5503,6 +6183,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -5579,6 +6260,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -5655,6 +6337,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -5731,6 +6414,7 @@
       "payLevel": null,
       "reportedPay": 223451.0,
       "reportedPayText": "$223,451",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -5806,6 +6490,7 @@
       "payLevel": null,
       "reportedPay": 213539.0,
       "reportedPayText": "$213,539",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 7,
       "standing": 3,
       "valuesFrom": "standing_listings",
@@ -5890,6 +6575,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -5969,6 +6655,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 5,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -6049,6 +6736,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -6125,6 +6813,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -6200,6 +6889,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -6276,6 +6966,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 5,
       "standing": 3,
       "valuesFrom": "standing_listings",
@@ -6359,6 +7050,7 @@
       "payLevel": null,
       "reportedPay": 198322.0,
       "reportedPayText": "$198,322",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -6443,6 +7135,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -6522,6 +7215,7 @@
       "payLevel": null,
       "reportedPay": 194190.0,
       "reportedPayText": "$194,190",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -6598,6 +7292,7 @@
       "payLevel": null,
       "reportedPay": 209964.0,
       "reportedPayText": "$209,964",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -6984,6 +7679,7 @@
       "payLevel": null,
       "reportedPay": 215632.0,
       "reportedPayText": "$215,632",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -7054,6 +7750,7 @@
       "payLevel": null,
       "reportedPay": 215922.0,
       "reportedPayText": "$215,922",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -7124,6 +7821,7 @@
       "payLevel": null,
       "reportedPay": 215922.0,
       "reportedPayText": "$215,922",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -7592,6 +8290,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -7662,6 +8361,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -8023,6 +8723,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9021,6 +9722,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9122,9 +9824,6 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-bureau-of-investigation"
     ],
@@ -9138,7 +9837,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/federal-bureau-of-investigation",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Federal Bureau of Investigation",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 36896,
@@ -9215,6 +9917,7 @@
       "payLevel": "II",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9316,9 +10019,6 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/drug-enforcement-administration"
     ],
@@ -9332,7 +10032,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/drug-enforcement-administration",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Drug Enforcement Administration",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 8871,
@@ -9409,6 +10112,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9509,6 +10213,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 9,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9610,9 +10315,6 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau"
     ],
@@ -9626,7 +10328,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Alcohol, Tobacco, Firearms, and Explosives Bureau",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 5168,
@@ -9703,6 +10408,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9803,6 +10509,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9873,6 +10580,7 @@
       "payLevel": null,
       "reportedPay": 222195.0,
       "reportedPayText": "$222,195",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -9943,6 +10651,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10013,6 +10722,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10084,9 +10794,6 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/prisons-bureau"
     ],
@@ -10100,7 +10807,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/prisons-bureau",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Prisons Bureau",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "parentId": "exec-dept-doj"
@@ -10160,9 +10870,6 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-08T19:19:15Z",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/united-states-marshals-service"
     ],
@@ -10176,7 +10883,10 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/united-states-marshals-service",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "United States Marshals Service",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 5568,
@@ -10253,6 +10963,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10353,6 +11064,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10423,6 +11135,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10493,6 +11206,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -10602,13 +11316,14 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementVerified": true,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.justice.gov/atr/",
       "https://www.federalregister.gov/agencies/antitrust-division"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-antitrust",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Antitrust Division",
@@ -10617,14 +11332,13 @@
       "parentListedName": "Justice Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/antitrust-division",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Antitrust Division",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-doj",
-    "verificationSiteFrom": "exec-dept-doj-div-antitrust",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-doj"
   },
   {
     "id": "exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5",
@@ -10680,6 +11394,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 13,
       "standing": 6,
       "valuesFrom": "standing_listings",
@@ -10760,6 +11475,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 7,
       "standing": 3,
       "valuesFrom": "standing_listings",
@@ -10840,6 +11556,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 9,
       "standing": 5,
       "valuesFrom": "standing_listings",
@@ -10924,6 +11641,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 29,
       "standing": 6,
       "valuesFrom": "standing_listings",
@@ -11004,6 +11722,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -11104,6 +11823,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 4,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -11184,6 +11904,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 9,
       "standing": 2,
       "valuesFrom": "standing_listings",
@@ -11260,6 +11981,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -11330,6 +12052,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 6,
       "standing": 5,
       "valuesFrom": "standing_listings",
@@ -11748,6 +12471,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12034,6 +12758,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12235,6 +12960,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12335,6 +13061,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -12488,6 +13215,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12558,6 +13286,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12713,6 +13442,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12868,6 +13598,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -12938,6 +13669,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -13109,6 +13841,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -13179,6 +13912,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -13637,6 +14371,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -13785,6 +14520,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -13863,6 +14599,10 @@
       "https://www.fs.usda.gov",
       "https://www.federalregister.gov/agencies/forest-service"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-usda-fs",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Forest Service",
@@ -13871,8 +14611,6 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/forest-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -13897,9 +14635,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationSiteFrom": "exec-dept-usda-fs",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-fns",
@@ -14049,6 +14785,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -14127,6 +14864,10 @@
       "https://www.aphis.usda.gov/",
       "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-usda-aphis",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Animal and Plant Health Inspection Service",
@@ -14135,8 +14876,6 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -14161,9 +14900,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationSiteFrom": "exec-dept-usda-aphis",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-aphis-administrator-aphis",
@@ -14219,6 +14956,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -14297,6 +15035,10 @@
       "https://www.ars.usda.gov/main/main.htm",
       "https://www.federalregister.gov/agencies/agricultural-research-service"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-dept-usda-ars",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Agricultural Research Service",
@@ -14305,8 +15047,6 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/agricultural-research-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -14331,9 +15071,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationSiteFrom": "exec-dept-usda-ars",
-    "verificationMatchedIn": "navigation"
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-ars-administrator-ars",
@@ -14389,6 +15127,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -14553,6 +15292,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -14623,6 +15363,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -15194,6 +15935,10 @@
       "https://www.bea.gov/",
       "https://www.federalregister.gov/agencies/economic-analysis-bureau"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doc-bea",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Economic Analysis Bureau",
@@ -15202,8 +15947,6 @@
       "parentListedName": "Commerce Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/economic-analysis-bureau",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -15228,9 +15971,7 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc",
-    "verificationSiteFrom": "exec-dept-doc-bea",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-doc"
   },
   {
     "id": "exec-dept-doc-bea-director-bea",
@@ -15286,6 +16027,7 @@
       "payLevel": null,
       "reportedPay": 191119.0,
       "reportedPayText": "$191,119",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -15974,6 +16716,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -16145,6 +16888,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -16245,6 +16989,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -16400,6 +17145,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -16571,6 +17317,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -16726,6 +17473,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -16796,6 +17544,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -17107,6 +17856,10 @@
       "https://www.fda.gov/",
       "https://www.federalregister.gov/agencies/food-and-drug-administration"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hhs-fda",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Food and Drug Administration",
@@ -17115,8 +17868,6 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/food-and-drug-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17141,9 +17892,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationSiteFrom": "exec-dept-hhs-fda",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-cdc",
@@ -17207,6 +17956,10 @@
       "https://www.cdc.gov/",
       "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hhs-cdc",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Centers for Disease Control and Prevention",
@@ -17215,8 +17968,6 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17241,9 +17992,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationSiteFrom": "exec-dept-hhs-cdc",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-cdc-chief-of-staff",
@@ -17299,6 +18048,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -17463,6 +18213,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -17571,6 +18322,10 @@
       "https://www.cms.gov/",
       "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hhs-cms",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Centers for Medicare & Medicaid Services",
@@ -17579,8 +18334,6 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17605,9 +18358,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationSiteFrom": "exec-dept-hhs-cms",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-cms-chief-of-staff",
@@ -17663,6 +18414,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -17827,6 +18579,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18042,6 +18795,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18112,6 +18866,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -18190,6 +18945,10 @@
       "https://www.ihs.gov/",
       "https://www.federalregister.gov/agencies/indian-health-service"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hhs-ihs",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Indian Health Service",
@@ -18198,8 +18957,6 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/indian-health-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -18224,9 +18981,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationSiteFrom": "exec-dept-hhs-ihs",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-ihs-director-ihs",
@@ -18282,6 +19037,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18382,6 +19138,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18644,6 +19401,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 11,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18795,6 +19553,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 13,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -18895,6 +19654,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 13,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -19216,6 +19976,10 @@
       "https://www.faa.gov/",
       "https://www.federalregister.gov/agencies/federal-aviation-administration"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-dot-faa",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Federal Aviation Administration",
@@ -19224,8 +19988,6 @@
       "parentListedName": "Transportation Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/federal-aviation-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -19250,9 +20012,7 @@
       },
       "agencyMatched": "exec-dept-dot"
     },
-    "parentId": "exec-dept-dot",
-    "verificationSiteFrom": "exec-dept-dot-faa",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-dot"
   },
   {
     "id": "exec-dept-dot-fhwa",
@@ -20075,6 +20835,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -20175,6 +20936,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -20682,6 +21444,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -20752,6 +21515,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -20852,6 +21616,7 @@
       "payLevel": "15",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -21060,6 +21825,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -21515,6 +22281,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -21685,6 +22452,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -21855,6 +22623,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22025,6 +22794,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22438,6 +23208,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22538,6 +23309,7 @@
       "payLevel": null,
       "reportedPay": 221900.0,
       "reportedPayText": "$221,900",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22608,6 +23380,7 @@
       "payLevel": null,
       "reportedPay": 225700.0,
       "reportedPayText": "$225,700",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22772,6 +23545,7 @@
       "payLevel": "IV",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22872,6 +23646,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -22942,6 +23717,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 5,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23106,6 +23882,7 @@
       "payLevel": "II",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23206,6 +23983,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23306,6 +24084,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23470,6 +24249,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23634,6 +24414,7 @@
       "payLevel": "III",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23734,6 +24515,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23804,6 +24586,7 @@
       "payLevel": null,
       "reportedPay": 132455.0,
       "reportedPayText": "$132,455",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23874,6 +24657,7 @@
       "payLevel": null,
       "reportedPay": 172410.0,
       "reportedPayText": "$172,410",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -23944,6 +24728,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 5,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -24108,6 +24893,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 6,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -24178,6 +24964,7 @@
       "payLevel": "II",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -24278,6 +25065,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -24348,6 +25136,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 4,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -25268,6 +26057,7 @@
       "payLevel": null,
       "reportedPay": 289400.0,
       "reportedPayText": "$289,400",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -25338,6 +26128,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -25408,6 +26199,7 @@
       "payLevel": null,
       "reportedPay": 289400.0,
       "reportedPayText": "$289,400",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -25478,6 +26270,7 @@
       "payLevel": null,
       "reportedPay": 289400.0,
       "reportedPayText": "$289,400",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -25548,6 +26341,7 @@
       "payLevel": null,
       "reportedPay": 289400.0,
       "reportedPayText": "$289,400",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -26360,6 +27154,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -26430,6 +27225,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -27835,6 +28631,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -27905,6 +28702,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 0,
       "valuesFrom": "past_incumbencies",
@@ -27979,11 +28777,15 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.neh.gov/",
       "https://www.federalregister.gov/agencies/national-endowment-for-the-humanities"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "National Endowment for the Humanities",
@@ -27992,11 +28794,7 @@
       "parentListedName": "National Foundation on the Arts and the Humanities",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-humanities-neh-general-counsel",
@@ -28052,6 +28850,7 @@
       "payLevel": null,
       "reportedPay": 204000.0,
       "reportedPayText": "$204,000",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -28296,6 +29095,7 @@
       "payLevel": null,
       "reportedPay": 220032.0,
       "reportedPayText": "$220,032",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -28370,11 +29170,15 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.eeoc.gov/",
       "https://www.federalregister.gov/agencies/equal-employment-opportunity-commission"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Equal Employment Opportunity Commission",
@@ -28383,8 +29187,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 2028,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28409,9 +29211,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-office-of-special-counsel-osc",
@@ -28534,11 +29334,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.mspb.gov/",
       "https://www.federalregister.gov/agencies/merit-systems-protection-board"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Merit Systems Protection Board",
@@ -28547,8 +29351,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 177,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28573,9 +29375,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-federal-labor-relations-authority-flra",
@@ -28619,11 +29419,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.flra.gov/",
       "https://www.federalregister.gov/agencies/federal-labor-relations-authority"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Federal Labor Relations Authority",
@@ -28632,8 +29436,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 108,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28658,9 +29460,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-mediation-board-nmb",
@@ -28795,6 +29595,7 @@
       "payLevel": null,
       "reportedPay": 204000.0,
       "reportedPayText": "$204,000",
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -28853,11 +29654,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.fec.gov/",
       "https://www.federalregister.gov/agencies/federal-election-commission"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-ind-misc-federal-election-commission-fec",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Federal Election Commission",
@@ -28866,8 +29671,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 280,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28892,9 +29695,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-federal-election-commission-fec",
-    "verificationMatchedIn": "navigation"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-federal-election-commission-fec-general-counsel",
@@ -28950,6 +29751,7 @@
       "payLevel": "V",
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -29050,6 +29852,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -29199,6 +30002,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 2,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -29269,6 +30073,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 1,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -29394,6 +30199,7 @@
       "payLevel": null,
       "reportedPay": null,
       "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
       "incumbencies": 3,
       "standing": 1,
       "valuesFrom": "standing_listings",
@@ -29849,11 +30655,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.arc.gov/",
       "https://www.federalregister.gov/agencies/appalachian-regional-commission"
     ],
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Appalachian Regional Commission",
@@ -29862,11 +30672,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-capital-planning-commission-ncpc",

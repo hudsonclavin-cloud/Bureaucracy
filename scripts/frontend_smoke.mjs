@@ -373,7 +373,14 @@ try {
     // presented as a rate, and that any rate shown is attributed to the table
     // it came from. Rewritten rather than deleted, deliberately.
     check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
-    check("the archive's own level carries no rate", !/level or grade [IVX\d]+[^.]*\$/i.test(listing), listing);
+    // Scoped to the archive's own clause. A first rewrite keyed on "level or
+    // grade", which ui.js only emits when payPlan !== "EX" — so it could not
+    // fire on any of the 29 Executive Schedule nodes, the exact ones a table
+    // rate reaches. An assertion that cannot fail where it matters is worse
+    // than none, because its name claims it did.
+    const archiveClause = (listing.match(/Pay plan [\s\S]*?The archive gives the rank/) || [""])[0];
+    check("the archive's own clause states a rank and never a rate",
+      Boolean(archiveClause) && !archiveClause.includes("$"), archiveClause || listing);
   }
 
   // The salary table's rate, which is a join of two documents and has to read

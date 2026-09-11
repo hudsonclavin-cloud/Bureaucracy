@@ -624,6 +624,10 @@ def apply_pay_evidence(
         if (
             str(listing.get("payLevel") or "") != str(claim.get("payLevel") or "")
             or str(listing.get("payPlan") or "") != EX_PAY_PLAN
+            # Re-checked here and not only in the deriver: this is the module's
+            # own stated refusal, and a rule only `eligible()` can see is one a
+            # stale or hand-edited evidence file never meets.
+            or not listing.get("payPlanAndLevelOnOneRow")
         ):
             stats["listing_reports_a_different_level"] += 1
             continue

@@ -423,6 +423,15 @@ class ApplyTestCase(unittest.TestCase):
         self.assertEqual(stats["listing_reports_a_different_level"], 1)
         self.assertNotIn("positionPayRate", index_tree(tree)[0]["cisa-director"])
 
+    def test_a_published_listing_that_never_printed_the_pair_withdraws_the_rate(self):
+        # The module's central refusal has to be checkable from the published
+        # listing, not only inside the deriver: a rule only eligible() can see
+        # is one a stale or hand-edited evidence file never meets.
+        tree = self._with_listing(self._tree(), payPlanAndLevelOnOneRow=False)
+        stats = apply_pay_evidence(tree, self.records)
+        self.assertEqual(stats["priced"], 0)
+        self.assertEqual(stats["listing_reports_a_different_level"], 1)
+
     def test_a_listing_on_another_pay_plan_withdraws_the_rate(self):
         tree = self._with_listing(self._tree(), payPlan="AD")
         stats = apply_pay_evidence(tree, self.records)
@@ -601,6 +610,17 @@ class ScriptAndGateTestCase(unittest.TestCase):
         code, out = self._gate(path)
         self.assertEqual(code, 1, out)
         self.assertIn("its listing reports", out)
+
+    def test_the_gate_refuses_a_pair_the_archive_never_printed_on_one_row(self):
+        self._derive()
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        index_tree(graph)[0]["cisa-director"]["positionListing"]["payPlanAndLevelOnOneRow"] = False
+        path = self.tmp / "bad.json"
+        path.write_text(json.dumps(graph), encoding="utf-8")
+        code, out = self._gate(path)
+        self.assertEqual(code, 1, out)
+        self.assertIn("never printed on one row", out)
 
     def test_the_gate_refuses_a_rate_with_no_listing_behind_it(self):
         self._derive()

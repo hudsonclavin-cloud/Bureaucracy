@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260911b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260911b";
+import { createGovernmentGraph } from "./graph.js?v=20260911c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260911c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -573,10 +573,23 @@ function renderCountProvenance(data) {
     // rate under a sentence calling it the group's.
     const perPost = isCostHiddenAsEstimate(data) && reportedPayOf(data) !== null;
     if (perPost) {
-      const posts = represents.kind === "exact"
-        ? `all ${represents.count}`
-        : represents.kind === "range" ? `each of the ${represents.low} to ${represents.high}` : "each";
-      add(`The rate above is what the archive reports for the title, so it is one post's rate rather than the group's — ${posts} would be paid separately.`);
+      // Only what was actually read. An earlier version of this sentence said
+      // "each of the 2 to 4 would be paid separately", which the archive does
+      // not state: for the Western Hemisphere Affairs Deputy Assistant
+      // Secretary it carries four rows at three different figures, and the
+      // rate shown is the one its standing listings agree on. What the other
+      // posts are paid is not in the file.
+      const listing = data.positionListing || {};
+      const rows = Number(listing.incumbencies) || 0;
+      const from = listing.valuesFrom === "standing_listings"
+        ? "the listings still standing when it closed"
+        : "a past incumbency";
+      add(
+        "The rate above is one post's rather than the group's: it is what " +
+        `the archive reports for ${from}` +
+        (rows ? ` (${rows} row${rows === 1 ? "" : "s"} under this title here)` : "") +
+        ", and it does not say what the other posts of this title are paid.",
+      );
     } else {
       add("Any figure above is for the group, not for one holder.");
     }

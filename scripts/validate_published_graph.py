@@ -113,6 +113,12 @@ def table_pay_violations(node, pay, listing, today, label):
             say("prices pay plan {!r} but its listing reports {!r}".format(plan, listing.get("payPlan")))
         if listing.get("reportedPay") is not None:
             say("carries a table rate beside a rate the archive states; two rates for one post")
+        if not listing.get("payPlanAndLevelOnOneRow"):
+            # The module's central refusal, checkable from the published graph
+            # alone. describe_listing aggregates the pay plan and the level
+            # independently and ignores blanks, so without this a pair the
+            # archive never printed on one row could be priced.
+            say("prices a pay plan and level the archive never printed on one row")
 
     # The rate half. The mirrored table is the only thing that can catch a
     # figure that is simply wrong, and the printed text must agree with it too
