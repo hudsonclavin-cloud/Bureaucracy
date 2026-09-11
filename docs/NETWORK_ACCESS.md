@@ -36,7 +36,38 @@ source is reachable now. Two consequences, both already true of the code:
   matched positions an official rate of pay, refused on 2026-09-09.
 
 Before concluding a host is blocked, try it — the list below is dated, not
-permanent.
+permanent:
+
+    python scripts/probe_network_access.py            # what is reachable now
+    python scripts/probe_network_access.py --allowlist # the blocked hosts, paste-ready
+
+That script reports *where* a 403 came from, which is the distinction that
+matters: a refusal at the CONNECT, before a byte reaches the host, is the
+sandbox; an HTTP status from the host is the host. Collapsing the two into
+"failed" is what made the 2026-09-09 change look like the sites had changed
+their minds.
+
+## 0a. Which environment — the mistake this note used to invite
+
+An allowlist belongs to a **cloud environment**, and this repository is
+reachable from two of them:
+
+| environment | id |
+|---|---|
+| `Default` | `env_018HP1sQhQm6Ff5TQZJcJ3XZ` |
+| `Bureaucracy (Treasury)` | `env_01J86PgZpDPCZZFoX5fadMNY` |
+
+An earlier version of this note told the reader to widen the allowlist of
+"the one named Bureaucracy (Treasury)". That is the trap. The session that
+produced every fixture and every verification run in this repository has run
+in **`Default`** — confirmed on 2026-09-11 from the session's own
+`environment_id`, not from the name. Editing the better-named environment
+looks *exactly* like the setting not working: same 403, same CONNECT, no
+error anywhere saying you changed the wrong thing.
+
+So: ask the session which environment it is in before touching a setting.
+The `claude-code-remote` `get_session` tool reports `environment_id`, and
+`list_environments` maps ids to names. Widen that one.
 
 ## 1. Denied by the environment's network policy — 85 hosts, fixable
 
@@ -48,10 +79,26 @@ House's and Senate's own committee sites), which is why that run confirmed
 nothing: the plan grew from 220 to 430 checks and every new one failed at
 the proxy.
 
-To fix, add these to the allowlist of the cloud environment the verifier
-runs in (the one named "Bureaucracy (Treasury)"), then re-run
-`python scripts/verify_base_graph.py`. Nothing in the repository needs to
-change; the candidates are already committed.
+To fix, add these to the allowlist of the cloud environment the session
+actually runs in — see §0a, and check the id rather than trusting a name —
+then re-run `python scripts/verify_base_graph.py`. Nothing in the repository
+needs to change; the candidates are already committed.
+
+Two things to know before pasting:
+
+- **`scripts/probe_network_access.py --allowlist` emits the list**, live, so
+  it never goes stale the way a hand-maintained block does. On 2026-09-11 it
+  printed 157 hosts.
+- **That list includes the nineteen hosts of §2**, because they are
+  proxy-blocked *as well as* robots-refused. Allowlisting them changes
+  nothing: this project still declines them by its own conduct rule, and that
+  rule is not to be relaxed to raise a coverage number. Widening the
+  allowlist buys §1 and §3, not §2.
+- A TLD wildcard is **not** a documented feature. The one documented form is
+  a leading `*.` matching subdomains (`*.internal.example.com`), which would
+  not match an apex domain in any case. Do not assume `*.gov` works; paste
+  the hosts, or test a wildcard and verify with the probe before relying on
+  it.
 
     agriculture.house.gov appropriations.house.gov armedservices.house.gov
     arts.gov budget.house.gov cha.house.gov disa.mil energycommerce.house.gov
