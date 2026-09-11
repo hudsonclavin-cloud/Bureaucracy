@@ -123,16 +123,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.agriculture.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -147,12 +148,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:53Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.agriculture.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml"
     ],
     "directoryListing": {
@@ -163,9 +165,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:53Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations",
@@ -177,16 +181,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -201,12 +206,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -217,9 +223,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies",
@@ -231,16 +239,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -255,11 +264,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -270,15 +280,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on Commerce, Justice, Science, and Related Agencies",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "Commerce, Justice, Science, and Related Agencies",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-energy-water-development",
@@ -290,16 +303,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -314,11 +328,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -329,15 +344,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on Energy and Water Development",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "Energy and Water Development",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-financial-services-general-government",
@@ -349,16 +367,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -373,11 +392,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -388,15 +408,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on Financial Services and General Government",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "Financial Services and General Government",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-legislative-branch",
@@ -408,16 +431,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -432,11 +456,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -447,15 +472,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on Legislative Branch",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "Legislative Branch",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies",
@@ -467,16 +495,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -491,11 +520,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -506,15 +536,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "Military Construction, Veterans Affairs, and Related Agencies",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs",
@@ -526,16 +559,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -550,11 +584,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:55Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.appropriations.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml"
     ],
     "directoryListing": {
@@ -565,15 +600,18 @@
       "parentListedName": "Committee on Appropriations",
       "checkedAt": "2026-09-08T19:20:55Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
-    "placementVerifiedAt": "2026-09-08T19:20:55Z",
+    "placementUrl": "https://www.appropriations.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-appropriations",
-    "placementMatchedText": "Subcommittee on State, Foreign Operations, and Related Programs",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-appropriations"
+    "placementMatchedText": "State, Foreign Operations, and Related Programs",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-appropriations",
+    "verificationSiteFrom": "leg-senate-cmte-appropriations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-armed-services",
@@ -585,16 +623,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.armed-services.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -609,12 +648,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:56Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.armed-services.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "directoryListing": {
@@ -625,9 +665,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:56Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-armed-services",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-armed-services-sub-airland",
@@ -1443,7 +1485,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:59Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.budget.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-senate-cmte-commerce-science-transportation",
@@ -1455,16 +1501,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.commerce.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1479,12 +1526,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:00Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.commerce.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "directoryListing": {
@@ -1495,9 +1543,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:00Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources",
@@ -1509,16 +1559,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1533,12 +1584,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:01Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "directoryListing": {
@@ -1549,9 +1601,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:01Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-energy",
@@ -1622,16 +1676,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1646,11 +1701,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:01Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "directoryListing": {
@@ -1661,15 +1717,18 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:01Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:01Z",
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "Subcommittee on National Parks",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-energy-natural-resources"
+    "placementMatchedText": "National Parks",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-energy-natural-resources",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-public-lands-forests-mining",
@@ -1681,16 +1740,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1705,11 +1765,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:01Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "directoryListing": {
@@ -1720,15 +1781,18 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:01Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:01Z",
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "Subcommittee on Public Lands, Forests, and Mining",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-energy-natural-resources"
+    "placementMatchedText": "Public Lands, Forests & Mining",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-energy-natural-resources",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources-sub-water-power",
@@ -1740,16 +1804,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1764,11 +1829,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:01Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.energy.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
     "directoryListing": {
@@ -1779,15 +1845,18 @@
       "parentListedName": "Committee on Energy and Natural Resources",
       "checkedAt": "2026-09-08T19:21:01Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:01Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:01Z",
+    "placementUrl": "https://www.energy.senate.gov/",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "placementParentId": "leg-senate-cmte-energy-natural-resources",
-    "placementMatchedText": "Subcommittee on Water and Power",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-energy-natural-resources"
+    "placementMatchedText": "Water & Power",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-energy-natural-resources",
+    "verificationSiteFrom": "leg-senate-cmte-energy-natural-resources",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-environment-public-works",
@@ -2030,16 +2099,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2054,12 +2124,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.finance.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2070,9 +2141,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-finance",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure",
@@ -2438,16 +2511,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2462,12 +2536,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2478,9 +2553,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy",
@@ -2905,16 +2982,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.help.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2929,12 +3007,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:07Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.help.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml"
     ],
     "directoryListing": {
@@ -2945,9 +3024,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:07Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:07Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-health-education-labor-pensions",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety",
@@ -3077,16 +3158,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.hsgac.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3101,12 +3183,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:06Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.hsgac.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSGA.xml"
     ],
     "directoryListing": {
@@ -3117,9 +3200,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:06Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:06Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-homeland-security-governmental-affairs",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-judiciary",
@@ -3173,7 +3258,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:09Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.judiciary.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-senate-cmte-judiciary-sub-constitution",
@@ -3362,16 +3451,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.rules.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSRA.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3386,12 +3476,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:10Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.rules.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSRA.xml"
     ],
     "directoryListing": {
@@ -3402,9 +3493,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:10Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:10Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-rules-administration",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-small-business-entrepreneurship",
@@ -3470,16 +3563,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.veterans.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3494,12 +3588,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:13Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.veterans.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml"
     ],
     "directoryListing": {
@@ -3510,9 +3605,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:13Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:13Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-veterans-affairs",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-select-committee-on-intelligence",
@@ -3566,7 +3663,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:51Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.intelligence.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-senate-cmte-special-committee-on-aging",
@@ -3620,7 +3721,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:52Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.aging.senate.gov",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-senate-cmte-select-committee-on-ethics",
@@ -3674,7 +3779,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:48Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.ethics.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-senate-cmte-indian-affairs",
@@ -3728,7 +3837,11 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:20:49Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "parentId": "leg-senate-committees",
+    "pageReadNotNamed": {
+      "url": "https://www.indian.senate.gov/",
+      "checkedAt": "2026-09-11T04:01:57+00:00"
+    }
   },
   {
     "id": "leg-house",
@@ -5132,10 +5245,6 @@
     "sourceCount": 1,
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
-    "pageReadNotNamed": {
-      "url": "https://www.whitehouse.gov",
-      "checkedAt": "2026-09-08T19:58:40+00:00"
-    },
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/administration-office-executive-office-of-the-president"
     ],
@@ -10449,9 +10558,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-08T19:58:40+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -10464,14 +10570,17 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
+      "https://www.justice.gov/atr/",
       "https://www.federalregister.gov/agencies/antitrust-division"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -10479,7 +10588,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10489,14 +10598,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementVerified": true,
     "placementParentId": "exec-dept-doj",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
+      "https://www.justice.gov/atr/",
       "https://www.federalregister.gov/agencies/antitrust-division"
     ],
     "directoryListing": {
@@ -10507,12 +10617,14 @@
       "parentListedName": "Justice Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.federalregister.gov/agencies/antitrust-division",
     "placementMatchedText": "Antitrust Division",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationSiteFrom": "exec-dept-doj-div-antitrust",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5",
@@ -13700,18 +13812,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.fs.usda.gov",
       "https://www.federalregister.gov/agencies/forest-service"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -13732,9 +13847,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083967",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 9122359099.35,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Forest Service",
@@ -13743,8 +13858,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.fs.usda.gov",
       "https://www.federalregister.gov/agencies/forest-service"
     ],
     "directoryListing": {
@@ -13755,8 +13871,8 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/forest-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -13781,7 +13897,9 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationSiteFrom": "exec-dept-usda-fs",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-usda-fns",
@@ -13958,18 +14076,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.aphis.usda.gov/",
       "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -13990,9 +14111,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083870",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1845033545.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Animal and Plant Health Inspection Service",
@@ -14001,8 +14122,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.aphis.usda.gov/",
       "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service"
     ],
     "directoryListing": {
@@ -14013,8 +14135,8 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/animal-and-plant-health-inspection-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -14039,7 +14161,9 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationSiteFrom": "exec-dept-usda-aphis",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-usda-aphis-administrator-aphis",
@@ -14122,18 +14246,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ars.usda.gov/main/main.htm",
       "https://www.federalregister.gov/agencies/agricultural-research-service"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -14154,9 +14281,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083853",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1464483892.87,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Agricultural Research Service",
@@ -14165,8 +14292,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.ars.usda.gov/main/main.htm",
       "https://www.federalregister.gov/agencies/agricultural-research-service"
     ],
     "directoryListing": {
@@ -14177,8 +14305,8 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/agricultural-research-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -14203,7 +14331,9 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationSiteFrom": "exec-dept-usda-ars",
+    "verificationMatchedIn": "navigation"
   },
   {
     "id": "exec-dept-usda-ars-administrator-ars",
@@ -15028,14 +15158,17 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
+      "https://www.bea.gov/",
       "https://www.federalregister.gov/agencies/economic-analysis-bureau"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -15043,7 +15176,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 14634332.83,
     "cost_status": "allocated",
     "cost_basis": "budget_weight",
@@ -15053,11 +15186,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.bea.gov/",
       "https://www.federalregister.gov/agencies/economic-analysis-bureau"
     ],
     "directoryListing": {
@@ -15068,8 +15202,8 @@
       "parentListedName": "Commerce Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/economic-analysis-bureau",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -15094,7 +15228,9 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "verificationSiteFrom": "exec-dept-doc-bea",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-doc-bea-director-bea",
@@ -16920,18 +17056,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.fda.gov/",
       "https://www.federalregister.gov/agencies/food-and-drug-administration"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -16952,9 +17091,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084251",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2960213477.45,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Food and Drug Administration",
@@ -16963,8 +17102,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.fda.gov/",
       "https://www.federalregister.gov/agencies/food-and-drug-administration"
     ],
     "directoryListing": {
@@ -16975,8 +17115,8 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/food-and-drug-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17001,7 +17141,9 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationSiteFrom": "exec-dept-hhs-fda",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-hhs-cdc",
@@ -17014,18 +17156,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.cdc.gov/",
       "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -17046,9 +17191,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084257",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 8054724302.65,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Centers for Disease Control and Prevention",
@@ -17057,8 +17202,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.cdc.gov/",
       "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention"
     ],
     "directoryListing": {
@@ -17069,8 +17215,8 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/centers-for-disease-control-and-prevention",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17095,7 +17241,9 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationSiteFrom": "exec-dept-hhs-cdc",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-hhs-cdc-chief-of-staff",
@@ -17372,18 +17520,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.cms.gov/",
       "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -17404,9 +17555,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084306",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2328205320351.0,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
@@ -17415,8 +17566,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.cms.gov/",
       "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services"
     ],
     "directoryListing": {
@@ -17427,8 +17579,8 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/centers-for-medicare-medicaid-services",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -17453,7 +17605,9 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationSiteFrom": "exec-dept-hhs-cms",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-hhs-cms-chief-of-staff",
@@ -17985,18 +18139,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ihs.gov/",
       "https://www.federalregister.gov/agencies/indian-health-service"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -18017,9 +18174,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084255",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 8822870503.88,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Indian Health Service",
@@ -18028,8 +18185,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.ihs.gov/",
       "https://www.federalregister.gov/agencies/indian-health-service"
     ],
     "directoryListing": {
@@ -18040,8 +18198,8 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/indian-health-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -18066,7 +18224,9 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationSiteFrom": "exec-dept-hhs-ihs",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-hhs-ihs-director-ihs",
@@ -19005,18 +19165,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.faa.gov/",
       "https://www.federalregister.gov/agencies/federal-aviation-administration"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -19037,9 +19200,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084825",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 20356780367.92,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Aviation Administration",
@@ -19048,8 +19211,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
+      "https://www.faa.gov/",
       "https://www.federalregister.gov/agencies/federal-aviation-administration"
     ],
     "directoryListing": {
@@ -19060,8 +19224,8 @@
       "parentListedName": "Transportation Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/federal-aviation-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -19086,7 +19250,9 @@
       },
       "agencyMatched": "exec-dept-dot"
     },
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationSiteFrom": "exec-dept-dot-faa",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-dot-fhwa",
@@ -19852,7 +20018,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-08T19:58:40+00:00",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -20146,7 +20312,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-08T19:58:40+00:00",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -26702,7 +26868,7 @@
     "allocation_basis": "treasury_rollup",
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-08T19:58:40+00:00",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -27766,18 +27932,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.neh.gov/",
       "https://www.federalregister.gov/agencies/national-endowment-for-the-humanities"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -27798,9 +27967,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085280",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 52197425.96,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Endowment for the Humanities",
@@ -27809,9 +27978,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.neh.gov/",
       "https://www.federalregister.gov/agencies/national-endowment-for-the-humanities"
     ],
     "directoryListing": {
@@ -27822,9 +27992,11 @@
       "parentListedName": "National Foundation on the Arts and the Humanities",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-humanities-neh-general-counsel",
@@ -28151,18 +28323,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.eeoc.gov/",
       "https://www.federalregister.gov/agencies/equal-employment-opportunity-commission"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -28183,9 +28358,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085257",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 351117249.28,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Equal Employment Opportunity Commission",
@@ -28194,9 +28369,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.eeoc.gov/",
       "https://www.federalregister.gov/agencies/equal-employment-opportunity-commission"
     ],
     "directoryListing": {
@@ -28207,8 +28383,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 2028,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28233,7 +28409,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-office-of-special-counsel-osc",
@@ -28324,14 +28502,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.mspb.gov/",
       "https://www.federalregister.gov/agencies/merit-systems-protection-board"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -28339,7 +28520,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 443108505.66,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -28349,12 +28530,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.mspb.gov/",
       "https://www.federalregister.gov/agencies/merit-systems-protection-board"
     ],
     "directoryListing": {
@@ -28365,8 +28547,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 177,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28391,7 +28573,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-federal-labor-relations-authority-flra",
@@ -28403,14 +28587,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.flra.gov/",
       "https://www.federalregister.gov/agencies/federal-labor-relations-authority"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -28418,7 +28605,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 443108505.66,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -28428,12 +28615,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.flra.gov/",
       "https://www.federalregister.gov/agencies/federal-labor-relations-authority"
     ],
     "directoryListing": {
@@ -28444,8 +28632,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 108,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28470,7 +28658,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-national-mediation-board-nmb",
@@ -28631,14 +28821,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.fec.gov/",
       "https://www.federalregister.gov/agencies/federal-election-commission"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -28646,7 +28839,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 443108505.66,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -28656,12 +28849,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.fec.gov/",
       "https://www.federalregister.gov/agencies/federal-election-commission"
     ],
     "directoryListing": {
@@ -28672,8 +28866,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 280,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28698,7 +28892,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-federal-election-commission-fec",
+    "verificationMatchedIn": "navigation"
   },
   {
     "id": "exec-ind-misc-federal-election-commission-fec-general-counsel",
@@ -29621,14 +29817,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.arc.gov/",
       "https://www.federalregister.gov/agencies/appalachian-regional-commission"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -29636,7 +29835,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 443108505.66,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -29646,12 +29845,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-11T04:01:57+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.arc.gov/",
       "https://www.federalregister.gov/agencies/appalachian-regional-commission"
     ],
     "directoryListing": {
@@ -29662,9 +29862,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-national-capital-planning-commission-ncpc",
@@ -30754,7 +30956,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-08T19:58:40+00:00",
+    "placementVerifiedAt": "2026-09-11T04:01:57+00:00",
     "parentId": "judicial-branch"
   },
   {

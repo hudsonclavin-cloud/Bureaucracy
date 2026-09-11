@@ -264,12 +264,26 @@ class CommittedFilesTests(unittest.TestCase):
             self.assertIn(record["url"], sites[node_id], node_id)
             self.assertIsNone(seed_official_sites.refusal(record["url"]), record["url"])
             self.assertEqual(urlparse(record["url"]).scheme, "https")
-            self.assertIn(record["source"], (FR, "congress_committee_pages"), node_id)
+            self.assertIn(record["source"], (FR, "congress_committee_pages", "agent_nomination"), node_id)
             if record.get("schemeUpgraded"):
                 # The directory's own listing is kept beside the URL used, and differs only in scheme.
                 self.assertEqual(record["listedUrl"], "http://" + record["url"][len("https://"):], node_id)
-            self.assertTrue(record["directoryFetchedAt"], node_id)
-            self.assertTrue(record["listedName"], node_id)
+            if record["source"] == "agent_nomination":
+                # A page `nominate.py promote` queued. It is a different kind of
+                # candidate from a directory listing and carries a different
+                # provenance: no directory named this unit, so what must be
+                # recorded instead is who proposed it, when, on what basis, and
+                # how sure they were — plus, in the record itself, that none of
+                # that is evidence. The verifier decides by reading the page.
+                self.assertTrue(record["basis"], node_id)
+                self.assertIn(record["confidence"], ("speculative", "likely", "certain"), node_id)
+                self.assertTrue(record["nominatedAt"], node_id)
+                self.assertTrue(record["run"], node_id)
+                self.assertIn("Not evidence", record["note"], node_id)
+                self.assertNotIn("listedName", record, node_id)
+            else:
+                self.assertTrue(record["directoryFetchedAt"], node_id)
+                self.assertTrue(record["listedName"], node_id)
         # No seeded URL duplicates a curated one.
         seeded = {r["url"].rstrip("/") for r in provenance.values()}
         curated = [u.rstrip("/") for k, v in sites.items() if k != "_note" and k not in provenance for u in v]
