@@ -44,6 +44,19 @@ EXECUTIVE_SCHEDULE_RATES = {
     "V": 184_900.0,
 }
 EXECUTIVE_SCHEDULE_PAY_PLAN = "EX"
+EXECUTIVE_SCHEDULE_EFFECTIVE = "2026-01-01"
+EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT = "Effective January 2026"
+# The page's own notes, mirrored for the same reason the rates are. The panel
+# prints these inside quotation marks as "the table's own note", so an
+# unchecked footnote list is a channel for a fabricated quotation attributed
+# to OPM — a red team published "no pay freeze applies", the reverse of what
+# the page says, and every other check passed.
+EXECUTIVE_SCHEDULE_FOOTNOTES = (
+    "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze "
+    "on the payable pay rates for the Vice President and certain senior political appointees "
+    "continues through January 30, 2026. Future Congressional action will determine whether these "
+    "frozen rates continue beyond that date.",
+)
 # The weights the cascade may divide a share by. A pay rate appearing here
 # would mean a rate of basic pay had become an apportionment basis.
 KNOWN_COST_BASES = {
@@ -73,6 +86,10 @@ def table_pay_violations(node, pay, listing, today, label):
     type_text = str(node.get("type") or "").casefold()
     if not any(word in type_text for word in ("position", "role", "office holder")):
         say("carries a rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    # A node standing for many posts has no single holder for a rate to be of,
+    # and its own panel sentence says any figure shown is the group's.
+    if node.get("representsPosts"):
+        say("carries one post's rate but stands for several posts")
 
     # The level half. It must still be the level the archive publishes on this
     # very node: if positions.py withdrew or changed the listing, the rate is a
@@ -106,10 +123,21 @@ def table_pay_violations(node, pay, listing, today, label):
         say("publishes {!r} as a rate of basic pay".format(amount))
     elif expected is not None and abs(float(amount) - expected) > 0.005:
         say("publishes {:,.2f} for level {}, which the table pays {:,.2f}".format(float(amount), level, expected))
-    digits = re.sub(r"[^0-9.]", "", str(pay.get("rateText") or ""))
-    if not digits or (isinstance(amount, (int, float)) and not isinstance(amount, bool)
-                      and abs(float(digits) - float(amount)) > 0.005):
-        say("prints {!r} beside the number {!r}".format(pay.get("rateText"), amount))
+    # Everything below is a field the PANEL PRINTS VERBATIM. Checking the
+    # machine-readable amount and leaving these free text would mean the gate
+    # vouched for a figure while the sentence beside it said something else —
+    # "pays $197,200 per month", "effective January 2031", "for Level I".
+    if expected is not None:
+        printed = "${:,.0f}".format(expected)
+        if str(pay.get("rateText") or "") != printed:
+            # Not a digit comparison: digits alone let arbitrary text ride
+            # along into the money figure the reader sees.
+            say("prints the rate as {!r}; the table prints {!r}".format(pay.get("rateText"), printed))
+        scope = str(pay.get("amountScope") or "")
+        if scope.casefold() != "level {}".format(level).casefold():
+            # amountScope is the only field saying which level the printed
+            # rate is for, and the panel prints it at the end of the sentence.
+            say("prints the rate as being for {!r} while pricing level {!r}".format(scope, level))
     if str(pay.get("table") or "") != EXECUTIVE_SCHEDULE_TABLE:
         say("cites table {!r}, not {!r}".format(pay.get("table"), EXECUTIVE_SCHEDULE_TABLE))
 
@@ -117,10 +145,14 @@ def table_pay_violations(node, pay, listing, today, label):
     # can see that one source is older than the other. The table's effective
     # date is deliberately NOT required to be past: a table may be published
     # ahead of the date it takes effect.
-    if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(pay.get("effective") or "")):
-        say("claims a table rate without the date it takes effect")
-    if not str(pay.get("effectiveText") or "").strip():
-        say("claims a table rate without the effective heading the page prints")
+    if str(pay.get("effective") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE:
+        say("dates the table {!r}, not {!r}".format(pay.get("effective"), EXECUTIVE_SCHEDULE_EFFECTIVE))
+    if str(pay.get("effectiveText") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT:
+        # The heading is what the panel prints; the ISO date is what the gate
+        # would otherwise be checking. Both, or a reader and the machine are
+        # being told different things.
+        say("prints the effective heading as {!r}; the page prints {!r}".format(
+            pay.get("effectiveText"), EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT))
     checked = str(pay.get("checkedAt") or "")
     if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
         say("claims a table rate without a past retrieval date ({!r})".format(checked))
@@ -142,6 +174,10 @@ def table_pay_violations(node, pay, listing, today, label):
     footnotes = pay.get("footnotes")
     if not isinstance(footnotes, list) or not any(str(f).strip() for f in footnotes):
         say("carries a table rate without the notes the table prints beside it")
+    elif tuple(str(f).strip() for f in footnotes) != EXECUTIVE_SCHEDULE_FOOTNOTES:
+        # The panel prints these in quotation marks as the table's own words,
+        # so anything but the page's actual notes is a fabricated quotation.
+        say("quotes notes the table does not carry")
 
     # It is not a cost, and it is not evidence that the post exists.
     if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):

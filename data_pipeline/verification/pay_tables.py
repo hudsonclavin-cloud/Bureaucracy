@@ -92,6 +92,19 @@ _MONTHS = {
     "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12,
 }
 
+#: Tags that implicitly close an open <p>, per HTML5's optional end tags.
+#: `html.parser` does not model this, so without it an unclosed footnote
+#: swallows everything after it until the next </p> — and the panel prints a
+#: footnote verbatim, in quotation marks, as OPM's own words. A red team got
+#: "continues through January 30, 2026.UNRELATED PROSE" into one quotation
+#: that way, from markup that is perfectly valid HTML5.
+_CLOSES_A_PARAGRAPH = {
+    "address", "article", "aside", "blockquote", "details", "div", "dl",
+    "fieldset", "figcaption", "figure", "footer", "form", "h1", "h2", "h3",
+    "h4", "h5", "h6", "header", "hgroup", "hr", "main", "menu", "nav", "ol",
+    "p", "pre", "section", "table", "ul",
+}
+
 
 class Unreadable(Exception):
     """The page is not the table this parser knows how to read.
@@ -122,6 +135,11 @@ class ExecutiveScheduleParser(HTMLParser):
         self.rows: list[dict[str, Any]] = []
         self.headings: list[str] = []
         self.footnotes: list[str] = []
+        #: How many headings had been seen when the data table opened, so the
+        #: table's number and effective date are read from the headings that
+        #: precede *it* rather than from anywhere on the page.
+        self.headings_before_table: int | None = None
+        self.data_tables = 0
         self._in_table = False
         self._in_thead = False
         self._cell: list[str] | None = None
@@ -129,11 +147,29 @@ class ExecutiveScheduleParser(HTMLParser):
         self._heading: list[str] | None = None
         self._footnote: list[str] | None = None
 
+    def _close_footnote(self) -> None:
+        if self._footnote is None:
+            return
+        text = _collapse("".join(self._footnote))
+        if text:
+            self.footnotes.append(text)
+        self._footnote = None
+
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attributes = {k: (v or "") for k, v in attrs}
         classes = attributes.get("class", "").split()
+        # HTML5 lets a <p> be closed by the next block element. Flush first, or
+        # the text after it is spliced into the quotation.
+        if tag in _CLOSES_A_PARAGRAPH:
+            self._close_footnote()
         if tag == "table":
-            self._in_table = "DataTable" in classes
+            if "DataTable" in classes:
+                self.data_tables += 1
+                self._in_table = True
+                if self.headings_before_table is None:
+                    self.headings_before_table = len(self.headings)
+            else:
+                self._in_table = False
             return
         if tag in ("h1", "h2", "h3", "h4"):
             self._heading = []
@@ -158,10 +194,7 @@ class ExecutiveScheduleParser(HTMLParser):
             self._heading = None
             return
         if tag == "p" and self._footnote is not None:
-            text = _collapse("".join(self._footnote))
-            if text:
-                self.footnotes.append(text)
-            self._footnote = None
+            self._close_footnote()
             return
         if tag == "table":
             self._in_table = False
@@ -202,9 +235,16 @@ def parse_executive_schedule(html: str) -> dict[str, Any]:
     parser = ExecutiveScheduleParser()
     parser.feed(html)
     parser.close()
+    parser._close_footnote()
 
     if not parser.rows:
         raise Unreadable("no rows found in a table classed DataTable")
+    if parser.data_tables > 1:
+        # Which table the headings date, and which rates belong to which, is
+        # not decidable from this parser's model of the page.
+        raise Unreadable(
+            f"{parser.data_tables} tables classed DataTable; this parser reads a page with one"
+        )
     columns = tuple(c.casefold() for c in parser.columns)
     if columns != EXPECTED_COLUMNS:
         raise Unreadable(
@@ -212,18 +252,26 @@ def parse_executive_schedule(html: str) -> dict[str, Any]:
             f"{list(EXPECTED_COLUMNS)!r}; it has been reshaped"
         )
 
+    # Only the headings *above* the table, and the nearest one of each kind.
+    # Scanning the whole page would let a heading somewhere else date these
+    # rates — the date is the difference between a current rate and a
+    # historical one, so it has to be the table's own.
+    above = parser.headings[: parser.headings_before_table or 0]
     number = ""
     effective_text = ""
-    for heading in parser.headings:
-        match = _TABLE_NUMBER.match(heading)
-        if match and not number:
+    for heading in above:
+        if _TABLE_NUMBER.match(heading):
             number = heading
-        if _EFFECTIVE.match(heading) and not effective_text:
+        if _EFFECTIVE.match(heading):
             effective_text = heading
     if not number:
-        raise Unreadable("no 'Salary Table No. ...' heading; an unnumbered table is not citable")
+        raise Unreadable(
+            "no 'Salary Table No. ...' heading above the table; an unnumbered table is not citable"
+        )
     if not effective_text:
-        raise Unreadable("no 'Effective <Month> <Year>' heading; an undated rate is not evidence")
+        raise Unreadable(
+            "no 'Effective <Month> <Year>' heading above the table; an undated rate is not evidence"
+        )
 
     month_name, year_text = _EFFECTIVE.match(effective_text).groups()
     month = _MONTHS.get(month_name.casefold())
@@ -264,6 +312,18 @@ def parse_executive_schedule(html: str) -> dict[str, Any]:
             "rowText": row["text"],
             "levelText": level_cell,
         }
+
+    # All five, or this is not the Executive Schedule. A single omitted </tr>
+    # — legal HTML5 — silently drops a row, and a table quietly missing Level
+    # IV would simply leave twelve posts unpriced while the run record blamed
+    # it on the pay plan. The module declares the schedule has five levels;
+    # reading four and carrying on would be guessing which one went missing.
+    if set(levels) != set(EXECUTIVE_SCHEDULE_LEVELS):
+        missing = sorted(set(EXECUTIVE_SCHEDULE_LEVELS) - set(levels), key=EXECUTIVE_SCHEDULE_LEVELS.index)
+        raise Unreadable(
+            f"the table prints {len(levels)} of the Executive Schedule's five levels "
+            f"(missing {', '.join(missing)}); a partial table is not this table"
+        )
 
     return {
         "source": PAY_SOURCE,
@@ -370,6 +430,14 @@ def eligible(record: Mapping[str, Any], table: Mapping[str, Any]) -> tuple[bool,
         return False, f"pay_plan_is_{pay_plan.casefold()}_not_executive_schedule"
     if level not in table["levels"]:
         return False, f"level_{level}_is_not_printed_in_this_table"
+    # The archive must have printed this pay plan and this level on one row.
+    # positions.describe_listing aggregates the two independently, so without
+    # this the pair could be assembled from two rows that each state only half
+    # of it. Absent on records derived before that field existed, which is
+    # refused rather than assumed: an unpriced post is a gap, a wrongly priced
+    # one is a false claim.
+    if not record.get("payPlanAndLevelOnOneRow"):
+        return False, "pay_plan_and_level_never_printed_on_one_row"
     return True, "listed_at_an_executive_schedule_level"
 
 
@@ -476,6 +544,30 @@ def build_records(
     return records, report
 
 
+def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
+    """Take the rate off any node that stands for several posts.
+
+    Run *after* `annotate_stated_counts`, which is the only thing that computes
+    `representsPosts`. The guard inside `apply_pay_evidence` cannot do this
+    job: that runs before the tree is pruned and before the counts are
+    annotated, so on a fresh build the field it tests does not exist yet and
+    the guard silently passes — a red team caught exactly that, with a rate
+    published on a node named "... (×4)" and `stands_for_many_posts: 0` in the
+    run record.
+
+    742 position nodes carry a multiplicity. One rate on such a node reads as
+    what a single holder is paid while the panel beside it describes a group.
+    """
+    withdrawn = 0
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if node.get("representsPosts") and node.pop("positionPayRate", None) is not None:
+            withdrawn += 1
+        stack.extend(node.get("children") or [])
+    return withdrawn
+
+
 def apply_pay_evidence(
     root: dict[str, Any],
     records: Mapping[str, Mapping[str, Any]],
@@ -504,6 +596,7 @@ def apply_pay_evidence(
         "no_listing_published": 0,
         "listing_reports_a_different_level": 0,
         "listing_reports_a_rate": 0,
+        "stands_for_many_posts": 0,
     }
     for node_id, record in sorted(records.items()):
         node = node_map.get(node_id)
@@ -512,6 +605,13 @@ def apply_pay_evidence(
             continue
         if "position" not in str(node.get("type") or "").casefold():
             stats["not_a_position"] += 1
+            continue
+        # 742 position nodes stand for several posts at once ("×multiple",
+        # a range, an exact count). One rate on such a node reads as what one
+        # holder is paid, and the panel's own sentence for those nodes says any
+        # figure above is the group's — the two would contradict each other.
+        if node.get("representsPosts"):
+            stats["stands_for_many_posts"] += 1
             continue
         listing = node.get("positionListing")
         if not isinstance(listing, Mapping):

@@ -34,6 +34,9 @@ from data_pipeline.verification.pay_tables import (
 from data_pipeline.verification.positions import apply_position_evidence
 from scripts import derive_pay_evidence
 from scripts.validate_published_graph import (
+    EXECUTIVE_SCHEDULE_EFFECTIVE,
+    EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT,
+    EXECUTIVE_SCHEDULE_FOOTNOTES,
     EXECUTIVE_SCHEDULE_RATES,
     EXECUTIVE_SCHEDULE_TABLE,
 )
@@ -99,7 +102,7 @@ def listing(**over):
         "listedOrganization": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
         "incumbencies": 1, "standing": 1, "status": "Filled", "valuesFrom": "standing_listings",
         "appointmentType": "PAS", "payPlan": "EX", "level": "II", "payLevel": "II",
-        "reportedPay": None, "reportedPayText": None,
+        "reportedPay": None, "reportedPayText": None, "payPlanAndLevelOnOneRow": True,
         "url": ARCHIVE_URL, "checkedAt": "2026-09-08T19:49:47Z",
         "placement": {"status": "listed", "parentId": "dhs-cisa",
                       "parentListedName": "CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY"},
@@ -157,6 +160,47 @@ class ParserTestCase(unittest.TestCase):
             "payable pay rates continues through January 30, 2026.",
         )
 
+    def test_an_unclosed_footnote_does_not_swallow_the_prose_after_it(self):
+        # HTML5 lets a <p> be closed by the next block element, and html.parser
+        # does not model that. A red team spliced unrelated text into the
+        # footnote this way — and the panel prints a footnote in quotation
+        # marks as OPM's own words, so the splice is a fabricated quotation.
+        page = PAGE.replace(
+            "continues through January 30, 2026.</p>",
+            "continues through January 30, 2026.<p>UNRELATED PROSE ABOUT SOMETHING ELSE.</p>",
+        )
+        table = parse_executive_schedule(page)
+        self.assertNotIn("UNRELATED", " ".join(table["footnotes"]))
+        self.assertTrue(table["footnotes"][0].endswith("January 30, 2026."))
+
+    def test_a_heading_below_the_table_does_not_date_it(self):
+        # The date is the difference between a current rate and a historical
+        # one, so it must be the table's own heading and not any heading that
+        # happens to be on the page.
+        page = PAGE.replace("<h3>Effective January 2026</h3>", "")
+        page = page.replace("</table>", "</table><h3>Effective January 2019</h3>")
+        with self.assertRaises(Unreadable):
+            parse_executive_schedule(page)
+
+    def test_the_nearest_heading_above_the_table_wins(self):
+        page = PAGE.replace(
+            "<h2>Salary Table No. 2026-EX</h2>",
+            "<h2>Salary Table No. 2019-EX</h2><h3>Effective January 2019</h3>"
+            "<h2>Salary Table No. 2026-EX</h2>",
+        )
+        table = parse_executive_schedule(page)
+        self.assertEqual(table["table"], "Salary Table No. 2026-EX")
+        self.assertEqual(table["effectiveText"], "Effective January 2026")
+
+    def test_a_second_data_table_is_refused_rather_than_merged(self):
+        page = PAGE.replace("</body>", """
+          <table class="DataTable">
+            <thead><tr><th>Level</th><th>Rate</th></tr></thead>
+            <tbody><tr><td>Level I</td><td>$1</td></tr></tbody>
+          </table></body>""")
+        with self.assertRaises(Unreadable):
+            parse_executive_schedule(page)
+
 
 class CommittedArtifactTestCase(unittest.TestCase):
     """The real fetched page, pinned. A silent replacement must fail here."""
@@ -184,6 +228,21 @@ class CommittedArtifactTestCase(unittest.TestCase):
         table = parse_executive_schedule(DEFAULT_PAY_TABLE_HTML.read_text(encoding="utf-8", errors="replace"))
         self.assertEqual({k: v["amount"] for k, v in table["levels"].items()}, EXECUTIVE_SCHEDULE_RATES)
         self.assertEqual(table["table"], EXECUTIVE_SCHEDULE_TABLE)
+
+    def test_the_gate_mirrors_the_dates_and_the_notes_the_panel_prints(self):
+        # Every one of these is printed verbatim on the page, so every one of
+        # them has to be pinned to the page — including the notes, which the
+        # panel prints in quotation marks as the table's own words.
+        table = parse_executive_schedule(DEFAULT_PAY_TABLE_HTML.read_text(encoding="utf-8", errors="replace"))
+        self.assertEqual(table["effective"], EXECUTIVE_SCHEDULE_EFFECTIVE)
+        self.assertEqual(table["effectiveText"], EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT)
+        self.assertEqual(tuple(table["footnotes"]), EXECUTIVE_SCHEDULE_FOOTNOTES)
+
+    def test_the_gate_mirrors_the_rate_text_the_panel_prints(self):
+        table = parse_executive_schedule(DEFAULT_PAY_TABLE_HTML.read_text(encoding="utf-8", errors="replace"))
+        for level, rate in EXECUTIVE_SCHEDULE_RATES.items():
+            self.assertEqual(table["levels"][level]["rateText"], "${:,.0f}".format(rate))
+            self.assertEqual(table["levels"][level]["levelText"], "Level {}".format(level))
 
     def test_the_loader_refuses_a_fixture_that_is_not_the_file_that_was_served(self):
         tmp = TEST_TMP_ROOT / f"pay-{uuid.uuid4().hex}"
@@ -265,6 +324,22 @@ class EligibilityTestCase(unittest.TestCase):
         ok, reason = eligible(listing(payLevel="VII"), self.table)
         self.assertFalse(ok)
         self.assertIn("not_printed", reason)
+
+    def test_a_pay_plan_and_level_assembled_from_two_rows_are_refused(self):
+        # describe_listing aggregates payPlan and level independently and
+        # ignores blanks, so rows of (EX, no level) and (no pay plan, IV) would
+        # report EX and IV although no row printed both. No title in the
+        # committed archive does that; the rule is what stops a later archive
+        # introducing one silently.
+        ok, reason = eligible(listing(payPlanAndLevelOnOneRow=False), self.table)
+        self.assertFalse(ok)
+        self.assertEqual(reason, "pay_plan_and_level_never_printed_on_one_row")
+
+    def test_a_record_predating_the_co_occurrence_field_is_refused_not_assumed(self):
+        record = listing()
+        record.pop("payPlanAndLevelOnOneRow")
+        ok, _ = eligible(record, self.table)
+        self.assertFalse(ok)
 
     def test_an_arabic_numeral_is_never_read_as_a_roman_one(self):
         for grade in ("1", "5", "15", "2"):
@@ -360,6 +435,13 @@ class ApplyTestCase(unittest.TestCase):
         stats = apply_pay_evidence(tree, self.records)
         self.assertEqual(stats["listing_reports_a_rate"], 1)
 
+    def test_a_node_standing_for_many_posts_is_not_given_one_holder_s_rate(self):
+        tree = self._with_listing(self._tree())
+        index_tree(tree)[0]["cisa-director"]["representsPosts"] = {"kind": "unstated", "text": "×multiple"}
+        stats = apply_pay_evidence(tree, self.records)
+        self.assertEqual(stats["priced"], 0)
+        self.assertEqual(stats["stands_for_many_posts"], 1)
+
     def test_a_rate_never_lands_on_an_organisation(self):
         records, _ = build_records({"dhs-cisa": listing()}, self.table,
                                    url=TABLE_URL, sha256="a" * 64, retrieved_at="2026-09-11T03:05:36Z")
@@ -452,6 +534,25 @@ class ScriptAndGateTestCase(unittest.TestCase):
         self.assertEqual(code, 0, out)
         self.assertIn("salary table         : 1 positions priced from Salary Table No. 2026-EX", out)
 
+    def test_a_multi_post_node_is_not_priced_by_a_real_build(self):
+        # The unit-level guard in apply_pay_evidence is not enough and this is
+        # the test that says so: representsPosts is computed by
+        # annotate_stated_counts, which runs AFTER the pay application, so on a
+        # fresh build the guard tests a field that does not exist yet. A red
+        # team published a rate on a node named "... (×4)" with the run record
+        # reporting stands_for_many_posts: 0. Asserted through build_graph
+        # rather than against the function, because the defect was the order.
+        base = json.loads(json.dumps(BASE))
+        index_tree(base)[0]["cisa-director"]["name"] = "Director, CISA (×4)"
+        self.base.write_text(json.dumps(base), encoding="utf-8")
+        code, out = self._derive()
+        self.assertEqual(code, 0, out)
+        result = self._build()
+        node = index_tree(json.loads(result.graph_path.read_text(encoding="utf-8")))[0]["cisa-director"]
+        self.assertTrue(node.get("representsPosts"), "the fixture no longer states a count")
+        self.assertNotIn("positionPayRate", node)
+        self.assertEqual(result.validation["pay_evidence"]["stands_for_many_posts"], 1)
+
     def test_dry_run_writes_nothing(self):
         code, out = self._derive("--dry-run")
         self.assertEqual(code, 0, out)
@@ -512,10 +613,46 @@ class ScriptAndGateTestCase(unittest.TestCase):
         self.assertEqual(code, 1, out)
         self.assertIn("no position listing", out)
 
+    def test_the_gate_refuses_one_post_s_rate_on_a_node_standing_for_many(self):
+        self._derive()
+        result = self._build()
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        index_tree(graph)[0]["cisa-director"]["representsPosts"] = {"kind": "unstated", "text": "×multiple"}
+        path = self.tmp / "bad.json"
+        path.write_text(json.dumps(graph), encoding="utf-8")
+        code, out = self._gate(path)
+        self.assertEqual(code, 1, out)
+        self.assertIn("stands for several posts", out)
+
     def test_the_gate_refuses_a_dropped_footnote(self):
         code, out = self._corrupt(footnotes=[])
         self.assertEqual(code, 1, out)
         self.assertIn("without the notes the table prints", out)
+
+    # The panel prints amountScope, rateText, effectiveText and the footnotes
+    # verbatim. A gate that checked only the machine-readable amount would
+    # vouch for a figure while the sentence beside it said something else.
+    def test_the_gate_refuses_a_rate_attributed_to_the_wrong_level(self):
+        code, out = self._corrupt(amountScope="Level I")
+        self.assertEqual(code, 1, out)
+        self.assertIn("while pricing level", out)
+
+    def test_the_gate_refuses_text_riding_along_with_the_printed_rate(self):
+        # "$228,000 per month" is digit-identical to the annual rate and
+        # twelve times the claim.
+        code, out = self._corrupt(rateText="$228,000 per month")
+        self.assertEqual(code, 1, out)
+        self.assertIn("the table prints", out)
+
+    def test_the_gate_refuses_an_effective_heading_that_is_not_the_pages(self):
+        code, out = self._corrupt(effectiveText="Effective January 2031")
+        self.assertEqual(code, 1, out)
+
+    def test_the_gate_refuses_a_fabricated_note_attributed_to_the_table(self):
+        code, out = self._corrupt(footnotes=[
+            "The table's rates are payable in full to every Executive Schedule appointee; no pay freeze applies."])
+        self.assertEqual(code, 1, out)
+        self.assertIn("quotes notes the table does not carry", out)
 
     def test_the_gate_refuses_a_rate_from_another_table(self):
         code, out = self._corrupt(table="Salary Table No. 2025-EX")

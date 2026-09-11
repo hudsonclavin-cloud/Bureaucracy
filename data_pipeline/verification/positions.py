@@ -448,6 +448,18 @@ def describe_listing(rows: list[dict[str, Any]]) -> dict[str, Any]:
     out["payLevel"] = level
     out["reportedPay"] = pay
     out["reportedPayText"] = pay_text
+    # Each field above is aggregated on its own, and `_single_or_counts`
+    # ignores blanks — so a title whose rows are (payPlan EX, no level) and
+    # (no payPlan, level IV) reports EX and IV although no single row says a
+    # post on the Executive Schedule sits at level IV. Nothing may price a
+    # rank off a pair the archive never printed together, so the pair is
+    # recorded rather than inferred. No title in the committed archive is
+    # currently in that position; the field exists so that a later archive
+    # cannot introduce one silently.
+    out["payPlanAndLevelOnOneRow"] = bool(
+        out.get("payPlan") and out.get("level")
+        and any(r["payPlan"] == out["payPlan"] and r["level"] == out["level"] for r in basis)
+    )
     return out
 
 

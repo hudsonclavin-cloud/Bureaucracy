@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260911a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260911a";
+import { createGovernmentGraph } from "./graph.js?v=20260911b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260911b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -564,7 +564,22 @@ function renderCountProvenance(data) {
     } else {
       add(`Its name states that it stands for several posts of this title ("${represents.as_written}") without saying how many, and no number is invented here. `);
     }
-    add("Any figure above is for the group, not for one holder.");
+    // What the figure above actually is decides this sentence. An apportioned
+    // share or a measured total is the group's; a rate of basic pay is one
+    // post's, and calling that "for the group" is false in the other
+    // direction. Nine published nodes said exactly that — five State
+    // department offices, the Deputy Solicitor General (×4) and two Deputy
+    // Assistant Attorney General nodes — each printing a single archive
+    // rate under a sentence calling it the group's.
+    const perPost = isCostHiddenAsEstimate(data) && reportedPayOf(data) !== null;
+    if (perPost) {
+      const posts = represents.kind === "exact"
+        ? `all ${represents.count}`
+        : represents.kind === "range" ? `each of the ${represents.low} to ${represents.high}` : "each";
+      add(`The rate above is what the archive reports for the title, so it is one post's rate rather than the group's — ${posts} would be paid separately.`);
+    } else {
+      add("Any figure above is for the group, not for one holder.");
+    }
   }
 }
 

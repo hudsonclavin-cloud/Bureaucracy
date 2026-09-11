@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-11T03:30:44.395760+00:00",
+  "timestamp": "2026-09-11T03:57:44.763562+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -351,7 +351,8 @@
       "not_a_position": 0,
       "no_listing_published": 0,
       "listing_reports_a_different_level": 0,
-      "listing_reports_a_rate": 0
+      "listing_reports_a_rate": 0,
+      "stands_for_many_posts": 0
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {

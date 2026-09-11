@@ -2323,6 +2323,7 @@ def build_graph(
         DEFAULT_PAY_EVIDENCE_PATH,
         apply_pay_evidence,
         load_pay_evidence,
+        withdraw_pay_from_multi_post_nodes,
     )
 
     resolved_pay_path = DEFAULT_PAY_EVIDENCE_PATH if pay_evidence_path == "default" else pay_evidence_path
@@ -2378,6 +2379,11 @@ def build_graph(
     # After the tree is final and pruned: the count a name states is only
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
+    # And only now can a rate of basic pay be taken off a node that stands for
+    # several posts: `representsPosts` does not exist until the line above
+    # computes it, so the guard inside apply_pay_evidence (which runs at 2329,
+    # before the tree is even pruned) never sees it on a fresh build.
+    validation["pay_evidence"]["stands_for_many_posts"] = withdraw_pay_from_multi_post_nodes(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats
