@@ -111,23 +111,34 @@ class FetchFixtureTests(unittest.TestCase):
         self.assertEqual(fetch_fixture.main(["fetch_fixture.py", URL, "../../escape.html"]), 2)
 
 
-class RecordedRefusalTests(unittest.TestCase):
-    """The committed record of the Executive Schedule table this session could
-    not read. It is evidence, so it must stay a refusal with no data beside
-    it — a fixture appearing here later means somebody fetched it, which is
-    the point."""
+class RecordedFetchTests(unittest.TestCase):
+    """The committed record of the Executive Schedule table. It was a refusal
+    with no data beside it until 2026-09-11, when the session's network
+    access opened up and the table was actually fetched — recorded here
+    pinned the other way now: the file on disk must be exactly the bytes the
+    meta record's hash names, so a hand-typed table could never substitute
+    for a real fetch without failing this hash check."""
 
     PAY = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "pay"
 
-    def test_the_blocked_fetch_is_recorded_with_its_reason(self) -> None:
+    def test_the_fetch_is_recorded_with_its_hash(self) -> None:
         meta = json.loads((self.PAY / "executive_schedule_2026.html.meta.json").read_text(encoding="utf-8"))
         self.assertIn("opm.gov", meta["url"])
-        self.assertIn("403", meta["error"])
-        self.assertIsNone(meta["sha256"])
+        self.assertEqual(meta["status"], 200)
+        self.assertIsNone(meta["error"])
+        self.assertIsNotNone(meta["sha256"])
 
-    def test_no_table_was_typed_in_beside_it(self) -> None:
-        stray = [p.name for p in self.PAY.iterdir() if p.suffix not in (".json", ".md")]
-        self.assertEqual(stray, [], "a pay table appeared without a fetch behind it")
+    def test_the_fixture_matches_the_recorded_hash(self) -> None:
+        meta = json.loads((self.PAY / "executive_schedule_2026.html.meta.json").read_text(encoding="utf-8"))
+        table = self.PAY / "executive_schedule_2026.html"
+        self.assertTrue(table.exists(), "the meta record claims a fetch but no fixture is beside it")
+        self.assertEqual(hashlib.sha256(table.read_bytes()).hexdigest(), meta["sha256"])
+        self.assertEqual(table.stat().st_size, meta["bytes"])
+
+    def test_no_other_table_was_typed_in_beside_it(self) -> None:
+        recorded = {p.name.removesuffix(".meta.json") for p in self.PAY.glob("*.meta.json")}
+        stray = [p.name for p in self.PAY.iterdir() if p.suffix not in (".json", ".md") and p.name not in recorded]
+        self.assertEqual(stray, [], "a pay table appeared without a fetch record behind it")
 
 
 if __name__ == "__main__":
