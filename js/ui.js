@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909e";
+import { createGovernmentGraph } from "./graph.js?v=20260911a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260911a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -598,8 +598,8 @@ function renderPositionListing(data) {
   // Pay, as the archive states it and no further. The column it comes from
   // holds two different things — a rank ("IV", "15") and, for 983 rows, a
   // rate of basic pay ("$225,700") — so a dollar figure is never printed as
-  // a level. Nothing converts a level into a rate: that needs the Executive
-  // Schedule table, which this pipeline has not been able to fetch.
+  // a level. The archive itself never converts a level into a rate; where
+  // the block below shows one, it comes from a second document and says so.
   if (listing.payPlan) add(`Pay plan ${listing.payPlan}`);
   if (listing.payLevel) {
     add(`${listing.payPlan ? ", " : ""}${listing.payPlan === "EX" ? "Executive Schedule level" : "level or grade"} ${listing.payLevel}`);
@@ -614,6 +614,29 @@ function renderPositionListing(data) {
     add("Those details come from a past incumbency, not a standing listing. ");
   }
   add("It is a record of that period and says nothing about who holds this post now.");
+  renderTableRate(data, add);
+}
+
+// The salary table's rate for the level the archive reports. Deliberately
+// rendered here, inside the listing block, rather than only in the cost block:
+// this element is drawn whatever the estimates toggle says, and the claim only
+// makes sense beside the level it was looked up from. Text nodes throughout —
+// the footnote is verbatim text from a fetched OPM page, and this file has no
+// escaping helper (its convention is replaceChildren + createTextNode).
+function renderTableRate(data, add) {
+  const rate = data.positionPayRate;
+  if (!rate || typeof rate !== "object" || typeof rate.amount !== "number") return;
+  const printed = rate.rateText || `$${rate.amount.toLocaleString()}`;
+  // Only the leading "Effective" is lowercased to join the sentence; the month
+  // keeps the capitalisation the page prints, because this is quoted text.
+  const when = rate.effectiveText ? `, ${String(rate.effectiveText).replace(/^Effective\b/, "effective")}` : "";
+  add(` Separately, OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}.`);
+  // The whole point of the module: two documents, and the join is weaker than
+  // either. Neither half is allowed to be read as the other.
+  add(" That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.");
+  add(" A rate of basic pay is also not this unit's cost: it excludes benefits, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  const notes = Array.isArray(rate.footnotes) ? rate.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {

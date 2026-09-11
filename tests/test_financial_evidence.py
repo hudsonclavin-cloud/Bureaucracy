@@ -205,25 +205,60 @@ class NodeBindingTestCase(unittest.TestCase):
             fe.validate_record(rec(nodeId="leg-house-cmte-rules"), COMMITTEE)
 
     def test_a_pay_level_is_a_proxy_for_a_post_not_an_exact_match(self):
+        # The shape of Salary Table No. 2026-EX as actually fetched on
+        # 2026-09-11. An earlier version of this test was written before the
+        # page existed and guessed at it in three ways that the real page
+        # refutes: dot leaders in the quote, a heading reading "in whole
+        # dollars" (the words "dollar", "thousand" and "million" do not occur
+        # on the page at all), and $225,700 for Level II (the archive's SES
+        # rate; the table pays Level II $228,000). Fitting a record to a
+        # guessed page is the exact failure tests/fixtures/opm/pay/README.md
+        # declined to risk.
         out = fe.validate_record(
             {
                 "nodeId": "doj-fbi-director",
-                "amount": 225700.0, "amountRaw": "225,700", "units": "usd",
+                "amount": 228000.0, "amountRaw": "228,000", "units": "usd",
                 "normalizedMultiplier": 1,
-                "unitsEvidence": "Rates of basic pay, in whole dollars",
+                "unitsEvidence": "Level II $228,000",
                 "costBasis": "basic_pay", "fiscalYear": 2026,
-                "periodCoverage": "full_fiscal_year",
+                "periodCoverage": "annual_rate", "periodAsOf": "2026-01-01",
                 "amountScope": "Level II", "scopeMatch": "proxy", "rollupRole": "line",
                 "sourceType": "opm_pay_table",
                 "sourceUrl": "https://www.opm.gov/salary-tables/26Tables/exec/html/EX.aspx",
                 "documentSha256": "b" * 64, "retrievedAt": "2026-09-01T00:00:00Z",
-                "locator": {"table": "Executive Schedule", "row": "Level II"},
-                "quote": "Level II .......... 225,700",
+                "locator": {"table": "Salary Table No. 2026-EX", "row": "Level II"},
+                "quote": "Level II $228,000",
                 "financialEvidenceStatus": "partial",
             },
             POST,
         )
         self.assertEqual(fe.classify(out), "partial")
+        self.assertEqual(out["unitsEvidenceKind"], "currency_mark_on_the_printed_figure")
+
+    def test_a_pay_table_that_does_state_its_scale_still_goes_the_ordinary_route(self):
+        # The currency-mark rule is an addition, not a replacement. A table
+        # that states its scale in words must still be read by the general
+        # rule, or the narrow exception would have quietly become the path
+        # everything takes.
+        out = fe.validate_record(
+            {
+                "nodeId": "doj-fbi-director",
+                "amount": 228000.0, "amountRaw": "228,000", "units": "usd",
+                "normalizedMultiplier": 1,
+                "unitsEvidence": "Rates of basic pay, in whole dollars",
+                "costBasis": "basic_pay", "fiscalYear": 2026,
+                "periodCoverage": "annual_rate", "periodAsOf": "2026-01-01",
+                "amountScope": "Level II", "scopeMatch": "proxy", "rollupRole": "line",
+                "sourceType": "opm_pay_table",
+                "sourceUrl": "https://www.opm.gov/salary-tables/26Tables/exec/html/EX.aspx",
+                "documentSha256": "b" * 64, "retrievedAt": "2026-09-01T00:00:00Z",
+                "locator": {"table": "Salary Table No. 2026-EX", "row": "Level II"},
+                "quote": "Level II 228,000",
+                "financialEvidenceStatus": "partial",
+            },
+            POST,
+        )
+        self.assertEqual(out["unitsEvidenceKind"], "scale_stated_in_the_document")
 
 
 class SourceAndBasisTestCase(unittest.TestCase):

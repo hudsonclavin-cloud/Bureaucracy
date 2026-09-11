@@ -2160,6 +2160,7 @@ def build_graph(
     directory_evidence_path: str | Path | None = "default",
     headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
+    pay_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2315,6 +2316,18 @@ def build_graph(
     resolved_position_path = DEFAULT_POSITION_EVIDENCE_PATH if position_evidence_path == "default" else position_evidence_path
     validation["position_evidence"] = apply_position_evidence(
         graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,
+    )
+    # The salary table last of all, because it is a gloss on the listing above
+    # and is published only where that listing still reports the same level.
+    from data_pipeline.verification.pay_tables import (  # noqa: E402 — pay_tables imports this module
+        DEFAULT_PAY_EVIDENCE_PATH,
+        apply_pay_evidence,
+        load_pay_evidence,
+    )
+
+    resolved_pay_path = DEFAULT_PAY_EVIDENCE_PATH if pay_evidence_path == "default" else pay_evidence_path
+    validation["pay_evidence"] = apply_pay_evidence(
+        graph, load_pay_evidence(resolved_pay_path) if resolved_pay_path else {}, index_tree=index_tree,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,

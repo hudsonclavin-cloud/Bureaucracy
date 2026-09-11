@@ -133,10 +133,24 @@ PERIOD_COVERAGES = {
     "quarter",
     "month",
     "multi_year",
+    # A rate is not a flow. Every other coverage here bounds a sum of money
+    # that moved over a period; an annual rate of basic pay is a standing
+    # figure in effect from a date, and filing it as "full_fiscal_year" would
+    # claim the rate covered a whole year it did not — the January 2026
+    # Executive Schedule rates took effect a quarter of the way into FY2026.
+    "annual_rate",
 }
 #: A year-to-date figure is meaningless without the date it runs to; two YTD
-#: figures cut off at different months are not the same measurement.
-PERIODS_NEEDING_AS_OF = {"fiscal_year_to_date", "quarter", "month"}
+#: figures cut off at different months are not the same measurement. A rate is
+#: in the same position: two rates in effect from different dates are two
+#: different measurements, so `annual_rate` carries its effective date here.
+PERIODS_NEEDING_AS_OF = {"fiscal_year_to_date", "quarter", "month", "annual_rate"}
+
+#: Bases that are rates rather than sums. The coverage and the basis have to
+#: agree in both directions: "net outlays, as an annual rate" is not a thing,
+#: and a rate of basic pay filed as a fiscal year's spending would be compared
+#: against sums it has nothing to do with.
+RATE_BASES = {"basic_pay"}
 
 SOURCE_TYPES = {
     "congressional_justification",
@@ -148,6 +162,12 @@ SOURCE_TYPES = {
     "omb_apportionment",
     "opm_pay_table",
 }
+
+#: Documents that state their scale by *printing* it rather than by declaring
+#: it in a heading — see `_prints_whole_dollars`. Deliberately one entry: this
+#: is a narrowing of the units rule, so it is granted per document class, to
+#: classes somebody here has actually read, and never as a general relaxation.
+SCALE_PRINTED_SOURCE_TYPES = {"opm_pay_table"}
 
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
@@ -222,6 +242,44 @@ def scale_stated_by(heading: str, kind: str) -> tuple[str | None, str]:
         if len(phrase) > len(best_phrase):
             best_unit, best_phrase = unit, phrase
     return best_unit, best_phrase
+
+
+def _prints_whole_dollars(evidence: str, amount_raw: Any, source_type: str, units: str) -> str:
+    """Whether the document states whole dollars by *printing* the figure with
+    its currency mark attached, rather than by declaring a scale in a heading.
+
+    OPM's Salary Table No. 2026-EX states no scale anywhere. Its own words are
+    "Level" and "Rate"; the words "dollars", "thousands" and "millions" do not
+    occur on the page. The scale is stated by the cell reading "$209,600" — a
+    figure printed with its dollar sign and all of its digits, which no table
+    printed in thousands would show. The general units rule cannot see that,
+    so an honest record from that page was unfilable — and an unfilable honest
+    record is how a validator gets worked around, which `double_counted` below
+    already records as the more dangerous failure.
+
+    The narrowing is deliberately small:
+
+    - only `usd`, and only for a source type in `SCALE_PRINTED_SOURCE_TYPES`,
+      so it is granted per document class that somebody here has read rather
+      than as a general relaxation of the units rule;
+    - only when the evidence states no scale phrase at all. The caller checks
+      that first, so a document that says "in thousands" is still refused on
+      the mismatch rather than rescued by a dollar sign somewhere in the line;
+    - the mark must be attached to *this record's own printed figure*. A
+      dollar sign loose in the text proves nothing about which column the
+      figure came out of.
+
+    Returns the matched text, or "" when the evidence does not show this.
+    """
+    if units != "usd" or source_type not in SCALE_PRINTED_SOURCE_TYPES:
+        return ""
+    raw = _text(amount_raw)
+    # An accounting negative has no business being priced this way, and the
+    # parenthesised form would make the "attached" test meaningless.
+    if not raw or not re.fullmatch(r"[\d,]+", raw):
+        return ""
+    match = re.search(rf"\$\s*{re.escape(raw)}(?![\d,])", evidence)
+    return match.group(0) if match else ""
 
 
 def _is_real_number(value: Any) -> bool:
@@ -442,15 +500,23 @@ def validate_record(
     kind = "count" if units in COUNT_UNITS else "money"
     stated, phrase = scale_stated_by(units_evidence, kind)
     if stated is None:
-        raise Rejected(
-            f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
-            f"(expected one of {UNIT_PHRASES[units]})"
-        )
-    if stated != units:
-        raise Rejected(
-            f"{node_id}: unitsEvidence states {stated!r} (on {phrase!r}) but the record "
-            f"declares {units!r}"
-        )
+        # A document may state its scale by printing it. Narrow, per source
+        # type, and only where no scale phrase was found at all — see
+        # `_prints_whole_dollars`.
+        printed = _prints_whole_dollars(units_evidence, record.get("amountRaw"), source_type, units)
+        if not printed:
+            raise Rejected(
+                f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
+                f"(expected one of {UNIT_PHRASES[units]})"
+            )
+        units_evidence_kind = "currency_mark_on_the_printed_figure"
+    else:
+        if stated != units:
+            raise Rejected(
+                f"{node_id}: unitsEvidence states {stated!r} (on {phrase!r}) but the record "
+                f"declares {units!r}"
+            )
+        units_evidence_kind = "scale_stated_in_the_document"
 
     quote = _text(record.get("quote"))
     if len(quote) < 8:
@@ -501,6 +567,13 @@ def validate_record(
     coverage = _text(record.get("periodCoverage"))
     if coverage not in PERIOD_COVERAGES:
         raise Rejected(f"{node_id}: periodCoverage {coverage!r} is not one of {sorted(PERIOD_COVERAGES)}")
+    # A rate and a sum are not interchangeable in either direction.
+    if (coverage == "annual_rate") != (basis in RATE_BASES):
+        raise Rejected(
+            f"{node_id}: periodCoverage {coverage!r} and costBasis {basis!r} disagree about whether "
+            f"this is a rate or a sum; {sorted(RATE_BASES)} are rates and take 'annual_rate', and "
+            "nothing else does"
+        )
     as_of = _text(record.get("periodAsOf"))
     if coverage in PERIODS_NEEDING_AS_OF:
         if not as_of:
@@ -578,6 +651,10 @@ def validate_record(
         "sourceUrl": url,
         "sourceType": source_type,
         "financialEvidenceStatus": state,
+        # Which rule established the scale. Published so a reviewer can see at
+        # a glance which records rest on the narrower of the two, and so the
+        # release gate can report the count rather than leaving it implicit.
+        "unitsEvidenceKind": units_evidence_kind,
     }
 
 

@@ -363,8 +363,37 @@ try {
   if (withLevel) {
     await openByName(withLevel.name);
     const listing = await text("#info-position-listing");
-    check("a level is never printed as a dollar figure", !/level [^.]*\$/i.test(listing), listing);
+    // This used to assert !/level [^.]*\$/i — that no dollar figure appeared
+    // anywhere near the word "level". That was the right invariant while the
+    // archive was the only source: it had no rate for a level, so any dollar
+    // figure beside one would have been invented. Since 2026-09-11 a second
+    // document, OPM's salary table, does state a rate for a level, so the
+    // blanket form now tests the wrong thing. The invariant that still holds
+    // — and the one that matters — is that the ARCHIVE's level is never
+    // presented as a rate, and that any rate shown is attributed to the table
+    // it came from. Rewritten rather than deleted, deliberately.
     check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
+    check("the archive's own level carries no rate", !/level or grade [IVX\d]+[^.]*\$/i.test(listing), listing);
+  }
+
+  // The salary table's rate, which is a join of two documents and has to read
+  // as one: the level from the archive, the rate from the table, and neither
+  // saying what the post pays now.
+  const withTableRate = allNodes.find((n) => n.positionPayRate && typeof n.positionPayRate.amount === "number" && unique(n));
+  check("some position is priced from the salary table", Boolean(withTableRate), "none");
+  if (withTableRate) {
+    await openByName(withTableRate.name);
+    const listing = await text("#info-position-listing");
+    check("the table rate names the table it came from", /Salary Table No\. \d{4}-EX/.test(listing), listing);
+    check("the table rate names the level it prices", /pays \$[\d,]+ for Level [IVX]+/.test(listing), listing);
+    check("the panel says it is two documents, not one", /two documents, not one/.test(listing), listing);
+    check("the panel disclaims the current holder", /neither says what this post pays whoever holds it now/.test(listing), listing);
+    check("the panel says a rate of pay is not the unit's cost", /not this unit's cost/.test(listing), listing);
+    check("the pay-freeze note is carried through", /The table's own note: "/.test(listing), listing);
+    check("the freeze note names what it covers", /freeze on the payable pay rates/.test(listing), listing);
+    // The rate must never be dressed as a measured cost of the unit.
+    const stats = await text("#info-stats");
+    check("the table rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(stats) || !/Salary Table/.test(stats), stats);
   }
 
   // The exact-costs-only view: with it on, an apportioned share is not shown

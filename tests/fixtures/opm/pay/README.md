@@ -35,18 +35,42 @@ through rather than drop:
 > Future Congressional action will determine whether these frozen rates
 > continue beyond that date.
 
-1,596 rows of the PLUM archive are Executive Schedule positions carrying a
-level (I–V) rather than a rate of pay, and 30 of the graph's matched positions
-are among them. This table turns each level into the statutory rate of basic
-pay, which would give those positions a figure from an official source
-instead of nothing.
+1,596 rows of the PLUM archive carry the `EX` pay plan; 1,544 of those carry a
+level (I–V) rather than a rate of pay. This table turns each level into the
+statutory rate of basic pay, which gives those positions a figure from an
+official source instead of nothing.
 
-**The parser and the level-to-rate matcher are still deliberately not
-written.** Fetching the page is not the same claim as reading it correctly:
-writing a parser against a page nobody here had seen would have been guessing
-at its markup, and a parser fitted to a guess is how a validator comes to run
-happily and be wrong. Now that the file exists, write them against it —
-`financial_evidence.py` has no producer for this table yet.
+**Read by `data_pipeline/verification/pay_tables.py`, derived by
+`scripts/derive_pay_evidence.py`.** The parser was written against this file
+and not before it, which is the whole reason the fetch had to come first: a
+parser fitted to a guess about markup is how a validator comes to run happily
+and be wrong. It refuses rather than guesses — a reshaped table, an
+unnumbered or undated one, a sixth level, a level printed twice, or a rate
+that is not a figure all raise `Unreadable`.
+
+**29 positions are priced, not 30.** An earlier draft of this README said 30,
+counting every matched position that carries "a level". One of those thirty is
+a GS-15 (`exec-dept-ed-ocr-deputy-assistant-secretary`), which Salary Table
+2026-EX says nothing about. The pay plan, not the numeral, decides: the
+archive files General Schedule grades in the same column, and two of its rows
+carry a Roman numeral on a pay plan that is not the Executive Schedule at all
+("THE SECRETARY" on `AD`, "BOARD MEMBER - CHAIR" on `WC`). A rate is published
+only where the archive gives both an `EX` pay plan and a level this table
+prints. Level I matches no node in the graph.
+
+The two things the matcher had to be honest about, and how it is:
+
+- the level is from the **2021–2025 archive** and the table is **effective
+  January 2026**, so every record carries both halves with their own dates
+  (`levelClaim`), the scope is `proxy` rather than `exact` because the table
+  names a rank and not the unit, and `financial_evidence.classify` therefore
+  grades all 29 `partial` — there is no route by which one becomes `verified`;
+- basic pay is **not** the position's cost, so it is published in
+  `positionPayRate` beside the listing and never in the cost cascade, and the
+  release gate refuses a pay block that sits beside a measured cost status.
+
+The freeze note above rides on every record and is printed verbatim in the
+panel, because a rate that was frozen is not what was payable.
 
 Two things the matcher will have to be honest about when it is written:
 

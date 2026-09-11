@@ -119,6 +119,11 @@ EVIDENCE_OWNED_FIELDS = (
     "positionListing",
     "employeesOfficial",
     "employeesOfficialSource",
+    # Written by pay_tables.py. It is a gloss on positionListing directly
+    # above — the rate the salary table pays the level that listing reports —
+    # so it must be withdrawn on the same build the listing is, or a rate
+    # would outlive the level it was looked up from.
+    "positionPayRate",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never

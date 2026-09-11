@@ -8926,6 +8926,36 @@
     "placementParentId": "exec-dept-doj",
     "placementMatchedText": "INSPECTOR GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "INSPECTOR GENERAL",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj"
   },
   {
@@ -9090,6 +9120,36 @@
     "placementParentId": "exec-dept-doj-fbi",
     "placementMatchedText": "DIRECTOR, FEDERAL BUREAU OF INVESTIGATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "II",
+      "payPlan": "EX",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, FEDERAL BUREAU OF INVESTIGATION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-fbi"
   },
   {
@@ -9254,6 +9314,36 @@
     "placementParentId": "exec-dept-doj-dea",
     "placementMatchedText": "ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-dea"
   },
   {
@@ -9324,6 +9414,36 @@
     "placementParentId": "exec-dept-doj-dea",
     "placementMatchedText": "DEPUTY ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DEPUTY ADMINISTRATOR, DRUG ENFORCEMENT ADMINISTRATION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-dea"
   },
   {
@@ -9488,6 +9608,36 @@
     "placementParentId": "exec-dept-doj-atf",
     "placementMatchedText": "DIRECTOR, BUREAU OF ALCOHOL, TOBACCO, FIREARMS, AND EXPLOSIVES",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, BUREAU OF ALCOHOL, TOBACCO, FIREARMS, AND EXPLOSIVES",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-atf"
   },
   {
@@ -10008,6 +10158,36 @@
     "placementParentId": "exec-dept-doj-usms",
     "placementMatchedText": "DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-usms"
   },
   {
@@ -10726,6 +10906,36 @@
     "placementParentId": "exec-dept-doj-div-nsd",
     "placementMatchedText": "ASSISTANT ATTORNEY GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT ATTORNEY GENERAL",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doj-div-nsd"
   },
   {
@@ -11440,6 +11650,36 @@
     "placementParentId": "exec-dept-doi-nps",
     "placementMatchedText": "DIRECTOR, NATIONAL PARK SERVICE",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, NATIONAL PARK SERVICE",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doi-nps"
   },
   {
@@ -11696,6 +11936,36 @@
     "placementParentId": "exec-dept-doi-usgs",
     "placementMatchedText": "DIRECTOR, U.S. GEOLOGICAL SURVEY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, U.S. GEOLOGICAL SURVEY",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doi-usgs"
   },
   {
@@ -11867,6 +12137,36 @@
     "placementParentId": "exec-dept-doi-fws",
     "placementMatchedText": "DIRECTOR, UNITED STATES FISH AND WILDLIFE SERVICE",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, UNITED STATES FISH AND WILDLIFE SERVICE",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doi-fws"
   },
   {
@@ -15723,6 +16023,36 @@
     "placementParentId": "exec-dept-dol-eta",
     "placementMatchedText": "ASSISTANT SECRETARY FOR EMPLOYMENT AND TRAINING",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT SECRETARY FOR EMPLOYMENT AND TRAINING",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dol-eta"
   },
   {
@@ -16999,6 +17329,36 @@
     "placementParentId": "exec-dept-hhs-nih",
     "placementMatchedText": "DIRECTOR, NATIONAL INSTITUTES OF HEALTH",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, NATIONAL INSTITUTES OF HEALTH",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-hhs-nih"
   },
   {
@@ -17776,6 +18136,36 @@
     "placementParentId": "exec-dept-hhs-ihs",
     "placementMatchedText": "DIRECTOR, INDIAN HEALTH SERVICE",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, INDIAN HEALTH SERVICE",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-hhs-ihs"
   },
   {
@@ -18108,6 +18498,36 @@
     "placementParentId": "exec-dept-hud-pih",
     "placementMatchedText": "ASSISTANT SECRETARY FOR PUBLIC AND INDIAN HOUSING",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT SECRETARY FOR PUBLIC AND INDIAN HOUSING",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-hud-pih"
   },
   {
@@ -18229,6 +18649,36 @@
     "placementParentId": "exec-dept-hud-cpd",
     "placementMatchedText": "ASSISTANT SECRETARY FOR COMMUNITY PLANNING AND DEVELOPMENT",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT SECRETARY FOR COMMUNITY PLANNING AND DEVELOPMENT",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-hud-cpd"
   },
   {
@@ -18299,6 +18749,36 @@
     "placementParentId": "exec-dept-hud-fheo",
     "placementMatchedText": "ASSISTANT SECRETARY FOR FAIR HOUSING AND EQUAL OPPORTUNITY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT SECRETARY FOR FAIR HOUSING AND EQUAL OPPORTUNITY",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-hud-fheo"
   },
   {
@@ -19443,6 +19923,36 @@
     "placementParentId": "exec-dept-doe-sc",
     "placementMatchedText": "DIRECTOR, OFFICE OF SCIENCE",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, OFFICE OF SCIENCE",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doe-sc"
   },
   {
@@ -20090,6 +20600,36 @@
     "placementParentId": "exec-dept-ed-ocr",
     "placementMatchedText": "ASSISTANT SECRETARY FOR CIVIL RIGHTS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ASSISTANT SECRETARY FOR CIVIL RIGHTS",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-ed-ocr"
   },
   {
@@ -20823,6 +21363,36 @@
     "placementParentId": "exec-dept-va-vha",
     "placementMatchedText": "UNDER SECRETARY FOR HEALTH",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "UNDER SECRETARY FOR HEALTH",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va-vha"
   },
   {
@@ -20963,6 +21533,36 @@
     "placementParentId": "exec-dept-va-vba",
     "placementMatchedText": "UNDER SECRETARY FOR BENEFITS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "UNDER SECRETARY FOR BENEFITS",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va-vba"
   },
   {
@@ -21103,6 +21703,36 @@
     "placementParentId": "exec-dept-va-nca",
     "placementMatchedText": "UNDER SECRETARY FOR MEMORIAL AFFAIRS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "UNDER SECRETARY FOR MEMORIAL AFFAIRS",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va-nca"
   },
   {
@@ -21243,6 +21873,36 @@
     "placementParentId": "exec-dept-va-bva",
     "placementMatchedText": "CHAIRMAN, BOARD OF VETERANS APPEALS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "CHAIRMAN, BOARD OF VETERANS APPEALS",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va-bva"
   },
   {
@@ -21626,6 +22286,36 @@
     "placementParentId": "exec-dept-dhs-cbp",
     "placementMatchedText": "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-cbp"
   },
   {
@@ -21930,6 +22620,36 @@
     "placementParentId": "exec-dept-dhs-ice",
     "placementMatchedText": "DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "IV",
+      "payPlan": "EX",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-ice"
   },
   {
@@ -22234,6 +22954,36 @@
     "placementParentId": "exec-dept-dhs-tsa",
     "placementMatchedText": "ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "II",
+      "payPlan": "EX",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-tsa"
   },
   {
@@ -22304,6 +23054,36 @@
     "placementParentId": "exec-dept-dhs-tsa",
     "placementMatchedText": "DEPUTY ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DEPUTY ADMINISTRATOR, TRANSPORTATION SECURITY ADMINISTRATION",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-tsa"
   },
   {
@@ -22702,6 +23482,36 @@
     "placementParentId": "exec-dept-dhs-uscis",
     "placementMatchedText": "DIRECTOR, UNITED STATES  CITIZENSHIP AND IMMIGRATION SERVICES",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "III",
+      "payPlan": "EX",
+      "amount": 209600.0,
+      "rateText": "$209,600",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level III",
+      "quote": "Level III $209,600",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, UNITED STATES  CITIZENSHIP AND IMMIGRATION SERVICES",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-uscis"
   },
   {
@@ -23216,6 +24026,36 @@
     "placementParentId": "exec-dept-dhs-cisa",
     "placementMatchedText": "DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "II",
+      "payPlan": "EX",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dhs-cisa"
   },
   {
@@ -27928,6 +28768,36 @@
     "placementParentId": "exec-ind-misc-federal-election-commission-fec",
     "placementMatchedText": "GENERAL COUNSEL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
+    "positionPayRate": {
+      "source": "opm_executive_schedule",
+      "method": "rate_for_the_level_reported_in_the_plum_archive",
+      "payLevel": "V",
+      "payPlan": "EX",
+      "amount": 184900.0,
+      "rateText": "$184,900",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level V",
+      "quote": "Level V $184,900",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "levelSource": {
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "listedTitle": "GENERAL COUNSEL",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z"
+      },
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-ind-misc-federal-election-commission-fec"
   },
   {

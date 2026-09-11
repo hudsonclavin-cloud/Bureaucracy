@@ -34,6 +34,8 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
+python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
+python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -452,31 +454,86 @@ Executive Schedule row, "15" for a General Schedule one) and, for 983 rows,
 a rate of basic pay ("$225,700") — so `split_level_grade_pay` separates
 them into `payLevel` and `reportedPay` (with `reportedPayText`, the text
 the archive prints, so the figure can be audited against the file). 44 of
-the matched positions carry a rate, 30 a level only. A dollar figure is
-never published under a heading that reads "Level", the gate refuses each
+the matched positions carry a rate, 30 a level or grade only. A dollar figure
+is never published under a heading that reads "Level", the gate refuses each
 holding the other's kind of value, and the panel says a level is the rank,
 not a rate of pay, and that a rate is neither this unit's cost nor
 necessarily what the post pays now.
 
-Nothing converts a level into a rate. That needs OPM's Salary Table
-2026-EX, and `www.opm.gov` is refused by this session's egress proxy —
-along with `www.federalregister.gov` (the Executive Order setting the rates
-would have been a second route), `www.senate.gov` and
-`fiscaldata.treasury.gov`, all four of which were fetched successfully on
-2026-09-08. The allowlist is per session; `docs/NETWORK_ACCESS.md` §0
-records the change with dates. `scripts/fetch_fixture.py` fetches a file
-verbatim into `tests/fixtures/` with a `.meta.json` carrying the status,
-the sha256 and the robots verdict, and on a refusal writes the meta and no
-fixture — so a blocked source is recorded rather than looking untried.
-`tests/fixtures/opm/pay/` is that record and holds no table: five numbers
-are easy to transcribe from a screenshot and impossible to audit, and a
-hand-entered table under an `opm.gov` URL would read on the site exactly
-like a fetched one. The parser and the level-to-rate matcher are
-deliberately unwritten until the page has been fetched; the README there
-says what they will have to be honest about (the level is from the
-2021–2025 archive, the table is effective January 2026, basic pay is not
-the node's share of outlays, and the table's own pay-freeze note must
-carry through).
+**The level converted into a rate, since 2026-09-11, by two documents that
+each say half of it** (`data_pipeline/verification/pay_tables.py`, derived by
+`scripts/derive_pay_evidence.py` into `data/verification/pay_evidence.json`).
+OPM's Salary Table No. 2026-EX was fetched once the session's allowlist was
+widened — `docs/NETWORK_ACCESS.md` §0a records that the earlier refusals came
+of editing the wrong cloud environment — and is committed verbatim at
+`tests/fixtures/opm/pay/executive_schedule_2026.html`, with the `.meta.json`
+its fetch wrote. `load_executive_schedule` **recomputes the digest from the
+bytes on disk and refuses a mismatch**, which is the only such check in the
+repository and the thing that makes a record's `documentSha256` a claim
+rather than a copied string; a hand-entered table under an `opm.gov` URL
+would otherwise read on the site exactly like a fetched one.
+
+The claim is deliberately two-sourced and can never be more: the **level** is
+the previous administration's archive (January 2021 – January 2025) and the
+**rate** is a table effective January 2026, so neither half says what a post
+pays whoever holds it now, and the panel prints both with their own dates.
+`scopeMatch` is `proxy` — the table names a rank, not a unit — so
+`financial_evidence.classify` grades all 29 `partial` and no route makes one
+`verified`.
+
+The pay plan is what settles whether a rank is an Executive Schedule rank,
+not the numeral: the archive files General Schedule grades in the same column,
+and two of its rows carry a Roman numeral on a pay plan that is not the
+Executive Schedule at all (ABMC's "THE SECRETARY" on `AD`, the Corporation for
+National and Community Service's "BOARD MEMBER - CHAIR" on `WC`). So a rate is
+published only where the archive gives **both** an `EX` pay plan and a level
+the table prints. **29** of the 126 matched positions qualify — not the 30
+that "carry a level or grade", the 30th being a GS-15 — and one `EX` record
+carries no level at all. Level I reaches no node in this graph.
+
+Three boundaries the gate enforces (`table_pay_violations`), each of which
+failed or nearly failed in development:
+
+- **It is not the unit's cost.** Basic pay excludes benefits and is not a
+  share of federal outlays, which is what `resolved_total_amount` means
+  everywhere else. Nothing writes a cost field; the gate refuses a pay block
+  beside a measured cost status or an unknown `cost_basis`.
+- **It is not evidence that the post exists.** The first version appended the
+  table's URL to `sourceUrls`, and the release gate passed it:
+  `verify_node_sources` counts URLs and classifies hosts, so a second `.gov`
+  URL added `official_site` and carried confidence 0.5 → 0.8. 29 positions
+  published `verificationStatus: verified` on the strength of a five-row table
+  naming no post, and the graph's verified count went 49 → 78 in one build.
+  The module now writes no `sourceUrls`, `sourceTypes`, `lastVerified` or
+  `verificationMethod`; the URL rides in `positionPayRate` only.
+- **It cannot outlive the level it was looked up from.** `positionPayRate` is
+  in `EVIDENCE_OWNED_FIELDS`, and the rate is published only where the node's
+  own `positionListing` still reports that level on that pay plan — so when
+  `positions.py` withdraws a listing, the rate goes with it rather than
+  leaving "$228,000 (Level II)" on the site with nothing asserting the post is
+  at Level II.
+
+The gate mirrors the five rates in `EXECUTIVE_SCHEDULE_RATES` because it is
+stdlib-only and cannot parse the fixture; `tests/test_pay_tables.py` parses the
+committed page and asserts the mirror equals it, so the two cannot drift. The
+table's footnotes ride on every record and are printed verbatim — a pay freeze
+for the Vice President and certain senior political appointees runs through
+January 30, 2026, so a level's table rate is not necessarily what was payable,
+and the gate refuses a block whose footnote list is empty.
+
+Feeding these records through `financial_evidence.validate_record` — rather
+than stamping them straight onto the graph — needed three changes to a module
+that had already survived 178 attacks, each narrow and each recorded there:
+`annual_rate` joins `PERIOD_COVERAGES` (a rate is not a flow, and filing it as
+`full_fiscal_year` would claim it covered a year it did not) and is required
+of `basic_pay` in both directions; and `_prints_whole_dollars` lets a document
+state its scale by *printing* it, because the OPM page contains none of the
+words "dollar", "thousand" or "million" and an honest record from it was
+otherwise unfilable. That relaxation is granted per source type
+(`SCALE_PRINTED_SOURCE_TYPES`, currently one entry), applies only when no
+scale phrase is present at all, requires the currency mark to be attached to
+the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
+can see which records rest on it.
 
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every

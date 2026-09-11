@@ -28,6 +28,136 @@ MAX_TOP_LEVEL_CHILDREN = 10
 CHILD_SUM_TOLERANCE = 0.005  # 0.5%, for rounding in the apportionment cascade
 SAMPLE_LIMIT = 20
 
+# OPM's Salary Table No. 2026-EX, mirrored so the gate can check a published
+# rate against the figure the table actually prints. The gate is stdlib-only
+# and reads one file — it cannot parse the fixture — and without a mirror it
+# could not tell $209,600 from $290,600 on any node. The mirror is pinned to
+# the fetched page by tests/test_pay_tables.py, which parses
+# tests/fixtures/opm/pay/executive_schedule_2026.html and asserts equality, so
+# the two cannot drift apart silently. Same precedent as `position_title_keys`.
+EXECUTIVE_SCHEDULE_TABLE = "Salary Table No. 2026-EX"
+EXECUTIVE_SCHEDULE_RATES = {
+    "I": 253_100.0,
+    "II": 228_000.0,
+    "III": 209_600.0,
+    "IV": 197_200.0,
+    "V": 184_900.0,
+}
+EXECUTIVE_SCHEDULE_PAY_PLAN = "EX"
+# The weights the cascade may divide a share by. A pay rate appearing here
+# would mean a rate of basic pay had become an apportionment basis.
+KNOWN_COST_BASES = {
+    "annual_budget_weight", "budget_weight", "direct_outlay_weight",
+    "implied_budget_weight", "employee_weight", "implied_employee_weight",
+    "subtree_weight",
+}
+
+
+def table_pay_violations(node, pay, listing, today, label):
+    """Everything that must be true of a rate looked up from the salary table.
+
+    The claim being checked is a join of two documents — *the archive reports
+    this post at Level II; the January 2026 table pays Level II $228,000* — and
+    every rule here exists to stop one half being published as if it were the
+    other, or as if either were this unit's cost.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionPayRate {!r} is not a record".format(pay))
+        return out
+
+    # Whose figure it is. A rate of basic pay is one post's rate; on an
+    # organisation it would read as what the unit costs. This is the dual of
+    # the gate's existing "a measured cost sits only on an organisation".
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+
+    # The level half. It must still be the level the archive publishes on this
+    # very node: if positions.py withdrew or changed the listing, the rate is a
+    # figure for a rank nothing now says this post holds.
+    level = str(pay.get("payLevel") or "")
+    plan = str(pay.get("payPlan") or "")
+    if level not in EXECUTIVE_SCHEDULE_RATES:
+        say("prices level {!r}, which the Executive Schedule does not have".format(level))
+    if plan != EXECUTIVE_SCHEDULE_PAY_PLAN:
+        # The archive carries Roman numerals on pay plans that are not the
+        # Executive Schedule at all ("THE SECRETARY" on AD, "BOARD MEMBER -
+        # CHAIR" on WC). Those are ranks in other systems and this table does
+        # not price them.
+        say("prices pay plan {!r}; only {!r} is the Executive Schedule".format(plan, EXECUTIVE_SCHEDULE_PAY_PLAN))
+    if not isinstance(listing, dict):
+        say("claims a table rate with no position listing beneath it to say what level the post is")
+    else:
+        if str(listing.get("payLevel") or "") != level:
+            say("prices level {!r} but its listing reports {!r}".format(level, listing.get("payLevel")))
+        if str(listing.get("payPlan") or "") != plan:
+            say("prices pay plan {!r} but its listing reports {!r}".format(plan, listing.get("payPlan")))
+        if listing.get("reportedPay") is not None:
+            say("carries a table rate beside a rate the archive states; two rates for one post")
+
+    # The rate half. The mirrored table is the only thing that can catch a
+    # figure that is simply wrong, and the printed text must agree with it too
+    # — the panel prints the text and the JSON carries the number.
+    amount = pay.get("amount")
+    expected = EXECUTIVE_SCHEDULE_RATES.get(level)
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a rate of basic pay".format(amount))
+    elif expected is not None and abs(float(amount) - expected) > 0.005:
+        say("publishes {:,.2f} for level {}, which the table pays {:,.2f}".format(float(amount), level, expected))
+    digits = re.sub(r"[^0-9.]", "", str(pay.get("rateText") or ""))
+    if not digits or (isinstance(amount, (int, float)) and not isinstance(amount, bool)
+                      and abs(float(digits) - float(amount)) > 0.005):
+        say("prints {!r} beside the number {!r}".format(pay.get("rateText"), amount))
+    if str(pay.get("table") or "") != EXECUTIVE_SCHEDULE_TABLE:
+        say("cites table {!r}, not {!r}".format(pay.get("table"), EXECUTIVE_SCHEDULE_TABLE))
+
+    # Both dates, because the two-sourced claim is only auditable when a reader
+    # can see that one source is older than the other. The table's effective
+    # date is deliberately NOT required to be past: a table may be published
+    # ahead of the date it takes effect.
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", str(pay.get("effective") or "")):
+        say("claims a table rate without the date it takes effect")
+    if not str(pay.get("effectiveText") or "").strip():
+        say("claims a table rate without the effective heading the page prints")
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a table rate without a past retrieval date ({!r})".format(checked))
+    url = str(pay.get("url") or "")
+    host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+    if not host.endswith((".gov", ".mil")):
+        say("claims a table rate with no .gov/.mil document behind it")
+    source = pay.get("levelSource") if isinstance(pay.get("levelSource"), dict) else {}
+    if not str(source.get("edition") or "").strip():
+        say("does not say which edition of the archive reported the level")
+    src_url = str(source.get("url") or "")
+    src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+    if not src_host.endswith((".gov", ".mil")):
+        say("does not say which document reported the level")
+
+    # The footnote. A pay freeze for the Vice President and certain senior
+    # political appointees is the difference between the table's rate and what
+    # was payable, so dropping it publishes a rate that may not have been paid.
+    footnotes = pay.get("footnotes")
+    if not isinstance(footnotes, list) or not any(str(f).strip() for f in footnotes):
+        say("carries a table rate without the notes the table prints beside it")
+
+    # It is not a cost, and it is not evidence that the post exists.
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a table rate and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a table rate and claims a verified cost")
+    basis = str(node.get("cost_basis") or "")
+    if basis and basis not in KNOWN_COST_BASES:
+        say("carries a table rate and an unknown cost basis {!r}".format(basis))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a salary table that names no post")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a salary table that names no post")
+    return out
+
 
 def walk(node, parent=None):
     """Yield (node, parent) for every dict node in the tree."""
@@ -535,6 +665,10 @@ def main(argv):
     }
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
     failure_beside_source, unofficial_official, unknown_method = [], [], []
+    # Kept apart from unknown_method deliberately: a pay defect printed under
+    # "every verification method is one this pipeline can produce" would be
+    # reported as the wrong kind of fault.
+    bad_table_pay = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -599,6 +733,12 @@ def main(argv):
                         unknown_method.append("{} publishes {!r} as a reported rate of pay".format(label(node), reported_pay))
                     elif "$" not in str(listing.get("reportedPayText") or ""):
                         unknown_method.append("{} reports pay without the text the archive prints".format(label(node)))
+        # A rate looked up from the salary table for the level the archive
+        # reports. Two documents, neither of which says what this post pays: the
+        # checks below are what keep the join from being read as one source.
+        pay = node.get("positionPayRate")
+        if pay is not None:
+            bad_table_pay.extend(table_pay_violations(node, pay, listing, today, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -686,6 +826,7 @@ def main(argv):
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
+    gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -872,6 +1013,16 @@ def main(argv):
     with_level = sum(1 for n in listings if n["positionListing"].get("payLevel"))
     print("  archive pay          : {:,} positions carry a rate of basic pay the archive reports; {:,} carry a level or grade only".format(
         with_rate, with_level))
+    table_paid = [n for n in nodes if isinstance(n.get("positionPayRate"), dict)]
+    by_level = {}
+    for n in table_paid:
+        key = str(n["positionPayRate"].get("payLevel") or "?")
+        by_level[key] = by_level.get(key, 0) + 1
+    print("  salary table         : {:,} positions priced from {} for the level the archive reports ({}); "
+          "{:,} not priced (a level on another pay plan)".format(
+              len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
+              ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
+              with_level - len(table_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
