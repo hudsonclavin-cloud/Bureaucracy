@@ -157,14 +157,14 @@ def table_pay_violations(node, pay, listing, today, label):
     if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
         say("claims a table rate without a past retrieval date ({!r})".format(checked))
     url = str(pay.get("url") or "")
-    host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+    host = host_of(url)
     if not host.endswith((".gov", ".mil")):
         say("claims a table rate with no .gov/.mil document behind it")
     source = pay.get("levelSource") if isinstance(pay.get("levelSource"), dict) else {}
     if not str(source.get("edition") or "").strip():
         say("does not say which edition of the archive reported the level")
     src_url = str(source.get("url") or "")
-    src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+    src_host = host_of(src_url)
     if not src_host.endswith((".gov", ".mil")):
         say("does not say which document reported the level")
 
@@ -298,12 +298,29 @@ def extends_published_name(name_key, published_keys):
     return None
 
 
+def host_of(url):
+    """The URL's real host, lowercased, or "".
+
+    NOT `url.split("/")[2]`. That reads everything up to the first slash as the
+    host, so `https://evil.com?x=.gov` and `https://evil.example.com#.gov` both
+    passed the gate's `.gov`/`.mil` test, and `https://www.opm.gov@evil.com/`
+    was read as opm.gov. `financial_evidence._validate_source_url` documents
+    fixing exactly this in its own URL check; the gate still had the split in
+    eight places, and a red team walked a non-government URL past the check
+    literally named "claims a table rate with no .gov/.mil document behind it".
+    """
+    try:
+        return (urlparse(str(url or "")).hostname or "").lower()
+    except ValueError:
+        return ""
+
+
 def is_federal_register_only(urls):
     hosts = []
     for url in urls:
         text = str(url or "")
         if text.startswith(("http://", "https://")):
-            hosts.append(text.split("/")[2].lower())
+            hosts.append(host_of(text))
     return bool(hosts) and all(h.endswith("federalregister.gov") for h in hosts)
 
 
@@ -718,7 +735,7 @@ def main(argv):
         if failure_kind:
             src = node.get("verificationFailureSource") if isinstance(node.get("verificationFailureSource"), dict) else {}
             src_url = str(src.get("url") or "")
-            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_host = host_of(src_url)
             src_date = str(src.get("checkedAt") or "")
             if failure_kind == "not_in_official_list" and not src_url.startswith("https://www.senate.gov/"):
                 unknown_method.append("{} claims not_in_official_list without the list's URL".format(label(node)))
@@ -734,7 +751,7 @@ def main(argv):
         if official_headcount is not None:
             src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
             src_url = str(src.get("url") or "")
-            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_host = host_of(src_url)
             src_date = str(src.get("checkedAt") or "")
             if not isinstance(official_headcount, int) or official_headcount < 0:
                 unknown_method.append("{} employeesOfficial {!r}".format(label(node), official_headcount))
@@ -749,7 +766,7 @@ def main(argv):
                 unknown_method.append("{} positionListing {!r}".format(label(node), listing))
             else:
                 l_url = str(listing.get("url") or "")
-                l_host = l_url.split("/")[2].lower() if l_url.startswith("http") and l_url.count("/") >= 2 else ""
+                l_host = host_of(l_url)
                 l_date = str(listing.get("checkedAt") or "")
                 if not l_host.endswith((".gov", ".mil")) or not listing.get("edition"):
                     unknown_method.append("{} claims a position listing without a .gov file and the edition it came from".format(label(node)))
@@ -783,7 +800,7 @@ def main(argv):
                 unknown_method.append("{} pageReadNotNamed {!r}".format(label(node), read_not_named))
             else:
                 rn_url = str(read_not_named.get("url") or "")
-                rn_host = rn_url.split("/")[2].lower() if rn_url.startswith("http") and rn_url.count("/") >= 2 else ""
+                rn_host = host_of(rn_url)
                 rn_date = str(read_not_named.get("checkedAt") or "")
                 if not rn_host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", rn_date) or rn_date[:10] > today:
                     unknown_method.append("{} records a page read that did not name it, without a .gov URL and a past date".format(label(node)))
@@ -825,7 +842,7 @@ def main(argv):
         if node.get("placementVerified") is not True:
             continue
         url = str(node.get("placementUrl") or "")
-        host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+        host = host_of(url)
         stamp = str(node.get("placementVerifiedAt") or "")
         if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
             placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))

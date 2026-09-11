@@ -658,6 +658,26 @@ class ScriptAndGateTestCase(unittest.TestCase):
         code, out = self._corrupt(table="Salary Table No. 2025-EX")
         self.assertEqual(code, 1, out)
 
+    def test_the_gate_refuses_a_rate_behind_a_url_that_only_looks_governmental(self):
+        # `url.split("/")[2]` reads everything before the first slash as the
+        # host, so a query string or a fragment ending in ".gov" — or userinfo
+        # of "www.opm.gov@" — walked straight past the check named "claims a
+        # table rate with no .gov/.mil document behind it". The gate had that
+        # split in eight places; financial_evidence.py documents fixing the
+        # same bug in its own URL check.
+        for url in ("https://evil.com?x=.gov",
+                    "https://evil.example.com#.gov",
+                    "https://www.opm.gov@evil.com/"):
+            with self.subTest(url=url):
+                code, out = self._corrupt(url=url)
+                self.assertEqual(code, 1, out)
+
+    def test_the_gate_refuses_a_level_source_url_that_only_looks_governmental(self):
+        # The same split was used for the URL that says which archive reported
+        # the level, so both halves of the two-sourced claim were exposed.
+        code, out = self._corrupt(levelSource={"edition": EDITION, "url": "https://evil.com?x=.gov"})
+        self.assertEqual(code, 1, out)
+
     def test_the_gate_refuses_a_rate_with_no_effective_date(self):
         code, out = self._corrupt(effective=None)
         self.assertEqual(code, 1, out)
