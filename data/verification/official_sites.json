@@ -1,535 +1,559 @@
 {
-  "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch — usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse. Candidates seeded from the Federal Register agency directory by scripts/seed_official_sites.py are marked in data/verification/official_sites_provenance.json.",
-  "legislative-branch": [
-    "https://www.congress.gov/"
-  ],
-  "leg-senate": [
-    "https://www.senate.gov/"
-  ],
-  "leg-house": [
-    "https://www.house.gov/"
-  ],
-  "leg-support-gao": [
-    "https://www.gao.gov/about"
-  ],
-  "leg-support-cbo": [
-    "https://www.cbo.gov/about/overview"
-  ],
-  "leg-support-loc": [
-    "https://www.loc.gov/about/"
-  ],
-  "leg-support-gpo": [
-    "https://www.gpo.gov/who-we-are"
-  ],
-  "leg-support-aoc": [
-    "https://www.aoc.gov/about-us"
-  ],
-  "leg-support-uscp": [
-    "https://www.uscp.gov/the-department"
-  ],
-  "executive-branch": [
-    "https://www.whitehouse.gov/government/executive-branch/"
-  ],
-  "exec-eop": [
-    "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
-  ],
-  "exec-eop-omb": [
-    "https://www.whitehouse.gov/omb/"
-  ],
-  "exec-eop-ustr": [
-    "https://ustr.gov/about-us"
-  ],
-  "exec-eop-ostp": [
-    "https://www.whitehouse.gov/ostp/"
-  ],
-  "exec-eop-ondcp": [
-    "https://www.whitehouse.gov/ondcp/"
-  ],
-  "exec-eop-cea": [
-    "https://www.whitehouse.gov/cea/"
-  ],
-  "exec-dept-state": [
-    "https://www.state.gov/about/"
-  ],
-  "exec-dept-treasury": [
-    "https://home.treasury.gov/about/general-information"
-  ],
-  "exec-dept-defense": [
-    "https://www.defense.gov/About/"
-  ],
-  "exec-dept-doj": [
-    "https://www.justice.gov/about"
-  ],
-  "exec-dept-doi": [
-    "https://www.doi.gov/whoweare"
-  ],
-  "exec-dept-usda": [
-    "https://www.usda.gov/about-usda"
-  ],
-  "exec-dept-doc": [
-    "https://www.commerce.gov/about"
-  ],
-  "exec-dept-dol": [
-    "https://www.dol.gov/general/aboutdol"
-  ],
-  "exec-dept-hhs": [
-    "https://www.hhs.gov/about/index.html"
-  ],
-  "exec-dept-hud": [
-    "https://www.hud.gov/about"
-  ],
-  "exec-dept-dot": [
-    "https://www.transportation.gov/about"
-  ],
-  "exec-dept-doe": [
-    "https://www.energy.gov/leadership-organization"
-  ],
-  "exec-dept-doe-nnsa": [
-    "https://www.energy.gov/nnsa/national-nuclear-security-administration"
-  ],
-  "exec-dept-doe-sc": [
-    "https://www.energy.gov/science/office-science"
-  ],
-  "exec-dept-doe-em": [
-    "https://www.energy.gov/em/office-environmental-management"
-  ],
-  "exec-dept-ed": [
-    "https://www.ed.gov/about"
-  ],
-  "exec-dept-va": [
-    "https://www.va.gov/about_va/"
-  ],
-  "exec-dept-dhs": [
-    "https://www.dhs.gov/about-dhs"
-  ],
-  "exec-ind-cia": [
-    "https://www.cia.gov/about/"
-  ],
-  "exec-ind-epa": [
-    "https://www.epa.gov/aboutepa"
-  ],
-  "exec-ind-nasa": [
-    "https://www.nasa.gov/about/",
-    "https://www.nasa.gov/organization/"
-  ],
-  "exec-ind-nasa-kennedy-space-center-ksc": [
-    "https://www.nasa.gov/kennedy/"
-  ],
-  "exec-ind-nasa-johnson-space-center-jsc": [
-    "https://www.nasa.gov/johnson/"
-  ],
-  "exec-ind-nasa-goddard-space-flight-center-gsfc": [
-    "https://www.nasa.gov/goddard/"
-  ],
-  "exec-ind-nasa-marshall-space-flight-center-msfc": [
-    "https://www.nasa.gov/marshall/"
-  ],
-  "exec-ind-nasa-ames-research-center-arc": [
-    "https://www.nasa.gov/ames/"
-  ],
-  "exec-ind-nasa-glenn-research-center-grc": [
-    "https://www.nasa.gov/glenn/"
-  ],
-  "exec-ind-nasa-langley-research-center-larc": [
-    "https://www.nasa.gov/langley/"
-  ],
-  "exec-ind-nasa-stennis-space-center-ssc": [
-    "https://www.nasa.gov/stennis/"
-  ],
-  "exec-ind-nasa-armstrong-flight-research-center-afrc": [
-    "https://www.nasa.gov/armstrong/"
-  ],
-  "exec-ind-ssa": [
-    "https://www.ssa.gov/agency/"
-  ],
-  "exec-ind-sba": [
-    "https://www.sba.gov/about-sba"
-  ],
-  "exec-ind-nsf": [
-    "https://www.nsf.gov/about"
-  ],
-  "exec-ind-opm": [
-    "https://www.opm.gov/about-us/"
-  ],
-  "exec-ind-nara": [
-    "https://www.archives.gov/about"
-  ],
-  "exec-regulatory-fed": [
-    "https://www.federalreserve.gov/aboutthefed.htm"
-  ],
-  "exec-regulatory-sec": [
-    "https://www.sec.gov/about"
-  ],
-  "exec-regulatory-fcc": [
-    "https://www.fcc.gov/about-fcc/what-we-do"
-  ],
-  "exec-regulatory-ftc": [
-    "https://www.ftc.gov/about-ftc"
-  ],
-  "exec-regulatory-nrc": [
-    "https://www.nrc.gov/about-nrc.html"
-  ],
-  "exec-regulatory-ferc": [
-    "https://www.ferc.gov/about/what-ferc"
-  ],
-  "exec-regulatory-cpsc": [
-    "https://www.cpsc.gov/About-CPSC"
-  ],
-  "exec-regulatory-fdic": [
-    "https://www.fdic.gov/about"
-  ],
-  "exec-regulatory-cftc": [
-    "https://www.cftc.gov/About/AboutTheCommission"
-  ],
-  "exec-regulatory-fmc": [
-    "https://www.fmc.gov/about-the-fmc/"
-  ],
-  "judicial-branch": [
-    "https://www.uscourts.gov/about-federal-courts"
-  ],
-  "jud-scotus": [
-    "https://www.supremecourt.gov/about/about.aspx"
-  ],
-  "jud-appeals": [
-    "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
-  ],
-  "jud-district": [
-    "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
-  ],
-  "jud-specialized-tax": [
-    "https://www.ustaxcourt.gov/"
-  ],
-  "jud-specialized-claims": [
-    "https://www.uscfc.uscourts.gov/"
-  ],
-  "jud-specialized-intl-trade": [
-    "https://www.cit.uscourts.gov/about-court"
-  ],
-  "jud-support-aousc": [
-    "https://www.uscourts.gov/about-federal-courts/governance-judicial-conference/administrative-office-us-courts"
-  ],
-  "jud-support-fjc": [
-    "https://www.fjc.gov/about"
-  ],
-  "jud-support-ussc": [
-    "https://www.ussc.gov/about"
-  ],
-  "exec-dept-defense-agency-nga": [
-    "https://www.nga.mil/"
-  ],
-  "exec-dept-treasury-fiscal": [
-    "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service"
-  ],
-  "exec-dept-usda-fs": [
-    "https://www.fs.usda.gov"
-  ],
-  "exec-eop-onadm": [
-    "https://www.whitehouse.gov"
-  ],
-  "exec-ind-misc-national-credit-union-administration-ncua": [
-    "https://www.ncua.gov"
-  ],
-  "exec-dept-defense-agency-dcaa": [
-    "https://www.dcaa.mil/"
-  ],
-  "exec-dept-defense-agency-dia": [
-    "https://www.dia.mil"
-  ],
-  "exec-dept-defense-agency-disa": [
-    "https://disa.mil/"
-  ],
-  "exec-dept-defense-agency-dla": [
-    "https://www.dla.mil/Pages/default.aspx"
-  ],
-  "exec-dept-dhs-cbp": [
-    "https://www.cbp.gov/"
-  ],
-  "exec-dept-dhs-fema": [
-    "https://www.fema.gov/"
-  ],
-  "exec-dept-dhs-ice": [
-    "https://www.ice.gov/"
-  ],
-  "exec-dept-dhs-tsa": [
-    "https://www.tsa.gov"
-  ],
-  "exec-dept-dhs-usss": [
-    "https://www.secretservice.gov/"
-  ],
-  "exec-dept-doc-bea": [
-    "https://www.bea.gov/"
-  ],
-  "exec-dept-doc-census": [
-    "https://www.census.gov/"
-  ],
-  "exec-dept-doc-ita": [
-    "https://trade.gov/"
-  ],
-  "exec-dept-doe-eere": [
-    "https://www.eere.energy.gov/"
-  ],
-  "exec-dept-doi-bia": [
-    "https://www.bia.gov/"
-  ],
-  "exec-dept-doi-blm": [
-    "https://www.blm.gov/"
-  ],
-  "exec-dept-doi-boem": [
-    "https://www.boem.gov/"
-  ],
-  "exec-dept-doi-bsee": [
-    "https://www.bsee.gov/"
-  ],
-  "exec-dept-doi-fws": [
-    "https://www.fws.gov/"
-  ],
-  "exec-dept-doi-usgs": [
-    "https://www.usgs.gov/"
-  ],
-  "exec-dept-doj-atf": [
-    "https://www.atf.gov/"
-  ],
-  "exec-dept-doj-dea": [
-    "https://www.justice.gov/dea/"
-  ],
-  "exec-dept-doj-div-antitrust": [
-    "https://www.justice.gov/atr/"
-  ],
-  "exec-dept-doj-fbi": [
-    "https://www.fbi.gov/"
-  ],
-  "exec-dept-dol-bls": [
-    "https://www.bls.gov/"
-  ],
-  "exec-dept-dol-ebsa": [
-    "https://www.dol.gov/ebsa/"
-  ],
-  "exec-dept-dol-eta": [
-    "https://www.doleta.gov/"
-  ],
-  "exec-dept-dol-msha": [
-    "https://www.msha.gov/"
-  ],
-  "exec-dept-dol-ofccp": [
-    "https://www.dol.gov/ofccp/"
-  ],
-  "exec-dept-dot-faa": [
-    "https://www.faa.gov/"
-  ],
-  "exec-dept-dot-fhwa": [
-    "https://www.fhwa.dot.gov/"
-  ],
-  "exec-dept-dot-fra": [
-    "https://www.fra.dot.gov/"
-  ],
-  "exec-dept-dot-fta": [
-    "https://www.fta.dot.gov/"
-  ],
-  "exec-dept-dot-marad": [
-    "https://www.marad.dot.gov/"
-  ],
-  "exec-dept-hhs-ahrq": [
-    "https://www.ahrq.gov/about/ahrqfact.htm"
-  ],
-  "exec-dept-hhs-cdc": [
-    "https://www.cdc.gov/"
-  ],
-  "exec-dept-hhs-cms": [
-    "https://www.cms.gov/"
-  ],
-  "exec-dept-hhs-fda": [
-    "https://www.fda.gov/"
-  ],
-  "exec-dept-hhs-hrsa": [
-    "https://www.hrsa.gov/index.html"
-  ],
-  "exec-dept-hhs-ihs": [
-    "https://www.ihs.gov/"
-  ],
-  "exec-dept-treasury-bep": [
-    "https://www.moneyfactory.gov/"
-  ],
-  "exec-dept-treasury-fincen": [
-    "https://www.fincen.gov/"
-  ],
-  "exec-dept-treasury-irs": [
-    "https://www.irs.gov/"
-  ],
-  "exec-dept-treasury-ofac": [
-    "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx"
-  ],
-  "exec-dept-treasury-ofr": [
-    "https://www.treasury.gov/initiatives/Pages/ofr.aspx"
-  ],
-  "exec-dept-treasury-ttb": [
-    "https://www.ttb.gov"
-  ],
-  "exec-dept-usda-aphis": [
-    "https://www.aphis.usda.gov/"
-  ],
-  "exec-dept-usda-ars": [
-    "https://www.ars.usda.gov/main/main.htm"
-  ],
-  "exec-dept-usda-fsa": [
-    "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing"
-  ],
-  "exec-dept-usda-fsis": [
-    "https://www.fsis.usda.gov/"
-  ],
-  "exec-eop-omb-office-of-federal-procurement-policy": [
-    "https://www.whitehouse.gov/omb/procurement_default/"
-  ],
-  "exec-ind-misc-american-battle-monuments-commission-abmc": [
-    "https://www.abmc.gov"
-  ],
-  "exec-ind-misc-appalachian-regional-commission-arc": [
-    "https://www.arc.gov/"
-  ],
-  "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": [
-    "https://www.csb.gov/"
-  ],
-  "exec-ind-misc-election-assistance-commission-eac": [
-    "https://www.eac.gov/"
-  ],
-  "exec-ind-misc-equal-employment-opportunity-commission-eeoc": [
-    "https://www.eeoc.gov/"
-  ],
-  "exec-ind-misc-farm-credit-administration": [
-    "https://www.fca.gov/index.html"
-  ],
-  "exec-ind-misc-federal-election-commission-fec": [
-    "https://www.fec.gov/"
-  ],
-  "exec-ind-misc-federal-labor-relations-authority-flra": [
-    "https://www.flra.gov/"
-  ],
-  "exec-ind-misc-merit-systems-protection-board-mspb": [
-    "https://www.mspb.gov/"
-  ],
-  "exec-ind-misc-national-endowment-for-the-arts-nea": [
-    "https://arts.gov/"
-  ],
-  "exec-ind-misc-national-endowment-for-the-humanities-neh": [
-    "https://www.neh.gov/"
-  ],
-  "exec-ind-misc-office-of-special-counsel-osc": [
-    "https://www.osc.gov/Intro.htm"
-  ],
-  "leg-support-loc-copyright": [
-    "https://www.copyright.gov/"
-  ],
-  "leg-house-cmte-agriculture": [
-    "https://agriculture.house.gov/"
-  ],
-  "leg-house-cmte-appropriations": [
-    "https://appropriations.house.gov/"
-  ],
-  "leg-house-cmte-armed-services": [
-    "https://armedservices.house.gov/"
-  ],
-  "leg-house-cmte-budget": [
-    "https://budget.house.gov/"
-  ],
-  "leg-house-cmte-energy-commerce": [
-    "https://energycommerce.house.gov/"
-  ],
-  "leg-house-cmte-financial-services": [
-    "https://financialservices.house.gov/"
-  ],
-  "leg-house-cmte-foreign-affairs": [
-    "https://foreignaffairs.house.gov/"
-  ],
-  "leg-house-cmte-homeland-security": [
-    "https://homeland.house.gov/"
-  ],
-  "leg-house-cmte-house-administration": [
-    "https://cha.house.gov/"
-  ],
-  "leg-house-cmte-judiciary": [
-    "https://judiciary.house.gov/"
-  ],
-  "leg-house-cmte-natural-resources": [
-    "https://naturalresources.house.gov/"
-  ],
-  "leg-house-cmte-permanent-select-committee-on-intelligence": [
-    "https://intelligence.house.gov/"
-  ],
-  "leg-house-cmte-rules": [
-    "https://rules.house.gov/"
-  ],
-  "leg-house-cmte-science-space-technology": [
-    "https://science.house.gov/"
-  ],
-  "leg-house-cmte-small-business": [
-    "https://smallbusiness.house.gov/"
-  ],
-  "leg-house-cmte-transportation-infrastructure": [
-    "https://transportation.house.gov/"
-  ],
-  "leg-house-cmte-veterans-affairs": [
-    "https://veterans.house.gov/"
-  ],
-  "leg-house-cmte-ways-means": [
-    "https://waysandmeans.house.gov/"
-  ],
-  "leg-senate-cmte-agriculture-nutrition-and-forestry": [
-    "https://www.agriculture.senate.gov/"
-  ],
-  "leg-senate-cmte-appropriations": [
-    "https://www.appropriations.senate.gov/"
-  ],
-  "leg-senate-cmte-armed-services": [
-    "https://www.armed-services.senate.gov/"
-  ],
-  "leg-senate-cmte-banking-housing-urban-affairs": [
-    "https://www.banking.senate.gov/public"
-  ],
-  "leg-senate-cmte-budget": [
-    "https://www.budget.senate.gov/"
-  ],
-  "leg-senate-cmte-commerce-science-transportation": [
-    "https://www.commerce.senate.gov/"
-  ],
-  "leg-senate-cmte-energy-natural-resources": [
-    "https://www.energy.senate.gov/"
-  ],
-  "leg-senate-cmte-environment-public-works": [
-    "https://www.epw.senate.gov/"
-  ],
-  "leg-senate-cmte-finance": [
-    "https://www.finance.senate.gov/"
-  ],
-  "leg-senate-cmte-foreign-relations": [
-    "https://www.foreign.senate.gov/"
-  ],
-  "leg-senate-cmte-health-education-labor-pensions": [
-    "https://www.help.senate.gov/"
-  ],
-  "leg-senate-cmte-homeland-security-governmental-affairs": [
-    "https://www.hsgac.senate.gov/"
-  ],
-  "leg-senate-cmte-indian-affairs": [
-    "https://www.indian.senate.gov/"
-  ],
-  "leg-senate-cmte-judiciary": [
-    "https://www.judiciary.senate.gov/"
-  ],
-  "leg-senate-cmte-rules-administration": [
-    "https://www.rules.senate.gov/"
-  ],
-  "leg-senate-cmte-select-committee-on-ethics": [
-    "https://www.ethics.senate.gov/"
-  ],
-  "leg-senate-cmte-select-committee-on-intelligence": [
-    "https://www.intelligence.senate.gov/"
-  ],
-  "leg-senate-cmte-small-business-entrepreneurship": [
-    "https://www.sbc.senate.gov/"
-  ],
-  "leg-senate-cmte-special-committee-on-aging": [
-    "https://www.aging.senate.gov"
-  ],
-  "leg-senate-cmte-veterans-affairs": [
-    "https://www.veterans.senate.gov/"
-  ]
+ "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch — usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse. Candidates seeded from the Federal Register agency directory by scripts/seed_official_sites.py are marked in data/verification/official_sites_provenance.json.",
+ "legislative-branch": [
+  "https://www.congress.gov/"
+ ],
+ "leg-senate": [
+  "https://www.senate.gov/"
+ ],
+ "leg-house": [
+  "https://www.house.gov/"
+ ],
+ "leg-support-gao": [
+  "https://www.gao.gov/about"
+ ],
+ "leg-support-cbo": [
+  "https://www.cbo.gov/about/overview"
+ ],
+ "leg-support-loc": [
+  "https://www.loc.gov/about/"
+ ],
+ "leg-support-gpo": [
+  "https://www.gpo.gov/who-we-are"
+ ],
+ "leg-support-aoc": [
+  "https://www.aoc.gov/about-us"
+ ],
+ "leg-support-uscp": [
+  "https://www.uscp.gov/the-department"
+ ],
+ "executive-branch": [
+  "https://www.whitehouse.gov/government/executive-branch/"
+ ],
+ "exec-eop": [
+  "https://www.whitehouse.gov/administration/executive-office-of-the-president/"
+ ],
+ "exec-eop-omb": [
+  "https://www.whitehouse.gov/omb/"
+ ],
+ "exec-eop-ustr": [
+  "https://ustr.gov/about-us"
+ ],
+ "exec-eop-ostp": [
+  "https://www.whitehouse.gov/ostp/"
+ ],
+ "exec-eop-ondcp": [
+  "https://www.whitehouse.gov/ondcp/"
+ ],
+ "exec-eop-cea": [
+  "https://www.whitehouse.gov/cea/"
+ ],
+ "exec-dept-state": [
+  "https://www.state.gov/about/"
+ ],
+ "exec-dept-treasury": [
+  "https://home.treasury.gov/about/general-information"
+ ],
+ "exec-dept-defense": [
+  "https://www.defense.gov/About/"
+ ],
+ "exec-dept-doj": [
+  "https://www.justice.gov/about"
+ ],
+ "exec-dept-doi": [
+  "https://www.doi.gov/whoweare"
+ ],
+ "exec-dept-usda": [
+  "https://www.usda.gov/about-usda"
+ ],
+ "exec-dept-doc": [
+  "https://www.commerce.gov/about"
+ ],
+ "exec-dept-dol": [
+  "https://www.dol.gov/general/aboutdol"
+ ],
+ "exec-dept-hhs": [
+  "https://www.hhs.gov/about/index.html"
+ ],
+ "exec-dept-hud": [
+  "https://www.hud.gov/about"
+ ],
+ "exec-dept-dot": [
+  "https://www.transportation.gov/about"
+ ],
+ "exec-dept-doe": [
+  "https://www.energy.gov/leadership-organization"
+ ],
+ "exec-dept-doe-nnsa": [
+  "https://www.energy.gov/nnsa/national-nuclear-security-administration"
+ ],
+ "exec-dept-doe-sc": [
+  "https://www.energy.gov/science/office-science"
+ ],
+ "exec-dept-doe-em": [
+  "https://www.energy.gov/em/office-environmental-management"
+ ],
+ "exec-dept-ed": [
+  "https://www.ed.gov/about"
+ ],
+ "exec-dept-va": [
+  "https://www.va.gov/about_va/"
+ ],
+ "exec-dept-dhs": [
+  "https://www.dhs.gov/about-dhs"
+ ],
+ "exec-ind-cia": [
+  "https://www.cia.gov/about/"
+ ],
+ "exec-ind-epa": [
+  "https://www.epa.gov/aboutepa"
+ ],
+ "exec-ind-nasa": [
+  "https://www.nasa.gov/about/",
+  "https://www.nasa.gov/organization/"
+ ],
+ "exec-ind-nasa-kennedy-space-center-ksc": [
+  "https://www.nasa.gov/kennedy/"
+ ],
+ "exec-ind-nasa-johnson-space-center-jsc": [
+  "https://www.nasa.gov/johnson/"
+ ],
+ "exec-ind-nasa-goddard-space-flight-center-gsfc": [
+  "https://www.nasa.gov/goddard/"
+ ],
+ "exec-ind-nasa-marshall-space-flight-center-msfc": [
+  "https://www.nasa.gov/marshall/"
+ ],
+ "exec-ind-nasa-ames-research-center-arc": [
+  "https://www.nasa.gov/ames/"
+ ],
+ "exec-ind-nasa-glenn-research-center-grc": [
+  "https://www.nasa.gov/glenn/"
+ ],
+ "exec-ind-nasa-langley-research-center-larc": [
+  "https://www.nasa.gov/langley/"
+ ],
+ "exec-ind-nasa-stennis-space-center-ssc": [
+  "https://www.nasa.gov/stennis/"
+ ],
+ "exec-ind-nasa-armstrong-flight-research-center-afrc": [
+  "https://www.nasa.gov/armstrong/"
+ ],
+ "exec-ind-ssa": [
+  "https://www.ssa.gov/agency/"
+ ],
+ "exec-ind-sba": [
+  "https://www.sba.gov/about-sba"
+ ],
+ "exec-ind-nsf": [
+  "https://www.nsf.gov/about"
+ ],
+ "exec-ind-opm": [
+  "https://www.opm.gov/about-us/"
+ ],
+ "exec-ind-nara": [
+  "https://www.archives.gov/about"
+ ],
+ "exec-regulatory-fed": [
+  "https://www.federalreserve.gov/aboutthefed.htm"
+ ],
+ "exec-regulatory-sec": [
+  "https://www.sec.gov/about"
+ ],
+ "exec-regulatory-fcc": [
+  "https://www.fcc.gov/about-fcc/what-we-do"
+ ],
+ "exec-regulatory-ftc": [
+  "https://www.ftc.gov/about-ftc"
+ ],
+ "exec-regulatory-nrc": [
+  "https://www.nrc.gov/about-nrc.html"
+ ],
+ "exec-regulatory-ferc": [
+  "https://www.ferc.gov/about/what-ferc"
+ ],
+ "exec-regulatory-cpsc": [
+  "https://www.cpsc.gov/About-CPSC"
+ ],
+ "exec-regulatory-fdic": [
+  "https://www.fdic.gov/about"
+ ],
+ "exec-regulatory-cftc": [
+  "https://www.cftc.gov/About/AboutTheCommission"
+ ],
+ "exec-regulatory-fmc": [
+  "https://www.fmc.gov/about-the-fmc/"
+ ],
+ "judicial-branch": [
+  "https://www.uscourts.gov/about-federal-courts"
+ ],
+ "jud-scotus": [
+  "https://www.supremecourt.gov/about/about.aspx"
+ ],
+ "jud-appeals": [
+  "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+ ],
+ "jud-district": [
+  "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+ ],
+ "jud-specialized-tax": [
+  "https://www.ustaxcourt.gov/"
+ ],
+ "jud-specialized-claims": [
+  "https://www.uscfc.uscourts.gov/"
+ ],
+ "jud-specialized-intl-trade": [
+  "https://www.cit.uscourts.gov/about-court"
+ ],
+ "jud-support-aousc": [
+  "https://www.uscourts.gov/about-federal-courts/governance-judicial-conference/administrative-office-us-courts"
+ ],
+ "jud-support-fjc": [
+  "https://www.fjc.gov/about"
+ ],
+ "jud-support-ussc": [
+  "https://www.ussc.gov/about"
+ ],
+ "exec-dept-defense-agency-nga": [
+  "https://www.nga.mil/"
+ ],
+ "exec-dept-treasury-fiscal": [
+  "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service"
+ ],
+ "exec-dept-usda-fs": [
+  "https://www.fs.usda.gov"
+ ],
+ "exec-eop-onadm": [
+  "https://www.whitehouse.gov"
+ ],
+ "exec-ind-misc-national-credit-union-administration-ncua": [
+  "https://www.ncua.gov"
+ ],
+ "exec-dept-defense-agency-dcaa": [
+  "https://www.dcaa.mil/"
+ ],
+ "exec-dept-defense-agency-dia": [
+  "https://www.dia.mil"
+ ],
+ "exec-dept-defense-agency-disa": [
+  "https://disa.mil/"
+ ],
+ "exec-dept-defense-agency-dla": [
+  "https://www.dla.mil/Pages/default.aspx"
+ ],
+ "exec-dept-dhs-cbp": [
+  "https://www.cbp.gov/"
+ ],
+ "exec-dept-dhs-fema": [
+  "https://www.fema.gov/"
+ ],
+ "exec-dept-dhs-ice": [
+  "https://www.ice.gov/"
+ ],
+ "exec-dept-dhs-tsa": [
+  "https://www.tsa.gov"
+ ],
+ "exec-dept-dhs-usss": [
+  "https://www.secretservice.gov/"
+ ],
+ "exec-dept-doc-bea": [
+  "https://www.bea.gov/"
+ ],
+ "exec-dept-doc-census": [
+  "https://www.census.gov/"
+ ],
+ "exec-dept-doc-ita": [
+  "https://trade.gov/"
+ ],
+ "exec-dept-doe-eere": [
+  "https://www.eere.energy.gov/"
+ ],
+ "exec-dept-doi-bia": [
+  "https://www.bia.gov/"
+ ],
+ "exec-dept-doi-blm": [
+  "https://www.blm.gov/"
+ ],
+ "exec-dept-doi-boem": [
+  "https://www.boem.gov/"
+ ],
+ "exec-dept-doi-bsee": [
+  "https://www.bsee.gov/"
+ ],
+ "exec-dept-doi-fws": [
+  "https://www.fws.gov/"
+ ],
+ "exec-dept-doi-usgs": [
+  "https://www.usgs.gov/"
+ ],
+ "exec-dept-doj-atf": [
+  "https://www.atf.gov/"
+ ],
+ "exec-dept-doj-dea": [
+  "https://www.justice.gov/dea/"
+ ],
+ "exec-dept-doj-div-antitrust": [
+  "https://www.justice.gov/atr/"
+ ],
+ "exec-dept-doj-fbi": [
+  "https://www.fbi.gov/"
+ ],
+ "exec-dept-dol-bls": [
+  "https://www.bls.gov/"
+ ],
+ "exec-dept-dol-ebsa": [
+  "https://www.dol.gov/ebsa/"
+ ],
+ "exec-dept-dol-eta": [
+  "https://www.doleta.gov/"
+ ],
+ "exec-dept-dol-msha": [
+  "https://www.msha.gov/"
+ ],
+ "exec-dept-dol-ofccp": [
+  "https://www.dol.gov/ofccp/"
+ ],
+ "exec-dept-dot-faa": [
+  "https://www.faa.gov/"
+ ],
+ "exec-dept-dot-fhwa": [
+  "https://www.fhwa.dot.gov/"
+ ],
+ "exec-dept-dot-fra": [
+  "https://www.fra.dot.gov/"
+ ],
+ "exec-dept-dot-fta": [
+  "https://www.fta.dot.gov/"
+ ],
+ "exec-dept-dot-marad": [
+  "https://www.marad.dot.gov/"
+ ],
+ "exec-dept-hhs-ahrq": [
+  "https://www.ahrq.gov/about/ahrqfact.htm"
+ ],
+ "exec-dept-hhs-cdc": [
+  "https://www.cdc.gov/"
+ ],
+ "exec-dept-hhs-cms": [
+  "https://www.cms.gov/"
+ ],
+ "exec-dept-hhs-fda": [
+  "https://www.fda.gov/"
+ ],
+ "exec-dept-hhs-hrsa": [
+  "https://www.hrsa.gov/index.html"
+ ],
+ "exec-dept-hhs-ihs": [
+  "https://www.ihs.gov/"
+ ],
+ "exec-dept-treasury-bep": [
+  "https://www.moneyfactory.gov/"
+ ],
+ "exec-dept-treasury-fincen": [
+  "https://www.fincen.gov/"
+ ],
+ "exec-dept-treasury-irs": [
+  "https://www.irs.gov/"
+ ],
+ "exec-dept-treasury-ofac": [
+  "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx"
+ ],
+ "exec-dept-treasury-ofr": [
+  "https://www.treasury.gov/initiatives/Pages/ofr.aspx"
+ ],
+ "exec-dept-treasury-ttb": [
+  "https://www.ttb.gov"
+ ],
+ "exec-dept-usda-aphis": [
+  "https://www.aphis.usda.gov/"
+ ],
+ "exec-dept-usda-ars": [
+  "https://www.ars.usda.gov/main/main.htm"
+ ],
+ "exec-dept-usda-fsa": [
+  "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing"
+ ],
+ "exec-dept-usda-fsis": [
+  "https://www.fsis.usda.gov/"
+ ],
+ "exec-eop-omb-office-of-federal-procurement-policy": [
+  "https://www.whitehouse.gov/omb/procurement_default/"
+ ],
+ "exec-ind-misc-american-battle-monuments-commission-abmc": [
+  "https://www.abmc.gov"
+ ],
+ "exec-ind-misc-appalachian-regional-commission-arc": [
+  "https://www.arc.gov/"
+ ],
+ "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": [
+  "https://www.csb.gov/"
+ ],
+ "exec-ind-misc-election-assistance-commission-eac": [
+  "https://www.eac.gov/"
+ ],
+ "exec-ind-misc-equal-employment-opportunity-commission-eeoc": [
+  "https://www.eeoc.gov/"
+ ],
+ "exec-ind-misc-farm-credit-administration": [
+  "https://www.fca.gov/index.html"
+ ],
+ "exec-ind-misc-federal-election-commission-fec": [
+  "https://www.fec.gov/"
+ ],
+ "exec-ind-misc-federal-labor-relations-authority-flra": [
+  "https://www.flra.gov/"
+ ],
+ "exec-ind-misc-merit-systems-protection-board-mspb": [
+  "https://www.mspb.gov/"
+ ],
+ "exec-ind-misc-national-endowment-for-the-arts-nea": [
+  "https://arts.gov/"
+ ],
+ "exec-ind-misc-national-endowment-for-the-humanities-neh": [
+  "https://www.neh.gov/"
+ ],
+ "exec-ind-misc-office-of-special-counsel-osc": [
+  "https://www.osc.gov/Intro.htm"
+ ],
+ "leg-support-loc-copyright": [
+  "https://www.copyright.gov/"
+ ],
+ "leg-house-cmte-agriculture": [
+  "https://agriculture.house.gov/"
+ ],
+ "leg-house-cmte-appropriations": [
+  "https://appropriations.house.gov/"
+ ],
+ "leg-house-cmte-armed-services": [
+  "https://armedservices.house.gov/"
+ ],
+ "leg-house-cmte-budget": [
+  "https://budget.house.gov/"
+ ],
+ "leg-house-cmte-energy-commerce": [
+  "https://energycommerce.house.gov/"
+ ],
+ "leg-house-cmte-financial-services": [
+  "https://financialservices.house.gov/"
+ ],
+ "leg-house-cmte-foreign-affairs": [
+  "https://foreignaffairs.house.gov/"
+ ],
+ "leg-house-cmte-homeland-security": [
+  "https://homeland.house.gov/"
+ ],
+ "leg-house-cmte-house-administration": [
+  "https://cha.house.gov/"
+ ],
+ "leg-house-cmte-judiciary": [
+  "https://judiciary.house.gov/"
+ ],
+ "leg-house-cmte-natural-resources": [
+  "https://naturalresources.house.gov/"
+ ],
+ "leg-house-cmte-permanent-select-committee-on-intelligence": [
+  "https://intelligence.house.gov/"
+ ],
+ "leg-house-cmte-rules": [
+  "https://rules.house.gov/"
+ ],
+ "leg-house-cmte-science-space-technology": [
+  "https://science.house.gov/"
+ ],
+ "leg-house-cmte-small-business": [
+  "https://smallbusiness.house.gov/"
+ ],
+ "leg-house-cmte-transportation-infrastructure": [
+  "https://transportation.house.gov/"
+ ],
+ "leg-house-cmte-veterans-affairs": [
+  "https://veterans.house.gov/"
+ ],
+ "leg-house-cmte-ways-means": [
+  "https://waysandmeans.house.gov/"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry": [
+  "https://www.agriculture.senate.gov/"
+ ],
+ "leg-senate-cmte-appropriations": [
+  "https://www.appropriations.senate.gov/"
+ ],
+ "leg-senate-cmte-armed-services": [
+  "https://www.armed-services.senate.gov/"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs": [
+  "https://www.banking.senate.gov/public"
+ ],
+ "leg-senate-cmte-budget": [
+  "https://www.budget.senate.gov/"
+ ],
+ "leg-senate-cmte-commerce-science-transportation": [
+  "https://www.commerce.senate.gov/"
+ ],
+ "leg-senate-cmte-energy-natural-resources": [
+  "https://www.energy.senate.gov/"
+ ],
+ "leg-senate-cmte-environment-public-works": [
+  "https://www.epw.senate.gov/"
+ ],
+ "leg-senate-cmte-finance": [
+  "https://www.finance.senate.gov/"
+ ],
+ "leg-senate-cmte-foreign-relations": [
+  "https://www.foreign.senate.gov/"
+ ],
+ "leg-senate-cmte-health-education-labor-pensions": [
+  "https://www.help.senate.gov/"
+ ],
+ "leg-senate-cmte-homeland-security-governmental-affairs": [
+  "https://www.hsgac.senate.gov/"
+ ],
+ "leg-senate-cmte-indian-affairs": [
+  "https://www.indian.senate.gov/"
+ ],
+ "leg-senate-cmte-judiciary": [
+  "https://www.judiciary.senate.gov/"
+ ],
+ "leg-senate-cmte-rules-administration": [
+  "https://www.rules.senate.gov/"
+ ],
+ "leg-senate-cmte-select-committee-on-ethics": [
+  "https://www.ethics.senate.gov/"
+ ],
+ "leg-senate-cmte-select-committee-on-intelligence": [
+  "https://www.intelligence.senate.gov/"
+ ],
+ "leg-senate-cmte-small-business-entrepreneurship": [
+  "https://www.sbc.senate.gov/"
+ ],
+ "leg-senate-cmte-special-committee-on-aging": [
+  "https://www.aging.senate.gov"
+ ],
+ "leg-senate-cmte-veterans-affairs": [
+  "https://www.veterans.senate.gov/"
+ ],
+ "leg-house-cao": [
+  "https://cao.house.gov/"
+ ],
+ "leg-house-clerk": [
+  "https://clerk.house.gov/"
+ ],
+ "leg-house-cmte-education-the-workforce": [
+  "https://edworkforce.house.gov/"
+ ],
+ "leg-house-cmte-oversight-accountability": [
+  "https://oversight.house.gov/"
+ ],
+ "leg-house-cmte-select-committee-on-the-chinese-communist-party": [
+  "https://selectcommitteeontheccp.house.gov/"
+ ],
+ "leg-joint-econ": [
+  "https://www.jec.senate.gov/"
+ ],
+ "leg-joint-tax": [
+  "https://www.jct.gov/"
+ ],
+ "leg-senate-admin-chaplain": [
+  "https://www.chaplain.senate.gov/"
+ ]
 }

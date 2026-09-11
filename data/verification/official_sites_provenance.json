@@ -1,804 +1,884 @@
 {
-  "exec-dept-defense-agency-dcaa": {
-    "url": "https://www.dcaa.mil/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Defense Contract Audit Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.dcaa.mil/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-defense-agency-dia": {
-    "url": "https://www.dia.mil",
-    "source": "federal_register_agency_directory",
-    "listedName": "Defense Intelligence Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.dia.mil",
-    "schemeUpgraded": true
-  },
-  "exec-dept-defense-agency-disa": {
-    "url": "https://disa.mil/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Defense Information Systems Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://disa.mil/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-defense-agency-dla": {
-    "url": "https://www.dla.mil/Pages/default.aspx",
-    "source": "federal_register_agency_directory",
-    "listedName": "Defense Logistics Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.dla.mil/Pages/default.aspx",
-    "schemeUpgraded": true
-  },
-  "exec-dept-defense-agency-nga": {
-    "url": "https://www.nga.mil/",
-    "source": "federal_register_agency_directory",
-    "listedName": "National Geospatial-Intelligence Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z"
-  },
-  "exec-dept-dhs-cbp": {
-    "url": "https://www.cbp.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "U.S. Customs and Border Protection",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.cbp.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dhs-fema": {
-    "url": "https://www.fema.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Emergency Management Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fema.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dhs-ice": {
-    "url": "https://www.ice.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "U.S. Immigration and Customs Enforcement",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.ice.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dhs-tsa": {
-    "url": "https://www.tsa.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "Transportation Security Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.tsa.gov",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dhs-usss": {
-    "url": "https://www.secretservice.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Secret Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.secretservice.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doc-bea": {
-    "url": "https://www.bea.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Economic Analysis Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.bea.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doc-census": {
-    "url": "https://www.census.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Census Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.census.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doc-ita": {
-    "url": "https://trade.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "International Trade Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://trade.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doe-eere": {
-    "url": "https://www.eere.energy.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Energy Efficiency and Renewable Energy Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.eere.energy.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-bia": {
-    "url": "https://www.bia.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Indian Affairs Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.bia.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-blm": {
-    "url": "https://www.blm.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Land Management Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.blm.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-boem": {
-    "url": "https://www.boem.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Ocean Energy Management Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.boem.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-bsee": {
-    "url": "https://www.bsee.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Safety and Environmental Enforcement Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.bsee.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-fws": {
-    "url": "https://www.fws.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Fish and Wildlife Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fws.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doi-usgs": {
-    "url": "https://www.usgs.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Geological Survey",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.usgs.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doj-atf": {
-    "url": "https://www.atf.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Alcohol, Tobacco, Firearms, and Explosives Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.atf.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doj-dea": {
-    "url": "https://www.justice.gov/dea/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Drug Enforcement Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.justice.gov/dea/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doj-div-antitrust": {
-    "url": "https://www.justice.gov/atr/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Antitrust Division",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.justice.gov/atr/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-doj-fbi": {
-    "url": "https://www.fbi.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Bureau of Investigation",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fbi.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dol-bls": {
-    "url": "https://www.bls.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Labor Statistics Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.bls.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dol-ebsa": {
-    "url": "https://www.dol.gov/ebsa/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Employee Benefits Security Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.dol.gov/ebsa/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dol-eta": {
-    "url": "https://www.doleta.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Employment and Training Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.doleta.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dol-msha": {
-    "url": "https://www.msha.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Mine Safety and Health Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.msha.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dol-ofccp": {
-    "url": "https://www.dol.gov/ofccp/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Contract Compliance Programs Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.dol.gov/ofccp/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dot-faa": {
-    "url": "https://www.faa.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Aviation Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.faa.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dot-fhwa": {
-    "url": "https://www.fhwa.dot.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Highway Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fhwa.dot.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dot-fra": {
-    "url": "https://www.fra.dot.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Railroad Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fra.dot.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dot-fta": {
-    "url": "https://www.fta.dot.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Transit Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fta.dot.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-dot-marad": {
-    "url": "https://www.marad.dot.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Maritime Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.marad.dot.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-ahrq": {
-    "url": "https://www.ahrq.gov/about/ahrqfact.htm",
-    "source": "federal_register_agency_directory",
-    "listedName": "Agency for Healthcare Research and Quality",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.ahrq.gov/about/ahrqfact.htm",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-cdc": {
-    "url": "https://www.cdc.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Centers for Disease Control and Prevention",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.cdc.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-cms": {
-    "url": "https://www.cms.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Centers for Medicare & Medicaid Services",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.cms.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-fda": {
-    "url": "https://www.fda.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Food and Drug Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fda.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-hrsa": {
-    "url": "https://www.hrsa.gov/index.html",
-    "source": "federal_register_agency_directory",
-    "listedName": "Health Resources and Services Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.hrsa.gov/index.html",
-    "schemeUpgraded": true
-  },
-  "exec-dept-hhs-ihs": {
-    "url": "https://www.ihs.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Indian Health Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.ihs.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-bep": {
-    "url": "https://www.moneyfactory.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Engraving and Printing Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.moneyfactory.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-fincen": {
-    "url": "https://www.fincen.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Financial Crimes Enforcement Network",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fincen.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-fiscal": {
-    "url": "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service",
-    "source": "federal_register_agency_directory",
-    "listedName": "Bureau of the Fiscal Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z"
-  },
-  "exec-dept-treasury-irs": {
-    "url": "https://www.irs.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Internal Revenue Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.irs.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-ofac": {
-    "url": "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
-    "source": "federal_register_agency_directory",
-    "listedName": "Foreign Assets Control Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-ofr": {
-    "url": "https://www.treasury.gov/initiatives/Pages/ofr.aspx",
-    "source": "federal_register_agency_directory",
-    "listedName": "Financial Research Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.treasury.gov/initiatives/Pages/ofr.aspx",
-    "schemeUpgraded": true
-  },
-  "exec-dept-treasury-ttb": {
-    "url": "https://www.ttb.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "Alcohol and Tobacco Tax and Trade Bureau",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.ttb.gov",
-    "schemeUpgraded": true
-  },
-  "exec-dept-usda-aphis": {
-    "url": "https://www.aphis.usda.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Animal and Plant Health Inspection Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.aphis.usda.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-dept-usda-ars": {
-    "url": "https://www.ars.usda.gov/main/main.htm",
-    "source": "federal_register_agency_directory",
-    "listedName": "Agricultural Research Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.ars.usda.gov/main/main.htm",
-    "schemeUpgraded": true
-  },
-  "exec-dept-usda-fs": {
-    "url": "https://www.fs.usda.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "Forest Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z"
-  },
-  "exec-dept-usda-fsa": {
-    "url": "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
-    "source": "federal_register_agency_directory",
-    "listedName": "Farm Service Agency",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
-    "schemeUpgraded": true
-  },
-  "exec-dept-usda-fsis": {
-    "url": "https://www.fsis.usda.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Food Safety and Inspection Service",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fsis.usda.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-eop-omb-office-of-federal-procurement-policy": {
-    "url": "https://www.whitehouse.gov/omb/procurement_default/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Procurement Policy Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.whitehouse.gov/omb/procurement_default/",
-    "schemeUpgraded": true
-  },
-  "exec-eop-onadm": {
-    "url": "https://www.whitehouse.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "Administration Office, Executive Office of the President",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z"
-  },
-  "exec-ind-misc-american-battle-monuments-commission-abmc": {
-    "url": "https://www.abmc.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "American Battle Monuments Commission",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.abmc.gov",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-appalachian-regional-commission-arc": {
-    "url": "https://www.arc.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Appalachian Regional Commission",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.arc.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
-    "url": "https://www.csb.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Chemical Safety and Hazard Investigation Board",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.csb.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-election-assistance-commission-eac": {
-    "url": "https://www.eac.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Election Assistance Commission",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.eac.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-equal-employment-opportunity-commission-eeoc": {
-    "url": "https://www.eeoc.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Equal Employment Opportunity Commission",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.eeoc.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-farm-credit-administration": {
-    "url": "https://www.fca.gov/index.html",
-    "source": "federal_register_agency_directory",
-    "listedName": "Farm Credit Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fca.gov/index.html",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-federal-election-commission-fec": {
-    "url": "https://www.fec.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Election Commission",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.fec.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-federal-labor-relations-authority-flra": {
-    "url": "https://www.flra.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Federal Labor Relations Authority",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.flra.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-merit-systems-protection-board-mspb": {
-    "url": "https://www.mspb.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Merit Systems Protection Board",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.mspb.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-national-credit-union-administration-ncua": {
-    "url": "https://www.ncua.gov",
-    "source": "federal_register_agency_directory",
-    "listedName": "National Credit Union Administration",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z"
-  },
-  "exec-ind-misc-national-endowment-for-the-arts-nea": {
-    "url": "https://arts.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "National Endowment for the Arts",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://arts.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-national-endowment-for-the-humanities-neh": {
-    "url": "https://www.neh.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "National Endowment for the Humanities",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.neh.gov/",
-    "schemeUpgraded": true
-  },
-  "exec-ind-misc-office-of-special-counsel-osc": {
-    "url": "https://www.osc.gov/Intro.htm",
-    "source": "federal_register_agency_directory",
-    "listedName": "Special Counsel Office",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.osc.gov/Intro.htm",
-    "schemeUpgraded": true
-  },
-  "leg-house-cmte-agriculture": {
-    "url": "https://agriculture.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Agriculture (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-appropriations": {
-    "url": "https://appropriations.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Appropriations (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-armed-services": {
-    "url": "https://armedservices.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Armed Services (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-budget": {
-    "url": "https://budget.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Budget (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-energy-commerce": {
-    "url": "https://energycommerce.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Energy and Commerce (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-financial-services": {
-    "url": "https://financialservices.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Financial Services (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-foreign-affairs": {
-    "url": "https://foreignaffairs.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Foreign Affairs (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-homeland-security": {
-    "url": "https://homeland.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Homeland Security (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-house-administration": {
-    "url": "https://cha.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "House Administration (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-judiciary": {
-    "url": "https://judiciary.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Judiciary (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-natural-resources": {
-    "url": "https://naturalresources.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Natural Resources (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-permanent-select-committee-on-intelligence": {
-    "url": "https://intelligence.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Permanent Select Committee on Intelligence (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-rules": {
-    "url": "https://rules.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Rules (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-science-space-technology": {
-    "url": "https://science.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Science, Space, and Technology (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-small-business": {
-    "url": "https://smallbusiness.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Small Business (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-transportation-infrastructure": {
-    "url": "https://transportation.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Transportation and Infrastructure (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-veterans-affairs": {
-    "url": "https://veterans.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Veterans’ Affairs (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-house-cmte-ways-means": {
-    "url": "https://waysandmeans.house.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Ways and Means (House committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z"
-  },
-  "leg-senate-cmte-agriculture-nutrition-and-forestry": {
-    "url": "https://www.agriculture.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Agriculture, Nutrition, and Forestry (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.agriculture.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-appropriations": {
-    "url": "https://www.appropriations.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Appropriations (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.appropriations.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-armed-services": {
-    "url": "https://www.armed-services.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Armed Services (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.armed-services.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-banking-housing-urban-affairs": {
-    "url": "https://www.banking.senate.gov/public",
-    "source": "congress_committee_pages",
-    "listedName": "Banking, Housing, and Urban Affairs (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.banking.senate.gov/public",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-budget": {
-    "url": "https://www.budget.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Budget (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.budget.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-commerce-science-transportation": {
-    "url": "https://www.commerce.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Commerce, Science, and Transportation (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.commerce.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-energy-natural-resources": {
-    "url": "https://www.energy.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Energy and Natural Resources (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.energy.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-environment-public-works": {
-    "url": "https://www.epw.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Environment and Public Works (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.epw.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-finance": {
-    "url": "https://www.finance.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Finance (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.finance.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-foreign-relations": {
-    "url": "https://www.foreign.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Foreign Relations (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.foreign.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-health-education-labor-pensions": {
-    "url": "https://www.help.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Health, Education, Labor, and Pensions (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.help.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-homeland-security-governmental-affairs": {
-    "url": "https://www.hsgac.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Homeland Security and Governmental Affairs (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.hsgac.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-indian-affairs": {
-    "url": "https://www.indian.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Indian Affairs (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.indian.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-judiciary": {
-    "url": "https://www.judiciary.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Judiciary (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.judiciary.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-rules-administration": {
-    "url": "https://www.rules.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Rules and Administration (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.rules.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-select-committee-on-ethics": {
-    "url": "https://www.ethics.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Select Committee on Ethics (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.ethics.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-select-committee-on-intelligence": {
-    "url": "https://www.intelligence.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Select Committee on Intelligence (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.intelligence.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-small-business-entrepreneurship": {
-    "url": "https://www.sbc.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Small Business and Entrepreneurship (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.sbc.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-special-committee-on-aging": {
-    "url": "https://www.aging.senate.gov",
-    "source": "congress_committee_pages",
-    "listedName": "Special Committee on Aging (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.aging.senate.gov",
-    "schemeUpgraded": true
-  },
-  "leg-senate-cmte-veterans-affairs": {
-    "url": "https://www.veterans.senate.gov/",
-    "source": "congress_committee_pages",
-    "listedName": "Veterans' Affairs (Senate committee page)",
-    "directoryFetchedAt": "2026-09-08T19:19:19Z",
-    "listedUrl": "http://www.veterans.senate.gov/",
-    "schemeUpgraded": true
-  },
-  "leg-support-loc-copyright": {
-    "url": "https://www.copyright.gov/",
-    "source": "federal_register_agency_directory",
-    "listedName": "Copyright Office, Library of Congress",
-    "directoryFetchedAt": "2026-09-08T19:19:15Z",
-    "listedUrl": "http://www.copyright.gov/",
-    "schemeUpgraded": true
-  }
+ "exec-dept-defense-agency-dcaa": {
+  "url": "https://www.dcaa.mil/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Defense Contract Audit Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.dcaa.mil/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-defense-agency-dia": {
+  "url": "https://www.dia.mil",
+  "source": "federal_register_agency_directory",
+  "listedName": "Defense Intelligence Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.dia.mil",
+  "schemeUpgraded": true
+ },
+ "exec-dept-defense-agency-disa": {
+  "url": "https://disa.mil/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Defense Information Systems Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://disa.mil/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-defense-agency-dla": {
+  "url": "https://www.dla.mil/Pages/default.aspx",
+  "source": "federal_register_agency_directory",
+  "listedName": "Defense Logistics Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.dla.mil/Pages/default.aspx",
+  "schemeUpgraded": true
+ },
+ "exec-dept-defense-agency-nga": {
+  "url": "https://www.nga.mil/",
+  "source": "federal_register_agency_directory",
+  "listedName": "National Geospatial-Intelligence Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z"
+ },
+ "exec-dept-dhs-cbp": {
+  "url": "https://www.cbp.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "U.S. Customs and Border Protection",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.cbp.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dhs-fema": {
+  "url": "https://www.fema.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Emergency Management Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fema.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dhs-ice": {
+  "url": "https://www.ice.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "U.S. Immigration and Customs Enforcement",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.ice.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dhs-tsa": {
+  "url": "https://www.tsa.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "Transportation Security Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.tsa.gov",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dhs-usss": {
+  "url": "https://www.secretservice.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Secret Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.secretservice.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doc-bea": {
+  "url": "https://www.bea.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Economic Analysis Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.bea.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doc-census": {
+  "url": "https://www.census.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Census Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.census.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doc-ita": {
+  "url": "https://trade.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "International Trade Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://trade.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doe-eere": {
+  "url": "https://www.eere.energy.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Energy Efficiency and Renewable Energy Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.eere.energy.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-bia": {
+  "url": "https://www.bia.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Indian Affairs Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.bia.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-blm": {
+  "url": "https://www.blm.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Land Management Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.blm.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-boem": {
+  "url": "https://www.boem.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Ocean Energy Management Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.boem.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-bsee": {
+  "url": "https://www.bsee.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Safety and Environmental Enforcement Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.bsee.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-fws": {
+  "url": "https://www.fws.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Fish and Wildlife Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fws.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doi-usgs": {
+  "url": "https://www.usgs.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Geological Survey",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.usgs.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doj-atf": {
+  "url": "https://www.atf.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Alcohol, Tobacco, Firearms, and Explosives Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.atf.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doj-dea": {
+  "url": "https://www.justice.gov/dea/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Drug Enforcement Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.justice.gov/dea/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doj-div-antitrust": {
+  "url": "https://www.justice.gov/atr/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Antitrust Division",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.justice.gov/atr/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-doj-fbi": {
+  "url": "https://www.fbi.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Bureau of Investigation",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fbi.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dol-bls": {
+  "url": "https://www.bls.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Labor Statistics Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.bls.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dol-ebsa": {
+  "url": "https://www.dol.gov/ebsa/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Employee Benefits Security Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.dol.gov/ebsa/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dol-eta": {
+  "url": "https://www.doleta.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Employment and Training Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.doleta.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dol-msha": {
+  "url": "https://www.msha.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Mine Safety and Health Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.msha.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dol-ofccp": {
+  "url": "https://www.dol.gov/ofccp/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Contract Compliance Programs Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.dol.gov/ofccp/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dot-faa": {
+  "url": "https://www.faa.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Aviation Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.faa.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dot-fhwa": {
+  "url": "https://www.fhwa.dot.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Highway Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fhwa.dot.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dot-fra": {
+  "url": "https://www.fra.dot.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Railroad Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fra.dot.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dot-fta": {
+  "url": "https://www.fta.dot.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Transit Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fta.dot.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-dot-marad": {
+  "url": "https://www.marad.dot.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Maritime Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.marad.dot.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-ahrq": {
+  "url": "https://www.ahrq.gov/about/ahrqfact.htm",
+  "source": "federal_register_agency_directory",
+  "listedName": "Agency for Healthcare Research and Quality",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.ahrq.gov/about/ahrqfact.htm",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-cdc": {
+  "url": "https://www.cdc.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Centers for Disease Control and Prevention",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.cdc.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-cms": {
+  "url": "https://www.cms.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Centers for Medicare & Medicaid Services",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.cms.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-fda": {
+  "url": "https://www.fda.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Food and Drug Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fda.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-hrsa": {
+  "url": "https://www.hrsa.gov/index.html",
+  "source": "federal_register_agency_directory",
+  "listedName": "Health Resources and Services Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.hrsa.gov/index.html",
+  "schemeUpgraded": true
+ },
+ "exec-dept-hhs-ihs": {
+  "url": "https://www.ihs.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Indian Health Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.ihs.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-bep": {
+  "url": "https://www.moneyfactory.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Engraving and Printing Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.moneyfactory.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-fincen": {
+  "url": "https://www.fincen.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Financial Crimes Enforcement Network",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fincen.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-fiscal": {
+  "url": "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service",
+  "source": "federal_register_agency_directory",
+  "listedName": "Bureau of the Fiscal Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z"
+ },
+ "exec-dept-treasury-irs": {
+  "url": "https://www.irs.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Internal Revenue Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.irs.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-ofac": {
+  "url": "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
+  "source": "federal_register_agency_directory",
+  "listedName": "Foreign Assets Control Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-ofr": {
+  "url": "https://www.treasury.gov/initiatives/Pages/ofr.aspx",
+  "source": "federal_register_agency_directory",
+  "listedName": "Financial Research Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.treasury.gov/initiatives/Pages/ofr.aspx",
+  "schemeUpgraded": true
+ },
+ "exec-dept-treasury-ttb": {
+  "url": "https://www.ttb.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "Alcohol and Tobacco Tax and Trade Bureau",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.ttb.gov",
+  "schemeUpgraded": true
+ },
+ "exec-dept-usda-aphis": {
+  "url": "https://www.aphis.usda.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Animal and Plant Health Inspection Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.aphis.usda.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-dept-usda-ars": {
+  "url": "https://www.ars.usda.gov/main/main.htm",
+  "source": "federal_register_agency_directory",
+  "listedName": "Agricultural Research Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.ars.usda.gov/main/main.htm",
+  "schemeUpgraded": true
+ },
+ "exec-dept-usda-fs": {
+  "url": "https://www.fs.usda.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "Forest Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z"
+ },
+ "exec-dept-usda-fsa": {
+  "url": "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
+  "source": "federal_register_agency_directory",
+  "listedName": "Farm Service Agency",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
+  "schemeUpgraded": true
+ },
+ "exec-dept-usda-fsis": {
+  "url": "https://www.fsis.usda.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Food Safety and Inspection Service",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fsis.usda.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-eop-omb-office-of-federal-procurement-policy": {
+  "url": "https://www.whitehouse.gov/omb/procurement_default/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Procurement Policy Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.whitehouse.gov/omb/procurement_default/",
+  "schemeUpgraded": true
+ },
+ "exec-eop-onadm": {
+  "url": "https://www.whitehouse.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "Administration Office, Executive Office of the President",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z"
+ },
+ "exec-ind-misc-american-battle-monuments-commission-abmc": {
+  "url": "https://www.abmc.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "American Battle Monuments Commission",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.abmc.gov",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-appalachian-regional-commission-arc": {
+  "url": "https://www.arc.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Appalachian Regional Commission",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.arc.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
+  "url": "https://www.csb.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Chemical Safety and Hazard Investigation Board",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.csb.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-election-assistance-commission-eac": {
+  "url": "https://www.eac.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Election Assistance Commission",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.eac.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-equal-employment-opportunity-commission-eeoc": {
+  "url": "https://www.eeoc.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Equal Employment Opportunity Commission",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.eeoc.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-farm-credit-administration": {
+  "url": "https://www.fca.gov/index.html",
+  "source": "federal_register_agency_directory",
+  "listedName": "Farm Credit Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fca.gov/index.html",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-federal-election-commission-fec": {
+  "url": "https://www.fec.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Election Commission",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.fec.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-federal-labor-relations-authority-flra": {
+  "url": "https://www.flra.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Federal Labor Relations Authority",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.flra.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-merit-systems-protection-board-mspb": {
+  "url": "https://www.mspb.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Merit Systems Protection Board",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.mspb.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-national-credit-union-administration-ncua": {
+  "url": "https://www.ncua.gov",
+  "source": "federal_register_agency_directory",
+  "listedName": "National Credit Union Administration",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z"
+ },
+ "exec-ind-misc-national-endowment-for-the-arts-nea": {
+  "url": "https://arts.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "National Endowment for the Arts",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://arts.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-national-endowment-for-the-humanities-neh": {
+  "url": "https://www.neh.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "National Endowment for the Humanities",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.neh.gov/",
+  "schemeUpgraded": true
+ },
+ "exec-ind-misc-office-of-special-counsel-osc": {
+  "url": "https://www.osc.gov/Intro.htm",
+  "source": "federal_register_agency_directory",
+  "listedName": "Special Counsel Office",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.osc.gov/Intro.htm",
+  "schemeUpgraded": true
+ },
+ "leg-house-cmte-agriculture": {
+  "url": "https://agriculture.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Agriculture (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-appropriations": {
+  "url": "https://appropriations.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Appropriations (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-armed-services": {
+  "url": "https://armedservices.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Armed Services (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-budget": {
+  "url": "https://budget.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Budget (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-energy-commerce": {
+  "url": "https://energycommerce.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Energy and Commerce (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-financial-services": {
+  "url": "https://financialservices.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Financial Services (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-foreign-affairs": {
+  "url": "https://foreignaffairs.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Foreign Affairs (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-homeland-security": {
+  "url": "https://homeland.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Homeland Security (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-house-administration": {
+  "url": "https://cha.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "House Administration (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-judiciary": {
+  "url": "https://judiciary.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Judiciary (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-natural-resources": {
+  "url": "https://naturalresources.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Natural Resources (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-permanent-select-committee-on-intelligence": {
+  "url": "https://intelligence.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Permanent Select Committee on Intelligence (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-rules": {
+  "url": "https://rules.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Rules (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-science-space-technology": {
+  "url": "https://science.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Science, Space, and Technology (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-small-business": {
+  "url": "https://smallbusiness.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Small Business (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-transportation-infrastructure": {
+  "url": "https://transportation.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Transportation and Infrastructure (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-veterans-affairs": {
+  "url": "https://veterans.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Veterans’ Affairs (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-house-cmte-ways-means": {
+  "url": "https://waysandmeans.house.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Ways and Means (House committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry": {
+  "url": "https://www.agriculture.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Agriculture, Nutrition, and Forestry (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.agriculture.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-appropriations": {
+  "url": "https://www.appropriations.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Appropriations (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.appropriations.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-armed-services": {
+  "url": "https://www.armed-services.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Armed Services (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.armed-services.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs": {
+  "url": "https://www.banking.senate.gov/public",
+  "source": "congress_committee_pages",
+  "listedName": "Banking, Housing, and Urban Affairs (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.banking.senate.gov/public",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-budget": {
+  "url": "https://www.budget.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Budget (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.budget.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-commerce-science-transportation": {
+  "url": "https://www.commerce.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Commerce, Science, and Transportation (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.commerce.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-energy-natural-resources": {
+  "url": "https://www.energy.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Energy and Natural Resources (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.energy.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-environment-public-works": {
+  "url": "https://www.epw.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Environment and Public Works (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.epw.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-finance": {
+  "url": "https://www.finance.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Finance (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.finance.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-foreign-relations": {
+  "url": "https://www.foreign.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Foreign Relations (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.foreign.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-health-education-labor-pensions": {
+  "url": "https://www.help.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Health, Education, Labor, and Pensions (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.help.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-homeland-security-governmental-affairs": {
+  "url": "https://www.hsgac.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Homeland Security and Governmental Affairs (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.hsgac.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-indian-affairs": {
+  "url": "https://www.indian.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Indian Affairs (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.indian.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-judiciary": {
+  "url": "https://www.judiciary.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Judiciary (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.judiciary.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-rules-administration": {
+  "url": "https://www.rules.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Rules and Administration (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.rules.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-select-committee-on-ethics": {
+  "url": "https://www.ethics.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Select Committee on Ethics (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.ethics.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-select-committee-on-intelligence": {
+  "url": "https://www.intelligence.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Select Committee on Intelligence (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.intelligence.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-small-business-entrepreneurship": {
+  "url": "https://www.sbc.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Small Business and Entrepreneurship (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.sbc.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-special-committee-on-aging": {
+  "url": "https://www.aging.senate.gov",
+  "source": "congress_committee_pages",
+  "listedName": "Special Committee on Aging (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.aging.senate.gov",
+  "schemeUpgraded": true
+ },
+ "leg-senate-cmte-veterans-affairs": {
+  "url": "https://www.veterans.senate.gov/",
+  "source": "congress_committee_pages",
+  "listedName": "Veterans' Affairs (Senate committee page)",
+  "directoryFetchedAt": "2026-09-08T19:19:19Z",
+  "listedUrl": "http://www.veterans.senate.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-support-loc-copyright": {
+  "url": "https://www.copyright.gov/",
+  "source": "federal_register_agency_directory",
+  "listedName": "Copyright Office, Library of Congress",
+  "directoryFetchedAt": "2026-09-08T19:19:15Z",
+  "listedUrl": "http://www.copyright.gov/",
+  "schemeUpgraded": true
+ },
+ "leg-house-cao": {
+  "url": "https://cao.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The Chief Administrative Officer of the House commonly maintains a page at cao.house.gov, but this is from general knowledge, not a verified fetch.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:53:09Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-clerk": {
+  "url": "https://clerk.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The Clerk of the House commonly maintains a page at clerk.house.gov, but this is from general knowledge, not a verified fetch.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:53:09Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-education-the-workforce": {
+  "url": "https://edworkforce.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Following the common House committee domain pattern (committee-name.house.gov); the committee's full name suggests an 'edworkforce' abbreviation, but this is a guess, not a verified domain.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:43:03Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability": {
+  "url": "https://oversight.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Following the common House committee domain pattern (committee-name.house.gov, e.g. edworkforce.house.gov), the House Committee on Oversight and Accountability's page is plausibly at oversight.house.gov -- but this is a guess from the naming pattern, not a verified domain.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:51:11Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-select-committee-on-the-chinese-communist-party": {
+  "url": "https://selectcommitteeontheccp.house.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The House Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party is commonly known by this shortened domain, but this is a guess from general knowledge, not a verified fetch.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:52:42Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-joint-econ": {
+  "url": "https://www.jec.senate.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The Joint Economic Committee's official site is commonly known to be jec.senate.gov (administratively hosted under the Senate's domain despite being a joint committee), though this is from general knowledge, not a verified fetch.",
+  "confidence": "likely",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:53:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-joint-tax": {
+  "url": "https://www.jct.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The Joint Committee on Taxation's official site is commonly known to be jct.gov, a standalone domain, though this is from general knowledge, not a verified fetch.",
+  "confidence": "likely",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:53:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-admin-chaplain": {
+  "url": "https://www.chaplain.senate.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Recollection that the Senate Chaplain's office publishes under this subdomain, following the same senate.gov subdomain pattern as other statutory Senate offices; unverified, offered for the verifier to actually check.",
+  "confidence": "speculative",
+  "run": "pass1",
+  "nominatedAt": "2026-09-09T23:40:22Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ }
 }
