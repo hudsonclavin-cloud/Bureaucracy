@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-13T22:27:34Z",
+ "url": "https://www.epa.gov/aboutepa/epa-region-1-new-england",
+ "status": 200,
+ "final_url": "https://www.epa.gov/aboutepa/epa-region-1-new-england",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /aboutepa/epa-region-1-new-england",
+ "bytes": 98589,
+ "sha256": "d02afd5928991fb4dd553bf968108f2d7519c74a5f59f886bb0fe59fadceffe0",
+ "error": null
+}

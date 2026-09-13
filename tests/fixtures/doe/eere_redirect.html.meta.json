@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-13T22:27:39Z",
+ "url": "https://www.energy.gov/eere",
+ "status": 200,
+ "final_url": "https://www.energy.gov/cmei/office-critical-minerals-and-energy-innovation",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /eere",
+ "bytes": 185084,
+ "sha256": "07fb76137e54ac029d49f5fa8b5a40899b90e251a65ee985c15b42f74f12c114",
+ "error": null
+}
