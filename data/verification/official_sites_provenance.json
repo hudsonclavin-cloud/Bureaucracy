@@ -568,10 +568,14 @@
   "directoryFetchedAt": "2026-09-08T19:19:19Z"
  },
  "leg-house-cmte-homeland-security": {
-  "url": "https://homeland.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Homeland Security (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://homeland.house.gov/about/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The About page has a real H2 heading 'Committee On Homeland Security', a rendered heading rather than head-only markup, naming the committee (minus the 'House' prefix).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-house-administration": {
   "url": "https://cha.house.gov/",
@@ -598,34 +602,54 @@
   "directoryFetchedAt": "2026-09-08T19:19:19Z"
  },
  "leg-house-cmte-rules": {
-  "url": "https://rules.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Rules (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://rules.house.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched live: 200 OK, distinct from the registered parent URL (https://rules.house.gov/, homepage). The page body (not nav) lists both Rules subcommittees, each as a bolded link: '<a href=\".../subcommittee-legislative-and-budget-process\" title=\"Subcommittee on Legislative and Budget Process\"><strong>Subcommittee on Legislative and Budget Process</strong></a>' -- the exact curated name (modulo '&' vs 'and') as link text in the page content.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-science-space-technology": {
-  "url": "https://science.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Science, Space, and Technology (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://science.house.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched live: 200 OK, distinct from registered parent homepage URL. Page content (an 'issues-group' card list, not the site nav) links 'Energy' with a page-title span to /subcommittee-energy.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-small-business": {
-  "url": "https://smallbusiness.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Small Business (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://smallbusiness.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched live: 200 OK, distinct from registered parent homepage. Content div (class 'issues-wrap', not nav) links '<a class=\"issues-item\" href=\".../SubcommitteeID=71810\">Contracting and Infrastructure</a>' by name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-transportation-infrastructure": {
-  "url": "https://transportation.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Transportation and Infrastructure (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://transportation.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched live: 200 OK, distinct from registered parent homepage. Content list item '<li><a href=\".../ID=107417\">Aviation</a></li>' and a separate '<h4><a href=\".../ID=107417\">Aviation</a></h4>' card heading -- both content-region, not nav-only.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-veterans-affairs": {
-  "url": "https://veterans.house.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Veterans’ Affairs (House committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z"
+  "url": "https://veterans.house.gov/issues",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched live: 200 OK, distinct from registered parent homepage. Page content has '<li><a href=\"/issues/issue/?IssueID=117990\">Disability Assistance and Memorial Affairs</a></li>' plus a second content block '<li class=\"117990\"><h2 class=\"middleheadline h4\"><a href=\"...\">Disability Assistance and Memorial Affairs</a></h2>' -- a list item AND heading AND link all carrying the exact name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-house-cmte-ways-means": {
   "url": "https://waysandmeans.house.gov/",
@@ -658,12 +682,14 @@
   "schemeUpgraded": true
  },
  "leg-senate-cmte-banking-housing-urban-affairs": {
-  "url": "https://www.banking.senate.gov/public",
-  "source": "congress_committee_pages",
-  "listedName": "Banking, Housing, and Urban Affairs (Senate committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z",
-  "listedUrl": "http://www.banking.senate.gov/public",
-  "schemeUpgraded": true
+  "url": "https://www.banking.senate.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Root homepage (distinct from the already-tried /public subpage) carries a visible header/logo banner reading 'United States Senate Committee On' / 'Banking, Housing, and Urban Affairs', and the <title> tag reads 'Home | United States Committee on Banking, Housing, and Urban Affairs' -- both close variants of this node's name ('and' vs '&', word order).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-senate-cmte-budget": {
   "url": "https://www.budget.senate.gov/",
@@ -706,12 +732,14 @@
   "schemeUpgraded": true
  },
  "leg-senate-cmte-foreign-relations": {
-  "url": "https://www.foreign.senate.gov/",
-  "source": "congress_committee_pages",
-  "listedName": "Foreign Relations (Senate committee page)",
-  "directoryFetchedAt": "2026-09-08T19:19:19Z",
-  "listedUrl": "http://www.foreign.senate.gov/",
-  "schemeUpgraded": true
+  "url": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Fetched https://www.foreign.senate.gov/about/subcommittees (200 OK). It renders an <h2> heading reading exactly 'Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, & Global Women's Issues' (comma before '&' vs none in curated name, otherwise identical), inside a div with id matching the subcommittee slug. This is the parent committee's own page listing this subcommittee as a labeled heading, and it is a different/more specific URL than the bare https://www.foreign.senate.gov/ already on file for the parent.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "leg-senate-cmte-health-education-labor-pensions": {
   "url": "https://www.help.senate.gov/",
@@ -879,6 +907,1506 @@
   "confidence": "speculative",
   "run": "pass1",
   "nominatedAt": "2026-09-09T23:40:22Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-cia-directorate-of-analysis-da": {
+  "url": "https://www.cia.gov/about/organization/directorate-of-analysis/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.cia.gov/about/organization/ live: under an h2 'Directorates' heading it lists a link-button whose visible anchor text is exactly 'Directorate of Analysis', hrefed to this URL. Fetched the target URL itself and confirmed it returns 200 OK.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-cia-directorate-of-operations-do": {
+  "url": "https://www.cia.gov/about/organization/directorate-of-operations/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.cia.gov/about/organization/ live: under the 'Directorates' h2 it lists a link-button with visible anchor text exactly 'Directorate of Operations', hrefed to this URL. Fetched the target URL itself and confirmed 200 OK.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-cia-directorate-of-science-technology-dst": {
+  "url": "https://www.cia.gov/about/organization/directorate-of-science-and-technology/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.cia.gov/about/organization/ live: under the 'Directorates' h2 it lists a link-button with visible anchor text 'Directorate of Science and Technology' (a close variant of the curated 'Directorate of Science & Technology (DS&T)'), hrefed to this URL. Fetched the target URL itself and confirmed 200 OK.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-cia-directorate-of-support-ds": {
+  "url": "https://www.cia.gov/about/organization/directorate-of-support/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.cia.gov/about/organization/ live: under the 'Directorates' h2 it lists a link-button with visible anchor text exactly 'Directorate of Support', hrefed to this URL. Fetched the target URL itself and confirmed 200 OK.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-i-new-england": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-1-new-england",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 1 (New England)', a close numeral/formatting variant of the curated name 'EPA Region I — New England'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-ii-new-york": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-2",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The guessed URL epa-region-2-new-york 404'd, so I fetched https://www.epa.gov/aboutepa/regional-and-geographic-offices, EPA's own regional-office directory, which links to this exact URL under the text 'Region 2'. Fetched the URL itself live: 200 OK, and its own <h1 class=\"page-title\"> reads 'EPA Region 2'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-iii-mid-atlantic": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-3-mid-atlantic",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 3 (Mid-Atlantic)', matching the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-iv-southeast": {
+  "url": "https://www.epa.gov/aboutepa/about-epa-region-4-southeast",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "This is the URL already spot-checked in the task description as real (200 OK). I re-fetched it myself and confirmed the page's own <h1 class=\"page-title\"> reads 'About EPA Region 4 (Southeast)', naming the region.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-ix-pacific": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 9 (Pacific Southwest)', matching the curated 'EPA Region IX — Pacific' region.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-v-midwest": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-5",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The guessed URL epa-region-5-midwest 404'd, so I found the real slug via https://www.epa.gov/aboutepa/regional-and-geographic-offices (EPA's own regional-office directory), which links to this exact URL under the text 'Region 5'. Fetched the URL itself live: 200 OK, and its own <h1 class=\"page-title\"> reads 'EPA Region 5'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-vi-south-central": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-6-south-central",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 6 (South Central)', matching the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-vii-plains": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-7-midwest",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 7 (Midwest)'. Note EPA currently brands this region 'Midwest' rather than the curated 'Plains', but the page's h1 clearly identifies it as 'EPA Region 7', matching on the numbered-region identity even though the descriptive suffix differs from the curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-viii-mountain": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-8-mountains-and-plains",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 8 (Mountains and Plains)', matching the curated 'EPA Region VIII — Mountain' region.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-epa-region-x-northwest": {
+  "url": "https://www.epa.gov/aboutepa/epa-region-10-pacific-northwest",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, and the page's own <h1 class=\"page-title\"> reads 'EPA Region 10 (Pacific Northwest)', matching the curated 'EPA Region X — Northwest' region.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "This archives.gov page (NARA's own domain) is a fuller listing than the currently registered parent page (archives.gov/about): it names this specific library as an <h3> heading 'Barack Obama Presidential Library', which archives.gov/about does not do.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-barack-obama-presidential-library-chicago-il": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Fetched https://www.archives.gov/presidential-libraries (NARA's own directory) live: it lists each library as a distinct <h3> heading, and this library's entry reads exactly '<h3>Barack Obama Presidential Library</h3>' with a 'Visit Website' link to https://www.obamalibrary.gov/. The library's own domain (obamalibrary.gov) is refused by this session's egress proxy (CONNECT 403, confirmed via the proxy status endpoint as a policy denial affecting every presidential-library .gov domain checked, not specific to this one), so this NARA-hosted directory entry is the best reachable candidate and it does label the child by name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Fetched https://www.archives.gov/presidential-libraries (NARA's own directory) live: this library's entry reads '<h3>Dwight D. Eisenhower Presidential Library and Museum</h3>' (a close variant of the curated 'Dwight D. Eisenhower Presidential Library (Abilene, KS)') with a 'Visit Website' link to http://www.eisenhowerlibrary.gov/. The library's own domain is refused by this session's egress proxy (CONNECT 403, confirmed as a blanket policy denial on every presidential-library .gov host tried), so this NARA-hosted directory entry is the best reachable candidate and it does label the child by name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Live fetch (200 OK) of NARA's own presidential-libraries directory page contains an <h3> heading 'Franklin D. Roosevelt Presidential Library and Museum', a close match to the curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "The directory page's h3 heading reads 'George Bush Presidential Library and Museum' (no 'H.W.' and no city), a weaker variant of the curated name 'George H.W. Bush Presidential Library (College Station, TX)', so flagged speculative rather than likely.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Live fetch located an <h3> heading 'George W. Bush Presidential Library' on NARA's own directory page, matching the curated name closely (only lacking the city).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Gerald R. Ford Presidential Library' on NARA's directory page (page also has a separate 'Gerald R. Ford Presidential Museum' heading for the sister site).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Harry S. Truman Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Herbert Hoover Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Jimmy Carter Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'John F. Kennedy Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Lyndon Baines Johnson Presidential Library and Museum' on NARA's directory page ('Baines' spelled out vs curated 'B.') is the same person/institution as the curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Richard Nixon Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'Ronald Reagan Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
+  "url": "https://www.archives.gov/presidential-libraries",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "h3 heading 'William J. Clinton Presidential Library and Museum' on NARA's directory page matches the curated name closely.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nasa-aeronautics-research-mission-directorate": {
+  "url": "https://www.nasa.gov/directorates/armd/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Live fetch (200 OK, following a 301 from /aeronautics-research-mission-directorate/) has <h1>Aeronautics Research Mission Directorate</h1> — an exact-text heading match.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nasa-exploration-systems-development-mission-directorate": {
+  "url": "https://www.nasa.gov/exploration-systems-development-mission-directorate/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Live fetch (200 OK) has <title>Exploration Systems Development Mission Directorate - NASA</title> and an exact-text <h1>Exploration Systems Development Mission Directorate</h1>.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nasa-space-operations-mission-directorate": {
+  "url": "https://www.nasa.gov/directorates/space-operations/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Live fetch of /directorates/somd/ (redirects here, 200 OK) has an exact-text <h1>Space Operations Mission Directorate</h1>.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nasa-space-technology-mission-directorate": {
+  "url": "https://www.nasa.gov/space-technology-mission-directorate/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Live fetch (200 OK) has <title>Space Technology Mission Directorate - NASA</title> and an exact-text <h1>Space Technology Mission Directorate</h1>.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development": {
+  "url": "https://agriculture.house.gov/issues/issue/?IssueID=14907",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://agriculture.house.gov/subcommittees/ (200 OK): it links each subcommittee to its own dedicated page. Followed the link for 'Commodity Markets, Digital Assets, and Rural Development' to this URL and fetched it directly: <title> and <h1> both read exactly 'Commodity Markets, Digital Assets, and Rural Development', matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-agriculture-sub-conservation-research-biotechnology": {
+  "url": "https://agriculture.house.gov/issues/issue/?IssueID=14910",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via agriculture.house.gov/subcommittees/; fetched this URL directly, <h1> reads exactly 'Conservation, Research, and Biotechnology' matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit": {
+  "url": "https://agriculture.house.gov/issues/issue/?IssueID=14912",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via agriculture.house.gov/subcommittees/; fetched this URL directly, <title> and <h1> both read exactly 'General Farm Commodities, Risk Management, and Credit', matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-agriculture-sub-livestock-dairy-poultry": {
+  "url": "https://agriculture.house.gov/issues/issue/?IssueID=14908",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via agriculture.house.gov/subcommittees/; fetched this URL directly, <h1> reads exactly 'Livestock, Dairy, and Poultry' matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture": {
+  "url": "https://agriculture.house.gov/issues/issue/?IssueID=14909",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched agriculture.house.gov/subcommittees/ and this URL directly: <title>/<h1> read exactly 'Nutrition and Foreign Agriculture', with no 'Horticulture' in the current official name at all. This node's curated name adds '& Horticulture', which the parent's page does not carry for this subcommittee (Horticulture is instead paired with Forestry in a separate subcommittee). Nominating speculatively since it is plausibly the same subcommittee under an outdated/superset curated name, but the name does not match as a label -- the real verifier should very likely reject this on label equality, flagging for curation review instead of confirming.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://appropriations.house.gov/subcommittees (200 OK): it links each subcommittee to its own dedicated page. Fetched this URL directly: <title> and <h1> both read exactly 'Agriculture, Rural Development, Food and Drug Administration, and Related Agencies', matching this node's name (FDA spelled out, & vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/commerce-justice-science-and-related-agencies-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Commerce, Justice, Science, and Related Agencies' matching this node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-defense": {
+  "url": "https://appropriations.house.gov/subcommittees/defense-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <title> and <h1> both read exactly 'Defense'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-energy-water-development": {
+  "url": "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <title> and <h1> both read exactly 'Energy and Water Development and Related Agencies'; this node's name is the same subcommittee minus the trailing '...and Related Agencies'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-financial-services-general-government": {
+  "url": "https://appropriations.house.gov/subcommittees/financial-services-and-general-government-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Financial Services and General Government' matching this node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-homeland-security": {
+  "url": "https://appropriations.house.gov/subcommittees/homeland-security-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <title> and <h1> both read exactly 'Homeland Security'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-interior-environment-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/interior-environment-and-related-agencies-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Interior, Environment, and Related Agencies' matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Labor, Health and Human Services, Education, and Related Agencies', matching this node's name (HHS spelled out, & vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-legislative-branch": {
+  "url": "https://appropriations.house.gov/subcommittees/legislative-branch-0",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <title> and <h1> both read exactly 'Legislative Branch'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/military-construction-veterans-affairs-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Military Construction, Veterans Affairs, and Related Agencies' matching this node's name (& vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies": {
+  "url": "https://appropriations.house.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via appropriations.house.gov/subcommittees; fetched this URL directly, <h1> reads exactly 'Transportation, Housing and Urban Development, and Related Agencies', matching this node's name (HUD spelled out, & vs and).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation": {
+  "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14892",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://armedservices.house.gov/subcommittees (200 OK) which links each subcommittee to /Issues/Issue/?IssueID=... ; that URL 301-redirected (followed with -L) to the given URL. Fetched the final URL directly: <title> and <h1> both read 'Cyber, Information Technologies, and Innovation' (plural 'Technologies' vs this node's 'Technology'), otherwise matching.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-military-personnel": {
+  "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14894",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via armedservices.house.gov/subcommittees; fetched the redirected URL directly, <title> and <h1> both read exactly 'Military Personnel'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-readiness": {
+  "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same discovery path via armedservices.house.gov/subcommittees; fetched the redirected URL directly, <title> and <h1> both read exactly 'Readiness'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-seapower-projection-forces": {
+  "url": "https://armedservices.house.gov/Issues/Issue/?IssueID=14896",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). Page <title> is 'Seapower and Projection Forces | House Armed Services Committee' and the on-page H1 banner-title reads 'Seapower and Projection Forces' — a dedicated committee-hosted page for this subcommittee, linked from armedservices.house.gov/subcommittees.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-strategic-forces": {
+  "url": "https://armedservices.house.gov/Issues/Issue/?IssueID=14897",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> is 'Strategic Forces | House Armed Services Committee' and the H1 banner-title reads 'Strategic Forces', matching the subcommittee's name minus the 'Subcommittee on' prefix.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-armed-services-sub-tactical-air-land-forces": {
+  "url": "https://armedservices.house.gov/Issues/Issue/?IssueID=14898",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> is 'Tactical Air and Land Forces | House Armed Services Committee' and the H1 banner-title reads 'Tactical Air and Land Forces', matching the subcommittee's name (using 'and' for '&').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education": {
+  "url": "https://edworkforce.house.gov/issues/issue/?IssueID=43419",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads 'Early Childhood, Elementary, and Secondary Education', matching the node's name ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions": {
+  "url": "https://edworkforce.house.gov/issues/issue/?IssueID=43422",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads 'Health, Employment, Labor, and Pensions', matching the node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development": {
+  "url": "https://edworkforce.house.gov/issues/issue/?IssueID=43420",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads 'Higher Education and Workforce Development', matching the node's name ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-energy-commerce-sub-communications-technology": {
+  "url": "https://energycommerce.house.gov/committees/subcommittee/communications-technology",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads 'Communications & Technology', an exact match to the node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-energy-commerce-sub-health": {
+  "url": "https://energycommerce.house.gov/committees/subcommittee/health",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads exactly 'Health', matching the node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-energy-commerce-sub-oversight-investigations": {
+  "url": "https://energycommerce.house.gov/committees/subcommittee/oversight-investigations",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). The page's H1 reads 'Oversight & Investigations', an exact match to the node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-capital-markets": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> and H1 both read 'Subcommittee on Capital Markets', an exact match to the node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> and H1 both read 'Subcommittee on Digital Assets, Financial Technology, and Artificial Intelligence', an exact match ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28985",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). This is the only 'Financial Institutions'-named subcommittee page currently linked from financialservices.house.gov/subcommittees, but its <title> and H1 both read only 'Subcommittee on Financial Institutions' — I searched the full page and 'Monetary Policy' does not appear anywhere. Likely the same subcommittee under a shortened current name rather than an exact label match, so a real verifier fetch is worth the one try but should not be assumed to pass label equality.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-housing-insurance": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> and H1 both read 'Subcommittee on Housing and Insurance', matching the node's name ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> and H1 both read 'Subcommittee on National Security, Illicit Finance, and International Financial Institutions', an exact match ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-financial-services-sub-oversight-investigations": {
+  "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> and H1 both read 'Subcommittee on Oversight and Investigations', matching the node's name ('&' vs 'and').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-foreign-affairs-sub-africa": {
+  "url": "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live (200 OK). <title> is 'Africa Subcommittee (119th Congress) | Republican Foreign Affairs Committee' and the page carries an H1 'Africa Subcommittee' — a close variant of the node's name (word order, no 'Subcommittee on' prefix).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-foreign-affairs-sub-the-western-hemisphere": {
+  "url": "https://foreignaffairs.house.gov/subcommittees/western-hemisphere-subcommittee-119th-congress",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Page has two distinct H1 headings, 'Western Hemisphere Subcommittee (119th Congress)' and 'Western Hemisphere Subcommittee', and is linked from the parent's own site-wide nav as 'Western Hemisphere Subcommittee' under Subcommittees.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-border-security-enforcement": {
+  "url": "https://homeland.house.gov/border-security-facilitation-and-operations/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag 'Border Security and Enforcement – Committee on Homeland Security' and a real H2 'Border Security and Enforcement' on the page; the parent's /subcommittees/ page links to this URL under the label 'Border Security and Enforcement'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence": {
+  "url": "https://homeland.house.gov/intelligence-and-counterterrorism/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag and page content read 'Counterterrorism and Intelligence', the closest current subcommittee to this curated name, but the page drops 'Law Enforcement' entirely so it is not a full name match.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection": {
+  "url": "https://homeland.house.gov/cybersecurity-infrastructure-protection-and-innovation/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag 'Cybersecurity and Infrastructure Protection – Committee on Homeland Security' matches the curated name (& vs and) exactly; linked from the parent's subcommittees grid under the same label.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-emergency-management-technology": {
+  "url": "https://homeland.house.gov/emergency-preparedness-response-and-recovery/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag and page content read 'Emergency Management and Technology', an exact match to the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-oversight-investigations-accountability": {
+  "url": "https://homeland.house.gov/oversight-management-and-accountability/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag and content read 'Oversight, Investigations, and Accountability', matching the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-homeland-security-sub-transportation-maritime-security": {
+  "url": "https://homeland.house.gov/transportation-and-maritime-security/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Title tag and content read 'Transportation and Maritime Security', an exact match to the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-house-administration-sub-elections": {
+  "url": "https://cha.house.gov/elections",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 heading 'Elections' and title tag 'Elections - United States Committee on House Administration'; also linked from the parent's own nav under Subcommittees as 'Elections'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust": {
+  "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/antitrust-commercial-and-administrative-law-119th",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'The Subcommittee on the Administrative State, Regulatory Reform, and Antitrust' matches the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-judiciary-sub-constitution-limited-government": {
+  "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/constitution-and-limited-government-119th-congress",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'The Subcommittee on the Constitution and Limited Government' matches the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": {
+  "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'The Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet' is the current name of the subcommittee this curated node maps to, but it has grown a clause ('Artificial Intelligence,') the curated name lacks.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance": {
+  "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'The Subcommittee on Crime and Federal Government Surveillance' matches the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement": {
+  "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'The Subcommittee on Immigration Integrity, Security, and Enforcement' matches the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-natural-resources-sub-water-wildlife-fisheries": {
+  "url": "https://naturalresources.house.gov/issues/issue/?IssueID=5937",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 'Water, Wildlife and Fisheries' (with an 'h2: Jurisdiction of the Subcommittee' beneath it) confirms this is the subcommittee's own page; it is also linked from the parent site's Subcommittees nav dropdown under the label 'Water, Wildlife and Fisheries'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability-sub-cybersecurity-information-technology-government-innovation": {
+  "url": "https://oversight.house.gov/subcommittee/cybersecurity-information-technology-government-innovation/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 and title both read 'Cybersecurity, Information Technology, and Government Innovation', matching the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability-sub-economic-growth-energy-policy-regulatory-affairs": {
+  "url": "https://oversight.house.gov/subcommittee/economic-growth-energy-policy-regulatory-affairs/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 and title both read 'Economic Growth, Energy Policy, and Regulatory Affairs', matching the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce": {
+  "url": "https://oversight.house.gov/subcommittee/government-operations/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 and title both read only 'Government Operations' — the closest current subcommittee to this curated node, but the page drops 'and the Federal Workforce' from the name entirely.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability-sub-health-care-financial-services": {
+  "url": "https://oversight.house.gov/subcommittee/subcommittee-on-health-care-and-financial-services/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 and title both read 'Health Care and Financial Services', matching the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-oversight-accountability-sub-military-foreign-affairs": {
+  "url": "https://oversight.house.gov/subcommittee/military-and-foreign-affairs/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "H1 and title both read 'Military and Foreign Affairs', matching the curated name apart from '&' vs 'and'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-rules-sub-legislative-budget-process": {
+  "url": "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, <title>Subcommittee on Legislative and Budget Process | House of Representatives Committee on Rules</title> and an <h1> reading exactly 'Subcommittee on Legislative and Budget Process' (curated name uses '&' for 'and'). This is the subcommittee's own dedicated subpage, linked from the parent committee's subcommittees index.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-rules-sub-rules-the-organization-of-the-house": {
+  "url": "https://rules.house.gov/about/subcommittees/subcommittee-rules-and-organization-house",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK, <title>Subcommittee on Rules and Organization of the House | House of Representatives Committee on Rules</title> and <h1> reading exactly 'Subcommittee on Rules and Organization of the House' (curated name uses '&' and is worded 'Rules & the Organization of the House' -- a close variant of the same subcommittee, word order/connector differs slightly).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-science-space-technology-sub-energy": {
+  "url": "https://science.house.gov/subcommittee-energy",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Energy - House Committee on Science Space & Tech - Republicans</title>, <h1><a href=\"/subcommittee-energy\">Energy</a></h1>, and a filter dropdown on the page contains <option>Subcommittee on Energy</option> matching the full curated name. Page is entirely about this one subcommittee (jurisdiction text, members, hearings).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-science-space-technology-sub-environment": {
+  "url": "https://science.house.gov/subcommittee-environment",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Environment - House Committee on Science Space & Tech - Republicans</title>, <h1><a href=\"/subcommittee-environment\">Environment</a></h1>. Dedicated subcommittee page, same site pattern verified for the Energy subcommittee.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-science-space-technology-sub-investigations-oversight": {
+  "url": "https://science.house.gov/subcommittee-investigations-oversight",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Investigations and Oversight - House Committee on Science Space & Tech - Republicans</title>, <h1><a href=\"/subcommittee-investigations-oversight\">Investigations and Oversight</a></h1>, matching curated name 'Subcommittee on Investigations & Oversight'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-science-space-technology-sub-research-technology": {
+  "url": "https://science.house.gov/subcommittee-research-technology",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Research and Technology - House Committee on Science Space & Tech - Republicans</title>, <h1><a href=\"/subcommittee-research-technology\">Research and Technology</a></h1>.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-science-space-technology-sub-space-aeronautics": {
+  "url": "https://science.house.gov/subcommittee-space-aeronautics",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Space and Aeronautics - House Committee on Science Space & Tech - Republicans</title>, <h1><a href=\"/subcommittee-space-aeronautics\">Space and Aeronautics</a></h1>.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-small-business-sub-contracting-infrastructure": {
+  "url": "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71810",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Contracting and Infrastructure</span></h1>, matching curated 'Subcommittee on Contracting & Infrastructure'. Dedicated subcommittee page found via smallbusiness.house.gov/subcommittees/.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access": {
+  "url": "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Economic Growth, Tax, and Capital Access</span></h1>, matching curated 'Subcommittee on Economic Growth, Tax & Capital Access'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development": {
+  "url": "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71811",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Innovation, Entrepreneurship, and Workforce Development</span></h1>, matching curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-small-business-sub-oversight-investigations-regulations": {
+  "url": "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Oversight, Investigations, and Regulations</span></h1>, matching curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-small-business-sub-rural-development-energy-supply-chains": {
+  "url": "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71809",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Rural Development, Energy, and Supply Chains</span></h1>, matching curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-aviation": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107417",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <title>Aviation | Transportation and Infrastructure Committee</title>, <h1><span id=\"ctl00_PageLink\">Aviation</span></h1>, body text 'The Subcommittee on Aviation has jurisdiction over...' -- exact curated subcommittee name appears in body prose, and page heading/title/URL are specific to it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107418",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. Page heading/title reads 'Coast Guard and Maritime Transportation', matching curated 'Subcommittee on Coast Guard & Maritime Transportation'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107419",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. Page heading/title reads 'Economic Development, Public Buildings and Emergency Management', matching curated name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-highways-transit": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107420",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. Page heading/title reads 'Highways and Transit', matching curated 'Subcommittee on Highways & Transit'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107421",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. Page heading/title reads 'Railroads, Pipelines, and Hazardous Materials', matching curated 'Subcommittee on Railroads, Pipelines & Hazardous Materials'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-transportation-infrastructure-sub-water-resources-environment": {
+  "url": "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107422",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. Page heading/title reads 'Water Resources and Environment', matching curated 'Subcommittee on Water Resources & Environment'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs": {
+  "url": "https://veterans.house.gov/issues/issue/?IssueID=117990",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Disability Assistance and Memorial Affairs</span></h1>, exact match to curated 'Subcommittee on Disability Assistance & Memorial Affairs' minus the 'Subcommittee on' prefix.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-veterans-affairs-sub-economic-opportunity": {
+  "url": "https://veterans.house.gov/issues/issue/?IssueID=117991",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Economic Opportunity</span></h1>, exact match to curated 'Subcommittee on Economic Opportunity' minus prefix.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-veterans-affairs-sub-health": {
+  "url": "https://veterans.house.gov/issues/issue/?IssueID=117992",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: 200 OK. <h1 class=\"h2\"><span id=\"ctl00_PageLink\">Health</span></h1>, exact match to curated 'Subcommittee on Health' minus prefix. Marked speculative rather than likely because 'Health' alone is a generic single word (the same category CLAUDE.md flags as hard to distinguish), even though this specific page is unambiguously the Veterans' Affairs Health subcommittee's own page.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-veterans-affairs-sub-oversight-investigations": {
+  "url": "https://veterans.house.gov/issues/issue/?IssueID=117993",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Dedicated page under the parent committee's own domain, reached from its site-wide 'issues & subcommittees' nav menu; the page's visible h1 heading reads 'Oversight and Investigations' and the body repeatedly links to 'Subcommittee on Oversight and Investigations' events/press, closely matching the node's name (minus the 'Subcommittee on' prefix, 'and' vs '&').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-veterans-affairs-sub-technology-modernization": {
+  "url": "https://veterans.house.gov/issues/issue/?IssueID=117997",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Dedicated page under the parent committee's domain, linked from the same 'issues & subcommittees' nav; visible h1 heading reads exactly 'Technology Modernization', matching the node's name minus the 'Subcommittee on' prefix.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-ways-means-sub-health": {
+  "url": "https://waysandmeans.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Parent committee's dedicated subcommittees roster page; contains the exact h2 heading 'Subcommittee On Health' for this unit, alongside Majority/Minority member lists.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-ways-means-sub-oversight": {
+  "url": "https://waysandmeans.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same roster page carries the exact h2 heading 'Subcommittee On Oversight'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-ways-means-sub-social-security": {
+  "url": "https://waysandmeans.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same roster page carries the exact h2 heading 'Subcommittee On Social Security'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-ways-means-sub-tax": {
+  "url": "https://waysandmeans.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same roster page carries the exact h2 heading 'Subcommittee On Tax'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-ways-means-sub-trade": {
+  "url": "https://waysandmeans.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same roster page carries the exact h2 heading 'Subcommittee On Trade'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade": {
+  "url": "https://www.agriculture.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Parent committee's dedicated subcommittees page carries the h2 heading 'The Subcommittee on Commodities, Derivatives, Risk Management, and Trade', a close variant of this node's name (extra word 'Derivatives', 'and' vs '&').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources": {
+  "url": "https://www.agriculture.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries h2 'The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology', which shares 'Conservation, Forestry, Natural Resources' with this node's name but substitutes 'Biotechnology' for the node's 'Climate' -- possibly a renamed jurisdiction, so only speculative.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research": {
+  "url": "https://www.agriculture.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries h2 'The Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research', sharing 'Food and Nutrition, Specialty Crops' with this node's name but ending in 'Organics, and Research' rather than 'Agricultural Research'.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security": {
+  "url": "https://www.agriculture.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries h2 'The Subcommittee on Livestock, Dairy, Poultry, and Food Safety', sharing 'Livestock, Dairy, Poultry' and 'Food Safety' with this node's longer name, but omitting 'Local Food Systems' and '& Security'.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy": {
+  "url": "https://www.agriculture.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries h2 'The Subcommittee on Rural Development, Energy, and Credit', a close variant of this node's name 'Rural Development & Energy' (extra 'and Credit').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Dedicated subcommittee page (its own URL, distinct from the committee homepage) whose visible h1 heading reads 'Agriculture, Rural Development, Food and Drug Administration, and Related Agencies' -- matches this node's name with 'FDA' spelled out and 'and' for '&'.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Dedicated subcommittee page whose visible h1 heading reads 'Labor, Health and Human Services, Education, and Related Agencies' -- matches this node's name with 'HHS' spelled out.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Dedicated subcommittee page whose visible h1 heading reads 'Transportation, Housing and Urban Development, and Related Agencies' -- matches this node's name with 'HUD' spelled out.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Parent committee's dedicated subcommittees page carries the h2 heading 'Emerging Threats and Capabilities', a close variant of this node's name ('and' vs '&').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-readiness-management-support": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries the h2 heading 'Readiness and Management Support', a close variant of this node's name ('and' vs '&').",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-strategic-forces": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Same page carries the h2 heading 'Strategic Forces', an exact match of this node's name.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy": {
+  "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page lists this subcommittee's name as a link label in the page's subcommittee navigation and as a section anchor on the same page.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection": {
+  "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page lists this subcommittee's name as a link label in the page's subcommittee navigation and as a section anchor on the same page.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development": {
+  "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page lists this subcommittee's name as a link label in the page's subcommittee navigation and as a section anchor on the same page.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance": {
+  "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page lists this subcommittee's name as a link label in the page's subcommittee navigation and as a section anchor on the same page.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment": {
+  "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page lists this subcommittee's name as a link label in the page's subcommittee navigation and as a section anchor on the same page.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on Energy, Natural Resources, and Infrastructure' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on Fiscal Responsibility and Economic Growth' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-health-care": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on Health Care' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on International Trade, Customs, and Global Competitiveness' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-social-security-pensions-family-policy": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on Social Security, Pensions, and Family Policy' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-finance-sub-taxation-irs-oversight": {
+  "url": "https://www.finance.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the page carries a heading 'Subcommittee on Taxation and IRS Oversight' naming this subcommittee, with its own chair/ranking-member roster beneath it.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries an <h2> heading with this subcommittee's exact name at the matching anchor id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries an <h2> heading with this subcommittee's exact name (minor comma difference) at the matching anchor id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries an <h2> heading with this subcommittee's exact name at the matching anchor id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries a heading with this subcommittee's exact name (minor comma differences) at the matching anchor/div id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries an <h2> heading with this subcommittee's exact name (minor comma difference) at the matching anchor id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development": {
+  "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched live: the committee's subcommittees page carries an <h2> heading with this subcommittee's exact name (minor comma difference) at the matching anchor id.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": {
+  "url": "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.help.senate.gov/about/subcommittees (200 OK); found <div id=\"employment-ii-workplace-safety\"><h2>Employment & Workplace Safety</h2></div> -- an exact-text h2 heading naming this subcommittee, preceded only by a generic 'SUBCOMMITTEE ON' overline (not part of the specific name).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": {
+  "url": "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.help.senate.gov/about/subcommittees (200 OK); found <div id=\"primary-health-ii-retirement-security\"><h2>Primary Health & Retirement Security</h2></div> -- an exact-text h2 heading naming this subcommittee, preceded only by a generic 'Subcommittee on' overline.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights": {
+  "url": "https://www.judiciary.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.judiciary.senate.gov/about/subcommittees (200 OK); found an h2 heading 'Antitrust, Competition Policy, and Consumer Rights'. This is the same three topics as the curated name 'Competition Policy, Antitrust & Consumer Rights' but in a different word order and with 'and' instead of '&', so it may or may not satisfy an exact label match -- flagging speculative rather than likely.",
+  "confidence": "speculative",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-judiciary-sub-intellectual-property": {
+  "url": "https://www.judiciary.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.judiciary.senate.gov/about/subcommittees (200 OK); found an h2 heading reading exactly 'Intellectual Property' (rendered as 'Intellectual&nbsp;<i>Property</i>' in markup, same words), preceded only by a generic 'Subcommittee on' overline.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-judiciary-sub-privacy-technology-the-law": {
+  "url": "https://www.judiciary.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.judiciary.senate.gov/about/subcommittees (200 OK); found an h2 heading 'Privacy, Technology, and the Law', matching the curated name 'Privacy, Technology & the Law' except 'and' vs '&', preceded only by a generic 'Subcommittee on' overline.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-uscp-office-of-professional-responsibility": {
+  "url": "https://www.uscp.gov/the-department/our-mission",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.uscp.gov/the-department/our-mission (200 OK). Found a list item with '<strong>Office of Professional Responsibility</strong> oversees administrative investigations related to the conduct of Department personnel and inspections...' -- an exact-text bolded label naming this office as an item in the department's organizational list (distinct from the earlier, non-visible occurrence in a nav link's title attribute, which I disregarded per this project's own rule against title-attribute matches).",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-uscp-protective-services-bureau": {
+  "url": "https://www.uscp.gov/the-department/our-mission",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Fetched https://www.uscp.gov/the-department/our-mission (200 OK). Found a list item with '<strong>Protective Services Bureau</strong> collects and analyzes information, assess threats, identify risks...' -- an exact-text bolded label naming this bureau as an item in the department's organizational list under the Assistant Chief of Police for Protective & Intelligence Operations.",
+  "confidence": "likely",
+  "run": "recheck1",
+  "nominatedAt": "2026-09-13T21:58:58Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }

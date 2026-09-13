@@ -152,7 +152,8 @@
   "https://www.opm.gov/about-us/"
  ],
  "exec-ind-nara": [
-  "https://www.archives.gov/about"
+  "https://www.archives.gov/about",
+  "https://www.archives.gov/presidential-libraries"
  ],
  "exec-regulatory-fed": [
   "https://www.federalreserve.gov/aboutthefed.htm"
@@ -440,7 +441,8 @@
   "https://foreignaffairs.house.gov/"
  ],
  "leg-house-cmte-homeland-security": [
-  "https://homeland.house.gov/"
+  "https://homeland.house.gov/",
+  "https://homeland.house.gov/about/"
  ],
  "leg-house-cmte-house-administration": [
   "https://cha.house.gov/"
@@ -455,19 +457,24 @@
   "https://intelligence.house.gov/"
  ],
  "leg-house-cmte-rules": [
-  "https://rules.house.gov/"
+  "https://rules.house.gov/",
+  "https://rules.house.gov/about/subcommittees"
  ],
  "leg-house-cmte-science-space-technology": [
-  "https://science.house.gov/"
+  "https://science.house.gov/",
+  "https://science.house.gov/subcommittees"
  ],
  "leg-house-cmte-small-business": [
-  "https://smallbusiness.house.gov/"
+  "https://smallbusiness.house.gov/",
+  "https://smallbusiness.house.gov/subcommittees/"
  ],
  "leg-house-cmte-transportation-infrastructure": [
-  "https://transportation.house.gov/"
+  "https://transportation.house.gov/",
+  "https://transportation.house.gov/subcommittees/"
  ],
  "leg-house-cmte-veterans-affairs": [
-  "https://veterans.house.gov/"
+  "https://veterans.house.gov/",
+  "https://veterans.house.gov/issues"
  ],
  "leg-house-cmte-ways-means": [
   "https://waysandmeans.house.gov/"
@@ -482,7 +489,8 @@
   "https://www.armed-services.senate.gov/"
  ],
  "leg-senate-cmte-banking-housing-urban-affairs": [
-  "https://www.banking.senate.gov/public"
+  "https://www.banking.senate.gov/public",
+  "https://www.banking.senate.gov/"
  ],
  "leg-senate-cmte-budget": [
   "https://www.budget.senate.gov/"
@@ -500,7 +508,8 @@
   "https://www.finance.senate.gov/"
  ],
  "leg-senate-cmte-foreign-relations": [
-  "https://www.foreign.senate.gov/"
+  "https://www.foreign.senate.gov/",
+  "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues"
  ],
  "leg-senate-cmte-health-education-labor-pensions": [
   "https://www.help.senate.gov/"
@@ -555,5 +564,452 @@
  ],
  "leg-senate-admin-chaplain": [
   "https://www.chaplain.senate.gov/"
+ ],
+ "exec-ind-cia-directorate-of-analysis-da": [
+  "https://www.cia.gov/about/organization/directorate-of-analysis/"
+ ],
+ "exec-ind-cia-directorate-of-operations-do": [
+  "https://www.cia.gov/about/organization/directorate-of-operations/"
+ ],
+ "exec-ind-cia-directorate-of-science-technology-dst": [
+  "https://www.cia.gov/about/organization/directorate-of-science-and-technology/"
+ ],
+ "exec-ind-cia-directorate-of-support-ds": [
+  "https://www.cia.gov/about/organization/directorate-of-support/"
+ ],
+ "exec-ind-epa-region-i-new-england": [
+  "https://www.epa.gov/aboutepa/epa-region-1-new-england"
+ ],
+ "exec-ind-epa-region-ii-new-york": [
+  "https://www.epa.gov/aboutepa/epa-region-2"
+ ],
+ "exec-ind-epa-region-iii-mid-atlantic": [
+  "https://www.epa.gov/aboutepa/epa-region-3-mid-atlantic"
+ ],
+ "exec-ind-epa-region-iv-southeast": [
+  "https://www.epa.gov/aboutepa/about-epa-region-4-southeast"
+ ],
+ "exec-ind-epa-region-ix-pacific": [
+  "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest"
+ ],
+ "exec-ind-epa-region-v-midwest": [
+  "https://www.epa.gov/aboutepa/epa-region-5"
+ ],
+ "exec-ind-epa-region-vi-south-central": [
+  "https://www.epa.gov/aboutepa/epa-region-6-south-central"
+ ],
+ "exec-ind-epa-region-vii-plains": [
+  "https://www.epa.gov/aboutepa/epa-region-7-midwest"
+ ],
+ "exec-ind-epa-region-viii-mountain": [
+  "https://www.epa.gov/aboutepa/epa-region-8-mountains-and-plains"
+ ],
+ "exec-ind-epa-region-x-northwest": [
+  "https://www.epa.gov/aboutepa/epa-region-10-pacific-northwest"
+ ],
+ "exec-ind-nara-barack-obama-presidential-library-chicago-il": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": [
+  "https://www.archives.gov/presidential-libraries"
+ ],
+ "exec-ind-nasa-aeronautics-research-mission-directorate": [
+  "https://www.nasa.gov/directorates/armd/"
+ ],
+ "exec-ind-nasa-exploration-systems-development-mission-directorate": [
+  "https://www.nasa.gov/exploration-systems-development-mission-directorate/"
+ ],
+ "exec-ind-nasa-space-operations-mission-directorate": [
+  "https://www.nasa.gov/directorates/space-operations/"
+ ],
+ "exec-ind-nasa-space-technology-mission-directorate": [
+  "https://www.nasa.gov/space-technology-mission-directorate/"
+ ],
+ "leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development": [
+  "https://agriculture.house.gov/issues/issue/?IssueID=14907"
+ ],
+ "leg-house-cmte-agriculture-sub-conservation-research-biotechnology": [
+  "https://agriculture.house.gov/issues/issue/?IssueID=14910"
+ ],
+ "leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit": [
+  "https://agriculture.house.gov/issues/issue/?IssueID=14912"
+ ],
+ "leg-house-cmte-agriculture-sub-livestock-dairy-poultry": [
+  "https://agriculture.house.gov/issues/issue/?IssueID=14908"
+ ],
+ "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture": [
+  "https://agriculture.house.gov/issues/issue/?IssueID=14909"
+ ],
+ "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies"
+ ],
+ "leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/commerce-justice-science-and-related-agencies-0"
+ ],
+ "leg-house-cmte-appropriations-sub-defense": [
+  "https://appropriations.house.gov/subcommittees/defense-0"
+ ],
+ "leg-house-cmte-appropriations-sub-energy-water-development": [
+  "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies-0"
+ ],
+ "leg-house-cmte-appropriations-sub-financial-services-general-government": [
+  "https://appropriations.house.gov/subcommittees/financial-services-and-general-government-0"
+ ],
+ "leg-house-cmte-appropriations-sub-homeland-security": [
+  "https://appropriations.house.gov/subcommittees/homeland-security-0"
+ ],
+ "leg-house-cmte-appropriations-sub-interior-environment-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/interior-environment-and-related-agencies-0"
+ ],
+ "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies"
+ ],
+ "leg-house-cmte-appropriations-sub-legislative-branch": [
+  "https://appropriations.house.gov/subcommittees/legislative-branch-0"
+ ],
+ "leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/military-construction-veterans-affairs-and-related-agencies"
+ ],
+ "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies": [
+  "https://appropriations.house.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies"
+ ],
+ "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation": [
+  "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14892"
+ ],
+ "leg-house-cmte-armed-services-sub-military-personnel": [
+  "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14894"
+ ],
+ "leg-house-cmte-armed-services-sub-readiness": [
+  "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895"
+ ],
+ "leg-house-cmte-armed-services-sub-seapower-projection-forces": [
+  "https://armedservices.house.gov/Issues/Issue/?IssueID=14896"
+ ],
+ "leg-house-cmte-armed-services-sub-strategic-forces": [
+  "https://armedservices.house.gov/Issues/Issue/?IssueID=14897"
+ ],
+ "leg-house-cmte-armed-services-sub-tactical-air-land-forces": [
+  "https://armedservices.house.gov/Issues/Issue/?IssueID=14898"
+ ],
+ "leg-house-cmte-education-the-workforce-sub-early-childhood-elementary-secondary-education": [
+  "https://edworkforce.house.gov/issues/issue/?IssueID=43419"
+ ],
+ "leg-house-cmte-education-the-workforce-sub-health-employment-labor-pensions": [
+  "https://edworkforce.house.gov/issues/issue/?IssueID=43422"
+ ],
+ "leg-house-cmte-education-the-workforce-sub-higher-education-workforce-development": [
+  "https://edworkforce.house.gov/issues/issue/?IssueID=43420"
+ ],
+ "leg-house-cmte-energy-commerce-sub-communications-technology": [
+  "https://energycommerce.house.gov/committees/subcommittee/communications-technology"
+ ],
+ "leg-house-cmte-energy-commerce-sub-health": [
+  "https://energycommerce.house.gov/committees/subcommittee/health"
+ ],
+ "leg-house-cmte-energy-commerce-sub-oversight-investigations": [
+  "https://energycommerce.house.gov/committees/subcommittee/oversight-investigations"
+ ],
+ "leg-house-cmte-financial-services-sub-capital-markets": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
+ ],
+ "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
+ ],
+ "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28985"
+ ],
+ "leg-house-cmte-financial-services-sub-housing-insurance": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
+ ],
+ "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
+ ],
+ "leg-house-cmte-financial-services-sub-oversight-investigations": [
+  "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
+ ],
+ "leg-house-cmte-foreign-affairs-sub-africa": [
+  "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress"
+ ],
+ "leg-house-cmte-foreign-affairs-sub-the-western-hemisphere": [
+  "https://foreignaffairs.house.gov/subcommittees/western-hemisphere-subcommittee-119th-congress"
+ ],
+ "leg-house-cmte-homeland-security-sub-border-security-enforcement": [
+  "https://homeland.house.gov/border-security-facilitation-and-operations/"
+ ],
+ "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence": [
+  "https://homeland.house.gov/intelligence-and-counterterrorism/"
+ ],
+ "leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection": [
+  "https://homeland.house.gov/cybersecurity-infrastructure-protection-and-innovation/"
+ ],
+ "leg-house-cmte-homeland-security-sub-emergency-management-technology": [
+  "https://homeland.house.gov/emergency-preparedness-response-and-recovery/"
+ ],
+ "leg-house-cmte-homeland-security-sub-oversight-investigations-accountability": [
+  "https://homeland.house.gov/oversight-management-and-accountability/"
+ ],
+ "leg-house-cmte-homeland-security-sub-transportation-maritime-security": [
+  "https://homeland.house.gov/transportation-and-maritime-security/"
+ ],
+ "leg-house-cmte-house-administration-sub-elections": [
+  "https://cha.house.gov/elections"
+ ],
+ "leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust": [
+  "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/antitrust-commercial-and-administrative-law-119th"
+ ],
+ "leg-house-cmte-judiciary-sub-constitution-limited-government": [
+  "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/constitution-and-limited-government-119th-congress"
+ ],
+ "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": [
+  "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial"
+ ],
+ "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance": [
+  "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
+ ],
+ "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement": [
+  "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
+ ],
+ "leg-house-cmte-natural-resources-sub-water-wildlife-fisheries": [
+  "https://naturalresources.house.gov/issues/issue/?IssueID=5937"
+ ],
+ "leg-house-cmte-oversight-accountability-sub-cybersecurity-information-technology-government-innovation": [
+  "https://oversight.house.gov/subcommittee/cybersecurity-information-technology-government-innovation/"
+ ],
+ "leg-house-cmte-oversight-accountability-sub-economic-growth-energy-policy-regulatory-affairs": [
+  "https://oversight.house.gov/subcommittee/economic-growth-energy-policy-regulatory-affairs/"
+ ],
+ "leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce": [
+  "https://oversight.house.gov/subcommittee/government-operations/"
+ ],
+ "leg-house-cmte-oversight-accountability-sub-health-care-financial-services": [
+  "https://oversight.house.gov/subcommittee/subcommittee-on-health-care-and-financial-services/"
+ ],
+ "leg-house-cmte-oversight-accountability-sub-military-foreign-affairs": [
+  "https://oversight.house.gov/subcommittee/military-and-foreign-affairs/"
+ ],
+ "leg-house-cmte-rules-sub-legislative-budget-process": [
+  "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
+ ],
+ "leg-house-cmte-rules-sub-rules-the-organization-of-the-house": [
+  "https://rules.house.gov/about/subcommittees/subcommittee-rules-and-organization-house"
+ ],
+ "leg-house-cmte-science-space-technology-sub-energy": [
+  "https://science.house.gov/subcommittee-energy"
+ ],
+ "leg-house-cmte-science-space-technology-sub-environment": [
+  "https://science.house.gov/subcommittee-environment"
+ ],
+ "leg-house-cmte-science-space-technology-sub-investigations-oversight": [
+  "https://science.house.gov/subcommittee-investigations-oversight"
+ ],
+ "leg-house-cmte-science-space-technology-sub-research-technology": [
+  "https://science.house.gov/subcommittee-research-technology"
+ ],
+ "leg-house-cmte-science-space-technology-sub-space-aeronautics": [
+  "https://science.house.gov/subcommittee-space-aeronautics"
+ ],
+ "leg-house-cmte-small-business-sub-contracting-infrastructure": [
+  "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71810"
+ ],
+ "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access": [
+  "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
+ ],
+ "leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development": [
+  "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71811"
+ ],
+ "leg-house-cmte-small-business-sub-oversight-investigations-regulations": [
+  "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
+ ],
+ "leg-house-cmte-small-business-sub-rural-development-energy-supply-chains": [
+  "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71809"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-aviation": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107417"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107418"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107419"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-highways-transit": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107420"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107421"
+ ],
+ "leg-house-cmte-transportation-infrastructure-sub-water-resources-environment": [
+  "https://transportation.house.gov/Subcommittees/Subcommittee/?ID=107422"
+ ],
+ "leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs": [
+  "https://veterans.house.gov/issues/issue/?IssueID=117990"
+ ],
+ "leg-house-cmte-veterans-affairs-sub-economic-opportunity": [
+  "https://veterans.house.gov/issues/issue/?IssueID=117991"
+ ],
+ "leg-house-cmte-veterans-affairs-sub-health": [
+  "https://veterans.house.gov/issues/issue/?IssueID=117992"
+ ],
+ "leg-house-cmte-veterans-affairs-sub-oversight-investigations": [
+  "https://veterans.house.gov/issues/issue/?IssueID=117993"
+ ],
+ "leg-house-cmte-veterans-affairs-sub-technology-modernization": [
+  "https://veterans.house.gov/issues/issue/?IssueID=117997"
+ ],
+ "leg-house-cmte-ways-means-sub-health": [
+  "https://waysandmeans.house.gov/subcommittees/"
+ ],
+ "leg-house-cmte-ways-means-sub-oversight": [
+  "https://waysandmeans.house.gov/subcommittees/"
+ ],
+ "leg-house-cmte-ways-means-sub-social-security": [
+  "https://waysandmeans.house.gov/subcommittees/"
+ ],
+ "leg-house-cmte-ways-means-sub-tax": [
+  "https://waysandmeans.house.gov/subcommittees/"
+ ],
+ "leg-house-cmte-ways-means-sub-trade": [
+  "https://waysandmeans.house.gov/subcommittees/"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade": [
+  "https://www.agriculture.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources": [
+  "https://www.agriculture.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research": [
+  "https://www.agriculture.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security": [
+  "https://www.agriculture.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy": [
+  "https://www.agriculture.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies"
+ ],
+ "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies"
+ ],
+ "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies"
+ ],
+ "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-armed-services-sub-readiness-management-support": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-armed-services-sub-strategic-forces": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy": [
+  "https://www.banking.senate.gov/about/subcommittees#economic-policy"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection": [
+  "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development": [
+  "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance": [
+  "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance"
+ ],
+ "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment": [
+  "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment"
+ ],
+ "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-finance-sub-health-care": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-finance-sub-social-security-pensions-family-policy": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-finance-sub-taxation-irs-oversight": [
+  "https://www.finance.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy": [
+  "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy": [
+  "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation": [
+  "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy": [
+  "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism": [
+  "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism"
+ ],
+ "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development": [
+  "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development"
+ ],
+ "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": [
+  "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety"
+ ],
+ "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": [
+  "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
+ ],
+ "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights": [
+  "https://www.judiciary.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-judiciary-sub-intellectual-property": [
+  "https://www.judiciary.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-cmte-judiciary-sub-privacy-technology-the-law": [
+  "https://www.judiciary.senate.gov/about/subcommittees"
+ ],
+ "leg-support-uscp-office-of-professional-responsibility": [
+  "https://www.uscp.gov/the-department/our-mission"
+ ],
+ "leg-support-uscp-protective-services-bureau": [
+  "https://www.uscp.gov/the-department/our-mission"
  ]
 }

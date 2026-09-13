@@ -903,16 +903,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -927,14 +928,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:56Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-armed-services",
     "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "directoryListing": {
@@ -945,12 +947,14 @@
       "parentListedName": "Committee on Armed Services",
       "checkedAt": "2026-09-08T19:20:56Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
     "placementMatchedText": "Subcommittee on Emerging Threats and Capabilities",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-armed-services"
+    "parentId": "leg-senate-cmte-armed-services",
+    "verificationSiteFrom": "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-armed-services-sub-personnel",
@@ -1021,16 +1025,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1045,14 +1050,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:56Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-armed-services",
     "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "directoryListing": {
@@ -1063,12 +1069,14 @@
       "parentListedName": "Committee on Armed Services",
       "checkedAt": "2026-09-08T19:20:56Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
     "placementMatchedText": "Subcommittee on Readiness and Management Support",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-armed-services"
+    "parentId": "leg-senate-cmte-armed-services",
+    "verificationSiteFrom": "leg-senate-cmte-armed-services-sub-readiness-management-support",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-armed-services-sub-seapower",
@@ -1139,16 +1147,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1163,14 +1172,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:56Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-armed-services",
     "placementVerifiedAt": "2026-09-08T19:20:56Z",
     "evidenceUrls": [
+      "https://www.armed-services.senate.gov/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml"
     ],
     "directoryListing": {
@@ -1181,12 +1191,14 @@
       "parentListedName": "Committee on Armed Services",
       "checkedAt": "2026-09-08T19:20:56Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:56Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAS.xml",
     "placementMatchedText": "Subcommittee on Strategic Forces",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-armed-services"
+    "parentId": "leg-senate-cmte-armed-services",
+    "verificationSiteFrom": "leg-senate-cmte-armed-services-sub-strategic-forces",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs",
@@ -1252,16 +1264,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#economic-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1276,14 +1289,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#economic-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1294,12 +1308,14 @@
       "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
     "placementMatchedText": "Subcommittee on Economic Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
+    "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection",
@@ -1311,16 +1327,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1335,14 +1352,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1353,12 +1371,14 @@
       "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
     "placementMatchedText": "Subcommittee on Financial Institutions and Consumer Protection",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
+    "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development",
@@ -1370,16 +1390,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1394,14 +1415,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1412,12 +1434,14 @@
       "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
     "placementMatchedText": "Subcommittee on Housing, Transportation, and Community Development",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
+    "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance",
@@ -1429,16 +1453,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1453,14 +1478,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1471,12 +1497,14 @@
       "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
     "placementMatchedText": "Subcommittee on National Security and  International Trade and Finance",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
+    "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment",
@@ -1488,16 +1516,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1512,14 +1541,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-banking-housing-urban-affairs",
     "placementVerifiedAt": "2026-09-08T19:20:57Z",
     "evidenceUrls": [
+      "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1530,12 +1560,14 @@
       "parentListedName": "Committee on Banking, Housing, and Urban Affairs",
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml",
     "placementMatchedText": "Subcommittee on Securities, Insurance, and Investment",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-banking-housing-urban-affairs"
+    "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-budget",
@@ -1577,7 +1609,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -2261,16 +2293,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2285,14 +2318,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2303,12 +2337,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on Energy, Natural Resources, and Infrastructure",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth",
@@ -2320,16 +2356,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2344,14 +2381,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2362,12 +2400,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on Fiscal Responsibility and Economic Growth",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-health-care",
@@ -2379,16 +2419,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2403,14 +2444,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2421,12 +2463,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on Health Care",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-health-care",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness",
@@ -2438,16 +2482,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2462,14 +2507,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2480,12 +2526,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on International Trade, Customs, and Global Competitiveness",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-social-security-pensions-family-policy",
@@ -2497,16 +2545,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2521,14 +2570,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2539,12 +2589,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on Social Security, Pensions, and Family Policy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-social-security-pensions-family-policy",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-finance-sub-taxation-irs-oversight",
@@ -2556,16 +2608,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2580,14 +2633,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:04Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-finance",
     "placementVerifiedAt": "2026-09-08T19:21:04Z",
     "evidenceUrls": [
+      "https://www.finance.senate.gov/about/subcommittees",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml"
     ],
     "directoryListing": {
@@ -2598,12 +2652,14 @@
       "parentListedName": "Committee on Finance",
       "checkedAt": "2026-09-08T19:21:04Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:04Z",
-    "verificationMethod": "listed_in_senate_committee_list",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFI.xml",
     "placementMatchedText": "Subcommittee on Taxation and IRS Oversight",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-finance"
+    "parentId": "leg-senate-cmte-finance",
+    "verificationSiteFrom": "leg-senate-cmte-finance-sub-taxation-irs-oversight",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations",
@@ -2673,16 +2729,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2697,14 +2754,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2715,12 +2773,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on Africa and Global Health Policy",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "Africa & Global Health Policy",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy",
@@ -2732,16 +2793,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2756,14 +2818,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2774,12 +2837,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on East Asia, the Pacific, and International Cybersecurity Policy",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation",
@@ -2791,16 +2857,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2815,14 +2882,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2833,12 +2901,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on Europe and Regional Security Cooperation",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "Europe & Regional Security Cooperation",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
@@ -2850,16 +2921,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2874,14 +2946,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2892,12 +2965,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on Multilateral International Development, Multilateral Institutions, and International Economic, Energy, and Environmental Policy",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism",
@@ -2909,16 +2985,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2933,14 +3010,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -2951,12 +3029,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on Near East, South Asia, Central Asia, and Counterterrorism",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development",
@@ -2968,16 +3049,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2992,14 +3074,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -3010,12 +3093,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on State Department and USAID Management, International Operations, and Bilateral International Development",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
@@ -3027,16 +3113,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3051,14 +3138,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:05Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-foreign-relations",
-    "placementVerifiedAt": "2026-09-08T19:21:05Z",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
+      "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml"
     ],
     "directoryListing": {
@@ -3069,12 +3157,15 @@
       "parentListedName": "Committee on Foreign Relations",
       "checkedAt": "2026-09-08T19:21:05Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:05Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSFR.xml",
-    "placementMatchedText": "Subcommittee on Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, and Global Women's Issues",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-foreign-relations"
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues",
+    "placementMatchedText": "Western Hemisphere, Transnational Crime, Civilian Security, Democracy, Human Rights, & Global Women's Issues",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-foreign-relations",
+    "verificationSiteFrom": "leg-senate-cmte-foreign-relations",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-health-education-labor-pensions",
@@ -3350,7 +3441,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -3755,7 +3846,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -3813,7 +3904,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -3871,7 +3962,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -3929,7 +4020,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.indian.senate.gov/",
-      "checkedAt": "2026-09-13T20:34:29+00:00"
+      "checkedAt": "2026-09-13T21:59:29+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml"
@@ -4598,6 +4689,98 @@
     "verificationSiteFrom": "leg-house-clerk",
     "placementCheckable": false,
     "parentId": "leg-house-admin"
+  },
+  {
+    "id": "leg-house-cao",
+    "name": "Chief Administrative Officer",
+    "type": "Office",
+    "desc": "Manages House financial, HR, IT, and administrative services for all Member offices.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://cao.house.gov/"
+    ],
+    "evidenceUrls": [
+      "https://cao.house.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-13T20:34:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-cao",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 42015390.98,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-house-admin"
+  },
+  {
+    "id": "leg-joint-econ",
+    "name": "Joint Economic Committee",
+    "type": "Committee",
+    "desc": "Studies the economy and makes policy recommendations to Congress.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.jec.senate.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.jec.senate.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-13T20:34:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-joint-econ",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 4008631.2,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-joint"
   },
   {
     "id": "leg-support-gao",
@@ -20778,7 +20961,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -21074,7 +21257,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -27664,7 +27847,7 @@
     "allocation_basis": "treasury_rollup",
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -28564,11 +28747,15 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-13T20:34:29+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://arts.gov/",
       "https://www.federalregister.gov/agencies/national-endowment-for-the-arts"
     ],
+    "evidenceVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-national-endowment-for-the-arts-nea",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "National Endowment for the Arts",
@@ -28577,11 +28764,7 @@
       "parentListedName": "National Foundation on the Arts and the Humanities",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-13T20:34:29+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-national-endowment-for-the-arts-nea",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-arts-nea-director-administrator-chair-national-endowment-for-the-arts",
@@ -30367,18 +30550,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ncua.gov",
       "https://www.federalregister.gov/agencies/national-credit-union-administration"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -30399,9 +30585,9 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": -1083957571.33,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Credit Union Administration",
@@ -30410,9 +30596,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "lastVerified": "2026-09-13T21:59:29+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.ncua.gov",
       "https://www.federalregister.gov/agencies/national-credit-union-administration"
     ],
     "directoryListing": {
@@ -30423,8 +30610,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 1214,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -30450,7 +30637,9 @@
       ]
     },
     "treasury_pool_negative": -1083957571.33,
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
@@ -31768,7 +31957,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-13T20:34:29+00:00",
+    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
     "parentId": "judicial-branch"
   },
   {
