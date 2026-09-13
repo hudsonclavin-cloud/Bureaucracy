@@ -748,18 +748,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.agriculture.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:53Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -774,6 +765,23 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                        "checkedAt": "2026-09-08T19:20:53Z",
+                        "listedNames": [
+                          "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+                          "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+                          "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+                          "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+                          "Subcommittee on Rural Development, Energy, and Credit"
+                        ]
+                      },
                       "resolved_total_amount": 9964835.81,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -884,18 +892,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.agriculture.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:53Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -910,6 +909,23 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                        "checkedAt": "2026-09-08T19:20:53Z",
+                        "listedNames": [
+                          "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+                          "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+                          "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+                          "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+                          "Subcommittee on Rural Development, Energy, and Credit"
+                        ]
+                      },
                       "resolved_total_amount": 9964835.81,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -1020,18 +1036,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.agriculture.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:53Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -1046,6 +1053,23 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                        "checkedAt": "2026-09-08T19:20:53Z",
+                        "listedNames": [
+                          "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+                          "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+                          "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+                          "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+                          "Subcommittee on Rural Development, Energy, and Credit"
+                        ]
+                      },
                       "resolved_total_amount": 9964835.81,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -1156,18 +1180,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.agriculture.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:53Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -1182,6 +1197,23 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                        "checkedAt": "2026-09-08T19:20:53Z",
+                        "listedNames": [
+                          "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+                          "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+                          "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+                          "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+                          "Subcommittee on Rural Development, Energy, and Credit"
+                        ]
+                      },
                       "resolved_total_amount": 9964835.81,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -1292,18 +1324,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.agriculture.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:53Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:53Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -1318,6 +1341,23 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Agriculture, Nutrition, and Forestry",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                        "checkedAt": "2026-09-08T19:20:53Z",
+                        "listedNames": [
+                          "Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+                          "Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+                          "Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+                          "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+                          "Subcommittee on Rural Development, Energy, and Credit"
+                        ]
+                      },
                       "resolved_total_amount": 9964835.81,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -1606,18 +1646,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
-                        "urlsRead": [
-                          "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:55Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -1632,6 +1663,30 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Appropriations",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+                        "checkedAt": "2026-09-08T19:20:55Z",
+                        "listedNames": [
+                          "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+                          "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+                          "Subcommittee on Department of Defense",
+                          "Subcommittee on Department of Homeland Security",
+                          "Subcommittee on Department of Interior, Environment, and Related Agencies",
+                          "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+                          "Subcommittee on Energy and Water Development",
+                          "Subcommittee on Financial Services and General Government",
+                          "Subcommittee on Legislative Branch",
+                          "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+                          "Subcommittee on State, Foreign Operations, and Related Programs",
+                          "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+                        ]
+                      },
                       "resolved_total_amount": 9750208.58,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -2632,18 +2687,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
-                        "urlsRead": [
-                          "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:55Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -2658,6 +2704,30 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Appropriations",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+                        "checkedAt": "2026-09-08T19:20:55Z",
+                        "listedNames": [
+                          "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+                          "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+                          "Subcommittee on Department of Defense",
+                          "Subcommittee on Department of Homeland Security",
+                          "Subcommittee on Department of Interior, Environment, and Related Agencies",
+                          "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+                          "Subcommittee on Energy and Water Development",
+                          "Subcommittee on Financial Services and General Government",
+                          "Subcommittee on Legislative Branch",
+                          "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+                          "Subcommittee on State, Foreign Operations, and Related Programs",
+                          "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+                        ]
+                      },
                       "resolved_total_amount": 9750208.58,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -3230,18 +3300,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
-                        "urlsRead": [
-                          "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:20:55Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:20:55Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -3256,6 +3317,30 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on Appropriations",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAP.xml",
+                        "checkedAt": "2026-09-08T19:20:55Z",
+                        "listedNames": [
+                          "Subcommittee on Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+                          "Subcommittee on Commerce, Justice, Science, and Related Agencies",
+                          "Subcommittee on Department of Defense",
+                          "Subcommittee on Department of Homeland Security",
+                          "Subcommittee on Department of Interior, Environment, and Related Agencies",
+                          "Subcommittee on Departments of Labor, Health and Human Services, and Education, and Related Agencies",
+                          "Subcommittee on Energy and Water Development",
+                          "Subcommittee on Financial Services and General Government",
+                          "Subcommittee on Legislative Branch",
+                          "Subcommittee on Military Construction, Veterans Affairs, and Related Agencies",
+                          "Subcommittee on State, Foreign Operations, and Related Programs",
+                          "Subcommittee on Transportation, Housing and Urban Development, and Related Agencies"
+                        ]
+                      },
                       "resolved_total_amount": 9750208.58,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -12163,18 +12248,9 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationFailure": "not_found",
-                      "verificationSiteFrom": "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights",
-                      "verificationFailureSource": {
-                        "source": "own_official_page",
-                        "url": "https://www.judiciary.senate.gov/about/subcommittees",
-                        "urlsRead": [
-                          "https://www.judiciary.senate.gov/about/subcommittees"
-                        ],
-                        "checkedAt": "2026-09-13T21:59:29+00:00"
-                      },
+                      "lastVerified": "2026-09-08T19:21:09Z",
+                      "evidenceVerifiedAt": "2026-09-08T19:21:09Z",
+                      "verificationFailure": "not_in_official_list",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -12189,6 +12265,25 @@
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-judiciary",
                       "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "pageReadNotNamed": {
+                        "url": "https://www.judiciary.senate.gov/about/subcommittees",
+                        "checkedAt": "2026-09-13T21:59:29+00:00"
+                      },
+                      "verificationFailureSource": {
+                        "source": "senate_committee_list",
+                        "listedUnder": "Committee on the Judiciary",
+                        "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+                        "checkedAt": "2026-09-08T19:21:09Z",
+                        "listedNames": [
+                          "Subcommittee on Antitrust, Competition Policy, and Consumer Rights",
+                          "Subcommittee on Border Security and Immigration",
+                          "Subcommittee on Crime and Counterterrorism",
+                          "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+                          "Subcommittee on Intellectual Property",
+                          "Subcommittee on Privacy, Technology, and the Law",
+                          "Subcommittee on the Constitution"
+                        ]
+                      },
                       "resolved_total_amount": 9865187.45,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -21524,20 +21619,9 @@
                       "sourceUrls": [
                         "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
                       ],
-                      "evidenceUrls": [
-                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-capital-markets",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -21546,9 +21630,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10613674.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -21557,7 +21638,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-capital-markets",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-financial-services",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence",
@@ -21632,20 +21727,9 @@
                       "sourceUrls": [
                         "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
                       ],
-                      "evidenceUrls": [
-                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -21654,9 +21738,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10613674.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -21665,7 +21746,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-financial-services",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy",
@@ -21846,20 +21941,9 @@
                       "sourceUrls": [
                         "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
                       ],
-                      "evidenceUrls": [
-                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-housing-insurance",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -21868,9 +21952,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10613674.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -21879,7 +21960,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-housing-insurance",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-financial-services",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions",
@@ -21954,20 +22049,9 @@
                       "sourceUrls": [
                         "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
                       ],
-                      "evidenceUrls": [
-                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -21976,9 +22060,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10613674.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -21987,7 +22068,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-financial-services",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-oversight-investigations",
@@ -22062,20 +22157,9 @@
                       "sourceUrls": [
                         "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
                       ],
-                      "evidenceUrls": [
-                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-oversight-investigations",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -22084,9 +22168,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10613674.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -22095,7 +22176,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-financial-services-sub-oversight-investigations",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-financial-services",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     }
                   ],
                   "sourceUrls": [
@@ -25089,20 +25184,9 @@
                       "sourceUrls": [
                         "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
                       ],
-                      "evidenceUrls": [
-                        "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -25111,9 +25195,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10558299.25,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -25122,7 +25203,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-judiciary",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement",
@@ -25197,20 +25292,9 @@
                       "sourceUrls": [
                         "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
                       ],
-                      "evidenceUrls": [
-                        "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -25219,9 +25303,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10558299.25,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -25230,7 +25311,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-judiciary",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans",
@@ -27113,20 +27208,9 @@
                       "sourceUrls": [
                         "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
                       ],
-                      "evidenceUrls": [
-                        "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-rules-sub-legislative-budget-process",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27135,13 +27219,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": true,
-                      "placementUrl": "https://rules.house.gov/about/subcommittees",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "placementParentId": "leg-house-cmte-rules",
-                      "placementMatchedText": "Subcommittee on Legislative and Budget Process",
-                      "placementMethod": "name_labelled_on_parent_official_page",
-                      "placementMatchedIn": "content",
                       "resolved_total_amount": 11167431.89,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27150,7 +27227,25 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-rules-sub-legislative-budget-process",
+                      "placementVerified": true,
+                      "placementUrl": "https://rules.house.gov/about/subcommittees",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "placementParentId": "leg-house-cmte-rules",
+                      "placementMatchedText": "Subcommittee on Legislative and Budget Process",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content"
                     },
                     {
                       "id": "leg-house-cmte-rules-sub-rules-the-organization-of-the-house",
@@ -27484,20 +27579,9 @@
                       "sourceUrls": [
                         "https://science.house.gov/subcommittee-energy"
                       ],
-                      "evidenceUrls": [
-                        "https://science.house.gov/subcommittee-energy"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-energy",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27506,9 +27590,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-science-space-technology",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27517,7 +27598,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://science.house.gov/subcommittee-energy"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-energy",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-science-space-technology",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-science-space-technology-sub-environment",
@@ -27592,20 +27687,9 @@
                       "sourceUrls": [
                         "https://science.house.gov/subcommittee-environment"
                       ],
-                      "evidenceUrls": [
-                        "https://science.house.gov/subcommittee-environment"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-environment",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27614,9 +27698,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-science-space-technology",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27625,7 +27706,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://science.house.gov/subcommittee-environment"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-environment",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-science-space-technology",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-science-space-technology-sub-investigations-oversight",
@@ -27700,20 +27795,9 @@
                       "sourceUrls": [
                         "https://science.house.gov/subcommittee-investigations-oversight"
                       ],
-                      "evidenceUrls": [
-                        "https://science.house.gov/subcommittee-investigations-oversight"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-investigations-oversight",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27722,9 +27806,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-science-space-technology",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27733,7 +27814,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://science.house.gov/subcommittee-investigations-oversight"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-investigations-oversight",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-science-space-technology",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-science-space-technology-sub-research-technology",
@@ -27808,20 +27903,9 @@
                       "sourceUrls": [
                         "https://science.house.gov/subcommittee-research-technology"
                       ],
-                      "evidenceUrls": [
-                        "https://science.house.gov/subcommittee-research-technology"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-research-technology",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27830,9 +27914,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-science-space-technology",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27841,7 +27922,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://science.house.gov/subcommittee-research-technology"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-research-technology",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-science-space-technology",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-science-space-technology-sub-space-aeronautics",
@@ -27916,20 +28011,9 @@
                       "sourceUrls": [
                         "https://science.house.gov/subcommittee-space-aeronautics"
                       ],
-                      "evidenceUrls": [
-                        "https://science.house.gov/subcommittee-space-aeronautics"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-space-aeronautics",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -27938,9 +28022,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-science-space-technology",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -27949,7 +28030,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://science.house.gov/subcommittee-space-aeronautics"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-space-aeronautics",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-science-space-technology",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     }
                   ],
                   "placementCheckable": false,
@@ -28272,20 +28367,9 @@
                       "sourceUrls": [
                         "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
                       ],
-                      "evidenceUrls": [
-                        "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -28294,9 +28378,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-small-business",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -28305,7 +28386,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-small-business",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development",
@@ -28475,20 +28570,9 @@
                       "sourceUrls": [
                         "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
                       ],
-                      "evidenceUrls": [
-                        "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-13T21:59:29+00:00",
-                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cmte-small-business-sub-oversight-investigations-regulations",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -28497,9 +28581,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementVerified": false,
-                      "placementParentId": "leg-house-cmte-small-business",
-                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                       "resolved_total_amount": 10686537.7,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -28508,7 +28589,21 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-13T21:59:29+00:00",
+                      "evidenceUrls": [
+                        "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-small-business-sub-oversight-investigations-regulations",
+                      "placementVerified": false,
+                      "placementParentId": "leg-house-cmte-small-business",
+                      "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                     },
                     {
                       "id": "leg-house-cmte-small-business-sub-rural-development-energy-supply-chains",
@@ -134141,20 +134236,9 @@
                   "sourceUrls": [
                     "https://www.cia.gov/about/organization/directorate-of-operations/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.cia.gov/about/organization/directorate-of-operations/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -134163,9 +134247,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 92245304.64,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -134174,7 +134255,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.cia.gov/about/organization/directorate-of-operations/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-analysis-da",
@@ -134319,20 +134414,9 @@
                   "sourceUrls": [
                     "https://www.cia.gov/about/organization/directorate-of-analysis/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.cia.gov/about/organization/directorate-of-analysis/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -134341,9 +134425,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 92245304.64,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -134352,7 +134433,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.cia.gov/about/organization/directorate-of-analysis/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-science-technology-dst",
@@ -134497,20 +134592,9 @@
                   "sourceUrls": [
                     "https://www.cia.gov/about/organization/directorate-of-science-and-technology/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.cia.gov/about/organization/directorate-of-science-and-technology/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -134519,9 +134603,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 92245304.64,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -134530,7 +134611,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.cia.gov/about/organization/directorate-of-science-and-technology/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-digital-innovation-ddi",
@@ -134840,20 +134935,9 @@
                   "sourceUrls": [
                     "https://www.cia.gov/about/organization/directorate-of-support/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.cia.gov/about/organization/directorate-of-support/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -134862,9 +134946,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 92245304.64,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -134873,7 +134954,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.cia.gov/about/organization/directorate-of-support/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-cia",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 }
               ],
               "sourceUrls": [
@@ -138870,20 +138965,9 @@
                   "sourceUrls": [
                     "https://www.nasa.gov/exploration-systems-development-mission-directorate/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.nasa.gov/exploration-systems-development-mission-directorate/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -138892,9 +138976,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 592659866.92,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -138903,7 +138984,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/exploration-systems-development-mission-directorate/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-space-operations-mission-directorate",
@@ -139053,20 +139148,9 @@
                   "sourceUrls": [
                     "https://www.nasa.gov/directorates/space-operations/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.nasa.gov/directorates/space-operations/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -139075,9 +139159,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 592659866.92,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -139086,7 +139167,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/directorates/space-operations/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-aeronautics-research-mission-directorate",
@@ -139236,20 +139331,9 @@
                   "sourceUrls": [
                     "https://www.nasa.gov/directorates/armd/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.nasa.gov/directorates/armd/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -139258,9 +139342,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 592659866.92,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -139269,7 +139350,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/directorates/armd/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-space-technology-mission-directorate",
@@ -139419,20 +139514,9 @@
                   "sourceUrls": [
                     "https://www.nasa.gov/space-technology-mission-directorate/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.nasa.gov/space-technology-mission-directorate/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -139441,9 +139525,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
                   "resolved_total_amount": 592659866.92,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -139452,7 +139533,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/space-technology-mission-directorate/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
+                  "placementVerified": false,
+                  "placementParentId": "exec-ind-nasa",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-centers",
@@ -161717,20 +161812,9 @@
                   "sourceUrls": [
                     "https://www.archives.gov/presidential-libraries"
                   ],
-                  "evidenceUrls": [
-                    "https://www.archives.gov/presidential-libraries"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -161739,13 +161823,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": true,
-                  "placementUrl": "https://www.archives.gov/presidential-libraries",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "placementParentId": "exec-ind-nara",
-                  "placementMatchedText": "Gerald R. Ford Presidential Library",
-                  "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content",
                   "resolved_total_amount": 23664080.83,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -161754,7 +161831,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.archives.gov/presidential-libraries"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi",
+                  "placementVerified": true,
+                  "placementUrl": "https://www.archives.gov/presidential-libraries",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "placementParentId": "exec-ind-nara",
+                  "placementMatchedText": "Gerald R. Ford Presidential Library",
+                  "placementMethod": "name_labelled_on_parent_official_page",
+                  "placementMatchedIn": "content"
                 },
                 {
                   "id": "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga",
@@ -162845,20 +162940,9 @@
                   "sourceUrls": [
                     "https://www.archives.gov/presidential-libraries"
                   ],
-                  "evidenceUrls": [
-                    "https://www.archives.gov/presidential-libraries"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nara-george-w-bush-presidential-library-dallas-tx",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -162867,13 +162951,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": true,
-                  "placementUrl": "https://www.archives.gov/presidential-libraries",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "placementParentId": "exec-ind-nara",
-                  "placementMatchedText": "George W. Bush Presidential Library",
-                  "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content",
                   "resolved_total_amount": 23664080.83,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -162882,7 +162959,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.archives.gov/presidential-libraries"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nara-george-w-bush-presidential-library-dallas-tx",
+                  "placementVerified": true,
+                  "placementUrl": "https://www.archives.gov/presidential-libraries",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "placementParentId": "exec-ind-nara",
+                  "placementMatchedText": "George W. Bush Presidential Library",
+                  "placementMethod": "name_labelled_on_parent_official_page",
+                  "placementMatchedIn": "content"
                 },
                 {
                   "id": "exec-ind-nara-barack-obama-presidential-library-chicago-il",
@@ -163082,20 +163177,9 @@
                   "sourceUrls": [
                     "https://www.archives.gov/presidential-libraries"
                   ],
-                  "evidenceUrls": [
-                    "https://www.archives.gov/presidential-libraries"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-13T21:59:29+00:00",
-                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nara-barack-obama-presidential-library-chicago-il",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -163104,13 +163188,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": true,
-                  "placementUrl": "https://www.archives.gov/presidential-libraries",
-                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-                  "placementParentId": "exec-ind-nara",
-                  "placementMatchedText": "Barack Obama Presidential Library",
-                  "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content",
                   "resolved_total_amount": 23664080.83,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -163119,7 +163196,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-13T21:59:29+00:00",
+                  "evidenceUrls": [
+                    "https://www.archives.gov/presidential-libraries"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nara-barack-obama-presidential-library-chicago-il",
+                  "placementVerified": true,
+                  "placementUrl": "https://www.archives.gov/presidential-libraries",
+                  "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+                  "placementParentId": "exec-ind-nara",
+                  "placementMatchedText": "Barack Obama Presidential Library",
+                  "placementMethod": "name_labelled_on_parent_official_page",
+                  "placementMatchedIn": "content"
                 }
               ],
               "sourceUrls": [

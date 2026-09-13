@@ -333,7 +333,18 @@ publishes `verificationFailure: not_in_official_list` with
 `verificationFailureSource` (the list, the committee, the date, the names
 it does carry), and the panel says "checked against the Senate's official
 committee list: it carries no unit of this name under <committee>"; the
-current names the graph lacks go to CURATION.md, never fuzzy-matched. A
+current names the graph lacks go to CURATION.md, never fuzzy-matched.
+**Two true negatives on one node: the complete list's wins.** The page
+module runs first and stamps `not_found` when the committee's own
+subcommittees page does not label the curated name; the list's absence
+used to be refused for standing "beside a page's own failed check", so
+the 2026-09-13 recheck — the first with the committee pages reachable —
+silently swapped the stronger claim for the weaker one on nine
+subcommittees. Since then the list's badge supersedes a page `not_found`
+(never another list's), and the page read stays as `pageReadNotNamed`,
+the field a listing already uses to keep that fact; the stat is
+`page_negatives_superseded`, and `tests/test_congress.py` pins it in
+both directions. A
 listed subcommittee is placed under its committee by the list's own
 structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
 `committee_key` folds the graph's artifacts ("Senate Committee on Select

@@ -317,7 +317,7 @@ def apply_directory_evidence(
     node_map, parent_map = index_tree(root)
     stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "placements_listed": 0, "placements_ancestor": 0,
              "placements_disagree": 0, "placements_stale_parent": 0, "urls_added": 0, "not_in_list": 0, "unknown_source": 0,
-             "failed_checks_withdrawn": 0}
+             "failed_checks_withdrawn": 0, "page_negatives_superseded": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
@@ -333,17 +333,38 @@ def apply_directory_evidence(
         if status == STATUS_NOT_IN_LIST:
             # A complete official list that does not carry the name: a
             # checked negative, published only where nothing else vouches for
-            # the node, and never beside a page's own failed check.
-            if not node.get("sourceUrls") and not node.get("verificationFailure") and record.get("url") and checked_at:
-                node["verificationFailure"] = FAILURE_NOT_IN_LIST
-                node["verificationFailureSource"] = {
-                    "source": source, "listedUnder": record.get("listedUnder"), "url": str(record["url"]),
-                    "checkedAt": checked_at, "listedNames": list(record.get("listedSubcommittees") or [])[:80],
-                }
-                node["lastVerified"] = checked_at
-                node["evidenceVerifiedAt"] = checked_at
-                verify_node_sources(node)
-                stats["not_in_list"] += 1
+            # the node. It outranks a page's own failed check: a page is not
+            # obliged to list anything, the Senate's list is complete by
+            # declaration, and the first live run with widened access let the
+            # page module's not_found — recorded on the same build — stand in
+            # front of it on nine subcommittees, so the site said "its page
+            # does not name it as a heading or link" where it had said "the
+            # Senate's list carries no unit of this name" the day before. The
+            # page read stays as a fact (pageReadNotNamed, the field a listing
+            # already uses for the same purpose); only the badge changes. A
+            # negative from another list is not overridden.
+            if node.get("sourceUrls") or not record.get("url") or not checked_at:
+                continue
+            existing_failure = str(node.get("verificationFailure") or "")
+            if existing_failure and existing_failure != "not_found":
+                continue
+            if existing_failure == "not_found":
+                failed_source = node.pop("verificationFailureSource", None)
+                node.pop("verificationSiteFrom", None)
+                if isinstance(failed_source, dict) and failed_source.get("url"):
+                    node["pageReadNotNamed"] = {
+                        "url": str(failed_source["url"]), "checkedAt": failed_source.get("checkedAt"),
+                    }
+                stats["page_negatives_superseded"] += 1
+            node["verificationFailure"] = FAILURE_NOT_IN_LIST
+            node["verificationFailureSource"] = {
+                "source": source, "listedUnder": record.get("listedUnder"), "url": str(record["url"]),
+                "checkedAt": checked_at, "listedNames": list(record.get("listedSubcommittees") or [])[:80],
+            }
+            node["lastVerified"] = checked_at
+            node["evidenceVerifiedAt"] = checked_at
+            verify_node_sources(node)
+            stats["not_in_list"] += 1
             continue
         if status != STATUS_LISTED or not record.get("url"):
             continue

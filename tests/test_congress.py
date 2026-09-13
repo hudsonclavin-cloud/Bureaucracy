@@ -139,6 +139,68 @@ class MatchTests(unittest.TestCase):
         self.assertNotIn("verificationFailureSource", stale)
         self.assertFalse(stale.get("lastVerified"))
 
+    def test_the_complete_list_s_absence_outranks_a_page_s_not_found_and_keeps_the_read(self) -> None:
+        # Both facts were true of nine Senate subcommittees on 2026-09-13: the
+        # committee's subcommittees page did not label the curated name, and
+        # the Senate's complete list did not carry it. The page module runs
+        # first, and the list's stronger claim was then refused for standing
+        # "beside a page's own failed check" — so the site published the
+        # weaker of two true negatives. The list's badge wins; the page read
+        # is kept as a fact in the field a listing already uses for it.
+        tree = json.loads(json.dumps(BASE))
+        node_map, parent_map = index_tree(tree)
+        records, _ = match_senate(self.committees, node_map, parent_map)
+        apply_evidence_to_tree(tree, {})
+        nodes = index_tree(tree)[0]
+        stale = nodes["leg-senate-cmte-judiciary-sub-antitrust"]
+        # What the page module stamps for a not_found (evidence.py).
+        stale.update({
+            "lastVerified": "2026-09-13T21:59:29+00:00", "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+            "verificationFailure": "not_found", "verificationSiteFrom": "leg-senate-cmte-judiciary-sub-antitrust",
+            "verificationFailureSource": {
+                "source": "own_official_page", "url": "https://www.judiciary.senate.gov/about/subcommittees",
+                "urlsRead": ["https://www.judiciary.senate.gov/about/subcommittees"], "checkedAt": "2026-09-13T21:59:29+00:00",
+            },
+        })
+        # A negative from a different list is another list's claim, not a page's: left alone.
+        other = nodes["leg-senate-cmte-stale"]
+        other.update({
+            "verificationFailure": FAILURE_NOT_IN_LIST, "lastVerified": "2026-09-01T00:00:00Z", "evidenceVerifiedAt": "2026-09-01T00:00:00Z",
+            "verificationFailureSource": {"source": "some_other_official_list", "url": "https://www.senate.gov/other.xml", "checkedAt": "2026-09-01T00:00:00Z"},
+        })
+        stats = apply_directory_evidence(tree, records)
+        nodes = index_tree(tree)[0]
+        stale = nodes["leg-senate-cmte-judiciary-sub-antitrust"]
+        self.assertEqual(stats["page_negatives_superseded"], 1)
+        self.assertEqual(stale["verificationFailure"], FAILURE_NOT_IN_LIST)
+        self.assertEqual(stale["verificationFailureSource"]["source"], "senate_committee_list")
+        self.assertEqual(stale["verificationFailureSource"]["listedUnder"], "Committee on the Judiciary")
+        self.assertEqual(stale["lastVerified"], "2026-09-08T19:20:53Z")
+        self.assertNotIn("verificationSiteFrom", stale)
+        self.assertEqual(stale["pageReadNotNamed"], {
+            "url": "https://www.judiciary.senate.gov/about/subcommittees", "checkedAt": "2026-09-13T21:59:29+00:00",
+        })
+        other = nodes["leg-senate-cmte-stale"]
+        self.assertEqual(other["verificationFailureSource"]["source"], "some_other_official_list")
+        self.assertEqual(other["lastVerified"], "2026-09-01T00:00:00Z")
+        self.assertNotIn("pageReadNotNamed", other)
+        # A node a page confirmed is not touched by the list's absence at all.
+        tree2 = json.loads(json.dumps(BASE))
+        apply_evidence_to_tree(tree2, {})
+        confirmed = index_tree(tree2)[0]["leg-senate-cmte-judiciary-sub-antitrust"]
+        confirmed.update({"sourceUrls": ["https://www.judiciary.senate.gov/about/subcommittees"], "sourceTypes": ["official_site"],
+                          "lastVerified": "2026-09-13T21:59:29+00:00"})
+        stats2 = apply_directory_evidence(tree2, records)
+        confirmed = index_tree(tree2)[0]["leg-senate-cmte-judiciary-sub-antitrust"]
+        self.assertNotIn("verificationFailure", confirmed)
+        self.assertNotIn("pageReadNotNamed", confirmed)
+        self.assertEqual(stats2["page_negatives_superseded"], 0)
+        # And the superseded shape is withdrawn whole on the next build.
+        apply_evidence_to_tree(tree, {})
+        stale = index_tree(tree)[0]["leg-senate-cmte-judiciary-sub-antitrust"]
+        self.assertNotIn("verificationFailure", stale)
+        self.assertNotIn("pageReadNotNamed", stale)
+
     def test_the_gate_accepts_the_list_s_claims_and_refuses_an_unbacked_negative(self) -> None:
         base = self.tmp / "base.json"; base.write_text(json.dumps(BASE), encoding="utf-8")
         tree = json.loads(json.dumps(BASE)); node_map, parent_map = index_tree(tree)
