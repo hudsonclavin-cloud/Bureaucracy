@@ -141,10 +141,15 @@ def ledger_paths(kind):
 
 
 def read_ledger(kind) -> dict[str, dict]:
-    """Every agent's file, merged. Later records win, which is what makes a
-    re-nomination after a failed fetch work."""
+    """Every agent's file, merged. The LATEST record wins — by nominatedAt,
+    not by file name — which is what makes a re-nomination after a failed
+    fetch work. The first version let the alphabetically last file win:
+    source-brute1.jsonl sorted before source-pass1.jsonl, so 371 live-fetched
+    records were shadowed by the blind declines they were written to replace,
+    and promote queued one page of the 160."""
     records: dict[str, dict] = {}
-    for path in ledger_paths(kind):
+    stamps: dict[str, tuple[str, int]] = {}
+    for order, path in enumerate(ledger_paths(kind)):
         for line in path.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if not line:
@@ -154,7 +159,11 @@ def read_ledger(kind) -> dict[str, dict]:
             except ValueError:
                 continue
             if isinstance(record, dict) and record.get("id"):
-                records[str(record["id"])] = record
+                node_id = str(record["id"])
+                stamp = (str(record.get("nominatedAt") or ""), order)
+                if node_id not in stamps or stamp >= stamps[node_id]:
+                    stamps[node_id] = stamp
+                    records[node_id] = record
     return records
 
 
@@ -163,6 +172,19 @@ def is_organisation(node) -> bool:
     return not node.get("synthetic") and not any(
         word in type_text for word in ("position", "role", "caucus", "office holder")
     )
+
+
+def urls_tried_for(evidence: dict, node_id: str) -> set[str]:
+    """The URLs the verifier has read or failed on for THIS node."""
+    record = evidence.get(node_id) or {}
+    out: set[str] = set()
+    for source in record.get("sources") or []:
+        if url := str(source.get("url") or ""):
+            out.add(url)
+    for failure in record.get("failures") or []:
+        if url := str(failure.get("url") or ""):
+            out.add(url)
+    return out
 
 
 def urls_already_tried(evidence: dict) -> dict[str, str]:
@@ -283,7 +305,7 @@ def validate_url(url: str) -> None:
         raise Rejected(f"a nominated page contains whitespace: {url!r}")
 
 
-def validate_source(record, node, sites, tried):
+def validate_source(record, node, sites, tried, tried_for_node=None):
     node_id = record["id"]
     if not is_organisation(node):
         raise Rejected(f"{node_id} is a {node.get('type')!r}; pages are nominated for organisations only")
@@ -308,9 +330,16 @@ def validate_source(record, node, sites, tried):
         seen.add(url)
         if url in existing:
             raise Rejected(f"{node_id}: {url} is already a candidate for this node")
-        if url in tried:
+        if url in tried and url in (tried_for_node or ()):
+            # Only a page already read FOR THIS NODE is a wasted nomination. The
+            # first version refused any URL the verifier had ever fetched, so
+            # senate.gov — read once to confirm the Senate — could never be
+            # nominated as the page that labels the Secretary of the Senate,
+            # which it does: a parent's page is exactly the page that lists
+            # many children, and the brute-force pass lost three such
+            # nominations to it.
             raise Rejected(
-                f"{node_id}: {url} has already been fetched — {tried[url]}. "
+                f"{node_id}: {url} has already been fetched for this node — {tried[url]}. "
                 "Nominate a different page rather than the one that failed."
             )
         if nomination.get("role") not in SOURCE_ROLES:
@@ -382,7 +411,7 @@ def cmd_record(args):
             if node_id not in by_id:
                 raise Rejected(f"{node_id!r} is not a node in the published graph")
             if args.kind == "source":
-                validate_source(record, by_id[node_id], sites, tried)
+                validate_source(record, by_id[node_id], sites, tried, urls_tried_for(evidence, node_id))
             else:
                 validate_cost(record, by_id[node_id])
             record["kind"] = args.kind

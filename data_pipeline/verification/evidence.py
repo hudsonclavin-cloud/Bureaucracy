@@ -411,6 +411,14 @@ def uncheckable_reason(name: str) -> str | None:
 
 def label_matches(key: str, fragment: str) -> bool:
     """Is this fragment the name, rather than text that contains the name?"""
+    # The whole fragment first. The separator split runs before the key
+    # drops parentheticals, so "Division of Social and Economic Sciences
+    # (SBE/SES)" was split at the "/" into "… Sciences (SBE" and "SES)", and
+    # a page that labels the unit exactly as the graph names it was recorded
+    # as not naming it. Equality on the unsplit fragment is at least as strict
+    # as equality on a part of it.
+    if canonical_name_key(fragment) == key:
+        return True
     for part in LABEL_SEPARATORS.split(fragment):
         candidate = canonical_name_key(part)
         if not candidate:

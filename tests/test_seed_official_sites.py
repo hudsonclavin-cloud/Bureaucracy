@@ -284,8 +284,12 @@ class CommittedFilesTests(unittest.TestCase):
             else:
                 self.assertTrue(record["directoryFetchedAt"], node_id)
                 self.assertTrue(record["listedName"], node_id)
-        # No seeded URL duplicates a curated one.
-        seeded = {r["url"].rstrip("/") for r in provenance.values()}
+        # No seeded URL duplicates a curated one — except a page nominated as
+        # a parent_listing, which is BY DESIGN the parent's own page: the
+        # Secretary of the Senate is labelled on senate.gov, the page the
+        # curated Senate node already carries, and that shared read is what
+        # evidences the edge.
+        seeded = {r["url"].rstrip("/") for r in provenance.values() if r.get("role") != "parent_listing"}
         curated = [u.rstrip("/") for k, v in sites.items() if k != "_note" and k not in provenance for u in v]
         self.assertEqual(seeded & set(curated), set())
 

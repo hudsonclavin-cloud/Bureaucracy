@@ -134,6 +134,34 @@ of evidence:
 | `api.sam.gov` | SAM.gov Federal Hierarchy | the definitive executive-branch org structure — also needs an api.data.gov key, which only you can register for |
 | `www.usa.gov`, `data.opm.gov`, `www.govinfo.gov` | agency index, OPM datasets, the printed Plum Book | secondary confirmations |
 
+## 1a. Snapshot after the 2026-09-13 brute-force pass — 83 hosts still denied
+
+`python scripts/probe_network_access.py --allowlist` on 2026-09-13, after
+`nominate.py promote` queued the 159 pages the thirteen shard agents found:
+every host below answered the CONNECT with 403 at the proxy. They are the
+own-site domains of the units the pass could only nominate speculatively —
+the national laboratories, the combatant commands, the circuit courts, NIST,
+NIH, NOAA, CISA — so this is where the next coverage step is. The live
+command is authoritative; this block is a dated paste-ready copy.
+
+    ca3.uscourts.gov chaplain.house.gov crsreports.congress.gov department.va.gov diplomaticsecurity.state.gov
+    ies.ed.gov legcounsel.house.gov ncses.nsf.gov srnl.doe.gov travel.state.gov
+    www.af.mil www.americorps.gov www.ameslab.gov www.anl.gov www.armfor.uscourts.gov
+    www.army.mil www.bop.gov www.ca1.uscourts.gov www.ca10.uscourts.gov www.ca6.uscourts.gov
+    www.cem.va.gov www.centcom.mil www.chaplain.senate.gov www.cisa.gov www.cybercom.mil
+    www.darpa.mil www.dcma.mil www.dfas.mil www.dfc.gov www.dtra.mil
+    www.esd.whs.mil www.eucom.mil www.exim.gov www.fisc.uscourts.gov www.fletc.gov
+    www.fmcsa.dot.gov www.fnal.gov www.fns.usda.gov www.ginniemae.gov www.health.mil
+    www.inl.gov www.jcs.mil www.lbl.gov www.llnl.gov www.marines.mil
+    www.navy.mil www.ncpc.gov www.nhtsa.gov www.nih.gov www.nist.gov
+    www.nlrb.gov www.noaa.gov www.nps.gov www.nrcs.usda.gov www.nrel.gov
+    www.nsa.gov www.ntia.gov www.ntsb.gov www.ornl.gov www.osha.gov
+    www.pbgc.gov www.peacecorps.gov www.pfpa.mil www.phmsa.dot.gov www.pnnl.gov
+    www.pppl.gov www.prc.gov www.socom.mil www.southcom.mil www.spacecom.mil
+    www.spaceforce.mil www.sss.gov www.stratcom.mil www.usagm.gov www.usbr.gov
+    www.uscg.mil www.uscis.gov www.uscourts.cavc.gov www.usmarshals.gov www.usmint.gov
+    www.ustranscom.mil www.visitthecapitol.gov www.whitehouse.gov
+
 ## 2. Refused by this project's own robots policy — 19 hosts, deliberate
 
 These hosts answer `robots.txt` itself with 401 or 403. Python's

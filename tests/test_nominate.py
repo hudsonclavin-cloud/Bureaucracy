@@ -90,6 +90,18 @@ class AcceptsHonestNominationsTests(HarnessTestCase):
             self.page(url="https://www.things.gov/offices", role="parent_listing", basis="the parent's index"),
         ]}]), 0)
 
+    def test_the_latest_record_wins_whatever_its_file_is_called(self) -> None:
+        # A blind decline in pass1 and a live-fetched nomination in brute1:
+        # alphabetically brute1 comes first, and the file order used to let
+        # the older decline shadow the newer nomination.
+        self.assertEqual(self.record([{"id": "bureau", "noCandidate": True, "reason": "covered_by_parent",
+                                       "nominatedAt": "2026-09-09T00:00:00Z"}], run="pass1"), 0)
+        self.assertEqual(self.record([{"id": "bureau", "nominations": [self.page()],
+                                       "nominatedAt": "2026-09-13T23:30:00Z"}], run="brute1"), 0)
+        latest = nominate.read_ledger("source")["bureau"]
+        self.assertEqual(latest["run"], "brute1")
+        self.assertFalse(latest.get("noCandidate"))
+
     def test_each_run_writes_its_own_file(self) -> None:
         # This is what lets N agents work at once without clobbering.
         self.record([{"id": "bureau", "nominations": [self.page()]}], run="agent-1")
@@ -124,6 +136,14 @@ class RefusesUnadjudicableNominationsTests(HarnessTestCase):
         # the scarcest thing here.
         code = self.record([{"id": "bureau", "nominations": [self.page(url="https://www.stuff.gov/")]}])
         self.assertEqual(code, 1)
+
+    def test_a_url_fetched_for_another_node_is_still_nominable(self) -> None:
+        # stuff.gov 404ed for "bureau", not for "other": the refusal is per
+        # node. A parent's page is read once and lists many children, and
+        # the global rule had refused senate.gov as the page that labels the
+        # Secretary of the Senate because it had already confirmed the Senate.
+        code = self.record([{"id": "other", "nominations": [self.page(url="https://www.stuff.gov/", role="parent_listing")]}])
+        self.assertEqual(code, 0)
 
     def test_a_url_already_queued_is_refused(self) -> None:
         self.assertEqual(self.record([{"id": "dept", "nominations": [self.page(url="https://www.things.gov/")]}]), 1)

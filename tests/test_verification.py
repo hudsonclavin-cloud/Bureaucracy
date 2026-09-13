@@ -175,6 +175,18 @@ class LabelMatchingTests(unittest.TestCase):
         self.assertIsNone(find_label("Department of Energy (DOE)", page_fragments(
             "<p>In 1977 Congress created what is now called the Department of Energy.</p>")))
 
+    def test_a_slash_inside_a_parenthetical_does_not_split_the_label(self) -> None:
+        """nsf.gov titles the unit exactly as the graph names it, acronym and
+        all; the separator split ran before the key dropped the parenthetical
+        and left "… Sciences (SBE" and "SES)", neither of which is the name."""
+        self.assertEqual(
+            find_label("Division of Social & Economic Sciences (SBE/SES)",
+                       page_fragments("<h1>Division of Social and Economic Sciences (SBE/SES)</h1>")),
+            "Division of Social and Economic Sciences (SBE/SES)",
+        )
+        # Still not a substring test: the longer name does not confirm the shorter.
+        self.assertIsNone(find_label("Office of Science", page_fragments("<h1>Office of Science and Technology Policy (OSTP/EOP)</h1>")))
+
     def test_a_separator_splits_a_label_from_its_tagline(self) -> None:
         self.assertEqual(find_label("Office of Science", page_fragments("<li>Office of Science — Advancing discovery</li>")),
                          "Office of Science — Advancing discovery")

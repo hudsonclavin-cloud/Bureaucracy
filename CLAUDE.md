@@ -773,7 +773,19 @@ failed, a metric outside the five (`net_outlays`, `audited_net_cost`,
 `obligations`, `budget_authority`, `basic_pay`), an identifier with no basis.
 `nominate.py promote` is the only command that writes outside `data/audit/`:
 it adds candidates to the verifier's fetch queue and records each one's run,
-basis and confidence in `official_sites_provenance.json`.
+basis and confidence in `official_sites_provenance.json`. Two rules fixed by
+the 2026-09-13 brute-force pass (13 Sonnet agents, one shard each, live
+fetches, `source-brute1.jsonl`, 371 records): the ledger's "later record
+wins" is by `nominatedAt`, not by file name — `source-brute1` sorted before
+`source-pass1` and 371 live-fetched records were shadowed by the blind
+declines they replaced, so `promote` queued one page of 160; and a URL is
+refused as "already fetched" only when it was fetched *for this node* — a
+parent's page is read once and lists many children, and the global rule
+had refused senate.gov as the page that labels the Secretary of the Senate.
+`label_matches` tests the whole fragment before splitting it on separators:
+"Division of Social and Economic Sciences (SBE/SES)" was split at the "/"
+before the key dropped the parenthetical, and a page naming the unit exactly
+was recorded as not naming it.
 
 **Many agents at once.** `--shard k/N` partitions the work deterministically
 (disjoint and complete, pinned by a test) and each run writes its own ledger
