@@ -195,7 +195,17 @@ try {
   const openByName = async (name) => {
     await page.fill("#search-input", name);
     await page.waitForTimeout(500);
-    await page.locator("#search-results .sr-item", { hasText: name }).first().click();
+    // The result whose name IS the name, not one that contains it: searching
+    // "Subcommittee on Defense" also lists "Chair, Subcommittee on Defense",
+    // and a substring match opened the position instead of the committee.
+    const exact = page.locator("#search-results .sr-item").filter({
+      has: page.locator(".sr-name", { hasText: new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`) }),
+    });
+    if (await exact.count()) {
+      await exact.first().click();
+    } else {
+      await page.locator("#search-results .sr-item", { hasText: name }).first().click();
+    }
     await page.waitForTimeout(2000);
   };
   const exactDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
@@ -285,12 +295,39 @@ try {
     const existence = await text("#info-panel");
     check("a Senate-list existence line names the list", /Senate's official committee list carries it/.test(existence), existence);
   }
-  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list");
+  // A committee confirmed with the graph's type words set aside quotes the
+  // page's own label and says the prefix was set aside — never the plain claim.
+  const folded = allNodes.find((n) => n.verificationMatchRule === "committee_scaffolding_folded");
+  check("some committee is confirmed with its type words set aside", Boolean(folded), "none");
+  if (folded) {
+    await openByName(folded.name);
+    const existence = await text("#info-panel");
+    check("a folded confirmation quotes the page's label", existence.includes(`as "${folded.verificationMatchedText}"`), existence);
+    check("a folded confirmation says the prefix was set aside", /prefix set aside/.test(existence), existence);
+  }
+  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list" && n.verificationFailureSource?.source === "senate_committee_list");
   check("some curated name is checked against the Senate's list and absent", Boolean(staleName), "none");
   if (staleName) {
     await openByName(staleName.name);
     const existence = await text("#info-panel");
     check("an absence from a complete list says which list and which committee", /against the Senate's official committee list: it carries no unit of this name under "/.test(existence), existence);
+  }
+  // The House Clerk's list, the other chamber's complete list, said as itself.
+  const houseListed = allNodes.find((n) => n.placementMethod === "listed_under_committee_in_house_clerk_committee_list");
+  check("some subcommittee is placed by the House Clerk's list", Boolean(houseListed), "none");
+  if (houseListed) {
+    await openByName(houseListed.name);
+    const line = await text("#verification-placement");
+    check("a House-list placement names the Clerk's list", /House Clerk's official committee list carries it under its committee here/.test(line), line);
+    const existence = await text("#info-panel");
+    check("a House-list existence line names the Clerk's list", /House Clerk's official committee list carries it/.test(existence), existence);
+  }
+  const houseStale = allNodes.find((n) => n.verificationFailure === "not_in_official_list" && n.verificationFailureSource?.source === "house_clerk_committee_list");
+  check("some curated name is checked against the House Clerk's list and absent", Boolean(houseStale), "none");
+  if (houseStale) {
+    await openByName(houseStale.name);
+    const existence = await text("#info-panel");
+    check("an absence from the Clerk's list says which list and which committee", /against the House Clerk's official committee list: it carries no unit of this name under "/.test(existence), existence);
   }
 
   // OPM's own numbers, each said as itself: a sourced headcount beside an

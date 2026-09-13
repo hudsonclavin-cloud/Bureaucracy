@@ -38,6 +38,10 @@
     "treasury_classification_id": "59083821",
     "treasury_netted": true,
     "treasury_receipts_child_id": "legislative-branch--treasury-receipts",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 5836998774.43,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Legislative Branch",
@@ -46,10 +50,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "placementCheckable": false
   },
   {
@@ -92,6 +92,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083738",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1087689291.06,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Senate",
@@ -100,9 +103,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T16:28:38+00:00",
     "evidenceUrls": [
       "https://www.senate.gov/"
@@ -1210,16 +1210,18 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.banking.senate.gov/public",
+      "https://www.banking.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -1234,12 +1236,14 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:20:57Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:20+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.banking.senate.gov/public",
+      "https://www.banking.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBK.xml"
     ],
     "directoryListing": {
@@ -1250,9 +1254,13 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:57Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:20:57Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "Home | United States Committee on Banking, Housing, and Urban Affairs",
+    "verificationMatchRule": "committee_scaffolding_folded"
   },
   {
     "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy",
@@ -1609,7 +1617,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
+      "checkedAt": "2026-09-13T22:51:20+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -3441,7 +3449,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
+      "checkedAt": "2026-09-13T22:51:20+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -3846,7 +3854,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
+      "checkedAt": "2026-09-13T22:51:20+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -3904,7 +3912,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
+      "checkedAt": "2026-09-13T22:51:20+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -3962,7 +3970,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
+      "checkedAt": "2026-09-13T22:51:20+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -3990,16 +3998,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.indian.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4014,15 +4023,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "placementCheckable": false,
-    "pageReadNotNamed": {
-      "url": "https://www.indian.senate.gov/",
-      "checkedAt": "2026-09-13T21:59:29+00:00"
-    },
     "evidenceUrls": [
+      "https://www.indian.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIA.xml"
     ],
     "directoryListing": {
@@ -4033,10 +4039,14 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:20:49Z"
     },
-    "lastVerified": "2026-09-08T19:20:49Z",
-    "evidenceVerifiedAt": "2026-09-08T19:20:49Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "lastVerified": "2026-09-13T22:51:20+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-indian-affairs",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "Home - Indian Affairs Committee",
+    "verificationMatchRule": "committee_scaffolding_folded"
   },
   {
     "id": "leg-house",
@@ -4084,6 +4094,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083744",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1671237203.62,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "House of Representatives",
@@ -4092,9 +4105,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.house.gov/",
@@ -4124,14 +4134,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://agriculture.house.gov/"
+      "https://agriculture.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4146,19 +4159,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://agriculture.house.gov/"
+      "https://agriculture.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-agriculture",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Agriculture",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://agriculture.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-appropriations",
@@ -4170,14 +4192,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://appropriations.house.gov/"
+      "https://appropriations.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4192,19 +4217,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://appropriations.house.gov/"
+      "https://appropriations.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-appropriations",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://appropriations.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-energy-commerce",
@@ -4216,14 +4250,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://energycommerce.house.gov/"
+      "https://energycommerce.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4238,19 +4275,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://energycommerce.house.gov/"
+      "https://energycommerce.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-energy-commerce",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Energy and Commerce",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://energycommerce.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services",
@@ -4262,14 +4308,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/"
+      "https://financialservices.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4284,19 +4333,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/"
+      "https://financialservices.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Financial Services",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://financialservices.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services-sub-capital-markets",
@@ -4308,14 +4366,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4330,21 +4391,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28829",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services-sub-capital-markets",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-financial-services",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-financial-services"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-financial-services",
+    "placementUrl": "https://financialservices.house.gov/",
+    "placementMatchedText": "Capital Markets",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Capital Markets",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Financial Services",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence",
@@ -4356,14 +4431,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4378,21 +4456,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100098",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-financial-services",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-financial-services"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-financial-services",
+    "placementUrl": "https://financialservices.house.gov/",
+    "placementMatchedText": "Digital Assets, Financial Technology, and Artificial Intelligence",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Digital Assets, Financial Technology, and Artificial Intelligence",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Financial Services",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services-sub-housing-insurance",
@@ -4404,14 +4496,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4426,21 +4521,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100090",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services-sub-housing-insurance",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-financial-services",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-financial-services"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-financial-services",
+    "placementUrl": "https://financialservices.house.gov/",
+    "placementMatchedText": "Housing and Insurance",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Housing and Insurance",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Financial Services",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions",
@@ -4452,14 +4561,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4474,21 +4586,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=100097",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-financial-services",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-financial-services"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-financial-services",
+    "placementUrl": "https://financialservices.house.gov/",
+    "placementMatchedText": "National Security, Illicit Finance, and International Financial Institutions",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "National Security, Illicit Finance, and International Financial Institutions",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Financial Services",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-financial-services-sub-oversight-investigations",
@@ -4500,14 +4626,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4522,21 +4651,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921"
+      "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=32921",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-financial-services-sub-oversight-investigations",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-financial-services",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-financial-services"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-financial-services",
+    "placementUrl": "https://financialservices.house.gov/",
+    "placementMatchedText": "Oversight and Investigations",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Oversight and Investigations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Financial Services",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance",
@@ -4548,14 +4691,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
+      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4570,21 +4716,33 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th"
+      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/crime-and-federal-government-surveillance-119th",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-judiciary",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-judiciary"
+    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "parentId": "leg-house-cmte-judiciary",
+    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "placementMatchedText": "Crime and Federal Government Surveillance",
+    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Crime and Federal Government Surveillance",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on the Judiciary",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement",
@@ -4596,14 +4754,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
+      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4618,21 +4779,33 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement"
+      "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/immigration-integrity-security-and-enforcement",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-judiciary",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-judiciary"
+    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "parentId": "leg-house-cmte-judiciary",
+    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "placementMatchedText": "Immigration Integrity, Security, and Enforcement",
+    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Immigration Integrity, Security, and Enforcement",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on the Judiciary",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-natural-resources",
@@ -4644,14 +4817,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4666,19 +4842,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-natural-resources",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Natural Resources",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://naturalresources.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-natural-resources-sub-energy-mineral-resources",
@@ -4690,14 +4875,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4712,14 +4900,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-natural-resources",
@@ -4730,7 +4919,15 @@
     "placementMatchedText": "Subcommittee on Energy and Mineral Resources",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-house-cmte-natural-resources"
+    "parentId": "leg-house-cmte-natural-resources",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Energy and Mineral Resources",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Natural Resources",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-natural-resources-sub-federal-lands",
@@ -4742,14 +4939,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4764,14 +4964,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-natural-resources",
@@ -4782,7 +4983,15 @@
     "placementMatchedText": "Subcommittee on Federal Lands",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-house-cmte-natural-resources"
+    "parentId": "leg-house-cmte-natural-resources",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Federal Lands",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Natural Resources",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-natural-resources-sub-indian-insular-affairs",
@@ -4794,14 +5003,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4816,14 +5028,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-natural-resources",
@@ -4834,7 +5047,15 @@
     "placementMatchedText": "Subcommittee on Indian and Insular Affairs",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-house-cmte-natural-resources"
+    "parentId": "leg-house-cmte-natural-resources",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Indian and Insular Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Natural Resources",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-natural-resources-sub-oversight-investigations",
@@ -4846,14 +5067,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4868,14 +5092,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://naturalresources.house.gov/"
+      "https://naturalresources.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_parent_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-natural-resources",
@@ -4886,7 +5111,15 @@
     "placementMatchedText": "Subcommittee on Oversight and Investigations",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-house-cmte-natural-resources"
+    "parentId": "leg-house-cmte-natural-resources",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Oversight and Investigations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Natural Resources",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-rules-sub-legislative-budget-process",
@@ -4898,14 +5131,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
+      "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4920,14 +5156,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process"
+      "https://rules.house.gov/about/subcommittees/subcommittee-legislative-and-budget-process",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-rules-sub-legislative-budget-process",
@@ -4938,7 +5175,15 @@
     "placementMatchedText": "Subcommittee on Legislative and Budget Process",
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
-    "parentId": "leg-house-cmte-rules"
+    "parentId": "leg-house-cmte-rules",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Legislative and Budget Process",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Rules",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-science-space-technology-sub-energy",
@@ -4950,14 +5195,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://science.house.gov/subcommittee-energy"
+      "https://science.house.gov/subcommittee-energy",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -4972,21 +5220,33 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://science.house.gov/subcommittee-energy"
+      "https://science.house.gov/subcommittee-energy",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-energy",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-science-space-technology",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-science-space-technology"
+    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "parentId": "leg-house-cmte-science-space-technology",
+    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "placementMatchedText": "Energy",
+    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Energy",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-science-space-technology-sub-environment",
@@ -4998,14 +5258,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://science.house.gov/subcommittee-environment"
+      "https://science.house.gov/subcommittee-environment",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5020,21 +5283,33 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://science.house.gov/subcommittee-environment"
+      "https://science.house.gov/subcommittee-environment",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-environment",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-science-space-technology",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-science-space-technology"
+    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "parentId": "leg-house-cmte-science-space-technology",
+    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+    "placementMatchedText": "Environment",
+    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Environment",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-science-space-technology-sub-investigations-oversight",
@@ -5046,14 +5321,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://science.house.gov/subcommittee-investigations-oversight"
+      "https://science.house.gov/subcommittee-investigations-oversight",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5068,21 +5346,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://science.house.gov/subcommittee-investigations-oversight"
+      "https://science.house.gov/subcommittee-investigations-oversight",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-investigations-oversight",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-science-space-technology",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-science-space-technology"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-science-space-technology",
+    "placementUrl": "https://science.house.gov/",
+    "placementMatchedText": "Investigations and Oversight",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Investigations and Oversight",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-science-space-technology-sub-research-technology",
@@ -5094,14 +5386,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://science.house.gov/subcommittee-research-technology"
+      "https://science.house.gov/subcommittee-research-technology",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5116,21 +5411,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://science.house.gov/subcommittee-research-technology"
+      "https://science.house.gov/subcommittee-research-technology",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-research-technology",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-science-space-technology",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-science-space-technology"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-science-space-technology",
+    "placementUrl": "https://science.house.gov/",
+    "placementMatchedText": "Research and Technology",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Research and Technology",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-science-space-technology-sub-space-aeronautics",
@@ -5142,14 +5451,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://science.house.gov/subcommittee-space-aeronautics"
+      "https://science.house.gov/subcommittee-space-aeronautics",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5164,21 +5476,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://science.house.gov/subcommittee-space-aeronautics"
+      "https://science.house.gov/subcommittee-space-aeronautics",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-science-space-technology-sub-space-aeronautics",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-science-space-technology",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-science-space-technology"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-science-space-technology",
+    "placementUrl": "https://science.house.gov/",
+    "placementMatchedText": "Space and Aeronautics",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Space and Aeronautics",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-small-business",
@@ -5190,14 +5516,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://smallbusiness.house.gov/"
+      "https://smallbusiness.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5212,19 +5541,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://smallbusiness.house.gov/"
+      "https://smallbusiness.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-small-business",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Small Business",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://smallbusiness.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access",
@@ -5236,14 +5574,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
+      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5258,21 +5599,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807"
+      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71807",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-small-business",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-small-business"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-small-business",
+    "placementUrl": "https://smallbusiness.house.gov/",
+    "placementMatchedText": "Economic Growth, Tax, and Capital Access",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Economic Growth, Tax, and Capital Access",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Small Business",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-small-business-sub-oversight-investigations-regulations",
@@ -5284,14 +5639,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
+      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5306,21 +5664,35 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T21:59:29+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808"
+      "https://smallbusiness.house.gov/Subcommittees/Subcommittee/?SubcommitteeID=71808",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-small-business-sub-oversight-investigations-regulations",
-    "placementVerified": false,
+    "placementVerified": true,
     "placementParentId": "leg-house-cmte-small-business",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
-    "parentId": "leg-house-cmte-small-business"
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "parentId": "leg-house-cmte-small-business",
+    "placementUrl": "https://smallbusiness.house.gov/",
+    "placementMatchedText": "Oversight, Investigations, and Regulations",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "placementMatchRule": "committee_scaffolding_folded",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Oversight, Investigations, and Regulations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": null,
+      "parentListedName": "Committee on Small Business",
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-cmte-veterans-affairs",
@@ -5332,14 +5704,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
-      "https://veterans.house.gov/"
+      "https://veterans.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -5354,19 +5729,28 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-11T04:01:57+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T22:51:28Z",
     "evidenceUrls": [
-      "https://veterans.house.gov/"
+      "https://veterans.house.gov/",
+      "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
-    "evidenceVerifiedAt": "2026-09-11T04:01:57+00:00",
+    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "leg-house-cmte-veterans-affairs",
     "placementCheckable": false,
-    "parentId": "leg-house-committees"
+    "parentId": "leg-house-committees",
+    "directoryListing": {
+      "source": "house_clerk_committee_list",
+      "listedName": "Committee on Veterans' Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "agencyUrl": "https://veterans.house.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-13T22:51:28Z"
+    }
   },
   {
     "id": "leg-house-clerk",
@@ -5549,6 +5933,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083801",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 678655238.13,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Government Accountability Office",
@@ -5557,9 +5944,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -5620,6 +6004,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083782",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 57506741.9,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Congressional Budget Office",
@@ -5628,9 +6015,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -5691,6 +6075,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083792",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 732193774.42,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Library of Congress",
@@ -5699,9 +6086,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -5822,6 +6206,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083798",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 122380168.98,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Government Publishing Office",
@@ -5830,9 +6217,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -5893,6 +6277,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083788",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 735681009.22,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Architect of the Capitol",
@@ -5901,9 +6288,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -5961,6 +6345,9 @@
     "costSourceCount": 1,
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083777",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "rollup_total_amount": 675627352.77,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Capitol Police",
@@ -5969,9 +6356,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T16:28:38+00:00",
     "evidenceUrls": [
       "https://www.uscp.gov/the-department"
@@ -6141,6 +6525,9 @@
     "treasury_classification_id": "59085137",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-eop--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": -1238955786.55,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Executive Office of the President",
@@ -6149,9 +6536,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
@@ -6223,6 +6607,9 @@
     "costSourceCount": 1,
     "treasury_section": "Executive Office of the President",
     "treasury_classification_id": "59085131",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 55670464.76,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "The White House",
@@ -6231,9 +6618,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/the-white-house-office"
@@ -6373,6 +6757,9 @@
     "costSourceCount": 1,
     "treasury_section": "Executive Office of the President",
     "treasury_classification_id": "59085132",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 93254266.7,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Office of Management and Budget",
@@ -6381,9 +6768,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.whitehouse.gov/omb/",
@@ -6984,6 +7368,9 @@
     "treasury_classification_id": "59084788",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-state--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 22560808102.86,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of State",
@@ -6992,9 +7379,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -8330,6 +8714,9 @@
     "treasury_classification_id": "59085051",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-treasury--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1407363818653.21,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of the Treasury",
@@ -8338,9 +8725,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information",
@@ -8477,6 +8861,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Treasury",
     "treasury_classification_id": "59085024",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 246207359582.86,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Internal Revenue Service",
@@ -8485,9 +8872,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information",
@@ -8791,6 +9175,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Treasury",
     "treasury_classification_id": "59084993",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 10201297.89,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of Engraving and Printing",
@@ -8799,9 +9186,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information",
@@ -8892,6 +9276,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Treasury",
     "treasury_classification_id": "59084995",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": -867505200.84,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Mint",
@@ -8900,9 +9287,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information",
@@ -8994,6 +9378,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Treasury",
     "treasury_classification_id": "59084983",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 8200443023.04,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Bureau of the Fiscal Service",
@@ -9002,9 +9389,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information",
@@ -9325,6 +9709,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Treasury",
     "treasury_classification_id": "59085026",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "rollup_total_amount": 313040142.9,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Comptroller of the Currency",
@@ -9333,9 +9720,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T16:28:38+00:00",
     "evidenceUrls": [
       "https://home.treasury.gov/about/general-information"
@@ -9753,6 +10137,9 @@
     "treasury_classification_id": "59084118",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-defense--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 764710153765.82,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Defense--Military Programs",
@@ -9761,9 +10148,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -10465,6 +10849,9 @@
     "treasury_classification_id": "59084620",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-doj--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 36669643774.69,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Justice",
@@ -10473,9 +10860,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.justice.gov/about",
@@ -10719,6 +11103,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084592",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 8666025201.8,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Federal Bureau of Investigation",
@@ -10727,9 +11114,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-bureau-of-investigation"
@@ -10914,6 +11298,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084594",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 2624638971.33,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Drug Enforcement Administration",
@@ -10922,9 +11309,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/drug-enforcement-administration"
@@ -11210,6 +11594,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084596",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1346657615.3,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
@@ -11218,9 +11605,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau"
@@ -11689,6 +12073,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084598",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 6902593064.22,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Federal Prison System",
@@ -11697,9 +12084,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/prisons-bureau"
@@ -11765,6 +12149,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084585",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1400494094.97,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Marshals Service",
@@ -11773,9 +12160,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/united-states-marshals-service"
@@ -12167,6 +12551,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Justice",
     "treasury_classification_id": "59084583",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 2121685024.04,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Attorneys",
@@ -12175,11 +12563,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "placementVerified": false,
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
+    "placementParentId": "exec-dept-doj"
   },
   {
     "id": "exec-dept-doj-div-antitrust",
@@ -13102,6 +13489,9 @@
     "treasury_classification_id": "59084572",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-doi--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 13678033128.75,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of the Interior",
@@ -13110,9 +13500,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -13269,6 +13656,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Interior",
     "treasury_classification_id": "59084538",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 4028885585.72,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Park Service",
@@ -13277,9 +13667,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -13556,6 +13943,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Interior",
     "treasury_classification_id": "59084529",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1227358189.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Geological Survey",
@@ -13564,9 +13954,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -13758,6 +14145,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Interior",
     "treasury_classification_id": "59084536",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2905449328.7,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Fish and Wildlife Service",
@@ -13766,9 +14156,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -14031,6 +14418,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Interior",
     "treasury_classification_id": "59084545",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2212335415.1,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of Indian Affairs and Bureau of Indian Education",
@@ -14039,9 +14429,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -14639,6 +15026,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of the Interior",
     "treasury_classification_id": "59084512",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 110999674.06,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of Ocean Energy Management",
@@ -14647,9 +15037,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.doi.gov/whoweare",
@@ -14942,6 +15329,9 @@
     "treasury_classification_id": "59083980",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-usda--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 188233199434.7,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Agriculture",
@@ -14950,9 +15340,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -15173,6 +15560,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083893",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 9741460068.95,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Farm Service Agency",
@@ -15181,9 +15571,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/farm-service-agency"
@@ -15490,6 +15877,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083967",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 9122359099.35,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Forest Service",
@@ -15498,9 +15888,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.fs.usda.gov",
@@ -15587,6 +15974,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083944",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 117174961882.55,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Food and Nutrition Service",
@@ -15595,9 +15985,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/food-and-nutrition-service"
@@ -15755,6 +16142,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083870",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1845033545.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Animal and Plant Health Inspection Service",
@@ -15763,9 +16153,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.aphis.usda.gov/",
@@ -15926,6 +16313,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083853",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 1464483892.87,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Agricultural Research Service",
@@ -15934,9 +16324,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.ars.usda.gov/main/main.htm",
@@ -16094,6 +16481,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Agriculture",
     "treasury_classification_id": "59083872",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 933183885.13,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Food Safety and Inspection Service",
@@ -16102,9 +16492,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/food-safety-and-inspection-service"
@@ -16393,6 +16780,9 @@
     "treasury_classification_id": "59084019",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-doc--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 11469278897.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Commerce",
@@ -16401,9 +16791,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -16549,6 +16936,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Commerce",
     "treasury_classification_id": "59083990",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1136520149.51,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of the Census",
@@ -16557,9 +16947,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/census-bureau"
@@ -16637,6 +17024,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Commerce",
     "treasury_classification_id": "59083997",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 5621196879.58,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Oceanic and Atmospheric Administration",
@@ -16645,10 +17036,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -16688,6 +17075,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Commerce",
     "treasury_classification_id": "59084000",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 2716222306.17,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Institute of Standards and Technology",
@@ -16696,10 +17087,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -16745,6 +17132,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Commerce",
     "treasury_classification_id": "59083993",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 406606066.11,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "International Trade Administration",
@@ -16753,9 +17143,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/international-trade-administration"
@@ -16988,6 +17375,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Commerce",
     "treasury_classification_id": "59084003",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 883979805.69,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Telecommunications and Information Administration",
@@ -16996,10 +17387,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-doc"
   },
   {
@@ -17115,6 +17502,9 @@
     "treasury_classification_id": "59084734",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-dol--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 47306925733.82,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Labor",
@@ -17123,9 +17513,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -17312,6 +17699,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084713",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 485006912.9,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Occupational Safety and Health Administration",
@@ -17320,9 +17710,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -17413,6 +17800,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084719",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 396905212.34,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Bureau of Labor Statistics",
@@ -17421,9 +17811,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -17514,6 +17901,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084710",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 243244418.9,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Wage and Hour Division",
@@ -17522,9 +17912,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -17686,6 +18073,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084683",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 40234996645.84,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Employment and Training Administration",
@@ -17694,9 +18084,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -18115,6 +18502,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084716",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 309234362.63,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Mine Safety and Health Administration",
@@ -18123,9 +18513,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.dol.gov/general/aboutdol",
@@ -18574,6 +18961,9 @@
     "treasury_classification_id": "59084358",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-hhs--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1724888110533.0,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Health and Human Services",
@@ -18582,9 +18972,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -18747,6 +19134,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084251",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2960213477.45,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Food and Drug Administration",
@@ -18755,9 +19145,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.fda.gov/",
@@ -18847,6 +19234,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084257",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 8054724302.65,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Centers for Disease Control and Prevention",
@@ -18855,9 +19245,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.cdc.gov/",
@@ -19015,6 +19402,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084259",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 37555056794.16,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Institutes of Health",
@@ -19023,9 +19413,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/national-institutes-of-health"
@@ -19213,6 +19600,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084306",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 2328205320351.0,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
@@ -19221,9 +19611,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.cms.gov/",
@@ -19381,6 +19768,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084263",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 229049055.06,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Agency for Healthcare Research and Quality",
@@ -19389,9 +19779,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/agency-for-healthcare-research-and-quality"
@@ -19540,6 +19927,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084261",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 6476066397.41,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Substance Abuse and Mental Health Services Administration",
@@ -19548,10 +19939,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-hhs"
   },
   {
@@ -19597,6 +19984,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084253",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 12175725845.16,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Health Resources and Services Administration",
@@ -19605,9 +19995,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/health-resources-and-services-administration"
@@ -19836,6 +20223,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Health and Human Services",
     "treasury_classification_id": "59084255",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 8822870503.88,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Indian Health Service",
@@ -19844,9 +20234,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.ihs.gov/",
@@ -20171,6 +20558,9 @@
     "treasury_classification_id": "59084500",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-hud--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 56813533464.05,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Housing and Urban Development",
@@ -20179,9 +20569,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.hud.gov/about",
@@ -20240,6 +20627,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Housing and Urban Development",
     "treasury_classification_id": "59084430",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 40488970019.37,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Public and Indian Housing Programs",
@@ -20248,10 +20639,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-hud"
   },
   {
@@ -20392,6 +20779,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Housing and Urban Development",
     "treasury_classification_id": "59084446",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 13054839218.67,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Community Planning and Development",
@@ -20400,10 +20791,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-hud"
   },
   {
@@ -20718,6 +21105,9 @@
     "treasury_classification_id": "59084909",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-dot--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 97995857073.27,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Transportation",
@@ -20726,9 +21116,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -20867,6 +21254,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084825",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 20356780367.92,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Aviation Administration",
@@ -20875,9 +21265,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.faa.gov/",
@@ -20964,6 +21351,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084846",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 51281932207.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Highway Administration",
@@ -20972,9 +21362,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-highway-administration"
@@ -21052,6 +21439,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084852",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 1209189952.6,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Highway Traffic Safety Administration",
@@ -21060,10 +21451,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -21109,6 +21496,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084868",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 6655355597.9,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Railroad Administration",
@@ -21117,9 +21507,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-railroad-administration"
@@ -21197,6 +21584,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084849",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 772379003.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Federal Motor Carrier Safety Administration",
@@ -21205,10 +21596,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "parentId": "exec-dept-dot"
   },
   {
@@ -21254,6 +21641,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Transportation",
     "treasury_classification_id": "59084886",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 16880076728.0,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Transit Administration",
@@ -21262,9 +21652,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-transit-administration"
@@ -21348,6 +21735,9 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": -971530606.26,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Maritime Administration",
@@ -21356,9 +21746,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/maritime-administration"
@@ -21513,6 +21900,9 @@
     "treasury_classification_id": "59084246",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-doe--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 42979199644.55,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Energy",
@@ -21521,9 +21911,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.energy.gov/leadership-organization",
@@ -21685,7 +22072,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -21903,6 +22290,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Energy",
     "treasury_classification_id": "59084222",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 3009533357.01,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Energy Efficiency and Renewable Energy",
@@ -21911,9 +22301,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementVerified": true,
     "placementParentId": "exec-dept-doe",
@@ -21981,7 +22368,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -22090,6 +22477,9 @@
     "treasury_classification_id": "59084192",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-ed--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 52938105799.5,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Education",
@@ -22098,9 +22488,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -22265,6 +22652,10 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 76054364353.4,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Office of Federal Student Aid",
@@ -22273,10 +22664,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "employeesOfficial": 1413,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -22577,6 +22964,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Education",
     "treasury_classification_id": "59084136",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 25382904757.84,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Office of Elementary and Secondary Education",
@@ -22585,10 +22976,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "employeesOfficial": 293,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -22646,6 +23033,10 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Education",
     "treasury_classification_id": "59084181",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 439172894.04,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Institute of Education Sciences",
@@ -22654,10 +23045,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "employeesOfficial": 185,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -22858,6 +23245,9 @@
     "treasury_classification_id": "59085096",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-va--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 360049162129.07,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Veterans Affairs",
@@ -22866,9 +23256,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.va.gov/about_va/",
@@ -23854,6 +24241,9 @@
     "treasury_classification_id": "59084406",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-dept-dhs--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 87523833437.83,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Department of Homeland Security",
@@ -23862,9 +24252,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -24010,6 +24397,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084372",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 22163637285.17,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "U.S. Customs and Border Protection",
@@ -24018,9 +24408,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/u-s-customs-and-border-protection"
@@ -24347,6 +24734,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084370",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 18711776979.42,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Immigration and Customs Enforcement",
@@ -24355,9 +24745,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/u-s-immigration-and-customs-enforcement"
@@ -24684,6 +25071,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084368",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 6691147128.56,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Transportation Security Administration",
@@ -24692,9 +25082,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/transportation-security-administration"
@@ -25051,6 +25438,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084391",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 25655049044.02,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Emergency Management Agency",
@@ -25059,9 +25449,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/federal-emergency-management-agency"
@@ -25216,6 +25603,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084364",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 4675774387.6,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Citizenship and Immigration Services",
@@ -25224,9 +25614,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services"
@@ -25695,6 +26082,9 @@
     "costSourceCount": 1,
     "treasury_section": "Department of Homeland Security",
     "treasury_classification_id": "59084366",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 2978095395.53,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Secret Service",
@@ -25703,9 +26093,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/secret-service"
@@ -26225,7 +26612,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -26273,7 +26660,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -26321,7 +26708,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -26369,7 +26756,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -26417,6 +26804,9 @@
     "treasury_classification_id": "59085129",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-epa--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 13938855973.04,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Environmental Protection Agency",
@@ -26425,9 +26815,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -26947,6 +27334,9 @@
     "treasury_classification_id": "59085191",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-nasa--treasury-receipts",
+    "sourceCount": 4,
+    "confidenceScore": 1.0,
+    "verificationStatus": "verified",
     "rollup_total_amount": 19407504274.99,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--National Aeronautics and Space Administration",
@@ -26955,9 +27345,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 4,
-    "confidenceScore": 1.0,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.nasa.gov/about/",
@@ -27218,7 +27605,7 @@
     "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -27337,7 +27724,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -27456,7 +27843,7 @@
     "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -27575,7 +27962,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -28223,6 +28610,9 @@
     "treasury_classification_id": "59085245",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-ssa--treasury-receipts",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1444993847336.67,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Social Security Administration",
@@ -28231,9 +28621,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -28581,6 +28968,9 @@
     "treasury_classification_id": "59085221",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-sba--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 11509168516.3,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Small Business Administration",
@@ -28589,9 +28979,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.sba.gov/about-sba",
@@ -28745,6 +29132,9 @@
     "treasury_classification_id": "59085198",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-nsf--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 7044450851.39,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--National Science Foundation",
@@ -28753,9 +29143,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.nsf.gov/about",
@@ -28941,6 +29328,10 @@
     "costSourceCount": 1,
     "treasury_section": "National Science Foundation",
     "treasury_classification_id": "59085194",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 889454271.88,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Education and Human Resources",
@@ -28949,13 +29340,9 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -29219,6 +29606,9 @@
     "treasury_classification_id": "59085213",
     "treasury_netted": true,
     "treasury_receipts_child_id": "exec-ind-opm--treasury-receipts",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 113687741429.64,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Office of Personnel Management",
@@ -29227,9 +29617,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.opm.gov/about-us/",
@@ -29378,6 +29765,9 @@
     "costSourceCount": 1,
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085316",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1029016720.27,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Smithsonian Institution",
@@ -29386,9 +29776,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -29491,6 +29878,9 @@
     "costSourceCount": 1,
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085277",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 368483544.32,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Archives and Records Administration",
@@ -29499,9 +29889,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.archives.gov/about",
@@ -29745,6 +30132,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "International Assistance Programs",
     "treasury_classification_id": "59085173",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 335797574.1,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Peace Corps",
@@ -29753,9 +30143,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -29913,6 +30300,10 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": -36529457.88,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Export-Import Bank of the United States",
@@ -29921,10 +30312,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "placementCheckable": false,
     "employeesOfficial": 377,
     "employeesOfficialSource": {
@@ -29999,6 +30386,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085279",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 124234286.91,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Endowment for the Arts",
@@ -30007,9 +30397,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-13T20:34:29+00:00",
     "evidenceUrls": [
       "https://arts.gov/",
@@ -30218,6 +30605,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085280",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 52197425.96,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Endowment for the Humanities",
@@ -30226,9 +30616,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.neh.gov/",
@@ -30442,6 +30829,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085281",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 228712355.85,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Labor Relations Board",
@@ -30450,9 +30840,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -30611,6 +30998,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085257",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 351117249.28,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Equal Employment Opportunity Commission",
@@ -30619,9 +31009,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-11T04:01:57+00:00",
     "evidenceUrls": [
       "https://www.eeoc.gov/",
@@ -31849,6 +32236,9 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": -1083957571.33,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "National Credit Union Administration",
@@ -31857,9 +32247,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-13T21:59:29+00:00",
     "evidenceUrls": [
       "https://www.ncua.gov",
@@ -31948,6 +32335,9 @@
     "child_cost_basis": "subtree",
     "treasury_section": "Department of Labor",
     "treasury_classification_id": "59084686",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1992636236.68,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Pension Benefit Guaranty Corporation",
@@ -31956,9 +32346,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -32043,6 +32430,9 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": -1182145210.54,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Tennessee Valley Authority",
@@ -32051,9 +32441,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -32389,6 +32776,9 @@
     "costSourceCount": 1,
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085315",
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": 1646343264.31,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Securities and Exchange Commission",
@@ -32397,9 +32787,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -32645,6 +33032,9 @@
     "costSourceCount": 1,
     "treasury_section": "Independent Agencies",
     "treasury_classification_id": "59085282",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
     "rollup_total_amount": 179950579.66,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Nuclear Regulatory Commission",
@@ -32653,9 +33043,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 3,
-    "confidenceScore": 0.9,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.nrc.gov/about-nrc.html",
@@ -32890,6 +33277,9 @@
     "costConfidenceScore": 0.95,
     "costVerificationReason": "matched_official_rollup",
     "costSourceCount": 1,
+    "sourceCount": 2,
+    "confidenceScore": 0.5,
+    "verificationStatus": "partial",
     "rollup_total_amount": -18643789566.77,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Federal Deposit Insurance Corporation",
@@ -32898,9 +33288,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
     "evidenceUrls": [
@@ -33146,6 +33533,10 @@
     "treasury_classification_id": "59083846",
     "treasury_netted": true,
     "treasury_receipts_child_id": "judicial-branch--treasury-receipts",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "lastVerified": null,
     "rollup_total_amount": 8375236264.3,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Total--Judicial Branch",
@@ -33154,10 +33545,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
     "placementCheckable": false
   },
   {
@@ -33200,6 +33587,9 @@
     "costSourceCount": 1,
     "treasury_section": "Judicial Branch",
     "treasury_classification_id": "59083828",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "rollup_total_amount": 147833433.46,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Supreme Court of the United States",
@@ -33208,9 +33598,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T16:28:38+00:00",
     "evidenceUrls": [
       "https://www.supremecourt.gov/about/about.aspx"
@@ -33221,7 +33608,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-13T21:59:29+00:00",
+    "placementVerifiedAt": "2026-09-13T22:51:20+00:00",
     "parentId": "judicial-branch"
   },
   {
@@ -33265,6 +33652,9 @@
     "treasury_section": "Legislative Branch",
     "treasury_classification_id": "59083807",
     "treasury_external_section": true,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
     "rollup_total_amount": 61717264.29,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "United States Tax Court",
@@ -33273,9 +33663,6 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "lastVerified": "2026-09-08T16:28:38+00:00",
     "evidenceUrls": [
       "https://www.ustaxcourt.gov/"
@@ -33681,7 +34068,9 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
+    "attachToRoot": true,
     "treasury_section": "Undistributed Offsetting Receipts",
+    "placementCheckable": false,
     "resolved_total_amount": -343316737551.34,
     "cost_status": "official",
     "cost_basis": "treasury_rollup",
@@ -33692,7 +34081,6 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666",
-    "placementCheckable": false
+    "color": "#666666"
   }
 ]

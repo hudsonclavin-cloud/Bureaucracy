@@ -65,7 +65,13 @@ SOURCES: dict[str, dict[str, str]] = {
         "placement_method": "listed_under_committee_in_senate_committee_list",
         "source_type": "senate_committee_list",
     },
+    "house_clerk_committee_list": {
+        "method": "listed_in_house_clerk_committee_list",
+        "placement_method": "listed_under_committee_in_house_clerk_committee_list",
+        "source_type": "house_clerk_committee_list",
+    },
 }
+COMMITTEE_LIST_SOURCES = ("senate_committee_list", "house_clerk_committee_list")
 
 
 # The directory writes the head noun last: "Energy Department", "Civil
@@ -286,7 +292,7 @@ def _ancestors_of(node_id: str, parent_map: dict[str, str | None]) -> list[str]:
 
 
 def listed_name_still_names(node_name: Any, listed_name: Any, source: str = FR_SOURCE) -> bool:
-    if source == "senate_committee_list":
+    if source in COMMITTEE_LIST_SOURCES:
         from data_pipeline.verification.congress import committee_key, subcommittee_key
 
         return bool(canonical_name_key(node_name)) and (

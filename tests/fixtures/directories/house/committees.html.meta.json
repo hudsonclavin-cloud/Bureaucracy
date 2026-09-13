@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-13T22:51:29Z",
+ "url": "https://clerk.house.gov/Committees",
+ "status": 200,
+ "final_url": "https://clerk.house.gov/Committees",
+ "content_type": "text/html; charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 304488,
+ "sha256": "788ed798d4214c54a64d995f57f7a880fbfa37dea23ffc9e7b07720a88d5d6e8",
+ "error": null
+}

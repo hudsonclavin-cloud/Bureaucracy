@@ -97,6 +97,13 @@ EVIDENCE_OWNED_FIELDS = (
     "placementMatchedIn",
     "placementCheckable",
     "verificationMatchedIn",
+    # The label as the page prints it and the rule that let it count, both
+    # stamped only when the rule was the committee fold below: a reader must
+    # be able to see that "Livestock, Dairy, and Poultry" is what the page
+    # says and "Subcommittee on" is what the graph adds.
+    "verificationMatchedText",
+    "verificationMatchRule",
+    "placementMatchRule",
     # Exactly the URLs this module put on the node, so the next build can
     # remove exactly those and nothing else. The first version cleared the
     # node's whole list, which stripped the Treasury FiscalData URL from 26
@@ -422,6 +429,71 @@ def label_matches(key: str, fragment: str) -> bool:
     return False
 
 
+# The graph names every committee and subcommittee with a type word in front
+# — "House Committee on Armed Services", "Subcommittee on Livestock, Dairy &
+# Poultry" — and the chambers' own sites label the same bodies without it:
+# "Committee on Armed Services", "Livestock, Dairy, and Poultry" under a
+# "Subcommittees" heading. Label equality refused 38 of the 78 not_found
+# records on 2026-09-13 for that prefix and nothing else. The Senate-list
+# module already folds exactly this scaffolding (congress.committee_key,
+# subcommittee_key) for the same kind of node; the page check now does the
+# same, and only for that kind: COMMITTEE_TYPES is the whole scope, so
+# "Office of Science" can never match "Science". A core of one token is
+# refused outright ("Subcommittee on Readiness" is not confirmed by the word
+# "Readiness" anywhere on armedservices.house.gov), which is the same floor
+# GENERIC_SINGLE_TOKENS puts under a curated name. A match made this way is
+# recorded with the rule and the label as printed, so the site can say
+# "as 'Livestock, Dairy, and Poultry'" and never pretend the prefix was there.
+COMMITTEE_TYPES = frozenset({"committee", "subcommittee"})
+MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
+_CHAMBER_PREFIXES = ("house ", "senate ")
+_COMMITTEE_PREFIXES = (
+    "permanent select committee on ", "select committee on ", "special committee on ",
+    "joint committee on ", "subcommittee on ", "committee on ",
+)
+_COMMITTEE_SUFFIXES = (" subcommittee", " committee")
+
+
+def committee_core_key(key: str) -> str:
+    """'house committee on armed services', 'committee on armed services' and
+    'armed services committee' → 'armed services'. '' when fewer than two
+    tokens remain, so a bare word can never confirm a committee."""
+    text = str(key or "").strip()
+    for prefix in _CHAMBER_PREFIXES:
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+    # The curated artifact nests two: "committee on select committee on ethics".
+    for _ in range(2):
+        for prefix in _COMMITTEE_PREFIXES:
+            if text.startswith(prefix):
+                text = text[len(prefix):]
+                break
+        if text.startswith("the "):
+            text = text[len("the "):]
+    for suffix in _COMMITTEE_SUFFIXES:
+        if text.endswith(suffix):
+            text = text[: -len(suffix)]
+            break
+    text = text.strip()
+    return text if len(text.split()) >= 2 else ""
+
+
+def label_matches_folded(core: str, fragment: str) -> bool:
+    """Is this fragment the committee's name once the type words are set
+    aside on both sides? Exact after folding; no scaffold allowance."""
+    if not core:
+        return False
+    for part in LABEL_SEPARATORS.split(fragment):
+        if committee_core_key(canonical_name_key(part)) == core:
+            return True
+    return False
+
+
+def folds_committee(node: dict[str, Any] | None) -> bool:
+    return bool(node) and str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
+
+
 def name_appears_unlabelled(name: str, fragments: list[str]) -> bool:
     """Is the unit's name anywhere in this page's text, even if not as a label?
 
@@ -453,13 +525,29 @@ def find_label_region(name: str, fragments: list[str] | PageText) -> tuple[str, 
     `navigation` for the site-wide chrome (nav, header, footer, banner) —
     a listing there holds for every page of the site, and the record says
     so. A bare fragment list is all content."""
+    found = find_label_region_rule(name, fragments)
+    return (found[0], found[1]) if found else None
+
+
+def find_label_region_rule(
+    name: str, fragments: list[str] | PageText, *, fold_committee: bool = False
+) -> tuple[str, str, str | None] | None:
+    """As find_label_region, plus the rule that made the match: None for
+    plain label equality, MATCH_RULE_COMMITTEE when the committee fold was
+    needed. Equality is tried on every fragment first, so a page that carries
+    the name in full is never recorded as folded."""
     if uncheckable_reason(name):
         return None
     key = canonical_name_key(name)
     page = fragments if isinstance(fragments, PageText) else PageText(fragments=list(fragments), regions=[REGION_CONTENT] * len(fragments))
     for fragment, region in zip(page.fragments, page.regions):
         if label_matches(key, fragment):
-            return fragment[:200], region
+            return fragment[:200], region, None
+    if fold_committee:
+        core = committee_core_key(key)
+        for fragment, region in zip(page.fragments, page.regions):
+            if label_matches_folded(core, fragment):
+                return fragment[:200], region, MATCH_RULE_COMMITTEE
     return None
 
 
@@ -506,13 +594,16 @@ def verify_node(
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
         page = parse_page(html)
-        found = find_label_region(name, page)
+        found = find_label_region_rule(name, page, fold_committee=folds_committee(node))
         if found:
             # A label a visitor can see is a confirmation wherever it sits;
             # the region is recorded so a site-wide menu is not presented as
             # the page's own account of itself.
             pages_read += 1
-            confirmed.append({"url": url, "matchedText": found[0], "matchedIn": found[1]})
+            source = {"url": url, "matchedText": found[0], "matchedIn": found[1]}
+            if found[2]:
+                source["matchRule"] = found[2]
+            confirmed.append(source)
             continue
         if not page.readable:
             # 200 OK with no readable body: a JS shell, a bot challenge, a
@@ -587,9 +678,9 @@ def verify_placement(
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
         page = parse_page(html)
-        found = find_label_region(name, page)
+        found = find_label_region_rule(name, page, fold_committee=folds_committee(node))
         if found:
-            return {
+            block: dict[str, Any] = {
                 "status": PLACEMENT_LISTED,
                 "parentId": parent_id,
                 "url": url,
@@ -597,6 +688,9 @@ def verify_placement(
                 "matchedIn": found[1],
                 "checkedAt": checked_at,
             }
+            if found[2]:
+                block["matchRule"] = found[2]
+            return block
         if not page.readable:
             # Banner, header and footer around no body: the page was not
             # read, and "read and does not list it" may not be said of it.
@@ -638,7 +732,7 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
     ):
         sources = [src for src in (record.get("sources") or []) if isinstance(src, dict) and src.get("url")]
         if sources:
-            return {
+            derived = {
                 "status": PLACEMENT_LISTED,
                 "parentId": parent_id,
                 "url": str(sources[0]["url"]),
@@ -647,10 +741,13 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
                 "checkedAt": record.get("checkedAt"),
                 "derivedFrom": "parent_page_confirmation",
             }
+            if sources[0].get("matchRule"):
+                derived["matchRule"] = str(sources[0]["matchRule"])
+            return derived
     return None
 
 
-def evidence_names_this_node(node_name: str, matched_text: Any) -> bool:
+def evidence_names_this_node(node_name: str, matched_text: Any, node: dict[str, Any] | None = None) -> bool:
     """Does the recorded label still name the node as it is now called?
 
     Records are keyed by id and never re-fetched once confirmed. A curator
@@ -660,7 +757,13 @@ def evidence_names_this_node(node_name: str, matched_text: Any) -> bool:
     if not matched_text:
         return True
     key = canonical_name_key(node_name)
-    return bool(key) and label_matches(key, str(matched_text))
+    if not key:
+        return False
+    if label_matches(key, str(matched_text)):
+        return True
+    # The fold is granted by the node's kind, never by the record: a
+    # committee re-typed as an office keeps nothing it earned as a committee.
+    return folds_committee(node) and label_matches_folded(committee_core_key(key), str(matched_text))
 
 
 def claimed_by_another_stage(node: dict[str, Any], url: str) -> bool:
@@ -723,6 +826,11 @@ def clear_evidence_fields(node: dict[str, Any], official_urls: set[str]) -> bool
         if len(types) != len(node.get("sourceTypes") or []):
             node["sourceTypes"] = types
             touched = True
+    if not any("clerk.house.gov/" in u for u in kept):
+        types = [str(t) for t in (node.get("sourceTypes") or []) if t != "house_clerk_committee_list"]
+        if len(types) != len(node.get("sourceTypes") or []):
+            node["sourceTypes"] = types
+            touched = True
     if not any("federalregister.gov/agencies/" in u for u in kept):
         types = [str(t) for t in (node.get("sourceTypes") or []) if t not in ("federal_register_directory", "federal_register")]
         if len(types) != len(node.get("sourceTypes") or []):
@@ -767,6 +875,7 @@ def apply_evidence_to_tree(
     stats.update({
         "placements_evidenced": 0, "placements_checked_not_listed": 0, "placements_stale_parent": 0,
         "placements_stale_name": 0, "existence_stale_name": 0, "placements_not_checkable_no_parent_page": 0,
+        "existence_folded": 0, "placements_folded": 0,
         PLACEMENT_ONLY: 0,
     })
     # Withdraw every claim this module previously published before applying
@@ -844,11 +953,20 @@ def apply_evidence_to_tree(
             # No official URL behind it: not a confirmation at all.
             stats["unknown_status"] += 1
             continue
-        sources = [s for s in official if evidence_names_this_node(str(node.get("name") or ""), s.get("matchedText"))]
+        sources = [s for s in official if evidence_names_this_node(str(node.get("name") or ""), s.get("matchedText"), node)]
         if not sources:
             # The label recorded names a unit this node is no longer called.
             stats["existence_stale_name"] += 1
             continue
+        # A folded match is published as one: the rule, and the label as the
+        # page prints it, so the panel can quote the page rather than the
+        # graph. An unfolded match on any page outranks it — the plain claim
+        # is the stronger one and the one shown.
+        folded = [s for s in sources if s.get("matchRule") == MATCH_RULE_COMMITTEE]
+        if folded and len(folded) == len(sources):
+            node["verificationMatchRule"] = MATCH_RULE_COMMITTEE
+            node["verificationMatchedText"] = str(folded[0].get("matchedText") or "")[:200]
+            stats["existence_folded"] += 1
         urls = [str(s["url"]) for s in sources]
         existing = [str(u) for u in (node.get("sourceUrls") or [])]
         for url in urls:
@@ -891,7 +1009,7 @@ def apply_evidence_to_tree(
             # Evidence for an edge the tree no longer has. Never inherited.
             stats["placements_stale_parent"] += 1
         listed = placement_from_record(record, actual_parent)
-        if listed and not evidence_names_this_node(str(node.get("name") or ""), listed.get("matchedText")):
+        if listed and not evidence_names_this_node(str(node.get("name") or ""), listed.get("matchedText"), node):
             stats["placements_stale_name"] += 1
             listed = None
         if listed and classify_source_url(str(listed.get("url") or "")) == "official_site":
@@ -905,6 +1023,9 @@ def apply_evidence_to_tree(
             node["placementMethod"] = PLACEMENT_METHOD
             if listed.get("matchedIn") in KNOWN_REGIONS:
                 node["placementMatchedIn"] = str(listed["matchedIn"])
+            if listed.get("matchRule") == MATCH_RULE_COMMITTEE:
+                node["placementMatchRule"] = MATCH_RULE_COMMITTEE
+                stats["placements_folded"] += 1
             stats["placements_evidenced"] += 1
         elif block and block.get("status") == PLACEMENT_NOT_LISTED and str(block.get("parentId") or "") == str(actual_parent or ""):
             # Read and not listed. Recorded so it is auditable; claims nothing.

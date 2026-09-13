@@ -19,6 +19,8 @@ substituted for a source that failed.
 |---|---|---|---|---|
 | `federal_register_agencies.json` | https://www.federalregister.gov/api/v1/agencies.json | 2026-09-08T19:19:15Z | 200 | 693552 |
 | `house_gov_committees.html` | https://www.house.gov/committees | 2026-09-08T19:19:17Z | 200 | 23801 |
+| `house/committees.xlsx` | https://clerk.house.gov/Committees/ExcelCommitteeData | 2026-09-13T22:51:28Z | 200 | 6345 |
+| `house/committees.html` | https://clerk.house.gov/Committees | 2026-09-13T22:51:29Z | 200 | 304488 |
 | `senate/senate_committees_page.html` | https://www.senate.gov/committees/ | 2026-09-08T19:19:19Z | 200 | 57666 |
 | `senate/committee_membership_index.waf_response.html` | https://www.senate.gov/general/committee_membership/ | 2026-09-08T19:19:18Z | 200 | 33637 |
 | `senate/committee_memberships_JSEC.xml` | https://www.senate.gov/general/committee_membership/committee_memberships_JSEC.xml | 2026-09-08T19:20:42Z | 200 | 1566 |
@@ -70,13 +72,26 @@ response: 472 entries, no pagination envelope.
 
 ## 2. House committees
 
-`https://clerk.house.gov/xml/lists/MemberData.xml` and the `https://clerk.house.gov/xml/lists/`
-index could not be fetched: the session's egress proxy refused the CONNECT to
-`clerk.house.gov:443` with 403 ("gateway answered 403 to CONNECT (policy denial or upstream
-failure)"). No byte from the Clerk was received, so nothing can be said here about whether
-MemberData.xml carries committee or subcommittee names. The robots.txt of that host could not
-be read for the same reason (the verifier's policy calls that "no readable robots.txt" and
-fails open; the fetch itself was then refused by the proxy, not by the host).
+`house/committees.xlsx` is the House Clerk's committee data as served by
+`https://clerk.house.gov/Committees/ExcelCommitteeData` on 2026-09-13T22:51:28Z
+(6,345 bytes, sha256 `9029009d…`), fetched by `scripts/fetch_fixture.py` once the
+session's allowlist reached `clerk.house.gov` (the host answered `robots.txt` with 404;
+the policy fails open and records it). It is one worksheet of 136 data rows with the
+columns `Committee Name, Committee Code, Committee Type, Parent Committee, Address,
+City, State, Zip Code, Telephone, Website`: 20 standing committees, one permanent
+select and one select committee, four joint committees, one select subcommittee, and
+109 subcommittees each filed under its parent's code. It is read with the standard
+library alone (`congress.read_xlsx_rows`: an .xlsx is a zip of XML) and matched by
+exactly the rules the Senate's files are; `house/committees.html` is the Clerk's
+`/Committees` page from the same minute, kept as the human-readable counterpart (it
+links every subcommittee by code but carries the names only in the spreadsheet).
+
+The earlier attempt is still recorded: on 2026-09-08 `https://clerk.house.gov/xml/lists/MemberData.xml`
+and the `https://clerk.house.gov/xml/lists/` index could not be fetched because the
+session's egress proxy refused the CONNECT to `clerk.house.gov:443` with 403 ("gateway
+answered 403 to CONNECT (policy denial or upstream failure)"). Re-fetched on 2026-09-13,
+MemberData.xml (556,936 bytes) carries members' committee assignments by code
+(`<committee comcode="II00" rank="22"/>`) and no committee names; it is not committed.
 
 `house_gov_committees.html` is `https://www.house.gov/committees` as served (the second page the
 task named). It links the 20 standing committees, the Permanent Select Committee on

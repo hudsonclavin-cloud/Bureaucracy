@@ -245,6 +245,34 @@ Five statuses in `evidence.json`, and only the first two are applied:
   ("Individual Senator Offices (100)", 44 of them) or a name too generic to
   distinguish anything ("Energy", "Defense", 16). Never fetched.
 
+**Committees, with the graph's type words set aside (since 2026-09-13).**
+The graph names every committee with a type word in front — "House
+Committee on Armed Services", "Subcommittee on Livestock, Dairy &
+Poultry" — and the chambers' sites label the same bodies without it. Label
+equality refused 38 of the 78 `not_found` records for that prefix and
+nothing else. `committee_core_key` folds a leading chamber word, one or two
+"…Committee on" prefixes and a trailing "Committee"/"Subcommittee" on
+*both* sides, and the fold is granted only by the node's type
+(`COMMITTEE_TYPES`: committee, subcommittee — so "Office of Science" can
+never match "Science") and only when two or more tokens remain
+("Subcommittee on Readiness" is not confirmed by the word "Readiness";
+"Senate Committee on Select Committee on Ethics" folds to one token and
+stays unconfirmed). Equality is tried first on every fragment, so a page
+carrying the full name is never recorded as folded; a folded match carries
+`matchRule: committee_scaffolding_folded` in the record and the exporter
+publishes `verificationMatchRule` with `verificationMatchedText` — the
+label as the page prints it — and `placementMatchRule` beside
+`placementMatchedText`, so the panel says "as 'Livestock, Dairy, and
+Poultry' (the graph's 'Committee on' / 'Subcommittee on' prefix set
+aside)" and never the plain claim. The rename guard
+(`evidence_names_this_node`) takes the node, not just its name: a committee
+re-typed as an office loses everything it earned as a committee. The gate
+refuses the rule on any other type, without the label, under a method that
+read no page, or with a label whose core is not the name's, and mirrors the
+fold stdlib-only (`tests/test_committee_fold.py` pins the two together).
+First run: 53 confirmed and 48 placed by the fold; `not_found` 78 → 46,
+confirmed records 182 → 235, nothing previously confirmed changed.
+
 **Placement — evidence for the edge, not the node.** A hierarchy is the
 site's central assertion, and until 2026-09-06 nothing had checked a single
 parent→child edge. The verifier's placement pass takes every organisation
@@ -351,9 +379,27 @@ structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
 Committee on Ethics", "Committee on Judiciary") onto the Senate's names
 and nothing else. First run: all 20 curated Senate committees listed, 43
 subcommittees listed and placed, 27 curated names the Senate no longer
-carries. The House Clerk's list could not be fetched from the pipeline's
-network (proxy refusal, recorded in the fixtures README); house.gov lists
-committees only.
+carries. **The House Clerk's list landed on 2026-09-13**, once the
+allowlist reached clerk.house.gov (the 2026-09-08 proxy refusal stays
+recorded in the fixtures README): `Committees/ExcelCommitteeData` is one
+spreadsheet of every committee and subcommittee with its code, type,
+parent code and website, committed verbatim at
+`tests/fixtures/directories/house/committees.xlsx`, read with the standard
+library alone (`congress.read_xlsx_rows`: an .xlsx is a zip of XML) and
+matched by exactly the Senate's rules through the shared
+`match_committee_list` (`match_senate` and `match_house` are one function
+with a source, an id prefix and a list label). Its methods are
+`listed_in_house_clerk_committee_list` /
+`listed_under_committee_in_house_clerk_committee_list`, its negative is the
+same `not_in_official_list` with `verificationFailureSource.source:
+house_clerk_committee_list`, and the gate accepts that negative only with
+a clerk.house.gov URL. First run: 27 committees in the list, 18 matched
+(the joint committees and the Ethics Committee have no curated node;
+"Education and Workforce", "Oversight and Government Reform" and the
+Strategic Competition select committee are spelled differently from the
+curated names and are reported, never fuzzy-matched); 68 subcommittees
+listed and placed; 25 curated House names the Clerk does not carry; 30
+Clerk names the graph lacks, all in CURATION.md §5.7.
 OPM's data landed on 2026-09-08 (`tests/fixtures/opm/`, README there):
 FedScope civilian employment by agency and sub-agency for March 2025 and
 September 2024 — the official counts the cost cascade's headcount weights

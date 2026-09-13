@@ -12,6 +12,12 @@
       "dir": "tests/fixtures/directories/senate",
       "files": 24,
       "fetched_at": "2026-09-08T19:21:13Z"
+    },
+    {
+      "kind": "house_clerk_committee_list",
+      "file": "tests/fixtures/directories/house/committees.xlsx",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "fetched_at": "2026-09-13T22:51:28Z"
     }
   ],
   "report": {
@@ -363,6 +369,292 @@
       {
         "committee": "Committee on the Judiciary",
         "subcommittee": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights"
+      }
+    ],
+    "placements_disagree": []
+  },
+  "house_report": {
+    "source": "house_clerk_committee_list",
+    "committees_in_list": 27,
+    "committees_matched": 18,
+    "committees_not_in_graph": [
+      "Committee on Education and Workforce",
+      "Committee on Ethics",
+      "Committee on Oversight and Government Reform",
+      "Joint Committee on the Library",
+      "Joint Committee on Printing",
+      "Joint Committee on Taxation",
+      "Joint Economic Committee",
+      "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+      "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+    ],
+    "graph_committees_not_in_list": [
+      {
+        "id": "leg-house-cmte-education-the-workforce",
+        "name": "House Committee on Education & the Workforce"
+      },
+      {
+        "id": "leg-house-cmte-intelligence",
+        "name": "House Committee on Intelligence"
+      },
+      {
+        "id": "leg-house-cmte-oversight-accountability",
+        "name": "House Committee on Oversight & Accountability"
+      },
+      {
+        "id": "leg-house-cmte-select-committee-on-the-chinese-communist-party",
+        "name": "House Committee on Select Committee on the Chinese Communist Party"
+      }
+    ],
+    "ambiguous": [],
+    "subcommittees_matched": 68,
+    "subcommittees_not_in_list": [
+      {
+        "id": "leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture",
+        "name": "Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture",
+        "committee": "Committee on Agriculture"
+      },
+      {
+        "id": "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture",
+        "name": "Subcommittee on Nutrition, Foreign Agriculture & Horticulture",
+        "committee": "Committee on Agriculture"
+      },
+      {
+        "id": "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
+        "name": "Subcommittee on Agriculture, Rural Development, FDA & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-house-cmte-appropriations-sub-energy-water-development",
+        "name": "Subcommittee on Energy & Water Development",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies",
+        "name": "Subcommittee on Labor, HHS & Education & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs",
+        "name": "Subcommittee on State, Foreign Operations & Related Programs",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies",
+        "name": "Subcommittee on Transportation, HUD & Related Agencies",
+        "committee": "Committee on Appropriations"
+      },
+      {
+        "id": "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation",
+        "name": "Subcommittee on Cyber, Information Technology & Innovation",
+        "committee": "Committee on Armed Services"
+      },
+      {
+        "id": "leg-house-cmte-energy-commerce-sub-energy-climate-grid-security",
+        "name": "Subcommittee on Energy, Climate & Grid Security",
+        "committee": "Committee on Energy and Commerce"
+      },
+      {
+        "id": "leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials",
+        "name": "Subcommittee on Environment, Manufacturing & Critical Materials",
+        "committee": "Committee on Energy and Commerce"
+      },
+      {
+        "id": "leg-house-cmte-energy-commerce-sub-innovation-data-commerce",
+        "name": "Subcommittee on Innovation, Data & Commerce",
+        "committee": "Committee on Energy and Commerce"
+      },
+      {
+        "id": "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy",
+        "name": "Subcommittee on Financial Institutions & Monetary Policy",
+        "committee": "Committee on Financial Services"
+      },
+      {
+        "id": "leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations",
+        "name": "Subcommittee on Global Health, Global Human Rights & International Organizations",
+        "committee": "Committee on Foreign Affairs"
+      },
+      {
+        "id": "leg-house-cmte-foreign-affairs-sub-indo-pacific",
+        "name": "Subcommittee on Indo-Pacific",
+        "committee": "Committee on Foreign Affairs"
+      },
+      {
+        "id": "leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia",
+        "name": "Subcommittee on Middle East, North Africa & Central Asia",
+        "committee": "Committee on Foreign Affairs"
+      },
+      {
+        "id": "leg-house-cmte-foreign-affairs-sub-oversight-accountability",
+        "name": "Subcommittee on Oversight & Accountability",
+        "committee": "Committee on Foreign Affairs"
+      },
+      {
+        "id": "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence",
+        "name": "Subcommittee on Counterterrorism, Law Enforcement & Intelligence",
+        "committee": "Committee on Homeland Security"
+      },
+      {
+        "id": "leg-house-cmte-house-administration-sub-committees",
+        "name": "Subcommittee on Committees",
+        "committee": "Committee on House Administration"
+      },
+      {
+        "id": "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet",
+        "name": "Subcommittee on Courts, Intellectual Property & the Internet",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans",
+        "name": "Subcommittee on Responsiveness & Accountability to Americans",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+        "name": "Subcommittee on Weaponization of the Federal Government",
+        "committee": "Committee on the Judiciary"
+      },
+      {
+        "id": "leg-house-cmte-rules-sub-rules-the-organization-of-the-house",
+        "name": "Subcommittee on Rules & the Organization of the House",
+        "committee": "Committee on Rules"
+      },
+      {
+        "id": "leg-house-cmte-veterans-affairs-sub-benefits",
+        "name": "Subcommittee on Benefits",
+        "committee": "Committee on Veterans' Affairs"
+      },
+      {
+        "id": "leg-house-cmte-ways-means-sub-select-revenue-measures",
+        "name": "Subcommittee on Select Revenue Measures",
+        "committee": "Committee on Ways and Means"
+      },
+      {
+        "id": "leg-house-cmte-ways-means-sub-worker-family-support",
+        "name": "Subcommittee on Worker & Family Support",
+        "committee": "Committee on Ways and Means"
+      }
+    ],
+    "subcommittees_not_in_graph": [
+      {
+        "committee": "Committee on Agriculture",
+        "subcommittee": "Forestry and Horticulture"
+      },
+      {
+        "committee": "Committee on Agriculture",
+        "subcommittee": "Nutrition and Foreign Agriculture"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Energy and Water Development and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Labor, Health and Human Services, Education, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "National Security, Department of State, and Related Programs"
+      },
+      {
+        "committee": "Committee on Appropriations",
+        "subcommittee": "Transportation, Housing and Urban Development, and Related Agencies"
+      },
+      {
+        "committee": "Committee on Armed Services",
+        "subcommittee": "Cyber, Information Technologies, and Innovation"
+      },
+      {
+        "committee": "Committee on Armed Services",
+        "subcommittee": "Intelligence and Special Operations"
+      },
+      {
+        "committee": "Committee on Energy and Commerce",
+        "subcommittee": "Commerce, Manufacturing, and Trade"
+      },
+      {
+        "committee": "Committee on Energy and Commerce",
+        "subcommittee": "Energy"
+      },
+      {
+        "committee": "Committee on Energy and Commerce",
+        "subcommittee": "Environment"
+      },
+      {
+        "committee": "Committee on Financial Services",
+        "subcommittee": "Financial Institutions"
+      },
+      {
+        "committee": "Committee on Foreign Affairs",
+        "subcommittee": "East Asia and Pacific"
+      },
+      {
+        "committee": "Committee on Foreign Affairs",
+        "subcommittee": "Europe"
+      },
+      {
+        "committee": "Committee on Foreign Affairs",
+        "subcommittee": "Middle East and North Africa"
+      },
+      {
+        "committee": "Committee on Foreign Affairs",
+        "subcommittee": "Oversight and Intelligence"
+      },
+      {
+        "committee": "Committee on Foreign Affairs",
+        "subcommittee": "South and Central Asia"
+      },
+      {
+        "committee": "Committee on Homeland Security",
+        "subcommittee": "Counterterrorism and Intelligence"
+      },
+      {
+        "committee": "Committee on House Administration",
+        "subcommittee": "Modernization and Innovation"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Courts, Intellectual Property, Artificial Intelligence, and the Internet"
+      },
+      {
+        "committee": "Committee on the Judiciary",
+        "subcommittee": "Oversight"
+      },
+      {
+        "committee": "Committee on Rules",
+        "subcommittee": "Rules and Organization of the House"
+      },
+      {
+        "committee": "Committee on Ways and Means",
+        "subcommittee": "Work and Welfare"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "Central Intelligence Agency"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "Defense Intelligence and Overhead Architecture"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "National Intelligence Enterprise"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "National Security Agency and Cyber"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "Open Source Intelligence"
+      },
+      {
+        "committee": "Permanent Select Committee on Intelligence",
+        "subcommittee": "Oversight and Investigations"
       }
     ],
     "placements_disagree": []
@@ -3372,6 +3664,1665 @@
       "code": "SSVA00",
       "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSVA.xml",
       "checkedAt": "2026-09-08T19:21:13Z"
+    },
+    "leg-house-cmte-agriculture": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Agriculture",
+      "code": "AG00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://agriculture.house.gov"
+    },
+    "leg-house-cmte-agriculture-sub-commodity-markets-digital-assets-rural-development": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Commodity Markets, Digital Assets, and Rural Development",
+      "code": "AG22",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Agriculture",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-agriculture",
+        "parentListedName": "Committee on Agriculture"
+      }
+    },
+    "leg-house-cmte-agriculture-sub-conservation-research-biotechnology": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Conservation, Research, and Biotechnology",
+      "code": "AG14",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Agriculture",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-agriculture",
+        "parentListedName": "Committee on Agriculture"
+      }
+    },
+    "leg-house-cmte-agriculture-sub-general-farm-commodities-risk-management-credit": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "General Farm Commodities, Risk Management, and Credit",
+      "code": "AG16",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Agriculture",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-agriculture",
+        "parentListedName": "Committee on Agriculture"
+      }
+    },
+    "leg-house-cmte-agriculture-sub-livestock-dairy-poultry": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Livestock, Dairy, and Poultry",
+      "code": "AG29",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Agriculture",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-agriculture",
+        "parentListedName": "Committee on Agriculture"
+      }
+    },
+    "leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Commodity Markets, Digital Assets, and Rural Development",
+        "Conservation, Research, and Biotechnology",
+        "Forestry and Horticulture",
+        "General Farm Commodities, Risk Management, and Credit",
+        "Livestock, Dairy, and Poultry",
+        "Nutrition and Foreign Agriculture"
+      ]
+    },
+    "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Agriculture",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Commodity Markets, Digital Assets, and Rural Development",
+        "Conservation, Research, and Biotechnology",
+        "Forestry and Horticulture",
+        "General Farm Commodities, Risk Management, and Credit",
+        "Livestock, Dairy, and Poultry",
+        "Nutrition and Foreign Agriculture"
+      ]
+    },
+    "leg-house-cmte-appropriations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Appropriations",
+      "code": "AP00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://appropriations.house.gov"
+    },
+    "leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Commerce, Justice, Science, and Related Agencies",
+      "code": "AP19",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-defense": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Defense",
+      "code": "AP02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-financial-services-general-government": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Financial Services and General Government",
+      "code": "AP23",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-homeland-security": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Homeland Security",
+      "code": "AP15",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-interior-environment-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Interior, Environment, and Related Agencies",
+      "code": "AP06",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-legislative-branch": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Legislative Branch",
+      "code": "AP24",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Military Construction, Veterans Affairs, and Related Agencies",
+      "code": "AP18",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Appropriations",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-appropriations",
+        "parentListedName": "Committee on Appropriations"
+      }
+    },
+    "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Commerce, Justice, Science, and Related Agencies",
+        "Defense",
+        "Energy and Water Development and Related Agencies",
+        "Financial Services and General Government",
+        "Homeland Security",
+        "Interior, Environment, and Related Agencies",
+        "Labor, Health and Human Services, Education, and Related Agencies",
+        "Legislative Branch",
+        "Military Construction, Veterans Affairs, and Related Agencies",
+        "National Security, Department of State, and Related Programs",
+        "Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-house-cmte-appropriations-sub-energy-water-development": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Commerce, Justice, Science, and Related Agencies",
+        "Defense",
+        "Energy and Water Development and Related Agencies",
+        "Financial Services and General Government",
+        "Homeland Security",
+        "Interior, Environment, and Related Agencies",
+        "Labor, Health and Human Services, Education, and Related Agencies",
+        "Legislative Branch",
+        "Military Construction, Veterans Affairs, and Related Agencies",
+        "National Security, Department of State, and Related Programs",
+        "Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Commerce, Justice, Science, and Related Agencies",
+        "Defense",
+        "Energy and Water Development and Related Agencies",
+        "Financial Services and General Government",
+        "Homeland Security",
+        "Interior, Environment, and Related Agencies",
+        "Labor, Health and Human Services, Education, and Related Agencies",
+        "Legislative Branch",
+        "Military Construction, Veterans Affairs, and Related Agencies",
+        "National Security, Department of State, and Related Programs",
+        "Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Commerce, Justice, Science, and Related Agencies",
+        "Defense",
+        "Energy and Water Development and Related Agencies",
+        "Financial Services and General Government",
+        "Homeland Security",
+        "Interior, Environment, and Related Agencies",
+        "Labor, Health and Human Services, Education, and Related Agencies",
+        "Legislative Branch",
+        "Military Construction, Veterans Affairs, and Related Agencies",
+        "National Security, Department of State, and Related Programs",
+        "Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Appropriations",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+        "Commerce, Justice, Science, and Related Agencies",
+        "Defense",
+        "Energy and Water Development and Related Agencies",
+        "Financial Services and General Government",
+        "Homeland Security",
+        "Interior, Environment, and Related Agencies",
+        "Labor, Health and Human Services, Education, and Related Agencies",
+        "Legislative Branch",
+        "Military Construction, Veterans Affairs, and Related Agencies",
+        "National Security, Department of State, and Related Programs",
+        "Transportation, Housing and Urban Development, and Related Agencies"
+      ]
+    },
+    "leg-house-cmte-armed-services": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Armed Services",
+      "code": "AS00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://armedservices.house.gov"
+    },
+    "leg-house-cmte-armed-services-sub-military-personnel": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Military Personnel",
+      "code": "AS02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-house-cmte-armed-services-sub-readiness": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Readiness",
+      "code": "AS03",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-house-cmte-armed-services-sub-seapower-projection-forces": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Seapower and Projection Forces",
+      "code": "AS28",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-house-cmte-armed-services-sub-strategic-forces": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Strategic Forces",
+      "code": "AS29",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-house-cmte-armed-services-sub-tactical-air-land-forces": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Tactical Air and Land Forces",
+      "code": "AS25",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Armed Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-armed-services",
+        "parentListedName": "Committee on Armed Services"
+      }
+    },
+    "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Armed Services",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Cyber, Information Technologies, and Innovation",
+        "Intelligence and Special Operations",
+        "Military Personnel",
+        "Readiness",
+        "Seapower and Projection Forces",
+        "Strategic Forces",
+        "Tactical Air and Land Forces"
+      ]
+    },
+    "leg-house-cmte-budget": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on the Budget",
+      "code": "BU00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://budget.house.gov"
+    },
+    "leg-house-cmte-energy-commerce": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Energy and Commerce",
+      "code": "IF00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://energycommerce.house.gov"
+    },
+    "leg-house-cmte-energy-commerce-sub-communications-technology": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Communications and Technology",
+      "code": "IF16",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Energy and Commerce",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-energy-commerce",
+        "parentListedName": "Committee on Energy and Commerce"
+      }
+    },
+    "leg-house-cmte-energy-commerce-sub-health": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Health",
+      "code": "IF14",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Energy and Commerce",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-energy-commerce",
+        "parentListedName": "Committee on Energy and Commerce"
+      }
+    },
+    "leg-house-cmte-energy-commerce-sub-oversight-investigations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight and Investigations",
+      "code": "IF02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Energy and Commerce",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-energy-commerce",
+        "parentListedName": "Committee on Energy and Commerce"
+      }
+    },
+    "leg-house-cmte-energy-commerce-sub-energy-climate-grid-security": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Energy and Commerce",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Commerce, Manufacturing, and Trade",
+        "Communications and Technology",
+        "Energy",
+        "Environment",
+        "Health",
+        "Oversight and Investigations"
+      ]
+    },
+    "leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Energy and Commerce",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Commerce, Manufacturing, and Trade",
+        "Communications and Technology",
+        "Energy",
+        "Environment",
+        "Health",
+        "Oversight and Investigations"
+      ]
+    },
+    "leg-house-cmte-energy-commerce-sub-innovation-data-commerce": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Energy and Commerce",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Commerce, Manufacturing, and Trade",
+        "Communications and Technology",
+        "Energy",
+        "Environment",
+        "Health",
+        "Oversight and Investigations"
+      ]
+    },
+    "leg-house-cmte-financial-services": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Financial Services",
+      "code": "BA00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://financialservices.house.gov"
+    },
+    "leg-house-cmte-financial-services-sub-capital-markets": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Capital Markets",
+      "code": "BA16",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Financial Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-financial-services",
+        "parentListedName": "Committee on Financial Services"
+      }
+    },
+    "leg-house-cmte-financial-services-sub-digital-assets-financial-technology-artificial-intelligence": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Digital Assets, Financial Technology, and Artificial Intelligence",
+      "code": "BA21",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Financial Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-financial-services",
+        "parentListedName": "Committee on Financial Services"
+      }
+    },
+    "leg-house-cmte-financial-services-sub-housing-insurance": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Housing and Insurance",
+      "code": "BA04",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Financial Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-financial-services",
+        "parentListedName": "Committee on Financial Services"
+      }
+    },
+    "leg-house-cmte-financial-services-sub-national-security-illicit-finance-international-financial-institutions": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "National Security, Illicit Finance, and International Financial Institutions",
+      "code": "BA10",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Financial Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-financial-services",
+        "parentListedName": "Committee on Financial Services"
+      }
+    },
+    "leg-house-cmte-financial-services-sub-oversight-investigations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight and Investigations",
+      "code": "BA09",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Financial Services",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-financial-services",
+        "parentListedName": "Committee on Financial Services"
+      }
+    },
+    "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Financial Services",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Capital Markets",
+        "Digital Assets, Financial Technology, and Artificial Intelligence",
+        "Financial Institutions",
+        "Housing and Insurance",
+        "National Security, Illicit Finance, and International Financial Institutions",
+        "Oversight and Investigations"
+      ]
+    },
+    "leg-house-cmte-foreign-affairs": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Foreign Affairs",
+      "code": "FA00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://foreignaffairs.house.gov"
+    },
+    "leg-house-cmte-foreign-affairs-sub-africa": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Africa",
+      "code": "FA16",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Foreign Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-foreign-affairs",
+        "parentListedName": "Committee on Foreign Affairs"
+      }
+    },
+    "leg-house-cmte-foreign-affairs-sub-the-western-hemisphere": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Western Hemisphere",
+      "code": "FA07",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Foreign Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-foreign-affairs",
+        "parentListedName": "Committee on Foreign Affairs"
+      }
+    },
+    "leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Foreign Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Africa",
+        "East Asia and Pacific",
+        "Europe",
+        "Middle East and North Africa",
+        "Oversight and Intelligence",
+        "South and Central Asia",
+        "Western Hemisphere"
+      ]
+    },
+    "leg-house-cmte-foreign-affairs-sub-indo-pacific": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Foreign Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Africa",
+        "East Asia and Pacific",
+        "Europe",
+        "Middle East and North Africa",
+        "Oversight and Intelligence",
+        "South and Central Asia",
+        "Western Hemisphere"
+      ]
+    },
+    "leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Foreign Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Africa",
+        "East Asia and Pacific",
+        "Europe",
+        "Middle East and North Africa",
+        "Oversight and Intelligence",
+        "South and Central Asia",
+        "Western Hemisphere"
+      ]
+    },
+    "leg-house-cmte-foreign-affairs-sub-oversight-accountability": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Foreign Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Africa",
+        "East Asia and Pacific",
+        "Europe",
+        "Middle East and North Africa",
+        "Oversight and Intelligence",
+        "South and Central Asia",
+        "Western Hemisphere"
+      ]
+    },
+    "leg-house-cmte-homeland-security": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Homeland Security",
+      "code": "HM00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://homeland.house.gov"
+    },
+    "leg-house-cmte-homeland-security-sub-border-security-enforcement": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Border Security and Enforcement",
+      "code": "HM11",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Homeland Security",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-homeland-security",
+        "parentListedName": "Committee on Homeland Security"
+      }
+    },
+    "leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Cybersecurity and Infrastructure Protection",
+      "code": "HM08",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Homeland Security",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-homeland-security",
+        "parentListedName": "Committee on Homeland Security"
+      }
+    },
+    "leg-house-cmte-homeland-security-sub-emergency-management-technology": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Emergency Management and Technology",
+      "code": "HM12",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Homeland Security",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-homeland-security",
+        "parentListedName": "Committee on Homeland Security"
+      }
+    },
+    "leg-house-cmte-homeland-security-sub-oversight-investigations-accountability": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight, Investigations, and Accountability",
+      "code": "HM09",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Homeland Security",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-homeland-security",
+        "parentListedName": "Committee on Homeland Security"
+      }
+    },
+    "leg-house-cmte-homeland-security-sub-transportation-maritime-security": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Transportation and Maritime Security",
+      "code": "HM07",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Homeland Security",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-homeland-security",
+        "parentListedName": "Committee on Homeland Security"
+      }
+    },
+    "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Homeland Security",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Border Security and Enforcement",
+        "Counterterrorism and Intelligence",
+        "Cybersecurity and Infrastructure Protection",
+        "Emergency Management and Technology",
+        "Oversight, Investigations, and Accountability",
+        "Transportation and Maritime Security"
+      ]
+    },
+    "leg-house-cmte-house-administration": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on House Administration",
+      "code": "HA00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://cha.house.gov"
+    },
+    "leg-house-cmte-house-administration-sub-elections": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Elections",
+      "code": "HA08",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on House Administration",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-house-administration",
+        "parentListedName": "Committee on House Administration"
+      }
+    },
+    "leg-house-cmte-house-administration-sub-committees": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on House Administration",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Elections",
+        "Modernization and Innovation"
+      ]
+    },
+    "leg-house-cmte-judiciary": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on the Judiciary",
+      "code": "JU00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://judiciary.house.gov"
+    },
+    "leg-house-cmte-judiciary-sub-administrative-state-regulatory-reform-antitrust": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "The Administrative State, Regulatory Reform, and Antitrust",
+      "code": "JU05",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-house-cmte-judiciary-sub-constitution-limited-government": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "The Constitution and Limited Government",
+      "code": "JU10",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Crime and Federal Government Surveillance",
+      "code": "JU08",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-house-cmte-judiciary-sub-immigration-integrity-security-enforcement": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Immigration Integrity, Security, and Enforcement",
+      "code": "JU01",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
+    "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "The Administrative State, Regulatory Reform, and Antitrust",
+        "The Constitution and Limited Government",
+        "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "Crime and Federal Government Surveillance",
+        "Immigration Integrity, Security, and Enforcement",
+        "Oversight"
+      ]
+    },
+    "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "The Administrative State, Regulatory Reform, and Antitrust",
+        "The Constitution and Limited Government",
+        "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "Crime and Federal Government Surveillance",
+        "Immigration Integrity, Security, and Enforcement",
+        "Oversight"
+      ]
+    },
+    "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on the Judiciary",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "The Administrative State, Regulatory Reform, and Antitrust",
+        "The Constitution and Limited Government",
+        "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+        "Crime and Federal Government Surveillance",
+        "Immigration Integrity, Security, and Enforcement",
+        "Oversight"
+      ]
+    },
+    "leg-house-cmte-natural-resources": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Natural Resources",
+      "code": "II00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://naturalresources.house.gov"
+    },
+    "leg-house-cmte-natural-resources-sub-energy-mineral-resources": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Energy and Mineral Resources",
+      "code": "II06",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-natural-resources",
+        "parentListedName": "Committee on Natural Resources"
+      }
+    },
+    "leg-house-cmte-natural-resources-sub-federal-lands": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Federal Lands",
+      "code": "II10",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-natural-resources",
+        "parentListedName": "Committee on Natural Resources"
+      }
+    },
+    "leg-house-cmte-natural-resources-sub-indian-insular-affairs": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Indian and Insular Affairs",
+      "code": "II24",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-natural-resources",
+        "parentListedName": "Committee on Natural Resources"
+      }
+    },
+    "leg-house-cmte-natural-resources-sub-oversight-investigations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight and Investigations",
+      "code": "II15",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-natural-resources",
+        "parentListedName": "Committee on Natural Resources"
+      }
+    },
+    "leg-house-cmte-natural-resources-sub-water-wildlife-fisheries": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Water, Wildlife and Fisheries",
+      "code": "II13",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Natural Resources",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-natural-resources",
+        "parentListedName": "Committee on Natural Resources"
+      }
+    },
+    "leg-house-cmte-rules": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Rules",
+      "code": "RU00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://rules.house.gov"
+    },
+    "leg-house-cmte-rules-sub-legislative-budget-process": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Legislative and Budget Process",
+      "code": "RU02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Rules",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-rules",
+        "parentListedName": "Committee on Rules"
+      }
+    },
+    "leg-house-cmte-rules-sub-rules-the-organization-of-the-house": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Rules",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Legislative and Budget Process",
+        "Rules and Organization of the House"
+      ]
+    },
+    "leg-house-cmte-science-space-technology": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Science, Space, and Technology",
+      "code": "SY00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://science.house.gov"
+    },
+    "leg-house-cmte-science-space-technology-sub-energy": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Energy",
+      "code": "SY20",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-science-space-technology",
+        "parentListedName": "Committee on Science, Space, and Technology"
+      }
+    },
+    "leg-house-cmte-science-space-technology-sub-environment": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Environment",
+      "code": "SY18",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-science-space-technology",
+        "parentListedName": "Committee on Science, Space, and Technology"
+      }
+    },
+    "leg-house-cmte-science-space-technology-sub-investigations-oversight": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Investigations and Oversight",
+      "code": "SY21",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-science-space-technology",
+        "parentListedName": "Committee on Science, Space, and Technology"
+      }
+    },
+    "leg-house-cmte-science-space-technology-sub-research-technology": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Research and Technology",
+      "code": "SY15",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-science-space-technology",
+        "parentListedName": "Committee on Science, Space, and Technology"
+      }
+    },
+    "leg-house-cmte-science-space-technology-sub-space-aeronautics": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Space and Aeronautics",
+      "code": "SY16",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Science, Space, and Technology",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-science-space-technology",
+        "parentListedName": "Committee on Science, Space, and Technology"
+      }
+    },
+    "leg-house-cmte-small-business": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Small Business",
+      "code": "SM00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://smallbusiness.house.gov"
+    },
+    "leg-house-cmte-small-business-sub-contracting-infrastructure": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Contracting and Infrastructure",
+      "code": "SM23",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Small Business",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-small-business",
+        "parentListedName": "Committee on Small Business"
+      }
+    },
+    "leg-house-cmte-small-business-sub-economic-growth-tax-capital-access": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Economic Growth, Tax, and Capital Access",
+      "code": "SM27",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Small Business",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-small-business",
+        "parentListedName": "Committee on Small Business"
+      }
+    },
+    "leg-house-cmte-small-business-sub-innovation-entrepreneurship-workforce-development": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Innovation, Entrepreneurship, and Workforce Development",
+      "code": "SM22",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Small Business",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-small-business",
+        "parentListedName": "Committee on Small Business"
+      }
+    },
+    "leg-house-cmte-small-business-sub-oversight-investigations-regulations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight, Investigations, and Regulations",
+      "code": "SM24",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Small Business",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-small-business",
+        "parentListedName": "Committee on Small Business"
+      }
+    },
+    "leg-house-cmte-small-business-sub-rural-development-energy-supply-chains": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Rural Development, Energy, and Supply Chains",
+      "code": "SM21",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Small Business",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-small-business",
+        "parentListedName": "Committee on Small Business"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Transportation and Infrastructure",
+      "code": "PW00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://transportation.house.gov"
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-aviation": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Aviation",
+      "code": "PW05",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-coast-guard-maritime-transportation": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Coast Guard and Maritime Transportation",
+      "code": "PW07",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-economic-development-public-buildings-emergency-management": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Economic Development, Public Buildings, and Emergency Management",
+      "code": "PW13",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-highways-transit": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Highways and Transit",
+      "code": "PW12",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-railroads-pipelines-hazardous-materials": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Railroads, Pipelines, and Hazardous Materials",
+      "code": "PW14",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-transportation-infrastructure-sub-water-resources-environment": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Water Resources and Environment",
+      "code": "PW02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Transportation and Infrastructure",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-transportation-infrastructure",
+        "parentListedName": "Committee on Transportation and Infrastructure"
+      }
+    },
+    "leg-house-cmte-veterans-affairs": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Veterans' Affairs",
+      "code": "VR00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://veterans.house.gov"
+    },
+    "leg-house-cmte-veterans-affairs-sub-disability-assistance-memorial-affairs": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Disability Assistance and Memorial Affairs",
+      "code": "VR09",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Veterans' Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-veterans-affairs",
+        "parentListedName": "Committee on Veterans' Affairs"
+      }
+    },
+    "leg-house-cmte-veterans-affairs-sub-economic-opportunity": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Economic Opportunity",
+      "code": "VR10",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Veterans' Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-veterans-affairs",
+        "parentListedName": "Committee on Veterans' Affairs"
+      }
+    },
+    "leg-house-cmte-veterans-affairs-sub-health": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Health",
+      "code": "VR03",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Veterans' Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-veterans-affairs",
+        "parentListedName": "Committee on Veterans' Affairs"
+      }
+    },
+    "leg-house-cmte-veterans-affairs-sub-oversight-investigations": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight and Investigations",
+      "code": "VR08",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Veterans' Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-veterans-affairs",
+        "parentListedName": "Committee on Veterans' Affairs"
+      }
+    },
+    "leg-house-cmte-veterans-affairs-sub-technology-modernization": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Technology Modernization",
+      "code": "VR11",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Veterans' Affairs",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-veterans-affairs",
+        "parentListedName": "Committee on Veterans' Affairs"
+      }
+    },
+    "leg-house-cmte-veterans-affairs-sub-benefits": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Veterans' Affairs",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Disability Assistance and Memorial Affairs",
+        "Economic Opportunity",
+        "Health",
+        "Oversight and Investigations",
+        "Technology Modernization"
+      ]
+    },
+    "leg-house-cmte-ways-means": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Committee on Ways and Means",
+      "code": "WM00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://waysandmeans.house.gov"
+    },
+    "leg-house-cmte-ways-means-sub-health": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Health",
+      "code": "WM02",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Ways and Means",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-ways-means",
+        "parentListedName": "Committee on Ways and Means"
+      }
+    },
+    "leg-house-cmte-ways-means-sub-oversight": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Oversight",
+      "code": "WM06",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Ways and Means",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-ways-means",
+        "parentListedName": "Committee on Ways and Means"
+      }
+    },
+    "leg-house-cmte-ways-means-sub-social-security": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Social Security",
+      "code": "WM01",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Ways and Means",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-ways-means",
+        "parentListedName": "Committee on Ways and Means"
+      }
+    },
+    "leg-house-cmte-ways-means-sub-tax": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Tax",
+      "code": "WM05",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Ways and Means",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-ways-means",
+        "parentListedName": "Committee on Ways and Means"
+      }
+    },
+    "leg-house-cmte-ways-means-sub-trade": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Trade",
+      "code": "WM04",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on Ways and Means",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-ways-means",
+        "parentListedName": "Committee on Ways and Means"
+      }
+    },
+    "leg-house-cmte-ways-means-sub-select-revenue-measures": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Ways and Means",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Health",
+        "Oversight",
+        "Social Security",
+        "Tax",
+        "Trade",
+        "Work and Welfare"
+      ]
+    },
+    "leg-house-cmte-ways-means-sub-worker-family-support": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "Committee on Ways and Means",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Health",
+        "Oversight",
+        "Social Security",
+        "Tax",
+        "Trade",
+        "Work and Welfare"
+      ]
+    },
+    "leg-house-cmte-permanent-select-committee-on-intelligence": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Permanent Select Committee on Intelligence",
+      "code": "IG00",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "agencyUrl": "https://intelligence.house.gov"
+    },
+    "leg-house-cmte-education-the-workforce": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "the House Clerk's committee list",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Committee on Agriculture",
+        "Committee on Appropriations",
+        "Committee on Armed Services",
+        "Committee on the Budget",
+        "Committee on Education and Workforce",
+        "Committee on Energy and Commerce",
+        "Committee on Ethics",
+        "Committee on Financial Services",
+        "Committee on Foreign Affairs",
+        "Committee on Homeland Security",
+        "Committee on House Administration",
+        "Committee on the Judiciary",
+        "Committee on Natural Resources",
+        "Committee on Oversight and Government Reform",
+        "Committee on Rules",
+        "Committee on Science, Space, and Technology",
+        "Committee on Small Business",
+        "Committee on Transportation and Infrastructure",
+        "Committee on Veterans' Affairs",
+        "Committee on Ways and Means",
+        "Joint Committee on the Library",
+        "Joint Committee on Printing",
+        "Joint Committee on Taxation",
+        "Joint Economic Committee",
+        "Permanent Select Committee on Intelligence",
+        "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+      ]
+    },
+    "leg-house-cmte-intelligence": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "the House Clerk's committee list",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Committee on Agriculture",
+        "Committee on Appropriations",
+        "Committee on Armed Services",
+        "Committee on the Budget",
+        "Committee on Education and Workforce",
+        "Committee on Energy and Commerce",
+        "Committee on Ethics",
+        "Committee on Financial Services",
+        "Committee on Foreign Affairs",
+        "Committee on Homeland Security",
+        "Committee on House Administration",
+        "Committee on the Judiciary",
+        "Committee on Natural Resources",
+        "Committee on Oversight and Government Reform",
+        "Committee on Rules",
+        "Committee on Science, Space, and Technology",
+        "Committee on Small Business",
+        "Committee on Transportation and Infrastructure",
+        "Committee on Veterans' Affairs",
+        "Committee on Ways and Means",
+        "Joint Committee on the Library",
+        "Joint Committee on Printing",
+        "Joint Committee on Taxation",
+        "Joint Economic Committee",
+        "Permanent Select Committee on Intelligence",
+        "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+      ]
+    },
+    "leg-house-cmte-oversight-accountability": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "the House Clerk's committee list",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Committee on Agriculture",
+        "Committee on Appropriations",
+        "Committee on Armed Services",
+        "Committee on the Budget",
+        "Committee on Education and Workforce",
+        "Committee on Energy and Commerce",
+        "Committee on Ethics",
+        "Committee on Financial Services",
+        "Committee on Foreign Affairs",
+        "Committee on Homeland Security",
+        "Committee on House Administration",
+        "Committee on the Judiciary",
+        "Committee on Natural Resources",
+        "Committee on Oversight and Government Reform",
+        "Committee on Rules",
+        "Committee on Science, Space, and Technology",
+        "Committee on Small Business",
+        "Committee on Transportation and Infrastructure",
+        "Committee on Veterans' Affairs",
+        "Committee on Ways and Means",
+        "Joint Committee on the Library",
+        "Joint Committee on Printing",
+        "Joint Committee on Taxation",
+        "Joint Economic Committee",
+        "Permanent Select Committee on Intelligence",
+        "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+      ]
+    },
+    "leg-house-cmte-select-committee-on-the-chinese-communist-party": {
+      "source": "house_clerk_committee_list",
+      "status": "not_in_list",
+      "listedUnder": "the House Clerk's committee list",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "listedSubcommittees": [
+        "Committee on Agriculture",
+        "Committee on Appropriations",
+        "Committee on Armed Services",
+        "Committee on the Budget",
+        "Committee on Education and Workforce",
+        "Committee on Energy and Commerce",
+        "Committee on Ethics",
+        "Committee on Financial Services",
+        "Committee on Foreign Affairs",
+        "Committee on Homeland Security",
+        "Committee on House Administration",
+        "Committee on the Judiciary",
+        "Committee on Natural Resources",
+        "Committee on Oversight and Government Reform",
+        "Committee on Rules",
+        "Committee on Science, Space, and Technology",
+        "Committee on Small Business",
+        "Committee on Transportation and Infrastructure",
+        "Committee on Veterans' Affairs",
+        "Committee on Ways and Means",
+        "Joint Committee on the Library",
+        "Joint Committee on Printing",
+        "Joint Committee on Taxation",
+        "Joint Economic Committee",
+        "Permanent Select Committee on Intelligence",
+        "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+        "Select Subcommittee to Investigate the Remaining Questions Surrounding January 6, 2021"
+      ]
     }
   }
 }

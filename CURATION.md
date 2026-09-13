@@ -153,7 +153,9 @@ matched them to the curated organisations by exact canonical name and wrote
 `data/verification/directory_evidence.json`: 229 node records, 139 from the
 directory and 90 from the Senate list. Everything below is read off those
 files and `output/graph.json`. Nothing was fetched for this section, and
-nothing in it has been applied to the base graph (§5.6).
+nothing in it has been applied to the base graph (§5.6). A third list, the
+House Clerk's, was fetched on 2026-09-13 and is in §5.7; the file now holds
+344 records.
 
 Headline counts, from `directory_evidence.json`:
 
@@ -549,3 +551,70 @@ it; it never renames, moves, adds or removes a node, and it never chooses
 between a list and the curated file. Every change this section suggests is
 the owner's to make by hand, and until it is made the site publishes the
 difference as a difference.
+
+### 5.7 The House Clerk's committee list (fetched 2026-09-13)
+
+`tests/fixtures/directories/house/committees.xlsx` is the Clerk's own
+committee data (`https://clerk.house.gov/Committees/ExcelCommitteeData`,
+2026-09-13T22:51:28Z, 136 rows: name, code, type, parent code, website).
+`scripts/derive_directory_evidence.py` matched it by the Senate's rules
+(§5, `house_report` in `directory_evidence.json`): a leading "House
+Committee on" and "Subcommittee on" are ignored, "&" reads as "and", and
+"House Committee on Permanent Select Committee on Intelligence" folds onto
+"Permanent Select Committee on Intelligence" as the Senate's Ethics artifact
+does. Nothing was fuzzy-matched.
+
+| Figure | Value |
+|---|---|
+| committees in the list / matched to a `leg-house-cmte-*` Committee node | 27 / 18 |
+| list committees with no such node | 9 — the four joint committees (`leg-joint-*`, as §5.2), the Committee on Ethics (no curated node), the Select Subcommittee on January 6 (none), and three spelled differently from the curated name: "Committee on Education and Workforce", "Committee on Oversight and Government Reform", "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party" |
+| graph House committees not in the list | 4 — Education & the Workforce, Oversight & Accountability and the Chinese Communist Party select committee (the three above, read from the other side), and `leg-house-cmte-intelligence` "House Committee on Intelligence", which sits beside `leg-house-cmte-permanent-select-committee-on-intelligence` (the one the list matches): [Likely] a duplicate of it, for the owner to merge |
+| subcommittees: matched and placed / graph names not in the list / list names not in the graph | 68 / 25 / 30 |
+| placement disagreements | 0 |
+
+Each of the 25 publishes as "Checked 13 Sep 2026 against the House Clerk's
+official committee list: it carries no unit of this name under
+'<committee>'" with the committee's full list of names beside it. The last
+column follows §5.1's rule: filled only where the same committee has
+exactly one list name the graph lacks that shares the graph name's
+distinctive words; a lead, never a claim.
+
+| Graph id | Curated name | Committee | Possibly the same body, unverified |
+|---|---|---|---|
+| `leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture` | Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture | Agriculture | — (two list names share "Horticulture") |
+| `leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture` | Subcommittee on Nutrition, Foreign Agriculture & Horticulture | Agriculture | Nutrition and Foreign Agriculture (AG03) |
+| `leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies` | Subcommittee on Agriculture, Rural Development, FDA & Related Agencies | Appropriations | Agriculture, Rural Development, Food and Drug Administration, and Related Agencies (AP01) |
+| `leg-house-cmte-appropriations-sub-energy-water-development` | Subcommittee on Energy & Water Development | Appropriations | Energy and Water Development and Related Agencies (AP10) |
+| `leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies` | Subcommittee on Labor, HHS & Education & Related Agencies | Appropriations | Labor, Health and Human Services, Education, and Related Agencies |
+| `leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs` | Subcommittee on State, Foreign Operations & Related Programs | Appropriations | National Security, Department of State, and Related Programs |
+| `leg-house-cmte-appropriations-sub-transportation-hud-related-agencies` | Subcommittee on Transportation, HUD & Related Agencies | Appropriations | Transportation, Housing and Urban Development, and Related Agencies |
+| `leg-house-cmte-armed-services-sub-cyber-information-technology-innovation` | Subcommittee on Cyber, Information Technology & Innovation | Armed Services | Cyber, Information Technologies, and Innovation |
+| `leg-house-cmte-energy-commerce-sub-energy-climate-grid-security` | Subcommittee on Energy, Climate & Grid Security | Energy and Commerce | Energy |
+| `leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials` | Subcommittee on Environment, Manufacturing & Critical Materials | Energy and Commerce | Environment |
+| `leg-house-cmte-energy-commerce-sub-innovation-data-commerce` | Subcommittee on Innovation, Data & Commerce | Energy and Commerce | Commerce, Manufacturing, and Trade |
+| `leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy` | Subcommittee on Financial Institutions & Monetary Policy | Financial Services | Financial Institutions |
+| `leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations` | Subcommittee on Global Health, Global Human Rights & International Organizations | Foreign Affairs | — |
+| `leg-house-cmte-foreign-affairs-sub-indo-pacific` | Subcommittee on Indo-Pacific | Foreign Affairs | East Asia and Pacific |
+| `leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia` | Subcommittee on Middle East, North Africa & Central Asia | Foreign Affairs | Middle East and North Africa |
+| `leg-house-cmte-foreign-affairs-sub-oversight-accountability` | Subcommittee on Oversight & Accountability | Foreign Affairs | Oversight and Intelligence |
+| `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence` | Subcommittee on Counterterrorism, Law Enforcement & Intelligence | Homeland Security | Counterterrorism and Intelligence |
+| `leg-house-cmte-house-administration-sub-committees` | Subcommittee on Committees | House Administration | — |
+| `leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet` | Subcommittee on Courts, Intellectual Property & the Internet | Judiciary | Courts, Intellectual Property, Artificial Intelligence, and the Internet |
+| `leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans` | Subcommittee on Responsiveness & Accountability to Americans | Judiciary | — |
+| `leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government` | Subcommittee on Weaponization of the Federal Government | Judiciary | — |
+| `leg-house-cmte-rules-sub-rules-the-organization-of-the-house` | Subcommittee on Rules & the Organization of the House | Rules | Rules and Organization of the House |
+| `leg-house-cmte-veterans-affairs-sub-benefits` | Subcommittee on Benefits | Veterans' Affairs | — |
+| `leg-house-cmte-ways-means-sub-select-revenue-measures` | Subcommittee on Select Revenue Measures | Ways and Means | — |
+| `leg-house-cmte-ways-means-sub-worker-family-support` | Subcommittee on Worker & Family Support | Ways and Means | Work and Welfare |
+
+The 30 Clerk names the graph lacks are in `house_report.subcommittees_not_in_graph`;
+beyond the leads above they include the six subcommittees of the Permanent
+Select Committee on Intelligence (Central Intelligence Agency; Defense
+Intelligence and Overhead Architecture; National Intelligence Enterprise;
+National Security Agency and Cyber; Open Source Intelligence; Oversight and
+Investigations), Armed Services' "Intelligence and Special Operations",
+Foreign Affairs' "Europe" and "South and Central Asia", House
+Administration's "Modernization and Innovation", Judiciary's "Oversight" and
+Agriculture's "Forestry and Horticulture" — none of which has a curated
+node. Adding them is the owner's to do; the pipeline reports them and
+publishes nothing about a node that does not exist.

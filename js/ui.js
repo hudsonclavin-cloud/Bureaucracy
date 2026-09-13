@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260911c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260911c";
+import { createGovernmentGraph } from "./graph.js?v=20260913a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260913a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -728,6 +728,7 @@ function renderPlacementLine(data) {
   const directoryPlacement = {
     listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
     listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
+    listed_under_committee_in_house_clerk_committee_list: "the House Clerk's official committee list carries it under its committee here",
   }[String(data.placementMethod || "")];
   if (data.placementVerified === true && directoryPlacement) {
     add(`Placement: ${directoryPlacement}, as "${data.placementMatchedText || ""}" on `);
@@ -749,7 +750,9 @@ function renderPlacementLine(data) {
     // say so — one fetch must not read as two independent checks.
     const sameRead =
       Array.isArray(data.sourceUrls) && data.sourceUrls.includes(data.placementUrl) && data.lastVerified === data.placementVerifiedAt;
-    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"` : "";
+    const foldedNote =
+      data.placementMatchRule === "committee_scaffolding_folded" ? ` (the graph's "Committee on" / "Subcommittee on" prefix set aside)` : "";
+    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"${foldedNote}` : "";
     // A listing in the site-wide navigation (nav, header, footer) holds for
     // every page of the parent's site: real evidence, but not the page's own
     // account of itself, and the panel says which.
@@ -831,10 +834,12 @@ function renderVerificationPanel(data) {
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
+      listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
     };
     const SOURCE_TEXT = {
       federal_register_agency_directory: "the Federal Register's agency directory",
       senate_committee_list: "the Senate's official committee list",
+      house_clerk_committee_list: "the House Clerk's official committee list",
     };
     let checkLine = "Not yet verified";
     const failureSource = data.verificationFailureSource;
@@ -851,7 +856,14 @@ function renderVerificationPanel(data) {
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
-      checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+      // A committee matched with the graph's "Committee on" / "Subcommittee
+      // on" prefix set aside quotes the page's own label, so the reader sees
+      // what the page says and what the graph adds.
+      const folded =
+        data.verificationMatchRule === "committee_scaffolding_folded" && data.verificationMatchedText
+          ? ` as "${data.verificationMatchedText}" (the graph's "Committee on" / "Subcommittee on" prefix set aside)`
+          : "";
+      checkLine = how ? `${how}${where}${folded} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     // A directory listing beside a page claim: a second, weaker claim, said
     // as itself, with the name and the parent exactly as the directory has them.

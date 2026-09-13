@@ -25,7 +25,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from data_pipeline.exporter.build_graph import index_tree, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
-from data_pipeline.verification.congress import load_senate_committees, match_senate  # noqa: E402
+from data_pipeline.verification.congress import load_house_committees, load_senate_committees, match_house, match_senate  # noqa: E402
 from data_pipeline.verification.directories import (  # noqa: E402
     DEFAULT_DIRECTORY_EVIDENCE_PATH,
     FR_DIRECTORY_URL,
@@ -36,6 +36,7 @@ from data_pipeline.verification.directories import (  # noqa: E402
 DEFAULT_BASE_GRAPH = PROJECT_ROOT / "data" / "federal_gov_complete_1.json"
 DEFAULT_FR = PROJECT_ROOT / "tests" / "fixtures" / "directories" / "federal_register_agencies.json"
 DEFAULT_SENATE = PROJECT_ROOT / "tests" / "fixtures" / "directories" / "senate"
+DEFAULT_HOUSE = PROJECT_ROOT / "tests" / "fixtures" / "directories" / "house" / "committees.xlsx"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -43,6 +44,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
     parser.add_argument("--federal-register", type=Path, default=DEFAULT_FR, help="verbatim agencies.json fetch")
     parser.add_argument("--senate-dir", type=Path, default=DEFAULT_SENATE, help="directory of verbatim Senate committee XML + meta files; pass an empty dir to skip")
+    parser.add_argument("--house-xlsx", type=Path, default=DEFAULT_HOUSE, help="the House Clerk's verbatim committee spreadsheet (+ .meta.json); pass a missing path to skip")
     parser.add_argument("--out", type=Path, default=DEFAULT_DIRECTORY_EVIDENCE_PATH)
     parser.add_argument("--dry-run", action="store_true", help="report the matches; write nothing")
     args = parser.parse_args((argv or sys.argv)[1:])
@@ -78,6 +80,20 @@ def main(argv: list[str] | None = None) -> int:
     overlap = set(records) & set(senate_records)
     assert not overlap, f"a node in two directories: {sorted(overlap)[:5]}"
     records = {**records, **senate_records}
+    house = load_house_committees(args.house_xlsx)
+    house_records, house_report = match_house(house, node_map, parent_map)
+    print(f"house clerk list: {house_report['committees_in_list']} committees; matched {house_report['committees_matched']}; "
+          f"subcommittees matched {house_report['subcommittees_matched']}; curated names not in the list {len(house_report['subcommittees_not_in_list'])}; "
+          f"list names not in the graph {len(house_report['subcommittees_not_in_graph'])}; committees not in graph {len(house_report['committees_not_in_graph'])}")
+    for item in house_report["subcommittees_not_in_list"][:80]:
+        print("  not in list:", item)
+    for item in house_report["subcommittees_not_in_graph"][:80]:
+        print("  not in graph:", item)
+    for item in house_report["graph_committees_not_in_list"]:
+        print("  committee not in list:", item)
+    overlap = set(records) & set(house_records)
+    assert not overlap, f"a node in two directories: {sorted(overlap)[:5]}"
+    records = {**records, **house_records}
     if args.dry_run:
         return 0
     store = {
@@ -91,9 +107,12 @@ def main(argv: list[str] | None = None) -> int:
              "url": directory.get("url") or FR_DIRECTORY_URL, "fetched_at": directory.get("fetched_at")},
             {"kind": "senate_committee_list", "dir": str(args.senate_dir.relative_to(PROJECT_ROOT)) if args.senate_dir.is_relative_to(PROJECT_ROOT) else str(args.senate_dir),
              "files": len(senate), "fetched_at": max((c.get("fetched_at") or "" for c in senate), default=None)},
+            {"kind": "house_clerk_committee_list", "file": str(args.house_xlsx.relative_to(PROJECT_ROOT)) if args.house_xlsx.is_relative_to(PROJECT_ROOT) else str(args.house_xlsx),
+             "url": house[0].get("url") if house else None, "fetched_at": house[0].get("fetched_at") if house else None},
         ],
         "report": {k: v for k, v in report.items() if k not in ("unmatched_entries",)} | {"unmatched_sample": report["unmatched_entries"][:60]},
         "senate_report": senate_report,
+        "house_report": house_report,
         "nodes": records,
     }
     write_json_file(args.out, store)

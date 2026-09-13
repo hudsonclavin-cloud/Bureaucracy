@@ -433,6 +433,57 @@ def directory_name_keys(value):
     return keys
 
 
+COMMITTEE_TYPES = {"committee", "subcommittee"}
+MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
+
+
+def is_committee(node):
+    return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
+
+
+def committee_core_key(key):
+    """Mirror of data_pipeline.verification.evidence.committee_core_key, kept
+    stdlib-only here; tests/test_committee_fold.py pins the two together.
+    'house committee on armed services' -> 'armed services'; '' when fewer
+    than two tokens remain."""
+    text = str(key or "").strip()
+    for prefix in ("house ", "senate "):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+    for _ in range(2):
+        for prefix in ("permanent select committee on ", "select committee on ", "special committee on ",
+                       "joint committee on ", "subcommittee on ", "committee on "):
+            if text.startswith(prefix):
+                text = text[len(prefix):]
+                break
+        if text.startswith("the "):
+            text = text[len("the "):]
+    for suffix in (" subcommittee", " committee"):
+        if text.endswith(suffix):
+            text = text[: -len(suffix)]
+            break
+    text = text.strip()
+    return text if len(text.split()) >= 2 else ""
+
+
+def folded_label_names(node, matched_text):
+    """Does the page's label name this committee once the type words are set
+    aside on both sides? Only for a committee-typed node, only with two or
+    more tokens left, and exact after the fold."""
+    import re
+
+    if not is_committee(node):
+        return False
+    core = committee_core_key(canonical_key(node.get("name")))
+    if not core:
+        return False
+    for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", str(matched_text or "")):
+        if committee_core_key(canonical_key(part)) == core:
+            return True
+    return False
+
+
 def canonical_key(value):
     # Same reduction the exporter uses (kept local so the gate stays stdlib-only).
     import re
@@ -731,9 +782,11 @@ def main(argv):
         "name_labelled_on_parent_official_page",
         "listed_in_federal_register_agency_directory",
         "listed_in_senate_committee_list",
+        "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
     }
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
+    COMMITTEE_LIST_URLS = ("https://www.senate.gov/", "https://clerk.house.gov/")
     failure_beside_source, unofficial_official, unknown_method = [], [], []
     # Kept apart from unknown_method deliberately: a pay defect printed under
     # "every verification method is one this pipeline can produce" would be
@@ -746,6 +799,23 @@ def main(argv):
             failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
         if node.get("verificationFailure") and str(node.get("verificationFailure")) not in KNOWN_FAILURES:
             unknown_method.append("{} verificationFailure {!r}".format(label(node), node.get("verificationFailure")))
+        # A confirmation made by setting the committee type words aside says
+        # so, quotes the page, and is granted by the node's kind: the rule on
+        # anything but a committee, or without the label, or with a label
+        # whose core is not the name's, is refused.
+        rule = node.get("verificationMatchRule")
+        if rule is not None:
+            matched_text = node.get("verificationMatchedText")
+            if str(rule) != MATCH_RULE_COMMITTEE:
+                unknown_method.append("{} verificationMatchRule {!r}".format(label(node), rule))
+            elif not is_committee(node):
+                unknown_method.append("{} folds committee scaffolding but is typed {!r}".format(label(node), node.get("type")))
+            elif not str(node.get("verificationMethod") or "").startswith("name_labelled_on_"):
+                unknown_method.append("{} folds committee scaffolding under a method that read no page".format(label(node)))
+            elif not matched_text or not folded_label_names(node, matched_text):
+                unknown_method.append("{} folded label {!r} does not name it".format(label(node), matched_text))
+        elif node.get("verificationMatchedText") is not None:
+            unknown_method.append("{} quotes a folded label without the rule".format(label(node)))
         # A negative must be as auditable as a positive: it names the page or
         # the list it was checked against, and when. The panel prints that URL.
         failure_kind = str(node.get("verificationFailure") or "")
@@ -754,7 +824,7 @@ def main(argv):
             src_url = str(src.get("url") or "")
             src_host = host_of(src_url)
             src_date = str(src.get("checkedAt") or "")
-            if failure_kind == "not_in_official_list" and not src_url.startswith("https://www.senate.gov/"):
+            if failure_kind == "not_in_official_list" and not src_url.startswith(COMMITTEE_LIST_URLS):
                 unknown_method.append("{} claims not_in_official_list without the list's URL".format(label(node)))
             elif failure_kind == "not_found" and not src_host.endswith((".gov", ".mil")):
                 unknown_method.append("{} claims its own page did not name it, without naming the page".format(label(node)))
@@ -867,12 +937,13 @@ def main(argv):
             "name_labelled_on_parent_official_page",
             "listed_under_parent_in_federal_register_agency_directory",
             "listed_under_committee_in_senate_committee_list",
+            "listed_under_committee_in_house_clerk_committee_list",
             "listed_under_organization_in_opm_plum_archive",
         ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
-        if str(node.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list":
+        if str(node.get("placementMethod") or "") in ("listed_under_committee_in_senate_committee_list", "listed_under_committee_in_house_clerk_committee_list"):
             matched = re.sub(r"^subcommittee on (the )?", "", matched)
             name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
         if str(node.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive":
@@ -882,8 +953,19 @@ def main(argv):
             # substring test would refuse 25 of the 91 real matches, so the
             # gate mirrors the module's rule; a test pins the two together.
             name_key = min(position_title_keys(node.get("name"), parent_name_of(node, parent_of, by_id)), key=len, default=name_key)
+        placement_rule = node.get("placementMatchRule")
+        if placement_rule is not None:
+            if str(placement_rule) != MATCH_RULE_COMMITTEE:
+                placement_unbacked.append("{} placementMatchRule {!r}".format(label(node), placement_rule))
+            elif not is_committee(node):
+                placement_unbacked.append("{} folds committee scaffolding for placement but is typed {!r}".format(label(node), node.get("type")))
+            elif str(node.get("placementMethod") or "") != "name_labelled_on_parent_official_page":
+                placement_unbacked.append("{} folds committee scaffolding under a placement method that read no page".format(label(node)))
         if matched and name_key and name_key not in matched and name_key not in directory_name_keys(node.get("placementMatchedText")):
-            placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
+            # The fold is allowed only where the node says it used it, and only
+            # for a committee: a mismatch anywhere else is still a mismatch.
+            if not (placement_rule == MATCH_RULE_COMMITTEE and folded_label_names(node, node.get("placementMatchedText"))):
+                placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
             placement_unbacked.append("{} placementMatchedIn {!r}".format(label(node), node.get("placementMatchedIn")))
         claimed = str(node.get("placementParentId") or "")
@@ -1055,11 +1137,15 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    folded_existence = sum(1 for n in nodes if n.get("verificationMatchRule") == MATCH_RULE_COMMITTEE)
+    folded_placement = sum(1 for n in nodes if n.get("placementMatchRule") == MATCH_RULE_COMMITTEE)
+    print("  committee labels     : {:,} confirmed and {:,} placed with the graph's \"Committee on\"/\"Subcommittee on\" prefix set aside".format(
+        folded_existence, folded_placement))
     org_edges = [n for n in nodes if n is not graph and "position" not in str(n.get("type") or "").lower()]
     placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
     placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
     unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
-    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") != "senate_committee_list")
+    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") not in ("senate_committee_list", "house_clerk_committee_list"))
     directory_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_parent_in_federal_register_agency_directory")
     directory_disagree = sum(1 for n in nodes if isinstance(n.get("placementDirectoryDisagreement"), dict))
     directory_ancestor = sum(1 for n in nodes if isinstance(n.get("placementDirectoryAncestor"), dict))
@@ -1067,7 +1153,11 @@ def main(argv):
         directory_listed, directory_placed, directory_ancestor, directory_disagree))
     senate_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "senate_committee_list")
     senate_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list")
-    senate_missing = sum(1 for n in nodes if str(n.get("verificationFailure") or "") == "not_in_official_list")
+    senate_missing = sum(
+        1 for n in nodes
+        if str(n.get("verificationFailure") or "") == "not_in_official_list"
+        and isinstance(n.get("verificationFailureSource"), dict) and n["verificationFailureSource"].get("source") == "senate_committee_list"
+    )
     official_counts = [n for n in nodes if n.get("employeesOfficial") is not None]
     disagree = sum(
         1 for n in official_counts
@@ -1097,6 +1187,15 @@ def main(argv):
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
         senate_listed, senate_placed, senate_missing))
+    house_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "house_clerk_committee_list")
+    house_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_house_clerk_committee_list")
+    house_missing = sum(
+        1 for n in nodes
+        if str(n.get("verificationFailure") or "") == "not_in_official_list"
+        and isinstance(n.get("verificationFailureSource"), dict) and n["verificationFailureSource"].get("source") == "house_clerk_committee_list"
+    )
+    print("  House Clerk list     : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
+        house_listed, house_placed, house_missing))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
         placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.
