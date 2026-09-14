@@ -456,6 +456,25 @@ try {
     check("the statutory rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(statutoryStats), statutoryStats);
   }
 
+  // A reported rate from the White House Office's statutory personnel report:
+  // a third field again, and the one whose wording must not slip into saying
+  // the post pays this, because the roster is person-level by statute.
+  const withReportedPay = allNodes.find((n) => n.positionReportedPay && typeof n.positionReportedPay.amount === "number" && unique(n));
+  check("some position is priced from the White House Office roster", Boolean(withReportedPay), "none");
+  if (withReportedPay) {
+    await openByName(withReportedPay.name);
+    const reported = await text("#info-reported-pay");
+    check("the reported rate names the amount it prices", new RegExp(withReportedPay.positionReportedPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(reported), reported);
+    check("the panel says it is the listed person's pay, not the post's", /not what the post pays whoever holds it/.test(reported), reported);
+    check("the panel says two people can share a title at different salaries", /share a title at different salaries/.test(reported), reported);
+    check("the panel says a reported rate is not the unit's cost", /not this unit's cost/.test(reported), reported);
+    check("the panel says it is not evidence the post exists", /not evidence that this post exists/.test(reported), reported);
+    check("the report's own quoted row is shown", /The report's own row: "/.test(reported), reported);
+    check("no roster name is rendered", !/\b[A-Z][A-Z.'\-]{1,}, +[A-Z][A-Z.'\-]*\b/.test(reported.replace(withReportedPay.positionReportedPay.reportedTitle || "", "")), reported);
+    const reportedStats = await text("#info-stats");
+    check("the reported rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(reportedStats), reportedStats);
+  }
+
   // The exact-costs-only view: with it on, an apportioned share is not shown
   // as a figure at all, and the panel says why.
   const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6

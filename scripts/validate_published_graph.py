@@ -302,6 +302,171 @@ STATUTORY_PAY_SOURCES = {
     },
 }
 
+# ---------------------------------------------------------------------------
+# The White House Office's statutory annual personnel report — a roster, not a
+# rate schedule, so it gets its own checker rather than reusing the statutory
+# one above. See data_pipeline/verification/whitehouse_pay.py.
+WHITEHOUSE_REPORT_URL = (
+    "https://www.whitehouse.gov/wp-content/uploads/2026/07/"
+    "2026-Annual-Report-to-Congress-on-White-House-Staff.pdf"
+)
+WHITEHOUSE_REPORT_AS_OF = "2026-07-01"
+WHITEHOUSE_REPORT_AS_OF_TEXT = "Wednesday, July 1, 2026"
+WHITEHOUSE_REPORT_STATUSES = ("EMPLOYEE", "DETAILEE")
+WHITEHOUSE_REPORT_PAY_BASIS = "Per Annum"
+WHITEHOUSE_RANK_PREFIXES = (
+    "DEPUTY ASSISTANT TO THE PRESIDENT AND ",
+    "SPECIAL ASSISTANT TO THE PRESIDENT AND ",
+    "ASSISTANT TO THE PRESIDENT AND ",
+)
+
+#: node id -> (the title the report prints, the rate it prints beside it).
+#: Keyed by id and not by amount alone for the reason the Senate leadership
+#: case established: **four** of these five posts are paid the identical
+#: $195,200, so a record moved from one to another would keep a correct
+#: figure, a correct quote and a correct footnote. Only a check tied to the
+#: node's own identity catches that.
+WHITEHOUSE_REPORTED_PAY = {
+    "exec-eop-who-cabinet-secretary": (
+        "ASSISTANT TO THE PRESIDENT AND CABINET SECRETARY", 195_200.00),
+    "exec-eop-who-chief-of-staff": (
+        "ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF", 195_200.00),
+    "exec-eop-who-deputy-chief-of-staff-for-operations": (
+        "ASSISTANT TO THE PRESIDENT AND DEPUTY CHIEF OF STAFF FOR OPERATIONS", 195_200.00),
+    "exec-eop-who-director-of-intergovernmental-affairs": (
+        "DEPUTY ASSISTANT TO THE PRESIDENT AND DIRECTOR OF INTERGOVERNMENTAL AFFAIRS", 155_000.00),
+    "exec-eop-who-press-secretary": (
+        "ASSISTANT TO THE PRESIDENT AND PRESS SECRETARY", 195_200.00),
+}
+
+
+def whitehouse_canonical(text):
+    """The module's `canonical`, mirrored with the standard library alone."""
+    upper = str(text or "").upper().replace("&", " AND ")
+    return " ".join(re.sub(r"[^A-Z0-9 ]+", " ", upper).split())
+
+
+def whitehouse_title_core(title):
+    """The module's `title_core`, mirrored. A leading rank prefix only."""
+    key = whitehouse_canonical(title)
+    for prefix in WHITEHOUSE_RANK_PREFIXES:
+        if key.startswith(prefix):
+            folded = key[len(prefix):].strip()
+            return folded if len(folded.split()) >= 2 else key
+    return key
+
+
+def reported_pay_violations(node, pay, today, label):
+    """Everything that must be true of a reported-pay claim.
+
+    A different shape from `statutory_pay_violations`, and deliberately not
+    folded into it. A statutory rate attaches to the office and survives a
+    change of holder; this is one listed person's pay on one date, so the
+    checks are about the roster row: the figure the report prints for *this*
+    node's title, a status and pay basis the report actually uses, a positive
+    amount, and a title that still folds onto the node's current name.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionReportedPay {!r} is not a record".format(pay))
+        return out
+
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a reported rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one person's reported pay but stands for several posts")
+
+    source = str(pay.get("source") or "")
+    if source != "whitehouse_staff_report":
+        say("prices from source {!r}, which this pipeline does not produce".format(source))
+        return out
+
+    node_id = str(node.get("id") or "")
+    if not node_id.startswith("exec-eop-who-"):
+        say("prices from the White House Office roster but sits outside that office")
+    expected = WHITEHOUSE_REPORTED_PAY.get(node_id)
+    if expected is None:
+        say("prices a node the mirrored report does not list unambiguously")
+        return out
+    expected_title, expected_amount = expected
+
+    reported_title = str(pay.get("reportedTitle") or "")
+    if reported_title != expected_title:
+        say("reports title {!r}; the report prints {!r} for this post".format(reported_title, expected_title))
+    # The fold is what licensed the match in the first place, so the gate
+    # re-derives it rather than trusting that it was applied: a title that no
+    # longer folds onto this node's name is evidence for a different post.
+    if whitehouse_title_core(reported_title) != whitehouse_canonical(node.get("name")):
+        say("reports a title that does not name this node once its rank prefix is set aside")
+
+    amount = pay.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a reported rate of basic pay".format(amount))
+    elif float(amount) <= 0:
+        # Ten rows of the report read $0.00. Zero is never published here.
+        say("publishes {!r}, and a rate of zero is never published as pay".format(amount))
+    elif abs(float(amount) - expected_amount) > 0.005:
+        say("publishes {:,.2f}; the report prints {:,.2f} for {!r}".format(
+            float(amount), expected_amount, expected_title))
+
+    rate_text = str(pay.get("rateText") or "")
+    if rate_text != "${:,.2f}".format(expected_amount):
+        say("prints the rate as {!r}; the report prints {!r}".format(
+            rate_text, "${:,.2f}".format(expected_amount)))
+    quote = str(pay.get("quote") or "")
+    if rate_text and rate_text not in quote:
+        say("quotes text that does not contain the figure it prices")
+    if expected_title and expected_title not in quote:
+        say("quotes text that does not contain the title it prices")
+
+    status = str(pay.get("reportedStatus") or "")
+    if status not in WHITEHOUSE_REPORT_STATUSES:
+        say("reports status {!r}, which the report does not use".format(status))
+    basis = str(pay.get("payBasis") or "")
+    if basis != WHITEHOUSE_REPORT_PAY_BASIS:
+        say("reports pay basis {!r}, not {!r}".format(basis, WHITEHOUSE_REPORT_PAY_BASIS))
+
+    if str(pay.get("asOf") or "") != WHITEHOUSE_REPORT_AS_OF_TEXT:
+        say("dates the roster {!r}, not {!r}".format(pay.get("asOf"), WHITEHOUSE_REPORT_AS_OF_TEXT))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a reported rate without a past retrieval date ({!r})".format(checked))
+    if WHITEHOUSE_REPORT_AS_OF > today:
+        say("cites a roster dated in the future")
+
+    url = str(pay.get("url") or "")
+    if url != WHITEHOUSE_REPORT_URL:
+        say("cites {!r}, not the report this pipeline reads".format(url))
+    if not host_of(url).endswith((".gov", ".mil")):
+        say("claims a reported rate with no .gov/.mil document behind it")
+
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a reported rate and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a reported rate and claims a verified cost")
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a payroll roster")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a payroll roster")
+    if url and url in [str(u) for u in (node.get("sourceUrls") or [])]:
+        say("cites the payroll roster among the sources that it exists")
+    # The report's NAME column must never reach the graph. The module drops it
+    # at parse time; this is the artefact-side check that it stayed dropped.
+    # The report prints names as "LAST, FIRST M." with the surname in capitals,
+    # which is what this looks for — a looser "Word, Word" test matches the
+    # report's own as-of text ("Wednesday, July 1, 2026") and fails every
+    # honest record. The three fields that legitimately carry the report's
+    # upper-case title text are exempt.
+    for field, value in pay.items():
+        if field in ("quote", "amountScope", "reportedTitle"):
+            continue
+        if isinstance(value, str) and re.search(r"\b[A-Z][A-Z.'\-]{1,}, +[A-Z][A-Z.'\-]*\b", value):
+            say("carries {!r}, which looks like a person's name from the roster".format(field))
+    return out
+
 
 def statutory_pay_violations(node, pay, today, label):
     """Everything that must be true of a single-source statutory pay claim.
@@ -981,6 +1146,7 @@ def main(argv):
     # reported as the wrong kind of fault.
     bad_table_pay = []
     bad_statutory_pay = []
+    bad_reported_pay = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -1074,6 +1240,11 @@ def main(argv):
         statutory_pay = node.get("positionStatutoryPay")
         if statutory_pay is not None:
             bad_statutory_pay.extend(statutory_pay_violations(node, statutory_pay, today, label))
+        # A roster row — what one listed person is paid — beside both of the
+        # above; again its own field, its own mirror, its own rules.
+        reported_pay = node.get("positionReportedPay")
+        if reported_pay is not None:
+            bad_reported_pay.extend(reported_pay_violations(node, reported_pay, today, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -1175,6 +1346,7 @@ def main(argv):
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
+    gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -1383,6 +1555,9 @@ def main(argv):
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
     print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(
         len(statutory_paid), dict(by_source) or "none"))
+    reported_paid = [n for n in nodes if isinstance(n.get("positionReportedPay"), dict)]
+    print("  reported pay         : {:,} White House Office positions carrying what the July 1 roster reports for the one person under that title".format(
+        len(reported_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(

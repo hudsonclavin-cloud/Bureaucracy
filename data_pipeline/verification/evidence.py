@@ -137,6 +137,12 @@ EVIDENCE_OWNED_FIELDS = (
     # renamed) must not survive because the previous graph.json is re-fed as
     # a payload on every build.
     "positionStatutoryPay",
+    # Written by whitehouse_pay.py. Withdrawal matters more here than for
+    # either field above: this one rests on a roster that is reissued every
+    # July, and a title the next report no longer carries — or carries twice —
+    # must lose its figure rather than keep last year's because the previous
+    # graph.json is re-fed as a payload.
+    "positionReportedPay",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never

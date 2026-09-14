@@ -38,6 +38,7 @@ python scripts/probe_network_access.py           # what this session can reach n
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
+python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -589,8 +590,8 @@ of `basic_pay` in both directions; and `_prints_whole_dollars` lets a document
 state its scale by *printing* it, because the OPM page contains none of the
 words "dollar", "thousand" or "million" and an honest record from it was
 otherwise unfilable. That relaxation is granted per source type
-(`SCALE_PRINTED_SOURCE_TYPES`, three entries as of the judicial and
-congressional modules below), applies only when no
+(`SCALE_PRINTED_SOURCE_TYPES`, four entries as of the judicial,
+congressional and White House modules below), applies only when no
 scale phrase is present at all, requires the currency mark to be attached to
 the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
 can see which records rest on it.
@@ -637,10 +638,68 @@ tier or role that node is: three Senate leadership roles share one dollar
 figure and one shared footnote, so a record for the Majority Leader
 relabelled as the President Pro Tempore would still quote a footnote naming
 that role and price the same $193,400, and only a check tied to the node's
-own identity catches it. `withdraw_pay_from_multi_post_nodes` strips both
-`positionPayRate` and `positionStatutoryPay` in one sweep, since the
-multi-post rule is the same rule on both. First run: 18 positions priced
-(15 judicial, 3 congressional), all `partial`, none `verified`.
+own identity catches it. `withdraw_pay_from_multi_post_nodes` strips all three pay
+fields in one sweep, since the multi-post rule is the same rule on each.
+First run: 18 positions priced (15 judicial, 3 congressional), all
+`partial`, none `verified`.
+
+**The one named-salary disclosure the law requires, and the narrow claim it
+supports (since 2026-09-14).** `whitehouse_pay.py` reads the White House
+Office's own Annual Report to Congress on White House Staff, which Section 6
+of Public Law 103-270 requires by July 1 each year and requires to state
+every employee's and detailee's title and annual rate of pay. It is the only
+place in this project where an official document gives a specific post a
+specific number of dollars actually paid. It is also, by statute,
+**person-level**: the 2026 report lists 408 people, `SENIOR POLICY ADVISOR`
+21 times and `STAFF ASSISTANT` 15, at differing salaries. So the claim is
+deliberately not "this post pays $X" but "the one person the report lists
+under this title is paid $X, as of the report's own as-of date" — which is
+why the field is a third one, `positionReportedPay`, with its own gate
+checker (`reported_pay_violations`), and why `scopeMatch` stays `proxy`. A
+statutory rate attaches to the office and survives a change of holder; a
+reported rate does not.
+
+**The NAME column is discarded at parse time**, not carried and declined:
+`parse_staff_report` matches the name cell only so as to exclude it, and the
+gate refuses any published field whose text looks like the report's own
+`LAST, FIRST M.` form. The rule `positions.py` set for the PLUM archive —
+the incumbent columns are never read — binds harder here, because this
+document names living people beside their salaries.
+
+Refusals: a title more than one person holds (two salaries make the figure
+undecidable); a node outside the `exec-eop-who` subtree, scoped as
+`headcounts.py` scopes a FedScope row; a node standing for several posts;
+and **a rate of $0.00**, which ten of the 408 rows carry — uncompensated
+appointees, the National Security Advisor among them. Zero is never
+published here, and an uncompensated arrangement is a fact about a person,
+not about the post. The report spells a post with its White House
+commissioning rank in front, so `title_core` folds those three ranks off the
+**front** and then requires exact equality — a containment test would price
+a principal from a deputy, since `Press Secretary` is inside `ASSISTANT
+PRESS SECRETARY`, and the only titles containing `Director of Legislative
+Affairs` and `Social Secretary` are their **Deputies'**. That is the same
+failure the existence verifier documents for "Office of Science" inside
+"Office of Science and Technology Policy".
+
+**A PDF, read with the standard library alone.** No third-party PDF library
+entered the repository: the document is `%PDF-1.6`, carries no `/Encrypt`
+(an encrypted one is refused rather than having ciphertext read out of it),
+and holds its text in FlateDecode streams — zlib — as ordinary `BT … Tm …
+TJ` blocks, so `extract_text_runs` reads it the way `congress.read_xlsx_rows`
+reads a spreadsheet as a zip of XML. Position cannot separate the columns
+(every cell in a row shares one `Tm` and advances by kerning), so they are
+recovered by **shape**: a money pattern, the closed `EMPLOYEE`/`DETAILEE`
+and `Per Annum` vocabularies, a `LAST, FIRST M.` name, and the title as
+remainder. A row not yielding exactly one of each is refused — 8 of 408 are.
+
+The gate mirrors node id → (printed title, printed rate) in
+`WHITEHOUSE_REPORTED_PAY`, keyed by id for the reason the Senate leadership
+case established and more sharply: **four of the five priced posts are paid
+the identical $195,200**, so a record moved between them would keep a correct
+figure, quote and pay basis. First run: **5 positions priced** of the 27 the
+graph carries under the White House Office — the binding limit is that the
+graph holds 27 sketch nodes for a 400-person office, which `CURATION.md` §7.4
+records as the highest-yield curation in this line.
 
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every

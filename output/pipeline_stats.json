@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T15:41:27.534343+00:00",
+  "timestamp": "2026-09-14T18:09:48.529731+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -369,6 +369,15 @@
       "unknown_node": 0,
       "not_a_position": 0,
       "stands_for_many_posts": 0,
+      "stands_for_many_posts_after_pruning": 0
+    },
+    "whitehouse_pay_evidence": {
+      "priced": 5,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "stands_for_many_posts": 0,
+      "outside_the_white_house_office": 0,
+      "name_no_longer_matches": 0,
       "stands_for_many_posts_after_pruning": 0
     },
     "budget_summary_reused_from_previous_build": false,

@@ -162,6 +162,40 @@ command is authoritative; this block is a dated paste-ready copy.
     www.uscg.mil www.uscis.gov www.uscourts.cavc.gov www.usmarshals.gov www.usmint.gov
     www.ustranscom.mil www.visitthecapitol.gov www.whitehouse.gov
 
+## 1b. 2026-09-14, chasing salaries: one host opened, one newly denied
+
+Probed while looking for official pay sources. Two findings worth keeping,
+because each would otherwise be re-derived:
+
+**`www.whitehouse.gov` is now reachable.** It is in §1a's denied list above,
+dated 2026-09-13, and on 2026-09-14 it answered 200 — the allowlist widened
+again between the two dates. That is what made
+`tests/fixtures/whitehouse/staff_report_2026.pdf` fetchable, and with it the
+only named-salary disclosure the federal government is required to publish.
+Its `robots.txt` is `User-agent: * / Disallow:` — an empty disallow, which
+permits everything. §1a's list is a dated paste, not a live fact; re-probe
+before believing any line of it.
+
+**`uscode.house.gov` answers the CONNECT with 403** — the egress proxy, not
+the host, the same signature `clerk.house.gov` carried before it was
+allowlisted. This is the one host that would unlock the rest of the
+congressional pay work:
+
+| Host | What it serves | What it would unlock |
+|---|---|---|
+| `uscode.house.gov` | the U.S. Code, 5 U.S.C. § 5332 Schedule 6 | the Speaker of the House ($223,500) and the House Majority and Minority Leaders ($193,400) — three curated position nodes that cannot be priced from the Senate's own salary page, whose footnote names only the three *Senate* leadership roles. Also 28 U.S.C. §§ 172(b) and 252, which give Court of Federal Claims and Court of International Trade judges the district-judge rate. |
+
+Two hosts here are refused **by the host, not by this session**, and no
+allowlist change fixes them: `www.congress.gov` and `crsreports.congress.gov`
+both serve a Cloudflare interstitial ("Just a moment…") with a 403,
+confirmed from the response body. CRS report 97-1011 — the report the House
+Clerk's own salary PDF cites for congressional pay, and the document most
+likely to state the House's leadership premiums — is behind it.
+
+Also probed and still denied at the proxy on this date: `www.dfas.mil` (403,
+military basic pay tables) and `radiotv.house.gov` (403). `www.justice.gov`
+answered 401.
+
 ## 2. Refused by this project's own robots policy — 19 hosts, deliberate
 
 These hosts answer `robots.txt` itself with 401 or 403. Python's

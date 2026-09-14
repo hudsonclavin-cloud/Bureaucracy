@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260914a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260914a";
+import { createGovernmentGraph } from "./graph.js?v=20260914b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260914b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -702,6 +702,46 @@ function renderStatutoryPay(data) {
   if (quote) add(` The source's own words: "${quote}"`);
 }
 
+function renderReportedPay(data) {
+  let line = document.getElementById("info-reported-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-reported-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = data.positionReportedPay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const on = pay.checkedAt
+    ? new Date(pay.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  // The claim is deliberately about the person the roster lists, not about
+  // the post: the report is person-level by statute, and two people can hold
+  // one title at different salaries.
+  add(
+    `${pay.sourceLabel || "The White House Office's own annual report to Congress"}` +
+      `${on ? ` (checked ${on})` : ""} lists one person under "${pay.reportedTitle || "this title"}"` +
+      `${pay.asOf ? `, as of ${pay.asOf}` : ""}, paid ${printed}${pay.payBasis ? ` ${String(pay.payBasis).toLowerCase()}` : ""}.`,
+  );
+  add(" That is what the one person listed under this title is paid, not what the post pays whoever holds it: the report states each individual's own rate, and two people can share a title at different salaries.");
+  if (pay.titleFolded) {
+    add(" The report spells the title with its White House rank in front; that prefix is set aside to match this unit.");
+  }
+  add(" It is not this unit's cost — basic pay excludes benefits and is not a share of federal outlays — and it is not evidence that this post exists as the graph draws it.");
+  const quote = String(pay.quote || "").trim();
+  if (quote) add(` The report's own row: "${quote}"`);
+}
+
 function renderDescriptionProvenance(data, isClusteredView) {
   let line = document.getElementById("info-desc-provenance");
   if (!line && dom.infoDesc) {
@@ -1376,6 +1416,7 @@ function renderInfoPanel(nodeObj) {
   renderHeadcountProvenance(data);
   renderPositionListing(data);
   renderStatutoryPay(data);
+  renderReportedPay(data);
   renderCountProvenance(data);
 
   if (isClusteredView) {

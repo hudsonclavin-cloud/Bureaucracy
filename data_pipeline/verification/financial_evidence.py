@@ -167,15 +167,26 @@ SOURCE_TYPES = {
     # congressional_pay.py.
     "uscourts_judicial_compensation",
     "senate_salary_schedule",
+    # A roster, not a rate schedule: the White House Office's statutory annual
+    # report states what each listed person is paid, so a record from it is a
+    # claim about an incumbent rather than about the office. See
+    # data_pipeline/verification/whitehouse_pay.py.
+    "whitehouse_staff_report",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
 #: it in a heading — see `_prints_whole_dollars`. Narrowing granted per
 #: document class, to classes somebody here has actually read, and never as a
-#: general relaxation: none of these three pages contains the words "dollar",
-#: "thousand" or "million" anywhere, and each states its figures only by
-#: printing them with a dollar sign attached ("$249,900", "$193,400 per year").
-SCALE_PRINTED_SOURCE_TYPES = {"opm_pay_table", "uscourts_judicial_compensation", "senate_salary_schedule"}
+#: general relaxation: none of these four documents contains the words
+#: "dollar", "thousand" or "million" anywhere, and each states its figures
+#: only by printing them with a dollar sign attached ("$249,900", "$193,400
+#: per year", "$195,200.00").
+SCALE_PRINTED_SOURCE_TYPES = {
+    "opm_pay_table",
+    "uscourts_judicial_compensation",
+    "senate_salary_schedule",
+    "whitehouse_staff_report",
+}
 
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
@@ -195,6 +206,7 @@ SOURCE_BASES = {
     "opm_pay_table": {"basic_pay"},
     "uscourts_judicial_compensation": {"basic_pay"},
     "senate_salary_schedule": {"basic_pay"},
+    "whitehouse_staff_report": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}
@@ -286,9 +298,16 @@ def _prints_whole_dollars(evidence: str, amount_raw: Any, source_type: str, unit
     raw = _text(amount_raw)
     # An accounting negative has no business being priced this way, and the
     # parenthesised form would make the "attached" test meaningless.
-    if not raw or not re.fullmatch(r"[\d,]+", raw):
+    #
+    # A cents component is allowed because it makes the claim stronger, not
+    # weaker: the White House staff report prints "$195,200.00", and no table
+    # stated in thousands or millions prints cents. The trailing guard rejects
+    # a following digit, comma *or* decimal fraction, so a whole-dollar
+    # amountRaw of "1,234" can never be vouched for by a printed "$1,234.56" —
+    # that would be a different figure from a different column.
+    if not raw or not re.fullmatch(r"[\d,]+(?:\.\d{1,2})?", raw):
         return ""
-    match = re.search(rf"\$\s*{re.escape(raw)}(?![\d,])", evidence)
+    match = re.search(rf"\$\s*{re.escape(raw)}(?![\d,]|\.\d)", evidence)
     return match.group(0) if match else ""
 
 

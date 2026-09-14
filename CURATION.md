@@ -666,3 +666,91 @@ site no longer names most curated "Division of …" units under those names
 Education's own office list carries no numbered regions; DOJ's ENRD is now
 "Energy and Natural Resources Division". These are the largest single sources
 of the remaining `not_found` and `inconclusive` records, and they are curation.
+
+## 7. Pay sources: what is priced, what is blocked, what is structurally out of reach (2026-09-14)
+
+Following the salary work in `judicial_pay.py`, `congressional_pay.py` and
+`whitehouse_pay.py`, this is the standing account of which official pay
+sources can reach a node and which cannot, so the analysis is not redone.
+**23 of 4,382 position nodes carry a rate of pay from a primary source**: 15
+judicial, 3 congressional, 5 White House Office.
+
+### 7.1 Blocked on one allowlist entry — three House leadership nodes
+
+`uscode.house.gov` answers the proxy's CONNECT with 403 (see
+`docs/NETWORK_ACCESS.md` §1b). It serves 5 U.S.C. § 5332 Schedule 6, which
+states the statutory salaries of congressional leadership. Once the host is
+reachable, three curated nodes become priceable by a module that would be a
+near-clone of `congressional_pay.py`:
+
+| Node | Post | Schedule 6 rate |
+|---|---|---|
+| `leg-house-leadership-speaker-of-the-house` | Speaker of the House | $223,500 |
+| `leg-house-leadership-majority-leader` | Majority Leader | $193,400 |
+| `leg-house-leadership-minority-leader` | Minority Leader | $193,400 |
+
+These cannot be priced from the Senate's own salary page, which is what
+`congressional_pay.py` reads: its footnote names only the three **Senate**
+leadership roles.
+
+**The other 15 House leadership nodes must stay unpriced**, and that is a
+finding, not a gap. The whips, the caucus and conference chairs, the Freedom
+Caucus and Problem Solvers chairs receive **no separate statutory personal
+salary** — a Member who holds one of those posts is paid the Member rate.
+Neither is a committee chair separately compensated. Nothing should price
+them.
+
+### 7.2 Reaches zero nodes, despite a clean statutory rule
+
+28 U.S.C. § 153(a) sets a full-time bankruptcy judge at 92% of the
+district-judge rate — $229,908 at the 2026 rate — and 28 U.S.C. § 634(a)
+caps a full-time magistrate judge at the same 92%, with the Judicial
+Conference fixing the actual figure. Neither reaches a node: **every
+bankruptcy and magistrate node in this graph states a multiplicity**
+(`Bankruptcy Judge (×12)`, `Magistrate Judge (×13)`, `(×varies)`), and the
+multi-post rule refuses them all. Splitting those into individually named
+seats is curation; until then there is nothing for the rule to price.
+
+28 U.S.C. § 172(b) (Court of Federal Claims) and § 252 (Court of
+International Trade) give those judges the district-judge rate, and
+`jud-specialized-tax-chief-judge-tax-court` is a single-post node — but the
+statutory text is on `uscode.house.gov`, blocked as above.
+
+### 7.3 Structurally out of reach — the graph carries no pay key
+
+Three whole categories of official pay table cannot reach any node in this
+graph, for one shared reason: **the curated file records no pay grade, no SES
+status and no GS grade/step/duty station on any node.** Matching a node to a
+row would mean guessing which row it is, which is the inference this project
+refuses everywhere else.
+
+| Source | What it states | Why it cannot reach a node |
+|---|---|---|
+| DFAS military basic pay tables | pay grade × years of service; O-7 to O-10 capped at Executive Schedule Level II ($18,999.90/month in 2026) | Pricing `Chief of Staff, U.S. Army` requires asserting the post is an O-10 with *n* years of service. No curated field says so. (`www.dfas.mil` is also proxy-blocked.) |
+| OPM SES salary table | two national bands — $151,661–$228,000 certified, $151,661–$209,600 not — under 5 U.S.C. §§ 5382 and 5307(d) | It is two ranges, not a per-agency or per-post figure, and nothing records which nodes are SES. |
+| OPM GS and locality tables | grade × step × locality | The best-formatted federal pay data there is, and useless here: no node carries a grade, a step or a duty station, and a title string is not a grade. |
+
+The narrow DOJ sources are real but tiny: the U.S. Trustee Program states
+$197,200 for a U.S. Trustee and $135,000–$197,100 for an Assistant U.S.
+Trustee (`www.justice.gov` answered 401 on 2026-09-14), and the USAO
+Administratively Determined pay plan states grade/experience ranges rather
+than a post's rate.
+
+### 7.4 The White House Office is a sketch, and that is the binding limit
+
+`whitehouse_pay.py` prices 5 nodes. 21 more were refused as
+`no_row_carries_this_title` — not because the matcher is weak but because
+this graph carries **27 position nodes for an office the report shows
+employing 408 people**. `Chief Speechwriter`, `Director of Presidential
+Personnel`, `Director of Public Liaison`, `Director of Strategic
+Communications`, `Director of Scheduling & Advance`, `Director of the White
+House Situation Room` and `Deputy Chief of Staff for Implementation` are not
+titles the 2026 report prints at all. Expanding the White House Office
+subtree from the report's own 229 distinct titles is the curation task that
+would move this number, and it is the single highest-yield curation available
+in the pay line.
+
+One node is refused for a different and more interesting reason:
+`exec-eop-who-national-security-advisor` is listed at **$0.00**. Ten of the
+408 rows are — uncompensated appointees. That is a fact about the person
+currently in the post, not about the post, and zero is never published here.

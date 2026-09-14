@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-14T17:52:39Z",
+ "url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+ "status": 200,
+ "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /wp-content/uploads/2026/07/2026-Annual-Report-to-Congress-on-White-House-Staff.pdf",
+ "bytes": 251322,
+ "sha256": "549c4b93a121dc5ae9905e1584bed9906dff47099013d72eccf46aabad7f2354",
+ "error": null
+}
