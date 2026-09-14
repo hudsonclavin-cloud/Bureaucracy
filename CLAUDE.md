@@ -904,6 +904,45 @@ Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
 
+**UI honesty fixes, keyboard access, and remembered state (since
+2026-09-15).** Four small panel bugs, none data-affecting: a leaf node showed
+both "No Sub-nodes" (disabled) and "Expand All Below" (also disabled) side by
+side, saying the same thing twice; "Trace Origin" re-rendered the same
+root-to-node path the breadcrumb already shows, as a second list, rather than
+only confirming the 3D glow path (`pathGlowPool` in graph.js) it actually
+adds; the depth buttons are a fixed HTML list (1–12) with no idea the loaded
+tree is only 8 levels deep (`state.maxDataDepth`, computed from `__meta`),
+so five of the twelve promised a jump the data cannot make; and a candidate
+node's description and placement lines were blanked outright rather than
+saying what a reviewer actually needs — the discovery notice's own text and
+the crawler's `possibleParent` guess, each labelled as unreviewed rather than
+presented as fact. `updateDepthButtonAvailability` (`ui.js`) now disables and
+retitles any depth button past `stats.maxDataDepth` on every stats update, so
+it self-corrects if the tree's depth changes on a future build rather than
+needing the button list hand-trimmed.
+
+Every clickable row that was a plain `<div>`/`<span>` with a click handler —
+the breadcrumb, the children list, search results — was unreachable by
+keyboard and invisible to a screen reader: no role, no tab stop, no label.
+`makeInteractiveRow(element, label, onActivate)` adds `role="button"`,
+`tabindex="0"`, `aria-label` and an Enter/Space keydown handler that calls the
+same activation function as the click, applied at all three sites; the 17
+static depth buttons got `aria-label`s directly since they were real
+`<button>` elements already, just unlabelled.
+
+A reload used to lose the depth filter, both toggles, and the selected node
+every time — nothing was remembered, and there was no way to link someone to
+a specific node. `writeStoredPrefs`/`readStoredPrefs` keep one JSON blob under
+`bureaucracy-view-prefs-v1` in `localStorage` for the depth filter and the
+three toggle states (both wrapped in try/catch: private browsing or blocked
+site data must degrade to "nothing remembered," never a broken load); the
+selected node goes in the URL hash instead (`#node=<id>` via
+`history.replaceState`), since that one is worth sharing as a link, not just
+recalling for the same viewer — a cluster's collapsed id is excluded from the
+hash since it names whatever the LOD happened to fold together, not a stable
+target. `restorePersistedState()` runs once at boot and reflects both back
+into the visible controls, not just into memory.
+
 **What the browser fetches, and why it is not `graph.json` (since
 2026-09-14).** `output/graph.json` is two things at once: the site's data and
 the pipeline's own state file. `load_existing_graph_payload` re-feeds it as a

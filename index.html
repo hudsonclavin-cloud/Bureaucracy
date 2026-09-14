@@ -150,6 +150,8 @@ body.dragging{cursor:grabbing;}
   cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;
 }
 .depth-btn:hover,.depth-btn.active{background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);}
+.depth-btn:disabled,.depth-btn-unavailable{opacity:0.28;cursor:not-allowed;}
+.depth-btn:disabled:hover{background:rgba(4,8,16,0.8);color:var(--gold-dim);border-color:rgba(200,168,74,0.15);}
 #depth-label{font-size:8px;color:var(--gold-dim);letter-spacing:0.1em;writing-mode:vertical-rl;margin:4px 0;}
 #tooltip{
   position:fixed;background:rgba(4,8,16,0.97);border:1px solid rgba(200,168,74,0.25);
@@ -180,6 +182,8 @@ body.dragging{cursor:grabbing;}
 .depth-expand-btn:hover,.depth-expand-btn.active{
   background:rgba(200,168,74,0.12);color:var(--gold);border-color:rgba(200,168,74,0.4);
 }
+.depth-expand-btn:disabled,.depth-expand-btn.depth-btn-unavailable{opacity:0.28;cursor:not-allowed;}
+.depth-expand-btn:disabled:hover{background:rgba(4,8,16,0.8);color:var(--gold-dim);border-color:rgba(200,168,74,0.15);}
 @media (max-width: 900px){
   #info-panel{top:auto;right:16px;left:16px;bottom:16px;width:auto;max-height:40vh;transform:translateY(110%);}
   #info-panel.open{transform:translateY(0);}
@@ -215,14 +219,14 @@ body.dragging{cursor:grabbing;}
 <div id="depth-expand-ctrl">
   <div id="depth-expand-label">Expand to depth</div>
   <div id="depth-expand-btns">
-    <button class="depth-expand-btn" data-target="1" title="Show depth 1">1</button>
-    <button class="depth-expand-btn" data-target="2" title="Show depth 2">2</button>
-    <button class="depth-expand-btn" data-target="3" title="Show depth 3">3</button>
-    <button class="depth-expand-btn" data-target="4" title="Show depth 4">4</button>
-    <button class="depth-expand-btn" data-target="5" title="Show depth 5">5</button>
-    <button class="depth-expand-btn" data-target="6" title="Show depth 6">6</button>
-    <button class="depth-expand-btn" data-target="8" title="Show depth 8">8</button>
-    <button class="depth-expand-btn" data-target="12" title="Show depth 12">12</button>
+    <button class="depth-expand-btn" data-target="1" title="Show depth 1" aria-label="Progressively expand the graph to depth 1">1</button>
+    <button class="depth-expand-btn" data-target="2" title="Show depth 2" aria-label="Progressively expand the graph to depth 2">2</button>
+    <button class="depth-expand-btn" data-target="3" title="Show depth 3" aria-label="Progressively expand the graph to depth 3">3</button>
+    <button class="depth-expand-btn" data-target="4" title="Show depth 4" aria-label="Progressively expand the graph to depth 4">4</button>
+    <button class="depth-expand-btn" data-target="5" title="Show depth 5" aria-label="Progressively expand the graph to depth 5">5</button>
+    <button class="depth-expand-btn" data-target="6" title="Show depth 6" aria-label="Progressively expand the graph to depth 6">6</button>
+    <button class="depth-expand-btn" data-target="8" title="Show depth 8" aria-label="Progressively expand the graph to depth 8">8</button>
+    <button class="depth-expand-btn" data-target="12" title="Show depth 12" aria-label="Progressively expand the graph to depth 12">12</button>
   </div>
 </div>
 </div>
@@ -256,15 +260,15 @@ body.dragging{cursor:grabbing;}
 
 <div id="depth-ctrl">
   <div id="depth-label">DEPTH</div>
-  <button class="depth-btn active" data-depth="all" title="Show all expanded">∞</button>
-  <button class="depth-btn" data-depth="1" title="Depth 1">1</button>
-  <button class="depth-btn" data-depth="2" title="Depth 2">2</button>
-  <button class="depth-btn" data-depth="3" title="Depth 3">3</button>
-  <button class="depth-btn" data-depth="4" title="Depth 4">4</button>
-  <button class="depth-btn" data-depth="5" title="Depth 5">5</button>
-  <button class="depth-btn" data-depth="6" title="Depth 6">6</button>
-  <button class="depth-btn" data-depth="8" title="Depth 8">8</button>
-  <button class="depth-btn" data-depth="12" title="Depth 12">12</button>
+  <button class="depth-btn active" data-depth="all" title="Show all expanded" aria-label="Show all expanded depths">∞</button>
+  <button class="depth-btn" data-depth="1" title="Depth 1" aria-label="Limit the visible graph to depth 1">1</button>
+  <button class="depth-btn" data-depth="2" title="Depth 2" aria-label="Limit the visible graph to depth 2">2</button>
+  <button class="depth-btn" data-depth="3" title="Depth 3" aria-label="Limit the visible graph to depth 3">3</button>
+  <button class="depth-btn" data-depth="4" title="Depth 4" aria-label="Limit the visible graph to depth 4">4</button>
+  <button class="depth-btn" data-depth="5" title="Depth 5" aria-label="Limit the visible graph to depth 5">5</button>
+  <button class="depth-btn" data-depth="6" title="Depth 6" aria-label="Limit the visible graph to depth 6">6</button>
+  <button class="depth-btn" data-depth="8" title="Depth 8" aria-label="Limit the visible graph to depth 8">8</button>
+  <button class="depth-btn" data-depth="12" title="Depth 12" aria-label="Limit the visible graph to depth 12">12</button>
 </div>
 
 <div id="legend">
@@ -340,7 +344,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260914d"
+<script type="module" src="./js/ui.js?v=20260915a"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

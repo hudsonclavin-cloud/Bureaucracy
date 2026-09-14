@@ -620,6 +620,137 @@ try {
   check("a description is labelled as uncited", /uncited prose/i.test(descNote), descNote);
   check("provenance does not call every cost an estimate", !/^costs are estimates/.test(provenance), provenance);
 
+  // The depth buttons are a fixed HTML list (1..12) that does not know how
+  // deep the loaded tree actually is (MAX_DEPTH=20 caps it further still).
+  // A button past the real depth must be disabled and say why, not sit there
+  // promising a jump the data cannot make.
+  const computedMaxDepth = (() => {
+    let max = 0;
+    const walkDepth = (node, depth) => {
+      max = Math.max(max, depth);
+      for (const child of node.children || []) walkDepth(child, depth + 1);
+    };
+    walkDepth(graphJson, 0);
+    return max;
+  })();
+  const depthButtonState = await page.evaluate(() => {
+    const buttons = [...document.querySelectorAll(".depth-btn[data-depth]")]
+      .filter((b) => b.dataset.depth !== "all")
+      .map((b) => ({ depth: Number(b.dataset.depth), disabled: b.disabled, title: b.title }));
+    return buttons;
+  });
+  const overDepth = depthButtonState.find((b) => b.depth > computedMaxDepth);
+  check("a depth button says its own list goes deeper than the graph does when true", computedMaxDepth < 12, `graph depth ${computedMaxDepth}, expected < 12 for this assertion to be meaningful`);
+  if (overDepth) {
+    check(`the depth ${overDepth.depth} button is disabled past the real data depth (${computedMaxDepth})`, overDepth.disabled === true, JSON.stringify(overDepth));
+    check("the disabled depth button explains why in its title", new RegExp(`only ${computedMaxDepth} levels deep`).test(overDepth.title), overDepth.title);
+  }
+  const withinDepth = depthButtonState.find((b) => b.depth <= computedMaxDepth);
+  if (withinDepth) {
+    check(`the depth ${withinDepth.depth} button stays enabled within the real data depth`, withinDepth.disabled === false, JSON.stringify(withinDepth));
+  }
+
+  // Rows that were only click targets before now expose role=button,
+  // tabindex and an aria-label, and respond to a keyboard Enter the same
+  // way a click does — a screen-reader or keyboard-only visitor could not
+  // reach a single node before this.
+  await page.fill("#search-input", "Department of Energy");
+  await page.waitForTimeout(500);
+  const searchRow = page.locator("#search-results .sr-item").first();
+  const searchRowAttrs = await searchRow.evaluate((el) => ({
+    role: el.getAttribute("role"),
+    tabindex: el.getAttribute("tabindex"),
+    ariaLabel: el.getAttribute("aria-label"),
+  }));
+  check("a search result row is a focusable button for assistive tech", searchRowAttrs.role === "button" && searchRowAttrs.tabindex === "0", JSON.stringify(searchRowAttrs));
+  check("a search result row has a real label, not just visual text", Boolean(searchRowAttrs.ariaLabel && searchRowAttrs.ariaLabel.length > 0), JSON.stringify(searchRowAttrs));
+  await searchRow.focus();
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(1500);
+  const openedByKeyboard = await text("#info-name");
+  check("Enter on a focused search row opens it, same as a click", openedByKeyboard.length > 0, openedByKeyboard);
+  await page.fill("#search-input", "");
+
+  const breadcrumbRow = page.locator("#bc-items > *").first();
+  if (await breadcrumbRow.count()) {
+    const bcAttrs = await breadcrumbRow.evaluate((el) => ({ role: el.getAttribute("role"), tabindex: el.getAttribute("tabindex") }));
+    check("a breadcrumb crumb is keyboard-focusable", bcAttrs.role === "button" && bcAttrs.tabindex === "0", JSON.stringify(bcAttrs));
+  }
+  const childRow = page.locator("#info-children-list > *").first();
+  if (await childRow.count()) {
+    const childAttrs = await childRow.evaluate((el) => ({ role: el.getAttribute("role"), tabindex: el.getAttribute("tabindex") }));
+    check("a children-list row is keyboard-focusable", childAttrs.role === "button" && childAttrs.tabindex === "0", JSON.stringify(childAttrs));
+  }
+
+  // State a viewer sets is remembered across a reload: the depth filter, the
+  // three toggles, and which node was open (via the URL hash, so it is also
+  // a link worth sharing) — not just recalled silently, but recalled AND
+  // reflected back into the visible controls and the open panel.
+  await page.evaluate(() => {
+    const box = document.querySelector("#verification-toggles input");
+    if (box && box.checked) box.click();
+  });
+  await page.waitForTimeout(300);
+  await openByName(energy && energy.cost_status === "official" ? energy.name : "Department of Energy");
+  const hashBeforeReload = await page.evaluate(() => window.location.hash);
+  check("selecting a node writes its id into the URL hash", /^#node=/.test(hashBeforeReload), hashBeforeReload);
+  const storedPrefs = await page.evaluate(() => {
+    try {
+      return JSON.parse(window.localStorage.getItem("bureaucracy-view-prefs-v1") || "{}");
+    } catch (e) {
+      return null;
+    }
+  });
+  check("a toggle change is persisted to localStorage", storedPrefs && typeof storedPrefs.showUnverified === "boolean", JSON.stringify(storedPrefs));
+
+  await page.goto(`http://127.0.0.1:${PORT}/index.html${hashBeforeReload}`, { waitUntil: "domcontentloaded" });
+  await page.waitForFunction(
+    () => window.__bureaucracy_ui_loaded__ && (() => { const el = document.getElementById("loading"); return !el || getComputedStyle(el).opacity === "0"; })(),
+    null,
+    { timeout: 90000 },
+  );
+  await page.waitForTimeout(2000);
+  const toggleAfterReload = await page.locator("#verification-toggles input").first().isChecked();
+  check("the unverified-nodes toggle survives a reload", toggleAfterReload === false, String(toggleAfterReload));
+  const nameAfterReload = await text("#info-name");
+  check("the previously-selected node reopens from the URL hash on reload", nameAfterReload.length > 0 && nameAfterReload !== "—", nameAfterReload);
+  await page.evaluate(() => {
+    const box = document.querySelector("#verification-toggles input");
+    if (box && !box.checked) box.click();
+  });
+  await page.waitForTimeout(300);
+
+  // A candidate node — unreviewed, never placed by anything but a crawler's
+  // own guess — must say that plainly rather than showing a blank
+  // description or placement line, which used to read as "nothing is known"
+  // instead of "nothing has been checked yet."
+  const candidatesPath = path.join(ROOT, "output", "candidate_nodes.json");
+  if (fs.existsSync(candidatesPath)) {
+    const candidates = JSON.parse(fs.readFileSync(candidatesPath, "utf8"));
+    const candidateList = Array.isArray(candidates) ? candidates : candidates.candidates || [];
+    const candidateWithParent = candidateList.find((c) => c.possibleParentId || c.possibleParent);
+    check("some candidate carries a possible-parent guess", Boolean(candidateWithParent), "none");
+    await page.evaluate(() => {
+      const label = [...document.querySelectorAll("#verification-toggles label")].find((l) => /candidate/i.test(l.textContent || ""));
+      const box = label && label.querySelector("input");
+      if (box && !box.checked) box.click();
+    });
+    await page.waitForTimeout(500);
+    if (candidateWithParent) {
+      await openByName(candidateWithParent.name);
+      const candidatePlacement = await text("#verification-placement");
+      check("a candidate's possible parent is shown, labelled as an unverified guess", /POSSIBLE PARENT \(unverified guess, not yet placed\)/.test(candidatePlacement), candidatePlacement);
+      const candidateDesc = await text("#info-desc-provenance");
+      check("a candidate's description says it comes from the discovery notice", /from the notice that surfaced this candidate/.test(candidateDesc), candidateDesc);
+    }
+    const candidateNoParent = candidateList.find((c) => !c.possibleParentId && !c.possibleParent);
+    if (candidateNoParent) {
+      await openByName(candidateNoParent.name);
+      const noParentPlacement = await text("#verification-placement");
+      check("a candidate with no parent guess says so", /No possible parent was identified/.test(noParentPlacement), noParentPlacement);
+    }
+  }
+
   await page.fill("#search-input", "");
   check("no page errors", pageErrors.length === 0, pageErrors.join(" | "));
   await browser.close();

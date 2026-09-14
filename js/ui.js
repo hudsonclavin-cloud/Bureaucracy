@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260914d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260914d";
+import { createGovernmentGraph } from "./graph.js?v=20260915a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260915a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -77,10 +77,75 @@ const state = {
   loadFailed: false,
 };
 
+// Per-viewer convenience only — never a source of truth. A reload used to
+// lose the depth filter, both toggles and the selected node every time,
+// which is why "share this view" was never possible. localStorage can throw
+// (private browsing, blocked site data) and must never break the page for
+// that; every call here is wrapped so a failure degrades to "nothing was
+// remembered," not a broken load.
+const STORAGE_KEY = "bureaucracy-view-prefs-v1";
+
+function readStoredPrefs() {
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function writeStoredPrefs(patch) {
+  try {
+    const current = readStoredPrefs();
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...current, ...patch }));
+  } catch (error) {
+    // Storage unavailable or full: the view still works, it just is not
+    // remembered for next time.
+  }
+}
+
+// The node id lives in the URL hash, not localStorage, because it is the
+// one piece of state worth sharing with someone else, not just recalling for
+// the same viewer later.
+function setNodeHash(id) {
+  try {
+    const target = id ? `#node=${encodeURIComponent(id)}` : " ";
+    window.history.replaceState(null, "", id ? target : window.location.pathname + window.location.search);
+  } catch (error) {
+    // A sandboxed iframe or an unusual embed can refuse history writes;
+    // the selection still works, it just will not survive a reload.
+  }
+}
+
+function getNodeIdFromHash() {
+  const match = /^#node=(.+)$/.exec(window.location.hash);
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
 function setText(element, value) {
   if (element.textContent !== value) {
     element.textContent = value;
   }
+}
+
+// The breadcrumb, the children list and search results are all built as
+// plain <div>/<span> elements with a click handler — real for a mouse, but
+// invisible to a keyboard: nothing here got a tab stop or an Enter/Space
+// handler, and none carried an accessible name beyond its own visible text
+// (which a screen reader announces flatly, with no indication it is
+// interactive or what clicking it does). This makes one such element behave
+// like the real button it visually is, without changing how it looks.
+function makeInteractiveRow(element, label, onActivate) {
+  element.setAttribute("role", "button");
+  element.setAttribute("tabindex", "0");
+  element.setAttribute("aria-label", label);
+  element.addEventListener("click", onActivate);
+  element.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      onActivate(event);
+    }
+  });
 }
 
 function showLoader(label) {
@@ -116,6 +181,41 @@ function updateStats(stats) {
     dom.statsDepth,
     `LOD ${stats.lodLevel ?? "?"}: ${stats.lodLabel || "Unknown"} | depth ${Number.isFinite(stats.maxVisibleDepth) ? stats.maxVisibleDepth : "All"} | queue ${stats.pendingExpansions ?? 0}`,
   );
+  updateDepthButtonAvailability(stats.maxDataDepth);
+}
+
+// The depth buttons are a fixed HTML list (1, 2, 3, ... 12) that does not
+// know how deep the loaded tree actually goes. A button past the real depth
+// used to sit there offering a level that does not exist and doing nothing
+// when pressed — the control claiming more than the data supports, which is
+// the one thing this project's own standing rule refuses everywhere else.
+// This disables any such button instead of trimming the list by hand, so it
+// self-corrects if the tree's depth ever changes on a future build.
+function updateDepthButtonAvailability(maxDataDepth) {
+  if (!Number.isFinite(maxDataDepth) || maxDataDepth <= 0) {
+    return;
+  }
+  document.querySelectorAll(".depth-btn, .depth-expand-btn").forEach((button) => {
+    const raw = button.dataset.depth ?? button.dataset.target;
+    if (raw === "all" || raw === undefined) {
+      return;
+    }
+    const value = Number(raw);
+    if (!Number.isFinite(value)) {
+      return;
+    }
+    // The original title is captured once so repeated calls (every stats
+    // update) never compound an appended note onto itself.
+    if (button.dataset.baseTitle === undefined) {
+      button.dataset.baseTitle = button.title;
+    }
+    const exceedsData = value > maxDataDepth;
+    button.disabled = exceedsData;
+    button.classList.toggle("depth-btn-unavailable", exceedsData);
+    button.title = exceedsData
+      ? `${button.dataset.baseTitle} — this graph is only ${maxDataDepth} levels deep`
+      : button.dataset.baseTitle;
+  });
 }
 
 // The line every visitor reads first. It used to be a hardcoded string in
@@ -239,7 +339,7 @@ function renderBreadcrumb(nodeObj) {
     const crumb = document.createElement("span");
     crumb.className = "bc-item";
     crumb.textContent = item.data.name.length > 28 ? `${item.data.name.slice(0, 26)}…` : item.data.name;
-    crumb.addEventListener("click", () => state.graph.setSelectedNode(item));
+    makeInteractiveRow(crumb, `Go to ${item.data.name}`, () => state.graph.setSelectedNode(item));
     fragment.appendChild(crumb);
   });
   dom.breadcrumb.appendChild(fragment);
@@ -754,7 +854,13 @@ function renderDescriptionProvenance(data, isClusteredView) {
     dom.infoDesc.insertAdjacentElement("afterend", line);
   }
   if (!line) return;
-  if (isClusteredView || data.isCandidate || !data.desc) {
+  if (data.isCandidate) {
+    line.textContent = data.desc
+      ? `DESCRIPTION: from the notice that surfaced this candidate (${data.discoveryMethod || "automated discovery"}) — not yet reviewed`
+      : "";
+    return;
+  }
+  if (isClusteredView || !data.desc) {
     line.textContent = "";
     return;
   }
@@ -780,7 +886,16 @@ function hostnameOf(url) {
 function renderPlacementLine(data) {
   if (!dom.verificationPlacement) return;
   if (data.isCandidate) {
-    setText(dom.verificationPlacement, "");
+    // Not a placement claim — nothing has verified this belongs anywhere.
+    // It is the discovery crawler's own guess at a parent, shown so a
+    // reviewer isn't left to wonder why an unreviewed record floats near
+    // the root with no visible reason: this is that reason.
+    setText(
+      dom.verificationPlacement,
+      data.possibleParent
+        ? `POSSIBLE PARENT (unverified guess, not yet placed): ${data.possibleParent}`
+        : "No possible parent was identified for this candidate.",
+    );
     return;
   }
   const isPosition = /position/i.test(String(data.type || ""));
@@ -1035,30 +1150,17 @@ function renderOriginTrace(nodeObj) {
   dom.originWrap.style.display = "block";
   dom.originList.replaceChildren();
 
-  const fragment = document.createDocumentFragment();
-  originTrace.forEach((item, index) => {
-    const row = document.createElement("div");
-    row.style.display = "flex";
-    row.style.alignItems = "center";
-    row.style.gap = "8px";
-    row.style.color = item.data.color || "#d4c4a1";
-    row.style.cursor = "pointer";
-    row.style.paddingLeft = `${index * 10}px`;
+  // The root-to-node path is already the breadcrumb below the title, in the
+  // same order, each step also clickable — so this does not repeat it as a
+  // second list. What this button adds beyond the breadcrumb is the glowing
+  // path drawn through the 3D scene itself (see graph.js's pathGlowPool);
+  // this line only confirms that is now on.
+  const confirmation = document.createElement("div");
+  confirmation.style.color = "#9a8a6a";
+  confirmation.style.lineHeight = "1.5";
+  confirmation.textContent = `Path from the root highlighted in the scene above (${originTrace.length} step${originTrace.length === 1 ? "" : "s"} — see the breadcrumb for the names).`;
+  dom.originList.appendChild(confirmation);
 
-    const arrow = document.createElement("span");
-    arrow.textContent = index === 0 ? "•" : "→";
-    arrow.style.color = "rgba(220, 210, 180, 0.75)";
-    row.appendChild(arrow);
-
-    const label = document.createElement("span");
-    label.textContent = item.data.name;
-    row.appendChild(label);
-
-    row.addEventListener("click", () => state.graph.setSelectedNode(item));
-    fragment.appendChild(row);
-  });
-
-  dom.originList.appendChild(fragment);
   setText(dom.btnTraceOrigin, "Hide Origin");
   dom.btnTraceOrigin.disabled = false;
 }
@@ -1525,7 +1627,7 @@ function renderInfoPanel(nodeObj) {
       label.textContent = child.name;
       item.appendChild(label);
 
-      item.addEventListener("click", () => {
+      makeInteractiveRow(item, `Open ${child.name}`, () => {
         const childObj = state.graph.getNodeById(child.id);
         if (childObj) {
           state.graph.setSelectedNode(childObj);
@@ -1553,8 +1655,10 @@ function renderInfoPanel(nodeObj) {
 
   if (children.length > 0 && !nodeObj.expanded) {
     dom.btnExpand.disabled = false;
+    dom.btnExpand.style.display = "block";
     setText(dom.btnExpand, `Expand — ${children.length} nodes`);
     dom.btnExpandAll.disabled = false;
+    dom.btnExpandAll.style.display = "block";
     setText(dom.btnExpandAll, "Expand All Below");
     if (isClusteredView) {
       setText(dom.btnExpand, `Open Cluster - ${children.length} nodes`);
@@ -1563,15 +1667,20 @@ function renderInfoPanel(nodeObj) {
     dom.btnCollapse.style.display = "none";
   } else if (nodeObj.expanded) {
     dom.btnExpand.disabled = true;
+    dom.btnExpand.style.display = "block";
     setText(dom.btnExpand, "Already Expanded");
     dom.btnExpandAll.disabled = false;
+    dom.btnExpandAll.style.display = "block";
     setText(dom.btnExpandAll, "Expand All Below");
     dom.btnCollapse.style.display = "block";
   } else {
+    // A leaf carries nothing "Expand All Below" would add beyond what
+    // "No Sub-nodes" already says, so it is hidden rather than shown a
+    // second time disabled with identical text.
     dom.btnExpand.disabled = true;
+    dom.btnExpand.style.display = "block";
     setText(dom.btnExpand, "No Sub-nodes");
-    dom.btnExpandAll.disabled = true;
-    setText(dom.btnExpandAll, "No Sub-nodes");
+    dom.btnExpandAll.style.display = "none";
     dom.btnCollapse.style.display = "none";
   }
 
@@ -1635,7 +1744,7 @@ function renderSearchResults(matches) {
     type.style.borderColor = `${match.color || "#666"}40`;
     row.appendChild(type);
 
-    row.addEventListener("click", () => {
+    makeInteractiveRow(row, `${match.name}${match.pathStr ? `, ${match.pathStr}` : ""}`, () => {
       closeSearch();
       dom.searchInput.value = "";
       revealAndSelect(match.id);
@@ -1812,6 +1921,7 @@ function bindControls() {
     dom.toggleUnverified.addEventListener("change", () => {
       state.graph.setShowUnverifiedNodes(dom.toggleUnverified.checked);
       updateStats(state.graph.getStats());
+      writeStoredPrefs({ showUnverified: dom.toggleUnverified.checked });
     });
   }
 
@@ -1823,6 +1933,7 @@ function bindControls() {
       if (selected) {
         renderInfoPanel(selected);
       }
+      writeStoredPrefs({ showEstimates: dom.toggleExactCosts.checked });
     });
   }
 
@@ -1832,6 +1943,7 @@ function bindControls() {
     closeSearch();
       state.graph.setShowCandidateNodes(dom.toggleCandidates.checked);
       updateStats(state.graph.getStats());
+      writeStoredPrefs({ showCandidates: dom.toggleCandidates.checked });
     });
   }
 
@@ -1909,6 +2021,7 @@ function bindControls() {
       const depth = button.dataset.depth === "all" ? Infinity : Number(button.dataset.depth);
       state.graph.setDepthFilter(depth);
       updateStats(state.graph.getStats());
+      writeStoredPrefs({ depthFilter: button.dataset.depth });
     });
   });
 
@@ -1970,12 +2083,56 @@ function safeInitUI() {
   }
 }
 
+// Applies whatever a previous visit (or the URL someone shared) left behind.
+// Runs after safeInitUI, since that is what creates the toggle checkboxes
+// and binds the depth buttons in the first place — nothing here exists to
+// restore state into until that has run. Setting a checkbox's `.checked`
+// does not fire its own `change` handler, so each restored toggle calls the
+// same graph method its handler would rather than relying on that event.
+function restorePersistedState() {
+  const prefs = readStoredPrefs();
+
+  if (typeof prefs.showUnverified === "boolean" && dom.toggleUnverified) {
+    dom.toggleUnverified.checked = prefs.showUnverified;
+    state.graph.setShowUnverifiedNodes(prefs.showUnverified);
+  }
+  if (typeof prefs.showEstimates === "boolean" && dom.toggleExactCosts) {
+    dom.toggleExactCosts.checked = prefs.showEstimates;
+    state.exactCostsOnly = !prefs.showEstimates;
+  }
+  if (typeof prefs.showCandidates === "boolean" && dom.toggleCandidates) {
+    dom.toggleCandidates.checked = prefs.showCandidates;
+    state.graph.setShowCandidateNodes(prefs.showCandidates);
+  }
+  if (prefs.depthFilter) {
+    const button = document.querySelector(`.depth-btn[data-depth="${prefs.depthFilter}"]`);
+    if (button && !button.disabled) {
+      document.querySelectorAll(".depth-btn").forEach((item) => item.classList.remove("active"));
+      button.classList.add("active");
+      state.graph.setDepthFilter(prefs.depthFilter === "all" ? Infinity : Number(prefs.depthFilter));
+    }
+  }
+  updateStats(state.graph.getStats());
+
+  const hashedId = getNodeIdFromHash();
+  if (hashedId) {
+    revealAndSelect(hashedId);
+  }
+}
+
 async function initGraphApp() {
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: (nodeObj) => {
       cancelRevealLoop();
       safeUiCall("renderInfoPanel", renderInfoPanel, nodeObj);
+      // A cluster's id is a stand-in for "whatever the LOD collapsed right
+      // now", not a fixed target — reloading later with the LOD in a
+      // different state would not resolve it to the same thing, so only a
+      // real node's selection is written into the shareable URL.
+      if (!nodeObj?.isCluster && nodeObj?.data?.id) {
+        setNodeHash(nodeObj.data.id);
+      }
     },
     onHover: (payload) => safeUiCall("updateTooltip", updateTooltip, payload),
     onCountsChange: (stats) => safeUiCall("updateStats", updateStats, stats),
@@ -2013,6 +2170,7 @@ async function initGraphApp() {
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
+  safeUiCall("restorePersistedState", restorePersistedState);
   hideLoadingOverlay();
 }
 
