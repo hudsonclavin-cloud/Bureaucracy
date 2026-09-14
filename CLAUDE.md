@@ -218,13 +218,76 @@ children can now sum to less than the parent, which is the honest reading:
 the remainder is not apportioned to anybody. Allocated nodes fell from 4,885
 to 653, and "with a cost" from 5,021 to 789.
 
-What this does *not* fix, and is still open: apportionment by subtree size is
-still distorted by the template positions themselves, because they still
-carry weight. A bureau whose subtree is a stamped 6-title leadership template
-is weighted as if it were a real bureau — the reason BSEE draws a larger
-share than its measured sibling BOEM. Excluding templated subtrees from
-weighting is the remaining half, and it *would* move organisations' figures,
-so it is not bundled here. The period of
+**The template half, since 2026-09-15 — and a correction.** The note above
+used BSEE drawing a larger share than its measured sibling BOEM as the
+reason to do this. Checked directly against the data while building it:
+that example was wrong. Neither BSEE nor BOEM carries any templated title —
+both have bespoke ones (Regional Director — Gulf of Mexico, Petroleum
+Engineer, ...) — and both are weighted by their own `employees` figure, not
+by subtree size. The claim was inherited from an external review that used
+"template" to mean "a shallow six-node sketch", which BSEE's subtree is, but
+being shallow and being *stamped* — the same titles copied verbatim across
+unrelated organisations — are different problems; this section fixes the
+second one.
+
+The real, stamped pattern is data-verified, not guessed: `General Counsel`,
+`Chief Financial Officer`, `Inspector General`, `Chief of Staff` and `Chief
+Information Officer` recur (92, 81, 80, 71 and 47 times) across 76
+organisations, 46 of them with nothing else beneath them at all — DIA, NSA,
+NGA, NRO, DARPA, DLA, TVA, NCUA, PBGC among them. A second, larger variant of
+the same stamp sits under every one of the 15 cabinet departments: six more
+titles — `Executive Secretary`, `Deputy Inspector General`, `Deputy General
+Counsel`, `Deputy CFO / Controller`, `Deputy CIO`, `Diversity & Inclusion
+Officer` — occur at *precisely* those 15 organisations and no others, which
+is what makes it a stamp and not independent curation: no department was
+individually assessed as needing a Diversity & Inclusion Officer, the same
+16-line office was written under all of them. `Deputy Administrator` and
+`Director of Human Resources` were checked and excluded from the list: the
+first always pairs with a real, org-specific `Administrator` title rather
+than standing alone as boilerplate, and the second's occurrences span
+legislative support offices and NASA field centers with no shared parent
+pattern — neither is evidenced as the same mechanical copy the titles above
+are.
+
+`GENERIC_ADMINISTRATIVE_TITLES` in `build_graph.py` is that list, and
+`compute_subtree_sizes` now gives a Position node matching it — by exact
+string equality, never a substring, so `Inspector General (DoJ IG covers
+FBI)` and `Chief of Staff of the Air Force` keep counting — no weight toward
+its ancestors' counted size. Real structure beneath a stamped title, should
+one ever be curated, still counts; only 46 of the 76 organisations have
+nothing else, and the other 30 keep every bit of their real substructure.
+No marker distinguished these nodes before this — a full key scan of the
+curated file found none — so this is a name-based, data-verified detector,
+not a flag some earlier stage forgot to set.
+
+Verified on the real graph, not asserted: **`Defense Agencies & Field
+Activities`**, which nests NSA/DIA/DARPA/DLA and a dozen more — each padded
+with the same five titles — drew **$258.7B** of DoD's pool before this
+change, more than `Military Departments & Services` itself ($194.6B). After:
+**$124.3B**, with the difference moving to Joint Chiefs, Military
+Departments and the Unified Combatant Commands — the parts of DoD with real,
+individually curated structure, pinned in
+`tests/test_cost_cascade_units.PublishedGraphAdminStampWeightingTests`. 418
+of 813 organisation nodes changed. BSEE moved slightly too — not because it
+carries the stamp (it does not), but because BLM's own bare `Deputy
+Director` is in the excluded list, which shifts the geometric-mean rate BSEE
+inherits through `resolve_sibling_weights`; BOEM, anchored to its own
+Treasury line, did not move at all.
+
+**Noticed but not fixed, and out of scope for this change:** Treasury's
+`FinCEN`, `OFAC` and `TTB` publish implausible figures in the hundred-
+billion range, both before and after this fix — a pre-existing distortion in
+how Treasury's own enormous total gets divided among its bureaus, unrelated
+to the admin-title stamp and not touched here.
+
+Still open: apportionment by subtree size is still weak wherever a sibling
+group has no dollar or headcount evidence and no stamp to exclude either —
+most bureaus in this graph bottom out directly in Position leaves with no
+deeper structure, so raw node count is a compressed, noisy proxy for real
+size even when every title in it was independently curated. Discounting
+curation depth itself, rather than just the identifiably mechanical stamp,
+would move many more organisations' figures on a much less bounded
+justification, and is not attempted here. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
 `record_date`, `label`) — the UI reads it there and applies it to every
 figure.

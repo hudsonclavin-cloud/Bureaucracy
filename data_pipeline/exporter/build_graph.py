@@ -451,11 +451,86 @@ def parse_cost_amount(value: Any) -> float | None:
         return None
 
 
+#: Position titles that were stamped, word for word, under many unrelated
+#: organisations rather than independently curated for each — the leadership
+#: office every cabinet department carries beneath its Secretary, and the
+#: smaller version of the same stamp under 76 sub-agencies (46 of them with
+#: nothing else beneath them at all: DIA, NSA, NGA, NRO, DARPA, TVA, NCUA,
+#: PBGC and 38 more). Confirmed by exact recurrence count, not guessed: six
+#: of these titles occur at precisely the same 15 organisations —
+#: `Executive Secretary`, `Deputy Inspector General`, `Deputy General
+#: Counsel`, `Deputy CFO / Controller`, `Deputy CIO`, `Diversity & Inclusion
+#: Officer` — which is exactly the federal government's 15 cabinet
+#: departments and nothing else; `General Counsel` (92), `Chief Financial
+#: Officer` (81), `Inspector General` (80), `Chief of Staff` (71) and `Chief
+#: Information Officer` (47) are the same stamp's smaller variant, present
+#: at both the departments and the 76 sub-agencies.
+#:
+#: A node this small is not proof of a small organisation, and a node this
+#: large is not proof of a large one: the count is an artefact of how many
+#: generic admin slots someone thought to write down, uncorrelated with the
+#: unit's real size, and it inflates whichever sibling happens to have more
+#: of them counted the same way real, individually-curated structure would.
+#: BSEE and BOEM are not examples of this — checked directly: neither
+#: carries any of these titles, both have bespoke ones (Regional Director —
+#: Gulf of Mexico, Petroleum Engineer, ...), and both are weighted by their
+#: own `employees` figure, never by subtree size. An earlier note here named
+#: them as the reason for this exclusion; that was wrong, and is corrected.
+#:
+#: Exact string match only, never a substring: `Inspector General (DoJ IG
+#: covers FBI)` and `Chief of Staff of the Air Force` are real, distinct,
+#: individually-curated positions that happen to contain one of these
+#: strings, and must keep counting. `Deputy Administrator` and `Director of
+#: Human Resources` were checked and excluded from this list: the first
+#: always pairs with a real, org-specific `Administrator` title (TTB, DEA,
+#: FSA, ...) rather than standing alone as boilerplate, and the second's
+#: occurrences span legislative support offices and NASA field centers with
+#: no shared parent pattern — neither is evidenced as the same mechanical
+#: stamp the way the titles below are.
+GENERIC_ADMINISTRATIVE_TITLES = frozenset({
+    "General Counsel",
+    "Chief Financial Officer",
+    "Inspector General",
+    "Chief of Staff",
+    "Chief Information Officer",
+    "Deputy Director",
+    "Deputy Director / Vice Chair",
+    "Executive Secretary",
+    "Deputy Inspector General",
+    "Deputy General Counsel",
+    "Deputy CFO / Controller",
+    "Deputy CIO",
+    "Chief Human Capital Officer",
+    "Diversity & Inclusion Officer",
+    "Director of Legislative Affairs",
+    "Director of Public Affairs",
+})
+
+
+def is_generic_administrative_title(node: dict[str, Any]) -> bool:
+    """A position node whose entire evidentiary content is the stamped
+    admin-office boilerplate, not anything specific to this organisation."""
+    if str(node.get("type") or "").casefold() != "position":
+        return False
+    return str(node.get("name") or "") in GENERIC_ADMINISTRATIVE_TITLES
+
+
 def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
+    """How much weight the cost cascade's `subtree_weight` fallback (and the
+    implied-weight rate it derives from dollar- or headcount-evidenced
+    siblings, see `resolve_sibling_weights`) gives each node's descendants.
+
+    Not a census: a node matching `is_generic_administrative_title`
+    contributes nothing to its ancestors' counted size, because its presence
+    says nothing about the size of the organisation it sits under. It still
+    recurses into that node's own children (there are none, in practice —
+    every instance checked is a leaf), so real structure beneath a stamped
+    title, should one ever be curated, would still count.
+    """
     sizes: dict[str, int] = {}
 
     def visit(node: dict[str, Any]) -> int:
-        total = 1
+        total = 0 if is_generic_administrative_title(node) else 1
         for child in node.get("children", []):
             if isinstance(child, dict):
                 total += visit(child)

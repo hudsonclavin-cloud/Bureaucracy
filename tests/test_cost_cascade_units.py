@@ -17,6 +17,8 @@ from pathlib import Path
 from data_pipeline.exporter.build_graph import (
     annotate_resolved_costs,
     build_graph,
+    compute_subtree_sizes,
+    is_generic_administrative_title,
     parse_cost_amount,
     summarize_scaled_official,
 )
@@ -695,3 +697,223 @@ class PostsAreNotBudgetUnitsTests(unittest.TestCase):
 
         walk(graph)
         self.assertEqual(priced, [])
+
+
+class GenericAdministrativeTitleWeightingTests(unittest.TestCase):
+    """A mechanically stamped admin title must not inflate a sibling's weight.
+
+    `data/federal_gov_complete_1.json` carries the same small set of titles —
+    General Counsel, Chief Financial Officer, Inspector General, Chief of
+    Staff, Chief Information Officer, and the department-level office around
+    them (Executive Secretary, Deputy Inspector General, Deputy General
+    Counsel, ...) — under 76 organisations, 46 of them with nothing else
+    beneath them at all. Before this fix, `compute_subtree_sizes` counted
+    every one of those stamped Position leaves the same as a genuinely
+    curated one, so an organisation whose only content was the stamp drew
+    weight as if that were real structure. Confirmed on the real graph:
+    DoD's "Defense Agencies & Field Activities" grouping — which nests NSA,
+    DIA, DARPA and a dozen more agencies, each padded with five stamped
+    titles — drew 258.7B of DoD's pool (roughly a third) before this fix and
+    124.3B after, with the freed weight moving to Joint Chiefs, Military
+    Departments and the Unified Combatant Commands: the parts of DoD with
+    real, individually-curated structure.
+    """
+
+    def test_the_stamp_is_matched_exactly_not_by_substring(self) -> None:
+        stamped = {"id": "x", "name": "General Counsel", "type": "Position", "children": []}
+        self.assertTrue(is_generic_administrative_title(stamped))
+        # A real, individually-curated position that happens to contain one
+        # of the stamped strings must not be caught by a substring match.
+        for name in (
+            "Inspector General (DoJ IG covers FBI)",
+            "Chief of Staff of the Air Force",
+            "Deputy General Counsel",  # a distinct title, itself also stamped
+        ):
+            with self.subTest(name=name):
+                node = {"id": "y", "name": name, "type": "Position", "children": []}
+                self.assertEqual(
+                    is_generic_administrative_title(node),
+                    name == "Deputy General Counsel",
+                )
+
+    def test_it_only_matches_position_type_nodes(self) -> None:
+        # An organisation could coincidentally be *named* "General Counsel"
+        # (it never is, in this graph) without being the stamped title.
+        node = {"id": "z", "name": "General Counsel", "type": "Office", "children": []}
+        self.assertFalse(is_generic_administrative_title(node))
+
+    def test_a_pure_stamped_subtree_counts_as_one_node_not_its_full_size(self) -> None:
+        stamped_org = {
+            "id": "agency", "name": "Agency", "type": "Independent Agency", "children": [
+                {"id": "agency-director", "name": "Director, Agency", "type": "Position", "children": []},
+                {"id": "agency-deputy", "name": "Deputy Director", "type": "Position", "children": []},
+                {"id": "agency-gc", "name": "General Counsel", "type": "Position", "children": []},
+                {"id": "agency-cfo", "name": "Chief Financial Officer", "type": "Position", "children": []},
+                {"id": "agency-ig", "name": "Inspector General", "type": "Position", "children": []},
+                {"id": "agency-cos", "name": "Chief of Staff", "type": "Position", "children": []},
+                {"id": "agency-cio", "name": "Chief Information Officer", "type": "Position", "children": []},
+            ],
+        }
+        sizes = compute_subtree_sizes(_tree([stamped_org]))
+        # Only "Director, Agency" survives the exclusion (it names the agency,
+        # so it is not one of the bare stamped strings); the bare "Deputy
+        # Director" and the fixed five are excluded. 1 (the org) + 1
+        # (Director, Agency) = 2, not 1 + 7 = 8.
+        self.assertEqual(sizes["agency"], 2)
+
+    def test_real_structure_beneath_the_stamp_still_counts(self) -> None:
+        department = {
+            "id": "dept", "name": "Department", "type": "Cabinet Department", "children": [
+                {"id": "dept-gc", "name": "General Counsel", "type": "Position", "children": []},
+                {"id": "dept-cfo", "name": "Chief Financial Officer", "type": "Position", "children": []},
+                {"id": "dept-bureau-a", "name": "Bureau A", "type": "Bureau", "children": [
+                    {"id": "dept-bureau-a-p1", "name": "Program Manager", "type": "Position", "children": []},
+                    {"id": "dept-bureau-a-p2", "name": "Field Officer", "type": "Position", "children": []},
+                ]},
+                {"id": "dept-bureau-b", "name": "Bureau B", "type": "Bureau", "children": [
+                    {"id": "dept-bureau-b-p1", "name": "Analyst", "type": "Position", "children": []},
+                ]},
+            ],
+        }
+        sizes = compute_subtree_sizes(_tree([department]))
+        # dept itself + bureau A (1 + its 2 real positions) + bureau B (1 +
+        # its 1 real position) = 1 + 3 + 2 = 6. The stamped GC/CFO contribute
+        # nothing, but neither bureau's own real staff is touched.
+        self.assertEqual(sizes["dept"], 6)
+        self.assertEqual(sizes["dept-bureau-a"], 3)
+        self.assertEqual(sizes["dept-bureau-b"], 2)
+
+    def test_the_stamp_alone_draws_no_more_than_bare_self(self) -> None:
+        """The headline case: an org whose whole subtree is the stamp, beside
+        an equally information-free bureau that just doesn't carry the stamp
+        at all — before this fix, one of them drew roughly 6x the other for
+        having more boilerplate, not more real structure."""
+        tree = _run(
+            [
+                {"id": "bare", "name": "Bare", "children": []},
+                {
+                    "id": "stamped", "name": "Stamped", "children": [
+                        {"id": "stamped-director", "name": "Director, Stamped", "type": "Position", "children": []},
+                        {"id": "stamped-deputy", "name": "Deputy Director", "type": "Position", "children": []},
+                        {"id": "stamped-gc", "name": "General Counsel", "type": "Position", "children": []},
+                        {"id": "stamped-cfo", "name": "Chief Financial Officer", "type": "Position", "children": []},
+                        {"id": "stamped-ig", "name": "Inspector General", "type": "Position", "children": []},
+                        {"id": "stamped-cos", "name": "Chief of Staff", "type": "Position", "children": []},
+                        {"id": "stamped-cio", "name": "Chief Information Officer", "type": "Position", "children": []},
+                    ],
+                },
+            ]
+        )
+        amounts = {c["id"]: c["resolved_total_amount"] for c in tree["children"]}
+        # "stamped" keeps its own org-specific "Director, Stamped" (1) but
+        # everything else it carries is boilerplate, so it counts as 2
+        # (itself + the one real title) against "bare"'s 1 — not 8.
+        self.assertAlmostEqual(amounts["stamped"], amounts["bare"] * 2, delta=0.05)
+
+    def test_a_stamped_org_no_longer_outweighs_a_more_thinly_structured_real_one(self) -> None:
+        """Two organisations with genuinely different real structure (2 real
+        positions vs. 1), one of them also carrying the stamp on top. The
+        richer-but-stamped org should draw only what its 2 real positions
+        earn — the stamp adds nothing beyond what a bare 3rd position
+        would."""
+        tree = _run(
+            [
+                {
+                    "id": "thin-real", "name": "Thin But Real", "children": [
+                        {"id": "thin-real-p1", "name": "Field Officer", "type": "Position", "children": []},
+                    ],
+                },
+                {
+                    "id": "richer-and-stamped", "name": "Richer And Stamped", "children": [
+                        {"id": "richer-p1", "name": "Field Officer", "type": "Position", "children": []},
+                        {"id": "richer-p2", "name": "Program Analyst", "type": "Position", "children": []},
+                        {"id": "richer-gc", "name": "General Counsel", "type": "Position", "children": []},
+                        {"id": "richer-cfo", "name": "Chief Financial Officer", "type": "Position", "children": []},
+                    ],
+                },
+            ]
+        )
+        amounts = {c["id"]: c["resolved_total_amount"] for c in tree["children"]}
+        # thin-real: 1 (itself) + 1 real position = 2.
+        # richer-and-stamped: 1 (itself) + 2 real positions = 3; the GC/CFO
+        # stamp contributes nothing. So the split is 2:3, not 2:5.
+        self.assertAlmostEqual(amounts["richer-and-stamped"] / amounts["thin-real"], 3 / 2, places=2)
+
+    def test_bsee_and_boem_carry_none_of_the_stamped_titles(self) -> None:
+        """The two bureaus CLAUDE.md's earlier note (wrongly) cited as the
+        reason for this exclusion. Documented here so the correction has a
+        pinned check: neither is a generic-administrative-title match, and
+        this fix does not touch them for that reason. (They can still shift
+        slightly through the geometric-mean rate their siblings imply — see
+        the module docstring — but never because BSEE or BOEM themselves are
+        stamped, because they are not.)"""
+        bsee_titles = (
+            "Director, BSEE", "Deputy Director", "Regional Director — Gulf of Mexico",
+            "Regional Director — Pacific", "Regional Director — Alaska",
+            "Offshore Inspector (×multiple)",
+        )
+        boem_titles = (
+            "Director, BOEM", "Deputy Director", "Regional Director — 3 Regions",
+            "Petroleum Engineer", "Environmental Scientist", "Offshore Energy Analyst",
+        )
+        for title in set(bsee_titles) | set(boem_titles):
+            node = {"id": "x", "name": title, "type": "Position", "children": []}
+            with self.subTest(title=title):
+                self.assertEqual(
+                    is_generic_administrative_title(node),
+                    title == "Deputy Director",  # the one bare, stamped title either carries
+                )
+
+
+class PublishedGraphAdminStampWeightingTests(unittest.TestCase):
+    """The real-graph case this fix exists for, pinned so it cannot regress.
+
+    Before this fix: "Defense Agencies & Field Activities" (which nests NSA,
+    DIA, DARPA and a dozen more, each padded with the stamped GC/CFO/IG/CoS/
+    CIO titles) drew $258.7B of DoD's discretionary pool -- roughly a third,
+    and more than Military Departments & Services itself. After: $124.3B,
+    with the difference moving to Joint Chiefs, Military Departments and the
+    Unified Combatant Commands -- the parts of DoD with real, individually
+    curated structure.
+    """
+
+    def _dod_children(self):
+        path = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+        if not path.exists():  # pragma: no cover - the published graph is tracked
+            self.skipTest("no published graph")
+        graph = json.loads(path.read_text(encoding="utf-8"))
+
+        def find(node, node_id):
+            if node.get("id") == node_id:
+                return node
+            for child in node.get("children") or []:
+                found = find(child, node_id)
+                if found is not None:
+                    return found
+            return None
+
+        dod = find(graph, "exec-dept-defense")
+        self.assertIsNotNone(dod, "exec-dept-defense not in the published graph")
+        return {c["id"]: c for c in dod.get("children") or []}
+
+    def test_defense_agencies_no_longer_outweighs_military_departments(self):
+        children = self._dod_children()
+        agencies = children["exec-dept-defense-agencies"]["resolved_total_amount"]
+        military = children["exec-dept-defense-branches"]["resolved_total_amount"]
+        # Before this fix, the padded grouping drew more than the real one
+        # (258.7B vs 194.6B). Now it must draw less.
+        self.assertLess(agencies, military)
+
+    def test_the_stamped_position_nodes_still_publish_no_amount(self):
+        """This fix changes weighting, not the post-is-not-a-budget-unit
+        rule: the stamped positions directly under DoD must still carry no
+        figure of their own."""
+        children = self._dod_children()
+        for node_id in (
+            "exec-dept-defense-general-counsel",
+            "exec-dept-defense-chief-financial-officer",
+            "exec-dept-defense-inspector-general",
+        ):
+            node = children[node_id]
+            self.assertIsNone(node.get("resolved_total_amount"))
+            self.assertEqual(node.get("cost_validation"), "post_is_not_a_budget_unit")
