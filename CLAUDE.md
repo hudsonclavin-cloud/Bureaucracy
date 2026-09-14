@@ -4,6 +4,14 @@ Guidance for Claude Code (claude.ai/code) when working in this repository.
 This file was lost in the 2026-08-04 merge and rewritten from the code on
 2026-09-02; where it disagrees with older commit messages, the code wins.
 
+## Start here
+
+`docs/GO.md` is the standing instruction for agent work on this repository.
+When the owner says **go**, read it and follow it from Step 0; it decides
+which of the three phases the work is currently in by reading state off disk,
+so a fresh session resumes exactly where the last one stopped. `/go` is the
+same thing as a slash command.
+
 ## Project goal
 
 A browsable, data-backed 3D organizational graph of the U.S. federal
@@ -26,6 +34,8 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
+python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
+python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -235,6 +245,34 @@ Five statuses in `evidence.json`, and only the first two are applied:
   ("Individual Senator Offices (100)", 44 of them) or a name too generic to
   distinguish anything ("Energy", "Defense", 16). Never fetched.
 
+**Committees, with the graph's type words set aside (since 2026-09-13).**
+The graph names every committee with a type word in front — "House
+Committee on Armed Services", "Subcommittee on Livestock, Dairy &
+Poultry" — and the chambers' sites label the same bodies without it. Label
+equality refused 38 of the 78 `not_found` records for that prefix and
+nothing else. `committee_core_key` folds a leading chamber word, one or two
+"…Committee on" prefixes and a trailing "Committee"/"Subcommittee" on
+*both* sides, and the fold is granted only by the node's type
+(`COMMITTEE_TYPES`: committee, subcommittee — so "Office of Science" can
+never match "Science") and only when two or more tokens remain
+("Subcommittee on Readiness" is not confirmed by the word "Readiness";
+"Senate Committee on Select Committee on Ethics" folds to one token and
+stays unconfirmed). Equality is tried first on every fragment, so a page
+carrying the full name is never recorded as folded; a folded match carries
+`matchRule: committee_scaffolding_folded` in the record and the exporter
+publishes `verificationMatchRule` with `verificationMatchedText` — the
+label as the page prints it — and `placementMatchRule` beside
+`placementMatchedText`, so the panel says "as 'Livestock, Dairy, and
+Poultry' (the graph's 'Committee on' / 'Subcommittee on' prefix set
+aside)" and never the plain claim. The rename guard
+(`evidence_names_this_node`) takes the node, not just its name: a committee
+re-typed as an office loses everything it earned as a committee. The gate
+refuses the rule on any other type, without the label, under a method that
+read no page, or with a label whose core is not the name's, and mirrors the
+fold stdlib-only (`tests/test_committee_fold.py` pins the two together).
+First run: 53 confirmed and 48 placed by the fold; `not_found` 78 → 46,
+confirmed records 182 → 235, nothing previously confirmed changed.
+
 **Placement — evidence for the edge, not the node.** A hierarchy is the
 site's central assertion, and until 2026-09-06 nothing had checked a single
 parent→child edge. The verifier's placement pass takes every organisation
@@ -323,16 +361,45 @@ publishes `verificationFailure: not_in_official_list` with
 `verificationFailureSource` (the list, the committee, the date, the names
 it does carry), and the panel says "checked against the Senate's official
 committee list: it carries no unit of this name under <committee>"; the
-current names the graph lacks go to CURATION.md, never fuzzy-matched. A
+current names the graph lacks go to CURATION.md, never fuzzy-matched.
+**Two true negatives on one node: the complete list's wins.** The page
+module runs first and stamps `not_found` when the committee's own
+subcommittees page does not label the curated name; the list's absence
+used to be refused for standing "beside a page's own failed check", so
+the 2026-09-13 recheck — the first with the committee pages reachable —
+silently swapped the stronger claim for the weaker one on nine
+subcommittees. Since then the list's badge supersedes a page `not_found`
+(never another list's), and the page read stays as `pageReadNotNamed`,
+the field a listing already uses to keep that fact; the stat is
+`page_negatives_superseded`, and `tests/test_congress.py` pins it in
+both directions. A
 listed subcommittee is placed under its committee by the list's own
 structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
 `committee_key` folds the graph's artifacts ("Senate Committee on Select
 Committee on Ethics", "Committee on Judiciary") onto the Senate's names
 and nothing else. First run: all 20 curated Senate committees listed, 43
 subcommittees listed and placed, 27 curated names the Senate no longer
-carries. The House Clerk's list could not be fetched from the pipeline's
-network (proxy refusal, recorded in the fixtures README); house.gov lists
-committees only.
+carries. **The House Clerk's list landed on 2026-09-13**, once the
+allowlist reached clerk.house.gov (the 2026-09-08 proxy refusal stays
+recorded in the fixtures README): `Committees/ExcelCommitteeData` is one
+spreadsheet of every committee and subcommittee with its code, type,
+parent code and website, committed verbatim at
+`tests/fixtures/directories/house/committees.xlsx`, read with the standard
+library alone (`congress.read_xlsx_rows`: an .xlsx is a zip of XML) and
+matched by exactly the Senate's rules through the shared
+`match_committee_list` (`match_senate` and `match_house` are one function
+with a source, an id prefix and a list label). Its methods are
+`listed_in_house_clerk_committee_list` /
+`listed_under_committee_in_house_clerk_committee_list`, its negative is the
+same `not_in_official_list` with `verificationFailureSource.source:
+house_clerk_committee_list`, and the gate accepts that negative only with
+a clerk.house.gov URL. First run: 27 committees in the list, 18 matched
+(the joint committees and the Ethics Committee have no curated node;
+"Education and Workforce", "Oversight and Government Reform" and the
+Strategic Competition select committee are spelled differently from the
+curated names and are reported, never fuzzy-matched); 68 subcommittees
+listed and placed; 25 curated House names the Clerk does not carry; 30
+Clerk names the graph lacks, all in CURATION.md §5.7.
 OPM's data landed on 2026-09-08 (`tests/fixtures/opm/`, README there):
 FedScope civilian employment by agency and sub-agency for March 2025 and
 September 2024 — the official counts the cost cascade's headcount weights
@@ -444,31 +511,86 @@ Executive Schedule row, "15" for a General Schedule one) and, for 983 rows,
 a rate of basic pay ("$225,700") — so `split_level_grade_pay` separates
 them into `payLevel` and `reportedPay` (with `reportedPayText`, the text
 the archive prints, so the figure can be audited against the file). 44 of
-the matched positions carry a rate, 30 a level only. A dollar figure is
-never published under a heading that reads "Level", the gate refuses each
+the matched positions carry a rate, 30 a level or grade only. A dollar figure
+is never published under a heading that reads "Level", the gate refuses each
 holding the other's kind of value, and the panel says a level is the rank,
 not a rate of pay, and that a rate is neither this unit's cost nor
 necessarily what the post pays now.
 
-Nothing converts a level into a rate. That needs OPM's Salary Table
-2026-EX, and `www.opm.gov` is refused by this session's egress proxy —
-along with `www.federalregister.gov` (the Executive Order setting the rates
-would have been a second route), `www.senate.gov` and
-`fiscaldata.treasury.gov`, all four of which were fetched successfully on
-2026-09-08. The allowlist is per session; `docs/NETWORK_ACCESS.md` §0
-records the change with dates. `scripts/fetch_fixture.py` fetches a file
-verbatim into `tests/fixtures/` with a `.meta.json` carrying the status,
-the sha256 and the robots verdict, and on a refusal writes the meta and no
-fixture — so a blocked source is recorded rather than looking untried.
-`tests/fixtures/opm/pay/` is that record and holds no table: five numbers
-are easy to transcribe from a screenshot and impossible to audit, and a
-hand-entered table under an `opm.gov` URL would read on the site exactly
-like a fetched one. The parser and the level-to-rate matcher are
-deliberately unwritten until the page has been fetched; the README there
-says what they will have to be honest about (the level is from the
-2021–2025 archive, the table is effective January 2026, basic pay is not
-the node's share of outlays, and the table's own pay-freeze note must
-carry through).
+**The level converted into a rate, since 2026-09-11, by two documents that
+each say half of it** (`data_pipeline/verification/pay_tables.py`, derived by
+`scripts/derive_pay_evidence.py` into `data/verification/pay_evidence.json`).
+OPM's Salary Table No. 2026-EX was fetched once the session's allowlist was
+widened — `docs/NETWORK_ACCESS.md` §0a records that the earlier refusals came
+of editing the wrong cloud environment — and is committed verbatim at
+`tests/fixtures/opm/pay/executive_schedule_2026.html`, with the `.meta.json`
+its fetch wrote. `load_executive_schedule` **recomputes the digest from the
+bytes on disk and refuses a mismatch**, which is the only such check in the
+repository and the thing that makes a record's `documentSha256` a claim
+rather than a copied string; a hand-entered table under an `opm.gov` URL
+would otherwise read on the site exactly like a fetched one.
+
+The claim is deliberately two-sourced and can never be more: the **level** is
+the previous administration's archive (January 2021 – January 2025) and the
+**rate** is a table effective January 2026, so neither half says what a post
+pays whoever holds it now, and the panel prints both with their own dates.
+`scopeMatch` is `proxy` — the table names a rank, not a unit — so
+`financial_evidence.classify` grades all 29 `partial` and no route makes one
+`verified`.
+
+The pay plan is what settles whether a rank is an Executive Schedule rank,
+not the numeral: the archive files General Schedule grades in the same column,
+and two of its rows carry a Roman numeral on a pay plan that is not the
+Executive Schedule at all (ABMC's "THE SECRETARY" on `AD`, the Corporation for
+National and Community Service's "BOARD MEMBER - CHAIR" on `WC`). So a rate is
+published only where the archive gives **both** an `EX` pay plan and a level
+the table prints. **29** of the 126 matched positions qualify — not the 30
+that "carry a level or grade", the 30th being a GS-15 — and one `EX` record
+carries no level at all. Level I reaches no node in this graph.
+
+Three boundaries the gate enforces (`table_pay_violations`), each of which
+failed or nearly failed in development:
+
+- **It is not the unit's cost.** Basic pay excludes benefits and is not a
+  share of federal outlays, which is what `resolved_total_amount` means
+  everywhere else. Nothing writes a cost field; the gate refuses a pay block
+  beside a measured cost status or an unknown `cost_basis`.
+- **It is not evidence that the post exists.** The first version appended the
+  table's URL to `sourceUrls`, and the release gate passed it:
+  `verify_node_sources` counts URLs and classifies hosts, so a second `.gov`
+  URL added `official_site` and carried confidence 0.5 → 0.8. 29 positions
+  published `verificationStatus: verified` on the strength of a five-row table
+  naming no post, and the graph's verified count went 49 → 78 in one build.
+  The module now writes no `sourceUrls`, `sourceTypes`, `lastVerified` or
+  `verificationMethod`; the URL rides in `positionPayRate` only.
+- **It cannot outlive the level it was looked up from.** `positionPayRate` is
+  in `EVIDENCE_OWNED_FIELDS`, and the rate is published only where the node's
+  own `positionListing` still reports that level on that pay plan — so when
+  `positions.py` withdraws a listing, the rate goes with it rather than
+  leaving "$228,000 (Level II)" on the site with nothing asserting the post is
+  at Level II.
+
+The gate mirrors the five rates in `EXECUTIVE_SCHEDULE_RATES` because it is
+stdlib-only and cannot parse the fixture; `tests/test_pay_tables.py` parses the
+committed page and asserts the mirror equals it, so the two cannot drift. The
+table's footnotes ride on every record and are printed verbatim — a pay freeze
+for the Vice President and certain senior political appointees runs through
+January 30, 2026, so a level's table rate is not necessarily what was payable,
+and the gate refuses a block whose footnote list is empty.
+
+Feeding these records through `financial_evidence.validate_record` — rather
+than stamping them straight onto the graph — needed three changes to a module
+that had already survived 178 attacks, each narrow and each recorded there:
+`annual_rate` joins `PERIOD_COVERAGES` (a rate is not a flow, and filing it as
+`full_fiscal_year` would claim it covered a year it did not) and is required
+of `basic_pay` in both directions; and `_prints_whole_dollars` lets a document
+state its scale by *printing* it, because the OPM page contains none of the
+words "dollar", "thousand" or "million" and an honest record from it was
+otherwise unfilable. That relaxation is granted per source type
+(`SCALE_PRINTED_SOURCE_TYPES`, currently one entry), applies only when no
+scale phrase is present at all, requires the currency mark to be attached to
+the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
+can see which records rest on it.
 
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every
@@ -618,6 +740,92 @@ the name gives no number none is invented, which the gate enforces along
 with the arithmetic and the requirement that the quoted text really is in
 the node's name. Every field is cleared and recomputed each build, so a
 rename withdraws the claim.
+
+### The three agent phases
+
+Three runbooks, run in order over the same 5,195 nodes, each with a harness
+that refuses what it cannot adjudicate. All three write **only** to
+`data/audit/`; none edits the curated file, the published graph or any
+evidence file, which is what makes it safe to point many agents at the whole
+tree.
+
+| Phase | Runbook | Harness | Writes | Asks |
+|---|---|---|---|---|
+| 1a | `NODE_AUDIT_RUNBOOK.md` | `node_audit.py` | `node_audit.jsonl` | Is what the site says about this node supported? |
+| 1b | `SOURCE_NOMINATION_RUNBOOK.md` | `nominate.py --kind source` | `nominations/source-*.jsonl` | Which page should the verifier fetch for it? |
+| 2 | `COST_NOMINATION_RUNBOOK.md` | `nominate.py --kind cost` | `nominations/cost-*.jsonl` | Which record would give it its own cost? |
+
+Phase 2 reads phase 1's ledger before nominating and skips any node the audit
+called a duplicate, not a real unit, wrongly parented or stale-named: a
+financial identifier on a node about to be merged or moved looks like
+evidence for the wrong thing. It feeds back the other way too — an identity
+problem found while chasing money goes into the audit ledger with `--force`.
+
+**Phases 1b and 2 are deliberately weaker than 1a, and that is the design.**
+A nomination is not a claim: `official_sites.json` has always said a URL there
+is "something to check, not evidence", so an agent may propose a page it
+cannot read and the verifier adjudicates by label equality. The worst a wrong
+nomination does is waste one fetch. Both refuse `confidence: certain`
+outright — an agent that cannot read the source has no way to earn it — and
+both refuse what could never be adjudicated at all: a host the verifier will
+not fetch, a dataset URL offered as a unit's own page, a URL already tried and
+failed, a metric outside the five (`net_outlays`, `audited_net_cost`,
+`obligations`, `budget_authority`, `basic_pay`), an identifier with no basis.
+`nominate.py promote` is the only command that writes outside `data/audit/`:
+it adds candidates to the verifier's fetch queue and records each one's run,
+basis and confidence in `official_sites_provenance.json`. Two rules fixed by
+the 2026-09-13 brute-force pass (13 Sonnet agents, one shard each, live
+fetches, `source-brute1.jsonl`, 371 records): the ledger's "later record
+wins" is by `nominatedAt`, not by file name — `source-brute1` sorted before
+`source-pass1` and 371 live-fetched records were shadowed by the blind
+declines they replaced, so `promote` queued one page of 160; and a URL is
+refused as "already fetched" only when it was fetched *for this node* — a
+parent's page is read once and lists many children, and the global rule
+had refused senate.gov as the page that labels the Secretary of the Senate.
+`label_matches` tests the whole fragment before splitting it on separators:
+"Division of Social and Economic Sciences (SBE/SES)" was split at the "/"
+before the key dropped the parenthetical, and a page naming the unit exactly
+was recorded as not naming it.
+
+**Many agents at once.** `--shard k/N` partitions the work deterministically
+(disjoint and complete, pinned by a test) and each run writes its own ledger
+file under `data/audit/nominations/`, so N agents never touch the same file
+and their branches merge without conflict. Positions and synthetic lines are
+never handed out for page nomination — 4,382 positions would produce 4,382
+identical refusals — but a position *can* carry a cost nomination, its rate of
+basic pay, which is never the unit's cost.
+
+The standing numbers this work exists to move: 611 of 788 organisations have
+no candidate page at all, so the verifier can never reach them; and 136 of
+5,195 nodes carry a cost identified for themselves.
+
+### The node-by-node audit
+
+`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,195
+nodes one at a time; `scripts/node_audit.py` is the harness. `next` hands
+over a batch of nodes with every claim the site makes about each and every
+evidence record keyed to its id; `record` validates findings and appends
+them to `data/audit/node_audit.jsonl`, which is the audit's **only** output
+— nothing in this path edits the curated file, the published graph or any
+evidence file, so an agent turned loose on the whole tree cannot damage it.
+
+The harness exists for one reason: an agent 400 nodes into a mechanical
+sweep stops reading and starts pattern-matching, and writes down a
+quotation that is not on the page. So `record` re-reads every cited file
+and **rejects the whole batch** if a quoted string is not in it — whole
+batch, not the bad record, because letting the good half through teaches
+that some invented citations survive. Whitespace is normalised (these files
+are hard-wrapped and an honest sentence-length quote crosses a newline);
+nothing else is. A `certain` or `likely` finding must carry evidence;
+`speculative` is the one level that may stand alone, and is how a question
+gets raised without being dressed as a fact. Citable sources are the
+repository's own published files and `.gov`/`.mil` URLs. Seven checks per
+node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
+most common — answer, not a failure: 4,762 nodes carry no source at all.
+`verify` re-checks every citation in the ledger against its source, since a
+file can change after a finding was accepted. The runbook's "do not report
+these" list matters as much as the rest: without it the sweep returns
+"description is uncited" 5,170 times and buries the real findings.
 
 ## Invariants
 

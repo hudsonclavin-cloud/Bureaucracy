@@ -2160,6 +2160,7 @@ def build_graph(
     directory_evidence_path: str | Path | None = "default",
     headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
+    pay_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2316,6 +2317,19 @@ def build_graph(
     validation["position_evidence"] = apply_position_evidence(
         graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,
     )
+    # The salary table last of all, because it is a gloss on the listing above
+    # and is published only where that listing still reports the same level.
+    from data_pipeline.verification.pay_tables import (  # noqa: E402 — pay_tables imports this module
+        DEFAULT_PAY_EVIDENCE_PATH,
+        apply_pay_evidence,
+        load_pay_evidence,
+        withdraw_pay_from_multi_post_nodes,
+    )
+
+    resolved_pay_path = DEFAULT_PAY_EVIDENCE_PATH if pay_evidence_path == "default" else pay_evidence_path
+    validation["pay_evidence"] = apply_pay_evidence(
+        graph, load_pay_evidence(resolved_pay_path) if resolved_pay_path else {}, index_tree=index_tree,
+    )
     proof_status_counts, _ = annotate_proof_tree(
         graph,
         parent_is_proven=True,
@@ -2365,6 +2379,11 @@ def build_graph(
     # After the tree is final and pruned: the count a name states is only
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
+    # And only now can a rate of basic pay be taken off a node that stands for
+    # several posts: `representsPosts` does not exist until the line above
+    # computes it, so the guard inside apply_pay_evidence (which runs at 2329,
+    # before the tree is even pruned) never sees it on a fresh build.
+    validation["pay_evidence"]["stands_for_many_posts"] = withdraw_pay_from_multi_post_nodes(graph)
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

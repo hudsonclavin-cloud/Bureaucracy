@@ -153,7 +153,9 @@ matched them to the curated organisations by exact canonical name and wrote
 `data/verification/directory_evidence.json`: 229 node records, 139 from the
 directory and 90 from the Senate list. Everything below is read off those
 files and `output/graph.json`. Nothing was fetched for this section, and
-nothing in it has been applied to the base graph (§5.6).
+nothing in it has been applied to the base graph (§5.6). A third list, the
+House Clerk's, was fetched on 2026-09-13 and is in §5.7; the file now holds
+344 records.
 
 Headline counts, from `directory_evidence.json`:
 
@@ -549,3 +551,118 @@ it; it never renames, moves, adds or removes a node, and it never chooses
 between a list and the curated file. Every change this section suggests is
 the owner's to make by hand, and until it is made the site publishes the
 difference as a difference.
+
+### 5.7 The House Clerk's committee list (fetched 2026-09-13)
+
+`tests/fixtures/directories/house/committees.xlsx` is the Clerk's own
+committee data (`https://clerk.house.gov/Committees/ExcelCommitteeData`,
+2026-09-13T22:51:28Z, 136 rows: name, code, type, parent code, website).
+`scripts/derive_directory_evidence.py` matched it by the Senate's rules
+(§5, `house_report` in `directory_evidence.json`): a leading "House
+Committee on" and "Subcommittee on" are ignored, "&" reads as "and", and
+"House Committee on Permanent Select Committee on Intelligence" folds onto
+"Permanent Select Committee on Intelligence" as the Senate's Ethics artifact
+does. Nothing was fuzzy-matched.
+
+| Figure | Value |
+|---|---|
+| committees in the list / matched to a `leg-house-cmte-*` Committee node | 27 / 18 |
+| list committees with no such node | 9 — the four joint committees (`leg-joint-*`, as §5.2), the Committee on Ethics (no curated node), the Select Subcommittee on January 6 (none), and three spelled differently from the curated name: "Committee on Education and Workforce", "Committee on Oversight and Government Reform", "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party" |
+| graph House committees not in the list | 4 — Education & the Workforce, Oversight & Accountability and the Chinese Communist Party select committee (the three above, read from the other side), and `leg-house-cmte-intelligence` "House Committee on Intelligence", which sits beside `leg-house-cmte-permanent-select-committee-on-intelligence` (the one the list matches): [Likely] a duplicate of it, for the owner to merge |
+| subcommittees: matched and placed / graph names not in the list / list names not in the graph | 68 / 25 / 30 |
+| placement disagreements | 0 |
+
+Each of the 25 publishes as "Checked 13 Sep 2026 against the House Clerk's
+official committee list: it carries no unit of this name under
+'<committee>'" with the committee's full list of names beside it. The last
+column follows §5.1's rule: filled only where the same committee has
+exactly one list name the graph lacks that shares the graph name's
+distinctive words; a lead, never a claim.
+
+| Graph id | Curated name | Committee | Possibly the same body, unverified |
+|---|---|---|---|
+| `leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture` | Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture | Agriculture | — (two list names share "Horticulture") |
+| `leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture` | Subcommittee on Nutrition, Foreign Agriculture & Horticulture | Agriculture | Nutrition and Foreign Agriculture (AG03) |
+| `leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies` | Subcommittee on Agriculture, Rural Development, FDA & Related Agencies | Appropriations | Agriculture, Rural Development, Food and Drug Administration, and Related Agencies (AP01) |
+| `leg-house-cmte-appropriations-sub-energy-water-development` | Subcommittee on Energy & Water Development | Appropriations | Energy and Water Development and Related Agencies (AP10) |
+| `leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies` | Subcommittee on Labor, HHS & Education & Related Agencies | Appropriations | Labor, Health and Human Services, Education, and Related Agencies |
+| `leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs` | Subcommittee on State, Foreign Operations & Related Programs | Appropriations | National Security, Department of State, and Related Programs |
+| `leg-house-cmte-appropriations-sub-transportation-hud-related-agencies` | Subcommittee on Transportation, HUD & Related Agencies | Appropriations | Transportation, Housing and Urban Development, and Related Agencies |
+| `leg-house-cmte-armed-services-sub-cyber-information-technology-innovation` | Subcommittee on Cyber, Information Technology & Innovation | Armed Services | Cyber, Information Technologies, and Innovation |
+| `leg-house-cmte-energy-commerce-sub-energy-climate-grid-security` | Subcommittee on Energy, Climate & Grid Security | Energy and Commerce | Energy |
+| `leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials` | Subcommittee on Environment, Manufacturing & Critical Materials | Energy and Commerce | Environment |
+| `leg-house-cmte-energy-commerce-sub-innovation-data-commerce` | Subcommittee on Innovation, Data & Commerce | Energy and Commerce | Commerce, Manufacturing, and Trade |
+| `leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy` | Subcommittee on Financial Institutions & Monetary Policy | Financial Services | Financial Institutions |
+| `leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations` | Subcommittee on Global Health, Global Human Rights & International Organizations | Foreign Affairs | — |
+| `leg-house-cmte-foreign-affairs-sub-indo-pacific` | Subcommittee on Indo-Pacific | Foreign Affairs | East Asia and Pacific |
+| `leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia` | Subcommittee on Middle East, North Africa & Central Asia | Foreign Affairs | Middle East and North Africa |
+| `leg-house-cmte-foreign-affairs-sub-oversight-accountability` | Subcommittee on Oversight & Accountability | Foreign Affairs | Oversight and Intelligence |
+| `leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence` | Subcommittee on Counterterrorism, Law Enforcement & Intelligence | Homeland Security | Counterterrorism and Intelligence |
+| `leg-house-cmte-house-administration-sub-committees` | Subcommittee on Committees | House Administration | — |
+| `leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet` | Subcommittee on Courts, Intellectual Property & the Internet | Judiciary | Courts, Intellectual Property, Artificial Intelligence, and the Internet |
+| `leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans` | Subcommittee on Responsiveness & Accountability to Americans | Judiciary | — |
+| `leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government` | Subcommittee on Weaponization of the Federal Government | Judiciary | — |
+| `leg-house-cmte-rules-sub-rules-the-organization-of-the-house` | Subcommittee on Rules & the Organization of the House | Rules | Rules and Organization of the House |
+| `leg-house-cmte-veterans-affairs-sub-benefits` | Subcommittee on Benefits | Veterans' Affairs | — |
+| `leg-house-cmte-ways-means-sub-select-revenue-measures` | Subcommittee on Select Revenue Measures | Ways and Means | — |
+| `leg-house-cmte-ways-means-sub-worker-family-support` | Subcommittee on Worker & Family Support | Ways and Means | Work and Welfare |
+
+The 30 Clerk names the graph lacks are in `house_report.subcommittees_not_in_graph`;
+beyond the leads above they include the six subcommittees of the Permanent
+Select Committee on Intelligence (Central Intelligence Agency; Defense
+Intelligence and Overhead Architecture; National Intelligence Enterprise;
+National Security Agency and Cyber; Open Source Intelligence; Oversight and
+Investigations), Armed Services' "Intelligence and Special Operations",
+Foreign Affairs' "Europe" and "South and Central Asia", House
+Administration's "Modernization and Innovation", Judiciary's "Oversight" and
+Agriculture's "Forestry and Horticulture" — none of which has a curated
+node. Adding them is the owner's to do; the pipeline reports them and
+publishes nothing about a node that does not exist.
+
+## 6. What the live pages said about the curated names (2026-09-13 brute-force pass)
+
+Thirteen agents each took a shard of the 371 organisations that had no
+candidate page, fetched what they could reach, and ran the verifier's own
+label test on what they fetched. Their nominations are in
+`data/audit/nominations/source-brute1.jsonl` (371 records: 149 nominated,
+98 covered by a parent, 47 editorial groupings, 43 with no public page they
+could find, 34 not on a .gov host) and were promoted into
+`official_sites.json` for the verifier to adjudicate. Along the way they read
+pages that contradict a curated name; each is an audit finding in
+`data/audit/node_audit.jsonl`, cited to the page as fetched that day (not
+committed as a fixture — re-fetch to confirm before renaming). Nothing here
+is applied to the base graph.
+
+| Graph id | Curated name | Finding | Claim | Page and the text it carries |
+|---|---|---|---|---|
+| `exec-ind-nsf-computer-information-science-engineering-cise-computing-communication-foundations` | Division of Computing & Communication Foundations | stale_name / note / likely | NSF's CISE directorate no longer organizes itself into a division called 'Computing and Communication Foundations' (CCF); its current program areas are named differently. | [www.nsf.gov/cise](https://www.nsf.gov/cise) — "Computing and AI Foundations ... Center-Scale and Testbeds ... Cyber, " |
+| `exec-ind-nsf-engineering-eng-emerging-frontiers-in-research-innovation` | Division of Emerging Frontiers in Research & Innovation | stale_name / correction / likely | 'EFRI' is a program inside NSF ENG's 'Office of Emerging Frontiers and Multidisciplinary Activities (EFMA)', not a 'Division of Emerging Frontiers in Research & Innovation'; no NSF page names a division by the curated ti | [www.nsf.gov/eng/emerging-frontiers-multi](https://www.nsf.gov/eng/emerging-frontiers-multidisciplinary-activities) — "The U.S. National Science Foundation Directorate for Engineering Offic" |
+| `exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems` | Division of Chemical, Bioengineering, Environmental & Transport Systems | stale_name / correction / likely | The curated name 'Division of Chemical, Bioengineering, Environmental & Transport Systems' does not match NSF's current name for this division; NSF's own site redirects the environmental-named URL to an energy-named one  | [www.nsf.gov/eng/chemical-bioengineering-](https://www.nsf.gov/eng/chemical-bioengineering-energy-transport-systems) — "ENG Chemical, Bioengineering, Energy and Transport Systems - Directora" |
+| `exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences` | Division of Mathematical Sciences | stale_name / note / likely | The curated name carries a 'Division of' prefix that NSF's current page for this unit does not use. | [www.nsf.gov/mps/mathematical-sciences](https://www.nsf.gov/mps/mathematical-sciences) — "MPS Mathematical Sciences - Directorate for Mathematical and Physical " |
+| `exec-dept-ed-region-ix-pacific` | Dept of Education Region IX — Pacific | not_a_real_unit / note / speculative | The Department of Education's current own directory of its offices names all 17 of them and none is a numbered geographic region; ED does not appear to organize itself this way today (unlike HUD, which this node's struct | [www.ed.gov/about/ed-offices](https://www.ed.gov/about/ed-offices) — "Each of ED's 17 offices play a vital role in ensuring students of all " |
+| `exec-ind-epa-office-of-research-development-ord` | Office of Research & Development (ORD) | stale_name / note / likely | EPA's own research-hub page no longer names an 'Office of Research and Development' anywhere in its content, and the analogous 'about-office-research-and-development-ord' URL 404s; EPA's About page nav now reads 'Labs an | [www.epa.gov/research](https://www.epa.gov/research) — "Research \| US EPA" |
+| `exec-dept-doj-div-enrd` | Environment & Natural Resources Division | stale_name / correction / likely | DOJ's division is now officially titled 'Energy and Natural Resources Division', not 'Environment & Natural Resources Division' as curated. | [www.justice.gov/enrd](https://www.justice.gov/enrd) — "Energy and Natural Resources Division" |
+| `exec-ind-nsf-biological-sciences-bio-integrative-organismal-systems` | Division of Integrative Organismal Systems | stale_name / note / likely | No page on nsf.gov names a distinct 'Division of Integrative Organismal Systems' any longer; both the legacy index path (nsf.gov/div/index.jsp?div=IOS) and a guessed direct path (nsf.gov/bio/ios) redirect to the general  | [www.nsf.gov/bio/ios](https://www.nsf.gov/bio/ios) — "Directorate for Biological Sciences (BIO)" |
+| `exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems` | Division of Electrical, Communications & Cyber Systems | stale_name / correction / likely | Curated name is 'Division of Electrical, Communications & Cyber Systems', but NSF's own page for this division (div=ECCS) titles itself 'ENG Electrical, Communications and Computing Systems' -- 'Computing', not 'Cyber'. | [www.nsf.gov/div/index.jsp?div=ECCS](https://www.nsf.gov/div/index.jsp?div=ECCS) — "ENG Electrical, Communications and Computing Systems" |
+| `exec-ind-nsf-biological-sciences-bio-biological-infrastructure` | Division of Biological Infrastructure | stale_name / note / likely | The BIO directorate's own page does not link or label a 'Division of Biological Infrastructure'; the closest match is a link titled 'Initiatives and Infrastructure', suggesting the division may have been renamed or restr | [www.nsf.gov/div/index.jsp?div=DBI](https://www.nsf.gov/div/index.jsp?div=DBI) — "Initiatives and Infrastructure" |
+| `exec-dept-ed-region-ii-new-york` | Dept of Education Region II — New York | stale_name / note / speculative | The Department of Education's own current 'ED Offices' page lists only functional/program offices (OCIO, OCO, OCR, OCTAE, ODS, OELA, OESE, OFO, OGC, OLCA, OPE, OPEPD, OS, OSERS, OUS, Office of the Inspector General) and  | [www.ed.gov/about/ed-offices](https://www.ed.gov/about/ed-offices) — "ED Offices" |
+| `exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems` | Division of Information & Intelligent Systems | stale_name / note / likely | NSF's CISE directorate page no longer names a 'Division of Information & Intelligent Systems'; it now describes six current thematic science areas instead, one of which ('Cyber, Physical and Intelligent Systems') is the  | [www.nsf.gov/cise](https://www.nsf.gov/cise) — "CISE is organized around six thematic science areas that support found" |
+| `exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences` | Division of Atmospheric & Geospace Sciences | stale_name / note / likely | NSF's GEO directorate page no longer names a 'Division of Atmospheric & Geospace Sciences'; it now runs a single 'Core Geoscience Research' funding opportunity with an 'Atmospheric and Geospace Sciences (AGS) program' in | [www.nsf.gov/geo/core-geoscience-research](https://www.nsf.gov/geo/core-geoscience-research) — "GEO Core calls for proposals in three programs: Atmospheric and Geospa" |
+| `leg-senate-admin-saa` | Sergeant at Arms of the Senate | stale_name / note / likely | The Senate's own page never appends 'of the Senate' to the office name -- it is headed 'About the Sergeant at Arms' and refers to 'the sergeant at arms' throughout, so the curated name 'Sergeant at Arms of the Senate' wi | [www.senate.gov/about/officers-staff/serg](https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm) — "About the Sergeant at Arms" |
+| `leg-support-loc-nls` | National Library Service for Blind & Print Disabled | stale_name / note / likely | The Library of Congress's own page spells the unit 'National Library Service for the Blind and Print Disabled (NLS)' -- with 'the' and 'and' -- where the curated name is 'National Library Service for Blind & Print Disabl | [www.loc.gov/nls/](https://www.loc.gov/nls/) — "National Library Service for the Blind and Print Disabled (NLS)" |
+| `exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure` | Division of Advanced Cyberinfrastructure | stale_name / correction / likely | NSF's own page names this unit 'Office of Advanced Cyberinfrastructure', not 'Division of Advanced Cyberinfrastructure' as curated -- a different organizational-level word, not just punctuation. | [www.nsf.gov/cise/office-advanced-cyberin](https://www.nsf.gov/cise/office-advanced-cyberinfrastructure) — "Office of Advanced Cyberinfrastructure" |
+| `exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator` | Division of Convergence Accelerator | stale_name / correction / likely | NSF's own page calls this a program, 'Convergence Accelerator', with no 'Division of' prefix and no NSF page found describing it as a division at all. | [www.nsf.gov/funding/initiatives/converge](https://www.nsf.gov/funding/initiatives/convergence-accelerator) — "Convergence Accelerator" |
+| `exec-ind-nsf-education-human-resources-ehr` | Education & Human Resources (EHR) | stale_name / correction / likely | The curated parent directorate 'Education & Human Resources (EHR)' appears to have been renamed by NSF to 'EDU' (Directorate for STEM Education); its own divisions are now labelled with an EDU/ prefix, not EHR/. | [www.nsf.gov/edu/drl](https://www.nsf.gov/edu/drl) — "Division of Research on Learning in Formal and Informal Settings (EDU/" |
+| `exec-ind-nsf-education-human-resources-ehr` | Education & Human Resources (EHR) | stale_name / correction / likely | The curated name 'Education & Human Resources (EHR)' is stale. NSF's own site now brands this directorate 'Directorate for STEM Education (EDU)', with divisions filed under nsf.gov/edu (EHR's old URL nsf.gov/ehr redirect | [www.nsf.gov/edu](https://www.nsf.gov/edu) — "Directorate for STEM Education (EDU) \| NSF - U.S. National Science Fou" |
+| `exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs` | Division of Directorate for TIP Programs | other / correction / likely | The curated node 'Division of Directorate for TIP Programs' (a sub-unit of the TIP directorate named after its own directorate) does not appear to correspond to any real NSF organizational unit; NSF's own TIP page descri | [www.nsf.gov/tip](https://www.nsf.gov/tip) — "TIP comprises three primary strategy areas" |
+| `exec-dept-ed-region-v-midwest` | Dept of Education Region V — Midwest | stale_name / note / speculative | ED's own current 'ED Offices' page lists all of the Department's principal offices by name and includes no numbered regional office ('Region V', 'Midwest', or any other), which is consistent with ED having discontinued i | [www.ed.gov/about/ed-offices](https://www.ed.gov/about/ed-offices) — "ED's Operating Structure View ED's organizational charts to learn more" |
+| `exec-ind-nsf-education-human-resources-ehr-human-resource-development` | Division of Human Resource Development | stale_name / correction / likely | This node's parent, 'Education & Human Resources (EHR)', appears to have been renamed by NSF: the fetched page for org group 17 (formerly EHR's org id) carries the title 'Directorate for STEM Education (EDU) \| NSF - U.S. | [www.nsf.gov/dir/index.jsp?org=EHR](https://www.nsf.gov/dir/index.jsp?org=EHR) — "Directorate for STEM Education (EDU) \| NSF - U.S. National Science Fou" |
+| `exec-dept-doj-usao` | U.S. Attorneys Office (USAO — 94 Districts) | stale_name / correction / likely | The Department of Justice does not call this unit 'U.S. Attorneys Office (USAO — 94 Districts)'; its own site names the collective 'Offices of the United States Attorneys' / 'U.S. Attorneys' with no '(USAO)' abbreviation | [www.justice.gov/usao](https://www.justice.gov/usao) — "U.S. Attorneys \| Offices of the United States Attorneys" |
+| `jud-support-fpd` | Federal Public Defender Offices (82) | count_mismatch / correction / likely | The curated name states '(82)' federal public defender offices, but the U.S. Courts' own Defender Services page states a different, larger figure and a different unit of count: 83 authorized federal defender organization | [www.uscourts.gov/about-federal-courts/de](https://www.uscourts.gov/about-federal-courts/defender-services) — "Today, there are 83 authorized federal defender organizations. They em" |
+
+The pattern worth reading across the rows: NSF reorganised in 2025 and its
+site no longer names most curated "Division of …" units under those names
+(CISE, GEO, BIO, ENG each now describe program areas); the Department of
+Education's own office list carries no numbered regions; DOJ's ENRD is now
+"Energy and Natural Resources Division". These are the largest single sources
+of the remaining `not_found` and `inconclusive` records, and they are curation.

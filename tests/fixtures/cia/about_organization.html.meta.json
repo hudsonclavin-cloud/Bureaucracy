@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-13T22:27:37Z",
+ "url": "https://www.cia.gov/about/organization/",
+ "status": 200,
+ "final_url": "https://www.cia.gov/about/organization/",
+ "content_type": "text/html",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /about/organization/",
+ "bytes": 526933,
+ "sha256": "2eef9c5ff20d3f9913f28f49340957e4be3848868137edc529028d03e8d62cdb",
+ "error": null
+}

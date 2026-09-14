@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260909e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260909e";
+import { createGovernmentGraph } from "./graph.js?v=20260913a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260913a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -564,7 +564,35 @@ function renderCountProvenance(data) {
     } else {
       add(`Its name states that it stands for several posts of this title ("${represents.as_written}") without saying how many, and no number is invented here. `);
     }
-    add("Any figure above is for the group, not for one holder.");
+    // What the figure above actually is decides this sentence. An apportioned
+    // share or a measured total is the group's; a rate of basic pay is one
+    // post's, and calling that "for the group" is false in the other
+    // direction. Nine published nodes said exactly that — five State
+    // department offices, the Deputy Solicitor General (×4) and two Deputy
+    // Assistant Attorney General nodes — each printing a single archive
+    // rate under a sentence calling it the group's.
+    const perPost = isCostHiddenAsEstimate(data) && reportedPayOf(data) !== null;
+    if (perPost) {
+      // Only what was actually read. An earlier version of this sentence said
+      // "each of the 2 to 4 would be paid separately", which the archive does
+      // not state: for the Western Hemisphere Affairs Deputy Assistant
+      // Secretary it carries four rows at three different figures, and the
+      // rate shown is the one its standing listings agree on. What the other
+      // posts are paid is not in the file.
+      const listing = data.positionListing || {};
+      const rows = Number(listing.incumbencies) || 0;
+      const from = listing.valuesFrom === "standing_listings"
+        ? "the listings still standing when it closed"
+        : "a past incumbency";
+      add(
+        "The rate above is one post's rather than the group's: it is what " +
+        `the archive reports for ${from}` +
+        (rows ? ` (${rows} row${rows === 1 ? "" : "s"} under this title here)` : "") +
+        ", and it does not say what the other posts of this title are paid.",
+      );
+    } else {
+      add("Any figure above is for the group, not for one holder.");
+    }
   }
 }
 
@@ -598,8 +626,8 @@ function renderPositionListing(data) {
   // Pay, as the archive states it and no further. The column it comes from
   // holds two different things — a rank ("IV", "15") and, for 983 rows, a
   // rate of basic pay ("$225,700") — so a dollar figure is never printed as
-  // a level. Nothing converts a level into a rate: that needs the Executive
-  // Schedule table, which this pipeline has not been able to fetch.
+  // a level. The archive itself never converts a level into a rate; where
+  // the block below shows one, it comes from a second document and says so.
   if (listing.payPlan) add(`Pay plan ${listing.payPlan}`);
   if (listing.payLevel) {
     add(`${listing.payPlan ? ", " : ""}${listing.payPlan === "EX" ? "Executive Schedule level" : "level or grade"} ${listing.payLevel}`);
@@ -614,6 +642,29 @@ function renderPositionListing(data) {
     add("Those details come from a past incumbency, not a standing listing. ");
   }
   add("It is a record of that period and says nothing about who holds this post now.");
+  renderTableRate(data, add);
+}
+
+// The salary table's rate for the level the archive reports. Deliberately
+// rendered here, inside the listing block, rather than only in the cost block:
+// this element is drawn whatever the estimates toggle says, and the claim only
+// makes sense beside the level it was looked up from. Text nodes throughout —
+// the footnote is verbatim text from a fetched OPM page, and this file has no
+// escaping helper (its convention is replaceChildren + createTextNode).
+function renderTableRate(data, add) {
+  const rate = data.positionPayRate;
+  if (!rate || typeof rate !== "object" || typeof rate.amount !== "number") return;
+  const printed = rate.rateText || `$${rate.amount.toLocaleString()}`;
+  // Only the leading "Effective" is lowercased to join the sentence; the month
+  // keeps the capitalisation the page prints, because this is quoted text.
+  const when = rate.effectiveText ? `, ${String(rate.effectiveText).replace(/^Effective\b/, "effective")}` : "";
+  add(` Separately, OPM's ${rate.table}${when}, pays ${printed} for ${rate.amountScope}.`);
+  // The whole point of the module: two documents, and the join is weaker than
+  // either. Neither half is allowed to be read as the other.
+  add(" That is two documents, not one — the level is the archive's record of a period that ended, and the rate is from a table that took effect afterwards, so neither says what this post pays whoever holds it now.");
+  add(" A rate of basic pay is also not this unit's cost: it excludes benefits, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  const notes = Array.isArray(rate.footnotes) ? rate.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {
@@ -677,6 +728,7 @@ function renderPlacementLine(data) {
   const directoryPlacement = {
     listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
     listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
+    listed_under_committee_in_house_clerk_committee_list: "the House Clerk's official committee list carries it under its committee here",
   }[String(data.placementMethod || "")];
   if (data.placementVerified === true && directoryPlacement) {
     add(`Placement: ${directoryPlacement}, as "${data.placementMatchedText || ""}" on `);
@@ -698,7 +750,9 @@ function renderPlacementLine(data) {
     // say so — one fetch must not read as two independent checks.
     const sameRead =
       Array.isArray(data.sourceUrls) && data.sourceUrls.includes(data.placementUrl) && data.lastVerified === data.placementVerifiedAt;
-    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"` : "";
+    const foldedNote =
+      data.placementMatchRule === "committee_scaffolding_folded" ? ` (the graph's "Committee on" / "Subcommittee on" prefix set aside)` : "";
+    const label = data.placementMatchedText ? ` as "${data.placementMatchedText}"${foldedNote}` : "";
     // A listing in the site-wide navigation (nav, header, footer) holds for
     // every page of the parent's site: real evidence, but not the page's own
     // account of itself, and the panel says which.
@@ -780,10 +834,12 @@ function renderVerificationPanel(data) {
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
+      listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
     };
     const SOURCE_TEXT = {
       federal_register_agency_directory: "the Federal Register's agency directory",
       senate_committee_list: "the Senate's official committee list",
+      house_clerk_committee_list: "the House Clerk's official committee list",
     };
     let checkLine = "Not yet verified";
     const failureSource = data.verificationFailureSource;
@@ -800,7 +856,14 @@ function renderVerificationPanel(data) {
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
-      checkLine = how ? `${how}${where} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+      // A committee matched with the graph's "Committee on" / "Subcommittee
+      // on" prefix set aside quotes the page's own label, so the reader sees
+      // what the page says and what the graph adds.
+      const folded =
+        data.verificationMatchRule === "committee_scaffolding_folded" && data.verificationMatchedText
+          ? ` as "${data.verificationMatchedText}" (the graph's "Committee on" / "Subcommittee on" prefix set aside)`
+          : "";
+      checkLine = how ? `${how}${where}${folded} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     // A directory listing beside a page claim: a second, weaker claim, said
     // as itself, with the name and the parent exactly as the directory has them.

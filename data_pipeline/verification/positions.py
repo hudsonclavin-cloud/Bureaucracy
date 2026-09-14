@@ -448,6 +448,18 @@ def describe_listing(rows: list[dict[str, Any]]) -> dict[str, Any]:
     out["payLevel"] = level
     out["reportedPay"] = pay
     out["reportedPayText"] = pay_text
+    # Each field above is aggregated on its own, and `_single_or_counts`
+    # ignores blanks — so a title whose rows are (payPlan EX, no level) and
+    # (no payPlan, level IV) reports EX and IV although no single row says a
+    # post on the Executive Schedule sits at level IV. Nothing may price a
+    # rank off a pair the archive never printed together, so the pair is
+    # recorded rather than inferred. No title in the committed archive is
+    # currently in that position; the field exists so that a later archive
+    # cannot introduce one silently.
+    out["payPlanAndLevelOnOneRow"] = bool(
+        out.get("payPlan") and out.get("level")
+        and any(r["payPlan"] == out["payPlan"] and r["level"] == out["level"] for r in basis)
+    )
     return out
 
 
@@ -657,6 +669,13 @@ def apply_position_evidence(
             "payLevel": record.get("payLevel"),
             "reportedPay": record.get("reportedPay"),
             "reportedPayText": record.get("reportedPayText"),
+            # Whether one archive row carried this pay plan and this level
+            # together. Published rather than kept in the evidence file so the
+            # exporter and the release gate can both check it: pay_tables
+            # refuses a pair the archive never printed on one row, and a rule
+            # only the deriver can see is a rule a stale or hand-edited
+            # evidence file walks straight past.
+            "payPlanAndLevelOnOneRow": record.get("payPlanAndLevelOnOneRow"),
             "incumbencies": record.get("incumbencies"),
             "standing": record.get("standing"),
             # Which rows the type, pay plan and level were read off: with no

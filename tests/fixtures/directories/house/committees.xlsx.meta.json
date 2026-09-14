@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-13T22:51:28Z",
+ "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+ "status": 200,
+ "final_url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+ "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 6345,
+ "sha256": "9029009d3d70063946d84fc87be5e8a0045b79beeb99c517d13c058ae5044fed",
+ "error": null
+}

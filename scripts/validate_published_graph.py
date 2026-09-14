@@ -28,6 +28,189 @@ MAX_TOP_LEVEL_CHILDREN = 10
 CHILD_SUM_TOLERANCE = 0.005  # 0.5%, for rounding in the apportionment cascade
 SAMPLE_LIMIT = 20
 
+# OPM's Salary Table No. 2026-EX, mirrored so the gate can check a published
+# rate against the figure the table actually prints. The gate is stdlib-only
+# and reads one file — it cannot parse the fixture — and without a mirror it
+# could not tell $209,600 from $290,600 on any node. The mirror is pinned to
+# the fetched page by tests/test_pay_tables.py, which parses
+# tests/fixtures/opm/pay/executive_schedule_2026.html and asserts equality, so
+# the two cannot drift apart silently. Same precedent as `position_title_keys`.
+EXECUTIVE_SCHEDULE_TABLE = "Salary Table No. 2026-EX"
+EXECUTIVE_SCHEDULE_RATES = {
+    "I": 253_100.0,
+    "II": 228_000.0,
+    "III": 209_600.0,
+    "IV": 197_200.0,
+    "V": 184_900.0,
+}
+EXECUTIVE_SCHEDULE_PAY_PLAN = "EX"
+EXECUTIVE_SCHEDULE_EFFECTIVE = "2026-01-01"
+EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT = "Effective January 2026"
+# The page's own notes, mirrored for the same reason the rates are. The panel
+# prints these inside quotation marks as "the table's own note", so an
+# unchecked footnote list is a channel for a fabricated quotation attributed
+# to OPM — a red team published "no pay freeze applies", the reverse of what
+# the page says, and every other check passed.
+EXECUTIVE_SCHEDULE_FOOTNOTES = (
+    "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze "
+    "on the payable pay rates for the Vice President and certain senior political appointees "
+    "continues through January 30, 2026. Future Congressional action will determine whether these "
+    "frozen rates continue beyond that date.",
+)
+# The weights the cascade may divide a share by. A pay rate appearing here
+# would mean a rate of basic pay had become an apportionment basis.
+KNOWN_COST_BASES = {
+    "annual_budget_weight", "budget_weight", "direct_outlay_weight",
+    "implied_budget_weight", "employee_weight", "implied_employee_weight",
+    "subtree_weight",
+}
+
+
+def table_pay_violations(node, pay, listing, today, label):
+    """Everything that must be true of a rate looked up from the salary table.
+
+    The claim being checked is a join of two documents — *the archive reports
+    this post at Level II; the January 2026 table pays Level II $228,000* — and
+    every rule here exists to stop one half being published as if it were the
+    other, or as if either were this unit's cost.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionPayRate {!r} is not a record".format(pay))
+        return out
+
+    # Whose figure it is. A rate of basic pay is one post's rate; on an
+    # organisation it would read as what the unit costs. This is the dual of
+    # the gate's existing "a measured cost sits only on an organisation".
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    # A node standing for many posts has no single holder for a rate to be of,
+    # and its own panel sentence says any figure shown is the group's.
+    if node.get("representsPosts"):
+        say("carries one post's rate but stands for several posts")
+
+    # The level half. It must still be the level the archive publishes on this
+    # very node: if positions.py withdrew or changed the listing, the rate is a
+    # figure for a rank nothing now says this post holds.
+    level = str(pay.get("payLevel") or "")
+    plan = str(pay.get("payPlan") or "")
+    if level not in EXECUTIVE_SCHEDULE_RATES:
+        say("prices level {!r}, which the Executive Schedule does not have".format(level))
+    if plan != EXECUTIVE_SCHEDULE_PAY_PLAN:
+        # The archive carries Roman numerals on pay plans that are not the
+        # Executive Schedule at all ("THE SECRETARY" on AD, "BOARD MEMBER -
+        # CHAIR" on WC). Those are ranks in other systems and this table does
+        # not price them.
+        say("prices pay plan {!r}; only {!r} is the Executive Schedule".format(plan, EXECUTIVE_SCHEDULE_PAY_PLAN))
+    if not isinstance(listing, dict):
+        say("claims a table rate with no position listing beneath it to say what level the post is")
+    else:
+        if str(listing.get("payLevel") or "") != level:
+            say("prices level {!r} but its listing reports {!r}".format(level, listing.get("payLevel")))
+        if str(listing.get("payPlan") or "") != plan:
+            say("prices pay plan {!r} but its listing reports {!r}".format(plan, listing.get("payPlan")))
+        if listing.get("reportedPay") is not None:
+            say("carries a table rate beside a rate the archive states; two rates for one post")
+        if not listing.get("payPlanAndLevelOnOneRow"):
+            # The module's central refusal, checkable from the published graph
+            # alone. describe_listing aggregates the pay plan and the level
+            # independently and ignores blanks, so without this a pair the
+            # archive never printed on one row could be priced.
+            say("prices a pay plan and level the archive never printed on one row")
+
+    # The rate half. The mirrored table is the only thing that can catch a
+    # figure that is simply wrong, and the printed text must agree with it too
+    # — the panel prints the text and the JSON carries the number.
+    amount = pay.get("amount")
+    expected = EXECUTIVE_SCHEDULE_RATES.get(level)
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a rate of basic pay".format(amount))
+    elif expected is not None and abs(float(amount) - expected) > 0.005:
+        say("publishes {:,.2f} for level {}, which the table pays {:,.2f}".format(float(amount), level, expected))
+    # Everything below is a field the PANEL PRINTS VERBATIM. Checking the
+    # machine-readable amount and leaving these free text would mean the gate
+    # vouched for a figure while the sentence beside it said something else —
+    # "pays $197,200 per month", "effective January 2031", "for Level I".
+    if expected is not None:
+        printed = "${:,.0f}".format(expected)
+        if str(pay.get("rateText") or "") != printed:
+            # Not a digit comparison: digits alone let arbitrary text ride
+            # along into the money figure the reader sees.
+            say("prints the rate as {!r}; the table prints {!r}".format(pay.get("rateText"), printed))
+        scope = str(pay.get("amountScope") or "")
+        if scope.casefold() != "level {}".format(level).casefold():
+            # amountScope is the only field saying which level the printed
+            # rate is for, and the panel prints it at the end of the sentence.
+            say("prints the rate as being for {!r} while pricing level {!r}".format(scope, level))
+    if str(pay.get("table") or "") != EXECUTIVE_SCHEDULE_TABLE:
+        say("cites table {!r}, not {!r}".format(pay.get("table"), EXECUTIVE_SCHEDULE_TABLE))
+
+    # Both dates, because the two-sourced claim is only auditable when a reader
+    # can see that one source is older than the other. The table's effective
+    # date is deliberately NOT required to be past: a table may be published
+    # ahead of the date it takes effect.
+    if str(pay.get("effective") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE:
+        say("dates the table {!r}, not {!r}".format(pay.get("effective"), EXECUTIVE_SCHEDULE_EFFECTIVE))
+    if str(pay.get("effectiveText") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT:
+        # The heading is what the panel prints; the ISO date is what the gate
+        # would otherwise be checking. Both, or a reader and the machine are
+        # being told different things.
+        say("prints the effective heading as {!r}; the page prints {!r}".format(
+            pay.get("effectiveText"), EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a table rate without a past retrieval date ({!r})".format(checked))
+    url = str(pay.get("url") or "")
+    host = host_of(url)
+    if not host.endswith((".gov", ".mil")):
+        say("claims a table rate with no .gov/.mil document behind it")
+    source = pay.get("levelSource") if isinstance(pay.get("levelSource"), dict) else {}
+    if not str(source.get("edition") or "").strip():
+        say("does not say which edition of the archive reported the level")
+    src_url = str(source.get("url") or "")
+    src_host = host_of(src_url)
+    if not src_host.endswith((".gov", ".mil")):
+        say("does not say which document reported the level")
+
+    # The footnote. A pay freeze for the Vice President and certain senior
+    # political appointees is the difference between the table's rate and what
+    # was payable, so dropping it publishes a rate that may not have been paid.
+    footnotes = pay.get("footnotes")
+    if not isinstance(footnotes, list) or not any(str(f).strip() for f in footnotes):
+        say("carries a table rate without the notes the table prints beside it")
+    elif tuple(str(f).strip() for f in footnotes) != EXECUTIVE_SCHEDULE_FOOTNOTES:
+        # The panel prints these in quotation marks as the table's own words,
+        # so anything but the page's actual notes is a fabricated quotation.
+        say("quotes notes the table does not carry")
+
+    # It is not a cost, and it is not evidence that the post exists.
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a table rate and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a table rate and claims a verified cost")
+    basis = str(node.get("cost_basis") or "")
+    if basis and basis not in KNOWN_COST_BASES:
+        say("carries a table rate and an unknown cost basis {!r}".format(basis))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a salary table that names no post")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a salary table that names no post")
+    # And the table's URL must not be among the node's sources. pay_tables
+    # deliberately writes no sourceUrls, but that was abstinence with nothing
+    # enforcing it: `verify_node_sources` counts URLs and classifies hosts, so
+    # one more .gov URL adds `official_site` and carries confidence 0.5 -> 0.8.
+    # It happened — 29 posts published `verified` on a five-row table naming no
+    # post, and the graph went 49 -> 78 verified with the gate reporting clean.
+    # Worse, it would have been unwithdrawable: the sweep in evidence.py takes
+    # back only the URLs a module recorded in `evidenceUrls`, and this module
+    # records none. Checked from the artefact so the rule survives the module.
+    if str(pay.get("url") or "") in [str(u) for u in (node.get("sourceUrls") or [])]:
+        say("cites the salary table among the sources that it exists; five rank rates name no post")
+    return out
+
 
 def walk(node, parent=None):
     """Yield (node, parent) for every dict node in the tree."""
@@ -132,12 +315,29 @@ def extends_published_name(name_key, published_keys):
     return None
 
 
+def host_of(url):
+    """The URL's real host, lowercased, or "".
+
+    NOT `url.split("/")[2]`. That reads everything up to the first slash as the
+    host, so `https://evil.com?x=.gov` and `https://evil.example.com#.gov` both
+    passed the gate's `.gov`/`.mil` test, and `https://www.opm.gov@evil.com/`
+    was read as opm.gov. `financial_evidence._validate_source_url` documents
+    fixing exactly this in its own URL check; the gate still had the split in
+    eight places, and a red team walked a non-government URL past the check
+    literally named "claims a table rate with no .gov/.mil document behind it".
+    """
+    try:
+        return (urlparse(str(url or "")).hostname or "").lower()
+    except ValueError:
+        return ""
+
+
 def is_federal_register_only(urls):
     hosts = []
     for url in urls:
         text = str(url or "")
         if text.startswith(("http://", "https://")):
-            hosts.append(text.split("/")[2].lower())
+            hosts.append(host_of(text))
     return bool(hosts) and all(h.endswith("federalregister.gov") for h in hosts)
 
 
@@ -231,6 +431,57 @@ def directory_name_keys(value):
         else:
             keys.add("united states " + k)
     return keys
+
+
+COMMITTEE_TYPES = {"committee", "subcommittee"}
+MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
+
+
+def is_committee(node):
+    return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
+
+
+def committee_core_key(key):
+    """Mirror of data_pipeline.verification.evidence.committee_core_key, kept
+    stdlib-only here; tests/test_committee_fold.py pins the two together.
+    'house committee on armed services' -> 'armed services'; '' when fewer
+    than two tokens remain."""
+    text = str(key or "").strip()
+    for prefix in ("house ", "senate "):
+        if text.startswith(prefix):
+            text = text[len(prefix):]
+            break
+    for _ in range(2):
+        for prefix in ("permanent select committee on ", "select committee on ", "special committee on ",
+                       "joint committee on ", "subcommittee on ", "committee on "):
+            if text.startswith(prefix):
+                text = text[len(prefix):]
+                break
+        if text.startswith("the "):
+            text = text[len("the "):]
+    for suffix in (" subcommittee", " committee"):
+        if text.endswith(suffix):
+            text = text[: -len(suffix)]
+            break
+    text = text.strip()
+    return text if len(text.split()) >= 2 else ""
+
+
+def folded_label_names(node, matched_text):
+    """Does the page's label name this committee once the type words are set
+    aside on both sides? Only for a committee-typed node, only with two or
+    more tokens left, and exact after the fold."""
+    import re
+
+    if not is_committee(node):
+        return False
+    core = committee_core_key(canonical_key(node.get("name")))
+    if not core:
+        return False
+    for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", str(matched_text or "")):
+        if committee_core_key(canonical_key(part)) == core:
+            return True
+    return False
 
 
 def canonical_key(value):
@@ -531,10 +782,16 @@ def main(argv):
         "name_labelled_on_parent_official_page",
         "listed_in_federal_register_agency_directory",
         "listed_in_senate_committee_list",
+        "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
     }
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
+    COMMITTEE_LIST_URLS = ("https://www.senate.gov/", "https://clerk.house.gov/")
     failure_beside_source, unofficial_official, unknown_method = [], [], []
+    # Kept apart from unknown_method deliberately: a pay defect printed under
+    # "every verification method is one this pipeline can produce" would be
+    # reported as the wrong kind of fault.
+    bad_table_pay = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -542,15 +799,32 @@ def main(argv):
             failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
         if node.get("verificationFailure") and str(node.get("verificationFailure")) not in KNOWN_FAILURES:
             unknown_method.append("{} verificationFailure {!r}".format(label(node), node.get("verificationFailure")))
+        # A confirmation made by setting the committee type words aside says
+        # so, quotes the page, and is granted by the node's kind: the rule on
+        # anything but a committee, or without the label, or with a label
+        # whose core is not the name's, is refused.
+        rule = node.get("verificationMatchRule")
+        if rule is not None:
+            matched_text = node.get("verificationMatchedText")
+            if str(rule) != MATCH_RULE_COMMITTEE:
+                unknown_method.append("{} verificationMatchRule {!r}".format(label(node), rule))
+            elif not is_committee(node):
+                unknown_method.append("{} folds committee scaffolding but is typed {!r}".format(label(node), node.get("type")))
+            elif not str(node.get("verificationMethod") or "").startswith("name_labelled_on_"):
+                unknown_method.append("{} folds committee scaffolding under a method that read no page".format(label(node)))
+            elif not matched_text or not folded_label_names(node, matched_text):
+                unknown_method.append("{} folded label {!r} does not name it".format(label(node), matched_text))
+        elif node.get("verificationMatchedText") is not None:
+            unknown_method.append("{} quotes a folded label without the rule".format(label(node)))
         # A negative must be as auditable as a positive: it names the page or
         # the list it was checked against, and when. The panel prints that URL.
         failure_kind = str(node.get("verificationFailure") or "")
         if failure_kind:
             src = node.get("verificationFailureSource") if isinstance(node.get("verificationFailureSource"), dict) else {}
             src_url = str(src.get("url") or "")
-            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_host = host_of(src_url)
             src_date = str(src.get("checkedAt") or "")
-            if failure_kind == "not_in_official_list" and not src_url.startswith("https://www.senate.gov/"):
+            if failure_kind == "not_in_official_list" and not src_url.startswith(COMMITTEE_LIST_URLS):
                 unknown_method.append("{} claims not_in_official_list without the list's URL".format(label(node)))
             elif failure_kind == "not_found" and not src_host.endswith((".gov", ".mil")):
                 unknown_method.append("{} claims its own page did not name it, without naming the page".format(label(node)))
@@ -564,7 +838,7 @@ def main(argv):
         if official_headcount is not None:
             src = node.get("employeesOfficialSource") if isinstance(node.get("employeesOfficialSource"), dict) else {}
             src_url = str(src.get("url") or "")
-            src_host = src_url.split("/")[2].lower() if src_url.startswith("http") and src_url.count("/") >= 2 else ""
+            src_host = host_of(src_url)
             src_date = str(src.get("checkedAt") or "")
             if not isinstance(official_headcount, int) or official_headcount < 0:
                 unknown_method.append("{} employeesOfficial {!r}".format(label(node), official_headcount))
@@ -579,7 +853,7 @@ def main(argv):
                 unknown_method.append("{} positionListing {!r}".format(label(node), listing))
             else:
                 l_url = str(listing.get("url") or "")
-                l_host = l_url.split("/")[2].lower() if l_url.startswith("http") and l_url.count("/") >= 2 else ""
+                l_host = host_of(l_url)
                 l_date = str(listing.get("checkedAt") or "")
                 if not l_host.endswith((".gov", ".mil")) or not listing.get("edition"):
                     unknown_method.append("{} claims a position listing without a .gov file and the edition it came from".format(label(node)))
@@ -599,6 +873,12 @@ def main(argv):
                         unknown_method.append("{} publishes {!r} as a reported rate of pay".format(label(node), reported_pay))
                     elif "$" not in str(listing.get("reportedPayText") or ""):
                         unknown_method.append("{} reports pay without the text the archive prints".format(label(node)))
+        # A rate looked up from the salary table for the level the archive
+        # reports. Two documents, neither of which says what this post pays: the
+        # checks below are what keep the join from being read as one source.
+        pay = node.get("positionPayRate")
+        if pay is not None:
+            bad_table_pay.extend(table_pay_violations(node, pay, listing, today, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -607,7 +887,7 @@ def main(argv):
                 unknown_method.append("{} pageReadNotNamed {!r}".format(label(node), read_not_named))
             else:
                 rn_url = str(read_not_named.get("url") or "")
-                rn_host = rn_url.split("/")[2].lower() if rn_url.startswith("http") and rn_url.count("/") >= 2 else ""
+                rn_host = host_of(rn_url)
                 rn_date = str(read_not_named.get("checkedAt") or "")
                 if not rn_host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", rn_date) or rn_date[:10] > today:
                     unknown_method.append("{} records a page read that did not name it, without a .gov URL and a past date".format(label(node)))
@@ -649,7 +929,7 @@ def main(argv):
         if node.get("placementVerified") is not True:
             continue
         url = str(node.get("placementUrl") or "")
-        host = url.split("/")[2].lower() if url.startswith("http") and url.count("/") >= 2 else ""
+        host = host_of(url)
         stamp = str(node.get("placementVerifiedAt") or "")
         if not host.endswith((".gov", ".mil")) or not re.match(r"^\d{4}-\d{2}-\d{2}", stamp) or stamp[:10] > today:
             placement_unbacked.append("{} placementUrl {!r} at {!r}".format(label(node), url, stamp))
@@ -657,12 +937,13 @@ def main(argv):
             "name_labelled_on_parent_official_page",
             "listed_under_parent_in_federal_register_agency_directory",
             "listed_under_committee_in_senate_committee_list",
+            "listed_under_committee_in_house_clerk_committee_list",
             "listed_under_organization_in_opm_plum_archive",
         ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
-        if str(node.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list":
+        if str(node.get("placementMethod") or "") in ("listed_under_committee_in_senate_committee_list", "listed_under_committee_in_house_clerk_committee_list"):
             matched = re.sub(r"^subcommittee on (the )?", "", matched)
             name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
         if str(node.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive":
@@ -672,8 +953,19 @@ def main(argv):
             # substring test would refuse 25 of the 91 real matches, so the
             # gate mirrors the module's rule; a test pins the two together.
             name_key = min(position_title_keys(node.get("name"), parent_name_of(node, parent_of, by_id)), key=len, default=name_key)
+        placement_rule = node.get("placementMatchRule")
+        if placement_rule is not None:
+            if str(placement_rule) != MATCH_RULE_COMMITTEE:
+                placement_unbacked.append("{} placementMatchRule {!r}".format(label(node), placement_rule))
+            elif not is_committee(node):
+                placement_unbacked.append("{} folds committee scaffolding for placement but is typed {!r}".format(label(node), node.get("type")))
+            elif str(node.get("placementMethod") or "") != "name_labelled_on_parent_official_page":
+                placement_unbacked.append("{} folds committee scaffolding under a placement method that read no page".format(label(node)))
         if matched and name_key and name_key not in matched and name_key not in directory_name_keys(node.get("placementMatchedText")):
-            placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
+            # The fold is allowed only where the node says it used it, and only
+            # for a committee: a mismatch anywhere else is still a mismatch.
+            if not (placement_rule == MATCH_RULE_COMMITTEE and folded_label_names(node, node.get("placementMatchedText"))):
+                placement_unbacked.append("{} placement text {!r} does not name it".format(label(node), node.get("placementMatchedText")))
         if node.get("placementMatchedIn") is not None and str(node.get("placementMatchedIn")) not in ("navigation", "content"):
             placement_unbacked.append("{} placementMatchedIn {!r}".format(label(node), node.get("placementMatchedIn")))
         claimed = str(node.get("placementParentId") or "")
@@ -686,6 +978,7 @@ def main(argv):
     gate.check("no node claims a failed check beside a source", failure_beside_source)
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
+    gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -844,11 +1137,15 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    folded_existence = sum(1 for n in nodes if n.get("verificationMatchRule") == MATCH_RULE_COMMITTEE)
+    folded_placement = sum(1 for n in nodes if n.get("placementMatchRule") == MATCH_RULE_COMMITTEE)
+    print("  committee labels     : {:,} confirmed and {:,} placed with the graph's \"Committee on\"/\"Subcommittee on\" prefix set aside".format(
+        folded_existence, folded_placement))
     org_edges = [n for n in nodes if n is not graph and "position" not in str(n.get("type") or "").lower()]
     placed = sum(1 for n in org_edges if n.get("placementVerified") is True)
     placed_no = sum(1 for n in org_edges if n.get("placementVerified") is False)
     unreachable = sum(1 for n in org_edges if n.get("placementCheckable") is False)
-    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") != "senate_committee_list")
+    directory_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") not in ("senate_committee_list", "house_clerk_committee_list"))
     directory_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_parent_in_federal_register_agency_directory")
     directory_disagree = sum(1 for n in nodes if isinstance(n.get("placementDirectoryDisagreement"), dict))
     directory_ancestor = sum(1 for n in nodes if isinstance(n.get("placementDirectoryAncestor"), dict))
@@ -856,7 +1153,11 @@ def main(argv):
         directory_listed, directory_placed, directory_ancestor, directory_disagree))
     senate_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "senate_committee_list")
     senate_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_senate_committee_list")
-    senate_missing = sum(1 for n in nodes if str(n.get("verificationFailure") or "") == "not_in_official_list")
+    senate_missing = sum(
+        1 for n in nodes
+        if str(n.get("verificationFailure") or "") == "not_in_official_list"
+        and isinstance(n.get("verificationFailureSource"), dict) and n["verificationFailureSource"].get("source") == "senate_committee_list"
+    )
     official_counts = [n for n in nodes if n.get("employeesOfficial") is not None]
     disagree = sum(
         1 for n in official_counts
@@ -872,10 +1173,29 @@ def main(argv):
     with_level = sum(1 for n in listings if n["positionListing"].get("payLevel"))
     print("  archive pay          : {:,} positions carry a rate of basic pay the archive reports; {:,} carry a level or grade only".format(
         with_rate, with_level))
+    table_paid = [n for n in nodes if isinstance(n.get("positionPayRate"), dict)]
+    by_level = {}
+    for n in table_paid:
+        key = str(n["positionPayRate"].get("payLevel") or "?")
+        by_level[key] = by_level.get(key, 0) + 1
+    print("  salary table         : {:,} positions priced from {} for the level the archive reports ({}); "
+          "{:,} not priced (a level on another pay plan)".format(
+              len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
+              ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
+              with_level - len(table_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
         senate_listed, senate_placed, senate_missing))
+    house_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "house_clerk_committee_list")
+    house_placed = sum(1 for n in org_edges if str(n.get("placementMethod") or "") == "listed_under_committee_in_house_clerk_committee_list")
+    house_missing = sum(
+        1 for n in nodes
+        if str(n.get("verificationFailure") or "") == "not_in_official_list"
+        and isinstance(n.get("verificationFailureSource"), dict) and n["verificationFailureSource"].get("source") == "house_clerk_committee_list"
+    )
+    print("  House Clerk list     : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
+        house_listed, house_placed, house_missing))
     print("  placement evidenced  : {:,} of {:,} organisation edges ({:.1%}); {:,} checked and not listed; {:,} unreachable (parent has no page)".format(
         placed, len(org_edges), placed / len(org_edges) if org_edges else 0, placed_no, unreachable))
     # A capped Treasury line publishes below the figure the statement reported.

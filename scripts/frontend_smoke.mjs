@@ -195,7 +195,17 @@ try {
   const openByName = async (name) => {
     await page.fill("#search-input", name);
     await page.waitForTimeout(500);
-    await page.locator("#search-results .sr-item", { hasText: name }).first().click();
+    // The result whose name IS the name, not one that contains it: searching
+    // "Subcommittee on Defense" also lists "Chair, Subcommittee on Defense",
+    // and a substring match opened the position instead of the committee.
+    const exact = page.locator("#search-results .sr-item").filter({
+      has: page.locator(".sr-name", { hasText: new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`) }),
+    });
+    if (await exact.count()) {
+      await exact.first().click();
+    } else {
+      await page.locator("#search-results .sr-item", { hasText: name }).first().click();
+    }
     await page.waitForTimeout(2000);
   };
   const exactDollars = (amount) => `${amount < 0 ? "-" : ""}$${Math.round(Math.abs(amount)).toLocaleString("en-US")}`;
@@ -285,12 +295,39 @@ try {
     const existence = await text("#info-panel");
     check("a Senate-list existence line names the list", /Senate's official committee list carries it/.test(existence), existence);
   }
-  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list");
+  // A committee confirmed with the graph's type words set aside quotes the
+  // page's own label and says the prefix was set aside — never the plain claim.
+  const folded = allNodes.find((n) => n.verificationMatchRule === "committee_scaffolding_folded");
+  check("some committee is confirmed with its type words set aside", Boolean(folded), "none");
+  if (folded) {
+    await openByName(folded.name);
+    const existence = await text("#info-panel");
+    check("a folded confirmation quotes the page's label", existence.includes(`as "${folded.verificationMatchedText}"`), existence);
+    check("a folded confirmation says the prefix was set aside", /prefix set aside/.test(existence), existence);
+  }
+  const staleName = allNodes.find((n) => n.verificationFailure === "not_in_official_list" && n.verificationFailureSource?.source === "senate_committee_list");
   check("some curated name is checked against the Senate's list and absent", Boolean(staleName), "none");
   if (staleName) {
     await openByName(staleName.name);
     const existence = await text("#info-panel");
     check("an absence from a complete list says which list and which committee", /against the Senate's official committee list: it carries no unit of this name under "/.test(existence), existence);
+  }
+  // The House Clerk's list, the other chamber's complete list, said as itself.
+  const houseListed = allNodes.find((n) => n.placementMethod === "listed_under_committee_in_house_clerk_committee_list");
+  check("some subcommittee is placed by the House Clerk's list", Boolean(houseListed), "none");
+  if (houseListed) {
+    await openByName(houseListed.name);
+    const line = await text("#verification-placement");
+    check("a House-list placement names the Clerk's list", /House Clerk's official committee list carries it under its committee here/.test(line), line);
+    const existence = await text("#info-panel");
+    check("a House-list existence line names the Clerk's list", /House Clerk's official committee list carries it/.test(existence), existence);
+  }
+  const houseStale = allNodes.find((n) => n.verificationFailure === "not_in_official_list" && n.verificationFailureSource?.source === "house_clerk_committee_list");
+  check("some curated name is checked against the House Clerk's list and absent", Boolean(houseStale), "none");
+  if (houseStale) {
+    await openByName(houseStale.name);
+    const existence = await text("#info-panel");
+    check("an absence from the Clerk's list says which list and which committee", /against the House Clerk's official committee list: it carries no unit of this name under "/.test(existence), existence);
   }
 
   // OPM's own numbers, each said as itself: a sourced headcount beside an
@@ -363,8 +400,44 @@ try {
   if (withLevel) {
     await openByName(withLevel.name);
     const listing = await text("#info-position-listing");
-    check("a level is never printed as a dollar figure", !/level [^.]*\$/i.test(listing), listing);
+    // This used to assert !/level [^.]*\$/i — that no dollar figure appeared
+    // anywhere near the word "level". That was the right invariant while the
+    // archive was the only source: it had no rate for a level, so any dollar
+    // figure beside one would have been invented. Since 2026-09-11 a second
+    // document, OPM's salary table, does state a rate for a level, so the
+    // blanket form now tests the wrong thing. The invariant that still holds
+    // — and the one that matters — is that the ARCHIVE's level is never
+    // presented as a rate, and that any rate shown is attributed to the table
+    // it came from. Rewritten rather than deleted, deliberately.
     check("the panel says a level is not a rate", /gives the rank, not a rate of pay/.test(listing), listing);
+    // Scoped to the archive's own clause. A first rewrite keyed on "level or
+    // grade", which ui.js only emits when payPlan !== "EX" — so it could not
+    // fire on any of the 29 Executive Schedule nodes, the exact ones a table
+    // rate reaches. An assertion that cannot fail where it matters is worse
+    // than none, because its name claims it did.
+    const archiveClause = (listing.match(/Pay plan [\s\S]*?The archive gives the rank/) || [""])[0];
+    check("the archive's own clause states a rank and never a rate",
+      Boolean(archiveClause) && !archiveClause.includes("$"), archiveClause || listing);
+  }
+
+  // The salary table's rate, which is a join of two documents and has to read
+  // as one: the level from the archive, the rate from the table, and neither
+  // saying what the post pays now.
+  const withTableRate = allNodes.find((n) => n.positionPayRate && typeof n.positionPayRate.amount === "number" && unique(n));
+  check("some position is priced from the salary table", Boolean(withTableRate), "none");
+  if (withTableRate) {
+    await openByName(withTableRate.name);
+    const listing = await text("#info-position-listing");
+    check("the table rate names the table it came from", /Salary Table No\. \d{4}-EX/.test(listing), listing);
+    check("the table rate names the level it prices", /pays \$[\d,]+ for Level [IVX]+/.test(listing), listing);
+    check("the panel says it is two documents, not one", /two documents, not one/.test(listing), listing);
+    check("the panel disclaims the current holder", /neither says what this post pays whoever holds it now/.test(listing), listing);
+    check("the panel says a rate of pay is not the unit's cost", /not this unit's cost/.test(listing), listing);
+    check("the pay-freeze note is carried through", /The table's own note: "/.test(listing), listing);
+    check("the freeze note names what it covers", /freeze on the payable pay rates/.test(listing), listing);
+    // The rate must never be dressed as a measured cost of the unit.
+    const stats = await text("#info-stats");
+    check("the table rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(stats) || !/Salary Table/.test(stats), stats);
   }
 
   // The exact-costs-only view: with it on, an apportioned share is not shown

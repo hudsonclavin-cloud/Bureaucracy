@@ -23,6 +23,7 @@ from data_pipeline.verification.positions import (
     PLUM_SOURCE,
     apply_position_evidence,
     archive_title_keys,
+    describe_listing,
     listed_title_still_names,
     load_plum_archive,
     load_position_evidence,
@@ -616,3 +617,33 @@ class ReportedPayTests(unittest.TestCase):
         for record in ranks:
             self.assertNotIn("$", record["payLevel"])
             self.assertIsNone(record["reportedPay"])
+
+
+class PayPlanAndLevelOnOneRowTests(unittest.TestCase):
+    """The pay plan and the level must have been printed together.
+
+    Each field of a listing is aggregated on its own and blanks are ignored,
+    so two rows that each state half of a claim would otherwise combine into a
+    whole one nothing in the archive asserts.
+    """
+
+    def _rows(self, *pairs):
+        return [
+            {"title": "T", "agency": "A", "organization": "O", "status": "Filled",
+             "appointmentType": "PAS", "payPlan": plan, "level": level, "vacated": ""}
+            for plan, level in pairs
+        ]
+
+    def test_one_row_stating_both_is_recorded_as_such(self):
+        out = describe_listing(self._rows(("EX", "IV")))
+        self.assertTrue(out["payPlanAndLevelOnOneRow"])
+
+    def test_two_rows_each_stating_half_do_not_make_a_whole_claim(self):
+        out = describe_listing(self._rows(("EX", ""), ("", "IV")))
+        self.assertEqual(out["payPlan"], "EX")
+        self.assertEqual(out["level"], "IV")
+        self.assertFalse(out["payPlanAndLevelOnOneRow"])
+
+    def test_a_listing_with_no_level_claims_no_pair(self):
+        out = describe_listing(self._rows(("EX", ""), ("EX", "")))
+        self.assertFalse(out["payPlanAndLevelOnOneRow"])
