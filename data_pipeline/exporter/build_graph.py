@@ -865,6 +865,26 @@ TREASURY_ROW_ALIASES = {
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
 NON_ORGANISATION_TYPE_KEYWORDS = ("committee", "subcommittee", "position", "role", "caucus", "office holder")
+# The people-shaped subset of the above, and the same reasoning carried from
+# the measured path to the estimated one. A Treasury line was never allowed to
+# land on a position because a post is not the thing that spent the money; an
+# apportioned share is the same claim with an "≈" in front of it, and it was
+# reaching 4,232 position nodes — 630 of them above $1B, with every one of the
+# Centers for Medicare & Medicaid Services' officers priced at $194.0B each.
+# A post's share of an agency's outlays is not a quantity that exists, so it
+# is published as unavailable with a reason rather than as a figure.
+#
+# Weighting is deliberately left alone: a post still takes its weight in the
+# sibling split, so no organisation's estimate moves because of this. What it
+# does mean is that a parent's shown children can sum to less than the parent,
+# which is the honest reading — the remainder is not apportioned to anybody.
+POST_TYPE_KEYWORDS = ("position", "role", "office holder")
+
+
+def is_post_node(node: Mapping[str, Any]) -> bool:
+    """A node that stands for a person holding a post, not a unit of government."""
+    type_text = str(node.get("type") or "").casefold()
+    return any(word in type_text for word in POST_TYPE_KEYWORDS)
 TREASURY_ROW_FIELDS = ("budget_as_of", "budget_year", "amount_kind", "source_system", "allocation_basis")
 
 
@@ -1627,6 +1647,7 @@ def annotate_resolved_costs(
         "mixed_weight_sibling_sets_implied": 0,
         "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
+        "posts_not_apportioned": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
         "treasury_external_lines": 0,
@@ -1832,6 +1853,17 @@ def annotate_resolved_costs(
                     section=current_section,
                 )
                 continue
+            if is_post_node(child):
+                # A post is not a budget unit. See POST_TYPE_KEYWORDS.
+                counters["posts_not_apportioned"] += 1
+                recurse(
+                    child,
+                    None,
+                    inherited_basis=weight_basis,
+                    inherited_validation="post_is_not_a_budget_unit",
+                    section=current_section,
+                )
+                continue
             recurse(
                 child,
                 child_total,
@@ -1998,6 +2030,7 @@ def annotate_resolved_costs(
             "mixed_weight_sibling_sets_implied": counters["mixed_weight_sibling_sets_implied"],
             "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
+            "posts_not_apportioned": counters["posts_not_apportioned"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_scaled": summarize_scaled_official(root),
         },

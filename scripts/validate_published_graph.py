@@ -320,24 +320,125 @@ WHITEHOUSE_RANK_PREFIXES = (
     "ASSISTANT TO THE PRESIDENT AND ",
 )
 
-#: node id -> (the title the report prints, the rate it prints beside it).
-#: Keyed by id and not by amount alone for the reason the Senate leadership
-#: case established: **four** of these five posts are paid the identical
-#: $195,200, so a record moved from one to another would keep a correct
-#: figure, a correct quote and a correct footnote. Only a check tied to the
-#: node's own identity catches that.
-WHITEHOUSE_REPORTED_PAY = {
-    "exec-eop-who-cabinet-secretary": (
-        "ASSISTANT TO THE PRESIDENT AND CABINET SECRETARY", 195_200.00),
-    "exec-eop-who-chief-of-staff": (
-        "ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF", 195_200.00),
-    "exec-eop-who-deputy-chief-of-staff-for-operations": (
-        "ASSISTANT TO THE PRESIDENT AND DEPUTY CHIEF OF STAFF FOR OPERATIONS", 195_200.00),
-    "exec-eop-who-director-of-intergovernmental-affairs": (
-        "DEPUTY ASSISTANT TO THE PRESIDENT AND DIRECTOR OF INTERGOVERNMENTAL AFFAIRS", 155_000.00),
-    "exec-eop-who-press-secretary": (
-        "ASSISTANT TO THE PRESIDENT AND PRESS SECRETARY", 195_200.00),
-}
+WHITEHOUSE_REPORT_FIXTURE = (
+    Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "whitehouse" / "staff_report_2026.pdf"
+)
+
+#: The roster, read from the committed report itself rather than mirrored as a
+#: literal. `EXECUTIVE_SCHEDULE_RATES` is a hand-kept mirror because it is five
+#: rows; this is 233 titles, and a hand-kept copy of that would rot silently.
+#:
+#: The extraction below is deliberately a **second, independent**
+#: implementation — this file imports nothing from `data_pipeline`, by design —
+#: and `tests/test_whitehouse_pay.py` pins it equal to the module's own parser
+#: on the real fixture, so the two cannot drift and a bug in one is caught by
+#: the other. It is the same bargain the Executive Schedule mirror strikes.
+_ROSTER_CACHE = {}
+
+
+def whitehouse_roster(path=None):
+    """canonical title -> (amount, how many people are listed under it).
+
+    Returns {} when the fixture or its digest is missing, and the caller then
+    refuses every reported-pay record rather than passing them unchecked.
+    """
+    fixture = Path(path) if path else WHITEHOUSE_REPORT_FIXTURE
+    key = str(fixture)
+    if key in _ROSTER_CACHE:
+        return _ROSTER_CACHE[key]
+    roster = {}
+    try:
+        raw = fixture.read_bytes()
+        meta = json.loads(fixture.with_name(fixture.name + ".meta.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        _ROSTER_CACHE[key] = roster
+        return roster
+    import hashlib
+    import zlib
+    if hashlib.sha256(raw).hexdigest() != str(meta.get("sha256") or "").lower():
+        _ROSTER_CACHE[key] = roster
+        return roster
+    if b"/Encrypt" in raw:
+        _ROSTER_CACHE[key] = roster
+        return roster
+
+    literal = re.compile(rb"\((?:\\.|[^\\()])*\)", re.S)
+
+    def unescape(chunk):
+        out = bytearray()
+        i = 0
+        simple = {0x6E: 10, 0x72: 13, 0x74: 9, 0x62: 8, 0x66: 12}
+        while i < len(chunk):
+            c = chunk[i]
+            if c != 0x5C or i + 1 >= len(chunk):
+                out.append(c)
+                i += 1
+                continue
+            n = chunk[i + 1]
+            if n in simple:
+                out.append(simple[n])
+                i += 2
+            elif 0x30 <= n <= 0x37:
+                j, digits = i + 1, b""
+                while j < len(chunk) and len(digits) < 3 and 0x30 <= chunk[j] <= 0x37:
+                    digits += bytes([chunk[j]])
+                    j += 1
+                out.append(int(digits, 8) & 0xFF)
+                i = j
+            else:
+                out.append(n)
+                i += 2
+        return out.decode("latin-1")
+
+    money = re.compile(r"^\$([\d,]+\.\d{2})$")
+    person = re.compile(r"^[A-Z][A-Za-z.'\- ]*, [A-Z]")
+    counts = {}
+    for match in re.finditer(rb"stream\r?\n", raw):
+        start = match.end()
+        end = raw.find(b"endstream", start)
+        if end < 0:
+            continue
+        try:
+            stream = zlib.decompress(raw[start:end])
+        except zlib.error:
+            continue
+        if b"TJ" not in stream and b"Tj" not in stream:
+            continue
+        rows, position = {}, None
+        for token in re.finditer(
+            rb"([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)\s+Tm"
+            rb"|\[(.*?)\]\s*TJ|\((?:\\.|[^\\()])*\)\s*Tj", stream, re.S):
+            whole = token.group(0)
+            if whole.rstrip().endswith(b"Tm"):
+                position = round(float(whole.split()[5]), 1)
+                continue
+            if position is None:
+                continue
+            if token.group(7) is not None:
+                text = "".join(unescape(x[1:-1]) for x in literal.findall(token.group(7)))
+            else:
+                found = literal.findall(whole)
+                text = unescape(found[0][1:-1]) if found else ""
+            if text.strip():
+                rows.setdefault(position, []).append(text.strip())
+        for cells in rows.values():
+            amounts = [c for c in cells if money.match(c)]
+            statuses = [c for c in cells if c in ("EMPLOYEE", "DETAILEE")]
+            bases = [c for c in cells if c == "Per Annum"]
+            rest = [c for c in cells
+                    if not money.match(c) and c not in ("EMPLOYEE", "DETAILEE", "Per Annum")]
+            names = [c for c in rest if person.match(c)]
+            titles = [c for c in rest if not person.match(c)]
+            if len(amounts) != 1 or len(statuses) != 1 or len(bases) != 1:
+                continue
+            if len(names) != 1 or len(titles) != 1:
+                continue
+            value = float(amounts[0][1:].replace(",", ""))
+            entry = counts.setdefault(whitehouse_canonical(titles[0]), [value, 0])
+            entry[1] += 1
+    roster = {title: (value, held) for title, (value, held) in counts.items()}
+    _ROSTER_CACHE[key] = roster
+    return roster
 
 
 def whitehouse_canonical(text):
@@ -386,20 +487,33 @@ def reported_pay_violations(node, pay, today, label):
     node_id = str(node.get("id") or "")
     if not node_id.startswith("exec-eop-who-"):
         say("prices from the White House Office roster but sits outside that office")
-    expected = WHITEHOUSE_REPORTED_PAY.get(node_id)
-    if expected is None:
-        say("prices a node the mirrored report does not list unambiguously")
-        return out
-    expected_title, expected_amount = expected
 
+    roster = whitehouse_roster()
+    if not roster:
+        say("prices from a roster this gate could not read or whose digest did not match")
+        return out
     reported_title = str(pay.get("reportedTitle") or "")
-    if reported_title != expected_title:
-        say("reports title {!r}; the report prints {!r} for this post".format(reported_title, expected_title))
+    entry = roster.get(whitehouse_canonical(reported_title))
+    if entry is None:
+        say("reports title {!r}, which the committed report does not print".format(reported_title))
+        return out
+    expected_amount, held_by = entry
+    expected_title = reported_title
+    # A title two people hold cannot price one node: the two salaries differ
+    # and nothing decides which is this post's.
+    if held_by != 1:
+        say("prices a title the report lists {} people under".format(held_by))
     # The fold is what licensed the match in the first place, so the gate
     # re-derives it rather than trusting that it was applied: a title that no
     # longer folds onto this node's name is evidence for a different post.
-    if whitehouse_title_core(reported_title) != whitehouse_canonical(node.get("name")):
-        say("reports a title that does not name this node once its rank prefix is set aside")
+    # Either spelling: the curated nodes are named for the function alone
+    # ("Chief of Staff") and the nodes expanded from this same report are
+    # named as it prints them ("Assistant to the President and Chief of
+    # Staff"). Equality first, then the fold.
+    if whitehouse_canonical(node.get("name")) not in (
+        whitehouse_canonical(reported_title), whitehouse_title_core(reported_title)
+    ):
+        say("reports a title that does not name this node, with or without its rank prefix")
 
     amount = pay.get("amount")
     if isinstance(amount, bool) or not isinstance(amount, (int, float)):

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260914b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260914b";
+import { createGovernmentGraph } from "./graph.js?v=20260914c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260914c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -762,6 +762,10 @@ function renderDescriptionProvenance(data, isClusteredView) {
     line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement lines it names";
     return;
   }
+  if (String(data.descriptionSource || "") === "generated_from_whitehouse_staff_report") {
+    line.textContent = "DESCRIPTION: generated from the White House Office's own annual report to Congress — the title and rate are the report's, the duties are not described";
+    return;
+  }
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
 }
 
@@ -1259,6 +1263,13 @@ function describeCost(node) {
         ...COST_STATUS_COPY.unavailable,
         note:
           "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it — its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no figure is shown rather than a guess.",
+      };
+    }
+    if (validation === "post_is_not_a_budget_unit") {
+      return {
+        ...COST_STATUS_COPY.unavailable,
+        note:
+          "This is a post, not a unit of government. No federal financial system reports spending for an individual post, and a share of the organisation's budget above it would not be a cost this post incurred — so no figure is shown. Where an official document states what the post is paid, that rate appears below instead, and a salary is not the same thing as a budget.",
       };
     }
     return COST_STATUS_COPY.unavailable;

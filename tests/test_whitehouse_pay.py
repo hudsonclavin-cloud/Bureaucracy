@@ -39,11 +39,11 @@ from data_pipeline.verification.whitehouse_pay import (
 )
 from scripts import derive_whitehouse_pay_evidence
 from scripts.validate_published_graph import (
-    WHITEHOUSE_REPORTED_PAY,
     WHITEHOUSE_REPORT_AS_OF_TEXT,
     WHITEHOUSE_REPORT_URL,
     reported_pay_violations,
     whitehouse_canonical,
+    whitehouse_roster,
     whitehouse_title_core,
 )
 from scripts.validate_published_graph import main as gate_main
@@ -439,12 +439,34 @@ class GateTests(unittest.TestCase):
     def test_dropping_the_cents_is_caught(self):
         self.assertTrue(self._check(lambda n, p: p.__setitem__("rateText", "$195,200")))
 
-    def test_the_mirror_matches_the_published_evidence(self):
+    def test_the_gates_own_reader_agrees_with_the_modules_parser(self):
+        """The gate re-reads the report with a second, independent stdlib
+        extraction — it imports nothing from data_pipeline by design. The two
+        must agree exactly, or one of them is wrong about the source."""
+        from collections import defaultdict
+        roster = whitehouse_roster()
+        rows = load_staff_report(DEFAULT_REPORT_PDF)["report"]["rows"]
+        by_title = defaultdict(list)
+        for row in rows:
+            by_title[canonical(str(row["title"]))].append(float(row["amount"]))
+        self.assertEqual(set(roster), set(by_title))
+        for title, amounts in by_title.items():
+            self.assertEqual(roster[title][1], len(amounts), title)
+            if len(amounts) == 1:
+                self.assertAlmostEqual(roster[title][0], amounts[0], places=2, msg=title)
+
+    def test_every_published_record_is_a_title_one_person_holds(self):
         evidence = json.loads(
             (Path(__file__).resolve().parents[1] / "data" / "verification"
              / "whitehouse_pay_evidence.json").read_text(encoding="utf-8"))
-        mirrored = {k: (v["reportedTitle"], float(v["amount"])) for k, v in evidence["nodes"].items()}
-        self.assertEqual(mirrored, dict(WHITEHOUSE_REPORTED_PAY))
+        roster = whitehouse_roster()
+        self.assertTrue(evidence["nodes"])
+        for node_id, record in evidence["nodes"].items():
+            entry = roster.get(whitehouse_canonical(record["reportedTitle"]))
+            self.assertIsNotNone(entry, node_id)
+            self.assertEqual(entry[1], 1, f"{node_id} prices a title {entry[1]} people hold")
+            self.assertAlmostEqual(entry[0], float(record["amount"]), places=2, msg=node_id)
+            self.assertGreater(float(record["amount"]), 0, node_id)
 
 
 class DeriveScriptTests(unittest.TestCase):
@@ -495,6 +517,108 @@ class DeriveScriptTests(unittest.TestCase):
         blob = result.graph_path.read_text(encoding="utf-8")
         for surname in ("ACRA", "ADAMIAN", "GEBBIA", "ADKISSON"):
             self.assertNotIn(surname, blob)
+
+
+class ExpansionScriptTests(unittest.TestCase):
+    """The script that adds White House Office nodes from the same roster.
+
+    It is the only writer of that subtree — the curated file is never
+    hand-edited — so the properties that matter are: it adds what the report
+    prints, it invents nothing, it never touches a curated node, and running
+    it twice is a no-op.
+    """
+
+    def setUp(self) -> None:
+        from scripts import expand_whitehouse_office as expand
+        self.expand = expand
+        self.tmp = TEST_TMP_ROOT / f"wh-expand-{uuid.uuid4().hex}"
+        self.tmp.mkdir(parents=True, exist_ok=True)
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.base = self.tmp / "base.json"
+        self.base.write_text(json.dumps(BASE), encoding="utf-8")
+
+    def _run(self, *args):
+        out = io.StringIO()
+        with redirect_stdout(out):
+            code = self.expand.main(["d", "--base-graph", str(self.base),
+                                     "--report", str(DEFAULT_REPORT_PDF), *args])
+        return code, out.getvalue()
+
+    def _who(self):
+        base = json.loads(self.base.read_text(encoding="utf-8"))
+        return self.expand.find_node(base, SCOPE_NODE_ID)
+
+    def test_a_dry_run_writes_nothing(self):
+        before = self.base.read_text(encoding="utf-8")
+        code, output = self._run("--dry-run")
+        self.assertEqual(code, 0, output)
+        self.assertEqual(self.base.read_text(encoding="utf-8"), before)
+
+    def test_it_adds_the_report_s_titles_and_is_idempotent(self):
+        code, _ = self._run()
+        self.assertEqual(code, 0)
+        first = len(self._who()["children"])
+        self.assertGreater(first, len(BASE["children"][1]["children"][0]["children"][0]["children"]))
+        code, output = self._run()
+        self.assertEqual(code, 0)
+        self.assertEqual(len(self._who()["children"]), first, "a second run added nodes")
+        self.assertIn("nodes to add                          : 0", output)
+
+    def test_a_curated_node_is_never_renamed_retyped_or_removed(self):
+        before = {c["id"]: dict(c) for c in self._who()["children"]}
+        self._run()
+        after = {c["id"]: c for c in self._who()["children"]}
+        for node_id, original in before.items():
+            self.assertIn(node_id, after, f"{node_id} was removed")
+            for field in ("name", "type", "desc"):
+                self.assertEqual(after[node_id].get(field), original.get(field), f"{node_id}.{field}")
+
+    def test_every_added_node_says_where_it_came_from(self):
+        before = {c["id"] for c in self._who()["children"]}
+        self._run()
+        added = [c for c in self._who()["children"] if c["id"] not in before]
+        self.assertTrue(added)
+        for node in added:
+            self.assertEqual(node["type"], "Position")
+            self.assertEqual(node["descriptionSource"], "generated_from_whitehouse_staff_report")
+            self.assertEqual(node["structureSource"], "listed_in_whitehouse_staff_report")
+            # The description quotes the report's own title and states a rate;
+            # it never describes duties, which the report does not give.
+            self.assertIn(node["reportedTitle"], node["desc"])
+            self.assertIn("per annum", node["desc"])
+
+    def test_a_title_several_people_hold_becomes_one_node_with_the_count(self):
+        self._run()
+        multi = [c for c in self._who()["children"] if c.get("representsPosts")
+                 and c.get("structureSource") == "listed_in_whitehouse_staff_report"]
+        self.assertTrue(multi)
+        roster = whitehouse_roster()
+        for node in multi:
+            held = node["representsPosts"]["count"]
+            self.assertEqual(node["representsPosts"]["kind"], "exact")
+            self.assertIn(f"(×{held})", node["name"])
+            self.assertEqual(roster[whitehouse_canonical(node["reportedTitle"])][1], held)
+
+    def test_added_ids_are_unique_and_scoped_to_the_office(self):
+        self._run()
+        ids = [c["id"] for c in self._who()["children"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for node_id in ids:
+            self.assertTrue(node_id.startswith(SCOPE_NODE_ID + "-"), node_id)
+
+    def test_no_added_node_carries_a_roster_name(self):
+        self._run()
+        blob = self.base.read_text(encoding="utf-8")
+        # The roster's own "LAST, FIRST M." form, not bare substrings: "AGEN"
+        # is inside "AGENCY" and would false-positive on honest text.
+        self.assertIsNone(re.search(r"\b[A-Z][A-Z.'\-]{1,}, +[A-Z][A-Z.'\-]*\b", blob))
+
+    def test_the_title_casing_is_mechanical_and_keeps_initialisms(self):
+        self.assertEqual(self.expand.title_case("ASSISTANT TO THE PRESIDENT AND CHIEF OF STAFF"),
+                         "Assistant to the President and Chief of Staff")
+        self.assertEqual(self.expand.title_case("DIRECTOR OF OMB"), "Director of OMB")
+        # A small word is still capitalised when it opens or closes the title.
+        self.assertEqual(self.expand.title_case("THE SECRETARY"), "The Secretary")
 
 
 class PublishedGraphTests(unittest.TestCase):

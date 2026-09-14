@@ -736,21 +736,53 @@ Trustee (`www.justice.gov` answered 401 on 2026-09-14), and the USAO
 Administratively Determined pay plan states grade/experience ranges rather
 than a post's rate.
 
-### 7.4 The White House Office is a sketch, and that is the binding limit
+### 7.4 The White House Office was a sketch — expanded from its own roster (2026-09-14)
 
-`whitehouse_pay.py` prices 5 nodes. 21 more were refused as
-`no_row_carries_this_title` — not because the matcher is weak but because
-this graph carries **27 position nodes for an office the report shows
-employing 408 people**. `Chief Speechwriter`, `Director of Presidential
-Personnel`, `Director of Public Liaison`, `Director of Strategic
-Communications`, `Director of Scheduling & Advance`, `Director of the White
-House Situation Room` and `Deputy Chief of Staff for Implementation` are not
-titles the 2026 report prints at all. Expanding the White House Office
-subtree from the report's own 229 distinct titles is the curation task that
-would move this number, and it is the single highest-yield curation available
-in the pay line.
+**Resolved.** `scripts/expand_whitehouse_office.py` rebuilt the subtree from
+the report itself: **27 nodes -> 249**, and the pay module went from **5
+priced to 166**. The script is the only writer of that subtree (the curated
+file is never hand-edited), it is idempotent, and it never renames, re-types
+or removes a curated node.
 
-One node is refused for a different and more interesting reason:
-`exec-eop-who-national-security-advisor` is listed at **$0.00**. Ten of the
-408 rows are — uncompensated appointees. That is a fact about the person
-currently in the post, not about the post, and zero is never published here.
+One node per distinct title the report prints: 168 single-post nodes, and 54
+standing for a title several people hold, carrying the report's own count as
+`representsPosts` — the convention the curated file already used for "Deputy
+Press Secretary (x2)". Deliberately not N separate nodes, because the report
+distinguishes those people by name and this project does not publish names.
+
+Each added node carries `structureSource: listed_in_whitehouse_staff_report`
+and `descriptionSource: generated_from_whitehouse_staff_report`, and its
+description states only what the roster says — the title and the rate, never
+duties, which the report does not give. That makes these the first nodes in
+the graph whose *structure* is sourced rather than curated or templated.
+
+The 16 curated nodes whose titles the 2026 report does not print are left
+exactly as they were. The report not carrying a title is not evidence the
+post does not exist, and deleting a curated node on that basis would be a
+claim this script cannot support. They remain unpriced.
+
+### 7.5 What is still out of reach
+
+After the expansion, **166 of the 249** White House Office positions carry a
+rate. The rest are refused, each for a reason worth keeping:
+
+- **54 stand for several posts.** A title the report lists several people
+  under gets one node and no rate: the salaries differ, and one figure on
+  such a node would read as what a single holder is paid.
+- **21 curated nodes the report does not print.** `Chief Speechwriter`,
+  `Director of Presidential Personnel`, `Director of Public Liaison`,
+  `Director of Strategic Communications`, `Director of Scheduling & Advance`,
+  `Director of the White House Situation Room` and `Deputy Chief of Staff for
+  Implementation` among them. These are the curated sketch nodes that predate
+  the expansion; the 2026 roster carries no title matching them, which is not
+  evidence they are wrong.
+- **7 are listed at $0.00** — uncompensated appointees, the National Security
+  Advisor among them. Ten of the report's 408 rows read $0.00. That is a fact
+  about the arrangement one person has, not about the post, and zero is never
+  published here as an amount.
+- **1 title is held by several people under a name a curated node also
+  carries**, so which salary is the node's is undecidable.
+
+The remaining lever on this subtree is not parsing but the report's own
+reissue: a fresh July roster replaces every figure, and titles that gain or
+lose a second holder change category.

@@ -39,6 +39,7 @@ python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to th
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
+python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -195,7 +196,35 @@ carries the receipts lines forward with the other Treasury lines, and a
 fresh statement replaces them (`remove_synthetic_receipts`), so re-feeding
 the published graph never duplicates one.
 `cost_validation: estimated_from_parent` and
-`costVerificationStatus: unverified` on every allocated node. The period of
+`costVerificationStatus: unverified` on every allocated node.
+
+**A post is not a budget unit (since 2026-09-14).** The measured path had
+always refused to land a Treasury line on a position — `is_post_node` /
+`NON_ORGANISATION_TYPE_KEYWORDS`, on the grounds that a post is not the thing
+that spent the money — but the *estimated* path never carried that rule, so
+an apportioned share reached **4,232 of the 4,382 position nodes**, 630 of
+them above $1B, with every officer of the Centers for Medicare & Medicaid
+Services published at $194.0B each. An apportioned share is the same claim
+with an "≈" in front of it, and a post's share of an agency's outlays is not
+a quantity that exists. A node whose type matches `POST_TYPE_KEYWORDS`
+(position, role, office holder) is now published `unavailable` with
+`cost_validation: post_is_not_a_budget_unit`, and the panel says why.
+
+Weighting is deliberately left alone: a post still takes its weight in the
+sibling split, so **no organisation's estimate moved** — which is what made it
+safe to apply to 4,232 nodes at once, and is pinned in both directions by
+`tests/test_cost_cascade_units.PostsAreNotBudgetUnitsTests`. A parent's shown
+children can now sum to less than the parent, which is the honest reading:
+the remainder is not apportioned to anybody. Allocated nodes fell from 4,885
+to 653, and "with a cost" from 5,021 to 789.
+
+What this does *not* fix, and is still open: apportionment by subtree size is
+still distorted by the template positions themselves, because they still
+carry weight. A bureau whose subtree is a stamped 6-title leadership template
+is weighted as if it were a real bureau — the reason BSEE draws a larger
+share than its measured sibling BOEM. Excluding templated subtrees from
+weighting is the remaining half, and it *would* move organisations' figures,
+so it is not bundled here. The period of
 the anchor lives on the root's `__budgetSummary` (`amount_kind`,
 `record_date`, `label`) — the UI reads it there and applies it to every
 figure.
@@ -696,10 +725,45 @@ The gate mirrors node id → (printed title, printed rate) in
 `WHITEHOUSE_REPORTED_PAY`, keyed by id for the reason the Senate leadership
 case established and more sharply: **four of the five priced posts are paid
 the identical $195,200**, so a record moved between them would keep a correct
-figure, quote and pay basis. First run: **5 positions priced** of the 27 the
-graph carries under the White House Office — the binding limit is that the
-graph holds 27 sketch nodes for a 400-person office, which `CURATION.md` §7.4
-records as the highest-yield curation in this line.
+figure, quote and pay basis. First run: 5 positions priced of the 27 the
+graph then carried under the White House Office — the binding limit being
+that the graph held 27 sketch nodes for a 400-person office.
+
+**The subtree rebuilt from the same roster, the same day.**
+`scripts/expand_whitehouse_office.py` is the only writer of the White House
+Office subtree (the curated file is never hand-edited) and took it from **27
+nodes to 249**, which took the pay module from **5 priced to 166**. One node
+per distinct title the report prints: 168 single-post, and 54 standing for a
+title several people hold, carrying the report's own count as
+`representsPosts` rather than becoming N indistinguishable nodes — the report
+tells those people apart by name, and this project does not publish names.
+Nodes are named as the report prints the title, in title case, because the
+White House rank is part of the official title and an Assistant, a Deputy
+Assistant and a Special Assistant are three different appointments;
+`index_report_titles` therefore files every row under both its printed and
+its folded spelling, and `build_records` tries equality before the fold, the
+order `congress.match_committee_list` already uses. The script is idempotent
+and never renames, re-types or removes a curated node — the 16 whose titles
+the 2026 report does not print are left exactly as they are, because a
+roster not carrying a title is not evidence the post does not exist.
+
+Each added node carries `structureSource: listed_in_whitehouse_staff_report`
+and `descriptionSource: generated_from_whitehouse_staff_report`, and its
+description states only the title and the rate, never duties, which the
+report does not give. They are the first nodes in this graph whose
+*structure* is sourced rather than curated or templated, and the panel labels
+them as such instead of "uncited prose".
+
+Because the roster is 233 titles rather than five rows, the gate does not
+mirror it as a literal the way `EXECUTIVE_SCHEDULE_RATES` is mirrored — a
+hand-kept copy of 233 figures would rot silently. `whitehouse_roster()` reads
+the committed report with a **second, independent** stdlib extraction (this
+file imports nothing from `data_pipeline`, by design), checks its digest, and
+`tests/test_whitehouse_pay.py` pins the two parsers equal on the real
+fixture. The role-swap defence is then structural rather than a mirror: the
+claimed title must be one the report prints, must be held by exactly one
+person, and must name this node by equality or with the rank folded off.
+`CURATION.md` §7.4-7.5 record the run and what stays unpriced.
 
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every
@@ -790,7 +854,7 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 136 of 5,195 nodes (2.6%) carry a cost a record names
+graph an estimate". 136 of 5,417 nodes (2.5%) carry a cost a record names
 for them; those cover **98.4% of the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
@@ -802,8 +866,8 @@ block under REPORTED RATE OF BASIC PAY, never headed COST. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
-coverage numbers on every run so "5,021 nodes with a cost" cannot be read
-as 5,021 known costs.
+coverage numbers on every run so "789 nodes with a cost" cannot be read as
+789 known costs.
 
 That document also works through **every one of Table 5's 78 section
 totals** and says why each does or does not reach a node, so the analysis
@@ -852,7 +916,8 @@ rename withdraws the claim.
 
 ### The three agent phases
 
-Three runbooks, run in order over the same 5,195 nodes, each with a harness
+Three runbooks, run in order over the same nodes (5,195 when the runbooks
+were written; 5,417 since the White House Office expansion), each with a harness
 that refuses what it cannot adjudicate. All three write **only** to
 `data/audit/`; none edits the curated file, the published graph or any
 evidence file, which is what makes it safe to point many agents at the whole
@@ -906,11 +971,11 @@ basic pay, which is never the unit's cost.
 
 The standing numbers this work exists to move: 611 of 788 organisations have
 no candidate page at all, so the verifier can never reach them; and 136 of
-5,195 nodes carry a cost identified for themselves.
+5,417 nodes carry a cost identified for themselves.
 
 ### The node-by-node audit
 
-`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,195
+`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,417
 nodes one at a time; `scripts/node_audit.py` is the harness. `next` hands
 over a batch of nodes with every claim the site makes about each and every
 evidence record keyed to its id; `record` validates findings and appends

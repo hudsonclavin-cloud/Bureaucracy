@@ -425,11 +425,26 @@ def title_core(title: str) -> str:
 
 
 def index_report_titles(rows: Iterable[Mapping[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    """Core title -> every row carrying it. A key with more than one row is
-    what `title_held_by_several_people` refuses."""
+    """Title -> every row carrying it, under both the title as printed and the
+    title with its rank folded off.
+
+    Both keys, because the graph carries both spellings: the curated nodes
+    that predate this module are named for the function alone ("Chief of
+    Staff") while the nodes `scripts/expand_whitehouse_office.py` adds from
+    this same report are named as the report prints them ("Assistant to the
+    President and Chief of Staff"). Equality is tried before the fold in
+    `build_records`, the order `congress.match_committee_list` already uses,
+    so a node named exactly as the source prints it is never recorded as a
+    folded match.
+
+    A row is filed under one key when the two coincide, so a title held by
+    one person cannot look like two by being counted under both spellings.
+    """
     index: dict[str, list[dict[str, Any]]] = {}
     for row in rows:
-        index.setdefault(title_core(str(row.get("title") or "")), []).append(dict(row))
+        printed = canonical(str(row.get("title") or ""))
+        for key in {printed, title_core(str(row.get("title") or ""))}:
+            index.setdefault(key, []).append(dict(row))
     return index
 
 
@@ -539,7 +554,10 @@ def build_records(
             "rateText": row["rateText"],
             "asOf": as_of,
             "asOfDate": as_of_day.isoformat(),
-            "titleFolded": title_core(row["title"]) != canonical(row["title"]),
+            # Whether *this match* needed the fold, not merely whether the
+            # title carries a rank: a node named as the report prints it
+            # matched on equality and the panel must not claim otherwise.
+            "titleFolded": key != canonical(row["title"]),
         }
 
     report_out = {
@@ -617,7 +635,7 @@ def apply_pay_evidence(
         # let it ride on a node the report's title no longer names — the same
         # guard `evidence.evidence_names_this_node` applies to page evidence.
         reported = str(record.get("reportedTitle") or "")
-        if title_core(reported) != canonical(str(node.get("name") or "")):
+        if canonical(str(node.get("name") or "")) not in (canonical(reported), title_core(reported)):
             stats["name_no_longer_matches"] += 1
             continue
         node["positionReportedPay"] = {

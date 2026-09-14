@@ -575,7 +575,7 @@ class StatedCountTests(unittest.TestCase):
         for field in ("statedChildCount", "carriedChildCount", "childrenIncomplete"):
             self.assertNotIn(field, tree["children"][0])
 
-    def test_the_real_graph_has_four_short_groupings_and_742_multi_post_nodes(self) -> None:
+    def test_the_real_graph_has_four_short_groupings_and_796_multi_post_nodes(self) -> None:
         graph = json.loads((Path(__file__).resolve().parents[1] / "output" / "graph.json").read_text(encoding="utf-8"))
         nodes = []
 
@@ -592,4 +592,106 @@ class StatedCountTests(unittest.TestCase):
             "Individual Representative Offices (435)",
             "Individual Senator Offices (100)",
         ])
-        self.assertEqual(sum(1 for n in nodes if n.get("representsPosts")), 742)
+        # 742 before the White House Office was expanded from its own roster
+        # (scripts/expand_whitehouse_office.py), which added 54 nodes standing
+        # for a title the report lists several people under.
+        self.assertEqual(sum(1 for n in nodes if n.get("representsPosts")), 796)
+
+
+BUDGET = {"government_total_outlay_amount": 1_000.0}
+
+
+class PostsAreNotBudgetUnitsTests(unittest.TestCase):
+    """A post does not receive an apportioned share of its parent's money.
+
+    The measured path has always refused to land a Treasury line on a
+    position, on the grounds that a post is not the thing that spent the
+    money. The estimated path did not carry that rule, so 4,232 position
+    nodes published an apportioned figure — 630 of them above $1B, every
+    officer of the Centers for Medicare & Medicaid Services at $194.0B
+    each. Both directions are pinned here: an organisation still gets its
+    estimate, and a post gets none.
+    """
+
+    def _tree(self):
+        return {
+            "id": "root", "name": "Root", "type": "Foundation",
+            "__budgetSummary": {"government_total_outlay_amount": 1_000.0},
+            "children": [{
+                "id": "agency", "name": "An Agency", "type": "Agency", "children": [
+                    {"id": "agency-bureau-a", "name": "Bureau A", "type": "Bureau", "children": []},
+                    {"id": "agency-bureau-b", "name": "Bureau B", "type": "Bureau", "children": []},
+                    {"id": "agency-director", "name": "Director", "type": "Position", "children": []},
+                    {"id": "agency-counsel", "name": "General Counsel", "type": "Position", "children": []},
+                ],
+            }],
+        }
+
+    def _by_id(self, tree):
+        found = {}
+
+        def walk(node):
+            found[node["id"]] = node
+            for child in node.get("children") or []:
+                walk(child)
+
+        walk(tree)
+        return found
+
+    def test_an_organisation_still_receives_its_estimate(self):
+        tree = self._tree()
+        annotate_resolved_costs(tree, budget_summary=BUDGET)
+        nodes = self._by_id(tree)
+        for bureau in ("agency-bureau-a", "agency-bureau-b"):
+            self.assertEqual(nodes[bureau]["cost_status"], "allocated", bureau)
+            self.assertGreater(nodes[bureau]["resolved_total_amount"], 0, bureau)
+
+    def test_a_post_receives_none_and_says_why(self):
+        tree = self._tree()
+        annotate_resolved_costs(tree, budget_summary=BUDGET)
+        nodes = self._by_id(tree)
+        for post in ("agency-director", "agency-counsel"):
+            self.assertEqual(nodes[post]["cost_status"], "unavailable", post)
+            self.assertIsNone(nodes[post].get("resolved_total_amount"), post)
+            self.assertEqual(nodes[post]["cost_validation"], "post_is_not_a_budget_unit", post)
+
+    def test_withholding_a_post_s_share_does_not_move_an_organisation_s(self):
+        """The post keeps its weight in the split; it just publishes nothing.
+
+        So no organisation's estimate changes because of this rule — which is
+        what makes it safe to apply to 4,232 nodes at once. The parent's shown
+        children then sum to less than the parent, which is the honest
+        reading: the remainder is not apportioned to anybody.
+        """
+        with_posts = self._tree()
+        annotate_resolved_costs(with_posts, budget_summary=BUDGET)
+        bureau_share = self._by_id(with_posts)["agency-bureau-a"]["resolved_total_amount"]
+
+        same_shape = self._tree()
+        annotate_resolved_costs(same_shape, budget_summary=BUDGET)
+        self.assertEqual(
+            self._by_id(same_shape)["agency-bureau-a"]["resolved_total_amount"], bureau_share)
+
+        agency = self._by_id(with_posts)["agency"]
+        shown = sum(
+            c["resolved_total_amount"] for c in agency["children"]
+            if c.get("resolved_total_amount") is not None)
+        self.assertLess(shown, agency["resolved_total_amount"])
+
+    def test_the_published_graph_prices_no_post(self):
+        path = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+        if not path.exists():  # pragma: no cover - the published graph is tracked
+            self.skipTest("no published graph")
+        graph = json.loads(path.read_text(encoding="utf-8"))
+        priced = []
+
+        def walk(node):
+            type_text = str(node.get("type") or "").casefold()
+            if any(word in type_text for word in ("position", "role", "office holder")):
+                if node.get("resolved_total_amount") is not None:
+                    priced.append(node.get("id"))
+            for child in node.get("children") or []:
+                walk(child)
+
+        walk(graph)
+        self.assertEqual(priced, [])

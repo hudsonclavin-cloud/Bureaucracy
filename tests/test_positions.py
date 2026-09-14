@@ -461,7 +461,7 @@ class RealFixtureTests(unittest.TestCase):
         self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (59, 110, 0))
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
                          (154, 27, 894, 0, 429))
-        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4382, 584, 1084))
+        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4604, 584, 1084))  # 4382 positions before the White House Office roster expansion added 222
         # 126, not the 91 of 2026-09-08: reading the organisation's own name
         # back off the archive's own title recovers 35 posts the archive
         # spells "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION".

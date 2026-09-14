@@ -173,8 +173,12 @@ class TreasuryOutlayWiringTests(unittest.TestCase):
         # A name two departments share is applied to neither.
         self.assertEqual(nodes["exec-dept-treasury-osec"][0]["cost_status"], "allocated")
         self.assertEqual(nodes["exec-dept-hhs-osec"][0]["cost_status"], "allocated")
-        # A position never receives an agency's outlays.
-        self.assertEqual(nodes["exec-dept-treasury-secretary"][0]["cost_status"], "allocated")
+        # A position never receives an agency's outlays — and since
+        # POST_TYPE_KEYWORDS carried that rule from the measured path to the
+        # estimated one, it does not receive an apportioned share either.
+        self.assertEqual(nodes["exec-dept-treasury-secretary"][0]["cost_status"], "unavailable")
+        self.assertEqual(
+            nodes["exec-dept-treasury-secretary"][0]["cost_validation"], "post_is_not_a_budget_unit")
 
         self.assertEqual(stats["rows_applied"], 5)
         self.assertEqual(stats["rows_superseded"], 1)
