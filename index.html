@@ -292,8 +292,28 @@ body.dragging{cursor:grabbing;}
 window.GRAPH_DATA_SOURCES = {
   // The exporter's gated tree is the site's base graph. `base` is the fallback
   // the loader drops to if the pipeline artefact is missing or malformed.
-  primary: "./output/graph.json",
+  //
+  // graph.min.json is graph.json with every field the browser never reads
+  // removed and the whitespace dropped: 4.0 MB against 10.3 MB, and the same
+  // 5,417 nodes. graph.json stays whole and stays committed because it is the
+  // pipeline's own state file — it is re-fed as a payload on the next build,
+  // and the Treasury lines, the receipts markers and the cost anchor exist
+  // nowhere else — but the browser has no use for any of that.
+  primary: "./output/graph.min.json",
   base: "./data/federal_gov_complete_1.json",
+  // Both expansion overlays are off, and each for its own reason.
+  //
+  // expanded_edges.json has always been `[]`: nothing in this project has ever
+  // produced a relationship, so the "how it connects" overlay draws nothing.
+  //
+  // expanded_nodes.json is 1.5 MB in which all 546 nodes are already in the
+  // tree, so merging it changed no structure — but it did change data, and for
+  // the worse: on 151 nodes it overwrote the curated `employees` text with a
+  // bare integer, which is why the Legislative Branch read "30000" instead of
+  // "~30,000 (total congressional staff)". The file is still written, because
+  // it is the pipeline's export record; it is simply not fetched.
+  expandedNodes: null,
+  expandedEdges: null,
   // data_expansion/corporate_expansion.json is currently the template output
   // of expand_corporate_nodes.py (invented "Head of Finance & Risk" positions),
   // not officers extracted from SEC EDGAR. It is not merged into the tree until
@@ -320,7 +340,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260914c"
+<script type="module" src="./js/ui.js?v=20260914d"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

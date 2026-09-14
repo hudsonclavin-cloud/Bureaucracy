@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260914c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260914c";
+import { createGovernmentGraph } from "./graph.js?v=20260914d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260914d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1992,6 +1992,14 @@ async function initGraphApp() {
       window.GRAPH_DATA_SOURCES && "corporate" in window.GRAPH_DATA_SOURCES
         ? window.GRAPH_DATA_SOURCES.corporate
         : "./data_expansion/corporate_expansion.json",
+    expandedNodesUrl:
+      window.GRAPH_DATA_SOURCES && "expandedNodes" in window.GRAPH_DATA_SOURCES
+        ? window.GRAPH_DATA_SOURCES.expandedNodes
+        : "./output/expanded_nodes.json",
+    expandedEdgesUrl:
+      window.GRAPH_DATA_SOURCES && "expandedEdges" in window.GRAPH_DATA_SOURCES
+        ? window.GRAPH_DATA_SOURCES.expandedEdges
+        : "./output/expanded_edges.json",
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);

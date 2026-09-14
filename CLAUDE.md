@@ -841,9 +841,48 @@ Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
 
+**What the browser fetches, and why it is not `graph.json` (since
+2026-09-14).** `output/graph.json` is two things at once: the site's data and
+the pipeline's own state file. `load_existing_graph_payload` re-feeds it as a
+payload on the next build, `merge_node` carries forward any key it does not
+handle, and the Treasury family, `synthetic` and the cost anchor exist nowhere
+else on disk — so a field stripped from it is data lost, not bytes saved. The
+release gate, `scripts/node_audit.py` and `scripts/nominate.py` read it too.
+So it stays whole, pretty-printed and committed, and the browser gets
+`output/graph.min.json` instead: the same 5,417 nodes with every field `js/`
+never reads removed and the whitespace dropped. **4.0 MB against 10.3 MB.**
+
+`MINIMAL_GRAPH_FIELDS` is the frontend's actual read set, and the list is only
+safe because `js/` names every field it reads — there is no `Object.keys`, no
+`for...in` and no variable-key access on node data anywhere in it, and
+`normalizeNode`'s `{...DEFAULT_NODE, ...rawNode}` carries keys through without
+naming any, so an absent key is simply absent. `tests/test_viewer_graph.py`
+pins both halves: no dropped field is named in `js/` (with four documented
+exemptions, each checked by hand — a nested sub-key, a value comparison, a
+local variable, and the expansion-only `attachToRoot`), and the full graph
+still carries everything the next build needs back. Nested objects are kept
+whole; the panel reads many sub-keys of each.
+
+**Both expansion overlays are off.** `expanded_edges.json` has always been
+`[]` — nothing in this project has ever produced a relationship, so the "how
+it connects" overlay draws nothing. `expanded_nodes.json` was 1.5 MB in which
+**all 546 nodes were already in the tree**, so merging it changed no
+structure — but it did change data, for the worse: `mergeNodeData` overwrote
+the curated `employees` text with a bare integer on **151 nodes**, which is
+why the Legislative Branch read "30000" rather than "~30,000 (total
+congressional staff)". Both files are still written, because they are the
+pipeline's export record; they are simply not fetched. A `null` in
+`GRAPH_DATA_SOURCES` means "no overlay", the convention `corporate` already
+used. Together with the pruned copy, a visitor parses **4.0 MB instead of
+11.8 MB** and receives about 228 KB gzipped instead of 517 KB.
+
+Nothing anywhere reads `expanded_nodes.json` back in; a comment in
+`build_graph` claiming it "is re-fed as a payload on the next run" was simply
+wrong and is corrected — only `graph.json` is.
+
 GitHub Pages serves the repository root from `main`. Everything the page
 fetches is tracked: `index.html`, `js/`, `data/federal_gov_complete_1.json`,
-and the five `output/*.json` files. `.nojekyll` stops Pages running the
+`output/graph.min.json` and the remaining `output/*.json` files. `.nojekyll` stops Pages running the
 content through Jekyll. The favicon is an inline `data:` URI rather than a
 file, so no request 404s. Two things load from outside the repo and are
 outside its control: Three.js from unpkg and the fonts from Google Fonts —

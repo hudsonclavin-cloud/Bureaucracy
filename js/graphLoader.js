@@ -383,9 +383,15 @@ export async function loadMergedGraphData({
     ? fetchJson(corporateUrl).catch(optionalFetchFallback(corporateUrl, null))
     : Promise.resolve(null);
   onStatus("Fetching pipeline-expanded nodes…");
-  const expandedNodesPromise = fetchJson(expandedNodesUrl).catch(optionalFetchFallback(expandedNodesUrl, []));
+  // null means "no overlay", the same convention corporateUrl uses; only an
+  // undefined key falls back to the default path.
+  const expandedNodesPromise = expandedNodesUrl
+    ? fetchJson(expandedNodesUrl).catch(optionalFetchFallback(expandedNodesUrl, []))
+    : Promise.resolve([]);
   onStatus("Fetching pipeline-expanded edges…");
-  const expandedEdgesPromise = fetchJson(expandedEdgesUrl).catch(optionalFetchFallback(expandedEdgesUrl, []));
+  const expandedEdgesPromise = expandedEdgesUrl
+    ? fetchJson(expandedEdgesUrl).catch(optionalFetchFallback(expandedEdgesUrl, []))
+    : Promise.resolve([]);
   const candidateNodesPromise = fetchJson(candidateNodesUrl).catch(optionalFetchFallback(candidateNodesUrl, []));
 
   const [baseRaw, corporateData, expandedNodes, expandedEdges, candidateNodes] = await Promise.all([

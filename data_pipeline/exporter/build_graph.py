@@ -193,24 +193,66 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
     return result
 
 
+#: Exactly the node fields `js/` reads, and nothing else.
+#:
+#: `graph.json` is the pipeline's own state file as well as the site's data:
+#: `load_existing_graph_payload` re-feeds it on the next build, `merge_node`
+#: copies forward any key it does not handle, and the Treasury family,
+#: `synthetic` and the root anchor exist nowhere else on disk — so a field
+#: stripped from *that* file is data lost. The release gate, `node_audit.py`
+#: and `nominate.py` read it too. So it is left whole, and this is the list
+#: for a separate, pruned copy the browser fetches instead (`graph.min.json`).
+#:
+#: The list is the frontend's actual read set, established by auditing every
+#: file in `js/`. That audit is trustworthy in a way it would not be for most
+#: code: `js/` contains no `Object.keys`/`for...in`/`hasOwnProperty` and no
+#: bracket access with a variable key on node data, so a field is read only if
+#: it is named. `normalizeNode`'s `{...DEFAULT_NODE, ...rawNode}` carries every
+#: key through without naming any, so an absent key is simply absent.
+#:
+#: Nested objects are kept whole — the panel reads many sub-keys of each, and
+#: they are small enough that pruning inside them buys little and risks much.
 MINIMAL_GRAPH_FIELDS = (
-    "id",
-    "name",
-    "type",
-    "color",
-    "children",
-    "resolved_total_amount",
+    # identity, layout and label
+    "id", "name", "type", "color", "children",
+    # the description block
+    "desc", "descriptionSource",
+    # the figures the panel prints beside the name
+    "budget", "employees", "employeesOfficial", "employeesOfficialSource",
+    # cost badge, amount and the note explaining which of the two it is
+    "cost_status", "resolved_total_amount", "cost_basis", "cost_validation",
+    "costVerificationStatus", "cost_weight_dispute", "rollup_total_amount",
+    "measured_net_beneath", "treasury_external_section", "treasury_section",
+    "synthetic", "amount_kind", "budget_as_of",
+    # the verification box
+    "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
+    "verificationStatus", "confidenceScore", "verificationMethod",
+    "verificationMatchedIn", "verificationMatchRule", "verificationMatchedText",
+    "verificationFailure", "verificationFailureSource", "directoryListing",
+    "pageReadNotNamed",
+    # the placement line, which is evidence for the edge above the node
+    "placementVerified", "placementVerifiedAt", "placementUrl", "placementMethod",
+    "placementMatchedText", "placementMatchRule", "placementMatchedIn",
+    "placementCheckable", "placementDirectoryDisagreement", "placementDirectoryAncestor",
+    # what a name's own stated count says, and what the tree carries
+    "childrenIncomplete", "statedChildCount", "carriedChildCount", "representsPosts",
+    # the three pay blocks, each a different kind of claim
+    "positionListing", "positionPayRate", "positionStatutoryPay", "positionReportedPay",
 )
 
+#: Root-only keys the viewer also needs: the anchor's period label, which the
+#: panel applies to every figure, and the edge index.
+MINIMAL_GRAPH_ROOT_FIELDS = ("__budgetSummary", "relationships")
 
-def prune_graph_for_viewer(node: dict[str, Any]) -> dict[str, Any]:
-    result: dict[str, Any] = {
-        key: deepcopy(node[key]) for key in MINIMAL_GRAPH_FIELDS if key in node
-    }
+
+def prune_graph_for_viewer(node: dict[str, Any], *, is_root: bool = True) -> dict[str, Any]:
+    """The published tree with every field the browser never reads removed."""
+    keys = MINIMAL_GRAPH_FIELDS + (MINIMAL_GRAPH_ROOT_FIELDS if is_root else ())
+    result: dict[str, Any] = {key: deepcopy(node[key]) for key in keys if key in node}
     children: list[dict[str, Any]] = []
     for child in node.get("children", []):
         if isinstance(child, dict):
-            children.append(prune_graph_for_viewer(child))
+            children.append(prune_graph_for_viewer(child, is_root=False))
     result["children"] = children
     return result
 
@@ -2181,7 +2223,7 @@ def build_graph(
     *,
     base_graph_path: str | Path = DEFAULT_BASE_GRAPH,
     graph_output_path: str | Path = DEFAULT_GRAPH_OUTPUT,
-    min_graph_output_path: str | Path | None = None,
+    min_graph_output_path: str | Path | None = "default",
     nodes_output_path: str | Path = DEFAULT_NODES_OUTPUT,
     edges_output_path: str | Path = DEFAULT_EDGES_OUTPUT,
     validity_report_output_path: str | Path = DEFAULT_VALIDITY_REPORT_OUTPUT,
@@ -2262,7 +2304,14 @@ def build_graph(
     validation["pipeline_summary"] = pipeline_summary
 
     graph_path = Path(graph_output_path)
-    min_graph_path = Path(min_graph_output_path) if min_graph_output_path is not None else None
+    # The browser's copy goes beside whichever graph this build is writing, so
+    # a test writing to a temp directory never touches the published one.
+    # `None` is still honoured, for a caller that wants no viewer copy at all.
+    min_graph_path = (
+        graph_path.with_name("graph.min.json")
+        if min_graph_output_path == "default"
+        else (Path(min_graph_output_path) if min_graph_output_path is not None else None)
+    )
     nodes_path = Path(nodes_output_path)
     edges_path = Path(edges_output_path)
     validity_report_path = Path(validity_report_output_path)
@@ -2506,11 +2555,18 @@ def build_graph(
         else:
             node.pop("parentId", None)
             graph_node.pop("parentId", None)
-        # The tree is the authority on evidence too. expanded_nodes.json is
-        # re-fed as a payload on the next run, so a claim withdrawn from the
-        # tree but left in this file came back on its own: the fields the
-        # evidence module owns, and the source fields it edits, are synced
-        # from the tree node and dropped when the tree node lacks them.
+        # The tree is the authority on evidence too: the fields the evidence
+        # module owns, and the source fields it edits, are synced from the tree
+        # node and dropped when the tree node lacks them, so a claim withdrawn
+        # from the tree is not left standing in this file.
+        #
+        # This used to say expanded_nodes.json "is re-fed as a payload on the
+        # next run", which was never true — `load_existing_graph_payload` reads
+        # graph.json and nothing anywhere reads this file back. The sync is
+        # still right, for the reason above; the justification was wrong.
+        # Since 2026-09-14 the site does not fetch this file either: all 546
+        # of its nodes are already in the tree, and merging it overwrote the
+        # curated `employees` text with a bare integer on 151 of them.
         from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS  # noqa: E402 — evidence imports this module
 
         for field_name in (*EVIDENCE_OWNED_FIELDS, "sourceUrls", "sourceTypes", "sourceCount", "lastVerified",
