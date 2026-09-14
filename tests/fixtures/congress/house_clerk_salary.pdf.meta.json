@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-14T15:20:47Z",
+ "url": "https://clerk.house.gov/documents/Salary.pdf",
+ "status": 200,
+ "final_url": "https://clerk.house.gov/documents/Salary.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 106220,
+ "sha256": "646efcefc659f891f1014102c31d0c20bcf9924483cbb8063e31f8d060592ff8",
+ "error": null
+}

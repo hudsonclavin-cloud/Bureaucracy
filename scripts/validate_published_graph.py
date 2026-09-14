@@ -57,6 +57,42 @@ EXECUTIVE_SCHEDULE_FOOTNOTES = (
     "continues through January 30, 2026. Future Congressional action will determine whether these "
     "frozen rates continue beyond that date.",
 )
+# The U.S. Courts' own Judicial Compensation table, mirrored for the same
+# reason and pinned the same way: tests/test_judicial_pay.py parses
+# tests/fixtures/uscourts/judicial_compensation.html and asserts equality.
+JUDICIAL_COMPENSATION_YEAR = "2026"
+JUDICIAL_COMPENSATION_TIERS = {
+    "district judges": 249_900.0,
+    "circuit judges": 264_900.0,
+    "associate justices": 306_600.0,
+    "chief justice": 320_700.0,
+}
+# The page carries a footnote (fn1) about two historical adjustments that
+# does not apply to the current row; this module's records never carry it
+# because it is about years this module does not price, but the field
+# exists on every record and the gate checks whatever list is actually there
+# against this mirror, empty or not.
+JUDICIAL_COMPENSATION_FOOTNOTES: tuple[str, ...] = ()
+
+# The Senate's own year-by-year salary schedule, mirrored the same way and
+# pinned by tests/test_congressional_pay.py against
+# tests/fixtures/congress/senate_salaries_since_1789.html.
+SENATE_SALARY_YEAR = "2026"
+SENATE_SALARY_BASE_RATE = 174_000.0
+SENATE_LEADERSHIP_RATE = 193_400.0
+SENATE_LEADERSHIP_FOOTNOTE = (
+    "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the "
+    "president pro tempore–have received higher salaries than other members. Currently, "
+    "leaders earn $193,400 per year."
+)
+# Which role each priced node stands for, so the gate can check the quoted
+# footnote actually names that role rather than trusting the node's own say-so.
+SENATE_LEADERSHIP_ROLE_PHRASES = {
+    "president pro tempore": "president pro tempore",
+    "majority leader": "majority and minority leaders",
+    "minority leader": "majority and minority leaders",
+}
+
 # The weights the cascade may divide a share by. A pay rate appearing here
 # would mean a rate of basic pay had become an apportionment basis.
 KNOWN_COST_BASES = {
@@ -209,6 +245,158 @@ def table_pay_violations(node, pay, listing, today, label):
     # records none. Checked from the artefact so the rule survives the module.
     if str(pay.get("url") or "") in [str(u) for u in (node.get("sourceUrls") or [])]:
         say("cites the salary table among the sources that it exists; five rank rates name no post")
+    return out
+
+
+#: Which mirror, which node kind, and which quoted footnote each source in
+#: `positionStatutoryPay` must match. One shared checker for both judicial and
+#: congressional pay — the shape they write is the same single-source claim
+#: (see `judicial_pay.py`, `congressional_pay.py`), so one function checking
+#: it against the right mirror by `source` is more auditable than two nearly
+#: identical ones that could drift apart from each other.
+#: Which tier or role each specific node is priced at. Checked against the
+#: node's own id, not just against whether the quoted text happens to
+#: contain the phrase for whatever tier the record claims — three Senate
+#: leadership roles share one dollar figure and one shared footnote, so a
+#: record for the Majority Leader that claimed to be the President Pro
+#: Tempore instead would still quote a footnote naming that role and price
+#: the same $193,400; only a check tied to the node's own identity catches
+#: it. Pinned against `judicial_pay.classify_seat` and
+#: `congressional_pay.LEADERSHIP_NODE_IDS` by
+#: tests/test_judicial_pay.py and tests/test_congressional_pay.py.
+STATUTORY_PAY_NODE_TIERS = {
+    "jud-scotus-chief-justice-of-the-united-states": "chief justice",
+    "jud-circuit-1st-circuit-chief-judge-1st-circuit": "circuit judges",
+    "jud-circuit-2nd-circuit-chief-judge-2nd-circuit": "circuit judges",
+    "jud-circuit-3rd-circuit-chief-judge-3rd-circuit": "circuit judges",
+    "jud-circuit-4th-circuit-chief-judge-4th-circuit": "circuit judges",
+    "jud-circuit-5th-circuit-chief-judge-5th-circuit": "circuit judges",
+    "jud-circuit-6th-circuit-chief-judge-6th-circuit": "circuit judges",
+    "jud-circuit-7th-circuit-chief-judge-7th-circuit": "circuit judges",
+    "jud-circuit-8th-circuit-chief-judge-8th-circuit": "circuit judges",
+    "jud-circuit-9th-circuit-chief-judge-9th-circuit": "circuit judges",
+    "jud-circuit-10th-circuit-chief-judge-10th-circuit": "circuit judges",
+    "jud-circuit-11th-circuit-chief-judge-11th-circuit": "circuit judges",
+    "jud-circuit-d-c-circuit-chief-judge-d-c-circuit": "circuit judges",
+    "jud-circuit-federal-circuit-chief-judge-federal-circuit": "circuit judges",
+    "jud-district-sdny-chief-judge-sdny": "district judges",
+    "leg-senate-leadership-president-pro-tempore": "president pro tempore",
+    "leg-senate-leadership-majority-leader": "majority leader",
+    "leg-senate-leadership-minority-leader": "minority leader",
+}
+
+STATUTORY_PAY_SOURCES = {
+    "uscourts_judicial_compensation": {
+        "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+        "year": JUDICIAL_COMPENSATION_YEAR,
+        "tiers": JUDICIAL_COMPENSATION_TIERS,
+        "footnotes": JUDICIAL_COMPENSATION_FOOTNOTES,
+        "id_prefix": "jud-",
+    },
+    "senate_salary_schedule": {
+        "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+        "year": SENATE_SALARY_YEAR,
+        "tiers": {role: SENATE_LEADERSHIP_RATE for role in SENATE_LEADERSHIP_ROLE_PHRASES},
+        "footnotes": (SENATE_LEADERSHIP_FOOTNOTE,),
+        "id_prefix": "leg-",
+    },
+}
+
+
+def statutory_pay_violations(node, pay, today, label):
+    """Everything that must be true of a single-source statutory pay claim.
+
+    Unlike `table_pay_violations`, there is no archive underneath this to
+    check for agreement with — the source names the rate directly — so the
+    checks are simpler: the source is a known one, the figure is the mirror's
+    own figure for the tier claimed, the quoted text really contains that
+    figure and, where the source is a grouped claim about several roles
+    (the Senate footnote), the quote actually names the specific role this
+    node is.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionStatutoryPay {!r} is not a record".format(pay))
+        return out
+
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a statutory rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one post's rate but stands for several posts")
+
+    source = str(pay.get("source") or "")
+    mirror = STATUTORY_PAY_SOURCES.get(source)
+    if mirror is None:
+        say("prices from source {!r}, which this pipeline does not produce".format(source))
+        return out
+    node_id = str(node.get("id") or "")
+    if not node_id.startswith(mirror["id_prefix"]):
+        say("prices from {!r}, which names no post outside the {!r} branch".format(source, mirror["id_prefix"]))
+
+    if str(pay.get("year") or "") != mirror["year"]:
+        say("prices year {!r}, not {!r}".format(pay.get("year"), mirror["year"]))
+    if str(pay.get("effective") or "") != "{}-01-01".format(mirror["year"]):
+        say("dates the rate {!r}, not {!r}".format(pay.get("effective"), "{}-01-01".format(mirror["year"])))
+
+    tier = str(pay.get("seatTier") or "")
+    expected_tier_for_node = STATUTORY_PAY_NODE_TIERS.get(node_id)
+    if expected_tier_for_node is None:
+        say("prices a node this pipeline has no known tier for")
+    elif tier != expected_tier_for_node:
+        say("prices tier {!r} on a node that is a {!r}".format(tier, expected_tier_for_node))
+    expected = mirror["tiers"].get(tier)
+    amount = pay.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a rate of basic pay".format(amount))
+    elif expected is None:
+        say("prices tier {!r}, which the mirrored table does not have".format(tier))
+    elif abs(float(amount) - expected) > 0.005:
+        say("publishes {:,.2f} for {!r}, which the table pays {:,.2f}".format(float(amount), tier, expected))
+    if expected is not None:
+        printed = "${:,.0f}".format(expected)
+        rate_text = str(pay.get("rateText") or "")
+        if not rate_text.startswith(printed):
+            say("prints the rate as {!r}; the table prints {!r}".format(rate_text, printed))
+
+    quote = str(pay.get("quote") or "")
+    if expected is not None and "${:,.0f}".format(expected) not in quote:
+        say("quotes text that does not contain the figure it prices")
+    if source == "senate_salary_schedule":
+        phrase = SENATE_LEADERSHIP_ROLE_PHRASES.get(tier)
+        if phrase is None or phrase not in quote.casefold():
+            say("prices a Senate leadership role its own quoted footnote does not name")
+
+    footnotes = pay.get("footnotes")
+    if not isinstance(footnotes, list):
+        say("footnotes is not a list")
+    elif tuple(str(f).strip() for f in footnotes) != mirror["footnotes"]:
+        say("quotes notes the source does not carry")
+
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a statutory rate without a past retrieval date ({!r})".format(checked))
+    url = str(pay.get("url") or "")
+    if url != mirror["url"]:
+        say("cites {!r}, not the source this pipeline reads for {!r}".format(url, source))
+    host = host_of(url)
+    if not host.endswith((".gov", ".mil")):
+        say("claims a statutory rate with no .gov/.mil document behind it")
+
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a statutory rate and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a statutory rate and claims a verified cost")
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a statutory pay source that names no post")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a statutory pay source that names no post")
+    # Same rule as table_pay_violations, same reason: abstinence from
+    # sourceUrls must be enforced from the artefact, not merely practised.
+    if url and url in [str(u) for u in (node.get("sourceUrls") or [])]:
+        say("cites the statutory pay source among the sources that it exists")
     return out
 
 
@@ -792,6 +980,7 @@ def main(argv):
     # "every verification method is one this pipeline can produce" would be
     # reported as the wrong kind of fault.
     bad_table_pay = []
+    bad_statutory_pay = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -879,6 +1068,12 @@ def main(argv):
         pay = node.get("positionPayRate")
         if pay is not None:
             bad_table_pay.extend(table_pay_violations(node, pay, listing, today, label))
+        # A single-source statutory rate — judicial or congressional — beside
+        # the two-source join above; a different field, a different set of
+        # rules, checked against its own mirror.
+        statutory_pay = node.get("positionStatutoryPay")
+        if statutory_pay is not None:
+            bad_statutory_pay.extend(statutory_pay_violations(node, statutory_pay, today, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -979,6 +1174,7 @@ def main(argv):
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
+    gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -1183,6 +1379,10 @@ def main(argv):
               len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
               ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
               with_level - len(table_paid)))
+    statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
+    by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
+    print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(
+        len(statutory_paid), dict(by_source) or "none"))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(

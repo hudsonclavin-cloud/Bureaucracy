@@ -557,13 +557,21 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
 
     742 position nodes carry a multiplicity. One rate on such a node reads as
     what a single holder is paid while the panel beside it describes a group.
+
+    Strips both `positionPayRate` (this module) and `positionStatutoryPay`
+    (`judicial_pay.py`, `congressional_pay.py`) for the same reason on both:
+    a single generic guard, run once, after the tree carries the counts
+    either module's own `apply_pay_evidence` ran too early to see.
     """
     withdrawn = 0
     stack = [root]
     while stack:
         node = stack.pop()
-        if node.get("representsPosts") and node.pop("positionPayRate", None) is not None:
-            withdrawn += 1
+        if node.get("representsPosts"):
+            if node.pop("positionPayRate", None) is not None:
+                withdrawn += 1
+            if node.pop("positionStatutoryPay", None) is not None:
+                withdrawn += 1
         stack.extend(node.get("children") or [])
     return withdrawn
 

@@ -131,6 +131,12 @@ EVIDENCE_OWNED_FIELDS = (
     # so it must be withdrawn on the same build the listing is, or a rate
     # would outlive the level it was looked up from.
     "positionPayRate",
+    # Written by judicial_pay.py and congressional_pay.py, withdrawn here
+    # with the rest for the same reason: a statutory-pay claim that is no
+    # longer supported (the table stops naming this tier, the node is
+    # renamed) must not survive because the previous graph.json is re-fed as
+    # a payload on every build.
+    "positionStatutoryPay",
 )
 PLACEMENT_METHOD = "name_labelled_on_parent_official_page"
 # A record created by the placement pass for a node whose own page was never

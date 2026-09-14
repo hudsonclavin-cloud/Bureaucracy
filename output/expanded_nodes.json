@@ -4060,20 +4060,9 @@
     "sourceUrls": [
       "https://www.senate.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.senate.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "navigation",
-    "verificationSiteFrom": "leg-senate-admin-secretary",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -4082,7 +4071,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 44036003.69,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -4092,6 +4080,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.senate.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "leg-senate-admin-secretary",
+    "placementCheckable": false,
     "parentId": "leg-senate-admin"
   },
   {
@@ -10172,20 +10172,9 @@
     "sourceUrls": [
       "https://www.house.gov/the-house-explained/officers-and-organizations/parliamentarian-of-the-house"
     ],
-    "evidenceUrls": [
-      "https://www.house.gov/the-house-explained/officers-and-organizations/parliamentarian-of-the-house"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-house-parliamentarian",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -10194,7 +10183,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 3501282.58,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10203,6 +10191,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.house.gov/the-house-explained/officers-and-organizations/parliamentarian-of-the-house"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-house-parliamentarian",
+    "placementCheckable": false,
     "parentId": "leg-house-admin"
   },
   {
@@ -10665,6 +10665,50 @@
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
     "parentId": "leg-support"
+  },
+  {
+    "id": "leg-support-aoc-capitol-visitor-center",
+    "name": "Capitol Visitor Center",
+    "type": "Division",
+    "desc": "Manages underground visitor facility and educational programming.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.visitthecapitol.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 66880091.75,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.visitthecapitol.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "leg-support-aoc-capitol-visitor-center",
+    "parentId": "leg-support-aoc"
   },
   {
     "id": "leg-support-uscp",
@@ -14835,6 +14879,51 @@
     "parentId": "exec-dept-defense-agencies"
   },
   {
+    "id": "exec-dept-defense-agency-darpa",
+    "name": "DARPA",
+    "type": "Defense Agency",
+    "desc": "Defense Advanced Research Projects Agency — breakthrough defense technology.",
+    "employees": 220,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.darpa.mil/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 192812016.34,
+    "cost_status": "allocated",
+    "cost_basis": "employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.darpa.mil/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-defense-agency-darpa",
+    "parentId": "exec-dept-defense-agencies"
+  },
+  {
     "id": "exec-dept-defense-agency-dla",
     "name": "Defense Logistics Agency (DLA)",
     "type": "Defense Agency",
@@ -17002,20 +17091,9 @@
     "sourceUrls": [
       "https://www.justice.gov/civil"
     ],
-    "evidenceUrls": [
-      "https://www.justice.gov/civil"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-div-civil",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17024,9 +17102,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -17036,6 +17111,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.justice.gov/civil"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-civil",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17131,20 +17220,9 @@
     "sourceUrls": [
       "https://www.justice.gov/crt"
     ],
-    "evidenceUrls": [
-      "https://www.justice.gov/crt"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-div-civil-rights",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17153,9 +17231,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -17165,6 +17240,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.justice.gov/crt"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-civil-rights",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17260,20 +17349,9 @@
     "sourceUrls": [
       "https://www.justice.gov/criminal"
     ],
-    "evidenceUrls": [
-      "https://www.justice.gov/criminal"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-div-criminal",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17282,9 +17360,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -17294,6 +17369,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.justice.gov/criminal"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-criminal",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17474,20 +17563,9 @@
     "sourceUrls": [
       "https://www.justice.gov/nsd"
     ],
-    "evidenceUrls": [
-      "https://www.justice.gov/nsd"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-div-nsd",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17496,9 +17574,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -17508,6 +17583,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.justice.gov/nsd"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-nsd",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17781,20 +17870,9 @@
     "sourceUrls": [
       "https://www.justice.gov/osg"
     ],
-    "evidenceUrls": [
-      "https://www.justice.gov/osg"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-solicitor",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17803,9 +17881,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "resolved_total_amount": 1582185912.62,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -17815,6 +17890,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.justice.gov/osg"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-solicitor",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -20324,6 +20413,10 @@
       "https://www.nrcs.usda.gov/",
       "https://www.federalregister.gov/agencies/natural-resources-conservation-service"
     ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-usda-nrcs",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Natural Resources Conservation Service",
@@ -20332,8 +20425,6 @@
       "parentListedName": "Agriculture Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/natural-resources-conservation-service",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -20358,9 +20449,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationSiteFrom": "exec-dept-usda-nrcs",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-nrcs-chief-nrcs",
@@ -25193,6 +25282,51 @@
     "parentId": "exec-cabinet"
   },
   {
+    "id": "exec-dept-hud-ginnie",
+    "name": "Ginnie Mae",
+    "type": "Agency",
+    "desc": "Government National Mortgage Association. Guarantees MBS backed by FHA/VA loans. $2.4T portfolio.",
+    "employees": 200,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.ginniemae.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 245577198.71,
+    "cost_status": "allocated",
+    "cost_basis": "employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.ginniemae.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud-ginnie",
+    "parentId": "exec-dept-hud"
+  },
+  {
     "id": "exec-dept-hud-pih",
     "name": "Office of Public & Indian Housing (PIH)",
     "type": "Office",
@@ -26937,20 +27071,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-argonne-national-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -26959,7 +27082,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -26969,6 +27091,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-argonne-national-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -26983,20 +27117,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-brookhaven-national-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27005,7 +27128,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27015,6 +27137,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-brookhaven-national-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27029,20 +27163,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-lawrence-berkeley-national-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27051,7 +27174,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27061,6 +27183,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-lawrence-berkeley-national-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27075,20 +27209,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-los-alamos-national-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27097,7 +27220,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27107,6 +27229,110 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-los-alamos-national-laboratory",
+    "placementCheckable": false,
+    "parentId": "exec-dept-doe-natl-labs"
+  },
+  {
+    "id": "exec-dept-doe-oak-ridge-national-laboratory",
+    "name": "Oak Ridge National Laboratory",
+    "type": "National Laboratory",
+    "desc": "DOE-funded national laboratory. Conducts basic and applied research across energy, physics, and national security.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.ornl.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1858563341.57,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.ornl.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-oak-ridge-national-laboratory",
+    "placementCheckable": false,
+    "parentId": "exec-dept-doe-natl-labs"
+  },
+  {
+    "id": "exec-dept-doe-pacific-northwest-national-laboratory",
+    "name": "Pacific Northwest National Laboratory",
+    "type": "National Laboratory",
+    "desc": "DOE-funded national laboratory. Conducts basic and applied research across energy, physics, and national security.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.pnnl.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 1858563341.57,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.pnnl.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-pacific-northwest-national-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27121,20 +27347,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-sandia-national-laboratories",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27143,7 +27358,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27153,6 +27367,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-sandia-national-laboratories",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27167,20 +27393,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-slac-national-accelerator-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27189,7 +27404,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27199,6 +27413,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-slac-national-accelerator-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27213,20 +27439,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-thomas-jefferson-national-accelerator-facility",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27235,7 +27450,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27245,6 +27459,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-thomas-jefferson-national-accelerator-facility",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -27259,20 +27485,9 @@
     "sourceUrls": [
       "https://www.energy.gov/national-laboratories"
     ],
-    "evidenceUrls": [
-      "https://www.energy.gov/national-laboratories"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-national-energy-technology-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27281,7 +27496,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27291,6 +27505,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.energy.gov/national-laboratories"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-national-energy-technology-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -28009,7 +28235,6 @@
     "sourceCount": 2,
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
-    "lastVerified": "2026-09-14T14:49:52+00:00",
     "rollup_total_amount": 439172894.04,
     "budget_source": "Treasury MTS Table 5",
     "treasury_row_name": "Institute of Education Sciences",
@@ -28018,6 +28243,14 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://ies.ed.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-ed-ies",
     "employeesOfficial": 185,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28036,14 +28269,7 @@
       },
       "agencyMatched": "exec-dept-ed"
     },
-    "parentId": "exec-dept-ed",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-ed-ies",
-    "verificationMatchedIn": "content",
-    "evidenceUrls": [
-      "https://ies.ed.gov/"
-    ],
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00"
+    "parentId": "exec-dept-ed"
   },
   {
     "id": "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
@@ -33184,20 +33410,9 @@
     "sourceUrls": [
       "https://www.nasa.gov/centers-and-facilities/"
     ],
-    "evidenceUrls": [
-      "https://www.nasa.gov/centers-and-facilities/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "navigation",
-    "verificationSiteFrom": "exec-ind-nasa-jet-propulsion-laboratory-jpl",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -33206,7 +33421,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1496466163.99,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -33216,6 +33430,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nasa.gov/centers-and-facilities/"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-ind-nasa-jet-propulsion-laboratory-jpl",
+    "placementCheckable": false,
     "parentId": "exec-ind-nasa-centers"
   },
   {
@@ -34384,21 +34610,9 @@
       "https://www.nsf.gov/edu/drl",
       "https://www.nsf.gov/about/directorates-offices"
     ],
-    "evidenceUrls": [
-      "https://www.nsf.gov/edu/drl",
-      "https://www.nsf.gov/about/directorates-offices"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-research-on-learning-in-formal-informal-settings",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -34407,7 +34621,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 197656504.86,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -34417,6 +34630,19 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/edu/drl",
+      "https://www.nsf.gov/about/directorates-offices"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-research-on-learning-in-formal-informal-settings",
+    "placementCheckable": false,
     "parentId": "exec-ind-nsf-education-human-resources-ehr"
   },
   {
@@ -34431,20 +34657,9 @@
     "sourceUrls": [
       "https://www.nsf.gov/edu/due"
     ],
-    "evidenceUrls": [
-      "https://www.nsf.gov/edu/due"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-undergraduate-education",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -34453,7 +34668,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 197656504.86,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -34463,6 +34677,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/edu/due"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-undergraduate-education",
+    "placementCheckable": false,
     "parentId": "exec-ind-nsf-education-human-resources-ehr"
   },
   {
@@ -34477,20 +34703,9 @@
     "sourceUrls": [
       "https://www.nsf.gov/edu"
     ],
-    "evidenceUrls": [
-      "https://www.nsf.gov/edu"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "navigation",
-    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-graduate-education",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -34499,7 +34714,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 197656504.86,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -34509,6 +34723,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/edu"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-ind-nsf-education-human-resources-ehr-graduate-education",
+    "placementCheckable": false,
     "parentId": "exec-ind-nsf-education-human-resources-ehr"
   },
   {
@@ -34627,20 +34853,9 @@
     "sourceUrls": [
       "https://www.nsf.gov/sbe"
     ],
-    "evidenceUrls": [
-      "https://www.nsf.gov/sbe"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "navigation",
-    "verificationSiteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -34649,13 +34864,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": true,
-    "placementUrl": "https://www.nsf.gov/dir/index.jsp?org=SBE",
-    "placementVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "placementParentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
-    "placementMatchedText": "Division of Behavioral and Cognitive Sciences (SBE/BCS)",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "placementMatchedIn": "navigation",
     "resolved_total_amount": 197369243.12,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -34665,6 +34873,24 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/sbe"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences",
+    "placementVerified": true,
+    "placementUrl": "https://www.nsf.gov/dir/index.jsp?org=SBE",
+    "placementVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "placementParentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
+    "placementMatchedText": "Division of Behavioral and Cognitive Sciences (SBE/BCS)",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
     "parentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe"
   },
   {
@@ -34680,21 +34906,9 @@
       "https://www.nsf.gov/sbe/ses",
       "https://www.nsf.gov/sbe"
     ],
-    "evidenceUrls": [
-      "https://www.nsf.gov/sbe/ses",
-      "https://www.nsf.gov/sbe"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences",
-    "sourceCount": 2,
-    "confidenceScore": 0.8,
-    "verificationStatus": "verified",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -34703,13 +34917,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": true,
-    "placementUrl": "https://www.nsf.gov/dir/index.jsp?org=SBE",
-    "placementVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "placementParentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
-    "placementMatchedText": "Division of Social and Economic Sciences (SBE/SES)",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "placementMatchedIn": "navigation",
     "resolved_total_amount": 197369243.12,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -34719,6 +34926,25 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.nsf.gov/sbe/ses",
+      "https://www.nsf.gov/sbe"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences",
+    "placementVerified": true,
+    "placementUrl": "https://www.nsf.gov/dir/index.jsp?org=SBE",
+    "placementVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "placementParentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
+    "placementMatchedText": "Division of Social and Economic Sciences (SBE/SES)",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
     "parentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe"
   },
   {
@@ -35498,11 +35724,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-14T14:49:52+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.sss.gov/",
       "https://www.federalregister.gov/agencies/selective-service-system"
     ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-selective-service-system",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Selective Service System",
@@ -35511,8 +35741,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 162,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -35537,9 +35765,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-selective-service-system",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-export-import-bank-of-the-u-s",
@@ -36122,11 +36348,15 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-14T14:49:52+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nlrb.gov/",
       "https://www.federalregister.gov/agencies/national-labor-relations-board"
     ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "National Labor Relations Board",
@@ -36135,8 +36365,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 1237,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -36161,9 +36389,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent-chief-financial-officer",
@@ -37634,11 +37860,15 @@
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
     "lastVerified": "2026-09-14T14:49:52+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.pbgc.gov/",
       "https://www.federalregister.gov/agencies/pension-benefit-guaranty-corporation"
     ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Pension Benefit Guaranty Corporation",
@@ -37647,8 +37877,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 939,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -37673,9 +37901,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-tennessee-valley-authority-tva",
@@ -37852,11 +38078,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-14T14:49:52+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.ncpc.gov/",
       "https://www.federalregister.gov/agencies/national-capital-planning-commission"
     ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "National Capital Planning Commission",
@@ -37865,8 +38095,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 35,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -37891,9 +38119,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationSiteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-american-battle-monuments-commission-abmc",
@@ -39083,6 +39309,52 @@
     "parentId": "jud-specialized"
   },
   {
+    "id": "jud-specialized-fisc",
+    "name": "Foreign Intelligence Surveillance Court (FISC)",
+    "type": "Specialized Court",
+    "desc": "Secret court. Issues surveillance warrants for foreign intelligence gathering under FISA. 11 district judges assigned.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.fisc.uscourts.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 283327935.97,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.fisc.uscourts.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-specialized-fisc",
+    "placementCheckable": false,
+    "parentId": "jud-specialized"
+  },
+  {
     "id": "jud-specialized-caaf",
     "name": "Court of Appeals for the Armed Forces (CAAF)",
     "type": "Specialized Court",
@@ -39094,20 +39366,9 @@
     "sourceUrls": [
       "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
     ],
-    "evidenceUrls": [
-      "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-13T23:39:14+00:00",
-    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "jud-specialized-caaf",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -39116,7 +39377,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 453324697.55,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -39126,6 +39386,64 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-13T23:39:14+00:00",
+    "evidenceUrls": [
+      "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+    ],
+    "evidenceVerifiedAt": "2026-09-13T23:39:14+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-specialized-caaf",
+    "placementCheckable": false,
+    "parentId": "jud-specialized"
+  },
+  {
+    "id": "jud-specialized-cavc",
+    "name": "Court of Appeals for Veterans Claims (CAVC)",
+    "type": "Specialized Court",
+    "desc": "Reviews BVA decisions on veterans' benefits. 9 judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.uscourts.cavc.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 283327935.97,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-14T14:49:52+00:00",
+    "evidenceUrls": [
+      "https://www.uscourts.cavc.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-specialized-cavc",
+    "placementCheckable": false,
     "parentId": "jud-specialized"
   },
   {

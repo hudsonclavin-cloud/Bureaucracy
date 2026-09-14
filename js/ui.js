@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260913a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260913a";
+import { createGovernmentGraph } from "./graph.js?v=20260914a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260914a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -665,6 +665,41 @@ function renderTableRate(data, add) {
   add(" A rate of basic pay is also not this unit's cost: it excludes benefits, and it is not a share of federal outlays, which is what every other figure in this graph means.");
   const notes = Array.isArray(rate.footnotes) ? rate.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
+}
+
+// A single primary source that names a judicial or congressional seat
+// directly and states what it pays — no PLUM-style archive to join it to,
+// unlike positionPayRate above. Rendered as its own block so it appears
+// whatever the estimates toggle says and whether or not the node also
+// carries a PLUM listing (it never does: the archive covers the executive
+// branch only).
+function renderStatutoryPay(data) {
+  let line = document.getElementById("info-statutory-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-statutory-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = data.positionStatutoryPay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const on = pay.checkedAt
+    ? new Date(pay.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+    : null;
+  add(`${pay.sourceLabel || "A primary official source"}${on ? ` (checked ${on})` : ""} states that ${pay.amountScope || "this tier"} is paid ${printed}${pay.year ? ` for ${pay.year}` : ""}.`);
+  add(" That names a tier or a group of roles, not this specific post by name, so it is one source's own account of what the tier pays — not a second, independent confirmation, and not this unit's cost: basic pay excludes benefits and is not a share of federal outlays.");
+  const quote = String(pay.quote || "").trim();
+  if (quote) add(` The source's own words: "${quote}"`);
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {
@@ -1340,6 +1375,7 @@ function renderInfoPanel(nodeObj) {
   renderDescriptionProvenance(data, isClusteredView);
   renderHeadcountProvenance(data);
   renderPositionListing(data);
+  renderStatutoryPay(data);
   renderCountProvenance(data);
 
   if (isClusteredView) {

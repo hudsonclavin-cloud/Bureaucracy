@@ -2161,6 +2161,8 @@ def build_graph(
     headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
     pay_evidence_path: str | Path | None = "default",
+    judicial_pay_evidence_path: str | Path | None = "default",
+    congressional_pay_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2330,6 +2332,34 @@ def build_graph(
     validation["pay_evidence"] = apply_pay_evidence(
         graph, load_pay_evidence(resolved_pay_path) if resolved_pay_path else {}, index_tree=index_tree,
     )
+    # Two more single-source statutory-pay claims, one per branch — a
+    # different field (positionStatutoryPay) from the Executive Schedule's
+    # two-source join above, because the two claims are checked by different
+    # rules and folding them together would let one source's rules be
+    # satisfied by the other's fields.
+    from data_pipeline.verification.judicial_pay import (  # noqa: E402 — judicial_pay imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_JUDICIAL_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_judicial_pay_evidence,
+        load_pay_evidence as load_judicial_pay_evidence,
+    )
+    from data_pipeline.verification.congressional_pay import (  # noqa: E402 — congressional_pay imports this module
+        DEFAULT_PAY_EVIDENCE_PATH as DEFAULT_CONGRESSIONAL_PAY_EVIDENCE_PATH,
+        apply_pay_evidence as apply_congressional_pay_evidence,
+        load_pay_evidence as load_congressional_pay_evidence,
+    )
+
+    resolved_judicial_pay_path = (
+        DEFAULT_JUDICIAL_PAY_EVIDENCE_PATH if judicial_pay_evidence_path == "default" else judicial_pay_evidence_path
+    )
+    validation["judicial_pay_evidence"] = apply_judicial_pay_evidence(
+        graph, load_judicial_pay_evidence(resolved_judicial_pay_path) if resolved_judicial_pay_path else {}, index_tree=index_tree,
+    )
+    resolved_congressional_pay_path = (
+        DEFAULT_CONGRESSIONAL_PAY_EVIDENCE_PATH if congressional_pay_evidence_path == "default" else congressional_pay_evidence_path
+    )
+    validation["congressional_pay_evidence"] = apply_congressional_pay_evidence(
+        graph, load_congressional_pay_evidence(resolved_congressional_pay_path) if resolved_congressional_pay_path else {}, index_tree=index_tree,
+    )
     proof_status_counts, _ = annotate_proof_tree(
         graph,
         parent_is_proven=True,
@@ -2382,8 +2412,14 @@ def build_graph(
     # And only now can a rate of basic pay be taken off a node that stands for
     # several posts: `representsPosts` does not exist until the line above
     # computes it, so the guard inside apply_pay_evidence (which runs at 2329,
-    # before the tree is even pruned) never sees it on a fresh build.
-    validation["pay_evidence"]["stands_for_many_posts"] = withdraw_pay_from_multi_post_nodes(graph)
+    # before the tree is even pruned) never sees it on a fresh build. One
+    # generic sweep for both fields it can write — positionPayRate and
+    # judicial_pay's/congressional_pay's positionStatutoryPay — since the
+    # multi-post rule is the same rule on both.
+    multi_post_withdrawn = withdraw_pay_from_multi_post_nodes(graph)
+    validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
+    validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
+    validation["congressional_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validity_report["audit_report"] = {"summary": deepcopy(audit_report.get("summary", {}))}
     validity_report["root_orphan_resolution"] = orphan_resolution
     validity_report["treasury_outlay_rows"] = outlay_stats

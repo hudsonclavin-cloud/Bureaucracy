@@ -161,13 +161,21 @@ SOURCE_TYPES = {
     "omb_public_budget",
     "omb_apportionment",
     "opm_pay_table",
+    # A single primary source that states, in one place, what a judicial or
+    # congressional seat pays — no PLUM-style archive to join it to, unlike
+    # opm_pay_table. See data_pipeline/verification/judicial_pay.py and
+    # congressional_pay.py.
+    "uscourts_judicial_compensation",
+    "senate_salary_schedule",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
-#: it in a heading — see `_prints_whole_dollars`. Deliberately one entry: this
-#: is a narrowing of the units rule, so it is granted per document class, to
-#: classes somebody here has actually read, and never as a general relaxation.
-SCALE_PRINTED_SOURCE_TYPES = {"opm_pay_table"}
+#: it in a heading — see `_prints_whole_dollars`. Narrowing granted per
+#: document class, to classes somebody here has actually read, and never as a
+#: general relaxation: none of these three pages contains the words "dollar",
+#: "thousand" or "million" anywhere, and each states its figures only by
+#: printing them with a dollar sign attached ("$249,900", "$193,400 per year").
+SCALE_PRINTED_SOURCE_TYPES = {"opm_pay_table", "uscourts_judicial_compensation", "senate_salary_schedule"}
 
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
@@ -185,6 +193,8 @@ SOURCE_BASES = {
     "omb_public_budget": {"budget_authority", "appropriations", "net_outlays", "budget_request"},
     "omb_apportionment": {"budget_authority"},
     "opm_pay_table": {"basic_pay"},
+    "uscourts_judicial_compensation": {"basic_pay"},
+    "senate_salary_schedule": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}

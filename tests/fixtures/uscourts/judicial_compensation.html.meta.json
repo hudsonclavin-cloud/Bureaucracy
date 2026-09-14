@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-14T15:20:14Z",
+ "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+ "status": 200,
+ "final_url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /about-federal-courts/about-federal-judges/judicial-compensation",
+ "bytes": 248816,
+ "sha256": "014c9a66ad48a019ab127752e9cd46e4cec94da5e8e94d41a4eb9e785e96e494",
+ "error": null
+}

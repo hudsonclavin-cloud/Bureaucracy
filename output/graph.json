@@ -73,6 +73,26 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "senate_salary_schedule",
+                    "sourceLabel": "the Senate's own published salary schedule",
+                    "method": "senate_leadership_rate_named_in_the_page_s_own_footnote",
+                    "amount": 193400.0,
+                    "rateText": "$193,400 per year",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senate leadership (majority leader, minority leader, president pro tempore)",
+                    "seatTier": "president pro tempore",
+                    "quote": "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year.",
+                    "footnotes": [
+                      "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year."
+                    ],
+                    "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+                    "checkedAt": "2026-09-14T15:24:47Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -103,6 +123,26 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "senate_salary_schedule",
+                    "sourceLabel": "the Senate's own published salary schedule",
+                    "method": "senate_leadership_rate_named_in_the_page_s_own_footnote",
+                    "amount": 193400.0,
+                    "rateText": "$193,400 per year",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senate leadership (majority leader, minority leader, president pro tempore)",
+                    "seatTier": "majority leader",
+                    "quote": "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year.",
+                    "footnotes": [
+                      "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year."
+                    ],
+                    "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+                    "checkedAt": "2026-09-14T15:24:47Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -133,6 +173,26 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "senate_salary_schedule",
+                    "sourceLabel": "the Senate's own published salary schedule",
+                    "method": "senate_leadership_rate_named_in_the_page_s_own_footnote",
+                    "amount": 193400.0,
+                    "rateText": "$193,400 per year",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Senate leadership (majority leader, minority leader, president pro tempore)",
+                    "seatTier": "minority leader",
+                    "quote": "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year.",
+                    "footnotes": [
+                      "Note: Since the early 1980s, Senate leaders–majority and minority leaders, and the president pro tempore–have received higher salaries than other members. Currently, leaders earn $193,400 per year."
+                    ],
+                    "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+                    "checkedAt": "2026-09-14T15:24:47Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41926,20 +41986,9 @@
                   "sourceUrls": [
                     "https://www.visitthecapitol.gov/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.visitthecapitol.gov/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T14:49:52+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "navigation",
-                  "verificationSiteFrom": "leg-support-aoc-capitol-visitor-center",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -41955,7 +42004,18 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T14:49:52+00:00",
+                  "evidenceUrls": [
+                    "https://www.visitthecapitol.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "navigation",
+                  "verificationSiteFrom": "leg-support-aoc-capitol-visitor-center"
                 }
               ],
               "sourceUrls": [
@@ -68306,20 +68366,9 @@
                       "sourceUrls": [
                         "https://www.darpa.mil/"
                       ],
-                      "evidenceUrls": [
-                        "https://www.darpa.mil/"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-14T14:49:52+00:00",
-                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-defense-agency-darpa",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -68336,7 +68385,18 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-14T14:49:52+00:00",
+                      "evidenceUrls": [
+                        "https://www.darpa.mil/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-defense-agency-darpa"
                     },
                     {
                       "id": "exec-dept-defense-agency-dla",
@@ -95773,20 +95833,9 @@
                   "sourceUrls": [
                     "https://www.ginniemae.gov/"
                   ],
-                  "evidenceUrls": [
-                    "https://www.ginniemae.gov/"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T14:49:52+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-dept-hud-ginnie",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -95803,7 +95852,18 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T14:49:52+00:00",
+                  "evidenceUrls": [
+                    "https://www.ginniemae.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-hud-ginnie"
                 },
                 {
                   "id": "exec-dept-hud-pih",
@@ -105160,20 +105220,9 @@
                       "sourceUrls": [
                         "https://www.ornl.gov/"
                       ],
-                      "evidenceUrls": [
-                        "https://www.ornl.gov/"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-14T14:49:52+00:00",
-                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-doe-oak-ridge-national-laboratory",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -105182,7 +105231,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementCheckable": false,
                       "resolved_total_amount": 1858563341.57,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -105191,7 +105239,19 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-14T14:49:52+00:00",
+                      "evidenceUrls": [
+                        "https://www.ornl.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-doe-oak-ridge-national-laboratory",
+                      "placementCheckable": false
                     },
                     {
                       "id": "exec-dept-doe-pacific-northwest-national-laboratory",
@@ -105436,20 +105496,9 @@
                       "sourceUrls": [
                         "https://www.pnnl.gov/"
                       ],
-                      "evidenceUrls": [
-                        "https://www.pnnl.gov/"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-14T14:49:52+00:00",
-                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-doe-pacific-northwest-national-laboratory",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -105458,7 +105507,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementCheckable": false,
                       "resolved_total_amount": 1858563341.57,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -105467,7 +105515,19 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-14T14:49:52+00:00",
+                      "evidenceUrls": [
+                        "https://www.pnnl.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-doe-pacific-northwest-national-laboratory",
+                      "placementCheckable": false
                     },
                     {
                       "id": "exec-dept-doe-sandia-national-laboratories",
@@ -109484,7 +109544,6 @@
                   "sourceCount": 2,
                   "confidenceScore": 0.8,
                   "verificationStatus": "verified",
-                  "lastVerified": "2026-09-14T14:49:52+00:00",
                   "rollup_total_amount": 439172894.04,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Institute of Education Sciences",
@@ -109493,6 +109552,7 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "lastVerified": "2026-09-14T14:49:52+00:00",
                   "evidenceUrls": [
                     "https://ies.ed.gov/"
                   ],
@@ -177788,6 +177848,24 @@
               "budget": null,
               "color": "#666666",
               "children": [],
+              "positionStatutoryPay": {
+                "source": "uscourts_judicial_compensation",
+                "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                "method": "rate_for_the_tier_this_post_holds",
+                "amount": 320700.0,
+                "rateText": "$320,700",
+                "year": "2026",
+                "effective": "2026-01-01",
+                "costBasis": "basic_pay",
+                "scopeMatch": "proxy",
+                "financialEvidenceStatus": "partial",
+                "amountScope": "Chief Justice",
+                "seatTier": "chief justice",
+                "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                "footnotes": [],
+                "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                "checkedAt": "2026-09-14T15:20:14Z"
+              },
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -178206,6 +178284,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -178493,6 +178589,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -178780,6 +178894,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179067,6 +179199,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179354,6 +179504,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179641,6 +179809,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179928,6 +180114,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -180215,6 +180419,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -180502,6 +180724,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -180789,6 +181029,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -181076,6 +181334,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -181363,6 +181639,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -181653,6 +181947,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 264900.0,
+                    "rateText": "$264,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "Circuit Judges",
+                    "seatTier": "circuit judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -181975,6 +182287,24 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "positionStatutoryPay": {
+                    "source": "uscourts_judicial_compensation",
+                    "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
+                    "method": "rate_for_the_tier_this_post_holds",
+                    "amount": 249900.0,
+                    "rateText": "$249,900",
+                    "year": "2026",
+                    "effective": "2026-01-01",
+                    "costBasis": "basic_pay",
+                    "scopeMatch": "proxy",
+                    "financialEvidenceStatus": "partial",
+                    "amountScope": "District Judges",
+                    "seatTier": "district judges",
+                    "quote": "Year District Judges Circuit Judges Associate Justices Chief Justice; 2026 $249,900 $264,900 $306,600 $320,700",
+                    "footnotes": [],
+                    "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
+                    "checkedAt": "2026-09-14T15:20:14Z"
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -183609,20 +183939,9 @@
               "sourceUrls": [
                 "https://www.fisc.uscourts.gov/"
               ],
-              "evidenceUrls": [
-                "https://www.fisc.uscourts.gov/"
-              ],
               "sourceTypes": [
                 "official_site"
               ],
-              "lastVerified": "2026-09-14T14:49:52+00:00",
-              "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-              "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationMatchedIn": "content",
-              "verificationSiteFrom": "jud-specialized-fisc",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
               "proofSourceCount": 1,
               "proofSourceTypes": [
                 "official_site"
@@ -183631,7 +183950,6 @@
               "parentProven": true,
               "proofStatus": "proven",
               "proofReason": "official_source_recorded",
-              "placementCheckable": false,
               "resolved_total_amount": 283327935.97,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -183640,7 +183958,19 @@
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.2,
               "costVerificationReason": "estimated_from_parent",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "lastVerified": "2026-09-14T14:49:52+00:00",
+              "evidenceUrls": [
+                "https://www.fisc.uscourts.gov/"
+              ],
+              "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationMatchedIn": "content",
+              "verificationSiteFrom": "jud-specialized-fisc",
+              "placementCheckable": false
             },
             {
               "id": "jud-specialized-caaf",
@@ -184046,20 +184376,9 @@
               "sourceUrls": [
                 "https://www.uscourts.cavc.gov/"
               ],
-              "evidenceUrls": [
-                "https://www.uscourts.cavc.gov/"
-              ],
               "sourceTypes": [
                 "official_site"
               ],
-              "lastVerified": "2026-09-14T14:49:52+00:00",
-              "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
-              "verificationMethod": "name_labelled_on_own_official_page",
-              "verificationMatchedIn": "content",
-              "verificationSiteFrom": "jud-specialized-cavc",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
               "proofSourceCount": 1,
               "proofSourceTypes": [
                 "official_site"
@@ -184068,7 +184387,6 @@
               "parentProven": true,
               "proofStatus": "proven",
               "proofReason": "official_source_recorded",
-              "placementCheckable": false,
               "resolved_total_amount": 283327935.97,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -184077,7 +184395,19 @@
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.2,
               "costVerificationReason": "estimated_from_parent",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "lastVerified": "2026-09-14T14:49:52+00:00",
+              "evidenceUrls": [
+                "https://www.uscourts.cavc.gov/"
+              ],
+              "evidenceVerifiedAt": "2026-09-14T14:49:52+00:00",
+              "verificationMethod": "name_labelled_on_own_official_page",
+              "verificationMatchedIn": "content",
+              "verificationSiteFrom": "jud-specialized-cavc",
+              "placementCheckable": false
             }
           ],
           "placementVerified": false,

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-14T15:20:16Z",
+ "url": "https://www.congress.gov/crs-product/97-1011",
+ "status": null,
+ "final_url": null,
+ "content_type": null,
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /crs-product/97-1011",
+ "bytes": null,
+ "sha256": null,
+ "error": "HTTPError: HTTP Error 403: Forbidden"
+}

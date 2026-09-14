@@ -440,6 +440,22 @@ try {
     check("the table rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(stats) || !/Salary Table/.test(stats), stats);
   }
 
+  // A single-source statutory rate — judicial or congressional — a
+  // different field from positionPayRate above, with its own rendering
+  // and no PLUM archive beneath it.
+  const withStatutoryPay = allNodes.find((n) => n.positionStatutoryPay && typeof n.positionStatutoryPay.amount === "number" && unique(n));
+  check("some position is priced from a single primary statutory source", Boolean(withStatutoryPay), "none");
+  if (withStatutoryPay) {
+    await openByName(withStatutoryPay.name);
+    const statutory = await text("#info-statutory-pay");
+    check("the statutory rate names the amount it prices", new RegExp(withStatutoryPay.positionStatutoryPay.rateText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(statutory), statutory);
+    check("the panel says it is one source's own account, not a second confirmation", /one source's own account/.test(statutory), statutory);
+    check("the panel says a rate of pay is not the unit's cost", /not this unit's cost/.test(statutory), statutory);
+    check("the source's own quoted words are shown", /The source's own words: "/.test(statutory), statutory);
+    const statutoryStats = await text("#info-stats");
+    check("the statutory rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(statutoryStats), statutoryStats);
+  }
+
   // The exact-costs-only view: with it on, an apportioned share is not shown
   // as a figure at all, and the panel says why.
   const allocatedNode = allNodes.find((n) => n.cost_status === "allocated" && n.resolved_total_amount > 1e6

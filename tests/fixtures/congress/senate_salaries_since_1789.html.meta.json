@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-14T15:24:47Z",
+ "url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+ "status": 200,
+ "final_url": "https://www.senate.gov/senators/SenateSalariesSince1789.htm",
+ "content_type": "text/html; charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /senators/SenateSalariesSince1789.htm",
+ "bytes": 38560,
+ "sha256": "6b67be0cc228b2b18f23b0842fad73351e015c4c0b8509f3919b44398f75d87a",
+ "error": null
+}

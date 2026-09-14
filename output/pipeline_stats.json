@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-14T14:58:35.177793+00:00",
+  "timestamp": "2026-09-14T15:41:27.534343+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5170,
@@ -26,19 +26,19 @@
     "verified": 187,
     "partial": 291
   },
-  "average_confidence_score": 0.68,
-  "verified_node_count": 181,
+  "average_confidence_score": 0.69,
+  "verified_node_count": 187,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 539,
-    "input_node_count": 539,
+    "initial_node_count": 546,
+    "input_node_count": 546,
     "input_edge_count": 0,
-    "exported_node_count": 539,
+    "exported_node_count": 546,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 1,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 539,
+    "final_node_count": 546,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -53,18 +53,18 @@
       "verified": 187,
       "partial": 291
     },
-    "verified_node_count": 181,
+    "verified_node_count": 187,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.68,
+    "average_confidence_score": 0.69,
     "pipeline_summary": {
-      "initial_node_count": 539,
-      "raw_nodes_loaded": 539,
-      "nodes_after_normalization": 539,
-      "nodes_after_merge": 539,
+      "initial_node_count": 546,
+      "raw_nodes_loaded": 546,
+      "nodes_after_normalization": 546,
+      "nodes_after_merge": 546,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 1,
       "nodes_removed_structural_errors": 0,
-      "final_node_count": 539,
+      "final_node_count": 546,
       "nodes_removed_cost_validation": 0
     },
     "cycle_fallback_root_attachments": 0,
@@ -304,7 +304,7 @@
       "unknown_node": 0,
       "unknown_status": 0,
       "urls_added": 277,
-      "stale_claims_cleared": 506,
+      "stale_claims_cleared": 513,
       "placements_evidenced": 119,
       "placements_checked_not_listed": 173,
       "placements_stale_parent": 0,
@@ -356,6 +356,20 @@
       "listing_reports_a_different_level": 0,
       "listing_reports_a_rate": 0,
       "stands_for_many_posts": 0
+    },
+    "judicial_pay_evidence": {
+      "priced": 15,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "stands_for_many_posts": 0,
+      "stands_for_many_posts_after_pruning": 0
+    },
+    "congressional_pay_evidence": {
+      "priced": 3,
+      "unknown_node": 0,
+      "not_a_position": 0,
+      "stands_for_many_posts": 0,
+      "stands_for_many_posts_after_pruning": 0
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {
@@ -542,7 +556,7 @@
       "partial": 291
     },
     "export_verified_node_count": 187,
-    "export_average_confidence_score": 0.68,
+    "export_average_confidence_score": 0.69,
     "pre_export_audit_summary": {
       "total_nodes": 5195,
       "nodes_with_errors": 4655,

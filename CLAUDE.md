@@ -36,6 +36,8 @@ python scripts/repair_review_queue.py --dry-run  # what the queue repair would d
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
+python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
+python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -587,10 +589,58 @@ of `basic_pay` in both directions; and `_prints_whole_dollars` lets a document
 state its scale by *printing* it, because the OPM page contains none of the
 words "dollar", "thousand" or "million" and an honest record from it was
 otherwise unfilable. That relaxation is granted per source type
-(`SCALE_PRINTED_SOURCE_TYPES`, currently one entry), applies only when no
+(`SCALE_PRINTED_SOURCE_TYPES`, three entries as of the judicial and
+congressional modules below), applies only when no
 scale phrase is present at all, requires the currency mark to be attached to
 the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
 can see which records rest on it.
+
+**Two more sources, each a single primary document rather than a join
+(since 2026-09-14).** `judicial_pay.py` and `congressional_pay.py` write a
+different field, `positionStatutoryPay`, because their claim is a different
+shape from `positionPayRate`'s: no archive to join, one source that names a
+tier or a role directly and states what it pays. `judicial_pay.py` reads
+`uscourts.gov`'s own "Judicial Compensation" table (District Judges, Circuit
+Judges, Associate Justices, Chief Justice, current year first) and prices
+exactly the Chief Justice and every named circuit's or district's own Chief
+Judge — a chief judge is paid as a judge of that tier, not at a distinct
+"chief" rate, so this is not a proxy for a different post the way an
+Executive Schedule level is. It refuses every node that states a
+multiplicity (351 circuit- and district-judge nodes), the specialized
+Article I courts (Tax Court, CFC, CIT, CAAF, CAVC — a different statutory
+basis this module has not read a source for), and one node the multi-post
+rule cannot see: `jud-district-structure-chief-judge`, a template describing
+every one of the 94 districts' structure rather than one district's actual
+chief judge, refused by id. `congressional_pay.py` reads `senate.gov`'s own
+year-by-year base-salary table, whose footnote names three specific
+leadership roles sharing one rate: the President Pro Tempore, the Majority
+Leader, the Minority Leader. It prices exactly those three and nothing
+else — not the party whips the footnote does not name, not the House's own
+Speaker or Majority/Minority Leader (no fetched official source this
+session could reach: `crsreports.congress.gov` and `www.congress.gov`'s CRS
+pages are Cloudflare-blocked, a fact about the network), not the Vice
+President's Senate-leadership node (a different statutory salary this
+module has not read), and no base "Member of Congress" seat, because none
+is curated as its own position node — "Individual Senator/Representative
+Offices" are staff-office groupings, not the Member's own seat.
+
+Both write `scopeMatch: "proxy"`, deliberately, even where a source's own
+wording matches a node's name closely: the Senate's footnote names three
+roles together under one shared rate rather than one row per role, and
+`financial_evidence.classify` would grade a `scopeMatch: "exact"` record
+`verified` — a stronger claim than a grouped statement earns. Both are
+gated by one shared checker, `statutory_pay_violations`, mirroring each
+source's table/footnote and — the check `table_pay_violations` does not
+need, because an Executive Schedule level's five rates are all
+different — a `STATUTORY_PAY_NODE_TIERS` map from node id to the specific
+tier or role that node is: three Senate leadership roles share one dollar
+figure and one shared footnote, so a record for the Majority Leader
+relabelled as the President Pro Tempore would still quote a footnote naming
+that role and price the same $193,400, and only a check tied to the node's
+own identity catches it. `withdraw_pay_from_multi_post_nodes` strips both
+`positionPayRate` and `positionStatutoryPay` in one sweep, since the
+multi-post rule is the same rule on both. First run: 18 positions priced
+(15 judicial, 3 congressional), all `partial`, none `verified`.
 
 The PLUM archive is the previous administration's reported positions
 (the current export is on escs.opm.gov, which the proxy refuses), so every
