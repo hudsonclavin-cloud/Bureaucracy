@@ -1617,7 +1617,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -3449,7 +3449,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -3854,7 +3854,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -3912,7 +3912,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -3970,7 +3970,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -5182,7 +5182,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -5438,7 +5438,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://budget.house.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6343,7 +6343,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6403,7 +6403,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6990,7 +6990,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://cha.house.gov/elections",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -7051,7 +7051,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://judiciary.house.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -10050,7 +10050,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://intelligence.house.gov/",
-      "checkedAt": "2026-09-14T14:49:52+00:00"
+      "checkedAt": "2026-09-14T23:51:55+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -17010,7 +17010,7 @@
     "allocation_basis": "treasury_rollup",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17124,7 +17124,7 @@
     "verificationSiteFrom": "exec-dept-doj-div-civil",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17253,7 +17253,7 @@
     "verificationSiteFrom": "exec-dept-doj-div-civil-rights",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17382,7 +17382,7 @@
     "verificationSiteFrom": "exec-dept-doj-div-criminal",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17596,7 +17596,7 @@
     "verificationSiteFrom": "exec-dept-doj-div-nsd",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17903,7 +17903,7 @@
     "verificationSiteFrom": "exec-dept-doj-solicitor",
     "placementVerified": false,
     "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -26808,7 +26808,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -26922,6 +26922,7 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
+      "https://www.energy.gov/science/office-science",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "sourceTypes": [
@@ -26945,11 +26946,12 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-14T23:51:55+00:00",
     "evidenceUrls": [
+      "https://www.energy.gov/science/office-science",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "positionListing": {
@@ -26973,15 +26975,18 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
+    "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
     "placementVerifiedAt": "2026-09-08T19:49:47Z",
     "placementParentId": "exec-dept-doe-sc",
     "placementMatchedText": "DEPUTY DIRECTOR FOR SCIENCE PROGRAMS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doe-sc"
+    "parentId": "exec-dept-doe-sc",
+    "verificationSiteFrom": "exec-dept-doe-sc",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "Deputy Director for Science Programs"
   },
   {
     "id": "exec-dept-doe-eere",
@@ -27564,7 +27569,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -28737,6 +28742,7 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
+      "https://www.va.gov/health",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "sourceTypes": [
@@ -28760,11 +28766,12 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-14T23:51:55+00:00",
     "evidenceUrls": [
+      "https://www.va.gov/health",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "positionListing": {
@@ -28788,8 +28795,8 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
+    "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
     "placementVerifiedAt": "2026-09-08T19:49:47Z",
@@ -28826,7 +28833,10 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-va-vha"
+    "parentId": "exec-dept-va-vha",
+    "verificationSiteFrom": "exec-dept-va-vha",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "Under Secretary for Health"
   },
   {
     "id": "exec-dept-va-vba",
@@ -29079,6 +29089,7 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
+      "https://www.cem.va.gov/",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "sourceTypes": [
@@ -29102,11 +29113,12 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-14T23:51:55+00:00",
     "evidenceUrls": [
+      "https://www.cem.va.gov/",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
     "positionListing": {
@@ -29130,8 +29142,8 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
-    "verificationMethod": "listed_in_opm_plum_archive",
+    "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
     "placementVerifiedAt": "2026-09-08T19:49:47Z",
@@ -29168,7 +29180,10 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-va-nca"
+    "parentId": "exec-dept-va-nca",
+    "verificationSiteFrom": "exec-dept-va-nca",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "Under Secretary for Memorial Affairs"
   },
   {
     "id": "exec-dept-va-bva",
@@ -31818,7 +31833,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -31866,7 +31881,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -31914,7 +31929,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -31962,7 +31977,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32811,7 +32826,7 @@
     "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -32930,7 +32945,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -33049,7 +33064,7 @@
     "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -33168,7 +33183,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -34594,7 +34609,7 @@
     "allocation_basis": "treasury_rollup",
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -39130,7 +39145,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-14T14:49:52+00:00",
+    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "judicial-branch"
   },
   {

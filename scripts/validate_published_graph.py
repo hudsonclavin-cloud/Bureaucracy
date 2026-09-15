@@ -962,15 +962,31 @@ def is_post(node):
     return any(word in type_text for word in ("position", "role", "office holder"))
 
 
-def label_names(node, matched_text):
-    """Is the quoted label this node's name, by plain equality?
+#: Mirror of data_pipeline.verification.evidence.SCAFFOLD_TOKENS and
+#: MAX_SCAFFOLD_TOKENS. tests/test_position_evidence.py pins the two
+#: together, as tests/test_committee_fold.py does for the committee fold.
+SCAFFOLD_TOKENS = frozenset(
+    "about the a an our welcome to home homepage official website site page of us u s united states usa gov "
+    "overview mission history contact leadership organization organisation".split()
+)
+MAX_SCAFFOLD_TOKENS = 5
 
-    Deliberately NOT the scaffold-tolerant `label_matches` the matcher uses:
-    the gate's job is to catch a label that has drifted from the name it was
-    recorded for, and the strictest reading is the right one for that. A
-    confirmation the matcher made through bounded scaffolding ("About the
-    Office of the Secretary") keeps the scaffolded fragment as its quoted
-    text, so the split below has to find the name as one of the parts.
+
+def label_names(node, matched_text):
+    """Is the quoted label this node's name, as the matcher reads a label?
+
+    A stdlib mirror of `evidence.label_matches`, and it has to be that rather
+    than plain equality. The first version here demanded equality on the
+    whole fragment or one of its separator-split parts, which looked stricter
+    and therefore safer — and it refused the Senate's own heading for its own
+    officer, "U.S. Senate: About the Sergeant at Arms", because the split
+    leaves "about the sergeant at arms" and the scaffolding is still on it.
+    A gate that rejects what the matcher correctly accepted is not a stricter
+    gate, it is a broken one: the invariant worth enforcing is "this label
+    names this node", and the matcher's bounded scaffold allowance is part of
+    what that means. What it still refuses is the thing it is for — a label
+    that names a DIFFERENT office ("Deputy Secretary" for "Secretary"), since
+    "deputy" is not a scaffold word and never becomes one.
     """
     import re
 
@@ -980,10 +996,21 @@ def label_names(node, matched_text):
     text = str(matched_text or "")
     if canonical_key(text) == key:
         return True
-    return any(
-        canonical_key(part) == key
-        for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", text)
-    )
+    for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", text):
+        candidate = canonical_key(part)
+        if not candidate:
+            continue
+        if candidate == key:
+            return True
+        if candidate.endswith(" " + key):
+            prefix = candidate[: -len(key) - 1].split()
+            if prefix and len(prefix) <= MAX_SCAFFOLD_TOKENS and all(t in SCAFFOLD_TOKENS for t in prefix):
+                return True
+        if candidate.startswith(key + " "):
+            suffix = candidate[len(key) + 1:].split()
+            if suffix and len(suffix) <= MAX_SCAFFOLD_TOKENS and all(t in SCAFFOLD_TOKENS for t in suffix):
+                return True
+    return False
 
 
 def canonical_key(value):

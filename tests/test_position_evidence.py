@@ -34,7 +34,12 @@ import uuid
 from contextlib import redirect_stdout
 from pathlib import Path
 
-from data_pipeline.exporter.build_graph import build_graph, index_tree, is_post_node
+from data_pipeline.exporter.build_graph import (
+    build_graph,
+    canonical_name_key,
+    index_tree,
+    is_post_node,
+)
 from data_pipeline.verification.evidence import (
     CONFIRMED,
     INCONCLUSIVE,
@@ -46,6 +51,7 @@ from data_pipeline.verification.evidence import (
     REASON_POST_ONLY_IN_NAVIGATION,
     REASON_POST_TITLE_TOO_GENERIC,
     apply_evidence_to_tree,
+    label_matches,
     placement_from_record,
     uncheckable_reason,
     uncheckable_reason_for_node,
@@ -140,6 +146,35 @@ class PostTitleFloorTests(unittest.TestCase):
         self.assertIsNone(uncheckable_reason_for_node({**BARE, "type": "Office"}))
         self.assertIsNone(uncheckable_reason_for_node(SEC))
         self.assertIsNone(uncheckable_reason_for_node(DEPT))
+
+    def test_the_gate_s_label_test_is_the_matcher_s_label_test(self) -> None:
+        """The gate keeps a stdlib copy of `label_matches`, and a copy that
+        drifts EITHER way is a fault: too loose lets a label for a different
+        office through, too strict rejects a confirmation the matcher made
+        correctly. The first version here was too strict and refused the
+        Senate's own heading for its own officer.
+        """
+        cases = [
+            ("Sergeant at Arms", "U.S. Senate: About the Sergeant at Arms"),
+            ("Sergeant at Arms", "Sergeant at Arms"),
+            ("Chief Administrative Officer", "CAO | Chief Administrative Officer |"),
+            ("Office of Science", "About the Office of Science"),
+            ("Office of Science", "Office of Science — Advancing discovery"),
+            # Must be refused: a different office, a superset, a substring.
+            ("Secretary of Defense", "Deputy Secretary of Defense"),
+            ("Office of Science", "Office of Science and Technology Policy"),
+            ("Press Secretary", "Assistant Press Secretary"),
+            ("Inspector General", "Deputy Inspector General"),
+            ("Sergeant at Arms", "Readiness"),
+            ("Sergeant at Arms", ""),
+        ]
+        for name, matched in cases:
+            with self.subTest(name=name, matched=matched):
+                self.assertEqual(
+                    gate.label_names({"name": name}, matched),
+                    label_matches(canonical_name_key(name), matched),
+                    f"the gate and the matcher disagree about {matched!r} naming {name!r}",
+                )
 
     def test_the_gate_s_post_mirror_is_the_exporter_s_function(self) -> None:
         """The gate is stdlib-only and cannot import the pipeline, so it keeps

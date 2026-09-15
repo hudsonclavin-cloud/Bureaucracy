@@ -625,8 +625,14 @@ try {
   // the organisation's, quotes the label found (84 nodes are called "General
   // Counsel", so the words are what tie the badge to this node), and never
   // publishes the same reading a second time as evidence for the edge.
+  // Pick one confirmed on a SINGLE page. That is the case the confidence
+  // arithmetic has to get right: 0.4 for having a source plus 0.3 for it
+  // being official is 0.70, which is "partial". A post named on two official
+  // pages reaches 0.80 and is "verified" — 4 of the 20 are, legitimately, so
+  // asserting "a post is never verified" would be asserting something false.
   const confirmedPost = allNodes.find(
-    (n) => n.verificationMethod === "name_labelled_on_its_organisations_official_page" && nameCounts.get(n.name) === 1,
+    (n) => n.verificationMethod === "name_labelled_on_its_organisations_official_page"
+      && nameCounts.get(n.name) === 1 && (n.sourceUrls || []).length === 1,
   );
   check("some position is confirmed by its organisation's own page", Boolean(confirmedPost), "none");
   if (confirmedPost) {
@@ -635,7 +641,7 @@ try {
     check("a confirmed post says whose page named it", /Its organisation's own official page names it/.test(posPanel), posPanel.slice(0, 400));
     check("a confirmed post quotes the label the page carries",
       posPanel.includes(`as "${confirmedPost.verificationMatchedText}"`), posPanel.slice(0, 400));
-    check("a confirmed post is not called verified off one page", !/\bVERIFIED\b/.test(posPanel), posPanel.slice(0, 300));
+    check("a post confirmed on one page reads partial, not verified", /PARTIAL/.test(posPanel) && !/\bVERIFIED\b/.test(posPanel), posPanel.slice(0, 300));
     check("a confirmed post no longer reads no source recorded", !/NO SOURCE RECORDED/.test(posPanel), posPanel.slice(0, 300));
     const posPlacement = await text("#verification-placement");
     check("a post's placement is not claimed as a second finding", /not claimed separately/.test(posPlacement), posPlacement);

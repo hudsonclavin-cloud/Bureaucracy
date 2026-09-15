@@ -511,6 +511,36 @@ counting positions in a total whose label says organisation. The numerator is
 now scoped with the denominator, and `scripts/frontend_smoke.mjs` recomputes
 the figure from the served graph and asserts the page agrees with it.
 
+**The first live run (2026-09-15), and what the strict rules actually cost.**
+2,858 nodes planned, 452 distinct pages: **20 positions confirmed**, all from
+page content, 16 published `partial` and 4 `verified` — the 4 because two
+official pages each named them, which is the existing confidence arithmetic
+(0.4 + 0.3 for one official URL is 0.70; a second adds 0.1) and not a rule
+this work changed. Coverage is 20 of 4,604, **0.4%**, reported on its own
+line by the gate so it cannot be read as anything grander. Spot-checked
+against the pages: VA's Under Secretary for Health on va.gov/health, NASA's
+Deputy Administrator and Associate Administrator on nasa.gov/organization,
+EPA's Inspector General on epa.gov/aboutepa. 1,021 positions came back
+`fetch_failed` — a fact about which hosts answer `robots.txt` — and 1,468
+`inconclusive`, which is what an organisation's page not naming a post means.
+A post can never be `not_found`: `is_own_page` is false for every post, so
+the negative branch that would say "its own page does not name it" is
+unreachable, and an org page is not obliged to list its staff.
+
+**The navigation rule paid for itself, measurably.** 27 titles were found in
+site chrome and refused — more than the 20 confirmed, so this is not a
+free rule. **18 of the 27 were `Inspector General`, in the footer of 18
+different agencies**: DOI, DOE, CIA, SBA, NSF, OPM, NLRB, FLRA, FEC, NCUA,
+NRC, CPSC, FDIC, CFTC, FMC and more. That is a stamped node on the graph's
+side being confirmed by stamped furniture on the page's side — every `.gov`
+footer carries an Inspector General link the way it carries FOIA and No FEAR
+Act — and it would have manufactured 18 confirmations out of one fact about
+federal web conventions. The rule does cost real evidence: the Secretary of
+the Senate, the Clerk of the House and two Circuit Executives are named only
+in their sites' navigation and go unconfirmed. Trading those for the 18 is
+the right way round, and it is recorded here as a measurement rather than a
+preference.
+
 **What the first run found, which was not a pipeline bug.** The most
 recognisable posts in the government came back `inconclusive` — and not
 because the pages are silent about them. **839 position nodes contain their
