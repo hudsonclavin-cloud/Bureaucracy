@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-15T23:22:29Z",
+ "url": "https://www.rfc-editor.org/rfc/rfc9309.txt",
+ "status": 200,
+ "final_url": "https://www.rfc-editor.org/rfc/rfc9309.txt",
+ "content_type": "text/plain;charset=utf-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /rfc/rfc9309.txt",
+ "bytes": 25265,
+ "sha256": "f633915daaa15b943cae56545d333bcf3ba4d156599e4555499686d6699fb207",
+ "error": null
+}

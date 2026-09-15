@@ -632,7 +632,15 @@ class RobotsTests(unittest.TestCase):
         self.assertEqual(seen["url"], "https://www.nih.gov/robots.txt")
         self.assertNotIn("Python-urllib", str(seen["ua"]))
 
-    def test_a_network_failure_is_not_a_prohibition_and_one_fetch_is_cached(self) -> None:
+    def test_a_network_failure_is_a_complete_disallow_and_one_fetch_is_cached(self) -> None:
+        """RFC 9309 2.3.1.4: unreachable "due to server or network errors"
+        means undefined, and undefined MUST be read as complete disallow.
+
+        This module used to allow the fetch here, reasoning that a robots.txt
+        nobody could reach is not a prohibition. It was the one place the
+        project was laxer than the standard it cited, and the standard was
+        only quotable once the proxy allowlist reached rfc-editor.org.
+        """
         policy = RobotsPolicy(user_agent="x")
         calls = []
 
@@ -641,8 +649,12 @@ class RobotsTests(unittest.TestCase):
             raise URLError("connect_rejected")
 
         with mock.patch.object(urllib.request, "urlopen", boom):
-            self.assertTrue(policy.allows("https://www.energy.gov/a")[0])
-            self.assertTrue(policy.allows("https://www.energy.gov/b")[0])
+            allowed, why = policy.allows("https://www.energy.gov/a")
+            self.assertFalse(allowed)
+            self.assertIn("could not be reached", why)
+            self.assertIn("complete disallow", why)
+            self.assertNotIn("disallows", why, "no rule was read, so none may be quoted")
+            self.assertFalse(policy.allows("https://www.energy.gov/b")[0])
             self.assertEqual(policy.crawl_delay("https://www.energy.gov/a"), 0.0)
         self.assertEqual(len(calls), 1, "robots.txt is fetched once per origin")
 

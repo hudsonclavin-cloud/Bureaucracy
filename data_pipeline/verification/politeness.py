@@ -5,9 +5,40 @@ A project whose deliverable is public trustworthiness does not ignore their
 stated crawl rules, and a bot-managed host answers an unknown agent with a
 challenge page the verifier would otherwise have to interpret.
 
-Failing open is deliberate and narrow: a robots.txt that cannot be fetched
-is not a prohibition, and treating it as one would silently stop the whole
-run. A robots.txt that IS fetched and disallows the path is obeyed.
+A robots.txt that IS fetched and disallows the path is obeyed. A path no
+rule covers is fetched. The interesting cases are the ones where no rule
+was read at all, and each is decided by RFC 9309, which this repository can
+now quote rather than recall: the standard was unreachable from every
+earlier session and is committed verbatim at
+`tests/fixtures/standards/rfc9309.txt` (fetched 2026-09-15, digest in its
+`.meta.json`), with `tests/test_politeness.py` asserting the sentences below
+are really in it.
+
+    2.3.1.3.  "Unavailable" Status
+       ... such status codes are in the 400-499 range.
+       If a server status code indicates that the robots.txt file is
+       unavailable to the crawler, then the crawler MAY access any
+       resources on the server.
+
+    2.3.1.4.  "Unreachable" Status
+       If the robots.txt file is unreachable due to server or network
+       errors, this means the robots.txt file is undefined and the crawler
+       MUST assume complete disallow. ... server errors are identified by
+       status codes in the 500-599 range.
+
+So: 4xx permits access and 5xx requires refusal, exactly as this file used
+to guess. Two consequences, and one of them corrects a deviation that ran
+the other way.
+
+**A network error is a refusal now (since 2026-09-15).** DNS failure, a TLS
+error, a timeout, a reset: this module used to allow the fetch, on the
+reasoning that "a robots.txt that cannot be fetched is not a prohibition".
+The standard says the opposite in as many words — unreachable "due to
+server **or network** errors" is undefined, and undefined MUST be treated
+as complete disallow — and it was the one place this project was laxer than
+the rule it cited. Measured before changing it: 8 hosts and 11 curated
+nodes, every one of which would fail the page fetch on the same fault, so
+conforming costs approximately nothing and removes an inconsistency.
 
 **The file is fetched with this project's own User-Agent (since
 2026-09-15), and that was a bug, not a policy.** `RobotFileParser.read()`
@@ -35,15 +66,14 @@ though a rule had been read: a host that answers robots.txt with 401 or
 as a deliberate conservative choice rather than a requirement: a host that
 will not show us its robots.txt is a host we do not have permission from,
 and the cost of stopping is now a handful of nodes rather than hundreds.
-That is NOT what the current standard mandates. RFC 9309 section 2.3.1.3
-puts 4xx under "Unavailable" and permits a crawler to access any resource;
-it is 5xx ("Unreachable", section 2.3.1.4) that requires assuming a complete
-disallow. Python's parser implements the older pre-RFC convention, in which
-401 and 403 alone mean disallow-all. [Likely, from memory: rfc-editor.org
-and datatracker.ietf.org are both refused by this environment's proxy, so
-the section numbers above remain unverified -- check them before citing
-this comment.] If a later run wants the standard's behaviour rather than
-ours, that is a deliberate policy change here, not a bug fix.
+That is NOT what the standard mandates, and that is now quoted above rather
+than remembered: 401 and 403 are 4xx, so RFC 9309 would permit the fetch.
+Python's parser implements the older pre-RFC convention in which those two
+alone mean disallow-all, and this module keeps the refusal on purpose. It is
+the one place we are deliberately stricter than the rule we cite, and it is
+cheap: after the User-Agent fix below, it costs a handful of nodes. If a
+later run wants the standard's behaviour instead, that is a deliberate
+policy change here, not a bug fix.
 
 **A 5xx now says what actually happened.** It is refused, which matches the
 standard, but the old code reported it as `robots.txt disallows <path>` --
@@ -70,7 +100,7 @@ RULES = "rules"                 # 2xx: a file was read; its rules decide
 NO_FILE = "no_file"             # 404/410/other 4xx: nothing published; allow
 REFUSED = "refused"             # 401/403: served nothing and would not say why
 UNREACHABLE = "unreachable"     # 5xx: the site is failing; refuse until it is not
-UNFETCHABLE = "unfetchable"     # DNS, TLS, timeout: a fact about the network; allow
+UNFETCHABLE = "unfetchable"     # DNS, TLS, timeout: RFC 9309 2.3.1.4, refuse
 
 
 @dataclass
@@ -78,6 +108,7 @@ class RobotsFile:
     kind: str
     status: int | None = None
     parser: RobotFileParser | None = None
+    detail: str = ""      # the network error's class, when there was one
 
 
 class RobotsPolicy:
@@ -107,9 +138,10 @@ class RobotsPolicy:
             if 400 <= error.code < 500:
                 return RobotsFile(NO_FILE, error.code)
             return RobotsFile(UNREACHABLE, error.code)
-        except (URLError, OSError, ValueError):
-            # No robots.txt we could reach at all is not a prohibition.
-            return RobotsFile(UNFETCHABLE)
+        except (URLError, OSError, ValueError) as error:
+            # RFC 9309 2.3.1.4: unreachable "due to server or network errors"
+            # is undefined, and undefined MUST be read as complete disallow.
+            return RobotsFile(UNFETCHABLE, detail=f"{error.__class__.__name__}")
         parser = RobotFileParser()
         parser.set_url(f"{origin}/robots.txt")
         try:
@@ -145,6 +177,11 @@ class RobotsPolicy:
             return False, (
                 f"{host}/robots.txt could not be fetched (HTTP {found.status}); "
                 "refused while the site is failing, no rule was seen"
+            )
+        if found.kind == UNFETCHABLE:
+            return False, (
+                f"{host}/robots.txt could not be reached ({found.detail}); "
+                "refused: an undefined robots.txt is a complete disallow"
             )
         return True, "no readable robots.txt"
 
