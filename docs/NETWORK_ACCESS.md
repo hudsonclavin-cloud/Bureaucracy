@@ -266,6 +266,53 @@ Nothing here is an argument for relaxing the rule, which stays until the
 owner decides otherwise. It is an argument for not mistaking the allowlist
 for the constraint.
 
+## 5. 2026-09-15, later: the robots refusals were largely our own bug
+
+Scoping the proposed relaxation of the 401/403 rule found the premise wrong
+twice, and the second finding removed the need for the change.
+
+**The relaxation was worth far less than §4 implies.** Probing all 86
+refused hosts, **64 also answer 403 to the page itself**, so relaxing would
+have moved those failures from "refused by policy" to "403 from the host"
+and gained nothing. The ceiling was 245 fetches, not 896.
+
+**The actual defect: we asked for robots.txt as somebody else.**
+`RobotFileParser.read()` calls `urlopen` with no headers, so every
+`robots.txt` went out as `Python-urllib/3.x` while every page went out as
+this project's self-identifying agent. Federal hosts behind bot management
+refuse the first and serve the second. Re-probed with our own agent, of the
+86: **19 serve robots.txt (182 recorded failures), 3 answer 404 (78), and 64
+still refuse (636)**.
+
+So sending the right header recovers more than the relaxation would have,
+and does it by making the verifier **more** obedient: those 19 hosts' rules
+had never been read, and are now read and followed. nih.gov, fbi.gov,
+loc.gov and census.gov went from "refused by policy" to "allowed by
+robots.txt"; state.gov and defense.gov refuse our agent too and stay
+refused. **The conservative 401/403 policy therefore stays unrelaxed**, and
+now costs a handful of nodes instead of hundreds. No evasion was added: the
+agent still names the project, and a host that refuses it is left alone.
+
+**What the full re-run actually produced**, against the run before it:
+
+    fetch_failed   1,209 -> 1,017   (-192: pages that are now read)
+    inconclusive   1,560 -> 1,721   (+161: read, and simply not naming the unit)
+    confirmed         20 ->     24
+    not_found         69 ->     71
+
+The honest reading is that the mechanical fix worked and the evidence yield
+is modest: 192 more pages were read, and 161 of them do not label the unit
+or post being checked. In the published graph: verified 191 -> 206, partial
+304 -> 310, official source 563 -> 577, "no source recorded" 4,765 -> 4,750,
+posts confirmed on their organisation's page 25 -> 28, placements 209 -> 212.
+
+**No node lost anything.** Checked node-by-node against the previous
+published graph: zero lost a `verificationMethod`, zero lost their
+`sourceUrls`. The two counts that fell — the Federal Register directory
+73 -> 62 and the Senate committee list 20 -> 18 — are 13 nodes *upgrading*
+from a directory listing to their own official page, which is the
+exporter's documented precedence working as intended.
+
 ## Regenerating this note
 
     python scripts/report_unreachable_hosts.py            # why each host failed, from the last run

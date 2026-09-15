@@ -1617,7 +1617,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -2012,16 +2012,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.epw.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2036,12 +2037,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:02Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.epw.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEV.xml"
     ],
     "directoryListing": {
@@ -2052,9 +2054,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:02Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:02Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-environment-public-works",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight",
@@ -3449,7 +3453,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -3712,16 +3716,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.sbc.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3736,12 +3741,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:11Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.sbc.senate.gov/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml"
     ],
     "directoryListing": {
@@ -3752,9 +3758,13 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:11Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:11Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "parentId": "leg-senate-committees"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-senate-committees",
+    "verificationSiteFrom": "leg-senate-cmte-small-business-entrepreneurship",
+    "verificationMatchedIn": "content",
+    "verificationMatchedText": "U.S. Committee on Small Business & Entrepreneurship",
+    "verificationMatchRule": "committee_scaffolding_folded"
   },
   {
     "id": "leg-senate-cmte-veterans-affairs",
@@ -3854,7 +3864,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -3912,7 +3922,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -3970,7 +3980,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -5229,7 +5239,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -5485,7 +5495,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://budget.house.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6390,7 +6400,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6450,7 +6460,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -7037,7 +7047,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://cha.house.gov/elections",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -7098,7 +7108,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://judiciary.house.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -10097,7 +10107,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://intelligence.house.gov/",
-      "checkedAt": "2026-09-14T23:51:55+00:00"
+      "checkedAt": "2026-09-15T16:45:59+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -10496,18 +10506,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.loc.gov/about/",
       "https://www.federalregister.gov/agencies/library-of-congress"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -10536,12 +10549,13 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.loc.gov/about/",
       "https://www.federalregister.gov/agencies/library-of-congress"
     ],
     "directoryListing": {
@@ -10552,9 +10566,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "leg-support"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-support",
+    "verificationSiteFrom": "leg-support-loc",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-support-loc-copyright",
@@ -10566,14 +10582,17 @@
     "color": "#8a4ac8",
     "children": [],
     "sourceUrls": [
+      "https://www.copyright.gov/",
       "https://www.federalregister.gov/agencies/copyright-office-library-of-congress"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -10581,7 +10600,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 189828015.59,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10591,11 +10610,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "evidenceUrls": [
+      "https://www.copyright.gov/",
       "https://www.federalregister.gov/agencies/copyright-office-library-of-congress"
     ],
     "directoryListing": {
@@ -10606,15 +10626,18 @@
       "parentListedName": "Library of Congress",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/copyright-office-library-of-congress",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementUrl": "https://www.loc.gov/about/",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "placementParentId": "leg-support-loc",
-    "placementMatchedText": "Copyright Office, Library of Congress",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "leg-support-loc"
+    "placementMatchedText": "Copyright Office",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-support-loc",
+    "verificationSiteFrom": "leg-support-loc-copyright",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-support-gpo",
@@ -10698,18 +10721,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.aoc.gov/about-us",
       "https://www.federalregister.gov/agencies/architect-of-the-capitol"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -10738,12 +10764,13 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.aoc.gov/about-us",
       "https://www.federalregister.gov/agencies/architect-of-the-capitol"
     ],
     "directoryListing": {
@@ -10754,9 +10781,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "leg-support"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "leg-support",
+    "verificationSiteFrom": "leg-support-aoc",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-support-aoc-capitol-visitor-center",
@@ -10800,7 +10829,14 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "navigation",
     "verificationSiteFrom": "leg-support-aoc-capitol-visitor-center",
-    "parentId": "leg-support-aoc"
+    "parentId": "leg-support-aoc",
+    "placementVerified": true,
+    "placementUrl": "https://www.aoc.gov/about-us",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "placementParentId": "leg-support-aoc",
+    "placementMatchedText": "U.S. Capitol Visitor Center",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation"
   },
   {
     "id": "leg-support-uscp",
@@ -15653,18 +15689,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.fbi.gov/",
       "https://www.federalregister.gov/agencies/federal-bureau-of-investigation"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -15693,14 +15732,15 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementVerified": true,
     "placementParentId": "exec-dept-doj",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
+      "https://www.fbi.gov/",
       "https://www.federalregister.gov/agencies/federal-bureau-of-investigation"
     ],
     "directoryListing": {
@@ -15711,8 +15751,8 @@
       "parentListedName": "Justice Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementUrl": "https://www.federalregister.gov/agencies/federal-bureau-of-investigation",
     "placementMatchedText": "Federal Bureau of Investigation",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
@@ -15734,7 +15774,9 @@
       },
       "agencyMatched": "exec-dept-doj"
     },
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationSiteFrom": "exec-dept-doj-fbi",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-doj-fbi-director-fbi",
@@ -17145,9 +17187,6 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17259,9 +17298,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-div-civil",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17388,9 +17424,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-div-civil-rights",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17517,9 +17550,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-div-criminal",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -17731,9 +17761,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-div-nsd",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -18038,9 +18065,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-solicitor",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-doj",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
     "parentId": "exec-dept-doj"
   },
   {
@@ -21732,18 +21756,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.census.gov/",
       "https://www.federalregister.gov/agencies/census-bureau"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -21772,11 +21799,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "evidenceUrls": [
+      "https://www.census.gov/",
       "https://www.federalregister.gov/agencies/census-bureau"
     ],
     "directoryListing": {
@@ -21787,8 +21815,8 @@
       "parentListedName": "Commerce Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/census-bureau",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -21813,7 +21841,9 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "verificationSiteFrom": "exec-dept-doc-census",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-doc-noaa",
@@ -22480,6 +22510,53 @@
     },
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
+  },
+  {
+    "id": "exec-dept-dol-secretary-of-department-of-labor-dol",
+    "name": "Secretary of Labor",
+    "type": "Position",
+    "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "nameSource": "listed_in_opm_plum_archive",
+    "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+    "verificationMatchedText": "Secretary of Labor",
+    "sourceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "evidenceUrls": [
+      "https://www.dol.gov/general/aboutdol"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-15T01:50:20+00:00",
+    "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-dol",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-dol"
   },
   {
     "id": "exec-dept-dol-osha",
@@ -24198,18 +24275,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.nih.gov/",
       "https://www.federalregister.gov/agencies/national-institutes-of-health"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -24238,11 +24318,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "evidenceUrls": [
+      "https://www.nih.gov/",
       "https://www.federalregister.gov/agencies/national-institutes-of-health"
     ],
     "directoryListing": {
@@ -24253,8 +24334,8 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/national-institutes-of-health",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -24279,7 +24360,9 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationSiteFrom": "exec-dept-hhs-nih",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-hhs-nih-director-nih",
@@ -26835,6 +26918,100 @@
     "parentId": "exec-cabinet"
   },
   {
+    "id": "exec-dept-doe-secretary-of-department-of-energy-doe",
+    "name": "Secretary of Energy",
+    "type": "Position",
+    "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "nameSource": "named_on_its_organisations_official_page",
+    "nameSourceDetail": "https://www.energy.gov/leadership-organization",
+    "verificationMatchedText": "Secretary of Energy",
+    "sourceUrls": [
+      "https://www.energy.gov/leadership-organization"
+    ],
+    "evidenceUrls": [
+      "https://www.energy.gov/leadership-organization"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-15T01:50:20+00:00",
+    "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doe"
+  },
+  {
+    "id": "exec-dept-doe-deputy-secretary-of-department-of-energy-doe",
+    "name": "Deputy Secretary of Energy",
+    "type": "Position",
+    "desc": "Second-in-command; acts as Secretary when absent.",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "nameSource": "listed_in_opm_plum_archive",
+    "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+    "verificationMatchedText": "Deputy Secretary of Energy",
+    "sourceUrls": [
+      "https://www.energy.gov/leadership-organization"
+    ],
+    "evidenceUrls": [
+      "https://www.energy.gov/leadership-organization"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-15T01:50:20+00:00",
+    "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doe"
+  },
+  {
     "id": "exec-dept-doe-nnsa",
     "name": "National Nuclear Security Administration (NNSA)",
     "type": "Agency",
@@ -26945,7 +27122,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -27706,7 +27883,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -27781,18 +27958,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ed.gov/about",
       "https://www.federalregister.gov/agencies/education-department"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -27823,12 +28003,13 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.ed.gov/about",
       "https://www.federalregister.gov/agencies/education-department"
     ],
     "directoryListing": {
@@ -27839,8 +28020,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 4052,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -27951,7 +28132,9 @@
       ]
     },
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationSiteFrom": "exec-dept-ed",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-ed-fsa",
@@ -27963,16 +28146,19 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ed.gov/about/ed-offices"
     ],
     "sourceTypes": [
       "treasury_outlays",
-      "government_dataset"
+      "government_dataset",
+      "official_site"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -27998,10 +28184,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "employeesOfficial": 1413,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28020,7 +28206,21 @@
       },
       "agencyMatched": "exec-dept-ed"
     },
-    "parentId": "exec-dept-ed"
+    "parentId": "exec-dept-ed",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-ed-fsa",
+    "placementVerified": true,
+    "placementUrl": "https://www.ed.gov/about",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "placementParentId": "exec-dept-ed",
+    "placementMatchedText": "Federal Student Aid (FSA)",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "navigation",
+    "verificationMatchedIn": "navigation",
+    "evidenceUrls": [
+      "https://www.ed.gov/about/ed-offices"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00"
   },
   {
     "id": "exec-dept-ed-fsa-chief-operating-officer-fsa",
@@ -28275,16 +28475,19 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
-      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+      "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://www.ed.gov/about/ed-offices/oese"
     ],
     "sourceTypes": [
       "treasury_outlays",
-      "government_dataset"
+      "government_dataset",
+      "official_site"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "official_financial_record"
     ],
     "existsProven": true,
@@ -28310,10 +28513,10 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "employeesOfficial": 293,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28332,7 +28535,17 @@
       },
       "agencyMatched": "exec-dept-ed"
     },
-    "parentId": "exec-dept-ed"
+    "parentId": "exec-dept-ed",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationSiteFrom": "exec-dept-ed-oese",
+    "placementVerified": false,
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "placementParentId": "exec-dept-ed",
+    "verificationMatchedIn": "content",
+    "evidenceUrls": [
+      "https://www.ed.gov/about/ed-offices/oese"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00"
   },
   {
     "id": "exec-dept-ed-ies",
@@ -28411,7 +28624,10 @@
       },
       "agencyMatched": "exec-dept-ed"
     },
-    "parentId": "exec-dept-ed"
+    "parentId": "exec-dept-ed",
+    "placementVerified": false,
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "placementParentId": "exec-dept-ed"
   },
   {
     "id": "exec-dept-ed-ies-commissioner-national-center-for-education-evaluation-ncee",
@@ -28798,6 +29014,100 @@
     },
     "child_cost_basis_implied": true,
     "parentId": "exec-cabinet"
+  },
+  {
+    "id": "exec-dept-va-secretary-of-department-of-veterans-affairs-va",
+    "name": "Secretary of Veterans Affairs",
+    "type": "Position",
+    "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "nameSource": "listed_in_opm_plum_archive",
+    "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+    "verificationMatchedText": "Secretary of Veterans Affairs",
+    "sourceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-15T01:50:20+00:00",
+    "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va"
+  },
+  {
+    "id": "exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va",
+    "name": "Deputy Secretary of Veterans Affairs",
+    "type": "Position",
+    "desc": "Second-in-command; acts as Secretary when absent.",
+    "employees": null,
+    "budget": null,
+    "color": "#666666",
+    "children": [],
+    "nameSource": "listed_in_opm_plum_archive",
+    "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+    "verificationMatchedText": "Deputy Secretary of Veterans Affairs",
+    "sourceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "evidenceUrls": [
+      "https://www.va.gov/about_va/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-15T01:50:20+00:00",
+    "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "post_is_not_a_budget_unit",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va"
   },
   {
     "id": "exec-dept-va-chief-of-staff",
@@ -32015,7 +32325,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32063,7 +32373,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32111,7 +32421,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32159,7 +32469,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -33278,7 +33588,7 @@
     "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -33397,7 +33707,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -33516,7 +33826,7 @@
     "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -33635,7 +33945,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -35196,7 +35506,7 @@
     "lastVerified": null,
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -36823,14 +37133,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.ntsb.gov/",
       "https://www.federalregister.gov/agencies/national-transportation-safety-board"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -36838,7 +37151,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 155940845.94,
     "cost_status": "allocated",
     "cost_basis": "budget_weight",
@@ -36848,12 +37161,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.ntsb.gov/",
       "https://www.federalregister.gov/agencies/national-transportation-safety-board"
     ],
     "directoryListing": {
@@ -36864,8 +37178,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 426,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -36890,7 +37204,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
+    "verificationMatchedIn": "navigation"
   },
   {
     "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
@@ -37831,14 +38147,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.eac.gov/",
       "https://www.federalregister.gov/agencies/election-assistance-commission"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -37846,7 +38165,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 204211474.93,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -37856,12 +38175,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.eac.gov/",
       "https://www.federalregister.gov/agencies/election-assistance-commission"
     ],
     "directoryListing": {
@@ -37872,8 +38192,8 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 82,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -37898,7 +38218,9 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-election-assistance-commission-eac",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-election-assistance-commission-eac-general-counsel",
@@ -38052,14 +38374,17 @@
     "color": "#4ac88a",
     "children": [],
     "sourceUrls": [
+      "https://www.csb.gov/",
       "https://www.federalregister.gov/agencies/chemical-safety-and-hazard-investigation-board"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -38067,7 +38392,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 204211474.93,
     "cost_status": "allocated",
     "cost_basis": "implied_budget_weight",
@@ -38077,12 +38402,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.csb.gov/",
       "https://www.federalregister.gov/agencies/chemical-safety-and-hazard-investigation-board"
     ],
     "directoryListing": {
@@ -38093,9 +38419,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-general-counsel",
@@ -38812,14 +39140,17 @@
     "color": "#c8884a",
     "children": [],
     "sourceUrls": [
+      "https://www.federalreserve.gov/aboutthefed.htm",
       "https://www.federalregister.gov/agencies/federal-reserve-system"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -38827,7 +39158,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 3275018648.84,
     "cost_status": "allocated",
     "cost_basis": "budget_weight",
@@ -38837,12 +39168,13 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
     "placementCheckable": false,
     "evidenceUrls": [
+      "https://www.federalreserve.gov/aboutthefed.htm",
       "https://www.federalregister.gov/agencies/federal-reserve-system"
     ],
     "directoryListing": {
@@ -38853,9 +39185,11 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-regulatory"
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "parentId": "exec-regulatory",
+    "verificationSiteFrom": "exec-regulatory-fed",
+    "verificationMatchedIn": "navigation"
   },
   {
     "id": "exec-regulatory-sec",
@@ -39732,7 +40066,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-14T23:51:55+00:00",
+    "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
     "parentId": "judicial-branch"
   },
   {
