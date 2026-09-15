@@ -58,7 +58,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Callable
 
-from data_pipeline.exporter.build_graph import canonical_name_key
+from data_pipeline.exporter.build_graph import canonical_name_key, is_post_node
 from data_pipeline.json_io import load_json_file
 from data_pipeline.processors.normalize_nodes import classify_source_url, verify_node_sources
 
@@ -73,12 +73,35 @@ INCONCLUSIVE = "inconclusive"
 # Why a check came back inconclusive rather than negative.
 REASON_ANCESTOR_PAGE = "only_an_ancestor_page_was_read"
 REASON_NAMED_NOT_LABELLED = "named_on_the_page_but_not_as_a_label"
+# A post's title is a common noun in a way an organisation's name is not.
+# "Department of Energy" names one thing in the whole federal government;
+# "Director" names thousands of posts, and a page carrying that word as a
+# link is as likely to be pointing at somebody else's director as at this
+# node's. The two refusals below are what a post has to clear that an
+# organisation does not; both are counted and reported, never silent.
+REASON_POST_TITLE_TOO_GENERIC = "post_title_is_a_bare_job_title"
+REASON_POST_ONLY_IN_NAVIGATION = "post_title_only_in_site_navigation"
 FETCH_FAILED = "fetch_failed"
 NOT_CHECKABLE = "not_checkable"
 APPLIED_STATUSES = (CONFIRMED, NOT_FOUND)
 
 METHOD_OWN_PAGE = "name_labelled_on_own_official_page"
 METHOD_PARENT_PAGE = "name_labelled_on_parent_official_page"
+# A post has no page of its own and never will: the thing with a page is the
+# organisation that carries the post. So the page read for a position is its
+# organisation's, and the claim is that organisation's own account of its own
+# leadership — a different claim from METHOD_PARENT_PAGE, where the page
+# belongs to a *different* unit listing a sub-unit, and it gets its own name
+# so the panel can say which was tested.
+#
+# The distinct name also settles the placement question structurally rather
+# than by anyone's discipline: `placement_from_record` promotes a confirmation
+# into placement evidence only under METHOD_PARENT_PAGE, so a post can never
+# have one observation published as two independent checks. For a post the
+# edge and the existence ARE the same observation — the organisation's page
+# naming its own Secretary says both at once — and presenting that as two
+# corroborating findings would be the over-claim this project exists to avoid.
+METHOD_POST_ON_ORG_PAGE = "name_labelled_on_its_organisations_official_page"
 # Fields this module owns. They are cleared from every node before the current
 # evidence is applied, so a record that is withdrawn, downgraded or deleted
 # stops being published. Without this the previously published graph.json —
@@ -401,8 +424,21 @@ def page_fragments(html: str) -> list[str]:
     return parse_page(html).fragments
 
 
-def uncheckable_reason(name: str) -> str | None:
-    """Why this curated name could never be evidence, or None if it can be."""
+def uncheckable_reason(name: str, *, is_post: bool = False) -> str | None:
+    """Why this curated name could never be evidence, or None if it can be.
+
+    `is_post` raises the floor for a position, and only there. An
+    organisation's one-word name is refused when it is short or on a known
+    list of words a page might merely use ("Energy", "Defense"). A post's
+    one-word title is refused outright, whatever the word: the check is
+    scoped to one organisation's page, which supplies the missing context
+    for a qualified title ("blm.gov labels 'Deputy Director'" does say BLM
+    has one), but a single bare noun — "Hydrologist", "Warden",
+    "Specialist", "Judge" — is as likely to be prose, a byline or a careers
+    listing as it is to be that page's label for this node's post. 49 of the
+    2,731 reachable positions are named that way; none of them can be
+    distinguished from a coincidence, so none of them is checked.
+    """
     text = str(name or "").strip()
     if not text:
         return "empty_name"
@@ -414,11 +450,26 @@ def uncheckable_reason(name: str) -> str | None:
     tokens = key.split()
     if any(any(ch.isdigit() for ch in token) for token in tokens):
         return "curated_count_label"
+    if is_post and len(tokens) < 2:
+        return REASON_POST_TITLE_TOO_GENERIC
     if len(tokens) == 1 and (len(key) < 4 or key in GENERIC_SINGLE_TOKENS):
         # "Energy", "Defense", "Personnel": a page using the word is not a
         # page naming the unit, and a bare word cannot distinguish them.
         return "name_too_generic"
     return None
+
+
+def uncheckable_reason_for_node(node: dict[str, Any] | None) -> str | None:
+    """`uncheckable_reason` with the post floor applied by the node's type.
+
+    Taking the node rather than the name is the same guard the committee fold
+    uses: the stricter rule is granted by what the node IS, so a post
+    re-typed as an office cannot keep a confirmation it could not have
+    earned as a post, and an office re-typed as a post loses one it could.
+    """
+    if not node:
+        return "empty_name"
+    return uncheckable_reason(str(node.get("name") or ""), is_post=is_post_node(node))
 
 
 def label_matches(key: str, fragment: str) -> bool:
@@ -550,22 +601,38 @@ def find_label_region(name: str, fragments: list[str] | PageText) -> tuple[str, 
 
 
 def find_label_region_rule(
-    name: str, fragments: list[str] | PageText, *, fold_committee: bool = False
+    name: str,
+    fragments: list[str] | PageText,
+    *,
+    fold_committee: bool = False,
+    is_post: bool = False,
+    regions_allowed: tuple[str, ...] | None = None,
 ) -> tuple[str, str, str | None] | None:
     """As find_label_region, plus the rule that made the match: None for
     plain label equality, MATCH_RULE_COMMITTEE when the committee fold was
     needed. Equality is tried on every fragment first, so a page that carries
-    the name in full is never recorded as folded."""
-    if uncheckable_reason(name):
+    the name in full is never recorded as folded.
+
+    `regions_allowed` narrows which parts of the page may confirm. Callers
+    pass `(REGION_CONTENT,)` for a post, so a title found only in the
+    site-wide navigation, header or footer cannot confirm it; see
+    REASON_POST_ONLY_IN_NAVIGATION for why that asymmetry exists.
+    """
+    if uncheckable_reason(name, is_post=is_post):
         return None
     key = canonical_name_key(name)
     page = fragments if isinstance(fragments, PageText) else PageText(fragments=list(fragments), regions=[REGION_CONTENT] * len(fragments))
-    for fragment, region in zip(page.fragments, page.regions):
+    pairs = [
+        (fragment, region)
+        for fragment, region in zip(page.fragments, page.regions)
+        if regions_allowed is None or region in regions_allowed
+    ]
+    for fragment, region in pairs:
         if label_matches(key, fragment):
             return fragment[:200], region, None
     if fold_committee:
         core = committee_core_key(key)
-        for fragment, region in zip(page.fragments, page.regions):
+        for fragment, region in pairs:
             if label_matches_folded(core, fragment):
                 return fragment[:200], region, MATCH_RULE_COMMITTEE
     return None
@@ -588,13 +655,16 @@ def verify_node(
     """
     checked_at = now or utc_now_iso()
     name = str(node.get("name") or "")
+    is_post = is_post_node(node)
     record: dict[str, Any] = {
         "name": name,
         "checkedAt": checked_at,
         "siteFrom": site_from,
         "ownPage": bool(is_own_page),
     }
-    reason = uncheckable_reason(name)
+    if is_post:
+        record["isPost"] = True
+    reason = uncheckable_reason(name, is_post=is_post)
     if reason:
         record["status"] = NOT_CHECKABLE
         record["reason"] = reason
@@ -614,7 +684,24 @@ def verify_node(
             failures.append({"url": url, "reason": f"{error.__class__.__name__}: {error}"[:200]})
             continue
         page = parse_page(html)
-        found = find_label_region_rule(name, page, fold_committee=folds_committee(node))
+        found = find_label_region_rule(
+            name,
+            page,
+            fold_committee=folds_committee(node),
+            is_post=is_post,
+            # For a post, only the page's own body may confirm. The chrome
+            # standard is host-blind inside `.gov` — this file already
+            # documents that a footer link to an unrelated agency would
+            # count — and for an organisation's name that is a tolerable
+            # edge case, because agencies do not put other agencies'
+            # names in their own mega-menus by accident. A job title is the
+            # opposite: "Inspector General", "General Counsel" and "Chief
+            # Information Officer" are standard site furniture, recurring
+            # across 76 organisations in this graph as a copied stamp, and a
+            # match in one department's footer would confirm a bureau's own
+            # post from markup that says nothing about the bureau.
+            regions_allowed=(REGION_CONTENT,) if is_post else None,
+        )
         if found:
             # A label a visitor can see is a confirmation wherever it sits;
             # the region is recorded so a site-wide menu is not presented as
@@ -624,6 +711,14 @@ def verify_node(
             if found[2]:
                 source["matchRule"] = found[2]
             confirmed.append(source)
+            continue
+        if is_post and find_label_region_rule(name, page, is_post=is_post):
+            # The title IS on the page, in the navigation, header or footer.
+            # Recorded as its own outcome rather than folded into "the page
+            # does not name it", which would be false, or into a
+            # confirmation, which would rest on site furniture.
+            pages_read += 1
+            failures.append({"url": url, "reason": REASON_POST_ONLY_IN_NAVIGATION})
             continue
         if not page.readable:
             # 200 OK with no readable body: a JS shell, a bot challenge, a
@@ -638,7 +733,13 @@ def verify_node(
     if confirmed:
         record["status"] = CONFIRMED
         record["sources"] = confirmed
-        record["method"] = METHOD_OWN_PAGE if is_own_page else METHOD_PARENT_PAGE
+        if is_post:
+            # Never METHOD_OWN_PAGE: a post has no page of its own, and
+            # `is_own_page` would only be true if somebody listed a post in
+            # official_sites.json, which the sites file is not for.
+            record["method"] = METHOD_POST_ON_ORG_PAGE
+        else:
+            record["method"] = METHOD_OWN_PAGE if is_own_page else METHOD_PARENT_PAGE
     elif pages_read == 0:
         record["status"] = FETCH_FAILED
     elif not is_own_page:
@@ -681,8 +782,17 @@ def verify_placement(
     The block names the parent it was checked against, so a later re-parenting
     of the node in the curated file cannot inherit evidence for a different
     edge; apply_evidence_to_tree and the gate both compare it to the tree.
+
+    A post gets no placement block at all. Its organisation's page naming it
+    is one observation, already published as the post's existence under
+    METHOD_POST_ON_ORG_PAGE; recording the same fetch a second time as
+    evidence for the edge would present one finding as two, and would put
+    positions into a placement count whose denominator ("N of M organisation
+    placements") deliberately excludes them.
     """
     name = str(node.get("name") or "")
+    if is_post_node(node):
+        return None
     if uncheckable_reason(name):
         return None
     checked_at = now or utc_now_iso()
@@ -987,6 +1097,15 @@ def apply_evidence_to_tree(
             node["verificationMatchRule"] = MATCH_RULE_COMMITTEE
             node["verificationMatchedText"] = str(folded[0].get("matchedText") or "")[:200]
             stats["existence_folded"] += 1
+        elif is_post_node(node):
+            # A post quotes its label too, and for a stronger reason than a
+            # committee does: "General Counsel" recurs at 84 organisations
+            # and "Inspector General" at 72, so the only thing separating
+            # this node's confirmation from another's is which page carried
+            # the text and what the text was. Both are published, so a
+            # reader can check the claim against the live page rather than
+            # taking a badge on trust.
+            node["verificationMatchedText"] = str(sources[0].get("matchedText") or "")[:200]
         urls = [str(s["url"]) for s in sources]
         existing = [str(u) for u in (node.get("sourceUrls") or [])]
         for url in urls:
@@ -1022,6 +1141,15 @@ def apply_evidence_to_tree(
     for node_id, record in evidence.items():
         node = node_map.get(node_id)
         if node is None:
+            continue
+        if is_post_node(node):
+            # No placement claim is ever published for a post, whatever a
+            # record carries. `verify_placement` refuses to write one and
+            # `placement_from_record` cannot derive one from the post
+            # method — this is the third guard, and the one that holds if an
+            # older or hand-edited record ever arrives with a block on it.
+            if isinstance(record.get("placement"), dict):
+                stats["placements_refused_post"] = stats.get("placements_refused_post", 0) + 1
             continue
         actual_parent = parent_map.get(node_id)
         block = record.get("placement") if isinstance(record.get("placement"), dict) else None

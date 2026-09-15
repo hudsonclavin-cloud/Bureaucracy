@@ -34,6 +34,7 @@ python scripts/validate_published_graph.py       # publish gate on output/graph.
 python scripts/regenerate_published_graph.py     # rebuild output/ offline from the base graph + published anchor, repair the queue, then gate
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
+python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
@@ -418,11 +419,136 @@ documented rather than fixed: within the chrome the standard is host-blind
 inside `.gov` — a footer link to an unrelated agency would count; the
 sites file is what scopes it, one page per parent.
 
+**Posts, on their own organisation's page (since 2026-09-15).** 4,604 of
+the 5,392 curated nodes are positions and **not one of them carried evidence
+of any kind** — no record in `evidence.json`, `directory_evidence.json` or
+`official_sites.json`, so the Secretary of Defense and the Speaker of the
+House read "no source recorded" beside a confirmed Department of Defense.
+That was not a coverage gap the crawl had not got to; it was total and by
+construction. `verify_base_graph.py` has always had `--include-positions`
+and it had **never been run**; `directories.py` and `headcounts.py` filter
+`"position" in type` out of their candidate pools; and `nominate.py` rejects
+a position outright with "pages are nominated for organisations only".
+
+That last refusal is correct and stays: a post has no page of its own and
+never will. The thing with a page is the **organisation that carries the
+post**, and the verifier already fetches it, for the organisation itself.
+So the marginal cost of checking a post is one string comparison against
+fragments already parsed — 2,731 of the 4,604 positions sit under a parent
+that has a candidate page, and the whole run adds no fetch that was not
+already being made.
+
+Cheap is not the same as honest, so four things narrow the claim to what was
+read, each pinned in both directions by `tests/test_position_evidence.py`:
+
+- **The method says whose page it was.** `METHOD_POST_ON_ORG_PAGE`
+  (`name_labelled_on_its_organisations_official_page`) rather than the
+  parent-page method, because "a department's page lists a bureau" and "a
+  department's page names its own Secretary" are different claims and the
+  panel prints a different sentence for each. The distinct string also
+  settles the placement question *structurally*: `placement_from_record`
+  promotes a confirmation into placement evidence only under
+  `METHOD_PARENT_PAGE`, so a post cannot acquire one by anybody forgetting.
+- **No placement claim, ever.** For an organisation, existence usually comes
+  off its own page and placement off its parent's — two fetches, two facts.
+  For a post there is only one page, so publishing both would present a
+  single observation as two corroborating findings. `verify_placement`
+  returns `None` for a post, the exporter skips the placement pass for one
+  (`placements_refused_post`), the gate refuses a page-derived
+  `placementMethod` on a post, and the runner does not even queue the fetch
+  (2,509 skipped as `placement_not_applicable_to_a_post`). A placement from
+  a *different document* is untouched: OPM's PLUM archive files 126
+  positions under an organisation, which is a second source and a real claim.
+- **A bare job title is never checked.** `uncheckable_reason(..., is_post=True)`
+  refuses a canonical key of fewer than two tokens, whatever the word. The
+  existing floor refuses an organisation's one-word name only when it is
+  short or on `GENERIC_SINGLE_TOKENS`; a post needs more, because scoping to
+  one organisation's page supplies the context a *qualified* title lacks
+  ("blm.gov labels 'Deputy Director'" does say BLM has one) and supplies
+  nothing at all to a single common noun. 118 nodes are refused this way —
+  `Hydrologist`, `Warden (×122 facilities)`, `Director (×3)`,
+  `U.S. Attorney (×94, appointed by President)`, `Specialist (×multiple)` —
+  and the parenthetical never counts toward the two, since
+  `canonical_name_key` drops it. The floor is granted by the node's type
+  (`uncheckable_reason_for_node`), the same way the committee fold is, so a
+  post re-typed as an office loses it and an office re-typed as a post gains it.
+- **Site-wide navigation cannot confirm a post.** This file already records
+  that inside the chrome the standard is host-blind within `.gov` — a footer
+  link to an unrelated agency would count. For an organisation's name that is
+  a tolerable edge (agencies do not put other agencies in their own mega-menus
+  by accident) and it is load-bearing: the first live run's DOI, DOL, Treasury,
+  NSF and NASA confirmations were *all* mega-menu matches. For a job title it
+  is the opposite. `Inspector General`, `General Counsel` and `Chief
+  Information Officer` are standard site furniture, recurring across 76
+  organisations here as a copied stamp, so a match in one department's footer
+  would confirm a bureau's own post from markup that says nothing about the
+  bureau. A post is confirmed from `REGION_CONTENT` only; a title found in the
+  chrome is recorded as `post_title_only_in_site_navigation` and the record
+  stays `inconclusive` — not `not_found`, which would be false, and not a
+  confirmation, which would rest on furniture. The organisation path is
+  unchanged, and a test asserts it stays unchanged.
+
+The label is published (`verificationMatchedText`) for a stronger reason than
+a committee's is: `General Counsel` is the name of **84** nodes in this graph
+and `Inspector General` of **72**, so the page it was found on and the exact
+words on it are the only things tying a confirmation to this post rather than
+another's. The gate requires all four — the node is a post, the label is
+quoted, the label still names the node, and `verificationMatchedIn` is
+`content` — and `tests/test_position_evidence.py` corrupts each one in turn
+and asserts the gate rejects it. Note what a confirmation is worth: one
+official URL scores 0.4 + 0.3 in `verify_node_sources`, so a post confirmed on
+one page publishes **`partial`, not `verified`**. That is the arithmetic that
+published 29 positions as verified off a five-row pay table on 2026-09-11, and
+it is left exactly where it is.
+
+**A live over-claim this work surfaced, and fixed.** The new gate check
+failed on the *existing* published graph: 126 positions already carried
+`placementVerified`, all from the PLUM archive. The gate's own coverage line
+scopes numerator and denominator to organisations and reported "209 of 812";
+`describeProvenance` in `js/ui.js` scoped only the denominator, so the site
+told every visitor "**335** of 812 organisation placements evidenced" —
+counting positions in a total whose label says organisation. The numerator is
+now scoped with the denominator, and `scripts/frontend_smoke.mjs` recomputes
+the figure from the served graph and asserts the page agrees with it.
+
+**What the first run found, which was not a pipeline bug.** The most
+recognisable posts in the government came back `inconclusive` — and not
+because the pages are silent about them. **839 position nodes contain their
+parent organisation's name verbatim**, and in 28 of them that template
+produces a title no page will ever carry: every cabinet department except
+Defense has a `Secretary of Department of <full department name>` node.
+energy.gov labels "Secretary of Energy"; the graph says "Secretary of
+Department of Energy (DOE)". justice.gov labels "The Attorney General"; the
+graph says "Secretary of Department of Justice (DOJ)" — **an office that
+does not exist.** Defense is the control case: it alone is curated as
+"Secretary of Defense", and it is the only one whose title could ever have
+matched.
+
+That is curation, and `CURATION.md` §8 carries the proposal with the pages
+quoted. `scripts/probe_post_titles.py` is the read-only probe that produced
+it — the position analogue of `probe_treasury_rows.py`: it fetches an
+organisation's page, says which curated post titles the page labels, and
+lists office-looking labels on the page that no curated post matches. It
+writes nothing and proposes rather than concludes.
+
+The matcher was deliberately **not** widened to absorb the difference. A
+"Department of" fold looks like the committee fold and is not: that one is
+granted by the node's type, folds a closed set of words the chambers' own
+sites demonstrably omit, and refuses a core under two tokens, whereas this
+would let a curated name differ from a page's label in a way that changes
+which office is meant — and the same looseness is what once let "Office of
+Science" match "Office of Science and Technology Policy". The matcher stays
+strict and the names get fixed where names are fixed.
+
+The binding constraint is otherwise unchanged and is the same one
+organisations face: **611 of 788 organisations have no candidate page at
+all**, so no post beneath them can be reached either. Nominating org pages
+(phase 1b) now moves both counts at once.
+
 **Directories — the government's own lists of itself.** The page method is
 near its ceiling: 71 organisations have a page of their own, twelve of the
-largest hosts refuse `robots.txt` and are refused in turn, 4,382 positions
-and 223 committees are never checked, and 520 edges hang under curated
-groupings with no page. `data_pipeline/verification/directories.py` adds
+largest hosts refuse `robots.txt` and are refused in turn, 223 committees are
+never checked, and 520 edges hang under curated groupings with no page. `data_pipeline/verification/directories.py` adds
 a second, weaker, honestly-labelled kind of evidence from structured
 official directories, the first being the Federal Register's agency
 directory (`api/v1/agencies.json`: every agency that publishes in the

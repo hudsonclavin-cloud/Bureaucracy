@@ -620,6 +620,45 @@ try {
   check("a description is labelled as uncited", /uncited prose/i.test(descNote), descNote);
   check("provenance does not call every cost an estimate", !/^costs are estimates/.test(provenance), provenance);
 
+  // A post confirmed on its own organisation's page. The claim is narrower
+  // than an organisation's and the panel has to say so: it names the page as
+  // the organisation's, quotes the label found (84 nodes are called "General
+  // Counsel", so the words are what tie the badge to this node), and never
+  // publishes the same reading a second time as evidence for the edge.
+  const confirmedPost = allNodes.find(
+    (n) => n.verificationMethod === "name_labelled_on_its_organisations_official_page" && nameCounts.get(n.name) === 1,
+  );
+  check("some position is confirmed by its organisation's own page", Boolean(confirmedPost), "none");
+  if (confirmedPost) {
+    await openByName(confirmedPost.name);
+    const posPanel = await text("#info-panel");
+    check("a confirmed post says whose page named it", /Its organisation's own official page names it/.test(posPanel), posPanel.slice(0, 400));
+    check("a confirmed post quotes the label the page carries",
+      posPanel.includes(`as "${confirmedPost.verificationMatchedText}"`), posPanel.slice(0, 400));
+    check("a confirmed post is not called verified off one page", !/\bVERIFIED\b/.test(posPanel), posPanel.slice(0, 300));
+    check("a confirmed post no longer reads no source recorded", !/NO SOURCE RECORDED/.test(posPanel), posPanel.slice(0, 300));
+    const posPlacement = await text("#verification-placement");
+    check("a post's placement is not claimed as a second finding", /not claimed separately/.test(posPlacement), posPlacement);
+    check("a post's placement never claims a page lists it", !/official page lists it/.test(posPlacement), posPlacement);
+    // Confirmed from the page's body, never from its site-wide furniture.
+    check("a post is never confirmed from the site-wide navigation", !/in the site-wide navigation/.test(posPlacement), posPlacement);
+  }
+  // The numerator and the denominator of the placement line must count the
+  // same population: it says "organisation placements", and the 126 positions
+  // the PLUM archive files under an organisation were being counted in it.
+  const provenanceLine = await text("#data-provenance");
+  const placementCounts = /([\d,]+) of ([\d,]+) organisation placements/.exec(provenanceLine);
+  check("the provenance line reports organisation placements", Boolean(placementCounts), provenanceLine);
+  if (placementCounts) {
+    const isOrgEdge = (n) => n !== graphJson && !/position/i.test(String(n.type || ""));
+    const expected = allNodes.filter((n) => isOrgEdge(n) && n.placementVerified === true).length;
+    check(
+      "the placement numerator counts organisations only, as its own label says",
+      Number(placementCounts[1].replace(/,/g, "")) === expected,
+      `${placementCounts[1]} shown, ${expected} organisation edges actually placed`,
+    );
+  }
+
   // The depth buttons are a fixed HTML list (1..12) that does not know how
   // deep the loaded tree actually is (MAX_DEPTH=20 caps it further still).
   // A button past the real depth must be disabled and say why, not sit there

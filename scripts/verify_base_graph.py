@@ -36,7 +36,12 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from data_pipeline.crawler.official_directory import USER_AGENT, request_text  # noqa: E402
-from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, index_tree, load_base_graph  # noqa: E402
+from data_pipeline.exporter.build_graph import (  # noqa: E402
+    DEFAULT_BASE_GRAPH,
+    index_tree,
+    is_post_node,
+    load_base_graph,
+)
 from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification.evidence import (  # noqa: E402
     CONFIRMED,
@@ -49,7 +54,7 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     candidate_urls,
     load_evidence,
     load_official_sites,
-    uncheckable_reason,
+    uncheckable_reason_for_node,
     utc_now_iso,
     verify_node,
     verify_placement,
@@ -110,7 +115,7 @@ def main(argv: list[str] | None = None) -> int:
         if prior and prior.get("status") == CONFIRMED and not args.recheck:
             skipped["already_confirmed"] += 1
             continue
-        reason = uncheckable_reason(node.get("name"))
+        reason = uncheckable_reason_for_node(node)
         if reason:
             # Recorded, not fetched: a curator's label ("Individual Senator
             # Offices (100)") or a name too generic to distinguish anything
@@ -141,7 +146,13 @@ def main(argv: list[str] | None = None) -> int:
         for node in nodes:
             node_id = str(node.get("id") or "")
             parent_id = parent_map.get(node_id)
-            if not parent_id or parent_id not in sites or uncheckable_reason(node.get("name")):
+            if not parent_id or parent_id not in sites or uncheckable_reason_for_node(node):
+                continue
+            if is_post_node(node):
+                # A post's existence check already reads exactly this page.
+                # Queuing it here would fetch nothing new and could only
+                # produce a placement block the exporter refuses to publish.
+                skipped["placement_not_applicable_to_a_post"] += 1
                 continue
             prior = evidence.get(node_id) or {}
             existing = prior.get("placement") if isinstance(prior.get("placement"), dict) else None

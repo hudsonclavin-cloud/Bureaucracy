@@ -84,7 +84,11 @@ BASE = {
                     "type": "Cabinet Department",
                     "children": [
                         {"id": "doe-science", "name": "Office of Science", "type": "Office", "children": [
-                            {"id": "doe-science-director", "name": "Director", "type": "Position", "children": []},
+                            {"id": "doe-science-director", "name": "Director, Office of Science", "type": "Position", "children": []},
+                            # A bare job title, kept in the fixture on purpose:
+                            # it is the shape the post floor refuses, and the
+                            # test below pins that refusal in both directions.
+                            {"id": "doe-science-hydrologist", "name": "Hydrologist", "type": "Position", "children": []},
                         ]},
                         {"id": "doe-nnsa", "name": "National Nuclear Security Administration", "type": "Component Agency", "children": []},
                         {"id": "doe-labs", "name": "National Laboratories (17)", "type": "Division", "children": []},
@@ -752,6 +756,10 @@ class VerifierScriptTests(unittest.TestCase):
         self.assertIn("to check 1", own_only)                    # only DOE's own page
         _, with_positions = self._run("--dry-run", "--include-positions", "--inherit-depth", "2")
         self.assertIn("doe-science-director", with_positions)    # the Position reappears at depth 2
+        # ...and the post floor is the other guard: a qualified title is
+        # planned, a bare one is refused by name and never fetched.
+        self.assertNotIn("doe-science-hydrologist", with_positions)
+        self.assertIn("post_title_is_a_bare_job_title", with_positions)
 
     def test_a_real_run_records_each_outcome_and_writes_nothing_else(self) -> None:
         pages = {"https://www.energy.gov/about-us": DOE_PAGE}
@@ -1418,7 +1426,10 @@ class FrontendWordingTests(unittest.TestCase):
             "listed, same read": "the same page read above lists it",
             "listed in the site chrome": "in its site-wide navigation",
             "not listed": "does not list it as a heading or link — no claim either way",
-            "position": "positions are not checked against a page",
+            # A post IS checked against a page — its organisation's — and that
+            # one reading is published as its existence, never repeated here
+            # as a second, independent finding about the edge.
+            "position": "not claimed separately",
             "unreachable": "its parent is a curated grouping with no official page of its own",
             "nothing": "no evidence recorded for where this sits in the hierarchy",
         }.items():

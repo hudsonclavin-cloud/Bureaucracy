@@ -902,6 +902,10 @@ def directory_name_keys(value):
 
 COMMITTEE_TYPES = {"committee", "subcommittee"}
 MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
+# A post confirmed by a label in its own organisation's page content. Mirrors
+# data_pipeline.verification.evidence.METHOD_POST_ON_ORG_PAGE; the checks
+# below and the coverage report both key off it.
+POST_PAGE_METHOD = "name_labelled_on_its_organisations_official_page"
 
 
 def is_committee(node):
@@ -949,6 +953,37 @@ def folded_label_names(node, matched_text):
         if committee_core_key(canonical_key(part)) == core:
             return True
     return False
+
+
+def is_post(node):
+    """Mirror of data_pipeline.exporter.build_graph.is_post_node, stdlib-only.
+    tests/test_position_evidence.py pins the two together."""
+    type_text = str(node.get("type") or "").casefold()
+    return any(word in type_text for word in ("position", "role", "office holder"))
+
+
+def label_names(node, matched_text):
+    """Is the quoted label this node's name, by plain equality?
+
+    Deliberately NOT the scaffold-tolerant `label_matches` the matcher uses:
+    the gate's job is to catch a label that has drifted from the name it was
+    recorded for, and the strictest reading is the right one for that. A
+    confirmation the matcher made through bounded scaffolding ("About the
+    Office of the Secretary") keeps the scaffolded fragment as its quoted
+    text, so the split below has to find the name as one of the parts.
+    """
+    import re
+
+    key = canonical_key(node.get("name"))
+    if not key:
+        return False
+    text = str(matched_text or "")
+    if canonical_key(text) == key:
+        return True
+    return any(
+        canonical_key(part) == key
+        for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", text)
+    )
 
 
 def canonical_key(value):
@@ -1247,11 +1282,15 @@ def main(argv):
     KNOWN_METHODS = {
         "name_labelled_on_own_official_page",
         "name_labelled_on_parent_official_page",
+        "name_labelled_on_its_organisations_official_page",
         "listed_in_federal_register_agency_directory",
         "listed_in_senate_committee_list",
         "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
     }
+    # Placement claims that rest on reading a page, as opposed to consulting a
+    # separate document. Only these are refused on a post; see below.
+    PAGE_PLACEMENT_METHODS = {"name_labelled_on_parent_official_page", POST_PAGE_METHOD}
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
     COMMITTEE_LIST_URLS = ("https://www.senate.gov/", "https://clerk.house.gov/")
     failure_beside_source, unofficial_official, unknown_method = [], [], []
@@ -1283,8 +1322,46 @@ def main(argv):
                 unknown_method.append("{} folds committee scaffolding under a method that read no page".format(label(node)))
             elif not matched_text or not folded_label_names(node, matched_text):
                 unknown_method.append("{} folded label {!r} does not name it".format(label(node), matched_text))
-        elif node.get("verificationMatchedText") is not None:
+        elif node.get("verificationMatchedText") is not None and not is_post(node):
             unknown_method.append("{} quotes a folded label without the rule".format(label(node)))
+        # A post confirmed on its organisation's page. Four things are
+        # required, and each of them failed at least once in development or
+        # would have published something false:
+        #   - the node is actually a post. The method's whole justification is
+        #     that the page belongs to the post's organisation rather than to
+        #     the post; on an organisation it would be a plain parent-page
+        #     claim wearing a stronger name.
+        #   - the label is quoted. "General Counsel" sits at 84 organisations
+        #     and "Inspector General" at 72, so without the text a reader
+        #     cannot tell this node's confirmation from another's.
+        #   - the label still names the node. Same guard the committee fold
+        #     gets: a rename must not inherit a badge earned by another name.
+        #   - the match came from the page's body. A job title in site-wide
+        #     chrome is the one match this design refuses, and a record that
+        #     arrived saying `navigation` would be publishing exactly that.
+        if str(node.get("verificationMethod") or "") == POST_PAGE_METHOD:
+            matched_text = node.get("verificationMatchedText")
+            if not is_post(node):
+                unknown_method.append(
+                    "{} claims a post's page method but is typed {!r}".format(label(node), node.get("type")))
+            elif not matched_text:
+                unknown_method.append("{} claims a post's page method without quoting the label".format(label(node)))
+            elif not label_names(node, matched_text):
+                unknown_method.append("{} post label {!r} does not name it".format(label(node), matched_text))
+            elif str(node.get("verificationMatchedIn") or "") != "content":
+                unknown_method.append(
+                    "{} confirms a post from {!r}, not the page's content".format(
+                        label(node), node.get("verificationMatchedIn")))
+        if is_post(node) and str(node.get("placementMethod") or "") in PAGE_PLACEMENT_METHODS:
+            # One fetch, one claim. The page that names a post is its
+            # organisation's, and that read is already published as the
+            # post's existence; recording it again as evidence for the edge
+            # would present a single observation as two corroborating
+            # findings. A placement from a different source is not affected —
+            # OPM's PLUM archive filing a post under an organisation is a
+            # second document, and 126 positions carry exactly that.
+            unknown_method.append(
+                "{} is a post whose placement rests on the same page read as its existence".format(label(node)))
         # A negative must be as auditable as a positive: it names the page or
         # the list it was checked against, and when. The panel prints that URL.
         failure_kind = str(node.get("verificationFailure") or "")
@@ -1619,6 +1696,13 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    # Positions are 85% of this graph and carried no evidence of any kind
+    # until 2026-09-15, so their coverage is reported on its own line rather
+    # than buried in a total the organisations dominate.
+    posts = [n for n in nodes if is_post(n)]
+    posts_confirmed = [n for n in posts if str(n.get("verificationMethod") or "") == POST_PAGE_METHOD]
+    print("  posts on their org's page: {:,} of {:,} positions confirmed by a label in their organisation's own page content ({:.1%})".format(
+        len(posts_confirmed), len(posts), len(posts_confirmed) / len(posts) if posts else 0))
     folded_existence = sum(1 for n in nodes if n.get("verificationMatchRule") == MATCH_RULE_COMMITTEE)
     folded_placement = sum(1 for n in nodes if n.get("placementMatchRule") == MATCH_RULE_COMMITTEE)
     print("  committee labels     : {:,} confirmed and {:,} placed with the graph's \"Committee on\"/\"Subcommittee on\" prefix set aside".format(

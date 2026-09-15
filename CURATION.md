@@ -786,3 +786,71 @@ rate. The rest are refused, each for a reason worth keeping:
 The remaining lever on this subtree is not parsing but the report's own
 reissue: a fresh July roster replaces every figure, and titles that gain or
 lose a second holder change category.
+
+## 8. Post titles the government's own pages do not carry (2026-09-15)
+
+Found by the first run of the position existence pass. The verifier now
+checks each post against its organisation's page, so for the first time the
+curated titles were compared against what the pages actually say — and the
+most recognisable posts in the federal government came back `inconclusive`,
+not because the pages are silent about them but because **the graph calls
+them something no page will ever say.**
+
+839 position nodes contain their parent organisation's full name verbatim.
+That is template output, and in 28 of them it produces a title that is
+wrong rather than merely verbose: every cabinet department except Defense
+carries a `Secretary of Department of <full department name>` node and a
+`Deputy Secretary of ...` beside it.
+
+`scripts/probe_post_titles.py` is the read-only probe that produced the
+evidence below. It fetches an organisation's page, reports which curated
+post titles the page labels, and lists office-looking labels on the page
+that no curated post matches. It writes nothing.
+
+    Department of Energy — https://www.energy.gov/leadership-organization
+      not labelled          'Secretary of Department of Energy (DOE)'
+      not labelled          'Deputy Secretary of Department of Energy (DOE)'
+      on the page, no node  'Secretary of Energy' [navigation]
+      on the page, no node  'Deputy Secretary of Energy' [navigation]
+      on the page, no node  'Under Secretary for Science' [content]
+      on the page, no node  'Under Secretary for Nuclear Security and NNSA Administrator' [content]
+
+    Department of Justice — https://www.justice.gov/about
+      not labelled          'Secretary of Department of Justice (DOJ)'
+      not labelled          'Deputy Secretary of Department of Justice (DOJ)'
+      on the page, no node  'The Attorney General' [navigation]
+
+The DOJ pair is the sharpest case: **there is no Secretary of Justice.** The
+head of the Department of Justice is the Attorney General and the second is
+the Deputy Attorney General, and justice.gov says so on the page the
+verifier read. The graph asserts an office that does not exist, and has
+since the curated file was written.
+
+**The proposal is a rename, and it is curation.** Thirteen departments need
+`Secretary of Department of X` -> the title the department's own page
+carries (`Secretary of Energy`, `Secretary of the Treasury`, `Secretary of
+State`, ...), and DOJ needs `Attorney General` / `Deputy Attorney General`.
+Defense is already correct and is the control case: it alone carries
+`Secretary of Defense`, and it is the only department whose curated title
+could ever have matched.
+
+**What must not happen, and why it is written down here rather than left to
+judgement.** The temptation is to widen the matcher until "Secretary of
+Department of State" matches "Secretary of State" — drop a "Department of"
+the way the committee fold drops a "Committee on". It is the same shape of
+fix and it is not the same thing. The committee fold is granted by the
+node's type, folds a closed set of scaffolding words that a chamber's own
+site demonstrably omits, and refuses a core of fewer than two tokens. A
+"Department of" fold would instead let a node's name differ from the page's
+label in a way that changes **which office is meant**: it would confirm the
+non-existent "Secretary of Justice" from the page's "Attorney General" only
+if the fold were loose enough to be useless, and short of that it would
+still teach that a curated name and a real title need not agree. The same
+looseness is what once let "Office of Science" match "Office of Science and
+Technology Policy". The matcher stays strict, the verifier keeps recording
+`inconclusive`, and the names get fixed where names are fixed.
+
+Two departments could not be probed at all: `www.state.gov` and
+`www.ed.gov` answer `robots.txt` with 401/403, which this project treats as
+a refusal (see CLAUDE.md on RFC 9309). That is a fact about the network, not
+about the titles.

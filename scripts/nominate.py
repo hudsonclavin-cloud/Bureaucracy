@@ -308,7 +308,14 @@ def validate_url(url: str) -> None:
 def validate_source(record, node, sites, tried, tried_for_node=None):
     node_id = record["id"]
     if not is_organisation(node):
-        raise Rejected(f"{node_id} is a {node.get('type')!r}; pages are nominated for organisations only")
+        # Still the right refusal, and since 2026-09-15 no longer a dead end:
+        # a post has no page of its own, but it IS checked against its
+        # organisation's page, so nominating a page for the organisation
+        # above it reaches every post beneath it in the same fetch.
+        raise Rejected(
+            f"{node_id} is a {node.get('type')!r}; pages are nominated for organisations only. "
+            "A post is checked against its organisation's page — nominate one for its parent instead."
+        )
     nominations = record.get("nominations") or []
     if record.get("noCandidate"):
         if nominations:

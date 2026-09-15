@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260915a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260915a";
+import { createGovernmentGraph } from "./graph.js?v=20260915b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260915b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -244,9 +244,20 @@ function describeProvenance(root) {
     else if (status === "official" || status === "root_total") measured += 1;
     else if (status === "scaled_official") capped += 1;
     if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
-    if (node.placementVerified === true) placed += 1;
-    if (node.placementCheckable === false) unreachable += 1;
-    if (node !== root && !/position/i.test(String(node.type || ""))) orgEdges += 1;
+    // Numerator and denominator must count the same population. This line
+    // says "organisation placements", and the denominator has always
+    // excluded positions — but the numerator did not, so the 126 positions
+    // the PLUM archive files under an organisation were counted in it. The
+    // site published "335 of 812" where the release gate, which scopes both
+    // to organisations, reported 209. Counting a position in a total
+    // labelled "organisation" is the kind of quiet inflation this project
+    // exists to refuse, so the type test now gates both.
+    const isOrgEdge = node !== root && !/position/i.test(String(node.type || ""));
+    if (isOrgEdge) {
+      orgEdges += 1;
+      if (node.placementVerified === true) placed += 1;
+      if (node.placementCheckable === false) unreachable += 1;
+    }
     for (const child of node.children || []) stack.push(child);
   }
   const estimated = Math.max(nodes - measured - capped - receipts, 0);
@@ -966,7 +977,14 @@ function renderPlacementLine(data) {
   } else if (data.placementVerified === false) {
     add(`Placement: its parent's official page was read${checked ? ` ${checked}` : ""} and does not list it as a heading or link — no claim either way`);
   } else if (isPosition) {
-    add("Placement: not checked (positions are not checked against a page)");
+    // Positions ARE checked against a page now — their organisation's — but
+    // that read is published above as the post's existence and is never
+    // repeated here as separate evidence for the edge. Saying "not checked"
+    // would be false; saying it was checked would imply a second finding.
+    add(
+      "Placement: not claimed separately — the page that names a post is its organisation's own,"
+      + " and that one reading is shown above as evidence the post exists, not a second time as evidence of where it sits",
+    );
   } else if (data.placementCheckable === false) {
     add("Placement: could not be checked — its parent is a curated grouping with no official page of its own");
   } else {
@@ -1026,6 +1044,11 @@ function renderVerificationPanel(data) {
     const METHOD_TEXT = {
       name_labelled_on_own_official_page: "Its own official page names it",
       name_labelled_on_parent_official_page: "Its parent's official page lists it",
+      // Worded as what was read, not as what it proves. The page belongs to
+      // the organisation that carries the post, so this is that organisation's
+      // own account of its own leadership — which is evidence the post exists,
+      // and is not evidence about who holds it or what it does.
+      name_labelled_on_its_organisations_official_page: "Its organisation's own official page names it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
       listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
@@ -1057,7 +1080,18 @@ function renderVerificationPanel(data) {
         data.verificationMatchRule === "committee_scaffolding_folded" && data.verificationMatchedText
           ? ` as "${data.verificationMatchedText}" (the graph's "Committee on" / "Subcommittee on" prefix set aside)`
           : "";
-      checkLine = how ? `${how}${where}${folded} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
+      // A post quotes its label unconditionally. "General Counsel" is the
+      // name of 84 nodes in this graph and "Inspector General" of 72, so the
+      // page and the words on it are the only things that tie a confirmation
+      // to this post rather than another — showing the badge without them
+      // would ask the reader to take the match on trust.
+      const quoted =
+        !folded
+        && String(data.verificationMethod || "") === "name_labelled_on_its_organisations_official_page"
+        && data.verificationMatchedText
+          ? ` as "${data.verificationMatchedText}"`
+          : "";
+      checkLine = how ? `${how}${where}${folded}${quoted} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     // A directory listing beside a page claim: a second, weaker claim, said
     // as itself, with the name and the parent exactly as the directory has them.
