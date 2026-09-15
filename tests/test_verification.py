@@ -17,7 +17,9 @@ import unittest
 import uuid
 from contextlib import redirect_stdout
 from pathlib import Path
+import urllib.request
 from unittest import mock
+from urllib.error import HTTPError, URLError
 
 from data_pipeline.exporter.build_graph import build_graph, index_tree
 from data_pipeline.verification.evidence import (
@@ -47,7 +49,12 @@ from urllib.robotparser import RobotFileParser
 
 from urllib.robotparser import RobotFileParser
 
-from data_pipeline.verification.politeness import RobotsPolicy
+from data_pipeline.verification.politeness import (
+    NO_FILE,
+    RULES,
+    RobotsFile,
+    RobotsPolicy,
+)
 from scripts import verify_base_graph
 from scripts.validate_published_graph import main as gate_main
 from data_pipeline.verification.evidence import (  # noqa: E402
@@ -527,98 +534,126 @@ class ApplyEvidenceTests(unittest.TestCase):
         self.assertEqual(json.dumps(tree, sort_keys=True), before)
 
 
+class _Response:
+    """Just enough of an HTTP response for urlopen's context-manager use."""
+
+    def __init__(self, status: int, body: str) -> None:
+        self.status = status
+        self._body = (body or "").encode("utf-8")
+
+    def read(self):
+        return self._body
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+def _fake_urlopen(status, body):
+    """Stand in for the network at the seam the real code uses."""
+
+    def opener(request, *args, **kwargs):
+        if body is None:
+            raise HTTPError(request.full_url, status, "err", {}, None)
+        return _Response(status, body)
+
+    return opener
+
+
 class RobotsTests(unittest.TestCase):
-    def test_a_disallow_is_obeyed_and_an_unreadable_file_is_not_a_prohibition(self) -> None:
-        policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0")
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=None):
-            self.assertEqual(policy.allows("https://www.energy.gov/x")[0], True)
-            self.assertEqual(policy.crawl_delay("https://www.energy.gov/x"), 0.0)
-
-        class Denies:
-            def can_fetch(self, agent, url):
-                return False
-
-            def crawl_delay(self, agent):
-                return 5
-
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=Denies()):
-            allowed, why = policy.allows("https://www.energy.gov/private")
-            self.assertFalse(allowed)
-            self.assertIn("disallows", why)
-            self.assertEqual(policy.crawl_delay("https://www.energy.gov/x"), 5.0)
-
+    def test_disabling_the_check_bypasses_it_entirely_and_fetches_nothing(self) -> None:
+        """`--ignore-robots` exists for a site owner's explicit agreement. It
+        must not merely ignore the answer -- it must not ask, since the
+        request itself is traffic the owner did not invite."""
         disabled = RobotsPolicy(user_agent="x", enabled=False)
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=Denies()):
-            self.assertTrue(disabled.allows("https://www.energy.gov/private")[0])
+        def boom(*args, **kwargs):
+            raise AssertionError("a disabled policy fetched robots.txt")
+        with mock.patch.object(urllib.request, "urlopen", boom):
+            allowed, why = disabled.allows("https://www.energy.gov/private")
+        self.assertTrue(allowed)
+        self.assertIn("disabled", why)
 
-    def test_a_refused_robots_file_is_obeyed_but_not_quoted_as_a_rule(self) -> None:
-        """A host that answers robots.txt with 403 is still refused, but the
-        record must not claim the site published a rule nobody could read.
+    def test_every_status_class_is_decided_and_described_by_what_happened(self) -> None:
+        """One table, because each row was wrong at some point.
 
-        RobotFileParser.read() swallows a 401/403 and sets disallow_all with
-        no entries parsed. www.state.gov did exactly this on the first live
-        run, and the evidence file went out saying
-        "www.state.gov/robots.txt disallows /about/" -- a claim about State's
-        crawl policy that no fetch supports.
+        The seam is the HTTP fetch rather than the parser object: the bug
+        that cost 260 fetches was that the REQUEST carried no User-Agent,
+        which no test mocking `_parser` could ever have seen.
         """
         policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0")
+        url = "https://www.state.gov/about/"
+        cases = [
+            # status, body,                              allowed, must say,            must NOT say
+            (200, "User-agent: *\nDisallow: /about/\n",  False, "disallows /about/", "could not be"),
+            (200, "User-agent: *\nDisallow: /\n",        False, "disallows /about/", "could not be"),
+            (200, "User-agent: *\nAllow: /\n",           True,  "allowed by robots", "disallows"),
+            (200, "",                                     True,  "allowed by robots", "disallows"),
+            # Served nothing and would not say why: refused, but no rule quoted.
+            (401, None,                                   False, "could not be read", "disallows"),
+            (403, None,                                   False, "could not be read", "disallows"),
+            # Nothing published: not a prohibition.
+            (404, None,                                   True,  "no readable robots", "disallows"),
+            (410, None,                                   True,  "no readable robots", "disallows"),
+            # The site is failing. Refused -- but the old code said
+            # "robots.txt disallows /about/", asserting a rule it never read.
+            (500, None,                                   False, "could not be fetched", "disallows"),
+            (503, None,                                   False, "could not be fetched", "disallows"),
+        ]
+        for status, body, expect_allowed, must_say, must_not_say in cases:
+            with self.subTest(status=status, body=body):
+                policy._files.clear()
+                with mock.patch.object(urllib.request, "urlopen", _fake_urlopen(status, body)):
+                    allowed, why = policy.allows(url)
+                self.assertEqual(allowed, expect_allowed, why)
+                self.assertIn(must_say, why)
+                self.assertNotIn(must_not_say, why)
+                if status >= 500:
+                    self.assertIn(str(status), why, "a 5xx refusal names the status it saw")
 
-        class Refused(RobotFileParser):
-            """What read() leaves behind on a 403: a blanket deny, no rules."""
+    def test_the_project_user_agent_is_sent_when_asking_for_robots(self) -> None:
+        """The bug itself, pinned. `RobotFileParser.read()` sends no headers,
+        so robots.txt went out as Python-urllib while every page went out as
+        this project. 19 federal hosts serve their rules to the second and
+        refuse the first, and the verifier recorded "refused by policy"
+        about sites that would have handed the rules over."""
+        seen = {}
 
-            def __init__(self) -> None:
-                super().__init__()
-                self.disallow_all = True
+        def capture(request, *args, **kwargs):
+            seen["ua"] = request.get_header("User-agent")
+            seen["url"] = request.full_url
+            return _Response(200, "User-agent: *\nAllow: /\n")
 
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=Refused()):
-            allowed, why = policy.allows("https://www.state.gov/about/")
-        self.assertFalse(allowed, "an unreadable robots.txt is still obeyed")
-        self.assertIn("could not be read", why)
-        self.assertNotIn("disallows /about/", why)
+        policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0 (+https://example.gov)")
+        with mock.patch.object(urllib.request, "urlopen", capture):
+            policy.allows("https://www.nih.gov/about")
+        self.assertEqual(seen["ua"], "bureaucracy-data-pipeline/1.0 (+https://example.gov)")
+        self.assertEqual(seen["url"], "https://www.nih.gov/robots.txt")
+        self.assertNotIn("Python-urllib", str(seen["ua"]))
 
-        # The other direction: a robots.txt that WAS read and does disallow
-        # the path still says so, and still names the path.
-        parsed = RobotFileParser()
-        parsed.parse(["User-agent: *", "Disallow: /about/"])
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
-            allowed, why = policy.allows("https://www.state.gov/about/")
-            self.assertFalse(allowed)
-            self.assertIn("disallows /about/", why)
-            self.assertNotIn("could not be read", why)
-            # and a path it does not cover is still allowed
-            self.assertTrue(policy.allows("https://www.state.gov/bureaus/")[0])
+    def test_a_network_failure_is_not_a_prohibition_and_one_fetch_is_cached(self) -> None:
+        policy = RobotsPolicy(user_agent="x")
+        calls = []
 
+        def boom(request, *args, **kwargs):
+            calls.append(request.full_url)
+            raise URLError("connect_rejected")
 
-class RobotsRefusalReasonTests(unittest.TestCase):
-    """A refusal must say which of the two things happened, and must not cite
-    a rule nobody read. Python's parser sets disallow_all on a 401/403 to
-    robots.txt itself — the pre-RFC-9309 convention — and the first live run
-    published "www.state.gov/robots.txt disallows /about/", which is a
-    statement about a file the run never saw."""
+        with mock.patch.object(urllib.request, "urlopen", boom):
+            self.assertTrue(policy.allows("https://www.energy.gov/a")[0])
+            self.assertTrue(policy.allows("https://www.energy.gov/b")[0])
+            self.assertEqual(policy.crawl_delay("https://www.energy.gov/a"), 0.0)
+        self.assertEqual(len(calls), 1, "robots.txt is fetched once per origin")
 
-    def test_an_unreadable_robots_is_refused_without_quoting_a_rule(self) -> None:
-        policy = RobotsPolicy(user_agent="bureaucracy-data-pipeline/1.0")
-
-        unreadable = RobotFileParser()
-        unreadable.disallow_all = True  # what read() sets on a 401/403
-
-        parsed = RobotFileParser()
-        parsed.parse(["User-agent: *", "Disallow: /about/"])
-
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=unreadable):
-            allowed, why = policy.allows("https://www.state.gov/about/")
-        self.assertFalse(allowed)
-        self.assertIn("could not be read", why)
-        self.assertNotIn("disallows", why)
-        self.assertNotIn("RFC", why, "the standard does not require this refusal; do not cite it")
-
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
-            allowed, why = policy.allows("https://www.state.gov/about/")
-        self.assertFalse(allowed)
-        self.assertIn("disallows /about/", why)
-
-        with mock.patch.object(RobotsPolicy, "_parser", return_value=parsed):
-            self.assertTrue(policy.allows("https://www.state.gov/other/")[0])
+    def test_the_crawl_delay_is_read_only_from_a_file_that_was_read(self) -> None:
+        policy = RobotsPolicy(user_agent="x")
+        with mock.patch.object(urllib.request, "urlopen",
+                               _fake_urlopen(200, "User-agent: *\nCrawl-delay: 7\n")):
+            self.assertEqual(policy.crawl_delay("https://www.energy.gov/a"), 7.0)
+        policy._files.clear()
+        with mock.patch.object(urllib.request, "urlopen", _fake_urlopen(403, None)):
+            self.assertEqual(policy.crawl_delay("https://www.energy.gov/a"), 0.0)
 
 
 class BuildAndGateTests(unittest.TestCase):
@@ -764,7 +799,7 @@ class VerifierScriptTests(unittest.TestCase):
     def test_a_real_run_records_each_outcome_and_writes_nothing_else(self) -> None:
         pages = {"https://www.energy.gov/about-us": DOE_PAGE}
         with mock.patch.object(verify_base_graph, "request_text", lambda url, timeout=30: pages[url]), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None):
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)):
             code, text = self._run()
         self.assertEqual(code, 0, text)
         store = json.loads(self.evidence.read_text(encoding="utf-8"))
@@ -786,7 +821,7 @@ class VerifierScriptTests(unittest.TestCase):
             return DOE_PAGE
 
         with mock.patch.object(verify_base_graph, "request_text", counting), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None):
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)):
             self._run()
         self.assertEqual(calls, ["https://www.energy.gov/about-us"])
 
@@ -795,7 +830,7 @@ class VerifierScriptTests(unittest.TestCase):
             raise OSError("Tunnel connection failed: 403 Forbidden")
 
         with mock.patch.object(verify_base_graph, "request_text", blocked), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None):
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)):
             code, text = self._run()
         self.assertEqual(code, 2, text)
         records = json.loads(self.evidence.read_text(encoding="utf-8"))["nodes"]
@@ -814,7 +849,7 @@ class VerifierScriptTests(unittest.TestCase):
                 return 0
 
         with mock.patch.object(verify_base_graph, "request_text", lambda url, timeout=30: DOE_PAGE), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=Denies()):
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(RULES, 200, Denies())):
             code, _ = self._run()
         self.assertEqual(code, 2)
         records = json.loads(self.evidence.read_text(encoding="utf-8"))["nodes"]
@@ -1287,7 +1322,7 @@ class PlacementScriptTests(unittest.TestCase):
         pages = pages if pages is not None else {"https://www.energy.gov/about-us": DOE_PAGE}
         out = io.StringIO()
         with mock.patch.object(verify_base_graph, "request_text", lambda url, timeout=30: pages[url]), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             code = verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
                                            "--evidence", str(self.evidence), "--sleep", "0", *extra])
@@ -1358,7 +1393,7 @@ class PlacementScriptTests(unittest.TestCase):
 
         out = io.StringIO()
         with mock.patch.object(verify_base_graph, "request_text", blocked), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
                                     "--evidence", str(self.evidence), "--sleep", "0"])
@@ -1383,7 +1418,7 @@ class PlacementScriptTests(unittest.TestCase):
 
         out = io.StringIO()
         with mock.patch.object(verify_base_graph, "request_text", blocked), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
                                     "--evidence", str(self.evidence), "--sleep", "0"])
@@ -1397,7 +1432,7 @@ class PlacementScriptTests(unittest.TestCase):
         # With --recheck the listed edge is in the plan too, and the same
         # unreadable page withdraws it — the run could not stand behind it.
         with mock.patch.object(verify_base_graph, "request_text", blocked), \
-             mock.patch.object(verify_base_graph.RobotsPolicy, "_parser", return_value=None), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(io.StringIO()):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
                                     "--evidence", str(self.evidence), "--sleep", "0", "--recheck"])

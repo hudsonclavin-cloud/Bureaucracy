@@ -24,6 +24,7 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from unittest import mock
 
+from data_pipeline.verification.politeness import NO_FILE, RobotsFile
 from scripts import probe_post_titles
 
 TEST_TMP_ROOT = Path(__file__).resolve().parent / ".tmp"
@@ -94,7 +95,7 @@ class ProbeOutputTests(unittest.TestCase):
         argv = ["probe", "--base-graph", str(self.base), "--sites", str(self.sites), "--sleep", "0", *extra]
         out = io.StringIO()
         with mock.patch.object(probe_post_titles, "request_text", lambda url, timeout=30: PAGE), \
-             mock.patch.object(probe_post_titles.RobotsPolicy, "_parser", return_value=None), \
+             mock.patch.object(probe_post_titles.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             code = probe_post_titles.main(argv)
         return code, out.getvalue()
