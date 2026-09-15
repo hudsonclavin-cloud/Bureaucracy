@@ -826,13 +826,52 @@ the Deputy Attorney General, and justice.gov says so on the page the
 verifier read. The graph asserts an office that does not exist, and has
 since the curated file was written.
 
-**The proposal is a rename, and it is curation.** Thirteen departments need
-`Secretary of Department of X` -> the title the department's own page
-carries (`Secretary of Energy`, `Secretary of the Treasury`, `Secretary of
-State`, ...), and DOJ needs `Attorney General` / `Deputy Attorney General`.
-Defense is already correct and is the control case: it alone carries
-`Secretary of Defense`, and it is the only department whose curated title
-could ever have matched.
+**Resolved for 15 of the 28, the same day.**
+`scripts/rename_templated_post_titles.py` is the only writer of these names
+(the curated file is never hand-edited), it is idempotent, and it renames
+nothing it cannot cite. The replacement is never produced by string surgery
+-- dropping "Department of" is right thirteen times and wrong once, and the
+once is DOJ. It comes from OPM's PLUM archive, or, where the archive carries
+only a bare "SECRETARY", from the department's own page:
+
+    Secretary of Department of Justice (DOJ)      -> Attorney General            [archive]
+    Deputy Secretary of Department of Justice     -> Deputy Attorney General     [archive]
+    Secretary of Department of State              -> Secretary of State          [archive]
+    Deputy Secretary of Department of State       -> Deputy Secretary of State   [archive]
+    Secretary of Department of Labor (DOL)        -> Secretary of Labor          [archive]
+    Deputy Secretary of Department of Labor       -> Deputy Secretary of Labor   [archive]
+    Secretary of Department of Veterans Affairs   -> Secretary of Veterans Affairs        [archive]
+    Deputy Secretary of Dept of Veterans Affairs  -> Deputy Secretary of Veterans Affairs [archive]
+    Secretary of Department of Homeland Security  -> Secretary of the Department of Homeland Security     [archive]
+    Deputy Secretary of Dept of Homeland Security -> Deputy Secretary of the Department of Homeland Security [archive]
+    Deputy Secretary of Department of Energy      -> Deputy Secretary of Energy  [archive]
+    Secretary of Department of Energy (DOE)       -> Secretary of Energy         [energy.gov]
+    Deputy Secretary of Department of Agriculture -> Deputy Secretary of Agriculture [archive]
+    Deputy Secretary of Department of the Interior-> Deputy Secretary of the Interior [archive]
+    Deputy Secretary of Dept of the Treasury      -> Deputy Secretary of the Treasury [archive]
+
+Note DHS: OPM's own archive spells it "SECRETARY OF THE DEPARTMENT OF
+HOMELAND SECURITY", keeping the words a transform would have stripped. It is
+the second proof that the replacement must be cited rather than computed.
+
+**The immediate payoff, measured.** Re-verifying just those 15 nodes
+confirmed **5** against their departments' own pages, which was structurally
+impossible while they were misnamed: Secretary of Labor (dol.gov), Secretary
+and Deputy Secretary of Energy (energy.gov), Secretary and Deputy Secretary
+of Veterans Affairs (va.gov). Confirmed positions went 20 -> 25.
+
+**Still templated: 13, because no official source in hand names the title.**
+Commerce, Education, Transportation, HHS and HUD (both posts each), and the
+Secretary side of Agriculture, the Interior and the Treasury. The archive
+files those heads as a bare "SECRETARY", which names the role and not the
+post and is refused; and seven of the fifteen department pages
+(www.dhs.gov, www.commerce.gov, www.transportation.gov, www.ed.gov,
+www.hhs.gov, www.usda.gov, www.state.gov) answer `robots.txt` with 401/403
+and are refused by policy. "Secretary of the Treasury" is not in doubt as a
+matter of fact; it is in doubt as a matter of what this repository can cite,
+and the rule that the name must be cited is the rule that caught DOJ.
+Defense is the control case: it alone was already correct, and it is the only
+department whose curated title could ever have matched.
 
 **What must not happen, and why it is written down here rather than left to
 judgement.** The temptation is to widen the matcher until "Secretary of

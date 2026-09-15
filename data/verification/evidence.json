@@ -24556,8 +24556,8 @@
       ]
     },
     "exec-dept-state-secretary-of-department-of-state": {
-      "name": "Secretary of Department of State",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Secretary of State",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "isPost": true,
@@ -24571,8 +24571,8 @@
       ]
     },
     "exec-dept-state-deputy-secretary-of-department-of-state": {
-      "name": "Deputy Secretary of Department of State",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of State",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-state",
       "ownPage": false,
       "isPost": true,
@@ -24992,8 +24992,8 @@
       ]
     },
     "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury": {
-      "name": "Deputy Secretary of Department of the Treasury",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of the Treasury",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-treasury",
       "ownPage": false,
       "isPost": true,
@@ -29210,8 +29210,8 @@
       ]
     },
     "exec-dept-doj-secretary-of-department-of-justice-doj": {
-      "name": "Secretary of Department of Justice (DOJ)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Attorney General",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
@@ -29221,13 +29221,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "name_not_labelled_on_page"
+          "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-dept-doj-deputy-secretary-of-department-of-justice-doj": {
-      "name": "Deputy Secretary of Department of Justice (DOJ)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Attorney General",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
@@ -31074,8 +31074,8 @@
       ]
     },
     "exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi": {
-      "name": "Deputy Secretary of Department of the Interior (DOI)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of the Interior",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-doi",
       "ownPage": false,
       "isPost": true,
@@ -32233,8 +32233,8 @@
       ]
     },
     "exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda": {
-      "name": "Deputy Secretary of Department of Agriculture (USDA)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of Agriculture",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-usda",
       "ownPage": false,
       "isPost": true,
@@ -33804,24 +33804,25 @@
       ]
     },
     "exec-dept-dol-secretary-of-department-of-labor-dol": {
-      "name": "Secretary of Department of Labor (DOL)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Secretary of Labor",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-dol",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.dol.gov/general/aboutdol",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Secretary of Labor",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
     },
     "exec-dept-dol-deputy-secretary-of-department-of-labor-dol": {
-      "name": "Deputy Secretary of Department of Labor (DOL)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of Labor",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-dol",
       "ownPage": false,
       "isPost": true,
@@ -37369,36 +37370,38 @@
       ]
     },
     "exec-dept-doe-secretary-of-department-of-energy-doe": {
-      "name": "Secretary of Department of Energy (DOE)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Secretary of Energy",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-doe",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.energy.gov/leadership-organization",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Secretary of Energy",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
     },
     "exec-dept-doe-deputy-secretary-of-department-of-energy-doe": {
-      "name": "Deputy Secretary of Department of Energy (DOE)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of Energy",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-doe",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.energy.gov/leadership-organization",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Deputy Secretary of Energy",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
     },
     "exec-dept-doe-chief-of-staff": {
       "name": "Chief of Staff",
@@ -40657,36 +40660,38 @@
       ]
     },
     "exec-dept-va-secretary-of-department-of-veterans-affairs-va": {
-      "name": "Secretary of Department of Veterans Affairs (VA)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Secretary of Veterans Affairs",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-va",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.va.gov/about_va/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Secretary of Veterans Affairs",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
     },
     "exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va": {
-      "name": "Deputy Secretary of Department of Veterans Affairs (VA)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of Veterans Affairs",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-va",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.va.gov/about_va/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Deputy Secretary of Veterans Affairs",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
     },
     "exec-dept-va-chief-of-staff": {
       "name": "Chief of Staff",
@@ -41080,8 +41085,8 @@
       ]
     },
     "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs": {
-      "name": "Secretary of Department of Homeland Security (DHS)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Secretary of the Department of Homeland Security",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "isPost": true,
@@ -41095,8 +41100,8 @@
       ]
     },
     "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs": {
-      "name": "Deputy Secretary of Department of Homeland Security (DHS)",
-      "checkedAt": "2026-09-14T23:51:55+00:00",
+      "name": "Deputy Secretary of the Department of Homeland Security",
+      "checkedAt": "2026-09-15T01:50:20+00:00",
       "siteFrom": "exec-dept-dhs",
       "ownPage": false,
       "isPost": true,

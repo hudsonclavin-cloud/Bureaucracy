@@ -15727,26 +15727,13 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "verificationMatchedText": "U.S. Senate: About the Sergeant at Arms",
                       "sourceUrls": [
-                        "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
-                        "https://www.senate.gov/about/officers-staff.htm"
-                      ],
-                      "evidenceUrls": [
                         "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
                         "https://www.senate.gov/about/officers-staff.htm"
                       ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-14T23:51:55+00:00",
-                      "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-senate-admin-saa",
-                      "sourceCount": 2,
-                      "confidenceScore": 0.8,
-                      "verificationStatus": "verified",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -15762,7 +15749,20 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-14T23:51:55+00:00",
+                      "verificationMatchedText": "U.S. Senate: About the Sergeant at Arms",
+                      "evidenceUrls": [
+                        "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
+                        "https://www.senate.gov/about/officers-staff.htm"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-senate-admin-saa"
                     },
                     {
                       "id": "leg-senate-admin-saa-deputy-sergeant-at-arms",
@@ -34684,24 +34684,12 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "verificationMatchedText": "CAO | Chief Administrative Officer |",
                       "sourceUrls": [
-                        "https://cao.house.gov/"
-                      ],
-                      "evidenceUrls": [
                         "https://cao.house.gov/"
                       ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-14T23:51:55+00:00",
-                      "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "leg-house-cao",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -34717,7 +34705,19 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-14T23:51:55+00:00",
+                      "verificationMatchedText": "CAO | Chief Administrative Officer |",
+                      "evidenceUrls": [
+                        "https://cao.house.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cao"
                     },
                     {
                       "id": "leg-house-cao-deputy-cao",
@@ -59579,24 +59579,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "About | United States Trade Representative",
                   "sourceUrls": [
-                    "https://ustr.gov/about-us"
-                  ],
-                  "evidenceUrls": [
                     "https://ustr.gov/about-us"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-eop-ustr",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -59612,7 +59600,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "About | United States Trade Representative",
+                  "evidenceUrls": [
+                    "https://ustr.gov/about-us"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-eop-ustr"
                 },
                 {
                   "id": "exec-eop-ustr-deputy-ustr-wto-multilateral-affairs",
@@ -61748,13 +61748,15 @@
               "children": [
                 {
                   "id": "exec-dept-state-secretary-of-department-of-state",
-                  "name": "Secretary of Department of State",
+                  "name": "Secretary of State",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -61778,13 +61780,15 @@
                 },
                 {
                   "id": "exec-dept-state-deputy-secretary-of-department-of-state",
-                  "name": "Deputy Secretary of Department of State",
+                  "name": "Deputy Secretary of State",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -66252,13 +66256,15 @@
                 },
                 {
                   "id": "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury",
-                  "name": "Deputy Secretary of Department of the Treasury",
+                  "name": "Deputy Secretary of the Treasury",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -82555,13 +82561,15 @@
               "children": [
                 {
                   "id": "exec-dept-doj-secretary-of-department-of-justice-doj",
-                  "name": "Secretary of Department of Justice (DOJ)",
+                  "name": "Attorney General",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -82585,13 +82593,15 @@
                 },
                 {
                   "id": "exec-dept-doj-deputy-secretary-of-department-of-justice-doj",
-                  "name": "Deputy Secretary of Department of Justice (DOJ)",
+                  "name": "Deputy Attorney General",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -88974,13 +88984,15 @@
                 },
                 {
                   "id": "exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi",
-                  "name": "Deputy Secretary of Department of the Interior (DOI)",
+                  "name": "Deputy Secretary of the Interior",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -92966,13 +92978,15 @@
                 },
                 {
                   "id": "exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda",
-                  "name": "Deputy Secretary of Department of Agriculture (USDA)",
+                  "name": "Deputy Secretary of Agriculture",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -98761,25 +98775,41 @@
               "children": [
                 {
                   "id": "exec-dept-dol-secretary-of-department-of-labor-dol",
-                  "name": "Secretary of Department of Labor (DOL)",
+                  "name": "Secretary of Labor",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "verificationMatchedText": "Secretary of Labor",
+                  "sourceUrls": [
+                    "https://www.dol.gov/general/aboutdol"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.dol.gov/general/aboutdol"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-15T01:50:20+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-dol",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "implied_budget_weight",
@@ -98791,13 +98821,15 @@
                 },
                 {
                   "id": "exec-dept-dol-deputy-secretary-of-department-of-labor-dol",
-                  "name": "Deputy Secretary of Department of Labor (DOL)",
+                  "name": "Deputy Secretary of Labor",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -111997,25 +112029,41 @@
               "children": [
                 {
                   "id": "exec-dept-doe-secretary-of-department-of-energy-doe",
-                  "name": "Secretary of Department of Energy (DOE)",
+                  "name": "Secretary of Energy",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "nameSource": "named_on_its_organisations_official_page",
+                  "nameSourceDetail": "https://www.energy.gov/leadership-organization",
+                  "verificationMatchedText": "Secretary of Energy",
+                  "sourceUrls": [
+                    "https://www.energy.gov/leadership-organization"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.energy.gov/leadership-organization"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-15T01:50:20+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-doe",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "implied_budget_weight",
@@ -112027,25 +112075,41 @@
                 },
                 {
                   "id": "exec-dept-doe-deputy-secretary-of-department-of-energy-doe",
-                  "name": "Deputy Secretary of Department of Energy (DOE)",
+                  "name": "Deputy Secretary of Energy",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "verificationMatchedText": "Deputy Secretary of Energy",
+                  "sourceUrls": [
+                    "https://www.energy.gov/leadership-organization"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.energy.gov/leadership-organization"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-15T01:50:20+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-doe",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "implied_budget_weight",
@@ -122186,74 +122250,16 @@
               "children": [
                 {
                   "id": "exec-dept-va-secretary-of-department-of-veterans-affairs-va",
-                  "name": "Secretary of Department of Veterans Affairs (VA)",
+                  "name": "Secretary of Veterans Affairs",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
-                  "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
-                },
-                {
-                  "id": "exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va",
-                  "name": "Deputy Secretary of Department of Veterans Affairs (VA)",
-                  "type": "Position",
-                  "desc": "Second-in-command; acts as Secretary when absent.",
-                  "employees": null,
-                  "budget": null,
-                  "color": "#666666",
-                  "children": [],
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
-                  "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
-                },
-                {
-                  "id": "exec-dept-va-chief-of-staff",
-                  "name": "Chief of Staff",
-                  "type": "Position",
-                  "desc": "Manages day-to-day operations of the Secretary's office.",
-                  "employees": null,
-                  "budget": null,
-                  "color": "#666666",
-                  "children": [],
-                  "verificationMatchedText": "Chief of Staff",
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "verificationMatchedText": "Secretary of Veterans Affairs",
                   "sourceUrls": [
                     "https://www.va.gov/about_va/"
                   ],
@@ -122263,8 +122269,8 @@
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "lastVerified": "2026-09-15T01:50:20+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
                   "verificationMethod": "name_labelled_on_its_organisations_official_page",
                   "verificationMatchedIn": "content",
                   "verificationSiteFrom": "exec-dept-va",
@@ -122287,6 +122293,96 @@
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
                   "costSourceCount": 0
+                },
+                {
+                  "id": "exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va",
+                  "name": "Deputy Secretary of Veterans Affairs",
+                  "type": "Position",
+                  "desc": "Second-in-command; acts as Secretary when absent.",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#666666",
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "verificationMatchedText": "Deputy Secretary of Veterans Affairs",
+                  "sourceUrls": [
+                    "https://www.va.gov/about_va/"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.va.gov/about_va/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-15T01:50:20+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T01:50:20+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-va",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0
+                },
+                {
+                  "id": "exec-dept-va-chief-of-staff",
+                  "name": "Chief of Staff",
+                  "type": "Position",
+                  "desc": "Manages day-to-day operations of the Secretary's office.",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#666666",
+                  "children": [],
+                  "sourceUrls": [
+                    "https://www.va.gov/about_va/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Chief of Staff",
+                  "evidenceUrls": [
+                    "https://www.va.gov/about_va/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-dept-va"
                 },
                 {
                   "id": "exec-dept-va-executive-secretary",
@@ -141624,13 +141720,15 @@
               "children": [
                 {
                   "id": "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs",
-                  "name": "Secretary of Department of Homeland Security (DHS)",
+                  "name": "Secretary of the Department of Homeland Security",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -141654,13 +141752,15 @@
                 },
                 {
                   "id": "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
-                  "name": "Deputy Secretary of Department of Homeland Security (DHS)",
+                  "name": "Deputy Secretary of the Department of Homeland Security",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -148776,24 +148876,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Inspector General",
                   "sourceUrls": [
-                    "https://www.epa.gov/aboutepa"
-                  ],
-                  "evidenceUrls": [
                     "https://www.epa.gov/aboutepa"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-epa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -148809,7 +148897,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Inspector General",
+                  "evidenceUrls": [
+                    "https://www.epa.gov/aboutepa"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-epa"
                 },
                 {
                   "id": "exec-ind-epa-chief-financial-officer",
@@ -152006,24 +152106,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Deputy Administrator",
                   "sourceUrls": [
-                    "https://www.nasa.gov/organization/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.nasa.gov/organization/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -152039,7 +152127,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Deputy Administrator",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa"
                 },
                 {
                   "id": "exec-ind-nasa-associate-administrator",
@@ -152050,24 +152150,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Associate Administrator",
                   "sourceUrls": [
-                    "https://www.nasa.gov/organization/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.nasa.gov/organization/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -152083,7 +152171,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Associate Administrator",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa"
                 },
                 {
                   "id": "exec-ind-nasa-chief-of-staff",
@@ -152094,24 +152194,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Chief of Staff",
                   "sourceUrls": [
-                    "https://www.nasa.gov/organization/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.nasa.gov/organization/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -152127,7 +152215,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Chief of Staff",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa"
                 },
                 {
                   "id": "exec-ind-nasa-chief-scientist",
@@ -152198,24 +152298,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "General Counsel",
                   "sourceUrls": [
-                    "https://www.nasa.gov/organization/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.nasa.gov/organization/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -152231,7 +152319,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "General Counsel",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa"
                 },
                 {
                   "id": "exec-ind-nasa-inspector-general",
@@ -152302,24 +152402,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Chief Information Officer",
                   "sourceUrls": [
-                    "https://www.nasa.gov/organization/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.nasa.gov/organization/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-ind-nasa",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -152335,7 +152423,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Chief Information Officer",
+                  "evidenceUrls": [
+                    "https://www.nasa.gov/organization/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-nasa"
                 },
                 {
                   "id": "exec-ind-nasa-science-mission-directorate",
@@ -154963,24 +155063,12 @@
                           "budget": null,
                           "color": "#666666",
                           "children": [],
-                          "verificationMatchedText": "Deputy Center Director",
                           "sourceUrls": [
-                            "https://www.nasa.gov/ames/"
-                          ],
-                          "evidenceUrls": [
                             "https://www.nasa.gov/ames/"
                           ],
                           "sourceTypes": [
                             "official_site"
                           ],
-                          "lastVerified": "2026-09-14T23:51:55+00:00",
-                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                          "verificationMatchedIn": "content",
-                          "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc",
-                          "sourceCount": 1,
-                          "confidenceScore": 0.7,
-                          "verificationStatus": "partial",
                           "proofSourceCount": 1,
                           "proofSourceTypes": [
                             "official_site"
@@ -154996,7 +155084,19 @@
                           "costVerificationStatus": "unverified",
                           "costConfidenceScore": 0.0,
                           "costVerificationReason": "missing_cost",
-                          "costSourceCount": 0
+                          "costSourceCount": 0,
+                          "sourceCount": 1,
+                          "confidenceScore": 0.7,
+                          "verificationStatus": "partial",
+                          "lastVerified": "2026-09-14T23:51:55+00:00",
+                          "verificationMatchedText": "Deputy Center Director",
+                          "evidenceUrls": [
+                            "https://www.nasa.gov/ames/"
+                          ],
+                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                          "verificationMatchedIn": "content",
+                          "verificationSiteFrom": "exec-ind-nasa-ames-research-center-arc"
                         },
                         {
                           "id": "exec-ind-nasa-ames-research-center-arc-chief-scientist",
@@ -156317,24 +156417,12 @@
                           "budget": null,
                           "color": "#666666",
                           "children": [],
-                          "verificationMatchedText": "Deputy Center Director (Acting)",
                           "sourceUrls": [
-                            "https://www.nasa.gov/armstrong/"
-                          ],
-                          "evidenceUrls": [
                             "https://www.nasa.gov/armstrong/"
                           ],
                           "sourceTypes": [
                             "official_site"
                           ],
-                          "lastVerified": "2026-09-14T23:51:55+00:00",
-                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                          "verificationMatchedIn": "content",
-                          "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
-                          "sourceCount": 1,
-                          "confidenceScore": 0.7,
-                          "verificationStatus": "partial",
                           "proofSourceCount": 1,
                           "proofSourceTypes": [
                             "official_site"
@@ -156350,7 +156438,19 @@
                           "costVerificationStatus": "unverified",
                           "costConfidenceScore": 0.0,
                           "costVerificationReason": "missing_cost",
-                          "costSourceCount": 0
+                          "costSourceCount": 0,
+                          "sourceCount": 1,
+                          "confidenceScore": 0.7,
+                          "verificationStatus": "partial",
+                          "lastVerified": "2026-09-14T23:51:55+00:00",
+                          "verificationMatchedText": "Deputy Center Director (Acting)",
+                          "evidenceUrls": [
+                            "https://www.nasa.gov/armstrong/"
+                          ],
+                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                          "verificationMatchedIn": "content",
+                          "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc"
                         },
                         {
                           "id": "exec-ind-nasa-armstrong-flight-research-center-afrc-chief-scientist",
@@ -156421,24 +156521,12 @@
                           "budget": null,
                           "color": "#666666",
                           "children": [],
-                          "verificationMatchedText": "Chief Financial Officer (Acting)",
                           "sourceUrls": [
-                            "https://www.nasa.gov/armstrong/"
-                          ],
-                          "evidenceUrls": [
                             "https://www.nasa.gov/armstrong/"
                           ],
                           "sourceTypes": [
                             "official_site"
                           ],
-                          "lastVerified": "2026-09-14T23:51:55+00:00",
-                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                          "verificationMatchedIn": "content",
-                          "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc",
-                          "sourceCount": 1,
-                          "confidenceScore": 0.7,
-                          "verificationStatus": "partial",
                           "proofSourceCount": 1,
                           "proofSourceTypes": [
                             "official_site"
@@ -156454,7 +156542,19 @@
                           "costVerificationStatus": "unverified",
                           "costConfidenceScore": 0.0,
                           "costVerificationReason": "missing_cost",
-                          "costSourceCount": 0
+                          "costSourceCount": 0,
+                          "sourceCount": 1,
+                          "confidenceScore": 0.7,
+                          "verificationStatus": "partial",
+                          "lastVerified": "2026-09-14T23:51:55+00:00",
+                          "verificationMatchedText": "Chief Financial Officer (Acting)",
+                          "evidenceUrls": [
+                            "https://www.nasa.gov/armstrong/"
+                          ],
+                          "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                          "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                          "verificationMatchedIn": "content",
+                          "verificationSiteFrom": "exec-ind-nasa-armstrong-flight-research-center-afrc"
                         },
                         {
                           "id": "exec-ind-nasa-armstrong-flight-research-center-afrc-director-of-safety-mission-assurance",
@@ -188866,24 +188966,12 @@
               "budget": null,
               "color": "#666666",
               "children": [],
-              "verificationMatchedText": "Chief Justice of the United States",
               "sourceUrls": [
-                "https://www.supremecourt.gov/about/about.aspx"
-              ],
-              "evidenceUrls": [
                 "https://www.supremecourt.gov/about/about.aspx"
               ],
               "sourceTypes": [
                 "official_site"
               ],
-              "lastVerified": "2026-09-14T23:51:55+00:00",
-              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-              "verificationMethod": "name_labelled_on_its_organisations_official_page",
-              "verificationMatchedIn": "content",
-              "verificationSiteFrom": "jud-scotus",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
               "proofSourceCount": 1,
               "proofSourceTypes": [
                 "official_site"
@@ -188892,6 +188980,26 @@
               "parentProven": true,
               "proofStatus": "proven",
               "proofReason": "official_source_recorded",
+              "resolved_total_amount": null,
+              "cost_status": "unavailable",
+              "cost_basis": "subtree_weight",
+              "cost_validation": "post_is_not_a_budget_unit",
+              "costVerificationStatus": "unverified",
+              "costConfidenceScore": 0.0,
+              "costVerificationReason": "missing_cost",
+              "costSourceCount": 0,
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "lastVerified": "2026-09-14T23:51:55+00:00",
+              "verificationMatchedText": "Chief Justice of the United States",
+              "evidenceUrls": [
+                "https://www.supremecourt.gov/about/about.aspx"
+              ],
+              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+              "verificationMethod": "name_labelled_on_its_organisations_official_page",
+              "verificationMatchedIn": "content",
+              "verificationSiteFrom": "jud-scotus",
               "positionStatutoryPay": {
                 "source": "uscourts_judicial_compensation",
                 "sourceLabel": "the U.S. Courts' own Judicial Compensation table",
@@ -188909,15 +189017,7 @@
                 "footnotes": [],
                 "url": "https://www.uscourts.gov/about-federal-courts/about-federal-judges/judicial-compensation",
                 "checkedAt": "2026-09-14T15:20:14Z"
-              },
-              "resolved_total_amount": null,
-              "cost_status": "unavailable",
-              "cost_basis": "subtree_weight",
-              "cost_validation": "post_is_not_a_budget_unit",
-              "costVerificationStatus": "unverified",
-              "costConfidenceScore": 0.0,
-              "costVerificationReason": "missing_cost",
-              "costSourceCount": 0
+              }
             },
             {
               "id": "jud-scotus-associate-justice-8",
@@ -189023,24 +189123,12 @@
               "budget": null,
               "color": "#666666",
               "children": [],
-              "verificationMatchedText": "Reporter Of Decisions",
               "sourceUrls": [
-                "https://www.supremecourt.gov/about/about.aspx"
-              ],
-              "evidenceUrls": [
                 "https://www.supremecourt.gov/about/about.aspx"
               ],
               "sourceTypes": [
                 "official_site"
               ],
-              "lastVerified": "2026-09-14T23:51:55+00:00",
-              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-              "verificationMethod": "name_labelled_on_its_organisations_official_page",
-              "verificationMatchedIn": "content",
-              "verificationSiteFrom": "jud-scotus",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
               "proofSourceCount": 1,
               "proofSourceTypes": [
                 "official_site"
@@ -189056,7 +189144,19 @@
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.0,
               "costVerificationReason": "missing_cost",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "lastVerified": "2026-09-14T23:51:55+00:00",
+              "verificationMatchedText": "Reporter Of Decisions",
+              "evidenceUrls": [
+                "https://www.supremecourt.gov/about/about.aspx"
+              ],
+              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+              "verificationMethod": "name_labelled_on_its_organisations_official_page",
+              "verificationMatchedIn": "content",
+              "verificationSiteFrom": "jud-scotus"
             },
             {
               "id": "jud-scotus-librarian-of-the-supreme-court",
@@ -189127,24 +189227,12 @@
               "budget": null,
               "color": "#666666",
               "children": [],
-              "verificationMatchedText": "Public Information Officer",
               "sourceUrls": [
-                "https://www.supremecourt.gov/about/about.aspx"
-              ],
-              "evidenceUrls": [
                 "https://www.supremecourt.gov/about/about.aspx"
               ],
               "sourceTypes": [
                 "official_site"
               ],
-              "lastVerified": "2026-09-14T23:51:55+00:00",
-              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-              "verificationMethod": "name_labelled_on_its_organisations_official_page",
-              "verificationMatchedIn": "content",
-              "verificationSiteFrom": "jud-scotus",
-              "sourceCount": 1,
-              "confidenceScore": 0.7,
-              "verificationStatus": "partial",
               "proofSourceCount": 1,
               "proofSourceTypes": [
                 "official_site"
@@ -189160,7 +189248,19 @@
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.0,
               "costVerificationReason": "missing_cost",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "sourceCount": 1,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
+              "lastVerified": "2026-09-14T23:51:55+00:00",
+              "verificationMatchedText": "Public Information Officer",
+              "evidenceUrls": [
+                "https://www.supremecourt.gov/about/about.aspx"
+              ],
+              "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+              "verificationMethod": "name_labelled_on_its_organisations_official_page",
+              "verificationMatchedIn": "content",
+              "verificationSiteFrom": "jud-scotus"
             },
             {
               "id": "jud-scotus-supreme-court-police-chief",
@@ -195376,24 +195476,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Clerk of the Court",
                   "sourceUrls": [
-                    "https://www.uscourts.cavc.gov/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.uscourts.cavc.gov/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-14T23:51:55+00:00",
-                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "jud-specialized-cavc",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -195409,7 +195497,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-14T23:51:55+00:00",
+                  "verificationMatchedText": "Clerk of the Court",
+                  "evidenceUrls": [
+                    "https://www.uscourts.cavc.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-14T23:51:55+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "jud-specialized-cavc"
                 },
                 {
                   "id": "jud-specialized-cavc-pro-se-staff-attorney-multiple",

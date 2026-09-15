@@ -35,6 +35,7 @@ python scripts/regenerate_published_graph.py     # rebuild output/ offline from 
 python scripts/repair_review_queue.py --dry-run  # what the queue repair would drop, and why
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
+python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
@@ -554,12 +555,36 @@ does not exist.** Defense is the control case: it alone is curated as
 "Secretary of Defense", and it is the only one whose title could ever have
 matched.
 
-That is curation, and `CURATION.md` §8 carries the proposal with the pages
-quoted. `scripts/probe_post_titles.py` is the read-only probe that produced
-it — the position analogue of `probe_treasury_rows.py`: it fetches an
-organisation's page, says which curated post titles the page labels, and
-lists office-looking labels on the page that no curated post matches. It
-writes nothing and proposes rather than concludes.
+That is curation, and it is now half fixed.
+`scripts/probe_post_titles.py` is the read-only probe that found it — the
+position analogue of `probe_treasury_rows.py`: it fetches an organisation's
+page, says which curated post titles the page labels, and lists
+office-looking labels on the page that no curated post matches. It writes
+nothing and proposes rather than concludes.
+`scripts/rename_templated_post_titles.py` then acts on it, and is the only
+writer of these names (the curated file is never hand-edited). It is
+idempotent and **renames nothing it cannot cite**: the replacement comes from
+OPM's PLUM archive, or from the department's own page where the archive
+carries only a bare "SECRETARY". The transform is used to *recognise* a
+templated name, never to produce the replacement — dropping "Department of"
+is right thirteen times and wrong once, and DHS proves it the other way,
+since OPM's archive spells that post "SECRETARY OF THE DEPARTMENT OF HOMELAND
+SECURITY", keeping the words the transform strips. A title naming only the
+role is refused: the first dry run would have renamed three deputies to a
+bare "Deputy Secretary", dropping the department and manufacturing exactly
+the generic title the post floor exists to refuse.
+
+**15 of the 28 renamed, and the payoff measured.** Re-verifying just those
+nodes confirmed **5** against their departments' own pages — Secretary of
+Labor, Secretary and Deputy Secretary of Energy, Secretary and Deputy
+Secretary of Veterans Affairs — which was structurally impossible while they
+were misnamed. Confirmed positions went **20 → 25**. The other 13 stay
+templated because no source in hand names them: the archive files those heads
+as a bare "SECRETARY", and seven of the fifteen department pages answer
+`robots.txt` with 401/403. "Secretary of the Treasury" is not in doubt as a
+fact; it is in doubt as something this repository can cite, and the rule that
+a name must be cited is the rule that caught DOJ. `CURATION.md` §8 lists
+every rename, every refusal and why.
 
 The matcher was deliberately **not** widened to absorb the difference. A
 "Department of" fold looks like the committee fold and is not: that one is

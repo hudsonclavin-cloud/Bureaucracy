@@ -17666,23 +17666,27 @@
               "children": [
                 {
                   "id": "exec-dept-state-secretary-of-department-of-state",
-                  "name": "Secretary of Department of State",
+                  "name": "Secretary of State",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-state-deputy-secretary-of-department-of-state",
-                  "name": "Deputy Secretary of Department of State",
+                  "name": "Deputy Secretary of State",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-state-chief-of-staff",
@@ -18834,13 +18838,15 @@
                 },
                 {
                   "id": "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury",
-                  "name": "Deputy Secretary of Department of the Treasury",
+                  "name": "Deputy Secretary of the Treasury",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-treasury-chief-of-staff",
@@ -23712,23 +23718,27 @@
               "children": [
                 {
                   "id": "exec-dept-doj-secretary-of-department-of-justice-doj",
-                  "name": "Secretary of Department of Justice (DOJ)",
+                  "name": "Attorney General",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-doj-deputy-secretary-of-department-of-justice-doj",
-                  "name": "Deputy Secretary of Department of Justice (DOJ)",
+                  "name": "Deputy Attorney General",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-doj-chief-of-staff",
@@ -25207,13 +25217,15 @@
                 },
                 {
                   "id": "exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi",
-                  "name": "Deputy Secretary of Department of the Interior (DOI)",
+                  "name": "Deputy Secretary of the Interior",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-doi-chief-of-staff",
@@ -26126,13 +26138,15 @@
                 },
                 {
                   "id": "exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda",
-                  "name": "Deputy Secretary of Department of Agriculture (USDA)",
+                  "name": "Deputy Secretary of Agriculture",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-usda-chief-of-staff",
@@ -27552,23 +27566,27 @@
               "children": [
                 {
                   "id": "exec-dept-dol-secretary-of-department-of-labor-dol",
-                  "name": "Secretary of Department of Labor (DOL)",
+                  "name": "Secretary of Labor",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-dol-deputy-secretary-of-department-of-labor-dol",
-                  "name": "Deputy Secretary of Department of Labor (DOL)",
+                  "name": "Deputy Secretary of Labor",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-dol-chief-of-staff",
@@ -30934,23 +30952,27 @@
               "children": [
                 {
                   "id": "exec-dept-doe-secretary-of-department-of-energy-doe",
-                  "name": "Secretary of Department of Energy (DOE)",
+                  "name": "Secretary of Energy",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_on_its_organisations_official_page",
+                  "nameSourceDetail": "https://www.energy.gov/leadership-organization"
                 },
                 {
                   "id": "exec-dept-doe-deputy-secretary-of-department-of-energy-doe",
-                  "name": "Deputy Secretary of Department of Energy (DOE)",
+                  "name": "Deputy Secretary of Energy",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-doe-chief-of-staff",
@@ -33872,23 +33894,27 @@
               "children": [
                 {
                   "id": "exec-dept-va-secretary-of-department-of-veterans-affairs-va",
-                  "name": "Secretary of Department of Veterans Affairs (VA)",
+                  "name": "Secretary of Veterans Affairs",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va",
-                  "name": "Deputy Secretary of Department of Veterans Affairs (VA)",
+                  "name": "Deputy Secretary of Veterans Affairs",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-va-chief-of-staff",
@@ -39974,23 +40000,27 @@
               "children": [
                 {
                   "id": "exec-dept-dhs-secretary-of-department-of-homeland-security-dhs",
-                  "name": "Secretary of Department of Homeland Security (DHS)",
+                  "name": "Secretary of the Department of Homeland Security",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-dhs-deputy-secretary-of-department-of-homeland-security-dhs",
-                  "name": "Deputy Secretary of Department of Homeland Security (DHS)",
+                  "name": "Deputy Secretary of the Department of Homeland Security",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
                 },
                 {
                   "id": "exec-dept-dhs-chief-of-staff",
