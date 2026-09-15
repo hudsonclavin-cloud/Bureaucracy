@@ -2,8 +2,31 @@
 """Which hosts this project needs are reachable from THIS session, right now.
 
     python scripts/probe_network_access.py                # probe and report
-    python scripts/probe_network_access.py --allowlist    # emit the paste-ready list
+    python scripts/probe_network_access.py --allowlist    # hosts blocked RIGHT NOW
+    python scripts/probe_network_access.py --all-hosts    # every host this repo could ever need
+    python scripts/probe_network_access.py --domains      # the same, as registrable domains
     python scripts/probe_network_access.py --data-only    # just the API hosts
+
+**`--allowlist` is reactive and `--all-hosts` is not.** The first emits the
+hosts the proxy refuses on this run, which is what to paste when something is
+broken today. It goes stale the moment a nomination is promoted or a curator
+adds a page: the verifier reaches 238 hosts across 162 registrable domains
+today, 26 of them under house.gov and 23 under senate.gov, and every new
+committee arrives as one more subdomain. `--all-hosts` emits the union of
+every host the repository currently knows about from any source — the data
+APIs, `official_sites.json`, the provenance file, every nomination ledger
+under `data/audit/nominations/`, and every URL `evidence.json` has recorded a
+fetch against — so an allowlist built from it survives the next promotion.
+
+**The genuinely future-proof answer is `*.gov` and `*.mil`, and it grants
+nothing.** `classify_source_url` returns `official_site` only for those two
+suffixes, `verify_node` and `verify_placement` refuse any URL that is not
+`official_site`, `nominate.py` refuses a nomination on any other host, and
+the release gate refuses an `official_site` claim without a `.gov`/`.mil`
+URL behind it. The code is already the allowlist. A network allowlist
+narrower than `*.gov`/`*.mil` therefore adds no safety — it only adds a
+second list that has to be maintained in step with the first, and the
+2026-09-09 incident in `docs/NETWORK_ACCESS.md` §0 is what that costs.
 
 `scripts/report_unreachable_hosts.py` answers a different question: it groups
 the hosts the verifier *recorded* a failure for, from evidence written in a
@@ -90,6 +113,112 @@ def candidate_hosts() -> dict[str, str]:
     return hosts
 
 
+#: Everywhere a host this project might need to reach can be written down.
+#: Each is read defensively: a missing or malformed file contributes nothing
+#: rather than failing the run, because this command's whole job is to be
+#: runnable when things are already broken.
+NOMINATION_LEDGERS = PROJECT_ROOT / "data" / "audit" / "nominations"
+PROVENANCE = PROJECT_ROOT / "data" / "verification" / "official_sites_provenance.json"
+EVIDENCE = PROJECT_ROOT / "data" / "verification" / "evidence.json"
+#: Documents this project cites a rule from but cannot currently read. RFC
+#: 9309 is the one CLAUDE.md marks "[likely; unverified from this
+#: environment]" — the robots.txt 4xx rule the verifier's politeness policy
+#: turns on — and it is unverified precisely because these hosts are refused.
+STANDARDS_HOSTS = {
+    "www.rfc-editor.org": "RFC 9309, the robots.txt standard this project's politeness policy cites",
+    "datatracker.ietf.org": "the same RFC, as IETF serves it",
+}
+
+
+def _hosts_from(urls) -> set[str]:
+    found = set()
+    for url in urls or []:
+        host = urlparse(str(url or "")).hostname
+        if host:
+            found.add(host.lower())
+    return found
+
+
+def _load_json(path):
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def every_known_host() -> dict[str, str]:
+    """Every host any part of this repository has ever addressed.
+
+    The superset `--all-hosts` emits. Deliberately includes hosts that are
+    only *proposed* (a nomination nobody has promoted) and hosts that only
+    ever failed: an allowlist that carries just today's working set has to be
+    edited again the moment the queue moves, which is the maintenance cost
+    this command exists to remove.
+    """
+    hosts: dict[str, str] = {}
+
+    def add(found, why):
+        for host in found:
+            hosts.setdefault(host, why)
+
+    add(DATA_HOSTS, "")
+    for host, why in DATA_HOSTS.items():
+        hosts[host] = why
+    for host, why in STANDARDS_HOSTS.items():
+        hosts.setdefault(host, why)
+    for host, why in candidate_hosts().items():
+        hosts.setdefault(host, why)
+
+    provenance = _load_json(PROVENANCE)
+    if isinstance(provenance, dict):
+        for key, value in provenance.items():
+            if key.startswith("_"):
+                continue
+            for record in (value if isinstance(value, list) else [value]):
+                if isinstance(record, dict):
+                    add(_hosts_from([record.get("url"), record.get("listedUrl")]),
+                        f"a page nominated or seeded for {key}")
+
+    if NOMINATION_LEDGERS.is_dir():
+        for ledger in sorted(NOMINATION_LEDGERS.glob("*.jsonl")):
+            try:
+                lines = ledger.read_text(encoding="utf-8").splitlines()
+            except OSError:
+                continue
+            for line in lines:
+                try:
+                    record = json.loads(line)
+                except ValueError:
+                    continue
+                for nomination in (record.get("nominations") or []):
+                    if isinstance(nomination, dict):
+                        add(_hosts_from([nomination.get("url")]),
+                            f"nominated in {ledger.name}, not yet promoted")
+
+    evidence = _load_json(EVIDENCE)
+    nodes = evidence.get("nodes") if isinstance(evidence, dict) else None
+    if isinstance(nodes, dict):
+        for record in nodes.values():
+            if not isinstance(record, dict):
+                continue
+            for source in (record.get("sources") or []):
+                if isinstance(source, dict):
+                    add(_hosts_from([source.get("url")]), "a page that has confirmed a node")
+            for failure in (record.get("failures") or []):
+                if isinstance(failure, dict):
+                    add(_hosts_from([failure.get("url")]), "a page the verifier has tried")
+    return hosts
+
+
+def registrable_domain(host: str) -> str:
+    """The last two labels. Crude on purpose and correct for this input: every
+    host here is under .gov or .mil, neither of which has a public second
+    level the way .co.uk does, so "energy.gov" and "af.mil" are right and
+    there is no list to keep current."""
+    parts = str(host or "").strip(".").split(".")
+    return ".".join(parts[-2:]) if len(parts) >= 2 else host
+
+
 def probe(host: str) -> tuple[str, str]:
     """Classify one host. Returns (verdict, detail).
 
@@ -129,11 +258,29 @@ def environment_note() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--all-hosts", action="store_true",
+                        help="every host this repository could need, from every source; fetches nothing")
+    parser.add_argument("--domains", action="store_true",
+                        help="the same superset collapsed to registrable domains, for a wildcard allowlist")
     parser.add_argument("--allowlist", action="store_true",
                         help="print only the blocked hosts, one per line, ready to paste")
     parser.add_argument("--data-only", action="store_true",
                         help="probe only the API/data hosts, not every candidate page")
     args = parser.parse_args(argv)
+
+    # Both of these answer "what should the allowlist contain", which is a
+    # question about the repository and not about the network, so neither
+    # probes anything. That also makes them work when egress is entirely
+    # blocked, which is exactly when the list is needed.
+    if args.all_hosts or args.domains:
+        known = every_known_host()
+        if args.domains:
+            for domain in sorted({registrable_domain(h) for h in known}):
+                print(domain)
+        else:
+            for host in sorted(known):
+                print(host)
+        return 0
 
     targets = dict(DATA_HOSTS)
     if not args.data_only:

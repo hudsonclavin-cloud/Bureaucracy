@@ -223,9 +223,70 @@ from another page; `--recheck` would fetch them.
     www.doleta.gov www.fincen.gov www.fws.gov www.irs.gov www.moneyfactory.gov
     www.msha.gov www.ttb.gov www.usgs.gov
 
+## 4. 2026-09-15: the two causes have swapped places
+
+The first position-verification pass re-measured all 238 candidate hosts,
+and the picture above is now upside down:
+
+    reached                                          131 hosts
+    refused by THIS PROJECT's robots policy (401/403)  85 hosts
+    denied by the environment's network policy         10 hosts
+    other (host 403, TLS, reset, timeout, 404)         12 hosts
+
+§1 was written when 85 hosts were denied at the proxy and 19 were refused
+by the robots rule. **Those numbers have traded places.** The allowlist
+widenings recorded in §1a and §1b worked: proxy denials fell 85 -> 10. What
+they uncovered is that `robots.txt` answering 401/403 was underneath all
+along, and it is now the binding constraint by a factor of eight.
+
+Counted in fetches rather than hosts, over the 2026-09-15 run: **896
+failures from the robots rule against 45 from the proxy.** The robots list
+is every major department — `www.state.gov`, `www.ed.gov`, `www.hhs.gov`,
+`www.dhs.gov`, `www.usda.gov`, `www.commerce.gov`,
+`www.transportation.gov`, `www.defense.gov`, `www.fbi.gov`, `www.nih.gov`,
+`www.federalreserve.gov`, `www.sec.gov`, `www.ssa.gov`, `www.army.mil`,
+`www.navy.mil`, `www.af.mil` — 85 in all.
+
+**So widening the allowlist further is now the small lever.** Ten hosts
+remain denied at the proxy (`www.nrel.gov`, `www.treasury.gov`,
+`www.fhwa.dot.gov`, `ca3.uscourts.gov`, `www.fns.usda.gov`, `trade.gov`,
+`www.chaplain.senate.gov`, `www.anl.gov`, `www.lbl.gov`,
+`www.armfor.uscourts.gov`), worth 45 fetches. The robots rule is worth
+twenty times that and is **a policy decision in this repository**, not a
+property of the sandbox: `data_pipeline/verification/politeness.py`, and
+CLAUDE.md's note that RFC 9309 [likely; unverified from this environment]
+treats a 4xx on `robots.txt` as "Unavailable" and permits access, while
+Python's `RobotFileParser` implements the older 401/403-means-disallow
+convention. That hedge is still a hedge: `www.rfc-editor.org` and
+`datatracker.ietf.org` are themselves refused at the proxy, so the standard
+cannot be read from here to settle it. Both are in `--all-hosts` for that
+reason.
+
+Nothing here is an argument for relaxing the rule, which stays until the
+owner decides otherwise. It is an argument for not mistaking the allowlist
+for the constraint.
+
 ## Regenerating this note
 
-    python scripts/report_unreachable_hosts.py
+    python scripts/report_unreachable_hosts.py            # why each host failed, from the last run
+    python scripts/probe_network_access.py                # what this session can reach right now
+    python scripts/probe_network_access.py --allowlist    # hosts the proxy refuses TODAY
+    python scripts/probe_network_access.py --all-hosts    # every host this repo could ever need
+    python scripts/probe_network_access.py --domains      # the same, as registrable domains
 
 The counts above are a snapshot; the causes are stable. A host that moves
 from group 1 to "reached" is the only change that raises coverage.
+
+**Building an allowlist that does not go stale.** `--allowlist` is reactive:
+it names what is broken now, and a promoted nomination or a new curated page
+invalidates it. `--all-hosts` (247) and `--domains` (168) are the superset,
+read from `official_sites.json`, the provenance file, every nomination
+ledger and every URL `evidence.json` has tried — so they already carry hosts
+nobody has fetched yet. The whole-estate answer is `*.gov` and `*.mil`, and
+it grants nothing the code does not already grant itself:
+`classify_source_url` returns `official_site` for those two suffixes and
+nothing else, `verify_node` and `verify_placement` refuse any URL that is
+not `official_site`, `nominate.py` refuses a nomination on any other host,
+and the gate refuses an `official_site` claim with no `.gov`/`.mil` URL
+behind it. A narrower network allowlist adds no safety over that — only a
+second list to keep in step, which is what §0 cost a day to.
