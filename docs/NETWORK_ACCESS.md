@@ -362,6 +362,108 @@ direction: a host-by-host allowlist cannot anticipate where a federal site
 will redirect next, and the code already refuses every host outside those
 two suffixes.
 
+## 7. 2026-09-16, later: the wildcard landed, and the wall is not ours
+
+The allowlist was widened to `*.gov` and `*.mil` on the **Default**
+environment — `env_018HP1sQhQm6Ff5TQZJcJ3XZ`, read off the session with
+`get_session` rather than picked by name, which is the mistake §0a exists to
+prevent and the one the 2/245 session made. `probe_network_access.py` reports
+**235 of 245**, against §6's 233.
+
+The count is not the news, because §6's 233 moved nothing. What is new is that
+the four redirect chains §6 named now complete **end to end**, tested by
+requesting the pages themselves with redirects followed rather than
+`/robots.txt` — the methodology §6 identified as the thing that overstated it:
+
+    trade.gov/                     -> 301 -> www.trade.gov          200
+    www.fns.usda.gov/              -> 301 -> www.fna.usda.gov       200
+    www.treasury.gov/...OFAC.aspx  -> 302 -> ofac.treasury.gov      200
+    www.fhwa.dot.gov/              -> 307 -> highways.dot.gov       403 from the host
+
+All ten `REDIRECT_TARGETS` pass the CONNECT, and the wildcard covers the apex
+as well as the subdomain: `trade.gov` and `www.trade.gov` both answer, as do
+`arts.gov`, `ncua.gov` and `treasury.gov` beside their `www` forms. All ten
+data hosts answer, including four this repository recorded as refused —
+`escs.opm.gov`, `clerk.house.gov`, `api.sam.gov`, `www.govinfo.gov`. Three
+hosts still fail (`ca3.uscourts.gov`, `www.chaplain.senate.gov`,
+`www.nrel.gov`), all with 502 at CONNECT rather than 403; bare `navy.mil` also
+answers 502 while `www.navy.mil` is reached under the same `*.mil` wildcard, so
+these read as upstream failures rather than policy, and widening again would
+not move them.
+
+The full pass over all 2,809 checkable nodes then moved the published graph by
+**two**: `exec-dept-treasury-ofac` unverified -> verified and `exec-dept-doc-ita`
+partial -> verified, which are two of §6's own four. FHWA is now a 403 from the
+host, and FNS's page is now *read* and simply does not label the curated name
+"Food & Nutrition Service (FNS)" — a curation question about the ampersand, not
+a network one.
+
+**Of 1,042 remaining `fetch_failed`, zero were refused at the proxy.** 752 are
+robots.txt, 148 are under the 400-character floor, 86 are a 403 from the host
+and 56 a 404. The allowlist question is closed. §6's "the widened allowlist
+moved nothing" has its sequel: the widening was necessary and was never
+sufficient, because it was the binding constraint for a handful of nodes only.
+
+### Are the robots refusals keyed to our User-Agent? Measured: no.
+
+§5 fixed a real bug — robots.txt had been fetched as `Python-urllib/3.x` while
+pages were fetched as this project's agent — and left 64 hosts refusing. The
+obvious next hypothesis was that those 64 are keyed to the agent too. Probed
+directly, all 64 hosts, robots.txt and the candidate page, under our own agent,
+a browser agent, and urllib's default:
+
+* **our agent and `Python-urllib` get identical statuses on every one of the
+  64.** The §5 lever is fully spent; there is nothing further in that direction.
+* a browser agent string recovers robots.txt on **7 hosts (75 nodes)** and the
+  page on **7 hosts (74 nodes)**. Adopting one is refused here on its own
+  merits: the agent exists so a site owner reading their logs can find out what
+  this is and who to complain to, and a browser string is a lie told to a
+  government server.
+* **55 hosts (602 nodes) refuse the page to every agent tried**, including a
+  full browser header set over HTTP/2 via curl, which is a different TLS stack
+  from urllib's. That is consistent with egress-IP reputation, which no
+  client-side change reaches.
+
+**§5's parenthetical is falsified in two places, and only two.** It says every
+one of the 64 "refuses the page itself to the same agent". `www.nga.mil` (8
+nodes) and `www.army.mil` (12 nodes) serve the page 200 to our own agent while
+refusing robots.txt. So relaxing the 401/403 refusal to what RFC 9309 §2.3.1.3
+permits is worth **20 nodes**, not the 696 the refusal count suggests — §5's
+judgement that it is worth nearly nothing stands, with that correction.
+
+### One host is not blocking us at all, and it is the largest
+
+`www.justice.gov` is **probabilistic**, not deterministic. Alternating
+conditions to control for load, it served 4 of 12 to our own honest agent and 2
+of 12 to a browser agent — the browser did no better. Its robots.txt behaves the
+same way: refused, refused, then **HTTP 200, 2,651 bytes of `text/plain`**, a
+standard Drupal robots.txt with 78 directive lines. Not a challenge page.
+
+Parsed, it permits everything this project wants:
+
+    can_fetch /about                                       -> True
+    can_fetch /agencies                                    -> True
+    can_fetch /doj/organization-mission-and-functions-manual -> True
+    crawl_delay                                            -> None
+
+Its 50 `Disallow` lines are Drupal internals — `/core/`, `/profiles/`, README
+files. So **67 nodes are refused on the strength of a rule the Department of
+Justice never published**, and its real rules allow the fetch.
+
+The lever here is a bounded retry on robots.txt, not a policy change and not an
+agent change. It is the same shape as the §5 fix: it makes the verifier *more*
+obedient, because it reads and follows a published file instead of assuming a
+blanket disallow nobody wrote. It is not implemented here — that is a
+deliberate change to `politeness.py` with tests in both directions, and this
+section only records the measurement that justifies it.
+
+Two cautions for whoever implements it. The success rate fell across the
+session — 4/12 early, 1/8 later — which is consistent with the host escalating
+against sustained probing, so the retry must be gentle and backed off, not
+aggressive. And a 200 must still be checked for being a real robots.txt rather
+than a challenge page served with the wrong status; on this host it was real,
+and that is a fact about this host on this day, not a guarantee.
+
 ## Regenerating this note
 
     python scripts/report_unreachable_hosts.py            # why each host failed, from the last run

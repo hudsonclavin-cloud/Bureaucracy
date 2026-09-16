@@ -55,10 +55,31 @@ does so by making the verifier MORE obedient, not less. Those 19 hosts'
 rules were never read before; now they are read and followed.
 
 That also settles a question this file used to leave open. Relaxing the
-401/403 refusal below would have reached the other 64 hosts, but every one
-of them refuses the page itself to the same agent, so the relaxation was
+401/403 refusal below would have reached the other 64 hosts, but almost every
+one of them refuses the page itself to the same agent, so the relaxation was
 measured as worth nearly nothing once this bug was fixed. The conservative
 policy stays, on its own merits and without costing coverage.
+
+Re-measured on 2026-09-16 against all 64, "almost every one" is the honest
+quantifier and "every one" was wrong: `www.nga.mil` (8 nodes) and
+`www.army.mil` (12 nodes) serve the page 200 to this agent while refusing
+robots.txt, so the relaxation is worth 20 nodes rather than nothing. That
+does not change the conclusion. The same pass settled the remaining
+hypothesis: this agent and `Python-urllib` draw identical statuses on all 64,
+so the fix above is fully spent; a browser agent string would recover 7 hosts
+and is refused as a lie told to a government server; and 55 hosts refuse the
+page to every agent tried, including a full browser header set over HTTP/2 on
+a different TLS stack, which no client-side change reaches.
+
+What that pass did find is that `www.justice.gov` -- 67 nodes, the largest
+single refusal here -- is not refusing us at all. It is probabilistic: 4 of 12
+to this agent, 2 of 12 to a browser one, and its robots.txt eventually answers
+200 with 2,651 bytes of real `text/plain` whose rules permit `/about` and
+carry no crawl-delay. Those 67 nodes are refused on a rule the Department of
+Justice never published. A bounded, backed-off retry would read and follow the
+real file, which is the same shape of fix as the one above and makes this
+module more obedient rather than less; it is not implemented yet.
+`docs/NETWORK_ACCESS.md` section 7 carries the measurement and two cautions.
 
 One case is neither allowed nor disallowed, and must not be reported as
 though a rule had been read: a host that answers robots.txt with 401 or
