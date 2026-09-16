@@ -1617,7 +1617,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.budget.senate.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -3453,7 +3453,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.judiciary.senate.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -3864,7 +3864,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.intelligence.senate.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -3922,7 +3922,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.aging.senate.gov",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -3980,7 +3980,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://www.ethics.senate.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -5239,7 +5239,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -5495,7 +5495,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://budget.house.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6400,7 +6400,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -6460,7 +6460,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -7047,7 +7047,7 @@
     "placementVerifiedAt": "2026-09-13T22:51:28Z",
     "pageReadNotNamed": {
       "url": "https://cha.house.gov/elections",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -7108,7 +7108,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://judiciary.house.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -10107,7 +10107,7 @@
     "placementCheckable": false,
     "pageReadNotNamed": {
       "url": "https://intelligence.house.gov/",
-      "checkedAt": "2026-09-15T23:24:31+00:00"
+      "checkedAt": "2026-09-16T18:22:10+00:00"
     },
     "evidenceUrls": [
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -10796,24 +10796,12 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "verificationMatchedText": "About Us | Architect of the Capitol",
     "sourceUrls": [
-      "https://www.aoc.gov/about-us"
-    ],
-    "evidenceUrls": [
       "https://www.aoc.gov/about-us"
     ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_its_organisations_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-support-aoc",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -10830,6 +10818,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "verificationMatchedText": "About Us | Architect of the Capitol",
+    "evidenceUrls": [
+      "https://www.aoc.gov/about-us"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-support-aoc",
     "parentId": "leg-support-aoc"
   },
   {
@@ -10844,20 +10844,9 @@
     "sourceUrls": [
       "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
     ],
-    "evidenceUrls": [
-      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-support-aoc-capitol-building",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -10866,9 +10855,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "leg-support-aoc",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "resolved_total_amount": 66880091.75,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10877,6 +10863,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-support-aoc-capitol-building",
+    "placementVerified": false,
+    "placementParentId": "leg-support-aoc",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "leg-support-aoc"
   },
   {
@@ -10891,20 +10891,9 @@
     "sourceUrls": [
       "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
     ],
-    "evidenceUrls": [
-      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-support-aoc-senate-office-buildings",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -10913,9 +10902,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "leg-support-aoc",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "resolved_total_amount": 66880091.75,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10924,6 +10910,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-support-aoc-senate-office-buildings",
+    "placementVerified": false,
+    "placementParentId": "leg-support-aoc",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "leg-support-aoc"
   },
   {
@@ -10938,20 +10938,9 @@
     "sourceUrls": [
       "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
     ],
-    "evidenceUrls": [
-      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-support-aoc-house-office-buildings",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -10960,9 +10949,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "leg-support-aoc",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "resolved_total_amount": 66880091.75,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -10971,6 +10957,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-support-aoc-house-office-buildings",
+    "placementVerified": false,
+    "placementParentId": "leg-support-aoc",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "leg-support-aoc"
   },
   {
@@ -10985,20 +10985,9 @@
     "sourceUrls": [
       "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
     ],
-    "evidenceUrls": [
-      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "leg-support-aoc-capitol-grounds",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -11007,9 +10996,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": false,
-    "placementParentId": "leg-support-aoc",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "resolved_total_amount": 66880091.75,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -11018,6 +11004,20 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-support-aoc-capitol-grounds",
+    "placementVerified": false,
+    "placementParentId": "leg-support-aoc",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "leg-support-aoc"
   },
   {
@@ -14576,14 +14576,17 @@
     "color": "#c84a4a",
     "children": [],
     "sourceUrls": [
+      "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
       "https://www.federalregister.gov/agencies/foreign-assets-control-office"
     ],
     "sourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 3,
+    "proofSourceCount": 4,
     "proofSourceTypes": [
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "historical_documentation"
@@ -14591,7 +14594,7 @@
     "existsProven": true,
     "parentProven": true,
     "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
+    "proofReason": "official_source_recorded",
     "resolved_total_amount": 132532777367.99,
     "cost_status": "allocated",
     "cost_basis": "employee_weight",
@@ -14601,11 +14604,12 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.4,
-    "verificationStatus": "unverified",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-16T18:22:10+00:00",
     "evidenceUrls": [
+      "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx",
       "https://www.federalregister.gov/agencies/foreign-assets-control-office"
     ],
     "directoryListing": {
@@ -14616,15 +14620,17 @@
       "parentListedName": "Treasury Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-16T18:22:10+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/foreign-assets-control-office",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "placementParentId": "exec-dept-treasury",
     "placementMatchedText": "Foreign Assets Control Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "verificationSiteFrom": "exec-dept-treasury-ofac",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-treasury-ofr",
@@ -16972,24 +16978,12 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "verificationMatchedText": "Correctional Officer",
     "sourceUrls": [
-      "https://www.bop.gov/"
-    ],
-    "evidenceUrls": [
       "https://www.bop.gov/"
     ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_its_organisations_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doj-bop",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -17006,6 +17000,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "verificationMatchedText": "Correctional Officer",
+    "evidenceUrls": [
+      "https://www.bop.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-bop",
     "representsPosts": {
       "text": "×multiple",
       "kind": "unstated",
@@ -22241,18 +22247,21 @@
     "children": [],
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+      "https://trade.gov/",
       "https://www.federalregister.gov/agencies/international-trade-administration"
     ],
     "sourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register"
     ],
-    "proofSourceCount": 6,
+    "proofSourceCount": 7,
     "proofSourceTypes": [
       "treasury_outlays",
       "government_dataset",
+      "official_site",
       "federal_register_directory",
       "federal_register",
       "official_financial_record",
@@ -22281,11 +22290,12 @@
     "amount_kind": "fytd_net_outlays",
     "source_system": "Treasury Fiscal Data",
     "allocation_basis": "treasury_rollup",
-    "sourceCount": 2,
-    "confidenceScore": 0.5,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:19:15Z",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-16T18:22:10+00:00",
     "evidenceUrls": [
+      "https://trade.gov/",
       "https://www.federalregister.gov/agencies/international-trade-administration"
     ],
     "directoryListing": {
@@ -22296,8 +22306,8 @@
       "parentListedName": "Commerce Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "evidenceVerifiedAt": "2026-09-16T18:22:10+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/international-trade-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -22322,7 +22332,9 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "verificationSiteFrom": "exec-dept-doc-ita",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-dept-doc-bea",
@@ -27405,7 +27417,7 @@
     "verificationSiteFrom": "exec-dept-doe-sc",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -27811,20 +27823,9 @@
     "sourceUrls": [
       "https://www.llnl.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.llnl.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-lawrence-livermore-national-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -27833,7 +27834,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -27843,6 +27843,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.llnl.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-lawrence-livermore-national-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -28179,20 +28191,9 @@
     "sourceUrls": [
       "https://www.pppl.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.pppl.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-dept-doe-princeton-plasma-physics-laboratory",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -28201,7 +28202,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementCheckable": false,
     "resolved_total_amount": 1858563341.57,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -28211,6 +28211,18 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "evidenceUrls": [
+      "https://www.pppl.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doe-princeton-plasma-physics-laboratory",
+    "placementCheckable": false,
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
@@ -28258,7 +28270,7 @@
     "verificationSiteFrom": "exec-dept-doe-em",
     "placementVerified": false,
     "placementParentId": "exec-dept-doe",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-dept-doe"
   },
   {
@@ -28899,9 +28911,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-ed-oese",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-ed",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "employeesOfficial": 293,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -28981,9 +28990,6 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-ed-ies",
-    "placementVerified": false,
-    "placementParentId": "exec-dept-ed",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
     "employeesOfficial": 185,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -32700,7 +32706,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32748,7 +32754,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32796,7 +32802,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -32844,7 +32850,7 @@
     "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
     "placementVerified": false,
     "placementParentId": "exec-ind-cia",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-cia"
   },
   {
@@ -33963,7 +33969,7 @@
     "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -34082,7 +34088,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -34201,7 +34207,7 @@
     "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -34320,7 +34326,7 @@
     "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
     "placementVerified": false,
     "placementParentId": "exec-ind-nasa",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-nasa"
   },
   {
@@ -35881,7 +35887,7 @@
     "lastVerified": null,
     "placementVerified": false,
     "placementParentId": "exec-ind-nsf",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "exec-ind-nsf"
   },
   {
@@ -39575,24 +39581,12 @@
     "budget": null,
     "color": "#666666",
     "children": [],
-    "verificationMatchedText": "Vice Chair for Supervision",
     "sourceUrls": [
-      "https://www.federalreserve.gov/aboutthefed.htm"
-    ],
-    "evidenceUrls": [
       "https://www.federalreserve.gov/aboutthefed.htm"
     ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-15T16:45:59+00:00",
-    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-    "verificationMethod": "name_labelled_on_its_organisations_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "exec-regulatory-fed",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -39609,6 +39603,18 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-15T16:45:59+00:00",
+    "verificationMatchedText": "Vice Chair for Supervision",
+    "evidenceUrls": [
+      "https://www.federalreserve.gov/aboutthefed.htm"
+    ],
+    "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-regulatory-fed",
     "parentId": "exec-regulatory-fed"
   },
   {
@@ -40486,7 +40492,7 @@
     "verificationSiteFrom": "jud-scotus",
     "placementVerified": false,
     "placementParentId": "judicial-branch",
-    "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
+    "placementVerifiedAt": "2026-09-16T18:22:10+00:00",
     "parentId": "judicial-branch"
   },
   {

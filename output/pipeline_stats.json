@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-15T23:55:01.363636+00:00",
+  "timestamp": "2026-09-16T18:51:17.856291+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5392,
@@ -22,9 +22,9 @@
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
-    "unverified": 4901,
-    "verified": 206,
-    "partial": 310
+    "unverified": 4900,
+    "verified": 208,
+    "partial": 309
   },
   "average_confidence_score": 0.7,
   "verified_node_count": 206,
@@ -49,9 +49,9 @@
     "explicitly_root_attached_nodes": 0,
     "relationship_counts": {},
     "verification_status_counts": {
-      "unverified": 4901,
-      "verified": 206,
-      "partial": 310
+      "unverified": 4900,
+      "verified": 208,
+      "partial": 309
     },
     "verified_node_count": 206,
     "dropped_placeholder_nodes": 0,
@@ -89,19 +89,19 @@
       }
     },
     "verification_evidence": {
-      "confirmed": 319,
-      "not_found": 71,
-      "inconclusive": 1712,
-      "fetch_failed": 1043,
+      "confirmed": 321,
+      "not_found": 72,
+      "inconclusive": 1710,
+      "fetch_failed": 1042,
       "not_checkable": 429,
-      "own_page_confirmations": 236,
+      "own_page_confirmations": 238,
       "parent_page_confirmations": 83,
       "unknown_node": 0,
       "unknown_status": 0,
-      "urls_added": 327,
+      "urls_added": 329,
       "stale_claims_cleared": 544,
       "placements_evidenced": 123,
-      "placements_checked_not_listed": 188,
+      "placements_checked_not_listed": 175,
       "placements_stale_parent": 0,
       "placements_stale_name": 0,
       "existence_stale_name": 0,
@@ -259,9 +259,9 @@
     "graph_summary": {
       "verified_treasury_total": 6284235715734.18,
       "verification_status_counts": {
-        "unverified": 4901,
-        "verified": 206,
-        "partial": 310
+        "unverified": 4900,
+        "verified": 208,
+        "partial": 309
       },
       "cost_status_counts": {
         "root_total": 1,
@@ -315,12 +315,12 @@
         "warning_only_nodes": 323,
         "severity_counts": {
           "error": 14096,
-          "warning": 11700
+          "warning": 11699
         },
         "issue_counts": {
           "missing_source_urls": 4840,
           "low_confidence": 4840,
-          "unverified": 4901,
+          "unverified": 4900,
           "estimated_cost": 653,
           "cost_unverified": 653,
           "low_cost_confidence": 653,
@@ -338,9 +338,9 @@
           "unverified": 5281
         },
         "verification_status_counts": {
-          "unverified": 4901,
-          "verified": 206,
-          "partial": 310
+          "unverified": 4900,
+          "verified": 208,
+          "partial": 309
         },
         "proof_status_counts": {
           "root": 1,
@@ -360,11 +360,11 @@
       "trusted_exceptions_applied": 4997
     },
     "export_verification_status_counts": {
-      "unverified": 4901,
-      "verified": 206,
-      "partial": 310
+      "unverified": 4900,
+      "verified": 208,
+      "partial": 309
     },
-    "export_verified_node_count": 206,
+    "export_verified_node_count": 208,
     "export_average_confidence_score": 0.7,
     "pre_export_audit_summary": {
       "total_nodes": 5417,
@@ -373,12 +373,12 @@
       "warning_only_nodes": 323,
       "severity_counts": {
         "error": 14096,
-        "warning": 11700
+        "warning": 11699
       },
       "issue_counts": {
         "missing_source_urls": 4840,
         "low_confidence": 4840,
-        "unverified": 4901,
+        "unverified": 4900,
         "estimated_cost": 653,
         "cost_unverified": 653,
         "low_cost_confidence": 653,
@@ -396,9 +396,9 @@
         "unverified": 5281
       },
       "verification_status_counts": {
-        "unverified": 4901,
-        "verified": 206,
-        "partial": 310
+        "unverified": 4900,
+        "verified": 208,
+        "partial": 309
       },
       "proof_status_counts": {
         "root": 1,
