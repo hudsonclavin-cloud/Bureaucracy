@@ -120,10 +120,32 @@ def candidate_hosts() -> dict[str, str]:
 NOMINATION_LEDGERS = PROJECT_ROOT / "data" / "audit" / "nominations"
 PROVENANCE = PROJECT_ROOT / "data" / "verification" / "official_sites_provenance.json"
 EVIDENCE = PROJECT_ROOT / "data" / "verification" / "evidence.json"
-#: Documents this project cites a rule from but cannot currently read. RFC
-#: 9309 is the one CLAUDE.md marks "[likely; unverified from this
-#: environment]" — the robots.txt 4xx rule the verifier's politeness policy
-#: turns on — and it is unverified precisely because these hosts are refused.
+#: Hosts that only ever appear as the far end of a redirect. They are in no
+#: candidate-page list, so an allowlist built from `official_sites.json`
+#: silently omits them — and that is precisely why the 2026-09-15 widening
+#: moved no coverage number: six of the hosts it opened redirect to six it
+#: did not. `trade.gov/robots.txt` answered 200 while `trade.gov/` answered
+#: "Tunnel connection failed: 403", because the page 301s to www.trade.gov.
+#: Measured by requesting all 454 candidate URLs with redirects disabled and
+#: reading the Location header; `--redirect-targets` re-derives them live.
+REDIRECT_TARGETS = {
+    "chinaselectcommittee.house.gov": "301 from selectcommitteeontheccp.house.gov",
+    "financialresearch.gov": "301 from www.treasury.gov",
+    "highways.dot.gov": "307 from www.fhwa.dot.gov",
+    "ncua.gov": "301 from www.ncua.gov",
+    "ofac.treasury.gov": "302 from www.treasury.gov",
+    "www.arts.gov": "301 from arts.gov",
+    "www.bep.gov": "302 from www.moneyfactory.gov",
+    "www.dea.gov": "301 from www.justice.gov",
+    "www.fna.usda.gov": "301 from www.fns.usda.gov",
+    "www.trade.gov": "301 from trade.gov",
+}
+
+#: Documents this project cites a rule from. RFC 9309 backs the verifier's
+#: robots.txt policy and was unreadable from every session before
+#: 2026-09-15, which is why politeness.py carried "[likely; unverified]" for
+#: so long; it is now committed at tests/fixtures/standards/rfc9309.txt.
+#: Kept here so the citation stays checkable from a fresh environment.
 STANDARDS_HOSTS = {
     "www.rfc-editor.org": "RFC 9309, the robots.txt standard this project's politeness policy cites",
     "datatracker.ietf.org": "the same RFC, as IETF serves it",
@@ -166,6 +188,8 @@ def every_known_host() -> dict[str, str]:
         hosts[host] = why
     for host, why in STANDARDS_HOSTS.items():
         hosts.setdefault(host, why)
+    for host, why in REDIRECT_TARGETS.items():
+        hosts.setdefault(host, f"redirect target, {why}")
     for host, why in candidate_hosts().items():
         hosts.setdefault(host, why)
 
@@ -210,6 +234,38 @@ def every_known_host() -> dict[str, str]:
     return hosts
 
 
+def discover_redirect_targets() -> dict[str, str]:
+    """Re-derive REDIRECT_TARGETS live, by asking where each candidate page
+    sends us. Redirects are followed by every other fetch in this project, so
+    the far end has to be allowlisted too — and nothing else in the repo
+    writes that host down."""
+    from urllib.parse import urljoin
+
+    class _NoRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            raise urllib.error.HTTPError(req.full_url, code, f"->{newurl}", headers, fp)
+
+    opener = urllib.request.build_opener(_NoRedirect)
+    try:
+        sites = json.loads(SITES.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    urls = [str(u) for k, v in sites.items() if not k.startswith("_") for u in (v or [])]
+    known = {(urlparse(u).hostname or "").lower() for u in urls}
+    found: dict[str, str] = {}
+    for url in sorted(set(urls)):
+        try:
+            opener.open(urllib.request.Request(url, headers={"User-Agent": USER_AGENT}), timeout=TIMEOUT)
+        except urllib.error.HTTPError as error:
+            if 300 <= error.code < 400 and str(error.reason).startswith("->"):
+                host = (urlparse(urljoin(url, str(error.reason)[2:])).hostname or "").lower()
+                if host and host not in known:
+                    found.setdefault(host, f"{error.code} from {urlparse(url).hostname}")
+        except Exception:  # noqa: BLE001 — a host we cannot reach proposes nothing
+            pass
+    return found
+
+
 def registrable_domain(host: str) -> str:
     """The last two labels. Crude on purpose and correct for this input: every
     host here is under .gov or .mil, neither of which has a public second
@@ -222,9 +278,18 @@ def registrable_domain(host: str) -> str:
 def probe(host: str) -> tuple[str, str]:
     """Classify one host. Returns (verdict, detail).
 
-    robots.txt is the right thing to ask for: it is what the verifier fetches
-    first, it is small, and every one of these hosts serves one or answers
-    for it.
+    robots.txt is asked for because it is what the verifier fetches first and
+    it is small. **It is not a sufficient test on its own**, and saying so
+    here because this command reported "reachable: 233" on 2026-09-15 for a
+    set that included hosts whose pages the proxy was refusing outright.
+    `trade.gov/robots.txt` answered 200 while `trade.gov/` answered
+    `Tunnel connection failed: 403`, because the page 301s to
+    `www.trade.gov` and the redirect TARGET is a different host that the
+    allowlist did not carry. robots.txt did not redirect, so it sailed
+    through and the probe called the host reachable.
+
+    A host is only as reachable as the last hop of its redirect chain. See
+    REDIRECT_TARGETS and `--redirect-targets`.
     """
     request = urllib.request.Request(
         f"https://{host}/robots.txt", headers={"User-Agent": USER_AGENT}
@@ -258,6 +323,8 @@ def environment_note() -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--redirect-targets", action="store_true",
+                        help="re-derive REDIRECT_TARGETS by following every candidate page's redirects")
     parser.add_argument("--all-hosts", action="store_true",
                         help="every host this repository could need, from every source; fetches nothing")
     parser.add_argument("--domains", action="store_true",
@@ -272,6 +339,20 @@ def main(argv: list[str] | None = None) -> int:
     # question about the repository and not about the network, so neither
     # probes anything. That also makes them work when egress is entirely
     # blocked, which is exactly when the list is needed.
+    if args.redirect_targets:
+        found = discover_redirect_targets()
+        stale = sorted(set(REDIRECT_TARGETS) - set(found))
+        fresh = sorted(set(found) - set(REDIRECT_TARGETS))
+        for host in sorted(found):
+            print(f"{host}  ({found[host]})")
+        if fresh:
+            print(f"\nNOT in REDIRECT_TARGETS -- add them: {', '.join(fresh)}")
+        if stale:
+            print(f"\nin REDIRECT_TARGETS but no longer redirected to: {', '.join(stale)}")
+        if not fresh and not stale:
+            print("\nREDIRECT_TARGETS is current.")
+        return 0
+
     if args.all_hosts or args.domains:
         known = every_known_host()
         if args.domains:

@@ -547,7 +547,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-senate",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -824,10 +824,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -968,10 +968,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -1112,10 +1112,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -1256,10 +1256,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -1400,10 +1400,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.agriculture.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -1722,10 +1722,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -2763,10 +2763,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -3376,10 +3376,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -5801,7 +5801,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://www.budget.senate.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://www.senate.gov/general/committee_membership/committee_memberships_SSBU.xml"
@@ -6049,7 +6049,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6190,7 +6190,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6331,7 +6331,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6472,7 +6472,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6613,7 +6613,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6754,7 +6754,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -6895,7 +6895,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -8152,7 +8152,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-environment-public-works",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -11119,7 +11119,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-health-education-labor-pensions",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -11733,7 +11733,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-homeland-security-governmental-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -11871,7 +11871,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-homeland-security-governmental-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -12009,7 +12009,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-homeland-security-governmental-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -12339,10 +12339,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://www.judiciary.senate.gov/about/subcommittees",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -12620,7 +12620,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -12762,7 +12762,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -12904,7 +12904,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-senate-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "senate_committee_list",
@@ -13274,7 +13274,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://www.judiciary.senate.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml"
@@ -13988,7 +13988,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://www.intelligence.senate.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://www.senate.gov/general/committee_membership/committee_memberships_SLIN.xml"
@@ -14166,7 +14166,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://www.aging.senate.gov",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://www.senate.gov/general/committee_membership/committee_memberships_SPAG.xml"
@@ -14344,7 +14344,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://www.ethics.senate.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://www.senate.gov/general/committee_membership/committee_memberships_SLET.xml"
@@ -14544,7 +14544,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-senate",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -16258,8 +16258,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-senate-admin-saa",
                   "verificationFailureSource": {
@@ -16269,7 +16269,7 @@
                       "https://www.senate.gov/about/officers-staff/sergeant-at-arms.htm",
                       "https://www.senate.gov/about/officers-staff.htm"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -16389,7 +16389,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-senate",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -17025,7 +17025,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-house",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -17639,7 +17639,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-agriculture",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -17891,10 +17891,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-agriculture",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://agriculture.house.gov/issues/issue/?IssueID=14909",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -18184,10 +18184,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://appropriations.house.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -18551,10 +18551,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies-0",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -19053,10 +19053,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://appropriations.house.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -19414,7 +19414,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -19545,10 +19545,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-appropriations",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://appropriations.house.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -19844,10 +19844,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-armed-services",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14892",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -20102,7 +20102,7 @@
                       "placementVerifiedAt": "2026-09-13T22:51:28Z",
                       "pageReadNotNamed": {
                         "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14895",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "evidenceUrls": [
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -20709,7 +20709,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://budget.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -21272,7 +21272,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-education-the-workforce",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -21662,7 +21662,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-energy-commerce",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -21773,7 +21773,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-energy-commerce",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -22003,7 +22003,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-energy-commerce",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -22683,10 +22683,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-financial-services",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://financialservices.house.gov/Subcommittees/Subcommittee/?IssueID=28985",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -23368,7 +23368,7 @@
                       "placementVerifiedAt": "2026-09-13T22:51:28Z",
                       "pageReadNotNamed": {
                         "url": "https://foreignaffairs.house.gov/subcommittees/africa-subcommittee-119th-congress",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "evidenceUrls": [
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -23460,7 +23460,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-foreign-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -23572,7 +23572,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-foreign-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -23684,7 +23684,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-foreign-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -23796,7 +23796,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-foreign-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -23995,7 +23995,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://foreignaffairs.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -24354,10 +24354,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-homeland-security",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://homeland.house.gov/intelligence-and-counterterrorism/",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -25145,7 +25145,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-house-administration",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -25283,7 +25283,7 @@
                       "placementVerifiedAt": "2026-09-13T22:51:28Z",
                       "pageReadNotNamed": {
                         "url": "https://cha.house.gov/elections",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "evidenceUrls": [
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -26381,10 +26381,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -26728,7 +26728,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -26839,7 +26839,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -26910,7 +26910,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://judiciary.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -28159,7 +28159,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-oversight-accountability",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -28484,7 +28484,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-oversight-accountability",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -28525,7 +28525,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://oversight.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "verificationFailureSource": {
                     "source": "house_clerk_committee_list",
@@ -28911,10 +28911,10 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-rules",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "pageReadNotNamed": {
                         "url": "https://rules.house.gov/about/subcommittees/subcommittee-rules-and-organization-house",
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -31722,7 +31722,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-veterans-affairs",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -32875,7 +32875,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-ways-means",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -33349,7 +33349,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "leg-house-cmte-ways-means",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_in_official_list",
                       "verificationFailureSource": {
                         "source": "house_clerk_committee_list",
@@ -33586,7 +33586,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://selectcommitteeontheccp.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "verificationFailureSource": {
                     "source": "house_clerk_committee_list",
@@ -33794,7 +33794,7 @@
                   "placementCheckable": false,
                   "pageReadNotNamed": {
                     "url": "https://intelligence.house.gov/",
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "evidenceUrls": [
                     "https://clerk.house.gov/Committees/ExcelCommitteeData"
@@ -33814,7 +33814,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-house",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -34646,8 +34646,8 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": [],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-house-saa",
                   "verificationFailureSource": {
@@ -34656,7 +34656,7 @@
                     "urlsRead": [
                       "https://www.house.gov/the-house-explained/officers-and-organizations"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -35078,8 +35078,8 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": [],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-house-chaplain",
                   "verificationFailureSource": {
@@ -35089,7 +35089,7 @@
                       "https://chaplain.house.gov/",
                       "https://www.house.gov/the-house-explained/officers-and-organizations"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -35165,8 +35165,8 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": [],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-house-counsel",
                   "verificationFailureSource": {
@@ -35176,7 +35176,7 @@
                       "https://www.house.gov/",
                       "https://legcounsel.house.gov"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -35239,8 +35239,8 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": [],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-house-ig",
                   "verificationFailureSource": {
@@ -35249,7 +35249,7 @@
                     "urlsRead": [
                       "https://www.house.gov/the-house-explained/officers-and-organizations/inspector-general"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -35275,7 +35275,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "leg-house",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -41240,7 +41240,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-loc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41271,8 +41271,8 @@
                   "budget": null,
                   "color": "#8a4ac8",
                   "children": [],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-support-loc-nls",
                   "verificationFailureSource": {
@@ -41281,7 +41281,7 @@
                     "urlsRead": [
                       "https://www.loc.gov/nls/"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -41296,7 +41296,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "leg-support-loc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 27118287.94,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -41317,7 +41317,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-loc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41607,7 +41607,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-gpo",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41640,7 +41640,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-gpo",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41673,7 +41673,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-gpo",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -41775,24 +41775,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "About Us | Architect of the Capitol",
                   "sourceUrls": [
-                    "https://www.aoc.gov/about-us"
-                  ],
-                  "evidenceUrls": [
                     "https://www.aoc.gov/about-us"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-aoc",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -41808,7 +41796,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "verificationMatchedText": "About Us | Architect of the Capitol",
+                  "evidenceUrls": [
+                    "https://www.aoc.gov/about-us"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-aoc"
                 },
                 {
                   "id": "leg-support-aoc-assistant-architect-of-the-capitol",
@@ -41912,20 +41912,9 @@
                   "sourceUrls": [
                     "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
                   ],
-                  "evidenceUrls": [
-                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-aoc-capitol-building",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -41934,9 +41923,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
                   "resolved_total_amount": 66880091.75,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -41944,7 +41930,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "evidenceUrls": [
+                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-aoc-capitol-building",
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-aoc",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "leg-support-aoc-senate-office-buildings",
@@ -41958,20 +41958,9 @@
                   "sourceUrls": [
                     "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
                   ],
-                  "evidenceUrls": [
-                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-aoc-senate-office-buildings",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -41980,9 +41969,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
                   "resolved_total_amount": 66880091.75,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -41990,7 +41976,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "evidenceUrls": [
+                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/senate-office-buildings"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-aoc-senate-office-buildings",
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-aoc",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "leg-support-aoc-house-office-buildings",
@@ -42004,20 +42004,9 @@
                   "sourceUrls": [
                     "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
                   ],
-                  "evidenceUrls": [
-                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-aoc-house-office-buildings",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -42026,9 +42015,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
                   "resolved_total_amount": 66880091.75,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -42036,7 +42022,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "evidenceUrls": [
+                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-aoc-house-office-buildings",
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-aoc",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "leg-support-aoc-capitol-power-plant",
@@ -42049,7 +42049,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -42083,20 +42083,9 @@
                   "sourceUrls": [
                     "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
                   ],
-                  "evidenceUrls": [
-                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
-                  ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_own_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-aoc-capitol-grounds",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -42105,9 +42094,6 @@
                   "parentProven": true,
                   "proofStatus": "proven",
                   "proofReason": "official_source_recorded",
-                  "placementVerified": false,
-                  "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
                   "resolved_total_amount": 66880091.75,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -42115,7 +42101,21 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "evidenceUrls": [
+                    "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-aoc-capitol-grounds",
+                  "placementVerified": false,
+                  "placementParentId": "leg-support-aoc",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "leg-support-aoc-library-of-congress-buildings",
@@ -42128,7 +42128,7 @@
                   "children": [],
                   "placementVerified": false,
                   "placementParentId": "leg-support-aoc",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -42604,7 +42604,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -42772,8 +42772,8 @@
                       }
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "leg-support-uscp-protective-services-bureau",
                   "verificationFailureSource": {
@@ -42782,7 +42782,7 @@
                     "urlsRead": [
                       "https://www.uscp.gov/the-department/our-mission"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -42797,7 +42797,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 73437755.74,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -42955,7 +42955,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -43125,7 +43125,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -43295,7 +43295,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -43632,7 +43632,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -43802,7 +43802,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "leg-support-uscp",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -77991,8 +77991,8 @@
                           "costSourceCount": 0
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-dept-defense-cocom-ussocom",
                       "verificationFailureSource": {
@@ -78001,7 +78001,7 @@
                         "urlsRead": [
                           "https://www.socom.mil/"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -85893,24 +85893,12 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
-                      "verificationMatchedText": "Correctional Officer",
                       "sourceUrls": [
-                        "https://www.bop.gov/"
-                      ],
-                      "evidenceUrls": [
                         "https://www.bop.gov/"
                       ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-doj-bop",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -85927,6 +85915,18 @@
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
                       "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-15T16:45:59+00:00",
+                      "verificationMatchedText": "Correctional Officer",
+                      "evidenceUrls": [
+                        "https://www.bop.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-doj-bop",
                       "representsPosts": {
                         "text": "×multiple",
                         "kind": "unstated",
@@ -113563,7 +113563,7 @@
                   "verificationSiteFrom": "exec-dept-doe-sc",
                   "placementVerified": false,
                   "placementParentId": "exec-dept-doe",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-dept-doe-eere",
@@ -115487,20 +115487,9 @@
                       "sourceUrls": [
                         "https://www.llnl.gov/"
                       ],
-                      "evidenceUrls": [
-                        "https://www.llnl.gov/"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-doe-lawrence-livermore-national-laboratory",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -115509,7 +115498,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementCheckable": false,
                       "resolved_total_amount": 1858563341.57,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -115518,7 +115506,19 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-15T16:45:59+00:00",
+                      "evidenceUrls": [
+                        "https://www.llnl.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-doe-lawrence-livermore-national-laboratory",
+                      "placementCheckable": false
                     },
                     {
                       "id": "exec-dept-doe-los-alamos-national-laboratory",
@@ -118484,20 +118484,9 @@
                       "sourceUrls": [
                         "https://www.pppl.gov/"
                       ],
-                      "evidenceUrls": [
-                        "https://www.pppl.gov/"
-                      ],
                       "sourceTypes": [
                         "official_site"
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                      "verificationMethod": "name_labelled_on_own_official_page",
-                      "verificationMatchedIn": "content",
-                      "verificationSiteFrom": "exec-dept-doe-princeton-plasma-physics-laboratory",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 1,
                       "proofSourceTypes": [
                         "official_site"
@@ -118506,7 +118495,6 @@
                       "parentProven": true,
                       "proofStatus": "proven",
                       "proofReason": "official_source_recorded",
-                      "placementCheckable": false,
                       "resolved_total_amount": 1858563341.57,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -118515,7 +118503,19 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2026-09-15T16:45:59+00:00",
+                      "evidenceUrls": [
+                        "https://www.pppl.gov/"
+                      ],
+                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "verificationMethod": "name_labelled_on_own_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "exec-dept-doe-princeton-plasma-physics-laboratory",
+                      "placementCheckable": false
                     }
                   ],
                   "sourceUrls": [],
@@ -118798,7 +118798,7 @@
                   "verificationSiteFrom": "exec-dept-doe-em",
                   "placementVerified": false,
                   "placementParentId": "exec-dept-doe",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-dept-doe--treasury-receipts",
@@ -120128,7 +120128,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "employeesOfficial": 581,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -120386,7 +120386,7 @@
                   "verificationSiteFrom": "exec-dept-ed-oese",
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "employeesOfficial": 293,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -120693,7 +120693,7 @@
                   "verificationSiteFrom": "exec-dept-ed-ies",
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "employeesOfficial": 185,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -120845,7 +120845,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121000,7 +121000,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121155,7 +121155,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121310,7 +121310,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121465,7 +121465,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121620,7 +121620,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121775,7 +121775,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -121930,7 +121930,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -122085,7 +122085,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -122240,7 +122240,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-dept-ed",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -127031,7 +127031,7 @@
                               ],
                               "placementVerified": false,
                               "placementParentId": "exec-dept-va-vha-visn-5-capitol-health-care-network",
-                              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                               "sourceUrls": [],
                               "sourceTypes": [],
                               "sourceCount": 0,
@@ -139461,7 +139461,7 @@
                               ],
                               "placementVerified": false,
                               "placementParentId": "exec-dept-va-vha-visn-22-desert-pacific",
-                              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                               "sourceUrls": [],
                               "sourceTypes": [],
                               "sourceCount": 0,
@@ -148256,7 +148256,7 @@
                   "verificationSiteFrom": "exec-ind-cia-directorate-of-operations-do",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-analysis-da",
@@ -148434,7 +148434,7 @@
                   "verificationSiteFrom": "exec-ind-cia-directorate-of-analysis-da",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-science-technology-dst",
@@ -148612,7 +148612,7 @@
                   "verificationSiteFrom": "exec-ind-cia-directorate-of-science-technology-dst",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-cia-directorate-of-digital-innovation-ddi",
@@ -148756,7 +148756,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -148955,7 +148955,7 @@
                   "verificationSiteFrom": "exec-ind-cia-directorate-of-support-ds",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-cia",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 }
               ],
               "sourceUrls": [
@@ -150640,8 +150640,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-i-new-england",
                   "verificationFailureSource": {
@@ -150650,7 +150650,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-1-new-england"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -150665,7 +150665,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -150806,8 +150806,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-ii-new-york",
                   "verificationFailureSource": {
@@ -150816,7 +150816,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-2"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -150831,7 +150831,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -150972,8 +150972,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-iii-mid-atlantic",
                   "verificationFailureSource": {
@@ -150982,7 +150982,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-3-mid-atlantic"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -150997,7 +150997,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151138,8 +151138,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-iv-southeast",
                   "verificationFailureSource": {
@@ -151148,7 +151148,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/about-epa-region-4-southeast"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151163,7 +151163,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151304,8 +151304,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-v-midwest",
                   "verificationFailureSource": {
@@ -151314,7 +151314,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-5"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151329,7 +151329,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151470,8 +151470,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-vi-south-central",
                   "verificationFailureSource": {
@@ -151480,7 +151480,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-6-south-central"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151495,7 +151495,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151636,8 +151636,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-vii-plains",
                   "verificationFailureSource": {
@@ -151646,7 +151646,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-7-midwest"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151661,7 +151661,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151802,8 +151802,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-viii-mountain",
                   "verificationFailureSource": {
@@ -151812,7 +151812,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-8-mountains-and-plains"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151827,7 +151827,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -151968,8 +151968,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-ix-pacific",
                   "verificationFailureSource": {
@@ -151978,7 +151978,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -151993,7 +151993,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -152134,8 +152134,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-epa-region-x-northwest",
                   "verificationFailureSource": {
@@ -152144,7 +152144,7 @@
                     "urlsRead": [
                       "https://www.epa.gov/aboutepa/epa-region-10-pacific-northwest"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -152159,7 +152159,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-epa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 766968411.85,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -153072,7 +153072,7 @@
                   "verificationSiteFrom": "exec-ind-nasa-exploration-systems-development-mission-directorate",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-space-operations-mission-directorate",
@@ -153255,7 +153255,7 @@
                   "verificationSiteFrom": "exec-ind-nasa-space-operations-mission-directorate",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-aeronautics-research-mission-directorate",
@@ -153438,7 +153438,7 @@
                   "verificationSiteFrom": "exec-ind-nasa-aeronautics-research-mission-directorate",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-space-technology-mission-directorate",
@@ -153621,7 +153621,7 @@
                   "verificationSiteFrom": "exec-ind-nasa-space-technology-mission-directorate",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nasa",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-nasa-centers",
@@ -162173,7 +162173,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-biological-sciences-bio",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -162308,7 +162308,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-biological-sciences-bio",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -162443,7 +162443,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-biological-sciences-bio",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -162578,7 +162578,7 @@
                       ],
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-biological-sciences-bio",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "sourceUrls": [],
                       "sourceTypes": [],
                       "sourceCount": 0,
@@ -163089,8 +163089,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-computer-information-science-engineering-cise-information-intelligent-systems",
                       "verificationFailureSource": {
@@ -163099,7 +163099,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/cise"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -163233,8 +163233,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure",
                       "verificationFailureSource": {
@@ -163243,7 +163243,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/cise/office-advanced-cyberinfrastructure"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -163995,7 +163995,7 @@
                   "lastVerified": null,
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nsf",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
                 },
                 {
                   "id": "exec-ind-nsf-engineering-eng",
@@ -164176,8 +164176,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems",
                       "verificationFailureSource": {
@@ -164186,7 +164186,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/eng/chemical-bioengineering-energy-transport-systems"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -164320,8 +164320,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
                       "verificationFailureSource": {
@@ -164330,7 +164330,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/eng/civil-mechanical-manufacturing-innovation"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -164464,8 +164464,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems",
                       "verificationFailureSource": {
@@ -164474,7 +164474,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/div/index.jsp?div=ECCS"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -164966,8 +164966,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences",
                       "verificationFailureSource": {
@@ -164976,7 +164976,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/geo/core-geoscience-research"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165243,8 +165243,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-geosciences-geo-ocean-sciences",
                       "verificationFailureSource": {
@@ -165253,7 +165253,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/geo"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165479,8 +165479,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-astronomical-sciences",
                       "verificationFailureSource": {
@@ -165489,7 +165489,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/mps/astronomical-sciences"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165504,7 +165504,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-mathematical-physical-sciences-mps",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 192584534.2,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -165625,8 +165625,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-chemistry",
                       "verificationFailureSource": {
@@ -165635,7 +165635,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/mps/chemistry"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165650,7 +165650,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-mathematical-physical-sciences-mps",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 192584534.2,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -165771,8 +165771,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-materials-research",
                       "verificationFailureSource": {
@@ -165781,7 +165781,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/mps/materials-research"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165796,7 +165796,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-mathematical-physical-sciences-mps",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 192584534.2,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -165917,8 +165917,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-mathematical-sciences",
                       "verificationFailureSource": {
@@ -165927,7 +165927,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/mps/mathematical-sciences"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -165942,7 +165942,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-mathematical-physical-sciences-mps",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 192584534.2,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -166063,8 +166063,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-mathematical-physical-sciences-mps-physics",
                       "verificationFailureSource": {
@@ -166073,7 +166073,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/mps/physics"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -166088,7 +166088,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-mathematical-physical-sciences-mps",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 192584534.2,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -166627,8 +166627,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics",
                       "verificationFailureSource": {
@@ -166637,7 +166637,7 @@
                         "urlsRead": [
                           "https://ncses.nsf.gov/"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -166652,7 +166652,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 197369243.12,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -166885,8 +166885,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator",
                       "verificationFailureSource": {
@@ -166895,7 +166895,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/funding/initiatives/convergence-accelerator"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -166910,7 +166910,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-technology-innovation-partnerships-tip",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 202632422.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -167031,8 +167031,8 @@
                           }
                         }
                       ],
-                      "lastVerified": "2026-09-15T16:45:59+00:00",
-                      "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "lastVerified": "2026-09-15T23:24:31+00:00",
+                      "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "verificationFailure": "not_found",
                       "verificationSiteFrom": "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs",
                       "verificationFailureSource": {
@@ -167041,7 +167041,7 @@
                         "urlsRead": [
                           "https://www.nsf.gov/tip"
                         ],
-                        "checkedAt": "2026-09-15T16:45:59+00:00"
+                        "checkedAt": "2026-09-15T23:24:31+00:00"
                       },
                       "sourceUrls": [],
                       "sourceTypes": [],
@@ -167056,7 +167056,7 @@
                       "proofReason": "trusted_base_graph",
                       "placementVerified": false,
                       "placementParentId": "exec-ind-nsf-technology-innovation-partnerships-tip",
-                      "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                      "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                       "resolved_total_amount": 202632422.94,
                       "cost_status": "allocated",
                       "cost_basis": "subtree_weight",
@@ -174674,7 +174674,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -174894,7 +174894,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -175114,7 +175114,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -175334,7 +175334,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -175554,7 +175554,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -175772,8 +175772,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-nara-lyndon-b-johnson-presidential-library-austin-tx",
                   "verificationFailureSource": {
@@ -175782,7 +175782,7 @@
                     "urlsRead": [
                       "https://www.archives.gov/presidential-libraries"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -175797,7 +175797,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 23272644.9,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -176005,7 +176005,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -176462,7 +176462,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -176682,7 +176682,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -176900,8 +176900,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx",
                   "verificationFailureSource": {
@@ -176910,7 +176910,7 @@
                     "urlsRead": [
                       "https://www.archives.gov/presidential-libraries"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -176925,7 +176925,7 @@
                   "proofReason": "trusted_base_graph",
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "resolved_total_amount": 23272644.9,
                   "cost_status": "allocated",
                   "cost_basis": "subtree_weight",
@@ -177133,7 +177133,7 @@
                   ],
                   "placementVerified": false,
                   "placementParentId": "exec-ind-nara",
-                  "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179538,8 +179538,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
                   "verificationFailureSource": {
@@ -179548,7 +179548,7 @@
                     "urlsRead": [
                       "https://www.usagm.gov/"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -182388,8 +182388,8 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "lastVerified": "2026-09-15T23:24:31+00:00",
+                  "evidenceVerifiedAt": "2026-09-15T23:24:31+00:00",
                   "verificationFailure": "not_found",
                   "verificationSiteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
                   "verificationFailureSource": {
@@ -182398,7 +182398,7 @@
                     "urlsRead": [
                       "https://www.prc.gov/"
                     ],
-                    "checkedAt": "2026-09-15T16:45:59+00:00"
+                    "checkedAt": "2026-09-15T23:24:31+00:00"
                   },
                   "sourceUrls": [],
                   "sourceTypes": [],
@@ -184392,24 +184392,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Vice Chair for Supervision",
                   "sourceUrls": [
-                    "https://www.federalreserve.gov/aboutthefed.htm"
-                  ],
-                  "evidenceUrls": [
                     "https://www.federalreserve.gov/aboutthefed.htm"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-15T16:45:59+00:00",
-                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "exec-regulatory-fed",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -184425,7 +184413,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-15T16:45:59+00:00",
+                  "verificationMatchedText": "Vice Chair for Supervision",
+                  "evidenceUrls": [
+                    "https://www.federalreserve.gov/aboutthefed.htm"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-15T16:45:59+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-regulatory-fed"
                 },
                 {
                   "id": "exec-regulatory-fed-governor-4-members",
@@ -189718,7 +189718,7 @@
           "verificationSiteFrom": "jud-scotus",
           "placementVerified": false,
           "placementParentId": "judicial-branch",
-          "placementVerifiedAt": "2026-09-15T16:45:59+00:00"
+          "placementVerifiedAt": "2026-09-15T23:24:31+00:00"
         },
         {
           "id": "jud-appeals",
@@ -193369,7 +193369,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "jud-appeals",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -193677,7 +193677,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "jud-appeals",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -194127,7 +194127,7 @@
               ],
               "placementVerified": false,
               "placementParentId": "jud-district",
-              "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+              "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -195889,7 +195889,7 @@
           ],
           "placementVerified": false,
           "placementParentId": "judicial-branch",
-          "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+          "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,
@@ -197177,7 +197177,7 @@
           ],
           "placementVerified": false,
           "placementParentId": "judicial-branch",
-          "placementVerifiedAt": "2026-09-15T16:45:59+00:00",
+          "placementVerifiedAt": "2026-09-15T23:24:31+00:00",
           "sourceUrls": [],
           "sourceTypes": [],
           "sourceCount": 0,

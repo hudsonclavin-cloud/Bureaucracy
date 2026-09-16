@@ -313,6 +313,55 @@ published graph: zero lost a `verificationMethod`, zero lost their
 from a directory listing to their own official page, which is the
 exporter's documented precedence working as intended.
 
+## 6. 2026-09-16: the allowlist was widened, and it moved nothing — redirects
+
+The owner widened the environment's allowlist. Proxy refusals fell **10 -> 4**
+(`ca3.uscourts.gov`, `www.chaplain.senate.gov`, `www.nrel.gov` — all 502 —
+and `www.fns.usda.gov`), and `probe_network_access.py` reported **233 of 245
+hosts reachable**. The full re-verification that followed produced a
+published graph **numerically identical** to the one before it: verified 206,
+partial 310, official source 577, posts 28, placements 212. Not one number
+moved.
+
+**Why: the far end of a redirect is a different host, and nothing wrote it
+down.** Only 7 curated nodes sit on the six hosts the widening opened, three
+were already confirmed, and the remaining four still fail — because their
+pages redirect off the allowlisted host:
+
+    trade.gov/                     -> 301 -> www.trade.gov
+    www.fhwa.dot.gov/              -> 307 -> highways.dot.gov
+    www.treasury.gov/...OFAC.aspx  -> 302 -> ofac.treasury.gov
+    www.fns.usda.gov/              -> 301 -> www.fna.usda.gov
+
+The proxy's own `recentRelayFailures` names those targets, not the hosts we
+asked for, which is what made it findable.
+
+**And this probe was reporting them as reachable.** `probe()` asks for
+`/robots.txt`, which usually does not redirect: `trade.gov/robots.txt`
+answered 200 while `trade.gov/` answered `Tunnel connection failed: 403`. So
+the "reachable: 233" line overstated the truth for every host whose pages
+redirect somewhere unlisted. A host is only as reachable as the last hop of
+its redirect chain, and the docstring now says so.
+
+`REDIRECT_TARGETS` records the ten measured by requesting all 454 candidate
+URLs with redirects disabled and reading the `Location` header; they are
+included in `--all-hosts` (247 -> 257) and `--domains` (168 -> 171), and
+`--redirect-targets` re-derives them live and reports drift in both
+directions rather than leaving a hand-kept list to rot.
+
+**These ten are what still needs allowlisting:**
+
+    chinaselectcommittee.house.gov      ofac.treasury.gov
+    financialresearch.gov               www.arts.gov
+    highways.dot.gov                    www.bep.gov
+    ncua.gov                            www.dea.gov
+    www.fna.usda.gov                    www.trade.gov
+
+Which is the argument for `*.gov` and `*.mil` made again, from a different
+direction: a host-by-host allowlist cannot anticipate where a federal site
+will redirect next, and the code already refuses every host outside those
+two suffixes.
+
 ## Regenerating this note
 
     python scripts/report_unreachable_hosts.py            # why each host failed, from the last run
