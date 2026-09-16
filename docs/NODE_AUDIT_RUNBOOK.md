@@ -348,7 +348,7 @@ You are phase 1a of three. What you record is read by the two that follow, so
 a finding you leave vague costs someone else a pass.
 
 **Phase 1b — `docs/SOURCE_NOMINATION_RUNBOOK.md`.** Nominates a page for the
-verifier to fetch, for the 611 organisations that have none. Your
+verifier to fetch, for the 305 organisations that have none. Your
 `existence: no_evidence_in_repo` verdicts are exactly its work list. Where you
 concluded a node is an editorial grouping the government does not name, say so
 in a finding: phase 1b can then record `noCandidate` instead of hunting for a

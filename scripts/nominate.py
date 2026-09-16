@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Nominations: agents propose what to check, the machine decides what is true.
 
-611 of the graph's 788 organisations have no candidate page in
+305 of the graph's 788 organisations have no candidate page in
 `official_sites.json`, so the verifier has nothing to fetch for them and they
-can never earn a source however long it runs. The bottleneck is not fetching;
+can never earn a source however long it runs. `status --kind source` computes
+that from the graph and the sites file rather than from this sentence; it read
+611 when this module was written, and 483 organisations now have a page. The bottleneck is not fetching;
 it is *knowing which URL to fetch*. That is a job an agent can do and a script
 cannot, so this harness lets many agents nominate — in parallel, without
 colliding — and keeps the adjudication where it belongs.

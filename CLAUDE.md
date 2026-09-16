@@ -596,9 +596,13 @@ Science" match "Office of Science and Technology Policy". The matcher stays
 strict and the names get fixed where names are fixed.
 
 The binding constraint is otherwise unchanged and is the same one
-organisations face: **611 of 788 organisations have no candidate page at
+organisations face: **305 of 788 organisations have no candidate page at
 all**, so no post beneath them can be reached either. Nominating org pages
-(phase 1b) now moves both counts at once.
+(phase 1b) now moves both counts at once. (That figure was 611 when this
+section was written and is not restated by hand any more: `python
+scripts/nominate.py status --kind source` prints it, and it moved to 305 on
+2026-09-13 when the recheck and the brute-force pass took `official_sites.json`
+from 185 entries to 483.)
 
 **Directories — the government's own lists of itself.** The page method is
 near its ceiling: 71 organisations have a page of their own, twelve of the
@@ -1042,12 +1046,19 @@ The gate requires: every `lastVerified` a past ISO date; every
 `verificationMethod` backed by a URL and one this pipeline can produce; no
 node claiming a failed check beside a source; an `official_site` type backed
 by a `.gov`/`.mil` URL. Coverage is reported. The verifier obeys `robots.txt`
-(failing open only when it cannot be fetched at all) and sends a User-Agent
-naming the project. A host that answers `robots.txt` itself with 401 or 403 is
+and sends a User-Agent naming the project. It fails open in exactly one case,
+and it is the opposite of the one this line used to name: a host that answers
+that there is no robots.txt (404/410) is crawled, because nothing was
+published to obey. Every other non-2xx refuses — 401/403 by this project's
+choice, 5xx and a DNS/TLS/timeout failure because RFC 9309 §2.3.1.4 makes an
+undefined robots.txt a complete disallow. "Cannot be fetched at all" is
+therefore the case that refuses, not the case that fails open. A host that answers `robots.txt` itself with 401 or 403 is
 the one case that looks like "unreadable" but is not treated as such:
 `RobotFileParser` swallows that status and sets a blanket disallow with no
 rules parsed. The path stays refused — by this project's choice, not by the
-standard: RFC 9309 [likely; unverified from this environment] treats 4xx as
+standard: RFC 9309 §2.3.1.3 — committed at
+`tests/fixtures/standards/rfc9309.txt`, fetched 2026-09-15, digest recorded —
+treats 4xx as
 "Unavailable" and permits access, reserving complete-disallow for 5xx, while
 Python implements the older 401/403-means-disallow convention. What the
 record may not do is quote a rule nobody read, so the reason distinguishes
@@ -1291,9 +1302,10 @@ never handed out for page nomination — 4,382 positions would produce 4,382
 identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
-The standing numbers this work exists to move: 611 of 788 organisations have
+The standing numbers this work exists to move: 305 of 788 organisations have
 no candidate page at all, so the verifier can never reach them; and 136 of
-5,417 nodes carry a cost identified for themselves.
+5,417 nodes carry a cost identified for themselves. `nominate.py status --kind
+source` prints the first of those, which is the copy to trust.
 
 ### The node-by-node audit
 

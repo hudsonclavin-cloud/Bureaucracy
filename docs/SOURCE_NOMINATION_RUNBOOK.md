@@ -13,10 +13,12 @@ Read this whole file before the first batch.
 finding the node's name on it as a label of its own. It works. It is not the
 bottleneck.
 
-The bottleneck is that **611 of the graph's 788 organisations have no page to
-fetch.** `official_sites.json` holds 177 candidates. For everything else the
+The bottleneck is that **305 of the graph's 788 organisations have no page to
+fetch.** `official_sites.json` holds 483 candidates. For everything else the
 verifier has nothing to try, so those nodes can never earn a source however
-long it runs.
+long it runs. Do not trust these two numbers from this page: run `python
+scripts/nominate.py status --kind source`, which computes both. They read 611
+and 177 until the 2026-09-13 passes, and this sentence did not keep up.
 
 Naming the right URL is a job you can do and a script cannot. That is the
 whole task.
@@ -139,7 +141,7 @@ Honest and common. Reasons, exact strings:
 - `not_an_organisation` — you should not see these, but if one reaches you.
 
 **Do not invent a URL to avoid saying `noCandidate`.** A wasted fetch is
-worse than an honest gap, and there are 611 of these — the ones you skip
+worse than an honest gap, and there are 305 of these — the ones you skip
 honestly are a shorter list for the next pass than a pile of 404s.
 
 ---

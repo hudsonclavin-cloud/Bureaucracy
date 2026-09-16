@@ -200,8 +200,10 @@ answered 401.
 
 These hosts answer `robots.txt` itself with 401 or 403. Python's
 `RobotFileParser` treats that as a blanket disallow, and this project keeps
-the refusal as a matter of conduct even though RFC 9309 [likely; unverified
-from this environment] would permit the fetch. The record says "could not be
+the refusal as a matter of conduct even though RFC 9309 §2.3.1.3 would permit
+the fetch — no longer a hedge: the standard is committed at
+`tests/fixtures/standards/rfc9309.txt` and says "the crawler MAY access any
+resources on the server" of a robots.txt in the 400-499 range. The record says "could not be
 read (401/403); refused by policy" rather than quoting a rule nobody read.
 **Do not change this to raise the coverage number.**
 
@@ -254,13 +256,15 @@ remain denied at the proxy (`www.nrel.gov`, `www.treasury.gov`,
 `www.armfor.uscourts.gov`), worth 45 fetches. The robots rule is worth
 twenty times that and is **a policy decision in this repository**, not a
 property of the sandbox: `data_pipeline/verification/politeness.py`, and
-CLAUDE.md's note that RFC 9309 [likely; unverified from this environment]
-treats a 4xx on `robots.txt` as "Unavailable" and permits access, while
-Python's `RobotFileParser` implements the older 401/403-means-disallow
-convention. That hedge is still a hedge: `www.rfc-editor.org` and
-`datatracker.ietf.org` are themselves refused at the proxy, so the standard
-cannot be read from here to settle it. Both are in `--all-hosts` for that
-reason.
+CLAUDE.md's note that RFC 9309 treats a 4xx on `robots.txt` as "Unavailable"
+and permits access, while Python's `RobotFileParser` implements the older
+401/403-means-disallow convention. **That hedge is no longer a hedge.**
+`www.rfc-editor.org` answered 200 on 2026-09-15 and the RFC is committed
+verbatim at `tests/fixtures/standards/rfc9309.txt`, with the digest its fetch
+recorded; §2.3.1.3 and §2.3.1.4 are quoted in `politeness.py` and
+`tests/test_politeness.py` asserts those sentences really are in the file. We
+are deliberately stricter than the standard, and can now say so by quoting it
+rather than by recalling it.
 
 Nothing here is an argument for relaxing the rule, which stays until the
 owner decides otherwise. It is an argument for not mistaking the allowlist
