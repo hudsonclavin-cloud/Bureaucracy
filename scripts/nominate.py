@@ -68,6 +68,7 @@ if str(PROJECT_ROOT) not in sys.path:
 # then ran the looser local test and let a committee through.
 from data_pipeline.verification.financial_evidence import (  # noqa: E402
     BASES as FINANCIAL_BASES,
+    SOURCE_TYPES as FINANCIAL_SOURCE_TYPES,
     NON_MONETARY_BASES as FINANCIAL_NON_MONETARY_BASES,
     POSITION_ONLY_BASES as FINANCIAL_POSITION_ONLY_BASES,
     is_organisation as may_carry_a_measured_cost,
@@ -93,7 +94,14 @@ SOURCE_ROLES = ("own_site", "parent_listing", "official_list")
 # the 5,195 cost nominations on file is a noCandidate carrying no metric at
 # all, so there is no stored value to migrate.
 COST_METRICS = tuple(sorted(FINANCIAL_BASES))
-COST_SYSTEMS = ("treasury_mts", "usaspending_file_ab", "agency_afr", "omb_public_budget", "opm_pay_table")
+#: One vocabulary with the evidence side, by construction rather than by
+#: copying: a figure `financial_evidence` can record must be a figure this
+#: side can name. The hand-kept list this replaced had drifted twice -- it
+#: spelled the AFR system `agency_afr` where the evidence side records
+#: `agency_financial_report`, and it had no entry for the White House staff
+#: report, so the 166 posts that report already prices could not be written
+#: down as a crosswalk entry at all, and were refused on that ground.
+COST_SYSTEMS = tuple(sorted(FINANCIAL_SOURCE_TYPES))
 
 CONFIDENCES = ("likely", "speculative")
 NO_CANDIDATE_REASONS = (

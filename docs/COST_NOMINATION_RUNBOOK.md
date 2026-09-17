@@ -50,15 +50,15 @@ can record is always a figure the nomination side can name.
 
 | `metric` | What it answers | Source system | Notes |
 |---|---|---|---|
-| `audited_net_cost` | What did this entity cost? | `agency_afr` | Audited, accrual basis. The best answer and the only audited one. |
+| `audited_net_cost` | What did this entity cost? | `agency_financial_report` | Audited, accrual basis. The best answer and the only audited one. |
 | `net_outlays` | What cash went out, net of receipts? | `treasury_mts`, `usaspending_file_ab` | What this graph already publishes. Not cost. |
-| `gross_outlays` | What cash went out, before receipts? | `treasury_mts` | The statement prints both. On a large agency they differ by billions. |
+| `gross_outlays` | What cash went out, before receipts? | `treasury_mts`, `usaspending_file_ab` | The statement prints both. On a large agency they differ by billions. File A reports only this, fiscal-year-to-date. |
 | `obligations` | What was committed? | `usaspending_file_ab` | A commitment, not spending. |
 | `budget_authority` | What was made available? | `usaspending_file_ab`, `omb_public_budget` | A plan, not an outcome. |
 | `appropriations` | What did Congress enact? | `appropriations_act`, `omb_public_budget` | Enacted, but not yet spent, and often keyed by account rather than by organisation. |
 | `budget_request` | What did the agency ask for? | `congressional_justification` | **Not spending, and not even funding.** A request made before the year began, which Congress may cut, ignore, or supersede. It is the most granular figure available by organisation, and the least authoritative. |
-| `payroll` | What does this unit's staff cost? | `agency_afr`, `congressional_justification` | An input to cost, not cost. |
-| `basic_pay` | What does this post pay? | `opm_pay_table` | Compensation for one post. **Never** an organisation's cost. |
+| `payroll` | What does this unit's staff cost? | `agency_financial_report`, `congressional_justification` | An input to cost, not cost. |
+| `basic_pay` | What does this post pay? | `opm_pay_table`, `uscourts_judicial_compensation`, `senate_salary_schedule`, `whitehouse_staff_report` | Compensation for one post. **Never** an organisation's cost. The last three are single primary documents that name a seat or a title directly. |
 | `full_time_equivalents` | How many staff-years? | `congressional_justification` | Not money at all. Carried because budget tables report it beside the dollars, and because it is the honest answer when a unit's money cannot be separated but its staffing can. Never rendered with a currency symbol. |
 
 Nominate the metric that source actually reports. Do not nominate
@@ -108,9 +108,18 @@ name-keyed alias table and why every entry in it carries a section check.
 |---|---|
 | `treasury_mts` | The Table 5 line as the statement prints it, e.g. `Total--Office of Federal Student Aid`, plus the section it sits under in `basis` |
 | `usaspending_file_ab` | A TAS (agency identifier, main account code, and any sub-account) or a federal account symbol; a toptier CGAC code for a whole department |
-| `agency_afr` | The entity as the Statement of Net Cost names it, plus the fiscal year |
+| `agency_financial_report` | The entity as the Statement of Net Cost names it, plus the fiscal year |
 | `omb_public_budget` | OMB agency and bureau codes |
+| `omb_apportionment` | The apportionment's TAS and the OMB approval it carries |
+| `appropriations_act` | The public law, the division and the account heading as enacted |
+| `congressional_justification` | The CJ's own budget activity or office line, plus the fiscal year of the request |
 | `opm_pay_table` | The pay plan and level, e.g. `EX-II` |
+| `uscourts_judicial_compensation` | The tier as the U.S. Courts' table names it, e.g. `District Judges` |
+| `senate_salary_schedule` | The role as the Senate's footnote names it, e.g. `Majority Leader` |
+| `whitehouse_staff_report` | The title exactly as the Annual Report to Congress on White House Staff prints it |
+
+The list is `financial_evidence.SOURCE_TYPES`, imported rather than copied,
+so a source the evidence side can record is always one this side can name.
 
 `basis` is where you say why this key is this node — the section it appears
 under, the parent account, the page that lists it. That sentence is what a
