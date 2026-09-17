@@ -346,6 +346,21 @@ try {
       check("the panel says the two count different populations", /count different populations/.test(note), note);
     }
   }
+  // USAspending File A, under its own heading and never as the cost: the
+  // row names the system and the period and says in the heading itself that
+  // it is not the cost; the sentence beneath says which system it came from.
+  const withFileA = allNodes.find((n) => n.usaspendingOutlays && typeof n.usaspendingOutlays.amount === "number");
+  check("some node carries a File A gross outlay", Boolean(withFileA), "none");
+  if (withFileA) {
+    await openByName(withFileA.name);
+    const stats = await text("#info-stats");
+    check("the File A figure is shown under its own heading, dated, and says it is not the cost",
+      /GROSS OUTLAYS — USAspending File A \(FY\d{4} to \d{4}-\d{2}-\d{2}; not the cost\)/.test(stats), stats.slice(0, 500));
+    const note = await text("#info-headcount-provenance");
+    check("the File A sentence names the system, the API's own name for the unit, and says it is not the cost",
+      /USAspending's File A reports gross outlays of \$[\d,]+ for ".+" \((toptier|bureau ".+" of toptier) \S+\) for FY\d{4} through \d{4}-\d{2}-\d{2}.* and is not the cost\./.test(note), note);
+  }
+
   // A node with an OPM figure and nothing else must not be told it has no
   // source at all: the provenance block right below shows an opm.gov URL.
   const officialNoSources = allNodes.find(
