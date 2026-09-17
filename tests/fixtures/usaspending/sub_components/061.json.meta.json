@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:17:50Z",
+ "url": "https://api.usaspending.gov/api/v2/agency/061/sub_components/?fiscal_year=2026&limit=100",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/agency/061/sub_components/?fiscal_year=2026&limit=100",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 371,
+ "sha256": "1fcf55b86eee47bd7ce9a9af2e0199bbc16714519f7227c64c9a28a185352bd0",
+ "error": null
+}

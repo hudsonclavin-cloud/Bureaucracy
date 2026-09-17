@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:21:51Z",
+ "url": "https://api.usaspending.gov/api/v2/agency/097/sub_components/air-force/?fiscal_year=2026&limit=100",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/agency/097/sub_components/air-force/?fiscal_year=2026&limit=100",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 5580,
+ "sha256": "6334f646a59541a6bf2be3a6a7859adeb6700b0e224b93615de653f86e9050c3",
+ "error": null
+}

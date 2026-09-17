@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:21:53Z",
+ "url": "https://api.usaspending.gov/api/v2/agency/014/sub_components/bureau-of-land-management/?fiscal_year=2026&limit=100",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/agency/014/sub_components/bureau-of-land-management/?fiscal_year=2026&limit=100",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 8056,
+ "sha256": "93f0231641cbfce4282cd5e09aeacaefa8d5d8175062a0eb1afb3fd5167d0453",
+ "error": null
+}

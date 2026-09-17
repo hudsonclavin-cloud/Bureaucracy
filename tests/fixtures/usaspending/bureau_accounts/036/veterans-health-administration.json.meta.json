@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:22:13Z",
+ "url": "https://api.usaspending.gov/api/v2/agency/036/sub_components/veterans-health-administration/?fiscal_year=2026&limit=100",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/agency/036/sub_components/veterans-health-administration/?fiscal_year=2026&limit=100",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 2978,
+ "sha256": "62e4cb0a8f0e3a15c965b0919b41d4a960bb9c8be80427fd31691d61dbb917a4",
+ "error": null
+}

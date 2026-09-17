@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:22:26Z",
+ "url": "https://api.usaspending.gov/api/v2/agency/036/sub_components/benefits-programs/?fiscal_year=2026&limit=100",
+ "status": 200,
+ "final_url": "https://api.usaspending.gov/api/v2/agency/036/sub_components/benefits-programs/?fiscal_year=2026&limit=100",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 3774,
+ "sha256": "a0be4ec35eb8fb813025ea0f9c3c4a808f929f3cecf431f47a03cc0dd0a0834d",
+ "error": null
+}
