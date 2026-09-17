@@ -50,6 +50,17 @@ sibling `<file>.meta.json` recording `fetched_at`, `url`, `final_url`, HTTP
   office codes beneath (`1234HK`, `19XNEA`) are the only place USAspending
   names sub-bureau offices at all, which a later pass may want.
 
+- **`data_dictionary_crosswalk.xlsx`** — `https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx`:
+  the publisher's own Data Dictionary, a workbook whose "Public" sheet maps
+  every USAspending field to the DATA Act (DAIMS) element it carries, with
+  the element's definition. It is here for one row: `GrossOutlayAmountByTAS_CPE`
+  → `gross_outlay_amount`, the API's `total_outlays`/`outlay_amount`. The API
+  states no unit in words anywhere on a `.gov` host — the endpoint docs are
+  a client-side shell loaded from GitHub — so this row is what the scale of
+  every figure above rests on (`financial_evidence.DICTIONARY_SCALED_SOURCE_TYPES`),
+  quoted verbatim in each record's `unitsEvidence` with this file's digest,
+  and re-read by the derive step and the release gate.
+
 **Outlays here are File A gross outlays**, the per-account field
 `gross_outlay_amount`, and are not the net figure the Monthly Treasury
 Statement prints for the same agency; the two must never be merged, which is
@@ -62,6 +73,11 @@ Figures are FY2026 to date at the fetch time and change on every refresh.
 | File | URL | Fetched (UTC) | HTTP | Bytes | sha256 |
 |---|---|---|---|---|---|
 | `toptier_agencies.json` | https://api.usaspending.gov/api/v2/references/toptier_agencies/ | 2026-09-17T16:12:34Z | 200 | 52613 | `a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8` |
+
+### `data_dictionary_crosswalk.xlsx`
+| File | URL | Fetched (UTC) | HTTP | Bytes | sha256 |
+|---|---|---|---|---|---|
+| `data_dictionary_crosswalk.xlsx` | https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx | 2026-09-17T16:41:51Z | 200 | 110540 | `d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23` |
 
 ### `sub_components/` (52 files)
 | File | URL | Fetched (UTC) | HTTP | Bytes | sha256 |

@@ -11777,7 +11777,35 @@
         }
       ]
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1100/office-of-science-and-technology-policy",
+      "apiName": "Office of Science and Technology Policy",
+      "toptierCode": "1100",
+      "toptierName": "Executive Office of the President",
+      "bureauId": "office-of-science-and-technology-policy",
+      "amount": 5822732.42,
+      "amountRaw": "5822732.42",
+      "obligations": 4945316.57,
+      "accounts": 1,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1100/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1100.json",
+      "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
+      "retrievedAt": "2026-09-17T16:18:33Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-eop-ondcp",
@@ -11867,7 +11895,35 @@
         }
       ]
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1100/office-of-national-drug-control-policy",
+      "apiName": "Office of National Drug Control Policy",
+      "toptierCode": "1100",
+      "toptierName": "Executive Office of the President",
+      "bureauId": "office-of-national-drug-control-policy",
+      "amount": 20810912.49,
+      "amountRaw": "20810912.49",
+      "obligations": 16235065.18,
+      "accounts": 2,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1100/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1100.json",
+      "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
+      "retrievedAt": "2026-09-17T16:18:33Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-eop-nec",
@@ -11988,7 +12044,35 @@
         }
       ]
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1100/council-of-economic-advisers",
+      "apiName": "Council of Economic Advisers",
+      "toptierCode": "1100",
+      "toptierName": "Executive Office of the President",
+      "bureauId": "council-of-economic-advisers",
+      "amount": 3357823.94,
+      "amountRaw": "3357823.94",
+      "obligations": 3472884.37,
+      "accounts": 1,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1100/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1100.json",
+      "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
+      "retrievedAt": "2026-09-17T16:18:33Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-eop-onadm",
@@ -12071,7 +12155,35 @@
         }
       ]
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1100/office-of-administration",
+      "apiName": "Office of Administration",
+      "toptierCode": "1100",
+      "toptierName": "Executive Office of the President",
+      "bureauId": "office-of-administration",
+      "amount": 90372217.36,
+      "amountRaw": "90372217.36",
+      "obligations": 108476185.3,
+      "accounts": 2,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1100/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1100.json",
+      "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
+      "retrievedAt": "2026-09-17T16:18:33Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-eop--treasury-receipts",
@@ -14336,7 +14448,35 @@
       "period": "2025-03",
       "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
     },
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "020/financial-crimes-enforcement-network",
+      "apiName": "Financial Crimes Enforcement Network",
+      "toptierCode": "020",
+      "toptierName": "Department of the Treasury",
+      "bureauId": "financial-crimes-enforcement-network",
+      "amount": 141757325.43,
+      "amountRaw": "141757325.43",
+      "obligations": 142940758.61,
+      "accounts": 2,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/020/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/020.json",
+      "documentSha256": "72f7dd63a903f0c048a86193a92b5a0c7b7d83189768b801eed22347a52bcbc5",
+      "retrievedAt": "2026-09-17T16:18:24Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-treasury-fincen-director-fincen",
@@ -14775,7 +14915,35 @@
       },
       "agencyMatched": "exec-dept-treasury"
     },
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "020/alcohol-and-tobacco-tax-and-trade-bureau",
+      "apiName": "Alcohol and Tobacco Tax and Trade Bureau",
+      "toptierCode": "020",
+      "toptierName": "Department of the Treasury",
+      "bureauId": "alcohol-and-tobacco-tax-and-trade-bureau",
+      "amount": 454587262.79,
+      "amountRaw": "454587262.79",
+      "obligations": 456949919.83,
+      "accounts": 2,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/020/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/020.json",
+      "documentSha256": "72f7dd63a903f0c048a86193a92b5a0c7b7d83189768b801eed22347a52bcbc5",
+      "retrievedAt": "2026-09-17T16:18:24Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-treasury-ttb-deputy-administrator",
@@ -19030,7 +19198,35 @@
       },
       "agencyMatched": "exec-dept-doi"
     },
-    "parentId": "exec-dept-doi"
+    "parentId": "exec-dept-doi",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "014/bureau-of-land-management",
+      "apiName": "Bureau of Land Management",
+      "toptierCode": "014",
+      "toptierName": "Department of the Interior",
+      "bureauId": "bureau-of-land-management",
+      "amount": 1681950799.69,
+      "amountRaw": "1681950799.69",
+      "obligations": 1759910727.84,
+      "accounts": 41,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/014/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/014.json",
+      "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
+      "retrievedAt": "2026-09-17T16:18:22Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-doi-usgs",
@@ -19815,7 +20011,35 @@
       },
       "agencyMatched": "exec-dept-doi"
     },
-    "parentId": "exec-dept-doi"
+    "parentId": "exec-dept-doi",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "014/bureau-of-reclamation",
+      "apiName": "Bureau of Reclamation",
+      "toptierCode": "014",
+      "toptierName": "Department of the Interior",
+      "bureauId": "bureau-of-reclamation",
+      "amount": 3814477664.46,
+      "amountRaw": "3814477664.46",
+      "obligations": 3566317576.66,
+      "accounts": 23,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/014/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/014.json",
+      "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
+      "retrievedAt": "2026-09-17T16:18:22Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-doi-bor-deputy-commissioner",
@@ -19971,7 +20195,35 @@
       },
       "agencyMatched": "exec-dept-doi"
     },
-    "parentId": "exec-dept-doi"
+    "parentId": "exec-dept-doi",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "014/bureau-of-safety-and-environmental-enforcement",
+      "apiName": "Bureau of Safety and Environmental Enforcement",
+      "toptierCode": "014",
+      "toptierName": "Department of the Interior",
+      "bureauId": "bureau-of-safety-and-environmental-enforcement",
+      "amount": 218881966.37,
+      "amountRaw": "218881966.37",
+      "obligations": 192033749.94,
+      "accounts": 2,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/014/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/014.json",
+      "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
+      "retrievedAt": "2026-09-17T16:18:22Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-doi-bsee-director-bsee",
@@ -20899,7 +21151,35 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "012/natural-resources-conservation-service",
+      "apiName": "Natural Resources Conservation Service",
+      "toptierCode": "012",
+      "toptierName": "Department of Agriculture",
+      "bureauId": "natural-resources-conservation-service",
+      "amount": 4844955907.76,
+      "amountRaw": "4844955907.76",
+      "obligations": 5117920858.12,
+      "accounts": 12,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/012/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/012.json",
+      "documentSha256": "e7a80ab91f75e1efaf78ddd0ff775ade234b0eb2d9cd88f72e0a3c1a52e1468c",
+      "retrievedAt": "2026-09-17T16:17:53Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-usda-nrcs-chief-nrcs",
@@ -22418,7 +22698,35 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "013/bureau-of-economic-analysis",
+      "apiName": "Bureau of Economic Analysis",
+      "toptierCode": "013",
+      "toptierName": "Department of Commerce",
+      "bureauId": "bureau-of-economic-analysis",
+      "amount": 89547963.17,
+      "amountRaw": "89547963.17",
+      "obligations": 93021703.52,
+      "accounts": 1,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/013/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/013.json",
+      "documentSha256": "cb3dc098e3c982856cd0e0c04d697441fbf9c78636db1815ec27c19376054950",
+      "retrievedAt": "2026-09-17T16:17:55Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-doc-bea-director-bea",
@@ -23583,7 +23891,35 @@
       },
       "agencyMatched": "exec-dept-dol"
     },
-    "parentId": "exec-dept-dol"
+    "parentId": "exec-dept-dol",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1601/employee-benefits-security-administration",
+      "apiName": "Employee Benefits Security Administration",
+      "toptierCode": "1601",
+      "toptierName": "Department of Labor",
+      "bureauId": "employee-benefits-security-administration",
+      "amount": 167244128.44,
+      "amountRaw": "167244128.44",
+      "obligations": 165450797.88,
+      "accounts": 1,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1601/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1601.json",
+      "documentSha256": "e6d23939da78ea1301e2bdd11b969165ceba8a1e15f36774c09493ad8180a355",
+      "retrievedAt": "2026-09-17T16:18:13Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-dol-ebsa-deputy-assistant-secretary",
@@ -23911,7 +24247,35 @@
       },
       "agencyMatched": "exec-dept-dol"
     },
-    "parentId": "exec-dept-dol"
+    "parentId": "exec-dept-dol",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "1601/office-of-federal-contract-compliance-programs",
+      "apiName": "Office of Federal Contract Compliance Programs",
+      "toptierCode": "1601",
+      "toptierName": "Department of Labor",
+      "bureauId": "office-of-federal-contract-compliance-programs",
+      "amount": 42835865.25,
+      "amountRaw": "42835865.25",
+      "obligations": 40072086.1,
+      "accounts": 1,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/1601/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/1601.json",
+      "documentSha256": "e6d23939da78ea1301e2bdd11b969165ceba8a1e15f36774c09493ad8180a355",
+      "retrievedAt": "2026-09-17T16:18:13Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-dol-ofccp-director-ofccp",
@@ -27370,7 +27734,35 @@
     "placementUrl": "https://www.federalregister.gov/agencies/national-nuclear-security-administration",
     "placementMatchedText": "National Nuclear Security Administration",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-doe"
+    "parentId": "exec-dept-doe",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "089/national-nuclear-security-administration",
+      "apiName": "National Nuclear Security Administration",
+      "toptierCode": "089",
+      "toptierName": "Department of Energy",
+      "bureauId": "national-nuclear-security-administration",
+      "amount": 25276829883.59,
+      "amountRaw": "25276829883.59",
+      "obligations": 32039663773.07,
+      "accounts": 4,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/089/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/089.json",
+      "documentSha256": "a68ee47620595dfde8b2efbe69f56d843e56485c8995a46648b6fba8e79dd127",
+      "retrievedAt": "2026-09-17T16:18:01Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-doe-sc",
@@ -29603,7 +29995,35 @@
       },
       "agencyMatched": "exec-dept-va"
     },
-    "parentId": "exec-dept-va"
+    "parentId": "exec-dept-va",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "bureau",
+      "key": "036/veterans-health-administration",
+      "apiName": "Veterans Health Administration",
+      "toptierCode": "036",
+      "toptierName": "Department of Veterans Affairs",
+      "bureauId": "veterans-health-administration",
+      "amount": 93863076642.64,
+      "amountRaw": "93863076642.64",
+      "obligations": 96548306293.41,
+      "accounts": 13,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/agency/036/sub_components/?fiscal_year=2026&limit=100",
+      "fixture": "tests/fixtures/usaspending/sub_components/036.json",
+      "documentSha256": "2d985589aaf54a010427818bf83d771aa24d5d53424c282bd703aa68f984ce25",
+      "retrievedAt": "2026-09-17T16:18:20Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-dept-va-vha-under-secretary-for-health",
@@ -37058,7 +37478,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "090",
+      "apiName": "Selective Service System",
+      "toptierCode": "090",
+      "toptierName": "Selective Service System",
+      "bureauId": null,
+      "amount": 25758603.63,
+      "amountRaw": "25758603.63",
+      "obligations": 24779516.73,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-export-import-bank-of-the-u-s",
@@ -37587,7 +38035,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "424",
+      "apiName": "National Transportation Safety Board",
+      "toptierCode": "424",
+      "toptierName": "National Transportation Safety Board",
+      "bureauId": null,
+      "amount": 119999167.27,
+      "amountRaw": "119999167.27",
+      "obligations": 106063520.51,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
@@ -37939,7 +38415,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "062",
+      "apiName": "Office of Special Counsel",
+      "toptierCode": "062",
+      "toptierName": "Office of Special Counsel",
+      "bureauId": null,
+      "amount": 23490995.16,
+      "amountRaw": "23490995.16",
+      "obligations": 26072215.24,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-merit-systems-protection-board-mspb",
@@ -38024,7 +38528,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "389",
+      "apiName": "Merit Systems Protection Board",
+      "toptierCode": "389",
+      "toptierName": "Merit Systems Protection Board",
+      "bureauId": null,
+      "amount": 39848414.54,
+      "amountRaw": "39848414.54",
+      "obligations": 40211543.67,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-federal-labor-relations-authority-flra",
@@ -38109,7 +38641,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "054",
+      "apiName": "Federal Labor Relations Authority",
+      "toptierCode": "054",
+      "toptierName": "Federal Labor Relations Authority",
+      "bureauId": null,
+      "amount": 19333036.94,
+      "amountRaw": "19333036.94",
+      "obligations": 21929473.22,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-national-mediation-board-nmb",
@@ -38188,7 +38748,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "421",
+      "apiName": "National Mediation Board",
+      "toptierCode": "421",
+      "toptierName": "National Mediation Board",
+      "bureauId": null,
+      "amount": 11722650.39,
+      "amountRaw": "11722650.39",
+      "obligations": 10888564.86,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-national-mediation-board-nmb-general-counsel",
@@ -38344,7 +38932,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "360",
+      "apiName": "Federal Election Commission",
+      "toptierCode": "360",
+      "toptierName": "Federal Election Commission",
+      "bureauId": null,
+      "amount": 62120044.09,
+      "amountRaw": "62120044.09",
+      "obligations": 66006799.14,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-federal-election-commission-fec-general-counsel",
@@ -38601,7 +39217,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "525",
+      "apiName": "Election Assistance Commission",
+      "toptierCode": "525",
+      "toptierName": "Election Assistance Commission",
+      "bureauId": null,
+      "amount": 52058120.79,
+      "amountRaw": "52058120.79",
+      "obligations": 61845193.72,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-election-assistance-commission-eac-general-counsel",
@@ -38930,7 +39574,35 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "535",
+      "apiName": "Privacy and Civil Liberties Oversight Board",
+      "toptierCode": "535",
+      "toptierName": "Privacy and Civil Liberties Oversight Board",
+      "bureauId": null,
+      "amount": 10510684.27,
+      "amountRaw": "10510684.27",
+      "obligations": 12187600.24,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-farm-credit-administration",
@@ -39345,7 +40017,35 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "309",
+      "apiName": "Appalachian Regional Commission",
+      "toptierCode": "309",
+      "toptierName": "Appalachian Regional Commission",
+      "bureauId": null,
+      "amount": 11714500.74,
+      "amountRaw": "11714500.74",
+      "obligations": 7042535.73,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-national-capital-planning-commission-ncpc",
@@ -39430,7 +40130,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "394",
+      "apiName": "National Capital Planning Commission",
+      "toptierCode": "394",
+      "toptierName": "National Capital Planning Commission",
+      "bureauId": null,
+      "amount": 8886218.23,
+      "amountRaw": "8886218.23",
+      "obligations": 11886960.06,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-ind-misc-american-battle-monuments-commission-abmc",
@@ -39509,7 +40237,35 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "074",
+      "apiName": "American Battle Monuments Commission",
+      "toptierCode": "074",
+      "toptierName": "American Battle Monuments Commission",
+      "bureauId": null,
+      "amount": 93630752.62,
+      "amountRaw": "93630752.62",
+      "obligations": 130613006.87,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-regulatory-fed",
@@ -39789,7 +40545,35 @@
         }
       ]
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "027",
+      "apiName": "Federal Communications Commission",
+      "toptierCode": "027",
+      "toptierName": "Federal Communications Commission",
+      "bureauId": null,
+      "amount": 9147551280.71,
+      "amountRaw": "9147551280.71",
+      "obligations": 8365980155.87,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-regulatory-ftc",
@@ -40116,7 +40900,35 @@
         }
       ]
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "061",
+      "apiName": "Consumer Product Safety Commission",
+      "toptierCode": "061",
+      "toptierName": "Consumer Product Safety Commission",
+      "bureauId": null,
+      "amount": 117650125.01,
+      "amountRaw": "117650125.01",
+      "obligations": 111176472.92,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-regulatory-fdic",
@@ -40291,7 +41103,35 @@
         }
       ]
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "339",
+      "apiName": "Commodity Futures Trading Commission",
+      "toptierCode": "339",
+      "toptierName": "Commodity Futures Trading Commission",
+      "bureauId": null,
+      "amount": 287395587.68,
+      "amountRaw": "287395587.68",
+      "obligations": 310018784.24,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "exec-regulatory-fmc",
@@ -40376,7 +41216,35 @@
         }
       ]
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "065",
+      "apiName": "Federal Maritime Commission",
+      "toptierCode": "065",
+      "toptierName": "Federal Maritime Commission",
+      "bureauId": null,
+      "amount": 32113129.4,
+      "amountRaw": "32113129.4",
+      "obligations": 29812388.73,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "judicial-branch",
@@ -40959,7 +41827,35 @@
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "jud-specialized-cavc",
     "placementCheckable": false,
-    "parentId": "jud-specialized"
+    "parentId": "jud-specialized",
+    "usaspendingOutlays": {
+      "source": "usaspending_file_ab",
+      "basis": "gross_outlays",
+      "level": "toptier",
+      "key": "345",
+      "apiName": "United States Court of Appeals for Veterans Claims",
+      "toptierCode": "345",
+      "toptierName": "United States Court of Appeals for Veterans Claims",
+      "bureauId": null,
+      "amount": 36064351.33,
+      "amountRaw": "36064351.33",
+      "obligations": 37793981.16,
+      "accounts": null,
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "financialEvidenceStatus": "verified",
+      "unitsEvidenceKind": "publishers_data_dictionary",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      }
+    }
   },
   {
     "id": "jud-specialized-cavc-clerk-of-the-court",

@@ -99,9 +99,17 @@ are committed verbatim under `tests/fixtures/usaspending/` (README there), and
 `data/audit/nominations/cost-cost-usaspending.jsonl` proposes 47 File A keys —
 22 toptier CGAC codes and 25 Treasury bureau slugs — for the 619 organisations
 phase 2 had declined for want of the network, every one citing the fixture it
-was read from and carrying the metric `gross_outlays`. **A proposed key is not
-a published figure**: nothing reaches the graph until a matcher reads it out
-of the fixture and the gate passes it. The other 572 are refused with the
+was read from and carrying the metric `gross_outlays`. Later the same day
+step 3 followed: `data_pipeline/verification/usaspending.py` reads the
+proposals whose API name and node name reduce to the same canonical key and
+publishes the fixture's own figure in a block of its own, `usaspendingOutlays`
+— **37 organisations, 17 by toptier code and 20 by Treasury's bureau slug**,
+gross and fiscal-year-to-date, beside the cost and never as it (CLAUDE.md,
+"USAspending File A, beside the cost"). 9 proposals are held for review by
+name and one is refused for printing zero. The measured-cost count above is
+unchanged at 136 on purpose: a gross year-to-date outlay from a different
+system is not the Treasury net line this graph calls a cost, and the gate
+refuses the block wherever the two coincide. The other 572 are refused with the
 reason on the record, most often that the entity does not report under the
 DATA Act at all:
 

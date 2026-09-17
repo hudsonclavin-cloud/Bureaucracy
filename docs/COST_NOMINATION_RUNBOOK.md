@@ -189,6 +189,14 @@ crosswalk entry becomes a published figure only when:
 
 None of that is your job. Your job is the crosswalk.
 
+For `usaspending_file_ab` the matcher exists (`scripts/derive_usaspending_evidence.py`):
+it applies a proposal only where the API's name and the node's reduce to the
+same canonical key, and holds every other proposal — an alias, an
+abbreviation, a bureau broader than the node — as `awaiting_review` with the
+confidence you gave it. A held proposal is not wasted; it is the list a
+curator reads. What it publishes is `gross_outlays`, beside the cost, never
+as it.
+
 ---
 
 ## Feeding back into phase 1

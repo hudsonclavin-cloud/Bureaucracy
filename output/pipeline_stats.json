@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-17T16:37:36.798717+00:00",
+  "timestamp": "2026-09-17T16:52:25.179197+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5392,
@@ -174,6 +174,17 @@
       "outside_the_white_house_office": 0,
       "name_no_longer_matches": 0,
       "stands_for_many_posts_after_pruning": 0
+    },
+    "usaspending_evidence": {
+      "applied": 37,
+      "unknown_node": 0,
+      "not_an_organisation": 0,
+      "stale_name": 0,
+      "malformed": 0,
+      "by_level": {
+        "toptier": 17,
+        "bureau": 20
+      }
     },
     "budget_summary_reused_from_previous_build": false,
     "budget_summary": {

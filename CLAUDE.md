@@ -42,6 +42,7 @@ python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
+python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -1228,6 +1229,68 @@ system reports on; the target is not full coverage but that every figure
 says which of outlays, obligations, budget authority, audited net cost or
 salary it is.
 
+**USAspending File A, beside the cost and never in it (since 2026-09-17).**
+The crosswalk `docs/EXACT_NODE_COSTS.md` §1 asks for got its first pass the
+day the network opened: USAspending's toptier agency list (the 111 DATA Act
+reporters with their CGAC codes) and, per matched agency, the `sub_components`
+bureau list — Treasury's own GTAS grouping, each bureau with a stable slug and
+FY-to-date `total_outlays` — were fetched verbatim into
+`tests/fixtures/usaspending/` (README there; 130 files, every one with its
+`.meta.json` and sha256), and phase 2 re-nominated the 619 organisations it
+had declined for want of the network: **47 File A keys proposed, 572
+refused** with the reason on the record (313 have no DATA Act reporter at
+all — committees, the courts, LOC/GPO/AOC/USCP/CBO, CIA, USPS, the
+Smithsonian, the Fed; 221 are not separable under their toptier; 38 are an
+ancestor's key). `data_pipeline/verification/usaspending.py` then applies a
+proposal only where the API's name and the node's reduce to the same
+canonical key — the test `evidence.py` uses for a page label and
+`financial_evidence` uses for `scopeMatch: exact` — so **37 organisations
+carry `usaspendingOutlays`** (17 toptier, 20 bureau) and **9 proposals are
+held** as `awaiting_review_name_not_equal` with the proposer's confidence
+(USPTO, PHMSA and FHEO differ from the API by an abbreviation; AmeriCorps,
+USAGM, DFC and CSB by an alias; VBA and the NSC by a bureau broader than the
+node). The FTC's key is refused because the fixture prints an outlay of 0.0.
+
+The figure is `gross_outlays`: File A's `GrossOutlayAmountByTAS_CPE`, which
+the DATA Act specification crosswalks to GTAS SF 133 line 3020 "Outlays,
+Gross" — *gross*, before the offsetting collections the Monthly Treasury
+Statement nets off, and fiscal-year-to-date as of the fetch. So it is a
+different measure from the Treasury line the graph publishes as a node's
+cost, and everything about it is built to keep the two apart: it writes no
+cost field, the panel prints it under its own heading ("GROSS OUTLAYS —
+USAspending File A (FY2026 to <date>; not the cost)") with a sentence saying
+which system it came from, `cost identified for the node itself` stays at
+136 by design, and the gate's check re-reads the fixture by the block's own
+key — digest recomputed from the bytes, the API's name still reducing to the
+node's, the figure the row prints — and refuses the block anywhere its
+amount equals the node's measured cost to the cent, since gross is not net
+and equality there means the figure leaked. Where it is most useful is where
+the graph honestly publishes no cost: the EOP offices beneath the Executive
+Office's negative Treasury pool now carry a sourced, dated File A figure
+beside that blank.
+
+**The scale, stated the only way this publisher states it.** USAspending's
+JSON prints `117451319504.29` with no currency mark and no heading, and its
+endpoint documentation is served client-side from a non-`.gov` host, so the
+validator's two existing scale rules — a phrase such as "in thousands", or a
+`$` printed on the figure — cannot see it. What the publisher does state, in
+its own Data Dictionary crosswalk (`data_dictionary_crosswalk.xlsx`, fetched
+verbatim from files.usaspending.gov), is which DATA Act element each API
+field carries, and that element is the Treasury's own SF 133 dollar figure.
+`DICTIONARY_SCALED_SOURCE_TYPES` grants exactly this source type a third
+rule, `publishers_data_dictionary`: the record must quote the dictionary's
+mapping row (both the API field and the DAIMS element) and name the
+workbook's digest, the derive step re-reads the row from the committed
+workbook, and the gate recomputes the workbook's digest again. It is the same
+shape as `_prints_whole_dollars` — granted per document class somebody here
+has read, recorded in `unitsEvidenceKind` on every record — and the
+validator's own plausibility ceiling is what bounds a units error.
+`tests/test_usaspending.py` pins it both ways: a name-equal key applies and
+the fixture's own figure is what is published; an unequal one is held with
+its confidence; a tampered fixture, a post, a renamed node, a zero and a
+figure equal to the measured cost are each refused; the block is withdrawn
+with everything else the evidence modules own.
+
 ### Names that state a count
 
 Eight curated groupings state a number in their own name. Four carry it
@@ -1353,6 +1416,11 @@ these" list matters as much as the rest: without it the sweep returns
   `costSourceCount` needs a URL, a rollup, or (root only) the anchor. No
   duplicate ids. `scripts/validate_published_graph.py` enforces all of these
   and must pass before a regenerated graph is committed.
+- A USAspending File A figure lives only in `usaspendingOutlays`, labelled
+  gross and fiscal-year-to-date, and is never a cost: nothing writes it into
+  a cost field, and the gate refuses the block on a post, on a node whose
+  name the API no longer prints, from a fixture whose digest has changed, or
+  wherever its amount equals the node's measured cost to the cent.
 - A curated node's name and type come from the base file, never from a
   payload copy. Anything a crawler adds to a base node merges around them.
 - A run that refuses to publish exits nonzero from every entry point

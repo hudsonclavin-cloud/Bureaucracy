@@ -457,6 +457,111 @@ def whitehouse_title_core(title):
     return key
 
 
+def usaspending_violations(node, block, today, label):
+    """Everything that must be true of a File A gross-outlays block.
+
+    The claim is narrow and the checks keep it that way: the block sits on an
+    organisation, not a post; it is File A gross outlays, fiscal-year-to-date,
+    dated, from api.usaspending.gov; the figure is the one the committed
+    fixture prints for the key, re-read here from bytes whose digest still
+    matches the block's; the name the API prints still reduces to this node's;
+    the scale rests on the publisher's dictionary, whose digest is re-checked
+    too; and -- the one that matters most -- it is not being published as the
+    cost. A Treasury line is net and a File A figure is gross, so a node whose
+    measured cost equals this figure to the cent is a node where the two were
+    confused, and the gate says so.
+    """
+    import hashlib
+    import json as _json
+    import math
+    from datetime import date
+
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    # The gate hands `today` in as an ISO string; the tests hand in a date.
+    today_date = today if isinstance(today, date) else date.fromisoformat(str(today)[:10])
+    if not isinstance(block, dict):
+        say("usaspendingOutlays {!r} is not a record".format(block))
+        return out
+    if is_post(node) or node.get("synthetic"):
+        say("carries a File A outlay but is a {!r}, not an organisation".format(node.get("type")))
+    if block.get("source") != "usaspending_file_ab" or block.get("basis") != "gross_outlays":
+        say("File A block claims source {!r} basis {!r}".format(block.get("source"), block.get("basis")))
+        return out
+    level = block.get("level")
+    if level not in ("toptier", "bureau"):
+        say("File A block has level {!r}".format(level))
+        return out
+    amount = block.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)) or not math.isfinite(float(amount)):
+        say("publishes {!r} as a File A outlay".format(amount))
+        return out
+    if float(amount) == 0:
+        say("publishes a File A outlay of zero, which is never published as a measurement")
+    if block.get("periodCoverage") != "fiscal_year_to_date" or not isinstance(block.get("fiscalYear"), int):
+        say("File A block is not a dated fiscal-year-to-date figure ({!r}, FY{!r})".format(
+            block.get("periodCoverage"), block.get("fiscalYear")))
+    for field in ("periodAsOf", "retrievedAt"):
+        text = str(block.get(field) or "")[:10]
+        try:
+            when = date.fromisoformat(text)
+        except ValueError:
+            say("File A block {} {!r} is not an ISO date".format(field, block.get(field)))
+            continue
+        if when > today_date:
+            say("File A block {} {!r} is in the future".format(field, block.get(field)))
+    url = str(block.get("url") or "")
+    if not url.startswith("https://api.usaspending.gov/"):
+        say("File A block cites {!r}, not api.usaspending.gov".format(url))
+    if block.get("unitsEvidenceKind") != "publishers_data_dictionary":
+        say("File A block rests its scale on {!r}; this pipeline establishes it from the publisher's dictionary".format(
+            block.get("unitsEvidenceKind")))
+    source = block.get("unitsEvidenceSource") if isinstance(block.get("unitsEvidenceSource"), dict) else {}
+    dictionary = PROJECT_ROOT / str(source.get("file") or "")
+    if not str(source.get("file") or "").startswith("tests/fixtures/usaspending/") or not dictionary.is_file():
+        say("File A block names a dictionary this repository does not carry: {!r}".format(source.get("file")))
+    elif hashlib.sha256(dictionary.read_bytes()).hexdigest() != str(source.get("sha256") or "").lower():
+        say("File A block names a dictionary whose digest does not match the committed workbook")
+    fixture_rel = str(block.get("fixture") or "")
+    fixture = PROJECT_ROOT / fixture_rel
+    if not fixture_rel.startswith("tests/fixtures/usaspending/") or not fixture.is_file():
+        say("File A block cites a fixture this repository does not carry: {!r}".format(fixture_rel))
+        return out
+    if hashlib.sha256(fixture.read_bytes()).hexdigest() != str(block.get("documentSha256") or "").lower():
+        say("File A block cites a fixture whose digest does not match the bytes on disk")
+        return out
+    try:
+        data = _json.loads(fixture.read_text(encoding="utf-8"))
+    except ValueError:
+        say("File A fixture {!r} is not JSON".format(fixture_rel))
+        return out
+    rows = data.get("results") or []
+    if level == "toptier":
+        rows = [r for r in rows if str(r.get("toptier_code")) == str(block.get("toptierCode"))]
+        printed_amount = rows[0].get("outlay_amount") if len(rows) == 1 else None
+        printed_name = rows[0].get("agency_name") if len(rows) == 1 else None
+    else:
+        rows = [r for r in rows if str(r.get("id")) == str(block.get("bureauId"))]
+        printed_amount = rows[0].get("total_outlays") if len(rows) == 1 else None
+        printed_name = rows[0].get("name") if len(rows) == 1 else None
+    if len(rows) != 1:
+        say("File A key {!r} matches {} rows of its fixture, not one".format(block.get("key"), len(rows)))
+        return out
+    if not isinstance(printed_amount, (int, float)) or abs(float(printed_amount) - float(amount)) > 0.005:
+        say("publishes File A outlay {!r}; the fixture prints {!r} for {!r}".format(amount, printed_amount, block.get("key")))
+    if canonical_key(printed_name) != canonical_key(node.get("name")):
+        say("File A row is named {!r}, which no longer names this node".format(printed_name))
+    if canonical_key(block.get("apiName")) != canonical_key(printed_name):
+        say("File A block records apiName {!r}; the fixture prints {!r}".format(block.get("apiName"), printed_name))
+    # Never the cost. Gross is not net, and year-to-date is not a period the
+    # Treasury line reports, so equality here means the figure leaked.
+    measured = str(node.get("cost_status") or "") in ("official", "root_total")
+    cost = node.get("resolved_total_amount")
+    if measured and isinstance(cost, (int, float)) and abs(float(cost) - float(amount)) <= 0.005:
+        say("publishes its File A gross outlay as its measured cost")
+    return out
+
+
 def reported_pay_violations(node, pay, today, label):
     """Everything that must be true of a reported-pay claim.
 
@@ -1327,6 +1432,7 @@ def main(argv):
     bad_table_pay = []
     bad_statutory_pay = []
     bad_reported_pay = []
+    bad_usaspending = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -1463,6 +1569,10 @@ def main(argv):
         reported_pay = node.get("positionReportedPay")
         if reported_pay is not None:
             bad_reported_pay.extend(reported_pay_violations(node, reported_pay, today, label))
+        # File A gross outlays, in a block of their own beside the cost.
+        usaspending = node.get("usaspendingOutlays")
+        if usaspending is not None:
+            bad_usaspending.extend(usaspending_violations(node, usaspending, today, label))
         # The same, for a page read that did not name the node and stands
         # beside a directory listing that did.
         read_not_named = node.get("pageReadNotNamed")
@@ -1565,6 +1675,7 @@ def main(argv):
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
+    gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -1762,6 +1873,12 @@ def main(argv):
         len(official_counts), disagree))
     print("  weights disputed     : {:,} allocated shares were apportioned by a headcount OPM's file contradicts".format(
         len(disputed)))
+    file_a = [n for n in nodes if isinstance(n.get("usaspendingOutlays"), dict)]
+    print("  USAspending File A   : {:,} organisations carry a gross-outlays figure ({:,} toptier, {:,} bureau), "
+          "fiscal-year-to-date, beside the cost and never as it".format(
+        len(file_a),
+        sum(1 for n in file_a if n["usaspendingOutlays"].get("level") == "toptier"),
+        sum(1 for n in file_a if n["usaspendingOutlays"].get("level") == "bureau")))
     with_rate = sum(1 for n in listings if isinstance(n["positionListing"].get("reportedPay"), (int, float)))
     with_level = sum(1 for n in listings if n["positionListing"].get("payLevel"))
     print("  archive pay          : {:,} positions carry a rate of basic pay the archive reports; {:,} carry a level or grade only".format(

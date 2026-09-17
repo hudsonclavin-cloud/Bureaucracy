@@ -238,6 +238,8 @@ MINIMAL_GRAPH_FIELDS = (
     "childrenIncomplete", "statedChildCount", "carriedChildCount", "representsPosts",
     # the three pay blocks, each a different kind of claim
     "positionListing", "positionPayRate", "positionStatutoryPay", "positionReportedPay",
+    # USAspending File A gross outlays, beside the cost and never in it
+    "usaspendingOutlays",
 )
 
 #: Root-only keys the viewer also needs: the anchor's period label, which the
@@ -2314,6 +2316,7 @@ def build_graph(
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
+    usaspending_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2529,6 +2532,22 @@ def build_graph(
     )
     validation["whitehouse_pay_evidence"] = apply_whitehouse_pay_evidence(
         graph, load_whitehouse_pay_evidence(resolved_whitehouse_pay_path) if resolved_whitehouse_pay_path else {}, index_tree=index_tree,
+    )
+    # USAspending File A, last: a gross fiscal-year-to-date outlay stamped in
+    # its own block beside the Treasury figure. It reads no cost field and
+    # writes none; the panel prints it under its own heading and the gate
+    # refuses it anywhere it could pass for the cost.
+    from data_pipeline.verification.usaspending import (  # noqa: E402 — usaspending imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_USASPENDING_EVIDENCE_PATH,
+        apply_usaspending_evidence,
+        load_usaspending_evidence,
+    )
+
+    resolved_usaspending_path = (
+        DEFAULT_USASPENDING_EVIDENCE_PATH if usaspending_evidence_path == "default" else usaspending_evidence_path
+    )
+    validation["usaspending_evidence"] = apply_usaspending_evidence(
+        graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,
     )
     proof_status_counts, _ = annotate_proof_tree(
         graph,

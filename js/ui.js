@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260915b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260915b";
+import { createGovernmentGraph } from "./graph.js?v=20260917a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260917a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -615,12 +615,27 @@ function renderHeadcountProvenance(data) {
   }
   if (!line) return;
   const source = data.employeesOfficialSource;
-  if (!source || typeof source !== "object" || typeof data.employeesOfficial !== "number") {
-    line.replaceChildren();
-    return;
-  }
+  const hasHeadcount = source && typeof source === "object" && typeof data.employeesOfficial === "number";
+  const fileA = data.usaspendingOutlays;
+  const hasFileA = fileA && typeof fileA === "object" && typeof fileA.amount === "number";
   line.replaceChildren();
   const add = (text) => line.appendChild(document.createTextNode(text));
+  if (hasFileA) {
+    // A different measure from the cost above it, and said so in the same
+    // breath: File A is gross, before the offsetting collections the Treasury
+    // statement nets off, and year-to-date rather than a period the Treasury
+    // line reports. The figure is the API's own, for the name it prints.
+    const fetched = fileA.retrievedAt
+      ? new Date(fileA.retrievedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
+      : null;
+    const where = fileA.level === "bureau"
+      ? `bureau "${fileA.bureauId}" of toptier ${fileA.toptierCode}`
+      : `toptier ${fileA.toptierCode}`;
+    add(`USAspending's File A reports gross outlays of $${Math.round(fileA.amount).toLocaleString()} for "${fileA.apiName}" (${where}) for FY${fileA.fiscalYear} through ${fileA.periodAsOf}`);
+    if (fetched) add(`, fetched ${fetched}`);
+    add(". This is a gross, year-to-date figure from a different system than the Treasury statement's net line; it is shown beside the cost and is not the cost. ");
+  }
+  if (!hasHeadcount) return;
   const on = source.checkedAt
     ? new Date(source.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })
     : null;
@@ -1591,6 +1606,15 @@ function renderInfoPanel(nodeObj) {
   if (typeof data.employeesOfficial === "number" && official && typeof official === "object") {
     const period = official.period ? ` (${official.period})` : "";
     statRows.push([`EMPLOYEES — OPM FedScope${period}`, data.employeesOfficial.toLocaleString()]);
+  }
+  // USAspending File A, under its own heading so it can never read as the
+  // cost: gross outlays, fiscal-year-to-date, from a different system.
+  const fileA = data.usaspendingOutlays;
+  if (fileA && typeof fileA === "object" && typeof fileA.amount === "number") {
+    statRows.push([
+      `GROSS OUTLAYS — USAspending File A (FY${fileA.fiscalYear} to ${fileA.periodAsOf}; not the cost)`,
+      `$${Math.round(fileA.amount).toLocaleString()}`,
+    ]);
   }
   if (data.budget) {
     // A hand-typed note in the curated file, not a sourced figure. Unlabelled it

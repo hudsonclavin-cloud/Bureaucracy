@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-17T16:41:51Z",
+ "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx",
+ "status": 200,
+ "final_url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx",
+ "content_type": "binary/octet-stream",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 110540,
+ "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+ "error": null
+}

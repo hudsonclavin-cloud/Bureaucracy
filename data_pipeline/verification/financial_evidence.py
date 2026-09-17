@@ -188,6 +188,25 @@ SCALE_PRINTED_SOURCE_TYPES = {
     "whitehouse_staff_report",
 }
 
+#: A third way a source can state its scale, narrower still, and granted to
+#: exactly one source type: a machine-readable API whose publisher states no
+#: scale in words anywhere -- USAspending's JSON prints `117451319504.29` with
+#: no currency mark and no heading -- but publishes a data dictionary tying
+#: each field to the DATA Act schema element it carries, whose definition is
+#: OMB Circular A-11's. The record must quote that mapping from the committed
+#: dictionary (`unitsEvidence` names both the API field and the DAIMS
+#: element) and carry the dictionary's digest in `unitsEvidenceSource`, so a
+#: reviewer can open the workbook the claim rests on. Kind:
+#: `publishers_data_dictionary`. Per basis, because the dictionary maps each
+#: element separately and "outlays" and "obligations" are different rows.
+DICTIONARY_SCALED_SOURCE_TYPES = {
+    "usaspending_file_ab": {
+        "gross_outlays": ("gross_outlay_amount", "GrossOutlayAmountByTAS_CPE"),
+        "obligations": ("obligations_incurred_total", "ObligationsIncurredTotalByTAS_CPE"),
+        "budget_authority": ("total_budgetary_resources", "TotalBudgetaryResources_CPE"),
+    },
+}
+
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
 #: CJs *do* print prior-year actual columns, so realized bases are allowed
@@ -309,6 +328,31 @@ def _prints_whole_dollars(evidence: str, amount_raw: Any, source_type: str, unit
         return ""
     match = re.search(rf"\$\s*{re.escape(raw)}(?![\d,]|\.\d)", evidence)
     return match.group(0) if match else ""
+
+
+def _dictionary_states_scale(record: Mapping[str, Any], evidence: str, source_type: str, basis: str, units: str) -> str:
+    """Whether the publisher's data dictionary, quoted in `unitsEvidence` and
+    named with its digest in `unitsEvidenceSource`, ties this record's field to
+    the DATA Act element for its basis. See `DICTIONARY_SCALED_SOURCE_TYPES`.
+
+    Deliberately not a general relaxation: one source type, one basis at a
+    time, both names required in the quoted line, and a sha256 for the
+    workbook so the derive step and the release gate can check the mapping is
+    really in it. The quote establishes which element the figure is; the
+    validator's own ceiling bounds the scale; neither alone would do.
+    """
+    mapping = DICTIONARY_SCALED_SOURCE_TYPES.get(source_type, {}).get(basis)
+    if not mapping or units != "usd":
+        return ""
+    field, element = mapping
+    if field.casefold() not in evidence or element.casefold() not in evidence:
+        return ""
+    source = record.get("unitsEvidenceSource")
+    if not isinstance(source, Mapping):
+        return ""
+    if not _SHA256.match(_text(source.get("sha256")).lower()) or not _text(source.get("file")):
+        return ""
+    return f"{field} -> {element}"
 
 
 def _is_real_number(value: Any) -> bool:
@@ -533,12 +577,13 @@ def validate_record(
         # type, and only where no scale phrase was found at all — see
         # `_prints_whole_dollars`.
         printed = _prints_whole_dollars(units_evidence, record.get("amountRaw"), source_type, units)
-        if not printed:
+        dictionary = "" if printed else _dictionary_states_scale(record, units_evidence, source_type, basis, units)
+        if not printed and not dictionary:
             raise Rejected(
                 f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
                 f"(expected one of {UNIT_PHRASES[units]})"
             )
-        units_evidence_kind = "currency_mark_on_the_printed_figure"
+        units_evidence_kind = "currency_mark_on_the_printed_figure" if printed else "publishers_data_dictionary"
     else:
         if stated != units:
             raise Rejected(

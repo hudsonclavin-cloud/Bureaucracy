@@ -108,6 +108,10 @@ METHOD_POST_ON_ORG_PAGE = "name_labelled_on_its_organisations_official_page"
 # which the exporter re-feeds as a payload on every run — made any claim
 # permanent and no retraction could ever reach the site.
 EVIDENCE_OWNED_FIELDS = (
+    # USAspending File A gross outlays, in its own block beside the cost;
+    # listed first so a withdrawn record cannot outlive the build that
+    # withdrew it (data_pipeline/verification/usaspending.py).
+    "usaspendingOutlays",
     "verificationMethod",
     "verificationFailure",
     "verificationSiteFrom",
