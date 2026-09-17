@@ -2303,7 +2303,7 @@
     },
     "exec-dept-doj-dea": {
       "name": "Drug Enforcement Administration (DEA)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2311,7 +2311,7 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
@@ -2360,7 +2360,7 @@
     },
     "exec-dept-doj-usao": {
       "name": "U.S. Attorneys Office (USAO — 94 Districts)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": true,
       "status": "fetch_failed",
@@ -2368,7 +2368,7 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
@@ -2438,17 +2438,26 @@
     },
     "exec-dept-doj-div-enrd": {
       "name": "Environment & Natural Resources Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "named_on_the_page_but_not_as_a_label",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-17T16:34:17+00:00"
+      }
     },
     "exec-dept-doj-div-nsd": {
       "name": "National Security Division",
@@ -2468,17 +2477,26 @@
     },
     "exec-dept-doj-div-tax": {
       "name": "Tax Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-17T16:34:17+00:00"
+      }
     },
     "exec-dept-doj-solicitor": {
       "name": "Office of the Solicitor General",
@@ -29353,241 +29371,257 @@
     },
     "exec-dept-doj-secretary-of-department-of-justice-doj": {
       "name": "Attorney General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-dept-doj-deputy-secretary-of-department-of-justice-doj": {
       "name": "Deputy Attorney General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-executive-secretary": {
       "name": "Executive Secretary",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-deputy-inspector-general": {
       "name": "Deputy Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-deputy-general-counsel": {
       "name": "Deputy General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-deputy-cfo-controller": {
       "name": "Deputy CFO / Controller",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-chief-information-officer": {
       "name": "Chief Information Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-deputy-cio": {
       "name": "Deputy CIO",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-chief-human-capital-officer": {
       "name": "Chief Human Capital Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-director-of-legislative-affairs": {
       "name": "Director of Legislative Affairs",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-director-of-public-affairs": {
       "name": "Director of Public Affairs",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-diversity-inclusion-officer": {
       "name": "Diversity & Inclusion Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/about",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
@@ -29929,7 +29963,7 @@
     },
     "exec-dept-doj-dea-administrator-dea": {
       "name": "Administrator, DEA",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -29938,13 +29972,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-deputy-administrator": {
       "name": "Deputy Administrator",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -29953,13 +29987,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -29968,13 +30002,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-chief-inspector": {
       "name": "Chief Inspector",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -29983,13 +30017,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-chief-counsel": {
       "name": "Chief Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -29998,13 +30032,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-assistant-administrator-diversion-control-division": {
       "name": "Assistant Administrator — Diversion Control Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30013,13 +30047,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-assistant-administrator-intelligence-division": {
       "name": "Assistant Administrator — Intelligence Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30028,13 +30062,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-assistant-administrator-operational-support-division": {
       "name": "Assistant Administrator — Operational Support Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30043,13 +30077,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-assistant-administrator-human-resources-division": {
       "name": "Assistant Administrator — Human Resources Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30058,13 +30092,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-diversion-investigator-multiple": {
       "name": "Diversion Investigator (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30073,13 +30107,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-dea-special-agent-multiple": {
       "name": "Special Agent (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": false,
       "isPost": true,
@@ -30088,7 +30122,7 @@
       "failures": [
         {
           "url": "https://www.justice.gov/dea/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
@@ -30651,7 +30685,7 @@
     },
     "exec-dept-doj-usao-first-assistant-u-s-attorney": {
       "name": "First Assistant U.S. Attorney",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30660,13 +30694,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-criminal-division-chief": {
       "name": "Criminal Division Chief",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30675,13 +30709,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-civil-division-chief": {
       "name": "Civil Division Chief",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30690,13 +30724,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-national-security-coordinator": {
       "name": "National Security Coordinator",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30705,13 +30739,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-assistant-u-s-attorney-criminal-multiple": {
       "name": "Assistant U.S. Attorney — Criminal (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30720,13 +30754,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-assistant-u-s-attorney-civil-multiple": {
       "name": "Assistant U.S. Attorney — Civil (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30735,13 +30769,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-paralegal-specialist-multiple": {
       "name": "Paralegal Specialist (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30750,13 +30784,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-usao-victim-witness-coordinator": {
       "name": "Victim-Witness Coordinator",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-usao",
       "ownPage": false,
       "isPost": true,
@@ -30765,13 +30799,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/usao",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-antitrust-assistant-attorney-general-antitrust-division": {
       "name": "Assistant Attorney General, Antitrust Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-antitrust",
       "ownPage": false,
       "isPost": true,
@@ -30780,13 +30814,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/atr/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-antitrust-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-antitrust",
       "ownPage": false,
       "isPost": true,
@@ -30795,13 +30829,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/atr/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-antitrust-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-antitrust",
       "ownPage": false,
       "isPost": true,
@@ -30810,13 +30844,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/atr/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-antitrust-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-antitrust",
       "ownPage": false,
       "isPost": true,
@@ -30825,133 +30859,141 @@
       "failures": [
         {
           "url": "https://www.justice.gov/atr/",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-civil-assistant-attorney-general-civil-division": {
       "name": "Assistant Attorney General, Civil Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/civil",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/civil",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/civil",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/civil",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-rights-assistant-attorney-general-civil-rights-division": {
       "name": "Assistant Attorney General, Civil Rights Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil-rights",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/crt",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-rights-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil-rights",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/crt",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-rights-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil-rights",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/crt",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-civil-rights-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-civil-rights",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/crt",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-criminal-assistant-attorney-general-criminal-division": {
       "name": "Assistant Attorney General, Criminal Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-criminal",
       "ownPage": false,
       "isPost": true,
@@ -30960,13 +31002,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/criminal",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-criminal-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-criminal",
       "ownPage": false,
       "isPost": true,
@@ -30975,13 +31017,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/criminal",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-criminal-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-criminal",
       "ownPage": false,
       "isPost": true,
@@ -30990,13 +31032,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/criminal",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-criminal-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-div-criminal",
       "ownPage": false,
       "isPost": true,
@@ -31005,133 +31047,141 @@
       "failures": [
         {
           "url": "https://www.justice.gov/criminal",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-div-enrd-assistant-attorney-general-environment-natural-resources-division": {
       "name": "Assistant Attorney General, Environment & Natural Resources Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-enrd-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-enrd-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-enrd-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-nsd-assistant-attorney-general-national-security-division": {
       "name": "Assistant Attorney General, National Security Division",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-nsd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/nsd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-nsd-deputy-assistant-attorney-general-3-5": {
       "name": "Deputy Assistant Attorney General (×3-5)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-nsd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/nsd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-nsd-section-chief-multiple": {
       "name": "Section Chief (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-nsd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/nsd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-div-nsd-trial-attorney-ausa-multiple": {
       "name": "Trial Attorney / AUSA (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:34:17+00:00",
       "siteFrom": "exec-dept-doj-div-nsd",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.justice.gov/nsd",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-solicitor-solicitor-general-of-the-united-states": {
       "name": "Solicitor General of the United States",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-solicitor",
       "ownPage": false,
       "isPost": true,
@@ -31140,13 +31190,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/osg",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-solicitor-principal-deputy-solicitor-general": {
       "name": "Principal Deputy Solicitor General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-solicitor",
       "ownPage": false,
       "isPost": true,
@@ -31155,13 +31205,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/osg",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-solicitor-deputy-solicitor-general-4": {
       "name": "Deputy Solicitor General (×4)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-solicitor",
       "ownPage": false,
       "isPost": true,
@@ -31170,13 +31220,13 @@
       "failures": [
         {
           "url": "https://www.justice.gov/osg",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },
     "exec-dept-doj-solicitor-assistant-to-the-solicitor-general-multiple": {
       "name": "Assistant to the Solicitor General (×multiple)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-17T16:36:13+00:00",
       "siteFrom": "exec-dept-doj-solicitor",
       "ownPage": false,
       "isPost": true,
@@ -31185,7 +31235,7 @@
       "failures": [
         {
           "url": "https://www.justice.gov/osg",
-          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401); refused by policy, no rule was seen)"
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 5 attempts; refused by policy, no rule was seen)"
         }
       ]
     },

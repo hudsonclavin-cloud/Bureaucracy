@@ -668,6 +668,148 @@ class RobotsTests(unittest.TestCase):
             self.assertEqual(policy.crawl_delay("https://www.energy.gov/a"), 0.0)
 
 
+def _sequenced_urlopen(sequence, calls):
+    """The network answering differently on each knock: (status, body) in
+    order, the last one repeating. `body is None` raises that status."""
+
+    def opener(request, *args, **kwargs):
+        status, body = sequence[min(len(calls), len(sequence) - 1)]
+        calls.append(request.full_url)
+        if body is None:
+            raise HTTPError(request.full_url, status, "err", {}, None)
+        return _Response(status, body)
+
+    return opener
+
+
+class RobotsRetryTests(unittest.TestCase):
+    """www.justice.gov answers robots.txt 401 about two times in three and a
+    real 2,651-byte file the third (docs/NETWORK_ACCESS.md section 7). One
+    knock recorded 67 nodes as refused by a rule the department never
+    published; asking again reads the file and obeys it. Pinned both ways:
+    a refusal that clears yields the rules, a refusal that never clears is
+    refused after exactly the bounded attempts and says how many, and the
+    cases that must NOT be retried are not."""
+
+    def _policy(self, retries=2):
+        slept = []
+        return RobotsPolicy(user_agent="x", retries=retries, backoff=2.0, sleep=slept.append), slept
+
+    def test_a_refusal_that_clears_on_retry_yields_the_rules_that_were_read(self) -> None:
+        policy, slept = self._policy()
+        calls = []
+        seq = [(401, None), (401, None), (200, "User-agent: *\nDisallow: /private/\n")]
+        with mock.patch.object(urllib.request, "urlopen", _sequenced_urlopen(seq, calls)):
+            allowed, why = policy.allows("https://www.justice.gov/about")
+            self.assertTrue(allowed)
+            self.assertIn("read on attempt 3", why, "a third-try success must not read as a first-try one")
+            blocked, why2 = policy.allows("https://www.justice.gov/private/x")
+            self.assertFalse(blocked)
+            self.assertIn("disallows /private/x", why2, "the rules that were finally read are obeyed")
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(slept, [2.0, 4.0], "backed off, and the file is fetched once per origin")
+
+    def test_a_refusal_that_never_clears_is_refused_after_exactly_the_bounded_attempts(self) -> None:
+        policy, slept = self._policy(retries=2)
+        calls = []
+        with mock.patch.object(urllib.request, "urlopen", _sequenced_urlopen([(403, None)], calls)):
+            allowed, why = policy.allows("https://www.state.gov/about/")
+        self.assertFalse(allowed)
+        self.assertIn("could not be read (403) on each of 3 attempts", why)
+        self.assertIn("refused by policy", why)
+        self.assertNotIn("disallows", why, "no rule was read on any attempt, so none may be quoted")
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(slept, [2.0, 4.0])
+
+    def test_a_server_error_is_retried_and_a_recovered_file_is_obeyed(self) -> None:
+        policy, slept = self._policy()
+        calls = []
+        seq = [(503, None), (200, "User-agent: *\nDisallow: /\n")]
+        with mock.patch.object(urllib.request, "urlopen", _sequenced_urlopen(seq, calls)):
+            allowed, why = policy.allows("https://www.energy.gov/a")
+        self.assertFalse(allowed)
+        self.assertIn("disallows /a", why)
+        self.assertIn("read on attempt 2", why)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(slept, [2.0])
+
+    def test_nothing_published_is_an_answer_and_is_not_retried(self) -> None:
+        policy, slept = self._policy()
+        calls = []
+        with mock.patch.object(urllib.request, "urlopen", _sequenced_urlopen([(404, None)], calls)):
+            allowed, why = policy.allows("https://www.energy.gov/a")
+        self.assertTrue(allowed)
+        self.assertIn("no readable robots", why)
+        self.assertEqual(len(calls), 1, "a 404 is an answer; asking again would be pestering")
+        self.assertEqual(slept, [])
+
+    def test_a_network_error_is_not_retried(self) -> None:
+        policy, slept = self._policy()
+        calls = []
+
+        def boom(request, *args, **kwargs):
+            calls.append(request.full_url)
+            raise URLError("connect_rejected")
+
+        with mock.patch.object(urllib.request, "urlopen", boom):
+            allowed, why = policy.allows("https://www.energy.gov/a")
+        self.assertFalse(allowed)
+        self.assertIn("complete disallow", why)
+        self.assertEqual(len(calls), 1, "DNS and TLS do not heal in seconds; each attempt costs a timeout")
+        self.assertEqual(slept, [])
+
+    def test_zero_retries_is_exactly_the_old_behaviour(self) -> None:
+        policy, slept = self._policy(retries=0)
+        calls = []
+        with mock.patch.object(urllib.request, "urlopen", _sequenced_urlopen([(401, None)], calls)):
+            allowed, why = policy.allows("https://www.justice.gov/about")
+        self.assertFalse(allowed)
+        self.assertIn("could not be read (401); refused by policy", why)
+        self.assertNotIn("attempt", why)
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(slept, [])
+
+
+class PageRetryTests(unittest.TestCase):
+    """The page is asked for again under the same rule as robots.txt, since
+    justice.gov answers both the same way; otherwise the rules would be read
+    and the page still recorded as a 401 on the first knock."""
+
+    def _request(self, statuses, calls):
+        def request(url, *, timeout):
+            status = statuses[min(len(calls), len(statuses) - 1)]
+            calls.append(url)
+            if status != 200:
+                raise HTTPError(url, status, "err", {}, None)
+            return "<html>ok</html>"
+        return request
+
+    def test_a_page_that_answers_401_then_200_is_read(self) -> None:
+        calls, slept = [], []
+        text = verify_base_graph.fetch_with_retries("https://www.justice.gov/about", timeout=5, retries=2, backoff=2.0,
+                                                    sleep=slept.append, request=self._request([401, 401, 200], calls))
+        self.assertEqual(text, "<html>ok</html>")
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(slept, [2.0, 4.0])
+
+    def test_a_page_that_keeps_answering_401_raises_after_the_bounded_attempts(self) -> None:
+        calls, slept = [], []
+        with self.assertRaises(HTTPError) as caught:
+            verify_base_graph.fetch_with_retries("https://www.state.gov/about/", timeout=5, retries=2, backoff=2.0,
+                                                 sleep=slept.append, request=self._request([401], calls))
+        self.assertEqual(caught.exception.code, 401)
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(slept, [2.0, 4.0])
+
+    def test_a_404_is_raised_at_once(self) -> None:
+        calls, slept = [], []
+        with self.assertRaises(HTTPError):
+            verify_base_graph.fetch_with_retries("https://www.energy.gov/gone", timeout=5, retries=2, backoff=2.0,
+                                                 sleep=slept.append, request=self._request([404], calls))
+        self.assertEqual(len(calls), 1)
+        self.assertEqual(slept, [])
+
+
 class BuildAndGateTests(unittest.TestCase):
     def setUp(self) -> None:
         self.tmp = TEST_TMP_ROOT / f"verify-{uuid.uuid4().hex}"
@@ -783,7 +925,7 @@ class VerifierScriptTests(unittest.TestCase):
         out = io.StringIO()
         with redirect_stdout(out):
             code = verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
-                                           "--evidence", str(self.evidence), "--sleep", "0", *extra])
+                                           "--evidence", str(self.evidence), "--sleep", "0", "--retry-backoff", "0", *extra])
         return code, out.getvalue()
 
     def test_dry_run_plans_without_fetching_or_writing(self) -> None:
@@ -807,6 +949,32 @@ class VerifierScriptTests(unittest.TestCase):
         # planned, a bare one is refused by name and never fetched.
         self.assertNotIn("doe-science-hydrologist", with_positions)
         self.assertIn("post_title_is_a_bare_job_title", with_positions)
+
+    def test_a_page_that_refuses_twice_and_answers_the_third_time_is_read_through_the_cli(self) -> None:
+        """The wiring rather than the mechanism: `--retries` reaches the page
+        fetch, and `--retries 0` is exactly the old one-knock behaviour."""
+        calls = []
+
+        def flaky(url, timeout=30):
+            calls.append(url)
+            if len(calls) < 3:
+                raise HTTPError(url, 401, "err", {}, None)
+            return DOE_PAGE
+
+        with mock.patch.object(verify_base_graph, "request_text", flaky), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)):
+            code, text = self._run()
+        self.assertEqual(code, 0, text)
+        records = json.loads(self.evidence.read_text(encoding="utf-8"))["nodes"]
+        self.assertEqual(records["exec-dept-doe"]["status"], CONFIRMED)
+        self.assertEqual(calls, ["https://www.energy.gov/about-us"] * 3,
+                         "two refusals, the page on the third knock, and one fetch per page per run after that")
+        calls.clear()
+        with mock.patch.object(verify_base_graph, "request_text", flaky), \
+             mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)):
+            code, text = self._run("--retries", "0", "--recheck")
+        self.assertNotEqual(code, 0, "with retries off, the first 401 is final")
+        self.assertEqual(calls, ["https://www.energy.gov/about-us"], "one knock, as before this change")
 
     def test_a_real_run_records_each_outcome_and_writes_nothing_else(self) -> None:
         pages = {"https://www.energy.gov/about-us": DOE_PAGE}
@@ -1337,7 +1505,7 @@ class PlacementScriptTests(unittest.TestCase):
              mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             code = verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
-                                           "--evidence", str(self.evidence), "--sleep", "0", *extra])
+                                           "--evidence", str(self.evidence), "--sleep", "0", "--retry-backoff", "0", *extra])
         return code, out.getvalue()
 
     def _records(self):
@@ -1408,7 +1576,7 @@ class PlacementScriptTests(unittest.TestCase):
              mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
-                                    "--evidence", str(self.evidence), "--sleep", "0"])
+                                    "--evidence", str(self.evidence), "--sleep", "0", "--retry-backoff", "0"])
         self.assertIn("'parent_page_unreadable': 2", out.getvalue())
         for record in self._records().values():
             self.assertNotIn("placement", record)
@@ -1433,7 +1601,7 @@ class PlacementScriptTests(unittest.TestCase):
              mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(out):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
-                                    "--evidence", str(self.evidence), "--sleep", "0"])
+                                    "--evidence", str(self.evidence), "--sleep", "0", "--retry-backoff", "0"])
         self.assertIn("'parent_page_unreadable': 1", out.getvalue())
         self.assertIn("'prior_block_withdrawn': 1", out.getvalue())
         records = self._records()
@@ -1447,7 +1615,7 @@ class PlacementScriptTests(unittest.TestCase):
              mock.patch.object(verify_base_graph.RobotsPolicy, "_fetch", return_value=RobotsFile(NO_FILE)), \
              redirect_stdout(io.StringIO()):
             verify_base_graph.main(["v", "--base-graph", str(self.base), "--sites", str(self.sites),
-                                    "--evidence", str(self.evidence), "--sleep", "0", "--recheck"])
+                                    "--evidence", str(self.evidence), "--sleep", "0", "--retry-backoff", "0", "--recheck"])
         records = self._records()
         self.assertEqual(records["doe-science"]["status"], FETCH_FAILED)
         self.assertNotIn("placement", records["doe-science"])

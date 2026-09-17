@@ -28,6 +28,7 @@ import time
 from collections import Counter
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError
 from urllib.parse import urlparse
 
 
@@ -72,6 +73,33 @@ def select_nodes(node_map: dict[str, dict[str, Any]], *, ids: list[str], include
     ]
 
 
+def fetch_with_retries(url: str, *, timeout: int, retries: int, backoff: float,
+                       sleep=None, request=None) -> str:
+    """The page, asked for again on 401, 403 or 5xx -- the same rule and the
+    same reason as `RobotsPolicy`: www.justice.gov answers its own pages that
+    way about two times in three, and a page that answers 200 the third time
+    is the same page. A 404 is an answer and is raised at once; a network
+    error is raised at once because it will not heal in seconds and each
+    attempt costs a timeout. `retries` is the number of EXTRA attempts, so 2
+    means at most three knocks, waiting backoff*1 then backoff*2 seconds."""
+    # Resolved at call time, not bound at definition: the tests stand in for
+    # `request_text` on this module, and a default argument would have kept
+    # the real one and reached the real network.
+    sleep = sleep or time.sleep
+    request = request or globals()["request_text"]
+    attempts = 0
+    while True:
+        attempts += 1
+        try:
+            return request(url, timeout=timeout)
+        except HTTPError as error:
+            retryable = error.code in (401, 403) or error.code >= 500
+            if retryable and attempts <= max(0, int(retries)):
+                sleep(float(backoff) * attempts)
+                continue
+            raise
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--base-graph", type=Path, default=DEFAULT_BASE_GRAPH)
@@ -89,6 +117,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--sleep", type=float, default=1.0, help="seconds between fetches of distinct pages")
     parser.add_argument("--timeout", type=int, default=30)
+    parser.add_argument("--retries", type=int, default=2,
+                        help="ask a host again this many times, on 401, 403 or 5xx only, for robots.txt and for the page")
+    parser.add_argument("--retry-backoff", type=float, default=2.0,
+                        help="seconds to wait before the first retry; doubled for the second, and so on")
     parser.add_argument("--ignore-robots", action="store_true", help="do not read robots.txt (use only with the site owner's agreement)")
     parser.add_argument("--no-placement", action="store_true", help="skip the placement pass (parent pages naming their children)")
     parser.add_argument("--dry-run", action="store_true", help="print the plan; fetch nothing; write nothing")
@@ -189,7 +221,8 @@ def main(argv: list[str] | None = None) -> int:
     # what gets cached; a fetch error is cached too, as the exception.
     page_cache: dict[str, str | Exception] = {}
     last_fetch = 0.0
-    robots = RobotsPolicy(user_agent=USER_AGENT, timeout=args.timeout, enabled=not args.ignore_robots)
+    robots = RobotsPolicy(user_agent=USER_AGENT, timeout=args.timeout, enabled=not args.ignore_robots,
+                          retries=args.retries, backoff=args.retry_backoff)
 
     def fetch(url: str) -> str:
         nonlocal last_fetch
@@ -202,7 +235,8 @@ def main(argv: list[str] | None = None) -> int:
                 if wait > 0:
                     time.sleep(wait)
                 try:
-                    page_cache[url] = request_text(url, timeout=args.timeout)
+                    page_cache[url] = fetch_with_retries(url, timeout=args.timeout, retries=args.retries,
+                                                         backoff=args.retry_backoff)
                 except Exception as error:  # noqa: BLE001
                     page_cache[url] = error
                 last_fetch = time.monotonic()

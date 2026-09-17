@@ -88102,6 +88102,9 @@
                       }
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-17T16:34:17+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -88605,6 +88608,9 @@
                       }
                     }
                   ],
+                  "placementVerified": false,
+                  "placementParentId": "exec-dept-doj",
+                  "placementVerifiedAt": "2026-09-17T16:34:17+00:00",
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,

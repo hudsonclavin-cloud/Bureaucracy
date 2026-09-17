@@ -457,16 +457,46 @@ Justice never published**, and its real rules allow the fetch.
 The lever here is a bounded retry on robots.txt, not a policy change and not an
 agent change. It is the same shape as the §5 fix: it makes the verifier *more*
 obedient, because it reads and follows a published file instead of assuming a
-blanket disallow nobody wrote. It is not implemented here — that is a
-deliberate change to `politeness.py` with tests in both directions, and this
-section only records the measurement that justifies it.
+blanket disallow nobody wrote.
 
-Two cautions for whoever implements it. The success rate fell across the
-session — 4/12 early, 1/8 later — which is consistent with the host escalating
-against sustained probing, so the retry must be gentle and backed off, not
-aggressive. And a 200 must still be checked for being a real robots.txt rather
-than a challenge page served with the wrong status; on this host it was real,
-and that is a fact about this host on this day, not a guarantee.
+### Implemented and measured, 2026-09-17 — and the number above was the wrong number
+
+`RobotsPolicy` and the verifier's page fetch now ask again on 401, 403 and 5xx
+— `--retries` (default 2) more times, waiting `--retry-backoff` (default 2)
+seconds times the attempt number — and never on a 404 or a network error. The
+verdict records how many knocks it took, so a third-try success is never
+written up as a first-try one, and `tests/test_verification.py` pins it in
+both directions: a refusal that clears yields the rules that were finally
+read; a refusal that never clears is refused after exactly the bounded
+attempts and says so; a 404 and a DNS failure get one knock; `--retries 0` is
+the old behaviour to the call.
+
+Then it was run against the 67 justice.gov nodes, twice, and the honest
+result is this. **The "67 nodes" above was the count of refusals, not of
+confirmations waiting behind them, and those are different quantities.**
+
+*First run (default retries):* 10 distinct pages planned, **5 read** —
+`/about`, `/enrd`, `/civil`, `/crt`, `/nsd` — where none had been before.
+34 records moved from `fetch_failed` to `inconclusive` and 4 placement checks
+were made. **Confirmations: 0.** 63 of the 67 are posts, checked only against
+the department's About page, which names none of them; the Environment &
+Natural Resources Division's own page names it in prose and not as a label
+(`named_on_the_page_but_not_as_a_label`); the Tax Division reached only the
+About page. A page read and found not to label the unit is real evidence —
+it replaces "the network failed" with "we looked" — but it is not a source.
+
+*Second run, 30 minutes later, the 33 still failing, `--retries 4
+--retry-backoff 3`:* **0 of 6 pages.** Every one refused at robots.txt itself,
+401 on each of five knocks across thirty seconds of backoff, where the first
+run had read the same file. The success rate across this session went 4/12,
+1/8, then 0/5: the host escalates against sustained probing, exactly as the
+caution above said, and the retry must stay gentle for that reason.
+
+So the retry is right and small: it converts a network non-answer into a
+read where the host lets it, at the cost of a few seconds per refused host,
+and it costs nothing where the host does not. It does not reach the 67 —
+there is nothing on those pages for most of them to reach — and the sentence
+above that read as if it did is corrected here rather than left standing.
 
 ## Regenerating this note
 
