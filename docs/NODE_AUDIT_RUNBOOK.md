@@ -245,10 +245,12 @@ repeat them:
 
 ## Network
 
-Assume you have none. As of 2026-09-09 this environment's egress proxy refuses
-`fiscaldata.treasury.gov`, `api.usaspending.gov`, `www.opm.gov`,
-`federalregister.gov` and `www.senate.gov` with `403` on the CONNECT — all of
-which worked on 2026-09-08. `docs/NETWORK_ACCESS.md` §0 has the detail.
+Assume nothing either way. On 2026-09-09 this environment's egress proxy
+refused `fiscaldata.treasury.gov`, `api.usaspending.gov`, `www.opm.gov`,
+`federalregister.gov` and `www.senate.gov` with `403` on the CONNECT; since
+2026-09-16 the allowlist is `*.gov` and `*.mil` and all of them answer
+(`docs/NETWORK_ACCESS.md` §0 and §7). What the network is today is what the
+check below says it is.
 
 Before your first batch, check once:
 

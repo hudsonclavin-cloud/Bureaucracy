@@ -37,9 +37,12 @@ for h in ("https://www.federalregister.gov/robots.txt", "https://www.opm.gov/rob
 PY
 ```
 
-As of 2026-09-09 every `.gov` host is refused by this session's proxy. If that
-is still true, the work is unchanged — you nominate rather than fetch. If it
-has opened up, see **Step 2**.
+On 2026-09-09 every `.gov` host was refused by the session's proxy; since
+2026-09-16 the Default environment allows `*.gov` and `*.mil` and both hosts
+above answer 200 (`docs/NETWORK_ACCESS.md` §7). Do not assume either state:
+run the check. If it fails, the work is unchanged — you nominate rather than
+fetch. If it succeeds, see **Step 2**, and know that the remaining wall is
+robots.txt on 64 hosts, not the proxy.
 
 ---
 
@@ -218,8 +221,10 @@ machine has confirmed.
 3. **Never edit files under `data/verification/` by hand.** The verifier writes
    those. `nominate.py promote` is the one sanctioned exception and it writes
    only the fetch queue.
-4. **Push to `claude/bureaucracy-code-review-h3o89b` and nowhere else.** Do not
-   open a pull request unless the owner asks.
+4. **Push to the branch this session was assigned and nowhere else.** The name
+   changes per session and is given in the session's own instructions; a
+   literal used to stand here and went stale. Do not open a pull request
+   unless the owner asks.
 5. **`python -m pytest tests/` and `python scripts/validate_published_graph.py`
    must both pass before any push that touches code or `output/`.** A batch
    that only appends to `data/audit/` cannot break either, so commit those

@@ -90,10 +90,20 @@ explicitly not presented as the unit's cost.
 
 ## The route to more exact-node costs
 
-In order of evidence value, and each one gated on a fetch this environment
-currently cannot make (see `docs/NETWORK_ACCESS.md` — `fiscaldata.treasury.gov`,
-`www.opm.gov` and `federalregister.gov` are all refused by this session's
-egress proxy, having worked on 2026-09-08):
+In order of evidence value. When this was written each was gated on a fetch
+the environment could not make (`fiscaldata.treasury.gov`, `www.opm.gov` and
+`federalregister.gov` were all refused at the proxy); since 2026-09-16 the
+allowlist is `*.gov` and `*.mil` (`docs/NETWORK_ACCESS.md` §7), and on
+2026-09-17 step 1 got its first pass: USAspending's toptier and bureau lists
+are committed verbatim under `tests/fixtures/usaspending/` (README there), and
+`data/audit/nominations/cost-cost-usaspending.jsonl` proposes 47 File A keys —
+22 toptier CGAC codes and 25 Treasury bureau slugs — for the 619 organisations
+phase 2 had declined for want of the network, every one citing the fixture it
+was read from and carrying the metric `gross_outlays`. **A proposed key is not
+a published figure**: nothing reaches the graph until a matcher reads it out
+of the fixture and the gate passes it. The other 572 are refused with the
+reason on the record, most often that the entity does not report under the
+DATA Act at all:
 
 1. **A reviewed identifier crosswalk, before any new source.** The one thing
    that must exist first. `graph_node_id → source_system + source_entity_key +

@@ -193,8 +193,9 @@ into a reading. Raise nothing above `likely` even so — the verifier still has
 to find the label, and that is its call, not yours.
 
 **If it fails**, nominate from what you know and let the fetch happen later.
-As of 2026-09-09 every `.gov` host is refused by this session's proxy; see
-`docs/NETWORK_ACCESS.md` §0.
+Every `.gov` host was refused by the session's proxy on 2026-09-09 and every
+one has been allowed since 2026-09-16; see `docs/NETWORK_ACCESS.md` §0 and §7.
+The check decides, not this sentence.
 
 Never disable TLS verification, never unset `HTTPS_PROXY`.
 
