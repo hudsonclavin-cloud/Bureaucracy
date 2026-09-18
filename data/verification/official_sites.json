@@ -22,7 +22,8 @@
   "https://www.gpo.gov/who-we-are"
  ],
  "leg-support-aoc": [
-  "https://www.aoc.gov/about-us"
+  "https://www.aoc.gov/about-us",
+  "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
  ],
  "leg-support-uscp": [
   "https://www.uscp.gov/the-department"
@@ -76,7 +77,8 @@
   "https://www.hhs.gov/about/index.html"
  ],
  "exec-dept-hud": [
-  "https://www.hud.gov/about"
+  "https://www.hud.gov/about",
+  "https://www.hud.gov/aboutus"
  ],
  "exec-dept-dot": [
   "https://www.transportation.gov/about"
@@ -94,7 +96,8 @@
   "https://www.energy.gov/em/office-environmental-management"
  ],
  "exec-dept-ed": [
-  "https://www.ed.gov/about"
+  "https://www.ed.gov/about",
+  "https://www.ed.gov/about/ed-offices"
  ],
  "exec-dept-va": [
   "https://www.va.gov/about_va/"
@@ -1103,7 +1106,8 @@
   "https://www.ntia.gov/"
  ],
  "exec-dept-doe-ames-national-laboratory": [
-  "https://www.ameslab.gov/"
+  "https://www.ameslab.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-argonne-national-laboratory": [
   "https://www.energy.gov/national-laboratories",
@@ -1113,17 +1117,20 @@
   "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-fermi-national-accelerator-laboratory": [
-  "https://www.fnal.gov/"
+  "https://www.fnal.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-idaho-national-laboratory": [
-  "https://www.inl.gov/"
+  "https://www.inl.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-lawrence-berkeley-national-laboratory": [
   "https://www.energy.gov/national-laboratories",
   "https://www.lbl.gov/"
  ],
  "exec-dept-doe-lawrence-livermore-national-laboratory": [
-  "https://www.llnl.gov/"
+  "https://www.llnl.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-los-alamos-national-laboratory": [
   "https://www.energy.gov/national-laboratories"
@@ -1135,19 +1142,23 @@
   "https://www.nrel.gov/"
  ],
  "exec-dept-doe-oak-ridge-national-laboratory": [
-  "https://www.ornl.gov/"
+  "https://www.ornl.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-pacific-northwest-national-laboratory": [
-  "https://www.pnnl.gov/"
+  "https://www.pnnl.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-princeton-plasma-physics-laboratory": [
-  "https://www.pppl.gov/"
+  "https://www.pppl.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-sandia-national-laboratories": [
   "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-savannah-river-national-laboratory": [
-  "https://srnl.doe.gov/"
+  "https://srnl.doe.gov/",
+  "https://www.energy.gov/national-laboratories"
  ],
  "exec-dept-doe-slac-national-accelerator-laboratory": [
   "https://www.energy.gov/national-laboratories"
@@ -1469,5 +1480,150 @@
  ],
  "leg-support-loc-nls": [
   "https://www.loc.gov/nls/"
+ ],
+ "exec-dept-ed-ocr": [
+  "https://www.ed.gov/about/ed-offices/ocr",
+  "https://www.ed.gov/about/ed-offices"
+ ],
+ "exec-dept-state-foreign-service-institute": [
+  "https://www.usgovernmentmanual.gov/Agency?EntityId=/jQN/FRk+WE=&ParentEId=+klubNxgV0o=&EType=jY3M4CTKVHY="
+ ],
+ "exec-dept-state-u-s-mission-to-the-united-nations": [
+  "https://www.usgovernmentmanual.gov/Agency?EntityId=/jQN/FRk+WE=&ParentEId=+klubNxgV0o=&EType=jY3M4CTKVHY="
+ ],
+ "exec-dept-treasury-occ": [
+  "https://home.treasury.gov/about/bureaus"
+ ],
+ "exec-dept-va-bva": [
+  "https://department.va.gov/board-of-veterans-appeals/"
+ ],
+ "exec-dept-va-vba": [
+  "https://department.va.gov/veterans-benefits-administration/",
+  "https://benefits.va.gov/benefits/"
+ ],
+ "exec-ind-misc-national-mediation-board-nmb": [
+  "https://nmb.gov/NMB_Application/"
+ ],
+ "exec-ind-misc-tennessee-valley-authority-tva": [
+  "https://oig.tva.gov/"
+ ],
+ "exec-ind-nsf-biological-sciences-bio-biological-infrastructure": [
+  "https://www.nsf.gov/funding/opportunities/prfb-postdoctoral-research-fellowships-biology"
+ ],
+ "exec-ind-nsf-biological-sciences-bio-environmental-biology": [
+  "https://www.nsf.gov/funding/opportunities/ltreb-long-term-research-environmental-biology"
+ ],
+ "exec-ind-nsf-biological-sciences-bio-integrative-organismal-systems": [
+  "https://www.nsf.gov/funding/opportunities/neural-systems"
+ ],
+ "exec-ind-nsf-biological-sciences-bio-molecular-cellular-biosciences": [
+  "https://www.nsf.gov/funding/opportunities/cellular-dynamics-function"
+ ],
+ "exec-ind-nsf-computer-information-science-engineering-cise": [
+  "https://www.nsf.gov/cise"
+ ],
+ "exec-ind-nsf-computer-information-science-engineering-cise-computer-network-systems": [
+  "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-cns-community"
+ ],
+ "exec-ind-nsf-computer-information-science-engineering-cise-computing-communication-foundations": [
+  "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-ccf-community"
+ ],
+ "jud-circuit-11th-circuit": [
+  "https://www.ca11.uscourts.gov/about-court"
+ ],
+ "jud-circuit-d-c-circuit": [
+  "https://www.cadc.uscourts.gov/"
+ ],
+ "jud-circuit-federal-circuit": [
+  "https://www.cafc.uscourts.gov/"
+ ],
+ "leg-house-cmte-intelligence-sub-central-intelligence-agency": [
+  "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+  "https://intelligence.house.gov/subcommittees/"
+ ],
+ "leg-house-cmte-natural-resources-sub-energy-mineral-resources": [
+  "https://naturalresources.house.gov/issues/issue/?IssueID=5062"
+ ],
+ "leg-house-cmte-natural-resources-sub-federal-lands": [
+  "https://naturalresources.house.gov/issues/issue/?IssueID=5063"
+ ],
+ "leg-house-cmte-natural-resources-sub-indian-insular-affairs": [
+  "https://naturalresources.house.gov/issues/issue/?IssueID=5066"
+ ],
+ "leg-house-cmte-natural-resources-sub-oversight-investigations": [
+  "https://naturalresources.house.gov/issues/issue/?IssueID=5064"
+ ],
+ "leg-joint-library": [
+  "https://www.senate.gov/general/committee_membership/committee_memberships_JSLC.htm",
+  "https://www.house.gov/committees"
+ ],
+ "leg-joint-printing": [
+  "https://www.senate.gov/general/committee_membership/committee_memberships_JSPR.htm",
+  "https://www.house.gov/committees"
+ ],
+ "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/commerce-justice-science-and-related-agencies"
+ ],
+ "leg-senate-cmte-appropriations-sub-energy-water-development": [
+  "https://www.appropriations.senate.gov/subcommittees/energy-and-water-development"
+ ],
+ "leg-senate-cmte-appropriations-sub-financial-services-general-government": [
+  "https://www.appropriations.senate.gov/subcommittees/financial-services-and-general-government"
+ ],
+ "leg-senate-cmte-appropriations-sub-homeland-security": [
+  "https://www.appropriations.senate.gov/subcommittees/homeland-security"
+ ],
+ "leg-senate-cmte-appropriations-sub-interior-environment-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/interior-environment-and-related-agencies"
+ ],
+ "leg-senate-cmte-appropriations-sub-legislative-branch": [
+  "https://www.appropriations.senate.gov/subcommittees/legislative-branch"
+ ],
+ "leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": [
+  "https://www.appropriations.senate.gov/subcommittees/military-construction-veterans-affairs-and-related-agencies"
+ ],
+ "leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs": [
+  "https://www.appropriations.senate.gov/subcommittees/state-foreign-operations-and-related-programs"
+ ],
+ "leg-senate-cmte-armed-services-sub-airland": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-armed-services-sub-cybersecurity": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-armed-services-sub-personnel": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-armed-services-sub-seapower": [
+  "https://www.armed-services.senate.gov/subcommittees"
+ ],
+ "leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight": [
+  "https://www.epw.senate.gov/public/index.cfm/subcommittees"
+ ],
+ "leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife": [
+  "https://www.epw.senate.gov/public/index.cfm/subcommittees"
+ ],
+ "leg-senate-cmte-environment-public-works-sub-transportation-infrastructure": [
+  "https://www.epw.senate.gov/public/index.cfm/subcommittees"
+ ],
+ "leg-senate-cmte-judiciary-sub-constitution": [
+  "https://www.judiciary.senate.gov/about/subcommittees"
+ ],
+ "leg-senate-committees": [
+  "https://www.senate.gov/committees/"
+ ],
+ "leg-senate-leadership": [
+  "https://www.senate.gov/senators/leadership.htm"
+ ],
+ "leg-support-aoc-capitol-power-plant": [
+  "https://www.aoc.gov/explore-capitol-campus/buildings-grounds/capitol-power-plant",
+  "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+ ],
+ "leg-support-loc-law": [
+  "https://wwws.loc.gov/law/",
+  "https://guides.loc.gov/law-library"
+ ],
+ "the-constitution-of-the-united-states": [
+  "https://www.archives.gov/founding-docs/constitution"
  ]
 }

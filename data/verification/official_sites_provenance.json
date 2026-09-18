@@ -2710,13 +2710,13 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-ames-national-laboratory": {
-  "url": "https://www.ameslab.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "NOT fetched — CONNECT tunnel failed with 403; same DOE-national-lab proxy-policy block seen for fnal.gov, pnnl.gov and sandia.gov this session. ameslab.gov is Ames Laboratory's well-known official domain; unconfirmed by fetch.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Ames National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its only existing candidate, https://www.ameslab.gov/, was probed and DOES read (1,549 readable characters) but does not label the curated name anywhere on it, so this page is the only probed page that does.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-argonne-national-laboratory": {
@@ -2740,23 +2740,23 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-fermi-national-accelerator-laboratory": {
-  "url": "https://www.fnal.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "NOT fetched — CONNECT tunnel failed with 403; this session's proxy denies fnal.gov by policy (confirmed at /__agentproxy/status). fnal.gov is Fermilab's well-known official domain; unconfirmed by fetch.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Fermi National Accelerator Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its only existing candidate, https://www.fnal.gov/, was probed and is refused by policy (www.fnal.gov/robots.txt could not be read, 403 on each of 3 attempts), so without this page the node can never be reached at all.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-idaho-national-laboratory": {
-  "url": "https://www.inl.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "INL's own domain is inl.gov (not fetched -- proxy CONNECT to www.inl.gov refused with 403 this session).",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Idaho National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its only existing candidate, https://www.inl.gov/, was probed and returned HTTP 403 Forbidden, so without this page the node can never be reached at all.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-lawrence-berkeley-national-laboratory": {
@@ -2770,13 +2770,13 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-lawrence-livermore-national-laboratory": {
-  "url": "https://www.llnl.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "Not fetched: proxy CONNECT denied this session (organization policy). llnl.gov is Lawrence Livermore National Laboratory's unambiguous, long-standing official domain.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Lawrence Livermore National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its own site https://www.llnl.gov/ was probed too and does label it, so this page is not needed for existence -- it is nominated as the parent's listing, which is the only thing that can evidence the edge to DOE.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-los-alamos-national-laboratory": {
@@ -2810,33 +2810,33 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-oak-ridge-national-laboratory": {
-  "url": "https://www.ornl.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "Not fetched -- curl got 'CONNECT tunnel failed, response 403' (proxy-level block this session). ornl.gov is Oak Ridge National Laboratory's own well-known official domain.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Oak Ridge National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its own site https://www.ornl.gov/ was probed too and does label it, so this page is not needed for existence -- it is nominated as the parent's listing, which is the only thing that can evidence the edge to DOE.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-pacific-northwest-national-laboratory": {
-  "url": "https://www.pnnl.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "Not fetched: attempted, but the session's egress proxy denied the CONNECT (403) before reaching the host. pnnl.gov is Pacific Northwest National Laboratory's well-known official domain.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Pacific Northwest National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its own site https://www.pnnl.gov/ was probed too and does label it, so this page is not needed for existence -- it is nominated as the parent's listing, which is the only thing that can evidence the edge to DOE.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-princeton-plasma-physics-laboratory": {
-  "url": "https://www.pppl.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "PPPL's own domain is pppl.gov (not fetched -- proxy CONNECT to www.pppl.gov refused with 403 this session).",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Princeton Plasma Physics Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its own site https://www.pppl.gov/ was probed too and does label it, so this page is not needed for existence -- it is nominated as the parent's listing, which is the only thing that can evidence the edge to DOE.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-sandia-national-laboratories": {
@@ -2850,13 +2850,13 @@
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-savannah-river-national-laboratory": {
-  "url": "https://srnl.doe.gov/",
+  "url": "https://www.energy.gov/national-laboratories",
   "source": "agent_nomination",
-  "role": "own_site",
-  "basis": "srnl.doe.gov is Savannah River National Laboratory's well-known official domain, but not fetched: this session's proxy refused the CONNECT (403 Forbidden at the tunnel).",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
+  "role": "parent_listing",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: https://www.energy.gov/national-laboratories is robots-allowed, served 10,425 readable characters, and the verifier's own label test matched \"Savannah River National Laboratory\" as a content fragment (region=content, plain equality). It is DOE's own list of its national laboratories, and its only existing candidate, https://srnl.doe.gov/, was probed and is refused by policy (srnl.doe.gov serves no robots.txt at all), so without this page the node can never be reached at all.",
+  "confidence": "likely",
+  "run": "probe-04",
+  "nominatedAt": "2026-09-18T20:48:56Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-doe-slac-national-accelerator-laboratory": {
@@ -3897,6 +3897,496 @@
   "confidence": "speculative",
   "run": "brute1",
   "nominatedAt": "2026-09-13T23:37:50Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-ed": {
+  "url": "https://www.ed.gov/about/ed-offices",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: 3,664 readable characters and the verifier's own label test matched the department itself in the content region as \"ED Offices | U.S. Department of Education\". The same fetch also labels four of this node's children in content - \"Federal Student Aid (FSA)\", \"Office for Civil Rights (OCR)\", \"Office of Elementary and Secondary Education (OESE)\" and \"Institute of Education Sciences (IES)\" - so it is the page that can evidence the exec-dept-ed -> child EDGES. It has to sit in THIS node's entry to do that: verify_base_graph.py's placement pass reads sites[parent_id] (scripts/verify_base_graph.py line 181, 'parent_id not in sites'), so the same URL recorded under a child's id evidences no edge and, being distance 0 in evidence.candidate_urls, would publish method name_labelled_on_own_official_page - the department's office list described as the child's own page. Recorded here, and the department's existing candidate https://www.ed.gov/about is untouched; note it answered 403 on the 2026-09-16 verifier run, so this is a second readable page for a node whose only one is intermittent.",
+  "confidence": "likely",
+  "run": "second-06",
+  "nominatedAt": "2026-09-18T22:27:13Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-ed-ocr": {
+  "url": "https://www.ed.gov/about/ed-offices",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: 3,664 readable characters; the label test matched in the content region as \"Office for Civil Rights (OCR)\". This is the department's own enumeration of its offices (\"Each of ED's 17 offices\"), so a confirmation from it evidences the exec-dept-ed -> exec-dept-ed-ocr edge as well as the unit. The prior pass declined this node covered_by_parent on the belief that www.ed.gov refuses this crawler; it does not - it was read four times today.",
+  "confidence": "likely",
+  "run": "probe-06",
+  "nominatedAt": "2026-09-18T20:56:30Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-hud": {
+  "url": "https://www.hud.gov/aboutus",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Outside shard 7's node list but found while working it, and time-critical. This node's only candidate page, https://www.hud.gov/about, is the source of its current confirmed record (evidence.json, 2026-09-08, matchedText '25red-About HUD | HUD.gov / U.S. Department of Housing and Urban Development (HUD)') and that page today serves only 116 readable characters - BELOW the verifier's 400-character floor, so the next run records nothing from it and the confirmation is withdrawn. The redesigned site serves its About page at /aboutus instead: probed 2026-09-18, 628 readable characters, verdict labelled in the content region as 'About Us | HUD.gov / U.S. Department of Housing and Urban Development'. Same claim, same host, a page that still reads.",
+  "confidence": "likely",
+  "run": "second-07",
+  "nominatedAt": "2026-09-18T22:36:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-state-foreign-service-institute": {
+  "url": "https://www.usgovernmentmanual.gov/Agency?EntityId=/jQN/FRk+WE=&ParentEId=+klubNxgV0o=&EType=jY3M4CTKVHY=",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: this is the United States Government Manual's Department of State entry (the official handbook of the federal government, published by NARA's Office of the Federal Register), it answers robots.txt and reads with 46,537 characters of text outside the chrome, and the verifier's own label test returns labelled for this node with matchedText \"Foreign Service Institute\" in the page CONTENT, not the site-wide chrome. It is a directory entry for the parent department rather than FSI's own site -- FSI's own pages are on www.state.gov, which answers robots.txt 403 and is refused, and fsi.state.gov does not resolve -- so the role is official_list; note for the reviewer that promote files every role under the node's own id, so a confirmation from it would publish the own-page method string. Confidence stays likely because verify_base_graph.py re-fetches and decides for itself.",
+  "confidence": "likely",
+  "run": "second-05",
+  "nominatedAt": "2026-09-18T22:21:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-state-u-s-mission-to-the-united-nations": {
+  "url": "https://www.usgovernmentmanual.gov/Agency?EntityId=/jQN/FRk+WE=&ParentEId=+klubNxgV0o=&EType=jY3M4CTKVHY=",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Probed with scripts/probe_candidate_pages.py on 2026-09-18: the United States Government Manual's Department of State entry reads (46,537 characters outside the chrome) and the verifier's own label test returns labelled for this node with matchedText \"UNITED STATES MISSION TO THE UNITED NATIONS\" in page CONTENT -- canonical_name_key expands the curated \"U.S.\" to \"united states\", so the two names reduce to one key. The mission's own host usun.usmission.gov answers robots.txt 403 and is refused, as do usun.state.gov, www.usmission.gov and geneva.usmission.gov, and www.usun.gov does not resolve, so this directory entry is the only readable page found that names the unit; role official_list because it is a government directory's entry for the parent department, not the mission's own site.",
+  "confidence": "likely",
+  "run": "second-05",
+  "nominatedAt": "2026-09-18T22:21:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-treasury-occ": {
+  "url": "https://home.treasury.gov/about/bureaus",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: the page is readable (3,304 characters outside chrome) and the verifier's own label test matches this node in the content region on the text 'The Office of the Comptroller of the Currency (OCC)'. The same probe matched seven other Treasury bureaus on the page, so it is the department's real bureau list and would evidence the parent->child edge as well as the unit. The OCC's own host cannot be used: www.occ.gov, occ.gov and www.occ.treas.gov each answer robots.txt with HTTP 302, which this project's politeness policy refuses, so nominating one would waste a fetch.",
+  "confidence": "likely",
+  "run": "probe-14",
+  "nominatedAt": "2026-09-18T21:45:09Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-va-bva": {
+  "url": "https://department.va.gov/board-of-veterans-appeals/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed 2026-09-18: the page reads (8,254 readable characters) and labels this unit in page CONTENT as \"Board of Veterans' Appeals\", which is the curated name once the '(BVA)' parenthetical is dropped. This is the Board's own page on the department's site.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-dept-va-vba": {
+  "url": "https://benefits.va.gov/benefits/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed 2026-09-18: benefits.va.gov reads (2,985 readable characters) and labels 'Veterans Benefits Administration' in page CONTENT. This is VBA's own long-standing public domain, and the prior blind pass recorded it as proxy-refused (CONNECT 403); that is no longer true.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-misc-national-mediation-board-nmb": {
+  "url": "https://nmb.gov/NMB_Application/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "NMB's own site. https://www.nmb.gov/ and https://nmb.gov/ both serve a 183-byte JavaScript redirect (location.replace) to this path and yield 0 readable characters, which is why the prior pass found nothing. Probed: this page reads 433 characters, above the verifier's floor, and its content fragment \"National Mediation Board - The National Mediation Board helps to maintain...\" matches the node's name as a label (the '(NMB)' parenthetical is dropped by the canonical key).",
+  "confidence": "likely",
+  "run": "probe-11",
+  "nominatedAt": "2026-09-18T21:32:42Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-misc-tennessee-valley-authority-tva": {
+  "url": "https://oig.tva.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "A .gov host of TVA's own that this project can actually read, which the prior pass did not try. Probed with scripts/probe_candidate_pages.py: the page reads 6,425 characters and the verifier's own label test matches the node twice -- in the content region as \"Tennessee Valley Authority Home\" (the home link/title; the verifier's bounded-scaffold allowance takes the trailing \"Home\"), and exactly as \"Tennessee Valley Authority\" in the site-wide navigation, which the verifier accepts for an organisation. What this page is, stated plainly: TVA's Office of the Inspector General, on the tva.gov domain -- not TVA's corporate site, which is tva.com and off-host, and not tva.gov/www.tva.gov, which this session's egress proxy refuses at CONNECT (\"Tunnel connection failed: 403\" on a plain GET of either robots.txt), the fact behind the prior not_on_a_gov_host record. Two things a reader should weigh: promote files every nomination under the node's own id, so a confirmation here would publish name_labelled_on_own_official_page about the Inspector General's site rather than TVA's main site; and oig.tva.gov/robots.txt answers 200 with the site's own HTML rather than a robots file, which the politeness policy parses to no rules and therefore allows -- that is how the probe read it. Side effect, probed and reported rather than left to be discovered: with --include-positions this page also labels TVA's \"Inspector General\" post in the content region, and labels none of the other four TVA posts.",
+  "confidence": "likely",
+  "run": "second-11",
+  "nominatedAt": "2026-09-18T23:05:53Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-biological-sciences-bio-biological-infrastructure": {
+  "url": "https://www.nsf.gov/funding/opportunities/prfb-postdoctoral-research-fellowships-biology",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: the page is read (3,258 readable chars) and labels this division in its content region as \"Division of Biological Infrastructure (BIO/DBI)\" -- NSF names the awarding division on its own funding-opportunity pages. The prior decline (no_public_page_known) was right that NSF's redesign retired the per-division pages: nsf.gov/div/index.jsp?div=DBI and nsf.gov/bio/dbi both now resolve to the BIO directorate page, and nsf.gov/about/directorates-offices lists BIO's program areas instead of its divisions. This page is the one place NSF still prints the division's full name.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-biological-sciences-bio-environmental-biology": {
+  "url": "https://www.nsf.gov/funding/opportunities/ltreb-long-term-research-environmental-biology",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (3,778 readable chars) and labels the division in its content region as \"Division of Environmental Biology (BIO/DEB)\". The prior decline's four URLs were all confirmed dead ends this session -- nsf.gov/div/index.jsp?div=DEB and nsf.gov/bio/deb both redirect to the BIO directorate page, which names program areas rather than divisions -- but NSF's funding-opportunity pages still print the awarding division's full name.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-biological-sciences-bio-integrative-organismal-systems": {
+  "url": "https://www.nsf.gov/funding/opportunities/neural-systems",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (2,735 readable chars) and labels the division in its content region as \"Division of Integrative Organismal Systems (BIO/IOS)\". Overturns the prior covered_by_parent decline: the parent's page (nsf.gov/bio) was re-probed this session and does not name any of BIO's divisions, so the parent is NOT the right check; this program page is.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-biological-sciences-bio-molecular-cellular-biosciences": {
+  "url": "https://www.nsf.gov/funding/opportunities/cellular-dynamics-function",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (2,217 readable chars) and labels the division in its content region as \"Division of Molecular and Cellular Biosciences (BIO/MCB)\" -- which the verifier's own label test matches to the curated \"Division of Molecular & Cellular Biosciences\", the ampersand and \"and\" reducing to one canonical key. Overturns the prior covered_by_parent decline; nsf.gov/bio was re-probed and names no divisions at all.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-computer-information-science-engineering-cise": {
+  "url": "https://www.nsf.gov/cise",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed 2026-09-18: the page reads (5,363 readable characters) and the verifier's own label test finds the curated name verbatim - matched text \"Computer & Information Science & Engineering (CISE)\", in NSF's site-wide directorate menu [navigation], which the verifier accepts for an organisation. The node is confirmed today only from the parent's page (nsf.gov/about, itself a navigation match); this is the directorate's own page, so a hit here would publish the own-page method instead.",
+  "confidence": "likely",
+  "run": "probe-15",
+  "nominatedAt": "2026-09-18T21:55:31Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-computer-information-science-engineering-cise-computer-network-systems": {
+  "url": "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-cns-community",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (1,406 readable chars) and labels the division in its content region as \"Division of Computer and Network Systems (CISE/CNS)\". The prior decline was right that nsf.gov/cise lists program areas rather than divisions and that div/index.jsp?div=CNS is now a 404 (both re-checked this session); this CNS community page still carries the division's full name.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "exec-ind-nsf-computer-information-science-engineering-cise-computing-communication-foundations": {
+  "url": "https://www.nsf.gov/funding/opportunities/additional-funding-opportunities-ccf-community",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (1,594 readable chars) and labels the division in its content region as \"Division of Computing and Communication Foundations (CISE/CCF)\". Overturns the prior no_public_page_known decline, whose reading of nsf.gov/cise (program areas only, no division names) was re-confirmed this session.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "jud-circuit-11th-circuit": {
+  "url": "https://www.ca11.uscourts.gov/about-court",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed with scripts/probe_candidate_pages.py: the court's own About the Court page reads (1,005 readable chars) and the verifier's own label test MATCHES the curated name in page content, as \"U.S. Court of Appeals for the 11th Circuit\" -- the graph's wording word for word, digit ordinal included. The earlier pass probed only the homepage (www.ca11.uscourts.gov/), which labels the court \"Eleventh Circuit | United States Court of Appeals\" and does not match; this deeper page on the same host does. Two things had to change for this to be findable: the digit-token rule that made uncheckable_reason() return 'curated_count_label' for every numbered circuit was fixed after the earlier pass recorded, so the label test now runs at all, and the page was found by reading the court's own About link rather than stopping at the homepage. Not evidence: verify_base_graph.py re-fetches and decides for itself.",
+  "confidence": "likely",
+  "run": "second-08",
+  "nominatedAt": "2026-09-18T22:43:13Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "jud-circuit-d-c-circuit": {
+  "url": "https://www.cadc.uscourts.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed with scripts/probe_candidate_pages.py: the court's own homepage was read (3,514 readable chars) and the verifier's own label test matched the curated name in page content, as \"United States Court of Appeals for the D.C. Circuit.\" The host was recorded as proxy-refused (CONNECT 403) on the previous blind pass; it is reachable now and answers robots.txt.",
+  "confidence": "likely",
+  "run": "probe-08",
+  "nominatedAt": "2026-09-18T21:08:47Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "jud-circuit-federal-circuit": {
+  "url": "https://www.cafc.uscourts.gov/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed: the court's own homepage was read (1,103 readable chars) and the verifier's label test matched the curated name in page content, as \"U.S. Court of Appeals for the Federal Circuit\" — word-for-word the graph's name. Note the www. host is the one that works: the bare https://cafc.uscourts.gov/ was refused because its robots.txt could not be reached (URLError), which under this project's policy is a complete disallow.",
+  "confidence": "likely",
+  "run": "probe-08",
+  "nominatedAt": "2026-09-18T21:08:47Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-intelligence-sub-central-intelligence-agency": {
+  "url": "https://intelligence.house.gov/subcommittees/",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "The committee's own subcommittees page. Probed: its content fragments include \"Central Intelligence Agency Subcommittee\", which matches this node under the committee fold. The page carries only 360 characters of readable text -- below the verifier's floor -- but a positive label is taken before that floor is applied, so the match still stands; the floor governs negatives.",
+  "confidence": "likely",
+  "run": "probe-11",
+  "nominatedAt": "2026-09-18T21:32:42Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-natural-resources-sub-energy-mineral-resources": {
+  "url": "https://naturalresources.house.gov/issues/issue/?IssueID=5062",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The first pass declined this node covered_by_parent on the premise that it is \"a real unit with no site of its own\". That premise is false, and a reading shows it: the committee's own site carries a page dedicated to this one subcommittee, linked from https://naturalresources.house.gov/ as \"Energy and Mineral Resources\" and reached at this URL. Probed 2026-09-18 with scripts/probe_candidate_pages.py: 4,439 readable characters (well above the verifier's 400-character floor) and the verifier's own label test matches in the CONTENT region as \"Energy and Mineral Resources | House Committee on Natural Resources\", rule=committee_scaffolding_folded — the fold this project already grants a node of type Subcommittee, with more than two tokens left in the core. The subcommittee is current, not a stale name: the House Clerk's committed list (tests/fixtures/directories/house/committees.xlsx) files \"Energy and Mineral Resources\" (II06) under II00. WHAT PROMOTING THIS COSTS, stated so it can be declined: the node is confirmed today through inheritance from https://naturalresources.house.gov/, where it matched by exact equality as \"Subcommittee on <name>\"; candidate_urls stops at distance 0, so once the node has an entry of its own it stops inheriting, and this page matches only by the committee fold (no fragment on it equals the full curated name, which is why the probe reports a folded rule rather than equality). What is gained is not just the stronger method string: today this node's existence and its placement rest on one fetch of one page counted twice, and after promotion existence comes from the subcommittee's own page while the listed placement block still rests on the committee's homepage — two observations of two pages instead of one. The risk is the ordinary own-page risk plus a query-string CMS path that could rot; the verifier re-fetches and re-decides, and if it ever 404s this node falls back to nothing rather than to the parent page.",
+  "confidence": "likely",
+  "run": "second-12",
+  "nominatedAt": "2026-09-18T22:58:52Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-natural-resources-sub-federal-lands": {
+  "url": "https://naturalresources.house.gov/issues/issue/?IssueID=5063",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The first pass declined this node covered_by_parent on the premise that it is \"a real unit with no site of its own\". That premise is false, and a reading shows it: the committee's own site carries a page dedicated to this one subcommittee, linked from https://naturalresources.house.gov/ as \"Federal Lands\" and reached at this URL. Probed 2026-09-18 with scripts/probe_candidate_pages.py: 3,897 readable characters (well above the verifier's 400-character floor) and the verifier's own label test matches in the CONTENT region as \"Federal Lands | House Committee on Natural Resources\", rule=committee_scaffolding_folded — the fold this project already grants a node of type Subcommittee, with more than two tokens left in the core. The subcommittee is current, not a stale name: the House Clerk's committed list (tests/fixtures/directories/house/committees.xlsx) files \"Federal Lands\" (II10) under II00. WHAT PROMOTING THIS COSTS, stated so it can be declined: the node is confirmed today through inheritance from https://naturalresources.house.gov/, where it matched by exact equality as \"Subcommittee on <name>\"; candidate_urls stops at distance 0, so once the node has an entry of its own it stops inheriting, and this page matches only by the committee fold (no fragment on it equals the full curated name, which is why the probe reports a folded rule rather than equality). What is gained is not just the stronger method string: today this node's existence and its placement rest on one fetch of one page counted twice, and after promotion existence comes from the subcommittee's own page while the listed placement block still rests on the committee's homepage — two observations of two pages instead of one. The risk is the ordinary own-page risk plus a query-string CMS path that could rot; the verifier re-fetches and re-decides, and if it ever 404s this node falls back to nothing rather than to the parent page.",
+  "confidence": "likely",
+  "run": "second-12",
+  "nominatedAt": "2026-09-18T22:58:52Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-natural-resources-sub-indian-insular-affairs": {
+  "url": "https://naturalresources.house.gov/issues/issue/?IssueID=5066",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The first pass declined this node covered_by_parent on the premise that it is \"a real unit with no site of its own\". That premise is false, and a reading shows it: the committee's own site carries a page dedicated to this one subcommittee, linked from https://naturalresources.house.gov/ as \"Indian and Insular Affairs\" and reached at this URL. Probed 2026-09-18 with scripts/probe_candidate_pages.py: 3,158 readable characters (well above the verifier's 400-character floor) and the verifier's own label test matches in the CONTENT region as \"Indian and Insular Affairs | House Committee on Natural Resources\", rule=committee_scaffolding_folded — the fold this project already grants a node of type Subcommittee, with more than two tokens left in the core. The subcommittee is current, not a stale name: the House Clerk's committed list (tests/fixtures/directories/house/committees.xlsx) files \"Indian and Insular Affairs\" (II24) under II00. WHAT PROMOTING THIS COSTS, stated so it can be declined: the node is confirmed today through inheritance from https://naturalresources.house.gov/, where it matched by exact equality as \"Subcommittee on <name>\"; candidate_urls stops at distance 0, so once the node has an entry of its own it stops inheriting, and this page matches only by the committee fold (no fragment on it equals the full curated name, which is why the probe reports a folded rule rather than equality). What is gained is not just the stronger method string: today this node's existence and its placement rest on one fetch of one page counted twice, and after promotion existence comes from the subcommittee's own page while the listed placement block still rests on the committee's homepage — two observations of two pages instead of one. The risk is the ordinary own-page risk plus a query-string CMS path that could rot; the verifier re-fetches and re-decides, and if it ever 404s this node falls back to nothing rather than to the parent page.",
+  "confidence": "likely",
+  "run": "second-12",
+  "nominatedAt": "2026-09-18T22:58:52Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-house-cmte-natural-resources-sub-oversight-investigations": {
+  "url": "https://naturalresources.house.gov/issues/issue/?IssueID=5064",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The first pass declined this node covered_by_parent on the premise that it is \"a real unit with no site of its own\". That premise is false, and a reading shows it: the committee's own site carries a page dedicated to this one subcommittee, linked from https://naturalresources.house.gov/ as \"Oversight and Investigations\" and reached at this URL. Probed 2026-09-18 with scripts/probe_candidate_pages.py: 2,086 readable characters (well above the verifier's 400-character floor) and the verifier's own label test matches in the CONTENT region as \"Oversight and Investigations | House Committee on Natural Resources\", rule=committee_scaffolding_folded — the fold this project already grants a node of type Subcommittee, with more than two tokens left in the core. The subcommittee is current, not a stale name: the House Clerk's committed list (tests/fixtures/directories/house/committees.xlsx) files \"Oversight and Investigations\" (II15) under II00. WHAT PROMOTING THIS COSTS, stated so it can be declined: the node is confirmed today through inheritance from https://naturalresources.house.gov/, where it matched by exact equality as \"Subcommittee on <name>\"; candidate_urls stops at distance 0, so once the node has an entry of its own it stops inheriting, and this page matches only by the committee fold (no fragment on it equals the full curated name, which is why the probe reports a folded rule rather than equality). What is gained is not just the stronger method string: today this node's existence and its placement rest on one fetch of one page counted twice, and after promotion existence comes from the subcommittee's own page while the listed placement block still rests on the committee's homepage — two observations of two pages instead of one. The risk is the ordinary own-page risk plus a query-string CMS path that could rot; the verifier re-fetches and re-decides, and if it ever 404s this node falls back to nothing rather than to the parent page.",
+  "confidence": "likely",
+  "run": "second-12",
+  "nominatedAt": "2026-09-18T22:58:52Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-joint-library": {
+  "url": "https://www.house.gov/committees",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Probed 2026-09-18: 873 readable characters, and the label test matched in the CONTENT region as \"Joint Committee on the Library\". The House's own committee directory enumerates the joint committees, so it is a second, independent official page carrying the name.",
+  "confidence": "likely",
+  "run": "probe-12",
+  "nominatedAt": "2026-09-18T21:29:54Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-joint-printing": {
+  "url": "https://www.house.gov/committees",
+  "source": "agent_nomination",
+  "role": "official_list",
+  "basis": "Probed 2026-09-18: 873 readable characters, and the label test matched in the CONTENT region as \"Joint Committee on Printing\". The House's own committee directory lists the joint committees, giving a second official page that carries the name.",
+  "confidence": "likely",
+  "run": "probe-12",
+  "nominatedAt": "2026-09-18T21:29:54Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/commerce-justice-science-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (8,372 characters outside the chrome) and it labels this unit in content as \"Commerce, Justice, Science, and Related Agencies\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-energy-water-development": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/energy-and-water-development",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (8,056 characters outside the chrome) and it labels this unit in content as \"Energy and Water Development\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-financial-services-general-government": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/financial-services-and-general-government",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (9,709 characters outside the chrome) and it labels this unit in content as \"Financial Services and General Government\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-homeland-security": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/homeland-security",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (6,836 characters outside the chrome) and it labels this unit in content as \"Homeland Security\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-interior-environment-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/interior-environment-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (7,893 characters outside the chrome) and it labels this unit in content as \"Interior, Environment, and Related Agencies\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-legislative-branch": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/legislative-branch",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (6,895 characters outside the chrome) and it labels this unit in content as \"Legislative Branch\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-military-construction-veterans-affairs-related-agencies": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/military-construction-veterans-affairs-and-related-agencies",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (6,977 characters outside the chrome) and it labels this unit in content as \"Military Construction, Veterans Affairs, and Related Agencies\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-appropriations-sub-state-foreign-operations-related-programs": {
+  "url": "https://www.appropriations.senate.gov/subcommittees/state-foreign-operations-and-related-programs",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "The subcommittee's OWN page on the committee's site, reached from the \"Subcommittees\" list on https://www.appropriations.senate.gov/. Probed with scripts/probe_candidate_pages.py on 2026-09-18: readable (9,711 characters outside the chrome) and it labels this unit in content as \"State, Foreign Operations, and Related Programs\" (verdict labelled, region content, no fold needed). The node is presently confirmed only by name_labelled_on_parent_official_page off the committee homepage; its own page supports the stronger, accurate claim. Placement is unaffected: the placement pass reads sites[parentId], which is the committee's own entry, not this one.",
+  "confidence": "likely",
+  "run": "second-09",
+  "nominatedAt": "2026-09-18T22:51:51Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-airland": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: the committee's own subcommittees page reads (8,875 readable characters) and carries the fragment 'Airland' on its own as a content label, character-for-character the curated name, alongside 'Emerging Threats and Capabilities', 'Readiness and Management Support' and 'Strategic Forces', which the probe reported as labelled. Recorded honestly: the probe's verdict for this node is 'uncheckable (name_too_generic)', because 'Airland' is a single token on evidence.GENERIC_SINGLE_TOKENS, so verify_base_graph.py will record not_checkable and never fetch. The URL is still the right page for this unit, and it becomes live the moment the curated name is lengthened.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-cybersecurity": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: the committee's own subcommittees page reads (8,875 readable characters) and carries the fragment 'Cybersecurity' on its own as a content label, character-for-character the curated name, alongside 'Emerging Threats and Capabilities', 'Readiness and Management Support' and 'Strategic Forces', which the probe reported as labelled. Recorded honestly: the probe's verdict for this node is 'uncheckable (name_too_generic)', because 'Cybersecurity' is a single token on evidence.GENERIC_SINGLE_TOKENS, so verify_base_graph.py will record not_checkable and never fetch. The URL is still the right page for this unit, and it becomes live the moment the curated name is lengthened.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-personnel": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: the committee's own subcommittees page reads (8,875 readable characters) and carries the fragment 'Personnel' on its own as a content label, character-for-character the curated name, alongside 'Emerging Threats and Capabilities', 'Readiness and Management Support' and 'Strategic Forces', which the probe reported as labelled. Recorded honestly: the probe's verdict for this node is 'uncheckable (name_too_generic)', because 'Personnel' is a single token on evidence.GENERIC_SINGLE_TOKENS, so verify_base_graph.py will record not_checkable and never fetch. The URL is still the right page for this unit, and it becomes live the moment the curated name is lengthened.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-armed-services-sub-seapower": {
+  "url": "https://www.armed-services.senate.gov/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18 with scripts/probe_candidate_pages.py: the committee's own subcommittees page reads (8,875 readable characters) and carries the fragment 'Seapower' on its own as a content label, character-for-character the curated name, alongside 'Emerging Threats and Capabilities', 'Readiness and Management Support' and 'Strategic Forces', which the probe reported as labelled. Recorded honestly: the probe's verdict for this node is 'uncheckable (name_too_generic)', because 'Seapower' is a single token on evidence.GENERIC_SINGLE_TOKENS, so verify_base_graph.py will record not_checkable and never fetch. The URL is still the right page for this unit, and it becomes live the moment the curated name is lengthened.",
+  "confidence": "likely",
+  "run": "probe-10",
+  "nominatedAt": "2026-09-18T21:16:32Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-environment-public-works-sub-chemical-safety-waste-management-environmental-justice-regulatory-oversight": {
+  "url": "https://www.epw.senate.gov/public/index.cfm/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: the committee's own subcommittees page is read (926 readable chars) and labels this subcommittee in its content region as \"Chemical Safety, Waste Management, Environmental Justice, and Regulatory Oversight\". It is the parent committee's own page, so a confirmation from it evidences the edge as well as the unit. The parent's candidate (epw.senate.gov homepage) does not carry the subcommittee list; this path does.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife": {
+  "url": "https://www.epw.senate.gov/public/index.cfm/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (926 readable chars) and labels this subcommittee in its content region as \"Fisheries, Water, and Wildlife\" -- the curated \"Fisheries, Water & Wildlife\" reduces to the same canonical key. The parent committee's own page, so it evidences the edge too.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-environment-public-works-sub-transportation-infrastructure": {
+  "url": "https://www.epw.senate.gov/public/index.cfm/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: read (926 readable chars) and labels this subcommittee in its content region as \"Transportation and Infrastructure\". The parent committee's own page, so a confirmation evidences the edge as well as the unit.",
+  "confidence": "likely",
+  "run": "probe-16",
+  "nominatedAt": "2026-09-18T21:57:40Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-cmte-judiciary-sub-constitution": {
+  "url": "https://www.judiciary.senate.gov/about/subcommittees",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Probed 2026-09-18: the page reads (7,060 readable characters) and prints this body as 'Subcommittee on' / 'The' / 'Constitution' across three separate DOM elements, so 'Constitution' does stand alone as a content fragment. I am deliberately nominating at speculative rather than likely, and saying plainly why: the probe's verdict for THIS node is not 'labelled' but 'uncheckable (name_too_generic)' — the verifier refuses the one-word curated name 'Constitution' before any page is consulted, so this page will confirm nothing while the node is called that, and the real fix is a rename (the page's own wording is 'Subcommittee on The Constitution'). It costs no fetch: a not_checkable node is never fetched. It is queued so the right page is already in place if the rename happens.",
+  "confidence": "speculative",
+  "run": "probe-07",
+  "nominatedAt": "2026-09-18T21:07:39Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-committees": {
+  "url": "https://www.senate.gov/committees/",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed with scripts/probe_candidate_pages.py: the page reads (6,975 readable chars) and the verifier's own label test returns LABELLED on the fragment \"U.S. Senate: Committees\" in region content (canonical_name_key drops \"U.S.\", so the page's label and this node's name reduce to the same key, \"senate committees\"). The prior blind pass declined this node as an editorial grouping without fetching; the Senate does publish a page for its committees under this name.",
+  "confidence": "likely",
+  "run": "probe-13",
+  "nominatedAt": "2026-09-18T21:41:34Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-senate-leadership": {
+  "url": "https://www.senate.gov/senators/leadership.htm",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed: the page reads (3,235 readable chars) and the verifier's own label test returns LABELLED on the fragment \"Senate leadership\" in region content, which is this node's name exactly (case is normalised by canonical_name_key). Declined blind as an editorial grouping by the previous pass; the Senate's own leadership page carries the name.",
+  "confidence": "likely",
+  "run": "probe-13",
+  "nominatedAt": "2026-09-18T21:41:34Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-aoc": {
+  "url": "https://www.aoc.gov/explore-capitol-campus/buildings-grounds",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "Not for AOC itself, which is already confirmed from https://www.aoc.gov/about-us - for the edges beneath it. The placement pass reads only the pages queued under the PARENT, and aoc.gov/about-us (probed 2026-09-18, 2,165 readable characters) names none of AOC's jurisdictions: Capitol Power Plant, Capitol Building, Senate Office Buildings, House Office Buildings and Library of Congress Buildings all came back not-labelled on it. AOC's own Buildings & Grounds index does carry them: probed the same day (2,318 readable characters), the verifier's own label test matches \"Capitol Power Plant\" in content, and the page also carries \"Senate Office Buildings\" and \"House Office Buildings\" as content labels. Queuing it under the parent is the only thing that can evidence those parent-child edges.",
+  "confidence": "likely",
+  "run": "probe-15",
+  "nominatedAt": "2026-09-18T21:55:46Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-aoc-capitol-power-plant": {
+  "url": "https://www.aoc.gov/explore-capitol-campus/buildings-grounds",
+  "source": "agent_nomination",
+  "role": "parent_listing",
+  "basis": "AOC's own Buildings & Grounds index, probed the same day (2,318 readable characters): the label test matches \"Capitol Power Plant\" in content there too. A second, shallower page on the same host, so if the dedicated page moves this one still names the unit.",
+  "confidence": "likely",
+  "run": "probe-15",
+  "nominatedAt": "2026-09-18T21:55:31Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "leg-support-loc-law": {
+  "url": "https://guides.loc.gov/law-library",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed: reads (1,556 readable chars) and the same label test returns LABELLED on \"Law Library of Congress\" in region content. guides.loc.gov is the Library's research-guides host and serves robots.txt normally, unlike blogs.loc.gov which answers it 403. Offered as a second candidate because the previous pass tried https://guides.loc.gov/law-library-of-congress, which is a 404; /law-library is the live path.",
+  "confidence": "likely",
+  "run": "second-13",
+  "nominatedAt": "2026-09-18T23:09:46Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "the-constitution-of-the-united-states": {
+  "url": "https://www.archives.gov/founding-docs/constitution",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "basis": "Probed 2026-09-18: the National Archives' page for the document is readable (1,785 characters outside chrome) and the verifier's own label test matches this node in the content region on the text 'The Constitution of the United States | National Archives'. NARA is the document's statutory custodian and publisher, so this is the Constitution's own official page rather than a third party's mention. Raised no higher than 'likely': the verifier re-fetches and re-decides. constitution.congress.gov was tried as a second candidate and answered HTTP 403, so it is not offered.",
+  "confidence": "likely",
+  "run": "probe-14",
+  "nominatedAt": "2026-09-18T21:45:09Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }
