@@ -110,7 +110,23 @@ NO_CANDIDATE_REASONS = (
     "covered_by_parent",            # no page of its own; the parent's page is the right check
     "no_public_page_known",         # a real unit with nothing this agent can name
     "not_on_a_gov_host",            # usps.com, si.edu — real, but the verifier will refuse them
+    # The two below were measured, not guessed, and they exist because the
+    # first pass with a working network found that "no_public_page_known" was
+    # carrying three different facts. A unit whose page nobody can name, a
+    # unit whose page this project refuses to fetch, and a unit whose page was
+    # read and does not carry the graph's name for it are three different
+    # problems with three different fixes — widen the allowlist, change the
+    # robots policy, or correct the curated name — and one reason string hid
+    # which. Both REQUIRE a probe block, because each asserts something about
+    # a specific page rather than about the agent's ignorance.
+    "host_refuses_crawler",         # a .gov/.mil page exists; the host will not serve robots.txt
+    "page_read_does_not_name_it",   # the page was read; the curated name is not a label on it
 )
+
+#: The reasons above that are a claim about a page rather than an admission of
+#: ignorance, and so may not be given without the reading that supports them.
+REASONS_REQUIRING_A_PROBE = ("host_refuses_crawler", "page_read_does_not_name_it")
+PROBE_VERDICTS = ("refused", "fetch_failed", "read_not_labelled", "read_labelled_in_navigation")
 
 
 def now() -> str:
@@ -315,6 +331,39 @@ def validate_url(url: str) -> None:
         raise Rejected(f"a nominated page contains whitespace: {url!r}")
 
 
+def validate_probe(node_id, reason, probe):
+    """A decline that names a page must carry the reading that page gave.
+
+    `no_public_page_known` says "I could not name a page", which needs no
+    evidence beyond the agent's honesty. `host_refuses_crawler` and
+    `page_read_does_not_name_it` say something about a URL somebody fetched,
+    and a claim about a fetch that carries no fetch is exactly the shape of
+    finding the audit harness rejects everywhere else.
+    """
+    if not isinstance(probe, dict):
+        raise Rejected(
+            f"{node_id}: reason {reason!r} asserts something about a page, so it needs a probe block "
+            '{"url": ..., "verdict": ...} from scripts/probe_candidate_pages.py'
+        )
+    validate_url(str(probe.get("url") or ""))
+    if probe.get("verdict") not in PROBE_VERDICTS:
+        raise Rejected(f"{node_id}: probe verdict {probe.get('verdict')!r} is not one of {PROBE_VERDICTS}")
+    if reason == "host_refuses_crawler" and probe["verdict"] not in ("refused", "fetch_failed"):
+        raise Rejected(
+            f"{node_id}: {reason!r} needs a probe whose verdict is 'refused' or 'fetch_failed'; "
+            f"this one says {probe['verdict']!r}, which means the page WAS read"
+        )
+    if reason == "page_read_does_not_name_it" and probe["verdict"] not in (
+        "read_not_labelled", "read_labelled_in_navigation"
+    ):
+        raise Rejected(
+            f"{node_id}: {reason!r} claims the page was read; a probe verdict of {probe['verdict']!r} "
+            "says it was not"
+        )
+    if not str(probe.get("detail") or "").strip():
+        raise Rejected(f"{node_id}: a probe needs a detail saying what the reading actually was")
+
+
 def validate_source(record, node, sites, tried, tried_for_node=None):
     node_id = record["id"]
     if not is_organisation(node):
@@ -332,6 +381,8 @@ def validate_source(record, node, sites, tried, tried_for_node=None):
             raise Rejected(f"{node_id}: noCandidate is set but nominations were given")
         if record.get("reason") not in NO_CANDIDATE_REASONS:
             raise Rejected(f"{node_id}: reason {record.get('reason')!r} is not one of {NO_CANDIDATE_REASONS}")
+        if record.get("reason") in REASONS_REQUIRING_A_PROBE:
+            validate_probe(node_id, record.get("reason"), record.get("probe"))
         return
     if not nominations:
         raise Rejected(f"{node_id}: no nominations and noCandidate is not set")

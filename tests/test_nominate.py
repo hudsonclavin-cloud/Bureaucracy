@@ -359,3 +359,83 @@ class RunbookTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ProbeBackedDeclineTests(unittest.TestCase):
+    """A decline that says something about a page must carry the reading.
+
+    The first pass with a working network found that `no_public_page_known`
+    was doing three jobs: a unit nobody can name a page for, a unit whose host
+    refuses this project's crawler, and a unit whose page was read and does
+    not carry the graph's name. Those have three different fixes, and one
+    string hid which applied. The two new reasons say which -- and because
+    each asserts something about a specific URL rather than about the agent's
+    ignorance, each is refused without the probe block that supports it.
+    """
+
+    def setUp(self) -> None:
+        self.node = {"id": "exec-dept-doc-uspto", "name": "USPTO — Patent & Trademark Office",
+                     "type": "Bureau", "children": []}
+
+    def _record(self, **kwargs):
+        record = {"id": self.node["id"], "noCandidate": True}
+        record.update(kwargs)
+        return record
+
+    def test_a_probe_backed_decline_is_accepted(self) -> None:
+        for reason, verdict in (
+            ("host_refuses_crawler", "refused"),
+            ("host_refuses_crawler", "fetch_failed"),
+            ("page_read_does_not_name_it", "read_not_labelled"),
+            ("page_read_does_not_name_it", "read_labelled_in_navigation"),
+        ):
+            with self.subTest(reason=reason, verdict=verdict):
+                nominate.validate_source(
+                    self._record(reason=reason, probe={
+                        "url": "https://www.uspto.gov/about-us", "verdict": verdict,
+                        "detail": "read 4,171 readable characters; the page labels "
+                                  '"United States Patent and Trademark Office", not the curated name',
+                    }),
+                    self.node, {}, {}, set())
+
+    def test_a_reason_that_names_a_page_is_refused_without_one(self) -> None:
+        for reason in ("host_refuses_crawler", "page_read_does_not_name_it"):
+            with self.subTest(reason=reason):
+                with self.assertRaises(nominate.Rejected):
+                    nominate.validate_source(self._record(reason=reason), self.node, {}, {}, set())
+
+    def test_the_probe_must_agree_with_what_the_reason_claims(self) -> None:
+        cases = {
+            # "the host refused us" beside a probe that read the page
+            "refused_but_read": ("host_refuses_crawler", "read_not_labelled"),
+            # "we read it and the name is absent" beside a probe that read nothing
+            "read_but_refused": ("page_read_does_not_name_it", "refused"),
+        }
+        for name, (reason, verdict) in cases.items():
+            with self.subTest(case=name):
+                with self.assertRaises(nominate.Rejected):
+                    nominate.validate_source(
+                        self._record(reason=reason, probe={
+                            "url": "https://www.uspto.gov/", "verdict": verdict, "detail": "x"}),
+                        self.node, {}, {}, set())
+
+    def test_a_probe_needs_a_gov_url_a_known_verdict_and_a_detail(self) -> None:
+        bad = {
+            "a non-gov host": {"url": "https://uspto.com/", "verdict": "refused", "detail": "x"},
+            "an invented verdict": {"url": "https://www.uspto.gov/", "verdict": "looked_wrong", "detail": "x"},
+            "no detail": {"url": "https://www.uspto.gov/", "verdict": "refused", "detail": "  "},
+            "not an object": "https://www.uspto.gov/",
+        }
+        for name, probe in bad.items():
+            with self.subTest(case=name):
+                with self.assertRaises(nominate.Rejected):
+                    nominate.validate_source(
+                        self._record(reason="host_refuses_crawler", probe=probe),
+                        self.node, {}, {}, set())
+
+    def test_an_ignorance_decline_still_needs_no_probe(self) -> None:
+        """The distinction is the point: admitting you cannot name a page is
+        not a claim about any page, so it carries no evidence and never did."""
+        for reason in ("no_public_page_known", "covered_by_parent", "editorial_grouping", "not_on_a_gov_host"):
+            with self.subTest(reason=reason):
+                nominate.validate_source(self._record(reason=reason), self.node, {}, {}, set())

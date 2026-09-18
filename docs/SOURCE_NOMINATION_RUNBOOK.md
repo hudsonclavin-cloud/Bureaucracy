@@ -140,8 +140,35 @@ Honest and common. Reasons, exact strings:
 - `not_on_a_gov_host` — USPS, the Smithsonian, the Federal Reserve banks.
 - `not_an_organisation` — you should not see these, but if one reaches you.
 
+Two more exist, and **both are claims about a specific page rather than
+admissions of ignorance, so neither may be given without a `probe` block**
+carrying the reading that supports it. The harness refuses them otherwise,
+and refuses a probe whose verdict contradicts the reason.
+
+- `host_refuses_crawler` — a `.gov`/`.mil` page for this unit exists, and the
+  host answers `robots.txt` with 401/403 or not at all, so this project
+  refuses to fetch it (`data_pipeline/verification/politeness.py` explains
+  why, and records that the 401/403 refusal is deliberately stricter than RFC
+  9309 requires). Nominating such a URL wastes the fetch. The right record is
+  this reason, the host named in the note, and the probe that was refused.
+- `page_read_does_not_name_it` — the page **was** read, and the graph's name
+  for this unit is not a label on it. This is not a nomination problem and no
+  other URL will fix it: it is the curated name, and the fix is a rename
+  argued from the page's own wording in `CURATION.md`, exactly as
+  `probe_post_titles.py` drives §8. Put the page's own wording in the note.
+
+Why the split, since `no_public_page_known` used to carry all three: a unit
+nobody can name a page for, a unit whose host refuses this crawler, and a
+unit whose page was read and does not carry the graph's name are three
+different problems with three different fixes — find the URL, change the
+policy, correct the name — and one string hid which applied to which. The
+first pass with a working network found the mix: USPTO was declined
+`covered_by_parent` while `uspto.gov` exists and is readable, and the real
+blocker is that the graph calls it "USPTO — Patent & Trademark Office", which
+no page says.
+
 **Do not invent a URL to avoid saying `noCandidate`.** A wasted fetch is
-worse than an honest gap, and there are 305 of these — the ones you skip
+worse than an honest gap, and there are 304 of these — the ones you skip
 honestly are a shorter list for the next pass than a pile of 404s.
 
 ---
@@ -166,6 +193,22 @@ honestly are a shorter list for the next pass than a pile of 404s.
     "noCandidate": true,
     "reason": "no_public_page_known",
     "note": "Probably publishes under fmcsa.dot.gov; I cannot confirm the host without fetching."
+  },
+  {
+    "id": "exec-dept-doc-uspto",
+    "noCandidate": true,
+    "reason": "page_read_does_not_name_it",
+    "note": "uspto.gov/about-us reads fine and labels \"United States Patent and Trademark Office\"; the graph says \"USPTO — Patent & Trademark Office\", which the page never says. A rename, not a URL.",
+    "probe": {"url": "https://www.uspto.gov/about-us", "verdict": "read_not_labelled",
+              "detail": "4,171 readable characters; no fragment equals the curated name"}
+  },
+  {
+    "id": "exec-dept-defense-agency-nro",
+    "noCandidate": true,
+    "reason": "host_refuses_crawler",
+    "note": "www.nro.gov is the office's real site; it answers robots.txt 403 on each of three attempts, which this project refuses by policy.",
+    "probe": {"url": "https://www.nro.gov/", "verdict": "refused",
+              "detail": "www.nro.gov/robots.txt could not be read (403) on each of 3 attempts"}
   }
 ]}
 ```
@@ -186,11 +229,31 @@ except Exception as e:
 PY
 ```
 
-**If it works, your job gets much better**: fetch the parent's page with
-`python scripts/fetch_fixture.py <url> <path under tests/fixtures>`, read the
-links it actually carries, and nominate the ones it names. That turns a guess
-into a reading. Raise nothing above `likely` even so — the verifier still has
-to find the label, and that is its call, not yours.
+**If it works, your job gets much better**, and there is an instrument for
+it. `scripts/probe_candidate_pages.py` fetches a candidate page under the
+same robots policy, User-Agent and readable-text floor the verifier uses, and
+runs **the verifier's own label test** against any units you name — so it
+tells you the answer `verify_base_graph.py` is going to give, before a fetch
+is spent on a URL that was never going to confirm:
+
+```bash
+python scripts/probe_candidate_pages.py --uncovered              # the working list; fetches nothing
+python scripts/probe_candidate_pages.py --url https://www.nist.gov/ --ids exec-dept-doc-nist
+python scripts/probe_candidate_pages.py --url https://www.commerce.gov/bureaus-and-offices \
+    --ids exec-dept-doc --with-children                          # which children the parent's page lists
+python scripts/probe_candidate_pages.py --plan plan.json --json  # many pages, one polite run
+```
+
+It writes nothing and decides nothing — only `verify_base_graph.py` publishes,
+and it re-fetches and re-decides for itself. Use it three ways: to confirm a
+URL before nominating it (nominate at `likely`, quoting the matched text as
+your basis); to find which of a parent's children its page actually lists,
+which is the only thing that can evidence an edge; and to tell the two
+probe-backed decline reasons above apart, since you may not give either
+without the probe.
+
+Raise nothing above `likely` even after a clean probe — the verifier still has
+to find the label on its own fetch, and that is its call, not yours.
 
 **If it fails**, nominate from what you know and let the fetch happen later.
 Every `.gov` host was refused by the session's proxy on 2026-09-09 and every
