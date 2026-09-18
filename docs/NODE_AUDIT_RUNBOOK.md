@@ -1,7 +1,8 @@
 # Node audit runbook
 
 Instructions for an agent auditing every node in the published graph, one at
-a time, until all 5,195 are done.
+a time, until every one is done. `python scripts/node_audit.py next` is what
+knows how many remain; 5,402 as of 2026-09-18.
 
 Read this whole file before the first batch. It is the entire brief; there is
 no other context you are expected to have.
@@ -116,8 +117,9 @@ contradicts? `no_contradiction_found` · `contradicted` · `no_description`
 **`cost`** — what kind of figure is this, and is it sound?
 `measured_and_sound` (official or root_total, from the right record) ·
 `estimate_only` (allocated or scaled_official — a share of an ancestor's
-total, which is the expected state for 4,885 of the 5,195 nodes and is **not**
-a finding) · `wrong_source` (measured, but that record is not this node's) ·
+total, which is the expected state wherever no record names the node — 650
+nodes carry such a share and 4,615 more carry no figure at all — and is
+**not** a finding) · `wrong_source` (measured, but that record is not this node's) ·
 `wrong_kind` (the wrong kind of number — a salary presented as a unit's cost)
 · `unavailable` (no figure published at all)
 
@@ -131,7 +133,7 @@ Read it straight off `cost.cost_status` in the dossier: `official` and
 
 ### `no_evidence_in_repo` is the honest answer for most nodes
 
-Most of this graph has never been checked against anything. 4,762 of 5,195
+Most of this graph has never been checked against anything. 4,824 of 5,402
 nodes carry no source at all. If the dossier's `evidence_records` is empty and
 nothing else in it bears on the question, the answer is `no_evidence_in_repo`
 — and that is a **complete, correct audit of that node**, not a failure.
@@ -168,12 +170,12 @@ that may go without evidence.
 They are already known, already labelled on the site, and reporting them 5,000
 times buries the real findings:
 
-- **"The description has no citation."** True of all 5,170. Every panel
+- **"The description has no citation."** True of all 5,155. Every panel
   already says "uncited prose — not checked against any source". Only report a
   description that is **contradicted** by evidence in the repo.
 - **"The cost is an estimate."** True of 4,885. Already labelled, and since
   2026-09-09 not even shown by default.
-- **"This node has no sources."** True of 4,762 — that is what
+- **"This node has no sources."** True of 4,824 — that is what
   `existence: no_evidence_in_repo` records. It is a check, not a finding.
 - **"This grouping is editorial rather than official"** for the named
   groupings the graph already flags — `Individual Senator Offices (100)`,

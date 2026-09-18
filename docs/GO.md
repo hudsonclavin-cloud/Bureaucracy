@@ -55,7 +55,7 @@ this page is the order to do them in.
 - `docs/SOURCE_NOMINATION_RUNBOOK.md` — how to nominate a page
 
 **These are one pass, not two.** Each dossier carries what both need, because
-reading 5,195 nodes twice to ask two questions about them is waste.
+reading 5,402 nodes twice to ask two questions about them is waste.
 
 ### The loop
 
@@ -103,7 +103,7 @@ Resist two temptations, both of which get stronger the longer you go:
   Department of Defense exists. This repository, at that node, may hold
   nothing that says so. The check is about the evidence, not about you.
 - **Reporting the known globals.** "The description is uncited" is true of all
-  5,170 and is already labelled on every panel. The runbook's *do not report
+  5,155 and is already labelled on every panel. The runbook's *do not report
   these* list is not optional; ignoring it buries the real findings under five
   thousand copies of the same non-finding.
 
@@ -243,5 +243,5 @@ machine has confirmed.
 ## If something is genuinely blocked
 
 Say what is blocked, what you tried, and what the next session would need —
-then keep working on whatever is not blocked. There are 5,195 nodes; almost
+then keep working on whatever is not blocked. There are 5,402 nodes; almost
 nothing blocks all of them at once.

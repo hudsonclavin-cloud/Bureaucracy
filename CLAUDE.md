@@ -1088,7 +1088,7 @@ so it is not merged until `extract_and_expand.py` has produced real ones).
   measured/estimate badge and period line; verification box with the
   "No source recorded" state and a separate Placement line for the edge
   above the node; every base-graph description labelled "uncited prose —
-  not checked against any source", because all 5,170 read as fact and none
+  not checked against any source", because all 5,155 read as fact and none
   has a citation; the provenance line under the title computed from the
   graph, never hardcoded), depth controls, verification toggles, expand
   batching.
@@ -1188,7 +1188,7 @@ handle, and the Treasury family, `synthetic` and the cost anchor exist nowhere
 else on disk — so a field stripped from it is data lost, not bytes saved. The
 release gate, `scripts/node_audit.py` and `scripts/nominate.py` read it too.
 So it stays whole, pretty-printed and committed, and the browser gets
-`output/graph.min.json` instead: the same 5,417 nodes with every field `js/`
+`output/graph.min.json` instead: the same 5,402 nodes with every field `js/`
 never reads removed and the whitespace dropped. **4.0 MB against 10.3 MB.**
 
 `MINIMAL_GRAPH_FIELDS` is the frontend's actual read set, and the list is only
@@ -1232,7 +1232,7 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 136 of 5,417 nodes (2.5%) carry a cost a record names
+graph an estimate". 137 of 5,402 nodes (2.5%) carry a cost a record names
 for them; those cover **98.4% of the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
@@ -1389,7 +1389,7 @@ rename withdraws the claim.
 ### The three agent phases
 
 Three runbooks, run in order over the same nodes (5,195 when the runbooks
-were written; 5,417 since the White House Office expansion), each with a harness
+were written; 5,402 today), each with a harness
 that refuses what it cannot adjudicate. All three write **only** to
 `data/audit/`; none edits the curated file, the published graph or any
 evidence file, which is what makes it safe to point many agents at the whole
@@ -1441,14 +1441,15 @@ never handed out for page nomination — 4,382 positions would produce 4,382
 identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
-The standing numbers this work exists to move: 305 of 788 organisations have
-no candidate page at all, so the verifier can never reach them; and 136 of
-5,417 nodes carry a cost identified for themselves. `nominate.py status --kind
-source` prints the first of those, which is the copy to trust.
+The standing numbers this work exists to move: 304 of 786 organisations have
+no candidate page at all, so the verifier can never reach them; and 137 of
+5,402 nodes carry a cost identified for themselves. `nominate.py status --kind
+source` prints the first and `validate_published_graph.py` the second; those
+are the copies to trust, and neither is restated by hand any more.
 
 ### The node-by-node audit
 
-`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,417
+`docs/NODE_AUDIT_RUNBOOK.md` is the brief for an agent examining all 5,402
 nodes one at a time; `scripts/node_audit.py` is the harness. `next` hands
 over a batch of nodes with every claim the site makes about each and every
 evidence record keyed to its id; `record` validates findings and appends
@@ -1468,11 +1469,11 @@ nothing else is. A `certain` or `likely` finding must carry evidence;
 gets raised without being dressed as a fact. Citable sources are the
 repository's own published files and `.gov`/`.mil` URLs. Seven checks per
 node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
-most common — answer, not a failure: 4,762 nodes carry no source at all.
+most common — answer, not a failure: 4,824 nodes carry no source at all.
 `verify` re-checks every citation in the ledger against its source, since a
 file can change after a finding was accepted. The runbook's "do not report
 these" list matters as much as the rest: without it the sweep returns
-"description is uncited" 5,170 times and buries the real findings.
+"description is uncited" 5,155 times and buries the real findings.
 
 ## Invariants
 

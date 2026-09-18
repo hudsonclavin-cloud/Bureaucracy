@@ -9,17 +9,19 @@ achievable route to more exact-node costs actually is.
 
 ## Where the graph stands
 
-    cost identified for the node itself:  136 of 5,195 nodes (2.6%)
-    a share of an ancestor's total:     4,885 nodes
-    unavailable:                          174 nodes
+Printed by `python scripts/validate_published_graph.py` on every run, which
+is the copy to trust; restated here as of 2026-09-18:
+
+    cost identified for the node itself:  137 of 5,402 nodes (2.5%)
+    a share of an ancestor's total:       650 nodes
+    no figure at all:                   4,615 nodes (4,441 of them posts)
     the measured nodes cover 98.4% of the anchor, counting each only once
 
-Those two numbers are the whole picture and they point in opposite
-directions. **2.6% of nodes** carry a figure a record names for them: the
-root's Treasury anchor, and the 135 Monthly Treasury Statement Table 5 lines
-applied to the nodes they name (25 of which are the receipts lines the
-exporter carries explicitly). But those nodes account for **98.4% of the
-money**. The apportioned figures are a subdivision of measured totals, not
+Those numbers are the whole picture and they point in opposite directions.
+**2.5% of nodes** carry a figure a record names for them: the root's Treasury
+anchor, and the 136 Monthly Treasury Statement Table 5 lines applied to the
+nodes they name (25 of which are the receipts lines the exporter carries
+explicitly). But those nodes account for **98.4% of the money**. The apportioned figures are a subdivision of measured totals, not
 invented money — every one of them is some measured ancestor's dollars split
 among its children.
 
@@ -34,20 +36,22 @@ unverified`. The estimates remain in `graph.json` — the cascade's arithmetic
 and the gate's child-sum checks are built on them — so a consumer of the
 JSON must read `cost_status` and not `resolved_total_amount` alone.
 
-The one exception is a real salary. 44 position nodes carry a rate of basic
-pay OPM's PLUM archive reports, and those show it in place of the withheld
+The one exception is a real salary. 257 position nodes carry a rate of pay an
+official source states — 44 from OPM's PLUM archive, 29 priced from the
+Executive Schedule table, 18 from a single statutory source, 166 from the
+White House Office roster — and those show it in place of the withheld
 estimate, under the heading REPORTED RATE OF BASIC PAY rather than COST,
 with the panel saying it is compensation for one post and not what the unit
 costs.
 
 Both coverage figures are printed by `scripts/validate_published_graph.py`
-on every run, so "5,021 nodes with a cost" can never be read as 5,021 known
+on every run, so "787 nodes with a cost" can never be read as 787 known
 costs.
 
 ## The review's findings, checked against this branch
 
 The review was run against a different, older checkout (it reports 164 nodes
-in one place and 6,486 in another; this graph has 5,195, and it names files
+in one place and 6,486 in another; this graph has 5,402, and it names files
 this branch does not contain). Each specific defect was tested here:
 
 | Claim | Checked | Result |
@@ -209,7 +213,7 @@ shape.
 
 ## The limit, stated plainly
 
-4,382 of the 5,195 nodes — 84% — are positions. Federal financial systems
+4,591 of the 5,402 nodes — 85% — are positions. Federal financial systems
 report by entity, bureau, Treasury account, program activity and object
 class. They do not report by org-chart box or by post. So:
 

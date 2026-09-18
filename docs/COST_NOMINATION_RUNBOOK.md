@@ -9,12 +9,16 @@ this phase depends on what phase 1 established.
 
 ## Why this comes second
 
-136 of 5,195 nodes carry a cost a record names for them. The other 4,885 carry
-a share of an ancestor's total, divided by budget, headcount or subtree size —
-which the site no longer shows by default, because a number nobody measured
-must not be the first thing a reader sees.
+137 of 5,402 nodes carry a cost a record names for them (the figure
+`python scripts/validate_published_graph.py` prints, which is the copy to
+trust). 650 carry a share of an ancestor's total, divided by budget, headcount
+or subtree size — which the site no longer shows by default, because a number
+nobody measured must not be the first thing a reader sees. The remaining 4,615
+carry no figure at all: 4,441 of them are posts, which have no budget to
+divide, so a cost nomination for one is never the unit's cost and only ever a
+rate of basic pay.
 
-Getting past 136 needs one thing before any new data source: **a reviewed
+Getting past 137 needs one thing before any new data source: **a reviewed
 crosswalk from node to financial identifier.** `docs/EXACT_NODE_COSTS.md` sets
 that out. This phase builds it, one nomination at a time.
 
