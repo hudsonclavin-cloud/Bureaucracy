@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-18T20:47:19.843382+00:00",
+  "timestamp": "2026-09-18T20:56:06.567155+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5377,
@@ -153,10 +153,12 @@
       "stands_for_many_posts": 0
     },
     "schedule_pay_evidence": {
-      "priced": 38,
+      "priced": 99,
+      "priced_scoped": 61,
       "unknown_node": 0,
       "not_a_position": 0,
       "renamed_since_the_match": 0,
+      "reparented_since_the_match": 0,
       "stands_for_many_posts": 0
     },
     "judicial_pay_evidence": {

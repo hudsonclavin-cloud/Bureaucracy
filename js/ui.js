@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260918d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260918d";
+import { createGovernmentGraph } from "./graph.js?v=20260918e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260918e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -975,6 +975,14 @@ function renderSchedulePay(data) {
   const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
   const when = pay.effectiveText ? `, ${String(pay.effectiveText).replace(/^Effective\b/, "effective")}` : "";
   add(`${pay.citation || "The United States Code"} places this post at Executive Schedule level ${pay.payLevel}, naming it "${pay.statutoryTitle}". OPM's ${pay.table}${when}, pays ${printed} for ${pay.amountScope}.`);
+  // Which office in which body. Not decoration: the Code writes "General
+  // Counsel of the Department of Agriculture" where this graph writes
+  // "General Counsel", and 84 nodes here carry that name. The organisation is
+  // half of what says which one the statute meant, so the panel prints it and
+  // never lets the reader assume the title alone picked this node.
+  if (pay.scopedOffice && pay.scopedOrganisation) {
+    add(` The Code writes that as one title; this graph splits it, so the figure was matched to "${pay.scopedOffice}" as the post of that name directly under ${pay.scopedOrganisation} — the organisation is half of what identifies it, because that title is not unique in this graph.`);
+  }
   add(" Two documents: the statute sets the level and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);

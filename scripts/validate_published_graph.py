@@ -43,7 +43,9 @@ EXECUTIVE_SCHEDULE_RATES = {
     "IV": 197_200.0,
     "V": 184_900.0,
 }
-#: node id -> (the title 5 U.S.C. 5312-5316 prints, its level, its section).
+#: node id -> (the title 5 U.S.C. 5312-5316 prints, its level, its section,
+#: and the organisation it was scoped to, or None when the node's whole name
+#: is the statutory title).
 #: Keyed by node id for the reason STATUTORY_PAY_NODE_TIERS established and
 #: more sharply still: FIFTEEN of these nodes are priced at Level I and carry
 #: the identical $253,100, so a record moved from the Secretary of Agriculture
@@ -55,44 +57,105 @@ EXECUTIVE_SCHEDULE_RATES = {
 #: tests/test_statutory_schedule.py parses the committed sections and asserts
 #: this mirror equals what they print, so the two cannot drift.
 US_CODE_EXECUTIVE_SCHEDULE = {
-    'exec-dept-defense-af-secretary-of-the-air-force': ('Secretary of the Air Force', 'II', '5313'),
-    'exec-dept-defense-af-under-secretary-of-the-air-force': ('Under Secretary of the Air Force', 'III', '5314'),
-    'exec-dept-defense-agency-nsa-deputy-director-national-security-agency-nsa': ('Deputy Director, National Security Agency', 'V', '5316'),
-    'exec-dept-defense-army-secretary-of-the-army': ('Secretary of the Army', 'II', '5313'),
-    'exec-dept-defense-army-under-secretary-of-the-army': ('Under Secretary of the Army', 'III', '5314'),
-    'exec-dept-defense-deputy-secretary-of-defense': ('Deputy Secretary of Defense', 'II', '5313'),
-    'exec-dept-defense-navy-secretary-of-the-navy': ('Secretary of the Navy', 'II', '5313'),
-    'exec-dept-defense-navy-under-secretary-of-the-navy': ('Under Secretary of the Navy', 'III', '5314'),
-    'exec-dept-defense-secretary-of-defense': ('Secretary of Defense', 'I', '5312'),
-    'exec-dept-doc-secretary-of-department-of-commerce': ('Secretary of Commerce', 'I', '5312'),
-    'exec-dept-doe-deputy-secretary-of-department-of-energy-doe': ('Deputy Secretary of Energy', 'II', '5313'),
-    'exec-dept-doe-secretary-of-department-of-energy-doe': ('Secretary of Energy', 'I', '5312'),
-    'exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi': ('Deputy Secretary of the Interior', 'II', '5313'),
-    'exec-dept-doi-secretary-of-department-of-the-interior-doi': ('Secretary of the Interior', 'I', '5312'),
-    'exec-dept-doj-deputy-secretary-of-department-of-justice-doj': ('Deputy Attorney General', 'II', '5313'),
-    'exec-dept-doj-secretary-of-department-of-justice-doj': ('Attorney General', 'I', '5312'),
-    'exec-dept-doj-solicitor-solicitor-general-of-the-united-states': ('Solicitor General of the United States', 'III', '5314'),
-    'exec-dept-dol-deputy-secretary-of-department-of-labor-dol': ('Deputy Secretary of Labor', 'II', '5313'),
-    'exec-dept-dol-secretary-of-department-of-labor-dol': ('Secretary of Labor', 'I', '5312'),
-    'exec-dept-dot-deputy-secretary-of-department-of-transportation-dot': ('Deputy Secretary of Transportation', 'II', '5313'),
-    'exec-dept-dot-secretary-of-department-of-transportation-dot': ('Secretary of Transportation', 'I', '5312'),
-    'exec-dept-ed-deputy-secretary-of-department-of-education': ('Deputy Secretary of Education', 'II', '5313'),
-    'exec-dept-ed-secretary-of-department-of-education': ('Secretary of Education', 'I', '5312'),
-    'exec-dept-hhs-deputy-secretary-of-department-of-health-human-services-hhs': ('Deputy Secretary of Health and Human Services', 'II', '5313'),
-    'exec-dept-hhs-secretary-of-department-of-health-human-services-hhs': ('Secretary of Health and Human Services', 'I', '5312'),
-    'exec-dept-hud-deputy-secretary-of-department-of-housing-urban-development-hud': ('Deputy Secretary of Housing and Urban Development', 'II', '5313'),
-    'exec-dept-hud-secretary-of-department-of-housing-urban-development-hud': ('Secretary of Housing and Urban Development', 'I', '5312'),
-    'exec-dept-state-deputy-secretary-of-department-of-state': ('Deputy Secretary of State', 'II', '5313'),
-    'exec-dept-state-secretary-of-department-of-state': ('Secretary of State', 'I', '5312'),
-    'exec-dept-treasury-deputy-secretary-of-department-of-the-treasury': ('Deputy Secretary of the Treasury', 'II', '5313'),
-    'exec-dept-treasury-occ-comptroller-of-the-currency': ('Comptroller of the Currency', 'III', '5314'),
-    'exec-dept-treasury-secretary-of-department-of-the-treasury': ('Secretary of the Treasury', 'I', '5312'),
-    'exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda': ('Deputy Secretary of Agriculture', 'II', '5313'),
-    'exec-dept-usda-secretary-of-department-of-agriculture-usda': ('Secretary of Agriculture', 'I', '5312'),
-    'exec-dept-va-bva-chairman-board-of-veterans-appeals': ("Chairman, Board of Veterans' Appeals", 'IV', '5315'),
-    'exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va': ('Deputy Secretary of Veterans Affairs', 'II', '5313'),
-    'exec-dept-va-secretary-of-department-of-veterans-affairs-va': ('Secretary of Veterans Affairs', 'I', '5312'),
-    'exec-eop-ustr-u-s-trade-representative-ambassador': ('United States Trade Representative', 'I', '5312'),
+    'exec-dept-defense-af-secretary-of-the-air-force': ('Secretary of the Air Force', 'II', '5313', None),
+    'exec-dept-defense-af-under-secretary-of-the-air-force': ('Under Secretary of the Air Force', 'III', '5314', None),
+    'exec-dept-defense-agency-nsa-deputy-director-national-security-agency-nsa': ('Deputy Director, National Security Agency', 'V', '5316', None),
+    'exec-dept-defense-army-secretary-of-the-army': ('Secretary of the Army', 'II', '5313', None),
+    'exec-dept-defense-army-under-secretary-of-the-army': ('Under Secretary of the Army', 'III', '5314', None),
+    'exec-dept-defense-deputy-secretary-of-defense': ('Deputy Secretary of Defense', 'II', '5313', None),
+    'exec-dept-defense-general-counsel': ('General Counsel of the Department of Defense', 'IV', '5315', 'exec-dept-defense'),
+    'exec-dept-defense-navy-secretary-of-the-navy': ('Secretary of the Navy', 'II', '5313', None),
+    'exec-dept-defense-navy-under-secretary-of-the-navy': ('Under Secretary of the Navy', 'III', '5314', None),
+    'exec-dept-defense-secretary-of-defense': ('Secretary of Defense', 'I', '5312', None),
+    'exec-dept-dhs-chief-financial-officer': ('Chief Financial Officer, Department of Homeland Security', 'IV', '5315', 'exec-dept-dhs'),
+    'exec-dept-dhs-chief-information-officer': ('Chief Information Officer, Department of Homeland Security', 'IV', '5315', 'exec-dept-dhs'),
+    'exec-dept-dhs-general-counsel': ('General Counsel, Department of Homeland Security', 'IV', '5315', 'exec-dept-dhs'),
+    'exec-dept-dhs-tsa-deputy-administrator': ('Deputy Administrator, Transportation Security Administration', 'III', '5314', 'exec-dept-dhs-tsa'),
+    'exec-dept-doc-chief-financial-officer': ('Chief Financial Officer, Department of Commerce', 'IV', '5315', 'exec-dept-doc'),
+    'exec-dept-doc-chief-information-officer': ('Chief Information Officer, Department of Commerce', 'IV', '5315', 'exec-dept-doc'),
+    'exec-dept-doc-general-counsel': ('General Counsel of the Department of Commerce', 'IV', '5315', 'exec-dept-doc'),
+    'exec-dept-doc-secretary-of-department-of-commerce': ('Secretary of Commerce', 'I', '5312', None),
+    'exec-dept-doe-chief-financial-officer': ('Chief Financial Officer, Department of Energy', 'IV', '5315', 'exec-dept-doe'),
+    'exec-dept-doe-chief-information-officer': ('Chief Information Officer, Department of Energy', 'IV', '5315', 'exec-dept-doe'),
+    'exec-dept-doe-deputy-secretary-of-department-of-energy-doe': ('Deputy Secretary of Energy', 'II', '5313', None),
+    'exec-dept-doe-general-counsel': ('General Counsel of the Department of Energy', 'IV', '5315', 'exec-dept-doe'),
+    'exec-dept-doe-nnsa-principal-deputy-administrator': ('Principal Deputy Administrator, National Nuclear Security Administration', 'IV', '5315', 'exec-dept-doe-nnsa'),
+    'exec-dept-doe-secretary-of-department-of-energy-doe': ('Secretary of Energy', 'I', '5312', None),
+    'exec-dept-doi-chief-financial-officer': ('Chief Financial Officer, Department of the Interior', 'IV', '5315', 'exec-dept-doi'),
+    'exec-dept-doi-chief-information-officer': ('Chief Information Officer, Department of the Interior', 'IV', '5315', 'exec-dept-doi'),
+    'exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi': ('Deputy Secretary of the Interior', 'II', '5313', None),
+    'exec-dept-doi-secretary-of-department-of-the-interior-doi': ('Secretary of the Interior', 'I', '5312', None),
+    'exec-dept-doj-chief-financial-officer': ('Chief Financial Officer, Department of Justice', 'IV', '5315', 'exec-dept-doj'),
+    'exec-dept-doj-chief-information-officer': ('Chief Information Officer, Department of Justice', 'IV', '5315', 'exec-dept-doj'),
+    'exec-dept-doj-deputy-secretary-of-department-of-justice-doj': ('Deputy Attorney General', 'II', '5313', None),
+    'exec-dept-doj-secretary-of-department-of-justice-doj': ('Attorney General', 'I', '5312', None),
+    'exec-dept-doj-solicitor-solicitor-general-of-the-united-states': ('Solicitor General of the United States', 'III', '5314', None),
+    'exec-dept-dol-chief-financial-officer': ('Chief Financial Officer, Department of Labor', 'IV', '5315', 'exec-dept-dol'),
+    'exec-dept-dol-chief-information-officer': ('Chief Information Officer, Department of Labor', 'IV', '5315', 'exec-dept-dol'),
+    'exec-dept-dol-deputy-secretary-of-department-of-labor-dol': ('Deputy Secretary of Labor', 'II', '5313', None),
+    'exec-dept-dol-secretary-of-department-of-labor-dol': ('Secretary of Labor', 'I', '5312', None),
+    'exec-dept-dot-chief-financial-officer': ('Chief Financial Officer, Department of Transportation', 'IV', '5315', 'exec-dept-dot'),
+    'exec-dept-dot-chief-information-officer': ('Chief Information Officer, Department of Transportation', 'IV', '5315', 'exec-dept-dot'),
+    'exec-dept-dot-deputy-secretary-of-department-of-transportation-dot': ('Deputy Secretary of Transportation', 'II', '5313', None),
+    'exec-dept-dot-faa-deputy-administrator': ('Deputy Administrator, Federal Aviation Administration', 'IV', '5315', 'exec-dept-dot-faa'),
+    'exec-dept-dot-general-counsel': ('General Counsel, Department of Transportation', 'IV', '5315', 'exec-dept-dot'),
+    'exec-dept-dot-secretary-of-department-of-transportation-dot': ('Secretary of Transportation', 'I', '5312', None),
+    'exec-dept-ed-chief-financial-officer': ('Chief Financial Officer, Department of Education', 'IV', '5315', 'exec-dept-ed'),
+    'exec-dept-ed-chief-information-officer': ('Chief Information Officer, Department of Education', 'IV', '5315', 'exec-dept-ed'),
+    'exec-dept-ed-deputy-secretary-of-department-of-education': ('Deputy Secretary of Education', 'II', '5313', None),
+    'exec-dept-ed-general-counsel': ('General Counsel, Department of Education', 'IV', '5315', 'exec-dept-ed'),
+    'exec-dept-ed-secretary-of-department-of-education': ('Secretary of Education', 'I', '5312', None),
+    'exec-dept-hhs-chief-financial-officer': ('Chief Financial Officer, Department of Health and Human Services', 'IV', '5315', 'exec-dept-hhs'),
+    'exec-dept-hhs-chief-information-officer': ('Chief Information Officer, Department of Health and Human Services', 'IV', '5315', 'exec-dept-hhs'),
+    'exec-dept-hhs-deputy-secretary-of-department-of-health-human-services-hhs': ('Deputy Secretary of Health and Human Services', 'II', '5313', None),
+    'exec-dept-hhs-general-counsel': ('General Counsel of the Department of Health and Human Services', 'IV', '5315', 'exec-dept-hhs'),
+    'exec-dept-hhs-secretary-of-department-of-health-human-services-hhs': ('Secretary of Health and Human Services', 'I', '5312', None),
+    'exec-dept-hud-chief-financial-officer': ('Chief Financial Officer, Department of Housing and Urban Development', 'IV', '5315', 'exec-dept-hud'),
+    'exec-dept-hud-chief-information-officer': ('Chief Information Officer, Department of Housing and Urban Development', 'IV', '5315', 'exec-dept-hud'),
+    'exec-dept-hud-deputy-secretary-of-department-of-housing-urban-development-hud': ('Deputy Secretary of Housing and Urban Development', 'II', '5313', None),
+    'exec-dept-hud-general-counsel': ('General Counsel of the Department of Housing and Urban Development', 'IV', '5315', 'exec-dept-hud'),
+    'exec-dept-hud-secretary-of-department-of-housing-urban-development-hud': ('Secretary of Housing and Urban Development', 'I', '5312', None),
+    'exec-dept-state-chief-financial-officer': ('Chief Financial Officer, Department of State', 'IV', '5315', 'exec-dept-state'),
+    'exec-dept-state-chief-information-officer': ('Chief Information Officer, Department of State', 'IV', '5315', 'exec-dept-state'),
+    'exec-dept-state-deputy-secretary-of-department-of-state': ('Deputy Secretary of State', 'II', '5313', None),
+    'exec-dept-state-secretary-of-department-of-state': ('Secretary of State', 'I', '5312', None),
+    'exec-dept-treasury-chief-financial-officer': ('Chief Financial Officer, Department of the Treasury', 'IV', '5315', 'exec-dept-treasury'),
+    'exec-dept-treasury-chief-information-officer': ('Chief Information Officer, Department of the Treasury', 'IV', '5315', 'exec-dept-treasury'),
+    'exec-dept-treasury-deputy-secretary-of-department-of-the-treasury': ('Deputy Secretary of the Treasury', 'II', '5313', None),
+    'exec-dept-treasury-general-counsel': ('General Counsel of the Department of the Treasury', 'IV', '5315', 'exec-dept-treasury'),
+    'exec-dept-treasury-occ-comptroller-of-the-currency': ('Comptroller of the Currency', 'III', '5314', None),
+    'exec-dept-treasury-secretary-of-department-of-the-treasury': ('Secretary of the Treasury', 'I', '5312', None),
+    'exec-dept-usda-chief-financial-officer': ('Chief Financial Officer, Department of Agriculture', 'IV', '5315', 'exec-dept-usda'),
+    'exec-dept-usda-chief-information-officer': ('Chief Information Officer, Department of Agriculture', 'IV', '5315', 'exec-dept-usda'),
+    'exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda': ('Deputy Secretary of Agriculture', 'II', '5313', None),
+    'exec-dept-usda-general-counsel': ('General Counsel of the Department of Agriculture', 'IV', '5315', 'exec-dept-usda'),
+    'exec-dept-usda-secretary-of-department-of-agriculture-usda': ('Secretary of Agriculture', 'I', '5312', None),
+    'exec-dept-va-bva-chairman-board-of-veterans-appeals': ("Chairman, Board of Veterans' Appeals", 'IV', '5315', None),
+    'exec-dept-va-chief-financial-officer': ('Chief Financial Officer, Department of Veterans Affairs', 'IV', '5315', 'exec-dept-va'),
+    'exec-dept-va-chief-information-officer': ('Chief Information Officer, Department of Veterans Affairs', 'IV', '5315', 'exec-dept-va'),
+    'exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va': ('Deputy Secretary of Veterans Affairs', 'II', '5313', None),
+    'exec-dept-va-general-counsel': ('General Counsel, Department of Veterans Affairs', 'IV', '5315', 'exec-dept-va'),
+    'exec-dept-va-secretary-of-department-of-veterans-affairs-va': ('Secretary of Veterans Affairs', 'I', '5312', None),
+    'exec-eop-omb-deputy-director-for-management': ('Deputy Director for Management, Office of Management and Budget', 'II', '5313', 'exec-eop-omb'),
+    'exec-eop-ustr-chief-agricultural-negotiator': ('Chief Agricultural Negotiator, Office of the United States Trade Representative', 'III', '5314', 'exec-eop-ustr'),
+    'exec-eop-ustr-u-s-trade-representative-ambassador': ('United States Trade Representative', 'I', '5312', None),
+    'exec-ind-cia-general-counsel': ('General Counsel of the Central Intelligence Agency', 'IV', '5315', 'exec-ind-cia'),
+    'exec-ind-epa-chief-financial-officer': ('Chief Financial Officer, Environmental Protection Agency', 'IV', '5315', 'exec-ind-epa'),
+    'exec-ind-epa-chief-information-officer': ('Chief Information Officer, Environmental Protection Agency', 'IV', '5315', 'exec-ind-epa'),
+    'exec-ind-epa-deputy-administrator': ('Deputy Administrator of the Environmental Protection Agency', 'III', '5314', 'exec-ind-epa'),
+    'exec-ind-misc-equal-employment-opportunity-commission-eeoc-general-counsel': ('General Counsel of the Equal Employment Opportunity Commission', 'V', '5316', 'exec-ind-misc-equal-employment-opportunity-commission-eeoc'),
+    'exec-ind-misc-national-labor-relations-board-nlrb-independent-general-counsel': ('General Counsel of the National Labor Relations Board', 'IV', '5315', 'exec-ind-misc-national-labor-relations-board-nlrb-independent'),
+    'exec-ind-nasa-associate-administrator': ('Associate Administrator of the National Aeronautics and Space Administration', 'IV', '5315', 'exec-ind-nasa'),
+    'exec-ind-nasa-chief-financial-officer': ('Chief Financial Officer, National Aeronautics and Space Administration', 'IV', '5315', 'exec-ind-nasa'),
+    'exec-ind-nasa-chief-information-officer': ('Chief Information Officer, National Aeronautics and Space Administration', 'IV', '5315', 'exec-ind-nasa'),
+    'exec-ind-nasa-deputy-administrator': ('Deputy Administrator of the National Aeronautics and Space Administration', 'III', '5314', 'exec-ind-nasa'),
+    'exec-ind-nasa-general-counsel': ('General Counsel of the National Aeronautics and Space Administration', 'V', '5316', 'exec-ind-nasa'),
+    'exec-ind-nsf-chief-information-officer': ('Chief Information Officer, National Science Foundation', 'IV', '5315', 'exec-ind-nsf'),
+    'exec-ind-opm-chief-information-officer': ('Chief Information Officer, Office of Personnel Management', 'IV', '5315', 'exec-ind-opm'),
+    'exec-ind-opm-deputy-director': ('Deputy Director of the Office of Personnel Management', 'III', '5314', 'exec-ind-opm'),
+    'exec-ind-sba-deputy-administrator': ('Deputy Administrator of the Small Business Administration', 'IV', '5315', 'exec-ind-sba'),
+    'exec-regulatory-nrc-executive-director-for-operations': ('Executive Director for Operations, Nuclear Regulatory Commission', 'IV', '5315', 'exec-regulatory-nrc'),
+    'exec-regulatory-nrc-general-counsel': ('General Counsel of the Nuclear Regulatory Commission', 'V', '5316', 'exec-regulatory-nrc'),
 }
 US_CODE_SECTIONS = ("5312", "5313", "5314", "5315", "5316")
 US_CODE_HOST = "uscode.house.gov"
@@ -795,7 +858,7 @@ def reported_pay_violations(node, pay, today, label):
     return out
 
 
-def schedule_pay_violations(node, pay, today, label):
+def schedule_pay_violations(node, pay, today, label, tree_parent=None):
     """A rate whose LEVEL is current law and whose FIGURE is OPM's table.
 
     A different claim from `positionPayRate`, which reads the level off the
@@ -825,15 +888,38 @@ def schedule_pay_violations(node, pay, today, label):
     if expected is None:
         say("carries a rate from the Executive Schedule; the Code names no such post for this node")
         return out
-    title, level, section = expected
+    title, level, section, scoped_org = expected
     if str(pay.get("statutoryTitle") or "") != title:
         say("quotes the Code as naming {!r}; §{} prints {!r}".format(pay.get("statutoryTitle"), section, title))
     # The node must still BE the office the statute named. A rename in the
     # curated file cannot inherit a level looked up for a different post --
-    # the same rename guard every evidence module here applies.
-    if canonical_key(node.get("name")) != canonical_key(title):
-        say("is now called {!r}, which is not the statutory title {!r} its rate was looked up from".format(
-            node.get("name"), title))
+    # the same rename guard every evidence module here applies. Two routes,
+    # two guards: a whole-name match must still equal the statutory title; a
+    # scoped one must still carry the office half AND still sit under the body
+    # the statute named, because that placement is half of what identified it.
+    if scoped_org is None:
+        if canonical_key(node.get("name")) != canonical_key(title):
+            say("is now called {!r}, which is not the statutory title {!r} its rate was looked up from".format(
+                node.get("name"), title))
+        if pay.get("scopedOffice") or pay.get("scopedOrganisationId"):
+            say("claims a scope the Code did not need: its whole name is the statutory title")
+    else:
+        office = str(pay.get("scopedOffice") or "")
+        if not office or canonical_key(node.get("name")) != canonical_key(office):
+            say("is now called {!r}, which is not the office {!r} the Code names inside {!r}".format(
+                node.get("name"), office, title))
+        if str(pay.get("scopedOrganisationId") or "") != scoped_org:
+            say("was priced as this office inside {!r}; it now claims {!r}".format(
+                scoped_org, pay.get("scopedOrganisationId")))
+        # Read off the tree the gate is walking, not off `parentId`: that
+        # field is stamped on the exported node list only, so a check against
+        # it would pass vacuously for most of the graph.
+        parent_id = str(tree_parent or node.get("parentId") or "")
+        if parent_id != scoped_org:
+            say("sits under {!r}, not {!r}, which is half of what identified it".format(
+                parent_id or "nothing", scoped_org))
+        if canonical_key(office) not in canonical_key(title):
+            say("names office {!r}, which is not part of the statutory title {!r}".format(office, title))
     if str(pay.get("payLevel") or "") != level:
         say("prices level {!r}; §{} places this post at level {!r}".format(pay.get("payLevel"), section, level))
     citation = str(pay.get("citation") or "")
@@ -1359,6 +1445,15 @@ def main(argv):
     graph = json.loads(graph_path.read_text(encoding="utf-8"))
     nodes = [node for node, _ in walk(graph)]
     pairs = list(walk(graph))
+    # The tree is the authority on placement. `parentId` is stamped only on the
+    # exported node list, not on every tree node, so a check that read it would
+    # silently pass for most of the graph -- which is exactly what the scoped
+    # Executive Schedule claim cannot afford: it identifies a node by its name
+    # AND the body above it, and "General Counsel" is the name of 84 nodes.
+    tree_parents = {
+        str(node.get("id") or ""): str((parent or {}).get("id") or "")
+        for node, parent in pairs
+    }
     print("Validating {} ({:,} nodes)\n".format(graph_path, len(nodes)))
 
     gate = Gate()
@@ -1787,7 +1882,9 @@ def main(argv):
         # own mirror, keyed by node id.
         schedule_pay = node.get("positionSchedulePay")
         if schedule_pay is not None:
-            bad_schedule_pay.extend(schedule_pay_violations(node, schedule_pay, today, label))
+            bad_schedule_pay.extend(schedule_pay_violations(
+                node, schedule_pay, today, label,
+                tree_parent=tree_parents.get(str(node.get("id") or ""))))
         # A roster row — what one listed person is paid — beside both of the
         # above; again its own field, its own mirror, its own rules.
         reported_pay = node.get("positionReportedPay")

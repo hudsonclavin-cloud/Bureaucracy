@@ -158,7 +158,7 @@ class MirrorTests(unittest.TestCase):
     def test_every_mirrored_entry_is_what_the_code_actually_prints(self) -> None:
         schedule = ss.load_schedule()
         by_key = {p["key"]: p for p in schedule["index"].values()}
-        for node_id, (title, level, section) in sorted(US_CODE_EXECUTIVE_SCHEDULE.items()):
+        for node_id, (title, level, section, scoped) in sorted(US_CODE_EXECUTIVE_SCHEDULE.items()):
             with self.subTest(node=node_id):
                 position = by_key.get(canonical_name_key(title))
                 self.assertIsNotNone(position, f"the Code does not print {title!r}")
@@ -166,6 +166,32 @@ class MirrorTests(unittest.TestCase):
                 self.assertEqual(position["level"], level)
                 self.assertEqual(position["section"], section)
                 self.assertIn(section, US_CODE_SECTIONS)
+                if scoped is not None:
+                    self.assertNotEqual(canonical_name_key(title), canonical_name_key(scoped),
+                                        "a scoped entry names an office inside a body, not the body")
+
+    @unittest.skipUnless(GRAPH.exists(), "no published graph")
+    def test_every_scoped_entry_still_sits_under_the_body_the_code_named(self) -> None:
+        """The scoped route identifies a node by its name AND its parent --
+        "General Counsel" is the name of 84 nodes here, and only the body it
+        sits under says which one the Code meant."""
+        node_map, _ = index_tree(json.loads(GRAPH.read_text(encoding="utf-8")))
+        scoped = {k: v for k, v in US_CODE_EXECUTIVE_SCHEDULE.items() if v[3] is not None}
+        self.assertTrue(scoped, "no scoped entries at all")
+        parents = {}
+        stack = [(json.loads(GRAPH.read_text(encoding="utf-8")), None)]
+        while stack:
+            current, parent = stack.pop()
+            parents[str(current.get("id") or "")] = str((parent or {}).get("id") or "")
+            for child in current.get("children") or []:
+                stack.append((child, current))
+        for node_id, (_, _, _, org_id) in sorted(scoped.items()):
+            node = node_map.get(node_id)
+            if node is None:
+                continue
+            with self.subTest(node=node_id):
+                self.assertEqual(parents.get(node_id), org_id)
+                self.assertEqual(node["positionSchedulePay"].get("scopedOrganisationId"), org_id)
 
     @unittest.skipUnless(GRAPH.exists(), "no published graph")
     def test_the_mirror_covers_exactly_the_published_nodes(self) -> None:
@@ -186,8 +212,9 @@ class MirrorTests(unittest.TestCase):
 
 
 def good_pay(node_id):
-    title, level, section = US_CODE_EXECUTIVE_SCHEDULE[node_id]
+    title, level, section, scoped = US_CODE_EXECUTIVE_SCHEDULE[node_id]
     return {
+        "scopedOffice": None, "scopedOrganisation": None, "scopedOrganisationId": None,
         "source": ss.SOURCE, "method": ss.METHOD,
         "payLevel": level, "citation": "5 U.S.C. §{}".format(section),
         "statutoryTitle": title,
@@ -213,7 +240,7 @@ class GateTests(unittest.TestCase):
 
     def setUp(self) -> None:
         self.assertIn(self.NODE_ID, US_CODE_EXECUTIVE_SCHEDULE)
-        title, _, _ = US_CODE_EXECUTIVE_SCHEDULE[self.NODE_ID]
+        title, _, _, _ = US_CODE_EXECUTIVE_SCHEDULE[self.NODE_ID]
         self.node = {"id": self.NODE_ID, "name": title, "type": "Position"}
 
     def test_a_true_record_passes(self) -> None:
@@ -267,6 +294,83 @@ class GateTests(unittest.TestCase):
             with self.subTest(case=name):
                 self.assertTrue(schedule_pay_violations(node or self.node, pay, TODAY, label),
                                 f"{name} was accepted")
+
+
+class ScopedGateTests(unittest.TestCase):
+    """The scoped route identifies a node by its NAME and its PARENT.
+
+    "General Counsel" is the name of 84 nodes in this graph, so the body it
+    sits under is not decoration -- it is half of what says which General
+    Counsel the Code meant. Every case below keeps a correct figure, a real
+    statutory title and a correct citation, and changes only the thing that
+    identifies the office.
+    """
+
+    def setUp(self) -> None:
+        scoped = {k: v for k, v in US_CODE_EXECUTIVE_SCHEDULE.items() if v[3] is not None}
+        self.assertTrue(scoped, "no scoped entries to test")
+        self.node_id = sorted(scoped)[0]
+        self.title, self.level, self.section, self.org = US_CODE_EXECUTIVE_SCHEDULE[self.node_id]
+        # The office half is whatever the Code's title carries beyond the body.
+        self.office = None
+        for separator in ss.SCOPE_SEPARATORS:
+            if separator in self.title:
+                self.office = self.title.partition(separator)[0]
+                break
+        self.assertIsNotNone(self.office)
+        self.node = {"id": self.node_id, "name": self.office, "type": "Position"}
+
+    def _pay(self, **overrides):
+        pay = good_pay(self.node_id)
+        pay.update({"scopedOffice": self.office, "scopedOrganisation": self.org,
+                    "scopedOrganisationId": self.org})
+        pay.update(overrides)
+        return pay
+
+    def test_a_true_scoped_record_passes(self) -> None:
+        self.assertEqual(
+            schedule_pay_violations(self.node, self._pay(), TODAY, label, tree_parent=self.org), [])
+
+    def test_the_parent_is_checked_against_the_tree_not_a_stamped_field(self) -> None:
+        """parentId is stamped on the exported node list only, so a check that
+        read it would pass vacuously for most of the graph."""
+        violations = schedule_pay_violations(
+            self.node, self._pay(), TODAY, label, tree_parent="some-other-organisation")
+        self.assertTrue(violations)
+        self.assertIn("half of what identified it", " ".join(violations))
+
+    def test_a_missing_parent_is_a_violation_rather_than_a_pass(self) -> None:
+        self.assertTrue(schedule_pay_violations(self.node, self._pay(), TODAY, label, tree_parent=None))
+
+    def test_each_way_a_scoped_record_can_be_faked_is_refused(self) -> None:
+        cases = {
+            "the record claims a different organisation": self._pay(scopedOrganisationId="exec-dept-doe"),
+            "the office half is dropped": self._pay(scopedOffice=""),
+            "the office half is not part of the statutory title": self._pay(scopedOffice="Chief of Staff"),
+            "the node was renamed to another office": None,
+        }
+        for name, pay in cases.items():
+            with self.subTest(case=name):
+                node = self.node
+                if pay is None:
+                    node = {"id": self.node_id, "name": "Something Else Entirely", "type": "Position"}
+                    pay = self._pay()
+                self.assertTrue(
+                    schedule_pay_violations(node, pay, TODAY, label, tree_parent=self.org),
+                    f"{name} was accepted")
+
+    def test_a_whole_name_match_may_not_claim_a_scope(self) -> None:
+        """The two routes are exclusive: a node whose own name is the statutory
+        title needs no organisation to identify it, and claiming one would
+        present a single reading as two."""
+        direct = sorted(k for k, v in US_CODE_EXECUTIVE_SCHEDULE.items() if v[3] is None)
+        self.assertTrue(direct)
+        node_id = direct[0]
+        title = US_CODE_EXECUTIVE_SCHEDULE[node_id][0]
+        node = {"id": node_id, "name": title, "type": "Position"}
+        pay = good_pay(node_id)
+        pay.update({"scopedOffice": title, "scopedOrganisationId": "exec-dept-doe"})
+        self.assertTrue(schedule_pay_violations(node, pay, TODAY, label))
 
 
 class ItIsNotEvidenceThePostExistsTests(unittest.TestCase):

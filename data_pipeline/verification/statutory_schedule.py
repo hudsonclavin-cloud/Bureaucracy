@@ -238,6 +238,118 @@ def load_schedule(directory: str | Path = FIXTURE_DIR) -> dict[str, Any]:
     }
 
 
+#: Separators the Code uses between an office and the body it belongs to:
+#: "General Counsel, Department of Education", "Deputy Administrator of the
+#: Environmental Protection Agency". Ordered longest-first so " of the " is
+#: tried before " of ".
+SCOPE_SEPARATORS = (", ", " of the ", " of ", " for the ", " for ")
+#: Types the Executive Schedule does not set pay for. Without this, "Secretary
+#: of Homeland Security" reaches the Senate Appropriations subcommittee named
+#: "Homeland Security" -- a real node, a unique name, and entirely the wrong
+#: branch of government. The office floor below refuses that particular case
+#: anyway ("Secretary" is one token), which is exactly why it must not be the
+#: only thing standing in the way.
+NON_EXECUTIVE_TYPE_WORDS = ("committee", "subcommittee", "caucus", "court", "circuit", "district")
+METHOD_SCOPED = "level_assigned_by_5_usc_5312_5316_to_this_post_in_this_organisation"
+#: An office part shorter than this is not a post, it is a role word. The
+#: statute's "Secretary of X" leaves "Secretary"; the graph has hundreds of
+#: nodes a bare role word would reach.
+MIN_SCOPED_OFFICE_TOKENS = 2
+
+
+def match_scoped_positions(
+    node_map: Mapping[str, Mapping[str, Any]],
+    schedule: Mapping[str, Any],
+    *,
+    already_matched: Mapping[str, Any] | None = None,
+) -> dict[str, Any]:
+    """The titles the Code writes as "<office>, <organisation>", scoped.
+
+    `match_positions` above needs the node's whole name to equal the statutory
+    title, which is right for "Secretary of Energy" and useless for "General
+    Counsel of the Department of Agriculture" -- the graph calls that node
+    `General Counsel`, under `Department of Agriculture (USDA)`. Splitting the
+    statutory title and requiring the organisation half to name the node's own
+    PARENT is the same scoping `headcounts.py` applies to a FedScope
+    sub-agency row: a name is only evidence of placement when something else
+    already placed it.
+
+    Four guards, and the first three each close a way this would otherwise
+    publish a real figure against the wrong office:
+
+    - the organisation half must name exactly ONE node, and that node must not
+      be a committee, court or other body the Executive Schedule does not
+      reach;
+    - the office half must be at least two tokens, so a bare role word
+      ("Secretary", "Administrator") reaches nothing;
+    - the office must be a DIRECT child of that organisation, and exactly one
+      such child, so a title cannot pick between two identically-named posts;
+    - a node already matched by whole-name equality is never scoped, and a
+      node two statutory titles reach claims neither.
+    """
+    index = schedule["index"]
+    taken = set(already_matched or ())
+    direct_keys = {canonical_name_key(node.get("name"))
+                   for node_id, node in node_map.items() if node_id in taken}
+    organisations: dict[str, list[str]] = {}
+    for node_id, node in node_map.items():
+        if is_post_node(node) or node.get("synthetic"):
+            continue
+        type_text = str(node.get("type") or "").casefold()
+        if any(word in type_text for word in NON_EXECUTIVE_TYPE_WORDS):
+            continue
+        organisations.setdefault(canonical_name_key(node.get("name")), []).append(node_id)
+
+    candidates: dict[str, list[dict[str, Any]]] = {}
+    refusals: dict[str, list[str]] = {}
+    for key, position in sorted(index.items()):
+        if key in direct_keys:
+            continue  # whole-name equality already priced it, or refused it
+        for separator in SCOPE_SEPARATORS:
+            if separator not in position["title"]:
+                continue
+            office, _, body = position["title"].partition(separator)
+            office_key, body_key = canonical_name_key(office), canonical_name_key(body)
+            if body_key not in organisations:
+                break
+            if len(organisations[body_key]) != 1:
+                refusals.setdefault("organisation_name_reaches_several_nodes", []).append(position["title"])
+                break
+            if len(office_key.split()) < MIN_SCOPED_OFFICE_TOKENS:
+                refusals.setdefault("office_part_is_a_bare_role_word", []).append(position["title"])
+                break
+            org_id = organisations[body_key][0]
+            children = [
+                child for child in (node_map[org_id].get("children") or [])
+                if is_post_node(child) and canonical_name_key(child.get("name")) == office_key
+            ]
+            if len(children) > 1:
+                refusals.setdefault("office_matches_several_children", []).append(position["title"])
+                break
+            if not children:
+                refusals.setdefault("no_such_post_directly_under_that_organisation", []).append(position["title"])
+                break
+            child_id = str(children[0].get("id") or "")
+            if child_id in taken:
+                refusals.setdefault("already_matched_by_its_whole_name", []).append(position["title"])
+                break
+            candidates.setdefault(child_id, []).append(
+                dict(position, scopedOffice=office, scopedOrganisationId=org_id,
+                     scopedOrganisation=str(node_map[org_id].get("name") or ""),
+                     method=METHOD_SCOPED)
+            )
+            break
+
+    matched: dict[str, dict[str, Any]] = {}
+    for node_id, found in sorted(candidates.items()):
+        if len(found) > 1:
+            refusals.setdefault("node_reached_by_several_statutory_titles", []).extend(
+                sorted(p["title"] for p in found))
+            continue
+        matched[node_id] = found[0]
+    return {"matched": matched, "refusals": {k: sorted(set(v)) for k, v in sorted(refusals.items())}}
+
+
 def match_positions(node_map: Mapping[str, Mapping[str, Any]], schedule: Mapping[str, Any]) -> dict[str, Any]:
     """Which position nodes the statute names, by canonical-key equality only.
 
@@ -326,7 +438,16 @@ def build_records(
             # --- the two halves, each with its own provenance --------------
             "levelClaim": {
                 "source": SOURCE,
-                "method": METHOD,
+                "method": position.get("method") or METHOD,
+                # Present only on a scoped match, and the panel prints it: the
+                # Code names "General Counsel of the Department of
+                # Agriculture" and the graph calls that node "General
+                # Counsel", so a reader must be able to see which office in
+                # which body the figure was looked up for. 84 nodes here are
+                # named "General Counsel".
+                "scopedOffice": position.get("scopedOffice"),
+                "scopedOrganisation": position.get("scopedOrganisation"),
+                "scopedOrganisationId": position.get("scopedOrganisationId"),
                 "payLevel": position["level"],
                 "citation": position["citation"],
                 "section": position["section"],
@@ -395,12 +516,14 @@ def apply_schedule_pay(
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
 
         index_tree = _index_tree
-    node_map, _ = index_tree(root)
+    node_map, parent_map = index_tree(root)
     stats = {
         "priced": 0,
+        "priced_scoped": 0,
         "unknown_node": 0,
         "not_a_position": 0,
         "renamed_since_the_match": 0,
+        "reparented_since_the_match": 0,
         "stands_for_many_posts": 0,
     }
     for node_id, record in sorted(records.items()):
@@ -419,7 +542,19 @@ def apply_schedule_pay(
             stats["stands_for_many_posts"] += 1
             continue
         claim = record.get("levelClaim") or {}
-        if canonical_name_key(node.get("name")) != canonical_name_key(claim.get("statutoryTitle")):
+        scoped_office = claim.get("scopedOffice")
+        if scoped_office:
+            # A scoped record rests on two things -- the node's own name and
+            # the body it sits under -- so both are re-checked. A node
+            # re-parented in the curated file has no claim on a level the
+            # statute set for that office in a different organisation.
+            if canonical_name_key(node.get("name")) != canonical_name_key(scoped_office):
+                stats["renamed_since_the_match"] += 1
+                continue
+            if parent_map.get(node_id) != claim.get("scopedOrganisationId"):
+                stats["reparented_since_the_match"] += 1
+                continue
+        elif canonical_name_key(node.get("name")) != canonical_name_key(claim.get("statutoryTitle")):
             stats["renamed_since_the_match"] += 1
             continue
         node["positionSchedulePay"] = {
@@ -428,6 +563,9 @@ def apply_schedule_pay(
             "payLevel": claim.get("payLevel"),
             "citation": claim.get("citation"),
             "statutoryTitle": claim.get("statutoryTitle"),
+            "scopedOffice": claim.get("scopedOffice"),
+            "scopedOrganisation": claim.get("scopedOrganisation"),
+            "scopedOrganisationId": claim.get("scopedOrganisationId"),
             "statuteUrl": claim.get("url"),
             "statuteCheckedAt": claim.get("checkedAt"),
             "amount": record.get("amount"),
@@ -446,6 +584,8 @@ def apply_schedule_pay(
             "checkedAt": record.get("retrievedAt"),
         }
         stats["priced"] += 1
+        if scoped_office:
+            stats["priced_scoped"] += 1
         # As in pay_tables: no `sourceUrls`, no `sourceTypes`, no
         # `lastVerified`, no `verificationMethod`. The Code saying a post sits
         # at Level II is not evidence that this graph's node for it exists as

@@ -782,6 +782,31 @@ try {
     check("the panel says it is two documents", /statute sets the level and the table sets the rate/.test(sched), sched.slice(0, 600));
     check("a statutory rate is never called this unit's cost", /not a share of federal outlays/.test(sched), sched.slice(0, 900));
     // The 2026-09-11 failure, checked from the served graph rather than trusted.
+    // The scoped half: a shared title ("General Counsel", 84 nodes) is only
+    // identified by the body above it, and the panel must say so.
+    const scopedAll = allNodes.filter((n) => n.positionSchedulePay && n.positionSchedulePay.scopedOrganisation);
+    check("some position is priced as an office inside a named organisation", scopedAll.length > 0, "none");
+    // Search finds a node by name, and the whole point of the scoped route is
+    // that these names are NOT unique -- 84 nodes are called "General
+    // Counsel". So the assertion is driven from one whose name happens to be
+    // unique, which is the only way a search can land on a known node.
+    const nameCounts = new Map();
+    for (const n of allNodes) nameCounts.set(n.name, (nameCounts.get(n.name) || 0) + 1);
+    const scopedNode = scopedAll.find((n) => nameCounts.get(n.name) === 1);
+    check("at least one scoped position has a name a search can resolve", Boolean(scopedNode),
+      `${scopedAll.length} scoped, none with a unique name`);
+    if (scopedNode) {
+      await page.fill("#search-input", scopedNode.name.slice(0, 30));
+      await page.waitForTimeout(700);
+      await page.locator("#search-results .sr-item").first().click();
+      await page.waitForTimeout(800);
+      const scopedPanel = await text("#info-panel");
+      check("the panel names the organisation the title was scoped to",
+        scopedPanel.includes(scopedNode.positionSchedulePay.scopedOrganisation), scopedPanel.slice(0, 500));
+      check("the panel says the title alone did not identify it",
+        /half of what identifies it/.test(scopedPanel), scopedPanel.slice(0, 700));
+    }
+
     check("a statutory rate did not make the post verified",
       !(withSchedulePay.sourceUrls || []).some((u) => String(u).includes("uscode.house.gov")),
       JSON.stringify(withSchedulePay.sourceUrls || []));

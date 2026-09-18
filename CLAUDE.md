@@ -917,7 +917,29 @@ statute states several of ("Assistant Secretaries of Commerce (11)") prices
 none; and "Archivist of the United States", which the Code places at **both**
 §5314 and §5316, is dropped from the index rather than adjudicated.
 
-**38 positions priced** — 15 at Level I, 16 at II, 5 at III, 1 each at IV and
+**A second route, scoped the way a FedScope row is.** Whole-name equality
+prices "Secretary of Energy" and is useless for the 375 statutory titles
+written as `<office>, <organisation>`: the Code says "General Counsel of the
+Department of Agriculture" and this graph calls that node `General Counsel`,
+under `Department of Agriculture (USDA)`. `match_scoped_positions` splits such
+a title and requires the organisation half to name the node's **own parent** —
+the same scoping `headcounts.py` applies to a FedScope sub-agency row, on the
+same principle that a name is only evidence of placement when something else
+already placed it. Four guards: the organisation half must name exactly one
+node and not a committee, court or other body the Executive Schedule does not
+reach; the office half must be at least two tokens; the office must be exactly
+one **direct** child of that organisation; and a node already priced by whole
+name, or reached by two statutory titles, is refused. The type guard is not
+belt-and-braces — without it "Secretary of Homeland Security" reaches the
+Senate Appropriations subcommittee named "Homeland Security", a real node with
+a unique name in entirely the wrong branch; the two-token floor happens to
+refuse that one too, which is exactly why it must not be the only thing
+standing there. **61 more priced**, and they are the stamped titles this file
+already documents as recurring 92, 81 and 47 times — `General Counsel`, `Chief
+Financial Officer`, `Chief Information Officer` — which otherwise carry no
+evidence at all.
+
+**99 positions priced** — 15 at Level I, 17 at II, 10 at III, 53 at IV and 4 at
 V — including the Secretary of State, the Attorney General and the Secretary
 of Defense, none of which carried pay evidence of any kind before. All
 `partial`, all `scopeMatch: proxy`, the same deliberate downgrade
@@ -927,14 +949,19 @@ channel by which a five-row table carried 29 positions to `verified` on
 2026-09-11, and `tests/test_statutory_schedule.py` asserts against the
 published graph that no priced node gained a `uscode.house.gov` URL.
 
-The gate mirrors node id → (statutory title, level, section) in
-`US_CODE_EXECUTIVE_SCHEDULE`, keyed by id for a reason sharper than the Senate
-case: **fifteen of these nodes are priced at the identical $253,100**, so a
-record moved between them keeps a correct figure, a correct rate text, a
-correct citation and a real statutory title, and only a check tied to the
-node's own identity catches it. The mirror is pinned equal to what the
-committed sections print, and the test corrupts each dimension in turn —
-twenty-two cases, including the swap — and asserts the gate rejects it.
+The gate mirrors node id → (statutory title, level, section, the organisation
+it was scoped to or `None`) in `US_CODE_EXECUTIVE_SCHEDULE`, keyed by id for a
+reason sharper than the Senate case: **fifteen of these nodes are priced at the
+identical $253,100**, so a record moved between them keeps a correct figure, a
+correct rate text, a correct citation and a real statutory title, and only a
+check tied to the node's own identity catches it. For a scoped record the
+placement is checked too, and **off the tree the gate is walking rather than
+off `parentId`** — that field is stamped on the exported node list only, so a
+check that read it would have passed vacuously for most of the graph while
+looking like a check. The mirror is pinned equal to what the committed sections
+print, the two routes are asserted mutually exclusive, and the tests corrupt
+every dimension in turn — the swap, a different organisation, a dropped office
+half, an office half not in the statutory title, a re-parenting, a rename.
 
 **Two more sources, each a single primary document rather than a join
 (since 2026-09-14).** `judicial_pay.py` and `congressional_pay.py` write a

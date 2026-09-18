@@ -62,6 +62,7 @@ from data_pipeline.verification.statutory_schedule import (  # noqa: E402
     build_records,
     load_schedule,
     match_positions,
+    match_scoped_positions,
 )
 from datetime import date  # noqa: E402
 
@@ -91,6 +92,13 @@ def main(argv: list[str] | None = None) -> int:
 
     node_map, _ = index_tree(load_base_graph(args.base_graph))
     matching = match_positions(node_map, schedule)
+    # The second route, for the titles the Code writes as "<office>,
+    # <organisation>". Run after the first and handed what it took, so a node
+    # can never be priced twice from two readings of the same statute.
+    scoped = match_scoped_positions(node_map, schedule, already_matched=matching["matched"])
+    matching["matched"].update(scoped["matched"])
+    for reason, items in scoped["refusals"].items():
+        matching["refusals"].setdefault(reason, []).extend(items)
     fiscal_year = federal_fiscal_year_of(date.fromisoformat(str(table["effective"])))
     records, report = build_records(
         matching["matched"], table,
@@ -98,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
         retrieved_at=loaded["fetched_at"], fiscal_year=fiscal_year,
     )
     report["matchRefusals"] = {k: len(v) for k, v in matching["refusals"].items()}
+    report["scopedMatches"] = len(scoped["matched"])
     report["ambiguousStatutoryTitles"] = schedule["ambiguous"]
     report["statutoryPositions"] = schedule["positions"]
 
@@ -135,7 +144,9 @@ def main(argv: list[str] | None = None) -> int:
     print(f"statute       : {schedule['positions']} positions across 5 sections; "
           f"{len(schedule['index'])} distinct titles, {len(schedule['ambiguous'])} ambiguous")
     print(f"salary table  : {table['table']}  {table['effectiveText']}")
-    print(f"matched nodes : {report['matched']}   priced {report['priced']}   validated {report['validated']}")
+    print(f"matched nodes : {report['matched']} ({report['matched'] - report['scopedMatches']} by whole name, "
+          f"{report['scopedMatches']} scoped to their organisation)   priced {report['priced']}   "
+          f"validated {report['validated']}")
     print(f"  by level    : {report['priced_by_level']}")
     for reason, count in sorted(report["matchRefusals"].items()):
         print(f"  refused, {reason}: {count}")
