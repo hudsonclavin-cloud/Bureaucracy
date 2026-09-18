@@ -193536,18 +193536,33 @@
                   }
                 }
               ],
+              "lastVerified": "2026-09-18T21:13:51+00:00",
+              "evidenceVerifiedAt": "2026-09-18T21:13:51+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "jud-circuit-1st-circuit",
+              "verificationFailureSource": {
+                "source": "own_official_page",
+                "url": "https://www.ca1.uscourts.gov/",
+                "urlsRead": [
+                  "https://www.ca1.uscourts.gov/",
+                  "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links"
+                ],
+                "checkedAt": "2026-09-18T21:13:51+00:00"
+              },
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
               "parentProven": true,
               "proofStatus": "baseline",
               "proofReason": "trusted_base_graph",
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-18T21:13:51+00:00",
               "resolved_total_amount": 400749031.08,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -194146,6 +194161,9 @@
                   }
                 }
               ],
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-18T21:13:51+00:00",
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
@@ -195061,18 +195079,32 @@
                   }
                 }
               ],
+              "lastVerified": "2026-09-18T21:13:51+00:00",
+              "evidenceVerifiedAt": "2026-09-18T21:13:51+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "jud-circuit-6th-circuit",
+              "verificationFailureSource": {
+                "source": "own_official_page",
+                "url": "https://www.ca6.uscourts.gov/",
+                "urlsRead": [
+                  "https://www.ca6.uscourts.gov/"
+                ],
+                "checkedAt": "2026-09-18T21:13:51+00:00"
+              },
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
               "parentProven": true,
               "proofStatus": "baseline",
               "proofReason": "trusted_base_graph",
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-18T21:13:51+00:00",
               "resolved_total_amount": 400749031.08,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -196281,18 +196313,32 @@
                   }
                 }
               ],
+              "lastVerified": "2026-09-18T21:13:51+00:00",
+              "evidenceVerifiedAt": "2026-09-18T21:13:51+00:00",
+              "verificationFailure": "not_found",
+              "verificationSiteFrom": "jud-circuit-10th-circuit",
+              "verificationFailureSource": {
+                "source": "own_official_page",
+                "url": "https://www.ca10.uscourts.gov/",
+                "urlsRead": [
+                  "https://www.ca10.uscourts.gov/"
+                ],
+                "checkedAt": "2026-09-18T21:13:51+00:00"
+              },
               "sourceUrls": [],
               "sourceTypes": [],
               "sourceCount": 0,
               "confidenceScore": 0.0,
               "verificationStatus": "unverified",
-              "lastVerified": null,
               "proofSourceCount": 0,
               "proofSourceTypes": [],
               "existsProven": false,
               "parentProven": true,
               "proofStatus": "baseline",
               "proofReason": "trusted_base_graph",
+              "placementVerified": false,
+              "placementParentId": "jud-appeals",
+              "placementVerifiedAt": "2026-09-18T21:13:51+00:00",
               "resolved_total_amount": 400749031.08,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",

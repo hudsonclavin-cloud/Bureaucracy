@@ -279,9 +279,29 @@
     },
     "jud-circuit-1st-circuit": {
       "name": "U.S. Court of Appeals for the 1st Circuit",
-      "status": "not_checkable",
-      "reason": "curated_count_label",
-      "checkedAt": "2026-09-16T18:22:10+00:00"
+      "checkedAt": "2026-09-18T21:13:51+00:00",
+      "siteFrom": "jud-circuit-1st-circuit",
+      "ownPage": true,
+      "status": "not_found",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.ca1.uscourts.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-18T21:13:51+00:00"
+      }
     },
     "jud-circuit-2nd-circuit": {
       "name": "U.S. Court of Appeals for the 2nd Circuit",
@@ -291,9 +311,25 @@
     },
     "jud-circuit-3rd-circuit": {
       "name": "U.S. Court of Appeals for the 3rd Circuit",
-      "status": "not_checkable",
-      "reason": "curated_count_label",
-      "checkedAt": "2026-09-16T18:22:10+00:00"
+      "checkedAt": "2026-09-18T21:13:51+00:00",
+      "siteFrom": "jud-circuit-3rd-circuit",
+      "ownPage": true,
+      "status": "fetch_failed",
+      "pagesRead": 0,
+      "failures": [
+        {
+          "url": "https://ca3.uscourts.gov/",
+          "reason": "PermissionError: robots.txt disallows this path (ca3.uscourts.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-18T21:13:51+00:00"
+      }
     },
     "jud-circuit-4th-circuit": {
       "name": "U.S. Court of Appeals for the 4th Circuit",
@@ -309,9 +345,25 @@
     },
     "jud-circuit-6th-circuit": {
       "name": "U.S. Court of Appeals for the 6th Circuit",
-      "status": "not_checkable",
-      "reason": "curated_count_label",
-      "checkedAt": "2026-09-16T18:22:10+00:00"
+      "checkedAt": "2026-09-18T21:13:51+00:00",
+      "siteFrom": "jud-circuit-6th-circuit",
+      "ownPage": true,
+      "status": "not_found",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.ca6.uscourts.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-18T21:13:51+00:00"
+      }
     },
     "jud-circuit-7th-circuit": {
       "name": "U.S. Court of Appeals for the 7th Circuit",
@@ -333,9 +385,25 @@
     },
     "jud-circuit-10th-circuit": {
       "name": "U.S. Court of Appeals for the 10th Circuit",
-      "status": "not_checkable",
-      "reason": "curated_count_label",
-      "checkedAt": "2026-09-16T18:22:10+00:00"
+      "checkedAt": "2026-09-18T21:13:51+00:00",
+      "siteFrom": "jud-circuit-10th-circuit",
+      "ownPage": true,
+      "status": "not_found",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.ca10.uscourts.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "jud-appeals",
+        "urlsRead": [
+          "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
+        ],
+        "checkedAt": "2026-09-18T21:13:51+00:00"
+      }
     },
     "jud-circuit-11th-circuit": {
       "name": "U.S. Court of Appeals for the 11th Circuit",
