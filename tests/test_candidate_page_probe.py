@@ -127,6 +127,60 @@ class VerdictTests(unittest.TestCase):
         self.assertFalse(page["readable"])
 
 
+class OrphanLabelTests(unittest.TestCase):
+    """What the page calls a unit this graph has no node for.
+
+    The largest category this probe finds is not a missing URL: the page reads
+    fine and does not carry the graph's NAME for the unit. That is fixed by a
+    rename argued from the page's own wording, so the wording has to be
+    reported -- the organisation analogue of probe_post_titles' "on the page,
+    no node". It proposes, it never concludes.
+    """
+
+    PAGE_WITH_EXTRAS = (
+        "<html><body><main><h1>National Institute of Standards and Technology</h1>"
+        "<ul><li><a href='/itl'>Information Technology Laboratory</a></li>"
+        "<li><a href='/pml'>Physical Measurement Laboratory</a></li></ul>"
+        "<p>Prose that is long enough to clear the readable-text floor, because a page below it "
+        "records nothing either way and a probe that called such a page a negative would be "
+        "predicting a verdict the verifier never reaches on it at all. More words follow here so "
+        "the count is comfortably past four hundred characters of real body text.</p>"
+        "</main></body></html>"
+    )
+
+    def test_a_unit_the_page_names_and_the_graph_lacks_is_offered(self) -> None:
+        code, out = run(["--url", "https://www.nist.gov/", "--ids", ORG_ID, "--orphan-labels", "--json"],
+                        page_html=self.PAGE_WITH_EXTRAS)
+        self.assertEqual(code, 0)
+        labels = {row["label"] for row in json.loads(out)["pages"][0]["orphanLabels"]}
+        self.assertIn("Information Technology Laboratory", labels)
+        self.assertIn("Physical Measurement Laboratory", labels)
+
+    def test_a_unit_the_graph_already_has_is_not_offered(self) -> None:
+        code, out = run(["--url", "https://www.nist.gov/", "--ids", ORG_ID, "--orphan-labels", "--json"],
+                        page_html=self.PAGE_WITH_EXTRAS)
+        labels = {row["label"] for row in json.loads(out)["pages"][0]["orphanLabels"]}
+        self.assertNotIn("National Institute of Standards and Technology", labels)
+
+    def test_prose_is_never_offered_as_a_unit(self) -> None:
+        code, out = run(["--url", "https://www.nist.gov/", "--ids", ORG_ID, "--orphan-labels", "--json"],
+                        page_html=self.PAGE_WITH_EXTRAS)
+        for row in json.loads(out)["pages"][0]["orphanLabels"]:
+            with self.subTest(label=row["label"]):
+                self.assertLessEqual(len(row["label"].split()), probe.MAX_UNIT_LABEL_WORDS)
+
+    def test_the_report_is_off_by_default(self) -> None:
+        code, out = run(["--url", "https://www.nist.gov/", "--ids", ORG_ID, "--json"],
+                        page_html=self.PAGE_WITH_EXTRAS)
+        self.assertNotIn("orphanLabels", json.loads(out)["pages"][0])
+
+    def test_a_label_without_a_unit_word_is_not_a_unit(self) -> None:
+        self.assertTrue(probe.looks_like_a_unit("Information Technology Laboratory"))
+        self.assertTrue(probe.looks_like_a_unit("Office of the Chief Scientist"))
+        self.assertFalse(probe.looks_like_a_unit("Skip to main content"))
+        self.assertFalse(probe.looks_like_a_unit("Laboratory"))  # one word
+
+
 class ItWritesNothingTests(unittest.TestCase):
     def test_no_file_is_opened_for_writing(self) -> None:
         real_open = open

@@ -39,6 +39,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from collections import Counter
@@ -51,6 +52,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from data_pipeline.crawler.official_directory import USER_AGENT, request_text  # noqa: E402
 from data_pipeline.exporter.build_graph import (  # noqa: E402
     DEFAULT_BASE_GRAPH,
+    canonical_name_key,
     index_tree,
     is_post_node,
     load_base_graph,
@@ -109,6 +111,57 @@ def probe_page(page, nodes: list[dict]) -> list[dict]:
     return results
 
 
+#: A label this long is a sentence, not a unit's name.
+MAX_UNIT_LABEL_WORDS = 12
+#: A label has to look like the name of a body to be offered as one. A closed
+#: list, for the reason `probe_post_titles.OFFICE_WORDS` is closed: an
+#: open-ended "does this look like an organisation" test fills the report with
+#: page furniture, and a curator reading 400 lines of noise reads none of them.
+UNIT_WORDS = (
+    "office", "bureau", "agency", "administration", "service", "division",
+    "directorate", "center", "centre", "command", "institute", "board",
+    "commission", "corporation", "council", "department", "laboratory",
+    "program", "authority", "court", "network", "region", "district",
+)
+
+
+def looks_like_a_unit(text: str) -> bool:
+    words = [w for w in re.split(r"\s+", text.strip()) if w]
+    if not (2 <= len(words) <= MAX_UNIT_LABEL_WORDS):
+        return False
+    lowered = text.casefold()
+    return any(re.search(r"\b" + word + r"s?\b", lowered) for word in UNIT_WORDS)
+
+
+def orphan_labels(page, nodes: list[dict], node_map: dict) -> list[dict]:
+    """Labels on the page that read like a unit and match no node given.
+
+    The organisation analogue of `probe_post_titles`' "on the page, no node".
+    It exists because the largest category this probe finds is not a missing
+    URL at all: the page reads fine and simply does not carry the graph's name
+    for the unit, which is a CURATED NAME problem and is fixed by a rename
+    argued from the page's own wording. This is that wording.
+
+    A CANDIDATE, never a fact. Navigation and body are both scanned, so a
+    label in a mega-menu may belong to a different unit entirely, and the
+    region is reported on every row so a reader can weigh it.
+    """
+    known = {canonical_name_key(n.get("name")) for n in nodes}
+    for node in nodes:
+        for child in node.get("children") or []:
+            known.add(canonical_name_key(child.get("name")))
+    seen: dict[str, dict] = {}
+    for fragment, region in zip(page.fragments, page.regions):
+        for part in re.split(r"\s*[—–|·•:>›»]\s*|\s+[-–]\s+|\n+", fragment):
+            text = part.strip()
+            key = canonical_name_key(text)
+            if not key or key in known or key in seen:
+                continue
+            if looks_like_a_unit(text):
+                seen[key] = {"label": text[:120], "region": region}
+    return sorted(seen.values(), key=lambda row: row["label"])
+
+
 def expand_ids(ids: list[str], node_map: dict, with_children: bool) -> list[dict]:
     seen: dict[str, dict] = {}
     for nid in ids:
@@ -153,6 +206,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--with-children", action="store_true", help="also test each id's own children")
     parser.add_argument("--plan", type=Path, help='JSON: [{"url": "...", "ids": [...], "withChildren": true}]')
     parser.add_argument("--uncovered", action="store_true", help="list organisations with no page; fetch nothing")
+    parser.add_argument("--orphan-labels", action="store_true",
+                        help="also report unit-looking labels on the page that match none of the ids given")
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--json", action="store_true", help="machine-readable output")
     parser.add_argument("--sleep", type=float, default=1.0)
@@ -215,6 +270,8 @@ def main(argv: list[str] | None = None) -> int:
         block["readable"] = page.readable
         block["contentChars"] = page.content_chars
         block["results"] = probe_page(page, nodes)
+        if args.orphan_labels:
+            block["orphanLabels"] = orphan_labels(page, nodes, node_map)
         for row in block["results"]:
             totals[row["verdict"]] += 1
         report.append(block)
@@ -226,6 +283,8 @@ def main(argv: list[str] | None = None) -> int:
                 rule = f'  rule={row["matchRule"]}' if row.get("matchRule") else ""
                 detail = f'  ({row["detail"]})' if row.get("detail") and not row.get("matchedText") else ""
                 print(f"   {row['verdict']:28s} {row['name'][:46]:48s}{extra}{rule}{detail}")
+            for row in block.get("orphanLabels") or []:
+                print(f"   {'on the page, no node':28s} {row['label'][:46]:48s}  [{row['region']}]")
     if args.json:
         json.dump({"totals": dict(totals), "pages": report}, sys.stdout, indent=1)
         print()
