@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260918a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260918a";
+import { createGovernmentGraph } from "./graph.js?v=20260918b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260918b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -225,55 +225,199 @@ function updateDepthButtonAvailability(maxDataDepth) {
 // repository records where the hierarchy or its 5,170 descriptions came
 // from, so "hand-compiled" asserts more than is known. Computing it from the
 // graph means it cannot drift from the data again.
-function describeProvenance(root) {
-  let nodes = 0;
-  let measured = 0;
-  let capped = 0;
-  let receipts = 0;
-  let sourced = 0;
-  let placed = 0;
-  let unreachable = 0;
-  let orgEdges = 0;
+// One walk of the tree, two readers. The provenance line below and the
+// "How to read this" card both describe the same graph, and the card exists
+// precisely because the line is too compressed to be read cold — so they must
+// never be able to disagree. Counting once and formatting twice is what makes
+// that structural rather than a thing to remember.
+function summariseGraph(root) {
+  const count = {
+    nodes: 0, measured: 0, capped: 0, receipts: 0, sourced: 0,
+    placed: 0, orgEdges: 0, unreachable: 0, posts: 0, paidPosts: 0,
+    allocated: 0, noFigure: 0, postsWithoutFigure: 0,
+  };
   const stack = [root];
   while (stack.length) {
     const node = stack.pop();
     if (!node || typeof node !== "object") continue;
-    nodes += 1;
+    count.nodes += 1;
     const status = String(node.cost_status || "");
-    if (String(node.synthetic || "") === "treasury_receipts") receipts += 1;
-    else if (status === "official" || status === "root_total") measured += 1;
-    else if (status === "scaled_official") capped += 1;
-    if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) sourced += 1;
-    // Numerator and denominator must count the same population. This line
-    // says "organisation placements", and the denominator has always
+    if (String(node.synthetic || "") === "treasury_receipts") count.receipts += 1;
+    else if (status === "official" || status === "root_total") count.measured += 1;
+    else if (status === "scaled_official") count.capped += 1;
+    // Counted, not inferred by subtraction. "Everything that is not measured
+    // is an estimate being withheld" was the old arithmetic here, and it was
+    // false by a factor of seven: 650 nodes carry an apportioned share, while
+    // 4,615 carry no figure at all and never will — 4,441 of them posts,
+    // which have no budget to apportion, and the rest beneath a Treasury pool
+    // that nets below zero. Ticking the estimates box reveals the first group
+    // and does nothing for the second, so the line a visitor reads must not
+    // promise 5,265 hidden numbers that do not exist.
+    if (status === "allocated") count.allocated += 1;
+    if (status === "unavailable" || (!status && node !== root)) count.noFigure += 1;
+    if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) count.sourced += 1;
+    // Numerator and denominator must count the same population. The line
+    // below says "organisation placements", and the denominator has always
     // excluded positions — but the numerator did not, so the 126 positions
     // the PLUM archive files under an organisation were counted in it. The
     // site published "335 of 812" where the release gate, which scopes both
     // to organisations, reported 209. Counting a position in a total
     // labelled "organisation" is the kind of quiet inflation this project
     // exists to refuse, so the type test now gates both.
-    const isOrgEdge = node !== root && !/position/i.test(String(node.type || ""));
-    if (isOrgEdge) {
-      orgEdges += 1;
-      if (node.placementVerified === true) placed += 1;
-      if (node.placementCheckable === false) unreachable += 1;
+    const isPost = /position/i.test(String(node.type || ""));
+    if (isPost) {
+      count.posts += 1;
+      if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
+      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay) {
+        count.paidPosts += 1;
+      }
+    }
+    if (node !== root && !isPost) {
+      count.orgEdges += 1;
+      if (node.placementVerified === true) count.placed += 1;
+      if (node.placementCheckable === false) count.unreachable += 1;
     }
     for (const child of node.children || []) stack.push(child);
   }
-  const estimated = Math.max(nodes - measured - capped - receipts, 0);
+  return count;
+}
+
+function describeProvenance(count) {
   return [
-    `${measured.toLocaleString()} costs measured from the Monthly Treasury Statement${
-      receipts ? `, with its receipts carried as ${receipts.toLocaleString()} explicit lines` : ""
+    `${(count.measured + count.receipts).toLocaleString()} costs measured from the Monthly Treasury Statement${
+      count.receipts ? ` (${count.receipts.toLocaleString()} of them its own receipts lines, carried explicitly)` : ""
     }`,
-    `${capped.toLocaleString()} capped to fit an estimated parent`,
+    `${count.capped.toLocaleString()} capped to fit an estimated parent`,
     // The estimates are no longer shown by default, and the line a visitor
     // reads first must say so rather than counting them as if they were on
     // screen.
-    `${estimated.toLocaleString()} apportioned estimates, withheld unless asked for`,
-    `${sourced.toLocaleString()} of ${nodes.toLocaleString()} nodes carry a source`,
-    `${placed.toLocaleString()} of ${orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${unreachable.toLocaleString()} unreachable: parent has no page)`,
+    `${count.allocated.toLocaleString()} apportioned estimates, withheld unless asked for`,
+    `${count.noFigure.toLocaleString()} with no figure at all, ${count.postsWithoutFigure.toLocaleString()} of them posts, which have no budget to divide`,
+    `${count.sourced.toLocaleString()} of ${count.nodes.toLocaleString()} nodes carry a source`,
+    `${count.placed.toLocaleString()} of ${count.orgEdges.toLocaleString()} organisation placements evidenced by the parent's official page (${count.unreachable.toLocaleString()} unreachable: parent has no page)`,
     "the descriptions carry no citation",
   ].join(" · ");
+}
+
+// The same graph, said once in sentences. Every number is taken from
+// `summariseGraph` rather than written here, so this card cannot claim a
+// coverage the data does not have — the failure mode that made the old
+// hardcoded provenance line ("costs are estimates apportioned from the
+// Treasury total") wrong the day the first Treasury line landed.
+function readingGuidePoints(count) {
+  const others = Math.max(count.nodes - count.posts, 0);
+  return [
+    [
+      "What you are looking at",
+      `Every box is one piece of the U.S. federal government — a branch, a department, `
+      + `an office, or a single job — drawn beneath whatever it sits under. `
+      + `${count.nodes.toLocaleString()} in all, of which ${count.posts.toLocaleString()} are individual `
+      + `posts rather than bodies with a budget, and ${others.toLocaleString()} are organisations, `
+      + `committees and groupings. Click one to open its panel on the right.`,
+    ],
+    [
+      "Most of it carries no dollar figure, and that is the point",
+      `${(count.measured + count.receipts).toLocaleString()} figures here were measured: the Treasury's own `
+      + `Monthly Treasury Statement names those units and states what they spent. `
+      + `${count.allocated.toLocaleString()} more could be shown as a share worked out by splitting a `
+      + `parent's total among its children — arithmetic, not a number anyone published — and those stay `
+      + `hidden until you ask for them, with "Also show estimated shares of a parent's total" on the left. `
+      + `The remaining ${count.noFigure.toLocaleString()} have no figure at all and never will; ticking `
+      + `the box does not reveal a number for them, because there is none to reveal.`,
+    ],
+    [
+      "A job is not a budget",
+      `The Department of Defense spends money; the Secretary of Defense has no budget of their own. `
+      + `So no position is given a share of an agency's outlays — that share is not a quantity that `
+      + `exists, and it is why ${count.postsWithoutFigure.toLocaleString()} of the `
+      + `${count.posts.toLocaleString()} posts show nothing under cost. `
+      + `${count.paidPosts.toLocaleString()} show a rate of pay instead, and only where an official `
+      + `document states one. A salary is not a budget either, and is labelled separately.`,
+    ],
+    [
+      "“No source recorded” is the usual answer, not a glitch",
+      `${count.sourced.toLocaleString()} of the ${count.nodes.toLocaleString()} entries carry a link to `
+      + `a source. The rest are structure with nothing behind them yet, and each panel says so rather `
+      + `than letting you assume it was checked. The written descriptions carry no citation at all, `
+      + `and are labelled that way wherever they appear.`,
+    ],
+    [
+      "Reading a panel",
+      `On a cost, a solid badge means measured and an outlined one means estimated — filled against `
+      + `hollow, so the difference survives colourblindness. A box's colour is the branch it belongs `
+      + `to; the key is bottom-left. "Placement" is a separate line, because "this page lists it" and `
+      + `"this thing exists" are different claims.`,
+    ],
+  ];
+}
+
+function renderReadingGuide(count) {
+  const body = document.getElementById("reading-guide-body");
+  const foot = document.getElementById("reading-guide-foot");
+  if (!body) return;
+  body.textContent = "";
+  for (const [title, text] of readingGuidePoints(count)) {
+    const block = document.createElement("div");
+    block.className = "rg-point";
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    block.appendChild(heading);
+    block.appendChild(paragraph);
+    body.appendChild(block);
+  }
+  if (foot) {
+    foot.textContent =
+      "Drag to orbit · scroll to zoom · click a box to select it · search at the top. "
+      + "Reopen this any time with “How to read this”, under the title.";
+  }
+}
+
+// Shown on a first visit and remembered as dismissed after that. The
+// remembering is a per-viewer convenience like the depth filter: if
+// localStorage is unavailable the card simply appears every time, which is
+// the harmless failure.
+function setReadingGuideOpen(open) {
+  const wrap = document.getElementById("reading-guide");
+  if (!wrap) return;
+  wrap.classList.toggle("open", open);
+  wrap.setAttribute("aria-hidden", open ? "false" : "true");
+  if (open) {
+    const close = document.getElementById("btn-reading-guide-close");
+    if (close) close.focus();
+  } else {
+    writeStoredPrefs({ readingGuideDismissed: true });
+    const opener = document.getElementById("btn-reading-guide");
+    if (opener) opener.focus();
+  }
+}
+
+function bindReadingGuide(count) {
+  renderReadingGuide(count);
+  const wrap = document.getElementById("reading-guide");
+  const opener = document.getElementById("btn-reading-guide");
+  const close = document.getElementById("btn-reading-guide-close");
+  if (opener) opener.addEventListener("click", () => setReadingGuideOpen(true));
+  if (close) close.addEventListener("click", () => setReadingGuideOpen(false));
+  if (wrap) {
+    // The backdrop closes it; a click inside the card must not.
+    wrap.addEventListener("click", (event) => {
+      if (event.target === wrap) setReadingGuideOpen(false);
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && wrap && wrap.classList.contains("open")) {
+      event.preventDefault();
+      setReadingGuideOpen(false);
+    }
+  });
+  // Opened after the loading overlay is gone, not while it still covers the
+  // screen: the card would otherwise take focus behind an opaque layer, and
+  // a keyboard visitor would be typing into something they cannot see.
+  if (!readStoredPrefs().readingGuideDismissed) {
+    window.setTimeout(() => setReadingGuideOpen(true), 900);
+  }
 }
 
 function hideLoadingOverlay(delay = 600) {
@@ -2225,13 +2369,15 @@ async function initGraphApp() {
     onStatus: (message) => setText(dom.loadStatus, message),
   });
   setGraphBudgetSummary(data && data.__budgetSummary);
+  const summary = summariseGraph(data);
   const provenance = document.getElementById("data-provenance");
   if (provenance) {
     provenance.textContent =
       data && data.__loadSource === "fallback"
         ? "Pipeline graph unavailable — showing the uncited hierarchy, with no cost data at all"
-        : describeProvenance(data);
+        : describeProvenance(summary);
   }
+  safeUiCall("bindReadingGuide", bindReadingGuide, summary);
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();

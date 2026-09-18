@@ -1097,6 +1097,35 @@ Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
 
+**"How to read this", and a count that was wrong by a factor of seven
+(since 2026-09-18).** Every claim this site makes is hedged precisely, in
+the info panel, in nine-pixel type; the line a visitor reads first was six
+clauses joined by middots. That is honest and it is not readable cold, so a
+first-visit card states the same things in plain sentences — what a box is,
+why most of them carry no dollar figure, why a post never gets one, what
+"no source recorded" means, and how to read the badges — and is remembered
+as dismissed after that (`readingGuideDismissed`, beside the other
+per-viewer prefs), with a "How to read this" button under the title to
+reopen it. It is a modal: backdrop click, Escape and a button all close it,
+and it opens 900ms after boot so it does not take focus behind the loading
+overlay.
+
+Writing it is what caught the error. Both the card and the provenance line
+are now formatted from **one** tree walk (`summariseGraph`), so they cannot
+disagree — and that walk had been deriving the estimate count by
+subtraction: everything not measured was published as "5,265 apportioned
+estimates, withheld unless asked for". Only **650** nodes carry an
+apportioned share. The other **4,615** carry no figure at all and never
+will — 4,441 of them posts, which have no budget to divide, and 174 beneath
+a Treasury pool that nets below zero — so ticking the estimates box reveals
+nothing for them. The line promised 5,265 hidden numbers, of which 4,615 do
+not exist. It now counts `cost_status == "allocated"` directly and names the
+no-figure group separately, and the measured clause reads 137 (the 25
+receipts lines are measured, and were being counted outside the total rather
+than inside it). `scripts/frontend_smoke.mjs` recomputes the measured, the
+allocated and the post counts from the served graph and asserts the card and
+the line both match, which is the check that would have failed before.
+
 **UI honesty fixes, keyboard access, and remembered state (since
 2026-09-15).** Four small panel bugs, none data-affecting: a leaf node showed
 both "No Sub-nodes" (disabled) and "Expand All Below" (also disabled) side by

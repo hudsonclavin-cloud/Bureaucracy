@@ -184,6 +184,64 @@ body.dragging{cursor:grabbing;}
 }
 .depth-expand-btn:disabled,.depth-expand-btn.depth-btn-unavailable{opacity:0.28;cursor:not-allowed;}
 .depth-expand-btn:disabled:hover{background:rgba(4,8,16,0.8);color:var(--gold-dim);border-color:rgba(200,168,74,0.15);}
+/* "How to read this" — the first-visit explainer.
+   Every claim this site makes is hedged precisely, in the info panel, in
+   nine-pixel type. That is correct and it is not readable by someone who
+   has just arrived: the provenance line alone is six clauses joined by
+   middots. This card says the same things in plain sentences, once, before
+   the reader touches anything — and its numbers are computed from the
+   loaded graph by the same tree walk that writes the provenance line, so
+   the two can never disagree and neither can go stale. It is shown on a
+   first visit and remembered as dismissed after that; the "How to read
+   this" button beside the title reopens it. */
+#reading-guide{
+  position:fixed;inset:0;z-index:120;display:none;
+  align-items:center;justify-content:center;padding:24px;
+  background:rgba(2,4,8,0.82);backdrop-filter:blur(6px);
+}
+#reading-guide.open{display:flex;}
+#reading-guide-card{
+  background:rgba(6,12,20,0.98);border:1px solid rgba(200,168,74,0.28);
+  padding:26px 28px;max-width:560px;max-height:calc(100vh - 48px);overflow-y:auto;
+  box-shadow:0 0 80px rgba(0,0,0,0.7);
+}
+#reading-guide-card::-webkit-scrollbar{width:3px;}
+#reading-guide-card::-webkit-scrollbar-thumb{background:rgba(200,168,74,0.2);}
+#reading-guide h2{
+  font-family:'Playfair Display',serif;font-size:19px;font-weight:600;
+  color:var(--gold-bright);margin-bottom:3px;letter-spacing:0.02em;
+}
+#reading-guide .rg-sub{
+  font-size:9px;color:var(--gold-dim);letter-spacing:0.22em;text-transform:uppercase;
+  padding-bottom:13px;border-bottom:1px solid rgba(200,168,74,0.12);margin-bottom:15px;
+}
+.rg-point{margin-bottom:13px;}
+.rg-point h3{
+  font-size:10px;color:var(--gold);letter-spacing:0.13em;text-transform:uppercase;
+  margin-bottom:4px;font-weight:500;
+}
+.rg-point p{font-size:11px;color:#b6a684;line-height:1.75;}
+.rg-point em{color:var(--text);font-style:normal;}
+#reading-guide .rg-foot{
+  font-size:10px;color:#8a7a5a;line-height:1.7;
+  padding-top:13px;border-top:1px solid rgba(200,168,74,0.12);margin-top:16px;
+}
+#btn-reading-guide-close{
+  margin-top:16px;width:100%;padding:9px;
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;
+  background:transparent;border:1px solid rgba(200,168,74,0.45);color:var(--gold);
+  transition:all 0.2s;
+}
+#btn-reading-guide-close:hover{background:rgba(200,168,74,0.12);}
+#btn-reading-guide{
+  pointer-events:auto;margin-top:6px;padding:3px 8px;
+  font-family:'IBM Plex Mono',monospace;font-size:8px;
+  letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;
+  background:transparent;border:1px solid rgba(200,168,74,0.3);color:var(--gold-dim);
+  transition:all 0.2s;align-self:flex-start;
+}
+#btn-reading-guide:hover{background:rgba(200,168,74,0.1);color:var(--gold);}
 @media (max-width: 900px){
   #info-panel{top:auto;right:16px;left:16px;bottom:16px;width:auto;max-height:40vh;transform:translateY(110%);}
   #info-panel.open{transform:translateY(0);}
@@ -195,6 +253,8 @@ body.dragging{cursor:grabbing;}
   #search-wrap{top:16px;width:calc(100vw - 32px);}
   #search-input{width:100%;}
   #controls-hint{display:none;}
+  #reading-guide{padding:12px;}
+  #reading-guide-card{padding:20px 18px;}
 }
 </style>
 </head>
@@ -214,6 +274,7 @@ body.dragging{cursor:grabbing;}
   <p>3D Organizational Explorer</p>
   <div id="node-counter">0 / 0 nodes rendered</div>
   <div id="data-provenance">Reading the published graph…</div>
+  <button id="btn-reading-guide" type="button" aria-label="Open the guide to reading this graph">How to read this</button>
 </div>
 
 <div id="depth-expand-ctrl">
@@ -292,6 +353,18 @@ body.dragging{cursor:grabbing;}
 <div id="expand-loader">Loading branch…</div>
 <div id="tooltip"></div>
 
+<!-- Filled by js/ui.js from the loaded graph; the counts are never written
+     here, for the same reason the provenance line is not. -->
+<div id="reading-guide" role="dialog" aria-modal="true" aria-labelledby="reading-guide-title" aria-hidden="true">
+  <div id="reading-guide-card">
+    <h2 id="reading-guide-title">How to read this</h2>
+    <div class="rg-sub">What it shows, and what it does not claim</div>
+    <div id="reading-guide-body"></div>
+    <div class="rg-foot" id="reading-guide-foot"></div>
+    <button id="btn-reading-guide-close" type="button">Start exploring</button>
+  </div>
+</div>
+
 <script>
 window.GRAPH_DATA_SOURCES = {
   // The exporter's gated tree is the site's base graph. `base` is the fallback
@@ -344,7 +417,7 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260918a"
+<script type="module" src="./js/ui.js?v=20260918b"
   onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
 </body>
 </html>

@@ -115,6 +115,25 @@ try {
   await page.waitForTimeout(1500);
   const text = async (selector) => (await page.locator(selector).first().innerText()).trim();
 
+  // "How to read this" — the first-visit explainer. A fresh browser context
+  // has an empty localStorage, so this is exactly the state a first-time
+  // visitor arrives in, and it must be on screen before anything else is
+  // touched. Its numbers are checked against the served graph further down;
+  // here it is only asserted to exist, to say the four things the site would
+  // otherwise leave to be inferred, and to close when dismissed — a modal
+  // that cannot be dismissed would lock the page for every new visitor.
+  const guideOpenFirstVisit = await page.locator("#reading-guide.open").count();
+  check("the reading guide greets a first-time visitor", guideOpenFirstVisit === 1, `${guideOpenFirstVisit} open`);
+  const guideText = await text("#reading-guide-card");
+  check("the guide says why most nodes show no figure", /Monthly Treasury Statement/.test(guideText), guideText.slice(0, 200));
+  check("the guide says the estimates are withheld", /stay\s+hidden until you ask for them/.test(guideText), guideText.slice(0, 400));
+  check("the guide says the withheld box reveals nothing for the rest", /have no figure at all and never will/.test(guideText), guideText.slice(0, 600));
+  check("the guide says a post gets no share of outlays", /no position is given a share/.test(guideText), guideText.slice(0, 600));
+  check("the guide says most entries carry no source", /entries carry a link to a source/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 900));
+  await page.locator("#btn-reading-guide-close").click();
+  await page.waitForTimeout(200);
+  check("the reading guide closes when dismissed", (await page.locator("#reading-guide.open").count()) === 0, "still open after dismissal");
+
   const statsTotal = await text("#stats-total");
   check("published count excludes the review queue", /published nodes · [\d,]+ unreviewed candidates|total nodes/.test(statsTotal), statsTotal);
   check("published count is the tree, not tree plus queue", !/9,0\d\d/.test(statsTotal), statsTotal);
@@ -678,6 +697,51 @@ try {
       Number(placementCounts[1].replace(/,/g, "")) === expected,
       `${placementCounts[1]} shown, ${expected} organisation edges actually placed`,
     );
+  }
+
+  // The guide's counts come from the same tree walk as the provenance line,
+  // and both must agree with the graph actually served. A card that said
+  // "137 measured" over a graph carrying some other number would be the
+  // hardcoded-provenance failure this project already made once.
+  const guideMeasured = /([\d,]+) figures here were measured/.exec(guideText.replace(/\s+/g, " "));
+  check("the guide states how many costs are measured", Boolean(guideMeasured), guideText.slice(0, 300));
+  if (guideMeasured) {
+    const expectedMeasured = allNodes.filter((n) => ["official", "root_total"].includes(String(n.cost_status || ""))).length;
+    check(
+      "the guide's measured count is the graph's own",
+      Number(guideMeasured[1].replace(/,/g, "")) === expectedMeasured,
+      `${guideMeasured[1]} shown, ${expectedMeasured} in the served graph`,
+    );
+  }
+  const guidePosts = /of the ([\d,]+) posts show nothing under cost/.exec(guideText.replace(/\s+/g, " "));
+  check("the guide states how many posts there are", Boolean(guidePosts), guideText.slice(0, 700));
+  if (guidePosts) {
+    const expectedPosts = allNodes.filter((n) => /position/i.test(String(n.type || ""))).length;
+    check(
+      "the guide's post count is the graph's own",
+      Number(guidePosts[1].replace(/,/g, "")) === expectedPosts,
+      `${guidePosts[1]} shown, ${expectedPosts} in the served graph`,
+    );
+  }
+
+  // "Apportioned estimates, withheld unless asked for" once counted every
+  // node that was not measured — 5,265 of them, where only 650 carry an
+  // apportioned share at all. The other 4,615 have no figure in the data,
+  // so ticking the estimates box reveals nothing for them. Both the line and
+  // the card must count the nodes that actually hold a share.
+  const estimateCounts = /([\d,]+) apportioned estimates/.exec(provenanceLine);
+  check("the provenance line counts apportioned estimates", Boolean(estimateCounts), provenanceLine);
+  if (estimateCounts) {
+    const expectedAllocated = allNodes.filter((n) => String(n.cost_status || "") === "allocated").length;
+    check(
+      "the estimate count is the nodes that carry a share, not every unmeasured node",
+      Number(estimateCounts[1].replace(/,/g, "")) === expectedAllocated,
+      `${estimateCounts[1]} shown, ${expectedAllocated} allocated in the served graph`,
+    );
+    const guideAllocated = /([\d,]+) more could be shown as a share/.exec(guideText.replace(/\s+/g, " "));
+    check("the guide counts the same apportioned estimates", Boolean(guideAllocated)
+      && Number(guideAllocated[1].replace(/,/g, "")) === expectedAllocated,
+      `${guideAllocated ? guideAllocated[1] : "absent"} in the card, ${expectedAllocated} allocated`);
   }
 
   // The depth buttons are a fixed HTML list (1..12) that does not know how
