@@ -981,6 +981,30 @@ TREASURY_ROW_ALIASES = {
     # explicitly beside it. Worth one more measured node than any other line
     # left unapplied that names a unit this graph actually has.
     "office of federal student aid": "exec-dept-ed-fsa",
+    # Two renames the Treasury's account names have not caught up with, both
+    # added 2026-09-18 and both filed by the statement under exactly the
+    # section the node's ancestors give it, which is the test.
+    #
+    # The first is not an inference at all. 6 U.S.C. §652(a), committed at
+    # tests/fixtures/uscode/cisa_6_usc_652.html: "The National Protection and
+    # Programs Directorate of the Department shall, on and after November 16,
+    # 2018, be known as the 'Cybersecurity and Infrastructure Security
+    # Agency'", and — the sentence that licenses this line — "Any reference to
+    # the National Protection and Programs Directorate of the Department in
+    # any law, regulation, map, document, record, or other paper of the United
+    # States shall be deemed to be a reference to the Cybersecurity and
+    # Infrastructure Security Agency". Table 5 is such a record, and it files
+    # the line under Department of Homeland Security, where the graph puts
+    # CISA.
+    "national protection and programs directorate": "exec-dept-dhs-cisa",
+    # The second needs no outside source: the curated node is itself named
+    # "Broadcasting Board of Governors / USAGM", so the graph already states
+    # that the two names are one unit, and the statement files the line under
+    # Independent Agencies, where the node sits.
+    # The key drops the leading "united states ", as it does for
+    # "United States Attorneys" above; canonical_name_key is applied to the
+    # row name before this lookup, so a key it would never emit is dead weight.
+    "agency for global media": "exec-ind-misc-broadcasting-board-of-governors-usagm",
 }
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
