@@ -744,6 +744,26 @@ try {
       `${guideAllocated ? guideAllocated[1] : "absent"} in the card, ${expectedAllocated} allocated`);
   }
 
+  // The key must name what it colours. A receipts line took the position grey
+  // from the node defaults, so the swatch labelled "Position / Office" was
+  // standing for 25 Treasury accounting lines as well as 4,589 posts.
+  const legendSlate = await page.evaluate(() => {
+    const row = [...document.querySelectorAll("#legend .leg-item")]
+      .find((item) => /Treasury accounting line/.test(item.textContent || ""));
+    const dot = row && row.querySelector(".leg-dot");
+    return dot ? getComputedStyle(dot).backgroundColor : null;
+  });
+  check("the legend names the Treasury accounting lines", Boolean(legendSlate), "no such legend row");
+  const receiptsColours = [...new Set(allNodes.filter((n) => String(n.synthetic || "") === "treasury_receipts").map((n) => n.color))];
+  check("every receipts line carries one colour of its own", receiptsColours.length === 1 && receiptsColours[0] === "#8aa0b0", JSON.stringify(receiptsColours));
+  check(
+    "the legend swatch is the colour those lines actually carry",
+    legendSlate === "rgb(138, 160, 176)",
+    `${legendSlate} in the key, ${receiptsColours[0]} in the graph`,
+  );
+  const slateImposters = allNodes.filter((n) => n.color === "#8aa0b0" && String(n.synthetic || "") !== "treasury_receipts");
+  check("nothing else is drawn in that colour", slateImposters.length === 0, slateImposters.slice(0, 3).map((n) => n.id).join(", "));
+
   // The depth buttons are a fixed HTML list (1..12) that does not know how
   // deep the loaded tree actually is (MAX_DEPTH=20 caps it further still).
   // A button past the real depth must be disabled and say why, not sit there

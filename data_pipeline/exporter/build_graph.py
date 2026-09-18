@@ -1044,6 +1044,14 @@ def collect_treasury_rows_all(payloads: Iterable[dict[str, Any]]) -> list[dict[s
 
 SYNTHETIC_RECEIPTS = "treasury_receipts"
 TREASURY_LINE_TYPE = "Treasury accounting line"
+#: A receipts line is not an organisation and not a post, and it must not be
+#: drawn as either. Left alone it took `DEFAULT_NODE["color"]`, the same
+#: #666666 the 4,589 Position nodes carry -- so the page's own key, which
+#: labels that swatch "Position / Office", was naming 25 Treasury accounting
+#: lines as offices. Slate is its own swatch in the legend, and differs from
+#: the position grey in lightness rather than hue so the distinction survives
+#: colour blindness, the same reasoning as the filled-against-hollow cost badge.
+TREASURY_LINE_COLOR = "#8aa0b0"
 UNDISTRIBUTED_NODE_ID = "treasury-undistributed-offsetting-receipts"
 
 
@@ -1107,6 +1115,7 @@ def make_receipts_node(
         "treasury_component_rows": [{"name": c["name"], "amount": round_currency(c["amount"])} for c in components],
         "sourceUrls": [TREASURY_DATASET_URL],
         "sourceTypes": ["treasury_outlays"],
+        "color": TREASURY_LINE_COLOR,
         "children": [],
     }
     for field_name in TREASURY_ROW_FIELDS:
@@ -1675,6 +1684,26 @@ def summarize_scaled_official(root: dict[str, Any]) -> dict[str, Any]:
 STATED_GROUP_COUNT = re.compile(r"\(\s*(\d+)\s*\)\s*$")
 STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECASE)
 MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
+
+
+def colour_treasury_lines(root: dict[str, Any]) -> int:
+    """Give every receipts line its own colour, however it got here.
+
+    `make_receipts_node` stamps it on a fresh build, but a build handed no
+    statement carries the published lines forward as payload nodes, and those
+    arrive with whatever colour the file holds -- which, for every line
+    published before this existed, is the position grey. One sweep after the
+    tree is final covers both routes and is idempotent.
+    """
+    changed = 0
+    stack = [root]
+    while stack:
+        node = stack.pop()
+        if str(node.get("synthetic") or "") == SYNTHETIC_RECEIPTS and node.get("color") != TREASURY_LINE_COLOR:
+            node["color"] = TREASURY_LINE_COLOR
+            changed += 1
+        stack.extend(node.get("children") or [])
+    return changed
 
 
 def annotate_stated_counts(root: dict[str, Any]) -> dict[str, Any]:
@@ -2598,6 +2627,7 @@ def build_graph(
     # After the tree is final and pruned: the count a name states is only
     # comparable with the children the published graph actually carries.
     validity_report["stated_counts"] = annotate_stated_counts(graph)
+    validity_report["treasury_lines_recoloured"] = colour_treasury_lines(graph)
     # And only now can a rate of basic pay be taken off a node that stands for
     # several posts: `representsPosts` does not exist until the line above
     # computes it, so the guard inside apply_pay_evidence (which runs at 2329,

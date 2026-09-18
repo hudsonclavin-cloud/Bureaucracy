@@ -21,6 +21,7 @@ from pathlib import Path
 
 from data_pipeline.crawler.treasury_outlays import parse_outlay_rows
 from data_pipeline.exporter.build_graph import (
+    TREASURY_LINE_COLOR,
     UNDISTRIBUTED_NODE_ID,
     build_graph,
     index_tree,
@@ -229,6 +230,39 @@ class NettingTests(unittest.TestCase):
         self.assertEqual(sorted(i for i in nodes if nodes[i].get("synthetic") == "treasury_receipts"), lines)
         self.assertGreater(again.validation["treasury_outlay_rows"]["synthetic_receipts_cleared"], 0)
         self.assertEqual(sum(1 for c in graph["children"] if c["id"] == UNDISTRIBUTED_NODE_ID), 1)
+
+    def test_a_receipts_line_is_not_drawn_as_a_position(self) -> None:
+        """The page's key labels #666666 "Position / Office", and a receipts
+        line took that colour from `DEFAULT_NODE` -- so the legend was naming
+        25 Treasury accounting lines as offices. Pinned both ways: a fresh
+        line carries the slate, and a line carried forward from a build that
+        predates this is recoloured rather than left grey."""
+        fresh = self._build([statement_payload()])
+        _, nodes = self._graph(fresh)
+        lines = [n for n in nodes.values() if n.get("synthetic") == "treasury_receipts"]
+        self.assertTrue(lines)
+        for line in lines:
+            self.assertEqual(line["color"], TREASURY_LINE_COLOR)
+            self.assertNotEqual(line["color"], "#666666")
+        # No organisation or post is given it, so the new swatch means exactly
+        # one thing.
+        others = [n for n in nodes.values() if n.get("synthetic") != "treasury_receipts"]
+        self.assertTrue(others)
+        self.assertEqual([n["id"] for n in others if n.get("color") == TREASURY_LINE_COLOR], [])
+
+        # The carry-forward route: a graph published before the colour existed,
+        # re-fed as a payload on a build handed no statement.
+        stale = json.loads(fresh.graph_path.read_text(encoding="utf-8"))
+        for node in index_tree(stale)[0].values():
+            if node.get("synthetic") == "treasury_receipts":
+                node["color"] = "#666666"
+        fresh.graph_path.write_text(json.dumps(stale), encoding="utf-8")
+        carried = self._build([], reuse=True)
+        _, carried_nodes = self._graph(carried)
+        carried_lines = [n for n in carried_nodes.values() if n.get("synthetic") == "treasury_receipts"]
+        self.assertEqual(len(carried_lines), len(lines))
+        for line in carried_lines:
+            self.assertEqual(line["color"], TREASURY_LINE_COLOR)
 
     def test_the_gate_accepts_the_true_lines_and_refuses_each_way_they_can_be_faked(self) -> None:
         result = self._build([statement_payload()])

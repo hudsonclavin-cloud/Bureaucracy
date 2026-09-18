@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260918b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260918b";
+import { createGovernmentGraph } from "./graph.js?v=20260918c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260918c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {

@@ -1097,6 +1097,21 @@ Cache busting is manual: bump the `?v=` query string in `index.html` and in
 the imports at the top of `js/ui.js` and `js/graph.js` together after any JS
 change, or users run stale modules against new data.
 
+**The key named 25 accounting lines as offices (since 2026-09-18).** A
+receipts line is created by the exporter and carried no colour of its own, so
+it took `DEFAULT_NODE["color"]` — the same `#666666` the 4,589 Position nodes
+carry, whose legend swatch reads "Position / Office". Every one of the 25
+Treasury accounting lines was drawn and keyed as a post. They now carry
+`TREASURY_LINE_COLOR` (`#8aa0b0`, differing from the position grey in
+lightness rather than hue, the same colourblindness reasoning as the
+filled-against-hollow cost badge) with their own legend row.
+`colour_treasury_lines` runs after the tree is final so a line carried
+forward from a build that predates this is recoloured too, not just a freshly
+created one; `tests/test_treasury_netting` pins both routes and asserts
+nothing else in the graph takes the colour, and the smoke check reads the
+legend swatch out of the page and compares it with what the served graph
+actually carries.
+
 **"How to read this", and a count that was wrong by a factor of seven
 (since 2026-09-18).** Every claim this site makes is hedged precisely, in
 the info panel, in nine-pixel type; the line a visitor reads first was six
