@@ -582,10 +582,72 @@ class ExpansionScriptTests(unittest.TestCase):
             self.assertEqual(node["type"], "Position")
             self.assertEqual(node["descriptionSource"], "generated_from_whitehouse_staff_report")
             self.assertEqual(node["structureSource"], "listed_in_whitehouse_staff_report")
-            # The description quotes the report's own title and states a rate;
-            # it never describes duties, which the report does not give.
+            # The description quotes the report's own title and either states a
+            # rate or says the appointment is uncompensated; it never describes
+            # duties, which the report does not give. A rate of $0.00 is never
+            # printed as what the post pays: whitehouse_pay.py refuses to
+            # publish a zero as a rate, and since 2026-09-18 this sentence does
+            # too, attributing the arrangement to the person holding the post.
             self.assertIn(node["reportedTitle"], node["desc"])
-            self.assertIn("per annum", node["desc"])
+            priced = "per annum" in node["desc"]
+            unpaid = "uncompensated appointment" in node["desc"]
+            self.assertTrue(priced or unpaid, node["desc"])
+            self.assertNotIn("$0.00", node["desc"])
+
+    def test_an_uncompensated_appointment_is_the_person_s_and_never_the_post_s_rate(self):
+        """Ten of the report's 408 rows read $0.00.
+
+        `whitehouse_pay.py` refuses to publish a zero as a rate, on the stated
+        ground that an uncompensated arrangement is a fact about a person and
+        not about the post. The generated description published it anyway, as
+        "at $0.00 per annum", on 8 nodes — the same claim in prose, on the
+        surface a reader actually sees. Pinned in both directions here: a paid
+        title still prints its rate, an unpaid one says what it is instead, and
+        a mixed group reports the range of what was actually paid rather than
+        a band starting at nothing.
+        """
+        from scripts.expand_whitehouse_office import pay_sentence
+
+        paid = pay_sentence(1, [195200.0])
+        self.assertIn("at $195,200.00 per annum", paid)
+        self.assertNotIn("uncompensated", paid)
+
+        unpaid = pay_sentence(1, [0.0])
+        self.assertIn("uncompensated appointment", unpaid)
+        self.assertIn("rather than a rate the post pays", unpaid)
+        self.assertNotIn("$0.00", unpaid)
+        self.assertNotIn("per annum", unpaid)
+
+        mixed = pay_sentence(5, [0.0, 0.0, 121785.0, 150000.0, 169279.0])
+        self.assertIn("paid between $121,785.00 and $169,279.00 per annum", mixed,
+                      "the range is what was actually paid, not a band starting at nothing")
+        self.assertIn("with 2 serving without pay", mixed)
+        self.assertNotIn("$0.00", mixed)
+
+        one_paid = pay_sentence(2, [0.0, 90000.0])
+        self.assertIn("one at $90,000.00 per annum", one_paid)
+        self.assertIn("with one serving without pay", one_paid)
+
+        none_paid = pay_sentence(3, [0.0, 0.0, 0.0])
+        self.assertIn("uncompensated appointment", none_paid)
+        self.assertIn("those people", none_paid)
+        self.assertNotIn("$0.00", none_paid)
+
+    def test_the_generated_descriptions_carry_no_zero_rate_in_the_published_graph(self):
+        """The whole point, checked where a reader would see it."""
+        graph_path = Path(__file__).resolve().parents[1] / "output" / "graph.json"
+        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        found = []
+
+        def walk(node):
+            if node.get("descriptionSource") == "generated_from_whitehouse_staff_report":
+                if "$0.00" in str(node.get("desc") or ""):
+                    found.append(node.get("id"))
+            for child in node.get("children") or []:
+                walk(child)
+
+        walk(graph)
+        self.assertEqual(found, [], "a generated description still prints a rate of $0.00")
 
     def test_a_title_several_people_hold_becomes_one_node_with_the_count(self):
         self._run()

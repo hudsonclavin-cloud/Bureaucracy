@@ -597,7 +597,10 @@ class StatedCountTests(unittest.TestCase):
         # 742 before the White House Office was expanded from its own roster
         # (scripts/expand_whitehouse_office.py), which added 54 nodes standing
         # for a title the report lists several people under.
-        self.assertEqual(sum(1 for n in nodes if n.get("representsPosts")), 796)
+        # 796 until the duplicate Coast Guard subtree was merged away, which took
+        # three multi-post nodes with it ("District Commander (×9 Districts)",
+        # "Sector Commander (×multiple)", "Station Commander (×multiple)").
+        self.assertEqual(sum(1 for n in nodes if n.get("representsPosts")), 793)
 
 
 BUDGET = {"government_total_outlay_amount": 1_000.0}

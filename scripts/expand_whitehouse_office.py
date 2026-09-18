@@ -153,6 +153,87 @@ def all_ids(node: dict, into: set[str]) -> set[str]:
     return into
 
 
+DESCRIPTION_SOURCE = "generated_from_whitehouse_staff_report"
+
+
+def pay_sentence(held: int, amounts: list[float]) -> str:
+    """What the roster reports for a title — with an uncompensated appointment
+    stated as the holder's arrangement rather than as the post's rate.
+
+    Ten of the report's 408 rows read $0.00: uncompensated appointees, the
+    National Security Advisor among them. `whitehouse_pay.py` refuses to
+    publish a zero as a rate, on the stated ground that an uncompensated
+    arrangement is a fact about a person and not about the post. This
+    sentence published it anyway — "at $0.00 per annum" on 8 nodes — which is
+    the same claim in prose, on the surface a reader actually sees. It is not
+    suppressed here, because the report does say it and hiding it would be its
+    own dishonesty; it is attributed to the person instead of to the post.
+    """
+    paid = sorted(amount for amount in amounts if amount > 0)
+    unpaid = len(amounts) - len(paid)
+    people = "one person" if held == 1 else f"{held} people"
+    holders = "that person" if held == 1 else "those people"
+    if not paid:
+        return (
+            f"The report lists {people} under this title and reports no salary — an "
+            f"uncompensated appointment, which is a fact about {holders} rather than a "
+            f"rate the post pays."
+        )
+    if len(paid) == 1:
+        rate = f"one at ${paid[0]:,.2f} per annum" if held > 1 else f"at ${paid[0]:,.2f} per annum"
+    elif paid[0] == paid[-1]:
+        rate = (
+            f"{len(paid)} of them at ${paid[0]:,.2f} per annum" if unpaid
+            else f"each at ${paid[0]:,.2f} per annum"
+        )
+    else:
+        rate = f"paid between ${paid[0]:,.2f} and ${paid[-1]:,.2f} per annum"
+    sentence = f"The report lists {people} under this title, {rate}"
+    if unpaid:
+        sentence += f", with {'one' if unpaid == 1 else unpaid} serving without pay"
+    return sentence + "."
+
+
+def description_for(title: str, held: int, amounts: list[float]) -> str:
+    return (
+        f'"{title}" is a post in the White House Office. {pay_sentence(held, amounts)} '
+        "The report states titles and rates of pay, not duties, so nothing "
+        "here describes what the post does."
+    )
+
+
+def refresh_generated_descriptions(who: dict, rows) -> list[tuple[str, str, str]]:
+    """Recompute the descriptions this script itself wrote, from today's roster.
+
+    The script never renames, re-types or removes a curated node, and that
+    stays true: what it rewrites here is only the prose it generated, on nodes
+    carrying its own `descriptionSource`, from the same report. Without this
+    a correction to the sentence above would reach new nodes only, and the 8
+    that already said "$0.00 per annum" would keep saying it for as long as
+    their titles stayed in the roster — which is exactly what a generator that
+    cannot revise its own output is for.
+    """
+    counts = Counter(str(row["title"]) for row in rows)
+    salaries: dict[str, list[float]] = {}
+    for row in rows:
+        salaries.setdefault(str(row["title"]), []).append(float(row["amount"]))
+    changed: list[tuple[str, str, str]] = []
+    for node in who.get("children") or []:
+        if node.get("descriptionSource") != DESCRIPTION_SOURCE:
+            continue
+        title = str(node.get("reportedTitle") or "")
+        if title not in counts:
+            # The roster no longer prints this title. Leaving the description
+            # as it stands is the same rule the script already applies to a
+            # curated node the report does not carry: absence is not evidence.
+            continue
+        fresh = description_for(title, counts[title], salaries[title])
+        if fresh != node.get("desc"):
+            changed.append((str(node.get("id")), str(node.get("desc") or ""), fresh))
+            node["desc"] = fresh
+    return changed
+
+
 def build_new_nodes(rows, who: dict, taken: set[str]) -> tuple[list[dict], dict]:
     counts = Counter(str(row["title"]) for row in rows)
     salaries: dict[str, list[float]] = {}
@@ -180,34 +261,12 @@ def build_new_nodes(rows, who: dict, taken: set[str]) -> tuple[list[dict], dict]
             suffix += 1
         taken.add(node_id)
 
-        if held > 1:
-            low, high = min(salaries[title]), max(salaries[title])
-            if low == high:
-                pay_sentence = (
-                    f"The report lists {held} people under this title, each at "
-                    f"${low:,.2f} per annum."
-                )
-            else:
-                pay_sentence = (
-                    f"The report lists {held} people under this title, paid between "
-                    f"${low:,.2f} and ${high:,.2f} per annum."
-                )
-        else:
-            pay_sentence = (
-                f"The report lists one person under this title, at "
-                f"${salaries[title][0]:,.2f} per annum."
-            )
-
         node = {
             "id": node_id,
             "name": name,
             "type": "Position",
-            "desc": (
-                f'"{title}" is a post in the White House Office. {pay_sentence} '
-                "The report states titles and rates of pay, not duties, so nothing "
-                "here describes what the post does."
-            ),
-            "descriptionSource": "generated_from_whitehouse_staff_report",
+            "desc": description_for(title, held, salaries[title]),
+            "descriptionSource": DESCRIPTION_SOURCE,
             "structureSource": "listed_in_whitehouse_staff_report",
             "reportedTitle": title,
             "employees": None,
@@ -253,6 +312,7 @@ def main(argv: list[str] | None = None) -> int:
 
     taken = all_ids(base, set())
     added, report = build_new_nodes(parsed["rows"], who, taken)
+    refreshed = refresh_generated_descriptions(who, parsed["rows"])
 
     print(f"report: as of {parsed['asOfText']}, {report['people_listed']} people, "
           f"{report['distinct_titles']} distinct titles")
@@ -263,20 +323,27 @@ def main(argv: list[str] | None = None) -> int:
           f"{len(who.get('children') or []) + report['added']}")
     curated_unmatched = len(who.get("children") or []) - report["already_curated"]
     print(f"  curated nodes the report does not print, left untouched: {curated_unmatched}")
+    print(f"  generated descriptions rewritten from today's roster    : {len(refreshed)}")
+    for node_id, was, now in refreshed[:8]:
+        print(f"      ~ {node_id}\n          was: {was[:150]}\n          now: {now[:150]}")
+    if len(refreshed) > 8:
+        print(f"      … and {len(refreshed) - 8} more")
     for node in added[:12]:
         print(f"      + {node['name']}")
     if len(added) > 12:
         print(f"      … and {len(added) - 12} more")
 
     if args.dry_run:
+        print("--dry-run: nothing written")
         return 0
-    if not added:
-        print("nothing to add; the subtree already carries every title the report prints")
+    if not added and not refreshed:
+        print("nothing to do; the subtree already carries every title the report prints, "
+              "and every generated description already matches it")
         return 0
 
     who.setdefault("children", []).extend(added)
     write_json_file(args.base_graph, base)
-    print(f"wrote {len(added)} nodes -> {args.base_graph}")
+    print(f"wrote {len(added)} node(s) and {len(refreshed)} refreshed description(s) -> {args.base_graph}")
     return 0
 
 

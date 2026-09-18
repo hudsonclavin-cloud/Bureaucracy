@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-09-17T16:52:25.179197+00:00",
+  "timestamp": "2026-09-17T19:10:29.018915+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
-  "nodes_before": 5392,
-  "nodes_after": 5417,
+  "nodes_before": 5377,
+  "nodes_after": 5402,
   "new_nodes_added": 25,
   "nodes_delta": 25,
   "published_nodes_before": 5417,
-  "nodes_delta_vs_published": 0,
+  "nodes_delta_vs_published": -15,
   "candidate_nodes_written": 71,
   "review_queue_repair": {
     "input_records": 71,
@@ -22,23 +22,23 @@
   "promoted_nodes_written": 0,
   "promotion_stats": {},
   "verification_breakdown": {
-    "unverified": 4900,
+    "unverified": 4885,
     "verified": 208,
     "partial": 309
   },
-  "average_confidence_score": 0.7,
+  "average_confidence_score": 0.68,
   "verified_node_count": 208,
   "treasury_total_fetched": false,
   "build_validation": {
-    "initial_node_count": 577,
-    "input_node_count": 577,
+    "initial_node_count": 592,
+    "input_node_count": 592,
     "input_edge_count": 0,
     "exported_node_count": 577,
     "exported_edge_count": 0,
     "nodes_removed_missing_parent": 0,
     "nodes_reattached_to_root": 0,
     "nodes_removed_structural_errors": 0,
-    "final_node_count": 577,
+    "final_node_count": 592,
     "orphan_nodes_detected": 0,
     "recovered_orphan_nodes": 0,
     "root_attached_missing_parent_nodes": 0,
@@ -49,18 +49,18 @@
     "explicitly_root_attached_nodes": 0,
     "relationship_counts": {},
     "verification_status_counts": {
-      "unverified": 4900,
+      "unverified": 4885,
       "verified": 208,
       "partial": 309
     },
     "verified_node_count": 208,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.7,
+    "average_confidence_score": 0.68,
     "pipeline_summary": {
-      "initial_node_count": 577,
-      "raw_nodes_loaded": 577,
-      "nodes_after_normalization": 577,
-      "nodes_after_merge": 577,
+      "initial_node_count": 592,
+      "raw_nodes_loaded": 592,
+      "nodes_after_normalization": 592,
+      "nodes_after_merge": 592,
       "nodes_removed_missing_parent": 0,
       "nodes_reattached_to_root": 0,
       "nodes_removed_structural_errors": 0,
@@ -69,23 +69,226 @@
     },
     "cycle_fallback_root_attachments": 0,
     "treasury_outlay_rows": {
-      "rows": 0,
-      "rows_applied": 0,
-      "rows_negative_applied": 0,
-      "rows_unmatched": 0,
+      "rows": 636,
+      "rows_applied": 111,
+      "rows_negative_applied": 7,
+      "rows_unmatched": 415,
       "rows_ambiguous": 0,
       "rows_superseded": 0,
-      "rows_negative_skipped": 0,
-      "negative_sample": [],
-      "stale_rollups_cleared": 0,
-      "synthetic_receipts_cleared": 0,
+      "rows_negative_skipped": 110,
+      "negative_sample": [
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Offsetting Governmental Receipts",
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Proprietary Receipts from the Public",
+        "Proprietary Receipts from the Public",
+        "Offsetting Governmental Receipts",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Department of the Navy",
+        "Department of the Air Force",
+        "Defense Agencies",
+        "Department of the Army",
+        "Proprietary Receipts from the Public",
+        "Proprietary Receipts from the Public",
+        "Intrabudgetary Transactions",
+        "Proprietary Receipts from the Public"
+      ],
+      "stale_rollups_cleared": 110,
+      "synthetic_receipts_cleared": 25,
       "carried_forward_citations_restored": 0,
-      "unmatched_sample": [],
+      "unmatched_sample": [
+        "Total--Other Defense Civil Programs",
+        "Total--International Assistance Programs",
+        "Total--Corps of Engineers",
+        "Total--Independent Agencies",
+        "Total--General Services Administration",
+        "Total--Federal Old-Age and Survivors Insurance Trust Fund (Off-Budget)",
+        "Total--Interest on the Public Debt",
+        "Total--Operation and Maintenance",
+        "Total--Benefits Programs",
+        "Total--Military Personnel",
+        "Total--Procurement",
+        "Total--Federal Disability Insurance Trust Fund (Off-Budget)",
+        "Total--Research, Development, Test, and Evaluation",
+        "Total--Administration for Children and Families",
+        "Total--Energy Programs",
+        "Total--Administration of Foreign Affairs",
+        "Total--Military Construction",
+        "Total--International Security Assistance",
+        "Total--Departmental Offices",
+        "Total--Fish and Wildlife and Parks",
+        "Total--Agency for International Development",
+        "Total--Water and Science",
+        "Total--Housing Programs",
+        "Total--Railroad Retirement Board",
+        "Total--Office of Postsecondary Education",
+        "Total--Land and Minerals Management",
+        "Total--Indian Affairs",
+        "Total--Multilateral Assistance",
+        "Total--Overseas Private Investment Corporation",
+        "Total--Interest on Treasury Debt Securities (Gross)",
+        "Total--Federal Supplementary Medical Insurance Trust Fund",
+        "Total--Federal Hospital Insurance Trust Fund",
+        "Total--Unemployment Trust Fund",
+        "Total--Airport and Airway Trust Fund",
+        "Civil Service Retirement and Disability Fund",
+        "Supplemental Security Income Program",
+        "Payments to Social Security Trust Funds",
+        "Other",
+        "Government Payment for Annuitants, Employees Health and Life Insurance Benefits",
+        "Disaster Loans Program"
+      ],
       "ambiguous_sample": [],
       "treasury_netting": {
         "applied": true,
-        "reason": "carried_forward",
-        "receipts_lines": 25
+        "identity": {
+          "anchor": 6284235715734.18,
+          "sections": 30,
+          "section_totals_sum": 6284235715734.18,
+          "difference": 0.0,
+          "holds": true
+        },
+        "section_mismatches": [
+          {
+            "section": "International Assistance Programs",
+            "lines_sum": 17341776239.19,
+            "printed_total": 17340679699.44
+          }
+        ],
+        "receipts_lines": 24,
+        "receipts_total": -956269800518.19,
+        "sections_netted": [
+          {
+            "id": "exec-dept-hhs",
+            "section": "Department of Health and Human Services",
+            "amount": -748793234454.84
+          },
+          {
+            "id": "exec-ind-ssa",
+            "section": "Social Security Administration",
+            "amount": -60875786065.15
+          },
+          {
+            "id": "exec-dept-treasury",
+            "section": "Department of the Treasury",
+            "amount": -17546349185.38
+          },
+          {
+            "id": "exec-dept-defense",
+            "section": "Department of Defense--Military Programs",
+            "amount": -1469904140.68
+          },
+          {
+            "id": "exec-dept-va",
+            "section": "Department of Veterans Affairs",
+            "amount": -6214442103.15
+          },
+          {
+            "id": "exec-dept-usda",
+            "section": "Department of Agriculture",
+            "amount": -2392725686.0
+          },
+          {
+            "id": "exec-ind-opm",
+            "section": "Office of Personnel Management",
+            "amount": -510328395.17
+          },
+          {
+            "id": "exec-dept-dot",
+            "section": "Department of Transportation",
+            "amount": -640058193.79
+          },
+          {
+            "id": "exec-dept-dhs",
+            "section": "Department of Homeland Security",
+            "amount": -14657066251.45
+          },
+          {
+            "id": "exec-dept-hud",
+            "section": "Department of Housing and Urban Development",
+            "amount": -708626393.04
+          },
+          {
+            "id": "exec-dept-ed",
+            "section": "Department of Education",
+            "amount": -72949734527.75
+          },
+          {
+            "id": "exec-dept-dol",
+            "section": "Department of Labor",
+            "amount": -705722561.97
+          },
+          {
+            "id": "exec-dept-doe",
+            "section": "Department of Energy",
+            "amount": -3109202629.87
+          },
+          {
+            "id": "exec-dept-doj",
+            "section": "Department of Justice",
+            "amount": -4112932418.27
+          },
+          {
+            "id": "exec-dept-state",
+            "section": "Department of State",
+            "amount": -4494380737.77
+          },
+          {
+            "id": "exec-ind-nasa",
+            "section": "National Aeronautics and Space Administration",
+            "amount": -2106366.8
+          },
+          {
+            "id": "exec-ind-epa",
+            "section": "Environmental Protection Agency",
+            "amount": -173362805.01
+          },
+          {
+            "id": "exec-dept-doi",
+            "section": "Department of the Interior",
+            "amount": -11453702919.52
+          },
+          {
+            "id": "exec-ind-sba",
+            "section": "Small Business Administration",
+            "amount": -2899730396.67
+          },
+          {
+            "id": "exec-dept-doc",
+            "section": "Department of Commerce",
+            "amount": -43221739.23
+          },
+          {
+            "id": "judicial-branch",
+            "section": "Judicial Branch",
+            "amount": -1238331950.98
+          },
+          {
+            "id": "exec-ind-nsf",
+            "section": "National Science Foundation",
+            "amount": -16081755.51
+          },
+          {
+            "id": "legislative-branch",
+            "section": "Legislative Branch",
+            "amount": -61229949.26
+          },
+          {
+            "id": "exec-eop",
+            "section": "Executive Office of the President",
+            "amount": -1201538890.93
+          }
+        ],
+        "government_wide": {
+          "id": "treasury-undistributed-offsetting-receipts",
+          "amount": -343316737551.34,
+          "printed_total": -343316737551.34
+        }
       }
     },
     "verification_evidence": {
@@ -99,13 +302,13 @@
       "unknown_node": 0,
       "unknown_status": 0,
       "urls_added": 329,
-      "stale_claims_cleared": 544,
+      "stale_claims_cleared": 545,
       "placements_evidenced": 123,
       "placements_checked_not_listed": 177,
       "placements_stale_parent": 0,
       "placements_stale_name": 0,
       "existence_stale_name": 0,
-      "placements_not_checkable_no_parent_page": 315,
+      "placements_not_checkable_no_parent_page": 311,
       "existence_folded": 54,
       "placements_folded": 48,
       "placement_only": 0
@@ -195,70 +398,69 @@
       "label": "FYTD net outlays through 2026-07-31",
       "source_system": "Treasury Fiscal Data",
       "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
-      "statement_file": "tests/fixtures/mts_table5_latest.json",
-      "reused_from_previous_build": true
+      "statement_file": "tests/fixtures/mts_table5_latest.json"
     },
     "budget_reconciliation": {
-      "nodes_seen": 5417,
-      "organisation_nodes_seen": 590,
+      "nodes_seen": 5402,
+      "organisation_nodes_seen": 589,
       "nodes_without_figures": 425,
-      "rows_emitted": 165,
-      "complete_rows": 79,
-      "budget_only_rows": 30,
+      "rows_emitted": 164,
+      "complete_rows": 80,
+      "budget_only_rows": 28,
       "actual_only_rows": 56,
       "unavailable_rows": 0,
       "missing_budget_rows": 56,
-      "missing_actual_rows": 30,
+      "missing_actual_rows": 28,
       "variance_status_counts": {
-        "unavailable": 86,
-        "under_budget": 55,
+        "unavailable": 84,
+        "under_budget": 56,
         "over_budget": 24
       },
       "budget_source_counts": {
-        "curated budget note": 109
+        "curated budget note": 108
       },
       "actual_source_counts": {
-        "Treasury MTS Table 5": 135
+        "Treasury MTS Table 5": 136
       },
-      "reconciled_rows": 79,
-      "incomplete_rows": 86
+      "reconciled_rows": 80,
+      "incomplete_rows": 84
     },
     "verified_treasury_total": 6284235715734.18,
     "cost_status_counts": {
       "root_total": 1,
-      "official": 135,
-      "allocated": 653,
-      "unavailable": 4628
+      "official": 136,
+      "allocated": 650,
+      "unavailable": 4615
     },
     "cost_validation_counts": {
       "verified_with_treasury_total": 1,
-      "matched_official_rollup": 135,
-      "estimated_from_parent": 653,
-      "post_is_not_a_budget_unit": 4454,
+      "matched_official_rollup": 136,
+      "estimated_from_parent": 650,
+      "post_is_not_a_budget_unit": 4441,
       "treasury_pool_negative": 174
     },
     "cost_verification_status_counts": {
-      "verified": 136,
-      "unverified": 5281
+      "verified": 137,
+      "unverified": 5265
     },
     "proof_status_counts": {
       "root": 1,
-      "proven": 577,
-      "baseline": 4839
+      "proven": 578,
+      "baseline": 4823
     },
-    "nodes_with_sources": 577,
-    "nodes_without_sources": 4840,
-    "resolved_cost_node_count": 789,
-    "unresolved_cost_node_count": 4628,
-    "estimated_cost_node_count": 653,
-    "official_cost_node_count": 136,
-    "verified_cost_node_count": 136,
+    "nodes_with_sources": 578,
+    "nodes_without_sources": 4824,
+    "resolved_cost_node_count": 787,
+    "unresolved_cost_node_count": 4615,
+    "estimated_cost_node_count": 650,
+    "official_cost_node_count": 137,
+    "verified_cost_node_count": 137,
     "partial_cost_node_count": 0,
-    "unverified_cost_node_count": 5281,
+    "unverified_cost_node_count": 5265,
     "mixed_weight_sibling_sets_implied": 15,
     "headcount_weights_disputed_by_opm": 10,
     "allocations_below_precision": 0,
-    "posts_not_apportioned": 4454,
+    "posts_not_apportioned": 4441,
     "sibling_sets_scaled_to_official_floors": 0,
     "treasury_lines_scaled": {
       "top_most_nodes": 0,
@@ -270,45 +472,45 @@
     "graph_summary": {
       "verified_treasury_total": 6284235715734.18,
       "verification_status_counts": {
-        "unverified": 4900,
+        "unverified": 4885,
         "verified": 208,
         "partial": 309
       },
       "cost_status_counts": {
         "root_total": 1,
-        "official": 135,
-        "allocated": 653,
-        "unavailable": 4628
+        "official": 136,
+        "allocated": 650,
+        "unavailable": 4615
       },
       "cost_validation_counts": {
         "verified_with_treasury_total": 1,
-        "matched_official_rollup": 135,
-        "estimated_from_parent": 653,
-        "post_is_not_a_budget_unit": 4454,
+        "matched_official_rollup": 136,
+        "estimated_from_parent": 650,
+        "post_is_not_a_budget_unit": 4441,
         "treasury_pool_negative": 174
       },
       "cost_verification_status_counts": {
-        "verified": 136,
-        "unverified": 5281
+        "verified": 137,
+        "unverified": 5265
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 577,
-        "baseline": 4839
+        "proven": 578,
+        "baseline": 4823
       },
-      "nodes_with_sources": 577,
-      "nodes_without_sources": 4840,
-      "resolved_cost_node_count": 789,
-      "unresolved_cost_node_count": 4628,
-      "estimated_cost_node_count": 653,
-      "official_cost_node_count": 136,
-      "verified_cost_node_count": 136,
+      "nodes_with_sources": 578,
+      "nodes_without_sources": 4824,
+      "resolved_cost_node_count": 787,
+      "unresolved_cost_node_count": 4615,
+      "estimated_cost_node_count": 650,
+      "official_cost_node_count": 137,
+      "verified_cost_node_count": 137,
       "partial_cost_node_count": 0,
-      "unverified_cost_node_count": 5281,
+      "unverified_cost_node_count": 5265,
       "mixed_weight_sibling_sets_implied": 15,
       "headcount_weights_disputed_by_opm": 10,
       "allocations_below_precision": 0,
-      "posts_not_apportioned": 4454,
+      "posts_not_apportioned": 4441,
       "sibling_sets_scaled_to_official_floors": 0,
       "treasury_lines_scaled": {
         "top_most_nodes": 0,
@@ -320,43 +522,43 @@
     },
     "audit_report": {
       "summary": {
-        "total_nodes": 5417,
-        "nodes_with_errors": 4997,
-        "nodes_with_warnings": 5166,
-        "warning_only_nodes": 323,
+        "total_nodes": 5402,
+        "nodes_with_errors": 4981,
+        "nodes_with_warnings": 5151,
+        "warning_only_nodes": 324,
         "severity_counts": {
-          "error": 14096,
-          "warning": 11699
+          "error": 14054,
+          "warning": 11659
         },
         "issue_counts": {
-          "missing_source_urls": 4840,
-          "low_confidence": 4840,
-          "unverified": 4900,
-          "estimated_cost": 653,
-          "cost_unverified": 653,
-          "low_cost_confidence": 653,
-          "missing_cost": 4628,
-          "unavailable_cost_status": 4628
+          "missing_source_urls": 4824,
+          "low_confidence": 4824,
+          "unverified": 4885,
+          "estimated_cost": 650,
+          "cost_unverified": 650,
+          "low_cost_confidence": 650,
+          "missing_cost": 4615,
+          "unavailable_cost_status": 4615
         },
         "cost_status_counts": {
           "root_total": 1,
-          "official": 135,
-          "allocated": 653,
-          "unavailable": 4628
+          "official": 136,
+          "allocated": 650,
+          "unavailable": 4615
         },
         "cost_verification_status_counts": {
-          "verified": 136,
-          "unverified": 5281
+          "verified": 137,
+          "unverified": 5265
         },
         "verification_status_counts": {
-          "unverified": 4900,
+          "unverified": 4885,
           "verified": 208,
           "partial": 309
         },
         "proof_status_counts": {
           "root": 1,
-          "proven": 577,
-          "baseline": 4839
+          "proven": 578,
+          "baseline": 4823
         },
         "warning_cost_statuses": [
           "allocated",
@@ -365,56 +567,56 @@
       }
     },
     "node_export_policy": {
-      "nodes_checked": 5417,
-      "nodes_allowed": 5417,
+      "nodes_checked": 5402,
+      "nodes_allowed": 5402,
       "nodes_rejected": 0,
-      "trusted_exceptions_applied": 4997
+      "trusted_exceptions_applied": 4981
     },
     "export_verification_status_counts": {
-      "unverified": 4900,
+      "unverified": 4885,
       "verified": 208,
       "partial": 309
     },
     "export_verified_node_count": 208,
-    "export_average_confidence_score": 0.7,
+    "export_average_confidence_score": 0.68,
     "pre_export_audit_summary": {
-      "total_nodes": 5417,
-      "nodes_with_errors": 4997,
-      "nodes_with_warnings": 5166,
-      "warning_only_nodes": 323,
+      "total_nodes": 5402,
+      "nodes_with_errors": 4981,
+      "nodes_with_warnings": 5151,
+      "warning_only_nodes": 324,
       "severity_counts": {
-        "error": 14096,
-        "warning": 11699
+        "error": 14054,
+        "warning": 11659
       },
       "issue_counts": {
-        "missing_source_urls": 4840,
-        "low_confidence": 4840,
-        "unverified": 4900,
-        "estimated_cost": 653,
-        "cost_unverified": 653,
-        "low_cost_confidence": 653,
-        "missing_cost": 4628,
-        "unavailable_cost_status": 4628
+        "missing_source_urls": 4824,
+        "low_confidence": 4824,
+        "unverified": 4885,
+        "estimated_cost": 650,
+        "cost_unverified": 650,
+        "low_cost_confidence": 650,
+        "missing_cost": 4615,
+        "unavailable_cost_status": 4615
       },
       "cost_status_counts": {
         "root_total": 1,
-        "official": 135,
-        "allocated": 653,
-        "unavailable": 4628
+        "official": 136,
+        "allocated": 650,
+        "unavailable": 4615
       },
       "cost_verification_status_counts": {
-        "verified": 136,
-        "unverified": 5281
+        "verified": 137,
+        "unverified": 5265
       },
       "verification_status_counts": {
-        "unverified": 4900,
+        "unverified": 4885,
         "verified": 208,
         "partial": 309
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 577,
-        "baseline": 4839
+        "proven": 578,
+        "baseline": 4823
       },
       "warning_cost_statuses": [
         "allocated",
@@ -422,16 +624,16 @@
       ]
     },
     "cost_export_policy": {
-      "nodes_checked": 5417,
-      "nodes_allowed": 5417,
+      "nodes_checked": 5402,
+      "nodes_allowed": 5402,
       "nodes_rejected": 0,
-      "trusted_exceptions_applied": 5281,
+      "trusted_exceptions_applied": 5265,
       "blocking_issue_counts": {
-        "non_authoritative_cost_status": 5281,
-        "cost_not_verified": 5281,
-        "missing_verifiable_cost_source": 5281,
-        "missing_cost": 4628,
-        "missing_cost_confidence": 4628
+        "non_authoritative_cost_status": 5265,
+        "cost_not_verified": 5265,
+        "missing_verifiable_cost_source": 5265,
+        "missing_cost": 4615,
+        "missing_cost_confidence": 4615
       }
     },
     "node_validation_rejected_nodes": 0,
@@ -446,11 +648,12 @@
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "proven": 577,
-      "baseline": 4839
+      "proven": 578,
+      "baseline": 4823,
+      "unproven": 15
     },
-    "published_node_count": 5417,
-    "treasury_lines_carried_forward": 135
+    "published_node_count": 5402,
+    "treasury_lines_carried_forward": 136
   },
   "stage_errors": [],
   "stage_results": {

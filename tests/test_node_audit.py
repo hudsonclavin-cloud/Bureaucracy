@@ -149,6 +149,56 @@ class AcceptsHonestWorkTests(HarnessTestCase):
         self.assertEqual(sorted(node_audit.read_ledger()), ["bureau", "twin"])
 
 
+class VerifyTests(HarnessTestCase):
+    """`verify` fails on a citation that has gone stale under a node that is
+    still there, and does not fail on one that went away with the node it was
+    about.
+
+    The distinction is not a convenience. When a `duplicate` finding is acted
+    on, the node it was about is merged away and the quotes that proved the
+    duplicate go with it — the finding was right, which is why the node is
+    gone — and `validate_record` refuses a corrected record for a node the
+    published graph no longer carries, so there is no way to retire it in
+    place. Failing on that would turn `verify` red the moment anybody fixed a
+    blocking finding, permanently, and a check that is always red stops being
+    read. Both directions are pinned so neither half can quietly go missing.
+    """
+
+    def _finding(self, quote):
+        return {
+            "kind": "duplicate", "severity": "blocking", "confidence": "certain",
+            "claim": "This unit is published twice.",
+            "evidence": [{"source": "CLAUDE.md", "locator": "Project goal", "quote": quote}],
+            "proposedAction": "Merge them.",
+        }
+
+    def _verify(self):
+        return node_audit.cmd_verify(mock.Mock())
+
+    def test_a_citation_that_still_matches_passes(self) -> None:
+        real = "never let the data or the UI claim more than the evidence supports"
+        self.assertEqual(self.record([self.clean(findings=[self._finding(real)])]), 0)
+        self.assertEqual(self._verify(), 0)
+
+    def test_a_stale_citation_on_a_node_that_is_still_in_the_graph_fails(self) -> None:
+        real = "never let the data or the UI claim more than the evidence supports"
+        self.record([self.clean(findings=[self._finding(real)])])
+        # The cited file changes under the ledger: the quote is no longer in it.
+        rows = [json.loads(line) for line in self.ledger.read_text(encoding="utf-8").splitlines() if line.strip()]
+        rows[0]["findings"][0]["evidence"][0]["quote"] = "a sentence CLAUDE.md does not contain anywhere at all"
+        self.ledger.write_text("\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+        self.assertEqual(self._verify(), 1, "a finding whose evidence no longer holds must fail")
+
+    def test_a_stale_citation_on_a_node_the_graph_no_longer_carries_does_not_fail(self) -> None:
+        self.record([self.clean(findings=[
+            self._finding("never let the data or the UI claim more than the evidence supports")])])
+        rows = [json.loads(line) for line in self.ledger.read_text(encoding="utf-8").splitlines() if line.strip()]
+        rows[0]["id"] = "a-node-that-was-merged-away"
+        rows[0]["findings"][0]["evidence"][0]["quote"] = "a sentence CLAUDE.md does not contain anywhere at all"
+        self.ledger.write_text("\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+        self.assertEqual(self._verify(), 0, "a citation cannot outlive the node it was about")
+
+
 class RefusesFabricationTests(HarnessTestCase):
     """Each of these is a way an agent invents support for a claim."""
 

@@ -7077,181 +7077,6 @@
                   ]
                 },
                 {
-                  "id": "leg-house-cmte-intelligence",
-                  "name": "House Committee on Intelligence",
-                  "type": "Committee",
-                  "desc": "Standing committee of the U.S. House of Representatives covering intelligence.",
-                  "employees": null,
-                  "budget": null,
-                  "color": "#8a4ac8",
-                  "children": [
-                    {
-                      "id": "leg-house-cmte-intelligence-chair-intelligence",
-                      "name": "Chair, Intelligence",
-                      "type": "Position",
-                      "desc": "Federal position: Chair, Intelligence",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#666666",
-                      "children": []
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-ranking-member-intelligence",
-                      "name": "Ranking Member, Intelligence",
-                      "type": "Position",
-                      "desc": "Federal position: Ranking Member, Intelligence",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#666666",
-                      "children": []
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-staff-director-intelligence",
-                      "name": "Staff Director, Intelligence",
-                      "type": "Position",
-                      "desc": "Federal position: Staff Director, Intelligence",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#666666",
-                      "children": []
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-minority-staff-director-intelligence",
-                      "name": "Minority Staff Director, Intelligence",
-                      "type": "Position",
-                      "desc": "Federal position: Minority Staff Director, Intelligence",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#666666",
-                      "children": []
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency",
-                      "name": "Subcommittee on Central Intelligence Agency",
-                      "type": "Subcommittee",
-                      "desc": "House subcommittee with jurisdiction over central intelligence agency.",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#8a4ac8",
-                      "children": [
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency-chair-subcommittee-on-central-intelligence-agency",
-                          "name": "Chair, Subcommittee on Central Intelligence Agency",
-                          "type": "Position",
-                          "desc": "Federal position: Chair, Subcommittee on Central Intelligence Agency",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency-ranking-member-subcommittee-on-central-intelligence-agency",
-                          "name": "Ranking Member, Subcommittee on Central Intelligence Agency",
-                          "type": "Position",
-                          "desc": "Federal position: Ranking Member, Subcommittee on Central Intelligence Agency",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support",
-                      "name": "Subcommittee on Defense Intelligence & Warfighter Support",
-                      "type": "Subcommittee",
-                      "desc": "House subcommittee with jurisdiction over defense intelligence & warfighter support.",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#8a4ac8",
-                      "children": [
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-chair-subcommittee-on-defense-intelligence-warfighter-support",
-                          "name": "Chair, Subcommittee on Defense Intelligence & Warfighter Support",
-                          "type": "Position",
-                          "desc": "Federal position: Chair, Subcommittee on Defense Intelligence & Warfighter Support",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-ranking-member-subcommittee-on-defense-intelligence-warfighter-support",
-                          "name": "Ranking Member, Subcommittee on Defense Intelligence & Warfighter Support",
-                          "type": "Position",
-                          "desc": "Federal position: Ranking Member, Subcommittee on Defense Intelligence & Warfighter Support",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity",
-                      "name": "Subcommittee on NSA & Cybersecurity",
-                      "type": "Subcommittee",
-                      "desc": "House subcommittee with jurisdiction over nsa & cybersecurity.",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#8a4ac8",
-                      "children": [
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity-chair-subcommittee-on-nsa-cybersecurity",
-                          "name": "Chair, Subcommittee on NSA & Cybersecurity",
-                          "type": "Position",
-                          "desc": "Federal position: Chair, Subcommittee on NSA & Cybersecurity",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity-ranking-member-subcommittee-on-nsa-cybersecurity",
-                          "name": "Ranking Member, Subcommittee on NSA & Cybersecurity",
-                          "type": "Position",
-                          "desc": "Federal position: Ranking Member, Subcommittee on NSA & Cybersecurity",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research",
-                      "name": "Subcommittee on Strategic Technologies & Advanced Research",
-                      "type": "Subcommittee",
-                      "desc": "House subcommittee with jurisdiction over strategic technologies & advanced research.",
-                      "employees": null,
-                      "budget": null,
-                      "color": "#8a4ac8",
-                      "children": [
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-chair-subcommittee-on-strategic-technologies-advanced-research",
-                          "name": "Chair, Subcommittee on Strategic Technologies & Advanced Research",
-                          "type": "Position",
-                          "desc": "Federal position: Chair, Subcommittee on Strategic Technologies & Advanced Research",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-ranking-member-subcommittee-on-strategic-technologies-advanced-research",
-                          "name": "Ranking Member, Subcommittee on Strategic Technologies & Advanced Research",
-                          "type": "Position",
-                          "desc": "Federal position: Ranking Member, Subcommittee on Strategic Technologies & Advanced Research",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
                   "id": "leg-house-cmte-judiciary",
                   "name": "House Committee on Judiciary",
                   "type": "Committee",
@@ -9282,9 +9107,9 @@
                 },
                 {
                   "id": "leg-house-cmte-permanent-select-committee-on-intelligence",
-                  "name": "House Committee on Permanent Select Committee on Intelligence",
+                  "name": "House Permanent Select Committee on Intelligence",
                   "type": "Committee",
-                  "desc": "Standing committee of the U.S. House of Representatives covering permanent select committee on intelligence.",
+                  "desc": "Select committee of the U.S. House of Representatives with jurisdiction over the intelligence community. The House Clerk's committee list carries it as the \"Permanent Select Committee on Intelligence\", code IG00, and types it Select rather than standing.",
                   "employees": null,
                   "budget": null,
                   "color": "#8a4ac8",
@@ -9328,6 +9153,130 @@
                       "budget": null,
                       "color": "#666666",
                       "children": []
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency",
+                      "name": "Subcommittee on Central Intelligence Agency",
+                      "type": "Subcommittee",
+                      "desc": "House subcommittee with jurisdiction over central intelligence agency.",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#8a4ac8",
+                      "children": [
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency-chair-subcommittee-on-central-intelligence-agency",
+                          "name": "Chair, Subcommittee on Central Intelligence Agency",
+                          "type": "Position",
+                          "desc": "Federal position: Chair, Subcommittee on Central Intelligence Agency",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        },
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-central-intelligence-agency-ranking-member-subcommittee-on-central-intelligence-agency",
+                          "name": "Ranking Member, Subcommittee on Central Intelligence Agency",
+                          "type": "Position",
+                          "desc": "Federal position: Ranking Member, Subcommittee on Central Intelligence Agency",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support",
+                      "name": "Subcommittee on Defense Intelligence & Warfighter Support",
+                      "type": "Subcommittee",
+                      "desc": "House subcommittee with jurisdiction over defense intelligence & warfighter support.",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#8a4ac8",
+                      "children": [
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-chair-subcommittee-on-defense-intelligence-warfighter-support",
+                          "name": "Chair, Subcommittee on Defense Intelligence & Warfighter Support",
+                          "type": "Position",
+                          "desc": "Federal position: Chair, Subcommittee on Defense Intelligence & Warfighter Support",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        },
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support-ranking-member-subcommittee-on-defense-intelligence-warfighter-support",
+                          "name": "Ranking Member, Subcommittee on Defense Intelligence & Warfighter Support",
+                          "type": "Position",
+                          "desc": "Federal position: Ranking Member, Subcommittee on Defense Intelligence & Warfighter Support",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity",
+                      "name": "Subcommittee on NSA & Cybersecurity",
+                      "type": "Subcommittee",
+                      "desc": "House subcommittee with jurisdiction over nsa & cybersecurity.",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#8a4ac8",
+                      "children": [
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity-chair-subcommittee-on-nsa-cybersecurity",
+                          "name": "Chair, Subcommittee on NSA & Cybersecurity",
+                          "type": "Position",
+                          "desc": "Federal position: Chair, Subcommittee on NSA & Cybersecurity",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        },
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity-ranking-member-subcommittee-on-nsa-cybersecurity",
+                          "name": "Ranking Member, Subcommittee on NSA & Cybersecurity",
+                          "type": "Position",
+                          "desc": "Federal position: Ranking Member, Subcommittee on NSA & Cybersecurity",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research",
+                      "name": "Subcommittee on Strategic Technologies & Advanced Research",
+                      "type": "Subcommittee",
+                      "desc": "House subcommittee with jurisdiction over strategic technologies & advanced research.",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#8a4ac8",
+                      "children": [
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-chair-subcommittee-on-strategic-technologies-advanced-research",
+                          "name": "Chair, Subcommittee on Strategic Technologies & Advanced Research",
+                          "type": "Position",
+                          "desc": "Federal position: Chair, Subcommittee on Strategic Technologies & Advanced Research",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        },
+                        {
+                          "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research-ranking-member-subcommittee-on-strategic-technologies-advanced-research",
+                          "name": "Ranking Member, Subcommittee on Strategic Technologies & Advanced Research",
+                          "type": "Position",
+                          "desc": "Federal position: Ranking Member, Subcommittee on Strategic Technologies & Advanced Research",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#666666",
+                          "children": []
+                        }
+                      ]
                     }
                   ]
                 }
@@ -12695,7 +12644,7 @@
                   "id": "exec-eop-who-advisor-5",
                   "name": "Advisor (×5)",
                   "type": "Position",
-                  "desc": "\"ADVISOR\" is a post in the White House Office. The report lists 5 people under this title, paid between $0.00 and $169,279.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"ADVISOR\" is a post in the White House Office. The report lists 5 people under this title, paid between $121,785.00 and $169,279.00 per annum, with 2 serving without pay. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "ADVISOR",
@@ -12944,7 +12893,7 @@
                   "id": "exec-eop-who-assistant-to-the-president-and-special-envoy-for-peace-missions",
                   "name": "Assistant to the President and Special Envoy for Peace Missions",
                   "type": "Position",
-                  "desc": "\"ASSISTANT TO THE PRESIDENT AND SPECIAL ENVOY FOR PEACE MISSIONS\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"ASSISTANT TO THE PRESIDENT AND SPECIAL ENVOY FOR PEACE MISSIONS\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "ASSISTANT TO THE PRESIDENT AND SPECIAL ENVOY FOR PEACE MISSIONS",
@@ -13216,7 +13165,7 @@
                   "id": "exec-eop-who-chief-design-officer",
                   "name": "Chief Design Officer",
                   "type": "Position",
-                  "desc": "\"CHIEF DESIGN OFFICER\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"CHIEF DESIGN OFFICER\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "CHIEF DESIGN OFFICER",
@@ -14498,7 +14447,7 @@
                   "id": "exec-eop-who-pardon-czar",
                   "name": "Pardon Czar",
                   "type": "Position",
-                  "desc": "\"PARDON CZAR\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"PARDON CZAR\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "PARDON CZAR",
@@ -14733,7 +14682,7 @@
                   "id": "exec-eop-who-senior-advisor-4",
                   "name": "Senior Advisor (×4)",
                   "type": "Position",
-                  "desc": "\"SENIOR ADVISOR\" is a post in the White House Office. The report lists 4 people under this title, paid between $0.00 and $197,200.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"SENIOR ADVISOR\" is a post in the White House Office. The report lists 4 people under this title, paid between $110,500.00 and $197,200.00 per annum, with one serving without pay. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "SENIOR ADVISOR",
@@ -14764,7 +14713,7 @@
                   "id": "exec-eop-who-senior-advisor-to-the-white-house-faith-office",
                   "name": "Senior Advisor to the White House Faith Office",
                   "type": "Position",
-                  "desc": "\"SENIOR ADVISOR TO THE WHITE HOUSE FAITH OFFICE\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"SENIOR ADVISOR TO THE WHITE HOUSE FAITH OFFICE\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "SENIOR ADVISOR TO THE WHITE HOUSE FAITH OFFICE",
@@ -15007,7 +14956,7 @@
                   "id": "exec-eop-who-special-assistant-to-the-president-and-assistant-communications-director",
                   "name": "Special Assistant to the President and Assistant Communications Director",
                   "type": "Position",
-                  "desc": "\"SPECIAL ASSISTANT TO THE PRESIDENT AND ASSISTANT COMMUNICATIONS DIRECTOR\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"SPECIAL ASSISTANT TO THE PRESIDENT AND ASSISTANT COMMUNICATIONS DIRECTOR\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "SPECIAL ASSISTANT TO THE PRESIDENT AND ASSISTANT COMMUNICATIONS DIRECTOR",
@@ -15355,7 +15304,7 @@
                   "id": "exec-eop-who-special-assistant-to-the-president-and-grant-coordinator",
                   "name": "Special Assistant to the President and Grant Coordinator",
                   "type": "Position",
-                  "desc": "\"SPECIAL ASSISTANT TO THE PRESIDENT AND GRANT COORDINATOR\" is a post in the White House Office. The report lists one person under this title, at $0.00 per annum. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
+                  "desc": "\"SPECIAL ASSISTANT TO THE PRESIDENT AND GRANT COORDINATOR\" is a post in the White House Office. The report lists one person under this title and reports no salary — an uncompensated appointment, which is a fact about that person rather than a rate the post pays. The report states titles and rates of pay, not duties, so nothing here describes what the post does.",
                   "descriptionSource": "generated_from_whitehouse_staff_report",
                   "structureSource": "listed_in_whitehouse_staff_report",
                   "reportedTitle": "SPECIAL ASSISTANT TO THE PRESIDENT AND GRANT COORDINATOR",
@@ -20193,7 +20142,7 @@
                   "id": "exec-dept-defense-branches",
                   "name": "Military Departments & Services",
                   "type": "Division",
-                  "desc": "The six armed services organized under three military departments.",
+                  "desc": "Five of the six armed services, organised under three military departments: the Department of the Army; the Department of the Navy, which includes the Marine Corps; and the Department of the Air Force, which includes the Space Force. The sixth armed service, the U.S. Coast Guard, is not a Defense Department component: it sits in the Department of Homeland Security, where this graph carries it, and transfers to the Navy only when Congress or the President directs.",
                   "employees": null,
                   "budget": null,
                   "color": "#c84a4a",
@@ -21056,107 +21005,6 @@
                           "name": "Delta 18 — Advanced Capabilities",
                           "type": "Position",
                           "desc": "Federal position: Delta 18 — Advanced Capabilities",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "exec-dept-defense-cg",
-                      "name": "U.S. Coast Guard",
-                      "type": "Military Branch",
-                      "desc": "Maritime law enforcement, search and rescue, drug and migrant interdiction, port security.",
-                      "employees": "~55,000 active & reserve",
-                      "budget": "~$12B",
-                      "color": "#c84a4a",
-                      "children": [
-                        {
-                          "id": "exec-dept-defense-cg-commandant-of-the-coast-guard-4-star-admiral",
-                          "name": "Commandant of the Coast Guard (4-star Admiral)",
-                          "type": "Position",
-                          "desc": "Federal position: Commandant of the Coast Guard (4-star Admiral)",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-vice-commandant",
-                          "name": "Vice Commandant",
-                          "type": "Position",
-                          "desc": "Federal position: Vice Commandant",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-master-chief-petty-officer-of-the-coast-guard",
-                          "name": "Master Chief Petty Officer of the Coast Guard",
-                          "type": "Position",
-                          "desc": "Federal position: Master Chief Petty Officer of the Coast Guard",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-commander-atlantic-area",
-                          "name": "Commander — Atlantic Area",
-                          "type": "Position",
-                          "desc": "Federal position: Commander — Atlantic Area",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-commander-pacific-area",
-                          "name": "Commander — Pacific Area",
-                          "type": "Position",
-                          "desc": "Federal position: Commander — Pacific Area",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-district-commander-9-districts",
-                          "name": "District Commander (×9 Districts)",
-                          "type": "Position",
-                          "desc": "Federal position: District Commander (×9 Districts)",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-sector-commander-multiple",
-                          "name": "Sector Commander (×multiple)",
-                          "type": "Position",
-                          "desc": "Federal position: Sector Commander (×multiple)",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-station-commander-multiple",
-                          "name": "Station Commander (×multiple)",
-                          "type": "Position",
-                          "desc": "Federal position: Station Commander (×multiple)",
-                          "employees": null,
-                          "budget": null,
-                          "color": "#666666",
-                          "children": []
-                        },
-                        {
-                          "id": "exec-dept-defense-cg-commanding-officer-aviation-units",
-                          "name": "Commanding Officer — Aviation units",
-                          "type": "Position",
-                          "desc": "Federal position: Commanding Officer — Aviation units",
                           "employees": null,
                           "budget": null,
                           "color": "#666666",

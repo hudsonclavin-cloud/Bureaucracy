@@ -97,7 +97,7 @@ graph, and is the reason `resolve_root_orphans` refuses root attachment.
 (`scripts/probe_treasury_rows.py`) will say which label it prints and
 whether one node answers to it. An alias candidate, once confirmed.
 
-## 3. One unit, two subtrees: the Coast Guard
+## 3. One unit, two subtrees: the Coast Guard — decided 2026-09-18
 
 `exec-dept-dhs-uscg` (under Homeland Security) and `exec-dept-defense-cg`
 (under the Department of Defense "branches" grouping) are both "U.S. Coast
@@ -119,6 +119,27 @@ call:
 
 An earlier session deleted one copy and was reverted; that was the right
 reversal — the choice is curatorial.
+
+**The owner took the first option on 2026-09-18**, and
+`scripts/merge_duplicate_nodes.py` is the change: the curated file is never
+hand-edited, so a script makes it, idempotently, with every precondition
+checked before anything is written. `exec-dept-defense-cg` and its nine
+positions are gone; `exec-dept-dhs-uscg` stays, and it was already the richer
+of the two (seventeen children, the nine districts named individually, against
+nine with one "District Commander (×9 Districts)" standing for all of them).
+"Military Departments & Services" gets the cross-reference this section
+proposed, which it needed on its own account: its description read "The six
+armed services organized under three military departments" while carrying
+six children, and it now says which five it carries and where the sixth is.
+
+The paragraph above expected the alias rule to keep the line unmatched. It
+does not any more — the cap it referred to is gone (§4) — and the rebuild
+that followed the merge landed it: **`exec-dept-dhs-uscg` publishes the
+Treasury's own $10,932,150,297.01, `cost_status: official`,
+`costVerificationStatus: verified`**, with the FiscalData URL on the node.
+Two contradictory estimates of $4.15B and $9.38B became one measured figure,
+and the graph's exact-node count went 136 → 137. That is what a duplicate was
+costing: not just a second subtree, but the measured cost of a real agency.
 
 ## 4. Resolved since this document was first written
 

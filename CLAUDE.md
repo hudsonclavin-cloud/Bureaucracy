@@ -1476,7 +1476,9 @@ these" list matters as much as the rest: without it the sweep returns
 Table 5 lines whose unit the curated graph has no node for at all, so no alias
 can reach them. Adding the nodes is curation work, not pipeline work;
 `CURATION.md` carries the proposal (parent, type, candidate page) for each,
-plus the AmeriCorps alias case, the Coast Guard duplicate and the cap:
+plus the AmeriCorps alias case and the cap. (The Coast Guard duplicate was in
+this list until 2026-09-18; it is merged, and the Treasury's own
+$10.93B now sits on the surviving DHS node as a measured cost — CURATION.md §3.)
 
     General Services Administration          Agency for International Development
     Railroad Retirement Board                Administration for Children and Families

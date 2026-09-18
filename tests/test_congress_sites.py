@@ -207,8 +207,14 @@ class RealFixtureTests(unittest.TestCase):
             "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
             "Joint Economic Committee", "Joint Committee on the Library", "Joint Committee on Printing", "Joint Committee on Taxation",
         ])
+        # leg-house-cmte-intelligence was the fourth here until 2026-09-18.
+        # The Clerk's list carries one intelligence committee and the graph
+        # carried two, which is what this line was reporting; the duplicate is
+        # merged away now (scripts/merge_duplicate_nodes.py) and the survivor
+        # is the node the list matches, so only the three genuine spelling
+        # differences remain.
         self.assertEqual([g["id"] for g in house["graph_not_listed"]], [
-            "leg-house-cmte-education-the-workforce", "leg-house-cmte-intelligence",
+            "leg-house-cmte-education-the-workforce",
             "leg-house-cmte-oversight-accountability", "leg-house-cmte-select-committee-on-the-chinese-communist-party",
         ])
         self.assertEqual((house["ambiguous"], house["rejected_urls"]), ([], []))

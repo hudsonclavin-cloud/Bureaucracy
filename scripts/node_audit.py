@@ -451,26 +451,44 @@ def cmd_verify(args):
     `record` already refused anything that did not check out, but a file can
     change after a finding was written, and a finding that no longer matches
     its source is a claim with nothing behind it.
+
+    A citation is only a failure while its node is still in the graph. When a
+    `duplicate` or `not_a_real_unit` finding is acted on, the node it was
+    about is merged away, and the quotes that proved the duplicate go with
+    it — the finding was right, which is why the node is gone. That cannot be
+    corrected in place either: `validate_record` refuses a record for a node
+    the published graph does not carry, so a `--force` re-audit is not
+    available for one. Failing on it would leave `verify` permanently red the
+    moment anybody fixed a blocking finding, and a check that is red forever
+    stops being read. So those are counted and printed separately, under what
+    they are, and only a stale citation on a node that is still there fails.
     """
     _, _, _, by_id = load_graph()
     done = read_ledger()
     cache: dict[str, str] = {}
-    stale, unknown = [], []
+    stale, retired, unknown = [], [], []
     for node_id, record in done.items():
-        if node_id not in by_id:
+        present = node_id in by_id
+        if not present:
             unknown.append(f"{node_id} is in the ledger but no longer in the graph")
         for finding in record.get("findings") or []:
             for item in finding.get("evidence") or []:
                 try:
                     check_quote(str(item.get("source") or ""), str(item.get("quote") or ""), cache)
                 except Rejected as error:
-                    stale.append(f"{node_id}: {error}")
+                    (stale if present else retired).append(f"{node_id}: {error}")
     print(f"  ledger records     : {len(done):,}")
     print(f"  citations re-checked and still exact: {'yes' if not stale else 'NO'}")
     for line in stale[:20]:
         print(f"    - {line}")
-    for line in unknown[:20]:
-        print(f"    - {line}")
+    if retired:
+        print(f"  citations retired with the node they were about: {len(retired):,}")
+        for line in retired[:10]:
+            print(f"    - {line}")
+    if unknown:
+        print(f"  ledger records whose node the graph no longer carries: {len(unknown):,}")
+        for line in unknown[:10]:
+            print(f"    - {line}")
     if stale:
         print(f"\n  {len(stale)} citation(s) no longer match their source.")
     return 1 if stale else 0
