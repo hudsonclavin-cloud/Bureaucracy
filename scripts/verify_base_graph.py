@@ -160,6 +160,35 @@ def main(argv: list[str] | None = None) -> int:
         urls, site_from, distance = candidate_urls(node_id, parent_map, sites)
         if not urls:
             skipped["no_candidate_url"] += 1
+            # A record whose page the queue no longer points at is a claim
+            # resting on a fetch nobody would make again, and until 2026-09-18
+            # it simply stayed: the node was skipped, nothing was written, and
+            # the exporter kept publishing it. That is the shape of failure
+            # this project has already been bitten by once -- "a retraction
+            # that could never reach the site".
+            #
+            # It became real when `nominate.py promote` was taught to file a
+            # URL by its role: 19 `official_list` URLs were dropped from the
+            # queue because no verifier method describes a directory
+            # truthfully, and 13 presidential libraries would otherwise have
+            # gone on publishing "its own official page names it" about
+            # archives.gov/presidential-libraries for ever.
+            #
+            # Only on a full pass: an --ids run says nothing about the nodes
+            # it did not select, and a --limit run stops early by design.
+            if prior and not args.ids and not args.limit and prior.get("status") != NOT_CHECKABLE:
+                withdrawn = dict(prior)
+                placement_block = withdrawn.get("placement")
+                del evidence[node_id]
+                if isinstance(placement_block, dict):
+                    # The edge evidence came from the PARENT's page and does
+                    # not depend on this node having a candidate of its own,
+                    # so it survives on its own record.
+                    evidence[node_id] = {
+                        "name": node.get("name"), "status": PLACEMENT_ONLY,
+                        "checkedAt": now, "placement": placement_block,
+                    }
+                skipped["record_withdrawn_no_candidate_page"] += 1
             continue
         if distance > args.inherit_depth:
             skipped["ancestor_page_too_far"] += 1

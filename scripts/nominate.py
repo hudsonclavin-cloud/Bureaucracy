@@ -513,46 +513,158 @@ def cmd_record(args):
 # promote / status / report
 
 
+def filing_id_for_role(node_id, role, parents):
+    """Which node's queue entry a nominated URL belongs in.
+
+    This is the whole of the fix made on 2026-09-18, and why it was needed is
+    worth keeping. `official_sites.json` is keyed by node, and
+    `evidence.candidate_urls` returns `distance == 0` for any URL under a
+    node's OWN key, which `verify_node` turns into
+    `name_labelled_on_own_official_page`. The role was written to
+    `official_sites_provenance.json` and then never read again — so a URL
+    nominated as `parent_listing`, meaning the parent's index page, published
+    the claim that it was the unit's own page.
+
+    Not hypothetical: 20 confirmations were live on the site under it, among
+    them nine Department of Energy national laboratories each citing
+    `energy.gov/national-laboratories` as *its own* official page.
+
+    - `own_site` files under the node. The claim is then true.
+    - `parent_listing` files under the node's PARENT, so the verifier finds it
+      one level up, `is_own_page` is False, and it publishes
+      `name_labelled_on_parent_official_page` — "the parent's official page
+      lists it", which is exactly what the runbook has always said this role
+      means.
+    - `official_list` files nowhere. A government directory is neither the
+      unit's page nor its parent's, and both available methods would
+      misdescribe it. Structured directories have their own modules here (the
+      Federal Register's, the Senate's, the House Clerk's), which is where
+      such a source belongs; promoting one into the page queue would buy a
+      confirmation by mislabelling it.
+    """
+    if role == "own_site":
+        return node_id, None
+    if role == "parent_listing":
+        parent = parents.get(node_id)
+        if not parent:
+            return None, "parent_listing_but_the_node_has_no_parent"
+        return parent, None
+    if role == "official_list":
+        return None, "official_list_has_no_truthful_verifier_method"
+    return None, "unknown_role_{!r}".format(role)
+
+
+def refile_misplaced(sites, records, parents, by_id, provenance=None):
+    """Repair a queue written before `filing_id_for_role` existed.
+
+    Only touches a URL the ledger says was nominated for THIS node under a
+    role that does not file it here. A seeded or hand-added URL with no ledger
+    nomination is left exactly where it is, because nothing here knows what it
+    was meant to be.
+    """
+    moved, dropped = [], []
+    for node_id, record in sorted(records.items()):
+        if record.get("noCandidate") or node_id not in by_id:
+            continue
+        for nomination in record.get("nominations") or []:
+            url = str(nomination.get("url") or "")
+            role = nomination.get("role")
+            if role == "own_site" or not url:
+                continue
+            here = list(sites.get(node_id) or [])
+            if url not in here:
+                continue
+            here.remove(url)
+            if here:
+                sites[node_id] = here
+            else:
+                sites.pop(node_id, None)
+            destination, why = filing_id_for_role(node_id, role, parents)
+            # The provenance file is keyed by the same id as the queue, and a
+            # committed test asserts the two agree — so a URL that moves takes
+            # its provenance record with it, and a URL that is dropped takes
+            # its record out. Leaving it behind would point a reader at a node
+            # whose queue no longer holds the URL the record describes.
+            record_here = (provenance or {}).get(node_id)
+            if isinstance(record_here, dict) and record_here.get("url") == url:
+                (provenance or {}).pop(node_id, None)
+                if destination is not None:
+                    provenance[destination] = dict(record_here, nominatedFor=node_id)
+            if destination is None:
+                dropped.append((node_id, url, role, why))
+                continue
+            there = list(sites.get(destination) or [])
+            if url not in there:
+                there.append(url)
+                sites[destination] = there
+            moved.append((node_id, url, role, destination))
+    return moved, dropped
+
+
 def cmd_promote(args):
     """Move accepted page nominations into the verifier's fetch queue.
 
     The queue is a list of things to check. Promoting a URL asserts nothing
     about the unit — only that the verifier should read that page and see.
+    Which key it is filed under, though, decides what the verifier will
+    CLAIM about it: see `filing_id_for_role`.
     """
     if args.kind != "source":
         raise SystemExit("promote applies to page nominations only")
-    _, _, _, by_id = load_graph()
+    _, _, parents, by_id = load_graph()
     sites = load_json(SITES)
     provenance = load_json(PROVENANCE)
     records = read_ledger("source")
-    added, skipped = [], []
+    added, skipped, refused = [], [], []
+    if args.refile_misplaced:
+        moved, dropped = refile_misplaced(sites, records, parents, by_id, provenance)
+        for node_id, url, role, destination in moved:
+            print("  REFILED  {:15s} {}\n             from {}  ->  {}".format(role, url[:62], node_id, destination))
+        for node_id, url, role, why in dropped:
+            print("  DROPPED  {:15s} {}\n             from {}  ({})".format(role, url[:62], node_id, why))
+        print("  refiled {}, dropped {}: each sat under a key that made the verifier "
+              "call it the node's own page\n".format(len(moved), len(dropped)))
     for node_id, record in sorted(records.items()):
         if record.get("noCandidate") or node_id not in by_id:
             continue
-        existing = list(sites.get(node_id) or [])
         for nomination in record.get("nominations") or []:
             url = str(nomination.get("url") or "")
+            role = nomination.get("role")
+            if args.only_role and role != args.only_role:
+                continue
+            filing_id, why = filing_id_for_role(node_id, role, parents)
+            if filing_id is None:
+                refused.append((node_id, url, role, why))
+                continue
+            existing = list(sites.get(filing_id) or [])
             if not url or url in existing:
                 skipped.append(url)
                 continue
-            if args.only_role and nomination.get("role") != args.only_role:
-                continue
             existing.append(url)
-            added.append((node_id, url, nomination.get("role")))
-            provenance.setdefault(node_id, {})
-            provenance[node_id] = {
+            sites[filing_id] = existing
+            added.append((node_id, url, role))
+            provenance.setdefault(filing_id, {})
+            provenance[filing_id] = {
                 "url": url,
                 "source": "agent_nomination",
-                "role": nomination.get("role"),
+                "role": role,
+                # Which node it was nominated FOR, which is no longer the same
+                # as the key it is filed under whenever the role is not own_site.
+                "nominatedFor": node_id,
                 "basis": nomination.get("basis"),
                 "confidence": nomination.get("confidence"),
                 "run": record.get("run"),
                 "nominatedAt": record.get("nominatedAt"),
                 "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it.",
             }
-        if existing:
-            sites[node_id] = existing
 
+    if refused:
+        print(f"  refused {len(refused)} nomination(s) that no verifier method could describe truthfully:")
+        for node_id, url, role, why in refused[: args.limit]:
+            print(f"    {node_id} <- {url}  [{role}: {why}]")
+        if len(refused) > args.limit:
+            print(f"    … and {len(refused) - args.limit} more")
+        print()
     print(f"  would add {len(added)} candidate page(s) across {len({n for n, _, _ in added})} node(s)")
     for node_id, url, role in added[: args.limit]:
         print(f"    {node_id} <- {url}  [{role}]")
@@ -653,6 +765,9 @@ def main(argv=None):
     p = add_kind(sub.add_parser("promote", help="move accepted page nominations into the verifier's fetch queue"))
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--only-role", choices=SOURCE_ROLES)
+    p.add_argument("--refile-misplaced", action="store_true",
+                   help="first move any already-queued URL whose role does not file it where it sits "
+                        "(see filing_id_for_role); repairs a queue written before 2026-09-18")
     p.add_argument("--limit", type=int, default=30)
     p.set_defaults(func=cmd_promote)
 

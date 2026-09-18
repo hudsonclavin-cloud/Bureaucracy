@@ -439,3 +439,120 @@ class ProbeBackedDeclineTests(unittest.TestCase):
         for reason in ("no_public_page_known", "covered_by_parent", "editorial_grouping", "not_on_a_gov_host"):
             with self.subTest(reason=reason):
                 nominate.validate_source(self._record(reason=reason), self.node, {}, {}, set())
+
+
+class FilingByRoleTests(unittest.TestCase):
+    """Which key a nominated URL is filed under decides what gets CLAIMED.
+
+    `official_sites.json` is keyed by node, and `evidence.candidate_urls`
+    returns distance 0 for any URL under a node's own key, which `verify_node`
+    turns into `name_labelled_on_own_official_page`. Until 2026-09-18 the role
+    was written to the provenance file and never read again, so a
+    `parent_listing` nomination -- the parent's index page, which is what the
+    role means -- published the claim that it was the unit's own page.
+
+    Twenty confirmations were live on the site under it, among them nine
+    Department of Energy national laboratories each citing
+    `energy.gov/national-laboratories` as ITS OWN official page.
+    """
+
+    PARENTS = {"lab": "labs", "labs": "doe", "doe": None, "orphan": None}
+
+    def test_an_own_site_url_files_under_the_node(self) -> None:
+        self.assertEqual(nominate.filing_id_for_role("lab", "own_site", self.PARENTS), ("lab", None))
+
+    def test_a_parent_listing_url_files_under_the_parent(self) -> None:
+        """So the verifier finds it one level up, is_own_page is False, and it
+        publishes name_labelled_on_parent_official_page -- 'the parent's
+        official page lists it', which is what the runbook has always said."""
+        self.assertEqual(nominate.filing_id_for_role("lab", "parent_listing", self.PARENTS), ("labs", None))
+
+    def test_a_parent_listing_url_for_a_node_with_no_parent_is_refused(self) -> None:
+        filing, why = nominate.filing_id_for_role("orphan", "parent_listing", self.PARENTS)
+        self.assertIsNone(filing)
+        self.assertIn("no_parent", why)
+
+    def test_an_official_list_url_is_never_filed(self) -> None:
+        """A government directory is neither the unit's page nor its parent's,
+        and both available methods would misdescribe it. Structured
+        directories have their own modules here; promoting one into the page
+        queue would buy a confirmation by mislabelling it."""
+        filing, why = nominate.filing_id_for_role("lab", "official_list", self.PARENTS)
+        self.assertIsNone(filing)
+        self.assertIn("no_truthful_verifier_method", why)
+
+    def test_an_unknown_role_is_refused_rather_than_defaulted(self) -> None:
+        filing, why = nominate.filing_id_for_role("lab", "somebody's_guess", self.PARENTS)
+        self.assertIsNone(filing)
+        self.assertIn("unknown_role", why)
+
+
+class RefileMisplacedTests(unittest.TestCase):
+    """Repairing a queue written before the rule existed."""
+
+    PARENTS = {"lab": "labs", "labs": "doe", "doe": None}
+    BY_ID = {"lab": {"id": "lab"}, "labs": {"id": "labs"}, "doe": {"id": "doe"}}
+
+    def _records(self, role, url="https://www.energy.gov/national-laboratories"):
+        return {"lab": {"id": "lab", "nominations": [{"url": url, "role": role}]}}
+
+    def test_a_parent_listing_url_is_moved_off_the_node_and_onto_the_parent(self) -> None:
+        sites = {"lab": ["https://www.energy.gov/national-laboratories"]}
+        moved, dropped = nominate.refile_misplaced(sites, self._records("parent_listing"), self.PARENTS, self.BY_ID)
+        self.assertEqual(dropped, [])
+        self.assertEqual([m[3] for m in moved], ["labs"])
+        self.assertNotIn("lab", sites)
+        self.assertEqual(sites["labs"], ["https://www.energy.gov/national-laboratories"])
+
+    def test_the_provenance_record_moves_with_the_url(self) -> None:
+        """A committed test asserts the queue and the provenance file agree on
+        the key. A URL that moves without its record points a reader at a node
+        whose queue no longer holds the URL the record describes."""
+        url = "https://www.energy.gov/national-laboratories"
+        sites = {"lab": [url]}
+        provenance = {"lab": {"url": url, "role": "parent_listing", "basis": "x"}}
+        nominate.refile_misplaced(sites, self._records("parent_listing"), self.PARENTS, self.BY_ID, provenance)
+        self.assertNotIn("lab", provenance)
+        self.assertEqual(provenance["labs"]["url"], url)
+        self.assertEqual(provenance["labs"]["nominatedFor"], "lab")
+
+    def test_a_dropped_url_takes_its_provenance_record_out(self) -> None:
+        url = "https://www.archives.gov/presidential-libraries"
+        sites = {"lab": [url]}
+        provenance = {"lab": {"url": url, "role": "official_list"}}
+        nominate.refile_misplaced(
+            sites, self._records("official_list", url), self.PARENTS, self.BY_ID, provenance)
+        self.assertEqual(provenance, {})
+        self.assertEqual(sites, {})
+
+    def test_an_official_list_url_is_removed_and_filed_nowhere(self) -> None:
+        sites = {"lab": ["https://www.archives.gov/presidential-libraries"]}
+        moved, dropped = nominate.refile_misplaced(
+            sites, self._records("official_list", "https://www.archives.gov/presidential-libraries"),
+            self.PARENTS, self.BY_ID)
+        self.assertEqual(moved, [])
+        self.assertEqual(len(dropped), 1)
+        self.assertEqual(sites, {})
+
+    def test_an_own_site_url_is_left_exactly_where_it_is(self) -> None:
+        sites = {"lab": ["https://www.anl.gov/"]}
+        moved, dropped = nominate.refile_misplaced(
+            sites, self._records("own_site", "https://www.anl.gov/"), self.PARENTS, self.BY_ID)
+        self.assertEqual((moved, dropped), ([], []))
+        self.assertEqual(sites, {"lab": ["https://www.anl.gov/"]})
+
+    def test_a_url_with_no_ledger_nomination_is_never_touched(self) -> None:
+        """A seeded or hand-added URL is left alone, because nothing here knows
+        what role it was meant to have."""
+        sites = {"lab": ["https://seeded.gov/", "https://www.energy.gov/national-laboratories"]}
+        nominate.refile_misplaced(sites, self._records("parent_listing"), self.PARENTS, self.BY_ID)
+        self.assertEqual(sites["lab"], ["https://seeded.gov/"])
+
+    def test_refiling_twice_changes_nothing_the_second_time(self) -> None:
+        sites = {"lab": ["https://www.energy.gov/national-laboratories"]}
+        records = self._records("parent_listing")
+        nominate.refile_misplaced(sites, records, self.PARENTS, self.BY_ID)
+        after_first = json.loads(json.dumps(sites))
+        moved, dropped = nominate.refile_misplaced(sites, records, self.PARENTS, self.BY_ID)
+        self.assertEqual((moved, dropped), ([], []))
+        self.assertEqual(sites, after_first)
