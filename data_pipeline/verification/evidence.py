@@ -215,6 +215,43 @@ MAX_SCAFFOLD_TOKENS = 5
 # and it was not there" about one asserts a failed existence check against a
 # body that plainly exists.
 COUNT_LABEL_PATTERN = re.compile(r"\(\s*[≈~]?\d[\d,]*\s*\+?\s*(?:[A-Za-z .&-]{0,30})?\)|\(\s*\d+\s*\)|\b\d+\s*\+")
+
+#: A count written as prose rather than parenthesised: "Regional Director —
+#: 10 Regions", "All 94 District Courts", "18 VA Integrated Service Networks".
+#: The number is the graph's own annotation of how many things a node stands
+#: for, so no page will ever carry it as a label and fetching is wasted.
+#:
+#: This replaced a rule that refused ANY name containing a digit, which is
+#: what the first live probe pass surfaced: it silently refused 268 nodes
+#: whose names are not counts at all -- the eleven `U.S. Court of Appeals for
+#: the Nth Circuit`, nineteen `VISN N` networks, `K-9 Unit`, the Joint Staff's
+#: `J3`, `Army G-2`, `OPNAV N2/N6`, `AF/A5`. Those have real pages and were
+#: never fetched, and the record said `not_checkable` -- a claim that the
+#: NAME could never be evidence, which was false of every one of them.
+#:
+#: The discriminator is a cardinal number followed, inside the same
+#: dash-delimited segment of the name, by a plural word. "10 Regions" counts
+#: regions; "VISN 1 — New England" does not count anything, and the number is
+#: part of the network's name. Segment-wise because this graph's convention is
+#: `<name> — <qualifier>`, so the number and the thing it counts always sit on
+#: the same side of the dash. Checked against every digit-bearing name in the
+#: curated file: 56 refused, all genuinely counts; 212 freed, none of them.
+_NAME_SEGMENT = re.compile(r"\s*[—–]\s*|\s+[-]\s+")
+_CARDINAL_TOKEN = re.compile(r"^\d[\d,]*$")
+_NAME_WORD = re.compile(r"[^\s(),./]+")
+
+
+def states_a_count_in_prose(name: str) -> bool:
+    """Is this name counting things, rather than merely containing a number?"""
+    for segment in _NAME_SEGMENT.split(str(name or "")):
+        tokens = _NAME_WORD.findall(segment)
+        for index, token in enumerate(tokens):
+            if not _CARDINAL_TOKEN.match(token):
+                continue
+            for later in tokens[index + 1:]:
+                if later.isalpha() and later.lower().endswith("s"):
+                    return True
+    return False
 GENERIC_SINGLE_TOKENS = frozenset(
     "defense energy personnel cybersecurity seapower airland constitution security policy operations "
     "administration management leadership committees districts offices staff research development "
@@ -458,7 +495,10 @@ def uncheckable_reason(name: str, *, is_post: bool = False) -> str | None:
     if not key:
         return "no_canonical_key"
     tokens = key.split()
-    if any(any(ch.isdigit() for ch in token) for token in tokens):
+    if states_a_count_in_prose(text):
+        # Not "any digit": see states_a_count_in_prose. The old rule refused
+        # every `U.S. Court of Appeals for the Nth Circuit` and every `VISN N`
+        # as a count label, which is a claim about the NAME and was false.
         return "curated_count_label"
     if is_post and len(tokens) < 2:
         return REASON_POST_TITLE_TOO_GENERIC

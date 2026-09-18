@@ -22,6 +22,7 @@ from unittest import mock
 from urllib.error import HTTPError, URLError
 
 from data_pipeline.exporter.build_graph import build_graph, index_tree
+from data_pipeline.verification import evidence
 from data_pipeline.verification.evidence import (
     CONFIRMED,
     FETCH_FAILED,
@@ -206,7 +207,15 @@ class LabelMatchingTests(unittest.TestCase):
         for name, reason in (
             ("Individual Senator Offices (100)", "curated_count_label"),
             ("U.S. Embassies & Consulates (180+)", "curated_count_label"),
-            ("VISN 1 — New England", "curated_count_label"),
+            # "VISN 1 — New England" was asserted here as a count label until
+            # 2026-09-18 and is not one: "1" is the network's number, not a
+            # count of networks, and department.va.gov labels "VISN 1" on its
+            # own page. Calling it uncheckable was a claim that the NAME could
+            # never be evidence, which is a stronger and different thing from
+            # "the page does not carry the whole curated name" -- and only the
+            # second is true. It is now fetched, and whatever the page says is
+            # what gets recorded. See CountLabelFloorTests below.
+            ("Regional Director — 10 Regions", "curated_count_label"),
             ("Energy", "name_too_generic"),
             ("Defense", "name_too_generic"),
             ("", "empty_name"),
@@ -1826,3 +1835,76 @@ class AnAuditableNegativeTests(unittest.TestCase):
                         self.assertEqual(gate_main(["gate", str(path)]), 1, f"{name}:\n{out.getvalue()}")
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
+
+
+class CountLabelFloorTests(unittest.TestCase):
+    """A name containing a number is not the same thing as a name counting.
+
+    `uncheckable_reason` refused any name with a digit in it as a
+    `curated_count_label`, which is a claim about the NAME -- that it could
+    never be a label on any page -- and it was false of 268 nodes. The eleven
+    `U.S. Court of Appeals for the Nth Circuit` have real pages on
+    `caN.uscourts.gov` and were never fetched; so do nineteen `VISN N`
+    networks, `K-9 Unit`, the Joint Staff's `J3`, `Army G-2`, `OPNAV N2/N6`
+    and `AF/A5`. The first live probe pass surfaced it.
+
+    Both directions are pinned, because a floor that lets a real count label
+    through is the failure the old rule was over-correcting for.
+    """
+
+    COUNTS = (
+        "Regional Director — 10 Regions",
+        "Regional Administrator — 10 FEMA Regions",
+        "All 94 District Courts — Standard Structure",
+        "18 VA Integrated Service Networks (VISNs)",
+        "Special Agent in Charge — 25 Field Divisions",
+        "Port Director — 328 Ports of Entry",
+        "County Executive Director — ~2,100 county offices",
+        "State Conservationist — 50 states",
+        "Individual Senator Offices (100)",
+        "Mission Teams (15)",
+        "Other Independent Agencies (25+)",
+    )
+    NAMES = (
+        "U.S. Court of Appeals for the 9th Circuit",
+        "U.S. Court of Appeals for the 1st Circuit",
+        "VISN 1 — New England",
+        "VISN 21 — Sierra Pacific",
+        "K-9 Unit",
+        "J3 — Director for Operations",
+        "Army G-2 (Intelligence)",
+        "OPNAV N2/N6 (Intelligence/Communications)",
+        "AF/A5 (Strategy & Planning)",
+        "Chief Judge, 10th Circuit",
+    )
+
+    def test_a_name_that_counts_things_is_still_refused(self) -> None:
+        for name in self.COUNTS:
+            with self.subTest(name=name):
+                self.assertEqual(
+                    evidence.uncheckable_reason(name), "curated_count_label",
+                    "a count the graph wrote itself would be fetched and could never match")
+
+    def test_a_name_that_merely_contains_a_number_is_checked(self) -> None:
+        for name in self.NAMES:
+            with self.subTest(name=name):
+                self.assertIsNone(
+                    evidence.uncheckable_reason(name),
+                    "a real unit with a number in its name was refused before any fetch")
+
+    def test_the_discriminator_is_the_plural_after_the_number(self) -> None:
+        self.assertTrue(evidence.states_a_count_in_prose("Regional Director — 10 Regions"))
+        # Same words, no number: nothing to count.
+        self.assertFalse(evidence.states_a_count_in_prose("Regional Director — Regions"))
+        # A number that ends its own segment is part of a name, not a count.
+        self.assertFalse(evidence.states_a_count_in_prose("VISN 1 — New England"))
+        # Ordinals are not cardinals.
+        self.assertFalse(evidence.states_a_count_in_prose("9th Circuit Courts"))
+
+    def test_the_segment_boundary_is_why_visn_survives(self) -> None:
+        """Without splitting on the dash, "VISN 1 — New England Networks"
+        would read as a count of networks. The graph's convention is
+        `<name> — <qualifier>`, so a count and the thing it counts always sit
+        on the same side."""
+        self.assertFalse(evidence.states_a_count_in_prose("VISN 1 — New England Networks"))
+        self.assertTrue(evidence.states_a_count_in_prose("New England — 1 Networks"))
