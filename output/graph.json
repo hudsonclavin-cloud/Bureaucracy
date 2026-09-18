@@ -60012,6 +60012,7 @@
                 "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
                 "retrievedAt": "2026-09-17T16:18:33Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -60360,6 +60361,7 @@
                 "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
                 "retrievedAt": "2026-09-17T16:18:33Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -60718,6 +60720,7 @@
                 "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
                 "retrievedAt": "2026-09-17T16:18:33Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -61332,6 +61335,7 @@
                 "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
                 "retrievedAt": "2026-09-17T16:18:33Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -61683,6 +61687,7 @@
                 "documentSha256": "e66f91a10349e8c16743c0be80ee912815ea56641426bfd09326601db110e0b5",
                 "retrievedAt": "2026-09-17T16:18:33Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -68957,6 +68962,7 @@
                     "documentSha256": "72f7dd63a903f0c048a86193a92b5a0c7b7d83189768b801eed22347a52bcbc5",
                     "retrievedAt": "2026-09-17T16:18:24Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -70156,6 +70162,7 @@
                     "documentSha256": "72f7dd63a903f0c048a86193a92b5a0c7b7d83189768b801eed22347a52bcbc5",
                     "retrievedAt": "2026-09-17T16:18:24Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -71974,6 +71981,7 @@
                         "documentSha256": "c319fa64f9ccfee38b950c3788e7290e15ef9ad41eb4edef5fb5cded0434bf64",
                         "retrievedAt": "2026-09-17T16:17:57Z",
                         "financialEvidenceStatus": "verified",
+                        "nameAlias": null,
                         "unitsEvidenceKind": "publishers_data_dictionary",
                         "unitsEvidenceSource": {
                           "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -73481,6 +73489,7 @@
                         "documentSha256": "c319fa64f9ccfee38b950c3788e7290e15ef9ad41eb4edef5fb5cded0434bf64",
                         "retrievedAt": "2026-09-17T16:17:57Z",
                         "financialEvidenceStatus": "verified",
+                        "nameAlias": null,
                         "unitsEvidenceKind": "publishers_data_dictionary",
                         "unitsEvidenceSource": {
                           "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -90294,6 +90303,7 @@
                     "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
                     "retrievedAt": "2026-09-17T16:18:22Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -91942,6 +91952,7 @@
                     "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
                     "retrievedAt": "2026-09-17T16:18:22Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -92320,6 +92331,7 @@
                     "documentSha256": "315d1bb87918223ace16ecdf3127b25c5b7201b752fd026ce524661528dd137f",
                     "retrievedAt": "2026-09-17T16:18:22Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -94036,6 +94048,7 @@
                     "documentSha256": "e7a80ab91f75e1efaf78ddd0ff775ade234b0eb2d9cd88f72e0a3c1a52e1468c",
                     "retrievedAt": "2026-09-17T16:17:53Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -97860,6 +97873,39 @@
                       }
                     }
                   ],
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "bureau",
+                    "key": "013/us-patent-and-trademark-office",
+                    "apiName": "U.S. Patent and Trademark Office",
+                    "toptierCode": "013",
+                    "toptierName": "Department of Commerce",
+                    "bureauId": "us-patent-and-trademark-office",
+                    "amount": 3450206210.23,
+                    "amountRaw": "3450206210.23",
+                    "obligations": 3824111156.39,
+                    "accounts": 2,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/agency/013/sub_components/?fiscal_year=2026&limit=100",
+                    "fixture": "tests/fixtures/usaspending/sub_components/013.json",
+                    "documentSha256": "cb3dc098e3c982856cd0e0c04d697441fbf9c78636db1815ec27c19376054950",
+                    "retrievedAt": "2026-09-17T16:17:55Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "USPTO — Patent & Trademark Office",
+                      "apiName": "U.S. Patent and Trademark Office",
+                      "basis": "The same words: the graph leads with the abbreviation it also spells out."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -98436,6 +98482,7 @@
                     "documentSha256": "cb3dc098e3c982856cd0e0c04d697441fbf9c78636db1815ec27c19376054950",
                     "retrievedAt": "2026-09-17T16:17:55Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -100847,6 +100894,7 @@
                     "documentSha256": "e6d23939da78ea1301e2bdd11b969165ceba8a1e15f36774c09493ad8180a355",
                     "retrievedAt": "2026-09-17T16:18:13Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -101531,6 +101579,7 @@
                     "documentSha256": "e6d23939da78ea1301e2bdd11b969165ceba8a1e15f36774c09493ad8180a355",
                     "retrievedAt": "2026-09-17T16:18:13Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -107504,6 +107553,39 @@
                       }
                     }
                   ],
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "bureau",
+                    "key": "086/fair-housing-and-equal-opportunity",
+                    "apiName": "Fair Housing and Equal Opportunity",
+                    "toptierCode": "086",
+                    "toptierName": "Department of Housing and Urban Development",
+                    "bureauId": "fair-housing-and-equal-opportunity",
+                    "amount": 51413697.75,
+                    "amountRaw": "51413697.75",
+                    "obligations": 147.77,
+                    "accounts": 1,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/agency/086/sub_components/?fiscal_year=2026&limit=100",
+                    "fixture": "tests/fixtures/usaspending/sub_components/086.json",
+                    "documentSha256": "d1dc5235cb01cb07a6e4e12a44ee0a3737b485769dfc0483a99d9a04e3f17159",
+                    "retrievedAt": "2026-09-17T16:18:08Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "Office of Fair Housing & Equal Opportunity (FHEO)",
+                      "apiName": "Fair Housing and Equal Opportunity",
+                      "basis": "The same words: the API drops the 'Office of' prefix the graph carries."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -111627,6 +111709,39 @@
                       }
                     }
                   ],
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "bureau",
+                    "key": "069/pipeline-and-hazardous-materials-safety-administration",
+                    "apiName": "Pipeline and Hazardous Materials Safety Administration",
+                    "toptierCode": "069",
+                    "toptierName": "Department of Transportation",
+                    "bureauId": "pipeline-and-hazardous-materials-safety-administration",
+                    "amount": 380317292.93,
+                    "amountRaw": "380317292.93",
+                    "obligations": 201486567.08,
+                    "accounts": 7,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/agency/069/sub_components/?fiscal_year=2026&limit=100",
+                    "fixture": "tests/fixtures/usaspending/sub_components/069.json",
+                    "documentSha256": "b08ee061819f6c57cea48fbb178ff6a8b336588f218c56215f9a1cab673f7f5a",
+                    "retrievedAt": "2026-09-17T16:18:17Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+                      "apiName": "Pipeline and Hazardous Materials Safety Administration",
+                      "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and '&' for 'and'."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -113097,6 +113212,7 @@
                     "documentSha256": "a68ee47620595dfde8b2efbe69f56d843e56485c8995a46648b6fba8e79dd127",
                     "retrievedAt": "2026-09-17T16:18:01Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -140466,6 +140582,7 @@
                     "documentSha256": "2d985589aaf54a010427818bf83d771aa24d5d53424c282bd703aa68f984ce25",
                     "retrievedAt": "2026-09-17T16:18:20Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -146523,6 +146640,7 @@
                     "documentSha256": "37119d8f40530fe4371afbb090a240b7967c53d76b8a139f6e570eda074fdf36",
                     "retrievedAt": "2026-09-17T16:18:06Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -147082,14 +147200,6 @@
                       "costSourceCount": 0
                     }
                   ],
-                  "rollup_total_amount": 10932150297.01,
-                  "budget_source": "Treasury MTS Table 5",
-                  "treasury_row_name": "United States Coast Guard",
-                  "budget_as_of": "2026-07-31",
-                  "budget_year": "2026",
-                  "amount_kind": "fytd_net_outlays",
-                  "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup",
                   "sourceUrls": [
                     "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
                   ],
@@ -147097,10 +147207,6 @@
                     "treasury_outlays",
                     "government_dataset"
                   ],
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
@@ -147113,6 +147219,27 @@
                   "proofReason": "official_source_recorded",
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59084374",
+                  "resolved_total_amount": 10932150297.01,
+                  "cost_status": "official",
+                  "cost_basis": "treasury_rollup",
+                  "cost_validation": "matched_official_rollup",
+                  "child_cost_basis": "subtree",
+                  "costVerificationStatus": "verified",
+                  "costConfidenceScore": 0.95,
+                  "costVerificationReason": "matched_official_rollup",
+                  "costSourceCount": 1,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
+                  "rollup_total_amount": 10932150297.01,
+                  "budget_source": "Treasury MTS Table 5",
+                  "treasury_row_name": "United States Coast Guard",
+                  "budget_as_of": "2026-07-31",
+                  "budget_year": "2026",
+                  "amount_kind": "fytd_net_outlays",
+                  "source_system": "Treasury Fiscal Data",
+                  "allocation_basis": "treasury_rollup",
                   "employeesOfficial": 9583,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -147130,16 +147257,7 @@
                       "employees": 9677
                     },
                     "agencyMatched": "exec-dept-dhs"
-                  },
-                  "resolved_total_amount": 10932150297.01,
-                  "cost_status": "official",
-                  "cost_basis": "treasury_rollup",
-                  "cost_validation": "matched_official_rollup",
-                  "child_cost_basis": "subtree",
-                  "costVerificationStatus": "verified",
-                  "costConfidenceScore": 0.95,
-                  "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  }
                 },
                 {
                   "id": "exec-dept-dhs-fletc",
@@ -147495,6 +147613,7 @@
                     "documentSha256": "37119d8f40530fe4371afbb090a240b7967c53d76b8a139f6e570eda074fdf36",
                     "retrievedAt": "2026-09-17T16:18:06Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -178391,6 +178510,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -178787,6 +178907,39 @@
                     }
                   ],
                   "placementCheckable": false,
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "077",
+                    "apiName": "U.S. International Development Finance Corporation",
+                    "toptierCode": "077",
+                    "toptierName": "U.S. International Development Finance Corporation",
+                    "bureauId": null,
+                    "amount": 1550586075.11,
+                    "amountRaw": "1550586075.11",
+                    "obligations": 1481540532.84,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "U.S. International Development Finance Corp (DFC)",
+                      "apiName": "U.S. International Development Finance Corporation",
+                      "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "sourceUrls": [],
                   "sourceTypes": [],
                   "sourceCount": 0,
@@ -179567,6 +179720,39 @@
                   "proofStatus": "baseline",
                   "proofReason": "trusted_base_graph",
                   "placementCheckable": false,
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "514",
+                    "apiName": "U.S. Agency for Global Media",
+                    "toptierCode": "514",
+                    "toptierName": "U.S. Agency for Global Media",
+                    "bureauId": null,
+                    "amount": 490569804.02,
+                    "amountRaw": "490569804.02",
+                    "obligations": 525540488.69,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "Broadcasting Board of Governors / USAGM",
+                      "apiName": "U.S. Agency for Global Media",
+                      "basis": "One agency under both its names: the graph carries the former and the abbreviation of the current one, and the API prints the current one in full."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
+                  },
                   "resolved_total_amount": 204893543.98,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -179832,6 +180018,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -180631,6 +180818,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -180894,6 +181082,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -181157,6 +181346,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -181454,6 +181644,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -181827,6 +182018,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -182170,6 +182362,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -182427,6 +182620,39 @@
                     "agencyUrl": "http://www.csb.gov/",
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "usaspendingOutlays": {
+                    "source": "usaspending_file_ab",
+                    "basis": "gross_outlays",
+                    "level": "toptier",
+                    "key": "510",
+                    "apiName": "United States Chemical Safety Board",
+                    "toptierCode": "510",
+                    "toptierName": "United States Chemical Safety Board",
+                    "bureauId": null,
+                    "amount": 10911861.57,
+                    "amountRaw": "10911861.57",
+                    "obligations": 9981790.64,
+                    "accounts": null,
+                    "fiscalYear": 2026,
+                    "periodCoverage": "fiscal_year_to_date",
+                    "periodAsOf": "2026-09-17",
+                    "url": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+                    "fixture": "tests/fixtures/usaspending/toptier_agencies.json",
+                    "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+                    "retrievedAt": "2026-09-17T16:12:34Z",
+                    "financialEvidenceStatus": "partial",
+                    "nameAlias": {
+                      "graphName": "Chemical Safety & Hazard Investigation Board (CSB)",
+                      "apiName": "United States Chemical Safety Board",
+                      "basis": "One board under its short and long forms; both carry CSB, and the API's row is the only chemical-safety entry in the toptier list."
+                    },
+                    "unitsEvidenceKind": "publishers_data_dictionary",
+                    "unitsEvidenceSource": {
+                      "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+                      "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+                      "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+                    }
                   }
                 },
                 {
@@ -182848,6 +183074,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -184041,6 +184268,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -184304,6 +184532,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -184561,6 +184790,7 @@
                     "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                     "retrievedAt": "2026-09-17T16:12:34Z",
                     "financialEvidenceStatus": "verified",
+                    "nameAlias": null,
                     "unitsEvidenceKind": "publishers_data_dictionary",
                     "unitsEvidenceSource": {
                       "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -186761,6 +186991,7 @@
                 "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                 "retrievedAt": "2026-09-17T16:12:34Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -188421,6 +188652,7 @@
                 "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                 "retrievedAt": "2026-09-17T16:12:34Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -189329,6 +189561,7 @@
                 "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                 "retrievedAt": "2026-09-17T16:12:34Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -189597,6 +189830,7 @@
                 "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                 "retrievedAt": "2026-09-17T16:12:34Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
@@ -196331,6 +196565,7 @@
                 "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
                 "retrievedAt": "2026-09-17T16:12:34Z",
                 "financialEvidenceStatus": "verified",
+                "nameAlias": null,
                 "unitsEvidenceKind": "publishers_data_dictionary",
                 "unitsEvidenceSource": {
                   "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",

@@ -3,7 +3,7 @@
   "source": {
     "kind": "usaspending_file_ab",
     "basis": "gross_outlays",
-    "derivedAt": "2026-09-17T16:51:14Z",
+    "derivedAt": "2026-09-18T00:24:38Z",
     "fixtures": "tests/fixtures/usaspending/"
   },
   "dictionary": {
@@ -17,73 +17,37 @@
   },
   "report": {
     "crosswalk_identifiers": 47,
-    "applied": 37,
+    "applied": 43,
     "applied_by_level": {
-      "toptier": 17,
-      "bureau": 20
+      "toptier": 20,
+      "bureau": 23
     },
     "refused": {
-      "awaiting_review_name_not_equal": 9,
-      "zero_outlay_reported": 1
+      "awaiting_review_api_entity_is_broader": 2,
+      "zero_outlay_reported": 2
     },
     "refused_detail": {
-      "awaiting_review_name_not_equal": [
-        {
-          "nodeId": "exec-dept-doc-uspto",
-          "key": "013/us-patent-and-trademark-office",
-          "confidence": "likely",
-          "detail": "API prints 'U.S. Patent and Trademark Office'"
-        },
-        {
-          "nodeId": "exec-dept-dot-phmsa",
-          "key": "069/pipeline-and-hazardous-materials-safety-administration",
-          "confidence": "likely",
-          "detail": "API prints 'Pipeline and Hazardous Materials Safety Administration'"
-        },
-        {
-          "nodeId": "exec-dept-hud-fheo",
-          "key": "086/fair-housing-and-equal-opportunity",
-          "confidence": "likely",
-          "detail": "API prints 'Fair Housing and Equal Opportunity'"
-        },
+      "awaiting_review_api_entity_is_broader": [
         {
           "nodeId": "exec-dept-va-vba",
           "key": "036/benefits-programs",
           "confidence": "speculative",
-          "detail": "API prints 'Benefits Programs'"
+          "detail": "USAspending's bureau is 'Benefits Programs', Treasury's grouping of the compensation, pension, readjustment and insurance accounts the Veterans Benefits Administration administers, at $233bn. That grouping is not the administration, and nothing here establishes that its accounts are exactly this node's."
         },
         {
           "nodeId": "exec-eop-nsc",
           "key": "1100/national-security-council-and-homeland-security-council",
           "confidence": "speculative",
-          "detail": "API prints 'National Security Council and Homeland Security Council'"
-        },
+          "detail": "USAspending's bureau is 'National Security Council and Homeland Security Council', which covers two bodies. The graph carries no Homeland Security Council node, so the key is broader than this node by whatever share of it that council is."
+        }
+      ],
+      "zero_outlay_reported": [
         {
           "nodeId": "exec-ind-misc-americorps",
           "key": "485",
           "confidence": "speculative",
-          "detail": "API prints 'Corporation for National and Community Service'"
+          "detail": "Corporation for National and Community Service"
         },
-        {
-          "nodeId": "exec-ind-misc-broadcasting-board-of-governors-usagm",
-          "key": "514",
-          "confidence": "likely",
-          "detail": "API prints 'U.S. Agency for Global Media'"
-        },
-        {
-          "nodeId": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
-          "key": "510",
-          "confidence": "likely",
-          "detail": "API prints 'United States Chemical Safety Board'"
-        },
-        {
-          "nodeId": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
-          "key": "077",
-          "confidence": "likely",
-          "detail": "API prints 'U.S. International Development Finance Corporation'"
-        }
-      ],
-      "zero_outlay_reported": [
         {
           "nodeId": "exec-regulatory-ftc",
           "key": "029",
@@ -288,6 +252,49 @@
       "obligations": 93021703.52,
       "accounts": 1,
       "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-dept-doc-uspto": {
+      "nodeId": "exec-dept-doc-uspto",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 3450206210.23,
+      "amountRaw": "3450206210.23",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"total_outlays\":3450206210.23",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "U.S. Patent and Trademark Office",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/agency/013/sub_components/?fiscal_year=2026&limit=100",
+      "documentSha256": "cb3dc098e3c982856cd0e0c04d697441fbf9c78636db1815ec27c19376054950",
+      "retrievedAt": "2026-09-17T16:17:55Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/sub_components/013.json",
+        "key": "013/us-patent-and-trademark-office"
+      },
+      "level": "bureau",
+      "toptierCode": "013",
+      "toptierName": "Department of Commerce",
+      "bureauId": "us-patent-and-trademark-office",
+      "obligations": 3824111156.39,
+      "accounts": 2,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "USPTO — Patent & Trademark Office",
+        "apiName": "U.S. Patent and Trademark Office",
+        "basis": "The same words: the graph leads with the abbreviation it also spells out."
+      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-dept-doe-nnsa": {
@@ -516,6 +523,92 @@
       "obligations": 40072086.1,
       "accounts": 1,
       "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-dept-dot-phmsa": {
+      "nodeId": "exec-dept-dot-phmsa",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 380317292.93,
+      "amountRaw": "380317292.93",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"total_outlays\":380317292.93",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "Pipeline and Hazardous Materials Safety Administration",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/agency/069/sub_components/?fiscal_year=2026&limit=100",
+      "documentSha256": "b08ee061819f6c57cea48fbb178ff6a8b336588f218c56215f9a1cab673f7f5a",
+      "retrievedAt": "2026-09-17T16:18:17Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/sub_components/069.json",
+        "key": "069/pipeline-and-hazardous-materials-safety-administration"
+      },
+      "level": "bureau",
+      "toptierCode": "069",
+      "toptierName": "Department of Transportation",
+      "bureauId": "pipeline-and-hazardous-materials-safety-administration",
+      "obligations": 201486567.08,
+      "accounts": 7,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+        "apiName": "Pipeline and Hazardous Materials Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and '&' for 'and'."
+      },
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-dept-hud-fheo": {
+      "nodeId": "exec-dept-hud-fheo",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 51413697.75,
+      "amountRaw": "51413697.75",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"total_outlays\":51413697.75",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "Fair Housing and Equal Opportunity",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/agency/086/sub_components/?fiscal_year=2026&limit=100",
+      "documentSha256": "d1dc5235cb01cb07a6e4e12a44ee0a3737b485769dfc0483a99d9a04e3f17159",
+      "retrievedAt": "2026-09-17T16:18:08Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/sub_components/086.json",
+        "key": "086/fair-housing-and-equal-opportunity"
+      },
+      "level": "bureau",
+      "toptierCode": "086",
+      "toptierName": "Department of Housing and Urban Development",
+      "bureauId": "fair-housing-and-equal-opportunity",
+      "obligations": 147.77,
+      "accounts": 1,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "Office of Fair Housing & Equal Opportunity (FHEO)",
+        "apiName": "Fair Housing and Equal Opportunity",
+        "basis": "The same words: the API drops the 'Office of' prefix the graph carries."
+      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-dept-treasury-fincen": {
@@ -936,6 +1029,92 @@
       "nominationConfidence": "likely",
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
+    "exec-ind-misc-broadcasting-board-of-governors-usagm": {
+      "nodeId": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 490569804.02,
+      "amountRaw": "490569804.02",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"U.S. Agency for Global Media\"; \"outlay_amount\":490569804.02",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "U.S. Agency for Global Media",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "514"
+      },
+      "level": "toptier",
+      "toptierCode": "514",
+      "toptierName": "U.S. Agency for Global Media",
+      "bureauId": null,
+      "obligations": 525540488.69,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "Broadcasting Board of Governors / USAGM",
+        "apiName": "U.S. Agency for Global Media",
+        "basis": "One agency under both its names: the graph carries the former and the abbreviation of the current one, and the API prints the current one in full."
+      },
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
+      "nodeId": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 10911861.57,
+      "amountRaw": "10911861.57",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"United States Chemical Safety Board\"; \"outlay_amount\":10911861.57",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "United States Chemical Safety Board",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "510"
+      },
+      "level": "toptier",
+      "toptierCode": "510",
+      "toptierName": "United States Chemical Safety Board",
+      "bureauId": null,
+      "obligations": 9981790.64,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "Chemical Safety & Hazard Investigation Board (CSB)",
+        "apiName": "United States Chemical Safety Board",
+        "basis": "One board under its short and long forms; both carry CSB, and the API's row is the only chemical-safety entry in the toptier list."
+      },
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
     "exec-ind-misc-election-assistance-commission-eac": {
       "nodeId": "exec-ind-misc-election-assistance-commission-eac",
       "financialEvidenceStatus": "verified",
@@ -1314,6 +1493,49 @@
       "obligations": 24779516.73,
       "accounts": null,
       "nominationConfidence": "likely",
+      "unitsEvidenceKind": "publishers_data_dictionary"
+    },
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
+      "nodeId": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "gross_outlays",
+      "amount": 1550586075.11,
+      "amountRaw": "1550586075.11",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "A: GrossOutlayAmountByTAS_CPE | B: The definition for this element appears in Section 20 of OMB Circular A-11 issued June 2015; a brief summary from A-11 appears below.\r\n\r\nPayments made to liquidate an obligation (other than the repayment of debt principal or other disbursements that are “means of financing” transactions). Outlays generally are equal to cash disbursements but also are recorded for cash-equivalent transactions, such as the issuance of debentures to pay insurance claims, and in a few cases are recorded on an accrual basis such as interest on public issues of the public debt. Outlays are the measure of Government spending. | C: N/A | D: Account Status | E: N/A | F: N/A | G: N/A | H: N/A | I: N/A | J: N/A | K: FA_AccountBalances.csv,\r\nTAS_AccountBalances.csv | L: gross_outlay_amount | M: appropriation_account_balances | N: gross_outlay_amount_by_tas_cpe | O: N/A | P: N/A | Q: N/A",
+      "unitsEvidenceSource": {
+        "file": "tests/fixtures/usaspending/data_dictionary_crosswalk.xlsx",
+        "sha256": "d9d9b42747d1e8ac74de1a955847aafda5a3da0ca9ee00f07da9ddf582d40c23",
+        "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
+      },
+      "quote": "\"agency_name\":\"U.S. International Development Finance Corporation\"; \"outlay_amount\":1550586075.11",
+      "fiscalYear": 2026,
+      "periodCoverage": "fiscal_year_to_date",
+      "periodAsOf": "2026-09-17",
+      "amountScope": "U.S. International Development Finance Corporation",
+      "scopeMatch": "proxy",
+      "rollupRole": "total",
+      "sourceType": "usaspending_file_ab",
+      "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
+      "documentSha256": "a6d73e48293fa247861b94cd4d548a307adb32fd7bf8669349d2f573aef181a8",
+      "retrievedAt": "2026-09-17T16:12:34Z",
+      "locator": {
+        "file": "tests/fixtures/usaspending/toptier_agencies.json",
+        "key": "077"
+      },
+      "level": "toptier",
+      "toptierCode": "077",
+      "toptierName": "U.S. International Development Finance Corporation",
+      "bureauId": null,
+      "obligations": 1481540532.84,
+      "accounts": null,
+      "nominationConfidence": "likely",
+      "nameAlias": {
+        "graphName": "U.S. International Development Finance Corp (DFC)",
+        "apiName": "U.S. International Development Finance Corporation",
+        "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'."
+      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-regulatory-cftc": {

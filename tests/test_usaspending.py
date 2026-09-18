@@ -65,18 +65,30 @@ class RealFixturePinTests(unittest.TestCase):
 
     def test_what_the_first_pass_applied_and_held(self) -> None:
         self.assertEqual(self.report["crosswalk_identifiers"], 47)
-        self.assertEqual(self.report["applied"], 37)
-        self.assertEqual(self.report["applied_by_level"], {"toptier": 17, "bureau": 20})
+        self.assertEqual(self.report["applied"], 43)
+        self.assertEqual(self.report["applied_by_level"], {"toptier": 20, "bureau": 23})
         held = self.report["refused"]
-        self.assertEqual(held.get("awaiting_review_name_not_equal"), 9, held)
-        self.assertEqual(held.get("zero_outlay_reported"), 1, "the FTC row prints an outlay of 0.0 and zero is never published")
-        # Every held proposal keeps the confidence its proposer gave it.
-        for item in self.report["refused_detail"]["awaiting_review_name_not_equal"]:
+        # Nothing is held on spelling any more: the six that were are aliased
+        # with a recorded basis, and AmeriCorps fell through to the real
+        # blocker underneath its spelling, which is that the row prints 0.0.
+        self.assertNotIn("awaiting_review_name_not_equal", held)
+        self.assertEqual(held.get("zero_outlay_reported"), 2, "the FTC and CNCS rows print 0.0 and zero is never published")
+        # The two that stay held are not spelling at all: the API's entity is a
+        # larger thing that contains the node, which no alias can fix.
+        self.assertEqual(held.get("awaiting_review_api_entity_is_broader"), 2, held)
+        broader = {item["nodeId"] for item in self.report["refused_detail"]["awaiting_review_api_entity_is_broader"]}
+        self.assertEqual(broader, {"exec-dept-va-vba", "exec-eop-nsc"})
+        for item in self.report["refused_detail"]["awaiting_review_api_entity_is_broader"]:
             self.assertIn(item["confidence"], ("likely", "speculative"))
 
     def test_every_record_is_the_fixture_s_own_figure_and_graded_by_the_validator(self) -> None:
         for node_id, record in self.records.items():
-            self.assertEqual(record["financialEvidenceStatus"], "verified", node_id)
+            # A record whose names agree is graded verified; one resting on a
+            # recorded alias is graded down, because an alias is a claim about
+            # two names and cannot earn what name equality earns.
+            aliased = isinstance(record.get("nameAlias"), dict)
+            self.assertEqual(record["financialEvidenceStatus"], "partial" if aliased else "verified", node_id)
+            self.assertEqual(record["scopeMatch"], "proxy" if aliased else "exact", node_id)
             self.assertEqual(record["unitsEvidenceKind"], "publishers_data_dictionary", node_id)
             self.assertIn(record["amountRaw"].replace(",", ""), record["quote"].replace(",", ""), node_id)
             self.assertEqual(record["periodCoverage"], "fiscal_year_to_date")
@@ -99,15 +111,18 @@ class MatchingTests(unittest.TestCase):
         return {"system": "usaspending_file_ab", "key": key, "basis": "test", "confidence": confidence, "metric": metric}
 
     def test_a_name_equal_key_is_applied_and_an_unequal_one_is_held_with_its_confidence(self) -> None:
+        # The Department of Energy pointed at Agriculture's toptier code: the
+        # names do not agree, no alias says they are one unit, so nothing is
+        # published and the proposer's confidence rides along for the curator.
         records, report = usaspending.build_records(
             self.node_map,
-            {"exec-dept-usda": self._ident("012"), "exec-ind-misc-americorps": self._ident("485", "speculative")},
+            {"exec-dept-usda": self._ident("012"), "exec-dept-doe": self._ident("012", "speculative")},
             dictionary=self.dictionary,
         )
         self.assertIn("exec-dept-usda", records)
-        self.assertNotIn("exec-ind-misc-americorps", records)
+        self.assertNotIn("exec-dept-doe", records)
         held = report["refused_detail"]["awaiting_review_name_not_equal"]
-        self.assertEqual(held[0]["nodeId"], "exec-ind-misc-americorps")
+        self.assertEqual(held[0]["nodeId"], "exec-dept-doe")
         self.assertEqual(held[0]["confidence"], "speculative")
 
     def test_a_post_an_unknown_node_and_another_metric_are_refused(self) -> None:
@@ -156,6 +171,74 @@ class MatchingTests(unittest.TestCase):
         broken["sourceType"] = "treasury_mts"  # the rule is granted to one source type
         with self.assertRaises(Rejected):
             validate_record(broken, node)
+
+
+class NameAliasTests(unittest.TestCase):
+    """An alias says two names are one unit. It may never say more than that.
+
+    Six of the nine proposals held on the first pass differed from the API by
+    an abbreviation, an "Office of" prefix or a rename the graph records both
+    sides of; refusing those was a mechanical name test, not a doubt about
+    identity. Two others were not spelling at all — USAspending's entity was a
+    larger thing containing the node — and no alias can fix that, so they stay
+    held under a reason that says which problem it is.
+    """
+
+    def setUp(self) -> None:
+        root = load_base_graph(BASE_GRAPH)
+        self.node_map, _ = index_tree(root)
+        self.dictionary = usaspending.load_dictionary()
+
+    def _ident(self, key):
+        return {"system": "usaspending_file_ab", "key": key, "basis": "t", "confidence": "likely",
+                "metric": "gross_outlays"}
+
+    def test_the_gate_mirror_equals_the_module_s_table(self) -> None:
+        from scripts.validate_published_graph import USASPENDING_NAME_ALIASES as mirror
+
+        self.assertEqual(
+            {k: (v["graphName"], v["apiName"]) for k, v in usaspending.USASPENDING_NAME_ALIASES.items()},
+            dict(mirror),
+            "the gate is stdlib-only and mirrors the table; the two must not drift",
+        )
+
+    def test_every_alias_names_a_real_node_and_the_name_it_still_carries(self) -> None:
+        for node_id, alias in usaspending.USASPENDING_NAME_ALIASES.items():
+            node = self.node_map.get(node_id)
+            self.assertIsNotNone(node, f"{node_id} is not in the curated file")
+            self.assertEqual(node.get("name"), alias["graphName"],
+                             f"{node_id} no longer carries the name its alias was written against")
+            self.assertTrue(alias["basis"].strip(), f"{node_id}'s alias states no basis")
+
+    def test_an_aliased_key_applies_and_is_graded_down(self) -> None:
+        records, report = usaspending.build_records(
+            self.node_map, {"exec-dept-doc-uspto": self._ident("013/us-patent-and-trademark-office")},
+            dictionary=self.dictionary,
+        )
+        record = records["exec-dept-doc-uspto"]
+        self.assertEqual(record["financialEvidenceStatus"], "partial")
+        self.assertEqual(record["scopeMatch"], "proxy")
+        self.assertEqual(record["nameAlias"]["apiName"], "U.S. Patent and Trademark Office")
+        self.assertEqual(report["applied"], 1)
+
+    def test_an_alias_written_against_another_name_does_not_apply(self) -> None:
+        self.node_map["exec-dept-doc-uspto"]["name"] = "Patent Office"
+        records, report = usaspending.build_records(
+            self.node_map, {"exec-dept-doc-uspto": self._ident("013/us-patent-and-trademark-office")},
+            dictionary=self.dictionary,
+        )
+        self.assertEqual(records, {})
+        self.assertEqual(report["refused"], {"alias_names_a_different_node": 1})
+
+    def test_a_broader_api_entity_is_held_and_never_aliased(self) -> None:
+        for node_id, key in (("exec-dept-va-vba", "036/benefits-programs"),
+                             ("exec-eop-nsc", "1100/national-security-council-and-homeland-security-council")):
+            records, report = usaspending.build_records(
+                self.node_map, {node_id: self._ident(key)}, dictionary=self.dictionary)
+            self.assertEqual(records, {}, node_id)
+            self.assertEqual(report["refused"], {"awaiting_review_api_entity_is_broader": 1}, node_id)
+            self.assertNotIn(node_id, usaspending.USASPENDING_NAME_ALIASES,
+                             "a bureau broader than the node must never be aliased into it")
 
 
 class ApplyToTheTreeTests(unittest.TestCase):

@@ -28,14 +28,40 @@ confidence. A proposal is not a fact. What makes a figure a node's own here
 is the same test `evidence.py` uses to decide whether a page names a unit
 and `financial_evidence.validate_record` uses for `scopeMatch: "exact"`:
 the name the API prints and the name the graph carries reduce to the same
-canonical key. A proposal that rests on anything looser -- an alias
-(AmeriCorps for the Corporation for National and Community Service), an
-abbreviation the API spells out ("Admin" for "Administration"), a bureau
-that is broader than the node (the Department of the Air Force, which holds
-the Space Force) -- is left in the ledger as a proposal and reported as
-`awaiting_review`, with its confidence, so a curator can accept it by
-name or add an alias with a stated basis. 8 of the 47 proposed keys stay
-there on the first pass; the other 39 are name-equal.
+canonical key. **37 of the 47 proposed keys pass that test** and are
+published `verified`.
+
+For the rest the test was doing two different jobs badly, so they are split.
+Six differed from the API by an abbreviation ("Admin" for "Administration",
+"Corp" for "Corporation"), by the "Office of" prefix the API drops, or by a
+rename the graph records both sides of ("Broadcasting Board of Governors /
+USAGM"). Refusing those was a string comparison failing, not a doubt about
+which unit was meant, and `USASPENDING_NAME_ALIASES` records each one with
+the basis on which the two names are taken to denote one unit. An alias is a
+claim about names and never about scope, so a record resting on one is filed
+`scopeMatch: "proxy"` and graded **`partial`**: `exact` is re-derived from
+the names by the validator and would grade `verified`, a stronger claim than
+somebody writing an alias down can earn. The release gate mirrors the table
+by node id, so an alias moved to another node is caught even though both
+names it quotes are real.
+
+Two are not spelling at all, and no alias may touch them: USAspending's
+entity is a larger thing that contains the node. The Veterans Benefits
+Administration's key would be "Benefits Programs", Treasury's grouping of
+the accounts it administers, at $233bn; the National Security Council's
+would be "National Security Council and Homeland Security Council", which
+covers a body this graph does not carry. Aliasing either would publish a
+bigger unit's money as this one's — the first of the three scoping failures
+`docs/COST_NOMINATION_RUNBOOK.md` names — so they stay held under
+`awaiting_review_api_entity_is_broader`, a reason that says which problem it
+actually is.
+
+The seventh alias changed nothing and is the most useful of them. AmeriCorps
+was held on its spelling, which hid the real blocker: `CURATION.md` §2
+already records that the Corporation for National and Community Service is
+its statutory name, and with that written down the record falls through to
+the rule underneath — the fixture prints an `outlay_amount` of `0.0`, and
+zero is never published as a measurement.
 
 **What the figure is, and is not.** `gross_outlays`: File A's
 `GrossOutlayAmountByTAS_CPE`, which the DATA Act Reporting Submission
@@ -106,6 +132,76 @@ DEFAULT_EVIDENCE_PATH = PROJECT_ROOT / "data" / "verification" / "usaspending_ev
 #: `financial_evidence.DICTIONARY_SCALED_SOURCE_TYPES` so the two cannot say
 #: different things without a test noticing.
 DICTIONARY_FIELD, DICTIONARY_ELEMENT = DICTIONARY_SCALED_SOURCE_TYPES[SOURCE][BASIS]
+
+
+#: A node whose name the API spells differently, where the two names denote
+#: the same unit. Each entry records the graph's name as well as the API's, so
+#: the rename guard still holds: an alias is written against one curated name
+#: and stops applying the moment that name changes. `apiName` must be exactly
+#: what the committed fixture prints, which the release gate re-reads.
+#:
+#: An alias is a claim about two names, never about scope. A record built from
+#: one is filed `scopeMatch: "proxy"` and graded `partial`, the same choice
+#: `judicial_pay.py` and `congressional_pay.py` make deliberately: `exact` is
+#: re-derived from the names by `financial_evidence.validate_record` and would
+#: grade `verified`, which is a stronger claim than "somebody wrote down that
+#: these two names are the same unit" can earn.
+USASPENDING_NAME_ALIASES: dict[str, dict[str, str]] = {
+    "exec-dept-doc-uspto": {
+        "graphName": "USPTO — Patent & Trademark Office",
+        "apiName": "U.S. Patent and Trademark Office",
+        "basis": "The same words: the graph leads with the abbreviation it also spells out.",
+    },
+    "exec-dept-dot-phmsa": {
+        "graphName": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+        "apiName": "Pipeline and Hazardous Materials Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and '&' for 'and'.",
+    },
+    "exec-dept-hud-fheo": {
+        "graphName": "Office of Fair Housing & Equal Opportunity (FHEO)",
+        "apiName": "Fair Housing and Equal Opportunity",
+        "basis": "The same words: the API drops the 'Office of' prefix the graph carries.",
+    },
+    "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
+        "graphName": "Chemical Safety & Hazard Investigation Board (CSB)",
+        "apiName": "United States Chemical Safety Board",
+        "basis": "One board under its short and long forms; both carry CSB, and the API's row is the only chemical-safety entry in the toptier list.",
+    },
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
+        "graphName": "U.S. International Development Finance Corp (DFC)",
+        "apiName": "U.S. International Development Finance Corporation",
+        "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'.",
+    },
+    "exec-ind-misc-broadcasting-board-of-governors-usagm": {
+        "graphName": "Broadcasting Board of Governors / USAGM",
+        "apiName": "U.S. Agency for Global Media",
+        "basis": "One agency under both its names: the graph carries the former and the abbreviation of the current one, and the API prints the current one in full.",
+    },
+    "exec-ind-misc-americorps": {
+        "graphName": "AmeriCorps",
+        "apiName": "Corporation for National and Community Service",
+        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps.",
+    },
+}
+
+#: Where the API's entity is not this node under another name but a larger
+#: thing that contains it. No alias can fix that — an alias would publish a
+#: bigger unit's money as this one's, which is the first of the three scoping
+#: failures `docs/COST_NOMINATION_RUNBOOK.md` names — so these stay held, and
+#: the reason says what is actually wrong rather than "the names differ".
+BROADER_API_ENTITY: dict[str, str] = {
+    "exec-dept-va-vba": (
+        "USAspending's bureau is 'Benefits Programs', Treasury's grouping of the compensation, "
+        "pension, readjustment and insurance accounts the Veterans Benefits Administration "
+        "administers, at $233bn. That grouping is not the administration, and nothing here "
+        "establishes that its accounts are exactly this node's."
+    ),
+    "exec-eop-nsc": (
+        "USAspending's bureau is 'National Security Council and Homeland Security Council', which "
+        "covers two bodies. The graph carries no Homeland Security Council node, so the key is "
+        "broader than this node by whatever share of it that council is."
+    ),
+}
 
 
 class Unreadable(Exception):
@@ -379,11 +475,25 @@ def build_records(
             refuse("fixture_unreadable", node_id, identifier, str(error))
             continue
         api_name = str(resolved.get("apiName") or "")
-        if canonical_name_key(api_name) != canonical_name_key(str(node.get("name") or "")):
-            # A proposal, not a fact: the ledger's confidence rides along so a
-            # curator can see which are plain aliases and which are guesses.
-            refuse("awaiting_review_name_not_equal", node_id, identifier, f"API prints {api_name!r}")
-            continue
+        node_name = str(node.get("name") or "")
+        names_equal = canonical_name_key(api_name) == canonical_name_key(node_name)
+        alias = None
+        if not names_equal:
+            if node_id in BROADER_API_ENTITY:
+                refuse("awaiting_review_api_entity_is_broader", node_id, identifier, BROADER_API_ENTITY[node_id])
+                continue
+            candidate = USASPENDING_NAME_ALIASES.get(node_id)
+            if not candidate or candidate["apiName"] != api_name:
+                # A proposal, not a fact: the ledger's confidence rides along so
+                # a curator can see which are plain aliases and which are guesses.
+                refuse("awaiting_review_name_not_equal", node_id, identifier, f"API prints {api_name!r}")
+                continue
+            if canonical_name_key(candidate["graphName"]) != canonical_name_key(node_name):
+                # The alias was written against a name this node no longer has.
+                refuse("alias_names_a_different_node", node_id, identifier,
+                       f"alias is for {candidate['graphName']!r}, node is {node_name!r}")
+                continue
+            alias = candidate
         amount = resolved.get("amount")
         printed = resolved.get("amountRaw")
         if amount is None or printed is None:
@@ -411,7 +521,10 @@ def build_records(
             "periodCoverage": "fiscal_year_to_date",
             "periodAsOf": _as_of_date(resolved.get("retrievedAt")),
             "amountScope": api_name,
-            "scopeMatch": "exact",
+            # An alias is a claim about two names and never about scope, so a
+            # record resting on one is graded down rather than published as if
+            # the source had named the node itself.
+            "scopeMatch": "exact" if names_equal else "proxy",
             "rollupRole": "total",
             "sourceType": SOURCE,
             "sourceUrl": resolved["url"],
@@ -426,6 +539,9 @@ def build_records(
             "accounts": resolved.get("accounts"),
             "nominationConfidence": identifier.get("confidence"),
         }
+        if alias:
+            record["nameAlias"] = {"graphName": alias["graphName"], "apiName": alias["apiName"],
+                                   "basis": alias["basis"]}
         try:
             normalised = validate_record(record, node)
         except Rejected as error:
@@ -498,9 +614,16 @@ def apply_usaspending_evidence(
         ):
             stats["malformed"] += 1
             continue
-        if canonical_name_key(str(record.get("amountScope") or "")) != canonical_name_key(str(node.get("name") or "")):
-            # Keyed by id and never re-derived on a rename: a figure earned by
-            # a different name is not this node's.
+        node_alias = record.get("nameAlias") if isinstance(record.get("nameAlias"), dict) else None
+        # Keyed by id and never re-derived on a rename: a figure earned by a
+        # different name is not this node's. An aliased record is held to the
+        # same rule from both ends — the source must still print the name the
+        # alias was written for, and the node must still carry the one it was
+        # written against.
+        expected_scope = (node_alias or {}).get("apiName") or str(node.get("name") or "")
+        expected_name = (node_alias or {}).get("graphName") or str(node.get("name") or "")
+        if (canonical_name_key(str(record.get("amountScope") or "")) != canonical_name_key(expected_scope)
+                or canonical_name_key(str(node.get("name") or "")) != canonical_name_key(expected_name)):
             stats["stale_name"] += 1
             continue
         block: dict[str, Any] = {
@@ -524,6 +647,7 @@ def apply_usaspending_evidence(
             "documentSha256": record.get("documentSha256"),
             "retrievedAt": record.get("retrievedAt"),
             "financialEvidenceStatus": record.get("financialEvidenceStatus"),
+            "nameAlias": node_alias,
             "unitsEvidenceKind": record.get("unitsEvidenceKind"),
             "unitsEvidenceSource": record.get("unitsEvidenceSource"),
         }

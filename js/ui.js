@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260917a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260917a";
+import { createGovernmentGraph } from "./graph.js?v=20260918a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260918a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -633,7 +633,14 @@ function renderHeadcountProvenance(data) {
       : `toptier ${fileA.toptierCode}`;
     add(`USAspending's File A reports gross outlays of $${Math.round(fileA.amount).toLocaleString()} for "${fileA.apiName}" (${where}) for FY${fileA.fiscalYear} through ${fileA.periodAsOf}`);
     if (fetched) add(`, fetched ${fetched}`);
-    add(". This is a gross, year-to-date figure from a different system than the Treasury statement's net line; it is shown beside the cost and is not the cost. ");
+    add(". ");
+    // When the API spells the unit differently, say so rather than leaving a
+    // reader to wonder why the quoted name is not the one above it. The basis
+    // is the recorded reason the two names are taken to be one unit.
+    if (fileA.nameAlias && typeof fileA.nameAlias === "object") {
+      add(`USAspending spells this unit differently from the graph — "${fileA.nameAlias.apiName}" against "${fileA.nameAlias.graphName}". ${fileA.nameAlias.basis} Because that match rests on a recorded alias rather than on the two names agreeing, this figure is held to the weaker grade. `);
+    }
+    add("This is a gross, year-to-date figure from a different system than the Treasury statement's net line; it is shown beside the cost and is not the cost. ");
   }
   if (!hasHeadcount) return;
   const on = source.checkedAt

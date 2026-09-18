@@ -457,6 +457,30 @@ def whitehouse_title_core(title):
     return key
 
 
+#: Mirrored from `data_pipeline.verification.usaspending.USASPENDING_NAME_ALIASES`
+#: because this gate is stdlib-only and imports nothing from the pipeline it
+#: checks. node id -> (the curated name the alias was written against, the name
+#: the API prints). Keyed by id for the reason the Senate leadership case
+#: established: an alias moved to another node would otherwise still name two
+#: real strings. `tests/test_usaspending.py` asserts the mirror equals the
+#: module's table, so the two cannot drift.
+USASPENDING_NAME_ALIASES = {
+    "exec-dept-doc-uspto": ("USPTO — Patent & Trademark Office", "U.S. Patent and Trademark Office"),
+    "exec-dept-dot-phmsa": ("Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+                            "Pipeline and Hazardous Materials Safety Administration"),
+    "exec-dept-hud-fheo": ("Office of Fair Housing & Equal Opportunity (FHEO)",
+                           "Fair Housing and Equal Opportunity"),
+    "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": (
+        "Chemical Safety & Hazard Investigation Board (CSB)", "United States Chemical Safety Board"),
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": (
+        "U.S. International Development Finance Corp (DFC)",
+        "U.S. International Development Finance Corporation"),
+    "exec-ind-misc-broadcasting-board-of-governors-usagm": (
+        "Broadcasting Board of Governors / USAGM", "U.S. Agency for Global Media"),
+    "exec-ind-misc-americorps": ("AmeriCorps", "Corporation for National and Community Service"),
+}
+
+
 def usaspending_violations(node, block, today, label):
     """Everything that must be true of a File A gross-outlays block.
 
@@ -549,10 +573,40 @@ def usaspending_violations(node, block, today, label):
         return out
     if not isinstance(printed_amount, (int, float)) or abs(float(printed_amount) - float(amount)) > 0.005:
         say("publishes File A outlay {!r}; the fixture prints {!r} for {!r}".format(amount, printed_amount, block.get("key")))
-    if canonical_key(printed_name) != canonical_key(node.get("name")):
-        say("File A row is named {!r}, which no longer names this node".format(printed_name))
     if canonical_key(block.get("apiName")) != canonical_key(printed_name):
         say("File A block records apiName {!r}; the fixture prints {!r}".format(block.get("apiName"), printed_name))
+    alias = block.get("nameAlias") if isinstance(block.get("nameAlias"), dict) else None
+    if alias is None:
+        if canonical_key(printed_name) != canonical_key(node.get("name")):
+            say("File A row is named {!r}, which no longer names this node".format(printed_name))
+    else:
+        # An alias says two names are one unit. It is only ever a claim about
+        # names, so it may not buy a stronger grade, it must be one this
+        # repository wrote down for THIS node, and it may not paper over a
+        # name that already matches.
+        node_id = str(node.get("id") or "")
+        mirrored = USASPENDING_NAME_ALIASES.get(node_id)
+        if mirrored is None:
+            say("File A block claims a name alias this repository does not carry for it")
+        else:
+            graph_name, api_name = mirrored
+            if canonical_key(alias.get("graphName")) != canonical_key(graph_name):
+                say("File A alias was written against {!r}; this gate carries {!r}".format(
+                    alias.get("graphName"), graph_name))
+            if canonical_key(alias.get("apiName")) != canonical_key(api_name):
+                say("File A alias names {!r}; this gate carries {!r}".format(alias.get("apiName"), api_name))
+            if canonical_key(node.get("name")) != canonical_key(graph_name):
+                say("File A alias was written against {!r}, and this node is now called {!r}".format(
+                    graph_name, node.get("name")))
+            if canonical_key(alias.get("apiName")) != canonical_key(printed_name):
+                say("File A alias names {!r}; the fixture prints {!r}".format(alias.get("apiName"), printed_name))
+        if canonical_key(printed_name) == canonical_key(node.get("name")):
+            say("File A block carries a name alias, but the fixture already names this node")
+        if str(block.get("financialEvidenceStatus") or "") != "partial":
+            say("File A block rests on a name alias but is graded {!r}; an alias cannot earn 'verified'".format(
+                block.get("financialEvidenceStatus")))
+        if not str(alias.get("basis") or "").strip():
+            say("File A alias carries no basis saying why the two names are one unit")
     # Never the cost. Gross is not net, and year-to-date is not a period the
     # Treasury line reports, so equality here means the figure leaked.
     measured = str(node.get("cost_status") or "") in ("official", "root_total")
@@ -1874,11 +1928,14 @@ def main(argv):
     print("  weights disputed     : {:,} allocated shares were apportioned by a headcount OPM's file contradicts".format(
         len(disputed)))
     file_a = [n for n in nodes if isinstance(n.get("usaspendingOutlays"), dict)]
+    aliased = [n for n in file_a if isinstance(n["usaspendingOutlays"].get("nameAlias"), dict)]
     print("  USAspending File A   : {:,} organisations carry a gross-outlays figure ({:,} toptier, {:,} bureau), "
-          "fiscal-year-to-date, beside the cost and never as it".format(
+          "fiscal-year-to-date, beside the cost and never as it; {:,} of them rest on a recorded name alias "
+          "and are graded partial".format(
         len(file_a),
         sum(1 for n in file_a if n["usaspendingOutlays"].get("level") == "toptier"),
-        sum(1 for n in file_a if n["usaspendingOutlays"].get("level") == "bureau")))
+        sum(1 for n in file_a if n["usaspendingOutlays"].get("level") == "bureau"),
+        len(aliased)))
     with_rate = sum(1 for n in listings if isinstance(n["positionListing"].get("reportedPay"), (int, float)))
     with_level = sum(1 for n in listings if n["positionListing"].get("payLevel"))
     print("  archive pay          : {:,} positions carry a rate of basic pay the archive reports; {:,} carry a level or grade only".format(

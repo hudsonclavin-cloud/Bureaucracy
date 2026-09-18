@@ -1244,12 +1244,44 @@ Smithsonian, the Fed; 221 are not separable under their toptier; 38 are an
 ancestor's key). `data_pipeline/verification/usaspending.py` then applies a
 proposal only where the API's name and the node's reduce to the same
 canonical key — the test `evidence.py` uses for a page label and
-`financial_evidence` uses for `scopeMatch: exact` — so **37 organisations
-carry `usaspendingOutlays`** (17 toptier, 20 bureau) and **9 proposals are
-held** as `awaiting_review_name_not_equal` with the proposer's confidence
-(USPTO, PHMSA and FHEO differ from the API by an abbreviation; AmeriCorps,
-USAGM, DFC and CSB by an alias; VBA and the NSC by a bureau broader than the
-node). The FTC's key is refused because the fixture prints an outlay of 0.0.
+`financial_evidence` uses for `scopeMatch: exact`. **37 pass that test** and
+publish `verified`.
+
+The other ten were, on 2026-09-17, all held under one reason, and that reason
+was doing two different jobs badly. **Six were spelling**: an abbreviation
+("Admin" for "Administration", "Corp" for "Corporation"), the "Office of"
+prefix the API drops, or a rename the graph records both sides of
+("Broadcasting Board of Governors / USAGM"). Refusing those was a string
+comparison failing, not a doubt about which unit was meant, so
+`USASPENDING_NAME_ALIASES` records each with the basis on which the two names
+denote one unit — and an alias buys nothing beyond that: the record is filed
+`scopeMatch: proxy` and graded **`partial`**, because `exact` is re-derived
+from the names by the validator and would grade `verified`, a stronger claim
+than writing an alias down can earn. That is the same deliberate downgrade
+`judicial_pay.py` and `congressional_pay.py` make. The gate mirrors the table
+by node id, so an alias moved to another node is caught even though both
+names it quotes are real. **43 organisations now carry `usaspendingOutlays`**
+(20 toptier, 23 bureau), 6 of them on an alias and graded partial, and the
+panel says so in as many words rather than leaving a reader to wonder why the
+quoted name differs from the one above it.
+
+**Two are not spelling and no alias may touch them**, because USAspending's
+entity is a larger thing containing the node: the VBA's key would be
+"Benefits Programs", Treasury's grouping of the accounts it administers, at
+$233bn, and the NSC's would be "National Security Council and Homeland
+Security Council", covering a body this graph has no node for. Aliasing
+either publishes a bigger unit's money as this one's, the first of the three
+scoping failures `docs/COST_NOMINATION_RUNBOOK.md` names, so both stay held
+under `awaiting_review_api_entity_is_broader` — a reason that says which
+problem it actually is.
+
+The seventh alias changed no figure and is the most useful of them.
+AmeriCorps was held on its spelling, which hid the real blocker: `CURATION.md`
+§2 already records the Corporation for National and Community Service as its
+statutory name, and with that written down the record falls through to the
+rule underneath — the fixture prints an `outlay_amount` of `0.0`, and zero is
+never published as a measurement. The FTC's key is refused for the same
+reason.
 
 The figure is `gross_outlays`: File A's `GrossOutlayAmountByTAS_CPE`, which
 the DATA Act specification crosswalks to GTAS SF 133 line 3020 "Outlays,
