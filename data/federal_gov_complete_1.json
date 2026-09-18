@@ -18777,13 +18777,15 @@
               "children": [
                 {
                   "id": "exec-dept-treasury-secretary-of-department-of-the-treasury",
-                  "name": "Secretary of Department of the Treasury",
+                  "name": "Secretary of the Treasury",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury",
@@ -25055,13 +25057,15 @@
               "children": [
                 {
                   "id": "exec-dept-doi-secretary-of-department-of-the-interior-doi",
-                  "name": "Secretary of Department of the Interior (DOI)",
+                  "name": "Secretary of the Interior",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi",
@@ -25976,13 +25980,15 @@
               "children": [
                 {
                   "id": "exec-dept-usda-secretary-of-department-of-agriculture-usda",
-                  "name": "Secretary of Department of Agriculture (USDA)",
+                  "name": "Secretary of Agriculture",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda",
@@ -26676,13 +26682,15 @@
               "children": [
                 {
                   "id": "exec-dept-doc-secretary-of-department-of-commerce",
-                  "name": "Secretary of Department of Commerce",
+                  "name": "Secretary of Commerce",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-doc-deputy-secretary-of-department-of-commerce",
@@ -28046,23 +28054,27 @@
               "children": [
                 {
                   "id": "exec-dept-hhs-secretary-of-department-of-health-human-services-hhs",
-                  "name": "Secretary of Department of Health & Human Services (HHS)",
+                  "name": "Secretary of Health and Human Services",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-hhs-deputy-secretary-of-department-of-health-human-services-hhs",
-                  "name": "Deputy Secretary of Department of Health & Human Services (HHS)",
+                  "name": "Deputy Secretary of Health and Human Services",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-hhs-chief-of-staff",
@@ -29085,23 +29097,27 @@
               "children": [
                 {
                   "id": "exec-dept-hud-secretary-of-department-of-housing-urban-development-hud",
-                  "name": "Secretary of Department of Housing & Urban Development (HUD)",
+                  "name": "Secretary of Housing and Urban Development",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-hud-deputy-secretary-of-department-of-housing-urban-development-hud",
-                  "name": "Deputy Secretary of Department of Housing & Urban Development (HUD)",
+                  "name": "Deputy Secretary of Housing and Urban Development",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-hud-chief-of-staff",
@@ -30021,23 +30037,27 @@
               "children": [
                 {
                   "id": "exec-dept-dot-secretary-of-department-of-transportation-dot",
-                  "name": "Secretary of Department of Transportation (DOT)",
+                  "name": "Secretary of Transportation",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-dot-deputy-secretary-of-department-of-transportation-dot",
-                  "name": "Deputy Secretary of Department of Transportation (DOT)",
+                  "name": "Deputy Secretary of Transportation",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-dot-chief-of-staff",
@@ -32767,23 +32787,27 @@
               "children": [
                 {
                   "id": "exec-dept-ed-secretary-of-department-of-education",
-                  "name": "Secretary of Department of Education",
+                  "name": "Secretary of Education",
                   "type": "Position",
                   "desc": "Principal head of the department; cabinet-level officer appointed by the President.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-ed-deputy-secretary-of-department-of-education",
-                  "name": "Deputy Secretary of Department of Education",
+                  "name": "Deputy Secretary of Education",
                   "type": "Position",
                   "desc": "Second-in-command; acts as Secretary when absent.",
                   "employees": null,
                   "budget": null,
                   "color": "#666666",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_in_5_usc_5312_5316",
+                  "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
                 },
                 {
                   "id": "exec-dept-ed-chief-of-staff",

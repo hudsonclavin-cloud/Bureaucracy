@@ -764,6 +764,29 @@ try {
   const slateImposters = allNodes.filter((n) => n.color === "#8aa0b0" && String(n.synthetic || "") !== "treasury_receipts");
   check("nothing else is drawn in that colour", slateImposters.length === 0, slateImposters.slice(0, 3).map((n) => n.id).join(", "));
 
+  // The Executive Schedule rate current law sets. The most recognisable posts
+  // in the government carried no pay evidence at all before this: the panel
+  // must print the statute's citation and its own title for the office, since
+  // fifteen nodes share the identical Level I figure and the citation is the
+  // only thing tying a figure to this post rather than another's.
+  const withSchedulePay = allNodes.find((n) => n.positionSchedulePay && typeof n.positionSchedulePay.amount === "number");
+  check("some position is priced at the level the U.S. Code sets", Boolean(withSchedulePay), "none");
+  if (withSchedulePay) {
+    await page.fill("#search-input", withSchedulePay.name.slice(0, 28));
+    await page.waitForTimeout(600);
+    await page.locator("#search-results .sr-item").first().click();
+    await page.waitForTimeout(700);
+    const sched = await text("#info-panel");
+    check("the panel cites the section of the Code", /5 U\.S\.C\. §53\d\d/.test(sched), sched.slice(0, 400));
+    check("the panel names the office as the Code names it", sched.includes(withSchedulePay.positionSchedulePay.statutoryTitle), sched.slice(0, 400));
+    check("the panel says it is two documents", /statute sets the level and the table sets the rate/.test(sched), sched.slice(0, 600));
+    check("a statutory rate is never called this unit's cost", /not a share of federal outlays/.test(sched), sched.slice(0, 900));
+    // The 2026-09-11 failure, checked from the served graph rather than trusted.
+    check("a statutory rate did not make the post verified",
+      !(withSchedulePay.sourceUrls || []).some((u) => String(u).includes("uscode.house.gov")),
+      JSON.stringify(withSchedulePay.sourceUrls || []));
+  }
+
   // The depth buttons are a fixed HTML list (1..12) that does not know how
   // deep the loaded tree actually is (MAX_DEPTH=20 caps it further still).
   // A button past the real depth must be disabled and say why, not sit there

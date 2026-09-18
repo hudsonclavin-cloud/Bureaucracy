@@ -176,9 +176,22 @@ class RunTests(unittest.TestCase):
         self.assertIn("left alone", text)
         # A correct title is not template-shaped and is never touched.
         self.assertEqual(names["dod-sec"], "Secretary of Defense")
-        # Every rename says where the name came from.
+        # Every rename says where the name came from, and WHICH source won.
+        # Since 2026-09-18 the U.S. Code is tried first, so a title 5 U.S.C.
+        # 5312-5316 prints is cited to the statute rather than to the archive
+        # -- current law naming the office beats a snapshot of who held it.
         nodes = index_tree(json.loads(self.base.read_text(encoding="utf-8")))[0]
-        for node_id in ("doj-sec", "doj-dep", "state-sec", "state-dep"):
+        for node_id in ("state-sec", "state-dep"):
+            with self.subTest(node=node_id):
+                self.assertEqual(nodes[node_id]["nameSource"], "named_in_5_usc_5312_5316")
+                self.assertTrue(nodes[node_id]["nameSourceDetail"].startswith("https://uscode.house.gov/"))
+        # Justice still comes from the archive, and that is the whole point of
+        # the statute selecting rather than producing: the transform yields
+        # "Secretary of Justice", the Executive Schedule prints no such title
+        # (the office is the Attorney General), so nothing is selected and DOJ
+        # falls through to the source below. "Attorney General" itself names no
+        # department, so it is not selected for Justice either.
+        for node_id in ("doj-sec", "doj-dep"):
             with self.subTest(node=node_id):
                 self.assertEqual(nodes[node_id]["nameSource"], "listed_in_opm_plum_archive")
                 self.assertTrue(nodes[node_id]["nameSourceDetail"].startswith("https://"))

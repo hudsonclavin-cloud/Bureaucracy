@@ -43,6 +43,60 @@ EXECUTIVE_SCHEDULE_RATES = {
     "IV": 197_200.0,
     "V": 184_900.0,
 }
+#: node id -> (the title 5 U.S.C. 5312-5316 prints, its level, its section).
+#: Keyed by node id for the reason STATUTORY_PAY_NODE_TIERS established and
+#: more sharply still: FIFTEEN of these nodes are priced at Level I and carry
+#: the identical $253,100, so a record moved from the Secretary of Agriculture
+#: to the Secretary of Commerce would keep a correct figure, a correct rate
+#: text, a correct citation and a real statutory title. Only a check tied to
+#: the node's own identity catches it. The statute's own words are mirrored
+#: too, because the panel prints them as the Code's: a published title the
+#: statute does not carry is a fabricated quotation attributed to Congress.
+#: tests/test_statutory_schedule.py parses the committed sections and asserts
+#: this mirror equals what they print, so the two cannot drift.
+US_CODE_EXECUTIVE_SCHEDULE = {
+    'exec-dept-defense-af-secretary-of-the-air-force': ('Secretary of the Air Force', 'II', '5313'),
+    'exec-dept-defense-af-under-secretary-of-the-air-force': ('Under Secretary of the Air Force', 'III', '5314'),
+    'exec-dept-defense-agency-nsa-deputy-director-national-security-agency-nsa': ('Deputy Director, National Security Agency', 'V', '5316'),
+    'exec-dept-defense-army-secretary-of-the-army': ('Secretary of the Army', 'II', '5313'),
+    'exec-dept-defense-army-under-secretary-of-the-army': ('Under Secretary of the Army', 'III', '5314'),
+    'exec-dept-defense-deputy-secretary-of-defense': ('Deputy Secretary of Defense', 'II', '5313'),
+    'exec-dept-defense-navy-secretary-of-the-navy': ('Secretary of the Navy', 'II', '5313'),
+    'exec-dept-defense-navy-under-secretary-of-the-navy': ('Under Secretary of the Navy', 'III', '5314'),
+    'exec-dept-defense-secretary-of-defense': ('Secretary of Defense', 'I', '5312'),
+    'exec-dept-doc-secretary-of-department-of-commerce': ('Secretary of Commerce', 'I', '5312'),
+    'exec-dept-doe-deputy-secretary-of-department-of-energy-doe': ('Deputy Secretary of Energy', 'II', '5313'),
+    'exec-dept-doe-secretary-of-department-of-energy-doe': ('Secretary of Energy', 'I', '5312'),
+    'exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi': ('Deputy Secretary of the Interior', 'II', '5313'),
+    'exec-dept-doi-secretary-of-department-of-the-interior-doi': ('Secretary of the Interior', 'I', '5312'),
+    'exec-dept-doj-deputy-secretary-of-department-of-justice-doj': ('Deputy Attorney General', 'II', '5313'),
+    'exec-dept-doj-secretary-of-department-of-justice-doj': ('Attorney General', 'I', '5312'),
+    'exec-dept-doj-solicitor-solicitor-general-of-the-united-states': ('Solicitor General of the United States', 'III', '5314'),
+    'exec-dept-dol-deputy-secretary-of-department-of-labor-dol': ('Deputy Secretary of Labor', 'II', '5313'),
+    'exec-dept-dol-secretary-of-department-of-labor-dol': ('Secretary of Labor', 'I', '5312'),
+    'exec-dept-dot-deputy-secretary-of-department-of-transportation-dot': ('Deputy Secretary of Transportation', 'II', '5313'),
+    'exec-dept-dot-secretary-of-department-of-transportation-dot': ('Secretary of Transportation', 'I', '5312'),
+    'exec-dept-ed-deputy-secretary-of-department-of-education': ('Deputy Secretary of Education', 'II', '5313'),
+    'exec-dept-ed-secretary-of-department-of-education': ('Secretary of Education', 'I', '5312'),
+    'exec-dept-hhs-deputy-secretary-of-department-of-health-human-services-hhs': ('Deputy Secretary of Health and Human Services', 'II', '5313'),
+    'exec-dept-hhs-secretary-of-department-of-health-human-services-hhs': ('Secretary of Health and Human Services', 'I', '5312'),
+    'exec-dept-hud-deputy-secretary-of-department-of-housing-urban-development-hud': ('Deputy Secretary of Housing and Urban Development', 'II', '5313'),
+    'exec-dept-hud-secretary-of-department-of-housing-urban-development-hud': ('Secretary of Housing and Urban Development', 'I', '5312'),
+    'exec-dept-state-deputy-secretary-of-department-of-state': ('Deputy Secretary of State', 'II', '5313'),
+    'exec-dept-state-secretary-of-department-of-state': ('Secretary of State', 'I', '5312'),
+    'exec-dept-treasury-deputy-secretary-of-department-of-the-treasury': ('Deputy Secretary of the Treasury', 'II', '5313'),
+    'exec-dept-treasury-occ-comptroller-of-the-currency': ('Comptroller of the Currency', 'III', '5314'),
+    'exec-dept-treasury-secretary-of-department-of-the-treasury': ('Secretary of the Treasury', 'I', '5312'),
+    'exec-dept-usda-deputy-secretary-of-department-of-agriculture-usda': ('Deputy Secretary of Agriculture', 'II', '5313'),
+    'exec-dept-usda-secretary-of-department-of-agriculture-usda': ('Secretary of Agriculture', 'I', '5312'),
+    'exec-dept-va-bva-chairman-board-of-veterans-appeals': ("Chairman, Board of Veterans' Appeals", 'IV', '5315'),
+    'exec-dept-va-deputy-secretary-of-department-of-veterans-affairs-va': ('Deputy Secretary of Veterans Affairs', 'II', '5313'),
+    'exec-dept-va-secretary-of-department-of-veterans-affairs-va': ('Secretary of Veterans Affairs', 'I', '5312'),
+    'exec-eop-ustr-u-s-trade-representative-ambassador': ('United States Trade Representative', 'I', '5312'),
+}
+US_CODE_SECTIONS = ("5312", "5313", "5314", "5315", "5316")
+US_CODE_HOST = "uscode.house.gov"
+
 EXECUTIVE_SCHEDULE_PAY_PLAN = "EX"
 EXECUTIVE_SCHEDULE_EFFECTIVE = "2026-01-01"
 EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT = "Effective January 2026"
@@ -738,6 +792,115 @@ def reported_pay_violations(node, pay, today, label):
             continue
         if isinstance(value, str) and re.search(r"\b[A-Z][A-Z.'\-]{1,}, +[A-Z][A-Z.'\-]*\b", value):
             say("carries {!r}, which looks like a person's name from the roster".format(field))
+    return out
+
+
+def schedule_pay_violations(node, pay, today, label):
+    """A rate whose LEVEL is current law and whose FIGURE is OPM's table.
+
+    A different claim from `positionPayRate`, which reads the level off the
+    previous administration's PLUM archive, so a different field and a
+    different checker. The two overlap in what they must not do -- neither is
+    a cost, neither is evidence the post exists -- and differ in what backs
+    the level: an archive edition there, a section of the United States Code
+    here, which is why this one requires no `positionListing` and that one
+    cannot be published without it.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionSchedulePay {!r} is not a record".format(pay))
+        return out
+
+    node_id = str(node.get("id") or "")
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a statutory rate of basic pay but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one post's statutory rate but stands for several posts")
+
+    # Which post the Code actually names. Without this the figure is right and
+    # the office is anybody's.
+    expected = US_CODE_EXECUTIVE_SCHEDULE.get(node_id)
+    if expected is None:
+        say("carries a rate from the Executive Schedule; the Code names no such post for this node")
+        return out
+    title, level, section = expected
+    if str(pay.get("statutoryTitle") or "") != title:
+        say("quotes the Code as naming {!r}; §{} prints {!r}".format(pay.get("statutoryTitle"), section, title))
+    # The node must still BE the office the statute named. A rename in the
+    # curated file cannot inherit a level looked up for a different post --
+    # the same rename guard every evidence module here applies.
+    if canonical_key(node.get("name")) != canonical_key(title):
+        say("is now called {!r}, which is not the statutory title {!r} its rate was looked up from".format(
+            node.get("name"), title))
+    if str(pay.get("payLevel") or "") != level:
+        say("prices level {!r}; §{} places this post at level {!r}".format(pay.get("payLevel"), section, level))
+    citation = str(pay.get("citation") or "")
+    if citation != "5 U.S.C. \u00a7{}".format(section):
+        say("cites {!r}; the section that names this post is §{}".format(citation, section))
+    statute_url = str(pay.get("statuteUrl") or "")
+    if host_of(statute_url) != US_CODE_HOST or "section{}".format(section) not in statute_url:
+        say("does not link the section of the Code that names it ({!r})".format(statute_url))
+    statute_checked = str(pay.get("statuteCheckedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", statute_checked) or statute_checked[:10] > today:
+        say("claims a statutory level without a past retrieval date ({!r})".format(statute_checked))
+
+    # The rate half: the same table, the same mirror, the same rules as
+    # table_pay_violations, because it is literally the same document.
+    amount = pay.get("amount")
+    rate = EXECUTIVE_SCHEDULE_RATES.get(level)
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)):
+        say("publishes {!r} as a statutory rate of basic pay".format(amount))
+    elif rate is not None and abs(float(amount) - rate) > 0.005:
+        say("publishes {:,.2f} for level {}, which the table pays {:,.2f}".format(float(amount), level, rate))
+    if rate is not None:
+        printed = "${:,.0f}".format(rate)
+        if str(pay.get("rateText") or "") != printed:
+            say("prints the rate as {!r}; the table prints {!r}".format(pay.get("rateText"), printed))
+        scope = str(pay.get("amountScope") or "")
+        if scope.casefold() != "level {}".format(level).casefold():
+            say("prints the rate as being for {!r} while pricing level {!r}".format(scope, level))
+    if str(pay.get("table") or "") != EXECUTIVE_SCHEDULE_TABLE:
+        say("cites table {!r}, not {!r}".format(pay.get("table"), EXECUTIVE_SCHEDULE_TABLE))
+    if str(pay.get("effective") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE:
+        say("dates the table {!r}, not {!r}".format(pay.get("effective"), EXECUTIVE_SCHEDULE_EFFECTIVE))
+    if str(pay.get("effectiveText") or "") != EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT:
+        say("prints the effective heading as {!r}; the page prints {!r}".format(
+            pay.get("effectiveText"), EXECUTIVE_SCHEDULE_EFFECTIVE_TEXT))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a table rate without a past retrieval date ({!r})".format(checked))
+    if not host_of(str(pay.get("url") or "")).endswith((".gov", ".mil")):
+        say("claims a table rate with no .gov/.mil document behind it")
+    footnotes = pay.get("footnotes")
+    if not isinstance(footnotes, list) or not any(str(f).strip() for f in footnotes):
+        say("carries a statutory rate without the notes the table prints beside it")
+    elif tuple(str(f).strip() for f in footnotes) != EXECUTIVE_SCHEDULE_FOOTNOTES:
+        say("quotes notes the table does not carry")
+
+    # It is not a cost, and it is not evidence that the post exists. The same
+    # two refusals table_pay_violations makes, and for the same reason: the
+    # 2026-09-11 failure in which a five-row table carried 29 positions to
+    # `verified` went through exactly these fields.
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a statutory rate and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a statutory rate and claims a verified cost")
+    basis = str(node.get("cost_basis") or "")
+    if basis and basis not in KNOWN_COST_BASES:
+        say("carries a statutory rate and an unknown cost basis {!r}".format(basis))
+    method = str(pay.get("method") or "")
+    if method and str(node.get("verificationMethod") or "") == method:
+        say("verifies its own existence with a statute that prices a rank")
+    if method and str(node.get("placementMethod") or "") == method:
+        say("places itself with a statute that prices a rank")
+    if str(pay.get("scopeMatch") or "") != "proxy":
+        say("claims scope {!r}; the table names a rank, not this post".format(pay.get("scopeMatch")))
+    if str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("grades itself {!r}; a rank priced for a post is partial".format(pay.get("financialEvidenceStatus")))
+    if str(pay.get("costBasis") or "") != "basic_pay":
+        say("files its figure as {!r} rather than basic_pay".format(pay.get("costBasis")))
     return out
 
 
@@ -1485,6 +1648,7 @@ def main(argv):
     # reported as the wrong kind of fault.
     bad_table_pay = []
     bad_statutory_pay = []
+    bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
     for node in nodes:
@@ -1618,6 +1782,12 @@ def main(argv):
         statutory_pay = node.get("positionStatutoryPay")
         if statutory_pay is not None:
             bad_statutory_pay.extend(statutory_pay_violations(node, statutory_pay, today, label))
+        # The same Executive Schedule rate from the other direction: current
+        # law names the level, OPM's table prices it. Its own field and its
+        # own mirror, keyed by node id.
+        schedule_pay = node.get("positionSchedulePay")
+        if schedule_pay is not None:
+            bad_schedule_pay.extend(schedule_pay_violations(node, schedule_pay, today, label))
         # A roster row — what one listed person is paid — beside both of the
         # above; again its own field, its own mirror, its own rules.
         reported_pay = node.get("positionReportedPay")
@@ -1728,6 +1898,7 @@ def main(argv):
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
+    gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
 
@@ -1950,6 +2121,19 @@ def main(argv):
               len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
               ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
               with_level - len(table_paid)))
+    schedule_paid = [n for n in nodes if isinstance(n.get("positionSchedulePay"), dict)]
+    if schedule_paid or US_CODE_EXECUTIVE_SCHEDULE:
+        sched_levels = Counter(str(n["positionSchedulePay"].get("payLevel") or "?") for n in schedule_paid)
+        # The mirror holds the posts the Code names AND this graph has a node
+        # for, which is a far smaller set than the Code's own list -- it
+        # enumerates 415 positions across the five sections. Saying "the Code
+        # names N" off the mirror's length would report this graph's coverage
+        # as the statute's contents.
+        print("  U.S. Code schedule   : {:,} positions priced at the level 5 U.S.C. §§{}-{} sets for them ({}); "
+              "{:,} are mirrored here, which is how many of the Code's positions this graph has a node for".format(
+                  len(schedule_paid), US_CODE_SECTIONS[0], US_CODE_SECTIONS[-1],
+                  ", ".join("{} {}".format(k, sched_levels[k]) for k in ("I", "II", "III", "IV", "V") if sched_levels.get(k)) or "none",
+                  len(US_CODE_EXECUTIVE_SCHEDULE)))
     statutory_paid = [n for n in nodes if isinstance(n.get("positionStatutoryPay"), dict)]
     by_source = Counter(str(n["positionStatutoryPay"].get("source") or "?") for n in statutory_paid)
     print("  statutory pay         : {:,} positions priced from a single primary source naming the seat directly ({})".format(

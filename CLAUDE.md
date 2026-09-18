@@ -874,6 +874,68 @@ scale phrase is present at all, requires the currency mark to be attached to
 the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
 can see which records rest on it.
 
+**The level half, from current law instead of a closed archive (since
+2026-09-18).** Every Executive Schedule rate this project published took its
+*level* from one place: OPM's PLUM archive of the **previous** administration
+(January 2021 – January 2025). That is a record of who held what, so the join
+it supports carries two dates and neither is now, and it reached 29 positions.
+5 U.S.C. §§5312–5316 **is** the Executive Schedule — five sections, one per
+level, each an enumerated list of the positions Congress placed there — and
+`uscode.house.gov` answers `robots.txt` 200, which no earlier session could
+check. The five sections are committed verbatim at `tests/fixtures/uscode/`
+and `statutory_schedule.load_schedule` recomputes every digest before reading,
+the same refusal `pay_tables` makes.
+
+It landed in two halves, and the first was a **rename**. `CURATION.md` §8
+recorded thirteen cabinet heads left templated because "no source in hand
+names them" — the archive files them as a bare "SECRETARY" and seven
+department pages answer 401/403. §5312 names every one. So
+`rename_templated_post_titles.py` gained the Code as a third source, ordered
+**first**, and renamed **12 of the 13**: `Secretary of Department of the
+Treasury` → `Secretary of the Treasury`, and so through Commerce, the
+Interior, Transportation, Education, HHS, HUD and Agriculture. The statute is
+used exactly as the other two sources are — **it selects, it never
+produces**. The transform that yields "Secretary of Justice" can only ever
+pick a string the Code actually prints, and the Code prints no such title
+because the office is the Attorney General, so DOJ selects nothing and falls
+through; a second guard requires the statutory title's "of …" remainder to be
+part of the department's own name, so a title naming a different department
+can never be chosen for this one. The one refusal left is honest: the
+Executive Schedule carries no "Deputy Secretary of Commerce".
+
+Then the pay. `positionSchedulePay` is a **fourth** pay field, not a widening
+of `positionPayRate`, because the two carry different dates and different
+withdrawal rules and folding them together would have meant loosening a gate
+check that already guards 29 published records — to make a new claim easier
+to publish, which is the wrong direction. Matching is canonical-key
+**equality**: the Code prints both "Secretary of the Army" and "Under
+Secretary of the Army", and a containment test prices the second from the
+first, the same failure `whitehouse_pay.title_core` documents for `Press
+Secretary` inside `ASSISTANT PRESS SECRETARY`. A statutory title reaching two
+nodes prices neither ("General Counsel" names 84 nodes here); a title the
+statute states several of ("Assistant Secretaries of Commerce (11)") prices
+none; and "Archivist of the United States", which the Code places at **both**
+§5314 and §5316, is dropped from the index rather than adjudicated.
+
+**38 positions priced** — 15 at Level I, 16 at II, 5 at III, 1 each at IV and
+V — including the Secretary of State, the Attorney General and the Secretary
+of Defense, none of which carried pay evidence of any kind before. All
+`partial`, all `scopeMatch: proxy`, the same deliberate downgrade
+`judicial_pay` and `congressional_pay` make. Nothing writes `sourceUrls`,
+`sourceTypes`, `lastVerified` or `verificationMethod`: that is the exact
+channel by which a five-row table carried 29 positions to `verified` on
+2026-09-11, and `tests/test_statutory_schedule.py` asserts against the
+published graph that no priced node gained a `uscode.house.gov` URL.
+
+The gate mirrors node id → (statutory title, level, section) in
+`US_CODE_EXECUTIVE_SCHEDULE`, keyed by id for a reason sharper than the Senate
+case: **fifteen of these nodes are priced at the identical $253,100**, so a
+record moved between them keeps a correct figure, a correct rate text, a
+correct citation and a real statutory title, and only a check tied to the
+node's own identity catches it. The mirror is pinned equal to what the
+committed sections print, and the test corrupts each dimension in turn —
+twenty-two cases, including the swap — and asserts the gate rejects it.
+
 **Two more sources, each a single primary document rather than a join
 (since 2026-09-14).** `judicial_pay.py` and `congressional_pay.py` write a
 different field, `positionStatutoryPay`, because their claim is a different

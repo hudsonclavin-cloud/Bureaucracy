@@ -28,17 +28,39 @@ spells the DHS post "SECRETARY OF THE DEPARTMENT OF HOMELAND SECURITY",
 keeping the words the transform would strip. So the transform is used only
 to *recognise* a templated name, never to produce the replacement.
 
-**What produces the replacement.** Two official sources, in that order:
+**What produces the replacement.** Three official sources, in that order:
 
-1. **OPM's PLUM archive** (`tests/fixtures/opm/plum/`, the previous
+1. **The United States Code** — 5 U.S.C. §§5312-5316, the Executive
+   Schedule, committed verbatim under `tests/fixtures/uscode/` and read by
+   `data_pipeline/verification/statutory_schedule.py` with its digests
+   checked. Added 2026-09-18, and placed first because it is the strongest
+   of the three by some distance: it is *current law naming the office*,
+   where the archive is a snapshot of the previous administration and a page
+   is a publisher's wording. It is also what closed the gap this script
+   documented and could not fix — thirteen departments' heads stayed
+   templated because "no source in hand names them", and §5312 names every
+   one.
+
+   **It is used exactly as the other two are: it selects, it never
+   produces.** The transform ("Secretary of Department of X" → "Secretary of
+   X") is still only a recogniser, and here it can only ever pick a string
+   the statute actually prints — which is what makes it safe in the one case
+   that breaks it. The transform yields "Secretary of Justice"; the
+   Executive Schedule does not carry that title, because the office does not
+   exist, so nothing is proposed and DOJ falls through. A second guard
+   narrows it further: the statutory title's "of …" remainder must be part
+   of the department's own name, so a title naming a *different* department
+   can never be selected for this one.
+2. **OPM's PLUM archive** (`tests/fixtures/opm/plum/`, the previous
    administration's reported positions — the same document `positions.py`
    already matches against). A title filed under this department, of the
    right kind, and *qualified*: the archive files several departments' heads
    as a bare "SECRETARY", which is no better than what is there and is
    refused by the post floor anyway.
-2. **The department's own official page**, read only when the archive has no
-   qualified title, under the same robots policy as the verifier. This is
-   what supplies "Secretary of Energy", which the archive does not carry.
+3. **The department's own official page**, read only when neither of the
+   above carries a qualified title, under the same robots policy as the
+   verifier. This is what supplied "Secretary of Energy" before the statute
+   was readable.
 
 Where several qualified titles exist, the general one wins **only** if every
 other is a refinement of it — "Deputy Secretary of State" against "Deputy
@@ -76,6 +98,10 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     parse_page,
 )
 from data_pipeline.verification.politeness import RobotsPolicy  # noqa: E402
+from data_pipeline.verification.statutory_schedule import (  # noqa: E402
+    Unreadable as ScheduleUnreadable,
+    load_schedule,
+)
 
 DEFAULT_ARCHIVE = PROJECT_ROOT / "tests" / "fixtures" / "opm" / "plum" / "plum-archive-biden-administration.csv"
 ARCHIVE_URL = "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/"
@@ -92,6 +118,12 @@ ROLE_PATTERNS = (
 #: then the parent organisation's own name. Matched on canonical keys, so
 #: "(DOE)" and "&" spelling never matter.
 TEMPLATE_PREFIXES = {"head": "secretary of ", "deputy": "deputy secretary of "}
+
+
+#: Where a reader checks the statute for themselves. The section a given
+#: title came from rides on the record; this is the Code's own front door for
+#: the chapter, which is what a citation in a description should point at.
+STATUTE_URL = "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII"
 
 
 def role_of(name: str, parent_name: str) -> str | None:
@@ -180,6 +212,45 @@ def archive_titles(archive_rows: list[dict[str, str]], dept_name: str) -> dict[s
     return found
 
 
+def statute_titles(schedule: dict, dept_name: str) -> dict[str, list[str]]:
+    """Head and deputy titles the Executive Schedule prints for this department.
+
+    Two guards, and the pairing is what makes the statute safe to put first.
+
+    The title must match the role pattern AND its "of ..." remainder must be
+    part of the department's own canonical name. The remainder test is what
+    stops a title naming a different department being selected for this one:
+    "Secretary of Education" can never answer for Health and Human Services,
+    because "education" is not in that department's name. And because the
+    only titles considered are ones the statute actually prints, the
+    transform that breaks on Justice cannot break here either -- the
+    Executive Schedule carries no "Secretary of Justice", so DOJ selects
+    nothing and falls through to the sources below it.
+    """
+    dept_key = canonical_name_key(dept_name)
+    found: dict[str, list[str]] = {"head": [], "deputy": []}
+    if not dept_key:
+        return found
+    for position in schedule["index"].values():
+        title = str(position["title"])
+        key = canonical_name_key(title)
+        for role, pattern in ROLE_PATTERNS:
+            # First pattern that matches wins, exactly as archive_titles and
+            # page_titles do it. The deputy pattern is tried first and must
+            # not stop the search when it fails, or every head title in the
+            # statute goes unseen -- which is precisely what it did on the
+            # first dry run, renaming the four deputies and none of the nine
+            # Secretaries the Code names explicitly.
+            if not pattern.match(key):
+                continue
+            _, _, remainder = key.partition(" of ")
+            remainder = remainder.strip()
+            if remainder and remainder in dept_key and qualified(title):
+                found[role].append(title)
+            break
+    return found
+
+
 def page_titles(page, dept_name: str) -> dict[str, list[str]]:
     """The same, read off the department's own page. Every fragment and
     region is scanned: this proposes a NAME for a curated node, which is
@@ -216,6 +287,13 @@ def main(argv: list[str] | None = None) -> int:
     with args.archive.open(encoding="utf-8-sig", newline="") as handle:
         archive_rows = list(csv.DictReader(handle))
     sites = load_official_sites(args.sites) if not args.no_pages else {}
+    try:
+        schedule = load_schedule()
+    except ScheduleUnreadable as error:
+        # A statute that cannot be trusted proposes nothing; the two older
+        # sources still run, exactly as they did before it existed.
+        print(f"  the Executive Schedule was not read: {error}")
+        schedule = {"index": {}}
 
     templated: list[tuple[dict[str, Any], dict[str, Any], str]] = []
     for node in node_map.values():
@@ -260,9 +338,12 @@ def main(argv: list[str] | None = None) -> int:
     for node, parent, role in templated:
         node_id, name = str(node.get("id")), str(node.get("name"))
         dept_name = str(parent.get("name"))
-        from_archive = archive_titles(archive_rows, dept_name)[role]
-        chosen, why = pick(from_archive)
-        source, detail = "listed_in_opm_plum_archive", ARCHIVE_URL
+        chosen, why = pick(statute_titles(schedule, dept_name)[role])
+        source, detail = "named_in_5_usc_5312_5316", STATUTE_URL
+        if not chosen:
+            from_archive = archive_titles(archive_rows, dept_name)[role]
+            chosen, why = pick(from_archive)
+            source, detail = "listed_in_opm_plum_archive", ARCHIVE_URL
         if not chosen and not args.no_pages:
             # Only when the archive carries no qualified title. Preferring one
             # source outright avoids having to adjudicate a disagreement

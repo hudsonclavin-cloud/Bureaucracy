@@ -11196,7 +11196,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "executive-branch",
@@ -11687,6 +11687,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-eop-ustr",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "I",
+      "citation": "5 U.S.C. §5312",
+      "statutoryTitle": "United States Trade Representative",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:33:51Z",
+      "amount": 253100.0,
+      "rateText": "$253,100",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level I",
+      "quote": "Level I $253,100",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-eop-ustr"
   },
   {
@@ -12248,7 +12273,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-state",
@@ -13591,7 +13616,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-treasury",
@@ -15081,7 +15106,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-defense",
@@ -15830,7 +15855,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-doj",
@@ -18748,7 +18773,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-doi",
@@ -20678,7 +20703,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-usda",
@@ -22164,7 +22189,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-doc",
@@ -22924,7 +22949,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-dol",
@@ -23170,6 +23195,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-dol",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "I",
+      "citation": "5 U.S.C. §5312",
+      "statutoryTitle": "Secretary of Labor",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:33:51Z",
+      "amount": 253100.0,
+      "rateText": "$253,100",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level I",
+      "quote": "Level I $253,100",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-dol"
   },
   {
@@ -24491,7 +24541,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-hhs",
@@ -26091,7 +26141,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-hud",
@@ -26686,7 +26736,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-dot",
@@ -27478,7 +27528,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-doe",
@@ -27634,6 +27684,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doe",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "I",
+      "citation": "5 U.S.C. §5312",
+      "statutoryTitle": "Secretary of Energy",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:33:51Z",
+      "amount": 253100.0,
+      "rateText": "$253,100",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level I",
+      "quote": "Level I $253,100",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doe"
   },
   {
@@ -27681,6 +27756,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doe",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "II",
+      "citation": "5 U.S.C. §5313",
+      "statutoryTitle": "Deputy Secretary of Energy",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:08Z",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-doe"
   },
   {
@@ -28738,7 +28838,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-ed",
@@ -29546,7 +29646,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-va",
@@ -29847,6 +29947,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-va",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "I",
+      "citation": "5 U.S.C. §5312",
+      "statutoryTitle": "Secretary of Veterans Affairs",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5312&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:33:51Z",
+      "amount": 253100.0,
+      "rateText": "$253,100",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level I",
+      "quote": "Level I $253,100",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va"
   },
   {
@@ -29894,6 +30019,31 @@
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-va",
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "II",
+      "citation": "5 U.S.C. §5313",
+      "statutoryTitle": "Deputy Secretary of Veterans Affairs",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5313&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:08Z",
+      "amount": 228000.0,
+      "rateText": "$228,000",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level II",
+      "quote": "Level II $228,000",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va"
   },
   {
@@ -30662,6 +30812,31 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
+    "positionSchedulePay": {
+      "source": "us_code_executive_schedule",
+      "method": "level_assigned_by_5_usc_5312_5316",
+      "payLevel": "IV",
+      "citation": "5 U.S.C. §5315",
+      "statutoryTitle": "Chairman, Board of Veterans' Appeals",
+      "statuteUrl": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5315&num=0&edition=prelim",
+      "statuteCheckedAt": "2026-09-18T20:34:27Z",
+      "amount": 197200.0,
+      "rateText": "$197,200",
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "effective": "2026-01-01",
+      "fiscalYear": 2026,
+      "costBasis": "basic_pay",
+      "scopeMatch": "proxy",
+      "financialEvidenceStatus": "partial",
+      "amountScope": "Level IV",
+      "quote": "Level IV $197,200",
+      "footnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "checkedAt": "2026-09-11T03:05:36Z"
+    },
     "parentId": "exec-dept-va-bva"
   },
   {
@@ -30723,7 +30898,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-dept-dhs",
@@ -33108,7 +33283,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-cia",
@@ -33926,7 +34101,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-nasa",
@@ -35612,7 +35787,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-ssa",
@@ -35770,7 +35945,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-usps",
@@ -36131,7 +36306,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-nsf",
@@ -36851,7 +37026,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-opm",
@@ -37015,7 +37190,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "exec-ind-smithsonian",
@@ -42257,7 +42432,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666"
+    "color": "#8aa0b0"
   },
   {
     "id": "treasury-undistributed-offsetting-receipts",
@@ -42329,7 +42504,7 @@
     "costSourceCount": 1,
     "employees": null,
     "budget": null,
-    "color": "#666666",
+    "color": "#8aa0b0",
     "placementCheckable": false
   }
 ]

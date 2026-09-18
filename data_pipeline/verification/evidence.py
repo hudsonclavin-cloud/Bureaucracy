@@ -164,6 +164,12 @@ EVIDENCE_OWNED_FIELDS = (
     # renamed) must not survive because the previous graph.json is re-fed as
     # a payload on every build.
     "positionStatutoryPay",
+    # Written by statutory_schedule.py: the Executive Schedule level CURRENT
+    # LAW assigns a post, priced from OPM's table. Withdrawn here with the
+    # rest because a rename in the curated file must take the rate with it --
+    # the statute names an office, and a node renamed to a different office
+    # has no claim on the level looked up for the old one.
+    "positionSchedulePay",
     # Written by whitehouse_pay.py. Withdrawal matters more here than for
     # either field above: this one rests on a roster that is reissued every
     # July, and a title the next report no longer carries — or carries twice —

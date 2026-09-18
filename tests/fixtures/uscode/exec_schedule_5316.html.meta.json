@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-18T20:34:37Z",
+ "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+ "status": 200,
+ "final_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title5-section5316&num=0&edition=prelim",
+ "content_type": "text/html;charset=UTF-8",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /view.xhtml",
+ "bytes": 271274,
+ "sha256": "9ab5ec55d48c11958802ac25731680772d2189fc2bdd9b4ae17dfd300ca7a49e",
+ "error": null
+}

@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260918c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260918c";
+import { createGovernmentGraph } from "./graph.js?v=20260918d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260918d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -944,6 +944,42 @@ function renderTableRate(data, add) {
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
+// The Executive Schedule rate CURRENT LAW sets for this post. Its own block,
+// because it needs no PLUM listing to hang off: 5 U.S.C. 5312-5316 names the
+// office itself, so this is published on nodes the archive never reported —
+// the Secretary of State, the Attorney General, the Secretary of Defense, none
+// of which carried any pay evidence before 2026-09-18.
+//
+// It is still two documents, and the sentence says so. What is different from
+// the block above is which document supplies the level: current law naming an
+// office, rather than an archive recording who held it between 2021 and 2025.
+function renderSchedulePay(data) {
+  let line = document.getElementById("info-schedule-pay");
+  if (!line && dom.infoStats) {
+    line = document.createElement("div");
+    line.id = "info-schedule-pay";
+    line.style.fontSize = "9px";
+    line.style.color = "#8f7a5d";
+    line.style.letterSpacing = "0.06em";
+    line.style.margin = "2px 0 8px";
+    dom.infoStats.insertAdjacentElement("afterend", line);
+  }
+  if (!line) return;
+  const pay = data.positionSchedulePay;
+  if (!pay || typeof pay !== "object" || typeof pay.amount !== "number") {
+    line.replaceChildren();
+    return;
+  }
+  line.replaceChildren();
+  const add = (text) => line.appendChild(document.createTextNode(text));
+  const printed = pay.rateText || `$${pay.amount.toLocaleString()}`;
+  const when = pay.effectiveText ? `, ${String(pay.effectiveText).replace(/^Effective\b/, "effective")}` : "";
+  add(`${pay.citation || "The United States Code"} places this post at Executive Schedule level ${pay.payLevel}, naming it "${pay.statutoryTitle}". OPM's ${pay.table}${when}, pays ${printed} for ${pay.amountScope}.`);
+  add(" Two documents: the statute sets the level and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
+}
+
 // A single primary source that names a judicial or congressional seat
 // directly and states what it pays — no PLUM-style archive to join it to,
 // unlike positionPayRate above. Rendered as its own block so it appears
@@ -1729,6 +1765,7 @@ function renderInfoPanel(nodeObj) {
   renderHeadcountProvenance(data);
   renderPositionListing(data);
   renderStatutoryPay(data);
+  renderSchedulePay(data);
   renderReportedPay(data);
   renderCountProvenance(data);
 

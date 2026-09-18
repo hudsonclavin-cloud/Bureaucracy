@@ -238,6 +238,7 @@ MINIMAL_GRAPH_FIELDS = (
     "childrenIncomplete", "statedChildCount", "carriedChildCount", "representsPosts",
     # the three pay blocks, each a different kind of claim
     "positionListing", "positionPayRate", "positionStatutoryPay", "positionReportedPay",
+    "positionSchedulePay",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
 )
@@ -2342,6 +2343,7 @@ def build_graph(
     headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
     pay_evidence_path: str | Path | None = "default",
+    schedule_pay_evidence_path: str | Path | None = "default",
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
@@ -2521,6 +2523,26 @@ def build_graph(
     resolved_pay_path = DEFAULT_PAY_EVIDENCE_PATH if pay_evidence_path == "default" else pay_evidence_path
     validation["pay_evidence"] = apply_pay_evidence(
         graph, load_pay_evidence(resolved_pay_path) if resolved_pay_path else {}, index_tree=index_tree,
+    )
+    # The same Executive Schedule rate, from the other direction: the level
+    # comes from 5 U.S.C. 5312-5316 rather than from the previous
+    # administration's archive, so it needs no positionListing and survives a
+    # build in which the archive says nothing. A fourth field, because the two
+    # claims carry different dates and different withdrawal rules and folding
+    # them together would have meant loosening a gate check that already
+    # guards 29 published records.
+    from data_pipeline.verification.statutory_schedule import (  # noqa: E402 — imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_SCHEDULE_PAY_EVIDENCE_PATH,
+        apply_schedule_pay,
+        load_evidence as load_schedule_pay_evidence,
+    )
+
+    resolved_schedule_pay_path = (
+        DEFAULT_SCHEDULE_PAY_EVIDENCE_PATH if schedule_pay_evidence_path == "default" else schedule_pay_evidence_path
+    )
+    validation["schedule_pay_evidence"] = apply_schedule_pay(
+        graph, load_schedule_pay_evidence(resolved_schedule_pay_path) if resolved_schedule_pay_path else {},
+        index_tree=index_tree,
     )
     # Two more single-source statutory-pay claims, one per branch — a
     # different field (positionStatutoryPay) from the Executive Schedule's
