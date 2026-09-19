@@ -815,14 +815,22 @@ try {
     return dot ? getComputedStyle(dot).backgroundColor : null;
   });
   check("the legend names the Treasury accounting lines", Boolean(legendSlate), "no such legend row");
-  const receiptsColours = [...new Set(allNodes.filter((n) => String(n.synthetic || "") === "treasury_receipts").map((n) => n.color))];
-  check("every receipts line carries one colour of its own", receiptsColours.length === 1 && receiptsColours[0] === "#8aa0b0", JSON.stringify(receiptsColours));
+  // Two kinds of node are Treasury accounting lines and both must carry the
+  // colour: the receipts lines the exporter creates, marked `synthetic`, and a
+  // line a curator added because the statement reports money under a heading
+  // naming no organisation ("Interest on the Public Debt"). This check keyed on
+  // `synthetic` alone until 2026-09-19 and failed on the second kind — the same
+  // narrowness the exporter's own colour guard had.
+  const isTreasuryLine = (n) => String(n.synthetic || "") === "treasury_receipts"
+    || String(n.type || "") === "Treasury accounting line";
+  const lineColours = [...new Set(allNodes.filter(isTreasuryLine).map((n) => n.color))];
+  check("every Treasury accounting line carries one colour of its own", lineColours.length === 1 && lineColours[0] === "#8aa0b0", JSON.stringify(lineColours));
   check(
     "the legend swatch is the colour those lines actually carry",
     legendSlate === "rgb(138, 160, 176)",
-    `${legendSlate} in the key, ${receiptsColours[0]} in the graph`,
+    `${legendSlate} in the key, ${lineColours[0]} in the graph`,
   );
-  const slateImposters = allNodes.filter((n) => n.color === "#8aa0b0" && String(n.synthetic || "") !== "treasury_receipts");
+  const slateImposters = allNodes.filter((n) => n.color === "#8aa0b0" && !isTreasuryLine(n));
   check("nothing else is drawn in that colour", slateImposters.length === 0, slateImposters.slice(0, 3).map((n) => n.id).join(", "));
 
   // The Executive Schedule rate current law sets. The most recognisable posts
