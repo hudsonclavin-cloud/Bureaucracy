@@ -12,8 +12,8 @@ achievable route to more exact-node costs actually is.
 Printed by `python scripts/validate_published_graph.py` on every run, which
 is the copy to trust; restated here as of 2026-09-18:
 
-    cost identified for the node itself:  137 of 5,402 nodes (2.5%)
-    a share of an ancestor's total:       650 nodes
+    cost identified for the node itself:  139 of 5,402 nodes (2.6%)
+    a share of an ancestor's total:       648 nodes
     no figure at all:                   4,615 nodes (4,441 of them posts)
     the measured nodes cover 98.4% of the anchor, counting each only once
 

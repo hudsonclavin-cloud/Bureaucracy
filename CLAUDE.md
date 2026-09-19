@@ -1342,15 +1342,18 @@ that one import is the only thing the smoke check cannot prove.
 ### Exact-node costs, and what the graph does not claim
 
 `docs/EXACT_NODE_COSTS.md` is the standing answer to "why is most of this
-graph an estimate". 137 of 5,402 nodes (2.5%) carry a cost a record names
+graph an estimate". 139 of 5,402 nodes (2.6%) carry a cost a record names
 for them; those cover **98.4% of the anchor**, so the apportioned figures
 subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — the 44
-positions carrying a PLUM-reported rate of basic pay show it in the cost
-block under REPORTED RATE OF BASIC PAY, never headed COST. The estimates
+parent's total" opts back in. The exception is a real salary — **354** of the
+4,591 positions now carry a rate of pay an official source states (44 from
+OPM's PLUM archive, 99 from the Executive Schedule as 5 U.S.C. §§5312–5316
+sets it, 29 from the archive's level joined to OPM's table, 18 statutory, 166
+from the White House roster), shown in the cost block under its own heading
+and never headed COST. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
@@ -1594,8 +1597,8 @@ never handed out for page nomination — 4,382 positions would produce 4,382
 identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
-The standing numbers this work exists to move: 304 of 786 organisations have
-no candidate page at all, so the verifier can never reach them; and 137 of
+The standing numbers this work exists to move: 297 of 786 organisations have
+no candidate page at all, so the verifier can never reach them; and 139 of
 5,402 nodes carry a cost identified for themselves. `nominate.py status --kind
 source` prints the first and `validate_published_graph.py` the second; those
 are the copies to trust, and neither is restated by hand any more.
@@ -1622,7 +1625,7 @@ nothing else is. A `certain` or `likely` finding must carry evidence;
 gets raised without being dressed as a fact. Citable sources are the
 repository's own published files and `.gov`/`.mil` URLs. Seven checks per
 node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
-most common — answer, not a failure: 4,824 nodes carry no source at all.
+most common — answer, not a failure: 4,808 nodes carry no source at all.
 `verify` re-checks every citation in the ledger against its source, since a
 file can change after a finding was accepted. The runbook's "do not report
 these" list matters as much as the rest: without it the sweep returns
