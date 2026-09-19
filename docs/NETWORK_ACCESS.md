@@ -498,6 +498,52 @@ and it costs nothing where the host does not. It does not reach the 67 —
 there is nothing on those pages for most of them to reach — and the sentence
 above that read as if it did is corrected here rather than left standing.
 
+## 8. 2026-09-18/19: three hosts this file recorded as denied now answer
+
+Re-measured directly, because §7 says the wall is no longer the proxy and the
+right response to that is to retry the things the proxy used to refuse rather
+than carry the old list forward.
+
+    uscode.house.gov     robots.txt 200   — WAS NOT IN THIS FILE AT ALL
+    www.govinfo.gov      robots.txt 200   — recorded as CONNECT 403 in CLAUDE.md
+    clerk.house.gov      robots.txt 404   — i.e. nothing published to obey; crawled
+
+`uscode.house.gov` is the one that paid. It serves the United States Code,
+and 5 U.S.C. §§5312–5316 is the Executive Schedule itself — the list of which
+positions Congress placed at which level. Until this session every Executive
+Schedule rate in the graph took its level from OPM's PLUM archive of the
+*previous* administration, reaching 29 positions; the statute took it to 99,
+including the Secretary of State, the Attorney General and the Secretary of
+Defense, none of which carried pay evidence of any kind. It also supplied the
+citation that finished a curation gap this repository had recorded as
+unfixable: thirteen cabinet heads were left spelled "Secretary of Department
+of X" because "no source in hand names them", and §5312 names every one.
+
+`www.govinfo.gov` answering 200 is recorded here but **not yet used**. It
+serves the Budget Appendix and agency Financial Reports, which
+`docs/EXACT_NODE_COSTS.md` names as the third step of the route to more
+exact-node costs. Nobody has read one from here yet; this note exists so the
+next session does not re-derive that it is blocked.
+
+### What is still the wall, and it is not the proxy
+
+The 2026-09-18 pass over all 304 organisations with no candidate page fetched
+every candidate it could name and recorded a probe-backed reason for each.
+The causes, which were previously all filed as "no page known":
+
+    109  the page was read and does not carry the graph's NAME  — curation
+     45  a real .gov/.mil site that refuses robots.txt          — policy
+     37  an editorial grouping the government never names
+     33  not on a .gov host (Smithsonian, USPS, Fed banks)
+     28  genuinely no page anyone could name
+
+So roughly half the remaining gap is a naming problem and a fifth is this
+project's own robots policy, and neither is fixed by nominating more URLs.
+The robots policy is deliberate and documented in
+`data_pipeline/verification/politeness.py`; the naming problem is curation,
+and `scripts/probe_candidate_pages.py --orphan-labels` prints what each page
+calls the unit so a rename can be argued from the page's own words.
+
 ## Regenerating this note
 
     python scripts/report_unreachable_hosts.py            # why each host failed, from the last run

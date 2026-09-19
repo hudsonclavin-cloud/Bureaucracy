@@ -11067,7 +11067,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh": {
       "name": "National Endowment for the Humanities (NEH)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": true,
       "status": "confirmed",
@@ -11083,7 +11083,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc": {
       "name": "Equal Employment Opportunity Commission (EEOC)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": true,
       "status": "confirmed",
@@ -11099,7 +11099,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc": {
       "name": "Office of Special Counsel (OSC)",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": true,
       "status": "fetch_failed",
@@ -11113,7 +11113,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb": {
       "name": "Merit Systems Protection Board (MSPB)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": true,
       "status": "confirmed",
@@ -11129,7 +11129,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra": {
       "name": "Federal Labor Relations Authority (FLRA)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": true,
       "status": "confirmed",
@@ -11145,7 +11145,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec": {
       "name": "Federal Election Commission (FEC)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": true,
       "status": "confirmed",
@@ -11161,7 +11161,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac": {
       "name": "Election Assistance Commission (EAC)",
-      "checkedAt": "2026-09-15T16:45:59+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": true,
       "status": "confirmed",
@@ -11177,7 +11177,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {
       "name": "Chemical Safety & Hazard Investigation Board (CSB)",
-      "checkedAt": "2026-09-15T16:45:59+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": true,
       "status": "confirmed",
@@ -11193,7 +11193,7 @@
     },
     "exec-ind-misc-farm-credit-administration": {
       "name": "Farm Credit Administration",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": true,
       "status": "fetch_failed",
@@ -11207,7 +11207,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua": {
       "name": "National Credit Union Administration (NCUA)",
-      "checkedAt": "2026-09-13T21:59:29+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": true,
       "status": "confirmed",
@@ -11223,7 +11223,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc": {
       "name": "Appalachian Regional Commission (ARC)",
-      "checkedAt": "2026-09-11T04:01:57+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": true,
       "status": "confirmed",
@@ -13028,7 +13028,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
       "name": "Broadcasting Board of Governors / USAGM",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": true,
       "status": "not_found",
@@ -13042,7 +13042,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb": {
       "name": "National Transportation Safety Board (NTSB)",
-      "checkedAt": "2026-09-15T16:45:59+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": true,
       "status": "confirmed",
@@ -13058,7 +13058,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent": {
       "name": "National Labor Relations Board (NLRB — independent)",
-      "checkedAt": "2026-09-14T14:49:52+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": true,
       "status": "confirmed",
@@ -13074,7 +13074,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission": {
       "name": "U.S. Postal Rate Commission / Postal Regulatory Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": true,
       "status": "not_found",
@@ -13088,7 +13088,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc": {
       "name": "Pension Benefit Guaranty Corporation (PBGC)",
-      "checkedAt": "2026-09-14T14:49:52+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": true,
       "status": "confirmed",
@@ -13104,7 +13104,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc": {
       "name": "National Capital Planning Commission (NCPC)",
-      "checkedAt": "2026-09-14T14:49:52+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": true,
       "status": "confirmed",
@@ -51671,7 +51671,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh-director-administrator-chair-national-endowment-for-the-humanities": {
       "name": "Director / Administrator / Chair, National Endowment for the Humanities",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": false,
       "isPost": true,
@@ -51687,7 +51687,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": false,
       "isPost": true,
@@ -51703,7 +51703,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": false,
       "isPost": true,
@@ -51719,7 +51719,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": false,
       "isPost": true,
@@ -51735,7 +51735,7 @@
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "ownPage": false,
       "isPost": true,
@@ -51751,7 +51751,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-director-administrator-chair-broadcasting-board-of-governors-usagm": {
       "name": "Director / Administrator / Chair, Broadcasting Board of Governors / USAGM",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": false,
       "isPost": true,
@@ -51767,7 +51767,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": false,
       "isPost": true,
@@ -51783,7 +51783,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": false,
       "isPost": true,
@@ -51799,7 +51799,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": false,
       "isPost": true,
@@ -51815,7 +51815,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-broadcasting-board-of-governors-usagm",
       "ownPage": false,
       "isPost": true,
@@ -51831,7 +51831,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-director-administrator-chair-national-transportation-safety-board": {
       "name": "Director / Administrator / Chair, National Transportation Safety Board",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
@@ -51847,7 +51847,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
@@ -51863,7 +51863,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
@@ -51879,7 +51879,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
@@ -51895,7 +51895,7 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
@@ -51911,7 +51911,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-director-administrator-chair-national-labor-relations-board": {
       "name": "Director / Administrator / Chair, National Labor Relations Board",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": false,
       "isPost": true,
@@ -51927,7 +51927,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": false,
       "isPost": true,
@@ -51943,7 +51943,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": false,
       "isPost": true,
@@ -51959,7 +51959,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": false,
       "isPost": true,
@@ -51975,7 +51975,7 @@
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "ownPage": false,
       "isPost": true,
@@ -51991,7 +51991,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc-director-administrator-chair-equal-employment-opportunity-commission": {
       "name": "Director / Administrator / Chair, Equal Employment Opportunity Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": false,
       "isPost": true,
@@ -52007,7 +52007,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": false,
       "isPost": true,
@@ -52023,7 +52023,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": false,
       "isPost": true,
@@ -52039,7 +52039,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": false,
       "isPost": true,
@@ -52055,7 +52055,7 @@
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "ownPage": false,
       "isPost": true,
@@ -52071,7 +52071,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc-director-administrator-chair-office-of-special-counsel": {
       "name": "Director / Administrator / Chair, Office of Special Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": false,
       "isPost": true,
@@ -52086,7 +52086,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": false,
       "isPost": true,
@@ -52101,7 +52101,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": false,
       "isPost": true,
@@ -52116,7 +52116,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": false,
       "isPost": true,
@@ -52131,7 +52131,7 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": false,
       "isPost": true,
@@ -52146,7 +52146,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb-director-administrator-chair-merit-systems-protection-board": {
       "name": "Director / Administrator / Chair, Merit Systems Protection Board",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": false,
       "isPost": true,
@@ -52162,7 +52162,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": false,
       "isPost": true,
@@ -52178,7 +52178,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": false,
       "isPost": true,
@@ -52194,7 +52194,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": false,
       "isPost": true,
@@ -52210,7 +52210,7 @@
     },
     "exec-ind-misc-merit-systems-protection-board-mspb-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-merit-systems-protection-board-mspb",
       "ownPage": false,
       "isPost": true,
@@ -52226,7 +52226,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra-director-administrator-chair-federal-labor-relations-authority": {
       "name": "Director / Administrator / Chair, Federal Labor Relations Authority",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": false,
       "isPost": true,
@@ -52242,7 +52242,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": false,
       "isPost": true,
@@ -52258,7 +52258,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": false,
       "isPost": true,
@@ -52274,7 +52274,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": false,
       "isPost": true,
@@ -52290,7 +52290,7 @@
     },
     "exec-ind-misc-federal-labor-relations-authority-flra-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-labor-relations-authority-flra",
       "ownPage": false,
       "isPost": true,
@@ -52306,7 +52306,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec-director-administrator-chair-federal-election-commission": {
       "name": "Director / Administrator / Chair, Federal Election Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": false,
       "isPost": true,
@@ -52322,7 +52322,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": false,
       "isPost": true,
@@ -52338,7 +52338,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": false,
       "isPost": true,
@@ -52354,7 +52354,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": false,
       "isPost": true,
@@ -52370,7 +52370,7 @@
     },
     "exec-ind-misc-federal-election-commission-fec-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-federal-election-commission-fec",
       "ownPage": false,
       "isPost": true,
@@ -52386,7 +52386,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac-director-administrator-chair-election-assistance-commission": {
       "name": "Director / Administrator / Chair, Election Assistance Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": false,
       "isPost": true,
@@ -52402,7 +52402,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": false,
       "isPost": true,
@@ -52418,7 +52418,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": false,
       "isPost": true,
@@ -52434,7 +52434,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": false,
       "isPost": true,
@@ -52450,7 +52450,7 @@
     },
     "exec-ind-misc-election-assistance-commission-eac-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-election-assistance-commission-eac",
       "ownPage": false,
       "isPost": true,
@@ -52466,7 +52466,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-director-administrator-chair-chemical-safety-hazard-investigation-board": {
       "name": "Director / Administrator / Chair, Chemical Safety & Hazard Investigation Board",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": false,
       "isPost": true,
@@ -52482,7 +52482,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": false,
       "isPost": true,
@@ -52498,7 +52498,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": false,
       "isPost": true,
@@ -52514,7 +52514,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": false,
       "isPost": true,
@@ -52530,7 +52530,7 @@
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-chemical-safety-hazard-investigation-board-csb",
       "ownPage": false,
       "isPost": true,
@@ -52546,7 +52546,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-director-administrator-chair-u-s-postal-rate-commission-postal-regulatory-commission": {
       "name": "Director / Administrator / Chair, U.S. Postal Rate Commission / Postal Regulatory Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": false,
       "isPost": true,
@@ -52562,7 +52562,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": false,
       "isPost": true,
@@ -52578,7 +52578,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": false,
       "isPost": true,
@@ -52594,7 +52594,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": false,
       "isPost": true,
@@ -52610,7 +52610,7 @@
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "ownPage": false,
       "isPost": true,
@@ -52626,7 +52626,7 @@
     },
     "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration": {
       "name": "Director / Administrator / Chair, Farm Credit Administration",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
@@ -52641,7 +52641,7 @@
     },
     "exec-ind-misc-farm-credit-administration-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
@@ -52656,7 +52656,7 @@
     },
     "exec-ind-misc-farm-credit-administration-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
@@ -52671,7 +52671,7 @@
     },
     "exec-ind-misc-farm-credit-administration-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
@@ -52686,7 +52686,7 @@
     },
     "exec-ind-misc-farm-credit-administration-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
@@ -52701,7 +52701,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua-director-administrator-chair-national-credit-union-administration": {
       "name": "Director / Administrator / Chair, National Credit Union Administration",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
@@ -52717,7 +52717,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
@@ -52733,7 +52733,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
@@ -52749,7 +52749,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
@@ -52765,7 +52765,7 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
@@ -52781,7 +52781,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-director-administrator-chair-pension-benefit-guaranty-corporation": {
       "name": "Director / Administrator / Chair, Pension Benefit Guaranty Corporation",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": false,
       "isPost": true,
@@ -52797,7 +52797,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": false,
       "isPost": true,
@@ -52813,7 +52813,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": false,
       "isPost": true,
@@ -52829,7 +52829,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": false,
       "isPost": true,
@@ -52845,7 +52845,7 @@
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
       "ownPage": false,
       "isPost": true,
@@ -52861,7 +52861,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc-director-administrator-chair-appalachian-regional-commission": {
       "name": "Director / Administrator / Chair, Appalachian Regional Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": false,
       "isPost": true,
@@ -52877,7 +52877,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": false,
       "isPost": true,
@@ -52893,7 +52893,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": false,
       "isPost": true,
@@ -52909,7 +52909,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": false,
       "isPost": true,
@@ -52925,7 +52925,7 @@
     },
     "exec-ind-misc-appalachian-regional-commission-arc-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-appalachian-regional-commission-arc",
       "ownPage": false,
       "isPost": true,
@@ -52941,7 +52941,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc-director-administrator-chair-national-capital-planning-commission": {
       "name": "Director / Administrator / Chair, National Capital Planning Commission",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": false,
       "isPost": true,
@@ -52957,7 +52957,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": false,
       "isPost": true,
@@ -52973,7 +52973,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": false,
       "isPost": true,
@@ -52989,7 +52989,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": false,
       "isPost": true,
@@ -53005,7 +53005,7 @@
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-16T18:22:10+00:00",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
       "siteFrom": "exec-ind-misc-national-capital-planning-commission-ncpc",
       "ownPage": false,
       "isPost": true,
@@ -57871,6 +57871,199 @@
       "failures": [
         {
           "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-national-mediation-board-nmb": {
+      "name": "National Mediation Board (NMB)",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "matchedText": "National Mediation Board – The National Mediation Board helps to maintain the flow of interstate commerce in the airline and railway industries through representation, mediation and arbitration servic",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-national-mediation-board-nmb-director-administrator-chair-national-mediation-board": {
+      "name": "Director / Administrator / Chair, National Mediation Board",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-national-mediation-board-nmb-deputy-director-vice-chair": {
+      "name": "Deputy Director / Vice Chair",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-national-mediation-board-nmb-general-counsel": {
+      "name": "General Counsel",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-national-mediation-board-nmb-inspector-general": {
+      "name": "Inspector General",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-national-mediation-board-nmb-chief-financial-officer": {
+      "name": "Chief Financial Officer",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-national-mediation-board-nmb",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://nmb.gov/NMB_Application/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva": {
+      "name": "Tennessee Valley Authority (TVA)",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://oig.tva.gov/",
+          "matchedText": "Tennessee Valley Authority Home | Office of the Inspector General OIG",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva-director-administrator-chair-tennessee-valley-authority": {
+      "name": "Director / Administrator / Chair, Tennessee Valley Authority",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://oig.tva.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva-deputy-director-vice-chair": {
+      "name": "Deputy Director / Vice Chair",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://oig.tva.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva-general-counsel": {
+      "name": "General Counsel",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://oig.tva.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ]
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva-inspector-general": {
+      "name": "Inspector General",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": false,
+      "isPost": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://oig.tva.gov/",
+          "matchedText": "Inspector General",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-tennessee-valley-authority-tva-chief-financial-officer": {
+      "name": "Chief Financial Officer",
+      "checkedAt": "2026-09-18T23:36:55+00:00",
+      "siteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
+      "ownPage": false,
+      "isPost": true,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://oig.tva.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ]
