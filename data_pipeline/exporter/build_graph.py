@@ -1005,6 +1005,24 @@ TREASURY_ROW_ALIASES = {
     # "United States Attorneys" above; canonical_name_key is applied to the
     # row name before this lookup, so a key it would never emit is dead weight.
     "agency for global media": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+    # Two more of exactly the same shape, added 2026-09-19 because CURATION.md
+    # §9 renamed the nodes to the wording their own pages carry and the
+    # Treasury's account names have not caught up. Both lines are filed by the
+    # statement under the section the graph gives the node, which is the test;
+    # neither is an inference about which unit is meant, because in both cases
+    # the agency's own site states the rename.
+    #
+    # fns.usda.gov now labels the bureau "Food and Nutrition Administration"
+    # throughout, with FNA as its abbreviation, over the same SNAP/WIC/
+    # school-meals programmes; Table 5 still prints "Food and Nutrition
+    # Service", under Department of Agriculture, where the node sits. Without
+    # this line the next run with a fresh statement would strip a measured
+    # $127.2B from the node and publish an apportioned share in its place.
+    "food and nutrition service": "exec-dept-usda-fns",
+    # nsf.gov/edu states "EDU was formerly the Directorate of Education"; Table
+    # 5 still prints "Education and Human Resources", under National Science
+    # Foundation, where the node sits.
+    "education and human resources": "exec-ind-nsf-education-human-resources-ehr",
 }
 # A Treasury outlay line is an organisation's spending; a committee named after
 # an agency, or a position, is never the thing that spent it.
