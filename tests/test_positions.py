@@ -458,13 +458,27 @@ class RealFixtureTests(unittest.TestCase):
 
     def test_the_matching_counts(self) -> None:
         r = self.report
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (59, 110, 0))
+        # (59, 110, 0) and (154, 27, 894, 0, 429) until 2026-09-19, when
+        # CURATION.md §9 renamed 69 organisations to the wording their own
+        # pages carry. Four positions gained a PLUM record and one lost it --
+        # the FNS Administrator, because the archive still files the bureau as
+        # the Food and Nutrition Service where USDA now says Administration.
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (62, 107, 0))
+        # The two ambiguous organisations are both the USPTO's: the archive
+        # files rows under "PATENT AND TRADEMARK OFFICE" and "UNITED STATES
+        # PATENT AND TRADEMARK OFFICE", and after the rename BOTH reduce to
+        # the node's key, so neither is attributed. Before the rename neither
+        # matched at all. The outcome is the same -- no record from those rows
+        # -- and it fails safe: a refusal, never a row attributed to the wrong
+        # unit. This is the cost the rename table's collision rule names.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (154, 27, 894, 0, 429))
+                         (160, 30, 895, 2, 420))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).
-        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4591, 584, 1084))
+        # 584 and 1,084 until 2026-09-19: the §9 renames matched three more
+        # agencies and six more organisations, so more posts sit under one.
+        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4591, 602, 1106))
         # 126, not the 91 of 2026-09-08: reading the organisation's own name
         # back off the archive's own title recovers 35 posts the archive
         # spells "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION".
@@ -472,9 +486,14 @@ class RealFixtureTests(unittest.TestCase):
         # declining to guess: "DEPUTY ASSISTANT SECRETARY" and "DEPUTY
         # ASSISTANT SECRETARY, EMPLOYMENT AND TRAINING ADMINISTRATION" are
         # two rows that now collapse onto one key, so neither is claimed.
+        # 126 until 2026-09-19: the §9 renames gained four posts a record
+        # (SAMHSA, USAGM and two NSF directorates, whose organisations now
+        # carry the names the archive and their own pages use) and lost one,
+        # the FNS Administrator, since the archive still files that bureau as
+        # the Food and Nutrition Service.
         self.assertEqual((r["positions_matched"], r["positions_unmatched"], len(r["positions_shared_title"]), len(r["positions_ambiguous_alternatives"]), len(r["positions_title_ambiguous_in_archive"])),
-                         (126, 953, 0, 0, 5))
-        self.assertEqual(len(self.records), 126)
+                         (129, 972, 0, 0, 5))
+        self.assertEqual(len(self.records), 129)
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["listedTitle"], "CHIEF OF STAFF")
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["placement"]["parentId"], "exec-dept-dhs-cisa")
 
@@ -613,7 +632,7 @@ class ReportedPayTests(unittest.TestCase):
         records, _ = match_positions(archive, node_map, parent_map, root_id=ROOT_ID)
         rates = [r for r in records.values() if r.get("reportedPay")]
         ranks = [r for r in records.values() if r.get("payLevel")]
-        self.assertEqual((len(rates), len(ranks)), (44, 30))
+        self.assertEqual((len(rates), len(ranks)), (46, 31))
         for record in rates:
             self.assertIsNone(record["payLevel"], "a rate was published as a level")
             self.assertIn("$", record["reportedPayText"])

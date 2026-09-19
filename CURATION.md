@@ -914,3 +914,255 @@ Two departments could not be probed at all: `www.state.gov` and
 `www.ed.gov` answer `robots.txt` with 401/403, which this project treats as
 a refusal (see CLAUDE.md on RFC 9309). That is a fact about the network, not
 about the titles.
+
+## 9. Organisation names the government's own pages do not carry (2026-09-19)
+
+§8 did this for post titles. This is the same finding one level up, and it
+was the largest single blocker left on verification coverage.
+
+A 2026-09-18 pass over every organisation with no candidate page established
+that the binding constraint is **not a missing URL**. For 181 organisations
+the page was read, reads fine, and simply does not carry the name this graph
+uses. No other URL fixes that: it is a curated-name problem, and the fix is a
+rename argued from the page's own wording — never a loosening of the matcher,
+for the reason §8 gives at length.
+
+Ten agents read those 181 nodes' pages with `scripts/probe_candidate_pages.py`
+and proposed or refused each. They returned **107 proposals and 74 refusals**,
+and they were told a refusal is a result. Every proposal was then re-tested
+independently against the live page with the verifier's own label test, and
+the curated name re-tested beside it: **64 of the first 65 confirmed, and the
+curated name was genuinely not labelled in every one**, so the premise held
+rather than being inherited.
+
+**69 renames applied; 39 proposals declined.** `data/curation/unit_renames.json`
+is the reviewed table and `scripts/rename_units_to_official_wording.py` is its
+only writer — the curated file is never hand-edited. The table is the same
+shape as `TREASURY_ROW_ALIASES` and `USASPENDING_NAME_ALIASES`: a reviewed
+identification with the basis written beside it, and re-checked against the
+source rather than trusted. **The table proposes; the page decides.** Every
+row is re-fetched and re-tested on every run, so a row cannot go stale
+silently, and the script refuses a row whose node no longer carries the name
+the row was written against.
+
+### 9.1 What the renames actually were
+
+Four kinds, and they are worth keeping apart because they carry different risk.
+
+**The graph's own typography, not a different name** (8). The curated file
+writes `<ACRONYM> — <Name>`, which no page carries. `canonical_name_key` drops
+parentheticals, so moving the acronym into brackets keeps it *and* confirms —
+strictly better than the bare form the agents proposed, and checked before
+being relied on:
+
+    NIST — National Institute of Standards & Technology
+        -> National Institute of Standards and Technology (NIST)
+    S.D.N.Y. — Southern District of New York
+        -> Southern District of New York (S.D.N.Y.)
+    Substance Abuse & Mental Health Services Admin (SAMHSA)
+        -> Substance Abuse and Mental Health Services Administration (SAMHSA)
+
+**A rename the agency itself states** (3). Not a wording difference: the graph
+is stale about a real rename, and the agency's own page says so.
+
+  - `National Renewable Energy Laboratory` → **National Laboratory of the
+    Rockies (NLR)**. energy.gov states it in its own words: "The National
+    Laboratory of the Rockies (NLR), formerly known as the National Renewable
+    Energy Laboratory (NREL), is a U.S. Department of Energy (DOE) national
+    laboratory".
+  - `Food & Nutrition Service (FNS)` → **Food and Nutrition Administration
+    (FNA)**. fns.usda.gov labels itself so throughout, with FNA as its
+    abbreviation, over the same SNAP/WIC/school-meals programmes.
+  - `Education & Human Resources (EHR)` → **Directorate for STEM Education
+    (EDU)**. The page states the rename: "EDU was formerly the Directorate of
+    Education".
+
+These three were the ones most worth checking directly rather than accepting,
+because an agent proposing "the lab is now called something else" is exactly
+where a confident error would do most damage. All three were read at source
+before being applied. Note which way the check ran: the prior belief that
+NREL is NREL was the stale thing, not the agent.
+
+**A garbled curated name** (6). `Senate Committee on Select Committee on
+Intelligence` stacks the graph's scaffolding in front of a name that already
+contains "Committee on", which is why the committee fold reduces it to one
+token and can never match; `Investigations & Subcommittee on Permanent
+Investigations` duplicates half of itself; `Division of National Center for
+Science & Engineering Statistics` prefixes "Division of" to a National Center.
+
+**A seat the chamber has since renamed** (31, all committees and
+subcommittees), each argued from the parent committee's own complete listing
+or from the Senate and House Clerk lists already committed under
+`tests/fixtures/directories/`. Two of these retire a standing
+`not_in_official_list` negative the site publishes today: `Competition Policy,
+Antitrust & Consumer Rights` is the Senate's `Antitrust, Competition Policy,
+and Consumer Rights` reordered, and `House Committee on Oversight &
+Accountability` is the Clerk's `Oversight and Government Reform` — both
+already recorded in §5.7 as names the official lists spell differently.
+
+**The remaining 21** are EPA's ten regions and five courts of appeals, below.
+
+### 9.2 EPA's regions: the qualifier is EPA's, not the graph's
+
+All ten regions were renamed from roman to arabic numerals, which is EPA's own
+numbering. The qualifier moved too, and that is the more careful half: because
+`canonical_name_key` **drops parentheticals, the qualifier is never checked
+against anything**. Keeping the graph's own word in brackets would ride along
+unverified, so EPA's is used instead — which corrected two:
+
+    EPA Region VII — Plains      -> EPA Region 7 (Midwest)
+    EPA Region VIII — Mountain   -> EPA Region 8 (Mountains and Plains)
+    EPA Region IX — Pacific      -> EPA Region 9 (Pacific Southwest)
+
+Region 8 is also what surfaced a false positive in this repository's own count
+rule, fixed with it: `states_a_count_in_prose` read "EPA Region 8 (Mountains
+and Plains)" as "8 ... Mountains", a count of mountains, and refused the name
+before any fetch. A bracket is a segment of its own for the same reason the
+dash is, and the fix changes the verdict on **no name in the curated file** —
+it is what lets an agency's own bracketed qualifier be proposed at all. Pinned
+both ways in `tests/test_verification.CountLabelFloorTests`.
+
+### 9.3 The courts of appeals: five of eleven, and the family kept
+
+The only thing blocking all eleven numbered circuits is the numeral: the graph
+writes `9th`, the courts write `Ninth`. The minimal edit keeps the graph's
+family form intact, and it was tested against all eleven rather than assumed:
+
+    confirm the family form  ->  2nd, 4th, 5th, 7th, 9th   (renamed)
+    label only a short form  ->  1st, 3rd, 6th, 8th, 10th, 11th   (left alone)
+
+The six left alone label themselves only `Sixth Circuit` or `Eighth Circuit
+Court of Appeals`. Adopting those would break the family convention across
+thirteen sibling nodes to confirm six, and `First Circuit` is two generic
+tokens besides. Five renames and six principled refusals is the honest split;
+the refusals are not a coverage failure but a statement about what those
+courts' own sites print.
+
+### 9.4 The 39 proposals declined, and why
+
+  - **HUD's ten regions** (10). HUD's Field Leadership page names each region
+    by headquarters city — `Region VIII - Denver` — and the match requires
+    dropping the `HUD` the graph uses to keep its regions apart from EPA's and
+    Education's identically numbered ones. A family decision that trades ten
+    nodes' disambiguation for ten confirmations; left to the owner.
+  - **VA's VISNs** (6). Proposed as bare `VISN 17` / `VISN 08`, matching only
+    in site-wide navigation. A much larger finding sits behind them and is not
+    a naming question at all: **department.va.gov now states the VA comprises
+    5 Veterans Integrated Service Networks, and the graph carries an 18-VISN
+    parent with nineteen children under it.** That is structural curation, it
+    affects every VISN node, and renaming one would obscure it. `VISN 4 — VISN
+    4` is separately garbled and should be fixed whichever way the structure
+    goes.
+  - **NSF's divisions** (9). `MPS Chemistry`, `ENG Civil, Mechanical, and
+    Manufacturing Innovation`, `Earth Sciences (EAR) program`. The redesigned
+    nsf.gov carries no "Division of" anywhere, but what it carries instead is
+    its own site-section labelling, not the unit's name — and "program"
+    mis-types a division. NSF's *directorates* were renamed (§9.1) because
+    `Directorate for Geosciences (GEO)` is a formal name; its divisions were
+    not, because `MPS Chemistry` is a breadcrumb.
+  - **A bare generic title** (5). `Inspector General` for the House OIG,
+    `Chaplain`, `Environment`, `Sergeant at Arms`, `Library of Congress` for
+    the AOC's buildings node. The first is the sharpest: `Inspector General`
+    names 72 nodes here and every `.gov` footer carries those words, which is
+    exactly the furniture match CLAUDE.md records the navigation rule refusing
+    18 times. The script refuses these by rule (`GENERIC_NAMES`, and a
+    two-token floor), not by taste.
+  - **A bare acronym** (1). `USSOCOM` is one token, and `Special Operations
+    Command (USSOCOM)` does not match, so the refusal is on the evidence
+    rather than on the convention.
+  - **Positional inference only** (1). The CIA's five directorates are named on
+    cia.gov and four match; the fifth is proposed as `Directorate of Mission
+    Systems` because it is what is left over. The page states no rename. That
+    is an argument from arithmetic, not from the page, and the agent marked it
+    speculative.
+  - **A stale or undecidable source** (7). One rests on an archived
+    118th-Congress block; one moves maritime jurisdiction the page does not
+    confirm; the rest are groupings no page names.
+
+### 9.5 The guard that earned its place
+
+`Subcommittee on Energy` was refused on the first pass because the House
+Science Committee already has one. That refusal was **too strict and the rule
+was changed, not the row**: the House and the Senate each name a subcommittee
+after the appropriations bill it writes, so `Agriculture, Rural Development,
+Food and Drug Administration, and Related Agencies` is the true name of two
+seats in two chambers. The collision guard is now scoped to siblings, where an
+ambiguity is real, and the cost of allowing a cross-parent duplicate is stated
+rather than hidden: a source matched by name alone refuses a name reaching two
+nodes, so a duplicate can lose a node an unrelated match. It fails safe — a
+refusal, never a figure attributed to the wrong unit.
+
+Two rows were refused on the first run for serving below the readable-text
+floor (judiciary.senate.gov served 0 characters; ca4.uscourts.gov 263) and
+applied on the next, one of them from the court's `/judges` page instead. That
+is the re-check doing its job rather than a fact about those courts.
+
+### 9.6 What the renames cost, measured rather than assumed
+
+A rename is not free: every source this project matches by name was re-run
+against the new names, and the counts moved in both directions.
+
+    House Clerk committee list   18 -> 20 matched   (both renamed to the Clerk's own wording)
+    OPM FedScope headcounts     133 -> 136 records  (+4, -1)
+    OPM PLUM archive positions  126 -> 129 records  (+4, -1)
+    USAspending File A          two aliases retired, both upgraded
+
+The gains are the graph's `<ACRONYM> — <name>` typography going away: NIST,
+USPTO, SAMHSA and USAGM had been unmatchable by every name-keyed source at
+once, and now match all of them.
+
+Two USAspending aliases were **deleted rather than updated**. `USPTO` and
+`USAGM` were held at `partial` by an alias recording that two spellings meant
+one unit; after the rename the names reduce to the same canonical key, so the
+records now apply by name equality and are graded `verified`. That is an
+upgrade the *names* earned, not one an alias could — writing an alias down has
+never been allowed to buy `exact`.
+
+**The one loss is real and is not aliased away.** The Food and Nutrition
+Service lost its FedScope headcount record and its Administrator lost a PLUM
+record, because both of OPM's files are from March 2025 and September 2024 and
+still name the bureau the Food and Nutrition Service. The alternative was to
+leave the graph stale about a rename USDA states on its own site, which is
+worse: the node now reads as the government reads it, and one official dataset
+has not caught up. A second alias mechanism was not built for one record.
+Expect this shape again — a correctly adopted rename will strand older datasets
+until they are refreshed.
+
+The PLUM matcher also reports two new *ambiguous* organisations, both the
+USPTO's: the archive files rows under `PATENT AND TRADEMARK OFFICE` and
+`UNITED STATES PATENT AND TRADEMARK OFFICE`, and both now reduce to the node's
+key, so neither is attributed. Before the rename neither matched at all, so the
+outcome is unchanged — and it fails the safe way, as a refusal rather than a
+row attributed to the wrong unit.
+
+## 10. The VA's networks: the graph carries 18, the VA now says 5 (2026-09-19)
+
+Found while probing pages for §9, and it is not a naming question, which is
+why no VISN rename was applied.
+
+`department.va.gov` states in its own words that the department "comprises 5
+Veterans Integrated Service Networks or VISNs". The curated graph carries a
+parent named `18 VA Integrated Service Networks (VISNs)` with **nineteen**
+children beneath it — itself an internal inconsistency, before the VA's own
+figure is considered at all.
+
+The page's VISN 1 lists Connecticut, District of Columbia, Delaware, Maine,
+Maryland, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania,
+Rhode Island and Vermont — a larger territory than the curated VISN 1, and one
+that covers several of its curated siblings. So the numbers survived the
+consolidation but the units behind them did not: this cannot be fixed by
+renaming nodes, and renaming one to a bare `VISN 17` would have quietly
+obscured it.
+
+What is needed, and what this pass deliberately did not do:
+
+  - decide whether the five current networks replace the nineteen nodes or
+    sit above them, which is a structural call the owner makes;
+  - correct the parent's name, which states a count the VA no longer reports
+    and which the graph does not itself carry;
+  - fix `VISN 4 — VISN 4`, whose qualifier is a duplication of its own name,
+    whichever way the structure goes.
+
+Until then every VISN node's description and placement should be read as
+describing the pre-consolidation VA. Nothing in the pipeline knows this; it is
+recorded here because the evidence for it is one page this session read.

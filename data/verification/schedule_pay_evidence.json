@@ -23,8 +23,8 @@
       "V": 4
     },
     "matchRefusals": {
-      "no_such_post_directly_under_that_organisation": 64,
-      "office_part_is_a_bare_role_word": 53
+      "no_such_post_directly_under_that_organisation": 66,
+      "office_part_is_a_bare_role_word": 55
     },
     "scopedMatches": 61,
     "ambiguousStatutoryTitles": {

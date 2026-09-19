@@ -1,0 +1,568 @@
+{
+  "_comment": [
+    "Organisations whose own official page does not carry the name this graph uses.",
+    "scripts/rename_units_to_official_wording.py is the only writer of these renames;",
+    "the curated file is never hand-edited. Every row is re-verified against the live",
+    "page on every run -- the table proposes, the page decides -- so a row cannot go",
+    "stale silently. CURATION.md records each row, and every proposal refused.",
+    "'from' is the name the row was written against: a node that no longer carries it",
+    "is skipped rather than overwritten."
+  ],
+  "renames": [
+    {
+      "id": "exec-dept-doc-nist",
+      "from": "NIST — National Institute of Standards & Technology",
+      "to": "National Institute of Standards and Technology (NIST)",
+      "url": "https://www.nist.gov/",
+      "basis": "nist.gov is the unit's own site and labels it with this name in page content; the curated name is the same words with the agency's own acronym bolted on in front of an em dash, which is the graph's convention and not anything the page carries.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-doc-uspto",
+      "from": "USPTO — Patent & Trademark Office",
+      "to": "United States Patent and Trademark Office (USPTO)",
+      "url": "https://www.uspto.gov/about-us",
+      "basis": "uspto.gov is the office's own site and its masthead reads 'United States Patent and Trademark Office - An Agency of the Department of Commerce', naming the graph's parent for this node as its department. The label sits in the site-wide masthead, so it holds for every page on the host; CLAUDE.md records that as evidence the verifier accepts for an organisation, and the panel says where it sat.",
+      "addedOn": "2026-09-19",
+      "region": "navigation"
+    },
+    {
+      "id": "jud-district-sdny",
+      "from": "S.D.N.Y. — Southern District of New York",
+      "to": "Southern District of New York (S.D.N.Y.)",
+      "url": "https://www.nysd.uscourts.gov/",
+      "basis": "nysd.uscourts.gov is the court's own site and names itself this way; it never writes the abbreviation the curated name leads with.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-eop-omb-oira-office-of-information-regulatory-affairs",
+      "from": "OIRA — Office of Information & Regulatory Affairs",
+      "to": "Office of Information and Regulatory Affairs (OIRA)",
+      "url": "https://www.reginfo.gov/public/jsp/Utilities/aboutUs.myjsp",
+      "basis": "reginfo.gov is OIRA's own site and this page sits under an Office of Management and Budget banner, the node's curated parent; the curated name itself gives this as the expansion of its leading acronym.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hhs-samhsa",
+      "from": "Substance Abuse & Mental Health Services Admin (SAMHSA)",
+      "to": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
+      "url": "https://www.samhsa.gov/",
+      "basis": "The agency's own site at its own domain; the curated key ends 'services admin' where every label on the page ends 'services administration'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-support-loc-nls",
+      "from": "National Library Service for Blind & Print Disabled",
+      "to": "National Library Service for the Blind and Print Disabled (NLS)",
+      "url": "https://www.loc.gov/nls/",
+      "basis": "The unit's own page on loc.gov describes the same free braille and audio service under the same parent; the curated name drops the definite article.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-counsel",
+      "from": "Office of Legislative Counsel",
+      "to": "Office of the Legislative Counsel",
+      "url": "https://www.house.gov/the-house-explained/officers-and-organizations",
+      "basis": "house.gov's own officers-and-organizations page labels this body 'The Office of the Legislative Counsel' verbatim, and the office's own site at legcounsel.house.gov titles itself the same way.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-judiciary",
+      "from": "Senate Committee on Judiciary",
+      "to": "United States Senate Committee on the Judiciary",
+      "url": "https://www.judiciary.senate.gov/",
+      "basis": "judiciary.senate.gov is the committee's own site; the curated name is the same committee missing the definite article, and 'judiciary' is a single token so the committee fold cannot bridge it.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-doe-national-renewable-energy-laboratory",
+      "from": "National Renewable Energy Laboratory",
+      "to": "National Laboratory of the Rockies (NLR)",
+      "url": "https://www.energy.gov/national-laboratories",
+      "basis": "DOE's own list of its national laboratories states the rename in its own words: 'The National Laboratory of the Rockies (NLR), formerly known as the National Renewable Energy Laboratory (NREL), is a U.S. Department of Energy (DOE) national laboratory'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-usda-fns",
+      "from": "Food & Nutrition Service (FNS)",
+      "to": "Food and Nutrition Administration (FNA)",
+      "url": "https://www.fns.usda.gov/",
+      "basis": "fns.usda.gov is the node's own USDA domain and now labels itself 'Food and Nutrition Administration' throughout, with the abbreviation FNA, over the same SNAP/WIC/school-meals programmes the node describes.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-education-human-resources-ehr",
+      "from": "Education & Human Resources (EHR)",
+      "to": "Directorate for STEM Education (EDU)",
+      "url": "https://www.nsf.gov/edu",
+      "basis": "The page states the rename itself -- 'EDU was formerly the Directorate of Education' -- and nsf.gov/ehr resolves to it, under the same parent the graph gives the node.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-geosciences-geo",
+      "from": "Geosciences (GEO)",
+      "to": "Directorate for Geosciences (GEO)",
+      "url": "https://www.nsf.gov/geo",
+      "basis": "nsf.gov/geo is the directorate's own page and carries NSF's full name for it; the curated name is that name with 'Directorate for' dropped, which is also what leaves it a single generic token the verifier refuses before any fetch.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-engineering-eng",
+      "from": "Engineering (ENG)",
+      "to": "Directorate for Engineering (ENG)",
+      "url": "https://www.nsf.gov/eng",
+      "basis": "nsf.gov/eng is the directorate's own page under NSF, the node's parent, and carries the same ENG code the curated name carries; the curated one-token key 'engineering' is refused as too generic before any page is read.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure",
+      "from": "Division of Advanced Cyberinfrastructure",
+      "to": "Office of Advanced Cyberinfrastructure",
+      "url": "https://www.nsf.gov/cise/oac",
+      "basis": "NSF files the page under this node's own parent -- its title reads 'Office of Advanced Cyberinfrastructure - Directorate for Computer and Information Science and Engineering (CISE)' -- and it is the only cyberinfrastructure unit CISE lists; NSF types it an Office where the graph says Division.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems",
+      "from": "Division of Chemical, Bioengineering, Environmental & Transport Systems",
+      "to": "Chemical, Bioengineering, Energy and Transport Systems (CBET)",
+      "url": "https://www.nsf.gov/eng",
+      "basis": "NSF's Engineering directorate page, the node's parent, lists this unit under the same CBET abbreviation the node's id carries; NSF prints 'Energy' where the curated name prints 'Environmental'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator",
+      "from": "Division of Convergence Accelerator",
+      "to": "Convergence Accelerator",
+      "url": "https://www.nsf.gov/funding/initiatives/convergence-accelerator",
+      "basis": "NSF's own page for the unit names the node's curated parent as the directorate it sits under, and describes it as a programme rather than a division, so NSF carries no 'Division of' for it.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-iv-southeast",
+      "from": "EPA Region IV — Southeast",
+      "to": "EPA Region 4 (Southeast)",
+      "url": "https://www.epa.gov/aboutepa/about-epa-region-4-southeast",
+      "basis": "EPA's regional index links its ten regions by arabic numeral and this page's heading reads 'About EPA Region 4 (Southeast)', listing exactly the states the node's description lists.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-v-midwest",
+      "from": "EPA Region V — Midwest",
+      "to": "EPA Region 5",
+      "url": "https://www.epa.gov/aboutepa/epa-region-5",
+      "basis": "EPA's own Region 5 page is the office the node describes -- the curated states (IL, IN, MI, MN, OH, WI) are Region 5's -- and EPA numbers its regions in arabic where the graph uses roman numerals. EPA's own page carries no qualifier for this region.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-vi-south-central",
+      "from": "EPA Region VI — South Central",
+      "to": "EPA Region 6 (South Central)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-6-south-central",
+      "basis": "The region's own page is headed 'EPA Region 6 (South Central)' and carries the same Dallas headquarters and same five states the curated description gives.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-vii-plains",
+      "from": "EPA Region VII — Plains",
+      "to": "EPA Region 7 (Midwest)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-7-midwest",
+      "basis": "The seventh region's own page heads itself 'EPA Region 7 (Midwest)' and describes serving Nebraska, Kansas, Iowa and Missouri, the four states the node's description gives. EPA calls this region the Midwest where the graph calls it the Plains.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-viii-mountain",
+      "from": "EPA Region VIII — Mountain",
+      "to": "EPA Region 8 (Mountains and Plains)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-8-mountains-and-plains",
+      "basis": "The page EPA's own regional index links as 'Region 8' heads itself 'EPA Region 8 (Mountains and Plains)', where the graph truncates the qualifier to 'Mountain'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-ix-pacific",
+      "from": "EPA Region IX — Pacific",
+      "to": "EPA Region 9 (Pacific Southwest)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest",
+      "basis": "EPA's own page for its ninth region labels it 'EPA Region 9 (Pacific Southwest)', where the graph writes the number in roman numerals and truncates EPA's qualifier to 'Pacific'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-2nd-circuit",
+      "from": "U.S. Court of Appeals for the 2nd Circuit",
+      "to": "U.S. Court of Appeals for the Second Circuit",
+      "url": "https://www.ca2.uscourts.gov/",
+      "basis": "ca2.uscourts.gov is the court's own site and labels itself 'United States Court of Appeals for the Second Circuit'; canonical_name_key strips the leading 'United States', so only the numeral differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-4th-circuit",
+      "from": "U.S. Court of Appeals for the 4th Circuit",
+      "to": "U.S. Court of Appeals for the Fourth Circuit",
+      "url": "https://www.ca4.uscourts.gov/judges",
+      "basis": "ca4.uscourts.gov is the court's own site and labels itself 'United States Court of Appeals for the Fourth Circuit'; only the numeral differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-5th-circuit",
+      "from": "U.S. Court of Appeals for the 5th Circuit",
+      "to": "U.S. Court of Appeals for the Fifth Circuit",
+      "url": "https://www.ca5.uscourts.gov/",
+      "basis": "ca5.uscourts.gov is the court's own site and labels itself 'United States Court of Appeals for the Fifth Circuit'; only the numeral differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-7th-circuit",
+      "from": "U.S. Court of Appeals for the 7th Circuit",
+      "to": "U.S. Court of Appeals for the Seventh Circuit",
+      "url": "https://www.ca7.uscourts.gov/",
+      "basis": "ca7.uscourts.gov is the court's own site and labels itself 'United States Court of Appeals for the Seventh Circuit'; only the numeral differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-9th-circuit",
+      "from": "U.S. Court of Appeals for the 9th Circuit",
+      "to": "U.S. Court of Appeals for the Ninth Circuit",
+      "url": "https://www.ca9.uscourts.gov/",
+      "basis": "ca9.uscourts.gov is the court's own site and labels itself 'United States Court of Appeals for the Ninth Circuit'; only the numeral differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-doe-natl-labs",
+      "from": "National Laboratories (17)",
+      "to": "National Laboratories",
+      "url": "https://www.energy.gov/national-laboratories",
+      "basis": "energy.gov/national-laboratories is DOE's own page for the system this node stands for, and names 16 of the node's 17 curated child laboratories in content. The curated '(17)' makes the name a count label the verifier refuses before fetching, so the count -- not label equality -- is what blocks it.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies",
+      "from": "Subcommittee on Labor, HHS & Education & Related Agencies",
+      "to": "Labor, Health and Human Services, Education, and Related Agencies",
+      "url": "https://appropriations.house.gov/subcommittees",
+      "basis": "The parent committee's own subcommittee listing carries this label and no other covering labor, health and education; the graph abbreviates 'Health and Human Services' to 'HHS', which label equality cannot bridge.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs",
+      "from": "Subcommittee on State, Foreign Operations & Related Programs",
+      "to": "National Security, Department of State, and Related Programs",
+      "url": "https://appropriations.house.gov/subcommittees",
+      "basis": "The House Clerk's committee list, committed at tests/fixtures/directories/house/committees.xlsx, carries exactly one State-Department subcommittee under Committee on Appropriations; the House renamed the seat.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies",
+      "from": "Subcommittee on Transportation, HUD & Related Agencies",
+      "to": "Transportation, Housing and Urban Development, and Related Agencies",
+      "url": "https://appropriations.house.gov/subcommittees",
+      "basis": "The committee's own subcommittee roster prints this title, and its subcommittees are one per appropriations bill, so it is the only transportation seat.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-appropriations-sub-energy-water-development",
+      "from": "Subcommittee on Energy & Water Development",
+      "to": "Energy and Water Development and Related Agencies",
+      "url": "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies",
+      "basis": "The House Appropriations Committee's own page for this subcommittee, the node's parent being that committee; the curated name omits the statutory 'and Related Agencies' tail.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity",
+      "from": "Subcommittee on NSA & Cybersecurity",
+      "to": "Subcommittee on the National Security Agency and Cyber",
+      "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+      "basis": "The House Clerk's Committee Repository page for the node's parent lists the committee's current subcommittees, and this is the only one covering the National Security Agency.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-foreign-affairs-sub-africa",
+      "from": "Subcommittee on Africa",
+      "to": "Africa Subcommittee",
+      "url": "https://foreignaffairs.house.gov/subcommittees/",
+      "basis": "The parent committee's own subcommittees page lists seven regional subcommittees and labels this one 'Africa Subcommittee' in body content, describing its remit as the State Department's Bureau of African Affairs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-foreign-affairs-sub-oversight-accountability",
+      "from": "Subcommittee on Oversight & Accountability",
+      "to": "Oversight and Intelligence Subcommittee",
+      "url": "https://foreignaffairs.house.gov/subcommittees/",
+      "basis": "The committee's own complete list has six regional subcommittees and exactly one functional one, and the House Clerk's official list carries the same name; the seat has taken on intelligence.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
+      "from": "Subcommittee on Weaponization of the Federal Government",
+      "to": "Select Subcommittee on the Weaponization of the Federal Government",
+      "url": "https://judiciary.house.gov/about/subcommittees",
+      "basis": "The committee's own subcommittees page carries this label in content and names no other weaponization body; the curated name drops 'Select' and 'the'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources",
+      "from": "Conservation, Climate, Forestry & Natural Resources",
+      "to": "The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+      "url": "https://www.agriculture.senate.gov/about/subcommittees",
+      "basis": "The committee's own page lists exactly five subcommittees for the 119th Congress and the graph carries exactly five under this committee, mapping one to one by subject; this is the conservation seat.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research",
+      "from": "Food & Nutrition, Specialty Crops & Agricultural Research",
+      "to": "Food and Nutrition, Specialty Crops, Organics, and Research",
+      "url": "https://www.agriculture.senate.gov/about/subcommittees",
+      "basis": "The parent committee's own subcommittees page carries exactly one subcommittee on this subject block, under a current name that adds 'Organics' and drops 'Agricultural'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security",
+      "from": "Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security",
+      "to": "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+      "url": "https://www.agriculture.senate.gov/about/subcommittees",
+      "basis": "Two official sources agree on the same seat under the same committee: the committee's own page with its jurisdiction line, and the Senate's committed committee list.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy",
+      "from": "Rural Development & Energy",
+      "to": "Subcommittee on Rural Development, Energy, and Credit",
+      "url": "https://www.agriculture.senate.gov/about/subcommittees",
+      "basis": "The committee's own page lists its five subcommittees for the 119th Congress and only this one covers rural development or energy.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
+      "from": "Agriculture, Rural Development, FDA & Related Agencies",
+      "to": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+      "url": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
+      "basis": "The subcommittee's own subpage on the parent committee's site, reached from that committee's own subcommittee list; the committee spells out what the graph abbreviates to 'FDA'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies",
+      "from": "Labor, HHS, Education & Related Agencies",
+      "to": "Labor, Health and Human Services, Education, and Related Agencies",
+      "url": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
+      "basis": "The subcommittee's own page on the parent committee's site, reached from that committee's own subcommittee list; its heading spells out the abbreviation the curated name compresses to 'HHS'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights",
+      "from": "Competition Policy, Antitrust & Consumer Rights",
+      "to": "Antitrust, Competition Policy, and Consumer Rights",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "basis": "Same seat, reordered: the Senate's own complete committee list, committed at tests/fixtures/directories/senate/committee_memberships_SSJU.xml, carries this name under Committee on the Judiciary, the node's curated parent.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism",
+      "from": "Criminal Justice & Counterterrorism",
+      "to": "Subcommittee on Crime and Counterterrorism",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "basis": "The Senate's own complete committee list files seven Judiciary subcommittees and only this one carries counterterrorism.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety",
+      "from": "Immigration, Citizenship & Border Safety",
+      "to": "Subcommittee on Border Security and Immigration",
+      "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+      "basis": "The Senate's own complete committee list carries seven subcommittees under Judiciary, of which this is the only one covering immigration.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security",
+      "from": "Consumer Protection, Product Safety & Data Security",
+      "to": "Consumer Protection, Technology, & Data Privacy",
+      "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+      "basis": "The committee's own subcommittees page gives this heading the jurisdiction paragraph the curated name states, and it is the only consumer-protection subcommittee the committee now carries.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations",
+      "from": "Investigations & Subcommittee on Permanent Investigations",
+      "to": "Permanent Subcommittee on Investigations",
+      "url": "https://www.hsgac.senate.gov/subcommittees/",
+      "basis": "The committee's own subcommittees page lists three subcommittees for the 119th Congress and this is the only investigative one; the curated name is a garbled duplication of the same title.",
+      "addedOn": "2026-09-19",
+      "region": "navigation"
+    },
+    {
+      "id": "exec-ind-epa-region-i-new-england",
+      "from": "EPA Region I — New England",
+      "to": "EPA Region 1 (New England)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-1-new-england",
+      "basis": "EPA's regional index links its ten regions by arabic numeral and this is the first region's own page; EPA writes the number in arabic where the graph writes it in roman.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-ii-new-york",
+      "from": "EPA Region II — New York",
+      "to": "EPA Region 2",
+      "url": "https://www.epa.gov/aboutepa/epa-region-2",
+      "basis": "EPA's own page for its second region; EPA writes the number in arabic where the graph writes it in roman, and carries no qualifier for this region.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-iii-mid-atlantic",
+      "from": "EPA Region III — Mid-Atlantic",
+      "to": "EPA Region 3 (Mid-Atlantic)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-3-mid-atlantic",
+      "basis": "EPA's own page for its third region, headed 'EPA Region 3 (Mid-Atlantic)'; only the numeral's form differs.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-epa-region-x-northwest",
+      "from": "EPA Region X — Northwest",
+      "to": "EPA Region 10 (Pacific Northwest)",
+      "url": "https://www.epa.gov/aboutepa/epa-region-10-pacific-northwest",
+      "basis": "EPA's organization chart lists 'Region 10 / Seattle' and this is that region's own page, the Seattle-headquartered region the node describes; EPA calls it the Pacific Northwest where the graph says Northwest.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+      "from": "Broadcasting Board of Governors / USAGM",
+      "to": "U.S. Agency for Global Media",
+      "url": "https://www.usagm.gov/",
+      "basis": "The agency's own site names it this way, and the curated name already states the two are one unit by carrying both. CLAUDE.md records the same identification licensing the Treasury alias 'United States Agency for Global Media' for this node.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
+      "from": "U.S. Postal Rate Commission / Postal Regulatory Commission",
+      "to": "Postal Regulatory Commission",
+      "url": "https://www.prc.gov/",
+      "basis": "The commission's own site names it this way; the curated name already states the two are one unit by carrying the former and current names together.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-oversight-accountability",
+      "from": "House Committee on Oversight & Accountability",
+      "to": "House Committee on Oversight and Government Reform",
+      "url": "https://oversight.house.gov/",
+      "basis": "oversight.house.gov is the standing committee's own site and titles it so; CLAUDE.md SS5.7 independently records that the House Clerk's official committee list carries 'Oversight and Government Reform' as one of the names spelled differently from the curated ones.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-select-committee-on-intelligence",
+      "from": "Senate Committee on Select Committee on Intelligence",
+      "to": "Senate Select Committee on Intelligence",
+      "url": "https://www.intelligence.senate.gov/",
+      "basis": "intelligence.senate.gov is the committee's own site; the curated string stacks the graph's 'Senate Committee on' scaffolding in front of a name that already contains 'Committee on', which is why the committee fold reduces it to one token and cannot match.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-budget",
+      "from": "Senate Committee on Budget",
+      "to": "Senate Committee on the Budget",
+      "url": "https://www.budget.senate.gov/about",
+      "basis": "budget.senate.gov is the committee's own site and titles it so; the curated name is the same committee missing the definite article.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-special-committee-on-aging",
+      "from": "Senate Committee on Special Committee on Aging",
+      "to": "Senate Special Committee on Aging",
+      "url": "https://www.aging.senate.gov/about",
+      "basis": "aging.senate.gov is the committee's own site; the curated string stacks 'Senate Committee on' in front of a name already containing 'Committee on'.",
+      "addedOn": "2026-09-19",
+      "region": "navigation"
+    },
+    {
+      "id": "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies",
+      "from": "Transportation, HUD & Related Agencies",
+      "to": "Transportation, Housing and Urban Development, and Related Agencies",
+      "url": "https://www.appropriations.senate.gov/subcommittees",
+      "basis": "The node's parent lists its twelve subcommittees on its own site and exactly one is the transportation-and-housing bill's; HUD is that department's own abbreviation of 'Housing and Urban Development', the only difference between the two names.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety",
+      "from": "Clean Air, Climate & Nuclear Safety",
+      "to": "Clean Air, Climate, and Nuclear Innovation and Safety",
+      "url": "https://www.epw.senate.gov/public/index.cfm/subcommittees",
+      "basis": "The parent committee lists exactly four subcommittees on its own site and the other three match the node's siblings, so this is the same body with 'Innovation and' added to its title.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence",
+      "from": "Subcommittee on Counterterrorism, Law Enforcement & Intelligence",
+      "to": "Counterterrorism and Intelligence",
+      "url": "https://homeland.house.gov/intelligence-and-counterterrorism/",
+      "basis": "The parent committee lists six subcommittees and this one's own page states the counterterrorism, law-enforcement and intelligence jurisdiction the curated name spells out; it is the only such subcommittee of this committee.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
+      "from": "Subcommittee on Agriculture, Rural Development, FDA & Related Agencies",
+      "to": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
+      "url": "https://appropriations.house.gov/subcommittees",
+      "basis": "The House Appropriations Committee's own subcommittee roster prints this title, and its subcommittees are one per appropriations bill. The Senate's seat for the same bill carries the same name, under a different parent, which is what the chambers call them.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-select-committee-on-the-chinese-communist-party",
+      "from": "House Committee on Select Committee on the Chinese Communist Party",
+      "to": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+      "url": "https://docs.house.gov/Committee/Committees.aspx?Code=ZS00",
+      "basis": "The committee's own site names it so, and CLAUDE.md SS5.7 records the Strategic Competition select committee as one of the Clerk-list names spelled differently from the curated one.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade",
+      "from": "Commodities, Risk Management & Trade",
+      "to": "The Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+      "url": "https://www.agriculture.senate.gov/about/subcommittees",
+      "basis": "The committee's own page lists exactly five subcommittees for the 119th Congress and this is the commodities seat.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-rules-sub-rules-the-organization-of-the-house",
+      "from": "Subcommittee on Rules & the Organization of the House",
+      "to": "Subcommittee on Rules and Organization of the House",
+      "url": "https://rules.house.gov/about/subcommittees",
+      "basis": "The parent committee's own page carries this title; the curated name adds a definite article the committee does not.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation",
+      "from": "Aviation Safety, Operations & Innovation",
+      "to": "Aviation, Space, & Innovation",
+      "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+      "basis": "The committee's own subcommittees page carries this seat and it is the only aviation subcommittee the committee now lists.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband",
+      "from": "Communications, Media & Broadband",
+      "to": "Telecommunications and Media",
+      "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+      "basis": "The committee's own subcommittees page carries this seat and it is the only communications-and-media subcommittee the committee now lists.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture",
+      "from": "Subcommittee on Nutrition, Foreign Agriculture & Horticulture",
+      "to": "Nutrition and Foreign Agriculture",
+      "url": "https://agriculture.house.gov/subcommittees/",
+      "basis": "The parent committee's own subcommittees page labels this seat so, and it is the only nutrition-and-foreign-agriculture subcommittee it carries.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics",
+      "from": "Division of National Center for Science & Engineering Statistics",
+      "to": "National Center for Science and Engineering Statistics (NCSES)",
+      "url": "https://www.nsf.gov/sbe/about",
+      "basis": "NSF's own page for the centre, under the node's curated parent directorate; the curated name prefixes 'Division of' to a body NSF calls a National Center.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "leg-senate-cmte-energy-natural-resources-sub-energy",
+      "from": "Energy",
+      "to": "Subcommittee on Energy",
+      "url": "https://www.energy.senate.gov/subcommittees/",
+      "basis": "The committee's own subcommittees page lists four bodies and this node's three siblings match the other three exactly, so the fourth is this node, whose bare curated name 'Energy' is a single generic token the verifier refuses before any fetch. The House Science Committee's own Subcommittee on Energy carries the same name under a different parent, which is what both chambers call them.",
+      "addedOn": "2026-09-19"
+    }
+  ]
+}

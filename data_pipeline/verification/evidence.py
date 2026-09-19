@@ -236,14 +236,36 @@ COUNT_LABEL_PATTERN = re.compile(r"\(\s*[≈~]?\d[\d,]*\s*\+?\s*(?:[A-Za-z .&-]{
 #: `<name> — <qualifier>`, so the number and the thing it counts always sit on
 #: the same side of the dash. Checked against every digit-bearing name in the
 #: curated file: 56 refused, all genuinely counts; 212 freed, none of them.
+#:
+#: A parenthetical is a segment of its own, for exactly the reason the dash is.
+#: "EPA Region 8 (Mountains and Plains)" is EPA's own wording for its eighth
+#: region, and reading the cardinal outside the bracket together with the
+#: plural inside it makes the name count mountains. The bracket is a qualifier
+#: the way the dashed tail is -- `canonical_name_key` drops it entirely, so it
+#: is never matched against a page either way -- and a number outside it does
+#: not count the words inside it. The genuinely parenthesised counts have the
+#: number INSIDE the bracket and the thing counted outside ("Individual Senator
+#: Offices (100)"), and those are COUNT_LABEL_PATTERN's, not this rule's. This
+#: changes the verdict on no name in the curated file; it is what lets an
+#: agency's own bracketed qualifier be proposed as a name at all.
 _NAME_SEGMENT = re.compile(r"\s*[—–]\s*|\s+[-]\s+")
+_PARENTHETICAL = re.compile(r"\(([^)]*)\)")
 _CARDINAL_TOKEN = re.compile(r"^\d[\d,]*$")
 _NAME_WORD = re.compile(r"[^\s(),./]+")
 
 
+def _count_segments(name: str) -> list[str]:
+    """The name split into the parts a count may not be read across."""
+    parts: list[str] = []
+    for segment in _NAME_SEGMENT.split(str(name or "")):
+        parts.append(_PARENTHETICAL.sub(" ", segment))
+        parts.extend(_PARENTHETICAL.findall(segment))
+    return parts
+
+
 def states_a_count_in_prose(name: str) -> bool:
     """Is this name counting things, rather than merely containing a number?"""
-    for segment in _NAME_SEGMENT.split(str(name or "")):
+    for segment in _count_segments(name):
         tokens = _NAME_WORD.findall(segment)
         for index, token in enumerate(tokens):
             if not _CARDINAL_TOKEN.match(token):

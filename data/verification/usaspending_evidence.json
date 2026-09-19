@@ -3,7 +3,7 @@
   "source": {
     "kind": "usaspending_file_ab",
     "basis": "gross_outlays",
-    "derivedAt": "2026-09-18T00:24:38Z",
+    "derivedAt": "2026-09-19T02:44:11Z",
     "fixtures": "tests/fixtures/usaspending/"
   },
   "dictionary": {
@@ -256,7 +256,7 @@
     },
     "exec-dept-doc-uspto": {
       "nodeId": "exec-dept-doc-uspto",
-      "financialEvidenceStatus": "partial",
+      "financialEvidenceStatus": "verified",
       "costBasis": "gross_outlays",
       "amount": 3450206210.23,
       "amountRaw": "3450206210.23",
@@ -273,7 +273,7 @@
       "periodCoverage": "fiscal_year_to_date",
       "periodAsOf": "2026-09-17",
       "amountScope": "U.S. Patent and Trademark Office",
-      "scopeMatch": "proxy",
+      "scopeMatch": "exact",
       "rollupRole": "total",
       "sourceType": "usaspending_file_ab",
       "sourceUrl": "https://api.usaspending.gov/api/v2/agency/013/sub_components/?fiscal_year=2026&limit=100",
@@ -290,11 +290,6 @@
       "obligations": 3824111156.39,
       "accounts": 2,
       "nominationConfidence": "likely",
-      "nameAlias": {
-        "graphName": "USPTO — Patent & Trademark Office",
-        "apiName": "U.S. Patent and Trademark Office",
-        "basis": "The same words: the graph leads with the abbreviation it also spells out."
-      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-dept-doe-nnsa": {
@@ -1031,7 +1026,7 @@
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
       "nodeId": "exec-ind-misc-broadcasting-board-of-governors-usagm",
-      "financialEvidenceStatus": "partial",
+      "financialEvidenceStatus": "verified",
       "costBasis": "gross_outlays",
       "amount": 490569804.02,
       "amountRaw": "490569804.02",
@@ -1048,7 +1043,7 @@
       "periodCoverage": "fiscal_year_to_date",
       "periodAsOf": "2026-09-17",
       "amountScope": "U.S. Agency for Global Media",
-      "scopeMatch": "proxy",
+      "scopeMatch": "exact",
       "rollupRole": "total",
       "sourceType": "usaspending_file_ab",
       "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
@@ -1065,11 +1060,6 @@
       "obligations": 525540488.69,
       "accounts": null,
       "nominationConfidence": "likely",
-      "nameAlias": {
-        "graphName": "Broadcasting Board of Governors / USAGM",
-        "apiName": "U.S. Agency for Global Media",
-        "basis": "One agency under both its names: the graph carries the former and the abbreviation of the current one, and the API prints the current one in full."
-      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": {

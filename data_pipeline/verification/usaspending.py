@@ -147,11 +147,12 @@ DICTIONARY_FIELD, DICTIONARY_ELEMENT = DICTIONARY_SCALED_SOURCE_TYPES[SOURCE][BA
 #: grade `verified`, which is a stronger claim than "somebody wrote down that
 #: these two names are the same unit" can earn.
 USASPENDING_NAME_ALIASES: dict[str, dict[str, str]] = {
-    "exec-dept-doc-uspto": {
-        "graphName": "USPTO — Patent & Trademark Office",
-        "apiName": "U.S. Patent and Trademark Office",
-        "basis": "The same words: the graph leads with the abbreviation it also spells out.",
-    },
+    # exec-dept-doc-uspto was here until 2026-09-19. CURATION.md §9 renamed the
+    # node to "United States Patent and Trademark Office (USPTO)", the office's
+    # own wording, and the two names now reduce to the same canonical key -- so
+    # the record applies by NAME EQUALITY and is graded `verified`, the stronger
+    # route. An alias would have held it at `partial` for a difference that no
+    # longer exists.
     "exec-dept-dot-phmsa": {
         "graphName": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
         "apiName": "Pipeline and Hazardous Materials Safety Administration",
@@ -172,11 +173,11 @@ USASPENDING_NAME_ALIASES: dict[str, dict[str, str]] = {
         "apiName": "U.S. International Development Finance Corporation",
         "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'.",
     },
-    "exec-ind-misc-broadcasting-board-of-governors-usagm": {
-        "graphName": "Broadcasting Board of Governors / USAGM",
-        "apiName": "U.S. Agency for Global Media",
-        "basis": "One agency under both its names: the graph carries the former and the abbreviation of the current one, and the API prints the current one in full.",
-    },
+    # exec-ind-misc-broadcasting-board-of-governors-usagm was here until
+    # 2026-09-19, for the same reason as USPTO above: CURATION.md §9 renamed the
+    # node to "U.S. Agency for Global Media", the agency's own wording, and it
+    # now reduces to the API's own key, so the record applies by name equality
+    # and is graded `verified` rather than held at `partial` by an alias.
     "exec-ind-misc-americorps": {
         "graphName": "AmeriCorps",
         "apiName": "Corporation for National and Community Service",

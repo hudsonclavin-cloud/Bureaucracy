@@ -37,7 +37,7 @@
       "Filled": 18475,
       "Vacant": 2837
     },
-    "agencies_matched": 59,
+    "agencies_matched": 62,
     "agencies_unmatched": [
       "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
       "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
@@ -123,7 +123,6 @@
       "OFFICE OF THE DIRECTOR FOR NATIONAL INTELLIGENCE",
       "OFFICE OF THE SECRETARY OF DEFENSE",
       "OFFICIAL RESIDENCE OF THE VICE PRESIDENT",
-      "POSTAL REGULATORY COMMISSION",
       "PRESIDENTS COMMITTEE ON THE ARTS AND THE HUMANITIES",
       "PUBLIC BUILDINGS REFORM BOARD",
       "RAILROAD RETIREMENT BOARD",
@@ -135,7 +134,6 @@
       "TRADE AND DEVELOPMENT AGENCY",
       "U.S. ABILITYONE COMMISSION",
       "U.S. ACCESS BOARD (ARCHITECTURAL AND TRANSPORTATION BARRIERS COMPLIANCE BOARD)",
-      "U.S. AGENCY FOR GLOBAL MEDIA",
       "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
       "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT OFFICE OF THE INSPECTOR GENERAL",
       "U.S. CHINA ECONOMIC AND SECURITY REVIEW COMMISSION",
@@ -145,15 +143,14 @@
       "U.S. INSTITUTE OF PEACE",
       "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
       "U.S. INTERNATIONAL TRADE COMMISSION",
-      "U.S. PATENT AND TRADEMARK OFFICE",
       "U.S. SEMIQUINCENTENNIAL COMMISSION",
       "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION",
       "WOODROW WILSON INTERNATIONAL CENTER FOR SCHOLARS"
     ],
     "agencies_ambiguous": [],
-    "organizations_of_agency": 27,
-    "organizations_matched": 154,
-    "organizations_under_unmatched_agency": 429,
+    "organizations_of_agency": 30,
+    "organizations_matched": 160,
+    "organizations_under_unmatched_agency": 420,
     "organizations_unmatched": [
       {
         "agency": "AMERICAN BATTLE MONUMENTS COMMISSION",
@@ -226,6 +223,10 @@
       {
         "agency": "DEPARTMENT OF AGRICULTURE",
         "organization": "FIELD UNITS"
+      },
+      {
+        "agency": "DEPARTMENT OF AGRICULTURE",
+        "organization": "FOOD AND NUTRITION SERVICE"
       },
       {
         "agency": "DEPARTMENT OF AGRICULTURE",
@@ -578,10 +579,6 @@
       {
         "agency": "DEPARTMENT OF COMMERCE",
         "organization": "NATIONAL DATA BUOY CENTER"
-      },
-      {
-        "agency": "DEPARTMENT OF COMMERCE",
-        "organization": "NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY"
       },
       {
         "agency": "DEPARTMENT OF COMMERCE",
@@ -1274,10 +1271,6 @@
       {
         "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
         "organization": "PROGRAM SUPPORT CENTER"
-      },
-      {
-        "agency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-        "organization": "SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION"
       },
       {
         "agency": "DEPARTMENT OF HOMELAND SECURITY",
@@ -3049,14 +3042,6 @@
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
-        "organization": "DIRECTORATE FOR ENGINEERING"
-      },
-      {
-        "agency": "NATIONAL SCIENCE FOUNDATION",
-        "organization": "DIRECTORATE FOR GEOSCIENCES"
-      },
-      {
-        "agency": "NATIONAL SCIENCE FOUNDATION",
         "organization": "DIRECTORATE FOR MATHEMATICAL AND PHYSICAL SCIENCES"
       },
       {
@@ -3065,15 +3050,15 @@
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
-        "organization": "DIRECTORATE FOR STEM EDUCATION"
-      },
-      {
-        "agency": "NATIONAL SCIENCE FOUNDATION",
         "organization": "DIRECTORATE FOR TECHNOLOGY, INNOVATION, AND PARTNERSHIPS"
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
         "organization": "DIVISION OF ADMINISTRATIVE SERVICES"
+      },
+      {
+        "agency": "NATIONAL SCIENCE FOUNDATION",
+        "organization": "DIVISION OF CHEMICAL, BIOENGINEERING, ENVIRONMENTAL, AND TRANSPORT SYSTEMS"
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
@@ -3113,15 +3098,7 @@
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
-        "organization": "NATIONAL CENTER FOR SCIENCE AND ENGINEERING STATISTICS"
-      },
-      {
-        "agency": "NATIONAL SCIENCE FOUNDATION",
         "organization": "NATIONAL SCIENCE BOARD"
-      },
-      {
-        "agency": "NATIONAL SCIENCE FOUNDATION",
-        "organization": "OFFICE  OF ADVANCED CYBERINFRASTRUCTURE"
       },
       {
         "agency": "NATIONAL SCIENCE FOUNDATION",
@@ -3428,6 +3405,26 @@
         "organization": "OFFICE OF THE EXECUTIVE DIRECTOR"
       },
       {
+        "agency": "POSTAL REGULATORY COMMISSION",
+        "organization": "OFFICE OF ACCOUNTABILITY AND COMPLIANCE"
+      },
+      {
+        "agency": "POSTAL REGULATORY COMMISSION",
+        "organization": "OFFICE OF PUBLIC AFFAIRS AND GOVERNMENT RELATIONS"
+      },
+      {
+        "agency": "POSTAL REGULATORY COMMISSION",
+        "organization": "OFFICE OF SECRETARY AND ADMINISTRATION"
+      },
+      {
+        "agency": "POSTAL REGULATORY COMMISSION",
+        "organization": "OFFICE OF THE COMMISSIONERS"
+      },
+      {
+        "agency": "POSTAL REGULATORY COMMISSION",
+        "organization": "OFFICE OF THE GENERAL COUNSEL"
+      },
+      {
         "agency": "SECURITIES AND EXCHANGE COMMISSION",
         "organization": "OFFICE OF COMMISSIONER CRENSHAW"
       },
@@ -3730,13 +3727,32 @@
       {
         "agency": "TENNESSEE VALLEY AUTHORITY",
         "organization": "BOARD OF DIRECTORS"
+      },
+      {
+        "agency": "U.S. AGENCY FOR GLOBAL MEDIA",
+        "organization": "INTERNATIONAL BROADCASTING ADVISORY BOARD"
       }
     ],
-    "organizations_ambiguous": [],
-    "positions_in_graph": 4382,
-    "positions_under_matched_agency_node": 584,
-    "positions_under_matched_organization": 1084,
-    "positions_matched": 126,
+    "organizations_ambiguous": [
+      {
+        "agency": "U.S. PATENT AND TRADEMARK OFFICE",
+        "organization": "PATENT AND TRADEMARK OFFICE",
+        "nodes": [
+          "exec-dept-doc-uspto"
+        ]
+      },
+      {
+        "agency": "U.S. PATENT AND TRADEMARK OFFICE",
+        "organization": "UNITED STATES PATENT AND TRADEMARK OFFICE",
+        "nodes": [
+          "exec-dept-doc-uspto"
+        ]
+      }
+    ],
+    "positions_in_graph": 4591,
+    "positions_under_matched_agency_node": 602,
+    "positions_under_matched_organization": 1106,
+    "positions_matched": 129,
     "positions_shared_title": [],
     "positions_ambiguous_alternatives": [],
     "positions_title_ambiguous_in_archive": [
@@ -3782,7 +3798,7 @@
         ]
       }
     ],
-    "positions_unmatched": 953,
+    "positions_unmatched": 972,
     "positions_unmatched_sample": [
       {
         "id": "exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations",
@@ -6198,6 +6214,34 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
+    "exec-dept-hhs-samhsa-assistant-secretary-for-mental-health-substance-use-dual-hat": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "ASSISTANT SECRETARY FOR MENTAL HEALTH AND SUBSTANCE USE",
+      "listedAgency": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "listedOrganization": "SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Vacant",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "IV",
+      "payLevel": "IV",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs-samhsa",
+        "parentListedName": "SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
     "exec-dept-hud-cpd-assistant-secretary-for-community-planning-development": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -6962,34 +7006,6 @@
       "periodStart": "2021-01-21",
       "periodEnd": "2025-01-20"
     },
-    "exec-dept-usda-fns-administrator-fns": {
-      "source": "opm_plum_archive",
-      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
-      "listedTitle": "ADMINISTRATOR",
-      "listedAgency": "DEPARTMENT OF AGRICULTURE",
-      "listedOrganization": "FOOD AND NUTRITION SERVICE",
-      "incumbencies": 2,
-      "standing": 1,
-      "status": "Vacant",
-      "valuesFrom": "standing_listings",
-      "appointmentType": "NA",
-      "payPlan": "ES",
-      "level": null,
-      "payLevel": null,
-      "reportedPay": null,
-      "reportedPayText": null,
-      "payPlanAndLevelOnOneRow": false,
-      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
-      "checkedAt": "2026-09-08T19:49:47Z",
-      "placement": {
-        "status": "listed",
-        "parentId": "exec-dept-usda-fns",
-        "parentListedName": "FOOD AND NUTRITION SERVICE"
-      },
-      "period": "January 21, 2021 - January 20, 2025",
-      "periodStart": "2021-01-21",
-      "periodEnd": "2025-01-20"
-    },
     "exec-dept-usda-fsa-administrator-fsa": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -7209,6 +7225,34 @@
         "status": "listed",
         "parentId": "exec-dept-va-vha",
         "parentListedName": "VETERANS HEALTH ADMINISTRATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-misc-broadcasting-board-of-governors-usagm-general-counsel": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "GENERAL COUNSEL",
+      "listedAgency": "U.S. AGENCY FOR GLOBAL MEDIA",
+      "listedOrganization": "U.S. AGENCY FOR GLOBAL MEDIA",
+      "incumbencies": 1,
+      "standing": 0,
+      "status": null,
+      "valuesFrom": "past_incumbencies",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": null,
+      "payLevel": null,
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": false,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-misc-broadcasting-board-of-governors-usagm",
+        "parentListedName": "U.S. AGENCY FOR GLOBAL MEDIA"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",
@@ -7630,6 +7674,62 @@
         "status": "listed",
         "parentId": "exec-ind-nasa-space-technology-mission-directorate",
         "parentListedName": "SPACE TECHNOLOGY MISSION DIRECTORATE"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nsf-education-human-resources-ehr-deputy-assistant-director": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ASSISTANT DIRECTOR",
+      "listedAgency": "NATIONAL SCIENCE FOUNDATION",
+      "listedOrganization": "DIRECTORATE FOR STEM EDUCATION",
+      "incumbencies": 1,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$222,698",
+      "payLevel": null,
+      "reportedPay": 222698.0,
+      "reportedPayText": "$222,698",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf-education-human-resources-ehr",
+        "parentListedName": "DIRECTORATE FOR STEM EDUCATION"
+      },
+      "period": "January 21, 2021 - January 20, 2025",
+      "periodStart": "2021-01-21",
+      "periodEnd": "2025-01-20"
+    },
+    "exec-ind-nsf-engineering-eng-deputy-assistant-director": {
+      "source": "opm_plum_archive",
+      "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+      "listedTitle": "DEPUTY ASSISTANT DIRECTOR",
+      "listedAgency": "NATIONAL SCIENCE FOUNDATION",
+      "listedOrganization": "DIRECTORATE FOR ENGINEERING",
+      "incumbencies": 2,
+      "standing": 1,
+      "status": "Filled",
+      "valuesFrom": "standing_listings",
+      "appointmentType": "CA",
+      "payPlan": "ES",
+      "level": "$222,698",
+      "payLevel": null,
+      "reportedPay": 222698.0,
+      "reportedPayText": "$222,698",
+      "payPlanAndLevelOnOneRow": true,
+      "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "checkedAt": "2026-09-08T19:49:47Z",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "parentListedName": "DIRECTORATE FOR ENGINEERING"
       },
       "period": "January 21, 2021 - January 20, 2025",
       "periodStart": "2021-01-21",

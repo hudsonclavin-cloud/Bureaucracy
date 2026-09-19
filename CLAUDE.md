@@ -36,6 +36,8 @@ python scripts/repair_review_queue.py --dry-run  # what the queue repair would d
 python scripts/probe_treasury_rows.py            # which Treasury lines match a node; read-only, drives TREASURY_ROW_ALIASES
 python scripts/probe_post_titles.py --dry-run    # which post titles an org's own page carries; read-only, drives CURATION.md §8
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
+python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
+python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
@@ -618,13 +620,84 @@ Science" match "Office of Science and Technology Policy". The matcher stays
 strict and the names get fixed where names are fixed.
 
 The binding constraint is otherwise unchanged and is the same one
-organisations face: **305 of 788 organisations have no candidate page at
+organisations face: **297 of 786 organisations have no candidate page at
 all**, so no post beneath them can be reached either. Nominating org pages
 (phase 1b) now moves both counts at once. (That figure was 611 when this
 section was written and is not restated by hand any more: `python
-scripts/nominate.py status --kind source` prints it, and it moved to 305 on
+scripts/nominate.py status --kind source` prints it. It moved to 305 on
 2026-09-13 when the recheck and the brute-force pass took `official_sites.json`
-from 185 entries to 483.)
+from 185 entries to 483, and to 297 on 2026-09-18 when the probe pass closed
+the rest — after which the blocker stopped being the URL and became the name,
+which is what the section below is about.)
+
+**Organisation names the pages do not carry (since 2026-09-19).** The post-title
+work above has an exact analogue one level up, and it was the largest single
+blocker left on verification coverage. For **181 organisations** the candidate
+page was read, reads fine, and simply does not carry the name this graph uses —
+so no other URL fixes them. `scripts/probe_candidate_pages.py` is the read-only
+instrument (the organisation analogue of `probe_post_titles.py`: it runs the
+verifier's own `find_label_region_rule` against a page and reports `labelled`,
+`labelled-in-site-navigation`, `not-labelled` or `uncheckable`, in words that
+are deliberately not the verifier's status strings, and writes nothing);
+`--orphan-labels` reports unit-looking labels on the page matching no node,
+which is where a proposed name comes from.
+
+`data/curation/unit_renames.json` is the reviewed table and
+`scripts/rename_units_to_official_wording.py` is its only writer — the third
+sanctioned writer of the curated file, beside `rename_templated_post_titles.py`
+and `expand_whitehouse_office.py`. The table is the same shape as
+`TREASURY_ROW_ALIASES` and `USASPENDING_NAME_ALIASES`: a reviewed
+identification with the basis written beside it, and re-checked against the
+source rather than trusted. **The table proposes; the page decides** — every
+row is re-fetched and re-tested with the verifier's own label test on every
+run, under its robots policy, User-Agent and readable-text floor, so a row
+cannot go stale silently and cannot be a hand-edit wearing a script's clothes.
+A row is refused when the node no longer carries the name the row was written
+against, when the page does not label the proposed name, when the only match is
+in site-wide chrome and the row did not declare it, when the proposed name is a
+no-op under `canonical_name_key`, when it is one token or on `GENERIC_NAMES`
+(`Inspector General` names 72 nodes here and sits in every `.gov` footer), or
+when it collides with a **sibling's** name. The collision rule is scoped to
+siblings deliberately: the House and the Senate each name a subcommittee after
+the appropriations bill it writes, so one name for two seats in two chambers is
+what the chambers call them, and the cost — a source matched by name alone
+refuses a name reaching two nodes — fails safe.
+
+**69 renames applied, 39 proposals declined**, all recorded in `CURATION.md` §9.
+Three are renames the agency states on its own page and the graph was simply
+stale about: NREL is now DOE's **National Laboratory of the Rockies**, the Food
+and Nutrition Service is USDA's **Food and Nutrition Administration**, and NSF's
+EHR is the **Directorate for STEM Education**. Eight were the graph's own
+`<ACRONYM> — <name>` typography, which no page carries; moving the acronym into
+brackets keeps it and still confirms, because `canonical_name_key` drops
+parentheticals. EPA's ten regions took EPA's arabic numbering *and* EPA's own
+qualifier, because that parenthetical is never checked against anything and the
+graph's own word would ride along unverified — which corrected Region 7 from
+"Plains" to EPA's "Midwest". Five of the eleven numbered courts of appeals took
+the ordinal spelled out, the family form kept; the other six label only a short
+form (`Sixth Circuit`) and are left alone rather than breaking the convention
+across thirteen siblings.
+
+Renaming is not free and the cost was measured rather than assumed: the House
+Clerk's list went 18 → 20 matched, FedScope 133 → 136 records and the PLUM
+archive 126 → 129, while the Food and Nutrition Service **lost** both, since
+OPM's files are from March 2025 and still carry the former name. Two
+USAspending aliases were deleted rather than updated — after the rename USPTO
+and USAGM reduce to the API's own keys, so those records apply by name equality
+and are graded `verified` instead of being held at `partial` by an alias, an
+upgrade the names earned rather than one an alias could buy. Refused and
+recorded rather than applied: HUD's ten regions (the match needs the `HUD` that
+keeps them apart from EPA's and Education's), NSF's divisions (`MPS Chemistry`
+is the site's breadcrumb, not the unit's name), and every VISN — behind which
+sits a finding that is not a naming question at all, that **department.va.gov
+now states the VA comprises 5 Integrated Service Networks where the graph
+carries an 18-VISN parent with nineteen children**.
+
+One defect in this repository's own rule surfaced and was fixed with it:
+`states_a_count_in_prose` read "EPA Region 8 (Mountains and Plains)" as a count
+of mountains and refused the name before any fetch. A bracket is a segment of
+its own for the same reason the dash is; the fix changes the verdict on no name
+in the curated file, and is pinned both ways.
 
 **Directories — the government's own lists of itself.** The page method is
 near its ceiling: 71 organisations have a page of their own, twelve of the
@@ -1348,12 +1421,18 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **354** of the
-4,591 positions now carry a rate of pay an official source states (44 from
-OPM's PLUM archive, 99 from the Executive Schedule as 5 U.S.C. §§5312–5316
-sets it, 29 from the archive's level joined to OPM's table, 18 statutory, 166
-from the White House roster), shown in the cost block under its own heading
-and never headed COST. The estimates
+parent's total" opts back in. The exception is a real salary — **311** of the
+4,591 positions now carry a rate of pay an official source states: 99 from the
+Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
+roster, 30 from the archive's level joined to OPM's table, 18 statutory. Shown
+in the cost block under its own heading and never headed COST.
+
+That figure read **354** until 2026-09-19 and was wrong: it added up the
+*records* each source derives rather than counting the nodes that publish one,
+and the archive's 46 pay records yield 30 published `positionPayRate` blocks
+because the rest carry a level or grade and no rate. The published count is
+what the site shows, so it is the one stated here; it was 310 before the §9
+renames and is 311 after. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both

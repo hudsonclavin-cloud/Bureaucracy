@@ -582,7 +582,6 @@ def whitehouse_title_core(title):
 #: real strings. `tests/test_usaspending.py` asserts the mirror equals the
 #: module's table, so the two cannot drift.
 USASPENDING_NAME_ALIASES = {
-    "exec-dept-doc-uspto": ("USPTO — Patent & Trademark Office", "U.S. Patent and Trademark Office"),
     "exec-dept-dot-phmsa": ("Pipeline & Hazardous Materials Safety Admin (PHMSA)",
                             "Pipeline and Hazardous Materials Safety Administration"),
     "exec-dept-hud-fheo": ("Office of Fair Housing & Equal Opportunity (FHEO)",
@@ -592,8 +591,6 @@ USASPENDING_NAME_ALIASES = {
     "exec-ind-misc-u-s-international-development-finance-corp-dfc": (
         "U.S. International Development Finance Corp (DFC)",
         "U.S. International Development Finance Corporation"),
-    "exec-ind-misc-broadcasting-board-of-governors-usagm": (
-        "Broadcasting Board of Governors / USAGM", "U.S. Agency for Global Media"),
     "exec-ind-misc-americorps": ("AmeriCorps", "Corporation for National and Community Service"),
 }
 

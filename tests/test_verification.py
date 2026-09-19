@@ -1908,3 +1908,29 @@ class CountLabelFloorTests(unittest.TestCase):
         on the same side."""
         self.assertFalse(evidence.states_a_count_in_prose("VISN 1 — New England Networks"))
         self.assertTrue(evidence.states_a_count_in_prose("New England — 1 Networks"))
+
+    def test_a_bracketed_qualifier_is_a_segment_of_its_own(self) -> None:
+        """A number outside a bracket does not count the words inside it.
+
+        EPA's own wording for its eighth region is "EPA Region 8 (Mountains
+        and Plains)". Read as one segment that is "8 ... Mountains", a count
+        of mountains, and the name is refused before any fetch -- so EPA's
+        own qualifier could not be proposed as the node's name at all. The
+        bracket is a qualifier exactly as the dashed tail is, and
+        `canonical_name_key` drops it either way, so it is never matched
+        against a page.
+        """
+        self.assertFalse(evidence.states_a_count_in_prose("EPA Region 8 (Mountains and Plains)"))
+        self.assertIsNone(evidence.uncheckable_reason("EPA Region 8 (Mountains and Plains)"))
+        self.assertFalse(evidence.states_a_count_in_prose("EPA Region 9 (Pacific Southwest)"))
+
+    def test_a_count_inside_the_bracket_still_counts(self) -> None:
+        """The other direction: the bracket is a segment, not a blind spot.
+
+        Where the number and the thing it counts are BOTH inside it, the name
+        states a count and is still refused -- and the common curated form,
+        the number alone in the bracket, stays refused by COUNT_LABEL_PATTERN.
+        """
+        self.assertTrue(evidence.states_a_count_in_prose("Regional Offices (10 Regions)"))
+        self.assertEqual(evidence.uncheckable_reason("Regional Offices (10 Regions)"), "curated_count_label")
+        self.assertEqual(evidence.uncheckable_reason("Individual Senator Offices (100)"), "curated_count_label")

@@ -211,20 +211,23 @@ class NameAliasTests(unittest.TestCase):
             self.assertTrue(alias["basis"].strip(), f"{node_id}'s alias states no basis")
 
     def test_an_aliased_key_applies_and_is_graded_down(self) -> None:
+        node_id = "exec-dept-dot-phmsa"
+        alias = usaspending.USASPENDING_NAME_ALIASES[node_id]
         records, report = usaspending.build_records(
-            self.node_map, {"exec-dept-doc-uspto": self._ident("013/us-patent-and-trademark-office")},
+            self.node_map, {node_id: self._ident("069/pipeline-and-hazardous-materials-safety-administration")},
             dictionary=self.dictionary,
         )
-        record = records["exec-dept-doc-uspto"]
+        record = records[node_id]
         self.assertEqual(record["financialEvidenceStatus"], "partial")
         self.assertEqual(record["scopeMatch"], "proxy")
-        self.assertEqual(record["nameAlias"]["apiName"], "U.S. Patent and Trademark Office")
+        self.assertEqual(record["nameAlias"]["apiName"], alias["apiName"])
         self.assertEqual(report["applied"], 1)
 
     def test_an_alias_written_against_another_name_does_not_apply(self) -> None:
-        self.node_map["exec-dept-doc-uspto"]["name"] = "Patent Office"
+        node_id = "exec-dept-dot-phmsa"
+        self.node_map[node_id]["name"] = "Pipeline Office"
         records, report = usaspending.build_records(
-            self.node_map, {"exec-dept-doc-uspto": self._ident("013/us-patent-and-trademark-office")},
+            self.node_map, {node_id: self._ident("069/pipeline-and-hazardous-materials-safety-administration")},
             dictionary=self.dictionary,
         )
         self.assertEqual(records, {})

@@ -246,7 +246,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade",
-                      "name": "Commodities, Risk Management & Trade",
+                      "name": "The Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Agriculture, Nutrition, and Forestry Committee.",
                       "employees": null,
@@ -283,11 +283,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.agriculture.senate.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "The Subcommittee on Commodities, Derivatives, Risk Management, and Trade"
                     },
                     {
                       "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources",
-                      "name": "Conservation, Climate, Forestry & Natural Resources",
+                      "name": "The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Agriculture, Nutrition, and Forestry Committee.",
                       "employees": null,
@@ -324,11 +328,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.agriculture.senate.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology"
                     },
                     {
                       "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research",
-                      "name": "Food & Nutrition, Specialty Crops & Agricultural Research",
+                      "name": "Food and Nutrition, Specialty Crops, Organics, and Research",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Agriculture, Nutrition, and Forestry Committee.",
                       "employees": null,
@@ -365,11 +373,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.agriculture.senate.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "The Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research"
                     },
                     {
                       "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security",
-                      "name": "Livestock, Dairy, Poultry, Local Food Systems & Food Safety & Security",
+                      "name": "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Agriculture, Nutrition, and Forestry Committee.",
                       "employees": null,
@@ -406,11 +418,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.agriculture.senate.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "The Subcommittee on Livestock, Dairy, Poultry, and Food Safety"
                     },
                     {
                       "id": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy",
-                      "name": "Rural Development & Energy",
+                      "name": "Subcommittee on Rural Development, Energy, and Credit",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Agriculture, Nutrition, and Forestry Committee.",
                       "employees": null,
@@ -447,7 +463,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.agriculture.senate.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "The Subcommittee on Rural Development, Energy, and Credit"
                     }
                   ]
                 },
@@ -502,7 +522,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
-                      "name": "Agriculture, Rural Development, FDA & Related Agencies",
+                      "name": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Appropriations Committee.",
                       "employees": null,
@@ -539,7 +559,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
                     },
                     {
                       "id": "leg-senate-cmte-appropriations-sub-commerce-justice-science-related-agencies",
@@ -789,7 +813,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-appropriations-sub-labor-hhs-education-related-agencies",
-                      "name": "Labor, HHS, Education & Related Agencies",
+                      "name": "Labor, Health and Human Services, Education, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Appropriations Committee.",
                       "employees": null,
@@ -826,7 +850,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.appropriations.senate.gov/subcommittees/labor-health-and-human-services-education-and-related-agencies",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Labor, Health and Human Services, Education, and Related Agencies"
                     },
                     {
                       "id": "leg-senate-cmte-appropriations-sub-legislative-branch",
@@ -953,7 +981,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies",
-                      "name": "Transportation, HUD & Related Agencies",
+                      "name": "Transportation, Housing and Urban Development, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Appropriations Committee.",
                       "employees": null,
@@ -990,7 +1018,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.appropriations.senate.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Transportation, Housing and Urban Development, and Related Agencies"
                     }
                   ]
                 },
@@ -1590,7 +1622,7 @@
                 },
                 {
                   "id": "leg-senate-cmte-budget",
-                  "name": "Senate Committee on Budget",
+                  "name": "Senate Committee on the Budget",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. Senate with jurisdiction over budget policy.",
                   "employees": null,
@@ -1637,7 +1669,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.budget.senate.gov/about",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "U.S. Senate Committee On The Budget"
                 },
                 {
                   "id": "leg-senate-cmte-commerce-science-transportation",
@@ -1690,7 +1726,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-aviation-safety-operations-innovation",
-                      "name": "Aviation Safety, Operations & Innovation",
+                      "name": "Aviation, Space, & Innovation",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Commerce, Science & Transportation Committee.",
                       "employees": null,
@@ -1727,11 +1763,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Aviation, Space, & Innovation"
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-communications-media-broadband",
-                      "name": "Communications, Media & Broadband",
+                      "name": "Telecommunications and Media",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Commerce, Science & Transportation Committee.",
                       "employees": null,
@@ -1768,11 +1808,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Telecommunications and Media"
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-consumer-protection-product-safety-data-security",
-                      "name": "Consumer Protection, Product Safety & Data Security",
+                      "name": "Consumer Protection, Technology, & Data Privacy",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Commerce, Science & Transportation Committee.",
                       "employees": null,
@@ -1809,7 +1853,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Consumer Protection, Technology, & Data Privacy"
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-oceans-fisheries-climate-change-manufacturing",
@@ -2028,7 +2076,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-energy-natural-resources-sub-energy",
-                      "name": "Energy",
+                      "name": "Subcommittee on Energy",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Energy & Natural Resources Committee.",
                       "employees": null,
@@ -2065,7 +2113,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.energy.senate.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on Energy"
                     },
                     {
                       "id": "leg-senate-cmte-energy-natural-resources-sub-national-parks",
@@ -2284,7 +2336,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-environment-public-works-sub-clean-air-climate-nuclear-safety",
-                      "name": "Clean Air, Climate & Nuclear Safety",
+                      "name": "Clean Air, Climate, and Nuclear Innovation and Safety",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Environment & Public Works Committee.",
                       "employees": null,
@@ -2321,7 +2373,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.epw.senate.gov/public/index.cfm/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Clean Air, Climate, and Nuclear Innovation and Safety"
                     },
                     {
                       "id": "leg-senate-cmte-environment-public-works-sub-fisheries-water-wildlife",
@@ -3349,7 +3405,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations",
-                      "name": "Investigations & Subcommittee on Permanent Investigations",
+                      "name": "Permanent Subcommittee on Investigations",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Homeland Security & Governmental Affairs Committee.",
                       "employees": null,
@@ -3386,13 +3442,17 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.hsgac.senate.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Permanent Subcommittee on Investigations"
                     }
                   ]
                 },
                 {
                   "id": "leg-senate-cmte-judiciary",
-                  "name": "Senate Committee on Judiciary",
+                  "name": "United States Senate Committee on the Judiciary",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. Senate with jurisdiction over judiciary policy.",
                   "employees": null,
@@ -3441,7 +3501,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights",
-                      "name": "Competition Policy, Antitrust & Consumer Rights",
+                      "name": "Antitrust, Competition Policy, and Consumer Rights",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Judiciary Committee.",
                       "employees": null,
@@ -3478,7 +3538,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on Antitrust, Competition Policy, and Consumer Rights"
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-constitution",
@@ -3523,7 +3587,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism",
-                      "name": "Criminal Justice & Counterterrorism",
+                      "name": "Subcommittee on Crime and Counterterrorism",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Judiciary Committee.",
                       "employees": null,
@@ -3560,7 +3624,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on Crime and Counterterrorism"
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-human-rights-the-law",
@@ -3605,7 +3673,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-immigration-citizenship-border-safety",
-                      "name": "Immigration, Citizenship & Border Safety",
+                      "name": "Subcommittee on Border Security and Immigration",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Judiciary Committee.",
                       "employees": null,
@@ -3642,7 +3710,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on Border Security and Immigration"
                     },
                     {
                       "id": "leg-senate-cmte-judiciary-sub-intellectual-property",
@@ -3726,7 +3798,11 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.judiciary.senate.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Home | United States Senate Committee on the Judiciary"
                 },
                 {
                   "id": "leg-senate-cmte-rules-administration",
@@ -3883,7 +3959,7 @@
                 },
                 {
                   "id": "leg-senate-cmte-select-committee-on-intelligence",
-                  "name": "Senate Committee on Select Committee on Intelligence",
+                  "name": "Senate Select Committee on Intelligence",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. Senate with jurisdiction over select committee on intelligence policy.",
                   "employees": null,
@@ -3930,11 +4006,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.intelligence.senate.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Senate Select Committee on Intelligence |"
                 },
                 {
                   "id": "leg-senate-cmte-special-committee-on-aging",
-                  "name": "Senate Committee on Special Committee on Aging",
+                  "name": "Senate Special Committee on Aging",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. Senate with jurisdiction over special committee on aging policy.",
                   "employees": null,
@@ -3981,7 +4061,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.aging.senate.gov/about",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "The United States Senate Special Committee On Aging"
                 },
                 {
                   "id": "leg-senate-cmte-select-committee-on-ethics",
@@ -5098,7 +5182,7 @@
                     },
                     {
                       "id": "leg-house-cmte-agriculture-sub-nutrition-foreign-agriculture-horticulture",
-                      "name": "Subcommittee on Nutrition, Foreign Agriculture & Horticulture",
+                      "name": "Nutrition and Foreign Agriculture",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over nutrition, foreign agriculture & horticulture.",
                       "employees": null,
@@ -5125,7 +5209,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://agriculture.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Nutrition and Foreign Agriculture"
                     }
                   ]
                 },
@@ -5180,7 +5268,7 @@
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies",
-                      "name": "Subcommittee on Agriculture, Rural Development, FDA & Related Agencies",
+                      "name": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over agriculture, rural development, fda & related agencies.",
                       "employees": null,
@@ -5207,7 +5295,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://appropriations.house.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Agriculture, Rural Development, Food and Drug Administration, and Related Agencies"
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-commerce-justice-science-related-agencies",
@@ -5273,7 +5365,7 @@
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-energy-water-development",
-                      "name": "Subcommittee on Energy & Water Development",
+                      "name": "Energy and Water Development and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over energy & water development.",
                       "employees": null,
@@ -5300,7 +5392,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://appropriations.house.gov/subcommittees/energy-and-water-development-and-related-agencies",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Energy and Water Development, and Related Agencies (118th Congress) | House Committee on Appropriations - Republicans"
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-financial-services-general-government",
@@ -5397,7 +5493,7 @@
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-labor-hhs-education-related-agencies",
-                      "name": "Subcommittee on Labor, HHS & Education & Related Agencies",
+                      "name": "Labor, Health and Human Services, Education, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over labor, hhs & education & related agencies.",
                       "employees": null,
@@ -5424,7 +5520,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://appropriations.house.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Labor, Health and Human Services, Education, and Related Agencies"
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-legislative-branch",
@@ -5490,7 +5590,7 @@
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-state-foreign-operations-related-programs",
-                      "name": "Subcommittee on State, Foreign Operations & Related Programs",
+                      "name": "National Security, Department of State, and Related Programs",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over state, foreign operations & related programs.",
                       "employees": null,
@@ -5517,11 +5617,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://appropriations.house.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "National Security, Department of State, and Related Programs"
                     },
                     {
                       "id": "leg-house-cmte-appropriations-sub-transportation-hud-related-agencies",
-                      "name": "Subcommittee on Transportation, HUD & Related Agencies",
+                      "name": "Transportation, Housing and Urban Development, and Related Agencies",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over transportation, hud & related agencies.",
                       "employees": null,
@@ -5548,7 +5652,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://appropriations.house.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Transportation, Housing and Urban Development, and Related Agencies"
                     }
                   ]
                 },
@@ -6540,7 +6648,7 @@
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-africa",
-                      "name": "Subcommittee on Africa",
+                      "name": "Africa Subcommittee",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over africa.",
                       "employees": null,
@@ -6567,7 +6675,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Africa Subcommittee"
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-global-health-global-human-rights-international-organizations",
@@ -6664,7 +6776,7 @@
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-oversight-accountability",
-                      "name": "Subcommittee on Oversight & Accountability",
+                      "name": "Oversight and Intelligence Subcommittee",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over oversight & accountability.",
                       "employees": null,
@@ -6691,7 +6803,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Oversight and Intelligence Subcommittee"
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-the-western-hemisphere",
@@ -6808,7 +6924,7 @@
                     },
                     {
                       "id": "leg-house-cmte-homeland-security-sub-counterterrorism-law-enforcement-intelligence",
-                      "name": "Subcommittee on Counterterrorism, Law Enforcement & Intelligence",
+                      "name": "Counterterrorism and Intelligence",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over counterterrorism, law enforcement & intelligence.",
                       "employees": null,
@@ -6835,7 +6951,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://homeland.house.gov/intelligence-and-counterterrorism/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Counterterrorism and Intelligence – Committee on Homeland Security"
                     },
                     {
                       "id": "leg-house-cmte-homeland-security-sub-cybersecurity-infrastructure-protection",
@@ -7313,7 +7433,7 @@
                     },
                     {
                       "id": "leg-house-cmte-judiciary-sub-weaponization-of-the-federal-government",
-                      "name": "Subcommittee on Weaponization of the Federal Government",
+                      "name": "Select Subcommittee on the Weaponization of the Federal Government",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over weaponization of the federal government.",
                       "employees": null,
@@ -7340,7 +7460,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://judiciary.house.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Select Subcommittee on the Weaponization of the Federal Government"
                     }
                   ]
                 },
@@ -7552,7 +7676,7 @@
                 },
                 {
                   "id": "leg-house-cmte-oversight-accountability",
-                  "name": "House Committee on Oversight & Accountability",
+                  "name": "House Committee on Oversight and Government Reform",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. House of Representatives covering oversight & accountability.",
                   "employees": null,
@@ -7785,7 +7909,11 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://oversight.house.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "United States House Committee on Oversight and Government Reform -"
                 },
                 {
                   "id": "leg-house-cmte-rules",
@@ -7869,7 +7997,7 @@
                     },
                     {
                       "id": "leg-house-cmte-rules-sub-rules-the-organization-of-the-house",
-                      "name": "Subcommittee on Rules & the Organization of the House",
+                      "name": "Subcommittee on Rules and Organization of the House",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over rules & the organization of the house.",
                       "employees": null,
@@ -7896,7 +8024,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://rules.house.gov/about/subcommittees",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on Rules and Organization of the House"
                     }
                   ]
                 },
@@ -9056,7 +9188,7 @@
                 },
                 {
                   "id": "leg-house-cmte-select-committee-on-the-chinese-communist-party",
-                  "name": "House Committee on Select Committee on the Chinese Communist Party",
+                  "name": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. House of Representatives covering select committee on the chinese communist party.",
                   "employees": null,
@@ -9103,7 +9235,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=ZS00",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party"
                 },
                 {
                   "id": "leg-house-cmte-permanent-select-committee-on-intelligence",
@@ -9218,7 +9354,7 @@
                     },
                     {
                       "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity",
-                      "name": "Subcommittee on NSA & Cybersecurity",
+                      "name": "Subcommittee on the National Security Agency and Cyber",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over nsa & cybersecurity.",
                       "employees": null,
@@ -9245,7 +9381,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Subcommittee on the National Security Agency and Cyber"
                     },
                     {
                       "id": "leg-house-cmte-intelligence-sub-strategic-technologies-advanced-research",
@@ -9696,13 +9836,17 @@
                 },
                 {
                   "id": "leg-house-counsel",
-                  "name": "Office of Legislative Counsel",
+                  "name": "Office of the Legislative Counsel",
                   "type": "Office",
                   "desc": "Drafts and reviews legislation in non-partisan service to all Members.",
                   "employees": null,
                   "budget": null,
                   "color": "#8a4ac8",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.house.gov/the-house-explained/officers-and-organizations",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "The Office of the Legislative Counsel"
                 },
                 {
                   "id": "leg-house-physician",
@@ -11580,13 +11724,17 @@
                 },
                 {
                   "id": "leg-support-loc-nls",
-                  "name": "National Library Service for Blind & Print Disabled",
+                  "name": "National Library Service for the Blind and Print Disabled (NLS)",
                   "type": "Bureau",
                   "desc": "Provides free braille and audio materials to eligible readers nationwide.",
                   "employees": null,
                   "budget": null,
                   "color": "#8a4ac8",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.loc.gov/nls/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "NLS at the Library of Congress - National Library Service for the Blind and Print Disabled (NLS) | Library of Congress"
                 },
                 {
                   "id": "leg-support-loc-folklife",
@@ -16599,7 +16747,7 @@
                 },
                 {
                   "id": "exec-eop-omb-oira-office-of-information-regulatory-affairs",
-                  "name": "OIRA — Office of Information & Regulatory Affairs",
+                  "name": "Office of Information and Regulatory Affairs (OIRA)",
                   "type": "Division",
                   "desc": "Reviews executive branch regulations and oversees government-wide information policy, statistics, and privacy. ~55 staff.",
                   "employees": null,
@@ -16646,7 +16794,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.reginfo.gov/public/jsp/Utilities/aboutUs.myjsp",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Office of Information and Regulatory Affairs"
                 },
                 {
                   "id": "exec-eop-omb-office-of-federal-procurement-policy",
@@ -26377,7 +26529,7 @@
                 },
                 {
                   "id": "exec-dept-usda-fns",
-                  "name": "Food & Nutrition Service (FNS)",
+                  "name": "Food and Nutrition Administration (FNA)",
                   "type": "Agency",
                   "desc": "Administers SNAP, WIC, and school meals programs serving 50M+ Americans.",
                   "employees": "~1,500",
@@ -26454,7 +26606,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.fns.usda.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "USDA Food and Nutrition Administration | Food and Nutrition Administration"
                 },
                 {
                   "id": "exec-dept-usda-aphis",
@@ -27056,7 +27212,7 @@
                 },
                 {
                   "id": "exec-dept-doc-nist",
-                  "name": "NIST — National Institute of Standards & Technology",
+                  "name": "National Institute of Standards and Technology (NIST)",
                   "type": "Bureau",
                   "desc": "Advances measurement science, standards, and technology. Manages CHIPS program.",
                   "employees": "~3,200",
@@ -27153,11 +27309,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.nist.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "National Institute of Standards and Technology"
                 },
                 {
                   "id": "exec-dept-doc-uspto",
-                  "name": "USPTO — Patent & Trademark Office",
+                  "name": "United States Patent and Trademark Office (USPTO)",
                   "type": "Bureau",
                   "desc": "Grants patents and registers trademarks. ~13,000 employees.",
                   "employees": "~13,000",
@@ -27244,7 +27404,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.uspto.gov/about-us",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "United States Patent and Trademark Office - An Agency of the Department of Commerce"
                 },
                 {
                   "id": "exec-dept-doc-ita",
@@ -28873,7 +29037,7 @@
                 },
                 {
                   "id": "exec-dept-hhs-samhsa",
-                  "name": "Substance Abuse & Mental Health Services Admin (SAMHSA)",
+                  "name": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
                   "type": "Operating Division",
                   "desc": "Leads public health efforts to reduce impact of substance abuse and mental illness. ~600 staff.",
                   "employees": "~600",
@@ -28940,7 +29104,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.samhsa.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Home | SAMHSA - Substance Abuse and Mental Health Services Administration"
                 },
                 {
                   "id": "exec-dept-hhs-hrsa",
@@ -31307,7 +31475,7 @@
                 },
                 {
                   "id": "exec-dept-doe-natl-labs",
-                  "name": "National Laboratories (17)",
+                  "name": "National Laboratories",
                   "type": "Division",
                   "desc": "A network of 17 federally funded research and development centers operating under DOE oversight.",
                   "employees": null,
@@ -31883,7 +32051,7 @@
                     },
                     {
                       "id": "exec-dept-doe-national-renewable-energy-laboratory",
-                      "name": "National Renewable Energy Laboratory",
+                      "name": "National Laboratory of the Rockies (NLR)",
                       "type": "National Laboratory",
                       "desc": "DOE-funded national laboratory. Conducts basic and applied research across energy, physics, and national security.",
                       "employees": null,
@@ -31960,7 +32128,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.energy.gov/national-laboratories",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "National Laboratory of the Rockies"
                     },
                     {
                       "id": "exec-dept-doe-oak-ridge-national-laboratory",
@@ -32691,7 +32863,11 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.energy.gov/national-laboratories",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "National Laboratories | Department of Energy"
                 },
                 {
                   "id": "exec-dept-doe-em",
@@ -42050,7 +42226,7 @@
                 },
                 {
                   "id": "exec-ind-epa-region-i-new-england",
-                  "name": "EPA Region I — New England",
+                  "name": "EPA Region 1 (New England)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Boston, MA. Serves: CT, ME, MA, NH, RI, VT.",
                   "employees": null,
@@ -42097,11 +42273,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-1-new-england",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 1 (New England) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-ii-new-york",
-                  "name": "EPA Region II — New York",
+                  "name": "EPA Region 2",
                   "type": "Regional Office",
                   "desc": "Headquartered in New York, NY. Serves: NJ, NY, PR, VI.",
                   "employees": null,
@@ -42148,11 +42328,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-2",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 2 | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-iii-mid-atlantic",
-                  "name": "EPA Region III — Mid-Atlantic",
+                  "name": "EPA Region 3 (Mid-Atlantic)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Philadelphia, PA. Serves: DE, MD, PA, VA, WV, DC.",
                   "employees": null,
@@ -42199,11 +42383,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-3-mid-atlantic",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 3 (Mid-Atlantic) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-iv-southeast",
-                  "name": "EPA Region IV — Southeast",
+                  "name": "EPA Region 4 (Southeast)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Atlanta, GA. Serves: AL, FL, GA, KY, MS, NC, SC, TN.",
                   "employees": null,
@@ -42250,11 +42438,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/about-epa-region-4-southeast",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "About EPA Region 4 (Southeast) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-v-midwest",
-                  "name": "EPA Region V — Midwest",
+                  "name": "EPA Region 5",
                   "type": "Regional Office",
                   "desc": "Headquartered in Chicago, IL. Serves: IL, IN, MI, MN, OH, WI.",
                   "employees": null,
@@ -42301,11 +42493,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-5",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 5 | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-vi-south-central",
-                  "name": "EPA Region VI — South Central",
+                  "name": "EPA Region 6 (South Central)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Dallas, TX. Serves: AR, LA, NM, OK, TX.",
                   "employees": null,
@@ -42352,11 +42548,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-6-south-central",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 6 (South Central) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-vii-plains",
-                  "name": "EPA Region VII — Plains",
+                  "name": "EPA Region 7 (Midwest)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Kansas City, MO. Serves: IA, KS, MO, NE.",
                   "employees": null,
@@ -42403,11 +42603,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-7-midwest",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 7 (Midwest) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-viii-mountain",
-                  "name": "EPA Region VIII — Mountain",
+                  "name": "EPA Region 8 (Mountains and Plains)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Denver, CO. Serves: CO, MT, ND, SD, UT, WY.",
                   "employees": null,
@@ -42454,11 +42658,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-8-mountains-and-plains",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 8 (Mountains and Plains) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-ix-pacific",
-                  "name": "EPA Region IX — Pacific",
+                  "name": "EPA Region 9 (Pacific Southwest)",
                   "type": "Regional Office",
                   "desc": "Headquartered in San Francisco, CA. Serves: AZ, CA, HI, NV, Pacific Islands.",
                   "employees": null,
@@ -42505,11 +42713,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-9-pacific-southwest",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 9 (Pacific Southwest) | US EPA"
                 },
                 {
                   "id": "exec-ind-epa-region-x-northwest",
-                  "name": "EPA Region X — Northwest",
+                  "name": "EPA Region 10 (Pacific Northwest)",
                   "type": "Regional Office",
                   "desc": "Headquartered in Seattle, WA. Serves: AK, ID, OR, WA.",
                   "employees": null,
@@ -42556,7 +42768,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.epa.gov/aboutepa/epa-region-10-pacific-northwest",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "EPA Region 10 (Pacific Northwest) | US EPA"
                 }
               ]
             },
@@ -45665,7 +45881,7 @@
                     },
                     {
                       "id": "exec-ind-nsf-computer-information-science-engineering-cise-advanced-cyberinfrastructure",
-                      "name": "Division of Advanced Cyberinfrastructure",
+                      "name": "Office of Advanced Cyberinfrastructure",
                       "type": "Division",
                       "desc": "NSF division funding research in advanced cyberinfrastructure.",
                       "employees": null,
@@ -45702,13 +45918,17 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.nsf.gov/cise/oac",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Office of Advanced Cyberinfrastructure - Directorate for Computer and Information Science and Engineering (CISE) | NSF - U.S. National Science Foundation"
                     }
                   ]
                 },
                 {
                   "id": "exec-ind-nsf-education-human-resources-ehr",
-                  "name": "Education & Human Resources (EHR)",
+                  "name": "Directorate for STEM Education (EDU)",
                   "type": "Directorate",
                   "desc": "Broadens STEM education at all levels.",
                   "employees": null,
@@ -45899,11 +46119,15 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.nsf.gov/edu",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Directorate for STEM Education (EDU) | NSF - U.S. National Science Foundation"
                 },
                 {
                   "id": "exec-ind-nsf-engineering-eng",
-                  "name": "Engineering (ENG)",
+                  "name": "Directorate for Engineering (ENG)",
                   "type": "Directorate",
                   "desc": "Supports fundamental engineering research.",
                   "employees": null,
@@ -45932,7 +46156,7 @@
                     },
                     {
                       "id": "exec-ind-nsf-engineering-eng-chemical-bioengineering-environmental-transport-systems",
-                      "name": "Division of Chemical, Bioengineering, Environmental & Transport Systems",
+                      "name": "Chemical, Bioengineering, Energy and Transport Systems (CBET)",
                       "type": "Division",
                       "desc": "NSF division funding research in chemical, bioengineering, environmental & transport systems.",
                       "employees": null,
@@ -45969,7 +46193,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.nsf.gov/eng",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Engineering (ENG): Chemical, Bioengineering, Energy, and Transport Systems (CBET)"
                     },
                     {
                       "id": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
@@ -46135,11 +46363,15 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.nsf.gov/eng",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Directorate for Engineering (ENG) | NSF - U.S. National Science Foundation"
                 },
                 {
                   "id": "exec-ind-nsf-geosciences-geo",
-                  "name": "Geosciences (GEO)",
+                  "name": "Directorate for Geosciences (GEO)",
                   "type": "Directorate",
                   "desc": "Advances understanding of Earth and its environment.",
                   "employees": null,
@@ -46289,7 +46521,11 @@
                         }
                       ]
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.nsf.gov/geo",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Directorate for Geosciences (GEO) | NSF - U.S. National Science Foundation"
                 },
                 {
                   "id": "exec-ind-nsf-mathematical-physical-sciences-mps",
@@ -46640,7 +46876,7 @@
                     },
                     {
                       "id": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-national-center-for-science-engineering-statistics",
-                      "name": "Division of National Center for Science & Engineering Statistics",
+                      "name": "National Center for Science and Engineering Statistics (NCSES)",
                       "type": "Division",
                       "desc": "NSF division funding research in national center for science & engineering statistics.",
                       "employees": null,
@@ -46677,7 +46913,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.nsf.gov/sbe/about",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "National Center for Science and Engineering Statistics (NCSES)"
                     }
                   ]
                 },
@@ -46712,7 +46952,7 @@
                     },
                     {
                       "id": "exec-ind-nsf-technology-innovation-partnerships-tip-convergence-accelerator",
-                      "name": "Division of Convergence Accelerator",
+                      "name": "Convergence Accelerator",
                       "type": "Division",
                       "desc": "NSF division funding research in convergence accelerator.",
                       "employees": null,
@@ -46749,7 +46989,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.nsf.gov/funding/initiatives/convergence-accelerator",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Convergence Accelerator | NSF - U.S. National Science Foundation"
                     },
                     {
                       "id": "exec-ind-nsf-technology-innovation-partnerships-tip-directorate-for-tip-programs",
@@ -50502,7 +50746,7 @@
                 },
                 {
                   "id": "exec-ind-misc-broadcasting-board-of-governors-usagm",
-                  "name": "Broadcasting Board of Governors / USAGM",
+                  "name": "U.S. Agency for Global Media",
                   "type": "Independent Agency",
                   "desc": "Oversees U.S. international media (VOA, RFE/RL, Radio Free Asia, MBN).",
                   "employees": "~4,000",
@@ -50559,7 +50803,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.usagm.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "USAGM – U.S. Agency for Global Media"
                 },
                 {
                   "id": "exec-ind-misc-national-transportation-safety-board-ntsb",
@@ -51173,7 +51421,7 @@
                 },
                 {
                   "id": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
-                  "name": "U.S. Postal Rate Commission / Postal Regulatory Commission",
+                  "name": "Postal Regulatory Commission",
                   "type": "Independent Agency",
                   "desc": "Regulates USPS rates and services.",
                   "employees": "~80",
@@ -51230,7 +51478,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.prc.gov/",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Home | Postal Regulatory Commission"
                 },
                 {
                   "id": "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob",
@@ -53389,7 +53641,7 @@
             },
             {
               "id": "jud-circuit-2nd-circuit",
-              "name": "U.S. Court of Appeals for the 2nd Circuit",
+              "name": "U.S. Court of Appeals for the Second Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in New York, NY. Jurisdiction: CT, NY, VT. 13 active circuit judges.",
               "employees": null,
@@ -53476,7 +53728,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca2.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "United States Court of Appeals for the Second Circuit"
             },
             {
               "id": "jud-circuit-3rd-circuit",
@@ -53571,7 +53827,7 @@
             },
             {
               "id": "jud-circuit-4th-circuit",
-              "name": "U.S. Court of Appeals for the 4th Circuit",
+              "name": "U.S. Court of Appeals for the Fourth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Richmond, VA. Jurisdiction: MD, NC, SC, VA, WV. 15 active circuit judges.",
               "employees": null,
@@ -53658,11 +53914,15 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca4.uscourts.gov/judges",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "U.S. Court of Appeals for the Fourth Circuit"
             },
             {
               "id": "jud-circuit-5th-circuit",
-              "name": "U.S. Court of Appeals for the 5th Circuit",
+              "name": "U.S. Court of Appeals for the Fifth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in New Orleans, LA. Jurisdiction: LA, MS, TX. 17 active circuit judges.",
               "employees": null,
@@ -53749,7 +54009,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca5.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "United States Court of Appeals for the Fifth Circuit"
             },
             {
               "id": "jud-circuit-6th-circuit",
@@ -53844,7 +54108,7 @@
             },
             {
               "id": "jud-circuit-7th-circuit",
-              "name": "U.S. Court of Appeals for the 7th Circuit",
+              "name": "U.S. Court of Appeals for the Seventh Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Chicago, IL. Jurisdiction: IL, IN, WI. 11 active circuit judges.",
               "employees": null,
@@ -53931,7 +54195,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca7.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "United States Court of Appeals for the Seventh Circuit"
             },
             {
               "id": "jud-circuit-8th-circuit",
@@ -54026,7 +54294,7 @@
             },
             {
               "id": "jud-circuit-9th-circuit",
-              "name": "U.S. Court of Appeals for the 9th Circuit",
+              "name": "U.S. Court of Appeals for the Ninth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in San Francisco, CA. Jurisdiction: AK, AZ, CA, HI, ID, MT, NV, OR, WA + Pacific territories. 29 active circuit judges.",
               "employees": null,
@@ -54113,7 +54381,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca9.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Home | United States Court of Appeals for the Ninth Circuit"
             },
             {
               "id": "jud-circuit-10th-circuit",
@@ -54492,7 +54764,7 @@
           "children": [
             {
               "id": "jud-district-sdny",
-              "name": "S.D.N.Y. — Southern District of New York",
+              "name": "Southern District of New York (S.D.N.Y.)",
               "type": "District Court",
               "desc": "Busiest and most prominent district court. Handles major financial, terrorism, and organized crime cases.",
               "employees": null,
@@ -54609,7 +54881,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.nysd.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "The Southern District of New York"
             },
             {
               "id": "jud-district-structure",

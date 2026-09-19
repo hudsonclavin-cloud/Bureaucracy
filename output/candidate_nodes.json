@@ -563,47 +563,6 @@
     "lastVerified": null
   },
   {
-    "id": "commodity-futures-trading-commission-office-of-information-and-regulatory-affairs-oira",
-    "name": "Office of Information and Regulatory Affairs (OIRA)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In compliance with the Paperwork Reduction Act of 1995 (PRA), this notice announces that the Information Collection Request (ICR) abstracted below has been forwarded to the Office of Information and Regulatory Affairs (OIRA), of the Office of Management and Budget (OMB), for review and comment. The ICR describes the nature of the information collection and its expected costs and burden.",
-    "description": "In compliance with the Paperwork Reduction Act of 1995 (PRA), this notice announces that the Information Collection Request (ICR) abstracted below has been forwarded to the Office of Information and Regulatory Affairs (OIRA), of the Office of Management and Budget (OMB), for review and comment. The ICR describes the nature of the information collection and its expected costs and burden.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17799/agency-information-collection-activities-under-omb-review"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Commodity Futures Trading Commission",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17799/agency-information-collection-activities-under-omb-review",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": "exec-regulatory-cftc",
-    "lastVerified": null
-  },
-  {
     "id": "defense-department-office-of-information",
     "name": "Office of Information",
     "type": "Office",

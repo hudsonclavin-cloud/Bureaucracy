@@ -35,10 +35,10 @@
     "footnotes": [
       "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
     ],
-    "listings_considered": 126,
-    "priced": 29,
+    "listings_considered": 129,
+    "priced": 30,
     "refused": {
-      "archive_reports_a_rate": 44,
+      "archive_reports_a_rate": 46,
       "no_level_reported": 52,
       "pay_plan_is_gs_not_executive_schedule": 1
     },
@@ -46,10 +46,10 @@
       "I": 0,
       "II": 3,
       "III": 8,
-      "IV": 12,
+      "IV": 13,
       "V": 6
     },
-    "validated": 29,
+    "validated": 30,
     "rejected": [],
     "conflicts": [],
     "double_counted": []
@@ -964,6 +964,50 @@
         "payLevel": "IV",
         "payPlan": "EX",
         "listedTitle": "DIRECTOR, NATIONAL INSTITUTES OF HEALTH",
+        "source": "opm_plum_archive",
+        "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
+        "period": "January 21, 2021 - January 20, 2025",
+        "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+        "checkedAt": "2026-09-08T19:49:47Z",
+        "valuesFrom": "standing_listings"
+      },
+      "table": "Salary Table No. 2026-EX",
+      "effectiveText": "Effective January 2026",
+      "rateText": "$197,200",
+      "tableFootnotes": [
+        "Under a provision in the Continuing Appropriations Act, 2026 (November 12, 2025), the freeze on the payable pay rates for the Vice President and certain senior political appointees continues through January 30, 2026. Future Congressional action will determine whether these frozen rates continue beyond that date."
+      ],
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-hhs-samhsa-assistant-secretary-for-mental-health-substance-use-dual-hat": {
+      "nodeId": "exec-dept-hhs-samhsa-assistant-secretary-for-mental-health-substance-use-dual-hat",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "Level IV $197,200",
+      "quote": "Level IV $197,200",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-01-01",
+      "amountScope": "Level IV",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_pay_table",
+      "sourceUrl": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
+      "documentSha256": "aacccfcb788a08a93a2bd0af20dca967aa8f1a8b5aafeb3c316b1b0168cbd4ab",
+      "retrievedAt": "2026-09-11T03:05:36Z",
+      "locator": {
+        "table": "Salary Table No. 2026-EX",
+        "row": "Level IV",
+        "column": "Rate"
+      },
+      "levelClaim": {
+        "payLevel": "IV",
+        "payPlan": "EX",
+        "listedTitle": "ASSISTANT SECRETARY FOR MENTAL HEALTH AND SUBSTANCE USE",
         "source": "opm_plum_archive",
         "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
         "period": "January 21, 2021 - January 20, 2025",

@@ -423,16 +423,24 @@ class RealFixturePinTests(unittest.TestCase):
         # is one row for another unit (Federal Reserve/CFPB, Judicial Branch/Tax
         # Court) and five sub-agency rows whose agency matched no node, so
         # nothing verified that the node answering to the name is the unit.
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (54, 79, 133))
+        # (54, 79, 133) until 2026-09-19, when CURATION.md §9 renamed 69
+        # organisations to the wording their own pages carry. Four gained a
+        # FedScope record (NIST, USPTO, SAMHSA, USAGM, whose curated names had
+        # been the graph's "<ACRONYM> — <name>" typography) and one lost it:
+        # OPM's table is from March 2025 and still says "Food and Nutrition
+        # Service" where USDA's own site now says "Food and Nutrition
+        # Administration". That loss is the price of the graph not being stale
+        # about a real rename, and it is recorded rather than aliased away.
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (55, 81, 136))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
         # rows are scoped against the right agency instead of floating.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (59, 363))
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (58, 360))
         self.assertEqual(len(self.report["scoped_out"]), 9)
         # One more: NARA's agency name now matches, so its single self-named
         # row is carried by the agency record instead of standing alone.
-        self.assertEqual(len(self.report["self_named_rows"]), 41)
+        self.assertEqual(len(self.report["self_named_rows"]), 42)
         irs = self.records["exec-dept-treasury-irs"]
         self.assertEqual((irs["employees"], irs["previous"]["employees"], irs["agencyMatched"]), (101_312, 99_001, "exec-dept-treasury"))
         va = self.records["exec-dept-va"]
@@ -453,8 +461,8 @@ class RealFixturePinTests(unittest.TestCase):
         # Seven fewer compared than the first derivation: two agency records
         # refused for being one other unit, five sub-agency rows refused for
         # having no matched agency to be scoped against.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (124, 9))
-        self.assertEqual(sum(comparison["bands"].values()), 124)
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (127, 9))
+        self.assertEqual(sum(comparison["bands"].values()), 127)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"
         # against the table's civilians-only figure for its own rows.

@@ -198,24 +198,33 @@ class RealFixtureTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.node_map = index_tree(load_base_graph(BASE_GRAPH))[0]
 
-    def test_the_house_page_lists_26_and_18_reach_a_node(self) -> None:
+    def test_the_house_page_lists_26_and_20_reach_a_node(self) -> None:
         proposals, report = load_congress_site_proposals(REAL_HOUSE, REAL_SENATE, self.node_map)
         house = report["house"]
-        self.assertEqual((house["listed"], house["matched"], house["fetched_at"]), (26, 18, "2026-09-08T19:19:17Z"))
+        # 18 until 2026-09-19. CURATION.md §9 renamed two nodes to the names the
+        # Clerk's own list carries -- "Oversight and Government Reform" and the
+        # Strategic Competition select committee -- and both were recorded here,
+        # in §5.7 and in the list below, as names the official list spelled
+        # differently from the curated ones. They are no longer "not in graph".
+        self.assertEqual((house["listed"], house["matched"], house["fetched_at"]), (26, 20, "2026-09-08T19:19:17Z"))
         self.assertEqual(house["not_in_graph"], [
-            "Education and Workforce", "Ethics", "Oversight and Government Reform",
-            "Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party",
+            "Education and Workforce", "Ethics",
             "Joint Economic Committee", "Joint Committee on the Library", "Joint Committee on Printing", "Joint Committee on Taxation",
         ])
         # leg-house-cmte-intelligence was the fourth here until 2026-09-18.
         # The Clerk's list carries one intelligence committee and the graph
         # carried two, which is what this line was reporting; the duplicate is
         # merged away now (scripts/merge_duplicate_nodes.py) and the survivor
-        # is the node the list matches, so only the three genuine spelling
-        # differences remain.
+        # is the node the list matches.
+        #
+        # Two more left on 2026-09-19: the oversight committee and the Chinese
+        # Communist Party select committee were renamed to the names the Clerk
+        # prints (CURATION.md §9), so the list now carries them. One genuine
+        # spelling difference remains, and the fix for it is the same -- the
+        # Clerk says "Education and Workforce", the graph says "Education & the
+        # Workforce", and no page read this session settles which is current.
         self.assertEqual([g["id"] for g in house["graph_not_listed"]], [
             "leg-house-cmte-education-the-workforce",
-            "leg-house-cmte-oversight-accountability", "leg-house-cmte-select-committee-on-the-chinese-communist-party",
         ])
         self.assertEqual((house["ambiguous"], house["rejected_urls"]), ([], []))
         self.assertEqual(proposals["leg-house-cmte-ways-means"], ["https://waysandmeans.house.gov/"])
@@ -236,10 +245,10 @@ class RealFixtureTests(unittest.TestCase):
         self.assertEqual({r["reason"] for r in senate["rejected_urls"]}, {REJECT_NOT_HTTPS})
         self.assertTrue(all(r["url"].startswith("http://www.") and r["url"].split("/")[2].endswith(".senate.gov") for r in senate["rejected_urls"]))
         self.assertEqual(len(senate["hosts"]), 23)
-        self.assertEqual(report["proposed"], 18)
+        self.assertEqual(report["proposed"], 20)
         self.assertFalse(any(k.startswith("leg-senate-") for k in proposals))
         # As printed, when the caller accepts the page's scheme.
         proposals, report = load_congress_site_proposals(REAL_HOUSE, REAL_SENATE, self.node_map, require_https=False)
-        self.assertEqual((report["senate"]["matched"], report["proposed"]), (20, 38))
+        self.assertEqual((report["senate"]["matched"], report["proposed"]), (20, 40))
         self.assertEqual(proposals["leg-senate-cmte-banking-housing-urban-affairs"], ["http://www.banking.senate.gov/public"])
         self.assertEqual(proposals["leg-senate-cmte-special-committee-on-aging"], ["http://www.aging.senate.gov"])
