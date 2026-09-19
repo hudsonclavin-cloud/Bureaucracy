@@ -780,15 +780,27 @@ FedScope civilian employment by agency and sub-agency for March 2025 and
 September 2024 — the official counts the cost cascade's headcount weights
 should answer to, where today's `employees` fields are uncited — and the
 PLUM archive of the previous administration's reported positions. The
-current PLUM export is served by escs.opm.gov, which the pipeline's
-egress proxy refuses (CONNECT 403), as it refuses clerk.house.gov,
-www.usa.gov, api.sam.gov, data.opm.gov and govinfo.gov; those are facts
-about the environment's network policy, recorded in the fixtures'
-`.meta.json` files, never worked around.
-Next in this line, in order of evidence value: the House Clerk's
-committee XML once the host is reachable, OPM's Plum Book for positions, OPM FedScope for the headcounts
-the cascade weights by, and SAM.gov's Federal Hierarchy if the owner
-obtains a key.
+current PLUM export is served by escs.opm.gov, which is refused — since
+2026-09-19 by the host rather than the proxy, which now connects: escs.opm.gov
+answers robots.txt with an Akamai 403, and this project refuses such a host by
+its own choice (docs/NETWORK_ACCESS.md §9). The rest of the list that stood
+here — clerk.house.gov, www.usa.gov, api.sam.gov, data.opm.gov and
+govinfo.gov — was re-measured on 2026-09-19 and **every one of them now
+answers**: clerk.house.gov, api.sam.gov and data.opm.gov with a 404 (nothing
+published to obey, so crawled), www.usa.gov and www.govinfo.gov with a 200.
+clerk.house.gov has in fact been in use since 2026-09-13. So the proxy is no
+longer the wall it was; what still refuses does so for its own reasons, host
+by host, and govinfo refuses through robots.txt on the endpoint that indexes
+it rather than through the network at all. A refusal is recorded in the
+fixtures' `.meta.json` files with the reason measured at the time, and never
+worked around.
+Next in this line, in order of evidence value, with what 2026-09-19's
+measurement did to each: the House Clerk's committee list **landed**
+(2026-09-13); OPM FedScope for the headcounts the cascade weights by
+**landed**; OPM's current Plum Book is refused by its host, so positions still
+rest on the previous administration's archive; and SAM.gov's Federal Hierarchy
+is reachable at last and still needs a key the owner would have to obtain.
+`data.opm.gov` and `www.usa.gov` answer too and nothing here has read either.
 
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from

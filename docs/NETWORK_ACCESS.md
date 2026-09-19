@@ -568,3 +568,55 @@ not `official_site`, `nominate.py` refuses a nomination on any other host,
 and the gate refuses an `official_site` claim with no `.gov`/`.mil` URL
 behind it. A narrower network allowlist adds no safety over that — only a
 second list to keep in step, which is what §0 cost a day to.
+
+## 9. 2026-09-19: govinfo is reachable and still refused, and escs.opm.gov moved
+
+Two of §8's notes needed re-measuring after the §9 rename pass, and both
+changed. Measured directly, not inferred.
+
+### `www.govinfo.gov` answers 200 — and the project's own rules still refuse it
+
+§8 recorded the host answering `robots.txt` 200 and left it "not yet used",
+which reads like an opportunity waiting to be taken. It is not. Traced to the
+end:
+
+    www.govinfo.gov/robots.txt        200   — /content/ and /app/ allowed, /search/ Disallow
+    api.govinfo.gov/robots.txt        500   — a complete disallow under RFC 9309 §2.3.1.4
+    www.govinfo.gov/app/collection/budget   200, and 15 readable characters
+
+The content paths are crawlable, but only if the package id is already known.
+The two ways to *find* one are both refused: `/search/` is explicitly
+disallowed in the site's own robots.txt, and `api.govinfo.gov` — which is
+what the `/app/` pages call — answers `robots.txt` with 500, which RFC 9309
+makes a complete disallow and which this project honours (the committed copy
+is `tests/fixtures/standards/rfc9309.txt`). The collection browse page is an
+Angular shell: 15 readable characters, far below this project's 400-character
+floor, so nothing can be read off it either. A guessed package path
+(`/content/pkg/BUDGET-2026-APP/html/BUDGET-2026-APP.htm`) redirects to
+`/error`.
+
+So the Budget Appendix is not available to this project today, and the
+blocker is not the network — it is govinfo's own robots.txt on the endpoint
+that indexes it. Recorded as a refusal rather than a to-do so the next
+session does not spend the probe again. It would become available if the API
+published a robots.txt, or if a package id were obtained from somewhere else.
+
+### `escs.opm.gov`: the blocker moved from the proxy to the host
+
+`CLAUDE.md` records OPM's current PLUM export as unavailable because "the
+pipeline's egress proxy refuses (CONNECT 403)". That is no longer the reason.
+The proxy now connects; the **host** answers:
+
+    escs.opm.gov/robots.txt   403 Access Denied (Akamai edge)
+
+This project refuses a host that answers `robots.txt` with 401 or 403 — by
+its own choice, not by the standard, and the distinction matters for what the
+record may say: "could not be read (403); refused by policy", never "disallows
+/path", because no rule was read. So the outcome is unchanged and the reason
+is different, and the difference is worth having written down: a proxy
+refusal might be lifted by an allowlist change, an Akamai 403 will not be.
+
+The practical consequence is unchanged too. Position evidence still rests on
+the **previous** administration's archive (January 2021 – January 2025), every
+record still names that archive and its period, and nothing in this graph
+claims to say who holds a post now.
