@@ -422,7 +422,13 @@ class StudentAidAliasTests(unittest.TestCase):
         self.assertIsNotNone(fsa, "the curated office is not in the published graph")
         self.assertEqual(fsa["cost_status"], "official")
         self.assertEqual(fsa["costVerificationStatus"], "verified")
-        self.assertEqual(round(fsa["resolved_total_amount"]), 76_054_364_353)
+        # The statement's own figure, so it moves when the statement does: this
+        # was $76,054,364,353 through 2026-07-31 and is $80,531,492,080 through
+        # 2026-08-31. What the test is really pinning is that the measured line
+        # reaches this node at all -- an apportioned share was $13.37B -- so
+        # update the figure when the anchor advances and treat the row name,
+        # the status and the section below as the invariants.
+        self.assertEqual(round(fsa["resolved_total_amount"]), 80_531_492_080)
         self.assertEqual(fsa["treasury_row_name"], "Total--Office of Federal Student Aid")
         self.assertTrue(any("fiscaldata.treasury.gov" in str(u) for u in fsa["sourceUrls"]))
 

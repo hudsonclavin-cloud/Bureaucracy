@@ -522,6 +522,47 @@
     "lastVerified": null
   },
   {
+    "id": "commerce-department-bureau-of-the-census",
+    "name": "Bureau of the Census",
+    "type": "Bureau",
+    "parentId": null,
+    "desc": "The Bureau of the Census (Census Bureau) has ceased collection and production of the Annual Survey of State Government Tax Collections (STC). The Census Bureau has redirected its resources to prioritize the Annual Survey of State Government Finances (ASFIN) and the Quarterly Summary of State & Local Tax Revenue (QTAX). State government tax data previously produced through STC will continue to be made available through ASFIN and QTAX. The survey 2025 data release on April 15, 2026, was the final release.",
+    "description": "The Bureau of the Census (Census Bureau) has ceased collection and production of the Annual Survey of State Government Tax Collections (STC). The Census Bureau has redirected its resources to prioritize the Annual Survey of State Government Finances (ASFIN) and the Quarterly Summary of State & Local Tax Revenue (QTAX). State government tax data previously produced through STC will continue to be made available through ASFIN and QTAX. The survey 2025 data release on April 15, 2026, was the final release.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/10/2026-18449/annual-survey-of-state-government-tax-collections"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Commerce Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/10/2026-18449/annual-survey-of-state-government-tax-collections",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
     "id": "commerce-department-center-for-biological-diversity",
     "name": "Center for Biological Diversity",
     "type": "Office",
@@ -560,6 +601,47 @@
     "isCandidate": true,
     "confidenceEstimate": 0.61,
     "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "commodity-futures-trading-commission-office-of-the-general-counsel",
+    "name": "Office of the General Counsel",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The Commodity Futures Trading Commission (\"Commission\" or \"CFTC\") is amending its rules implementing section 23 of the Commodity Exchange Act (\"CEA\"). Section 23 of the CEA and the Commission's implementing regulations provide for the payment of awards, subject to certain limitations and conditions, to whistleblowers who provide the Commission with information that aids in successful enforcement efforts. The Commission is adopting amendments, which are modeled on a similar provision in the Securities and Exchange Commission's (\"SEC\") regulations, to part 165 of its regulations to increase the efficiency, transparency, and predictability of whistleblower claims process, thereby protecting and enhancing the program's effectiveness in incentivizing whistleblowers to report. The amendments also include technical corrections to the whistleblower rules to reflect the Whistleblower Office's (\"WBO\") move in 2025, consistent with its adjudicatory functions, to the Office of the General Counsel (\"OGC\").",
+    "description": "The Commodity Futures Trading Commission (\"Commission\" or \"CFTC\") is amending its rules implementing section 23 of the Commodity Exchange Act (\"CEA\"). Section 23 of the CEA and the Commission's implementing regulations provide for the payment of awards, subject to certain limitations and conditions, to whistleblowers who provide the Commission with information that aids in successful enforcement efforts. The Commission is adopting amendments, which are modeled on a similar provision in the Securities and Exchange Commission's (\"SEC\") regulations, to part 165 of its regulations to increase the efficiency, transparency, and predictability of whistleblower claims process, thereby protecting and enhancing the program's effectiveness in incentivizing whistleblowers to report. The amendments also include technical corrections to the whistleblower rules to reflect the Whistleblower Office's (\"WBO\") move in 2025, consistent with its adjudicatory functions, to the Office of the General Counsel (\"OGC\").",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/16/2026-19006/whistleblower-award-determination"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Commodity Futures Trading Commission",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-19006/whistleblower-award-determination",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": "exec-regulatory-cftc",
     "lastVerified": null
   },
   {
@@ -686,55 +768,14 @@
     "lastVerified": null
   },
   {
-    "id": "energy-department-office-of-critical-minerals-and-energy-innovation",
-    "name": "Office of Critical Minerals and Energy Innovation",
+    "id": "environmental-protection-agency-office-of-resource-conservation-and-recovery-orcr",
+    "name": "Office of Resource Conservation and Recovery (ORCR)",
     "type": "Office",
     "parentId": null,
-    "desc": "The Office of Critical Minerals and Energy Innovation (formerly Office of Energy Efficiency and Renewable Energy) of the Department of Energy (DOE) is publishing a final rule to rescind the regulatory framework for production incentives for cellulosic biofuels, eliminating an inactive regulatory framework.",
-    "description": "The Office of Critical Minerals and Energy Innovation (formerly Office of Energy Efficiency and Renewable Energy) of the Department of Energy (DOE) is publishing a final rule to rescind the regulatory framework for production incentives for cellulosic biofuels, eliminating an inactive regulatory framework.",
+    "desc": "EPA updates test methods and waste sampling guidance as part of routine updates according to the Resource Conservation and Recovery Act (RCRA). To aid in the implementation of these directives, the Office of Resource Conservation and Recovery (ORCR) within the Environmental Protection Agency (EPA) requests information on SW-846 method experiences, needs, and requirements. ORCR is specifically interested in information on the Toxicity Characteristic Leaching Procedure (TCLP) Method 1311, including method challenges, and alternatives. Information is welcome from stakeholders involved in requesting, performing, and evaluating the results from SW-846 methods including, but not limited to, industry stakeholders, researchers, academia, state, Tribal, and local governments. This includes U.S. territories and the District of Columbia, other federal agencies, community groups, non-governmental organizations, the public, and international organizations. The EPA will use the information received in response to this request for information (RFI) to inform what action, if any, it may take.",
+    "description": "EPA updates test methods and waste sampling guidance as part of routine updates according to the Resource Conservation and Recovery Act (RCRA). To aid in the implementation of these directives, the Office of Resource Conservation and Recovery (ORCR) within the Environmental Protection Agency (EPA) requests information on SW-846 method experiences, needs, and requirements. ORCR is specifically interested in information on the Toxicity Characteristic Leaching Procedure (TCLP) Method 1311, including method challenges, and alternatives. Information is welcome from stakeholders involved in requesting, performing, and evaluating the results from SW-846 methods including, but not limited to, industry stakeholders, researchers, academia, state, Tribal, and local governments. This includes U.S. territories and the District of Columbia, other federal agencies, community groups, non-governmental organizations, the public, and international organizations. The EPA will use the information received in response to this request for information (RFI) to inform what action, if any, it may take.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17872/rescission-of-production-incentives-for-cellulosic-biofuels"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Energy Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17872/rescission-of-production-incentives-for-cellulosic-biofuels",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "environmental-protection-agency-division-of-air-quality-division",
-    "name": "Division of Air Quality (Division)",
-    "type": "Division",
-    "parentId": null,
-    "desc": "The U.S. Environmental Protection Agency (EPA or Agency) is proposing to approve a State Implementation Plan (SIP) revision submitted by the Commonwealth of Kentucky through the Energy and Environment Cabinet (Cabinet), Division of Air Quality (Division), on July 23, 2024. The SIP revision consists of a Limited Maintenance Plan (LMP) for the Kentucky portion of the tri-state Cincinnati-Hamilton 1997 8-hour ozone nonattainment area (the \"tri-state Cincinnati-Hamilton Area\"). The Kentucky portion of the tri-state Cincinnati-Hamilton Area is composed of Boone, Campbell, and Kenton Counties in Kentucky (hereinafter also referred to as the \"Northern Kentucky Area\"). The EPA is proposing to approve Kentucky's LMP for the Northern Kentucky Area because it provides for the maintenance of the 1997 8-hour ozone National Ambient Air Quality Standards (NAAQS) within the tri-state Cincinnati-Hamilton Area through the end of the second 10-year portion of the maintenance period. The effect of this proposed action would be to make certain commitments related to maintenance of the 1997 8-hour ozone NAAQS in the Northern Kentucky Area federally enforceable as part of the Kentucky SIP.",
-    "description": "The U.S. Environmental Protection Agency (EPA or Agency) is proposing to approve a State Implementation Plan (SIP) revision submitted by the Commonwealth of Kentucky through the Energy and Environment Cabinet (Cabinet), Division of Air Quality (Division), on July 23, 2024. The SIP revision consists of a Limited Maintenance Plan (LMP) for the Kentucky portion of the tri-state Cincinnati-Hamilton 1997 8-hour ozone nonattainment area (the \"tri-state Cincinnati-Hamilton Area\"). The Kentucky portion of the tri-state Cincinnati-Hamilton Area is composed of Boone, Campbell, and Kenton Counties in Kentucky (hereinafter also referred to as the \"Northern Kentucky Area\"). The EPA is proposing to approve Kentucky's LMP for the Northern Kentucky Area because it provides for the maintenance of the 1997 8-hour ozone National Ambient Air Quality Standards (NAAQS) within the tri-state Cincinnati-Hamilton Area through the end of the second 10-year portion of the maintenance period. The effect of this proposed action would be to make certain commitments related to maintenance of the 1997 8-hour ozone NAAQS in the Northern Kentucky Area federally enforceable as part of the Kentucky SIP.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/27/2026-17502/air-plan-approval-kentucky-cincinnati-hamilton-area-limited-maintenance-plan-for-the-1997-8-hour"
+      "https://www.federalregister.gov/documents/2026/09/14/2026-18754/request-for-information-on-test-methods-for-evaluating-solid-waste-sw-846-waste-sampling-and"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -759,135 +800,12 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Environmental Protection Agency",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/27/2026-17502/air-plan-approval-kentucky-cincinnati-hamilton-area-limited-maintenance-plan-for-the-1997-8-hour",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/14/2026-18754/request-for-information-on-test-methods-for-evaluating-solid-waste-sw-846-waste-sampling-and",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
     "confidenceEstimate": 0.61,
     "possibleParentId": "exec-ind-epa",
-    "lastVerified": null
-  },
-  {
-    "id": "environmental-protection-agency-division-of-environmental-quality-deq",
-    "name": "Division of Environmental Quality (DEQ)",
-    "type": "Division",
-    "parentId": null,
-    "desc": "Pursuant to the Clean Air Act (CAA or the Act), the U.S. Environmental Protection Agency (EPA) is finalizing approval of a State Implementation Plan (SIP) revision submitted by the State of Arkansas through the Division of Environmental Quality (DEQ) on August 8, 2022, clarified by DEQ on July 29, 2025, and further supplemented on May 4, 2026, to satisfy the requirements of the Act and the EPA's Regional Haze Rule (RHR) for visibility protection in mandatory Class I Federal areas (Class I areas) for the program's second implementation period. Arkansas' SIP submission addresses the requirement that States must revise their long-term strategies for making reasonable progress to prevent any future and remedy any existing man-made visibility impairment in the Class I areas. The EPA is taking this action pursuant to CAA sections 110 and 169A.",
-    "description": "Pursuant to the Clean Air Act (CAA or the Act), the U.S. Environmental Protection Agency (EPA) is finalizing approval of a State Implementation Plan (SIP) revision submitted by the State of Arkansas through the Division of Environmental Quality (DEQ) on August 8, 2022, clarified by DEQ on July 29, 2025, and further supplemented on May 4, 2026, to satisfy the requirements of the Act and the EPA's Regional Haze Rule (RHR) for visibility protection in mandatory Class I Federal areas (Class I areas) for the program's second implementation period. Arkansas' SIP submission addresses the requirement that States must revise their long-term strategies for making reasonable progress to prevent any future and remedy any existing man-made visibility impairment in the Class I areas. The EPA is taking this action pursuant to CAA sections 110 and 169A.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/27/2026-17494/air-plan-approval-arkansas-regional-haze-state-implementation-plan-for-the-second-implementation"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Environmental Protection Agency",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/27/2026-17494/air-plan-approval-arkansas-regional-haze-state-implementation-plan-for-the-second-implementation",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": "exec-ind-epa",
-    "lastVerified": null
-  },
-  {
-    "id": "environmental-protection-agency-service-of-oklahoma",
-    "name": "Service of Oklahoma",
-    "type": "Office",
-    "parentId": null,
-    "desc": "Pursuant to the Federal Clean Air Act (CAA or the Act), the Environmental Protection Agency (EPA) is proposing to approve the State implementation plan (SIP) revision submitted by the State of Oklahoma on March 12, 2026, (Oklahoma's 2026 SIP submission) for the regional haze program's first implementation (planning) period. Oklahoma's 2026 SIP submission revises previously approved source-specific requirements for the American Electric Power/Public Service of Oklahoma (AEP/PSO) Northeastern Power Station as part of the State's long-term strategy for the first planning period. The EPA is proposing to find that this SIP revision meets the requirements of the CAA and the Regional Haze Rule.",
-    "description": "Pursuant to the Federal Clean Air Act (CAA or the Act), the Environmental Protection Agency (EPA) is proposing to approve the State implementation plan (SIP) revision submitted by the State of Oklahoma on March 12, 2026, (Oklahoma's 2026 SIP submission) for the regional haze program's first implementation (planning) period. Oklahoma's 2026 SIP submission revises previously approved source-specific requirements for the American Electric Power/Public Service of Oklahoma (AEP/PSO) Northeastern Power Station as part of the State's long-term strategy for the first planning period. The EPA is proposing to find that this SIP revision meets the requirements of the CAA and the Regional Haze Rule.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/27/2026-17499/air-plan-approval-oklahoma-regional-haze-plan-for-the-first-implementation-revision-revision-to"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Environmental Protection Agency",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/27/2026-17499/air-plan-approval-oklahoma-regional-haze-plan-for-the-first-implementation-revision-revision-to",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": "exec-ind-epa",
-    "lastVerified": null
-  },
-  {
-    "id": "federal-communications-commission-office-of-economics-and-analytics-oea",
-    "name": "Office of Economics and Analytics (OEA)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In this document, the Federal Communications Commission (the Commission or FCC) announces an auction of 3,248 new flexible-use licenses in the 3.98-4.14 GHz band. The Office of Economics and Analytics (OEA) and the Wireless Telecommunications Bureau (WTB) seek comment on the competitive bidding procedures and auction design to be used for this auction, which is designated as Auction 115.",
-    "description": "In this document, the Federal Communications Commission (the Commission or FCC) announces an auction of 3,248 new flexible-use licenses in the 3.98-4.14 GHz band. The Office of Economics and Analytics (OEA) and the Wireless Telecommunications Bureau (WTB) seek comment on the competitive bidding procedures and auction design to be used for this auction, which is designated as Auction 115.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/03/2026-15725/auction-of-flexible-use-licenses-in-the-upper-c-band-for-next-generation-wireless-services-scheduled"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Federal Communications Commission",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/03/2026-15725/auction-of-flexible-use-licenses-in-the-upper-c-band-for-next-generation-wireless-services-scheduled",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": "exec-regulatory-fcc",
     "lastVerified": null
   },
   {
@@ -936,10 +854,10 @@
     "name": "Administration for Children and Families (ACF)",
     "type": "Office",
     "parentId": null,
-    "desc": "The Office of Head Start (OHS), Administration for Children and Families (ACF) is proposing a new information collection activity for the Head Start State Collaboration Office (HSCO) Grant Application. HSCO grants are authorized under the Head Start Act and support coordination between Head Start agencies and state systems serving young children and families. OHS has developed new application instructions to align HSCO grant activities with states and federal priorities, including improving outcomes in child welfare, strengthening family formation, supporting effective service delivery, and enhancing early childhood education. This proposed information collection is necessary to support consistent implementation of program objectives and alignment across all states.",
-    "description": "The Office of Head Start (OHS), Administration for Children and Families (ACF) is proposing a new information collection activity for the Head Start State Collaboration Office (HSCO) Grant Application. HSCO grants are authorized under the Head Start Act and support coordination between Head Start agencies and state systems serving young children and families. OHS has developed new application instructions to align HSCO grant activities with states and federal priorities, including improving outcomes in child welfare, strengthening family formation, supporting effective service delivery, and enhancing early childhood education. This proposed information collection is necessary to support consistent implementation of program objectives and alignment across all states.",
+    "desc": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
+    "description": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/31/2026-17745/submission-for-office-of-management-and-budget-review-head-start-state-collaboration-office-grant"
+      "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -964,7 +882,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/31/2026-17745/submission-for-office-of-management-and-budget-review-head-start-state-collaboration-office-grant",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -973,14 +891,14 @@
     "lastVerified": null
   },
   {
-    "id": "health-and-human-services-department-administration-for-children-and-families-acf-acf-tech",
-    "name": "Administration for Children and Families (ACF), ACF Tech",
+    "id": "health-and-human-services-department-bureau-of-health-workforce-performance-data-collection-omb-no",
+    "name": "Bureau of Health Workforce Performance Data Collection, OMB No",
     "type": "Office",
     "parentId": null,
-    "desc": "In accordance with subsection (e)(12) of the Privacy Act of 1974, as amended, the Department of Health and Human Services (HHS), Administration for Children and Families (ACF), ACF Tech, is providing notice of a re-established matching program between the Department of Veterans Affairs (VA) and State Public Assistance Agencies (SPAAs) participating in the Public Assistance Reporting Information System (PARIS) Program. The matching program provides the SPAAs with VA's compensation and pension data on a periodic basis to use in determining public assistance applicants' and recipients' eligibility for certain public assistance benefits. ACF Tech facilitates the matching program, and the Department of Treasury, Bureau of Fiscal Services, Do Not Pay (DNP) conducts the matches of SPAA and VA data and provides associated support.",
-    "description": "In accordance with subsection (e)(12) of the Privacy Act of 1974, as amended, the Department of Health and Human Services (HHS), Administration for Children and Families (ACF), ACF Tech, is providing notice of a re-established matching program between the Department of Veterans Affairs (VA) and State Public Assistance Agencies (SPAAs) participating in the Public Assistance Reporting Information System (PARIS) Program. The matching program provides the SPAAs with VA's compensation and pension data on a periodic basis to use in determining public assistance applicants' and recipients' eligibility for certain public assistance benefits. ACF Tech facilitates the matching program, and the Department of Treasury, Bureau of Fiscal Services, Do Not Pay (DNP) conducts the matches of SPAA and VA data and provides associated support.",
+    "desc": "In compliance with the requirement for opportunity for public comment on proposed data collection projects of the Paperwork Reduction Act of 1995, HRSA announces plans to submit an Information Collection Request (ICR), described below, to the Office of Management and Budget (OMB). Prior to submitting the ICR to OMB, HRSA seeks comments from the public regarding the burden estimate, below, or any other aspect of the ICR.",
+    "description": "In compliance with the requirement for opportunity for public comment on proposed data collection projects of the Paperwork Reduction Act of 1995, HRSA announces plans to submit an Information Collection Request (ICR), described below, to the Office of Management and Budget (OMB). Prior to submitting the ICR to OMB, HRSA seeks comments from the public regarding the burden estimate, below, or any other aspect of the ICR.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/27/2026-15146/privacy-act-of-1974-matching-program"
+      "https://www.federalregister.gov/documents/2026/09/08/2026-18235/agency-information-collection-activities-proposed-collection-public-comment-request-information"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -1005,171 +923,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/27/2026-15146/privacy-act-of-1974-matching-program",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-administration-for-children-and-families-acf-u",
-    "name": "Administration for Children and Families (ACF), U",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Family Assistance, Administration for Children and Families (ACF), U.S. Department of Health and Human Services, is proposing to collect data for state requests of Temporary Assistance for Needy Families (TANF) Contingency Fund provisional payments through the TANF Contingency Fund Application.",
-    "description": "The Office of Family Assistance, Administration for Children and Families (ACF), U.S. Department of Health and Human Services, is proposing to collect data for state requests of Temporary Assistance for Needy Families (TANF) Contingency Fund provisional payments through the TANF Contingency Fund Application.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17982/submission-for-office-of-management-and-budget-review-tanf-contingency-fund-application"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17982/submission-for-office-of-management-and-budget-review-tanf-contingency-fund-application",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-administration-of-financial-assistance-programs",
-    "name": "Administration of Financial Assistance Programs",
-    "type": "Office",
-    "parentId": null,
-    "desc": "This final rule amends the Grants to States for Public Assistance Programs regulations, the General Administration--State Plans and Grant Appeals regulations, the General Administration--Public Assistance Programs regulations, the Training and Use of Subprofessionals and Volunteers regulations, the Coverage and Conditions of Eligibility in Financial Assistance Programs regulations, the Financial Assistance to Individuals regulations, the Administration of Financial Assistance Programs regulations, the Fiscal Administration of Financial Assistance Programs regulations, the General Temporary Assistance for Needy Families (TANF) Provisions regulations, the Ensuring That Recipients Work regulations, the Accountability Provisions--General regulations, the Expenditures of State and Federal TANF Funds regulations, the Other Accountability Provisions regulations, the Data Collection and Reporting Requirements regulations, the High Performance Bonus Awards regulations, the Implementation of Section 403(a)(2) of the Social Security Act Bonus to Reward Decrease in Illegitimacy Ratio regulations, the Methodology for Determining Whether an Increase in a State or Territory's Child Poverty Rate Is the Result of the TANF Program regulations, the Tribal TANF Provisions regulations, and The Native Employment Works (NEW) Program regulations to eliminate unnecessary or obsolete regulations. A plain language summary of the final rule is posted at https:// www.regulations.gov.",
-    "description": "This final rule amends the Grants to States for Public Assistance Programs regulations, the General Administration--State Plans and Grant Appeals regulations, the General Administration--Public Assistance Programs regulations, the Training and Use of Subprofessionals and Volunteers regulations, the Coverage and Conditions of Eligibility in Financial Assistance Programs regulations, the Financial Assistance to Individuals regulations, the Administration of Financial Assistance Programs regulations, the Fiscal Administration of Financial Assistance Programs regulations, the General Temporary Assistance for Needy Families (TANF) Provisions regulations, the Ensuring That Recipients Work regulations, the Accountability Provisions--General regulations, the Expenditures of State and Federal TANF Funds regulations, the Other Accountability Provisions regulations, the Data Collection and Reporting Requirements regulations, the High Performance Bonus Awards regulations, the Implementation of Section 403(a)(2) of the Social Security Act Bonus to Reward Decrease in Illegitimacy Ratio regulations, the Methodology for Determining Whether an Increase in a State or Territory's Child Poverty Rate Is the Result of the TANF Program regulations, the Tribal TANF Provisions regulations, and The Native Employment Works (NEW) Program regulations to eliminate unnecessary or obsolete regulations. A plain language summary of the final rule is posted at https:// www.regulations.gov.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/31/2026-15567/reducing-bureaucracy-and-burden-for-family-assistance-programs"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/31/2026-15567/reducing-bureaucracy-and-burden-for-family-assistance-programs",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-administration-of-medical-services-vams",
-    "name": "Administration of Medical Services (VAMS)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Centers for Disease Control and Prevention (CDC), located within the Department of Health and Human Services (HHS), announces three separate awards to fund Vietnam Administration of Medical Services (VAMS), National Institute of Medical Research (NIMR), and ASEAN+3 FETN Foundation. For Vietnam Administration of Medical Services (VAMS), the award is approximately $2,000,000 for Federal Fiscal Year (FFY) 2026, with an expected total funding of approximately $10,000,000. For National Institute of Medical Research (NIMR), the award is approximately $2,000,000 for FFY 2026, with an expected total funding of approximately $10,000,000. For ASEAN+3 FETN Foundation, the award is approximately $500,000 in FFY 2026, with an expected total funding of approximately $2,500,000. The total 5-year period amount for the three recipients is $22,500,000, subject to the availability of funds. Funding amounts for years 2-5 will be set at continuation. The awards will support activities to protect Americans and people worldwide from public health threats by building capacity within their respective countries to strengthen public health preparedness; advancing early pathogen detection to mitigate the impact of global disease outbreaks and public health; and bolstering rapid response to global health emergencies.",
-    "description": "The Centers for Disease Control and Prevention (CDC), located within the Department of Health and Human Services (HHS), announces three separate awards to fund Vietnam Administration of Medical Services (VAMS), National Institute of Medical Research (NIMR), and ASEAN+3 FETN Foundation. For Vietnam Administration of Medical Services (VAMS), the award is approximately $2,000,000 for Federal Fiscal Year (FFY) 2026, with an expected total funding of approximately $10,000,000. For National Institute of Medical Research (NIMR), the award is approximately $2,000,000 for FFY 2026, with an expected total funding of approximately $10,000,000. For ASEAN+3 FETN Foundation, the award is approximately $500,000 in FFY 2026, with an expected total funding of approximately $2,500,000. The total 5-year period amount for the three recipients is $22,500,000, subject to the availability of funds. Funding amounts for years 2-5 will be set at continuation. The awards will support activities to protect Americans and people worldwide from public health threats by building capacity within their respective countries to strengthen public health preparedness; advancing early pathogen detection to mitigate the impact of global disease outbreaks and public health; and bolstering rapid response to global health emergencies.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/27/2026-17450/notice-of-award-of-a-sole-source-cooperative-agreement-to-fund-vietnam-administration-of-medical"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/27/2026-17450/notice-of-award-of-a-sole-source-cooperative-agreement-to-fund-vietnam-administration-of-medical",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-bureau-of-fiscal-services-do-not-pay-dnp",
-    "name": "Bureau of Fiscal Services, Do Not Pay (DNP)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In accordance with subsection (e)(12) of the Privacy Act of 1974, as amended, the Department of Health and Human Services (HHS), Administration for Children and Families (ACF), ACF Tech, is providing notice of a re-established matching program between the Department of Veterans Affairs (VA) and State Public Assistance Agencies (SPAAs) participating in the Public Assistance Reporting Information System (PARIS) Program. The matching program provides the SPAAs with VA's compensation and pension data on a periodic basis to use in determining public assistance applicants' and recipients' eligibility for certain public assistance benefits. ACF Tech facilitates the matching program, and the Department of Treasury, Bureau of Fiscal Services, Do Not Pay (DNP) conducts the matches of SPAA and VA data and provides associated support.",
-    "description": "In accordance with subsection (e)(12) of the Privacy Act of 1974, as amended, the Department of Health and Human Services (HHS), Administration for Children and Families (ACF), ACF Tech, is providing notice of a re-established matching program between the Department of Veterans Affairs (VA) and State Public Assistance Agencies (SPAAs) participating in the Public Assistance Reporting Information System (PARIS) Program. The matching program provides the SPAAs with VA's compensation and pension data on a periodic basis to use in determining public assistance applicants' and recipients' eligibility for certain public assistance benefits. ACF Tech facilitates the matching program, and the Department of Treasury, Bureau of Fiscal Services, Do Not Pay (DNP) conducts the matches of SPAA and VA data and provides associated support.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/27/2026-15146/privacy-act-of-1974-matching-program"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/27/2026-15146/privacy-act-of-1974-matching-program",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/08/2026-18235/agency-information-collection-activities-proposed-collection-public-comment-request-information",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1219,6 +973,47 @@
     "lastVerified": null
   },
   {
+    "id": "health-and-human-services-department-center-for-infant-toddler-and-families-inc",
+    "name": "Center for Infant, Toddler and Families, Inc",
+    "type": "Office",
+    "parentId": null,
+    "desc": "HRSA is providing supplemental award funds of $2,750,000 in federal fiscal year (FY) 2026 to ZERO TO THREE National Center for Infant, Toddler and Families, Inc., the current recipient of the Infant-Toddler Court Program (ITCP)--National Resource Center (NRC) cooperative agreement (HRSA-22-074). These funds will support the activities that strengthen child welfare and early childhood systems and advance early developmental health and well-being through the Infant-Toddler Court (ITC) approach. Supplemental funding will provide financial and technical support to local infant-toddler court sites, support increased expansion of the ITC approach into new sites and states, and expand technical assistance needed to sustain and expand state award activities funded under HRSA-22-073/074.",
+    "description": "HRSA is providing supplemental award funds of $2,750,000 in federal fiscal year (FY) 2026 to ZERO TO THREE National Center for Infant, Toddler and Families, Inc., the current recipient of the Infant-Toddler Court Program (ITCP)--National Resource Center (NRC) cooperative agreement (HRSA-22-074). These funds will support the activities that strengthen child welfare and early childhood systems and advance early developmental health and well-being through the Infant-Toddler Court (ITC) approach. Supplemental funding will provide financial and technical support to local infant-toddler court sites, support increased expansion of the ITC approach into new sites and states, and expand technical assistance needed to sustain and expand state award activities funded under HRSA-22-073/074.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/18/2026-19145/infant-toddler-court-program-national-resource-center"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/18/2026-19145/infant-toddler-court-program-national-resource-center",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
     "id": "health-and-human-services-department-center-for-newborn-screening-systems-excellence",
     "name": "Center for Newborn Screening Systems Excellence",
     "type": "Office",
@@ -1252,88 +1047,6 @@
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
     "sourceUrl": "https://www.federalregister.gov/documents/2026/08/12/2026-16396/national-newborn-screening-stakeholder-workgroup",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-center-for-scientific-review",
-    "name": "Center for Scientific Review",
-    "type": "Office",
-    "parentId": null,
-    "desc": "Center for Scientific Review; Notice of Closed Meetings",
-    "description": "Center for Scientific Review; Notice of Closed Meetings",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17896/center-for-scientific-review-notice-of-closed-meetings"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17896/center-for-scientific-review-notice-of-closed-meetings",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-division-of-clinical-research-dcr",
-    "name": "Division of Clinical Research (DCR)",
-    "type": "Division",
-    "parentId": null,
-    "desc": "Pursuant to the NIH Reform Act of 2006 (42 U.S.C. 281(d)(4)), notice is hereby given that the National Institute of Allergy and Infectious Diseases (NIAID) of the National Institutes of Health (NIH) will be accepting comments on a proposed reorganization involving the Division of Clinical Research (DCR).",
-    "description": "Pursuant to the NIH Reform Act of 2006 (42 U.S.C. 281(d)(4)), notice is hereby given that the National Institute of Allergy and Infectious Diseases (NIAID) of the National Institutes of Health (NIH) will be accepting comments on a proposed reorganization involving the Division of Clinical Research (DCR).",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/31/2026-17685/notice-of-public-hearing-niaid-proposed-reorganization"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/31/2026-17685/notice-of-public-hearing-niaid-proposed-reorganization",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1383,178 +1096,14 @@
     "lastVerified": null
   },
   {
-    "id": "health-and-human-services-department-office-of-extramural-research-oer",
-    "name": "Office of Extramural Research (OER)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-family-assistance",
-    "name": "Office of Family Assistance",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Family Assistance, Administration for Children and Families (ACF), U.S. Department of Health and Human Services, is proposing to collect data for state requests of Temporary Assistance for Needy Families (TANF) Contingency Fund provisional payments through the TANF Contingency Fund Application.",
-    "description": "The Office of Family Assistance, Administration for Children and Families (ACF), U.S. Department of Health and Human Services, is proposing to collect data for state requests of Temporary Assistance for Needy Families (TANF) Contingency Fund provisional payments through the TANF Contingency Fund Application.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17982/submission-for-office-of-management-and-budget-review-tanf-contingency-fund-application"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17982/submission-for-office-of-management-and-budget-review-tanf-contingency-fund-application",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-head-start-ohs",
-    "name": "Office of Head Start (OHS)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Head Start (OHS), Administration for Children and Families (ACF) is proposing a new information collection activity for the Head Start State Collaboration Office (HSCO) Grant Application. HSCO grants are authorized under the Head Start Act and support coordination between Head Start agencies and state systems serving young children and families. OHS has developed new application instructions to align HSCO grant activities with states and federal priorities, including improving outcomes in child welfare, strengthening family formation, supporting effective service delivery, and enhancing early childhood education. This proposed information collection is necessary to support consistent implementation of program objectives and alignment across all states.",
-    "description": "The Office of Head Start (OHS), Administration for Children and Families (ACF) is proposing a new information collection activity for the Head Start State Collaboration Office (HSCO) Grant Application. HSCO grants are authorized under the Head Start Act and support coordination between Head Start agencies and state systems serving young children and families. OHS has developed new application instructions to align HSCO grant activities with states and federal priorities, including improving outcomes in child welfare, strengthening family formation, supporting effective service delivery, and enhancing early childhood education. This proposed information collection is necessary to support consistent implementation of program objectives and alignment across all states.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/31/2026-17745/submission-for-office-of-management-and-budget-review-head-start-state-collaboration-office-grant"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/31/2026-17745/submission-for-office-of-management-and-budget-review-head-start-state-collaboration-office-grant",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-laboratory-animal-welfare-olaw",
-    "name": "Office of Laboratory Animal Welfare (OLAW)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "health-and-human-services-department-office-of-refugee-resettlement-orr",
     "name": "Office of Refugee Resettlement (ORR)",
     "type": "Office",
     "parentId": null,
-    "desc": "The Office of Refugee Resettlement (ORR), Administration for Children and Families (ACF), Department of Health and Human Services, is requesting emergency review of an information collection request from the Office of Management and Budget (OMB) and inviting public comments on and extension to the proposed collection. This questionnaire is used during brief telephone interviews with Afghan arrivals who might have received ORR benefits and services, to identify any additional service needs that may support assimilation, self- sufficiency, and citizenship for eligible populations.",
-    "description": "The Office of Refugee Resettlement (ORR), Administration for Children and Families (ACF), Department of Health and Human Services, is requesting emergency review of an information collection request from the Office of Management and Budget (OMB) and inviting public comments on and extension to the proposed collection. This questionnaire is used during brief telephone interviews with Afghan arrivals who might have received ORR benefits and services, to identify any additional service needs that may support assimilation, self- sufficiency, and citizenship for eligible populations.",
+    "desc": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
+    "description": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17856/emergency-office-of-management-and-budget-review-and-public-comment-questionnaire-for-the-refugee"
+      "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -1579,89 +1128,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17856/emergency-office-of-management-and-budget-review-and-public-comment-questionnaire-for-the-refugee",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-refugee-resettlement-orr-unaccompanied-alien-child-health-forms",
-    "name": "Office of Refugee Resettlement (ORR) Unaccompanied Alien Child Health Forms",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Administration for Children and Families (ACF) Office of Refugee Resettlement (ORR) is requesting to move the Serious Medical Procedure Request (SMR) Form (Office of Management and Budget (OMB) #: 0970-0561, expiration date December 31, 2026) under the Medical Assessment Form and Dental Assessment Form (OMB #: 0970-0466, expiration October 31, 2026) information collection and update the title of OMB # 0970-0466 to Office of Refugee Resettlement (ORR) Unaccompanied Alien Child Health Forms. Revisions are proposed to the forms. The proposed restructuring and revisions will improve transparency, lessen burden, improve data quality, and ensure alignment with ORR requirements. In addition, to ensure continuity of care, the request has been revised to include the sharing of health information with the Department of Homeland Security (DHS) in specific circumstances.",
-    "description": "The Administration for Children and Families (ACF) Office of Refugee Resettlement (ORR) is requesting to move the Serious Medical Procedure Request (SMR) Form (Office of Management and Budget (OMB) #: 0970-0561, expiration date December 31, 2026) under the Medical Assessment Form and Dental Assessment Form (OMB #: 0970-0466, expiration October 31, 2026) information collection and update the title of OMB # 0970-0466 to Office of Refugee Resettlement (ORR) Unaccompanied Alien Child Health Forms. Revisions are proposed to the forms. The proposed restructuring and revisions will improve transparency, lessen burden, improve data quality, and ensure alignment with ORR requirements. In addition, to ensure continuity of care, the request has been revised to include the sharing of health information with the Department of Homeland Security (DHS) in specific circumstances.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/05/2026-15848/proposed-information-collection-activity-office-of-refugee-resettlement-orr-unaccompanied-alien"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/05/2026-15848/proposed-information-collection-activity-office-of-refugee-resettlement-orr-unaccompanied-alien",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-refugee-resettlement-care-provider-facilities",
-    "name": "Office of Refugee Resettlement Care Provider Facilities",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Refugee Resettlement (ORR), Administration for Children and Families (ACF), U.S. Department of Health and Human Services (HHS), is inviting public comments on the proposed revisions to an information collection. The Monitoring and Compliance for ORR Care Provider Facilities information collection consists of several forms that will allow the Monitoring and Compliance Bureau (MCB) and Unaccompanied Alien Children Bureau (UACB) to better monitor UACB- funded care provider facilities for compliance with federal and state laws and regulations, licensing and accreditation standards, ORR policies and procedures, and child welfare standards. This request includes the addition of nine new instruments, discontinuation of obsolete instruments, and revisions to remaining currently approved instruments.",
-    "description": "The Office of Refugee Resettlement (ORR), Administration for Children and Families (ACF), U.S. Department of Health and Human Services (HHS), is inviting public comments on the proposed revisions to an information collection. The Monitoring and Compliance for ORR Care Provider Facilities information collection consists of several forms that will allow the Monitoring and Compliance Bureau (MCB) and Unaccompanied Alien Children Bureau (UACB) to better monitor UACB- funded care provider facilities for compliance with federal and state laws and regulations, licensing and accreditation standards, ORR policies and procedures, and child welfare standards. This request includes the addition of nine new instruments, discontinuation of obsolete instruments, and revisions to remaining currently approved instruments.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/05/2026-15842/proposed-information-collection-activity-monitoring-and-compliance-for-office-of-refugee"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/05/2026-15842/proposed-information-collection-activity-monitoring-and-compliance-for-office-of-refugee",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1674,10 +1141,10 @@
     "name": "Office of the Director",
     "type": "Office",
     "parentId": null,
-    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Laboratory Animal Welfare (OLAW) in the Office of Extramural Research (OER) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
+    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Science Policy (OSP), in the Office of the Director (OD), the National Institutes of Health (NIH) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
+    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Science Policy (OSP), in the Office of the Director (OD), the National Institutes of Health (NIH) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and"
+      "https://www.federalregister.gov/documents/2026/09/14/2026-18647/proposed-collection-60-day-comment-request-nih-electronic-application-system-for-nih-certificates-of"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -1702,48 +1169,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17899/proposed-collection-60-day-comment-request-assurance-interinstitutional-foreign-and-domestic-and",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "health-and-human-services-department-office-of-the-secretary",
-    "name": "Office of the Secretary",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995, the Office of the Secretary (OS), Department of Health and Human Services, is publishing the following summary of a proposed collection for public comment.",
-    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995, the Office of the Secretary (OS), Department of Health and Human Services, is publishing the following summary of a proposed collection for public comment.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/03/2026-18060/agency-information-collection-request-30-day-public-comment-request"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/03/2026-18060/agency-information-collection-request-30-day-public-comment-request",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/14/2026-18647/proposed-collection-60-day-comment-request-nih-electronic-application-system-for-nih-certificates-of",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1834,55 +1260,14 @@
     "lastVerified": null
   },
   {
-    "id": "interior-department-office-of-public-health-disease-reporting-and-surveillance-forms",
-    "name": "Office of Public Health Disease Reporting and Surveillance Forms",
-    "type": "Office",
-    "parentId": null,
-    "desc": "In accordance with the Paperwork Reduction Act of 1995, we, the National Park Service (NPS), are requesting an extension of a currently approved information collection.",
-    "description": "In accordance with the Paperwork Reduction Act of 1995, we, the National Park Service (NPS), are requesting an extension of a currently approved information collection.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17956/agency-information-collection-activities-office-of-public-health-disease-reporting-and-surveillance"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Interior Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17956/agency-information-collection-activities-office-of-public-health-disease-reporting-and-surveillance",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "interior-department-office-of-surface-mining-reclamation-and-enforcement-osm",
     "name": "Office of Surface Mining Reclamation and Enforcement (OSM)",
     "type": "Office",
     "parentId": null,
-    "desc": "The Office of Surface Mining Reclamation and Enforcement (OSM) published a document in the Federal Register on August 21, 2026, not approving, with one exception, an amendment to the Montana regulatory program under the Surface Mining Control and Reclamation Act of 1977 (SMCRA). OSM made an error in the document by adding an entry to 30 CFR 926.12 at paragraph (c), a paragraph that already existed. This document corrects the final regulation.",
-    "description": "The Office of Surface Mining Reclamation and Enforcement (OSM) published a document in the Federal Register on August 21, 2026, not approving, with one exception, an amendment to the Montana regulatory program under the Surface Mining Control and Reclamation Act of 1977 (SMCRA). OSM made an error in the document by adding an entry to 30 CFR 926.12 at paragraph (c), a paragraph that already existed. This document corrects the final regulation.",
+    "desc": "The Office of Surface Mining Reclamation and Enforcement (OSM) is publishing this notice to announce that it has prepared a Final Environmental Impact Statement (FEIS) and Record of Decision (ROD) for Navajo Transitional Energy Company's (NTEC) proposed Surface Mining Control and Reclamation Act of 1977 (SMCRA) permit for the No Name Permit area within NTEC's existing Navajo Mine Lease 14-20-603-2505.",
+    "description": "The Office of Surface Mining Reclamation and Enforcement (OSM) is publishing this notice to announce that it has prepared a Final Environmental Impact Statement (FEIS) and Record of Decision (ROD) for Navajo Transitional Energy Company's (NTEC) proposed Surface Mining Control and Reclamation Act of 1977 (SMCRA) permit for the No Name Permit area within NTEC's existing Navajo Mine Lease 14-20-603-2505.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17821/montana-regulatory-program"
+      "https://www.federalregister.gov/documents/2026/09/01/2026-17785/notice-of-availability-of-the-final-environmental-impact-statement-and-record-of-decision-for-navajo"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -1907,7 +1292,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Interior Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17821/montana-regulatory-program",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17785/notice-of-availability-of-the-final-environmental-impact-statement-and-record-of-decision-for-navajo",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2084,10 +1469,10 @@
     "name": "Bureau of Justice Statistics (BJS), Department of Justice (DOJ)",
     "type": "Office",
     "parentId": null,
-    "desc": "The Bureau of Justice Statistics (BJS), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
-    "description": "The Bureau of Justice Statistics (BJS), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
+    "desc": "The Bureau of Justice Statistics (BJS), Department of Justice (DOJ) will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
+    "description": "The Bureau of Justice Statistics (BJS), Department of Justice (DOJ) will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17960/agency-information-collection-activities-proposed-ecollection-ecomments-requested-reinstatement-with"
+      "https://www.federalregister.gov/documents/2026/09/11/2026-18554/agency-information-collection-activities-proposed-ecollection-ecomments-requested-reinstatement-with"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -2112,7 +1497,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Justice Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17960/agency-information-collection-activities-proposed-ecollection-ecomments-requested-reinstatement-with",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/11/2026-18554/agency-information-collection-activities-proposed-ecollection-ecomments-requested-reinstatement-with",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2244,47 +1629,6 @@
     "lastVerified": null
   },
   {
-    "id": "justice-department-office-for-victims-of-crime-training-and-technical-assistance",
-    "name": "Office for Victims of Crime Training and Technical Assistance",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Justice Programs (OJP), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
-    "description": "The Office of Justice Programs (OJP), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/31/2026-15590/agency-information-collection-activities-proposed-ecollection-ecomments-requested-revision-of-a"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Justice Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/31/2026-15590/agency-information-collection-activities-proposed-ecollection-ecomments-requested-revision-of-a",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "justice-department-office-of-justice-programs",
     "name": "Office of Justice Programs",
     "type": "Office",
@@ -2318,88 +1662,6 @@
     "possibleParent": "Justice Department",
     "discoveryMethod": "federal_register_listing_scan",
     "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17923/notice-of-submission-of-charter-for-the-reestablishment-of-the-global-justice-information-sharing",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "justice-department-office-of-justice-programs-ojp-department-of-justice-doj",
-    "name": "Office of Justice Programs (OJP), Department of Justice (DOJ)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Justice Programs (OJP), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
-    "description": "The Office of Justice Programs (OJP), Department of Justice (DOJ), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/31/2026-15590/agency-information-collection-activities-proposed-ecollection-ecomments-requested-revision-of-a"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Justice Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/31/2026-15590/agency-information-collection-activities-proposed-ecollection-ecomments-requested-revision-of-a",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "justice-department-office-of-the-pardon-attorney-pardon",
-    "name": "Office of the Pardon Attorney (PARDON)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Department of Justice (DOJ), Office of the Pardon Attorney (PARDON), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995. The final rule responding to those comments was published at Application for Relief from Disabilities Imposed by Federal Laws with Respect to the Acquisition, Receipt, Transfer, Shipment, Transportation, or Possession of Firearms in the Federal Register at 91 FR 54054, August 20, 2026.",
-    "description": "The Department of Justice (DOJ), Office of the Pardon Attorney (PARDON), will be submitting the following information collection request to the Office of Management and Budget (OMB) for review and approval in accordance with the Paperwork Reduction Act of 1995. The final rule responding to those comments was published at Application for Relief from Disabilities Imposed by Federal Laws with Respect to the Acquisition, Receipt, Transfer, Shipment, Transportation, or Possession of Firearms in the Federal Register at 91 FR 54054, August 20, 2026.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/24/2026-17242/agency-information-collection-activities-proposed-ecollection-ecomments-requested-application-to"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Justice Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/24/2026-17242/agency-information-collection-activities-proposed-ecollection-ecomments-requested-application-to",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2449,14 +1711,14 @@
     "lastVerified": null
   },
   {
-    "id": "labor-department-office-of-the-assistant-secretary-for-policy-oasp",
-    "name": "Office of the Assistant Secretary for Policy (OASP)",
+    "id": "labor-department-office-of-inspector-general",
+    "name": "Office of Inspector General",
     "type": "Office",
     "parentId": null,
-    "desc": "The Department of Labor, as part of its continuing effort to reduce paperwork and respondent burden, conducts a pre-clearance request for comment to provide the general public and Federal agencies with an opportunity to comment on proposed collections of information in accordance with the Paperwork Reduction Act of 1995. This request helps to ensure that: requested data can be provided in the desired format; reporting burden (time and financial resources) is minimized; collection instruments are clearly understood; and the impact of collection requirements on respondents can be properly assessed. Currently, the Office of the Assistant Secretary for Policy (OASP) is soliciting comments on the information collection for Registration for Public API.",
-    "description": "The Department of Labor, as part of its continuing effort to reduce paperwork and respondent burden, conducts a pre-clearance request for comment to provide the general public and Federal agencies with an opportunity to comment on proposed collections of information in accordance with the Paperwork Reduction Act of 1995. This request helps to ensure that: requested data can be provided in the desired format; reporting burden (time and financial resources) is minimized; collection instruments are clearly understood; and the impact of collection requirements on respondents can be properly assessed. Currently, the Office of the Assistant Secretary for Policy (OASP) is soliciting comments on the information collection for Registration for Public API.",
+    "desc": "The Department of Labor (DOL or the Department) is issuing this final rule to require the disclosure of confidential unemployment compensation (UC) information to Federal officials for purposes of UC program oversight and audits. This rule will ensure that Federal officials, including the Department's Office of Inspector General (DOL- OIG), are able to obtain the information needed from State UC agencies to ensure proper oversight of the UC programs and to hold State UC agencies accountable for identifying and addressing fraud in UC programs.",
+    "description": "The Department of Labor (DOL or the Department) is issuing this final rule to require the disclosure of confidential unemployment compensation (UC) information to Federal officials for purposes of UC program oversight and audits. This rule will ensure that Federal officials, including the Department's Office of Inspector General (DOL- OIG), are able to obtain the information needed from State UC agencies to ensure proper oversight of the UC programs and to hold State UC agencies accountable for identifying and addressing fraud in UC programs.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17837/proposed-extension-of-information-collection-registration-for-public-api"
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18978/federal-state-unemployment-compensation-uc-program-data-availability"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -2481,7 +1743,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Labor Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17837/proposed-extension-of-information-collection-registration-for-public-api",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18978/federal-state-unemployment-compensation-uc-program-data-availability",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2572,6 +1834,88 @@
     "lastVerified": null
   },
   {
+    "id": "securities-and-exchange-commission-office-of-disciplinary-affairs",
+    "name": "Office of Disciplinary Affairs",
+    "type": "Office",
+    "parentId": null,
+    "desc": "Self-Regulatory Organizations; 24X National Exchange LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend 24X Rule 8.1(d) To Clarify Certain Disciplinary Functions by FINRA's Office of Disciplinary Affairs",
+    "description": "Self-Regulatory Organizations; 24X National Exchange LLC; Notice of Filing and Immediate Effectiveness of Proposed Rule Change To Amend 24X Rule 8.1(d) To Clarify Certain Disciplinary Functions by FINRA's Office of Disciplinary Affairs",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/17/2026-19040/self-regulatory-organizations-24x-national-exchange-llc-notice-of-filing-and-immediate-effectiveness"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Securities and Exchange Commission",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/17/2026-19040/self-regulatory-organizations-24x-national-exchange-llc-notice-of-filing-and-immediate-effectiveness",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": "exec-regulatory-sec",
+    "lastVerified": null
+  },
+  {
+    "id": "small-business-administration-bureau-of-the-fiscal",
+    "name": "Bureau of the Fiscal",
+    "type": "Office",
+    "parentId": null,
+    "desc": "In accordance with the Privacy Act of 1974, as amended, and Office of Management and Budget (OMB) guidance on computer matching, the U.S. Small Business Administration (SBA) is providing notice of a modified matching program. Pursuant to the Payment Integrity Information Act of 2019, SBA is modifying a matching program consisting of the computerized comparison of systems of records for benefits programs at SBA with the U.S. Department of Treasury's Do Not Pay (DNP) Working System, which is administered by Treasury's Bureau of the Fiscal Service. This modified matching program will enable the SBA programs listed in the appendix of this notice to compare records maintained in their respective systems of records with records maintained in the DNP Working System for the purposes of identifying and preventing improper payments and conducting any related recovery activities by verifying through DNP prepayment or pre-award eligibility.",
+    "description": "In accordance with the Privacy Act of 1974, as amended, and Office of Management and Budget (OMB) guidance on computer matching, the U.S. Small Business Administration (SBA) is providing notice of a modified matching program. Pursuant to the Payment Integrity Information Act of 2019, SBA is modifying a matching program consisting of the computerized comparison of systems of records for benefits programs at SBA with the U.S. Department of Treasury's Do Not Pay (DNP) Working System, which is administered by Treasury's Bureau of the Fiscal Service. This modified matching program will enable the SBA programs listed in the appendix of this notice to compare records maintained in their respective systems of records with records maintained in the DNP Working System for the purposes of identifying and preventing improper payments and conducting any related recovery activities by verifying through DNP prepayment or pre-award eligibility.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/11/2026-18527/privacy-act-of-1974-matching-program"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Small Business Administration",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/11/2026-18527/privacy-act-of-1974-matching-program",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": "exec-ind-sba",
+    "lastVerified": null
+  },
+  {
     "id": "state-department-bureau-of-economic-and-business-affairs-contact-list-state-03",
     "name": "Bureau of Economic and Business Affairs Contact List, State-03",
     "type": "Bureau",
@@ -2613,14 +1957,14 @@
     "lastVerified": null
   },
   {
-    "id": "state-department-bureau-of-educational-and-cultural-affairs",
-    "name": "Bureau of Educational and Cultural Affairs",
-    "type": "Bureau",
+    "id": "state-department-bureau-of-the-fiscal",
+    "name": "Bureau of the Fiscal",
+    "type": "Office",
     "parentId": null,
-    "desc": "The Department of State's (Department's) Bureau of Educational and Cultural Affairs administers the Exchange Visitor Program, as set forth at 22 CFR part 62, wherein exchange visitors on educational and cultural exchange programs travel to the United States in the J visa category. The Department tracks the status and geographic location of exchange visitors through the Student and Exchange Visitor Information System (SEVIS), a database administered by the Department of Homeland Security. This Notice of Proposed Rulemaking (Proposed Rule) seeks to clarify the conditions under which a sponsor must terminate an exchange visitor's program and authorizes the Department, in its discretion, to terminate an exchange visitor's program in limited circumstances; modifies Extension of Program and Reinstatement to valid program status in their entirety by eliminating outdated requirements and introducing updated procedures that make use of current SEVIS functionality; amends Definitions to include definitions for \"Unauthorized Employment\" and \"Valid Program Status\"; and rescinds the separate extension of program provision for au pairs.",
-    "description": "The Department of State's (Department's) Bureau of Educational and Cultural Affairs administers the Exchange Visitor Program, as set forth at 22 CFR part 62, wherein exchange visitors on educational and cultural exchange programs travel to the United States in the J visa category. The Department tracks the status and geographic location of exchange visitors through the Student and Exchange Visitor Information System (SEVIS), a database administered by the Department of Homeland Security. This Notice of Proposed Rulemaking (Proposed Rule) seeks to clarify the conditions under which a sponsor must terminate an exchange visitor's program and authorizes the Department, in its discretion, to terminate an exchange visitor's program in limited circumstances; modifies Extension of Program and Reinstatement to valid program status in their entirety by eliminating outdated requirements and introducing updated procedures that make use of current SEVIS functionality; amends Definitions to include definitions for \"Unauthorized Employment\" and \"Valid Program Status\"; and rescinds the separate extension of program provision for au pairs.",
+    "desc": "In accordance with the Privacy Act of 1974, as amended by the Computer Matching and Privacy Protection Act of 1988 and the Computer Matching and Privacy Protection Amendments of 1990 (Privacy Act), and Office of Management and Budget (OMB) guidance on the conduct of computer matching, the Department of State (\"Department\") proposes to establish a matching program with the U.S. Department of the Treasury, Bureau of the Fiscal Service (\"Treasury\"). The matching program allows Treasury to provide services relating to the identification, prevention, and/or recovery of improper payments pursuant to the Do Not Pay (DNP) program operating under 31 U.S.C. 3354.",
+    "description": "In accordance with the Privacy Act of 1974, as amended by the Computer Matching and Privacy Protection Act of 1988 and the Computer Matching and Privacy Protection Amendments of 1990 (Privacy Act), and Office of Management and Budget (OMB) guidance on the conduct of computer matching, the Department of State (\"Department\") proposes to establish a matching program with the U.S. Department of the Treasury, Bureau of the Fiscal Service (\"Treasury\"). The matching program allows Treasury to provide services relating to the identification, prevention, and/or recovery of improper payments pursuant to the Do Not Pay (DNP) program operating under 31 U.S.C. 3354.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/07/30/2026-15450/exchange-visitor-program-termination-of-program-participation-extension-of-program-and-reinstatement"
+      "https://www.federalregister.gov/documents/2026/09/15/2026-18801/privacy-act-of-1974-system-of-records"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -2629,7 +1973,7 @@
     "attachToRoot": true,
     "employees": null,
     "budget": null,
-    "color": "#4a8ac8",
+    "color": "#888888",
     "confidenceScore": 0.61,
     "verificationStatus": "unverified",
     "sourceCount": 1,
@@ -2645,7 +1989,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "State Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/07/30/2026-15450/exchange-visitor-program-termination-of-program-participation-extension-of-program-and-reinstatement",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/15/2026-18801/privacy-act-of-1974-system-of-records",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2695,14 +2039,14 @@
     "lastVerified": null
   },
   {
-    "id": "transportation-department-office-of-the-assistant-secretary-for-research-and-technology-ost-r",
-    "name": "Office of the Assistant Secretary for Research and Technology (OST-R)",
+    "id": "transportation-department-office-of-hazardous-materials-safety",
+    "name": "Office of Hazardous Materials Safety",
     "type": "Office",
     "parentId": null,
-    "desc": "In accordance with the Paperwork Reduction Act of 1995, and its implementing regulations, the Office of the Assistant Secretary for Research and Technology (OST-R) invites the general public and all other interested entities to comment on a new information collection request associated with a new Federal Assistance program entitled \"2026 Drone Infrastructure Inspection Grant (DIIG) Program.\" This program was established under the FAA Reauthorization Act of 2024 to support government entities in deploying and enhancing highly automated drone systems for critical infrastructure safety inspections. OST-R is seeking a new OMB Control Number for this data collection effort.",
-    "description": "In accordance with the Paperwork Reduction Act of 1995, and its implementing regulations, the Office of the Assistant Secretary for Research and Technology (OST-R) invites the general public and all other interested entities to comment on a new information collection request associated with a new Federal Assistance program entitled \"2026 Drone Infrastructure Inspection Grant (DIIG) Program.\" This program was established under the FAA Reauthorization Act of 2024 to support government entities in deploying and enhancing highly automated drone systems for critical infrastructure safety inspections. OST-R is seeking a new OMB Control Number for this data collection effort.",
+    "desc": "In accordance with the procedures governing the application for, and the processing of, special permits from the Department of Transportation's Hazardous Material Regulations, notice is hereby given that the Office of Hazardous Materials Safety has granted or denied the application described herein.",
+    "description": "In accordance with the procedures governing the application for, and the processing of, special permits from the Department of Transportation's Hazardous Material Regulations, notice is hereby given that the Office of Hazardous Materials Safety has granted or denied the application described herein.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17776/60-day-notice-of-proposed-information-collection-information-collection-request-icr-for-the-drone"
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18917/hazardous-materials-notice-of-actions-on-special-permits"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -2727,7 +2071,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Transportation Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17776/60-day-notice-of-proposed-information-collection-information-collection-request-icr-for-the-drone",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18917/hazardous-materials-notice-of-actions-on-special-permits",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -2781,10 +2125,10 @@
     "name": "Office of the Comptroller",
     "type": "Office",
     "parentId": null,
-    "desc": "The Office of the Comptroller of the Currency (OCC) and the Federal Deposit Insurance Corporation (FDIC) are adopting a final rule to define the term \"unsafe or unsound practice\" for purposes of section 8 of the Federal Deposit Insurance Act and to revise the supervisory framework for the issuance of matters requiring attention and other supervisory communications.",
-    "description": "The Office of the Comptroller of the Currency (OCC) and the Federal Deposit Insurance Corporation (FDIC) are adopting a final rule to define the term \"unsafe or unsound practice\" for purposes of section 8 of the Federal Deposit Insurance Act and to revise the supervisory framework for the issuance of matters requiring attention and other supervisory communications.",
+    "desc": "The Office of the Comptroller of the Currency (OCC) and the Federal Deposit Insurance Corporation (FDIC) are proposing to amend their Community Reinvestment Act rules by making certain substantive, technical, and process-oriented changes to refocus on the statutory objective of encouraging banks to meet the credit needs of their communities; to better ensure that community development grants reach the communities they are intended to benefit; to reduce unnecessary burden, particularly for community banks; and to provide greater clarity for how to obtain CRA consideration. The OCC and the FDIC are also proposing certain technical changes to their rules implementing the Community Reinvestment Act sunshine requirements of the Federal Deposit Insurance Act. In addition, the OCC is proposing similar technical changes to its Public Welfare Investments rule and its Rules, Policies, and Procedures for Corporate Activities.",
+    "description": "The Office of the Comptroller of the Currency (OCC) and the Federal Deposit Insurance Corporation (FDIC) are proposing to amend their Community Reinvestment Act rules by making certain substantive, technical, and process-oriented changes to refocus on the statutory objective of encouraging banks to meet the credit needs of their communities; to better ensure that community development grants reach the communities they are intended to benefit; to reduce unnecessary burden, particularly for community banks; and to provide greater clarity for how to obtain CRA consideration. The OCC and the FDIC are also proposing certain technical changes to their rules implementing the Community Reinvestment Act sunshine requirements of the Federal Deposit Insurance Act. In addition, the OCC is proposing similar technical changes to its Public Welfare Investments rule and its Rules, Policies, and Procedures for Corporate Activities.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17823/unsafe-or-unsound-practices-matters-requiring-attention"
+      "https://www.federalregister.gov/documents/2026/08/12/2026-16454/community-reinvestment-act-regulations"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -2809,48 +2153,7 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Treasury Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17823/unsafe-or-unsound-practices-matters-requiring-attention",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "veterans-affairs-department-office-of-procurement",
-    "name": "Office of Procurement",
-    "type": "Office",
-    "parentId": null,
-    "desc": "Office of Procurement (OOP), Department of Veterans Affairs (VA), is announcing an opportunity for public comment on the proposed collection of certain information by the agency. Under the Paperwork Reduction Act (PRA) of 1995, Federal agencies are required to publish notice in the Federal Register concerning each proposed collection of information, including each proposed extension of a currently approved collection, and allow 60 days for public comment in response to the notice.",
-    "description": "Office of Procurement (OOP), Department of Veterans Affairs (VA), is announcing an opportunity for public comment on the proposed collection of certain information by the agency. Under the Paperwork Reduction Act (PRA) of 1995, Federal agencies are required to publish notice in the Federal Register concerning each proposed collection of information, including each proposed extension of a currently approved collection, and allow 60 days for public comment in response to the notice.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/03/2026-18028/agency-information-collection-activity-department-of-veterans-affairs-acquisition-regulation"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Veterans Affairs Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/03/2026-18028/agency-information-collection-activity-department-of-veterans-affairs-acquisition-regulation",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/12/2026-16454/community-reinvestment-act-regulations",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
