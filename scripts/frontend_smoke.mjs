@@ -115,6 +115,20 @@ try {
   await page.waitForTimeout(1500);
   const text = async (selector) => (await page.locator(selector).first().innerText()).trim();
 
+  // The served graph, read once and early: several checks below have to pick
+  // their example FROM THE DATA rather than naming a node. Every hardcoded
+  // example here has eventually become the thing it was chosen for not being
+  // — "Senate Leadership" was the unsourced node until the 2026-09-18
+  // verification pass gave it a source, and the check then failed on
+  // progress.
+  const graphJson = JSON.parse(fs.readFileSync(path.join(ROOT, "output", "graph.json"), "utf8"));
+  const allNodes = [];
+  const walkGraph = (node) => {
+    allNodes.push(node);
+    for (const child of node.children || []) walkGraph(child);
+  };
+  walkGraph(graphJson);
+
   // "How to read this" — the first-visit explainer. A fresh browser context
   // has an empty localStorage, so this is exactly the state a first-time
   // visitor arrives in, and it must be on screen before anything else is
@@ -169,8 +183,28 @@ try {
       return true;
     }, shown);
 
-  await page.fill("#search-input", "Senate Leadership");
-  await page.waitForTimeout(500);
+  // A node that genuinely has no source, chosen from the served graph rather
+  // than named: 4,800-odd nodes qualify, and which ones do changes on every
+  // verification pass. It also has to be findable by search, so the name must
+  // be unique, and it must carry no measured cost (that block reads
+  // differently).
+  const nameCount = new Map();
+  for (const n of allNodes) nameCount.set(n.name, (nameCount.get(n.name) || 0) + 1);
+  // It must also be an ORGANISATION carrying an apportioned share: the
+  // checks immediately below read the estimate block and its period line,
+  // and a post shows "this is a post, not a unit of government" instead.
+  // The first data-driven pick found a post and failed on exactly that.
+  const unsourced = allNodes.find((n) =>
+    nameCount.get(n.name) === 1
+    && !(n.sourceUrls || []).length
+    && !n.lastVerified
+    && !n.synthetic
+    && String(n.name || "").length > 8
+    && !/position/i.test(String(n.type || ""))
+    && String(n.cost_status || "") === "allocated");
+  check("the graph still carries a node with no source at all", Boolean(unsourced), "none");
+  await page.fill("#search-input", (unsourced ? unsourced.name : "Senate Leadership").slice(0, 30));
+  await page.waitForTimeout(600);
   const rowLabel = await text("#search-results .sr-item .sr-type");
   check("search rows use the never-checked badge", /NO SOURCE RECORDED/.test(rowLabel), rowLabel);
   await page.locator("#search-results .sr-item").first().click();
@@ -202,14 +236,6 @@ try {
   // The figures are read off the served graph, not hard-coded: the day the
   // cap was removed, a fixed "Department of Energy reads capped" assertion
   // would have failed for the right reason and taught nothing.
-  const graphJson = JSON.parse(fs.readFileSync(path.join(ROOT, "output", "graph.json"), "utf8"));
-  const allNodes = [];
-  const walk = (node) => {
-    if (!node || typeof node !== "object") return;
-    allNodes.push(node);
-    for (const child of node.children || []) walk(child);
-  };
-  walk(graphJson);
   const byId = (id) => allNodes.find((n) => n.id === id);
   const openByName = async (name) => {
     await page.fill("#search-input", name);
@@ -627,8 +653,14 @@ try {
   check("an evidenced placement says the parent's page lists it", /Placement: (its parent's official page|the same page read above) lists it( in its site-wide navigation)? as "/.test(placed), placed);
   check("an evidenced placement quotes the label and links the page", /lists it( in its site-wide navigation)? as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
   check("an evidenced placement never says 'reports to'", !/reports to/i.test(placed), placed);
-  await page.fill("#search-input", "Senate Leadership");
-  await page.waitForTimeout(500);
+  // Likewise chosen from the data: a node whose placement is not evidenced.
+  const unplacedNode = allNodes.find((n) =>
+    nameCount.get(n.name) === 1 && n.placementVerified !== true
+    && !n.synthetic && String(n.name || "").length > 8
+    && !/position/i.test(String(n.type || "")));
+  check("the graph still carries an organisation with no evidenced placement", Boolean(unplacedNode), "none");
+  await page.fill("#search-input", (unplacedNode ? unplacedNode.name : "Senate Leadership").slice(0, 30));
+  await page.waitForTimeout(600);
   await page.locator("#search-results .sr-item").first().click();
   await page.waitForTimeout(2000);
   const unplaced = await text("#verification-placement");
@@ -642,10 +674,39 @@ try {
     unplaced,
   );
   check("a placement without evidence never claims the page lists it", !/lists it/.test(unplaced), unplaced);
-  // A cluster's text is written by this UI, so no label there. On a real
-  // leaf the description is prose nobody has checked, and must say so.
-  const clusterNote = await text("#info-desc-provenance");
-  check("a cluster's generated text carries no citation label", clusterNote === "", clusterNote);
+  // The description label, asserted from the data rather than from whichever
+  // node happened to be on screen. This check used to read the panel after an
+  // unrelated selection and require the line to be EMPTY -- true only while
+  // the LOD had folded that node into a cluster, which is not something a
+  // test can rely on, and it broke the moment the selection above stopped
+  // being hardcoded. What is actually being claimed is a pair:
+  //   base-graph prose  -> "uncited prose ... not checked against any source"
+  //   a sourced structure -> its own generated label, and never that one
+  const generated = allNodes.find((n) => n.descriptionSource === "generated_from_whitehouse_staff_report"
+    && nameCount.get(n.name) === 1 && n.desc);
+  check("some node's description is sourced rather than curated", Boolean(generated), "none");
+  if (generated) {
+    await page.fill("#search-input", generated.name.slice(0, 30));
+    await page.waitForTimeout(600);
+    await page.locator("#search-results .sr-item").first().click();
+    await page.waitForTimeout(800);
+    const note = await text("#info-desc-provenance");
+    check("a sourced description says which document it came from",
+      /generated from the White House Office's own annual report/.test(note), note);
+    check("a sourced description is never labelled uncited prose", !/uncited prose/.test(note), note);
+  }
+  const curated = allNodes.find((n) => !n.descriptionSource && n.desc && nameCount.get(n.name) === 1
+    && !n.synthetic && String(n.name || "").length > 8);
+  check("the graph still carries an uncited curated description", Boolean(curated), "none");
+  if (curated) {
+    await page.fill("#search-input", curated.name.slice(0, 30));
+    await page.waitForTimeout(600);
+    await page.locator("#search-results .sr-item").first().click();
+    await page.waitForTimeout(800);
+    const note = await text("#info-desc-provenance");
+    check("curated prose says it was never checked against a source",
+      /uncited prose from the base graph/.test(note), note);
+  }
   await page.fill("#search-input", "President of the United States");
   await page.waitForTimeout(500);
   await page.locator("#search-results .sr-item").first().click();
