@@ -194,6 +194,16 @@
       "url": "https://department.va.gov/integrated-service-networks/",
       "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
       "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-treasury-interest-on-the-public-debt",
+      "parentId": "exec-dept-treasury",
+      "name": "Interest on the Public Debt",
+      "type": "Treasury accounting line",
+      "color": "#8aa0b0",
+      "licence": "treasury_statement_line",
+      "basis": "Table 5 reports $1.267 trillion under the Department of the Treasury's section as Interest on the Public Debt, and no node carried it — so the cascade treated it as money to be apportioned among Treasury's unlined bureaus by headcount. The result was published on the live site: the Alcohol & Tobacco Tax & Trade Bureau, with about 500 staff, at $287.1 BILLION — more than the measured IRS — and FinCEN at $201.0bn, OFAC at $143.6bn and the Office of Financial Research at $114.9bn, each exactly its curated headcount times one rate. This is not an organisation and the node does not claim it is: it is typed a Treasury accounting line, the same type the exporter gives the receipts lines it creates, and it exists so that money the statement reports under a heading naming no unit stops being divided among units. docs/EXACT_NODE_COSTS.md had listed this line among those deliberately left unmatched as one of 'Treasury's own funds and groupings'; leaving it unmatched is what caused the distortion.",
+      "addedOn": "2026-09-19"
     }
   ]
 }

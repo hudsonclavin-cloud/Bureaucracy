@@ -1225,3 +1225,39 @@ here — the old names the graph carried (New England, Capitol Health Care
 Network, Sunshine, Desert Pacific) all belong to the superseded eighteen and none
 attaches to a new network.
 
+
+## 11. Interest on the Public Debt, and what leaving a line unmatched cost (2026-09-19)
+
+`docs/EXACT_NODE_COSTS.md` worked through all 78 of Table 5's section totals
+and set 17 aside as "Treasury's own funds and groupings" — lines that name no
+organisation, so no node should carry them. Interest on the Public Debt was
+one. That reasoning is half right and the missing half was expensive.
+
+A line that names no organisation still reports real money, and the cascade
+has to do *something* with it. What it did was apportion $1.267 trillion among
+the Treasury bureaus that had no measured line of their own, by the best
+evidence those siblings carried — their headcounts. The result was live on the
+site:
+
+    Alcohol & Tobacco Tax & Trade Bureau   ~500 staff    $287,134,993,850
+    Financial Crimes Enforcement Network   ~350 staff    $200,994,495,695
+    Office of Foreign Assets Control       ~250 staff    $143,567,496,925
+    Office of Financial Research           ~200 staff    $114,853,997,540
+
+Each is exactly its curated headcount times $574,269,987.70. TTB was published
+at more than the measured Internal Revenue Service.
+
+The node added is **not** an organisation and does not claim to be: it is typed
+`Treasury accounting line`, the type the exporter already gives the receipts
+lines it creates, and it is drawn and keyed as a line. What it does is stop the
+money being divided among units, which is the only thing wrong with leaving it
+out. After: TTB $268.6M, FinCEN $188.0M, OFAC $134.3M, OFR $107.5M — figures a
+bureau of a few hundred people could plausibly spend.
+
+**53 of 5,426 nodes changed**, the four above and the rest by rounding.
+
+The general lesson, which applies to the other sixteen set-aside lines: "this
+line names no organisation" is a good reason not to put it on an organisation,
+and not a reason to leave it out of the tree. Anything inside a parent's total
+that no child carries is apportioned to the children that remain. The other
+sixteen should each be checked for the same effect rather than assumed benign.

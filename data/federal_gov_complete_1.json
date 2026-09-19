@@ -19939,6 +19939,20 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-treasury-interest-on-the-public-debt",
+                  "name": "Interest on the Public Debt",
+                  "type": "Treasury accounting line",
+                  "desc": "The Monthly Treasury Statement reports outlays for Interest on the Public Debt under Department of the Treasury (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Interest on the Public Debt",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#8aa0b0",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of the Treasury"
                 }
               ]
             },

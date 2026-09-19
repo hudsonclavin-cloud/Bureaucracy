@@ -281,11 +281,37 @@ Director` is in the excluded list, which shifts the geometric-mean rate BSEE
 inherits through `resolve_sibling_weights`; BOEM, anchored to its own
 Treasury line, did not move at all.
 
-**Noticed but not fixed, and out of scope for this change:** Treasury's
-`FinCEN`, `OFAC` and `TTB` publish implausible figures in the hundred-
-billion range, both before and after this fix — a pre-existing distortion in
-how Treasury's own enormous total gets divided among its bureaus, unrelated
-to the admin-title stamp and not touched here.
+**That distortion, diagnosed and fixed on 2026-09-19.** This section used to
+end by noting that Treasury's `FinCEN`, `OFAC` and `TTB` published implausible
+hundred-billion figures and leaving it there. The cause was one missing node.
+Table 5 reports **$1.267 trillion** under the Department of the Treasury's
+section as **Interest on the Public Debt**, no node carried it, and so the
+cascade treated it as money to apportion among Treasury's unlined bureaus —
+by headcount, since that is the best evidence those siblings carry. Every one
+of the four was exactly its curated headcount times a single rate of
+$574,269,987.70 per employee:
+
+    TTB     ~500 staff   $287,134,993,850  ->     $268,630,790
+    FinCEN  ~350 staff   $200,994,495,695  ->     $188,041,553
+    OFAC    ~250 staff   $143,567,496,925  ->     $134,315,395
+    OFR     ~200 staff   $114,853,997,540  ->     $107,452,316
+
+The Alcohol & Tobacco Tax & Trade Bureau was published at more than the
+measured IRS. `docs/EXACT_NODE_COSTS.md` had listed this line among the 17
+left deliberately unmatched as "Treasury's own funds and groupings", and
+leaving it unmatched is precisely what caused this: money reported under a
+heading that names no organisation does not stop existing, it gets divided
+among organisations.
+
+The fix is one curated node, added by `scripts/add_curated_nodes.py` under the
+`treasury_statement_line` licence and typed **`Treasury accounting line`** —
+the same type the exporter gives the receipts lines it creates, so the node
+does not claim to be a unit of government, and `colour_treasury_lines` draws
+it as a line rather than as an office. (That guard keyed on `synthetic` alone
+and now keys on the type as well, which is the same defect that drew all 25
+receipts lines as Position/Office nodes until 2026-09-18.) **Blast radius,
+measured rather than asserted: 53 of 5,426 nodes changed**, four of them the
+bureaus above and the rest by rounding through the cascade.
 
 Still open: apportionment by subtree size is still weak wherever a sibling
 group has no dollar or headcount evidence and no stamp to exclude either —

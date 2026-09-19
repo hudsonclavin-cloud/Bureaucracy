@@ -78,7 +78,6 @@ UNOWNED = [
     "Other Defense Civil Programs",
     "International Assistance Programs",
     "Operation and Maintenance",
-    "Interest on the Public Debt",
 ]
 
 #: Lines that landed nowhere until 2026-09-19 because the graph had no node for
@@ -90,6 +89,16 @@ NOW_OWNED = {
     "General Services Administration": "exec-independent-general-services-administration",
     "Railroad Retirement Board": "exec-ind-misc-railroad-retirement-board",
     "Corps of Engineers": "exec-independent-corps-of-engineers",
+    # Not an organisation, and the node does not claim to be one: it is typed a
+    # Treasury accounting line, like the receipts lines the exporter creates.
+    # It was in the list above until 2026-09-19, left unmatched on the reasoning
+    # that it is one of "Treasury's own funds and groupings" — and leaving it
+    # unmatched is what caused the distortion. Its $1.267tn sat in Treasury's
+    # apportionable pool and was divided among the bureaus with no line of their
+    # own, BY HEADCOUNT: the Alcohol & Tobacco Tax & Trade Bureau, about 500
+    # staff, was published at $287.1 BILLION, more than the measured IRS.
+    # With the line carried, TTB reads $268.6m and FinCEN $188.0m.
+    "Interest on the Public Debt": "exec-dept-treasury-interest-on-the-public-debt",
 }
 
 

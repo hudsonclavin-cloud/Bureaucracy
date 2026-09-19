@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-19T19:16:16.529094+00:00",
-  "nodes_before": 5397,
-  "nodes_after": 5426,
+  "timestamp": "2026-09-19T19:46:51.419372+00:00",
+  "nodes_before": 5398,
+  "nodes_after": 5427,
   "new_nodes_added": 29,
   "nodes_delta": 29,
-  "published_nodes_before": 5421,
-  "nodes_delta_vs_published": 5,
+  "published_nodes_before": 5426,
+  "nodes_delta_vs_published": 1,
   "candidate_nodes_written": 98,
   "candidates_discovered": 98,
   "promoted_nodes_written": 0,
@@ -18,7 +18,7 @@
   },
   "verification_breakdown": {
     "partial": 340,
-    "unverified": 4845,
+    "unverified": 4846,
     "verified": 241
   },
   "average_confidence_score": 0.55,
@@ -48,7 +48,7 @@
     },
     "verification_status_counts": {
       "partial": 340,
-      "unverified": 4845,
+      "unverified": 4846,
       "verified": 241
     },
     "verified_node_count": 241,
@@ -68,9 +68,9 @@
     "cycle_fallback_root_attachments": 0,
     "treasury_outlay_rows": {
       "rows": 643,
-      "rows_applied": 129,
+      "rows_applied": 130,
       "rows_negative_applied": 8,
-      "rows_unmatched": 399,
+      "rows_unmatched": 398,
       "rows_ambiguous": 0,
       "rows_superseded": 0,
       "rows_negative_skipped": 115,
@@ -104,7 +104,6 @@
         "Total--International Assistance Programs",
         "Total--Independent Agencies",
         "Total--Federal Old-Age and Survivors Insurance Trust Fund (Off-Budget)",
-        "Total--Interest on the Public Debt",
         "Total--Operation and Maintenance",
         "Total--Benefits Programs",
         "Total--Military Personnel",
@@ -139,7 +138,8 @@
         "Courts of Appeals, District Courts, and Other Judicial Services",
         "Departmental Management and Operations",
         "Exploration",
-        "Research and Related Activities"
+        "Research and Related Activities",
+        "Science"
       ],
       "ambiguous_sample": [],
       "treasury_netting": {
@@ -427,18 +427,18 @@
       "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
     },
     "budget_reconciliation": {
-      "nodes_seen": 5426,
-      "organisation_nodes_seen": 613,
+      "nodes_seen": 5427,
+      "organisation_nodes_seen": 614,
       "nodes_without_figures": 429,
-      "rows_emitted": 184,
+      "rows_emitted": 185,
       "complete_rows": 81,
       "budget_only_rows": 27,
-      "actual_only_rows": 76,
+      "actual_only_rows": 77,
       "unavailable_rows": 0,
-      "missing_budget_rows": 76,
+      "missing_budget_rows": 77,
       "missing_actual_rows": 27,
       "variance_status_counts": {
-        "unavailable": 103,
+        "unavailable": 104,
         "under_budget": 46,
         "over_budget": 35
       },
@@ -446,42 +446,42 @@
         "curated budget note": 108
       },
       "actual_source_counts": {
-        "Treasury MTS Table 5": 157
+        "Treasury MTS Table 5": 158
       },
       "reconciled_rows": 81,
-      "incomplete_rows": 103
+      "incomplete_rows": 104
     },
     "verified_treasury_total": 6811043257196.1,
     "cost_status_counts": {
       "root_total": 1,
-      "official": 157,
+      "official": 158,
       "allocated": 615,
       "unavailable": 4653
     },
     "cost_validation_counts": {
       "verified_with_treasury_total": 1,
-      "matched_official_rollup": 157,
+      "matched_official_rollup": 158,
       "estimated_from_parent": 615,
       "post_is_not_a_budget_unit": 3891,
       "treasury_pool_negative": 204,
       "unit_superseded": 558
     },
     "cost_verification_status_counts": {
-      "verified": 158,
+      "verified": 159,
       "unverified": 5268
     },
     "proof_status_counts": {
       "root": 1,
-      "proven": 658,
+      "proven": 659,
       "baseline": 4767
     },
-    "nodes_with_sources": 659,
+    "nodes_with_sources": 660,
     "nodes_without_sources": 4767,
-    "resolved_cost_node_count": 773,
+    "resolved_cost_node_count": 774,
     "unresolved_cost_node_count": 4653,
     "estimated_cost_node_count": 615,
-    "official_cost_node_count": 158,
-    "verified_cost_node_count": 158,
+    "official_cost_node_count": 159,
+    "verified_cost_node_count": 159,
     "partial_cost_node_count": 0,
     "unverified_cost_node_count": 5268,
     "mixed_weight_sibling_sets_implied": 15,
@@ -501,39 +501,39 @@
       "verified_treasury_total": 6811043257196.1,
       "verification_status_counts": {
         "partial": 340,
-        "unverified": 4845,
+        "unverified": 4846,
         "verified": 241
       },
       "cost_status_counts": {
         "root_total": 1,
-        "official": 157,
+        "official": 158,
         "allocated": 615,
         "unavailable": 4653
       },
       "cost_validation_counts": {
         "verified_with_treasury_total": 1,
-        "matched_official_rollup": 157,
+        "matched_official_rollup": 158,
         "estimated_from_parent": 615,
         "post_is_not_a_budget_unit": 3891,
         "treasury_pool_negative": 204,
         "unit_superseded": 558
       },
       "cost_verification_status_counts": {
-        "verified": 158,
+        "verified": 159,
         "unverified": 5268
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 658,
+        "proven": 659,
         "baseline": 4767
       },
-      "nodes_with_sources": 659,
+      "nodes_with_sources": 660,
       "nodes_without_sources": 4767,
-      "resolved_cost_node_count": 773,
+      "resolved_cost_node_count": 774,
       "unresolved_cost_node_count": 4653,
       "estimated_cost_node_count": 615,
-      "official_cost_node_count": 158,
-      "verified_cost_node_count": 158,
+      "official_cost_node_count": 159,
+      "verified_cost_node_count": 159,
       "partial_cost_node_count": 0,
       "unverified_cost_node_count": 5268,
       "mixed_weight_sibling_sets_implied": 15,
@@ -552,16 +552,16 @@
     },
     "audit_report": {
       "summary": {
-        "total_nodes": 5427,
+        "total_nodes": 5428,
         "nodes_with_errors": 4935,
-        "nodes_with_warnings": 5160,
-        "warning_only_nodes": 389,
+        "nodes_with_warnings": 5161,
+        "warning_only_nodes": 390,
         "severity_counts": {
-          "warning": 11458,
+          "warning": 11459,
           "error": 14073
         },
         "issue_counts": {
-          "unverified": 4846,
+          "unverified": 4847,
           "estimated_cost": 615,
           "cost_unverified": 615,
           "low_cost_confidence": 615,
@@ -572,22 +572,22 @@
         },
         "cost_status_counts": {
           "root_total": 1,
-          "official": 158,
+          "official": 159,
           "allocated": 615,
           "unavailable": 4653
         },
         "cost_verification_status_counts": {
-          "verified": 159,
+          "verified": 160,
           "unverified": 5268
         },
         "verification_status_counts": {
           "partial": 340,
-          "unverified": 4846,
+          "unverified": 4847,
           "verified": 241
         },
         "proof_status_counts": {
           "root": 1,
-          "proven": 659,
+          "proven": 660,
           "baseline": 4767
         },
         "warning_cost_statuses": [
@@ -597,29 +597,29 @@
       }
     },
     "node_export_policy": {
-      "nodes_checked": 5427,
-      "nodes_allowed": 5427,
+      "nodes_checked": 5428,
+      "nodes_allowed": 5428,
       "nodes_rejected": 0,
       "trusted_exceptions_applied": 4935
     },
     "export_verification_status_counts": {
       "partial": 340,
-      "unverified": 4845,
+      "unverified": 4846,
       "verified": 241
     },
     "export_verified_node_count": 241,
     "export_average_confidence_score": 0.55,
     "pre_export_audit_summary": {
-      "total_nodes": 5427,
+      "total_nodes": 5428,
       "nodes_with_errors": 4935,
-      "nodes_with_warnings": 5160,
-      "warning_only_nodes": 389,
+      "nodes_with_warnings": 5161,
+      "warning_only_nodes": 390,
       "severity_counts": {
-        "warning": 11458,
+        "warning": 11459,
         "error": 14073
       },
       "issue_counts": {
-        "unverified": 4846,
+        "unverified": 4847,
         "estimated_cost": 615,
         "cost_unverified": 615,
         "low_cost_confidence": 615,
@@ -630,22 +630,22 @@
       },
       "cost_status_counts": {
         "root_total": 1,
-        "official": 158,
+        "official": 159,
         "allocated": 615,
         "unavailable": 4653
       },
       "cost_verification_status_counts": {
-        "verified": 159,
+        "verified": 160,
         "unverified": 5268
       },
       "verification_status_counts": {
         "partial": 340,
-        "unverified": 4846,
+        "unverified": 4847,
         "verified": 241
       },
       "proof_status_counts": {
         "root": 1,
-        "proven": 659,
+        "proven": 660,
         "baseline": 4767
       },
       "warning_cost_statuses": [
@@ -654,8 +654,8 @@
       ]
     },
     "cost_export_policy": {
-      "nodes_checked": 5427,
-      "nodes_allowed": 5427,
+      "nodes_checked": 5428,
+      "nodes_allowed": 5428,
       "nodes_rejected": 0,
       "trusted_exceptions_applied": 5268,
       "blocking_issue_counts": {
@@ -680,7 +680,7 @@
     "duplicate_child_rollups_dropped": 0,
     "proof_status_counts_before_cull": {
       "root": 1,
-      "proven": 659,
+      "proven": 660,
       "baseline": 4767,
       "unproven": 171
     }

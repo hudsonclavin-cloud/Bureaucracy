@@ -1753,20 +1753,38 @@ STATED_MULTIPLICITY = re.compile(r"\(\s*[\u00d7x]\s*([^)]+?)\s*\)", re.IGNORECAS
 MULTIPLICITY_RANGE = re.compile(r"^(\d+)\s*[-\u2013]\s*(\d+)$")
 
 
+def is_treasury_line(node: dict[str, Any]) -> bool:
+    """A Treasury accounting line rather than a unit of government.
+
+    Two kinds qualify and both must be drawn as lines rather than as offices:
+    the receipts lines `make_receipts_node` creates, marked `synthetic`, and a
+    line a curator added because the statement reports money under a heading
+    that names no organisation — "Interest on the Public Debt". Keying on the
+    TYPE as well as on `synthetic` is what makes the second kind work; keying
+    on `synthetic` alone is the defect that drew all 25 receipts lines as
+    Position/Office nodes until 2026-09-18.
+    """
+    if not isinstance(node, dict):
+        return False
+    return (str(node.get("synthetic") or "") == SYNTHETIC_RECEIPTS
+            or str(node.get("type") or "") == TREASURY_LINE_TYPE)
+
+
 def colour_treasury_lines(root: dict[str, Any]) -> int:
-    """Give every receipts line its own colour, however it got here.
+    """Give every Treasury accounting line its own colour, however it got here.
 
     `make_receipts_node` stamps it on a fresh build, but a build handed no
     statement carries the published lines forward as payload nodes, and those
     arrive with whatever colour the file holds -- which, for every line
-    published before this existed, is the position grey. One sweep after the
-    tree is final covers both routes and is idempotent.
+    published before this existed, is the position grey. A curated line added
+    to the base file arrives with whatever colour that file gives it. One sweep
+    after the tree is final covers all three routes and is idempotent.
     """
     changed = 0
     stack = [root]
     while stack:
         node = stack.pop()
-        if str(node.get("synthetic") or "") == SYNTHETIC_RECEIPTS and node.get("color") != TREASURY_LINE_COLOR:
+        if is_treasury_line(node) and node.get("color") != TREASURY_LINE_COLOR:
             node["color"] = TREASURY_LINE_COLOR
             changed += 1
         stack.extend(node.get("children") or [])
