@@ -1261,3 +1261,66 @@ line names no organisation" is a good reason not to put it on an organisation,
 and not a reason to leave it out of the tree. Anything inside a parent's total
 that no child carries is apportioned to the children that remain. The other
 sixteen should each be checked for the same effect rather than assumed benign.
+
+## 12. The two answers to "is there an actual difference" (2026-09-19)
+
+Two suspected curation defects, checked against primary sources rather than
+pattern-matched. Neither turned out to be what it looked like.
+
+### 12.1 The Council of Economic Advisers' two identical members — not a duplicate
+
+`exec-eop-cea-member-cea` and `exec-eop-cea-member-cea-1` are byte-identical
+apart from the id suffix, and they are the curated file's **only** sibling name
+collision. That looks like an accident. It is not.
+
+15 U.S.C. §1023(a)(2), fetched from `uscode.house.gov` on 2026-09-19, states
+verbatim:
+
+> "The Council shall be composed of three members, of whom— (A) 1 shall be the
+> chairman who shall be appointed by the President by and with the advice and
+> consent of the Senate; and (B) 2 shall be appointed by the President."
+
+So the graph's `Chair, CEA` plus two `Member, CEA` is **structurally correct**:
+three members, one of them the chairman. The two Member nodes are two real,
+distinct seats. What is wrong is only that nothing tells them apart — and
+nothing can, because the statute does not distinguish them either.
+
+The graph already has the right shape for exactly this: `representsPosts`, used
+for a title several people hold. Collapsing the two into one `Member, CEA (×2)`
+would keep the statutory count at three, remove the only sibling collision, and
+say honestly that the two seats are indistinguishable. It needs a writer this
+repository does not yet have — no sanctioned script collapses two curated nodes
+into one with a multiplicity — so it is recorded here rather than done.
+
+**A second, worse finding on the same node, which nobody was looking for.** The
+Council of Economic Advisers' own description reads "Provides economic analysis
+and forecasting to the President. **Three Senate-confirmed members.** ~30
+staff." The statute above says only the **chairman** is confirmed by the Senate;
+the other two are appointed by the President alone. The site publishes that
+sentence today as uncited prose, and it is false. Fixing it needs the same
+missing machinery — nothing here writes a curated description — which is itself
+worth noting: of the five sanctioned writers, none can correct a wrong sentence.
+
+### 12.2 House Committee on Education & the Workforce — a disagreement between two official sources, not a stale name
+
+The House Clerk's committed committee list spells this committee "Education and
+Workforce"; the graph says "House Committee on Education & the Workforce". The
+difference is the word "the", which `canonical_name_key` does not fold, so the
+Clerk's list records the node as one it does not carry.
+
+Renaming to the Clerk's spelling was proposed, with a measured gain: committees
+matched 20 → 21 and subcommittees 81 → 84. It is refused, because the
+committee's **own site** disagrees with the Clerk. Probed on 2026-09-19,
+`edworkforce.house.gov` labels itself, verbatim:
+
+> "Committee on Education & the Workforce | Republicans"
+
+and the node is already confirmed against it through the committee fold. So the
+rename would trade a confirmation from the committee's own page for a listing in
+the Clerk's administrative index — and would have the graph call the committee
+something its own website does not.
+
+A committee's own site is the better authority for its own name. The
+disagreement is real, it is the Clerk's abbreviation rather than the graph being
+stale, and §5.7 already records it as one of the names the official lists spell
+differently. No action.
