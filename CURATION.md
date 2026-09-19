@@ -1046,13 +1046,13 @@ courts' own sites print.
     Education's identically numbered ones. A family decision that trades ten
     nodes' disambiguation for ten confirmations; left to the owner.
   - **VA's VISNs** (6). Proposed as bare `VISN 17` / `VISN 08`, matching only
-    in site-wide navigation. A much larger finding sits behind them and is not
-    a naming question at all: **department.va.gov now states the VA comprises
-    5 Veterans Integrated Service Networks, and the graph carries an 18-VISN
-    parent with nineteen children under it.** That is structural curation, it
-    affects every VISN node, and renaming one would obscure it. `VISN 4 — VISN
-    4` is separately garbled and should be fixed whichever way the structure
-    goes.
+    in site-wide navigation. Refusing them was right for a better reason than
+    the one given at the time: the whole subtree was superseded, not misnamed.
+    The VA consolidated eighteen networks into five under RISE; the eighteen are
+    now marked superseded and kept, five current ones sit beside them, and the
+    parent is renamed. §10 carries the evidence, the three passes it took to
+    establish it, and the corrections to this document's own claims along the
+    way. `VISN 4 — VISN 4` is moot: that node is one of the superseded eighteen.
   - **NSF's divisions** (9). `MPS Chemistry`, `ENG Civil, Mechanical, and
     Manufacturing Innovation`, `Earth Sciences (EAR) program`. The redesigned
     nsf.gov carries no "Division of" anywhere, but what it carries instead is
@@ -1135,34 +1135,93 @@ key, so neither is attributed. Before the rename neither matched at all, so the
 outcome is unchanged — and it fails the safe way, as a refusal rather than a
 row attributed to the wrong unit.
 
-## 10. The VA's networks: the graph carries 18, the VA now says 5 (2026-09-19)
+## 10. The VA's networks: five, and what it took to establish that (2026-09-19)
 
-Found while probing pages for §9, and it is not a naming question, which is
-why no VISN rename was applied.
+This section was written three times in one day and the rewrites are the record
+worth keeping, because each one was wrong in a way the next one caught.
 
-`department.va.gov` states in its own words that the department "comprises 5
-Veterans Integrated Service Networks or VISNs". The curated graph carries a
-parent named `18 VA Integrated Service Networks (VISNs)` with **nineteen**
-children beneath it — itself an internal inconsistency, before the VA's own
-figure is considered at all.
+**First pass — asserted.** A probing agent read
+`department.va.gov/integrated-service-networks/` and reported that the VA "now
+states it comprises 5 Veterans Integrated Service Networks where the graph
+carries 18". That went into `CLAUDE.md` and into this file as settled fact, and
+was reported upward as the largest open correctness problem.
 
-The page's VISN 1 lists Connecticut, District of Columbia, Delaware, Maine,
-Maryland, Massachusetts, New Hampshire, New Jersey, New York, Pennsylvania,
-Rhode Island and Vermont — a larger territory than the curated VISN 1, and one
-that covers several of its curated siblings. So the numbers survived the
-consolidation but the units behind them did not: this cannot be fixed by
-renaming nodes, and renaming one to a bare `VISN 17` would have quietly
-obscured it.
+**Second pass — retracted.** Checked directly, the same page that carries that
+sentence carries, in its own navigation, **eighteen** VISN entries (VISN 01, 02,
+04, 05, 06, 07, 08, 09, 10, 12, 15, 16, 17, 19, 20, 21, 22, 23). Every
+per-network sub-page fetched returned the identical 3,308 characters — the index
+itself. One page saying both things is not a settled fact, so the claim was
+withdrawn and nineteen nodes were not restructured.
 
-What is needed, and what this pass deliberately did not do:
+**Third pass — settled, at five.** The retraction was right to refuse the first
+pass's evidence and wrong to stop there. Three things settle it, none of which
+was on that page:
 
-  - decide whether the five current networks replace the nineteen nodes or
-    sit above them, which is a structural call the owner makes;
-  - correct the parent's name, which states a count the VA no longer reports
-    and which the graph does not itself carry;
-  - fix `VISN 4 — VISN 4`, whose qualifier is a duplication of its own name,
-    whichever way the structure goes.
+  - **A second VA host, on a different system.** `digital.va.gov/rise/` (last
+    updated 2026-09-16) prints **"5 VISN MAP (CAPTURE AREA BY STATE)"** beside
+    **"18 HEALTH SERVICE AREA (HSA) MAP CROSSING STATE LINES"**, and describes
+    the change as RISE — the Restructure for Impact and Sustainability Effort.
+    `digital.va.gov/rise/leadership/` (dated 2026-07-14/15) carries exactly five
+    networks, each with a named Network Director, subdivided into eighteen Health
+    Service Areas with named Executive Directors. That is an operational staffing
+    roster, not a proposal.
+  - **The old pages were retired deliberately, and the status codes prove it.**
+    All eighteen former slugs return **301 Moved Permanently** to the index,
+    while an invented slug (`visn-99-nonexistent`) returns **404**. A catch-all
+    would 200 or 404 both; a 301 on exactly the eighteen real ones is an
+    editorial act. This is the discriminator the second pass missed by reading
+    the served content and never the status code.
+  - **The five territories are a complete partition.** The state lists for VISN
+    1-5 contain the fifty states plus DC, Puerto Rico, the U.S. Virgin Islands,
+    American Samoa, Guam and the Northern Mariana Islands, with no gaps and no
+    duplicates. A stale fragment does not partition the United States exactly.
 
-Until then every VISN node's description and placement should be read as
-describing the pre-consolidation VA. Nothing in the pipeline knows this; it is
-recorded here because the evidence for it is one page this session read.
+So the contradiction is **stale navigation, not an error**: VA's menu and its
+sitemap are two symptoms of one un-regenerated site, and the body text is
+current.
+
+### 10.1 What was done
+
+Nothing was deleted. The eighteen numbered networks keep their ids, names,
+descriptions and every source they ever earned, and are marked
+`lifecycle: superseded` by `scripts/mark_superseded_units.py`, quoting the VA's
+own sentence. The site does not draw them unless the reader ticks "also show
+units the government has replaced". Five current networks — `VISN 1` through
+`VISN 5` — were added by `scripts/add_curated_nodes.py` under the
+`official_page_label` licence, because the VA's page labels each of them in its
+content. The parent, whose name stated a count the VA no longer reports (and
+which, because it stated a count, `uncheckable_reason` refused before any fetch,
+so it could never have earned a source), is renamed to the VA's own heading,
+**Veterans Integrated Service Networks**.
+
+`supersededBy` is empty on all eighteen, deliberately. The territories were
+redrawn rather than renumbered, so no old network maps onto one new one, and
+naming a successor for each would invent a correspondence no source states. The
+date recorded is 2026-07-14, the earliest dated official artefact showing the new
+structure staffed; **VA has published no single effective date**, and the RISE
+FAQ says placement below Network Director level is still ongoing.
+
+### 10.2 Three corrections to this repository's own claims
+
+  - `CLAUDE.md` and this file both said the parent carried **nineteen** children
+    and called that the graph disagreeing with itself. It carried **eighteen**,
+    matching its own name. The "inconsistency" was mine, asserted twice without
+    counting, and it was doing work in the argument.
+  - The VA is not the only place "18" appears: the new structure has **eighteen
+    Health Service Areas**, numbered 1.1 to 5.5, unrelated to the eighteen old
+    VISN numbers. Anyone reconciling these later will meet 18 twice meaning two
+    different things.
+  - No statute fixes the number. Title 38 refers to "each" VISN generically and
+    never states a count, which is why no Federal Register notice announced the
+    change — it is administrative. (38 U.S.C. §7309A, guessed at as the relevant
+    section, is "Office of Patient Advocacy" and has nothing to do with it.)
+
+### 10.3 Named, but not adopted
+
+VA names the new networks **by number only**. The single regional name found on
+any official page is "Pacific West", in prose on the RISE homepage describing
+VISN 5's director. No regional name exists for VISNs 1-4, and none is invented
+here — the old names the graph carried (New England, Capitol Health Care
+Network, Sunshine, Desert Pacific) all belong to the superseded eighteen and none
+attaches to a new network.
+

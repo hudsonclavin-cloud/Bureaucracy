@@ -66,16 +66,31 @@ FITTED = {
 # (the first three) or which name a Treasury grouping rather than an
 # organisation (the rest). Every one of these must stay unmatched: its amount
 # belongs in the remainder the cascade apportions, not on a node.
+#: Lines that still land nowhere, and each for a reason that is not a gap.
+#: Every one of these is a Treasury GROUPING rather than an organisation —
+#: "Fish and Wildlife and Parks" is Interior's heading over two bureaus the
+#: graph already carries, "Operation and Maintenance" is an object-class slice
+#: of a DoD total already applied, and "Interest on the Public Debt" is not a
+#: unit at all. Aliasing any of them onto a node would publish a grouping's
+#: money as one member's.
 UNOWNED = [
-    "General Services Administration",
-    "Railroad Retirement Board",
-    "Corps of Engineers",
     "Fish and Wildlife and Parks",
     "Other Defense Civil Programs",
     "International Assistance Programs",
     "Operation and Maintenance",
     "Interest on the Public Debt",
 ]
+
+#: Lines that landed nowhere until 2026-09-19 because the graph had no node for
+#: the unit, and now do. `scripts/add_curated_nodes.py` added the node for each,
+#: licensed by this very statement naming the unit (CURATION.md §1). They are
+#: pinned here so that losing one is a test failure rather than a silent
+#: return to the gap.
+NOW_OWNED = {
+    "General Services Administration": "exec-independent-general-services-administration",
+    "Railroad Retirement Board": "exec-ind-misc-railroad-retirement-board",
+    "Corps of Engineers": "exec-independent-corps-of-engineers",
+}
 
 
 def row(name: str, amount: float, level: int = 3) -> dict:
@@ -156,11 +171,27 @@ class AliasRoutingTests(unittest.TestCase):
             self.assertIn("treasury_outlays", node["sourceTypes"])
             self.assertTrue(any("fiscaldata.treasury.gov" in url for url in node["sourceUrls"]))
 
-    def test_a_line_whose_unit_the_graph_lacks_still_lands_nowhere(self) -> None:
+    def test_a_treasury_grouping_still_lands_nowhere(self) -> None:
         stats = self.apply([row(name, 9_000_000_000.0) for name in UNOWNED])
         self.assertEqual(stats["rows_applied"], 0)
         self.assertEqual(stats["rows_unmatched"], len(UNOWNED))
         self.assertEqual(sorted(stats["unmatched_sample"]), sorted(UNOWNED))
+
+    def test_the_units_added_for_their_own_lines_now_carry_them(self) -> None:
+        """The other direction, and the point of adding the nodes at all: a
+        line that reached nothing now reaches the unit the statement names."""
+        amounts = {name: 9_000_000_000.0 + index for index, name in enumerate(NOW_OWNED)}
+        stats = self.apply([row(name, amount) for name, amount in amounts.items()])
+        landed = {hit["row"]: hit["id"] for hit in stats["applied"]}
+        self.assertEqual(landed, NOW_OWNED)
+        self.assertEqual(stats["rows_unmatched"], 0)
+        self.assertEqual(stats["rows_ambiguous"], 0)
+        node_map, _ = index_tree(self.root)
+        for name, node_id in NOW_OWNED.items():
+            node = node_map[node_id]
+            self.assertEqual(node["rollup_total_amount"], amounts[name])
+            self.assertEqual(node["treasury_row_name"], name)
+            self.assertTrue(any("fiscaldata.treasury.gov" in url for url in node["sourceUrls"]))
 
     def test_the_department_grouping_lines_do_not_double_count_their_bureaus(self) -> None:
         # "Fish and Wildlife and Parks" is the Interior grouping that contains

@@ -850,47 +850,6 @@
     "lastVerified": null
   },
   {
-    "id": "health-and-human-services-department-administration-for-children-and-families-acf",
-    "name": "Administration for Children and Families (ACF)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
-    "description": "The Administration for Children and Families (ACF), Office of Refugee Resettlement (ORR), is withdrawing the, `Announcement of the Intent to Award a Single-Source Cooperative Agreement to Burke Law Group, PLLC in Houston, Texas' published in the Federal Register on August 6, 2026, at 91 FR 50848 (FR Doc. 2026-16081).",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Health and Human Services Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/17/2026-16741/withdrawal-of-the-announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "health-and-human-services-department-bureau-of-health-workforce-performance-data-collection-omb-no",
     "name": "Bureau of Health Workforce Performance Data Collection, OMB No",
     "type": "Office",
@@ -965,6 +924,129 @@
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
     "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17907/privacy-act-of-1974-matching-program",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-center-for-advancing-translational-sciences",
+    "name": "Center for Advancing Translational Sciences",
+    "type": "Office",
+    "parentId": null,
+    "desc": "National Center for Advancing Translational Sciences; Amended Notice of Meeting",
+    "description": "National Center for Advancing Translational Sciences; Amended Notice of Meeting",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/18/2026-19112/national-center-for-advancing-translational-sciences-amended-notice-of-meeting"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/18/2026-19112/national-center-for-advancing-translational-sciences-amended-notice-of-meeting",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-center-for-biologics-evaluation-and-research-cber",
+    "name": "Center for Biologics Evaluation and Research (CBER)",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The Food and Drug Administration (FDA or Agency) is announcing the availability of the draft guidance entitled \"Electronic Submission Template for Medical Device Premarket Approval Applications (PMAs).\" FDA is issuing this draft guidance for submitters of certain PMAs to the Center for Devices and Radiological Health (CDRH) and Center for Biologics Evaluation and Research (CBER). It introduces those submitters to the current publicly available resources and associated content developed to support electronic submissions of certain PMAs and PMA supplements to FDA. This draft guidance, when finalized, is intended to represent one of several steps in meeting FDA's commitment to the development of electronic submission templates to serve as guided submission preparation tools for industry to improve submission consistency and enhance efficiency in the review process. This draft guidance is not final nor is it for implementation at this time.",
+    "description": "The Food and Drug Administration (FDA or Agency) is announcing the availability of the draft guidance entitled \"Electronic Submission Template for Medical Device Premarket Approval Applications (PMAs).\" FDA is issuing this draft guidance for submitters of certain PMAs to the Center for Devices and Radiological Health (CDRH) and Center for Biologics Evaluation and Research (CBER). It introduces those submitters to the current publicly available resources and associated content developed to support electronic submissions of certain PMAs and PMA supplements to FDA. This draft guidance, when finalized, is intended to represent one of several steps in meeting FDA's commitment to the development of electronic submission templates to serve as guided submission preparation tools for industry to improve submission consistency and enhance efficiency in the review process. This draft guidance is not final nor is it for implementation at this time.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/18/2026-19181/electronic-submission-template-for-medical-device-premarket-approval-applications-pmas-draft"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/18/2026-19181/electronic-submission-template-for-medical-device-premarket-approval-applications-pmas-draft",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-center-for-devices-and-radiological-health-cdrh",
+    "name": "Center for Devices and Radiological Health (CDRH)",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The Food and Drug Administration (FDA or Agency) is announcing the availability of the draft guidance entitled \"Electronic Submission Template for Medical Device Premarket Approval Applications (PMAs).\" FDA is issuing this draft guidance for submitters of certain PMAs to the Center for Devices and Radiological Health (CDRH) and Center for Biologics Evaluation and Research (CBER). It introduces those submitters to the current publicly available resources and associated content developed to support electronic submissions of certain PMAs and PMA supplements to FDA. This draft guidance, when finalized, is intended to represent one of several steps in meeting FDA's commitment to the development of electronic submission templates to serve as guided submission preparation tools for industry to improve submission consistency and enhance efficiency in the review process. This draft guidance is not final nor is it for implementation at this time.",
+    "description": "The Food and Drug Administration (FDA or Agency) is announcing the availability of the draft guidance entitled \"Electronic Submission Template for Medical Device Premarket Approval Applications (PMAs).\" FDA is issuing this draft guidance for submitters of certain PMAs to the Center for Devices and Radiological Health (CDRH) and Center for Biologics Evaluation and Research (CBER). It introduces those submitters to the current publicly available resources and associated content developed to support electronic submissions of certain PMAs and PMA supplements to FDA. This draft guidance, when finalized, is intended to represent one of several steps in meeting FDA's commitment to the development of electronic submission templates to serve as guided submission preparation tools for industry to improve submission consistency and enhance efficiency in the review process. This draft guidance is not final nor is it for implementation at this time.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/18/2026-19181/electronic-submission-template-for-medical-device-premarket-approval-applications-pmas-draft"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/18/2026-19181/electronic-submission-template-for-medical-device-premarket-approval-applications-pmas-draft",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1055,6 +1137,47 @@
     "lastVerified": null
   },
   {
+    "id": "health-and-human-services-department-center-for-scientific-review",
+    "name": "Center for Scientific Review",
+    "type": "Office",
+    "parentId": null,
+    "desc": "Center for Scientific Review; Amended Notice of Meeting",
+    "description": "Center for Scientific Review; Amended Notice of Meeting",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/18/2026-19113/center-for-scientific-review-amended-notice-of-meeting"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/18/2026-19113/center-for-scientific-review-amended-notice-of-meeting",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
     "id": "health-and-human-services-department-office-for-immigration-review-eoir",
     "name": "Office for Immigration Review (EOIR)",
     "type": "Office",
@@ -1088,6 +1211,129 @@
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
     "sourceUrl": "https://www.federalregister.gov/documents/2026/08/06/2026-16081/announcement-of-the-intent-to-award-a-single-source-cooperative-agreement-to-burke-law-group-pllc-in",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-office-of-child-support-enforcement-ocse",
+    "name": "Office of Child Support Enforcement (OCSE)",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The Office of Child Support Enforcement (OCSE), Administration for Children and Families (ACF), is requesting a 3-year extension of the Multistate Financial Institution Data Match (MSFIDM) with Federally Assisted State Transmitted (FAST) Levy (Office of Management and Budget #: 0970-0196, expiration January 31, 2027). OCSE revised the MSFIDM handbook and the FAST Levy record specifications. Burden estimates were reduced by 32.71 percent to reflect the expected estimated number of respondents and responses per respondent over the next 3 years.",
+    "description": "The Office of Child Support Enforcement (OCSE), Administration for Children and Families (ACF), is requesting a 3-year extension of the Multistate Financial Institution Data Match (MSFIDM) with Federally Assisted State Transmitted (FAST) Levy (Office of Management and Budget #: 0970-0196, expiration January 31, 2027). OCSE revised the MSFIDM handbook and the FAST Levy record specifications. Burden estimates were reduced by 32.71 percent to reflect the expected estimated number of respondents and responses per respondent over the next 3 years.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/15/2026-18841/proposed-information-collection-activity-multistate-financial-institution-data-match-with-federally"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/15/2026-18841/proposed-information-collection-activity-multistate-financial-institution-data-match-with-federally",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-office-of-community-services-ocs",
+    "name": "Office of Community Services (OCS)",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The Office of Community Services (OCS), Administration for Children and Families (ACF), Department of Health and Human Services, is proposing to continue to collect data to understand diaper need and outcomes for beneficiaries of the Diaper Distribution Demonstration and Research Pilot (DDDRP). This collection (Office of Management and Budget (OMB) #: 0970-0642) currently includes the Beneficiary Report and Beneficiary Survey. No changes are proposed to the Beneficiary Report. OCS is proposing revisions to the Beneficiary Survey and proposes adding a new Organizational Survey.",
+    "description": "The Office of Community Services (OCS), Administration for Children and Families (ACF), Department of Health and Human Services, is proposing to continue to collect data to understand diaper need and outcomes for beneficiaries of the Diaper Distribution Demonstration and Research Pilot (DDDRP). This collection (Office of Management and Budget (OMB) #: 0970-0642) currently includes the Beneficiary Report and Beneficiary Survey. No changes are proposed to the Beneficiary Report. OCS is proposing revisions to the Beneficiary Survey and proposes adding a new Organizational Survey.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/17/2026-19023/proposed-information-collection-activity-diaper-distribution-demonstration-and-research-pilot"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/17/2026-19023/proposed-information-collection-activity-diaper-distribution-demonstration-and-research-pilot",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-office-of-intramural-research",
+    "name": "Office of Intramural Research",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The NIH Intramural Research Program (IRP) relies on a trustworthy research record to sustain public confidence and advance public health. NIH maintains procedures in compliance with NIH policy and 42 CFR part 93 to evaluate allegations of research misconduct, including falsification, fabrication, and plagiarism, through a fair, consistent, and peer-informed process. The proposed web-based reporting form will help the Agency Intramural Research Integrity Officer (AIRIO) receive sufficient information needed to assess concerns and determine appropriate next steps. Reports may be submitted anonymously, with optional contact information for follow-up. Concerns may also be reported in person, by telephone, or by email.",
+    "description": "The NIH Intramural Research Program (IRP) relies on a trustworthy research record to sustain public confidence and advance public health. NIH maintains procedures in compliance with NIH policy and 42 CFR part 93 to evaluate allegations of research misconduct, including falsification, fabrication, and plagiarism, through a fair, consistent, and peer-informed process. The proposed web-based reporting form will help the Agency Intramural Research Integrity Officer (AIRIO) receive sufficient information needed to assess concerns and determine appropriate next steps. Reports may be submitted anonymously, with optional contact information for follow-up. Concerns may also be reported in person, by telephone, or by email.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18937/proposed-collection-60-day-comment-request-nih-intramural-reporting-of-research-misconduct-irrm-web"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18937/proposed-collection-60-day-comment-request-nih-intramural-reporting-of-research-misconduct-irrm-web",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,
@@ -1137,14 +1383,14 @@
     "lastVerified": null
   },
   {
-    "id": "health-and-human-services-department-office-of-the-director",
-    "name": "Office of the Director",
+    "id": "health-and-human-services-department-office-of-research-integrity",
+    "name": "Office of Research Integrity",
     "type": "Office",
     "parentId": null,
-    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Science Policy (OSP), in the Office of the Director (OD), the National Institutes of Health (NIH) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
-    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995 to provide opportunity for public comment on proposed data collection projects, the Office of Science Policy (OSP), in the Office of the Director (OD), the National Institutes of Health (NIH) will publish periodic summaries of proposed projects to be submitted to the Office of Management and Budget (OMB) for review and approval.",
+    "desc": "The Office of Research Integrity (ORI) announces an ongoing opportunity for non-federal public and private sector entities to co- sponsor conferences, workshops, symposia, meetings, roundtables, or other similar events (collectively, \"Events\") with ORI. ORI co- sponsors a limited number of Events with non-federal entities each year. Potential co-sponsors must have demonstrated interest and experience in the responsible conduct of research or handling allegations of research misconduct and must be willing to substantively contribute to the co-sponsored Event. This notice supersedes ORI's October 21, 2022, co-sponsorship opportunity notice at 87 FR 64067.",
+    "description": "The Office of Research Integrity (ORI) announces an ongoing opportunity for non-federal public and private sector entities to co- sponsor conferences, workshops, symposia, meetings, roundtables, or other similar events (collectively, \"Events\") with ORI. ORI co- sponsors a limited number of Events with non-federal entities each year. Potential co-sponsors must have demonstrated interest and experience in the responsible conduct of research or handling allegations of research misconduct and must be willing to substantively contribute to the co-sponsored Event. This notice supersedes ORI's October 21, 2022, co-sponsorship opportunity notice at 87 FR 64067.",
     "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/14/2026-18647/proposed-collection-60-day-comment-request-nih-electronic-application-system-for-nih-certificates-of"
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18987/opportunity-to-co-sponsor-events-with-the-office-of-research-integrity"
     ],
     "sourceTypes": [
       "candidate_discovery",
@@ -1169,7 +1415,89 @@
     "proofReason": "historical_documentation_recorded",
     "possibleParent": "Health and Human Services Department",
     "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/14/2026-18647/proposed-collection-60-day-comment-request-nih-electronic-application-system-for-nih-certificates-of",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18987/opportunity-to-co-sponsor-events-with-the-office-of-research-integrity",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-office-of-the-director",
+    "name": "Office of the Director",
+    "type": "Office",
+    "parentId": null,
+    "desc": "The NIH Intramural Research Program (IRP) relies on a trustworthy research record to sustain public confidence and advance public health. NIH maintains procedures in compliance with NIH policy and 42 CFR part 93 to evaluate allegations of research misconduct, including falsification, fabrication, and plagiarism, through a fair, consistent, and peer-informed process. The proposed web-based reporting form will help the Agency Intramural Research Integrity Officer (AIRIO) receive sufficient information needed to assess concerns and determine appropriate next steps. Reports may be submitted anonymously, with optional contact information for follow-up. Concerns may also be reported in person, by telephone, or by email.",
+    "description": "The NIH Intramural Research Program (IRP) relies on a trustworthy research record to sustain public confidence and advance public health. NIH maintains procedures in compliance with NIH policy and 42 CFR part 93 to evaluate allegations of research misconduct, including falsification, fabrication, and plagiarism, through a fair, consistent, and peer-informed process. The proposed web-based reporting form will help the Agency Intramural Research Integrity Officer (AIRIO) receive sufficient information needed to assess concerns and determine appropriate next steps. Reports may be submitted anonymously, with optional contact information for follow-up. Concerns may also be reported in person, by telephone, or by email.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18937/proposed-collection-60-day-comment-request-nih-intramural-reporting-of-research-misconduct-irrm-web"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18937/proposed-collection-60-day-comment-request-nih-intramural-reporting-of-research-misconduct-irrm-web",
+    "wikidataId": null,
+    "discoveryConfidenceEstimate": 0.61,
+    "isCandidate": true,
+    "confidenceEstimate": 0.61,
+    "possibleParentId": null,
+    "lastVerified": null
+  },
+  {
+    "id": "health-and-human-services-department-office-of-the-secretary",
+    "name": "Office of the Secretary",
+    "type": "Office",
+    "parentId": null,
+    "desc": "In compliance with the requirement of the Paperwork Reduction Act of 1995, the Office of the Secretary (OS), Department of Health and Human Services, submitted an Information Collection Request (ICR) to the Office of Management and Budget (OMB) for review and approval. OMB will accept further comments from the public during the review and approval period.",
+    "description": "In compliance with the requirement of the Paperwork Reduction Act of 1995, the Office of the Secretary (OS), Department of Health and Human Services, submitted an Information Collection Request (ICR) to the Office of Management and Budget (OMB) for review and approval. OMB will accept further comments from the public during the review and approval period.",
+    "sourceUrls": [
+      "https://www.federalregister.gov/documents/2026/09/16/2026-18950/agency-information-collection-request-30-day-public-comment-request"
+    ],
+    "sourceTypes": [
+      "candidate_discovery",
+      "federal_register"
+    ],
+    "attachToRoot": true,
+    "employees": null,
+    "budget": null,
+    "color": "#888888",
+    "confidenceScore": 0.61,
+    "verificationStatus": "unverified",
+    "sourceCount": 1,
+    "children": [],
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": false,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "possibleParent": "Health and Human Services Department",
+    "discoveryMethod": "federal_register_listing_scan",
+    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/16/2026-18950/agency-information-collection-request-30-day-public-comment-request",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,

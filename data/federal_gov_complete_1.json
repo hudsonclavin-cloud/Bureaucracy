@@ -26824,6 +26824,34 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-usda-agricultural-marketing-service",
+                  "name": "Agricultural Marketing Service",
+                  "type": "Component Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Agricultural Marketing Service under Department of Agriculture (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Agricultural Marketing Service",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of Agriculture"
+                },
+                {
+                  "id": "exec-dept-usda-foreign-agricultural-service",
+                  "name": "Foreign Agricultural Service",
+                  "type": "Component Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Foreign Agricultural Service under Department of Agriculture (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Foreign Agricultural Service",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of Agriculture"
                 }
               ]
             },
@@ -27572,6 +27600,20 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-doc-economic-development-administration",
+                  "name": "Economic Development Administration",
+                  "type": "Component Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Economic Development Administration under Department of Commerce (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Economic Development Administration",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of Commerce"
                 }
               ]
             },
@@ -29251,6 +29293,34 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-hhs-administration-for-children-and-families",
+                  "name": "Administration for Children and Families",
+                  "type": "Component Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Administration for Children and Families under Department of Health and Human Services (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Administration for Children and Families",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of Health and Human Services"
+                },
+                {
+                  "id": "exec-dept-hhs-administration-for-community-living",
+                  "name": "Administration for Community Living",
+                  "type": "Component Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Administration for Community Living under Department of Health and Human Services (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Administration for Community Living",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Department of Health and Human Services"
                 }
               ]
             },
@@ -29684,7 +29754,7 @@
                 },
                 {
                   "id": "exec-dept-hud-region-i-new-england",
-                  "name": "HUD Region I — New England",
+                  "name": "Region I - Boston",
                   "type": "Regional Office",
                   "desc": "Headquartered in Boston, MA. Serves: CT, ME, MA, NH, RI, VT.",
                   "employees": null,
@@ -29731,11 +29801,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region I - Boston"
                 },
                 {
                   "id": "exec-dept-hud-region-ii-new-york",
-                  "name": "HUD Region II — New York",
+                  "name": "Region II - New York",
                   "type": "Regional Office",
                   "desc": "Headquartered in New York, NY. Serves: NJ, NY, PR, VI.",
                   "employees": null,
@@ -29782,11 +29856,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region II - New York"
                 },
                 {
                   "id": "exec-dept-hud-region-iii-mid-atlantic",
-                  "name": "HUD Region III — Mid-Atlantic",
+                  "name": "Region III - Philadelphia",
                   "type": "Regional Office",
                   "desc": "Headquartered in Philadelphia, PA. Serves: DE, MD, PA, VA, WV, DC.",
                   "employees": null,
@@ -29833,11 +29911,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region III - Philadelphia"
                 },
                 {
                   "id": "exec-dept-hud-region-iv-southeast",
-                  "name": "HUD Region IV — Southeast",
+                  "name": "Region IV - Atlanta",
                   "type": "Regional Office",
                   "desc": "Headquartered in Atlanta, GA. Serves: AL, FL, GA, KY, MS, NC, SC, TN.",
                   "employees": null,
@@ -29884,11 +29966,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region IV - Atlanta"
                 },
                 {
                   "id": "exec-dept-hud-region-v-midwest",
-                  "name": "HUD Region V — Midwest",
+                  "name": "Region V - Chicago",
                   "type": "Regional Office",
                   "desc": "Headquartered in Chicago, IL. Serves: IL, IN, MI, MN, OH, WI.",
                   "employees": null,
@@ -29935,11 +30021,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region V - Chicago"
                 },
                 {
                   "id": "exec-dept-hud-region-vi-south-central",
-                  "name": "HUD Region VI — South Central",
+                  "name": "Region VI - Fort Worth",
                   "type": "Regional Office",
                   "desc": "Headquartered in Dallas, TX. Serves: AR, LA, NM, OK, TX.",
                   "employees": null,
@@ -29986,11 +30076,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region VI - Fort Worth"
                 },
                 {
                   "id": "exec-dept-hud-region-vii-plains",
-                  "name": "HUD Region VII — Plains",
+                  "name": "Region VII - Kansas City",
                   "type": "Regional Office",
                   "desc": "Headquartered in Kansas City, MO. Serves: IA, KS, MO, NE.",
                   "employees": null,
@@ -30037,11 +30131,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region VII - Kansas City"
                 },
                 {
                   "id": "exec-dept-hud-region-viii-mountain",
-                  "name": "HUD Region VIII — Mountain",
+                  "name": "Region VIII - Denver",
                   "type": "Regional Office",
                   "desc": "Headquartered in Denver, CO. Serves: CO, MT, ND, SD, UT, WY.",
                   "employees": null,
@@ -30088,11 +30186,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region VIII - Denver"
                 },
                 {
                   "id": "exec-dept-hud-region-ix-pacific",
-                  "name": "HUD Region IX — Pacific",
+                  "name": "Region IX - San Francisco",
                   "type": "Regional Office",
                   "desc": "Headquartered in San Francisco, CA. Serves: AZ, CA, HI, NV, Pacific Islands.",
                   "employees": null,
@@ -30139,11 +30241,15 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region IX - San Francisco"
                 },
                 {
                   "id": "exec-dept-hud-region-x-northwest",
-                  "name": "HUD Region X — Northwest",
+                  "name": "Region X - Seattle",
                   "type": "Regional Office",
                   "desc": "Headquartered in Seattle, WA. Serves: AK, ID, OR, WA.",
                   "employees": null,
@@ -30190,7 +30296,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+                  "nameVerifiedAt": "2026-09-19",
+                  "nameMatchedText": "Region X - Seattle"
                 }
               ]
             },
@@ -34155,7 +34265,7 @@
                     },
                     {
                       "id": "exec-dept-va-vha-visns",
-                      "name": "18 VA Integrated Service Networks (VISNs)",
+                      "name": "Veterans Integrated Service Networks",
                       "type": "Division",
                       "desc": "18 regional networks each overseeing multiple VA Medical Centers.",
                       "employees": null,
@@ -34472,7 +34582,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-2-mid-atlantic",
@@ -34784,7 +34902,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-4-visn-4",
@@ -35096,7 +35222,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-5-capitol-health-care-network",
@@ -35408,7 +35542,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-6-mid-atlantic-health-care",
@@ -35720,7 +35862,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-7-southeast",
@@ -36032,7 +36182,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-8-sunshine-fl",
@@ -36344,7 +36502,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-9-mid-south",
@@ -36656,7 +36822,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-10-great-lakes",
@@ -36968,7 +37142,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-12-great-lakes",
@@ -37280,7 +37462,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-15-heartland",
@@ -37592,7 +37782,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-16-south-central",
@@ -37904,7 +38102,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-17-texas",
@@ -38216,7 +38422,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-19-rocky-mountain",
@@ -38528,7 +38742,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-20-northwest",
@@ -38840,7 +39062,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-21-sierra-pacific",
@@ -39152,7 +39382,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-22-desert-pacific",
@@ -39464,7 +39702,15 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
                         },
                         {
                           "id": "exec-dept-va-vha-visn-23-midwest",
@@ -39776,9 +40022,86 @@
                                 }
                               ]
                             }
-                          ]
+                          ],
+                          "lifecycle": "superseded",
+                          "supersededOn": "2026-07-14",
+                          "supersededBy": [],
+                          "supersededSource": {
+                            "url": "https://department.va.gov/integrated-service-networks/",
+                            "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+                            "readAt": "2026-09-19"
+                          }
+                        },
+                        {
+                          "id": "exec-dept-va-vha-visn-1",
+                          "name": "VISN 1",
+                          "type": "Regional Office",
+                          "desc": "VISN 1 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 1'. This node exists because that page names the unit; nothing further about it has been read.",
+                          "structureSource": "named_on_an_official_page",
+                          "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_its_official_page"
+                        },
+                        {
+                          "id": "exec-dept-va-vha-visn-2",
+                          "name": "VISN 2",
+                          "type": "Regional Office",
+                          "desc": "VISN 2 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 2'. This node exists because that page names the unit; nothing further about it has been read.",
+                          "structureSource": "named_on_an_official_page",
+                          "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_its_official_page"
+                        },
+                        {
+                          "id": "exec-dept-va-vha-visn-3",
+                          "name": "VISN 3",
+                          "type": "Regional Office",
+                          "desc": "VISN 3 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 3'. This node exists because that page names the unit; nothing further about it has been read.",
+                          "structureSource": "named_on_an_official_page",
+                          "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_its_official_page"
+                        },
+                        {
+                          "id": "exec-dept-va-vha-visn-4",
+                          "name": "VISN 4",
+                          "type": "Regional Office",
+                          "desc": "VISN 4 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 4'. This node exists because that page names the unit; nothing further about it has been read.",
+                          "structureSource": "named_on_an_official_page",
+                          "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_its_official_page"
+                        },
+                        {
+                          "id": "exec-dept-va-vha-visn-5",
+                          "name": "VISN 5",
+                          "type": "Regional Office",
+                          "desc": "VISN 5 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 5'. This node exists because that page names the unit; nothing further about it has been read.",
+                          "structureSource": "named_on_an_official_page",
+                          "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_its_official_page"
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://department.va.gov/integrated-service-networks/",
+                      "nameVerifiedAt": "2026-09-19",
+                      "nameMatchedText": "Veterans Integrated Service Networks"
                     }
                   ]
                 },
@@ -51971,8 +52294,120 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-ind-misc-railroad-retirement-board",
+                  "name": "Railroad Retirement Board",
+                  "type": "Independent Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Railroad Retirement Board under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Railroad Retirement Board",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Independent Agencies"
+                },
+                {
+                  "id": "exec-ind-misc-institute-of-museum-and-library-services",
+                  "name": "Institute of Museum and Library Services",
+                  "type": "Independent Agency",
+                  "desc": "The Monthly Treasury Statement reports outlays for Institute of Museum and Library Services under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Institute of Museum and Library Services",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Independent Agencies"
+                },
+                {
+                  "id": "exec-ind-misc-legal-services-corporation",
+                  "name": "Legal Services Corporation",
+                  "type": "Government Corporation",
+                  "desc": "The Monthly Treasury Statement reports outlays for Legal Services Corporation under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Legal Services Corporation",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Independent Agencies"
+                },
+                {
+                  "id": "exec-ind-misc-millennium-challenge-corporation",
+                  "name": "Millennium Challenge Corporation",
+                  "type": "Government Corporation",
+                  "desc": "The Monthly Treasury Statement reports outlays for Millennium Challenge Corporation under International Assistance Programs (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Millennium Challenge Corporation",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "International Assistance Programs"
+                },
+                {
+                  "id": "exec-ind-misc-corporation-for-public-broadcasting",
+                  "name": "Corporation for Public Broadcasting",
+                  "type": "Government Corporation",
+                  "desc": "The Monthly Treasury Statement reports outlays for Corporation for Public Broadcasting under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+                  "structureSource": "named_in_the_monthly_treasury_statement",
+                  "structureSourceDetail": "Corporation for Public Broadcasting",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_monthly_treasury_statement",
+                  "treasurySectionAtAdd": "Independent Agencies"
                 }
               ]
+            },
+            {
+              "id": "exec-independent-general-services-administration",
+              "name": "General Services Administration",
+              "type": "Independent Agency",
+              "desc": "The Monthly Treasury Statement reports outlays for General Services Administration under General Services Administration (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+              "structureSource": "named_in_the_monthly_treasury_statement",
+              "structureSourceDetail": "General Services Administration",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_the_monthly_treasury_statement",
+              "treasurySectionAtAdd": "General Services Administration"
+            },
+            {
+              "id": "exec-independent-agency-for-international-development",
+              "name": "Agency for International Development",
+              "type": "Independent Agency",
+              "desc": "The Monthly Treasury Statement reports outlays for Agency for International Development under International Assistance Programs (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+              "structureSource": "named_in_the_monthly_treasury_statement",
+              "structureSourceDetail": "Agency for International Development",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_the_monthly_treasury_statement",
+              "treasurySectionAtAdd": "International Assistance Programs"
+            },
+            {
+              "id": "exec-independent-corps-of-engineers",
+              "name": "Corps of Engineers",
+              "type": "Component Agency",
+              "desc": "The Monthly Treasury Statement reports outlays for Corps of Engineers under Corps of Engineers (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+              "structureSource": "named_in_the_monthly_treasury_statement",
+              "structureSourceDetail": "Corps of Engineers",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_the_monthly_treasury_statement",
+              "treasurySectionAtAdd": "Corps of Engineers"
             }
           ]
         },
@@ -53404,6 +53839,34 @@
                   "children": []
                 }
               ]
+            },
+            {
+              "id": "exec-regulatory-federal-housing-finance-agency",
+              "name": "Federal Housing Finance Agency",
+              "type": "Regulatory Agency",
+              "desc": "The Monthly Treasury Statement reports outlays for Federal Housing Finance Agency under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+              "structureSource": "named_in_the_monthly_treasury_statement",
+              "structureSourceDetail": "Federal Housing Finance Agency",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_the_monthly_treasury_statement",
+              "treasurySectionAtAdd": "Independent Agencies"
+            },
+            {
+              "id": "exec-regulatory-bureau-of-consumer-financial-protection",
+              "name": "Bureau of Consumer Financial Protection",
+              "type": "Regulatory Agency",
+              "desc": "The Monthly Treasury Statement reports outlays for Bureau of Consumer Financial Protection under Independent Agencies (FYTD net outlays through 2026-08-31). This node exists because the statement names the unit; nothing further about it has been read.",
+              "structureSource": "named_in_the_monthly_treasury_statement",
+              "structureSourceDetail": "Bureau of Consumer Financial Protection",
+              "employees": null,
+              "budget": null,
+              "color": "#c84a4a",
+              "children": [],
+              "descriptionSource": "generated_from_the_monthly_treasury_statement",
+              "treasurySectionAtAdd": "Independent Agencies"
             }
           ]
         }
@@ -53550,7 +54013,7 @@
           "children": [
             {
               "id": "jud-circuit-1st-circuit",
-              "name": "U.S. Court of Appeals for the 1st Circuit",
+              "name": "First Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Boston, MA. Jurisdiction: CT, ME, MA, NH, RI, Puerto Rico. 6 active circuit judges.",
               "employees": null,
@@ -53637,7 +54100,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca1.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "First Circuit | United States Court of Appeals"
             },
             {
               "id": "jud-circuit-2nd-circuit",
@@ -53736,7 +54203,7 @@
             },
             {
               "id": "jud-circuit-3rd-circuit",
-              "name": "U.S. Court of Appeals for the 3rd Circuit",
+              "name": "Third Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Philadelphia, PA. Jurisdiction: DE, NJ, PA, U.S. Virgin Islands. 14 active circuit judges.",
               "employees": null,
@@ -53823,7 +54290,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca3.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Third Circuit | United States Court of Appeals"
             },
             {
               "id": "jud-circuit-4th-circuit",
@@ -54017,7 +54488,7 @@
             },
             {
               "id": "jud-circuit-6th-circuit",
-              "name": "U.S. Court of Appeals for the 6th Circuit",
+              "name": "Sixth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Cincinnati, OH. Jurisdiction: KY, MI, OH, TN. 16 active circuit judges.",
               "employees": null,
@@ -54104,7 +54575,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca6.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Sixth Circuit | United States Court of Appeals"
             },
             {
               "id": "jud-circuit-7th-circuit",
@@ -54203,7 +54678,7 @@
             },
             {
               "id": "jud-circuit-8th-circuit",
-              "name": "U.S. Court of Appeals for the 8th Circuit",
+              "name": "Eighth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in St. Louis, MO. Jurisdiction: AR, IA, MN, MO, NE, ND, SD. 11 active circuit judges.",
               "employees": null,
@@ -54290,7 +54765,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca8.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Eighth Circuit | United States Court of Appeals"
             },
             {
               "id": "jud-circuit-9th-circuit",
@@ -54389,7 +54868,7 @@
             },
             {
               "id": "jud-circuit-10th-circuit",
-              "name": "U.S. Court of Appeals for the 10th Circuit",
+              "name": "Tenth Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Denver, CO. Jurisdiction: CO, KS, NM, OK, UT, WY. 12 active circuit judges.",
               "employees": null,
@@ -54476,11 +54955,15 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca10.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Tenth Circuit | The United States Court of Appeals"
             },
             {
               "id": "jud-circuit-11th-circuit",
-              "name": "U.S. Court of Appeals for the 11th Circuit",
+              "name": "Eleventh Circuit",
               "type": "Circuit Court",
               "desc": "Headquartered in Atlanta, GA. Jurisdiction: AL, FL, GA. 12 active circuit judges.",
               "employees": null,
@@ -54567,7 +55050,11 @@
                   "color": "#666666",
                   "children": []
                 }
-              ]
+              ],
+              "nameSource": "named_on_its_own_official_page",
+              "nameSourceDetail": "https://www.ca11.uscourts.gov/",
+              "nameVerifiedAt": "2026-09-19",
+              "nameMatchedText": "Eleventh Circuit | United States Court of Appeals"
             },
             {
               "id": "jud-circuit-d-c-circuit",

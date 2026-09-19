@@ -3387,15 +3387,15 @@
   "nominatedFor": "exec-dept-ed-ocr"
  },
  "exec-dept-hud": {
-  "url": "https://www.hud.gov/program_offices/field_policy_mgt/localoffices",
+  "url": "https://www.hud.gov/aboutus/field-leadership",
   "source": "agent_nomination",
   "role": "parent_listing",
-  "basis": "Fetched 200 but same JS-shell pattern as the FHA pages: readable=False, content_chars=126, title 'HUD's Local Offices | HUD.gov / ...'. Plausibly lists Region IX among HUD's field offices, but nothing is statically confirmable from this fetch.",
-  "confidence": "speculative",
-  "run": "brute1",
-  "nominatedAt": "2026-09-13T23:37:50Z",
-  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it.",
-  "nominatedFor": "exec-dept-hud-region-ix-pacific"
+  "nominatedFor": "exec-dept-hud-region-i-new-england",
+  "basis": "HUD's own Field Leadership page enumerates the department's ten field regions and heads each one by its headquarters city, which is exactly the label the region node now carries after the 2026-09-19 rename (CURATION.md §9). It is the parent department's page listing its children, so it is nominated as a parent_listing and filed under the parent; the claim it can support is 'HUD's own page lists this region', not 'this is the region's own site'. Probed before nominating: the page reads 1,101 readable characters and labels all ten regions in content.",
+  "confidence": "likely",
+  "run": "hud-regions-2026-09-19",
+  "nominatedAt": "2026-09-19T18:22:25Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  },
  "exec-dept-va-bva": {
   "url": "https://department.va.gov/board-of-veterans-appeals/",

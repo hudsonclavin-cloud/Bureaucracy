@@ -1,0 +1,159 @@
+{
+  "_comment": [
+    "Units the government has replaced, abolished or reorganised away.",
+    "scripts/mark_superseded_units.py is the only writer of these four fields and",
+    "the curated file is never hand-edited. Nothing here is deleted: a superseded",
+    "node keeps its id, name, description, evidence and place in the tree, and the",
+    "viewer simply does not draw it unless the reader asks for replaced units.",
+    "Every row quotes the words an official page uses to say so, and that page is",
+    "re-fetched and the quote re-checked on every run \u2014 a supersession is a positive",
+    "claim and needs a source that states it. Drop a row and the next run withdraws",
+    "the claim. CURATION.md \u00a710 carries the evidence and the correction it took."
+  ],
+  "superseded": [
+    {
+      "id": "exec-dept-va-vha-visn-1-new-england",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-2-mid-atlantic",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-4-visn-4",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-5-capitol-health-care-network",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-6-mid-atlantic-health-care",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-7-southeast",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-8-sunshine-fl",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-9-mid-south",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-10-great-lakes",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-12-great-lakes",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-15-heartland",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-16-south-central",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-17-texas",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-19-rocky-mountain",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-20-northwest",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-21-sierra-pacific",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-22-desert-pacific",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    },
+    {
+      "id": "exec-dept-va-vha-visn-23-midwest",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
+      "supersededOn": "2026-07-14",
+      "supersededBy": [],
+      "note": "One of the eighteen networks the VA consolidated under RISE. No successor is recorded for it individually because the territories were redrawn rather than renumbered: the five new networks partition the states afresh, so no old network maps onto one new one. The date is the day VA published the five-network leadership roster at digital.va.gov/rise/leadership/; VA has published no single effective date for the change, and this one is the earliest dated official artefact showing the new structure staffed."
+    }
+  ]
+}

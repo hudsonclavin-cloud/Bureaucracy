@@ -1645,6 +1645,28 @@ def main(argv):
         if isinstance(pool, (int, float)) and pool < 0:
             allowance = -float(pool)
             negative_pools.append(parent)
+        # A netted unit that declares `treasury_unapportioned` is saying, in a
+        # figure of its own, exactly how much of its total reaches no node —
+        # the statement's lines this graph has no unit for, going nowhere. Then
+        # the parts DO account for the whole, and the honest test is the
+        # identity rather than an inequality: children + unapportioned must
+        # equal the parent, to the cent. That is strictly stronger than the
+        # bound below wherever it applies, and it is what lets a unit whose net
+        # total is NEGATIVE pass at all — the General Services Administration
+        # nets -$1.06bn, carries one receipts line of -$274.8m and declares the
+        # remaining -$789.2m unapportioned, and the one-sided bound read the
+        # less-negative child sum as overshooting its more-negative parent.
+        unapportioned = parent.get("treasury_unapportioned")
+        if isinstance(unapportioned, (int, float)):
+            drift = abs(total + float(unapportioned) - parent_amount)
+            if drift > abs(parent_amount) * CHILD_SUM_TOLERANCE + 0.01:
+                over_parent_sums.append(
+                    "children of {} sum to {:,.2f} and it declares {:,.2f} unapportioned, "
+                    "which comes to {:,.2f}, not its total {:,.2f}".format(
+                        label(parent), total, float(unapportioned),
+                        total + float(unapportioned), parent_amount)
+                )
+            continue
         if total > parent_amount + abs(parent_amount) * CHILD_SUM_TOLERANCE + allowance + 0.01:
             over_parent_sums.append(
                 "children of {} sum to {:,.2f} > {:,.2f}{}".format(
@@ -2045,6 +2067,39 @@ def main(argv):
         if any(word in type_text for word in ("position", "role", "committee", "caucus", "office holder")):
             non_org_measured.append("{} is a {!r} carrying a measured cost".format(label(node), node.get("type")))
     gate.check("a measured cost sits only on an organisation", non_org_measured)
+
+    # A unit the government has replaced. Nothing is deleted, so the site keeps
+    # drawing it for anyone who asks — which makes the claim "this no longer
+    # exists" a published claim like any other, and it needs a source that says
+    # so in words the page really carries. It also must not be holding a share
+    # of this year's money: the cascade takes a superseded node out of the
+    # sibling weights entirely, and a share on one would mean that failed.
+    superseded_violations = []
+    node_ids = {str(n.get("id") or "") for n in nodes}
+    for node in nodes:
+        if str(node.get("lifecycle") or "") != "superseded":
+            for field in ("supersededOn", "supersededBy", "supersededSource"):
+                if node.get(field) is not None:
+                    superseded_violations.append(
+                        "{} carries {} without being marked superseded".format(label(node), field))
+            continue
+        source = node.get("supersededSource") or {}
+        url = str(source.get("url") or "")
+        if not (url.startswith("https://") and (".gov" in url or ".mil" in url)):
+            superseded_violations.append("{} cites {!r}, not an official page".format(label(node), url))
+        if not str(source.get("quote") or "").strip():
+            superseded_violations.append("{} quotes nothing from its source".format(label(node)))
+        on = str(node.get("supersededOn") or "")
+        if not (len(on) == 10 and on[:4].isdigit() and on <= today):
+            superseded_violations.append("{} gives supersededOn {!r}, not a past ISO date".format(label(node), on))
+        for replacement in node.get("supersededBy") or []:
+            if str(replacement) not in node_ids:
+                superseded_violations.append(
+                    "{} says it was replaced by {}, which is not a node".format(label(node), replacement))
+        if str(node.get("cost_status") or "") == "allocated":
+            superseded_violations.append(
+                "{} is superseded and still carries an apportioned share".format(label(node)))
+    gate.check("a superseded unit says who replaced it and holds no share", superseded_violations)
 
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";

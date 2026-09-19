@@ -563,6 +563,142 @@
       "url": "https://www.energy.senate.gov/subcommittees/",
       "basis": "The committee's own subcommittees page lists four bodies and this node's three siblings match the other three exactly, so the fourth is this node, whose bare curated name 'Energy' is a single generic token the verifier refuses before any fetch. The House Science Committee's own Subcommittee on Energy carries the same name under a different parent, which is what both chambers call them.",
       "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-i-new-england",
+      "from": "HUD Region I — New England",
+      "to": "Region I - Boston",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-ii-new-york",
+      "from": "HUD Region II — New York",
+      "to": "Region II - New York",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-iii-mid-atlantic",
+      "from": "HUD Region III — Mid-Atlantic",
+      "to": "Region III - Philadelphia",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-iv-southeast",
+      "from": "HUD Region IV — Southeast",
+      "to": "Region IV - Atlanta",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-v-midwest",
+      "from": "HUD Region V — Midwest",
+      "to": "Region V - Chicago",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-vi-south-central",
+      "from": "HUD Region VI — South Central",
+      "to": "Region VI - Fort Worth",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-vii-plains",
+      "from": "HUD Region VII — Plains",
+      "to": "Region VII - Kansas City",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-viii-mountain",
+      "from": "HUD Region VIII — Mountain",
+      "to": "Region VIII - Denver",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-ix-pacific",
+      "from": "HUD Region IX — Pacific",
+      "to": "Region IX - San Francisco",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hud-region-x-northwest",
+      "from": "HUD Region X — Northwest",
+      "to": "Region X - Seattle",
+      "url": "https://www.hud.gov/aboutus/field-leadership",
+      "basis": "HUD's own Field Leadership page enumerates the department's ten field regions in the graph's own roman numerals and heads each one by its headquarters city, naming that region's Regional Administrator beneath. The curated description already gives the same city, so the page's qualifier and the graph's name the same office. Renaming drops the 'HUD' the graph used to keep its regions apart from EPA's and Education's identically numbered ones; the parent in the breadcrumb carries that now, and the ten are siblings of each other so no collision arises. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-1st-circuit",
+      "from": "U.S. Court of Appeals for the 1st Circuit",
+      "to": "First Circuit",
+      "url": "https://www.ca1.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-3rd-circuit",
+      "from": "U.S. Court of Appeals for the 3rd Circuit",
+      "to": "Third Circuit",
+      "url": "https://www.ca3.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-6th-circuit",
+      "from": "U.S. Court of Appeals for the 6th Circuit",
+      "to": "Sixth Circuit",
+      "url": "https://www.ca6.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-8th-circuit",
+      "from": "U.S. Court of Appeals for the 8th Circuit",
+      "to": "Eighth Circuit",
+      "url": "https://www.ca8.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-10th-circuit",
+      "from": "U.S. Court of Appeals for the 10th Circuit",
+      "to": "Tenth Circuit",
+      "url": "https://www.ca10.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "jud-circuit-11th-circuit",
+      "from": "U.S. Court of Appeals for the 11th Circuit",
+      "to": "Eleventh Circuit",
+      "url": "https://www.ca11.uscourts.gov/",
+      "basis": "The court's own site labels itself by this short form and nowhere prints the graph's family wording: 'U.S. Court of Appeals for the <Ordinal> Circuit' was tested against four pages of this host (/judges, /about, /court-information and the front page) and matches none of them, while this form matches the front page in content. The family convention is broken deliberately rather than the name left uncited; CURATION.md records the resulting split. Owner's decision, 2026-09-19.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visns",
+      "from": "18 VA Integrated Service Networks (VISNs)",
+      "to": "Veterans Integrated Service Networks",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The VA's own page heads this collective 'Veterans Integrated Service Networks' in its content. The curated name states a count — eighteen — that the VA no longer reports, and because it states a count `uncheckable_reason` refuses the name before any fetch, so the node could never earn a source while it was called that. The eighteen numbered networks it carried are marked superseded rather than deleted, and five current ones sit beside them. CURATION.md §10.",
+      "addedOn": "2026-09-19"
     }
   ]
 }

@@ -38,6 +38,8 @@ python scripts/probe_post_titles.py --dry-run    # which post titles an org's ow
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
 python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
+python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement or a page; CURATION.md §1
+python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
@@ -688,16 +690,87 @@ and are graded `verified` instead of being held at `partial` by an alias, an
 upgrade the names earned rather than one an alias could buy. Refused and
 recorded rather than applied: HUD's ten regions (the match needs the `HUD` that
 keeps them apart from EPA's and Education's), NSF's divisions (`MPS Chemistry`
-is the site's breadcrumb, not the unit's name), and every VISN — behind which
-sits a finding that is not a naming question at all, that **department.va.gov
-now states the VA comprises 5 Integrated Service Networks where the graph
-carries an 18-VISN parent with nineteen children**.
+is the site's breadcrumb, not the unit's name), and every VISN — a case that was
+asserted, retracted and then settled in one day, and is worth reading in full at
+CURATION.md §10. Short version: one VA page says "comprises 5 Veterans Integrated
+Service Networks" a few lines below its own list of eighteen, so it settles
+nothing by itself; what settles it is a second VA host on a different system
+(`digital.va.gov/rise/`, "5 VISN MAP" beside "18 HEALTH SERVICE AREA MAP", with a
+staffing roster naming five Network Directors) and the fact that all eighteen old
+slugs return **301** to the index while an invented slug returns **404**, which
+makes their retirement an editorial act rather than a rendering quirk. The
+eighteen are marked superseded and kept; five current networks are added beside
+them. Twice in that sequence this repository asserted the parent carried
+*nineteen* children as evidence of inconsistency; it carried eighteen, matching
+its own name, and nobody had counted.
 
 One defect in this repository's own rule surfaced and was fixed with it:
 `states_a_count_in_prose` read "EPA Region 8 (Mountains and Plains)" as a count
 of mountains and refused the name before any fetch. A bracket is a segment of
 its own for the same reason the dash is; the fix changes the verdict on no name
 in the curated file, and is pinned both ways.
+
+**Units the graph had no node for at all (since 2026-09-19).** `CLAUDE.md`'s
+"Known base-graph gaps" listed Table 5 lines whose unit this graph simply had no
+node for — the Administration for Children and Families at $65.6B, the Corps of
+Engineers, the Railroad Retirement Board, the General Services Administration and
+a dozen more, together about **$95.5B** of measured outlays. No alias could reach
+them, because an alias maps a line to a node and there was no node, and adding one
+was recorded as "curation work, not pipeline work" since nothing was allowed to
+write a new node.
+
+`scripts/add_curated_nodes.py` is that writer, the fourth of the curated file, and
+`data/curation/new_nodes.json` its reviewed table. A node is added only under a
+licence named on the row and **verified on the run, not trusted**:
+`treasury_statement_line` requires exactly one row of the CURRENT statement to
+carry the name — with header rows and rows inside a receipts subtree removed
+first, through `SectionTree.receipts_component_ids`, the exporter's own answer to
+which rows name a unit rather than a receipt of one, so "exactly one" means what
+it should; `official_page_label` requires the verifier's own label test to find
+the name on an official page now. Refused before either: an id already present, a
+parent that is not in the file, a name colliding with one of its own siblings, a
+name under two tokens or on the generic list, and a name `uncheckable_reason`
+says could never be evidence — there is no point creating a node the verifier can
+never confirm. It only ever ADDS, and is idempotent.
+
+**15 units added**, each placed as `CURATION.md` §1 had already reasoned, with the
+statement's own section stamped on the node so a reviewer can see whether the
+placement agrees with where the Treasury files it — and the export gate's
+same-section rule is the backstop that refuses a line across sections rather than
+publishing it. The gains were not confined to the cost: OPM's FedScope already
+carried rows for several of these units and the PLUM archive already carried
+positions under them, so the records landed the moment the node existed —
+FedScope 136 → 145 and PLUM agencies 62 → 68, with no matcher change at all.
+
+**A unit the government has replaced (since 2026-09-19).** Governments
+reorganise, and this file had no way to say so: a replaced unit either sat in the
+tree as though it still existed, which is the site claiming something false, or
+would have had to be deleted, which throws away a real record of what the
+government used to be along with every source, cost and placement anybody earned
+for it. **Nothing is ever deleted.** A node marked `lifecycle: superseded` keeps
+its id, name, description, evidence and place in the tree, and gains
+`supersededOn`, `supersededBy` and `supersededSource` (the page, its own words,
+and the date they were read). The viewer hides it unless the reader ticks "also
+show units the government has replaced" — the default view is the government as
+it stands — and the panel then says what replaced it and quotes the page.
+
+The cascade takes a superseded node out of the sibling weights **entirely**,
+rather than merely denying it a share, and this is where it differs from the post
+rule deliberately: a post keeps its weight because the organisation really is
+that size, while a replaced unit is not there at all, and leaving it in the
+denominator would divide a real pool by a phantom and quietly shrink every living
+sibling's estimate. `compute_subtree_sizes` gives it and everything beneath it
+zero for the same reason. `scripts/mark_superseded_units.py` is the only writer,
+the fifth of the curated file, and it clears the four fields it owns before
+applying the table, so deleting a row is a real withdrawal. A supersession is a
+positive claim and needs a source that states it: the row quotes an official
+page's own words and the run re-fetches that page and refuses the row unless the
+quote is there now.
+
+**The table ships empty, and the reason is the point.** The case it was built for
+was the VA's Integrated Service Networks, and that case does not survive being
+checked — see `CURATION.md` §10. Nineteen nodes were nearly restructured on one
+true sentence.
 
 **Directories — the government's own lists of itself.** The page method is
 near its ceiling: 71 organisations have a page of their own, twelve of the

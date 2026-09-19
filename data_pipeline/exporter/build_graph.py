@@ -241,6 +241,10 @@ MINIMAL_GRAPH_FIELDS = (
     "positionSchedulePay",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
+    # whether the government still has this unit. Absent means it does; the
+    # viewer hides a superseded one unless asked, and the panel says what
+    # replaced it and quotes the page that says so.
+    "lifecycle", "supersededOn", "supersededBy", "supersededSource",
 )
 
 #: Root-only keys the viewer also needs: the anchor's period label, which the
@@ -534,6 +538,13 @@ def compute_subtree_sizes(root: dict[str, Any]) -> dict[str, int]:
 
     def visit(node: dict[str, Any]) -> int:
         total = 0 if is_generic_administrative_title(node) else 1
+        if is_superseded_node(node):
+            # A unit the government has replaced contributes nothing to its
+            # ancestors' counted size, and neither does anything beneath it:
+            # the whole subtree is history, and counting it would make an
+            # organisation's estimated share reflect units it no longer has.
+            sizes[str(node.get("id") or "").strip()] = 0
+            return 0
         for child in node.get("children", []):
             if isinstance(child, dict):
                 total += visit(child)
@@ -1040,6 +1051,14 @@ NON_ORGANISATION_TYPE_KEYWORDS = ("committee", "subcommittee", "position", "role
 # sibling split, so no organisation's estimate moves because of this. What it
 # does mean is that a parent's shown children can sum to less than the parent,
 # which is the honest reading — the remainder is not apportioned to anybody.
+#: A unit the government has replaced, abolished or reorganised away. The value
+#: is set only by `scripts/mark_superseded_units.py`, which requires an official
+#: page to say so in words it can quote, and it is never inferred from a type or
+#: a name. Nothing is ever deleted: the node, its description and its evidence
+#: stay exactly where they were, and the site simply does not draw it unless the
+#: viewer asks for units the government has replaced.
+LIFECYCLE_SUPERSEDED = "superseded"
+
 POST_TYPE_KEYWORDS = ("position", "role", "office holder")
 
 
@@ -1047,6 +1066,11 @@ def is_post_node(node: Mapping[str, Any]) -> bool:
     """A node that stands for a person holding a post, not a unit of government."""
     type_text = str(node.get("type") or "").casefold()
     return any(word in type_text for word in POST_TYPE_KEYWORDS)
+
+
+def is_superseded_node(node: dict[str, Any]) -> bool:
+    """Has the government replaced this unit? Read off the curated file only."""
+    return str((node or {}).get("lifecycle") or "") == LIFECYCLE_SUPERSEDED
 TREASURY_ROW_FIELDS = ("budget_as_of", "budget_year", "amount_kind", "source_system", "allocation_basis")
 
 
@@ -1839,6 +1863,7 @@ def annotate_resolved_costs(
         "headcount_weights_disputed_by_opm": 0,
         "allocations_below_precision": 0,
         "posts_not_apportioned": 0,
+        "superseded_units_not_apportioned": 0,
         "sibling_sets_scaled_to_official_floors": 0,
         "treasury_pools_negative": 0,
         "treasury_external_lines": 0,
@@ -1915,7 +1940,18 @@ def annotate_resolved_costs(
         # outlay — but it is not part of this node's total, so it is
         # published exactly and left out of the arithmetic here, flagged.
         external_children: list[tuple[dict[str, Any], float]] = []
+        # A unit the government has replaced is not a claimant on this year's
+        # money. It is taken out of the weights entirely rather than merely
+        # denied a share: left in the denominator it would divide a real pool
+        # by a phantom and quietly shrink every living sibling's estimate. This
+        # is where it differs from the post rule deliberately — a post keeps its
+        # weight because the organisation it sits in really is that size, and a
+        # superseded unit is not there at all.
+        superseded_children: list[dict[str, Any]] = []
         for child in children:
+            if is_superseded_node(child):
+                superseded_children.append(child)
+                continue
             official_child_total = get_node_official_total(child)
             child_section = str(child.get("treasury_section") or "")
             if official_child_total is not None and child_section and current_section and child_section != current_section:
@@ -2071,6 +2107,15 @@ def annotate_resolved_costs(
                 inherited_validation="scaled_to_parent_total" if scaled_to_fit_parent else "matched_official_rollup",
                 section=current_section,
             )
+        for child in superseded_children:
+            counters["superseded_units_not_apportioned"] += 1
+            recurse(
+                child,
+                None,
+                inherited_basis="superseded_unit",
+                inherited_validation="unit_superseded",
+                section=current_section,
+            )
         for child, official_child_total in external_children:
             child["treasury_external_section"] = True
             counters["treasury_external_lines"] += 1
@@ -2222,6 +2267,7 @@ def annotate_resolved_costs(
             "headcount_weights_disputed_by_opm": counters["headcount_weights_disputed_by_opm"],
             "allocations_below_precision": counters["allocations_below_precision"],
             "posts_not_apportioned": counters["posts_not_apportioned"],
+            "superseded_units_not_apportioned": counters["superseded_units_not_apportioned"],
             "sibling_sets_scaled_to_official_floors": counters["sibling_sets_scaled_to_official_floors"],
             "treasury_lines_scaled": summarize_scaled_official(root),
         },

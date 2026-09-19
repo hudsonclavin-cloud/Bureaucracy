@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260919a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260919a";
+import { createGovernmentGraph } from "./graph.js?v=20260919b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260919b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -56,6 +56,7 @@ const dom = {
   toggleUnverified: null,
   toggleCandidates: null,
   toggleExactCosts: null,
+  toggleSuperseded: null,
 };
 
 const state = {
@@ -648,7 +649,7 @@ function getVerificationBadgeConfig(data) {
 }
 
 function ensureVerificationToggles() {
-  if (dom.togglesWrap && dom.toggleUnverified && dom.toggleCandidates) {
+  if (dom.togglesWrap && dom.toggleUnverified && dom.toggleCandidates && dom.toggleSuperseded) {
     return;
   }
 
@@ -697,12 +698,19 @@ function ensureVerificationToggles() {
   // that hides something the reader was entitled to.
   const toggleExactCosts = makeToggle("Also show estimated shares of a parent's total");
   toggleExactCosts.checked = false;
+  // Governments reorganise, and nothing here is ever deleted when they do: a
+  // replaced unit keeps its id, its description and its sources. The default
+  // view is the government as it stands, and this opts in to the ones it has
+  // replaced — the same wording logic as the estimates toggle above.
+  const toggleSuperseded = makeToggle("Also show units the government has replaced");
+  toggleSuperseded.checked = false;
 
   (depthExpandCtrl || document.body).appendChild(wrap);
   dom.togglesWrap = wrap;
   dom.toggleUnverified = toggleUnverified;
   dom.toggleCandidates = toggleCandidates;
   dom.toggleExactCosts = toggleExactCosts;
+  dom.toggleSuperseded = toggleSuperseded;
 }
 
 function ensureVerificationLegend() {
@@ -1092,6 +1100,14 @@ function renderDescriptionProvenance(data, isClusteredView) {
     line.textContent = "";
     return;
   }
+  if (String(data.descriptionSource || "") === "generated_from_the_monthly_treasury_statement") {
+    line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement, which names this unit — nothing further about it has been read";
+    return;
+  }
+  if (String(data.descriptionSource || "") === "generated_from_its_official_page") {
+    line.textContent = "DESCRIPTION: generated from the official page that names this unit — nothing further about it has been read";
+    return;
+  }
   if (String(data.descriptionSource || "") === "generated_from_treasury_lines") {
     line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement lines it names";
     return;
@@ -1101,6 +1117,40 @@ function renderDescriptionProvenance(data, isClusteredView) {
     return;
   }
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
+}
+
+// A unit the government has replaced. The node is still here, with everything
+// it ever earned; what the panel must not do is let a reader take it for part
+// of the government as it stands. The claim is quoted, dated and linked,
+// because "this no longer exists" is a positive claim like any other.
+function renderSupersededNotice(data) {
+  const host = dom.infoPanel && dom.infoPanel.querySelector("#info-superseded");
+  const existing = host || document.createElement("div");
+  existing.id = "info-superseded";
+  if (!data || String(data.lifecycle || "") !== "superseded") {
+    existing.textContent = "";
+    existing.style.display = "none";
+    return;
+  }
+  const source = data.supersededSource || {};
+  const replacements = Array.isArray(data.supersededBy) ? data.supersededBy : [];
+  const by = replacements.length
+    ? ` Its work is carried by ${replacements.length} unit${replacements.length === 1 ? "" : "s"} now in the graph.`
+    : " No successor unit is recorded.";
+  const quote = String(source.quote || "");
+  existing.textContent =
+    `REPLACED — the government no longer has this unit as drawn (as of ${String(data.supersededOn || "an unstated date")}).` +
+    by +
+    (quote ? ` ${hostnameOf(source.url)} says: "${quote}"` : "") +
+    " It is kept, with its sources, as a record of what the government used to be.";
+  existing.style.display = "block";
+  existing.style.fontSize = "9px";
+  existing.style.lineHeight = "1.5";
+  existing.style.color = "#d99a6c";
+  existing.style.margin = "6px 0";
+  if (!host && dom.infoPanel && dom.infoPanel.firstChild) {
+    dom.infoPanel.insertBefore(existing, dom.infoPanel.firstChild.nextSibling);
+  }
 }
 
 function hostnameOf(url) {
@@ -1334,6 +1384,7 @@ function renderVerificationPanel(data) {
     setText(dom.verificationLastVerified, checkLine);
   }
   renderPlacementLine(data);
+  renderSupersededNotice(data);
 
   dom.verificationSources.replaceChildren();
   const sourcesLabel = document.createElement("div");
@@ -2186,6 +2237,16 @@ function bindControls() {
     });
   }
 
+  if (dom.toggleSuperseded) {
+    dom.toggleSuperseded.addEventListener("change", () => {
+      // An open results list may hold rows the toggle now hides.
+      closeSearch();
+      state.graph.setShowSupersededNodes(dom.toggleSuperseded.checked);
+      updateStats(state.graph.getStats());
+      writeStoredPrefs({ showSuperseded: dom.toggleSuperseded.checked });
+    });
+  }
+
   if (dom.toggleExactCosts) {
     dom.toggleExactCosts.addEventListener("change", () => {
       state.exactCostsOnly = !dom.toggleExactCosts.checked;
@@ -2353,6 +2414,10 @@ function safeInitUI() {
 function restorePersistedState() {
   const prefs = readStoredPrefs();
 
+  if (typeof prefs.showSuperseded === "boolean" && dom.toggleSuperseded) {
+    dom.toggleSuperseded.checked = prefs.showSuperseded;
+    state.graph.setShowSupersededNodes(prefs.showSuperseded);
+  }
   if (typeof prefs.showUnverified === "boolean" && dom.toggleUnverified) {
     dom.toggleUnverified.checked = prefs.showUnverified;
     state.graph.setShowUnverifiedNodes(prefs.showUnverified);

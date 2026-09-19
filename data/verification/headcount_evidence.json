@@ -28,8 +28,8 @@
       }
     ],
     "agencies": 115,
-    "agencies_matched": 55,
-    "subagencies_matched": 81,
+    "agencies_matched": 59,
+    "subagencies_matched": 86,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
     "ambiguous_agencies": [],
@@ -52,12 +52,6 @@
         "listedName": "DEPARTMENT OF THE AIR FORCE",
         "employees": 171750,
         "rows": 57
-      },
-      {
-        "agencyCode": "GS",
-        "listedName": "GENERAL SERVICES ADMINISTRATION",
-        "employees": 13182,
-        "rows": 17
       },
       {
         "agencyCode": "HU",
@@ -84,18 +78,6 @@
         "rows": 2
       },
       {
-        "agencyCode": "HF",
-        "listedName": "FEDERAL HOUSING FINANCE AGENCY",
-        "employees": 869,
-        "rows": 2
-      },
-      {
-        "agencyCode": "RR",
-        "listedName": "RAILROAD RETIREMENT BOARD",
-        "employees": 767,
-        "rows": 1
-      },
-      {
         "agencyCode": "KS",
         "listedName": "CORP FOR NATIONAL AND COMMUNITY SERVICE",
         "employees": 711,
@@ -117,12 +99,6 @@
         "agencyCode": "TC",
         "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
         "employees": 443,
-        "rows": 1
-      },
-      {
-        "agencyCode": "MI",
-        "listedName": "MILLENNIUM CHALLENGE CORPORATION",
-        "employees": 346,
         "rows": 1
       },
       {
@@ -546,6 +522,22 @@
         "agencyRows": 1
       },
       {
+        "agencyCode": "RR",
+        "subagencyCode": "RR00",
+        "listedName": "RAILROAD RETIREMENT BOARD",
+        "employees": 767,
+        "carriedBy": "exec-ind-misc-railroad-retirement-board",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "HF",
+        "subagencyCode": "HFHA",
+        "listedName": "FEDERAL HOUSING FINANCE AGENCY",
+        "employees": 743,
+        "carriedBy": "exec-regulatory-federal-housing-finance-agency",
+        "agencyRows": 2
+      },
+      {
         "agencyCode": "CT",
         "subagencyCode": "CT00",
         "listedName": "COMMODITY FUTURES TRADING COMMISSION",
@@ -583,6 +575,14 @@
         "listedName": "EXPORT-IMPORT BANK OF THE UNITED STATES",
         "employees": 377,
         "carriedBy": "exec-ind-misc-export-import-bank-of-the-u-s",
+        "agencyRows": 1
+      },
+      {
+        "agencyCode": "MI",
+        "subagencyCode": "MI00",
+        "listedName": "MILLENNIUM CHALLENGE CORPORATION",
+        "employees": 346,
+        "carriedBy": "exec-ind-misc-millennium-challenge-corporation",
         "agencyRows": 1
       },
       {
@@ -801,6 +801,17 @@
         ]
       },
       {
+        "agencyCode": "FR",
+        "agencyListedName": "FEDERAL RESERVE SYSTEM",
+        "agencyNode": "exec-regulatory-fed",
+        "subagencyCode": "FRFT",
+        "listedName": "BUREAU OF CONSUMER FINANCIAL PROTECTION",
+        "employees": 1661,
+        "nodesElsewhere": [
+          "exec-regulatory-bureau-of-consumer-financial-protection"
+        ]
+      },
+      {
         "agencyCode": "DN",
         "agencyListedName": "DEPARTMENT OF ENERGY",
         "agencyNode": "exec-dept-doe",
@@ -903,6 +914,17 @@
         "reason": "its agency matched no node, so the placement is unverified"
       },
       {
+        "agencyCode": "AM",
+        "agencyListedName": "U.S. AGENCY FOR INTERNATIONAL DEV",
+        "subagencyCode": "AM00",
+        "listedName": "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
+        "employees": 4922,
+        "nodes": [
+          "exec-independent-agency-for-international-development"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
         "agencyCode": "AF",
         "agencyListedName": "DEPARTMENT OF THE AIR FORCE",
         "subagencyCode": "AF4G",
@@ -932,6 +954,17 @@
         "employees": 160,
         "nodes": [
           "exec-ind-misc-national-endowment-for-the-arts-nea"
+        ],
+        "reason": "its agency matched no node, so the placement is unverified"
+      },
+      {
+        "agencyCode": "AH",
+        "agencyListedName": "NAT FOUNDATION ON ARTS AND HUMANITIES",
+        "subagencyCode": "AH03",
+        "listedName": "INSTITUTE OF MUSEUM AND LIBRARY SERVICES",
+        "employees": 97,
+        "nodes": [
+          "exec-ind-misc-institute-of-museum-and-library-services"
         ],
         "reason": "its agency matched no node, so the placement is unverified"
       },
@@ -1165,13 +1198,6 @@
         "employees": 14238
       },
       {
-        "kind": "agency",
-        "agencyCode": "GS",
-        "listedName": "GENERAL SERVICES ADMINISTRATION",
-        "employees": 13182,
-        "rows": 17
-      },
-      {
         "kind": "subagency",
         "agencyCode": "AF",
         "agencyListedName": "DEPARTMENT OF THE AIR FORCE",
@@ -1179,9 +1205,18 @@
         "subagencyCode": "AF1C",
         "listedName": "AIR COMBAT COMMAND",
         "employees": 12307
+      },
+      {
+        "kind": "subagency",
+        "agencyCode": "CM",
+        "agencyListedName": "DEPARTMENT OF COMMERCE",
+        "agencyMatched": "exec-dept-doc",
+        "subagencyCode": "CM54",
+        "listedName": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION",
+        "employees": 12267
       }
     ],
-    "matched_employees": 1638320,
+    "matched_employees": 1653484,
     "unmatched_subagencies": [
       {
         "agencyCode": "AF",
@@ -1450,7 +1485,7 @@
       {
         "agencyCode": "GS",
         "agencyListedName": "GENERAL SERVICES ADMINISTRATION",
-        "agencyMatched": null,
+        "agencyMatched": "exec-independent-general-services-administration",
         "subagencyCode": "GS03",
         "listedName": "PUBLIC BUILDINGS SERVICE",
         "employees": 5526
@@ -1488,14 +1523,6 @@
         "employees": 4989
       },
       {
-        "agencyCode": "AM",
-        "agencyListedName": "U.S. AGENCY FOR INTERNATIONAL DEV",
-        "agencyMatched": null,
-        "subagencyCode": "AM00",
-        "listedName": "U.S. AGENCY FOR INTERNATIONAL DEVELOPMENT",
-        "employees": 4922
-      },
-      {
         "agencyCode": "AG",
         "agencyListedName": "DEPARTMENT OF AGRICULTURE",
         "agencyMatched": "exec-dept-usda",
@@ -1506,7 +1533,7 @@
       {
         "agencyCode": "GS",
         "agencyListedName": "GENERAL SERVICES ADMINISTRATION",
-        "agencyMatched": null,
+        "agencyMatched": "exec-independent-general-services-administration",
         "subagencyCode": "GS30",
         "listedName": "FEDERAL ACQUISITION SERVICE",
         "employees": 4678
@@ -1534,14 +1561,6 @@
         "subagencyCode": "ARCH",
         "listedName": "US ARMY CIVILIAN HUMAN RESOURCES AGENCY",
         "employees": 4372
-      },
-      {
-        "agencyCode": "AG",
-        "agencyListedName": "DEPARTMENT OF AGRICULTURE",
-        "agencyMatched": "exec-dept-usda",
-        "subagencyCode": "AG02",
-        "listedName": "AGRICULTURAL MARKETING SERVICE",
-        "employees": 4370
       },
       {
         "agencyCode": "AR",
@@ -1744,14 +1763,6 @@
         "employees": 2510
       },
       {
-        "agencyCode": "HE",
-        "agencyListedName": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
-        "agencyMatched": "exec-dept-hhs",
-        "subagencyCode": "HE90",
-        "listedName": "ADMINISTRATION FOR CHILDREN AND FAMILIES",
-        "employees": 2296
-      },
-      {
         "agencyCode": "NN",
         "agencyListedName": "NAT AERONAUTICS AND SPACE ADMINISTRATION",
         "agencyMatched": "exec-ind-nasa",
@@ -1830,14 +1841,6 @@
         "subagencyCode": "AF0D",
         "listedName": "U.S. AIR FORCES, EUROPE",
         "employees": 1689
-      },
-      {
-        "agencyCode": "FR",
-        "agencyListedName": "FEDERAL RESERVE SYSTEM",
-        "agencyMatched": "exec-regulatory-fed",
-        "subagencyCode": "FRFT",
-        "listedName": "BUREAU OF CONSUMER FINANCIAL PROTECTION",
-        "employees": 1661
       },
       {
         "agencyCode": "DD",
@@ -2142,6 +2145,38 @@
         "subagencyCode": "AG90",
         "listedName": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
         "employees": 982
+      },
+      {
+        "agencyCode": "AF",
+        "agencyListedName": "DEPARTMENT OF THE AIR FORCE",
+        "agencyMatched": null,
+        "subagencyCode": "AF4V",
+        "listedName": "NON-DOD AND OTHER SUPPORT",
+        "employees": 965
+      },
+      {
+        "agencyCode": "AR",
+        "agencyListedName": "DEPARTMENT OF THE ARMY",
+        "agencyMatched": null,
+        "subagencyCode": "ARE1",
+        "listedName": "IMMEDIATE OFFICE OF THE COMMANDER-IN-CHIEF OF THE U.S. ARMY EUROPE AND SEVENTH ARMY",
+        "employees": 934
+      },
+      {
+        "agencyCode": "DJ",
+        "agencyListedName": "DEPARTMENT OF JUSTICE",
+        "agencyMatched": "exec-dept-doj",
+        "subagencyCode": "DJ11",
+        "listedName": "U.S. TRUSTEE PROGRAM",
+        "employees": 930
+      },
+      {
+        "agencyCode": "VA",
+        "agencyListedName": "DEPARTMENT OF VETERANS AFFAIRS",
+        "agencyMatched": "exec-dept-va",
+        "subagencyCode": "VAAE",
+        "listedName": "GENERAL COUNSEL",
+        "employees": 894
       }
     ],
     "comparison": {
@@ -2344,8 +2379,20 @@
           "direction": "opm_higher"
         }
       ],
-      "no_curated_figure": 9,
+      "no_curated_figure": 18,
       "no_curated_figure_nodes": [
+        {
+          "node": "exec-independent-general-services-administration",
+          "name": "General Services Administration",
+          "opm": 13182,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-usda-agricultural-marketing-service",
+          "name": "Agricultural Marketing Service",
+          "opm": 4370,
+          "curatedText": null
+        },
         {
           "node": "exec-ind-nasa-goddard-space-flight-center-gsfc",
           "name": "Goddard Space Flight Center (GSFC)",
@@ -2356,6 +2403,12 @@
           "node": "exec-dept-va-nca",
           "name": "National Cemetery Administration (NCA)",
           "opm": 2395,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-hhs-administration-for-children-and-families",
+          "name": "Administration for Children and Families",
+          "opm": 2296,
           "curatedText": null
         },
         {
@@ -2377,9 +2430,45 @@
           "curatedText": null
         },
         {
+          "node": "exec-regulatory-federal-housing-finance-agency",
+          "name": "Federal Housing Finance Agency",
+          "opm": 869,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-railroad-retirement-board",
+          "name": "Railroad Retirement Board",
+          "opm": 767,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-usda-foreign-agricultural-service",
+          "name": "Foreign Agricultural Service",
+          "opm": 693,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-misc-millennium-challenge-corporation",
+          "name": "Millennium Challenge Corporation",
+          "opm": 346,
+          "curatedText": null
+        },
+        {
           "node": "exec-dept-ed-oese",
           "name": "Office of Elementary & Secondary Education (OESE)",
           "opm": 293,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-hhs-administration-for-community-living",
+          "name": "Administration for Community Living",
+          "opm": 260,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doc-economic-development-administration",
+          "name": "Economic Development Administration",
+          "opm": 225,
           "curatedText": null
         },
         {
@@ -5252,6 +5341,113 @@
         "employees": 6487
       }
     },
+    "exec-independent-general-services-administration": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "GENERAL SERVICES ADMINISTRATION",
+      "agencyCode": "GS",
+      "subagencyCode": null,
+      "employees": 13182,
+      "subagencyRows": 17,
+      "components": [
+        {
+          "subagencyCode": "GS03",
+          "listedName": "PUBLIC BUILDINGS SERVICE",
+          "employees": 5526
+        },
+        {
+          "subagencyCode": "GS30",
+          "listedName": "FEDERAL ACQUISITION SERVICE",
+          "employees": 4678
+        },
+        {
+          "subagencyCode": "GS11",
+          "listedName": "OFFICE OF THE CHIEF FINANCIAL OFFICER",
+          "employees": 784
+        },
+        {
+          "subagencyCode": "GS28",
+          "listedName": "OFFICE OF GSA IT",
+          "employees": 488
+        },
+        {
+          "subagencyCode": "GS14",
+          "listedName": "OFFICE OF THE HUMAN RESOURCES MANAGEMENT",
+          "employees": 468
+        },
+        {
+          "subagencyCode": "GS15",
+          "listedName": "OFFICE OF INSPECTOR GENERAL",
+          "employees": 271
+        },
+        {
+          "subagencyCode": "GS26",
+          "listedName": "OFFICE OF GOVERNMENTWIDE POLICY",
+          "employees": 257
+        },
+        {
+          "subagencyCode": "GS12",
+          "listedName": "OFFICE OF GENERAL COUNSEL",
+          "employees": 182
+        },
+        {
+          "subagencyCode": "GS02",
+          "listedName": "OFFICE OF ADMINISTRATIVE SERVICES",
+          "employees": 124
+        },
+        {
+          "subagencyCode": "GS31",
+          "listedName": "OFFICE OF MISSION ASSURANCE",
+          "employees": 119
+        },
+        {
+          "subagencyCode": "GS32",
+          "listedName": "OFFICE OF STRATEGIC COMMUNICATION",
+          "employees": 100
+        },
+        {
+          "subagencyCode": "GS01",
+          "listedName": "IMMEDIATE OFFICE OF THE ADMINISTRATOR",
+          "employees": 42
+        },
+        {
+          "subagencyCode": "GS10",
+          "listedName": "OFFICE OF SMALL BUSINESS UTILIZATION",
+          "employees": 38
+        },
+        {
+          "subagencyCode": "GS13",
+          "listedName": "CIVILIAN BOARD OF CONTRACT APPEALS",
+          "employees": 30
+        },
+        {
+          "subagencyCode": "GS22",
+          "listedName": "OFFICES OF THE REGIONAL ADMINISTRATORS",
+          "employees": 29
+        },
+        {
+          "subagencyCode": "GS20",
+          "listedName": "OFFICE OF CONGRESSIONAL AND INTERGOVERNMENTAL AFFAIRS",
+          "employees": 27
+        },
+        {
+          "subagencyCode": "GS04",
+          "listedName": "OFFICE OF CIVIL RIGHTS",
+          "employees": 19
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 13371
+      }
+    },
     "exec-regulatory-sec": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -6021,6 +6217,75 @@
         "employees": 939
       }
     },
+    "exec-ind-misc-railroad-retirement-board": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "RAILROAD RETIREMENT BOARD",
+      "agencyCode": "RR",
+      "subagencyCode": null,
+      "employees": 767,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "RR00",
+          "listedName": "RAILROAD RETIREMENT BOARD",
+          "employees": 767
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 800
+      },
+      "selfNamedRow": {
+        "subagencyCode": "RR00",
+        "listedName": "RAILROAD RETIREMENT BOARD",
+        "employees": 767
+      }
+    },
+    "exec-regulatory-federal-housing-finance-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "FEDERAL HOUSING FINANCE AGENCY",
+      "agencyCode": "HF",
+      "subagencyCode": null,
+      "employees": 869,
+      "subagencyRows": 2,
+      "components": [
+        {
+          "subagencyCode": "HFHA",
+          "listedName": "FEDERAL HOUSING FINANCE AGENCY",
+          "employees": 743
+        },
+        {
+          "subagencyCode": "HFHI",
+          "listedName": "OFFICE OF INSPECTOR GENERAL",
+          "employees": 126
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 866
+      },
+      "selfNamedRow": {
+        "subagencyCode": "HFHA",
+        "listedName": "FEDERAL HOUSING FINANCE AGENCY",
+        "employees": 743
+      }
+    },
     "exec-regulatory-cftc": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -6179,6 +6444,38 @@
         "subagencyCode": "EB00",
         "listedName": "EXPORT-IMPORT BANK OF THE UNITED STATES",
         "employees": 377
+      }
+    },
+    "exec-ind-misc-millennium-challenge-corporation": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "agency",
+      "listedName": "MILLENNIUM CHALLENGE CORPORATION",
+      "agencyCode": "MI",
+      "subagencyCode": null,
+      "employees": 346,
+      "subagencyRows": 1,
+      "components": [
+        {
+          "subagencyCode": "MI00",
+          "listedName": "MILLENNIUM CHALLENGE CORPORATION",
+          "employees": 346
+        }
+      ],
+      "previous": {
+        "period": "2024-09",
+        "employees": 345
+      },
+      "selfNamedRow": {
+        "subagencyCode": "MI00",
+        "listedName": "MILLENNIUM CHALLENGE CORPORATION",
+        "employees": 346
       }
     },
     "exec-ind-misc-farm-credit-administration": {
@@ -7599,6 +7896,29 @@
         "employees": 5298
       }
     },
+    "exec-dept-usda-agricultural-marketing-service": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "AGRICULTURAL MARKETING SERVICE",
+      "agencyCode": "AG",
+      "agencyListedName": "DEPARTMENT OF AGRICULTURE",
+      "agencyMatched": "exec-dept-usda",
+      "subagencyCode": "AG02",
+      "employees": 4370,
+      "agencyEmployees": 90840,
+      "agencySubagencyRows": 28,
+      "previous": {
+        "period": "2024-09",
+        "employees": 4517
+      }
+    },
     "exec-dept-doc-nist": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -7850,6 +8170,29 @@
       "previous": {
         "period": "2024-09",
         "employees": 2404
+      }
+    },
+    "exec-dept-hhs-administration-for-children-and-families": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "ADMINISTRATION FOR CHILDREN AND FAMILIES",
+      "agencyCode": "HE",
+      "agencyListedName": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "agencyMatched": "exec-dept-hhs",
+      "subagencyCode": "HE90",
+      "employees": 2296,
+      "agencyEmployees": 92269,
+      "agencySubagencyRows": 16,
+      "previous": {
+        "period": "2024-09",
+        "employees": 2187
       }
     },
     "exec-dept-dol-bls": {
@@ -8358,6 +8701,29 @@
         "employees": 718
       }
     },
+    "exec-dept-usda-foreign-agricultural-service": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "FOREIGN AGRICULTURAL SERVICE",
+      "agencyCode": "AG",
+      "agencyListedName": "DEPARTMENT OF AGRICULTURE",
+      "agencyMatched": "exec-dept-usda",
+      "subagencyCode": "AG10",
+      "employees": 693,
+      "agencyEmployees": 90840,
+      "agencySubagencyRows": 28,
+      "previous": {
+        "period": "2024-09",
+        "employees": 739
+      }
+    },
     "exec-dept-doi-boem": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8540,6 +8906,52 @@
       "previous": {
         "period": "2024-09",
         "employees": 298
+      }
+    },
+    "exec-dept-hhs-administration-for-community-living": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "ADMINISTRATION FOR COMMUNITY LIVING",
+      "agencyCode": "HE",
+      "agencyListedName": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "agencyMatched": "exec-dept-hhs",
+      "subagencyCode": "HE12",
+      "employees": 260,
+      "agencyEmployees": 92269,
+      "agencySubagencyRows": 16,
+      "previous": {
+        "period": "2024-09",
+        "employees": 243
+      }
+    },
+    "exec-dept-doc-economic-development-administration": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "ECONOMIC DEVELOPMENT ADMINISTRATION",
+      "agencyCode": "CM",
+      "agencyListedName": "DEPARTMENT OF COMMERCE",
+      "agencyMatched": "exec-dept-doc",
+      "subagencyCode": "CM52",
+      "employees": 225,
+      "agencyEmployees": 47410,
+      "agencySubagencyRows": 13,
+      "previous": {
+        "period": "2024-09",
+        "employees": 244
       }
     },
     "exec-dept-ed-ies": {

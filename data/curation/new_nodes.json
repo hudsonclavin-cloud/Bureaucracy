@@ -1,0 +1,199 @@
+{
+  "_comment": [
+    "Organisations the graph had no node for, each licensed by an official source and",
+    "added by scripts/add_curated_nodes.py — the only writer of these nodes. The curated",
+    "file is never hand-edited. Every row is re-checked against its source on every run:",
+    "a treasury_statement_line row must match exactly one non-header, non-receipts row of",
+    "the CURRENT statement, and an official_page_label row must be labelled on the page",
+    "now. The table proposes; the source decides. CURATION.md §1 carries the reasoning",
+    "for each placement, and the export gate's same-section rule is the backstop that",
+    "refuses a cost line filed under a section the node's ancestors do not match."
+  ],
+  "nodes": [
+    {
+      "id": "exec-independent-general-services-administration",
+      "parentId": "exec-independent",
+      "name": "General Services Administration",
+      "type": "Independent Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Table 5 gives it a top-level section of its own; the graph has no node for it at all.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-independent-agency-for-international-development",
+      "parentId": "exec-independent",
+      "name": "Agency for International Development",
+      "type": "Independent Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Filed by the statement under International Assistance Programs, a Treasury grouping this graph has no node for. CURATION.md §1 note (c) records that the agency was reported reorganised into the Department of State in 2025; the statement still prints the line, which is what this repository can attest to, so the node's placement follows the statement and asserts nothing about its current organisational status.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-railroad-retirement-board",
+      "parentId": "exec-ind-misc",
+      "name": "Railroad Retirement Board",
+      "type": "Independent Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-independent-corps-of-engineers",
+      "parentId": "exec-independent",
+      "name": "Corps of Engineers",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. Table 5 gives the civil-works programme its own top-level section, outside the Department of Defense total. CURATION.md §1 note (a) sets out the choice: placing it under the Army would put a line outside DoD's measured total inside it and the same-section rule would leave the money unmatched, so this follows the statement's structure. The node is the Corps' civil works as the Treasury reports it, not the Corps' place in the Army's org chart.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-usda-agricultural-marketing-service",
+      "parentId": "exec-dept-usda",
+      "name": "Agricultural Marketing Service",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-usda-foreign-agricultural-service",
+      "parentId": "exec-dept-usda",
+      "name": "Foreign Agricultural Service",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-doc-economic-development-administration",
+      "parentId": "exec-dept-doc",
+      "name": "Economic Development Administration",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-regulatory-federal-housing-finance-agency",
+      "parentId": "exec-regulatory",
+      "name": "Federal Housing Finance Agency",
+      "type": "Regulatory Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-institute-of-museum-and-library-services",
+      "parentId": "exec-ind-misc",
+      "name": "Institute of Museum and Library Services",
+      "type": "Independent Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hhs-administration-for-children-and-families",
+      "parentId": "exec-dept-hhs",
+      "name": "Administration for Children and Families",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. At $65.6B the largest single unit the graph was missing.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-hhs-administration-for-community-living",
+      "parentId": "exec-dept-hhs",
+      "name": "Administration for Community Living",
+      "type": "Component Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-legal-services-corporation",
+      "parentId": "exec-ind-misc",
+      "name": "Legal Services Corporation",
+      "type": "Government Corporation",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-millennium-challenge-corporation",
+      "parentId": "exec-ind-misc",
+      "name": "Millennium Challenge Corporation",
+      "type": "Government Corporation",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-regulatory-bureau-of-consumer-financial-protection",
+      "parentId": "exec-regulatory",
+      "name": "Bureau of Consumer Financial Protection",
+      "type": "Regulatory Agency",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-ind-misc-corporation-for-public-broadcasting",
+      "parentId": "exec-ind-misc",
+      "name": "Corporation for Public Broadcasting",
+      "type": "Government Corporation",
+      "licence": "treasury_statement_line",
+      "basis": "The Monthly Treasury Statement's Table 5 prints exactly one line naming this unit, and a unit the United States reports outlays for exists. It is added because no node carried the name, so no alias could reach the money — CLAUDE.md's 'Known base-graph gaps'. A private nonprofit chartered by Congress; its site is cpb.org, not a .gov host, and this project accepts only .gov/.mil pages as official — so it can carry the Treasury line and will never carry page evidence. CURATION.md §1 note (b).",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visn-1",
+      "parentId": "exec-dept-va-vha-visns",
+      "name": "VISN 1",
+      "type": "Regional Office",
+      "licence": "official_page_label",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visn-2",
+      "parentId": "exec-dept-va-vha-visns",
+      "name": "VISN 2",
+      "type": "Regional Office",
+      "licence": "official_page_label",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visn-3",
+      "parentId": "exec-dept-va-vha-visns",
+      "name": "VISN 3",
+      "type": "Regional Office",
+      "licence": "official_page_label",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visn-4",
+      "parentId": "exec-dept-va-vha-visns",
+      "name": "VISN 4",
+      "type": "Regional Office",
+      "licence": "official_page_label",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
+      "addedOn": "2026-09-19"
+    },
+    {
+      "id": "exec-dept-va-vha-visn-5",
+      "parentId": "exec-dept-va-vha-visns",
+      "name": "VISN 5",
+      "type": "Regional Office",
+      "licence": "official_page_label",
+      "url": "https://department.va.gov/integrated-service-networks/",
+      "basis": "The Department of Veterans Affairs consolidated its Veterans Integrated Service Networks under the Restructure for Impact and Sustainability Effort (RISE). Two VA hosts on different systems agree: department.va.gov/integrated-service-networks/ states 'The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs' and labels VISN 1 through VISN 5 in its page content, and digital.va.gov/rise/ (last updated 2026-09-16) prints '5 VISN MAP (CAPTURE AREA BY STATE)' beside '18 HEALTH SERVICE AREA (HSA) MAP', with digital.va.gov/rise/leadership/ carrying exactly five networks and a named Network Director for each. The old numbering is retired rather than merely unlinked: all eighteen former slugs (visn-01 ... visn-23) return 301 Moved Permanently to the index while an invented slug returns 404, so those pages were withdrawn deliberately. VA names the new networks by number only; no regional name for any of them appears on an official page, and none is invented here. CURATION.md §10.",
+      "addedOn": "2026-09-19"
+    }
+  ]
+}

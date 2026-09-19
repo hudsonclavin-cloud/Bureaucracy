@@ -1,5 +1,5 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260919a";
+import { createLodManager } from "./lodManager.js?v=20260919b";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
@@ -268,6 +268,7 @@ export function createGovernmentGraph({
     flyPitchTarget: 0,
     lastUserDrillAt: 0,
     showUnverifiedNodes: true,
+    showSupersededNodes: false,
     showCandidateNodes: false,
     candidateNodes: [],
     keyState: {
@@ -294,6 +295,7 @@ export function createGovernmentGraph({
       cameraDistance: state.lod.cameraDistance,
       densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
       showUnverifiedNodes: state.showUnverifiedNodes,
+      showSupersededNodes: state.showSupersededNodes,
       showCandidateNodes: state.showCandidateNodes,
     });
   }
@@ -428,6 +430,13 @@ export function createGovernmentGraph({
   function shouldDisplayNodeByVerification(data) {
     if (data?.isCandidate) {
       return state.showCandidateNodes;
+    }
+    // A unit the government has replaced. The data is never deleted — the node
+    // keeps its id, its description and every source anybody earned for it —
+    // but the default view is the government as it stands, so it is drawn only
+    // when the reader asks for replaced units.
+    if (String(data?.lifecycle || "") === "superseded" && !state.showSupersededNodes) {
+      return false;
     }
     if (state.showUnverifiedNodes) {
       return true;
@@ -3101,6 +3110,12 @@ export function createGovernmentGraph({
       refreshVisibility(true);
       return state.showUnverifiedNodes;
     },
+    setShowSupersededNodes(enabled) {
+      state.showSupersededNodes = Boolean(enabled);
+      state.renderDirty = true;
+      refreshVisibility(true);
+      return state.showSupersededNodes;
+    },
     setShowCandidateNodes(enabled) {
       state.showCandidateNodes = Boolean(enabled);
       syncCandidateVisibility();
@@ -3184,6 +3199,7 @@ export function createGovernmentGraph({
         cameraDistance: state.lod.cameraDistance,
         densityHiddenNodeCount: state.lod.densityHiddenNodeCount || 0,
         showUnverifiedNodes: state.showUnverifiedNodes,
+      showSupersededNodes: state.showSupersededNodes,
         showCandidateNodes: state.showCandidateNodes,
       };
     },

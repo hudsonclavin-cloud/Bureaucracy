@@ -463,7 +463,7 @@ class RealFixtureTests(unittest.TestCase):
         # pages carry. Four positions gained a PLUM record and one lost it --
         # the FNS Administrator, because the archive still files the bureau as
         # the Food and Nutrition Service where USDA now says Administration.
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (62, 107, 0))
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (68, 101, 0))
         # The two ambiguous organisations are both the USPTO's: the archive
         # files rows under "PATENT AND TRADEMARK OFFICE" and "UNITED STATES
         # PATENT AND TRADEMARK OFFICE", and after the rename BOTH reduce to
@@ -472,7 +472,7 @@ class RealFixtureTests(unittest.TestCase):
         # -- and it fails safe: a refusal, never a row attributed to the wrong
         # unit. This is the cost the rename table's collision rule names.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (160, 30, 895, 2, 420))
+                         (168, 33, 949, 2, 358))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).

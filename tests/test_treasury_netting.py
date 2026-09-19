@@ -82,6 +82,16 @@ def row_amount(name):
     return float(matches[0]["current_fytd_net_outly_amt"])
 
 
+def _first_unapportioned(nodes):
+    """A published node that declares `treasury_unapportioned`, for the gate
+    case below. Raises rather than silently skipping: if the fixture stops
+    producing one, the case is passing vacuously and we want to know."""
+    for node in nodes.values():
+        if isinstance(node.get("treasury_unapportioned"), (int, float)):
+            return node
+    raise AssertionError("no node in the built graph declares treasury_unapportioned")
+
+
 class NettingTests(unittest.TestCase):
     def setUp(self) -> None:
         self.tmp = TEST_TMP_ROOT / f"netting-{uuid.uuid4().hex}"
@@ -289,6 +299,12 @@ class NettingTests(unittest.TestCase):
                 + 1e6),
             "children past a negative pool that is not declared": lambda g, n: n["exec-eop"].pop("treasury_pool_negative"),
             "a receipts line hidden as unavailable": lambda g, n: n["exec-dept-treasury--treasury-receipts"].update({"cost_status": "unavailable", "resolved_total_amount": None}),
+            # A unit that declares `treasury_unapportioned` is saying how much
+            # of its total reaches no node, so its parts DO account for the
+            # whole and the gate tests the identity rather than a bound. Break
+            # the declared figure and the sum stops adding up.
+            "a declared unapportioned figure that no longer completes the sum":
+                lambda g, n: _first_unapportioned(n).__setitem__("treasury_unapportioned", -1.0),
         }
         for name, mutate in cases.items():
             with self.subTest(case=name):
