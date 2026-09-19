@@ -340,8 +340,29 @@ Five statuses in `evidence.json`, and only the first two are applied:
   disallow, a 200 with under 400 characters of readable text (a JS shell or
   a bot challenge). Applies nothing; it is a fact about the network.
 - `not_checkable` — the curated name could never be evidence: a count label
-  ("Individual Senator Offices (100)", 44 of them) or a name too generic to
-  distinguish anything ("Energy", "Defense", 16). Never fetched.
+  ("Individual Senator Offices (100)") or a name too generic to distinguish
+  anything ("Energy", "Defense", 16). Never fetched.
+
+  **The count-label floor refused any name containing a digit until
+  2026-09-18**, which is a claim about the NAME — that no page could ever
+  carry it — and it was false of **268 nodes**. The eleven `U.S. Court of
+  Appeals for the Nth Circuit` have real pages on `caN.uscourts.gov`, four of
+  them already queued, and the verifier had never fetched one; nor nineteen
+  `VISN N` networks whose number `department.va.gov` itself prints, nor `K-9
+  Unit`, the Joint Staff's `J3`, `Army G-2`, `OPNAV N2/N6`, `AF/A5`. The first
+  live probe pass surfaced it — an agent chasing VISN 1 found the rule, not a
+  missing URL. `states_a_count_in_prose` replaces it: a cardinal number
+  followed, inside the same dash-delimited segment of the name, by a plural
+  word. "10 Regions" counts regions; "VISN 1 — New England" counts nothing.
+  Segment-wise because this graph's convention is `<name> — <qualifier>`, so a
+  count and the thing it counts always sit on the same side of the dash.
+  Checked against every digit-bearing name in the curated file rather than
+  reasoned about: **56 still refused, every one a real count** ("Port
+  Director — 328 Ports of Entry", "All 94 District Courts"); **212 freed, none
+  of them**. A committed test had asserted "VISN 1 — New England" IS a count
+  label; it is not, and the correction is the same distinction the nomination
+  vocabulary draws — "this name could never be evidence" and "the page does
+  not carry the whole curated name" are different claims with different fixes.
 
 **Committees, with the graph's type words set aside (since 2026-09-13).**
 The graph names every committee with a type word in front — "House
@@ -1522,6 +1543,49 @@ had refused senate.gov as the page that labels the Secretary of the Senate.
 before the key dropped the parenthetical, and a page naming the unit exactly
 was recorded as not naming it.
 
+**Which key a nominated URL is filed under is what it CLAIMS (since
+2026-09-18).** `official_sites.json` is keyed by node, `candidate_urls`
+returns `distance == 0` for any URL under a node's own key, and `verify_node`
+turns `distance == 0` into `name_labelled_on_own_official_page`. `promote`
+wrote every nomination to `sites[node_id]` whatever its role, and the role
+went into `official_sites_provenance.json` and was never read again — so the
+runbook's documented promise, that a `parent_listing` publishes
+`name_labelled_on_parent_official_page`, was implemented nowhere. **20
+confirmations were live under it**, among them nine Department of Energy
+national laboratories each citing `energy.gov/national-laboratories`, the
+department's index of them, as *its own* official page; also JPL on nasa.gov,
+three presidential libraries on archives.gov, the Secretary of the Senate,
+Federal Student Aid and the CAAF.
+
+`filing_id_for_role` is the rule now: `own_site` files under the node, so the
+claim is true; `parent_listing` files under the node's **parent**, so the
+verifier finds it one level up, `is_own_page` is false, and it publishes what
+the runbook always said; `official_list` files **nowhere**, because a
+government directory is neither the unit's page nor its parent's and both
+available methods would misdescribe it — structured directories have their own
+modules here (the Federal Register's, the Senate's, the House Clerk's), which
+is where such a source belongs. `promote --refile-misplaced` repairs a queue
+written before the rule (63 URLs moved onto their parents, 19 dropped), moving
+each provenance record with its URL so the committed queue/provenance
+invariant still holds, and touching only URLs the ledger says were nominated
+for that node — a seeded URL with no nomination is left alone, because nothing
+knows what it was meant to be.
+
+The retraction had to be able to reach the site, too. A node whose candidate
+page is removed was simply *skipped*, so its old confirmation stayed and the
+exporter kept publishing it — the same "a retraction that could never reach
+the site" this file already records once. `verify_base_graph.py` now withdraws
+such a record on a full pass (never on `--ids` or `--limit`, which say nothing
+about the nodes they did not select), keeping any placement block, which came
+from the parent's page and does not depend on this node having a candidate of
+its own.
+
+It was found by a second-opinion agent that had nothing to nominate — all 21
+nodes in its shard were Smithsonian museums, correctly declined
+`not_on_a_gov_host` — and reported the mechanism instead, naming both files
+and both line numbers. Checked against the live evidence file before being
+believed.
+
 **Many agents at once.** `--shard k/N` partitions the work deterministically
 (disjoint and complete, pinned by a test) and each run writes its own ledger
 file under `data/audit/nominations/`, so N agents never touch the same file
@@ -1631,7 +1695,16 @@ these" list matters as much as the rest: without it the sweep returns
   lines. A statement that has stopped reporting a node still clears it.
 - An alias is added to `TREASURY_ROW_ALIASES` only when the line belongs to
   the section of the node's ancestors, or the node is placed where the
-  statement files it. Since the receipts are carried explicitly a line
+  statement files it. Two were added on 2026-09-18 where the Treasury's
+  account name had simply not caught up with a rename: `National Protection
+  and Programs Directorate` → CISA, licensed by 6 U.S.C. §652(a) (committed at
+  `tests/fixtures/uscode/cisa_6_usc_652.html`), which deems "any reference to
+  the National Protection and Programs Directorate … in any … document, record
+  or other paper of the United States" to be a reference to CISA — Table 5 is
+  such a record; and `United States Agency for Global Media` → the node the
+  graph itself names "Broadcasting Board of Governors / USAGM", which needs no
+  outside source because the curated name already states the two are one unit.
+  Both are filed by the statement under the section the graph gives the node. Since the receipts are carried explicitly a line
   always fits inside its own section's total — Federal Student Aid's $76B
   inside Education's $53B net beside the section's receipts — so "fits" is
   no longer the test; "the same section" is. A line from another section
