@@ -868,6 +868,23 @@ try {
         /half of what identifies it/.test(scopedPanel), scopedPanel.slice(0, 700));
     }
 
+    // Where the archive and the Code reach the same level, the panel must say
+    // it is one level corroborated twice rather than print two silent
+    // paragraphs a reader would take for two figures.
+    const bothSources = allNodes.find((n) => n.positionSchedulePay && n.positionPayRate
+      && n.positionSchedulePay.payLevel === n.positionPayRate.payLevel
+      && nameCount.get(n.name) === 1);
+    if (bothSources) {
+      await page.fill("#search-input", bothSources.name.slice(0, 30));
+      await page.waitForTimeout(600);
+      await page.locator("#search-results .sr-item").first().click();
+      await page.waitForTimeout(800);
+      const bothPanel = await text("#info-panel");
+      check("two records agreeing on a level are not printed as two figures",
+        /one level corroborated by two records, not two separate figures/.test(bothPanel),
+        bothPanel.slice(0, 500));
+    }
+
     check("a statutory rate did not make the post verified",
       !(withSchedulePay.sourceUrls || []).some((u) => String(u).includes("uscode.house.gov")),
       JSON.stringify(withSchedulePay.sourceUrls || []));

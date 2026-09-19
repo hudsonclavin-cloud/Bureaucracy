@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260918e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260918e";
+import { createGovernmentGraph } from "./graph.js?v=20260919a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260919a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -984,6 +984,13 @@ function renderSchedulePay(data) {
     add(` The Code writes that as one title; this graph splits it, so the figure was matched to "${pay.scopedOffice}" as the post of that name directly under ${pay.scopedOrganisation} — the organisation is half of what identifies it, because that title is not unique in this graph.`);
   }
   add(" Two documents: the statute sets the level and the table sets the rate. Current law names the office, so this does not depend on who holds it — but it is a statutory rate of basic pay, not what the holder receives: it excludes benefits, any freeze the table notes below, and it is not a share of federal outlays, which is what every other figure in this graph means.");
+  // Two nodes carry BOTH this block and the archive-derived one above, and
+  // both agree. Printed as two silent paragraphs they read as two separate
+  // figures; saying it is the same level reached twice is what they are.
+  const archive = data.positionPayRate;
+  if (archive && typeof archive === "object" && archive.payLevel === pay.payLevel) {
+    add(` The block above reaches the same level independently: OPM's archive reported this post at level ${pay.payLevel} during the previous administration, and the Code places it there now. That is one level corroborated by two records, not two separate figures.`);
+  }
   const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
   for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
