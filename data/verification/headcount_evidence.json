@@ -29,7 +29,7 @@
     ],
     "agencies": 115,
     "agencies_matched": 59,
-    "subagencies_matched": 86,
+    "subagencies_matched": 104,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
     "ambiguous_agencies": [],
@@ -1363,14 +1363,6 @@
         "employees": 11459
       },
       {
-        "agencyCode": "DD",
-        "agencyListedName": "DEPARTMENT OF DEFENSE",
-        "agencyMatched": "exec-dept-defense",
-        "subagencyCode": "DD34",
-        "listedName": "DEFENSE COMMISSARY AGENCY",
-        "employees": 11238
-      },
-      {
         "agencyCode": "NV",
         "agencyListedName": "DEPARTMENT OF THE NAVY",
         "agencyMatched": null,
@@ -1721,14 +1713,6 @@
         "subagencyCode": "ARTA",
         "listedName": "U.S. ARMY RECRUITING COMMAND AND U.S. ARMY CADET COMMAND",
         "employees": 2666
-      },
-      {
-        "agencyCode": "DJ",
-        "agencyListedName": "DEPARTMENT OF JUSTICE",
-        "agencyMatched": "exec-dept-doj",
-        "subagencyCode": "DJ12",
-        "listedName": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
-        "employees": 2621
       },
       {
         "agencyCode": "TR",
@@ -2091,14 +2075,6 @@
         "employees": 1144
       },
       {
-        "agencyCode": "DD",
-        "agencyListedName": "DEPARTMENT OF DEFENSE",
-        "agencyMatched": "exec-dept-defense",
-        "subagencyCode": "DD06",
-        "listedName": "DEFENSE SECURITY COOPERATION AGENCY",
-        "employees": 1128
-      },
-      {
         "agencyCode": "AF",
         "agencyListedName": "DEPARTMENT OF THE AIR FORCE",
         "agencyMatched": null,
@@ -2177,6 +2153,30 @@
         "subagencyCode": "VAAE",
         "listedName": "GENERAL COUNSEL",
         "employees": 894
+      },
+      {
+        "agencyCode": "DD",
+        "agencyListedName": "DEPARTMENT OF DEFENSE",
+        "agencyMatched": "exec-dept-defense",
+        "subagencyCode": "DD02",
+        "listedName": "ORGANIZATION OF THE JOINT CHIEFS OF STAFF",
+        "employees": 831
+      },
+      {
+        "agencyCode": "AR",
+        "agencyListedName": "DEPARTMENT OF THE ARMY",
+        "agencyMatched": null,
+        "subagencyCode": "ARGB",
+        "listedName": "OFFICE OF THE CHIEF OF THE NATIONAL GUARD BUREAU",
+        "employees": 800
+      },
+      {
+        "agencyCode": "NV",
+        "agencyListedName": "DEPARTMENT OF THE NAVY",
+        "agencyMatched": null,
+        "subagencyCode": "NV15",
+        "listedName": "NAVAL INTELLIGENCE COMMAND",
+        "employees": 797
       }
     ],
     "comparison": {
@@ -2379,12 +2379,18 @@
           "direction": "opm_higher"
         }
       ],
-      "no_curated_figure": 18,
+      "no_curated_figure": 36,
       "no_curated_figure_nodes": [
         {
           "node": "exec-independent-general-services-administration",
           "name": "General Services Administration",
           "opm": 13182,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-defense-agency-defense-commissary-agency",
+          "name": "Defense Commissary Agency",
+          "opm": 11238,
           "curatedText": null
         },
         {
@@ -2397,6 +2403,12 @@
           "node": "exec-ind-nasa-goddard-space-flight-center-gsfc",
           "name": "Goddard Space Flight Center (GSFC)",
           "opm": 3042,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doj-executive-office-immigration-review",
+          "name": "Executive Office for Immigration Review",
+          "opm": 2621,
           "curatedText": null
         },
         {
@@ -2430,9 +2442,27 @@
           "curatedText": null
         },
         {
+          "node": "exec-dept-defense-agency-defense-security-cooperation-agency",
+          "name": "Defense Security Cooperation Agency",
+          "opm": 1128,
+          "curatedText": null
+        },
+        {
           "node": "exec-regulatory-federal-housing-finance-agency",
           "name": "Federal Housing Finance Agency",
           "opm": 869,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doj-office-justice-programs",
+          "name": "Office of Justice Programs",
+          "opm": 809,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-defense-agency-uniformed-services-university-health-sciences",
+          "name": "Uniformed Services University of the Health Sciences",
+          "opm": 773,
           "curatedText": null
         },
         {
@@ -2442,9 +2472,33 @@
           "curatedText": null
         },
         {
+          "node": "exec-ind-smithsonian-national-gallery-art",
+          "name": "National Gallery of Art",
+          "opm": 709,
+          "curatedText": null
+        },
+        {
           "node": "exec-dept-usda-foreign-agricultural-service",
           "name": "Foreign Agricultural Service",
           "opm": 693,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doc-bureau-industry-security",
+          "name": "Bureau of Industry and Security",
+          "opm": 509,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-defense-agency-national-defense-university",
+          "name": "National Defense University",
+          "opm": 431,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+          "name": "Office of Surface Mining Reclamation and Enforcement",
+          "opm": 416,
           "curatedText": null
         },
         {
@@ -2457,6 +2511,12 @@
           "node": "exec-dept-ed-oese",
           "name": "Office of Elementary & Secondary Education (OESE)",
           "opm": 293,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-defense-agency-defense-legal-services-agency",
+          "name": "Defense Legal Services Agency",
+          "opm": 272,
           "curatedText": null
         },
         {
@@ -2484,9 +2544,57 @@
           "curatedText": null
         },
         {
+          "node": "exec-dept-hhs-agency-toxic-substances-disease-registry",
+          "name": "Agency for Toxic Substances and Disease Registry",
+          "opm": 165,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-dol-bureau-international-labor-affairs",
+          "name": "Bureau of International Labor Affairs",
+          "opm": 144,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio",
+          "name": "Great Lakes Saint Lawrence Seaway Development Corporation",
+          "opm": 125,
+          "curatedText": null
+        },
+        {
           "node": "exec-eop-nsc",
           "name": "National Security Council",
           "opm": 76,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-smithsonian-john-f-kennedy-center-performing-arts",
+          "name": "John F. Kennedy Center for the Performing Arts",
+          "opm": 53,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doc-minority-business-development-agency",
+          "name": "Minority Business Development Agency",
+          "opm": 50,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-dol-women-s-bureau",
+          "name": "Women's Bureau",
+          "opm": 48,
+          "curatedText": null
+        },
+        {
+          "node": "exec-ind-smithsonian-woodrow-wilson-international-center-scholars",
+          "name": "Woodrow Wilson International Center for Scholars",
+          "opm": 44,
+          "curatedText": null
+        },
+        {
+          "node": "exec-dept-doc-national-technical-information-service",
+          "name": "National Technical Information Service",
+          "opm": 34,
           "curatedText": null
         }
       ],
@@ -7482,6 +7590,29 @@
         "employees": 11623
       }
     },
+    "exec-dept-defense-agency-defense-commissary-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "DEFENSE COMMISSARY AGENCY",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD34",
+      "employees": 11238,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 11223
+      }
+    },
     "exec-dept-defense-agency-dfas": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8149,6 +8280,29 @@
         "employees": 2689
       }
     },
+    "exec-dept-doj-executive-office-immigration-review": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "EXECUTIVE OFFICE FOR IMMIGRATION REVIEW",
+      "agencyCode": "DJ",
+      "agencyListedName": "DEPARTMENT OF JUSTICE",
+      "agencyMatched": "exec-dept-doj",
+      "subagencyCode": "DJ12",
+      "employees": 2621,
+      "agencyEmployees": 116047,
+      "agencySubagencyRows": 12,
+      "previous": {
+        "period": "2024-09",
+        "employees": 2716
+      }
+    },
     "exec-dept-va-nca": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8563,6 +8717,29 @@
         "employees": 1141
       }
     },
+    "exec-dept-defense-agency-defense-security-cooperation-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "DEFENSE SECURITY COOPERATION AGENCY",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD06",
+      "employees": 1128,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 1035
+      }
+    },
     "exec-dept-defense-agency-pfpa": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8655,6 +8832,29 @@
         "employees": 817
       }
     },
+    "exec-dept-doj-office-justice-programs": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "OFFICE OF JUSTICE PROGRAMS",
+      "agencyCode": "DJ",
+      "agencyListedName": "DEPARTMENT OF JUSTICE",
+      "agencyMatched": "exec-dept-doj",
+      "subagencyCode": "DJ07",
+      "employees": 809,
+      "agencyEmployees": 116047,
+      "agencySubagencyRows": 12,
+      "previous": {
+        "period": "2024-09",
+        "employees": 799
+      }
+    },
     "exec-dept-dol-ebsa": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8678,6 +8878,29 @@
         "employees": 830
       }
     },
+    "exec-dept-defense-agency-uniformed-services-university-health-sciences": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "UNIFORMED SERVICES UNIVERSITY OF THE HEALTH SCIENCES",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD15",
+      "employees": 773,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 818
+      }
+    },
     "exec-dept-dot-fta": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8699,6 +8922,29 @@
       "previous": {
         "period": "2024-09",
         "employees": 718
+      }
+    },
+    "exec-ind-smithsonian-national-gallery-art": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "NATIONAL GALLERY OF ART",
+      "agencyCode": "SM",
+      "agencyListedName": "SMITHSONIAN INSTITUTION",
+      "agencyMatched": "exec-ind-smithsonian",
+      "subagencyCode": "SM01",
+      "employees": 709,
+      "agencyEmployees": 4453,
+      "agencySubagencyRows": 4,
+      "previous": {
+        "period": "2024-09",
+        "employees": 701
       }
     },
     "exec-dept-usda-foreign-agricultural-service": {
@@ -8793,6 +9039,29 @@
         "employees": 518
       }
     },
+    "exec-dept-doc-bureau-industry-security": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "BUREAU OF INDUSTRY AND SECURITY",
+      "agencyCode": "CM",
+      "agencyListedName": "DEPARTMENT OF COMMERCE",
+      "agencyMatched": "exec-dept-doc",
+      "subagencyCode": "CM67",
+      "employees": 509,
+      "agencyEmployees": 47410,
+      "agencySubagencyRows": 13,
+      "previous": {
+        "period": "2024-09",
+        "employees": 527
+      }
+    },
     "exec-dept-dol-ofccp": {
       "source": "opm_fedscope_employment",
       "status": "listed",
@@ -8837,6 +9106,52 @@
       "previous": {
         "period": "2024-09",
         "employees": 473
+      }
+    },
+    "exec-dept-defense-agency-national-defense-university": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "NATIONAL DEFENSE UNIVERSITY",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD69",
+      "employees": 431,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 417
+      }
+    },
+    "exec-dept-doi-office-surface-mining-reclamation-enforcement": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "OFFICE OF SURFACE MINING, RECLAMATION AND ENFORCEMENT",
+      "agencyCode": "IN",
+      "agencyListedName": "DEPARTMENT OF INTERIOR",
+      "agencyMatched": "exec-dept-doi",
+      "subagencyCode": "IN22",
+      "employees": 416,
+      "agencyEmployees": 63752,
+      "agencySubagencyRows": 14,
+      "previous": {
+        "period": "2024-09",
+        "employees": 408
       }
     },
     "exec-dept-ed-oese": {
@@ -8906,6 +9221,29 @@
       "previous": {
         "period": "2024-09",
         "employees": 298
+      }
+    },
+    "exec-dept-defense-agency-defense-legal-services-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "DEFENSE LEGAL SERVICES AGENCY",
+      "agencyCode": "DD",
+      "agencyListedName": "DEPARTMENT OF DEFENSE",
+      "agencyMatched": "exec-dept-defense",
+      "subagencyCode": "DD25",
+      "employees": 272,
+      "agencyEmployees": 158689,
+      "agencySubagencyRows": 33,
+      "previous": {
+        "period": "2024-09",
+        "employees": 280
       }
     },
     "exec-dept-hhs-administration-for-community-living": {
@@ -9002,6 +9340,190 @@
       "wholeAgency": true,
       "outsideStatedCoverage": true,
       "treeBranch": "judicial-branch"
+    },
+    "exec-dept-hhs-agency-toxic-substances-disease-registry": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "AGENCY FOR TOXIC SUBSTANCES AND DISEASE REGISTRY",
+      "agencyCode": "HE",
+      "agencyListedName": "DEPARTMENT OF HEALTH AND HUMAN SERVICES",
+      "agencyMatched": "exec-dept-hhs",
+      "subagencyCode": "HE35",
+      "employees": 165,
+      "agencyEmployees": 92269,
+      "agencySubagencyRows": 16,
+      "previous": {
+        "period": "2024-09",
+        "employees": 173
+      }
+    },
+    "exec-dept-dol-bureau-international-labor-affairs": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "BUREAU OF INTERNATIONAL LABOR AFFAIRS",
+      "agencyCode": "DL",
+      "agencyListedName": "DEPARTMENT OF LABOR",
+      "agencyMatched": "exec-dept-dol",
+      "subagencyCode": "DLBL",
+      "employees": 144,
+      "agencyEmployees": 14107,
+      "agencySubagencyRows": 20,
+      "previous": {
+        "period": "2024-09",
+        "employees": 158
+      }
+    },
+    "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "GREAT LAKES SAINT LAWRENCE SEAWAY DEVELOPMENT CORPORATION",
+      "agencyCode": "TD",
+      "agencyListedName": "DEPARTMENT OF TRANSPORTATION",
+      "agencyMatched": "exec-dept-dot",
+      "subagencyCode": "TD06",
+      "employees": 125,
+      "agencyEmployees": 57204,
+      "agencySubagencyRows": 11,
+      "previous": {
+        "period": "2024-09",
+        "employees": 133
+      }
+    },
+    "exec-ind-smithsonian-john-f-kennedy-center-performing-arts": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "JOHN F. KENNEDY CENTER FOR THE PERFORMING ARTS",
+      "agencyCode": "SM",
+      "agencyListedName": "SMITHSONIAN INSTITUTION",
+      "agencyMatched": "exec-ind-smithsonian",
+      "subagencyCode": "SM04",
+      "employees": 53,
+      "agencyEmployees": 4453,
+      "agencySubagencyRows": 4,
+      "previous": {
+        "period": "2024-09",
+        "employees": 57
+      }
+    },
+    "exec-dept-doc-minority-business-development-agency": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "MINORITY BUSINESS DEVELOPMENT AGENCY",
+      "agencyCode": "CM",
+      "agencyListedName": "DEPARTMENT OF COMMERCE",
+      "agencyMatched": "exec-dept-doc",
+      "subagencyCode": "CM59",
+      "employees": 50,
+      "agencyEmployees": 47410,
+      "agencySubagencyRows": 13,
+      "previous": {
+        "period": "2024-09",
+        "employees": 55
+      }
+    },
+    "exec-dept-dol-women-s-bureau": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "WOMEN'S BUREAU",
+      "agencyCode": "DL",
+      "agencyListedName": "DEPARTMENT OF LABOR",
+      "agencyMatched": "exec-dept-dol",
+      "subagencyCode": "DLWB",
+      "employees": 48,
+      "agencyEmployees": 14107,
+      "agencySubagencyRows": 20,
+      "previous": {
+        "period": "2024-09",
+        "employees": 55
+      }
+    },
+    "exec-ind-smithsonian-woodrow-wilson-international-center-scholars": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "WOODROW WILSON INTERNATIONAL CENTER FOR SCHOLARS",
+      "agencyCode": "SM",
+      "agencyListedName": "SMITHSONIAN INSTITUTION",
+      "agencyMatched": "exec-ind-smithsonian",
+      "subagencyCode": "SM02",
+      "employees": 44,
+      "agencyEmployees": 4453,
+      "agencySubagencyRows": 4,
+      "previous": {
+        "period": "2024-09",
+        "employees": 40
+      }
+    },
+    "exec-dept-doc-national-technical-information-service": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "NATIONAL TECHNICAL INFORMATION SERVICE",
+      "agencyCode": "CM",
+      "agencyListedName": "DEPARTMENT OF COMMERCE",
+      "agencyMatched": "exec-dept-doc",
+      "subagencyCode": "CM62",
+      "employees": 34,
+      "agencyEmployees": 47410,
+      "agencySubagencyRows": 13,
+      "previous": {
+        "period": "2024-09",
+        "employees": 36
+      }
     }
   }
 }

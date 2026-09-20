@@ -247,6 +247,9 @@ MINIMAL_GRAPH_FIELDS = (
     "usaspendingOutlays",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
     "auditedNetCost",
+    # OMB's budget authority and outlays for the last completed fiscal year,
+    # likewise beside the cost and never in it
+    "ombBudget",
     # whether the government still has this unit. Absent means it does; the
     # viewer hides a superseded one unless asked, and the panel says what
     # replaced it and quotes the page that says so.
@@ -2462,6 +2465,7 @@ def build_graph(
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
     govman_evidence_path: str | Path | None = "default",
+    omb_budget_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2739,6 +2743,21 @@ def build_graph(
     )
     validation["govman_evidence"] = apply_govman_evidence(
         graph, load_govman_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
+    )
+    # OMB's Public Budget Database, beside the cost and never in it. Applied
+    # after the evidence sweep has withdrawn the field, so a package whose
+    # actual/estimate boundary has moved cannot leave a stale actual behind.
+    from data_pipeline.verification.omb_budget import (  # noqa: E402 — same late-import shape as net_cost
+        apply_omb_budget_evidence,
+        load_omb_budget_evidence,
+    )
+
+    default_omb_path = PROJECT_ROOT / "data" / "verification" / "omb_budget_evidence.json"
+    resolved_omb_path = (
+        default_omb_path if omb_budget_evidence_path == "default" else omb_budget_evidence_path
+    )
+    validation["omb_budget_evidence"] = apply_omb_budget_evidence(
+        graph, load_omb_budget_evidence(resolved_omb_path) if resolved_omb_path else {}, index_tree=index_tree,
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(
         graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,

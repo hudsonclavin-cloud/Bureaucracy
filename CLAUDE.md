@@ -48,6 +48,7 @@ python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
 python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys; writes nothing
 python scripts/derive_net_cost_evidence.py --dry-run       # Treasury's audited Statement of Net Cost; writes nothing
+python scripts/derive_omb_budget_evidence.py --dry-run     # OMB's Public Budget Database, last COMPLETED year only; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -769,6 +770,84 @@ carried rows for several of these units and the PLUM archive already carried
 positions under them, so the records landed the moment the node existed —
 FedScope 136 → 145 and PLUM agencies 62 → 68, with no matcher change at all.
 
+**26 units the Manual carries and this graph did not (since 2026-09-20).**
+The Government Manual work above left a by-product: 95 of its 231 agency
+entries reach no node by name. `CURATION.md` §13 recorded that list;
+`government_manual_entry` is the licence that acts on it, and it is the third
+`add_curated_nodes.py` accepts and **the only one that licenses the PLACEMENT
+as well as the name**. A Treasury line and a page label each say a unit of some
+name exists, and neither says what it sits under, so on those rows the parent
+is the row author's assertion and nothing can check it. The Manual prints a
+hierarchy, so the parent is checked: the entry must be the only one of that
+name, and the Manual's own chain above it must reach the node the row proposes.
+
+It licenses a **region, not a point**. The Manual says "Defense Agencies"; this
+graph calls that grouping "Defense Agencies & Field Activities", so an exact
+chain match would refuse a placement that is plainly right. A proposed parent
+is accepted when it sits at or beneath a node the Manual's chain names — which
+can never contradict the Manual — and the node records which of the two it was
+(`manualPlacementAtAdd`), because "the Manual files it here" and "the Manual
+files it somewhere above here" are different claims. Where it is the looser
+one, the generated description says so in words.
+
+**A guard the adversarial review found, which no licence had.** A unit the
+Treasury reports JOINTLY with a unit that already has a node must not become a
+node of its own. There is no Table 5 row for the Bureau of Indian Education;
+there is one combined row, "Bureau of Indian Affairs and Bureau of Indian
+Education", and the graph applies its measured $2.43bn to the existing Indian
+Affairs node. A separate Education node would not add a measured cost — there
+is no separate figure — it would insert an unlined sibling that takes an
+apportioned share out of a pool the statement reports for the two together, so
+a measured figure would quietly start being divided on no evidence.
+`jointly_measured_names` reads those joint rows off the published graph
+(offline, no network) and the writer refuses such a row naming the node that
+already carries it. It applies to every licence, not only this one.
+
+**Which 26, and how the other 22 were disposed of.** 48 candidates were
+adjudicated twice — once to decide, once by a second agent instructed to
+overturn — and the second pass did real work: it caught that a substring probe
+for "ntis" matches 51 `Scientist` posts, that NOAA, NTIA, DARPA, NSA and FMCSA
+are all already in the graph under an acronym, and the Indian Education case
+above. The dispositions: **26 added**; 6 already present; 5 are the Manual's
+own editorial scaffolding ("Bureaus", "Offices / Boards", "Defense Agencies",
+"Joint Service Schools", "Federally Aided Corporations"), which this file
+already refuses to treat as units the way it refuses Treasury's groupings; 3
+are the civilian-department / uniformed-service distinction this file records
+for the Army ("Department of the Navy" is not "U.S. Navy"); 4 are out of scope;
+and 3 are left unsure rather than guessed. `CURATION.md` §13 carries each.
+
+Of the 26, **19 sit exactly where the Manual's own chain puts them and 7 under
+the looser "within" rule**, each saying so in its description. Three of them
+were already in the discovery crawlers' review queue — Bureau of Industry and
+Security, Office of Surface Mining Reclamation and Enforcement, Office of
+Justice Programs — found independently from Federal Register and directory
+sources and sitting unpromoted below the threshold; the queue repair dropped
+exactly those three when the nodes landed. None of the 26 names collides with
+any existing organisation, so no name-based matcher was made ambiguous by them.
+
+**The gains were not confined to the tree**, the same way they were not when
+the 15 Treasury units landed: OPM already held records for several of these
+units and they applied the moment the nodes existed. FedScope sub-agency
+matches went **86 → 104** and its published records **145 → 163**, with 18
+fewer unmatched sub-agency rows, so 18 more organisations now carry an official
+headcount. No matcher changed. 36 of the matched headcount nodes carry no
+curated `employees` figure of their own against 18 before, which is the honest
+state for a node whose whole basis is the Manual naming it.
+
+The PLUM archive gained nothing published, and the distinction is worth
+keeping: its matching report went from 68 agencies and 168 organisations to 69
+and 180, but its **records stayed at 129**. The archive lists positions, and
+these 26 nodes have no position children, so more of its organisations are now
+reachable and none of its rows reached a new post. A matching count is not a
+published claim.
+
+The estimates move, and that is the honest consequence rather than a defect:
+**118 of 5,427 existing nodes changed by more than 0.1%**, every one a sibling
+of something added — the Department of Justice's eight litigating divisions
+fall 11.1% each because five real DOJ units now share their parent's pool, and
+`Defense Agencies & Field Activities` rises 9.6% because six were added
+beneath it. Nothing measured moved.
+
 **A unit the government has replaced (since 2026-09-19).** Governments
 reorganise, and this file had no way to say so: a replaced unit either sat in the
 tree as though it still existed, which is the site claiming something false, or
@@ -1020,7 +1099,9 @@ arithmetic and not a rule this work changed. The titles gained are precisely
 the stamped administrative posts this file documents as carrying no evidence
 at all: `Inspector General` 28, `General Counsel` 15, `Chief of Staff` 9,
 `Chief Financial Officer` 4. Nodes with an official source went 684 to 740 of
-5,427 (13.6%), and "no source recorded" fell 4,691 to 4,635.
+5,427 (13.6%), and "no source recorded" fell 4,691 to 4,635. (Both totals moved
+again the same day when 26 curated units were added: the graph now carries
+5,453 nodes and 740 of them an official source, still 13.6%.)
 
 **A listing says nothing about who holds the post, and the panel says so with
 the Manual's own words.** 26 of the 64 leadership tables carry a "Sources of
@@ -1866,6 +1947,158 @@ say which year it covers — and, outright, one whose amount equals the node's
 measured cost to the cent, since different basis and different period means
 equality can only be the two being confused.
 
+**OMB's Public Budget Database, and the source where most of the columns are
+the future (since 2026-09-20).** `docs/EXACT_NODE_COSTS.md` §1 asks for a
+reviewed identifier crosswalk as the first step toward exact-node costs. OMB's
+**Public Budget Database** is that crosswalk with the money already attached:
+one row per budget account, carrying the account's agency, bureau, Treasury
+agency code, **CGAC agency code**, subfunction and BEA category, and a figure
+for every fiscal year from 1962 to 2031. `www.govinfo.gov` answers `robots.txt`
+200 and allows the path; the package (`BUDGET-2027-DB`, 3.9 MB, two
+spreadsheets and a user's guide) is committed verbatim at `tests/fixtures/omb/`
+and its digest is recomputed from the bytes before anything is read.
+
+**This is the most dangerous source this project has read, and the danger is
+not subtle: most of its year columns have not happened.** The FY2027 package
+runs to FY2031, and the columns are identical in form — bare four-digit
+headers, no marker of any kind in the spreadsheets. The boundary appears in
+exactly one place, the user's guide:
+
+    "Budget estimates for the current fiscal year (2026), the budget year
+     (2027), and each subsequent year are prepared by agencies"
+
+so FY2025 is the last actual. The guide says the same thing a second time, in
+a different part of the document and a different form — the per-file field
+tables read "30-78 | 1977-2025 values | Actual amounts, in thousands of
+dollars" against "79-84 | 2026-2031 values | Estimated amounts, in thousands of
+dollars, for FY 2026 through FY 2031". **Both are parsed out of the committed
+guide on every run and must agree**, or `load_database` refuses to return
+anything at all; the gate then reads the boundary again, independently. Two
+reads rather than one because every other check in this module would pass
+happily on a projection. The
+boundary is not a constant anybody can edit; it is what the publisher printed,
+re-read each time. A year-column slip is the one error here that no
+plausibility check could catch, since FY2026's estimate is a perfectly
+reasonable-looking number, so it is guarded structurally instead.
+
+Reading the guide needed its own extractor. The PDF splits words across literal
+strings and spaces them with TJ kerning offsets, so `whitehouse_pay`'s
+`extract_text_runs` — which this repo already uses for the White House
+roster — returns **zero characters** for it. `guide_text` concatenates the
+strings with no separator and emits a space only where the kerning is wide
+enough to be a word gap, which is what turns "t hous a nds" back into
+"thousands". One residual split survives and is handled by quoting around it:
+the guide's "Treasury Fiscal Service" recovers as "Fi scal", so the quoted
+clause stops before those words rather than publishing a typo the document does
+not contain.
+
+**The publisher states no figure for any unit.** There is no total row anywhere
+in this database — every one of the 5,760 outlay rows is a budget account — so a
+unit's figure is not something OMB prints, it is **this repository's sum over
+the account rows OMB files under that unit**. The Department of the Treasury's
+$1.46 trillion is 368 rows added together. So every record carries
+`outlayAccountRows` and `budgetAuthorityAccountRows`, the gate re-counts them
+from the package, and the panel says "these are not figures OMB prints … each is
+the sum of the 368 account rows OMB files under it" rather than "OMB reports",
+which would attribute an arithmetic result to a publisher who never performed
+it. The first version of the panel copy said "OMB's Public Budget Database
+reports these", and that was wrong.
+
+**The unit is thousands — not millions — and precise only to the million.** Both
+from the guide: "Data for budget authority, outlays, offsetting receipts, and
+governmental receipts are shown in thousands of dollars", and "the file data
+from FY 1995 through FY 2031 represent the Budget amounts multiplied by one
+thousand to convert the amounts to thousands ; detail below millions is not
+available." So a figure is exact to the million whatever its trailing digits
+suggest, and the gate refuses a block that does not carry that second sentence.
+Summing the FY2025 outlay column over every row gives $7.011 trillion, which is
+the right order for the year and corroborates the stated unit without replacing
+the publisher's statement of it.
+
+**A negative figure is normal here** and is published as it stands, for the
+reason the Treasury's own negative lines are. OMB: "Budget authority and outlay
+amounts are reported net of any offsetting collections, such as fees, fines,
+and penalties", and "Outlays are usually positive values. Offsetting receipts
+are usually negative values." Ten of the 133 units net below zero — the FDIC at
+−$31.2bn, the SEC, the NCUA, the Export-Import Bank — because they collect more
+than they spend. Both sentences ride on every record so the panel explains the
+minus sign rather than leaving a reader to assume a bug.
+
+**It is not this graph's cost.** Different period (a completed year against the
+anchor's year to date), and OMB's own guide calls its totals only "generally
+consistent with data published in the Monthly Treasury Statement", then says
+why they differ: "a small number of reporting and classification corrections
+made subsequent to the Treasury publications and some conceptual differences
+between OMB and Treasury reporting". *Generally consistent* is not *the same*,
+and the publisher is the one saying so. Nothing writes a cost field, no
+`sourceUrls`, no `verificationMethod` — that channel is exactly how a five-row
+pay table carried 29 positions to `verified` on 2026-09-11.
+
+Measured rather than asserted: **94 nodes carry both an OMB FY2025 figure and a
+measured Treasury cost, and not one of the 94 agrees within 1%.** The median
+ratio is 0.863 — the graph's eleven months of FY2026 against OMB's completed
+FY2025 — with the Department of Labor closest at 1.019 and Health & Human
+Services at 0.967. That is what two honest figures for the same unit on
+different clocks look like, and it is why the gate's "equals the measured cost
+to the cent" check is a leak detector rather than a tolerance.
+
+**Matching is scoped the way a FedScope row is**, and three guards each earn
+their place on the real data:
+
+- a **type guard**: without it OMB's agency "Legislative Branch" reaches the
+  Senate Appropriations *Subcommittee on the Legislative Branch*, a real node
+  with a unique name in entirely the wrong branch, and every legislative bureau
+  would then be scoped underneath a subcommittee;
+- **uniqueness of the bureau name across the whole file**: this database
+  restates history onto the current account structure, so "Bureau of Labor
+  Statistics" appears under Commerce as well as Labor and the name alone
+  identifies no single row;
+- the **subtree guard**, which after the other two refuses exactly one pair:
+  OMB files the Pension Benefit Guaranty Corporation under the Department of
+  Labor and this graph curates it as an independent agency. Both are
+  defensible — the PBGC's board is chaired by the Secretary of Labor — so
+  nothing is resolved, the row is refused, and `CURATION.md` records it, the
+  treatment the Treasury's Tax Court line already gets.
+
+**Two identifiers this source does not have, and one choice it forces.** The
+`CGAC Agency Code` column is what made this package worth fetching — it is the
+crosswalk `docs/EXACT_NODE_COSTS.md` §1 asks for — and it is **per account, not
+per agency**: 20 of the 160 agencies carrying a code carry several, the
+Department of the Treasury nine and the Legislative Branch twenty-two, because
+OMB's "Agency" is a budget-presentation grouping over several Treasury
+entities. The first version published the first code seen, which is an
+identifier the file never assigns to the unit. A code is now published only
+where the agency has exactly one, the count rides beside it either way, and the
+gate refuses both a code on a multi-code agency and a count that is not the
+package's. 102 of OMB's codes are shared with USAspending's toptier list and 88
+of those agree on the name, which is the join to build on — by code, one day,
+rather than by name.
+
+And the row selection is a choice, not a given: summing every row rather than
+the on-budget rows alone is worth **13×** on the Social Security Administration
+($1,646.5bn against $125.6bn). Every record therefore declares the rule it used
+in words ("every account row OMB files under this unit for the year, on-budget
+and off-budget together, including the negative offsetting-receipt rows"), and
+the gate refuses a block that does not. A figure whose selection rule is not
+stated cannot be audited.
+
+**133 organisations carry a figure** (61 agency, 72 bureau), **39 of which
+publish no measured cost of their own**. A measure the package carries no row
+for is published as ABSENT, never as zero: the two member files do not cover
+the same units — the Farm Credit Administration has outlay rows and no
+budget-authority rows — and the first version defaulted the missing one to 0.0,
+which the gate caught as a figure the package does not carry.
+
+The gate re-derives everything from the package with a **second, independent
+stdlib reader** (an .xlsx is a zip of XML, the same fact `congress.read_xlsx_rows`
+uses) importing nothing from the module it checks, and refuses: a block on a
+post, a fiscal year that is not the guide's last completed one, a figure or a
+row count that is not what the package gives, a unit name that is not the
+node's, an agency-level block carrying a bureau name (the one way this block
+can lie while every number in it stays right), a missing units, precision or
+net-of-collections quote, and a citation that does not point at govinfo.
+`tests/test_omb_budget.py` corrupts each in turn.
+
 ### Names that state a count
 
 Eight curated groupings state a number in their own name. Four carry it
@@ -2011,7 +2244,7 @@ nothing else is. A `certain` or `likely` finding must carry evidence;
 gets raised without being dressed as a fact. Citable sources are the
 repository's own published files and `.gov`/`.mil` URLs. Seven checks per
 node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
-most common — answer, not a failure: 4,687 nodes carry no source at all.
+most common — answer, not a failure: 4,713 nodes carry no source at all.
 `verify` re-checks every citation in the ledger against its source, since a
 file can change after a finding was accepted. The runbook's "do not report
 these" list matters as much as the rest: without it the sweep returns

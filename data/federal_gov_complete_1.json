@@ -20684,6 +20684,23 @@
                           "budget": null,
                           "color": "#666666",
                           "children": []
+                        },
+                        {
+                          "id": "exec-dept-defense-navy-naval-academy",
+                          "name": "United States Naval Academy",
+                          "type": "Component Agency",
+                          "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for United States Naval Academy under Department of the Navy. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-276. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under U.S. Navy.",
+                          "structureSource": "named_in_the_us_government_manual",
+                          "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-276",
+                          "employees": null,
+                          "budget": null,
+                          "color": "#c84a4a",
+                          "children": [],
+                          "descriptionSource": "generated_from_the_us_government_manual",
+                          "manualPlacementAtAdd": {
+                            "kind": "within",
+                            "manualParent": "Department of Defense (DoD)"
+                          }
                         }
                       ]
                     },
@@ -23718,6 +23735,108 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-defense-commissary-agency",
+                      "name": "Defense Commissary Agency",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Defense Commissary Agency under Defense Agencies. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-216. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-216",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-defense-legal-services-agency",
+                      "name": "Defense Legal Services Agency",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Defense Legal Services Agency under Defense Agencies. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-222. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-222",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-defense-security-cooperation-agency",
+                      "name": "Defense Security Cooperation Agency",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Defense Security Cooperation Agency under Defense Agencies. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-224. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-224",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-national-intelligence-university",
+                      "name": "National Intelligence University",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for National Intelligence University under Joint Service Schools. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-233. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-233",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-national-defense-university",
+                      "name": "National Defense University",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for National Defense University under Joint Service Schools. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-234. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-234",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
+                    },
+                    {
+                      "id": "exec-dept-defense-agency-uniformed-services-university-health-sciences",
+                      "name": "Uniformed Services University of the Health Sciences",
+                      "type": "Defense Agency",
+                      "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Uniformed Services University of the Health Sciences under Joint Service Schools. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-235. The Manual's own chain above this entry reaches Department of Defense (DoD), and this graph files the unit more specifically, under Defense Agencies & Field Activities.",
+                      "structureSource": "named_in_the_us_government_manual",
+                      "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-235",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_the_us_government_manual",
+                      "manualPlacementAtAdd": {
+                        "kind": "within",
+                        "manualParent": "Department of Defense (DoD)"
+                      }
                     }
                   ]
                 }
@@ -25209,6 +25328,125 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-doj-office-community-oriented-policing-services",
+                  "name": "Office of Community Oriented Policing Services",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Office of Community Oriented Policing Services under Offices / Boards. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-290.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-290",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-office-violence-against-women",
+                  "name": "Office on Violence Against Women",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Office on Violence Against Women under Offices / Boards. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-334.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-334",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-foreign-claims-settlement-commission",
+                  "name": "Foreign Claims Settlement Commission of the United States",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Foreign Claims Settlement Commission of the United States under Offices / Boards. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-291.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-291",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-international-criminal-police-organization-washington",
+                  "name": "International Criminal Police Organization (INTERPOL)-Washington",
+                  "type": "Bureau",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for International Criminal Police Organization (INTERPOL)-Washington under Bureaus. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-283.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-283",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-office-justice-programs",
+                  "name": "Office of Justice Programs",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Office of Justice Programs under Bureaus. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-285.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-285",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-parole-commission",
+                  "name": "United States Parole Commission",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for United States Parole Commission under Offices / Boards. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-289.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-289",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
+                },
+                {
+                  "id": "exec-dept-doj-executive-office-immigration-review",
+                  "name": "Executive Office for Immigration Review",
+                  "type": "Office",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Executive Office for Immigration Review under Offices / Boards. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-288.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-288",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Justice (DOJ)"
+                  }
                 }
               ]
             },
@@ -26132,6 +26370,23 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+                  "name": "Office of Surface Mining Reclamation and Enforcement",
+                  "type": "Bureau",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Office of Surface Mining Reclamation and Enforcement under Department of the Interior. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-297.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-297",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of the Interior (DOI)"
+                  }
                 }
               ]
             },
@@ -27628,6 +27883,57 @@
                   "children": [],
                   "descriptionSource": "generated_from_the_monthly_treasury_statement",
                   "treasurySectionAtAdd": "Department of Commerce"
+                },
+                {
+                  "id": "exec-dept-doc-bureau-industry-security",
+                  "name": "Bureau of Industry and Security",
+                  "type": "Bureau",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Bureau of Industry and Security under Department of Commerce. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-259.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-259",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Commerce"
+                  }
+                },
+                {
+                  "id": "exec-dept-doc-minority-business-development-agency",
+                  "name": "Minority Business Development Agency",
+                  "type": "Component Agency",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Minority Business Development Agency under Department of Commerce. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-263.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-263",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Commerce"
+                  }
+                },
+                {
+                  "id": "exec-dept-doc-national-technical-information-service",
+                  "name": "National Technical Information Service",
+                  "type": "Component Agency",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for National Technical Information Service under Department of Commerce. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-267.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-267",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Commerce"
+                  }
                 }
               ]
             },
@@ -28260,6 +28566,57 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-dol-bureau-international-labor-affairs",
+                  "name": "Bureau of International Labor Affairs",
+                  "type": "Agency",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Bureau of International Labor Affairs under Department of Labor. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-324.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-324",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Labor (DOL)"
+                  }
+                },
+                {
+                  "id": "exec-dept-dol-veterans-employment-training-service",
+                  "name": "Veterans' Employment and Training Service",
+                  "type": "Agency",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Veterans' Employment and Training Service under Department of Labor. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-330.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-330",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Labor (DOL)"
+                  }
+                },
+                {
+                  "id": "exec-dept-dol-women-s-bureau",
+                  "name": "Women's Bureau",
+                  "type": "Agency",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Women's Bureau under Department of Labor. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-332.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-332",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Labor (DOL)"
+                  }
                 }
               ]
             },
@@ -29335,6 +29692,23 @@
                   "children": [],
                   "descriptionSource": "generated_from_the_monthly_treasury_statement",
                   "treasurySectionAtAdd": "Department of Health and Human Services"
+                },
+                {
+                  "id": "exec-dept-hhs-agency-toxic-substances-disease-registry",
+                  "name": "Agency for Toxic Substances and Disease Registry",
+                  "type": "Operating Division",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Agency for Toxic Substances and Disease Registry under Department of Health and Human Services. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-312.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-312",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Health & Human Services (HHS)"
+                  }
                 }
               ]
             },
@@ -31098,6 +31472,23 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio",
+                  "name": "Great Lakes Saint Lawrence Seaway Development Corporation",
+                  "type": "Government Corporation",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Great Lakes Saint Lawrence Seaway Development Corporation under Department of Transportation. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-246.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-246",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Department of Transportation (DOT)"
+                  }
                 }
               ]
             },
@@ -49527,6 +49918,57 @@
                       "children": []
                     }
                   ]
+                },
+                {
+                  "id": "exec-ind-smithsonian-john-f-kennedy-center-performing-arts",
+                  "name": "John F. Kennedy Center for the Performing Arts",
+                  "type": "Museum/Unit",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for John F. Kennedy Center for the Performing Arts under Smithsonian Institution. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-211.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-211",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Smithsonian Institution"
+                  }
+                },
+                {
+                  "id": "exec-ind-smithsonian-national-gallery-art",
+                  "name": "National Gallery of Art",
+                  "type": "Museum/Unit",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for National Gallery of Art under Smithsonian Institution. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-212.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-212",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Smithsonian Institution"
+                  }
+                },
+                {
+                  "id": "exec-ind-smithsonian-woodrow-wilson-international-center-scholars",
+                  "name": "Woodrow Wilson International Center for Scholars",
+                  "type": "Museum/Unit",
+                  "desc": "The United States Government Manual (2025-12-31 edition) carries an entry for Woodrow Wilson International Center for Scholars under Smithsonian Institution. This node exists because the government's own handbook of itself names the unit and files it there; nothing further about it has been read. The entry is at https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-213.",
+                  "structureSource": "named_in_the_us_government_manual",
+                  "structureSourceDetail": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-213",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_the_us_government_manual",
+                  "manualPlacementAtAdd": {
+                    "kind": "exact",
+                    "manualParent": "Smithsonian Institution"
+                  }
                 }
               ]
             },

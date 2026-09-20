@@ -463,7 +463,10 @@ class RealFixtureTests(unittest.TestCase):
         # pages carry. Four positions gained a PLUM record and one lost it --
         # the FNS Administrator, because the archive still files the bureau as
         # the Food and Nutrition Service where USDA now says Administration.
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (68, 101, 0))
+        # 68 -> 69 matched on 2026-09-20: one of the 26 units added from the
+        # Government Manual is an organisation the PLUM archive files positions
+        # under, so the archive reached it as soon as the node existed.
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (69, 100, 0))
         # The two ambiguous organisations are both the USPTO's: the archive
         # files rows under "PATENT AND TRADEMARK OFFICE" and "UNITED STATES
         # PATENT AND TRADEMARK OFFICE", and after the rename BOTH reduce to
@@ -471,8 +474,11 @@ class RealFixtureTests(unittest.TestCase):
         # matched at all. The outcome is the same -- no record from those rows
         # -- and it fails safe: a refusal, never a row attributed to the wrong
         # unit. This is the cost the rename table's collision rule names.
+        # 168 -> 180 matched on 2026-09-20: the 26 units added from the
+        # Government Manual are organisations the PLUM archive files positions
+        # under, so its rows reached them as soon as the nodes existed.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (168, 33, 949, 2, 358))
+                         (180, 34, 939, 2, 356))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).

@@ -116,6 +116,12 @@ EVIDENCE_OWNED_FIELDS = (
     # cost (data_pipeline/verification/net_cost.py). Listed here for the same
     # reason: a record refused since the last build must stop being published.
     "auditedNetCost",
+    # OMB's Public Budget Database: budget authority and outlays for the last
+    # COMPLETED fiscal year, in its own block beside the cost
+    # (data_pipeline/verification/omb_budget.py). Withdrawn here with the rest,
+    # because a newer package moves the actual/estimate boundary and a figure
+    # that is no longer an actual must stop being published as one.
+    "ombBudget",
     "verificationMethod",
     "verificationFailure",
     "verificationSiteFrom",

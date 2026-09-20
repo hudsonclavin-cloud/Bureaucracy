@@ -15,7 +15,7 @@ of those: **the table proposes and an official source decides.** A row in
 `data/curation/new_nodes.json` is a reviewed proposal; nothing is written until
 this run re-checks it against the source, live.
 
-A node is added only under one of two licences, named on the row and verified
+A node is added only under one of three licences, named on the row and verified
 here rather than trusted:
 
   - `treasury_statement_line` — the Monthly Treasury Statement itself names the
@@ -32,6 +32,27 @@ here rather than trusted:
     robots policy, User-Agent and readable-text floor. This is the same test
     `verify_base_graph.py` will run, so a node added this way is one that can
     actually earn a source.
+  - `government_manual_entry` — the United States Government Manual, the
+    government's own handbook of itself, carries an entry for the unit. This is
+    the strongest of the three and the only one that licenses the PLACEMENT as
+    well as the name: a Treasury line and a page label each say a unit of this
+    name exists, and neither says what it sits under, so the parent on the row
+    is the row author's assertion. The Manual states both. So this licence
+    requires exactly ONE entry whose canonical name is the node's AND that the
+    Manual's OWN parent chain from that entry reaches the node the row gives as
+    the parent; a row that files a unit somewhere the Manual does not is refused
+    with the chain the Manual actually prints. Verified against the committed
+    package at `tests/fixtures/govman/`, whose digest is recomputed from the
+    bytes before it is read, so this licence needs no network at all.
+
+    What it cannot do is tell a genuine gap from a spelling. The Manual carries
+    95 entries this graph does not match by name, and some of those are units
+    the graph already has under an acronym or an abbreviation — adding one of
+    those would create a duplicate, which this repository has had to merge
+    before. The sibling-collision check below catches only an exact key clash
+    under the same parent, so it does not catch "NOAA" against "National
+    Oceanic and Atmospheric Administration". That judgement is made when the row
+    is written, and `CURATION.md` records it; this script enforces what it can.
 
 Refused before either licence is checked: an id already in the file, a parent
 that is not in the file, a name that collides with one of its own siblings, a
@@ -48,6 +69,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -67,6 +89,11 @@ from data_pipeline.exporter.build_graph import (  # noqa: E402
 )
 from data_pipeline.exporter.treasury_sections import SectionTree  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.verification.govman import (  # noqa: E402
+    DETAILS_BASE as GOVMAN_DETAILS_BASE,
+    access_id as govman_access_id,
+    read_manual,
+)
 from data_pipeline.verification.evidence import (  # noqa: E402
     REGION_CONTENT,
     find_label_region_rule,
@@ -79,17 +106,20 @@ DEFAULT_TABLE = PROJECT_ROOT / "data" / "curation" / "new_nodes.json"
 
 LICENCE_TREASURY = "treasury_statement_line"
 LICENCE_PAGE = "official_page_label"
-LICENCES = (LICENCE_TREASURY, LICENCE_PAGE)
+LICENCE_MANUAL = "government_manual_entry"
+LICENCES = (LICENCE_TREASURY, LICENCE_PAGE, LICENCE_MANUAL)
 
 #: Stamped on every node this script creates, so the panel can say the node
 #: exists because an official source named it — not because somebody typed it.
 STRUCTURE_SOURCE = {
     LICENCE_TREASURY: "named_in_the_monthly_treasury_statement",
     LICENCE_PAGE: "named_on_an_official_page",
+    LICENCE_MANUAL: "named_in_the_us_government_manual",
 }
 DESCRIPTION_SOURCE = {
     LICENCE_TREASURY: "generated_from_the_monthly_treasury_statement",
     LICENCE_PAGE: "generated_from_its_official_page",
+    LICENCE_MANUAL: "generated_from_the_us_government_manual",
 }
 
 MIN_NAME_TOKENS = 2
@@ -184,6 +214,97 @@ def describe_from_treasury(name: str, row: dict, period: str) -> str:
             f"nothing further about it has been read.")
 
 
+def jointly_measured_names(published_path: Path) -> dict[str, tuple[str, str]]:
+    """Units the Treasury reports JOINTLY with a unit that already has a node.
+
+    Found the hard way. The Monthly Treasury Statement has no row named "Bureau
+    of Indian Education"; it has one combined row, "Bureau of Indian Affairs
+    and Bureau of Indian Education", and the graph applies that row's measured
+    $2.43bn to its existing Bureau of Indian Affairs node. Adding a separate
+    node for the Education half would not add a measured cost -- there is no
+    separate figure to add -- it would insert an unlined sibling that then
+    takes an apportioned share OUT of a pool the statement reports for the two
+    of them together, so a measured figure would quietly start being divided on
+    no evidence at all.
+
+    Returns {canonical component name: (the row as the Treasury prints it, the
+    node id already carrying it)}, read off the published graph so the check
+    needs no network.
+    """
+    if not published_path.exists():
+        return {}
+    graph = json.loads(published_path.read_text(encoding="utf-8"))
+    out: dict[str, tuple[str, str]] = {}
+    stack = [graph]
+    while stack:
+        node = stack.pop()
+        row = str(node.get("treasury_row_name") or "").strip()
+        if row and str(node.get("cost_status") or "") == "official":
+            parts = [p.strip() for p in re.split(r"\s+and\s+", row) if p.strip()]
+            if len(parts) > 1:
+                for part in parts:
+                    key = canonical_name_key(part)
+                    if key and key != canonical_name_key(node.get("name")):
+                        out[key] = (row, str(node.get("id") or ""))
+        stack.extend([c for c in (node.get("children") or []) if isinstance(c, dict)])
+    return out
+
+
+def manual_entries_by_key(manual: dict) -> dict[str, list[dict]]:
+    """Government Manual entries indexed by canonical name."""
+    index: dict[str, list[dict]] = {}
+    for entity in manual.get("entities") or []:
+        index.setdefault(canonical_name_key(entity.get("name")), []).append(entity)
+    return index
+
+
+def manual_chain(manual: dict, entity: dict) -> list[str]:
+    """The Manual's own chain of parents above an entry, nearest first."""
+    entities = {str(e.get("entityId")): e for e in (manual.get("entities") or [])}
+    chain: list[str] = []
+    seen: set[str] = set()
+    current = entities.get(str(entity.get("parentId")))
+    while current is not None and str(current.get("entityId")) not in seen:
+        seen.add(str(current.get("entityId")))
+        chain.append(str(current.get("name") or ""))
+        current = entities.get(str(current.get("parentId")))
+    return chain
+
+
+def manual_files_it_under(manual: dict, entity: dict, parent_name: str) -> tuple[bool, list[str]]:
+    """Does the Manual's OWN parent chain from `entity` reach `parent_name`?
+
+    This is what makes this licence different from the other two. A Treasury
+    line and a page label each say a unit of this name exists; neither says
+    what it sits under, so on those rows the parent is the row author's
+    assertion and nothing here can check it. The Manual prints a hierarchy, so
+    the placement can be checked — and is. The chain is returned either way, so
+    a refusal can print where the Manual actually files the unit rather than
+    only that it disagreed.
+    """
+    entities = {str(e.get("entityId")): e for e in (manual.get("entities") or [])}
+    want = canonical_name_key(parent_name)
+    chain: list[str] = []
+    seen: set[str] = set()
+    current = entities.get(str(entity.get("parentId")))
+    while current is not None and str(current.get("entityId")) not in seen:
+        seen.add(str(current.get("entityId")))
+        chain.append(str(current.get("name") or ""))
+        if canonical_name_key(current.get("name")) == want:
+            return True, chain
+        current = entities.get(str(current.get("parentId")))
+    return False, chain
+
+
+def describe_from_manual(name: str, manual: dict, chain: list[str], url: str) -> str:
+    under = next((c for c in chain if c), "")
+    where = f" under {under}" if under else ""
+    return (f"The United States Government Manual ({manual.get('edition')} edition) carries an "
+            f"entry for {name}{where}. This node exists because the government's own handbook "
+            f"of itself names the unit and files it there; nothing further about it has been "
+            f"read. The entry is at {url}.")
+
+
 def describe_from_page(name: str, url: str, matched: str) -> str:
     return (f"{name} is named on {url}, which labels it as {matched!r}. This node "
             f"exists because that page names the unit; nothing further about it "
@@ -202,7 +323,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv[1:] if argv else None)
 
     root = load_base_graph(args.base_graph)
-    node_map, _ = index_tree(root)
+    node_map, parents_of = index_tree(root)
     rows = load_table(args.table)
     if args.ids:
         wanted = set(args.ids)
@@ -218,6 +339,19 @@ def main(argv: list[str] | None = None) -> int:
             canonical_name_key(c.get("name")): str(c.get("id") or "")
             for c in (parent.get("children") or [])
         }
+
+    # A unit the Treasury already reports jointly with an existing node must
+    # not become a node of its own: see jointly_measured_names.
+    joint = jointly_measured_names(PROJECT_ROOT / "output" / "graph.json")
+
+    needs_manual = any(str(r.get("licence")) == LICENCE_MANUAL for r in rows)
+    manual: dict = {}
+    manual_by_key: dict[str, list[dict]] = {}
+    if needs_manual:
+        # Offline: the package is committed and its digest is recomputed from
+        # the bytes before it is read, so this licence adds no fetch.
+        manual = read_manual()
+        manual_by_key = manual_entries_by_key(manual)
 
     needs_treasury = any(str(r.get("licence")) == LICENCE_TREASURY for r in rows)
     statement: dict = {}
@@ -242,8 +376,16 @@ def main(argv: list[str] | None = None) -> int:
             results.append({"id": node_id, "added": False, "reason": verdict[0], "detail": verdict[1]})
             continue
 
+        held = joint.get(canonical_name_key(name))
+        if held:
+            results.append({"id": node_id, "added": False,
+                            "reason": "treasury_reports_it_jointly_with_an_existing_node",
+                            "detail": f"the statement's row is {held[0]!r}, already measured on {held[1]}"})
+            continue
+
         licence = str(row.get("licence"))
         node_desc, structure_detail = None, None
+        manual_placement = None
 
         if licence == LICENCE_TREASURY:
             matches = by_key.get(canonical_name_key(name)) or []
@@ -256,6 +398,52 @@ def main(argv: list[str] | None = None) -> int:
             node_desc = describe_from_treasury(name, hit, period)
             structure_detail = str(hit.get("name") or "")
             row_section = str(hit.get("treasurySection") or "")
+        elif licence == LICENCE_MANUAL:
+            matches = manual_by_key.get(canonical_name_key(name)) or []
+            if len(matches) != 1:
+                results.append({"id": node_id, "added": False,
+                                "reason": "manual_does_not_name_one_such_unit",
+                                "detail": f"{len(matches)} Government Manual entries carry this name"})
+                continue
+            entity = matches[0]
+            granule = govman_access_id(str(manual.get("package")), entity.get("entityId"))
+            if not granule:
+                results.append({"id": node_id, "added": False,
+                                "reason": "manual_entry_has_no_citable_granule",
+                                "detail": f"entity {entity.get('entityId')!r} has no numeric id"})
+                continue
+            chain = manual_chain(manual, entity)
+            chain_keys = {canonical_name_key(c) for c in chain if c}
+            # The Manual licenses a REGION, not only a point. A row may file a
+            # unit more specifically than the Manual does -- the Manual says
+            # "Defense Agencies", the graph has "Defense Agencies & Field
+            # Activities" -- and that is allowed only when the proposed parent
+            # sits AT or BENEATH a node the Manual's own chain names, so the
+            # extra specificity can never contradict the Manual. Which of the
+            # two it was is recorded on the node, because "the Manual files it
+            # here" and "the Manual files it somewhere above here" are
+            # different claims and the panel must not blur them.
+            placement = None
+            walk_id = parent_id
+            while walk_id:
+                if canonical_name_key(node_map[walk_id].get("name")) in chain_keys:
+                    placement = ("exact" if walk_id == parent_id else "within",
+                                 str(node_map[walk_id].get("name") or ""))
+                    break
+                walk_id = parents_of.get(walk_id) or ""
+            if placement is None:
+                # The row proposes a parent the Manual's own hierarchy does not
+                # support at all. Print the chain it does print, so the row can
+                # be corrected rather than merely rejected.
+                results.append({"id": node_id, "added": False,
+                                "reason": "manual_files_it_elsewhere",
+                                "detail": "the Manual files it under " + (" < ".join(c for c in chain if c) or "nothing")})
+                continue
+            url = f"{GOVMAN_DETAILS_BASE}/{manual.get('package')}/{granule}"
+            node_desc = describe_from_manual(name, manual, chain, url)
+            structure_detail = url
+            manual_placement = placement
+            row_section = ""
         else:
             url = str(row.get("url") or "")
             if url not in pages:
@@ -306,6 +494,19 @@ def main(argv: list[str] | None = None) -> int:
             node["descriptionSource"] = DESCRIPTION_SOURCE[licence]
         if licence == LICENCE_TREASURY and row_section:
             node["treasurySectionAtAdd"] = row_section
+        if manual_placement is not None:
+            kind, under = manual_placement
+            node["manualPlacementAtAdd"] = {"kind": kind, "manualParent": under}
+            if kind == "within":
+                # Said on the node, so the site never reports the graph's own
+                # extra specificity as something the Manual stated. Worded as
+                # what the Manual's chain REACHES rather than as a second "the
+                # Manual files it under", which the sentence above already
+                # makes with the Manual's own immediate parent.
+                node["desc"] = (str(node.get("desc") or "").rstrip()
+                                + f" The Manual's own chain above this entry reaches {under}, and"
+                                  f" this graph files the unit more specifically, under"
+                                  f" {node_map[parent_id].get('name')}.")
 
         results.append({"id": node_id, "added": True, "name": name, "parentId": parent_id,
                         "licence": licence, "detail": structure_detail})

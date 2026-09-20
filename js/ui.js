@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260920b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260920b";
+import { createGovernmentGraph } from "./graph.js?v=20260920d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260920d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -772,6 +772,9 @@ function renderHeadcountProvenance(data) {
   const hasFileA = fileA && typeof fileA === "object" && typeof fileA.amount === "number";
   const audited = data.auditedNetCost;
   const hasAudited = audited && typeof audited === "object" && typeof audited.netCostUsd === "number";
+  const omb = data.ombBudget;
+  const hasOmb = omb && typeof omb === "object"
+    && (typeof omb.outlays === "number" || typeof omb.budgetAuthority === "number");
   line.replaceChildren();
   const add = (text) => line.appendChild(document.createTextNode(text));
   if (hasAudited) {
@@ -784,6 +787,29 @@ function renderHeadcountProvenance(data) {
       add(` (gross cost $${Math.round(audited.grossCostUsd).toLocaleString()} less earned revenue $${Math.round(audited.earnedRevenueUsd).toLocaleString()})`);
     }
     add(". That is accrual accounting for a completed year — what the unit's programmes cost to run — and the figure above it is cash out of the door for the year to date. Different basis, different period; neither is the other. ");
+  }
+  if (hasOmb) {
+    // Two things a reader must know before reading these figures, and the
+    // publisher says both: the year is the last one that has FINISHED (the
+    // later columns of that file are the President's request, which this
+    // project never publishes), and OMB's totals are only "generally
+    // consistent with" the Treasury statement the cost above comes from.
+    const unit = omb.level === "bureau"
+      ? `"${omb.listedBureau}", the bureau OMB files under "${omb.listedAgency}"`
+      : `"${omb.listedAgency}"`;
+    const rows = (omb.outlayAccountRows || 0) + (omb.budgetAuthorityAccountRows || 0);
+    // OMB prints NO total row in this database: every row is a budget account.
+    // So this figure is not something the publisher states about the unit, it
+    // is a sum over the rows it files under it, and saying so — with the row
+    // count — is the difference between a citation and an attribution.
+    add(`These are not figures OMB prints for ${unit}: that database has no total row, so each is the sum of the ${rows ? rows.toLocaleString() + " " : ""}account rows OMB files under it, for fiscal year ${omb.fiscalYear} — the last completed year in the package. The later years in it are the President's request and are not published here. `);
+    if (omb.netQuote) add(`OMB reports these "${omb.netQuote.replace(/^Budget authority and outlay amounts are /, "")}" `);
+    if (typeof omb.outlays === "number" && omb.outlays < 0) {
+      add(`— which is why the figure is negative here: this unit collects more than it spends. `);
+    }
+    if (omb.treasuryQuote) add(`OMB says of its own totals: "${omb.treasuryQuote}", and that the two differ by reporting and classification corrections made after the Treasury published, and by conceptual differences between the two. `);
+    if (omb.rowSelection) add(`The sum is over ${omb.rowSelection}. `);
+    if (omb.precisionNote) add(`The figures are the publisher's thousands; OMB states that "detail below millions is not available", so they are exact to the million and no further. `);
   }
   if (hasFileA) {
     // A different measure from the cost above it, and said so in the same
@@ -1123,6 +1149,13 @@ function renderDescriptionProvenance(data, isClusteredView) {
   }
   if (String(data.descriptionSource || "") === "generated_from_treasury_lines") {
     line.textContent = "DESCRIPTION: generated from the Monthly Treasury Statement lines it names";
+    return;
+  }
+  if (String(data.descriptionSource || "") === "generated_from_the_us_government_manual") {
+    // A sourced description, not curated prose. The Manual is the government's
+    // own handbook of itself and it states both the unit's name and where it
+    // files it; nothing else about the unit has been read.
+    line.textContent = "DESCRIPTION: generated from the United States Government Manual, the government's own handbook, which names this unit and files it where the graph puts it — nothing further about it has been read";
     return;
   }
   if (String(data.descriptionSource || "") === "generated_from_whitehouse_staff_report") {
@@ -1916,6 +1949,26 @@ function renderInfoPanel(nodeObj) {
       `GROSS OUTLAYS — USAspending File A (FY${fileA.fiscalYear} to ${fileA.periodAsOf}; not the cost)`,
       `$${Math.round(fileA.amount).toLocaleString()}`,
     ]);
+  }
+  // OMB's Public Budget Database, under its own heading for the same reason:
+  // a COMPLETED fiscal year on OMB's basis, where the cost above is the
+  // current year to date on the Treasury's. Both figures the package reports
+  // are shown, because budget authority and outlays are different quantities
+  // and showing one alone invites the reader to treat it as the other.
+  const omb = data.ombBudget;
+  if (omb && typeof omb === "object") {
+    if (typeof omb.outlays === "number") {
+      statRows.push([
+        `OUTLAYS — OMB Public Budget Database (FY${omb.fiscalYear} actual; not the cost)`,
+        `$${Math.round(omb.outlays).toLocaleString()}`,
+      ]);
+    }
+    if (typeof omb.budgetAuthority === "number") {
+      statRows.push([
+        `BUDGET AUTHORITY — OMB Public Budget Database (FY${omb.fiscalYear} actual)`,
+        `$${Math.round(omb.budgetAuthority).toLocaleString()}`,
+      ]);
+    }
   }
   if (data.budget) {
     // A hand-typed note in the curated file, not a sourced figure. Unlabelled it

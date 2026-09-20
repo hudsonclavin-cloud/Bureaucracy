@@ -438,12 +438,18 @@ class RealFixturePinTests(unittest.TestCase):
         # Children and Families, the Corps of Engineers, the Railroad
         # Retirement Board among them. Adding the node is what let the record
         # land; nothing about the matcher changed.
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (59, 86, 145))
+        # 86 -> 104 sub-agencies and 145 -> 163 records on 2026-09-20, when 26
+        # units the Government Manual carries were added to the curated file:
+        # OPM already had rows for them and they landed the moment the nodes
+        # existed. The same effect the 15 Treasury units had (136 -> 145).
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (59, 104, 163))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
         # rows are scoped against the right agency instead of floating.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (54, 349))
+        # 349 -> 331 on 2026-09-20: exactly the 18 sub-agency rows that found a
+        # node when the 26 Government Manual units were added.
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (54, 331))
         self.assertEqual(len(self.report["scoped_out"]), 10)
         # One more: NARA's agency name now matches, so its single self-named
         # row is carried by the agency record instead of standing alone. 42 ->
@@ -474,7 +480,10 @@ class RealFixturePinTests(unittest.TestCase):
         # headcount and no curated `employees` figure to compare it against,
         # which is the honest state for a node the statement named and nobody
         # has hand-counted. "compared" is unchanged at 127 for the same reason.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (127, 18))
+        # 18 -> 36 with no curated figure: the 26 nodes added on 2026-09-20 carry
+        # an OPM headcount and no curated `employees` of their own, which is
+        # the honest state for a node whose whole basis is the Manual naming it.
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (127, 36))
         self.assertEqual(sum(comparison["bands"].values()), 127)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"

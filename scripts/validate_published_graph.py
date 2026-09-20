@@ -12,6 +12,7 @@ The gate never writes. Run it before every push that touches output/.
 
 from __future__ import annotations
 
+import io
 import json
 import re
 from datetime import datetime, timezone
@@ -1312,6 +1313,135 @@ MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
 # below and the coverage report both key off it.
 POST_PAGE_METHOD = "name_labelled_on_its_organisations_official_page"
 
+# OMB's Public Budget Database. The gate re-derives the figures from the
+# committed package itself -- a stdlib zip+XML read, importing nothing from
+# data_pipeline -- for the reason whitehouse_roster() is independent.
+OMB_PACKAGE = "BUDGET-2027-DB"
+OMB_FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "omb" / (OMB_PACKAGE + ".zip")
+OMB_ESTIMATE_SENTENCE = re.compile(
+    r"Budget\s*estimates\s*for\s*the\s*current\s*fiscal\s*year\s*\(\s*((?:\d\s*){4})\)", re.I)
+
+
+def _omb_sheet_rows(blob):
+    """One xlsx member as a list of rows, stdlib only.
+
+    An .xlsx is a zip of XML; the same fact `congress.read_xlsx_rows` uses,
+    reimplemented here so the gate does not import the code it checks.
+    """
+    import xml.etree.ElementTree as _ET
+    import zipfile as _zipfile
+
+    book = _zipfile.ZipFile(io.BytesIO(blob))
+    ns = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
+    shared = []
+    if "xl/sharedStrings.xml" in book.namelist():
+        for si in _ET.fromstring(book.read("xl/sharedStrings.xml")):
+            shared.append("".join(t.text or "" for t in si.iter(ns + "t")))
+    rows = []
+    for row in _ET.fromstring(book.read("xl/worksheets/sheet1.xml")).iter(ns + "row"):
+        cells = []
+        for cell in row.iter(ns + "c"):
+            ref = cell.get("r") or ""
+            letters = "".join(ch for ch in ref if ch.isalpha())
+            index = 0
+            for ch in letters:
+                index = index * 26 + (ord(ch.upper()) - 64)
+            index -= 1
+            value = cell.find(ns + "v")
+            text = "" if value is None else (value.text or "")
+            if cell.get("t") == "s" and text.isdigit() and int(text) < len(shared):
+                text = shared[int(text)]
+            elif cell.get("t") == "inlineStr":
+                node = cell.find(ns + "is")
+                text = "".join(t.text or "" for t in node.iter(ns + "t")) if node is not None else ""
+            while len(cells) <= index:
+                cells.append("")
+            cells[index] = text
+        rows.append(cells)
+    return rows
+
+
+def _omb_guide_text(pdf):
+    """The user's guide as prose. Mirrors omb_budget.guide_text, stdlib only."""
+    import zlib as _zlib
+
+    token = re.compile(rb"\((?:\\.|[^\\()])*\)|-?\d+(?:\.\d+)?|TJ|Tj|BT|ET|Td|TD|T\*|Tm")
+    out = []
+    for stream in re.findall(rb"stream\r?\n(.*?)endstream", pdf, re.S):
+        try:
+            body = _zlib.decompress(stream)
+        except _zlib.error:
+            continue
+        if b"BT" not in body:
+            continue
+        for m in token.finditer(body):
+            t = m.group(0)
+            if t.startswith(b"("):
+                text = re.sub(rb"\\([()\\])", rb"\1", t[1:-1])
+                out.append(text.replace(b"\\n", b" ").replace(b"\\r", b" ").decode("latin-1"))
+            elif t in (b"Td", b"TD", b"T*", b"Tm", b"ET"):
+                out.append(" ")
+            elif t not in (b"TJ", b"Tj", b"BT"):
+                try:
+                    if float(t) <= -120:
+                        out.append(" ")
+                except ValueError:
+                    continue
+    return re.sub(r"[ \t]+", " ", "".join(out))
+
+
+def omb_database():
+    """(last actual fiscal year, {agency: total}, {(agency, bureau): total}) per measure.
+
+    Raises OSError/ValueError, which the caller turns into a violation.
+    """
+    if "database" in _OMB_CACHE:
+        return _OMB_CACHE["database"]
+    import hashlib as _hashlib
+    import zipfile as _zipfile
+
+    raw = OMB_FIXTURE.read_bytes()
+    digest = _hashlib.sha256(raw).hexdigest()
+    meta_path = OMB_FIXTURE.with_suffix(OMB_FIXTURE.suffix + ".meta.json")
+    if meta_path.exists():
+        recorded = (json.loads(meta_path.read_text(encoding="utf-8")) or {}).get("sha256")
+        if recorded and recorded != digest:
+            raise ValueError("{}: sha256 on disk {} does not match the fetch record {}".format(
+                OMB_FIXTURE.name, digest, recorded))
+    archive = _zipfile.ZipFile(io.BytesIO(raw))
+    guide = _omb_guide_text(archive.read("{}/pdf/{}-4.pdf".format(OMB_PACKAGE, OMB_PACKAGE)))
+    found = OMB_ESTIMATE_SENTENCE.search(guide)
+    if not found:
+        raise ValueError("the OMB guide does not state which years are estimates")
+    last_actual = int(re.sub(r"\s+", "", found.group(1))) - 1
+
+    measures = {}
+    for measure, member in (("budget_authority", "1"), ("outlays", "2")):
+        rows = _omb_sheet_rows(archive.read("{}/xls/{}-{}.xlsx".format(OMB_PACKAGE, OMB_PACKAGE, member)))
+        header = rows[0]
+        a_i, b_i = header.index("Agency Name"), header.index("Bureau Name")
+        c_i = header.index("CGAC Agency Code")
+        y_i = header.index(str(last_actual))
+        agency, bureau, counts, cgac = {}, {}, {}, {}
+        for row in rows[1:]:
+            def get(i):
+                return str((row[i] if i < len(row) else "") or "").strip()
+            try:
+                value = float((get(y_i) or "0").replace(",", ""))
+            except ValueError:
+                value = 0.0
+            agency[get(a_i)] = agency.get(get(a_i), 0.0) + value
+            key = (get(a_i), get(b_i))
+            bureau[key] = bureau.get(key, 0.0) + value
+            counts[get(a_i)] = counts.get(get(a_i), 0) + 1
+            counts[key] = counts.get(key, 0) + 1
+            if get(c_i):
+                cgac.setdefault(get(a_i), set()).add(get(c_i))
+        measures[measure] = (agency, bureau, counts, cgac)
+    _OMB_CACHE["database"] = (last_actual, measures, digest)
+    return _OMB_CACHE["database"]
+
+
 # A post listed in its own organisation's entry in the United States
 # Government Manual. Mirrors data_pipeline.verification.govman.METHOD.
 GOVMAN_METHOD = "listed_in_its_organisations_us_government_manual_entry"
@@ -1322,6 +1452,10 @@ GOVMAN_FIXTURE = (
 )
 GOVMAN_ENTITY_TAGS = ("Entity", "SubEntityLevelOne", "SubEntityLevelTwo", "SubEntityLevelThree")
 GOVMAN_SEPARATORS = set("-\u2013\u2014_ ")
+
+
+_GOVMAN_CACHE = {}
+_OMB_CACHE = {}
 
 
 def govman_entries():
@@ -1337,6 +1471,8 @@ def govman_entries():
 
     Raises OSError/ValueError, which the caller turns into a violation.
     """
+    if "entries" in _GOVMAN_CACHE:
+        return _GOVMAN_CACHE["entries"]
     import hashlib as _hashlib
     import xml.etree.ElementTree as _ET
 
@@ -1397,6 +1533,7 @@ def govman_entries():
 
     for entity in _ET.parse(GOVMAN_FIXTURE).getroot():
         visit(entity)
+    _GOVMAN_CACHE["entries"] = entries
     return entries
 
 
@@ -2337,6 +2474,154 @@ def main(argv):
                 "{} claims placement from the Government Manual, which reads one entry".format(label(node)))
     gate.check("a Government Manual listing is a title that entry really prints", govman_violations)
 
+    # OMB's Public Budget Database, re-derived from the committed package
+    # rather than trusted. The check that matters most is the fiscal year: the
+    # later columns of this file are the President's request, and an estimate
+    # published beside figures this project calls measured would be the worst
+    # thing this source could do. The boundary is read out of the package's own
+    # user's guide here, independently of the module that wrote the block.
+    omb_violations = []
+    omb_last_actual = None
+    omb_measures = {}
+    omb_digest = None
+    try:
+        omb_last_actual, omb_measures, omb_digest = omb_database()
+    except (OSError, ValueError, KeyError) as error:
+        omb_violations.append("the OMB Public Budget Database fixture could not be read: {}".format(error))
+    for node in nodes:
+        block_data = node.get("ombBudget")
+        if not isinstance(block_data, dict):
+            continue
+        type_text = str(node.get("type") or "").casefold()
+        if any(word in type_text for word in ("position", "role", "office holder")):
+            omb_violations.append("{} is a post carrying an OMB budget figure".format(label(node)))
+            continue
+        year = block_data.get("fiscalYear")
+        if omb_last_actual is not None and year != omb_last_actual:
+            omb_violations.append(
+                "{} publishes FY{} where the guide's last completed year is FY{}".format(
+                    label(node), year, omb_last_actual))
+            continue
+        level = str(block_data.get("level") or "")
+        listed_agency = str(block_data.get("listedAgency") or "")
+        listed_bureau = str(block_data.get("listedBureau") or "")
+        if level not in ("agency", "bureau"):
+            omb_violations.append("{} carries an OMB block at level {!r}".format(label(node), level))
+            continue
+        # The panel prints the name the block quotes. An agency-level block
+        # carrying a bureau name would show one unit's name beside another
+        # unit's figures, which is the only way this block can lie while every
+        # number in it stays right.
+        if level == "agency" and listed_bureau:
+            omb_violations.append(
+                "{} is an agency-level OMB block naming the bureau {!r}".format(label(node), listed_bureau))
+            continue
+        if level == "bureau" and not listed_bureau:
+            omb_violations.append("{} is a bureau-level OMB block naming no bureau".format(label(node)))
+            continue
+        quoted = listed_bureau if level == "bureau" else listed_agency
+        if canonical_key(quoted) != canonical_key(str(node.get("name") or "")):
+            omb_violations.append(
+                "{} carries a block naming {!r}, which is not this node's name".format(label(node), quoted))
+            continue
+        if omb_measures:
+            ok = True
+            for measure, field, rows_field in (("outlays", "outlays", "outlayAccountRows"),
+                                               ("budget_authority", "budgetAuthority",
+                                                "budgetAuthorityAccountRows")):
+                agency_totals, bureau_totals, row_counts, _cgac = omb_measures[measure]
+                key = (listed_agency, listed_bureau) if level == "bureau" else listed_agency
+                published = bureau_totals.get(key) if level == "bureau" else agency_totals.get(key)
+                claimed = block_data.get(field)
+                if published is None or not published:
+                    # The two member files do not cover the same set of units.
+                    # An absent measure must be published as absent, never as
+                    # zero, and never as a figure.
+                    if claimed is not None:
+                        omb_violations.append(
+                            "{} publishes {} for {!r}, which the package carries no row for".format(
+                                label(node), field, listed_bureau or listed_agency))
+                        ok = False
+                        break
+                    continue
+                if not isinstance(claimed, (int, float)) or round(float(claimed), 2) != round(published * 1000, 2):
+                    omb_violations.append(
+                        "{} publishes {} of {!r} where the package gives {}".format(
+                            label(node), field, claimed, round(published * 1000, 2)))
+                    ok = False
+                    break
+                # OMB prints no total row, so the figure is a SUM over account
+                # rows and the count is what lets a reader check that claim.
+                # A wrong count would make an honest figure read as a different
+                # arithmetic than the one performed.
+                claimed_rows = block_data.get(rows_field)
+                if claimed_rows != row_counts.get(key, 0):
+                    omb_violations.append(
+                        "{} says its {} sums {} account rows where the package files {}".format(
+                            label(node), field, claimed_rows, row_counts.get(key, 0)))
+                    ok = False
+                    break
+            if not ok:
+                continue
+        measured = node.get("resolved_total_amount")
+        if (str(node.get("cost_status") or "") == "official" and isinstance(measured, (int, float))
+                and isinstance(block_data.get("outlays"), (int, float))
+                and round(float(measured), 2) == round(float(block_data["outlays"]), 2)):
+            omb_violations.append(
+                "{}'s OMB outlays equal its measured cost to the cent, so the two have been confused".format(
+                    label(node)))
+            continue
+        # The publisher's own statement of the unit, and of how far the figure
+        # is actually precise, must ride on the block: without them a reader
+        # cannot tell $1,892,935,000,000 from a number with six spurious digits.
+        if not str(block_data.get("unitsQuote") or "").strip():
+            omb_violations.append("{}'s OMB block does not say how its unit is known".format(label(node)))
+            continue
+        if not str(block_data.get("precisionNote") or "").strip():
+            omb_violations.append("{}'s OMB block does not state its precision".format(label(node)))
+            continue
+        # A negative figure is normal here and must arrive with the publisher's
+        # own explanation of why, or it reads as a bug.
+        if not str(block_data.get("netQuote") or "").strip():
+            omb_violations.append("{}'s OMB block does not say the figures are net of collections".format(label(node)))
+            continue
+        if omb_digest and str(block_data.get("documentSha256") or "") != omb_digest:
+            omb_violations.append(
+                "{}'s OMB block names digest {!r}, not the package's {}".format(
+                    label(node), block_data.get("documentSha256"), omb_digest[:16]))
+            continue
+        if not str(block_data.get("rowSelection") or "").strip():
+            omb_violations.append(
+                "{}'s OMB block does not declare which rows it summed".format(label(node)))
+            continue
+        # The CGAC column is per account. OMB's "Agency" groups several
+        # Treasury entities, so a code published for an agency that carries
+        # more than one would be an identifier the file never assigns it.
+        if omb_measures:
+            _a, _b, _c, agency_codes = omb_measures["outlays"]
+            codes = agency_codes.get(listed_agency) or set()
+            claimed_code = block_data.get("cgacAgencyCode")
+            if block_data.get("cgacAgencyCodeCount") != len(codes):
+                omb_violations.append(
+                    "{}'s OMB block says {} CGAC codes where the package has {}".format(
+                        label(node), block_data.get("cgacAgencyCodeCount"), len(codes)))
+                continue
+            if len(codes) == 1:
+                if claimed_code != sorted(codes)[0]:
+                    omb_violations.append(
+                        "{}'s OMB block gives CGAC {!r}, not the package's {!r}".format(
+                            label(node), claimed_code, sorted(codes)[0]))
+                    continue
+            elif claimed_code is not None:
+                omb_violations.append(
+                    "{}'s OMB block publishes CGAC {!r} for an agency carrying {} codes".format(
+                        label(node), claimed_code, len(codes)))
+                continue
+        url = str(block_data.get("url") or "")
+        if not url.startswith("https://www.govinfo.gov/"):
+            omb_violations.append("{}'s OMB block cites {!r}, not the package on govinfo".format(label(node), url))
+    gate.check("an OMB budget figure is a completed year the package really prints", omb_violations)
+
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";
     # it must be arithmetic, and it must not appear where it is not true.
@@ -2540,6 +2825,20 @@ def main(argv):
         len(govman_nodes),
         len({str((n.get("govmanListing") or {}).get("listedUnder") or "") for n in govman_nodes}),
         govman_method, govman_dated))
+    # Reported on its own line so "133 units with an OMB figure" can never be
+    # read as 133 more measured costs. The negative count is printed because a
+    # minus sign here is normal -- the figures are net of collections -- and an
+    # unexplained one reads as a defect.
+    omb_nodes = [n for n in nodes if isinstance(n.get("ombBudget"), dict)]
+    if omb_nodes:
+        omb_year = omb_nodes[0]["ombBudget"].get("fiscalYear")
+        omb_negative = sum(1 for n in omb_nodes if (n["ombBudget"].get("outlays") or 0) < 0)
+        omb_uncosted = sum(1 for n in omb_nodes if str(n.get("cost_status") or "") != "official")
+        print("  OMB budget database  : {:,} organisations carry FY{} budget authority and outlays ({:,} agency, {:,} bureau), each the sum of the account rows OMB files under it and never the cost; {:,} of them publish no measured cost of their own; {:,} net below zero, which is what 'net of offsetting collections' means".format(
+            len(omb_nodes), omb_year,
+            sum(1 for n in omb_nodes if n["ombBudget"].get("level") == "agency"),
+            sum(1 for n in omb_nodes if n["ombBudget"].get("level") == "bureau"),
+            omb_uncosted, omb_negative))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
         senate_listed, senate_placed, senate_missing))
     house_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "house_clerk_committee_list")

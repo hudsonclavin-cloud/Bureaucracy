@@ -481,47 +481,6 @@
     "lastVerified": null
   },
   {
-    "id": "commerce-department-bureau-of-industry-and-security",
-    "name": "Bureau of Industry and Security",
-    "type": "Bureau",
-    "parentId": null,
-    "desc": "The Bureau of Industry and Security (\"BIS\") is publishing this temporary final rule to restrict the exportation of black mass and tungsten waste and scrap without a license. Specifically, as of August 27, 2026, U.S. persons engaged in the sale of black mass and tungsten waste and scrap must allocate 100 percent of monthly sales to U.S. persons, unless an adjustment or exception is obtained in advance from BIS. This action is taken pursuant to section 101 of the Defense Production Act of 1950, as amended (\"DPA\" or the \"Act\"), the Defense Priorities and Allocations System (15 CFR part 700) and Presidential Determination Pursuant to Section 101 of the Defense Production Act of 1950, as Amended, on Recoverable Critical Minerals and Materials, dated July 30, 2026 (\"DPA Determination on Recoverable CMMs\"), in which the President authorized the Department of Commerce (\"Commerce\") to address the scarcity of recoverable critical minerals and materials (\"CMMs\"). BIS invites the public to submit comments on whether any additional sales requirements are necessary or appropriate to promote the national defense.",
-    "description": "The Bureau of Industry and Security (\"BIS\") is publishing this temporary final rule to restrict the exportation of black mass and tungsten waste and scrap without a license. Specifically, as of August 27, 2026, U.S. persons engaged in the sale of black mass and tungsten waste and scrap must allocate 100 percent of monthly sales to U.S. persons, unless an adjustment or exception is obtained in advance from BIS. This action is taken pursuant to section 101 of the Defense Production Act of 1950, as amended (\"DPA\" or the \"Act\"), the Defense Priorities and Allocations System (15 CFR part 700) and Presidential Determination Pursuant to Section 101 of the Defense Production Act of 1950, as Amended, on Recoverable Critical Minerals and Materials, dated July 30, 2026 (\"DPA Determination on Recoverable CMMs\"), in which the President authorized the Department of Commerce (\"Commerce\") to address the scarcity of recoverable critical minerals and materials (\"CMMs\"). BIS invites the public to submit comments on whether any additional sales requirements are necessary or appropriate to promote the national defense.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/08/06/2026-16078/dpas-directive-allocation-order-and-additional-requirements-for-recoverable-critical-minerals-and"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#4a8ac8",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Commerce Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/08/06/2026-16078/dpas-directive-allocation-order-and-additional-requirements-for-recoverable-critical-minerals-and",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "commerce-department-bureau-of-the-census",
     "name": "Bureau of the Census",
     "type": "Bureau",
@@ -1588,47 +1547,6 @@
     "lastVerified": null
   },
   {
-    "id": "interior-department-office-of-surface-mining-reclamation-and-enforcement-osm",
-    "name": "Office of Surface Mining Reclamation and Enforcement (OSM)",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Office of Surface Mining Reclamation and Enforcement (OSM) is publishing this notice to announce that it has prepared a Final Environmental Impact Statement (FEIS) and Record of Decision (ROD) for Navajo Transitional Energy Company's (NTEC) proposed Surface Mining Control and Reclamation Act of 1977 (SMCRA) permit for the No Name Permit area within NTEC's existing Navajo Mine Lease 14-20-603-2505.",
-    "description": "The Office of Surface Mining Reclamation and Enforcement (OSM) is publishing this notice to announce that it has prepared a Final Environmental Impact Statement (FEIS) and Record of Decision (ROD) for Navajo Transitional Energy Company's (NTEC) proposed Surface Mining Control and Reclamation Act of 1977 (SMCRA) permit for the No Name Permit area within NTEC's existing Navajo Mine Lease 14-20-603-2505.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/01/2026-17785/notice-of-availability-of-the-final-environmental-impact-statement-and-record-of-decision-for-navajo"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Interior Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/01/2026-17785/notice-of-availability-of-the-final-environmental-impact-statement-and-record-of-decision-for-navajo",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
     "id": "justice-department-bureau-of-investigation",
     "name": "Bureau of Investigation",
     "type": "Bureau",
@@ -1949,47 +1867,6 @@
     "possibleParent": "Justice Department",
     "discoveryMethod": "federal_register_listing_scan",
     "sourceUrl": "https://www.federalregister.gov/documents/2026/08/20/2026-17010/agency-information-collection-activities-proposed-collection-ecomments-requested-revision-of-a",
-    "wikidataId": null,
-    "discoveryConfidenceEstimate": 0.61,
-    "isCandidate": true,
-    "confidenceEstimate": 0.61,
-    "possibleParentId": null,
-    "lastVerified": null
-  },
-  {
-    "id": "justice-department-office-of-justice-programs",
-    "name": "Office of Justice Programs",
-    "type": "Office",
-    "parentId": null,
-    "desc": "The Department of Justice hereby gives notice of planned filing of the charter for the reestablishment of the Global Justice Information Sharing Initiative Advisory Committee (GAC) as a federal advisory committee pursuant to the Federal Advisory Committee Act, as amended. The GAC will provide recommendations to the Attorney General, Assistant Attorney General for the Office of Justice Programs, and the Director of the Bureau of Justice Assistance on national justice information and criminal intelligence sharing policy, standards, and integration initiatives that support improved public safety and enhanced coordination among federal, state, local, tribal, territorial, and other justice-interested partners.",
-    "description": "The Department of Justice hereby gives notice of planned filing of the charter for the reestablishment of the Global Justice Information Sharing Initiative Advisory Committee (GAC) as a federal advisory committee pursuant to the Federal Advisory Committee Act, as amended. The GAC will provide recommendations to the Attorney General, Assistant Attorney General for the Office of Justice Programs, and the Director of the Bureau of Justice Assistance on national justice information and criminal intelligence sharing policy, standards, and integration initiatives that support improved public safety and enhanced coordination among federal, state, local, tribal, territorial, and other justice-interested partners.",
-    "sourceUrls": [
-      "https://www.federalregister.gov/documents/2026/09/02/2026-17923/notice-of-submission-of-charter-for-the-reestablishment-of-the-global-justice-information-sharing"
-    ],
-    "sourceTypes": [
-      "candidate_discovery",
-      "federal_register"
-    ],
-    "attachToRoot": true,
-    "employees": null,
-    "budget": null,
-    "color": "#888888",
-    "confidenceScore": 0.61,
-    "verificationStatus": "unverified",
-    "sourceCount": 1,
-    "children": [],
-    "proofSourceCount": 2,
-    "proofSourceTypes": [
-      "federal_register",
-      "historical_documentation"
-    ],
-    "existsProven": true,
-    "parentProven": false,
-    "proofStatus": "proven",
-    "proofReason": "historical_documentation_recorded",
-    "possibleParent": "Justice Department",
-    "discoveryMethod": "federal_register_listing_scan",
-    "sourceUrl": "https://www.federalregister.gov/documents/2026/09/02/2026-17923/notice-of-submission-of-charter-for-the-reestablishment-of-the-global-justice-information-sharing",
     "wikidataId": null,
     "discoveryConfidenceEstimate": 0.61,
     "isCandidate": true,

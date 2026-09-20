@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-20T03:39:36Z",
+ "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip",
+ "content_type": "application/zip",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip",
+ "bytes": 3927162,
+ "sha256": "3fc01dd04bff12c425ce72cb54e259726b7769d8c04767dcd4e16743ca77ce4e",
+ "error": null
+}

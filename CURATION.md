@@ -1371,6 +1371,45 @@ and neither is wrong.
 
 ### 13.3 Genuine gaps: units the Manual carries and this graph has no node for
 
+**Adjudicated and applied on 2026-09-20.** The list below was the first pass.
+All 48 Manual entries with a mapped ancestor were then put through two rounds —
+one agent to decide, a second instructed to overturn — and **26 were added** by
+`scripts/add_curated_nodes.py` under the new `government_manual_entry` licence,
+which checks the Manual's own hierarchy as well as the name. The second round
+earned its place: it found that NOAA, NTIA, DARPA, NSA and FMCSA are all
+already in the graph under acronyms, that a substring probe for "ntis" matches
+51 `Scientist` posts, and the Bureau of Indian Education case in §13.5 below.
+
+Added (26): Bureau of Industry and Security, Minority Business Development
+Agency and the National Technical Information Service under Commerce; the
+United States Naval Academy under the Navy; the Defense Commissary, Legal
+Services and Security Cooperation Agencies, the National Intelligence,
+National Defense and Uniformed Services Universities under Defense Agencies &
+Field Activities; the Agency for Toxic Substances and Disease Registry under
+HHS; the Office of Surface Mining Reclamation and Enforcement under Interior;
+the Offices of Justice Programs, Community Oriented Policing Services and
+Violence Against Women, the Executive Office for Immigration Review, the
+Foreign Claims Settlement Commission, the United States Parole Commission and
+INTERPOL-Washington under Justice; the Bureau of International Labor Affairs,
+Veterans' Employment and Training Service and Women's Bureau under Labor; the
+Great Lakes Saint Lawrence Seaway Development Corporation under Transportation;
+and the Kennedy Center, the National Gallery of Art and the Woodrow Wilson
+International Center for Scholars, which the Manual files under the
+Smithsonian Institution.
+
+Not added: 6 already present under another name; 5 are the Manual's own
+grouping headings ("Bureaus", "Offices / Boards", "Defense Agencies", "Joint
+Service Schools", "Federally Aided Corporations"); 3 are the
+civilian-department / uniformed-service distinction §5 already records; 4 are
+out of scope; 3 were left unsure rather than guessed — Economics and Statistics
+Administration, Defense Acquisition University and the Bureau of Indian
+Education.
+
+The first pass's reasoning is kept below, unchanged, because it is what the
+adjudication was run against.
+
+
+
 Each was checked against the whole published graph twice: by
 `canonical_name_key` equality, and by a distinctive phrase from the name
 ("gallaudet", "kennedy center", "multidistrict", "interpol", "seaway",
@@ -1414,3 +1453,106 @@ from it: the Manual's hierarchy was measured for this pass and found to add
 nothing the tree does not already evidence (all 40 agreeing edges already
 carry placement from another source), so no placement is derived from the
 Manual at all. Recorded here so the next pass need not re-measure it.
+
+## 14. What OMB's Public Budget Database says, and the one placement it disputes (2026-09-20)
+
+`data_pipeline/verification/omb_budget.py` matches OMB's agencies and bureaus
+to curated organisations by canonical-name equality, scoped so a bureau only
+reaches a node beneath its own agency's node. 133 units match. Three things the
+join surfaced are curation questions rather than pipeline ones, and none is
+applied here.
+
+### 14.1 One placement disagreement, refused rather than resolved
+
+OMB files the **Pension Benefit Guaranty Corporation** as a bureau of the
+**Department of Labor**. This graph curates it as an independent agency
+(`exec-ind-misc-pension-benefit-guaranty-corporation-pbgc`). Both are
+defensible: the PBGC is a wholly owned federal corporation whose board of
+directors is chaired by the Secretary of Labor, so OMB's budget presentation
+files it there, while the graph treats it as the independent body its own
+governance makes it. The row is refused and no figure is published for the
+PBGC from this source. Nothing is resolved — this is the same treatment the
+Monthly Treasury Statement's Tax Court line gets, where the Treasury files
+under the Legislative Branch what the graph curates under the judiciary.
+
+### 14.2 A name that means two different units in the same file
+
+**"Bureau of Labor Statistics"** appears in this database under the Department
+of Commerce as well as under the Department of Labor. That is not an error in
+the file: OMB "adjusts [historical records] each year to conform to the agency
+and account structure of the current budget", and the BLS was a Commerce bureau
+before 1913. The matcher refuses a bureau name several of OMB's agencies use,
+so neither row is published. Recorded because it is the clearest example of why
+a name is never enough on its own here.
+
+### 14.3 The Department of War
+
+The FY2027 user's guide contains this sentence, in a passage about restating
+historical records onto the current budget's agency structure:
+
+> However, for technical reasons, the Department of War is referred to as the
+> Department of Defense.
+
+Read in context — the paragraph is about OMB renaming historical units to
+today's names, giving "Department of Health, Education, and Welfare" becoming
+HHS/Education/SSA as its example — this says the department's current name in
+the FY2027 Budget's structure is the **Department of War**, and that this
+database keeps calling it Defense as a technical carryover.
+
+**Nothing is done about it here, deliberately.** This graph names the node
+"Department of Defense (DoD)", and one clause in a data user's guide is a lead,
+not a licence: §10 records what it cost this repository to act on a single true
+sentence about the VA's networks. A rename would need what the renames in §9
+needed — the department's own page, or the statute, carrying the name — and
+`scripts/rename_units_to_official_wording.py` re-checks every row against the
+source on every run, so the row cannot be written until such a source is in
+hand. Recorded so the next pass starts from the evidence rather than rediscovering
+the sentence.
+
+### 13.5 Bureau of Indian Education: why a real, absent unit is still not added
+
+The strongest finding of the adversarial round, and it generalises.
+
+The Monthly Treasury Statement has **no row** named "Bureau of Indian
+Education". It has one combined row, `Bureau of Indian Affairs and Bureau of
+Indian Education` (classification 59309125), and the graph applies its measured
+**$2,427,080,474.47** to `exec-dept-doi-bia`, the existing Bureau of Indian
+Affairs node.
+
+So adding a Bureau of Indian Education node would not add a measured cost —
+there is no separate figure to add. It would insert an unlined sibling next to
+a node whose measured figure covers both of them, and the cascade would then
+apportion a share to it out of a pool the Treasury reports for the two
+together. A measured figure would start being divided on no evidence at all.
+
+`jointly_measured_names` in `scripts/add_curated_nodes.py` now refuses any row
+whose name is one half of a joint Treasury row already measured on another
+node, under every licence, and names the row and the node in the refusal. The
+unit is real and the graph does lack it; what is missing is a way to give it a
+figure without taking one from its sibling, and until the Treasury reports them
+separately there is none.
+
+### 13.6 The three left unsure
+
+- **Economics and Statistics Administration** — genuinely absent by every
+  probe, and the reviewer could not establish whether it still exists as a
+  distinct unit rather than as a title for the Under Secretary for Economic
+  Affairs' office. Absent evidence either way, it is not added.
+- **Defense Acquisition University** — absence confirmed independently; the
+  reviewer questioned whether it belongs under `Defense Agencies & Field
+  Activities` alongside the intelligence agencies rather than under a schools
+  grouping the graph does not have.
+- **Bureau of Indian Education** — §13.5.
+
+### 13.7 Three of the 26 were already in the review queue
+
+A corroboration worth recording. `output/candidate_nodes.json` is the
+discovery crawlers' review queue, and the queue repair that runs after every
+rebuild dropped exactly three entries when these nodes landed: **Bureau of
+Industry and Security**, **Office of Surface Mining Reclamation and
+Enforcement** and **Office of Justice Programs**. All three had been found
+independently by the crawlers from Federal Register and directory sources
+before the Manual was ever read, and sat unpromoted because a candidate needs
+to clear the promotion threshold. The Manual and the crawlers agree on them,
+which is the kind of agreement this project has had few opportunities to
+observe.
