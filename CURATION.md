@@ -1556,3 +1556,83 @@ before the Manual was ever read, and sat unpromoted because a candidate needs
 to clear the promotion threshold. The Manual and the crawlers agree on them,
 which is the kind of agreement this project has had few opportunities to
 observe.
+
+## 15. 2026-09-20: what a visitor clicks first, and what was behind it
+
+The repository owner opened the site and found a U.S. Court of Appeals with no
+verification, and then a review found the first three nodes anyone clicks were
+blank. Each case was checked against the graph before anything was changed,
+and most were not what they looked like.
+
+### 15.1 The thirteen circuits: five had never been given a page
+
+Six of thirteen carried nothing. Five (2nd, 4th, 5th, 7th, 9th) had **no
+candidate page in `official_sites.json` at all** — their siblings were queued
+on the identical `caN.uscourts.gov` pattern and these were simply skipped —
+so the verifier had never fetched them and never could have. The Third
+Circuit's URL lacked the `www.` its twelve siblings carry, so its robots.txt
+was unreachable; the Sixth died on a dropped connection. All eight pages were
+probed read-only first, then nominated with the observed label in the basis,
+and the verifier confirmed **13 of 13**. `canonical_name_key` already folds
+`U.S.` into `United States`, so no matcher was touched. The Fourth Circuit
+confirmed off a 263-character JavaScript shell — correctly, since the readable
+floor governs negatives only — and the record says so. The Eighth keeps its
+parent-page method rather than being upgraded on a page nothing read.
+
+Still open: this family carries two naming conventions across thirteen
+siblings — six short ("Sixth Circuit"), seven long ("U.S. Court of Appeals for
+the Ninth Circuit") — and both verify against their courts' own pages, so the
+evidence does not settle which the graph should use. Left for the owner.
+
+### 15.2 The branches: one page, one rename
+
+`usa.gov/branches-of-government` — the federal government's official portal
+stating its own structure — labels all three branches as headings in page
+content, the same class of page the Executive Branch's confirmation already
+rested on (`whitehouse.gov/government/executive-branch/`). senate.gov,
+house.gov and uscourts.gov label none of them. The **Judicial Branch** was
+nominated there and confirmed. The **Legislative Branch** could not be, under
+any URL: the curated name was `Legislative Branch — The Congress`, which keys
+to `legislative branch the congress`, and no page carries that. Renamed to
+`Legislative Branch` through `rename_units_to_official_wording.py` on that
+page's evidence — the same em-dash-qualifier class §9 records. The Senate
+Appropriations subcommittee of the same name is not a sibling, is excluded from
+Treasury name-matching by type, and the branch's $6.47bn is applied by
+`TREASURY_ROW_ALIASES` to the node id; `tests/test_treasury_outlays_wiring.py`
+still pins that the subcommittee never takes it.
+
+### 15.3 The 715 robots refusals, measured: one host was worth it
+
+Recorded in full in `docs/NETWORK_ACCESS.md` §11. 67 of 68 hosts refuse the
+page exactly as they refuse the robots file. `www.nga.mil` alone serves its
+homepage behind a 403 robots.txt and is now the second entry in
+`STANDARD_4XX_HOSTS`; NGA confirmed. The rest are unrecoverable from this
+environment and the site now says so per node (`verificationUnread`).
+
+### 15.4 The Government Manual's own entries: 38 organisations, no network
+
+The route to evidence for units on walled hosts is a directory, and the Manual
+is one this repository already holds verbatim. `build_org_records` names 162
+organisations uniquely; 38 of the unverified take it as their method. The
+Manual's printed hierarchy places 12 under the parent the tree gives them and
+files **one elsewhere**: the Federal Energy Regulatory Commission, under the
+Department of Energy, where this graph has it among the independent regulatory
+commissions. Both are defensible — FERC is an independent commission housed in
+DOE — so nothing is resolved and the panel says the two sources disagree.
+
+Three of the 38 are worth a note. "U.S. Courts of Appeals (13 Circuits)" and
+"U.S. District Courts (94 Districts)" match the Manual's "United States Courts
+of Appeals" / "United States District Courts" because `canonical_name_key`
+drops the parenthetical; those are real Manual entries for those court
+families and the match is right. "Export-Import Bank of the U.S." matches the
+Manual's spelling the same way.
+
+### 15.5 The evidence-triage sweep (phase 1c)
+
+`docs/EVIDENCE_TRIAGE_RUNBOOK.md` is the brief; 16 Sonnet agents took a shard
+of 52 organisations each with everything the repository knows about each node
+(siblings' evidence state, queued URLs, which hosts are walled, prior
+nominations, candidate Treasury lines), probed live, and proposed; 16
+adversarial verifiers then re-probed every nomination, rename and cost key to
+refute it. The results, once recorded, promoted and verified, are the subject
+of the next section.

@@ -370,7 +370,21 @@ Five statuses in `evidence.json`, and only the first two are applied:
   the confirmation count and never raise it. Applies nothing either way.
 - `fetch_failed` — no page was read: blocked network, 404, robots.txt
   disallow, a 200 with under 400 characters of readable text (a JS shell or
-  a bot challenge). Applies nothing; it is a fact about the network.
+  a bot challenge). It applies no source, no date and no failed check — it
+  is a fact about the network, not the unit — but **since 2026-09-20 it
+  publishes that fact**: `verificationUnread` carries a closed `kind`
+  (`host_refuses_crawler`, `robots_unreachable`, `page_not_found`,
+  `page_below_readable_floor`, `site_failing`, `network_error`, `other`)
+  classified from the record's own reason, the URL, its host, the date and
+  the attempt count, and the panel prints one sentence per kind where it
+  said "Not yet verified" — which on ~1,000 nodes read as though nobody had
+  tried. A refusal at the sandbox's own proxy ("Tunnel connection failed")
+  is a fact about this environment and is never published. The field is
+  evidence-owned, kept in the viewer copy, and gated: it may sit beside a
+  directory or Manual method (a different document) and beside a list
+  negative, never beside a page method or a `not_found`, both of which mean
+  a page WAS read. 96 organisations carried it the day it landed, 56 of
+  them because the host refuses the crawler outright.
 - `not_checkable` — the curated name could never be evidence: a count label
   ("Individual Senator Offices (100)") or a name too generic to distinguish
   anything ("Energy", "Defense", 16). Never fetched.
@@ -1127,6 +1141,34 @@ the panel, because a reader is entitled to see it before reading the badge as
 current. Staleness costs much less here than it would in a roster, since the
 incumbent is never read and a job title outlives its holder, but the claim is
 still "the Manual's <edition> entry lists a post of this name" and never more.
+
+**The organisation route, since 2026-09-20 — the Manual's entry for the unit
+itself.** `docs/NETWORK_ACCESS.md` §11 measured all 68 hosts this project had
+recorded as refusing robots.txt: **67 refuse the page too**, so for the units
+on them a web page can never be the route. The Manual names 162 of the graph's
+832 organisations uniquely and 38 of the 344 that carried no verification —
+CRS, the OCC, the Naval Academy, the Marine Corps, twelve Defense Agencies,
+COPS, OJP, EOIR, BIS, NTIS, the Women's Bureau — so `build_org_records` /
+`apply_govman_org_evidence` publish that entry as `verificationMethod:
+listed_in_us_government_manual` (a different claim from the post route, and a
+different sentence on the panel), with the entry block `govmanEntry` (the name
+as printed, the parent as printed, edition, granule, the publisher's URL)
+stamped always and the method only where none exists. It follows the Federal
+Register directory's shape, **not** the post route's: the entry's name is
+existence and the parent entry the Manual files it under is a separate claim
+about the edge — `placementMethod: listed_under_parent_in_us_government_manual`
+only when that parent IS the one the tree gives the node, a
+`placementDirectoryDisagreement` (source `us_government_manual`) when the
+Manual's parent names some other node here, and nothing when the parent is the
+Manual's own scaffolding ("Defense Agencies", "Bureaus"). FERC is the one
+disagreement: the Manual files it under the Department of Energy and this graph
+under the independent regulatory commissions, and neither is resolved. Both
+routes share one join (`match_organisations`, unambiguous on both sides or
+nothing). The gate's independent parse now also records which entity encloses
+each entry, so it refuses a parent the Manual does not print and a placement
+under a parent the tree does not give, beside every check the post block gets.
+First run: 162 entries, 38 methods, 12 placements, 1 disagreement; official
+source 747 → 783, placements evidenced 339 → 351.
 
 The gate parses the Manual itself rather than trusting the block: it
 recomputes the fixture's digest, re-derives the eligible titles with a
