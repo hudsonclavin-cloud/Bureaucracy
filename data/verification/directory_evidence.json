@@ -25,7 +25,7 @@
     "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
     "fetched_at": "2026-09-08T19:19:15Z",
     "entries": 472,
-    "matched": 145,
+    "matched": 158,
     "ambiguous_entries": [],
     "ambiguous_names_in_graph": [
       "agriculture rural development food and drug administration and related agencies",
@@ -40,7 +40,7 @@
       "transportation housing and urban development and related agencies",
       "va medical centers"
     ],
-    "placements_listed": 67,
+    "placements_listed": 72,
     "placements_ancestor": 5,
     "placements_disagree": [
       {
@@ -49,17 +49,15 @@
         "tree_parent": "exec-regulatory"
       }
     ],
-    "placements_parent_unmatched": 2,
-    "top_level_entries": 70,
+    "placements_parent_unmatched": 3,
+    "top_level_entries": 77,
     "unmatched_sample": [
       "ACTION",
       "Administrative Conference of the United States",
       "Advisory Council on Historic Preservation",
       "Advocacy and Outreach Office",
-      "Agency for International Development",
       "Agency for Toxic Substances and Disease Registry",
       "Aging Administration",
-      "Agricultural Marketing Service",
       "Air Force Department",
       "Air Quality National Commission",
       "Air Transportation Stabilization Board",
@@ -82,7 +80,6 @@
       "Broadcasting Board of Governors",
       "Census Monitoring Board",
       "Child Support Enforcement Office",
-      "Children and Families Administration",
       "Christopher Columbus Quincentenary Jubilee Commission",
       "Civil Rights Cold Case Records Review Board",
       "Civil Rights Commission",
@@ -100,10 +97,8 @@
       "Committee for the Implementation of Textile Agreements",
       "Commodity Credit Corporation",
       "Community Development Financial Institutions Fund",
-      "Community Living Administration",
       "Competitiveness Policy Council",
       "Comptroller of the Currency",
-      "Consumer Financial Protection Bureau",
       "Cooperative State Research, Education, and Extension Service",
       "Coordinating Council on Juvenile Justice and Delinquency Prevention",
       "Copyright Royalty Board",
@@ -111,7 +106,12 @@
       "Corporation for National and Community Service",
       "Council of the Inspectors General on Integrity and Efficiency",
       "Council on Environmental Quality",
-      "Counsel to the President"
+      "Counsel to the President",
+      "Court Services and Offender Supervision Agency for the District of Columbia",
+      "Crime and Security in U.S. Seaports, Interagency Commission",
+      "Customs Service",
+      "Defense Acquisition Regulations System",
+      "Defense Base Closure and Realignment Commission"
     ]
   },
   "senate_report": {
@@ -517,6 +517,32 @@
         "parentListedName": "Health and Human Services Department"
       }
     },
+    "exec-independent-agency-for-international-development": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 6,
+      "listedName": "Agency for International Development",
+      "url": "https://www.federalregister.gov/agencies/agency-for-international-development",
+      "agencyUrl": "http://www.usaid.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-usda-agricultural-marketing-service": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 9,
+      "listedName": "Agricultural Marketing Service",
+      "url": "https://www.federalregister.gov/agencies/agricultural-marketing-service",
+      "agencyUrl": "http://www.ams.usda.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
     "exec-dept-usda-ars": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -721,6 +747,22 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-dept-hhs-administration-for-children-and-families": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 49,
+      "listedName": "Children and Families Administration",
+      "url": "https://www.federalregister.gov/agencies/children-and-families-administration",
+      "agencyUrl": "http://www.acf.hhs.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
     "exec-dept-dhs-uscg": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -757,6 +799,22 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-dept-hhs-administration-for-community-living": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 587,
+      "listedName": "Community Living Administration",
+      "url": "https://www.federalregister.gov/agencies/community-living-administration",
+      "agencyUrl": "http://www.acl.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
+    },
     "leg-support-cbo": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -764,6 +822,16 @@
       "listedName": "Congressional Budget Office",
       "url": "https://www.federalregister.gov/agencies/congressional-budget-office",
       "agencyUrl": "http://www.cbo.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-regulatory-bureau-of-consumer-financial-protection": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 573,
+      "listedName": "Consumer Financial Protection Bureau",
+      "url": "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau",
+      "agencyUrl": "http://www.consumerfinance.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -898,6 +966,22 @@
       "listedName": "Economic Analysis Bureau",
       "url": "https://www.federalregister.gov/agencies/economic-analysis-bureau",
       "agencyUrl": "http://www.bea.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
+    "exec-dept-doc-economic-development-administration": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 120,
+      "listedName": "Economic Development Administration",
+      "url": "https://www.federalregister.gov/agencies/economic-development-administration",
+      "agencyUrl": "http://www.eda.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z",
       "parentListedName": "Commerce Department",
@@ -1184,6 +1268,16 @@
         "parentListedName": "Transportation Department"
       }
     },
+    "exec-regulatory-federal-housing-finance-agency": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 174,
+      "listedName": "Federal Housing Finance Agency",
+      "url": "https://www.federalregister.gov/agencies/federal-housing-finance-agency",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "exec-ind-misc-federal-labor-relations-authority-flra": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1368,6 +1462,22 @@
         "parentListedName": "Agriculture Department"
       }
     },
+    "exec-dept-usda-foreign-agricultural-service": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 202,
+      "listedName": "Foreign Agricultural Service",
+      "url": "https://www.federalregister.gov/agencies/foreign-agricultural-service",
+      "agencyUrl": "http://www.fas.usda.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Agriculture Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-usda",
+        "parentListedName": "Agriculture Department"
+      }
+    },
     "exec-dept-treasury-ofac": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1399,6 +1509,16 @@
         "parentId": "exec-dept-usda",
         "parentListedName": "Agriculture Department"
       }
+    },
+    "exec-independent-general-services-administration": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 210,
+      "listedName": "General Services Administration",
+      "url": "https://www.federalregister.gov/agencies/general-services-administration",
+      "agencyUrl": "http://www.gsa.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
     },
     "exec-dept-doi-usgs": {
       "source": "federal_register_agency_directory",
@@ -1514,6 +1634,17 @@
         "parentListedName": "Health and Human Services Department"
       }
     },
+    "exec-ind-misc-institute-of-museum-and-library-services": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 591,
+      "listedName": "Institute of Museum and Library Services",
+      "url": "https://www.federalregister.gov/agencies/institute-of-museum-and-library-services",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "National Foundation on the Arts and the Humanities"
+    },
     "exec-dept-doi": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1608,6 +1739,16 @@
         "parentListedName": "Interior Department"
       }
     },
+    "exec-ind-misc-legal-services-corporation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 276,
+      "listedName": "Legal Services Corporation",
+      "url": "https://www.federalregister.gov/agencies/legal-services-corporation",
+      "agencyUrl": "http://www.lsc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "leg-support-loc": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1651,6 +1792,16 @@
       "listedName": "Merit Systems Protection Board",
       "url": "https://www.federalregister.gov/agencies/merit-systems-protection-board",
       "agencyUrl": "http://www.mspb.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-millennium-challenge-corporation": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 287,
+      "listedName": "Millennium Challenge Corporation",
+      "url": "https://www.federalregister.gov/agencies/millennium-challenge-corporation",
+      "agencyUrl": "http://www.mcc.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
@@ -2036,6 +2187,16 @@
       "entryId": 438,
       "listedName": "Privacy and Civil Liberties Oversight Board",
       "url": "https://www.federalregister.gov/agencies/privacy-and-civil-liberties-oversight-board",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-ind-misc-railroad-retirement-board": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 444,
+      "listedName": "Railroad Retirement Board",
+      "url": "https://www.federalregister.gov/agencies/railroad-retirement-board",
       "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"

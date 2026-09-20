@@ -902,6 +902,40 @@ rest on the previous administration's archive; and SAM.gov's Federal Hierarchy
 is reachable at last and still needs a key the owner would have to obtain.
 `data.opm.gov` and `www.usa.gov` answer too and nothing here has read either.
 
+**usa.gov's A-to-Z index, used to nominate and not as a source (since
+2026-09-20).** The binding constraint on verification has never been fetching;
+it is knowing which URL to fetch, and 297 organisations had no candidate page at
+all. `www.usa.gov` answers `robots.txt` 200 with a 10-second crawl-delay and
+publishes an A-to-Z index pairing each federal agency with the official website
+the government itself points the public to. Crawled once across its 22 letter
+pages with that delay respected: **475 agency/site pairs, of which 200 reduce to
+exactly one node's canonical name and none to two.**
+
+It is deliberately NOT wired in as a fourth directory module beside the Federal
+Register's, the Senate's and the House Clerk's. Those make claims — a unit is
+listed, and for the complete ones its absence is evidence. usa.gov claims
+nothing this project needs: it carries no parent, so it can never support a
+placement, and it makes no completeness claim, so it can never support a
+negative. What it is good for is the one thing that was missing, and
+`official_sites.json` has always said what that is worth: "a URL here is
+something to check, not evidence." So the pairs go through `nominate.py` as
+ordinary `own_site` nominations and the verifier decides by reading the page.
+**25 organisations that had nothing to fetch now have a candidate**, among them
+DCSA, MDA, the NRO, USPTO, three national laboratories, SAMHSA, Federal Student
+Aid and the OCC.
+
+One was dropped, and it is the reason a directory's own pairing cannot be
+trusted wholesale: usa.gov links the **National Security Council** to a
+Congressional Research Service report on `congress.gov`, because the NSC has no
+public site of its own. Nominated as the NSC's own page it would have let the
+verifier confirm the Council from a legislative document that merely names it —
+the precise over-claim this project refuses. Publication platforms
+(`congress.gov`, `govinfo.gov`, `federalregister.gov`) are filtered out, and the
+NSC keeps its honest state of having no page. Two `http://` listings were used
+over `https://` with the listed URL recorded, the convention already applied to
+a directory's http listing on a `.gov` host: the scheme is transport, not a
+claim.
+
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from
 `data/verification/headcount_evidence.json` (133 records) and
@@ -1835,7 +1869,7 @@ never handed out for page nomination — 4,382 positions would produce 4,382
 identical refusals — but a position *can* carry a cost nomination, its rate of
 basic pay, which is never the unit's cost.
 
-The standing numbers this work exists to move: 297 of 786 organisations have
+The standing numbers this work exists to move: 294 of 807 organisations have
 no candidate page at all, so the verifier can never reach them; and 139 of
 5,402 nodes carry a cost identified for themselves. `nominate.py status --kind
 source` prints the first and `validate_published_graph.py` the second; those

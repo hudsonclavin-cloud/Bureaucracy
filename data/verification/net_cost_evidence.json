@@ -2,7 +2,7 @@
   "_note": "Derived by scripts/derive_net_cost_evidence.py from Treasury's Statement of Net Cost, committed verbatim under tests/fixtures/treasury/net_cost/ with its digest. Each record is an AUDITED figure -- the only cost in this project checked by somebody outside the reporting agency -- on an accrual basis for a fiscal year that has ended. It is not the unit's outlays and not the same period as the graph's anchor, so the exporter stamps it beside the cost and never over it. Rows that name no unit of government ('Total', 'All other entities') are refused rather than matched to the nearest node.",
   "source": {
     "kind": "treasury_statement_of_net_cost",
-    "derivedAt": "2026-09-20T00:18:19Z",
+    "derivedAt": "2026-09-20T01:23:52Z",
     "fixture": "tests/fixtures/treasury/net_cost/statement_net_cost_2025-09-30.json"
   },
   "report": {

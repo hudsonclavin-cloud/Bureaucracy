@@ -1503,5 +1503,77 @@
  ],
  "leg-support": [
   "https://www.aoc.gov/explore-capitol-campus/buildings-grounds"
+ ],
+ "exec-dept-defense-agency-dcsa": [
+  "https://www.dcsa.mil/"
+ ],
+ "exec-dept-defense-agency-mda": [
+  "https://www.mda.mil/"
+ ],
+ "exec-dept-defense-agency-nro": [
+  "https://www.nro.gov/"
+ ],
+ "exec-dept-doc-economic-development-administration": [
+  "https://www.eda.gov/"
+ ],
+ "exec-dept-doc-uspto": [
+  "https://www.uspto.gov/"
+ ],
+ "exec-dept-doe-brookhaven-national-laboratory": [
+  "https://www.bnl.gov/world/"
+ ],
+ "exec-dept-doe-los-alamos-national-laboratory": [
+  "https://www.lanl.gov/"
+ ],
+ "exec-dept-doe-national-energy-technology-laboratory": [
+  "https://www.netl.doe.gov/"
+ ],
+ "exec-dept-ed-fsa": [
+  "https://studentaid.gov/"
+ ],
+ "exec-dept-hhs-administration-for-children-and-families": [
+  "https://www.acf.hhs.gov/"
+ ],
+ "exec-dept-hhs-administration-for-community-living": [
+  "https://acl.gov/"
+ ],
+ "exec-dept-hhs-samhsa": [
+  "https://www.samhsa.gov/"
+ ],
+ "exec-dept-state-u-s-mission-to-the-united-nations": [
+  "https://usun.usmission.gov/"
+ ],
+ "exec-dept-treasury-occ": [
+  "https://www.occ.gov/"
+ ],
+ "exec-dept-usda-agricultural-marketing-service": [
+  "https://www.ams.usda.gov/"
+ ],
+ "exec-dept-usda-foreign-agricultural-service": [
+  "https://www.fas.usda.gov/"
+ ],
+ "exec-ind-misc-institute-of-museum-and-library-services": [
+  "https://www.imls.gov/"
+ ],
+ "exec-ind-misc-legal-services-corporation": [
+  "https://www.lsc.gov/"
+ ],
+ "exec-ind-misc-millennium-challenge-corporation": [
+  "https://www.mcc.gov/"
+ ],
+ "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob": [
+  "https://www.pclob.gov/"
+ ],
+ "exec-ind-misc-railroad-retirement-board": [
+  "https://rrb.gov/"
+ ],
+ "exec-independent-agency-for-international-development": [
+  "https://www.usaid.gov/"
+ ],
+ "exec-independent-general-services-administration": [
+  "https://www.gsa.gov/"
+ ],
+ "exec-regulatory-federal-housing-finance-agency": [
+  "https://www.fhfa.gov/"
  ]
 }
