@@ -1322,7 +1322,8 @@
   "https://www.ca1.uscourts.gov/"
  ],
  "jud-circuit-3rd-circuit": [
-  "https://ca3.uscourts.gov/"
+  "https://ca3.uscourts.gov/",
+  "https://www.ca3.uscourts.gov/"
  ],
  "jud-circuit-6th-circuit": [
   "https://www.ca6.uscourts.gov/"
@@ -1575,5 +1576,23 @@
  ],
  "exec-regulatory-federal-housing-finance-agency": [
   "https://www.fhfa.gov/"
+ ],
+ "jud-circuit-2nd-circuit": [
+  "https://www.ca2.uscourts.gov/"
+ ],
+ "jud-circuit-4th-circuit": [
+  "https://www.ca4.uscourts.gov/"
+ ],
+ "jud-circuit-5th-circuit": [
+  "https://www.ca5.uscourts.gov/"
+ ],
+ "jud-circuit-7th-circuit": [
+  "https://www.ca7.uscourts.gov/"
+ ],
+ "jud-circuit-8th-circuit": [
+  "https://www.ca8.uscourts.gov/"
+ ],
+ "jud-circuit-9th-circuit": [
+  "https://www.ca9.uscourts.gov/"
  ]
 }
