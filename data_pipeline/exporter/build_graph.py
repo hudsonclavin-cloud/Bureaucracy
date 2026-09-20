@@ -229,7 +229,7 @@ MINIMAL_GRAPH_FIELDS = (
     "verificationStatus", "confidenceScore", "verificationMethod",
     "verificationMatchedIn", "verificationMatchRule", "verificationMatchedText",
     "verificationFailure", "verificationFailureSource", "directoryListing",
-    "pageReadNotNamed",
+    "pageReadNotNamed", "verificationUnread",
     # the placement line, which is evidence for the edge above the node
     "placementVerified", "placementVerifiedAt", "placementUrl", "placementMethod",
     "placementMatchedText", "placementMatchRule", "placementMatchedIn",

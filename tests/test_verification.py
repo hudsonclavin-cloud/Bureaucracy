@@ -447,7 +447,9 @@ class ApplyEvidenceTests(unittest.TestCase):
         self.assertEqual(stats["own_page_confirmations"], 0)
 
     def test_only_a_miss_on_its_own_page_is_published_as_a_failed_check(self) -> None:
-        for status, expect_stamp in ((NOT_FOUND, True), (INCONCLUSIVE, False), (FETCH_FAILED, False), (NOT_CHECKABLE, False)):
+        # FETCH_FAILED is tested on its own below: since 2026-09-20 it stamps
+        # verificationUnread (why the page went unread) and nothing else.
+        for status, expect_stamp in ((NOT_FOUND, True), (INCONCLUSIVE, False), (NOT_CHECKABLE, False)):
             with self.subTest(status=status):
                 tree = self._tree()
                 untouched = index_tree(self._tree())[0]["doe-nnsa"]
@@ -461,6 +463,71 @@ class ApplyEvidenceTests(unittest.TestCase):
                     self.assertFalse(node.get("sourceUrls"))
                 else:
                     self.assertEqual(node, untouched, f"{status} must change nothing at all")
+
+    def test_a_fetch_failure_says_why_the_page_went_unread_and_nothing_more(self) -> None:
+        """"Not yet verified" read, on ~1,000 nodes, as though nobody had
+        tried. A fetch_failed record is a fact about the host or the page and
+        is published as exactly that: which host, why, when -- and no
+        lastVerified, no failed check, no source, because nothing was learned
+        about the unit."""
+        from data_pipeline.verification.evidence import (
+            UNREAD_HOST_REFUSES, UNREAD_ROBOTS_UNREACHABLE, UNREAD_PAGE_NOT_FOUND,
+            UNREAD_BELOW_FLOOR, UNREAD_SITE_FAILING, UNREAD_NETWORK, UNREAD_OTHER, unread_kind,
+        )
+        cases = (
+            ("PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)", UNREAD_HOST_REFUSES),
+            ("HTTPError: HTTP Error 403: Forbidden", UNREAD_HOST_REFUSES),
+            ("HTTPError: HTTP Error 401: Unauthorized", UNREAD_HOST_REFUSES),
+            ("PermissionError: robots.txt disallows this path (www.fsa.usda.gov/robots.txt could not be reached (TimeoutError); refused: an undefined robots.txt is a complete disallow)", UNREAD_ROBOTS_UNREACHABLE),
+            ("HTTPError: HTTP Error 404: Not Found", UNREAD_PAGE_NOT_FOUND),
+            ("no_readable_text", UNREAD_BELOW_FLOOR),
+            ("PermissionError: robots.txt disallows this path (www.occ.gov/robots.txt could not be fetched (HTTP 302); refused while the site is failing, no rule was seen)", UNREAD_SITE_FAILING),
+            ("HTTPError: HTTP Error 503: Service Unavailable", UNREAD_SITE_FAILING),
+            ("URLError: <urlopen error [Errno -2] Name or service not known>", UNREAD_NETWORK),
+            ("RemoteDisconnected: Remote end closed connection without response", UNREAD_NETWORK),
+            ("something this test has never seen", UNREAD_OTHER),
+        )
+        from data_pipeline.verification.evidence import UNREAD_SANDBOX, UNREAD_KINDS
+        self.assertEqual(unread_kind("OSError: Tunnel connection failed: 403 Forbidden"), UNREAD_SANDBOX)
+        self.assertNotIn(UNREAD_SANDBOX, UNREAD_KINDS, "a sandbox refusal is never publishable")
+        sandbox_tree = self._tree(); untouched = index_tree(self._tree())[0]["doe-nnsa"]
+        sb = apply_evidence_to_tree(sandbox_tree, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+                                                               "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "OSError: Tunnel connection failed: 403 Forbidden"}]}})
+        self.assertEqual(sb["unread_sandbox_skipped"], 1)
+        self.assertEqual(index_tree(sandbox_tree)[0]["doe-nnsa"], untouched, "a proxy refusal must put nothing on the site")
+        for reason, expected in cases:
+            with self.subTest(reason=reason[:40]):
+                self.assertEqual(unread_kind(reason), expected)
+        tree = self._tree()
+        stats = apply_evidence_to_tree(tree, {"doe-nnsa": {
+            "status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+            "failures": [{"url": "https://www.energy.gov/nnsa", "reason": cases[0][0]},
+                         {"url": "https://www.energy.gov/nnsa/about", "reason": cases[0][0]}]}})
+        node = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(stats[FETCH_FAILED], 1)
+        self.assertEqual(stats["unread_stamped"], 1)
+        unread = node["verificationUnread"]
+        self.assertEqual(unread["kind"], UNREAD_HOST_REFUSES)
+        self.assertEqual(unread["url"], "https://www.energy.gov/nnsa")
+        self.assertEqual(unread["host"], "www.energy.gov")
+        self.assertEqual(unread["checkedAt"], "2026-09-03T12:00:00+00:00")
+        self.assertEqual(unread["attempts"], 2)
+        self.assertIn("could not be read (403)", unread["detail"])
+        for field in ("lastVerified", "verificationFailure", "verificationMethod", "sourceUrls"):
+            self.assertFalse(node.get(field), f"{field} must not be set by a fetch failure")
+
+    def test_an_unread_stamp_is_withdrawn_when_the_page_is_later_read(self) -> None:
+        tree = self._tree()
+        apply_evidence_to_tree(tree, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+                                                   "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "HTTPError: HTTP Error 404: Not Found"}]}})
+        self.assertEqual(index_tree(tree)[0]["doe-nnsa"]["verificationUnread"]["kind"], "page_not_found")
+        apply_evidence_to_tree(tree, {})  # the record is gone: the next build withdraws what it owned
+        self.assertNotIn("verificationUnread", index_tree(tree)[0]["doe-nnsa"], "an owned field must be cleared on the next build")
+
+    def test_a_fetch_failure_without_a_url_stamps_nothing(self) -> None:
+        tree = self._tree(); untouched = index_tree(self._tree())[0]["doe-nnsa"]
+        apply_evidence_to_tree(tree, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa", "failures": []}})
+        self.assertEqual(index_tree(tree)[0]["doe-nnsa"], untouched)
 
     def test_a_confirmation_is_withdrawn_when_the_evidence_is(self) -> None:
         """The published graph is re-fed as a payload on every build, so
@@ -894,6 +961,60 @@ class BuildAndGateTests(unittest.TestCase):
         code, out = self._gate(second.graph_path)
         self.assertEqual(code, 0, out)
         self.assertIn("official source      : 0 of", out)
+
+    def test_an_unread_page_reaches_the_site_with_its_reason_and_the_gate_checks_every_field(self) -> None:
+        """A fetch_failed record used to publish nothing, and the panel said
+        "Not yet verified" as though nobody had tried. It now publishes WHY
+        the page went unread; the gate re-checks the vocabulary, the host,
+        the date, and that it never sits beside a page method or a failed
+        check, and reports the count on its own line scoped to organisations."""
+        result = self._build({"doe-nnsa": {
+            "status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+            "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "PermissionError: robots.txt disallows this path (www.energy.gov/robots.txt could not be read (403); refused by policy, no rule was seen)"}]}})
+        graph = json.loads(result.graph_path.read_text(encoding="utf-8"))
+        nnsa = self._record("doe-nnsa", graph)
+        self.assertEqual(nnsa["verificationUnread"]["kind"], "host_refuses_crawler")
+        self.assertEqual(nnsa["verificationUnread"]["host"], "www.energy.gov")
+        self.assertFalse(nnsa.get("lastVerified")); self.assertFalse(nnsa.get("verificationFailure"))
+        code, out = self._gate(result.graph_path)
+        self.assertEqual(code, 0, out)
+        self.assertIn("page unread          : 1 organisations", out)
+        self.assertIn("host_refuses_crawler", out)
+        cases = {
+            "invented kind": lambda n: n["verificationUnread"].__setitem__("kind", "vibes"),
+            "no url": lambda n: n["verificationUnread"].__setitem__("url", ""),
+            "non-official host": lambda n: n["verificationUnread"].update({"url": "https://example.com/x", "host": "example.com"}),
+            "host is not the url's": lambda n: n["verificationUnread"].__setitem__("host", "www.doe.gov"),
+            "future date": lambda n: n["verificationUnread"].__setitem__("checkedAt", "2999-01-01T00:00:00+00:00"),
+            "not a date": lambda n: n["verificationUnread"].__setitem__("checkedAt", "yesterday"),
+            "beside a page method": lambda n: n.update({"verificationMethod": METHOD_OWN_PAGE, "sourceUrls": ["https://www.energy.gov/nnsa"], "sourceCount": 1, "lastVerified": "2026-09-03"}),
+            "beside a failed check": lambda n: n.update({"verificationFailure": NOT_FOUND, "lastVerified": "2026-09-03"}),
+            "not an object": lambda n: n.__setitem__("verificationUnread", "yes"),
+        }
+        # Beside a LIST negative it passes: a complete list that was read and a
+        # page that could not be read are two documents and two true facts.
+        allowed = json.loads(json.dumps(graph))
+        self._record("doe-nnsa", allowed).update({"verificationFailure": "not_in_official_list", "lastVerified": "2026-09-03",
+            "verificationFailureSource": {"source": "senate_committee_list", "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSAF.xml",
+                                          "listedUnder": "Committee on Agriculture", "checkedAt": "2026-09-03T12:00:00+00:00", "listedNames": []}})
+        path = self.tmp / f"{uuid.uuid4().hex}.json"; path.write_text(json.dumps(allowed), encoding="utf-8")
+        code, out = self._gate(path)
+        self.assertNotIn("says its page went unread beside", out, out)
+        for name, mutate in cases.items():
+            with self.subTest(case=name):
+                corrupted = json.loads(json.dumps(graph))
+                mutate(self._record("doe-nnsa", corrupted))
+                path = self.tmp / f"{uuid.uuid4().hex}.json"
+                path.write_text(json.dumps(corrupted), encoding="utf-8")
+                code, out = self._gate(path)
+                self.assertEqual(code, 1, f"{name} should fail the gate:\n{out}")
+
+    def test_the_gate_mirrors_the_unread_vocabulary_exactly(self) -> None:
+        from data_pipeline.verification.evidence import UNREAD_KINDS
+        source = (Path(__file__).resolve().parent.parent / "scripts" / "validate_published_graph.py").read_text(encoding="utf-8")
+        block = source.split("UNREAD_KINDS = {",1)[1].split("}",1)[0]
+        mirrored = {tok.strip().strip('",') for tok in block.replace("\n"," ").split(",") if tok.strip().strip('",')}
+        self.assertEqual(mirrored, set(UNREAD_KINDS))
 
     def test_the_gate_refuses_every_way_a_verification_claim_can_be_unbacked(self) -> None:
         result = self._build({})

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-20T20:05:51.262757+00:00",
+  "timestamp": "2026-09-20T20:21:41.985859+00:00",
   "mode": "offline_regeneration",
   "note": "Rebuilt from the curated base graph and the Treasury anchor already published; no crawler ran. See scripts/regenerate_published_graph.py.",
   "nodes_before": 5424,
@@ -26,8 +26,8 @@
     "verified": 263,
     "unverified": 4769
   },
-  "average_confidence_score": 0.7,
-  "verified_node_count": 260,
+  "average_confidence_score": 0.71,
+  "verified_node_count": 263,
   "treasury_total_fetched": false,
   "build_validation": {
     "initial_node_count": 747,
@@ -53,9 +53,9 @@
       "verified": 263,
       "unverified": 4769
     },
-    "verified_node_count": 260,
+    "verified_node_count": 263,
     "dropped_placeholder_nodes": 0,
-    "average_confidence_score": 0.7,
+    "average_confidence_score": 0.71,
     "pipeline_summary": {
       "initial_node_count": 747,
       "raw_nodes_loaded": 747,
@@ -108,7 +108,8 @@
       "placements_not_checkable_no_parent_page": 204,
       "existence_folded": 60,
       "placements_folded": 63,
-      "placement_only": 0
+      "placement_only": 0,
+      "unread_stamped": 1078
     },
     "directory_evidence": {
       "listed": 337,
@@ -411,7 +412,7 @@
       "unverified": 4769
     },
     "export_verified_node_count": 263,
-    "export_average_confidence_score": 0.7,
+    "export_average_confidence_score": 0.71,
     "pre_export_audit_summary": {
       "total_nodes": 5453,
       "nodes_with_errors": 4930,

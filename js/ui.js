@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260920d";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260920d";
+import { createGovernmentGraph } from "./graph.js?v=20260920e";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260920e";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -236,6 +236,7 @@ function summariseGraph(root) {
     nodes: 0, measured: 0, capped: 0, receipts: 0, sourced: 0,
     placed: 0, orgEdges: 0, unreachable: 0, posts: 0, paidPosts: 0,
     allocated: 0, noFigure: 0, postsWithoutFigure: 0,
+    orgs: 0, orgsSourced: 0, orgsUnread: 0, orgsHostRefuses: 0,
   };
   const stack = [root];
   while (stack.length) {
@@ -275,6 +276,18 @@ function summariseGraph(root) {
     }
     if (node !== root && !isPost) {
       count.orgEdges += 1;
+      if (String(node.synthetic || "") !== "treasury_receipts" && !/treasury accounting line/i.test(String(node.type || ""))) {
+        // An organisation whose queued page went unread, and why. Counted
+        // only where no method confirmed it by another route, so the card's
+        // "could not be read" never overlaps its "carry a source".
+        count.orgs += 1;
+        if (Array.isArray(node.sourceUrls) && node.sourceUrls.length) count.orgsSourced += 1;
+        const unread = node.verificationUnread;
+        if (unread && typeof unread === "object" && !node.verificationMethod) {
+          count.orgsUnread += 1;
+          if (String(unread.kind || "") === "host_refuses_crawler") count.orgsHostRefuses += 1;
+        }
+      }
       if (node.placementVerified === true) count.placed += 1;
       if (node.placementCheckable === false) count.unreachable += 1;
     }
@@ -338,9 +351,14 @@ function readingGuidePoints(count) {
     [
       "“No source recorded” is the usual answer, not a glitch",
       `${count.sourced.toLocaleString()} of the ${count.nodes.toLocaleString()} entries carry a link to `
-      + `a source. The rest are structure with nothing behind them yet, and each panel says so rather `
-      + `than letting you assume it was checked. The written descriptions carry no citation at all, `
-      + `and are labelled that way wherever they appear.`,
+      + `a source. ${count.posts.toLocaleString()} of the entries are posts, and a post is confirmed only when `
+      + `its own organisation's official page names it as a heading — most pages name no staff at all — so `
+      + `"no source recorded" on a post is this site declining to claim what it cannot show, not a check `
+      + `that was skipped. Of the ${count.orgs.toLocaleString()} organisations, ${count.orgsSourced.toLocaleString()} `
+      + `carry a source and ${count.orgsUnread.toLocaleString()} have a page queued that could not be read`
+      + `${count.orgsHostRefuses ? ` — for ${count.orgsHostRefuses.toLocaleString()} of them because the host refuses this crawler outright, which is a fact about the host and not about the unit` : ""}; `
+      + `each panel says which. The written descriptions carry no citation at all, and are labelled that way `
+      + `wherever they appear.`,
     ],
     [
       "Reading a panel",
@@ -1391,6 +1409,26 @@ function renderVerificationPanel(data) {
       checkLine = checkedOn
         ? `Checked ${checkedOn}: its official page${where} does not name it as a heading or link`
         : `Its official page${where} does not name it as a heading or link`;
+    } else if (!data.verificationMethod && data.verificationUnread && typeof data.verificationUnread === "object") {
+      // The page queued for it went unread, and the record says why. Said as
+      // a fact about the host or the page, never as a finding about the unit:
+      // 67 of 68 such hosts refuse the page exactly as they refuse robots.txt
+      // (docs/NETWORK_ACCESS.md §11), and "Not yet verified" read as though
+      // nobody had tried.
+      const u = data.verificationUnread;
+      const when = u.checkedAt ? new Date(u.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
+      const on = when ? ` on ${when}` : "";
+      const host = u.host || hostnameOf(u.url) || "its queued page";
+      const UNREAD_TEXT = {
+        host_refuses_crawler: `Not verified: ${host} refuses this crawler${on} (401/403 to the project's User-Agent), so the page queued for it could not be read — a fact about the host, not about the unit`,
+        robots_unreachable: `Not verified: ${host}'s robots.txt could not be reached${on}; the crawl standard treats that as a complete disallow, so the page was not read`,
+        page_not_found: `Not verified: the page queued for it (${host}) answered 404${on}; it has moved or gone, and no other page has been proposed`,
+        page_below_readable_floor: `Not verified: the page queued for it (${host}) served under 400 characters of readable text${on} — a script shell — so nothing could be read`,
+        site_failing: `Not verified: ${host} answered a server error${on}; refused until the site recovers`,
+        network_error: `Not verified: ${host} could not be reached${on} (network error); the page was not read`,
+        other: `Not verified: the page queued for it (${host}) could not be read${on}`,
+      };
+      checkLine = UNREAD_TEXT[String(u.kind || "")] || UNREAD_TEXT.other;
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";

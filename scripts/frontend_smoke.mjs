@@ -144,6 +144,8 @@ try {
   check("the guide says the withheld box reveals nothing for the rest", /have no figure at all and never will/.test(guideText), guideText.slice(0, 600));
   check("the guide says a post gets no share of outlays", /no position is given a share/.test(guideText), guideText.slice(0, 600));
   check("the guide says most entries carry no source", /entries carry a link to a source/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 900));
+  check("the guide says why a post carries no source", /declining to claim what it cannot show/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 1200));
+  check("the guide says how many organisation pages went unread", /have a page queued that could not be read/.test(guideText.replace(/\s+/g, " ")), guideText.slice(0, 1400));
   await page.locator("#btn-reading-guide-close").click();
   await page.waitForTimeout(200);
   check("the reading guide closes when dismissed", (await page.locator("#reading-guide.open").count()) === 0, "still open after dismissal");

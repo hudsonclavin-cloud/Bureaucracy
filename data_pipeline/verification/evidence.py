@@ -52,6 +52,7 @@ record what was attempted and change nothing, because nothing was learned.
 from __future__ import annotations
 
 import re
+from urllib.parse import urlparse
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -124,6 +125,7 @@ EVIDENCE_OWNED_FIELDS = (
     "ombBudget",
     "verificationMethod",
     "verificationFailure",
+    "verificationUnread",
     "verificationSiteFrom",
     "placementVerified",
     "placementUrl",
@@ -215,6 +217,54 @@ TREASURY_DATASET_HOST = "fiscaldata.treasury.gov"
 # name was not there" is an honest thing to say. A JS-only shell, an empty
 # body and a bot-challenge interstitial all return 200 with nearly nothing.
 MIN_READABLE_CHARS = 400
+
+#: Why a queued page went unread, published on the node so the panel can say
+#: "its host refuses this crawler" rather than "not yet verified" -- which
+#: read, on ~1,000 nodes, as though nobody had tried. Measured 2026-09-20 on
+#: the 1,087 fetch_failed records then on file: 707 were a robots.txt answered
+#: 401/403, 115 a page under the readable floor, 112 an unreachable robots.txt,
+#: 95 a page answering 401/403 itself, 56 a 404. A closed vocabulary, and the
+#: record's own reason rides beside it truncated, so nothing here is invented.
+UNREAD_HOST_REFUSES = "host_refuses_crawler"
+UNREAD_ROBOTS_UNREACHABLE = "robots_unreachable"
+UNREAD_PAGE_NOT_FOUND = "page_not_found"
+UNREAD_BELOW_FLOOR = "page_below_readable_floor"
+UNREAD_SITE_FAILING = "site_failing"
+UNREAD_NETWORK = "network_error"
+UNREAD_OTHER = "other"
+#: A refusal at the sandbox's own egress proxy ("Tunnel connection failed")
+#: is a fact about THIS environment, not about the host or the page, and it
+#: is never published: the site must not carry sandbox weather. Deliberately
+#: outside UNREAD_KINDS, so the gate refuses it if it ever leaks.
+UNREAD_SANDBOX = "sandbox_refused"
+UNREAD_KINDS = (
+    UNREAD_HOST_REFUSES, UNREAD_ROBOTS_UNREACHABLE, UNREAD_PAGE_NOT_FOUND,
+    UNREAD_BELOW_FLOOR, UNREAD_SITE_FAILING, UNREAD_NETWORK, UNREAD_OTHER,
+)
+
+
+def unread_kind(reason: str) -> str:
+    """Classify a fetch failure's recorded reason. Order matters: the robots
+    verdicts are wrapped in a PermissionError whose text also names the path,
+    so they are tested before the bare HTTP statuses."""
+    s = str(reason or "")
+    if "Tunnel connection failed" in s:
+        return UNREAD_SANDBOX
+    if "could not be read (401" in s or "could not be read (403" in s:
+        return UNREAD_HOST_REFUSES
+    if "could not be reached" in s:
+        return UNREAD_ROBOTS_UNREACHABLE
+    if "while the site is failing" in s or re.search(r"HTTP Error 5\d\d", s):
+        return UNREAD_SITE_FAILING
+    if "HTTP Error 401" in s or "HTTP Error 403" in s:
+        return UNREAD_HOST_REFUSES
+    if "HTTP Error 404" in s or "HTTP Error 410" in s:
+        return UNREAD_PAGE_NOT_FOUND
+    if "no_readable_text" in s or "readable" in s:
+        return UNREAD_BELOW_FLOOR
+    if any(w in s for w in ("URLError", "RemoteDisconnected", "timed out", "TimeoutError", "ConnectionReset", "SSL", "IncompleteRead")):
+        return UNREAD_NETWORK
+    return UNREAD_OTHER
 
 # Text nodes are split on these before comparison, so "Office of Science —
 # Advancing discovery" offers "Office of Science" as a label.
@@ -1138,6 +1188,32 @@ def apply_evidence_to_tree(
             # Nothing was learned that can be published, except that a unit
             # absent from its own page is a real negative.
             stats[status] += 1
+            if status == FETCH_FAILED and checked_at:
+                # A page that went unread is still a fact the reader is owed:
+                # 67 of the 68 hosts this project had recorded as refusing
+                # robots.txt refuse the page too (docs/NETWORK_ACCESS.md 11),
+                # and "Not yet verified" said nothing about that. This stamps
+                # WHY, from the record's own reason, and nothing else -- no
+                # lastVerified, no failure, no source: nothing was learned
+                # about the unit, only about the host.
+                failed = [f for f in (record.get("failures") or []) if isinstance(f, dict) and f.get("url")]
+                kind = unread_kind(failed[0].get("reason")) if failed else None
+                if kind == UNREAD_SANDBOX:
+                    # The proxy refused the tunnel: nothing reached the host,
+                    # so there is no fact about the host to publish.
+                    stats["unread_sandbox_skipped"] = stats.get("unread_sandbox_skipped", 0) + 1
+                elif failed:
+                    first = failed[0]
+                    node["verificationUnread"] = {
+                        "kind": kind,
+                        "url": str(first["url"]),
+                        "host": urlparse(str(first["url"])).netloc.lower(),
+                        "checkedAt": checked_at,
+                        "attempts": len(failed),
+                        "detail": str(first.get("reason") or "")[:160],
+                    }
+                    stats["unread_stamped"] = stats.get("unread_stamped", 0) + 1
+                continue
             if status == NOT_FOUND and not node.get("sourceUrls") and checked_at:
                 # The page that was read, so the claim can be checked. Without
                 # it the panel said "its official page does not name it"

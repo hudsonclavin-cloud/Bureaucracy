@@ -1980,8 +1980,23 @@ def main(argv):
     # separate document. Only these are refused on a post; see below.
     PAGE_PLACEMENT_METHODS = {"name_labelled_on_parent_official_page", POST_PAGE_METHOD}
     KNOWN_FAILURES = {"not_found", "not_in_official_list"}
+    # Mirrors evidence.UNREAD_KINDS, stdlib-only by design (this file imports
+    # nothing from data_pipeline); tests/test_verification.py pins the two equal.
+    UNREAD_KINDS = {
+        "host_refuses_crawler", "robots_unreachable", "page_not_found",
+        "page_below_readable_floor", "site_failing", "network_error", "other",
+    }
+
+    def _past_iso(text):
+        from datetime import date  # local, as the lastVerified check above does
+        try:
+            when = date.fromisoformat(str(text or "")[:10])
+        except ValueError:
+            return False
+        return when <= date.today()
     COMMITTEE_LIST_URLS = ("https://www.senate.gov/", "https://clerk.house.gov/")
     failure_beside_source, unofficial_official, unknown_method = [], [], []
+    unread_violations = []
     # Kept apart from unknown_method deliberately: a pay defect printed under
     # "every verification method is one this pipeline can produce" would be
     # reported as the wrong kind of fault.
@@ -1997,6 +2012,36 @@ def main(argv):
             failure_beside_source.append("{} claims {!r} beside {} source(s)".format(label(node), node["verificationFailure"], len(urls)))
         if node.get("verificationFailure") and str(node.get("verificationFailure")) not in KNOWN_FAILURES:
             unknown_method.append("{} verificationFailure {!r}".format(label(node), node.get("verificationFailure")))
+        unread = node.get("verificationUnread")
+        if unread is not None:
+            # A page that went unread, and why. It may sit beside a directory
+            # or Manual method (a different document) but never beside a page
+            # method, since a page method means a page WAS read; every field
+            # has to be the record's, and the host has to be the URL's own.
+            if not isinstance(unread, dict):
+                unread_violations.append("{} verificationUnread is not an object".format(label(node)))
+            else:
+                kind = str(unread.get("kind") or "")
+                url = str(unread.get("url") or "")
+                host = str(unread.get("host") or "")
+                if kind not in UNREAD_KINDS:
+                    unread_violations.append("{} verificationUnread.kind {!r} is not one this pipeline produces".format(label(node), kind))
+                if not url.startswith("https://") and not url.startswith("http://"):
+                    unread_violations.append("{} verificationUnread names no URL".format(label(node)))
+                elif not urlparse(url).netloc.lower().endswith((".gov", ".mil")):
+                    unread_violations.append("{} verificationUnread cites a non-official host {!r}".format(label(node), urlparse(url).netloc))
+                if url and host != urlparse(url).netloc.lower():
+                    unread_violations.append("{} verificationUnread.host {!r} is not the URL's host".format(label(node), host))
+                if not _past_iso(unread.get("checkedAt")):
+                    unread_violations.append("{} verificationUnread.checkedAt {!r} is not a past ISO date".format(label(node), unread.get("checkedAt")))
+                if str(node.get("verificationMethod") or "").startswith("name_labelled_on_"):
+                    unread_violations.append("{} says its page went unread beside a page method {!r}".format(label(node), node.get("verificationMethod")))
+                # not_found means the unit's OWN page was read, which "went
+                # unread" contradicts. not_in_official_list is a different
+                # document -- a complete list that was read -- and a page that
+                # could not be read beside it is two true facts, not one lie.
+                if str(node.get("verificationFailure") or "") == "not_found":
+                    unread_violations.append("{} says its page went unread beside a failed check on that same page".format(label(node)))
         # A confirmation made by setting the committee type words aside says
         # so, quotes the page, and is granted by the node's kind: the rule on
         # anything but a committee, or without the label, or with a label
@@ -2235,6 +2280,7 @@ def main(argv):
     gate.check("every placement claim names the parent the tree actually has", placement_wrong_parent)
 
     gate.check("no node claims a failed check beside a source", failure_beside_source)
+    gate.check("an unread page says which host, why, and when, and never beside a page method", unread_violations)
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
@@ -2729,6 +2775,10 @@ def main(argv):
     print("  official source      : {:,} of {:,} ({:.1%})".format(official, len(nodes), official / len(nodes) if nodes else 0))
     print("  verified by          : {}".format(dict(methods) or "nothing yet"))
     print("  checked, not found   : {:,}".format(checked_failed))
+    unread_orgs = [n for n in nodes if not is_post(n) and isinstance(n.get("verificationUnread"), dict) and not n.get("verificationMethod")]
+    unread_kinds = Counter(str(n["verificationUnread"].get("kind")) for n in unread_orgs)
+    print("  page unread          : {:,} organisations have a queued page that could not be read and no other method {}".format(
+        len(unread_orgs), dict(unread_kinds) or ""))
     # Positions are 85% of this graph and carried no evidence of any kind
     # until 2026-09-15, so their coverage is reported on its own line rather
     # than buried in a total the organisations dominate.

@@ -52,6 +52,10 @@
     "budget": null,
     "color": "#8a4ac8",
     "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.usa.gov/branches-of-government",
+    "nameVerifiedAt": "2026-09-20",
+    "nameMatchedText": "Legislative branch",
     "sourceUrls": [
       "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
       "https://www.usa.gov/branches-of-government"
@@ -97,16 +101,16 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T20:03:37+00:00",
-    "placementVerified": false,
-    "placementParentId": "the-constitution-of-the-united-states",
-    "placementVerifiedAt": "2026-09-20T20:03:37+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "legislative-branch",
-    "verificationMatchedIn": "content",
     "evidenceUrls": [
       "https://www.usa.gov/branches-of-government"
     ],
-    "evidenceVerifiedAt": "2026-09-20T20:03:37+00:00"
+    "evidenceVerifiedAt": "2026-09-20T20:03:37+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "legislative-branch",
+    "placementVerified": false,
+    "placementParentId": "the-constitution-of-the-united-states",
+    "placementVerifiedAt": "2026-09-20T20:03:37+00:00"
   },
   {
     "id": "leg-senate",
@@ -12940,7 +12944,15 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "leg-support"
+    "parentId": "leg-support",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.gao.gov/about",
+      "host": "www.gao.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "leg-support-gao-inspector-general",
@@ -12994,7 +13006,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "leg-support-gao"
+    "parentId": "leg-support-gao",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.gao.gov/about",
+      "host": "www.gao.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "leg-support-cbo",
@@ -13067,7 +13087,15 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "leg-support"
+    "parentId": "leg-support",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cbo.gov/about/overview",
+      "host": "www.cbo.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cbo.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "leg-support-loc",
@@ -14346,7 +14374,15 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-eop-nsc",
@@ -14423,7 +14459,15 @@
         }
       ]
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-eop-omb",
@@ -14613,7 +14657,15 @@
     "placementParentId": "exec-eop-omb",
     "placementMatchedText": "Federal Procurement Policy Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-eop-omb"
+    "parentId": "exec-eop-omb",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.whitehouse.gov/omb/procurement_default/",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-eop-ustr-u-s-trade-representative-ambassador",
@@ -15023,7 +15075,15 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-eop-cea",
@@ -15278,7 +15338,15 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-eop"
+    "parentId": "exec-eop",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.whitehouse.gov",
+      "host": "www.whitehouse.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-eop--treasury-receipts",
@@ -15475,7 +15543,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.state.gov/about/",
+      "host": "www.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-executive-secretary",
@@ -15529,7 +15605,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-state"
+    "parentId": "exec-dept-state",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.state.gov/about/",
+      "host": "www.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-inspector-general",
@@ -15583,7 +15667,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-state"
+    "parentId": "exec-dept-state",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.state.gov/about/",
+      "host": "www.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-bureau-of-african-affairs-deputy-assistant-secretary-2-4-bureau-of-african-affairs",
@@ -15975,7 +16067,15 @@
       "low": 2,
       "high": 4
     },
-    "parentId": "exec-dept-state-bureau-of-near-eastern-affairs"
+    "parentId": "exec-dept-state-bureau-of-near-eastern-affairs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.state.gov/bureau-of-near-eastern-affairs/",
+      "host": "www.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-bureau-of-near-eastern-affairs-office-director-multiple-bureau-of-near-eastern-affairs",
@@ -16055,7 +16155,15 @@
       "kind": "unstated",
       "as_written": "multiple"
     },
-    "parentId": "exec-dept-state-bureau-of-near-eastern-affairs"
+    "parentId": "exec-dept-state-bureau-of-near-eastern-affairs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.state.gov/bureau-of-near-eastern-affairs/",
+      "host": "www.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-bureau-of-south-central-asian-affairs-deputy-assistant-secretary-2-4-bureau-of-south-central-asian-affairs",
@@ -16692,7 +16800,15 @@
       "low": 2,
       "high": 4
     },
-    "parentId": "exec-dept-state-bureau-of-consular-affairs"
+    "parentId": "exec-dept-state-bureau-of-consular-affairs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://travel.state.gov/content/travel.html",
+      "host": "travel.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (travel.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-state-bureau-of-diplomatic-security-office-director-multiple-bureau-of-diplomatic-security",
@@ -16768,7 +16884,15 @@
       "kind": "unstated",
       "as_written": "multiple"
     },
-    "parentId": "exec-dept-state-bureau-of-diplomatic-security"
+    "parentId": "exec-dept-state-bureau-of-diplomatic-security",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://diplomaticsecurity.state.gov/",
+      "host": "diplomaticsecurity.state.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (diplomaticsecurity.state.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no ru"
+    }
   },
   {
     "id": "exec-dept-state--treasury-receipts",
@@ -17692,7 +17816,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "treasury_pool_negative": -444816644.44,
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmint.gov/",
+      "host": "www.usmint.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmint.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-treasury-fiscal",
@@ -18157,7 +18289,15 @@
       },
       "agencyMatched": "exec-dept-treasury"
     },
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "verificationUnread": {
+      "kind": "site_failing",
+      "url": "https://www.occ.gov/",
+      "host": "www.occ.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.occ.gov/robots.txt could not be fetched (HTTP 302); refused while the site is failing, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-treasury-ofac",
@@ -18283,7 +18423,15 @@
     "placementUrl": "https://www.federalregister.gov/agencies/financial-research-office",
     "placementMatchedText": "Financial Research Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.treasury.gov/initiatives/Pages/ofr.aspx",
+      "host": "www.treasury.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-dept-treasury-ttb",
@@ -18905,7 +19053,15 @@
       "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.defense.gov/About/",
+      "host": "www.defense.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.defense.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-inspector-general",
@@ -18959,7 +19115,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-defense"
+    "parentId": "exec-dept-defense",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.defense.gov/About/",
+      "host": "www.defense.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.defense.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-general-counsel",
@@ -19041,7 +19205,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-defense"
+    "parentId": "exec-dept-defense",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.defense.gov/About/",
+      "host": "www.defense.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.defense.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-chief-information-officer",
@@ -19095,7 +19267,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-defense"
+    "parentId": "exec-dept-defense",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.defense.gov/About/",
+      "host": "www.defense.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.defense.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-agency-dia",
@@ -19158,7 +19338,15 @@
       "url": "https://www.federalregister.gov/agencies/defense-intelligence-agency",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-dept-defense-agencies"
+    "parentId": "exec-dept-defense-agencies",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dia.mil",
+      "host": "www.dia.mil",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dia.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-agency-nga",
@@ -19202,11 +19390,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T20:05:06+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.nga.mil/",
       "https://www.federalregister.gov/agencies/national-geospatial-intelligence-agency"
     ],
+    "evidenceVerifiedAt": "2026-09-20T20:05:06+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-defense-agency-nga",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "National Geospatial-Intelligence Agency",
@@ -19215,8 +19407,6 @@
       "parentListedName": "Defense Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T20:05:06+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementDirectoryAncestor": {
       "source": "federal_register_agency_directory",
       "listedUnder": "Defense Department",
@@ -19225,9 +19415,7 @@
       "url": "https://www.federalregister.gov/agencies/national-geospatial-intelligence-agency",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-dept-defense-agencies",
-    "verificationSiteFrom": "exec-dept-defense-agency-nga",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-defense-agencies"
   },
   {
     "id": "exec-dept-defense-agency-darpa",
@@ -19354,7 +19542,15 @@
       },
       "agencyMatched": "exec-dept-defense"
     },
-    "parentId": "exec-dept-defense-agencies"
+    "parentId": "exec-dept-defense-agencies",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dla.mil/Pages/default.aspx",
+      "host": "www.dla.mil",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dla.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-agency-dcaa",
@@ -19444,7 +19640,15 @@
       "period": "2025-03",
       "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
     },
-    "parentId": "exec-dept-defense-agencies"
+    "parentId": "exec-dept-defense-agencies",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dcaa.mil/",
+      "host": "www.dcaa.mil",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dcaa.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-defense-agency-disa",
@@ -19534,7 +19738,15 @@
       "period": "2025-03",
       "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip"
     },
-    "parentId": "exec-dept-defense-agencies"
+    "parentId": "exec-dept-defense-agencies",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://disa.mil/",
+      "host": "disa.mil",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (disa.mil/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+    }
   },
   {
     "id": "exec-dept-defense--treasury-receipts",
@@ -20252,7 +20464,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/dea/",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj-dea-administrator-dea",
@@ -20353,7 +20573,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-doj-dea"
+    "parentId": "exec-dept-doj-dea",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/dea/",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj-dea-deputy-administrator",
@@ -20454,7 +20682,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-doj-dea"
+    "parentId": "exec-dept-doj-dea",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/dea/",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj-atf",
@@ -20571,7 +20807,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-atf-director-atf",
@@ -20672,7 +20916,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-doj-atf"
+    "parentId": "exec-dept-doj-atf",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-atf-deputy-director",
@@ -20743,7 +20995,15 @@
     "placementParentId": "exec-dept-doj-atf",
     "placementMatchedText": "DEPUTY DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-atf"
+    "parentId": "exec-dept-doj-atf",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-atf-assistant-director-field-operations",
@@ -20814,7 +21074,15 @@
     "placementParentId": "exec-dept-doj-atf",
     "placementMatchedText": "ASSISTANT DIRECTOR, FIELD OPERATIONS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-atf"
+    "parentId": "exec-dept-doj-atf",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-atf-assistant-director-enforcement-programs-services",
@@ -20885,7 +21153,15 @@
     "placementParentId": "exec-dept-doj-atf",
     "placementMatchedText": "ASSISTANT DIRECTOR, ENFORCEMENT PROGRAMS AND SERVICES",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-atf"
+    "parentId": "exec-dept-doj-atf",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-atf-assistant-director-science-technology",
@@ -20956,7 +21232,15 @@
     "placementParentId": "exec-dept-doj-atf",
     "placementMatchedText": "ASSISTANT DIRECTOR, SCIENCE AND TECHNOLOGY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-atf"
+    "parentId": "exec-dept-doj-atf",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.atf.gov/",
+      "host": "www.atf.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.atf.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doj-bop",
@@ -21176,7 +21460,15 @@
       },
       "agencyMatched": "exec-dept-doj"
     },
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmarshals.gov/",
+      "host": "www.usmarshals.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmarshals.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
+    }
   },
   {
     "id": "exec-dept-doj-usms-director-usms",
@@ -21277,7 +21569,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-doj-usms"
+    "parentId": "exec-dept-doj-usms",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmarshals.gov/",
+      "host": "www.usmarshals.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmarshals.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
+    }
   },
   {
     "id": "exec-dept-doj-usms-deputy-director",
@@ -21362,7 +21662,15 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-282",
       "tableFooter": "The above list of key personnel was updated 8–2021."
     },
-    "parentId": "exec-dept-doj-usms"
+    "parentId": "exec-dept-doj-usms",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmarshals.gov/",
+      "host": "www.usmarshals.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmarshals.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
+    }
   },
   {
     "id": "exec-dept-doj-usms-associate-director-operations",
@@ -21433,7 +21741,15 @@
     "placementParentId": "exec-dept-doj-usms",
     "placementMatchedText": "ASSOCIATE DIRECTOR, OPERATIONS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-usms"
+    "parentId": "exec-dept-doj-usms",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmarshals.gov/",
+      "host": "www.usmarshals.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmarshals.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
+    }
   },
   {
     "id": "exec-dept-doj-usms-associate-director-administration",
@@ -21504,7 +21820,15 @@
     "placementParentId": "exec-dept-doj-usms",
     "placementMatchedText": "ASSOCIATE DIRECTOR, ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-usms"
+    "parentId": "exec-dept-doj-usms",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usmarshals.gov/",
+      "host": "www.usmarshals.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usmarshals.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
+    }
   },
   {
     "id": "exec-dept-doj-usao",
@@ -21831,7 +22155,15 @@
       "low": 3,
       "high": 5
     },
-    "parentId": "exec-dept-doj-div-civil-rights"
+    "parentId": "exec-dept-doj-div-civil-rights",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/crt",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj-div-criminal",
@@ -22428,7 +22760,15 @@
     "placementParentId": "exec-dept-doj-solicitor",
     "placementMatchedText": "PRINCIPAL DEPUTY SOLICITOR GENERAL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-solicitor"
+    "parentId": "exec-dept-doj-solicitor",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/osg",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj-solicitor-deputy-solicitor-general-4",
@@ -22512,7 +22852,15 @@
       "kind": "exact",
       "count": 4
     },
-    "parentId": "exec-dept-doj-solicitor"
+    "parentId": "exec-dept-doj-solicitor",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.justice.gov/osg",
+      "host": "www.justice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 401: Unauthorized"
+    }
   },
   {
     "id": "exec-dept-doj--treasury-receipts",
@@ -25002,7 +25350,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usda.gov/about-usda",
+      "host": "www.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-usda-inspector-general",
@@ -25056,7 +25412,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usda.gov/about-usda",
+      "host": "www.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-usda-fsa",
@@ -25173,7 +25537,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
+      "host": "www.fsa.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fsa.usda.gov/robots.txt could not be reached (TimeoutError); refused: an undefined robots.txt is a complete"
+    }
   },
   {
     "id": "exec-dept-usda-fsa-administrator-fsa",
@@ -25244,7 +25616,15 @@
     "placementParentId": "exec-dept-usda-fsa",
     "placementMatchedText": "ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-usda-fsa"
+    "parentId": "exec-dept-usda-fsa",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.fsa.usda.gov/FSA/webapp?area=home&subject=landing&topic=landing",
+      "host": "www.fsa.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fsa.usda.gov/robots.txt could not be reached (TimeoutError); refused: an undefined robots.txt is a complete"
+    }
   },
   {
     "id": "exec-dept-usda-nrcs",
@@ -26048,7 +26428,15 @@
     "placementParentId": "exec-dept-usda-ars",
     "placementMatchedText": "ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-usda-ars"
+    "parentId": "exec-dept-usda-ars",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.ars.usda.gov/main/main.htm",
+      "host": "www.ars.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-usda-fsis",
@@ -26165,7 +26553,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fsis.usda.gov/",
+      "host": "www.fsis.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fsis.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+    }
   },
   {
     "id": "exec-dept-usda-fsis-administrator-fsis",
@@ -26236,7 +26632,15 @@
     "placementParentId": "exec-dept-usda-fsis",
     "placementMatchedText": "ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-usda-fsis"
+    "parentId": "exec-dept-usda-fsis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fsis.usda.gov/",
+      "host": "www.fsis.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fsis.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+    }
   },
   {
     "id": "exec-dept-usda-fsis-deputy-administrator",
@@ -26307,7 +26711,15 @@
     "placementParentId": "exec-dept-usda-fsis",
     "placementMatchedText": "DEPUTY ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-usda-fsis"
+    "parentId": "exec-dept-usda-fsis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fsis.usda.gov/",
+      "host": "www.fsis.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fsis.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+    }
   },
   {
     "id": "exec-dept-usda-agricultural-marketing-service",
@@ -26553,7 +26965,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-usda"
+    "parentId": "exec-dept-usda",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fas.usda.gov/",
+      "host": "www.fas.usda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fas.usda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-usda--treasury-receipts",
@@ -26812,7 +27232,15 @@
     },
     "child_cost_basis_implied": true,
     "treasury_pool_negative": -108357223.55,
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.commerce.gov/about",
+      "host": "www.commerce.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.commerce.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doc-census",
@@ -26963,7 +27391,15 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.noaa.gov/",
+      "host": "www.noaa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.noaa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doc-nist",
@@ -27731,7 +28167,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-doc"
+    "parentId": "exec-dept-doc",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.eda.gov/",
+      "host": "www.eda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.eda.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-doc--treasury-receipts",
@@ -28445,7 +28889,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dol"
+    "parentId": "exec-dept-dol",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.osha.gov/",
+      "host": "www.osha.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.osha.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dol-bls",
@@ -28540,7 +28992,15 @@
       },
       "agencyMatched": "exec-dept-dol"
     },
-    "parentId": "exec-dept-dol"
+    "parentId": "exec-dept-dol",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.bls.gov/",
+      "host": "www.bls.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.bls.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dol-whd",
@@ -29985,7 +30445,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.hhs.gov/about/index.html",
+      "host": "www.hhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.hhs.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-fda",
@@ -30102,7 +30570,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fda.gov/",
+      "host": "www.fda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fda.gov/robots.txt could not be read (401) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-fda-chief-of-staff",
@@ -30156,7 +30632,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-hhs-fda"
+    "parentId": "exec-dept-hhs-fda",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fda.gov/",
+      "host": "www.fda.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fda.gov/robots.txt could not be read (401) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-cdc",
@@ -30899,7 +31383,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ahrq.gov/about/ahrqfact.htm",
+      "host": "www.ahrq.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-dept-hhs-ahrq-director-ahrq",
@@ -30970,7 +31462,15 @@
     "placementParentId": "exec-dept-hhs-ahrq",
     "placementMatchedText": "DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-hhs-ahrq"
+    "parentId": "exec-dept-hhs-ahrq",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ahrq.gov/about/ahrqfact.htm",
+      "host": "www.ahrq.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-dept-hhs-samhsa",
@@ -31315,7 +31815,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.hrsa.gov/index.html",
+      "host": "www.hrsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.hrsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-hrsa-administrator-hrsa",
@@ -31386,7 +31894,15 @@
     "placementParentId": "exec-dept-hhs-hrsa",
     "placementMatchedText": "ADMINISTRATOR, HEALTH RESOURCES AND SERVICES ADMINISTRATION",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-hhs-hrsa"
+    "parentId": "exec-dept-hhs-hrsa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.hrsa.gov/index.html",
+      "host": "www.hrsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.hrsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-hrsa-deputy-administrator",
@@ -31457,7 +31973,15 @@
     "placementParentId": "exec-dept-hhs-hrsa",
     "placementMatchedText": "DEPUTY ADMINISTRATOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-hhs-hrsa"
+    "parentId": "exec-dept-hhs-hrsa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.hrsa.gov/index.html",
+      "host": "www.hrsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.hrsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-hhs-ihs",
@@ -31872,7 +32396,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-hhs"
+    "parentId": "exec-dept-hhs",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.acf.hhs.gov/",
+      "host": "www.acf.hhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hhs-administration-for-community-living",
@@ -32334,7 +32866,15 @@
     "placementVerified": false,
     "placementParentId": "exec-dept-hud",
     "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "parentId": "exec-dept-hud"
+    "parentId": "exec-dept-hud",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.hud.gov/program_offices/public_indian_housing",
+      "host": "www.hud.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hud-pih-assistant-secretary-for-public-indian-housing",
@@ -32435,7 +32975,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-hud-pih"
+    "parentId": "exec-dept-hud-pih",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.hud.gov/program_offices/public_indian_housing",
+      "host": "www.hud.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hud-cpd",
@@ -32489,7 +33037,15 @@
     "placementVerified": false,
     "placementParentId": "exec-dept-hud",
     "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "parentId": "exec-dept-hud"
+    "parentId": "exec-dept-hud",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.hud.gov/program_offices/comm_planning",
+      "host": "www.hud.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hud-cpd-assistant-secretary-for-community-planning-development",
@@ -32590,7 +33146,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-hud-cpd"
+    "parentId": "exec-dept-hud-cpd",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.hud.gov/program_offices/comm_planning",
+      "host": "www.hud.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hud-fheo-assistant-secretary-for-fair-housing-equal-opportunity",
@@ -32691,7 +33255,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-hud-fheo"
+    "parentId": "exec-dept-hud-fheo",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.hud.gov/fairhousing",
+      "host": "www.hud.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-dept-hud-region-i-new-england",
@@ -33503,7 +34075,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.transportation.gov/about",
+      "host": "www.transportation.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.transportation.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was"
+    }
   },
   {
     "id": "exec-dept-dot-chief-of-staff",
@@ -33557,7 +34137,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.transportation.gov/about",
+      "host": "www.transportation.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.transportation.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was"
+    }
   },
   {
     "id": "exec-dept-dot-inspector-general",
@@ -33611,7 +34199,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.transportation.gov/about",
+      "host": "www.transportation.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.transportation.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was"
+    }
   },
   {
     "id": "exec-dept-dot-faa",
@@ -33851,7 +34447,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fhwa.dot.gov/",
+      "host": "www.fhwa.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-dept-dot-fhwa-deputy-administrator",
@@ -33905,7 +34509,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dot-fhwa"
+    "parentId": "exec-dept-dot-fhwa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fhwa.dot.gov/",
+      "host": "www.fhwa.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-dept-dot-nhtsa",
@@ -33956,7 +34568,15 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.nhtsa.gov/",
+      "host": "www.nhtsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.nhtsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dot-fra",
@@ -34073,7 +34693,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.fra.dot.gov/",
+      "host": "www.fra.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fra.dot.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disa"
+    }
   },
   {
     "id": "exec-dept-dot-fmcsa",
@@ -34124,7 +34752,15 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fmcsa.dot.gov/",
+      "host": "www.fmcsa.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fmcsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+    }
   },
   {
     "id": "exec-dept-dot-fta",
@@ -34241,7 +34877,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fta.dot.gov/",
+      "host": "www.fta.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fta.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dot-marad",
@@ -34359,7 +35003,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "treasury_pool_negative": -841121590.82,
-    "parentId": "exec-dept-dot"
+    "parentId": "exec-dept-dot",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.marad.dot.gov/",
+      "host": "www.marad.dot.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.marad.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
+    }
   },
   {
     "id": "exec-dept-dot--treasury-receipts",
@@ -35249,7 +35901,15 @@
     "placementUrl": "https://www.federalregister.gov/agencies/energy-efficiency-and-renewable-energy-office",
     "placementMatchedText": "Energy Efficiency and Renewable Energy Office",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-doe"
+    "parentId": "exec-dept-doe",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.eere.energy.gov/",
+      "host": "www.eere.energy.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.eere.energy.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete "
+    }
   },
   {
     "id": "exec-dept-doe-natl-labs",
@@ -36238,7 +36898,15 @@
       },
       "agencyMatched": "exec-dept-ed"
     },
-    "parentId": "exec-dept-ed"
+    "parentId": "exec-dept-ed",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://studentaid.gov/",
+      "host": "studentaid.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (studentaid.gov/robots.txt could not be reached (TimeoutError); refused: an undefined robots.txt is a complete d"
+    }
   },
   {
     "id": "exec-dept-ed-fsa-chief-operating-officer-fsa",
@@ -36309,7 +36977,15 @@
     "placementParentId": "exec-dept-ed-fsa",
     "placementMatchedText": "CHIEF OPERATING OFFICER",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-ed-fsa"
+    "parentId": "exec-dept-ed-fsa",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://studentaid.gov/",
+      "host": "studentaid.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (studentaid.gov/robots.txt could not be reached (TimeoutError); refused: an undefined robots.txt is a complete d"
+    }
   },
   {
     "id": "exec-dept-ed-ocr",
@@ -38745,7 +39421,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "child_cost_basis_implied": true,
-    "parentId": "exec-cabinet"
+    "parentId": "exec-cabinet",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dhs.gov/about-dhs",
+      "host": "www.dhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dhs.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-chief-of-staff",
@@ -38799,7 +39483,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dhs.gov/about-dhs",
+      "host": "www.dhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dhs.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-executive-secretary",
@@ -38853,7 +39545,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dhs.gov/about-dhs",
+      "host": "www.dhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dhs.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-general-counsel",
@@ -38935,7 +39635,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.dhs.gov/about-dhs",
+      "host": "www.dhs.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.dhs.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cbp",
@@ -39052,7 +39760,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cbp.gov/",
+      "host": "www.cbp.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cbp.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cbp-commissioner-cbp",
@@ -39153,7 +39869,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-cbp"
+    "parentId": "exec-dept-dhs-cbp",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cbp.gov/",
+      "host": "www.cbp.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cbp.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cbp-deputy-commissioner",
@@ -39224,7 +39948,15 @@
     "placementParentId": "exec-dept-dhs-cbp",
     "placementMatchedText": "DEPUTY COMMISSIONER",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-cbp"
+    "parentId": "exec-dept-dhs-cbp",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cbp.gov/",
+      "host": "www.cbp.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cbp.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cbp-chief-operating-officer",
@@ -39295,7 +40027,15 @@
     "placementParentId": "exec-dept-dhs-cbp",
     "placementMatchedText": "CHIEF OPERATING OFFICER",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-cbp"
+    "parentId": "exec-dept-dhs-cbp",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cbp.gov/",
+      "host": "www.cbp.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cbp.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-ice",
@@ -39412,7 +40152,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ice.gov/",
+      "host": "www.ice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-ice-director-ice",
@@ -39513,7 +40261,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-ice"
+    "parentId": "exec-dept-dhs-ice",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ice.gov/",
+      "host": "www.ice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-ice-deputy-director",
@@ -39584,7 +40340,15 @@
     "placementParentId": "exec-dept-dhs-ice",
     "placementMatchedText": "DEPUTY DIRECTOR, IMMIGRATION AND CUSTOMS ENFORCEMENT",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-ice"
+    "parentId": "exec-dept-dhs-ice",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ice.gov/",
+      "host": "www.ice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-ice-principal-legal-advisor-opla",
@@ -39655,7 +40419,15 @@
     "placementParentId": "exec-dept-dhs-ice",
     "placementMatchedText": "PRINCIPAL LEGAL ADVISOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-ice"
+    "parentId": "exec-dept-dhs-ice",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ice.gov/",
+      "host": "www.ice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-tsa",
@@ -39772,7 +40544,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.tsa.gov",
+      "host": "www.tsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.tsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-tsa-administrator-tsa",
@@ -39873,7 +40653,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-tsa"
+    "parentId": "exec-dept-dhs-tsa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.tsa.gov",
+      "host": "www.tsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.tsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-tsa-deputy-administrator",
@@ -40002,7 +40790,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-tsa"
+    "parentId": "exec-dept-dhs-tsa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.tsa.gov",
+      "host": "www.tsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.tsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-tsa-chief-of-staff",
@@ -40073,7 +40869,15 @@
     "placementParentId": "exec-dept-dhs-tsa",
     "placementMatchedText": "CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-tsa"
+    "parentId": "exec-dept-dhs-tsa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.tsa.gov",
+      "host": "www.tsa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.tsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-fema",
@@ -40190,7 +40994,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fema.gov/",
+      "host": "www.fema.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fema.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-fema-chief-of-staff",
@@ -40261,7 +41073,15 @@
     "placementParentId": "exec-dept-dhs-fema",
     "placementMatchedText": "CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-fema"
+    "parentId": "exec-dept-dhs-fema",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fema.gov/",
+      "host": "www.fema.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fema.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis",
@@ -40378,7 +41198,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis-director-uscis",
@@ -40479,7 +41307,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-uscis"
+    "parentId": "exec-dept-dhs-uscis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis-deputy-director",
@@ -40550,7 +41386,15 @@
     "placementParentId": "exec-dept-dhs-uscis",
     "placementMatchedText": "DEPUTY DIRECTOR, CITIZENSHIP AND IMMIGRATION SERVICES",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-uscis"
+    "parentId": "exec-dept-dhs-uscis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis-chief-of-staff",
@@ -40621,7 +41465,15 @@
     "placementParentId": "exec-dept-dhs-uscis",
     "placementMatchedText": "CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-uscis"
+    "parentId": "exec-dept-dhs-uscis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis-associate-director-refugee-asylum-international-operations",
@@ -40692,7 +41544,15 @@
     "placementParentId": "exec-dept-dhs-uscis",
     "placementMatchedText": "ASSOCIATE DIRECTOR, REFUGEE, ASYLUM AND INTERNATIONAL OPERATIONS",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-uscis"
+    "parentId": "exec-dept-dhs-uscis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscis-chief-office-of-policy-strategy",
@@ -40763,7 +41623,15 @@
     "placementParentId": "exec-dept-dhs-uscis",
     "placementMatchedText": "CHIEF, OFFICE OF POLICY AND STRATEGY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-uscis"
+    "parentId": "exec-dept-dhs-uscis",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscis.gov/",
+      "host": "www.uscis.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscis.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-usss",
@@ -40880,7 +41748,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.secretservice.gov/",
+      "host": "www.secretservice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.secretservice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was "
+    }
   },
   {
     "id": "exec-dept-dhs-usss-chief-of-staff",
@@ -40951,7 +41827,15 @@
     "placementParentId": "exec-dept-dhs-usss",
     "placementMatchedText": "CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-usss"
+    "parentId": "exec-dept-dhs-usss",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.secretservice.gov/",
+      "host": "www.secretservice.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.secretservice.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was "
+    }
   },
   {
     "id": "exec-dept-dhs-cisa",
@@ -41072,7 +41956,15 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cisa.gov/",
+      "host": "www.cisa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cisa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cisa-director-cisa",
@@ -41173,7 +42065,15 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-dhs-cisa"
+    "parentId": "exec-dept-dhs-cisa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cisa.gov/",
+      "host": "www.cisa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cisa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cisa-deputy-director",
@@ -41244,7 +42144,15 @@
     "placementParentId": "exec-dept-dhs-cisa",
     "placementMatchedText": "DEPUTY DIRECTOR, CYBERSECURITY AND INFRASTRUCTURE SECURITY AGENCY",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-cisa"
+    "parentId": "exec-dept-dhs-cisa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cisa.gov/",
+      "host": "www.cisa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cisa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-cisa-chief-of-staff",
@@ -41315,7 +42223,15 @@
     "placementParentId": "exec-dept-dhs-cisa",
     "placementMatchedText": "CHIEF OF STAFF",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-dhs-cisa"
+    "parentId": "exec-dept-dhs-cisa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.cisa.gov/",
+      "host": "www.cisa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.cisa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs-uscg",
@@ -41432,7 +42348,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-dept-dhs"
+    "parentId": "exec-dept-dhs",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.uscg.mil/",
+      "host": "www.uscg.mil",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.uscg.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-dept-dhs--treasury-receipts",
@@ -45090,7 +46014,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-independent"
+    "parentId": "exec-independent",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ssa.gov/agency/",
+      "host": "www.ssa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ssa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-ind-ssa-chief-of-staff",
@@ -45144,7 +46076,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-ssa"
+    "parentId": "exec-ind-ssa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ssa.gov/agency/",
+      "host": "www.ssa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ssa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-ind-ssa-inspector-general",
@@ -45198,7 +46138,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-ssa"
+    "parentId": "exec-ind-ssa",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ssa.gov/agency/",
+      "host": "www.ssa.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ssa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-ind-ssa--treasury-receipts",
@@ -45697,7 +46645,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-sba"
+    "parentId": "exec-ind-sba",
+    "verificationUnread": {
+      "kind": "page_below_readable_floor",
+      "url": "https://www.sba.gov/about-sba",
+      "host": "www.sba.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 2,
+      "detail": "no_readable_text"
+    }
   },
   {
     "id": "exec-ind-sba--treasury-receipts",
@@ -48012,7 +48968,15 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.peacecorps.gov/",
+      "host": "www.peacecorps.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-ind-misc-peace-corps-general-counsel",
@@ -48066,7 +49030,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-peace-corps"
+    "parentId": "exec-ind-misc-peace-corps",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.peacecorps.gov/",
+      "host": "www.peacecorps.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-ind-misc-peace-corps-inspector-general",
@@ -48120,7 +49092,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-peace-corps"
+    "parentId": "exec-ind-misc-peace-corps",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.peacecorps.gov/",
+      "host": "www.peacecorps.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-ind-misc-selective-service-system",
@@ -49972,7 +50952,15 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.osc.gov/Intro.htm",
+      "host": "www.osc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-ind-misc-merit-systems-protection-board-mspb",
@@ -51612,7 +52600,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.fca.gov/index.html",
+      "host": "www.fca.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-ind-misc-farm-credit-administration-general-counsel",
@@ -51666,7 +52662,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-farm-credit-administration"
+    "parentId": "exec-ind-misc-farm-credit-administration",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.fca.gov/index.html",
+      "host": "www.fca.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-ind-misc-farm-credit-administration-inspector-general",
@@ -51720,7 +52724,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-farm-credit-administration"
+    "parentId": "exec-ind-misc-farm-credit-administration",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.fca.gov/index.html",
+      "host": "www.fca.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "exec-ind-misc-national-credit-union-administration-ncua",
@@ -51855,7 +52867,15 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "treasury_pool_negative": -1211944181.54,
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.ncua.gov",
+      "host": "www.ncua.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallo"
+    }
   },
   {
     "id": "exec-ind-misc-national-credit-union-administration-ncua-general-counsel",
@@ -51909,7 +52929,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-national-credit-union-administration-ncua"
+    "parentId": "exec-ind-misc-national-credit-union-administration-ncua",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.ncua.gov",
+      "host": "www.ncua.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallo"
+    }
   },
   {
     "id": "exec-ind-misc-national-credit-union-administration-ncua-inspector-general",
@@ -51963,7 +52991,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-ind-misc-national-credit-union-administration-ncua"
+    "parentId": "exec-ind-misc-national-credit-union-administration-ncua",
+    "verificationUnread": {
+      "kind": "robots_unreachable",
+      "url": "https://www.ncua.gov",
+      "host": "www.ncua.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallo"
+    }
   },
   {
     "id": "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc",
@@ -52614,7 +53650,15 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-ind-misc"
+    "parentId": "exec-ind-misc",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.abmc.gov",
+      "host": "www.abmc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.abmc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-ind-misc-railroad-retirement-board",
@@ -53593,7 +54637,15 @@
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
     "treasury_unapportioned": 7250549929.16,
-    "parentId": "exec-independent"
+    "parentId": "exec-independent",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.usaid.gov/",
+      "host": "www.usaid.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.usaid.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-independent-agency-for-international-development--treasury-receipts",
@@ -54016,7 +55068,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.sec.gov/about",
+      "host": "www.sec.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.sec.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-regulatory-fcc",
@@ -54163,7 +55223,15 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fcc.gov/about-fcc/what-we-do",
+      "host": "www.fcc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fcc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-regulatory-fcc-inspector-general",
@@ -54217,7 +55285,15 @@
     },
     "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
     "evidenceVerifiedAt": "2025-12-31",
-    "parentId": "exec-regulatory-fcc"
+    "parentId": "exec-regulatory-fcc",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.fcc.gov/about-fcc/what-we-do",
+      "host": "www.fcc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.fcc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-regulatory-ftc",
@@ -54319,7 +55395,15 @@
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ftc.gov/about-ftc",
+      "host": "www.ftc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "PermissionError: robots.txt disallows this path (www.ftc.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+    }
   },
   {
     "id": "exec-regulatory-nrc",
@@ -54739,7 +55823,15 @@
       "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "parentId": "exec-regulatory"
+    "parentId": "exec-regulatory",
+    "verificationUnread": {
+      "kind": "host_refuses_crawler",
+      "url": "https://www.ferc.gov/about/what-ferc",
+      "host": "www.ferc.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 403: Forbidden"
+    }
   },
   {
     "id": "exec-regulatory-cpsc",
@@ -55666,6 +56758,13 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T20:03:37+00:00",
+    "evidenceUrls": [
+      "https://www.usa.gov/branches-of-government"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T20:03:37+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "judicial-branch",
     "placementVerified": false,
     "placementParentId": "the-constitution-of-the-united-states",
     "placementVerifiedAt": "2026-09-20T20:03:37+00:00",
@@ -55691,14 +56790,7 @@
       "budgetAuthorityAccountRows": 52,
       "package": "BUDGET-2027-DB",
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
-    },
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "judicial-branch",
-    "verificationMatchedIn": "content",
-    "evidenceUrls": [
-      "https://www.usa.gov/branches-of-government"
-    ],
-    "evidenceVerifiedAt": "2026-09-20T20:03:37+00:00"
+    }
   },
   {
     "id": "jud-scotus",
@@ -56041,20 +57133,9 @@
     "sourceUrls": [
       "https://www.ca3.uscourts.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.ca3.uscourts.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-20T19:43:47+00:00",
-    "evidenceVerifiedAt": "2026-09-20T19:43:47+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "jud-circuit-3rd-circuit",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -56063,13 +57144,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": true,
-    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
-    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "jud-appeals",
-    "placementMatchedText": "Third Circuit",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "placementMatchedIn": "content",
     "resolved_total_amount": 432234291.16,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -56079,6 +57153,24 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-20T19:43:47+00:00",
+    "evidenceUrls": [
+      "https://www.ca3.uscourts.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T19:43:47+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-circuit-3rd-circuit",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "Third Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "parentId": "jud-appeals"
   },
   {
@@ -56201,20 +57293,9 @@
     "sourceUrls": [
       "https://www.ca6.uscourts.gov/"
     ],
-    "evidenceUrls": [
-      "https://www.ca6.uscourts.gov/"
-    ],
     "sourceTypes": [
       "official_site"
     ],
-    "lastVerified": "2026-09-20T19:43:47+00:00",
-    "evidenceVerifiedAt": "2026-09-20T19:43:47+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationMatchedIn": "content",
-    "verificationSiteFrom": "jud-circuit-6th-circuit",
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
     "proofSourceCount": 1,
     "proofSourceTypes": [
       "official_site"
@@ -56223,13 +57304,6 @@
     "parentProven": true,
     "proofStatus": "proven",
     "proofReason": "official_source_recorded",
-    "placementVerified": true,
-    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
-    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "jud-appeals",
-    "placementMatchedText": "Sixth Circuit",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "placementMatchedIn": "content",
     "resolved_total_amount": 432234291.16,
     "cost_status": "allocated",
     "cost_basis": "subtree_weight",
@@ -56239,6 +57313,24 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "lastVerified": "2026-09-20T19:43:47+00:00",
+    "evidenceUrls": [
+      "https://www.ca6.uscourts.gov/"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T19:43:47+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-circuit-6th-circuit",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "Sixth Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
     "parentId": "jud-appeals"
   },
   {
@@ -57170,7 +58262,15 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "parentId": "jud-support"
+    "parentId": "jud-support",
+    "verificationUnread": {
+      "kind": "page_not_found",
+      "url": "https://www.uscourts.gov/about-federal-courts/governance-judicial-conference/administrative-office-us-courts",
+      "host": "www.uscourts.gov",
+      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "attempts": 1,
+      "detail": "HTTPError: HTTP Error 404: Not Found"
+    }
   },
   {
     "id": "jud-support-fjc",
