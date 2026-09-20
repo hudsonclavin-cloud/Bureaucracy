@@ -635,8 +635,9 @@ export function createGovernmentGraph({
     return state.lod;
   }
 
-  // "Legislative Branch — The Congress" is not "legislative branch", so a
-  // name lookup protected two branches out of three. The type says what it is.
+  // The branch used to be curated as "Legislative Branch — The Congress",
+  // which is not "legislative branch", so a name lookup protected two
+  // branches out of three. The type says what it is; the name never did.
   function isBranchRoot(data) {
     if (!data) {
       return false;

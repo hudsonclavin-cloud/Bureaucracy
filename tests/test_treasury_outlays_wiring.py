@@ -35,7 +35,7 @@ BASE = {
     "children": [
         {
             "id": "legislative-branch",
-            "name": "Legislative Branch — The Congress",
+            "name": "Legislative Branch",
             "type": "Branch",
             "children": [
                 {

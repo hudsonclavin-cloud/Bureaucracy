@@ -9,7 +9,7 @@
   "children": [
     {
       "id": "legislative-branch",
-      "name": "Legislative Branch — The Congress",
+      "name": "Legislative Branch",
       "type": "Branch",
       "desc": "Article I branch vested with all legislative powers. Consists of the Senate and House of Representatives. Responsible for making federal law, declaring war, controlling federal spending, and conducting oversight of the executive branch.",
       "employees": "~30,000 (total congressional staff)",
@@ -12451,7 +12451,11 @@
             }
           ]
         }
-      ]
+      ],
+      "nameSource": "named_on_its_own_official_page",
+      "nameSourceDetail": "https://www.usa.gov/branches-of-government",
+      "nameVerifiedAt": "2026-09-20",
+      "nameMatchedText": "Legislative branch"
     },
     {
       "id": "executive-branch",

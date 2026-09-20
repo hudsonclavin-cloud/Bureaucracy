@@ -4134,5 +4134,27 @@
   "run": "circuits-2026-09-20",
   "nominatedAt": "2026-09-20T19:42:07Z",
   "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "judicial-branch": {
+  "url": "https://www.usa.gov/branches-of-government",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "judicial-branch",
+  "basis": "Probed 2026-09-20 with the verifier's own find_label_region: https://www.usa.gov/branches-of-government (2,754 readable chars) labels 'Judicial branch' as a heading in page CONTENT. A branch of government has no website of its own; usa.gov is the federal government's official portal and this page is the government's own statement of its structure -- the same class of page the Executive Branch's existing confirmation rests on (whitehouse.gov/government/executive-branch/). senate.gov, house.gov and uscourts.gov were probed and label none of the three branch names. uscourts.gov/about-federal-courts (the queued page) names it only in prose, recorded inconclusive:named_on_the_page_but_not_as_a_label; whitehouse.gov/government/judicial-branch/ labels it but is a 37-character JS shell.",
+  "confidence": "likely",
+  "run": "branches-2026-09-20",
+  "nominatedAt": "2026-09-20T20:03:36Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
+ },
+ "legislative-branch": {
+  "url": "https://www.usa.gov/branches-of-government",
+  "source": "agent_nomination",
+  "role": "own_site",
+  "nominatedFor": "legislative-branch",
+  "basis": "Probed 2026-09-20 with the verifier's own find_label_region: https://www.usa.gov/branches-of-government (2,754 readable chars) labels 'Legislative branch' as a heading in page CONTENT. A branch of government has no website of its own; usa.gov is the federal government's official portal and this page is the government's own statement of its structure -- the same class of page the Executive Branch's existing confirmation rests on (whitehouse.gov/government/executive-branch/). senate.gov, house.gov and uscourts.gov were probed and label none of the three branch names. The queued congress.gov 403s the page. The node was renamed from 'Legislative Branch — The Congress' via rename_units_to_official_wording.py on the same page's evidence, because the em-dash qualifier keyed to 'legislative branch the congress', which no page carries.",
+  "confidence": "likely",
+  "run": "branches-2026-09-20",
+  "nominatedAt": "2026-09-20T20:03:36Z",
+  "note": "A candidate page to fetch. Not evidence: the verifier decides by reading it."
  }
 }

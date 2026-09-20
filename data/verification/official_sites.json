@@ -1,7 +1,8 @@
 {
  "_note": "Candidate official pages for scripts/verify_base_graph.py to fetch, keyed by base-graph node id. A URL here is something to check, not evidence: a node earns a source only when the verifier fetched the page and found the node's name on it as a label of its own (see evidence.json). A node without an entry is checked against its nearest ancestor's pages. Every URL must be https on a .gov or .mil host, which is what the evidence standard counts as official and what the verifier will agree to fetch — usps.com and si.edu are the real homes of USPS and the Smithsonian but are not .gov, so those two nodes have no candidate page rather than a page the verifier would refuse. Candidates seeded from the Federal Register agency directory by scripts/seed_official_sites.py are marked in data/verification/official_sites_provenance.json.",
  "legislative-branch": [
-  "https://www.congress.gov/"
+  "https://www.congress.gov/",
+  "https://www.usa.gov/branches-of-government"
  ],
  "leg-senate": [
   "https://www.senate.gov/"
@@ -193,7 +194,8 @@
   "https://www.fmc.gov/about-the-fmc/"
  ],
  "judicial-branch": [
-  "https://www.uscourts.gov/about-federal-courts"
+  "https://www.uscourts.gov/about-federal-courts",
+  "https://www.usa.gov/branches-of-government"
  ],
  "jud-scotus": [
   "https://www.supremecourt.gov/about/about.aspx"

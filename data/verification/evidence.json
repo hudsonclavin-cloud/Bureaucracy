@@ -987,12 +987,20 @@
       "checkedAt": "2026-09-20T00:33:15+00:00"
     },
     "legislative-branch": {
-      "name": "Legislative Branch — The Congress",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "Legislative Branch",
+      "checkedAt": "2026-09-20T20:03:37+00:00",
       "siteFrom": "legislative-branch",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usa.gov/branches-of-government",
+          "matchedText": "Legislative branch",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.congress.gov/",
@@ -1005,7 +1013,7 @@
         "urlsRead": [
           "https://www.archives.gov/founding-docs/constitution"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T20:03:37+00:00"
       }
     },
     "leg-senate": {
@@ -7242,12 +7250,19 @@
     },
     "judicial-branch": {
       "name": "Judicial Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:03:37+00:00",
       "siteFrom": "judicial-branch",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usa.gov/branches-of-government",
+          "matchedText": "Judicial branch",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscourts.gov/about-federal-courts",
@@ -7260,7 +7275,7 @@
         "urlsRead": [
           "https://www.archives.gov/founding-docs/constitution"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T20:03:37+00:00"
       }
     },
     "jud-scotus": {
@@ -12782,17 +12797,19 @@
     },
     "exec-dept-defense-agency-nga": {
       "name": "National Geospatial-Intelligence Agency (NGA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "matchedText": "Home | National Geospatial-Intelligence Agency",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     },
     "exec-dept-defense-agency-dla": {
       "name": "Defense Logistics Agency (DLA)",
@@ -31965,106 +31982,113 @@
     },
     "exec-dept-defense-agency-nga-director-national-geospatial-intelligence-agency-nga": {
       "name": "Director, National Geospatial-Intelligence Agency (NGA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-deputy-director-national-geospatial-intelligence-agency-nga": {
       "name": "Deputy Director, National Geospatial-Intelligence Agency (NGA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-defense-agency-nga-chief-information-officer": {
       "name": "Chief Information Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T20:05:06+00:00",
       "siteFrom": "exec-dept-defense-agency-nga",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nga.mil/",
-          "reason": "PermissionError: robots.txt disallows this path (www.nga.mil/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },

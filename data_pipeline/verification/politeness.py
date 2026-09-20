@@ -190,6 +190,17 @@ STANDARD_4XX_HOSTS: dict[str, str] = {
         "publishes for download. Added 2026-09-20 on the repository owner's "
         "explicit instruction."
     ),
+    "www.nga.mil": (
+        "The National Geospatial-Intelligence Agency's own site. Measured on "
+        "2026-09-20 across all 68 hosts whose robots.txt this project had "
+        "recorded as answering 401/403: 67 of them refuse the page with the "
+        "same status they refuse the robots file (CloudFront and Akamai bot "
+        "protection against this egress address, a fact about the network and "
+        "not a rule), and this host alone answers robots.txt 403 while serving "
+        "its homepage 200 with 3,408 readable characters. Added on that "
+        "measurement, for this host alone; the other 67 stay refused because "
+        "listing them would change nothing."
+    ),
 }
 
 

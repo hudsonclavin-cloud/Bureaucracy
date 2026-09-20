@@ -690,3 +690,59 @@ in fact.** The next session with outbound access should run
         opm/plum/escs_pbpub_download-data.csv
 
 and let the recorded verdict be whatever the host actually answers.
+
+## 11. 2026-09-20, later: the 715 robots refusals, measured host by host
+
+§10 withdrew the 401/403 refusal for one host. This section is the
+measurement that decides whether it should be withdrawn for any other, and
+the answer is: for exactly one more.
+
+**The question.** `evidence.json` records **715** fetch attempts refused with
+`robots.txt could not be read (401/403); refused by policy, no rule was seen`,
+across 68 hosts — `www.state.gov` 34, `www.uscg.mil` 26, `www.defense.gov`
+19, `www.af.mil` 19, `www.jcs.mil` 18, and 17 each for `www.usda.gov`,
+`www.commerce.gov`, `www.hhs.gov`, `www.transportation.gov`, `www.dhs.gov`,
+`www.navy.mil` and `www.spaceforce.mil`; then the SEC, FCC, SSA, the DHS
+components (CBP, TSA, USCIS, ICE, FEMA, CISA, Secret Service, FLETC), the
+combatant commands, and the DOE laboratories. That is the largest single
+mechanical cause of "no source recorded" on an organisation in this graph,
+and it rests on a choice this project made — RFC 9309 §2.3.1.3 would permit
+the fetch. So the choice was worth costing: if those hosts serve the *page*
+while refusing the robots file, the refusal is withholding real evidence; if
+they refuse both, the refusal changes nothing and the 715 are a fact about
+the network.
+
+**The measurement.** One request per host for `robots.txt` and one for a
+page the verifier had actually queued there, under the project's User-Agent,
+with the readable-text count computed by the verifier's own `parse_page` so
+the floor means what the verifier's would. Read-only; nothing written outside
+the scratchpad.
+
+    (robots, page)   hosts
+    (403, 403)         66
+    (401, 401)          1     www.justice.gov
+    (403, 200)          1     www.nga.mil  — 3,408 readable characters
+
+**67 of 68 hosts refuse the page with exactly the status they refuse the
+robots file.** `www.state.gov` answers from CloudFront with an S3 "Technical
+Difficulties" body; the `.mil` hosts and the departments answer from Akamai.
+That is bot protection against this egress address, and it is a fact about
+the network, not about any rule this project follows: withdrawing the 401/403
+refusal for those hosts would change no outcome at all, and so it is not
+done. `www.nga.mil` is the one host where the refusal was actually
+withholding a readable page, and it is now the second entry in
+`politeness.STANDARD_4XX_HOSTS`, with this measurement as its reason. Its
+eight refused nodes were re-run: the agency confirmed off its own homepage;
+its seven posts came back `inconclusive`, which is what an organisation's
+page not labelling a post means.
+
+**What this settles, and what it moves.** The 715 refusals are, to within
+one host, **unrecoverable from this environment**, and the site should say
+that rather than present them as a policy choice. The route to evidence for
+units on those hosts is therefore not a page at all: a directory the
+government publishes elsewhere — the Federal Register's agency list, which
+already reaches 158 of them, and the Government Manual, which names every
+one of these agencies in a document this repository already holds verbatim
+and currently reads only for posts. Extending `govman.py` to confirm an
+organisation from its own Manual entry is the single largest lever left on
+organisation coverage, and it needs no network.
