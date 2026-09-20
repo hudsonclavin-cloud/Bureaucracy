@@ -2413,10 +2413,16 @@ published as a measurement.
 A second, quieter gap surfaced the same day: a unit added under a licence
 that is not the Treasury's — the Office of Surface Mining Reclamation and
 Enforcement, added from the Government Manual — whose name equals a unique
-Table 5 money line ($1.13bn) and whose cost is still `allocated`, because an
-offline rebuild only carries previously applied lines forward and the line
-is matched on the next build that is handed a statement. The phase 1c sweep
-nominated it as a cost identifier; it applies on the next live crawl.
+Table 5 money line and whose cost stayed `allocated` for a day, because an
+offline rebuild only carries previously applied lines forward and a line is
+matched only on a build that is handed a statement. The phase 1c sweep
+nominated it as a cost identifier; the same afternoon the current statement
+(2026-08-31, the date the anchor already carried) was fetched through the
+crawler's own functions to `tests/fixtures/mts_table5_2026-08-31.json` — the
+pinned 2026-07-31 fixture is untouched — and one `regenerate
+--treasury-rows` build applied the line: OSMRE is `official` at $1.18bn,
+159 Treasury lines against 158. Any unit added under a non-Treasury licence
+needs that same step before its line lands.
 
 ("Other Defense Civil Programs" and "International Assistance Programs" are
 Treasury groupings rather than organisations; those stay unmatched by design.)
