@@ -1,0 +1,685 @@
+[
+ {
+  "host": "www.state.gov",
+  "refusals_recorded": 34,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.state.gov/about/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.uscg.mil",
+  "refusals_recorded": 26,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.uscg.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.defense.gov",
+  "refusals_recorded": 19,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.defense.gov/About/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.af.mil",
+  "refusals_recorded": 19,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.af.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.jcs.mil",
+  "refusals_recorded": 18,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.jcs.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.usda.gov",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.usda.gov/about-usda",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.commerce.gov",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.commerce.gov/about",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.hhs.gov",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.hhs.gov/about/index.html",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.transportation.gov",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.transportation.gov/about",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dhs.gov",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dhs.gov/about-dhs",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.navy.mil",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.navy.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.spaceforce.mil",
+  "refusals_recorded": 17,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.spaceforce.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.sec.gov",
+  "refusals_recorded": 16,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.sec.gov/about",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fcc.gov",
+  "refusals_recorded": 16,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fcc.gov/about-fcc/what-we-do",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.ssa.gov",
+  "refusals_recorded": 15,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.ssa.gov/agency/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.usmarshals.gov",
+  "refusals_recorded": 13,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.usmarshals.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fda.gov",
+  "refusals_recorded": 13,
+  "robots_status": 401,
+  "robots_error": "HTTPError 401",
+  "page_url": "https://www.fda.gov/",
+  "page_status": 401,
+  "page_error": "HTTPError 401",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.cbp.gov",
+  "refusals_recorded": 13,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.cbp.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.tsa.gov",
+  "refusals_recorded": 13,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.tsa.gov",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.secretservice.gov",
+  "refusals_recorded": 13,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.secretservice.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.gao.gov",
+  "refusals_recorded": 12,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.gao.gov/about",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.uscis.gov",
+  "refusals_recorded": 12,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.uscis.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fema.gov",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fema.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.eucom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.eucom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.centcom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.centcom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.southcom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.southcom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.spacecom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.spacecom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.cybercom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.cybercom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.stratcom.mil",
+  "refusals_recorded": 11,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.stratcom.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.noaa.gov",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.noaa.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.ice.gov",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.ice.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.cisa.gov",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.cisa.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fletc.gov",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fletc.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.ftc.gov",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.ftc.gov/about-ftc",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.marines.mil",
+  "refusals_recorded": 10,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.marines.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.usmint.gov",
+  "refusals_recorded": 9,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.usmint.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.atf.gov",
+  "refusals_recorded": 9,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.atf.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.cbo.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.cbo.gov/about/overview",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.hrsa.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.hrsa.gov/index.html",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.nhtsa.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.nhtsa.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dia.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dia.mil",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.nga.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.nga.mil/",
+  "page_status": 200,
+  "page_error": null,
+  "content_type": "text/html",
+  "content_chars": 3408,
+  "readable": true,
+  "fragments": 177
+ },
+ {
+  "host": "www.dla.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dla.mil/Pages/default.aspx",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dcaa.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dcaa.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.nsa.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.nsa.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.nro.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.nro.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dcma.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dcma.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dtra.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dtra.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.dfas.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.dfas.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.pfpa.mil",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.pfpa.mil/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.anl.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.anl.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fnal.gov",
+  "refusals_recorded": 8,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fnal.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.bls.gov",
+  "refusals_recorded": 7,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.bls.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fsis.usda.gov",
+  "refusals_recorded": 6,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fsis.usda.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.marad.dot.gov",
+  "refusals_recorded": 6,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.marad.dot.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.abmc.gov",
+  "refusals_recorded": 6,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.abmc.gov",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.americorps.gov",
+  "refusals_recorded": 6,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.americorps.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "travel.state.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://travel.state.gov/content/travel.html",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "diplomaticsecurity.state.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://diplomaticsecurity.state.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "usun.usmission.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://usun.usmission.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fmcsa.dot.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fmcsa.dot.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fta.dot.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fta.dot.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.phmsa.dot.gov",
+  "refusals_recorded": 5,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.phmsa.dot.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.osha.gov",
+  "refusals_recorded": 4,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.osha.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.esd.whs.mil",
+  "refusals_recorded": 1,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.esd.whs.mil/DD/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.fas.usda.gov",
+  "refusals_recorded": 1,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.fas.usda.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.eda.gov",
+  "refusals_recorded": 1,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.eda.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ },
+ {
+  "host": "www.usaid.gov",
+  "refusals_recorded": 1,
+  "robots_status": 403,
+  "robots_error": "HTTPError 403",
+  "page_url": "https://www.usaid.gov/",
+  "page_status": 403,
+  "page_error": "HTTPError 403",
+  "content_type": "text/html"
+ }
+]
