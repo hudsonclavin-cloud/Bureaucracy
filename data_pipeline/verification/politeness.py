@@ -111,6 +111,42 @@ cheap: after the User-Agent fix below, it costs a handful of nodes. If a
 later run wants the standard's behaviour instead, that is a deliberate
 policy change here, not a bug fix.
 
+**That policy change was made, for one host, on 2026-09-20**, at the
+repository owner's explicit instruction and recorded here rather than made
+quietly. `STANDARD_4XX_HOSTS` names hosts where this project follows RFC
+9309 2.3.1.3 as written -- a 4xx robots.txt is "Unavailable" and the crawler
+MAY access the server -- instead of the stricter convention above. It is a
+per-host list, not a switch: every other host keeps the refusal, and each
+entry carries the reason it was added and the date.
+
+The first and only entry is `escs.opm.gov`, which serves OPM's current Plum
+Book export -- the successor to the January 2021 archive that supplies every
+one of this project's position listings. The host answers robots.txt with an
+Akamai 403 while serving the export itself to the same agent, so the refusal
+rested on a rule nobody published, about a dataset OPM publishes for
+download.
+
+Note what the record for that host used to say, and why it was never the
+whole story. `tests/fixtures/opm/README.md` records a 2026-09-08 failure of
+`URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` -- that
+is the **proxy** refusing to open the tunnel, not the host refusing us. By
+2026-09-19 the proxy connected and the host's own robots.txt answered 403,
+which is a different fact with a different remedy, and only the second is
+what this list addresses.
+
+Three things the listing does NOT do, each pinned by a test:
+
+- It does not apply to 5xx or to a network failure. Those are 2.3.1.4,
+  where the standard itself requires complete disallow, and a listed host is
+  refused on those exactly as any other host is.
+- It does not manufacture a rule. The verdict says in as many words that the
+  file could not be read and that no rule was seen; what it adds is which
+  permission the fetch rests on. No record may read as though robots.txt had
+  been fetched and had allowed the path.
+- It does not relax anything else. The User-Agent still names the project, a
+  published crawl delay still applies, and a host not on the list is refused
+  exactly as before.
+
 **A 5xx now says what actually happened.** It is refused, which matches the
 standard, but the old code reported it as `robots.txt disallows <path>` --
 asserting a published rule when the file had never been read, which is the
@@ -138,6 +174,32 @@ NO_FILE = "no_file"             # 404/410/other 4xx: nothing published; allow
 REFUSED = "refused"             # 401/403: served nothing and would not say why
 UNREACHABLE = "unreachable"     # 5xx: the site is failing; refuse until it is not
 UNFETCHABLE = "unfetchable"     # DNS, TLS, timeout: RFC 9309 2.3.1.4, refuse
+
+#: Hosts for which this project follows RFC 9309 2.3.1.3 as written rather
+#: than the stricter convention in the docstring above: a robots.txt answered
+#: 4xx is "Unavailable", and the standard permits access. One entry per host,
+#: each added by an explicit decision with its reason beside it, and each
+#: applying ONLY to 401/403 -- never to a 5xx or a network failure, which
+#: 2.3.1.4 requires be refused.
+STANDARD_4XX_HOSTS: dict[str, str] = {
+    "escs.opm.gov": (
+        "OPM's current Plum Book export, the successor to the January 2021 "
+        "archive this project already reads. The host answers robots.txt with "
+        "an Akamai 403 while serving the export itself to this same agent, so "
+        "the refusal rested on a rule nobody published, about a dataset OPM "
+        "publishes for download. Added 2026-09-20 on the repository owner's "
+        "explicit instruction."
+    ),
+}
+
+
+def standard_4xx_host(netloc: str) -> str | None:
+    """The `STANDARD_4XX_HOSTS` key this netloc matches, or None.
+
+    Host only: a port is transport, and the listing is about a publisher.
+    """
+    host = (netloc or "").split("@")[-1].split(":")[0].strip().lower()
+    return host if host in STANDARD_4XX_HOSTS else None
 
 
 @dataclass
@@ -224,8 +286,17 @@ class RobotsPolicy:
                 return True, "allowed by robots.txt" + read_on
             return False, f"{host}/robots.txt disallows {urlparse(url).path or '/'}" + read_on
         if found.kind == REFUSED:
-            # No rule was read, so none may be quoted. Refused by this
-            # project's choice, not by the standard.
+            # No rule was read, so none may be quoted either way. What differs
+            # is which permission the fetch rests on, and the verdict says so:
+            # a listed host is allowed by the standard, never by a rule.
+            if standard_4xx_host(host) is not None:
+                return True, (
+                    f"{host}/robots.txt could not be read ({found.status}){each_of}; "
+                    "no rule was seen. RFC 9309 2.3.1.3 permits access to a server "
+                    "whose robots.txt is unavailable, and this host is listed for "
+                    "the standard's rule"
+                )
+            # Refused by this project's choice, not by the standard.
             return False, (
                 f"{host}/robots.txt could not be read ({found.status}){each_of}; "
                 "refused by policy, no rule was seen"

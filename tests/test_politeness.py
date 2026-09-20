@@ -21,6 +21,7 @@ import json
 import re
 import unittest
 from pathlib import Path
+from urllib.robotparser import RobotFileParser
 
 from data_pipeline.verification import politeness
 
@@ -109,6 +110,118 @@ class WhatTheModuleDoesWithEachRuleTests(unittest.TestCase):
         self.assertIn("deliberately stricter than the rule we cite", doc)
         self.assertNotIn("[Likely, from memory", doc,
                          "the citation is verifiable now; drop the hedge")
+
+
+class TheStandard4xxHostListTests(unittest.TestCase):
+    """The one per-host deviation from the deviation, pinned both ways.
+
+    `politeness.py` is deliberately stricter than RFC 9309 on a robots.txt
+    answered 401/403: the standard calls the file "Unavailable" and permits
+    access, and this project refuses anyway. `STANDARD_4XX_HOSTS` names the
+    hosts where that stricter choice is withdrawn and the standard's own rule
+    applies. It is a list, not a switch, so these tests assert what it does
+    NOT reach as hard as what it does -- a listing that quietly became a
+    global relaxation would pass a one-directional test.
+    """
+
+    def file(self, kind: str, status: int | None = None, detail: str = "") -> object:
+        return politeness.RobotsFile(kind, status, detail=detail)
+
+    def verdict(self, url: str, found: object) -> tuple[bool, str]:
+        policy = politeness.RobotsPolicy(user_agent="test-agent/1.0")
+        policy._file = lambda _url, _found=found: _found  # type: ignore[assignment]
+        return policy.allows(url)
+
+    def test_the_list_carries_a_reason_for_every_host(self) -> None:
+        """An entry is a decision, so it has to say why it was made and
+        when. A bare hostname records nothing a reviewer could weigh."""
+        self.assertTrue(politeness.STANDARD_4XX_HOSTS, "the list is empty")
+        for host, reason in politeness.STANDARD_4XX_HOSTS.items():
+            self.assertEqual(host, host.lower().strip(), host)
+            self.assertNotIn("/", host, f"{host} is a host, not a URL")
+            self.assertGreater(len(reason), 80, f"{host}: the reason is a stub")
+            self.assertRegex(reason, r"\b20\d\d-\d\d-\d\d\b",
+                             f"{host}: the reason names no date")
+
+    def test_a_listed_host_is_recognised_however_the_netloc_is_written(self) -> None:
+        for netloc in ("escs.opm.gov", "ESCS.OPM.GOV", "escs.opm.gov:443",
+                       "user@escs.opm.gov", " escs.opm.gov "):
+            self.assertEqual(politeness.standard_4xx_host(netloc), "escs.opm.gov", netloc)
+
+    def test_a_host_that_merely_ends_with_a_listed_one_is_not_listed(self) -> None:
+        """Substring matching is how an allowlist becomes a wildcard."""
+        for netloc in ("opm.gov", "www.opm.gov", "escs.opm.gov.example.com",
+                       "notescs.opm.gov", "", "escs.opm.govv"):
+            self.assertIsNone(politeness.standard_4xx_host(netloc), netloc)
+
+    def test_a_listed_host_answering_403_is_allowed_by_the_standard(self) -> None:
+        allowed, why = self.verdict("https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                                    self.file(politeness.REFUSED, 403))
+        self.assertTrue(allowed)
+        self.assertIn("could not be read (403)", why)
+        self.assertIn("RFC 9309 2.3.1.3", why)
+
+    def test_the_verdict_never_reads_as_though_a_rule_had_been_seen(self) -> None:
+        """The whole point of the module: no record may claim robots.txt was
+        fetched and permitted the path, because it was not fetched."""
+        _, why = self.verdict("https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                              self.file(politeness.REFUSED, 403))
+        self.assertIn("no rule was seen", why)
+        self.assertNotIn("allows", why)
+        self.assertNotIn("allowed by robots.txt", why)
+
+    def test_an_unlisted_host_answering_403_is_still_refused(self) -> None:
+        for status in (401, 403):
+            allowed, why = self.verdict("https://www.state.gov/about/",
+                                        self.file(politeness.REFUSED, status))
+            self.assertFalse(allowed, status)
+            self.assertIn("refused by policy", why)
+            self.assertIn("no rule was seen", why)
+
+    def test_a_listed_host_is_still_refused_on_a_5xx(self) -> None:
+        """2.3.1.4, where the standard itself requires complete disallow.
+        The listing withdraws this project's extra strictness, never the
+        standard's own rule."""
+        for status in (500, 502, 503):
+            allowed, why = self.verdict("https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                                        self.file(politeness.UNREACHABLE, status))
+            self.assertFalse(allowed, status)
+            self.assertIn("while the site is failing", why)
+
+    def test_a_listed_host_is_still_refused_on_a_network_failure(self) -> None:
+        allowed, why = self.verdict("https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                                    self.file(politeness.UNFETCHABLE, None, detail="URLError"))
+        self.assertFalse(allowed)
+        self.assertIn("complete disallow", why)
+
+    def test_a_listed_host_that_does_publish_rules_obeys_them(self) -> None:
+        """The listing is about an unreadable file. A host on it that later
+        publishes a robots.txt disallowing the path is obeyed."""
+        parser = RobotFileParser()
+        parser.parse(["User-agent: *", "Disallow: /escs-net/"])
+        found = politeness.RobotsFile(politeness.RULES, 200, parser=parser)
+        allowed, why = self.verdict(
+            "https://escs.opm.gov/escs-net/api/pbpub/download-data", found)
+        self.assertFalse(allowed)
+        self.assertIn("disallows", why)
+
+    def test_the_fixture_fetcher_rests_on_the_same_list(self) -> None:
+        """`scripts/fetch_fixture.py` used to carry its own copy of the
+        401/403 rule. A per-host exception written in one place and not the
+        other is how a fetch gets refused here and allowed there."""
+        source = (Path(__file__).resolve().parent.parent
+                  / "scripts" / "fetch_fixture.py").read_text(encoding="utf-8")
+        self.assertIn("from data_pipeline.verification.politeness import standard_4xx_host",
+                      source)
+        self.assertNotIn("STANDARD_4XX_HOSTS: dict", source,
+                         "the fetcher has grown its own copy of the list")
+
+    def test_the_docstring_records_the_change_rather_than_making_it_quietly(self) -> None:
+        doc = normalised(politeness.__doc__ or "")
+        self.assertIn("2026-09-20", doc)
+        self.assertIn("per-host list, not a switch", doc)
+        self.assertIn("deliberately stricter than the rule we cite", doc,
+                      "the general refusal must still be documented as the default")
 
 
 if __name__ == "__main__":

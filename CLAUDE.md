@@ -959,10 +959,25 @@ FedScope civilian employment by agency and sub-agency for March 2025 and
 September 2024 — the official counts the cost cascade's headcount weights
 should answer to, where today's `employees` fields are uncited — and the
 PLUM archive of the previous administration's reported positions. The
-current PLUM export is served by escs.opm.gov, which is refused — since
-2026-09-19 by the host rather than the proxy, which now connects: escs.opm.gov
-answers robots.txt with an Akamai 403, and this project refuses such a host by
-its own choice (docs/NETWORK_ACCESS.md §9). The rest of the list that stood
+current PLUM export is served by escs.opm.gov, and three different things
+have blocked it in turn. Until 2026-09-19 the **proxy** refused to open the
+tunnel; then the proxy connected and the **host** answered robots.txt with an
+Akamai 403, which this project refused by its own choice rather than by the
+standard. On **2026-09-20**, on the owner's explicit instruction, that refusal
+was withdrawn for this one host: `politeness.STANDARD_4XX_HOSTS` follows RFC
+9309 2.3.1.3 there — a 4xx robots.txt is "Unavailable" and access is
+permitted — while every other host keeps the refusal, and a listed host is
+still refused on a 5xx or a network failure, which 2.3.1.4 requires. It
+manufactures no rule: the verdict says the file could not be read and that no
+rule was seen, and adds only which permission the fetch rests on.
+**Nothing has been fetched from that host.** The third blocker is this
+session's own agent harness, which declined the request, so the policy is
+tested offline and has never met the live server; a copy obtained earlier is
+deliberately not committed, because it predates the policy and so carries no
+honest robots verdict, and a fixture whose provenance record is a guess is
+worse than an absent one. So the standing state is permitted by policy,
+unfetched in fact, and position evidence still rests entirely on the previous
+administration's archive (docs/NETWORK_ACCESS.md §10). The rest of the list that stood
 here — clerk.house.gov, www.usa.gov, api.sam.gov, data.opm.gov and
 govinfo.gov — was re-measured on 2026-09-19 and **every one of them now
 answers**: clerk.house.gov, api.sam.gov and data.opm.gov with a 404 (nothing
@@ -1539,7 +1554,8 @@ person, and must name this node by equality or with the rank folded off.
 `CURATION.md` §7.4-7.5 record the run and what stays unpriced.
 
 The PLUM archive is the previous administration's reported positions
-(the current export is on escs.opm.gov, which the proxy refuses), so every
+(the current export is on escs.opm.gov, which nothing here has fetched — the
+refusal was lifted on 2026-09-20 and the fetch has not happened, §10), so every
 record and every proposed panel sentence names the archive and its period
 and says nothing about who holds a post now: the incumbent columns are
 never read. 91 of the graph's 4,382 position nodes matched a listed title

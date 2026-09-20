@@ -34,6 +34,11 @@ from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from data_pipeline.verification.politeness import standard_4xx_host  # noqa: E402
+
 FIXTURE_ROOT = PROJECT_ROOT / "tests" / "fixtures"
 DEFAULT_UA = "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)"
 TIMEOUT = int(os.environ.get("PIPELINE_HTTP_TIMEOUT", "30"))
@@ -51,6 +56,14 @@ def robots_verdict(url: str, user_agent: str) -> tuple[bool, str]:
     and sets a blanket disallow with no rules parsed, so the record must not
     quote a rule nobody read. The distinction is the same one
     verify_base_graph.py makes.
+
+    The one exception is a host on `politeness.STANDARD_4XX_HOSTS`, where this
+    project follows RFC 9309 2.3.1.3 as written. That list is imported rather
+    than copied: this function used to carry its own statement of the rule, and
+    a per-host exception written in one place and not the other is how a fetch
+    gets refused here while the verifier allows it, or worse the other way
+    round. The verdict still says no rule was seen -- what changes is which
+    permission the fetch rests on.
     """
     parts = urlparse(url)
     robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
@@ -63,6 +76,12 @@ def robots_verdict(url: str, user_agent: str) -> tuple[bool, str]:
         parser.parse(body.splitlines())
     except urllib.error.HTTPError as error:
         if error.code in (401, 403):
+            if standard_4xx_host(parts.netloc) is not None:
+                return True, (
+                    f"robots.txt could not be read ({error.code}); no rule was seen. "
+                    "RFC 9309 2.3.1.3 permits access to a server whose robots.txt is "
+                    "unavailable, and this host is listed for the standard's rule"
+                )
             return False, f"robots.txt could not be read ({error.code}); refused by policy"
         return True, f"no readable robots.txt (HTTP {error.code}); failing open"
     except Exception as error:  # noqa: BLE001 - the reason is the record

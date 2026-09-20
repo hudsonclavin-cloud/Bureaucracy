@@ -67,10 +67,27 @@ not links: the page's inline script (search the saved page for `baseApiUrl`) set
 `${baseApiUrl}/download-data` with the active filters as a JSON body; the filter lists come
 from `get-current-agencies`, `get-current-organizations`, `get-current-positions` and
 `get-current-appointment-types` on the same base. So the machine-readable file of current
-positions with agency, title and appointment type is served by **`escs.opm.gov`**, and that
-host is refused by the proxy (see the table above; `plum/escs_pbpub_download-data.csv.meta.json`
-and `plum/escs_pbpub_get-current-agencies.json.meta.json` carry the exact error). Its record
-count, field names and sample rows are therefore not known from this environment.
+positions with agency, title and appointment type is served by **`escs.opm.gov`**.
+
+**Three different reasons have blocked that host, and only the first two are settled.**
+The 2026-09-08 rows in the table above read `Tunnel connection failed: 403 Forbidden`,
+which is the **proxy** refusing to open the tunnel and not the host refusing us. By
+2026-09-19 the proxy connected and the host's own `robots.txt` answered an Akamai **403**,
+so this project refused it — by its own choice rather than by the standard, since RFC 9309
+2.3.1.3 permits access to a server whose `robots.txt` is unavailable. On **2026-09-20**, at
+the repository owner's explicit instruction, that refusal was withdrawn for this one host:
+`politeness.STANDARD_4XX_HOSTS` lists it, and `scripts/fetch_fixture.py` rests on the same
+list. `docs/NETWORK_ACCESS.md` §10 records the change and its limits in full.
+
+**The file is still not here.** The third blocker is this session's own agent harness, which
+declined the outbound request, so the policy above is tested offline and has never been
+exercised against the live server. A copy obtained earlier in the session is deliberately not
+committed: it was fetched before the policy existed and so without any robots check, and its
+`.meta.json` could not honestly say which permission it rested on. Every fixture in this
+repository is the publisher's own bytes with a provenance record that is true; a record that
+is a guess is worse than an absent fixture. The record count, field names and sample rows are
+therefore still not known from this environment, and no published node carries a
+current-PLUM claim.
 `https://plumbook.opm.gov/` (the address the task named) and GovInfo — both the collection
 page and the 2024 printed Plum Book PDF that the OPM page links,
 `https://www.govinfo.gov/content/pkg/GPO-PLUMBOOK-2024/pdf/GPO-PLUMBOOK-2024.pdf` — were

@@ -620,3 +620,73 @@ The practical consequence is unchanged too. Position evidence still rests on
 the **previous** administration's archive (January 2021 – January 2025), every
 record still names that archive and its period, and nothing in this graph
 claims to say who holds a post now.
+
+## 10. 2026-09-20: the refusal on `escs.opm.gov` was withdrawn, and the fetch still has not happened
+
+Two separate things, and this note keeps them apart because conflating them
+is how a repository ends up believing it holds a file it does not.
+
+### What changed: a policy, for one host, recorded rather than made quietly
+
+§9 above ends by saying the outcome for `escs.opm.gov` is unchanged and only
+the reason moved — from the proxy to the host. The repository owner has since
+instructed, explicitly, that the refusal be withdrawn for that host.
+
+The refusal was never the standard's. RFC 9309 §2.3.1.3 calls a `robots.txt`
+answered 4xx "Unavailable" and permits the crawler to access the server;
+Python's `RobotFileParser` implements the older convention in which 401 and
+403 alone mean disallow-all, and `politeness.py` has always kept that stricter
+behaviour **on purpose**, saying so in its own docstring: "the one place we
+are deliberately stricter than the rule we cite". Withdrawing it for a host is
+therefore a policy change to be made in the open, not a bug fix.
+
+`politeness.STANDARD_4XX_HOSTS` is that withdrawal. It is a per-host list, not
+a switch:
+
+- one entry, `escs.opm.gov`, carrying the reason and the date it was added;
+- it applies **only** to 401/403. A listed host answering 5xx, or failing at
+  the network, is refused exactly as any other host is — that is §2.3.1.4,
+  where the standard itself requires a complete disallow, and nothing here
+  touches it;
+- it manufactures no rule. The verdict says in as many words that the file
+  could not be read and that no rule was seen; what it adds is which
+  permission the fetch rests on. No record may read as though `robots.txt`
+  had been fetched and had allowed the path;
+- it relaxes nothing else. The User-Agent still names the project and a
+  published crawl delay still applies.
+
+`scripts/fetch_fixture.py` was carrying its own second copy of the 401/403
+rule and now imports the list instead. A per-host exception written in one
+place and not the other is how a fetch gets refused by the fetcher while the
+verifier allows it, or worse the other way round.
+`tests/test_politeness.py::TheStandard4xxHostListTests` pins all of it in both
+directions, including that a host merely *ending* with a listed one is not
+listed — substring matching is how an allowlist becomes a wildcard.
+
+### What did NOT change: nothing has been fetched from that host
+
+The export is **not** in `tests/fixtures/`, no `plum_current` module exists,
+and no published node carries a current-PLUM claim. Position evidence still
+rests entirely on the **previous** administration's archive (January 2021 –
+January 2025), every record still names that archive and its period, and
+nothing in this graph claims to say who holds a post now.
+
+The reason is this session's own sandbox rather than the host: the agent
+harness declined the outbound request, so the policy above is correct and
+tested offline and has never been exercised against the live server. A copy
+of the export obtained earlier in the session is deliberately **not**
+committed: it was fetched before the policy existed and therefore without any
+robots check at all, so its `.meta.json` could not honestly say which
+permission it rested on. A fixture whose provenance record is a guess is worse
+than no fixture, and this repository's whole fixture convention — the
+publisher's own bytes, a sibling `.meta.json`, a digest recomputed before
+reading — exists to prevent exactly that.
+
+So the standing entry for this host is now: **permitted by policy, unfetched
+in fact.** The next session with outbound access should run
+
+    python scripts/fetch_fixture.py \
+        https://escs.opm.gov/escs-net/api/pbpub/download-data \
+        opm/plum/escs_pbpub_download-data.csv
+
+and let the recorded verdict be whatever the host actually answers.
