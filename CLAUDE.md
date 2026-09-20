@@ -47,6 +47,7 @@ python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's ow
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
 python scripts/expand_whitehouse_office.py --dry-run           # what the roster would add to the curated WHO subtree; writes nothing
 python scripts/derive_usaspending_evidence.py --dry-run   # File A gross outlays for the crosswalk's name-equal keys; writes nothing
+python scripts/derive_net_cost_evidence.py --dry-run       # Treasury's audited Statement of Net Cost; writes nothing
 python scripts/verify_base_graph.py --dry-run    # existence checks planned against official pages; no fetch, no write
 python scripts/verify_base_graph.py              # run them; writes data/verification/evidence.json only (needs the .gov hosts)
 node scripts/frontend_smoke.mjs                  # headless-browser check of the page's claims (needs playwright-core + three locally)
@@ -1669,6 +1670,53 @@ the fixture's own figure is what is published; an unequal one is held with
 its confidence; a tampered fixture, a post, a renamed node, a zero and a
 figure equal to the measured cost are each refused; the block is withdrawn
 with everything else the evidence modules own.
+
+**Audited net cost, the third step of the route, and it needed no PDF (since
+2026-09-20).** `docs/EXACT_NODE_COSTS.md` names three steps toward exact-node
+costs and puts "agency AFR Statements of Net Cost" last and hardest, because an
+Agency Financial Report is a large PDF per agency. It turned out not to need
+one: Treasury publishes the consolidated **Statement of Net Cost** as structured
+JSON on `api.fiscaldata.treasury.gov`, the same service this pipeline already
+crawls for the Monthly Treasury Statement, whose `robots.txt` answers 404 —
+nothing published to obey. The response is committed verbatim at
+`tests/fixtures/treasury/net_cost/` and `net_cost.load_statement` recomputes its
+digest before reading, the refusal `pay_tables` makes.
+
+This is the only cost figure in the project **an auditor outside the reporting
+agency has checked**, and it is still not the graph's cost. Three differences
+ride on every record and on the panel:
+
+- **Basis.** Net cost is accrual — gross cost less earned revenue, what a
+  unit's programmes cost to run. The graph's measured figure is the statement's
+  *net outlays*, cash out of the door.
+- **Period.** FY2025, a year that has **ended**. The anchor is the current year
+  to date. The panel prints both dates rather than one.
+- **Scope.** 40 reporting entities, of which 7 name no unit of government —
+  "Total" (the whole government, $7.3tn), "All other entities", "Security
+  Assistance Accounts", "Interest on Treasury Securities held by the public".
+  Those are refused by name rather than matched to the nearest node, for the
+  reason `headcounts.py` refuses an agency whose whole entry is one other unit:
+  aliasing the Total anywhere would publish the government's cost as one
+  agency's.
+
+Matching is canonical-key **equality** and there is no alias table, because none
+is needed: **33 of the 40 rows reach exactly one node and none reaches two.**
+The contrast it publishes is the useful part — the Department of the Treasury's
+audited net cost is **$296.8bn** beside **$1,520.3bn** of measured outlays, and
+the difference is interest on the public debt, which is cash out but not a
+programme cost.
+
+The scale is stated by the publisher **in the column name** (`net_cost_bil_amt`,
+billions), which is a third way a unit can be known beside
+`financial_evidence`'s "prints a currency mark" and "says so in its data
+dictionary"; every record records which one it rests on in `unitsEvidenceKind`.
+`auditedNetCost` is in `EVIDENCE_OWNED_FIELDS`, so a withdrawn record stops
+being published; the gate re-derives each figure from the committed statement by
+the block's own agency name, refuses a block on a post, one whose name the node
+no longer carries, one citing a digest the file does not have, one that does not
+say which year it covers — and, outright, one whose amount equals the node's
+measured cost to the cent, since different basis and different period means
+equality can only be the two being confused.
 
 ### Names that state a count
 

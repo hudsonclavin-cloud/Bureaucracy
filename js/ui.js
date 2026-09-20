@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260919b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260919b";
+import { createGovernmentGraph } from "./graph.js?v=20260920a";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260920a";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -770,8 +770,21 @@ function renderHeadcountProvenance(data) {
   const hasHeadcount = source && typeof source === "object" && typeof data.employeesOfficial === "number";
   const fileA = data.usaspendingOutlays;
   const hasFileA = fileA && typeof fileA === "object" && typeof fileA.amount === "number";
+  const audited = data.auditedNetCost;
+  const hasAudited = audited && typeof audited === "object" && typeof audited.netCostUsd === "number";
   line.replaceChildren();
   const add = (text) => line.appendChild(document.createTextNode(text));
+  if (hasAudited) {
+    // The only figure in this project an auditor outside the reporting agency
+    // has checked — and still not this unit's cost. Accrual, for a year that
+    // has ENDED, where the cost above is cash for the year to date. Both dates
+    // are printed rather than one, so the two cannot be read as the same thing.
+    add(`Treasury's audited Statement of Net Cost reports a net cost of $${Math.round(audited.netCostUsd).toLocaleString()} for "${audited.agencyName}" for fiscal year ${audited.fiscalYear}, ended ${audited.statementDate}`);
+    if (typeof audited.grossCostUsd === "number" && typeof audited.earnedRevenueUsd === "number") {
+      add(` (gross cost $${Math.round(audited.grossCostUsd).toLocaleString()} less earned revenue $${Math.round(audited.earnedRevenueUsd).toLocaleString()})`);
+    }
+    add(". That is accrual accounting for a completed year — what the unit's programmes cost to run — and the figure above it is cash out of the door for the year to date. Different basis, different period; neither is the other. ");
+  }
   if (hasFileA) {
     // A different measure from the cost above it, and said so in the same
     // breath: File A is gross, before the offsetting collections the Treasury
@@ -1863,6 +1876,13 @@ function renderInfoPanel(nodeObj) {
   }
   // USAspending File A, under its own heading so it can never read as the
   // cost: gross outlays, fiscal-year-to-date, from a different system.
+  const auditedRow = data.auditedNetCost;
+  if (auditedRow && typeof auditedRow === "object" && typeof auditedRow.netCostUsd === "number") {
+    statRows.push([
+      `AUDITED NET COST — Treasury Statement of Net Cost (FY${auditedRow.fiscalYear}, ended ${auditedRow.statementDate}; not the cost)`,
+      `$${Math.round(auditedRow.netCostUsd).toLocaleString()}`,
+    ]);
+  }
   const fileA = data.usaspendingOutlays;
   if (fileA && typeof fileA === "object" && typeof fileA.amount === "number") {
     statRows.push([

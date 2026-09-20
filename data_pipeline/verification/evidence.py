@@ -112,6 +112,10 @@ EVIDENCE_OWNED_FIELDS = (
     # listed first so a withdrawn record cannot outlive the build that
     # withdrew it (data_pipeline/verification/usaspending.py).
     "usaspendingOutlays",
+    # Treasury's audited Statement of Net Cost, in its own block beside the
+    # cost (data_pipeline/verification/net_cost.py). Listed here for the same
+    # reason: a record refused since the last build must stop being published.
+    "auditedNetCost",
     "verificationMethod",
     "verificationFailure",
     "verificationSiteFrom",

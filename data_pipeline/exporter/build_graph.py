@@ -241,6 +241,8 @@ MINIMAL_GRAPH_FIELDS = (
     "positionSchedulePay",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
+    # Treasury's audited Statement of Net Cost, likewise beside and never in
+    "auditedNetCost",
     # whether the government still has this unit. Absent means it does; the
     # viewer hides a superseded one unless asked, and the panel says what
     # replaced it and quotes the page that says so.
@@ -2454,6 +2456,7 @@ def build_graph(
     congressional_pay_evidence_path: str | Path | None = "default",
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
+    net_cost_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2702,6 +2705,18 @@ def build_graph(
 
     resolved_usaspending_path = (
         DEFAULT_USASPENDING_EVIDENCE_PATH if usaspending_evidence_path == "default" else usaspending_evidence_path
+    )
+    from data_pipeline.verification.net_cost import (  # noqa: E402 — same late-import shape as usaspending
+        apply_net_cost_evidence,
+        load_net_cost_evidence,
+    )
+
+    default_net_cost_path = PROJECT_ROOT / "data" / "verification" / "net_cost_evidence.json"
+    resolved_net_cost_path = (
+        default_net_cost_path if net_cost_evidence_path == "default" else net_cost_evidence_path
+    )
+    validation["net_cost_evidence"] = apply_net_cost_evidence(
+        graph, load_net_cost_evidence(resolved_net_cost_path) if resolved_net_cost_path else {}, index_tree=index_tree,
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(
         graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,

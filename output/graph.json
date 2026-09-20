@@ -16835,9 +16835,6 @@
           "costSourceCount": 1,
           "treasury_section": "Legislative Branch",
           "treasury_classification_id": "59308394",
-          "sourceCount": 2,
-          "confidenceScore": 0.8,
-          "verificationStatus": "verified",
           "rollup_total_amount": 1206618593.37,
           "budget_source": "Treasury MTS Table 5",
           "treasury_row_name": "Senate",
@@ -16846,6 +16843,9 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
+          "sourceCount": 2,
+          "confidenceScore": 0.8,
+          "verificationStatus": "verified",
           "lastVerified": "2026-09-19T01:51:02+00:00",
           "evidenceUrls": [
             "https://www.senate.gov/"
@@ -35881,9 +35881,6 @@
           "costSourceCount": 1,
           "treasury_section": "Legislative Branch",
           "treasury_classification_id": "59308399",
-          "sourceCount": 3,
-          "confidenceScore": 0.9,
-          "verificationStatus": "verified",
           "rollup_total_amount": 1833255200.73,
           "budget_source": "Treasury MTS Table 5",
           "treasury_row_name": "House of Representatives",
@@ -35892,6 +35889,9 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
+          "sourceCount": 3,
+          "confidenceScore": 0.9,
+          "verificationStatus": "verified",
           "lastVerified": "2026-09-19T01:51:02+00:00",
           "evidenceUrls": [
             "https://www.house.gov/",
@@ -39383,9 +39383,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308433",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 773914960.8,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Government Accountability Office",
@@ -39394,6 +39391,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "leg-support",
@@ -40972,9 +40972,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308416",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 66610369.35,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Congressional Budget Office",
@@ -40983,6 +40980,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "leg-support",
@@ -41960,9 +41960,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308425",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 823618772.19,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Library of Congress",
@@ -41971,6 +41968,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.loc.gov/about/",
@@ -42319,9 +42319,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308429",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 87161929.2,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Government Publishing Office",
@@ -42330,6 +42327,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "leg-support",
@@ -42865,9 +42865,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308420",
-              "sourceCount": 4,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 826075654.8,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Architect of the Capitol",
@@ -42876,6 +42873,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 4,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.aoc.gov/about-us",
@@ -44494,9 +44494,6 @@
               "costSourceCount": 1,
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308409",
-              "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
               "rollup_total_amount": 764621744.01,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Capitol Police",
@@ -44505,6 +44502,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.uscp.gov/the-department"
@@ -44611,7 +44611,9 @@
           "costVerificationStatus": "verified",
           "costConfidenceScore": 0.95,
           "costVerificationReason": "matched_official_rollup",
-          "costSourceCount": 1
+          "costSourceCount": 1,
+          "employees": null,
+          "budget": null
         }
       ],
       "sourceUrls": [
@@ -44644,10 +44646,6 @@
       "treasury_classification_id": "59308451",
       "treasury_netted": true,
       "treasury_receipts_child_id": "legislative-branch--treasury-receipts",
-      "sourceCount": 1,
-      "confidenceScore": 0.4,
-      "verificationStatus": "unverified",
-      "lastVerified": null,
       "rollup_total_amount": 6471395639.99,
       "budget_source": "Treasury MTS Table 5",
       "treasury_row_name": "Total--Legislative Branch",
@@ -44656,6 +44654,10 @@
       "amount_kind": "fytd_net_outlays",
       "source_system": "Treasury Fiscal Data",
       "allocation_basis": "treasury_rollup",
+      "sourceCount": 1,
+      "confidenceScore": 0.4,
+      "verificationStatus": "unverified",
+      "lastVerified": null,
       "placementVerified": false,
       "placementParentId": "the-constitution-of-the-united-states",
       "placementVerifiedAt": "2026-09-19T01:51:02+00:00"
@@ -56372,9 +56374,6 @@
               "costSourceCount": 1,
               "treasury_section": "Executive Office of the President",
               "treasury_classification_id": "59309781",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 65359248.46,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "The White House",
@@ -56383,6 +56382,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "evidenceUrls": [
                 "https://www.federalregister.gov/agencies/the-white-house-office"
@@ -60342,9 +60344,6 @@
               "costSourceCount": 1,
               "treasury_section": "Executive Office of the President",
               "treasury_classification_id": "59309782",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 105136537.41,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Office of Management and Budget",
@@ -60353,6 +60352,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.whitehouse.gov/omb/",
@@ -62688,7 +62690,9 @@
               "costVerificationStatus": "verified",
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
-              "costSourceCount": 1
+              "costSourceCount": 1,
+              "employees": null,
+              "budget": null
             }
           ],
           "sourceUrls": [
@@ -62730,9 +62734,6 @@
           "treasury_classification_id": "59309787",
           "treasury_netted": true,
           "treasury_receipts_child_id": "exec-eop--treasury-receipts",
-          "sourceCount": 3,
-          "confidenceScore": 0.9,
-          "verificationStatus": "verified",
           "rollup_total_amount": -1166326771.25,
           "budget_source": "Treasury MTS Table 5",
           "treasury_row_name": "Total--Executive Office of the President",
@@ -62741,6 +62742,9 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
+          "sourceCount": 3,
+          "confidenceScore": 0.9,
+          "verificationStatus": "verified",
           "lastVerified": "2026-09-19T01:51:02+00:00",
           "evidenceUrls": [
             "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
@@ -67275,7 +67279,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -67314,9 +67320,6 @@
               "treasury_classification_id": "59309307",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-state--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 24891927642.42,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of State",
@@ -67325,6 +67328,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -67363,6 +67369,22 @@
                     "employees": 14163
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of State",
+                "netCostUsd": 31900000000.0,
+                "grossCostUsd": 38100000000.0,
+                "earnedRevenueUsd": 6400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -68664,9 +68686,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Treasury",
                   "treasury_classification_id": "59309586",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 260269276851.62,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Internal Revenue Service",
@@ -68675,6 +68694,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.irs.gov/",
@@ -69002,9 +69024,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Treasury",
                   "treasury_classification_id": "59309540",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 9287041.05,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Engraving and Printing",
@@ -69013,6 +69032,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
@@ -69367,9 +69389,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Treasury",
                   "treasury_classification_id": "59309543",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": -444816644.44,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Mint",
@@ -69378,6 +69397,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementVerified": true,
                   "placementUrl": "https://home.treasury.gov/about/general-information",
@@ -69676,9 +69698,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Treasury",
                   "treasury_classification_id": "59309524",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 9899395085.72,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Bureau of the Fiscal Service",
@@ -69687,6 +69706,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://home.treasury.gov/about/offices/domestic-finance/fiscal-service",
@@ -70523,9 +70545,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Treasury",
                   "treasury_classification_id": "59309589",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 408288873.68,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Comptroller of the Currency",
@@ -70534,6 +70553,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://home.treasury.gov/about/general-information",
@@ -71407,6 +71429,13 @@
                   "children": [],
                   "descriptionSource": "generated_from_the_monthly_treasury_statement",
                   "treasurySectionAtAdd": "Department of the Treasury",
+                  "sourceUrls": [
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                  ],
+                  "sourceTypes": [
+                    "treasury_outlays",
+                    "government_dataset"
+                  ],
                   "rollup_total_amount": 1267361531632.09,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Interest on the Public Debt",
@@ -71415,17 +71444,6 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
-                  "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
-                  ],
-                  "sourceTypes": [
-                    "treasury_outlays",
-                    "government_dataset"
-                  ],
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "treasury_outlays",
@@ -71445,7 +71463,11 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-treasury--treasury-receipts",
@@ -71504,7 +71526,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -71547,9 +71571,6 @@
               "treasury_classification_id": "59309627",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-treasury--treasury-receipts",
-              "sourceCount": 4,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 1520317300729.7,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of the Treasury",
@@ -71558,6 +71579,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 4,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://home.treasury.gov/about/general-information",
@@ -71645,6 +71669,22 @@
                     "employees": 209
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of the Treasury",
+                "netCostUsd": 296800000000.0,
+                "grossCostUsd": 413700000000.0,
+                "earnedRevenueUsd": 116900000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -83775,7 +83815,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -83814,9 +83856,6 @@
               "treasury_classification_id": "59308755",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-defense--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 832633471247.51,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Defense--Military Programs",
@@ -83825,6 +83864,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -84023,6 +84065,22 @@
                     "employees": 23
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Defense",
+                "netCostUsd": 1237300000000.0,
+                "grossCostUsd": 1115400000000.0,
+                "earnedRevenueUsd": 120000000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -85492,9 +85550,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309169",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 9724112829.92,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Bureau of Investigation",
@@ -85503,6 +85558,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.fbi.gov/",
@@ -86129,9 +86187,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309171",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 2969266853.4,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Drug Enforcement Administration",
@@ -86140,6 +86195,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/drug-enforcement-administration"
@@ -86733,9 +86791,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309173",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 1497501197.68,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Alcohol, Tobacco, Firearms, and Explosives",
@@ -86744,6 +86799,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau"
@@ -87396,9 +87454,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309175",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 7932740679.58,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Prison System",
@@ -87407,6 +87462,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/prisons-bureau"
@@ -88062,9 +88120,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309164",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 1610072463.85,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Marshals Service",
@@ -88073,6 +88128,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/united-states-marshals-service"
@@ -88440,10 +88498,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Justice",
                   "treasury_classification_id": "59309161",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 2291251063.23,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Attorneys",
@@ -88451,7 +88505,11 @@
                   "budget_year": "2026",
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup"
+                  "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-doj-div-antitrust",
@@ -90330,7 +90388,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -90369,9 +90429,6 @@
               "treasury_classification_id": "59309195",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-doj--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 41306694994.56,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Justice",
@@ -90380,6 +90437,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -90473,6 +90533,22 @@
                     "employees": 56
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Justice",
+                "netCostUsd": 48500000000.0,
+                "grossCostUsd": 50200000000.0,
+                "earnedRevenueUsd": 1700000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -91592,9 +91668,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Interior",
                   "treasury_classification_id": "59309119",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 4431721287.83,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Park Service",
@@ -91603,6 +91676,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.nps.gov/",
@@ -92487,9 +92563,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Interior",
                   "treasury_classification_id": "59309110",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 1336172065.27,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Geological Survey",
@@ -92498,6 +92571,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.usgs.gov/",
@@ -92913,9 +92989,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Interior",
                   "treasury_classification_id": "59309117",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 3091700660.5,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Fish and Wildlife Service",
@@ -92924,6 +92997,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.fws.gov/",
@@ -93309,9 +93385,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Interior",
                   "treasury_classification_id": "59309125",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 2427080474.47,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Indian Affairs and Bureau of Indian Education",
@@ -93320,6 +93393,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.bia.gov/",
@@ -94395,9 +94471,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of the Interior",
                   "treasury_classification_id": "59309095",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 133467940.96,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Ocean Energy Management",
@@ -94406,6 +94479,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.boem.gov/",
@@ -94506,7 +94582,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -94548,9 +94626,6 @@
               "treasury_classification_id": "59309151",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-doi--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 12832178268.92,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of the Interior",
@@ -94559,6 +94634,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.doi.gov/whoweare",
@@ -94665,6 +94743,22 @@
                     "employees": 295
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of the Interior",
+                "netCostUsd": 30500000000.0,
+                "grossCostUsd": 34000000000.0,
+                "earnedRevenueUsd": 3500000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -95565,9 +95659,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308533",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 9467972191.32,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Farm Service Agency",
@@ -95576,6 +95667,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/farm-service-agency"
@@ -96240,9 +96334,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308590",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 11008051664.28,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Forest Service",
@@ -96251,6 +96342,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.fs.usda.gov",
@@ -96559,9 +96653,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308572",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 127220788208.37,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Food and Nutrition Service",
@@ -96570,6 +96661,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.fns.usda.gov/",
@@ -96901,9 +96995,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308493",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 2048645529.7,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Animal and Plant Health Inspection Service",
@@ -96912,6 +97003,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.aphis.usda.gov/",
@@ -97206,9 +97300,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308480",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 1637508142.58,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Agricultural Research Service",
@@ -97217,6 +97308,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.ars.usda.gov/main/main.htm",
@@ -97573,9 +97667,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Agriculture",
                   "treasury_classification_id": "59308496",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 1070885603.84,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Food Safety and Inspection Service",
@@ -97584,6 +97675,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/food-safety-and-inspection-service"
@@ -97663,10 +97757,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 1616282322.16,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Agricultural Marketing Service",
@@ -97675,6 +97765,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 4370,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -97734,10 +97828,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 1425550468.66,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Foreign Agricultural Service",
@@ -97746,6 +97836,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 693,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -97822,7 +97916,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -97861,9 +97957,6 @@
               "treasury_classification_id": "59308600",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-usda--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 202292623413.6,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Agriculture",
@@ -97872,6 +97965,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -98045,6 +98141,22 @@
                     "employees": 44
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Agriculture",
+                "netCostUsd": 223900000000.0,
+                "grossCostUsd": 236500000000.0,
+                "earnedRevenueUsd": 12600000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -98913,9 +99025,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308608",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 1349746840.63,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of the Census",
@@ -98924,6 +99033,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.census.gov/",
@@ -99374,10 +99486,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308614",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 6414280623.71,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Oceanic and Atmospheric Administration",
@@ -99385,7 +99493,11 @@
                   "budget_year": "2026",
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup"
+                  "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-doc-nist",
@@ -99713,9 +99825,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308616",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 2871627326.72,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Institute of Standards and Technology",
@@ -99724,6 +99833,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.nist.gov/",
@@ -100359,9 +100471,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308611",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 469663976.42,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "International Trade Administration",
@@ -100370,6 +100479,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://trade.gov/",
@@ -100818,10 +100930,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308619",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 986305441.58,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Telecommunications and Information Administration",
@@ -100829,7 +100937,11 @@
                   "budget_year": "2026",
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup"
+                  "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-doc-economic-development-administration",
@@ -100871,10 +100983,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 1063808699.83,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Economic Development Administration",
@@ -100883,6 +100991,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 225,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -100963,7 +101075,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -101002,9 +101116,6 @@
               "treasury_classification_id": "59308634",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-doc--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 13000128043.8,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Commerce",
@@ -101013,6 +101124,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -101111,6 +101225,22 @@
                     "employees": 34
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Commerce",
+                "netCostUsd": 18500000000.0,
+                "grossCostUsd": 27100000000.0,
+                "earnedRevenueUsd": 8600000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true,
               "treasury_pool_negative": -108357223.55
@@ -101933,9 +102063,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309258",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 560016210.75,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Occupational Safety and Health Administration",
@@ -101944,6 +102071,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
@@ -102248,9 +102378,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309262",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 449463540.67,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Bureau of Labor Statistics",
@@ -102259,6 +102386,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementVerified": true,
                   "placementUrl": "https://www.dol.gov/general/aboutdol",
@@ -102541,9 +102671,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309256",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 273948686.88,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Wage and Hour Division",
@@ -102552,6 +102679,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.dol.gov/agencies/whd",
@@ -102907,9 +103037,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309237",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 44061408872.96,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Employment and Training Administration",
@@ -102918,6 +103045,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.doleta.gov/",
@@ -103552,9 +103682,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309260",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 340436251.37,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Mine Safety and Health Administration",
@@ -103563,6 +103690,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.msha.gov/",
@@ -104017,7 +104147,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -104059,9 +104191,6 @@
               "treasury_classification_id": "59309272",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-dol--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 51358064489.24,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Labor",
@@ -104070,6 +104199,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.dol.gov/general/aboutdol",
@@ -104206,6 +104338,22 @@
                     "employees": 42
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Labor",
+                "netCostUsd": 62500000000.0,
+                "grossCostUsd": 62500000000.0,
+                "earnedRevenueUsd": 0.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -105316,9 +105464,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308838",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 3369384319.53,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Food and Drug Administration",
@@ -105327,6 +105472,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/food-and-drug-administration"
@@ -105853,9 +106001,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308845",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 8797566552.09,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Centers for Disease Control and Prevention",
@@ -105864,6 +106009,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.cdc.gov/",
@@ -106578,9 +106726,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308847",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 41470778905.87,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Institutes of Health",
@@ -106589,6 +106734,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.nih.gov/",
@@ -107088,9 +107236,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308891",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 2486049653525.63,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Centers for Medicare and Medicaid Services",
@@ -107099,6 +107244,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.cms.gov/",
@@ -107315,9 +107463,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308851",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 259717363.67,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Agency for Healthcare Research and Quality",
@@ -107326,6 +107471,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/agency-for-healthcare-research-and-quality"
@@ -107663,9 +107811,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308849",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 6986628348.34,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Substance Abuse and Mental Health Services Administration",
@@ -107674,6 +107819,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/substance-abuse-and-mental-health-services-administration"
@@ -108047,9 +108195,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308840",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 13326120452.32,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Health Resources and Services Administration",
@@ -108058,6 +108203,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/health-resources-and-services-administration"
@@ -108404,9 +108552,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Health and Human Services",
                   "treasury_classification_id": "59308843",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 9494534406.02,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Indian Health Service",
@@ -108415,6 +108560,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.ihs.gov/",
@@ -108497,10 +108645,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 65640372808.49,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Administration for Children and Families",
@@ -108509,6 +108653,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 2296,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -108568,10 +108716,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 2142149578.01,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Administration for Community Living",
@@ -108580,6 +108724,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 260,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -108656,7 +108804,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -108695,9 +108845,6 @@
               "treasury_classification_id": "59308941",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-hhs--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 1822378202029.11,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Health and Human Services",
@@ -108706,6 +108853,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -108819,6 +108969,22 @@
                     "employees": 165
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Health and Human Services",
+                "netCostUsd": 1886300000000.0,
+                "grossCostUsd": 2070100000000.0,
+                "earnedRevenueUsd": 184300000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -110019,10 +110185,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Housing and Urban Development",
                   "treasury_classification_id": "59309012",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 44561532246.56,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Public and Indian Housing Programs",
@@ -110031,6 +110193,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementVerified": false,
                   "placementParentId": "exec-dept-hud",
                   "placementVerifiedAt": "2026-09-19T01:51:02+00:00"
@@ -110263,10 +110429,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Housing and Urban Development",
                   "treasury_classification_id": "59309028",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 14378167642.09,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Community Planning and Development",
@@ -110275,6 +110437,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementVerified": false,
                   "placementParentId": "exec-dept-hud",
                   "placementVerifiedAt": "2026-09-19T01:51:02+00:00"
@@ -112193,7 +112359,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -112237,9 +112405,6 @@
               "treasury_classification_id": "59309082",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-hud--treasury-receipts",
-              "sourceCount": 5,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 61686962442.33,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Housing and Urban Development",
@@ -112248,6 +112413,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 5,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.hud.gov/about",
@@ -112267,6 +112435,22 @@
                 "agencyUrl": "http://portal.hud.gov/",
                 "parentListedName": null,
                 "checkedAt": "2026-09-08T19:19:15Z"
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Housing and Urban Development",
+                "netCostUsd": 71400000000.0,
+                "grossCostUsd": 75200000000.0,
+                "earnedRevenueUsd": 3800000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -113393,9 +113577,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309334",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 22531060812.05,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Aviation Administration",
@@ -113404,6 +113585,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.faa.gov/",
@@ -113705,9 +113889,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309355",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 58322278678.82,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Highway Administration",
@@ -113716,6 +113897,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/federal-highway-administration"
@@ -114008,10 +114192,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309360",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 1360453649.92,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Highway Traffic Safety Administration",
@@ -114019,7 +114199,11 @@
                   "budget_year": "2026",
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup"
+                  "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-dot-fra",
@@ -114220,9 +114404,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309381",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 6791383741.04,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Railroad Administration",
@@ -114231,6 +114412,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/federal-railroad-administration"
@@ -114463,10 +114647,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309357",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 863605463.94,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Motor Carrier Safety Administration",
@@ -114474,7 +114654,11 @@
                   "budget_year": "2026",
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
-                  "allocation_basis": "treasury_rollup"
+                  "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null
                 },
                 {
                   "id": "exec-dept-dot-fta",
@@ -114675,9 +114859,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309404",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 18549547599.63,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Transit Administration",
@@ -114686,6 +114867,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/federal-transit-administration"
@@ -115144,9 +115328,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": -841121590.82,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Maritime Administration",
@@ -115155,6 +115336,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/maritime-administration"
@@ -115256,7 +115440,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -115295,9 +115481,6 @@
               "treasury_classification_id": "59309432",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-dot--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 109594889432.49,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Transportation",
@@ -115306,6 +115489,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -115394,6 +115580,22 @@
                     "employees": 125
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Transportation",
+                "netCostUsd": 128600000000.0,
+                "grossCostUsd": 130200000000.0,
+                "earnedRevenueUsd": 1600000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -117258,9 +117460,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Energy",
                   "treasury_classification_id": "59308810",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 3303739714.39,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Energy Efficiency and Renewable Energy",
@@ -117269,6 +117468,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementVerified": true,
                   "placementParentId": "exec-dept-doe",
@@ -122381,7 +122583,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -122423,9 +122627,6 @@
               "treasury_classification_id": "59308834",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-doe--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 47466853460.71,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Energy",
@@ -122434,6 +122635,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.energy.gov/leadership-organization",
@@ -122480,6 +122684,22 @@
                     "employees": 1581
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Energy",
+                "netCostUsd": 66800000000.0,
+                "grossCostUsd": 72600000000.0,
+                "earnedRevenueUsd": 5800000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -123503,9 +123723,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 80531492080.33,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Office of Federal Student Aid",
@@ -123514,6 +123731,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.ed.gov/about",
@@ -124050,9 +124270,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Education",
                   "treasury_classification_id": "59308763",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 27191608261.22,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Office of Elementary and Secondary Education",
@@ -124061,6 +124278,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.ed.gov/about/ed-offices/oese"
@@ -124361,9 +124581,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Education",
                   "treasury_classification_id": "59308783",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 478287221.94,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Institute of Education Sciences",
@@ -124372,6 +124589,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://ies.ed.gov/"
@@ -126013,7 +126233,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -126056,9 +126278,6 @@
               "treasury_classification_id": "59308788",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-ed--treasury-receipts",
-              "sourceCount": 4,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 61327395379.76,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Education",
@@ -126067,6 +126286,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 4,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.ed.gov/about",
@@ -126194,6 +126416,22 @@
                     "employees": 15
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Education",
+                "netCostUsd": -77600000000.0,
+                "grossCostUsd": -29200000000.0,
+                "earnedRevenueUsd": 48400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -145912,7 +146150,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -145954,9 +146194,6 @@
               "treasury_classification_id": "59309718",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-va--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 395059405295.38,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Veterans Affairs",
@@ -145965,6 +146202,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.va.gov/about_va/",
@@ -146156,6 +146396,22 @@
                     "employees": 12
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Veterans Affairs",
+                "netCostUsd": 522200000000.0,
+                "grossCostUsd": 572700000000.0,
+                "earnedRevenueUsd": 6300000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             },
@@ -147390,9 +147646,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308956",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 25176948616.46,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "U.S. Customs and Border Protection",
@@ -147401,6 +147654,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/u-s-customs-and-border-protection"
@@ -147959,9 +148215,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308954",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 20618379814.35,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Immigration and Customs Enforcement",
@@ -147970,6 +148223,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/u-s-immigration-and-customs-enforcement"
@@ -148661,9 +148917,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308952",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 7449834519.9,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Transportation Security Administration",
@@ -148672,6 +148925,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/transportation-security-administration"
@@ -149130,9 +149386,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308974",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 29627654655.87,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Federal Emergency Management Agency",
@@ -149141,6 +149394,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/federal-emergency-management-agency"
@@ -149799,9 +150055,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308947",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 5232852592.24,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Citizenship and Immigration Services",
@@ -149810,6 +150063,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/u-s-citizenship-and-immigration-services"
@@ -150338,9 +150594,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Homeland Security",
                   "treasury_classification_id": "59308950",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 3363339533.09,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Secret Service",
@@ -150349,6 +150602,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/secret-service"
@@ -150886,10 +151142,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 1913129116.71,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Protection and Programs Directorate",
@@ -150898,6 +151150,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "employeesOfficial": 3323,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -151510,9 +151766,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 12231768573.05,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Coast Guard",
@@ -151521,6 +151774,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/coast-guard"
@@ -152005,7 +152261,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -152044,9 +152302,6 @@
               "treasury_classification_id": "59308989",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-dept-dhs--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 98222170059.21,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Department of Homeland Security",
@@ -152055,6 +152310,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -152153,6 +152411,22 @@
                     "employees": 223
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Department of Homeland Security",
+                "netCostUsd": 124100000000.0,
+                "grossCostUsd": 141700000000.0,
+                "earnedRevenueUsd": 18100000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "child_cost_basis_implied": true
             }
@@ -156804,7 +157078,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -156843,9 +157119,6 @@
               "treasury_classification_id": "59309779",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-epa--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 15983392461.05,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Environmental Protection Agency",
@@ -156854,6 +157127,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "exec-independent",
@@ -156894,6 +157170,22 @@
                     "employees": 16557
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Environmental Protection Agency",
+                "netCostUsd": 37000000000.0,
+                "grossCostUsd": 37600000000.0,
+                "earnedRevenueUsd": 600000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -161843,7 +162135,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -161886,9 +162180,6 @@
               "treasury_classification_id": "59309841",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-nasa--treasury-receipts",
-              "sourceCount": 4,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 21216279162.78,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--National Aeronautics and Space Administration",
@@ -161897,6 +162188,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 4,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.nasa.gov/about/",
@@ -161986,6 +162280,22 @@
                     "employees": 259
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "National Aeronautics and Space Administration",
+                "netCostUsd": 23500000000.0,
+                "grossCostUsd": 23900000000.0,
+                "earnedRevenueUsd": 400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -162873,7 +163183,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -162912,9 +163224,6 @@
               "treasury_classification_id": "59309933",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-ssa--treasury-receipts",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 1586725434763.84,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Social Security Administration",
@@ -162923,6 +163232,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "exec-independent",
@@ -162963,6 +163275,22 @@
                     "employees": 56263
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Social Security Administration",
+                "netCostUsd": 1655400000000.0,
+                "grossCostUsd": 1655700000000.0,
+                "earnedRevenueUsd": 300000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -165862,7 +166190,23 @@
                 "checkedAt": "2026-09-08T19:19:15Z"
               },
               "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-              "verificationMethod": "listed_in_federal_register_agency_directory"
+              "verificationMethod": "listed_in_federal_register_agency_directory",
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "United States Postal Service",
+                "netCostUsd": 11500000000.0,
+                "grossCostUsd": 90600000000.0,
+                "earnedRevenueUsd": 79100000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
+              }
             },
             {
               "id": "exec-ind-sba",
@@ -166418,7 +166762,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -166461,9 +166807,6 @@
               "treasury_classification_id": "59309880",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-sba--treasury-receipts",
-              "sourceCount": 4,
-              "confidenceScore": 1.0,
-              "verificationStatus": "verified",
               "rollup_total_amount": 11679892637.64,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Small Business Administration",
@@ -166472,6 +166815,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 4,
+              "confidenceScore": 1.0,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.sba.gov/about-sba",
@@ -166516,6 +166862,22 @@
                     "employees": 8164
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Small Business Administration",
+                "netCostUsd": 8000000000.0,
+                "grossCostUsd": 12400000000.0,
+                "earnedRevenueUsd": 4400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -169014,9 +169376,6 @@
                   "costSourceCount": 1,
                   "treasury_section": "National Science Foundation",
                   "treasury_classification_id": "59309844",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 985423177.39,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Education and Human Resources",
@@ -169025,6 +169384,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.nsf.gov/edu",
@@ -172278,7 +172640,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -172320,9 +172684,6 @@
               "treasury_classification_id": "59309848",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-nsf--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 7951593352.37,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--National Science Foundation",
@@ -172331,6 +172692,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.nsf.gov/about",
@@ -172374,6 +172738,22 @@
                     "employees": 1601
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "National Science Foundation",
+                "netCostUsd": 9900000000.0,
+                "grossCostUsd": 9900000000.0,
+                "earnedRevenueUsd": 0.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -172918,7 +173298,9 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null
                 }
               ],
               "sourceUrls": [
@@ -172960,9 +173342,6 @@
               "treasury_classification_id": "59309863",
               "treasury_netted": true,
               "treasury_receipts_child_id": "exec-ind-opm--treasury-receipts",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 124287409220.6,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Office of Personnel Management",
@@ -172971,6 +173350,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.opm.gov/about-us/",
@@ -173014,6 +173396,22 @@
                     "employees": 2941
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Office of Personnel Management",
+                "netCostUsd": -75500000000.0,
+                "grossCostUsd": 139800000000.0,
+                "earnedRevenueUsd": 34900000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -179243,9 +179641,6 @@
               "costSourceCount": 1,
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59310084",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 1155851484.61,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Smithsonian Institution",
@@ -179254,6 +179649,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementVerified": false,
               "placementParentId": "exec-independent",
@@ -182768,9 +183166,6 @@
               "costSourceCount": 1,
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59310001",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 407171945.17,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "National Archives and Records Administration",
@@ -182779,6 +183174,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.archives.gov/about",
@@ -183031,9 +183429,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "International Assistance Programs",
                   "treasury_classification_id": "59309823",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": 372892234.93,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Peace Corps",
@@ -183042,6 +183437,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementCheckable": false,
                   "evidenceUrls": [
@@ -183717,10 +184115,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": -32992212.54,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Export-Import Bank of the United States",
@@ -183729,6 +184123,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false,
                   "employeesOfficial": 377,
                   "employeesOfficialSource": {
@@ -183753,6 +184151,22 @@
                         "employees": 377
                       }
                     ]
+                  },
+                  "auditedNetCost": {
+                    "source": "treasury_statement_of_net_cost",
+                    "sourceType": "audited_financial_statement",
+                    "metric": "audited_net_cost",
+                    "agencyName": "Export-Import Bank of the United States",
+                    "netCostUsd": -100000000.0,
+                    "grossCostUsd": 100000000.0,
+                    "earnedRevenueUsd": 200000000.0,
+                    "fiscalYear": "2025",
+                    "statementDate": "2025-09-30",
+                    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                    "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                    "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                    "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                    "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
                   },
                   "treasury_pool_negative": -32992212.54
                 },
@@ -184249,9 +184663,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59310005",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 136258500.73,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Endowment for the Arts",
@@ -184260,6 +184671,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://arts.gov/",
@@ -184516,9 +184930,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59310007",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 61181877.27,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Endowment for the Humanities",
@@ -184527,6 +184938,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.neh.gov/",
@@ -184787,9 +185201,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 517507373.96,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "United States Agency for Global Media",
@@ -184798,6 +185209,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.usagm.gov/",
@@ -185399,9 +185813,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59310010",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 254240820.66,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Labor Relations Board",
@@ -185410,6 +185821,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.nlrb.gov/",
@@ -185678,9 +186092,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "Independent Agencies",
                   "treasury_classification_id": "59309957",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 381077914.19,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Equal Employment Opportunity Commission",
@@ -185689,6 +186100,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.eeoc.gov/",
@@ -188696,9 +189110,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 2,
-                  "confidenceScore": 0.5,
-                  "verificationStatus": "partial",
                   "rollup_total_amount": -1211944181.54,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Credit Union Administration",
@@ -188707,6 +189118,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 2,
+                  "confidenceScore": 0.5,
+                  "verificationStatus": "partial",
                   "lastVerified": "2026-09-08T19:19:15Z",
                   "placementCheckable": false,
                   "evidenceUrls": [
@@ -188745,6 +189159,22 @@
                         "employees": 1214
                       }
                     ]
+                  },
+                  "auditedNetCost": {
+                    "source": "treasury_statement_of_net_cost",
+                    "sourceType": "audited_financial_statement",
+                    "metric": "audited_net_cost",
+                    "agencyName": "National Credit Union Administration",
+                    "netCostUsd": 300000000.0,
+                    "grossCostUsd": 400000000.0,
+                    "earnedRevenueUsd": 100000000.0,
+                    "fiscalYear": "2025",
+                    "statementDate": "2025-09-30",
+                    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                    "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                    "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                    "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                    "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
                   },
                   "treasury_pool_negative": -1211944181.54
                 },
@@ -188945,9 +189375,6 @@
                   "child_cost_basis": "subtree",
                   "treasury_section": "Department of Labor",
                   "treasury_classification_id": "59309239",
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": 1370201748.37,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Pension Benefit Guaranty Corporation",
@@ -188956,6 +189383,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://www.pbgc.gov/",
@@ -188997,6 +189427,22 @@
                         "employees": 939
                       }
                     ]
+                  },
+                  "auditedNetCost": {
+                    "source": "treasury_statement_of_net_cost",
+                    "sourceType": "audited_financial_statement",
+                    "metric": "audited_net_cost",
+                    "agencyName": "Pension Benefit Guaranty Corporation",
+                    "netCostUsd": 200000000.0,
+                    "grossCostUsd": 17100000000.0,
+                    "earnedRevenueUsd": 16900000000.0,
+                    "fiscalYear": "2025",
+                    "statementDate": "2025-09-30",
+                    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                    "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                    "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                    "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                    "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
                   }
                 },
                 {
@@ -189210,9 +189656,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 3,
-                  "confidenceScore": 0.9,
-                  "verificationStatus": "verified",
                   "rollup_total_amount": -945112444.17,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Tennessee Valley Authority",
@@ -189221,6 +189664,9 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
                   "lastVerified": "2026-09-19T01:51:02+00:00",
                   "evidenceUrls": [
                     "https://oig.tva.gov/",
@@ -189238,6 +189684,22 @@
                     "agencyUrl": null,
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "auditedNetCost": {
+                    "source": "treasury_statement_of_net_cost",
+                    "sourceType": "audited_financial_statement",
+                    "metric": "audited_net_cost",
+                    "agencyName": "Tennessee Valley Authority",
+                    "netCostUsd": -1400000000.0,
+                    "grossCostUsd": 12300000000.0,
+                    "earnedRevenueUsd": 13700000000.0,
+                    "fiscalYear": "2025",
+                    "statementDate": "2025-09-30",
+                    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                    "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                    "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                    "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                    "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
                   },
                   "treasury_pool_negative": -945112444.17
                 },
@@ -190064,7 +190526,6 @@
                       "proofReason": "official_source_recorded",
                       "parentId": "exec-ind-misc-railroad-retirement-board",
                       "treasury_section": "Independent Agencies",
-                      "placementCheckable": false,
                       "resolved_total_amount": -11427266977.53,
                       "cost_status": "official",
                       "cost_basis": "treasury_rollup",
@@ -190072,7 +190533,10 @@
                       "costVerificationStatus": "verified",
                       "costConfidenceScore": 0.95,
                       "costVerificationReason": "matched_official_rollup",
-                      "costSourceCount": 1
+                      "costSourceCount": 1,
+                      "employees": null,
+                      "budget": null,
+                      "placementCheckable": false
                     }
                   ],
                   "descriptionSource": "generated_from_the_monthly_treasury_statement",
@@ -190106,10 +190570,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 4470523415.96,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Total--Railroad Retirement Board",
@@ -190118,6 +190578,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false,
                   "employeesOfficial": 767,
                   "employeesOfficialSource": {
@@ -190142,6 +190606,22 @@
                         "employees": 767
                       }
                     ]
+                  },
+                  "auditedNetCost": {
+                    "source": "treasury_statement_of_net_cost",
+                    "sourceType": "audited_financial_statement",
+                    "metric": "audited_net_cost",
+                    "agencyName": "Railroad Retirement Board",
+                    "netCostUsd": 14900000000.0,
+                    "grossCostUsd": 14900000000.0,
+                    "earnedRevenueUsd": 0.0,
+                    "fiscalYear": "2025",
+                    "statementDate": "2025-09-30",
+                    "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                    "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                    "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                    "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                    "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
                   },
                   "treasury_unapportioned": 15897790393.49
                 },
@@ -190185,10 +190665,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 214381355.64,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Institute of Museum and Library Services",
@@ -190197,6 +190673,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false
                 },
                 {
@@ -190239,10 +190719,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 540000000.0,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Legal Services Corporation",
@@ -190251,6 +190727,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false
                 },
                 {
@@ -190293,10 +190773,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 530694161.88,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Millennium Challenge Corporation",
@@ -190305,6 +190781,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false,
                   "employeesOfficial": 346,
                   "employeesOfficialSource": {
@@ -190371,10 +190851,6 @@
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
                   "costSourceCount": 1,
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
                   "rollup_total_amount": 8022259.83,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Corporation for Public Broadcasting",
@@ -190383,6 +190859,10 @@
                   "amount_kind": "fytd_net_outlays",
                   "source_system": "Treasury Fiscal Data",
                   "allocation_basis": "treasury_rollup",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": null,
                   "placementCheckable": false
                 }
               ],
@@ -190470,7 +190950,6 @@
                   "proofReason": "official_source_recorded",
                   "parentId": "exec-independent-general-services-administration",
                   "treasury_section": "General Services Administration",
-                  "placementCheckable": false,
                   "resolved_total_amount": -274815739.14,
                   "cost_status": "official",
                   "cost_basis": "treasury_rollup",
@@ -190478,7 +190957,10 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null,
+                  "placementCheckable": false
                 }
               ],
               "descriptionSource": "generated_from_the_monthly_treasury_statement",
@@ -190512,10 +190994,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
               "rollup_total_amount": -1064048019.07,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--General Services Administration",
@@ -190524,6 +191002,10 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 1,
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
+              "lastVerified": null,
               "employeesOfficial": 13182,
               "employeesOfficialSource": {
                 "source": "opm_fedscope_employment",
@@ -190628,6 +191110,22 @@
                   }
                 ]
               },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "General Services Administration",
+                "netCostUsd": 300000000.0,
+                "grossCostUsd": 1400000000.0,
+                "earnedRevenueUsd": 1100000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
+              },
               "treasury_unapportioned": -789232279.93
             },
             {
@@ -190691,7 +191189,6 @@
                   "proofReason": "official_source_recorded",
                   "parentId": "exec-independent-agency-for-international-development",
                   "treasury_section": "International Assistance Programs",
-                  "placementCheckable": false,
                   "resolved_total_amount": -363635528.15,
                   "cost_status": "official",
                   "cost_basis": "treasury_rollup",
@@ -190699,7 +191196,10 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null,
+                  "placementCheckable": false
                 }
               ],
               "descriptionSource": "generated_from_the_monthly_treasury_statement",
@@ -190733,10 +191233,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
               "rollup_total_amount": 6886914401.01,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Agency for International Development",
@@ -190745,6 +191241,26 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 1,
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
+              "lastVerified": null,
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Agency for International Development",
+                "netCostUsd": 15900000000.0,
+                "grossCostUsd": 16800000000.0,
+                "earnedRevenueUsd": 900000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
+              },
               "treasury_unapportioned": 7250549929.16
             },
             {
@@ -190808,7 +191324,6 @@
                   "proofReason": "official_source_recorded",
                   "parentId": "exec-independent-corps-of-engineers",
                   "treasury_section": "Corps of Engineers",
-                  "placementCheckable": false,
                   "resolved_total_amount": -1103876045.07,
                   "cost_status": "official",
                   "cost_basis": "treasury_rollup",
@@ -190816,7 +191331,10 @@
                   "costVerificationStatus": "verified",
                   "costConfidenceScore": 0.95,
                   "costVerificationReason": "matched_official_rollup",
-                  "costSourceCount": 1
+                  "costSourceCount": 1,
+                  "employees": null,
+                  "budget": null,
+                  "placementCheckable": false
                 }
               ],
               "descriptionSource": "generated_from_the_monthly_treasury_statement",
@@ -190850,10 +191368,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
               "rollup_total_amount": 10899676389.06,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Corps of Engineers",
@@ -190862,6 +191376,10 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 1,
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
+              "lastVerified": null,
               "treasury_unapportioned": 12003552434.13
             }
           ],
@@ -192397,9 +192915,6 @@
               "costSourceCount": 1,
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59310082",
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": 1799067031.03,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Securities and Exchange Commission",
@@ -192408,6 +192923,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -192446,6 +192964,22 @@
                     "employees": 4744
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Securities and Exchange Commission",
+                "netCostUsd": -2100000000.0,
+                "grossCostUsd": 2300000000.0,
+                "earnedRevenueUsd": 4400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -193020,6 +193554,22 @@
                     "employees": 1473
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Federal Communications Commission",
+                "netCostUsd": 10700000000.0,
+                "grossCostUsd": 11100000000.0,
+                "earnedRevenueUsd": 400000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "usaspendingOutlays": {
                 "source": "usaspending_file_ab",
@@ -193948,9 +194498,6 @@
               "costSourceCount": 1,
               "treasury_section": "Independent Agencies",
               "treasury_classification_id": "59310012",
-              "sourceCount": 3,
-              "confidenceScore": 0.9,
-              "verificationStatus": "verified",
               "rollup_total_amount": 186944054.1,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Nuclear Regulatory Commission",
@@ -193959,6 +194506,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 3,
+              "confidenceScore": 0.9,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.nrc.gov/about-nrc.html",
@@ -194000,6 +194550,22 @@
                     "employees": 2941
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "U.S. Nuclear Regulatory Commission",
+                "netCostUsd": 200000000.0,
+                "grossCostUsd": 1000000000.0,
+                "earnedRevenueUsd": 800000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               }
             },
             {
@@ -195212,9 +195778,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 2,
-              "confidenceScore": 0.5,
-              "verificationStatus": "partial",
               "rollup_total_amount": -18957565906.75,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Total--Federal Deposit Insurance Corporation",
@@ -195223,6 +195786,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.5,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "placementCheckable": false,
               "evidenceUrls": [
@@ -195261,6 +195827,22 @@
                     "employees": 6487
                   }
                 ]
+              },
+              "auditedNetCost": {
+                "source": "treasury_statement_of_net_cost",
+                "sourceType": "audited_financial_statement",
+                "metric": "audited_net_cost",
+                "agencyName": "Federal Deposit Insurance Corporation",
+                "netCostUsd": -16400000000.0,
+                "grossCostUsd": -1100000000.0,
+                "earnedRevenueUsd": 15300000000.0,
+                "fiscalYear": "2025",
+                "statementDate": "2025-09-30",
+                "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+                "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+                "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+                "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+                "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
               },
               "treasury_pool_negative": -18957565906.75
             },
@@ -195986,10 +196568,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
               "rollup_total_amount": 253082628.12,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Federal Housing Finance Agency",
@@ -195998,6 +196576,10 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 1,
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
+              "lastVerified": null,
               "placementCheckable": false,
               "employeesOfficial": 869,
               "employeesOfficialSource": {
@@ -196069,10 +196651,6 @@
               "costConfidenceScore": 0.95,
               "costVerificationReason": "matched_official_rollup",
               "costSourceCount": 1,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "lastVerified": null,
               "rollup_total_amount": 403988335.89,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "Bureau of Consumer Financial Protection",
@@ -196081,6 +196659,10 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 1,
+              "confidenceScore": 0.4,
+              "verificationStatus": "unverified",
+              "lastVerified": null,
               "placementCheckable": false
             }
           ],
@@ -196602,9 +197184,6 @@
           "costSourceCount": 1,
           "treasury_section": "Judicial Branch",
           "treasury_classification_id": "59308458",
-          "sourceCount": 2,
-          "confidenceScore": 0.8,
-          "verificationStatus": "verified",
           "rollup_total_amount": 162432819.44,
           "budget_source": "Treasury MTS Table 5",
           "treasury_row_name": "Supreme Court of the United States",
@@ -196613,6 +197192,9 @@
           "amount_kind": "fytd_net_outlays",
           "source_system": "Treasury Fiscal Data",
           "allocation_basis": "treasury_rollup",
+          "sourceCount": 2,
+          "confidenceScore": 0.8,
+          "verificationStatus": "verified",
           "lastVerified": "2026-09-19T01:51:02+00:00",
           "evidenceUrls": [
             "https://www.supremecourt.gov/about/about.aspx"
@@ -201904,9 +202486,6 @@
               "treasury_section": "Legislative Branch",
               "treasury_classification_id": "59308435",
               "treasury_external_section": true,
-              "sourceCount": 2,
-              "confidenceScore": 0.8,
-              "verificationStatus": "verified",
               "rollup_total_amount": 67612388.41,
               "budget_source": "Treasury MTS Table 5",
               "treasury_row_name": "United States Tax Court",
@@ -201915,6 +202494,9 @@
               "amount_kind": "fytd_net_outlays",
               "source_system": "Treasury Fiscal Data",
               "allocation_basis": "treasury_rollup",
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
               "lastVerified": "2026-09-19T01:51:02+00:00",
               "evidenceUrls": [
                 "https://www.ustaxcourt.gov/"
@@ -204410,7 +204992,9 @@
           "costVerificationStatus": "verified",
           "costConfidenceScore": 0.95,
           "costVerificationReason": "matched_official_rollup",
-          "costSourceCount": 1
+          "costSourceCount": 1,
+          "employees": null,
+          "budget": null
         }
       ],
       "sourceUrls": [
@@ -204443,10 +205027,6 @@
       "treasury_classification_id": "59308473",
       "treasury_netted": true,
       "treasury_receipts_child_id": "judicial-branch--treasury-receipts",
-      "sourceCount": 1,
-      "confidenceScore": 0.4,
-      "verificationStatus": "unverified",
-      "lastVerified": null,
       "rollup_total_amount": 9140133867.73,
       "budget_source": "Treasury MTS Table 5",
       "treasury_row_name": "Total--Judicial Branch",
@@ -204455,6 +205035,10 @@
       "amount_kind": "fytd_net_outlays",
       "source_system": "Treasury Fiscal Data",
       "allocation_basis": "treasury_rollup",
+      "sourceCount": 1,
+      "confidenceScore": 0.4,
+      "verificationStatus": "unverified",
+      "lastVerified": null,
       "placementVerified": false,
       "placementParentId": "the-constitution-of-the-united-states",
       "placementVerifiedAt": "2026-09-19T01:51:02+00:00"
@@ -204519,7 +205103,6 @@
       "parentProven": true,
       "proofStatus": "proven",
       "proofReason": "official_source_recorded",
-      "attachToRoot": true,
       "treasury_section": "Undistributed Offsetting Receipts",
       "resolved_total_amount": -358094223680.81,
       "cost_status": "official",
@@ -204528,7 +205111,9 @@
       "costVerificationStatus": "verified",
       "costConfidenceScore": 0.95,
       "costVerificationReason": "matched_official_rollup",
-      "costSourceCount": 1
+      "costSourceCount": 1,
+      "employees": null,
+      "budget": null
     }
   ],
   "sourceUrls": [
@@ -204573,6 +205158,7 @@
     "record_date": "2026-08-31",
     "label": "FYTD net outlays through 2026-08-31",
     "source_system": "Treasury Fiscal Data",
-    "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+    "source_url": "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+    "reused_from_previous_build": true
   }
 }

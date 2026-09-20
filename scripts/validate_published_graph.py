@@ -2101,6 +2101,71 @@ def main(argv):
                 "{} is superseded and still carries an apportioned share".format(label(node)))
     gate.check("a superseded unit says who replaced it and holds no share", superseded_violations)
 
+    # Treasury's audited Statement of Net Cost, published beside the cost and
+    # never as it. The figure is re-derived here from the committed fixture --
+    # digest recomputed from the bytes, the row found by the agency name the
+    # block quotes -- so a block cannot carry a number the statement does not
+    # print. It is audited ACCRUAL cost for a fiscal year that has ended, and
+    # the graph's measured figure is cash outlays for the year to date, so a
+    # block whose amount equals the node's cost to the cent means the two have
+    # been confused and is refused outright.
+    net_cost_violations = []
+    net_cost_rows = {}
+    net_cost_digest = None
+    net_cost_path = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "treasury" / "net_cost" / "statement_net_cost_2025-09-30.json"
+    try:
+        import hashlib as _hashlib
+        raw = net_cost_path.read_bytes()
+        net_cost_digest = _hashlib.sha256(raw).hexdigest()
+        payload = json.loads(raw.decode("utf-8"))
+        rows = [r for r in (payload.get("data") or []) if isinstance(r, dict)]
+        latest = max((str(r.get("stmt_fiscal_year") or "") for r in rows), default="")
+        for row in rows:
+            if str(row.get("stmt_fiscal_year") or "") == latest and str(row.get("restmt_flag") or "").upper() == "N":
+                net_cost_rows[canonical_key(str(row.get("agency_nm") or ""))] = row
+    except (OSError, ValueError) as error:
+        net_cost_violations.append("the Statement of Net Cost fixture could not be read: {}".format(error))
+
+    for node in nodes:
+        block = node.get("auditedNetCost")
+        if not isinstance(block, dict):
+            continue
+        type_text = str(node.get("type") or "").casefold()
+        if any(word in type_text for word in ("position", "role", "office holder")):
+            net_cost_violations.append("{} is a post carrying an audited net cost".format(label(node)))
+            continue
+        quoted = str(block.get("agencyName") or "")
+        if canonical_key(quoted) != canonical_key(str(node.get("name") or "")):
+            net_cost_violations.append(
+                "{} carries a block naming {!r}, which is not this node's name".format(label(node), quoted))
+            continue
+        if net_cost_digest and str(block.get("documentSha256") or "") != net_cost_digest:
+            net_cost_violations.append(
+                "{} cites a document digest the committed statement does not have".format(label(node)))
+        row = net_cost_rows.get(canonical_key(quoted))
+        if row is None:
+            if net_cost_rows:
+                net_cost_violations.append(
+                    "{} quotes {!r}, which the statement does not report".format(label(node), quoted))
+            continue
+        try:
+            printed = round(float(row.get("net_cost_bil_amt")) * 1000000000, 2)
+        except (TypeError, ValueError):
+            printed = None
+        if printed is None or abs(float(block.get("netCostUsd") or 0) - printed) > 0.01:
+            net_cost_violations.append(
+                "{} publishes {} where the statement prints {}".format(
+                    label(node), block.get("netCostUsd"), printed))
+        if not str(block.get("fiscalYear") or "").strip() or not str(block.get("statementDate") or "").strip():
+            net_cost_violations.append("{}'s audited figure does not say which year it covers".format(label(node)))
+        if not str(block.get("unitsEvidenceKind") or "").strip():
+            net_cost_violations.append("{}'s audited figure does not say how its unit is known".format(label(node)))
+        amount = node.get("resolved_total_amount")
+        if isinstance(amount, (int, float)) and abs(float(amount) - float(block.get("netCostUsd") or 0)) < 0.01:
+            net_cost_violations.append(
+                "{} publishes its audited net cost as its cost — different basis, different period".format(label(node)))
+    gate.check("an audited net cost is the statement's own figure, and never the cost", net_cost_violations)
+
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";
     # it must be arithmetic, and it must not appear where it is not true.

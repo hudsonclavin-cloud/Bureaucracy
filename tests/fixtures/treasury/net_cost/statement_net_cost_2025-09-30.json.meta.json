@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-20T00:16:23Z",
+ "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+ "status": 200,
+ "final_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+ "content_type": "application/json",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "no readable robots.txt (HTTP 404); failing open",
+ "bytes": 38612,
+ "sha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+ "error": null
+}
