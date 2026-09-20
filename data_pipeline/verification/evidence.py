@@ -152,6 +152,12 @@ EVIDENCE_OWNED_FIELDS = (
     # A page read that did not name the node, kept beside a directory listing
     # that did: both are true, and suppressing the read loses a fact.
     "pageReadNotNamed",
+    # Written by govman.py: the United States Government Manual's entry for
+    # an organisation lists a post of this name in that organisation's own
+    # leadership table. Withdrawn here with the rest, because a new edition
+    # that stops printing a title -- or a rename on this side -- must take
+    # the claim with it rather than have it survive on the re-fed graph.
+    "govmanListing",
     # Written by positions.py and headcounts.py, withdrawn here with the rest,
     # so a record dropped from either file stops being published.
     "positionListing",

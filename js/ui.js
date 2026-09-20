@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260920a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260920a";
+import { createGovernmentGraph } from "./graph.js?v=20260920b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260920b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1332,6 +1332,14 @@ function renderVerificationPanel(data) {
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
       listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
+      // The Manual is the government's own handbook of itself, and each
+      // agency's entry carries that agency's own leadership table. Worded as
+      // what was read: the entry lists a post of this name. It says nothing
+      // about who holds it — the office holder's name is never read — and the
+      // table's own "updated" date follows below, because some are years
+      // older than the edition.
+      listed_in_its_organisations_us_government_manual_entry:
+        "The United States Government Manual lists it in its organisation's entry",
     };
     const SOURCE_TEXT = {
       federal_register_agency_directory: "the Federal Register's agency directory",
@@ -1383,6 +1391,25 @@ function renderVerificationPanel(data) {
       }`;
     } else if (listing && typeof listing === "object") {
       checkLine += ` as "${listing.listedName}"${listing.parentListedName ? ` under "${listing.parentListedName}"` : ""}`;
+    }
+    // The Government Manual, beside a page claim or as the claim itself. The
+    // title it prints is quoted for the reason a post's page label is: this
+    // graph carries "General Counsel" 84 times and "Inspector General" 72,
+    // so the agency and the exact words are what tie the listing to this
+    // post. The leadership table's own "Sources of Information were updated"
+    // footer is printed verbatim where the Manual gives one — GAO's says
+    // 2-2019 against a 2025-12-31 edition, and a reader is entitled to know
+    // that before reading the badge as current.
+    const govman = data.govmanListing;
+    if (govman && typeof govman === "object") {
+      const already = /government_manual/.test(String(data.verificationMethod || ""));
+      const quoted = govman.listedTitle ? ` as "${govman.listedTitle}"` : "";
+      const under = govman.listedUnder ? ` under "${govman.listedUnder}"` : "";
+      checkLine += already
+        ? `${quoted}${under}`
+        : ` · also listed in the United States Government Manual${quoted}${under}`;
+      if (govman.edition) checkLine += ` (${govman.edition} edition)`;
+      if (govman.tableFooter) checkLine += ` — the Manual says of that table: "${govman.tableFooter}"`;
     }
     // Both facts, where both are true: a directory lists it, and its own
     // page was read and did not name it. Withdrawing the badge is right —

@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-20T02:53:13Z",
+ "url": "https://www.govinfo.gov/metadata/pkg/GOVMAN-2025-12-31/mods.xml",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/metadata/pkg/GOVMAN-2025-12-31/mods.xml",
+ "content_type": "application/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /metadata/pkg/GOVMAN-2025-12-31/mods.xml",
+ "bytes": 684957,
+ "sha256": "2285e8d029f1b4843930abad8f69932c72b6ca937eee0b0afd6a3631d39bdac8",
+ "error": null
+}

@@ -1324,3 +1324,93 @@ A committee's own site is the better authority for its own name. The
 disagreement is real, it is the Clerk's abbreviation rather than the graph being
 stale, and §5.7 already records it as one of the names the official lists spell
 differently. No action.
+
+## 13. What the Government Manual says the graph is missing (2026-09-20)
+
+`data_pipeline/verification/govman.py` matches the United States Government
+Manual's agency entries to curated organisations by canonical-name equality,
+one entry to one node or nothing. 136 of the Manual's 231 agency entries reach
+a node. **95 do not**, and since the Manual is the government's own handbook
+of itself, an agency it carries that this graph does not is worth writing
+down. Nothing below is applied: this section proposes, as §5 and §9 do.
+
+The 95 split three ways, and only the third is curation work.
+
+### 13.1 Four are the graph's own abbreviation, and renaming them gains nothing here
+
+The graph writes `Admin` where the Manual writes `Administration`, and `&`
+where it writes `and` — the same class `unit_renames.json` exists for:
+
+| The Manual's name | The curated name |
+|---|---|
+| Federal Motor Carrier Safety Administration | Federal Motor Carrier Safety Admin (FMCSA) |
+| National Highway Traffic Safety Administration | National Highway Traffic Safety Admin (NHTSA) |
+| Pipeline and Hazardous Materials Safety Administration | Pipeline & Hazardous Materials Safety Admin (PHMSA) |
+| National Telecommunications and Information Administration | National Telecommunications & Information Admin (NTIA) |
+
+`canonical_name_key` already folds `&` to `and` and drops the parenthetical,
+so the only thing keeping these apart is `Admin`/`Administration`.
+
+**They are not proposed for renaming on this evidence**, because the reason to
+rename must be the agency's own wording and the payoff must be real, and here
+the payoff is zero: **all four entries carry no eligible leadership rows at
+all**, so confirming the name would confirm no post. Whether the expansion
+helps the USAspending or FedScope joins is a separate question this pass did
+not measure, and it is not asserted.
+
+### 13.2 Some are a distinction this file already records, not a gap
+
+The Manual carries `Department of the Air Force`, `Department of the Army` and
+`Department of the Navy`; the graph carries `U.S. Air Force`, `U.S. Army` and
+`U.S. Navy`. §5 already records the same split for FedScope's `DEPARTMENT OF
+THE ARMY` — the first is a civilian department, the second the uniformed
+service, and they are different populations. `Defense Agencies` and `Lower
+Courts` are the Manual's own grouping headings, the way "Other Defense Civil
+Programs" is a Treasury grouping; the graph groups the same units differently
+and neither is wrong.
+
+### 13.3 Genuine gaps: units the Manual carries and this graph has no node for
+
+Each was checked against the whole published graph twice: by
+`canonical_name_key` equality, and by a distinctive phrase from the name
+("gallaudet", "kennedy center", "multidistrict", "interpol", "seaway",
+"veterans employment"). All 19 return nothing. The phrase probe matters —
+a single-token probe returns false hits, since "programs", "international"
+and "development" all appear in subcommittee names:
+
+- **Office of Justice Programs** (Department of Justice). The Manual files it
+  under DOJ's `Bureaus`.
+- **Gallaudet University**, **Howard University**, **American Printing House
+  for the Blind**, **National Technical Institute for the Deaf / Rochester
+  Institute of Technology** — the Manual's `Federally Aided Corporations`
+  under the Department of Education.
+- **John F. Kennedy Center for the Performing Arts**, **National Gallery of
+  Art**, **Woodrow Wilson International Center for Scholars** — filed by the
+  Manual beside the Smithsonian Institution.
+- **Defense Acquisition University**, **National Intelligence University**,
+  **National Defense University**, **Uniformed Services University of the
+  Health Sciences** — the Manual's `Joint Service Schools`.
+- **Bureau of International Labor Affairs**, **Veterans' Employment and
+  Training Service**, **Women's Bureau** (Department of Labor).
+- **Great Lakes Saint Lawrence Seaway Development Corporation** (Department of
+  Transportation).
+- **Territorial Courts**, **Judicial Panel on Multidistrict Litigation**
+  (the judiciary; the Manual files both under `Lower Courts`).
+- **International Criminal Police Organization (INTERPOL)–Washington**
+  (Department of Justice).
+
+Each would enter through `scripts/add_curated_nodes.py`, which already accepts
+an `official_page_label` licence; the Manual is a stronger basis than a page
+label, so a `government_manual_entry` licence would be the honest way to add
+them — the Manual states the unit's name, its parent and its own website, and
+the parent is what a page label never supplies. That is a change to the writer
+and is not made here.
+
+### 13.4 One placement disagreement, unresolved
+
+Of the 40 edges where both the Manual and the tree name a parent, 39 agree and
+**one disagrees**. Nothing is resolved either way and no field is published
+from it: the Manual's hierarchy was measured for this pass and found to add
+nothing the tree does not already evidence (all 40 agreeing edges already
+carry placement from another source), so no placement is derived from the
+Manual at all. Recorded here so the next pass need not re-measure it.

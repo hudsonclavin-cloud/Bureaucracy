@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-20T02:40:27Z",
+ "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
+ "status": 200,
+ "final_url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
+ "content_type": "application/xml",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
+ "bytes": 8138096,
+ "sha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
+ "error": null
+}

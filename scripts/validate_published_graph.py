@@ -1312,6 +1312,93 @@ MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
 # below and the coverage report both key off it.
 POST_PAGE_METHOD = "name_labelled_on_its_organisations_official_page"
 
+# A post listed in its own organisation's entry in the United States
+# Government Manual. Mirrors data_pipeline.verification.govman.METHOD.
+GOVMAN_METHOD = "listed_in_its_organisations_us_government_manual_entry"
+GOVMAN_PACKAGE = "GOVMAN-2025-12-31"
+GOVMAN_DETAILS = "https://www.govinfo.gov/app/details"
+GOVMAN_FIXTURE = (
+    Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "govman" / (GOVMAN_PACKAGE + ".xml")
+)
+GOVMAN_ENTITY_TAGS = ("Entity", "SubEntityLevelOne", "SubEntityLevelTwo", "SubEntityLevelThree")
+GOVMAN_SEPARATORS = set("-\u2013\u2014_ ")
+
+
+def govman_entries():
+    """granule id -> (agency name, {canonical title key: printed title}).
+
+    A SECOND, independent extraction of the rule
+    `data_pipeline/verification/govman.py` applies, written stdlib-only and
+    importing nothing from the module it checks -- the reason
+    `whitehouse_roster()` is independent, and the reason the Executive
+    Schedule mirror is pinned against the committed sections rather than
+    copied from the code. `tests/test_govman.py` asserts the two agree on
+    the real fixture, so they cannot drift apart silently.
+
+    Raises OSError/ValueError, which the caller turns into a violation.
+    """
+    import hashlib as _hashlib
+    import xml.etree.ElementTree as _ET
+
+    raw = GOVMAN_FIXTURE.read_bytes()
+    digest = _hashlib.sha256(raw).hexdigest()
+    meta_path = GOVMAN_FIXTURE.with_suffix(GOVMAN_FIXTURE.suffix + ".meta.json")
+    if meta_path.exists():
+        recorded = (json.loads(meta_path.read_text(encoding="utf-8")) or {}).get("sha256")
+        if recorded and recorded != digest:
+            raise ValueError(
+                "{}: sha256 on disk {} does not match the fetch record {}".format(
+                    GOVMAN_FIXTURE.name, digest, recorded))
+
+    def flat(value):
+        return " ".join(str(value or "").split())
+
+    def separator(text):
+        return bool(text) and set(text) <= GOVMAN_SEPARATORS
+
+    def all_caps(text):
+        letters = [c for c in text if c.isalpha()]
+        return bool(letters) and all(c.isupper() for c in letters)
+
+    entries = {}
+
+    def visit(element):
+        if element.tag in GOVMAN_ENTITY_TAGS:
+            name = flat(element.findtext("AgencyName"))
+            entity_id = (element.get("EntityId") or "").strip()
+            if name and entity_id.isdigit():
+                titles = {}
+                tables = element.find("LeaderShipTables")
+                for table in (tables.findall("LeaderShipTable") if tables is not None else []):
+                    if flat(table.findtext("Header")) not in ("", "*"):
+                        continue
+                    governed = False
+                    for row in table.findall("LeaderShipTableValues/Values"):
+                        # TitleColumnValue only. NameColumnValue is a living
+                        # person and is never read, here or in the module.
+                        title = flat(row.findtext("TitleColumnValue"))
+                        if not title:
+                            continue
+                        if separator(title):
+                            governed = False
+                            continue
+                        if all_caps(title):
+                            governed = True
+                            continue
+                        if governed:
+                            continue
+                        titles.setdefault(canonical_key(title), []).append(title)
+                granule = "{}-{:03d}".format(GOVMAN_PACKAGE, int(entity_id))
+                entries[granule] = (name, titles)
+        children = element.find("Childrens")
+        if children is not None:
+            for sub in children:
+                visit(sub)
+
+    for entity in _ET.parse(GOVMAN_FIXTURE).getroot():
+        visit(entity)
+    return entries
+
 
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
@@ -1750,6 +1837,7 @@ def main(argv):
         "listed_in_senate_committee_list",
         "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
+        GOVMAN_METHOD,
     }
     # Placement claims that rest on reading a page, as opposed to consulting a
     # separate document. Only these are refused on a post; see below.
@@ -2166,6 +2254,89 @@ def main(argv):
                 "{} publishes its audited net cost as its cost — different basis, different period".format(label(node)))
     gate.check("an audited net cost is the statement's own figure, and never the cost", net_cost_violations)
 
+    # The Government Manual's listing of a post, re-derived from the committed
+    # package rather than trusted. The block quotes an agency and a title; the
+    # check is that the Manual really prints that title in that agency's own
+    # leadership table, that the node is still the post it was matched as, and
+    # that the agency is still the node's parent -- read off the tree the gate
+    # is walking, never off `parentId`, which is stamped on the exported node
+    # list alone and would make the placement half of this check pass
+    # vacuously. `General Counsel` names 84 nodes here and `Inspector General`
+    # 72, so a record moved to another node keeps a real title, a real agency
+    # and a real URL, and only the parent tells them apart.
+    govman_violations = []
+    govman_index = {}
+    try:
+        govman_index = govman_entries()
+    except (OSError, ValueError) as error:
+        govman_violations.append("the Government Manual fixture could not be read: {}".format(error))
+    for node in nodes:
+        block_data = node.get("govmanListing")
+        if not isinstance(block_data, dict):
+            continue
+        type_text = str(node.get("type") or "").casefold()
+        if not any(word in type_text for word in ("position", "role", "office holder")):
+            govman_violations.append("{} is not a post but carries a Government Manual listing".format(label(node)))
+            continue
+        granule = str(block_data.get("granule") or "")
+        entry = govman_index.get(granule)
+        if govman_index and entry is None:
+            govman_violations.append(
+                "{} cites granule {!r}, which the committed Manual does not carry".format(label(node), granule))
+            continue
+        listed_under = str(block_data.get("listedUnder") or "")
+        listed_title = str(block_data.get("listedTitle") or "")
+        if entry is not None:
+            agency, titles = entry
+            if canonical_key(listed_under) != canonical_key(agency):
+                govman_violations.append(
+                    "{} cites {!r} under granule {}, which the Manual names {!r}".format(
+                        label(node), listed_under, granule, agency))
+                continue
+            printed = titles.get(canonical_key(listed_title)) or []
+            if not printed:
+                govman_violations.append(
+                    "{} quotes {!r}, which is not a title the Manual prints on its own face in {}".format(
+                        label(node), listed_title, agency))
+                continue
+            if len(printed) > 1:
+                govman_violations.append(
+                    "{} quotes {!r}, which {} prints {} times -- it identifies no single row".format(
+                        label(node), listed_title, agency, len(printed)))
+                continue
+        if canonical_key(node.get("name")) != canonical_key(listed_title):
+            govman_violations.append(
+                "{} carries a listing quoting {!r}, which is not this node's name".format(label(node), listed_title))
+            continue
+        parent = by_id.get(tree_parents.get(str(node.get("id") or "")) or "")
+        if parent is None or canonical_key(parent.get("name")) != canonical_key(listed_under):
+            govman_violations.append(
+                "{} was listed under {!r}, which is not the organisation the tree gives it".format(
+                    label(node), listed_under))
+            continue
+        expected_url = "{}/{}/{}".format(GOVMAN_DETAILS, GOVMAN_PACKAGE, granule)
+        if str(block_data.get("url") or "") != expected_url:
+            govman_violations.append(
+                "{} cites {!r}, which is not the Manual entry for granule {}".format(
+                    label(node), block_data.get("url"), granule))
+            continue
+        edition = str(block_data.get("edition") or "")
+        if not (len(edition) == 10 and edition[:4].isdigit() and edition <= today):
+            govman_violations.append(
+                "{} carries a Manual edition of {!r}".format(label(node), edition))
+            continue
+        if expected_url not in [str(u) for u in (node.get("sourceUrls") or [])]:
+            govman_violations.append("{} cites the Manual without carrying its URL".format(label(node)))
+            continue
+        # One document was read and it yields one observation. Publishing
+        # existence and placement from it would present a single finding as
+        # two corroborating ones -- the rule a post confirmed on its own
+        # organisation's page already follows.
+        if str(node.get("placementMethod") or "").find("government_manual") >= 0:
+            govman_violations.append(
+                "{} claims placement from the Government Manual, which reads one entry".format(label(node)))
+    gate.check("a Government Manual listing is a title that entry really prints", govman_violations)
+
     # A name that states how many things it stands for, against what the
     # graph carries. The claim is only ever "the name says N, we carry M";
     # it must be arithmetic, and it must not appear where it is not true.
@@ -2357,6 +2528,18 @@ def main(argv):
         len(reported_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
+    # Reported on its own line, like every other source, so "740 with an
+    # official source" cannot be read as 740 independently confirmed units.
+    # The stale-table count is printed beside it because 26 of these tables
+    # carry a "Sources of Information were updated" footer older than the
+    # edition, and that is the first thing a reader should know about them.
+    govman_nodes = [n for n in nodes if isinstance(n.get("govmanListing"), dict)]
+    govman_method = sum(1 for n in govman_nodes if str(n.get("verificationMethod") or "") == GOVMAN_METHOD)
+    govman_dated = sum(1 for n in govman_nodes if str((n.get("govmanListing") or {}).get("tableFooter") or "").strip())
+    print("  Government Manual    : {:,} positions listed in their own organisation's entry across {:,} agencies; {:,} take it as their method and grade partial; {:,} carry the leadership table's own 'updated' footer; no placement is claimed from it".format(
+        len(govman_nodes),
+        len({str((n.get("govmanListing") or {}).get("listedUnder") or "") for n in govman_nodes}),
+        govman_method, govman_dated))
     print("  Senate list          : {:,} committees and subcommittees listed; {:,} placements from it; {:,} curated names the list does not carry".format(
         senate_listed, senate_placed, senate_missing))
     house_listed = sum(1 for n in nodes if isinstance(n.get("directoryListing"), dict) and n["directoryListing"].get("source") == "house_clerk_committee_list")

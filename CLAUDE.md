@@ -936,6 +936,120 @@ over `https://` with the listed URL recorded, the convention already applied to
 a directory's http listing on a `.gov` host: the scheme is transport, not a
 claim.
 
+**The government's own handbook of itself (`govman.py`, since 2026-09-20).**
+The page method for posts is near its ceiling and this file says why: 35 of
+4,591 positions are confirmed by a label in their organisation's own page
+content, an agency's site is not obliged to name its officers, and the one
+rule that would have lifted the count was measured and refused — 18 of the 27
+titles found in site chrome were `Inspector General` in 18 different agencies'
+footers, which is federal web convention and not a fact about any of them.
+
+The **United States Government Manual** is the answer to exactly that gap: the
+official handbook of the federal government, prepared by the Office of the
+Federal Register, in which each agency's entry carries that agency's own
+leadership table. One document names an agency and then names the officers of
+that agency, so a match is scoped by construction in the way a footer link
+never is. `www.govinfo.gov` answers `robots.txt` 200 and allows both paths
+read here; the whole Manual is committed verbatim at
+`tests/fixtures/govman/GOVMAN-2025-12-31.xml` (8.1 MB, the publisher's own
+bytes) with the publisher's manifest beside it, and every digest is recomputed
+from the bytes before anything is read.
+
+**The office holder's name is never read.** Each leadership row is a pair:
+`NameColumnValue` is a living person and `TitleColumnValue` is the post. This
+module reads the second and never the first — not "reads and declines to
+publish" — the rule `positions.py` sets for the PLUM archive's incumbent
+columns, and `tests/test_govman.py` asserts both that no published title is a
+name the Manual prints and that the module never fetches that element.
+
+**Only rows that are complete titles on their own face.** The tables are
+typeset rather than tabular, and they qualify a group heading with bare
+fragments: under the header `Assistant Administrators`, EPA's rows read
+`Water` and `Air and Radiation`; under an ALL-CAPS `DEPUTY ADMINISTRATORS`,
+Energy's read `Naval Reactors` and `Defense Programs`. Assembling "Assistant
+Administrator for Water" out of two cells would be *producing* a title, which
+is the failure this file already refuses by name — the templated-post rename
+uses its transform to recognise a name and never to produce the replacement.
+So qualifiers are discarded wholesale rather than assembled, by three rules
+that are purely structural and need no vocabulary and no grammar: a table that
+carries a `Header` at all (anything but empty or the footnote mark `*`)
+governs its rows; a row after an ALL-CAPS row is governed by it; a row of
+dashes resets the grouping.
+
+That is deliberately blunt and it costs real evidence, measured rather than
+argued away: EPA's own `Deputy Administrator` is refused because
+`ADMINISTRATOR` sits above it, and its `Chief of Staff` because that table is
+headed `Office of the Administrator`. The blunt rule admits 314 rows under the
+136 matched agencies and confirms 64 posts; relaxing the header half to "a
+header that reads as plural" admits 459 and confirms 95, and the extra rows
+demonstrably include qualifiers — `Financial` under `Chief Officers`, and
+`Under Secretary` under `Food Safety`, which means the Under Secretary *for*
+Food Safety. Closing those leaks needs a plural test on free text, and a
+plural test is wrong about `Chief of Naval Operations` and `Chief of
+Chaplains`. 64 structurally sound confirmations beat 95 with a known leak,
+which is the same trade the navigation rule made and is recorded here as a
+measurement rather than a preference.
+
+**Scoped to the agency's own direct children, never its descendants.**
+Matching a post to the nearest ancestor that has a Manual entry was tried and
+rejected on measurement: it lifts 64 to 86, and the 22 extra are `General
+Counsel`, `Inspector General` and `Chief Information Officer` nodes belonging
+to DIA, NSA, DLA and other Defense agencies, every one of them confirmed from
+the Department of Defense's own single row. One row would have become four
+agencies' confirmations — the footer problem again, wearing a better source.
+Four refusals make the join unambiguous on both sides: the entry must name
+exactly one organisation in the graph, that organisation must answer to
+exactly one entry, the entry's eligible rows must carry the title once, and
+the organisation must carry one child of that name. On the real data three of
+the four never fire, which is what it looks like when a source is genuinely
+well scoped.
+
+**No placement claim, ever.** One entry was read and it yields one
+observation; publishing existence and placement from it would present a single
+finding as two corroborating ones. That is the rule this file already sets for
+a post confirmed on its organisation's web page, and the gate refuses a
+placement method naming the Manual.
+
+**64 posts listed across 37 agencies, and what each is worth.** 56 take the
+Manual as their verification method and publish `partial` — one official URL
+is 0.4 + 0.3 in `verify_node_sources`, and no route here makes it more. The
+other 8 already carried a claim from a page or from OPM's archive; those keep
+their own method, gain the Manual beside it, and reach `verified` on two
+genuinely independent official documents, which is the existing confidence
+arithmetic and not a rule this work changed. The titles gained are precisely
+the stamped administrative posts this file documents as carrying no evidence
+at all: `Inspector General` 28, `General Counsel` 15, `Chief of Staff` 9,
+`Chief Financial Officer` 4. Nodes with an official source went 684 to 740 of
+5,427 (13.6%), and "no source recorded" fell 4,691 to 4,635.
+
+**A listing says nothing about who holds the post, and the panel says so with
+the Manual's own words.** 26 of the 64 leadership tables carry a "Sources of
+Information were updated" footer, and they run from 2017 to 2022 against a
+2025-12-31 edition — the Government Accountability Office's reads `2–2019`.
+The footer is published verbatim on every record that has one and printed in
+the panel, because a reader is entitled to see it before reading the badge as
+current. Staleness costs much less here than it would in a roster, since the
+incumbent is never read and a job title outlives its holder, but the claim is
+still "the Manual's <edition> entry lists a post of this name" and never more.
+
+The gate parses the Manual itself rather than trusting the block: it
+recomputes the fixture's digest, re-derives the eligible titles with a
+**second, independent stdlib extraction** that imports nothing from the module
+it checks, and refuses a block whose title that entry does not print, whose
+granule names a different agency, whose URL does not address the granule
+quoted, whose edition has not happened, that sits on something other than a
+post, or whose organisation is not the parent the tree gives the node —
+checked off the tree the gate is walking rather than off `parentId`, for the
+reason the scoped Executive Schedule claim already documents. The citation's
+granule id is the publisher's own, not a construction hoped to be right:
+`app/details/.../GOVMAN-2025-12-31-072` serves the House of Representatives
+and `...-72` serves a page whose title is the raw id, so the zero-padding is
+pinned against all 241 ids in the committed manifest. That check exists
+because a plain HEAD request does not tell you: govinfo answers **200 with a
+"Page Not Found" body** for every `content/pkg/.../html/...htm` granule URL,
+real ids included, and publishing those would have put a fabricated citation
+on all 64 records.
+
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from
 `data/verification/headcount_evidence.json` (133 records) and
@@ -1897,7 +2011,7 @@ nothing else is. A `certain` or `likely` finding must carry evidence;
 gets raised without being dressed as a fact. Citable sources are the
 repository's own published files and `.gov`/`.mil` URLs. Seven checks per
 node with fixed vocabularies, and `no_evidence_in_repo` is the honest — and
-most common — answer, not a failure: 4,808 nodes carry no source at all.
+most common — answer, not a failure: 4,687 nodes carry no source at all.
 `verify` re-checks every citation in the ledger against its source, since a
 file can change after a finding was accepted. The runbook's "do not report
 these" list matters as much as the rest: without it the sweep returns

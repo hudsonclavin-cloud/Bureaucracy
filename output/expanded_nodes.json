@@ -2811,6 +2811,9 @@
     "confidenceScore": 0.7,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:21:01Z",
+    "placementVerified": true,
+    "placementParentId": "leg-senate-cmte-energy-natural-resources",
+    "placementVerifiedAt": "2026-09-08T19:21:01Z",
     "evidenceUrls": [
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml"
     ],
@@ -2824,10 +2827,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:21:01Z",
     "verificationMethod": "listed_in_senate_committee_list",
-    "placementVerified": true,
     "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSEG.xml",
-    "placementVerifiedAt": "2026-09-08T19:21:01Z",
-    "placementParentId": "leg-senate-cmte-energy-natural-resources",
     "placementMatchedText": "Subcommittee on Energy",
     "placementMethod": "listed_under_committee_in_senate_committee_list",
     "parentId": "leg-senate-cmte-energy-natural-resources"
@@ -5143,6 +5143,16 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "verificationMatchRule": "committee_scaffolding_folded",
+    "verificationMatchedText": "U.S. Committee on Small Business & Entrepreneurship",
+    "evidenceUrls": [
+      "https://www.sbc.senate.gov/",
+      "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-senate-cmte-small-business-entrepreneurship",
     "placementVerified": true,
     "placementUrl": "https://www.senate.gov/committees/",
     "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
@@ -5151,10 +5161,6 @@
     "placementMethod": "name_labelled_on_parent_official_page",
     "placementMatchedIn": "content",
     "placementMatchRule": "committee_scaffolding_folded",
-    "evidenceUrls": [
-      "https://www.sbc.senate.gov/",
-      "https://www.senate.gov/general/committee_membership/committee_memberships_SSSB.xml"
-    ],
     "directoryListing": {
       "source": "senate_committee_list",
       "listedName": "Committee on Small Business and Entrepreneurship",
@@ -5163,13 +5169,7 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:21:11Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "parentId": "leg-senate-committees",
-    "verificationSiteFrom": "leg-senate-cmte-small-business-entrepreneurship",
-    "verificationMatchedIn": "content",
-    "verificationMatchedText": "U.S. Committee on Small Business & Entrepreneurship",
-    "verificationMatchRule": "committee_scaffolding_folded"
+    "parentId": "leg-senate-committees"
   },
   {
     "id": "leg-senate-cmte-veterans-affairs",
@@ -12724,6 +12724,52 @@
     "parentId": "leg-house-admin"
   },
   {
+    "id": "leg-joint-econ",
+    "name": "Joint Economic Committee",
+    "type": "Committee",
+    "desc": "Studies the economy and makes policy recommendations to Congress.",
+    "employees": null,
+    "budget": null,
+    "color": "#8a4ac8",
+    "children": [],
+    "sourceUrls": [
+      "https://www.jec.senate.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.jec.senate.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "leg-joint-econ",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementCheckable": false,
+    "resolved_total_amount": 4846288.17,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "leg-joint"
+  },
+  {
     "id": "leg-joint-library",
     "name": "Joint Committee on the Library",
     "type": "Committee",
@@ -17812,10 +17858,10 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "parentId": "exec-dept-treasury",
     "placementVerified": false,
+    "placementParentId": "exec-dept-treasury",
     "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "exec-dept-treasury"
+    "parentId": "exec-dept-treasury"
   },
   {
     "id": "exec-dept-treasury--treasury-receipts",
@@ -18709,11 +18755,15 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
-    "placementCheckable": false,
     "evidenceUrls": [
       "https://www.justice.gov/about",
       "https://www.federalregister.gov/agencies/justice-department"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Justice Department",
@@ -18722,8 +18772,6 @@
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "employeesOfficial": 116047,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -18819,9 +18867,7 @@
       "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
-    "parentId": "exec-cabinet",
-    "verificationSiteFrom": "exec-dept-doj",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-cabinet"
   },
   {
     "id": "exec-dept-doj-inspector-general",
@@ -18833,16 +18879,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -18856,12 +18905,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -18884,7 +18934,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -18922,7 +18972,17 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-doj"
+    "parentId": "exec-dept-doj",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Department of Justice",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-121",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121",
+      "tableFooter": "The above list of key personnel was updated 8–2021."
+    }
   },
   {
     "id": "exec-dept-doj-fbi",
@@ -18990,6 +19050,9 @@
     "verificationMethod": "name_labelled_on_own_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-dept-doj-fbi",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Federal Bureau of Investigation",
@@ -18998,10 +19061,7 @@
       "parentListedName": "Justice Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/federal-bureau-of-investigation",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Federal Bureau of Investigation",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 36896,
@@ -19180,6 +19240,9 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/drug-enforcement-administration"
     ],
@@ -19193,10 +19256,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/drug-enforcement-administration",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Drug Enforcement Administration",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 8871,
@@ -19476,6 +19536,9 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau"
     ],
@@ -19489,10 +19552,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/alcohol-tobacco-firearms-and-explosives-bureau",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Alcohol, Tobacco, Firearms, and Explosives Bureau",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 5168,
@@ -19955,6 +20015,9 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/prisons-bureau"
     ],
@@ -19968,10 +20031,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/prisons-bureau",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Prisons Bureau",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "parentId": "exec-dept-doj"
@@ -20081,6 +20141,9 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/united-states-marshals-service"
     ],
@@ -20094,10 +20157,7 @@
     },
     "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/united-states-marshals-service",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "United States Marshals Service",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 5568,
@@ -20231,16 +20291,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-282"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -20254,12 +20317,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-282"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -20282,7 +20346,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -20290,7 +20354,17 @@
     "placementParentId": "exec-dept-doj-usms",
     "placementMatchedText": "DEPUTY DIRECTOR",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-doj-usms"
+    "parentId": "exec-dept-doj-usms",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Deputy Director",
+      "listedUnder": "United States Marshals Service",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-282",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-282",
+      "tableFooter": "The above list of key personnel was updated 8–2021."
+    }
   },
   {
     "id": "exec-dept-doj-usms-associate-director-operations",
@@ -20531,6 +20605,13 @@
       "https://www.justice.gov/atr/",
       "https://www.federalregister.gov/agencies/antitrust-division"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-antitrust",
+    "placementVerified": true,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Antitrust Division",
@@ -20539,17 +20620,58 @@
       "parentListedName": "Justice Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/antitrust-division",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doj",
     "placementMatchedText": "Antitrust Division",
     "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "parentId": "exec-dept-doj",
-    "verificationSiteFrom": "exec-dept-doj-div-antitrust",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-doj"
+  },
+  {
+    "id": "exec-dept-doj-div-civil",
+    "name": "Civil Division",
+    "type": "Division",
+    "desc": "Largest DOJ division. Defends the U.S. in civil cases; handles tort claims, immigration appeals, fraud. ~1,100 staff.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.justice.gov/civil"
+    ],
+    "evidenceUrls": [
+      "https://www.justice.gov/civil"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-civil",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "resolved_total_amount": 1724297184.83,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doj"
   },
   {
     "id": "exec-dept-doj-div-civil-deputy-assistant-attorney-general-3-5",
@@ -20714,6 +20836,54 @@
     "parentId": "exec-dept-doj-div-civil-rights"
   },
   {
+    "id": "exec-dept-doj-div-criminal",
+    "name": "Criminal Division",
+    "type": "Division",
+    "desc": "Develops federal criminal law policy; prosecutes major national and international crimes.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.justice.gov/criminal"
+    ],
+    "evidenceUrls": [
+      "https://www.justice.gov/criminal"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-criminal",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "resolved_total_amount": 1724297184.83,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doj"
+  },
+  {
     "id": "exec-dept-doj-div-criminal-deputy-assistant-attorney-general-3-5",
     "name": "Deputy Assistant Attorney General (×3-5)",
     "type": "Position",
@@ -20751,10 +20921,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "verificationMatchedText": "Deputy Assistant Attorney General",
     "evidenceUrls": [
       "https://www.justice.gov/criminal",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-criminal",
     "positionListing": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -20784,8 +20959,6 @@
         "NA": 1
       }
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
     "placementVerifiedAt": "2026-09-08T19:49:47Z",
@@ -20798,10 +20971,7 @@
       "low": 3,
       "high": 5
     },
-    "parentId": "exec-dept-doj-div-criminal",
-    "verificationSiteFrom": "exec-dept-doj-div-criminal",
-    "verificationMatchedIn": "content",
-    "verificationMatchedText": "Deputy Assistant Attorney General"
+    "parentId": "exec-dept-doj-div-criminal"
   },
   {
     "id": "exec-dept-doj-div-enrd-deputy-assistant-attorney-general-3-5",
@@ -20883,6 +21053,54 @@
       "high": 5
     },
     "parentId": "exec-dept-doj-div-enrd"
+  },
+  {
+    "id": "exec-dept-doj-div-nsd",
+    "name": "National Security Division",
+    "type": "Division",
+    "desc": "Oversees all national security, counterterrorism, counterintelligence, and FISA matters.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.justice.gov/nsd"
+    ],
+    "evidenceUrls": [
+      "https://www.justice.gov/nsd"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doj-div-nsd",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-doj",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "resolved_total_amount": 1724297184.83,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-doj"
   },
   {
     "id": "exec-dept-doj-div-nsd-assistant-attorney-general-national-security-division",
@@ -24732,6 +24950,28 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceUrls": [
+      "https://www.ams.usda.gov/",
+      "https://www.federalregister.gov/agencies/agricultural-marketing-service"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-usda-agricultural-marketing-service",
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Agricultural Marketing Service",
+      "url": "https://www.federalregister.gov/agencies/agricultural-marketing-service",
+      "agencyUrl": "http://www.ams.usda.gov",
+      "parentListedName": "Agriculture Department",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "placementVerified": true,
+    "placementUrl": "https://www.federalregister.gov/agencies/agricultural-marketing-service",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-usda",
+    "placementMatchedText": "Agricultural Marketing Service",
+    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 4370,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -24750,29 +24990,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-dept-usda-agricultural-marketing-service",
-    "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/agricultural-marketing-service",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-usda",
-    "placementMatchedText": "Agricultural Marketing Service",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "verificationMatchedIn": "content",
-    "evidenceUrls": [
-      "https://www.ams.usda.gov/",
-      "https://www.federalregister.gov/agencies/agricultural-marketing-service"
-    ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Agricultural Marketing Service",
-      "url": "https://www.federalregister.gov/agencies/agricultural-marketing-service",
-      "agencyUrl": "http://www.ams.usda.gov",
-      "parentListedName": "Agriculture Department",
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda-foreign-agricultural-service",
@@ -24832,6 +25050,25 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/foreign-agricultural-service"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Foreign Agricultural Service",
+      "url": "https://www.federalregister.gov/agencies/foreign-agricultural-service",
+      "agencyUrl": "http://www.fas.usda.gov/",
+      "parentListedName": "Agriculture Department",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
+    "placementUrl": "https://www.federalregister.gov/agencies/foreign-agricultural-service",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-usda",
+    "placementMatchedText": "Foreign Agricultural Service",
+    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 693,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -24850,26 +25087,7 @@
       },
       "agencyMatched": "exec-dept-usda"
     },
-    "parentId": "exec-dept-usda",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/foreign-agricultural-service",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-usda",
-    "placementMatchedText": "Foreign Agricultural Service",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/foreign-agricultural-service"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Foreign Agricultural Service",
-      "url": "https://www.federalregister.gov/agencies/foreign-agricultural-service",
-      "agencyUrl": "http://www.fas.usda.gov/",
-      "parentListedName": "Agriculture Department",
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-dept-usda"
   },
   {
     "id": "exec-dept-usda--treasury-receipts",
@@ -25412,6 +25630,10 @@
       "https://www.uspto.gov/",
       "https://www.federalregister.gov/agencies/patent-and-trademark-office"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-doc-uspto",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Patent and Trademark Office",
@@ -25420,8 +25642,6 @@
       "parentListedName": "Commerce Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/patent-and-trademark-office",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -25475,9 +25695,7 @@
         "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
       }
     },
-    "parentId": "exec-dept-doc",
-    "verificationSiteFrom": "exec-dept-doc-uspto",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-doc"
   },
   {
     "id": "exec-dept-doc-ita",
@@ -25872,6 +26090,25 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/economic-development-administration"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Economic Development Administration",
+      "url": "https://www.federalregister.gov/agencies/economic-development-administration",
+      "agencyUrl": "http://www.eda.gov/",
+      "parentListedName": "Commerce Department",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
+    "placementUrl": "https://www.federalregister.gov/agencies/economic-development-administration",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-doc",
+    "placementMatchedText": "Economic Development Administration",
+    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 225,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -25890,26 +26127,7 @@
       },
       "agencyMatched": "exec-dept-doc"
     },
-    "parentId": "exec-dept-doc",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/economic-development-administration",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-doc",
-    "placementMatchedText": "Economic Development Administration",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/economic-development-administration"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Economic Development Administration",
-      "url": "https://www.federalregister.gov/agencies/economic-development-administration",
-      "agencyUrl": "http://www.eda.gov/",
-      "parentListedName": "Commerce Department",
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-dept-doc"
   },
   {
     "id": "exec-dept-doc--treasury-receipts",
@@ -28339,16 +28557,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-314"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -28362,12 +28583,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-314"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -28390,7 +28612,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -28398,7 +28620,17 @@
     "placementParentId": "exec-dept-hhs-cms",
     "placementMatchedText": "CHIEF OF STAFF, CENTERS FOR MEDICARE AND MEDICAID SERVICES",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-dept-hhs-cms"
+    "parentId": "exec-dept-hhs-cms",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Chief of Staff",
+      "listedUnder": "Centers for Medicare and Medicaid Services",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-314",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-314",
+      "tableFooter": "The above list of key personnel was updated 6–2022."
+    }
   },
   {
     "id": "exec-dept-hhs-ahrq",
@@ -28631,6 +28863,10 @@
       "https://www.samhsa.gov/",
       "https://www.federalregister.gov/agencies/substance-abuse-and-mental-health-services-administration"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hhs-samhsa",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Substance Abuse and Mental Health Services Administration",
@@ -28639,8 +28875,6 @@
       "parentListedName": "Health and Human Services Department",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_own_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.federalregister.gov/agencies/substance-abuse-and-mental-health-services-administration",
     "placementVerifiedAt": "2026-09-08T19:19:15Z",
@@ -28665,9 +28899,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationSiteFrom": "exec-dept-hhs-samhsa",
-    "verificationMatchedIn": "content"
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-samhsa-assistant-secretary-for-mental-health-substance-use-dual-hat",
@@ -29336,6 +29568,25 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/children-and-families-administration"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Children and Families Administration",
+      "url": "https://www.federalregister.gov/agencies/children-and-families-administration",
+      "agencyUrl": "http://www.acf.hhs.gov/",
+      "parentListedName": "Health and Human Services Department",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
+    "placementUrl": "https://www.federalregister.gov/agencies/children-and-families-administration",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-hhs",
+    "placementMatchedText": "Children and Families Administration",
+    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 2296,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -29354,26 +29605,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/children-and-families-administration",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-hhs",
-    "placementMatchedText": "Children and Families Administration",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/children-and-families-administration"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Children and Families Administration",
-      "url": "https://www.federalregister.gov/agencies/children-and-families-administration",
-      "agencyUrl": "http://www.acf.hhs.gov/",
-      "parentListedName": "Health and Human Services Department",
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs-administration-for-community-living",
@@ -29433,6 +29665,25 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/community-living-administration"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Community Living Administration",
+      "url": "https://www.federalregister.gov/agencies/community-living-administration",
+      "agencyUrl": "http://www.acl.gov/",
+      "parentListedName": "Health and Human Services Department",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "placementVerified": true,
+    "placementUrl": "https://www.federalregister.gov/agencies/community-living-administration",
+    "placementVerifiedAt": "2026-09-08T19:19:15Z",
+    "placementParentId": "exec-dept-hhs",
+    "placementMatchedText": "Community Living Administration",
+    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
     "employeesOfficial": 260,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -29451,26 +29702,7 @@
       },
       "agencyMatched": "exec-dept-hhs"
     },
-    "parentId": "exec-dept-hhs",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": true,
-    "placementUrl": "https://www.federalregister.gov/agencies/community-living-administration",
-    "placementVerifiedAt": "2026-09-08T19:19:15Z",
-    "placementParentId": "exec-dept-hhs",
-    "placementMatchedText": "Community Living Administration",
-    "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/community-living-administration"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Community Living Administration",
-      "url": "https://www.federalregister.gov/agencies/community-living-administration",
-      "agencyUrl": "http://www.acl.gov/",
-      "parentListedName": "Health and Human Services Department",
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-dept-hhs"
   },
   {
     "id": "exec-dept-hhs--treasury-receipts",
@@ -30093,6 +30325,566 @@
       "checkedAt": "2026-09-11T03:05:36Z"
     },
     "parentId": "exec-dept-hud-fheo"
+  },
+  {
+    "id": "exec-dept-hud-region-i-new-england",
+    "name": "Region I - Boston",
+    "type": "Regional Office",
+    "desc": "Headquartered in Boston, MA. Serves: CT, ME, MA, NH, RI, VT.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region I - Boston",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region I - Boston",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-ii-new-york",
+    "name": "Region II - New York",
+    "type": "Regional Office",
+    "desc": "Headquartered in New York, NY. Serves: NJ, NY, PR, VI.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region II - New York",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region II - New York",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-iii-mid-atlantic",
+    "name": "Region III - Philadelphia",
+    "type": "Regional Office",
+    "desc": "Headquartered in Philadelphia, PA. Serves: DE, MD, PA, VA, WV, DC.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region III - Philadelphia",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region III - Philadelphia",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-iv-southeast",
+    "name": "Region IV - Atlanta",
+    "type": "Regional Office",
+    "desc": "Headquartered in Atlanta, GA. Serves: AL, FL, GA, KY, MS, NC, SC, TN.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region IV - Atlanta",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region IV - Atlanta",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-v-midwest",
+    "name": "Region V - Chicago",
+    "type": "Regional Office",
+    "desc": "Headquartered in Chicago, IL. Serves: IL, IN, MI, MN, OH, WI.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region V - Chicago",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region V - Chicago",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-vi-south-central",
+    "name": "Region VI - Fort Worth",
+    "type": "Regional Office",
+    "desc": "Headquartered in Dallas, TX. Serves: AR, LA, NM, OK, TX.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region VI - Fort Worth",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region VI - Fort Worth",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-vii-plains",
+    "name": "Region VII - Kansas City",
+    "type": "Regional Office",
+    "desc": "Headquartered in Kansas City, MO. Serves: IA, KS, MO, NE.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region VII - Kansas City",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region VII - Kansas City",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-viii-mountain",
+    "name": "Region VIII - Denver",
+    "type": "Regional Office",
+    "desc": "Headquartered in Denver, CO. Serves: CO, MT, ND, SD, UT, WY.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region VIII - Denver",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region VIII - Denver",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-ix-pacific",
+    "name": "Region IX - San Francisco",
+    "type": "Regional Office",
+    "desc": "Headquartered in San Francisco, CA. Serves: AZ, CA, HI, NV, Pacific Islands.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region IX - San Francisco",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region IX - San Francisco",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
+  },
+  {
+    "id": "exec-dept-hud-region-x-northwest",
+    "name": "Region X - Seattle",
+    "type": "Regional Office",
+    "desc": "Headquartered in Seattle, WA. Serves: AK, ID, OR, WA.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.hud.gov/aboutus/field-leadership",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Region X - Seattle",
+    "sourceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "evidenceUrls": [
+      "https://www.hud.gov/aboutus/field-leadership"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-hud",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.hud.gov/aboutus/field-leadership",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-hud",
+    "placementMatchedText": "Region X - Seattle",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 263115905.75,
+    "cost_status": "allocated",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-hud"
   },
   {
     "id": "exec-dept-hud--treasury-receipts",
@@ -32215,45 +33007,6 @@
     "parentId": "exec-dept-doe-natl-labs"
   },
   {
-    "id": "exec-dept-doe-princeton-plasma-physics-laboratory",
-    "name": "Princeton Plasma Physics Laboratory",
-    "type": "National Laboratory",
-    "desc": "DOE-funded national laboratory. Conducts basic and applied research across energy, physics, and national security.",
-    "employees": null,
-    "budget": null,
-    "color": "#c84a4a",
-    "children": [],
-    "sourceUrls": [],
-    "sourceTypes": [],
-    "proofSourceCount": 0,
-    "proofSourceTypes": [],
-    "existsProven": false,
-    "parentProven": true,
-    "proofStatus": "baseline",
-    "proofReason": "trusted_base_graph",
-    "resolved_total_amount": 2050568237.22,
-    "cost_status": "allocated",
-    "cost_basis": "subtree_weight",
-    "cost_validation": "estimated_from_parent",
-    "child_cost_basis": "subtree",
-    "costVerificationStatus": "unverified",
-    "costConfidenceScore": 0.2,
-    "costVerificationReason": "estimated_from_parent",
-    "costSourceCount": 0,
-    "sourceCount": 0,
-    "confidenceScore": 0.0,
-    "verificationStatus": "unverified",
-    "lastVerified": null,
-    "placementVerified": true,
-    "placementUrl": "https://www.energy.gov/national-laboratories",
-    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "exec-dept-doe-natl-labs",
-    "placementMatchedText": "Princeton Plasma Physics Laboratory",
-    "placementMethod": "name_labelled_on_parent_official_page",
-    "placementMatchedIn": "content",
-    "parentId": "exec-dept-doe-natl-labs"
-  },
-  {
     "id": "exec-dept-doe-em",
     "name": "Office of Environmental Management (EM)",
     "type": "Office",
@@ -33931,6 +34684,328 @@
     "parentId": "exec-dept-va-vha"
   },
   {
+    "id": "exec-dept-va-vha-visns",
+    "name": "Veterans Integrated Service Networks",
+    "type": "Division",
+    "desc": "18 regional networks each overseeing multiple VA Medical Centers.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Veterans Integrated Service Networks",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": false,
+    "placementParentId": "exec-dept-va-vha",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "resolved_total_amount": 48148812086.2,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha"
+  },
+  {
+    "id": "exec-dept-va-vha-visn-1",
+    "name": "VISN 1",
+    "type": "Regional Office",
+    "desc": "VISN 1 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 1'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://department.va.gov/integrated-service-networks/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va-vha-visns",
+    "placementMatchedText": "VISN 1",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9629762417.24,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha-visns"
+  },
+  {
+    "id": "exec-dept-va-vha-visn-2",
+    "name": "VISN 2",
+    "type": "Regional Office",
+    "desc": "VISN 2 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 2'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://department.va.gov/integrated-service-networks/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va-vha-visns",
+    "placementMatchedText": "VISN 2",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9629762417.24,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha-visns"
+  },
+  {
+    "id": "exec-dept-va-vha-visn-3",
+    "name": "VISN 3",
+    "type": "Regional Office",
+    "desc": "VISN 3 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 3'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://department.va.gov/integrated-service-networks/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va-vha-visns",
+    "placementMatchedText": "VISN 3",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9629762417.24,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha-visns"
+  },
+  {
+    "id": "exec-dept-va-vha-visn-4",
+    "name": "VISN 4",
+    "type": "Regional Office",
+    "desc": "VISN 4 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 4'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://department.va.gov/integrated-service-networks/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va-vha-visns",
+    "placementMatchedText": "VISN 4",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9629762417.24,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha-visns"
+  },
+  {
+    "id": "exec-dept-va-vha-visn-5",
+    "name": "VISN 5",
+    "type": "Regional Office",
+    "desc": "VISN 5 is named on https://department.va.gov/integrated-service-networks/, which labels it as 'VISN 5'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://department.va.gov/integrated-service-networks/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "evidenceUrls": [
+      "https://department.va.gov/integrated-service-networks/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-vha-visns",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://department.va.gov/integrated-service-networks/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va-vha-visns",
+    "placementMatchedText": "VISN 5",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 9629762417.24,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va-vha-visns"
+  },
+  {
     "id": "exec-dept-va-vba",
     "name": "Veterans Benefits Administration (VBA)",
     "type": "Agency",
@@ -34104,6 +35179,76 @@
     "parentId": "exec-dept-va-vba"
   },
   {
+    "id": "exec-dept-va-nca",
+    "name": "National Cemetery Administration (NCA)",
+    "type": "Agency",
+    "desc": "Maintains 155 national cemeteries honoring veterans' service. Over 4M veterans interred.",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "sourceUrls": [
+      "https://www.cem.va.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.cem.va.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-nca",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.va.gov/about_va/",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "exec-dept-va",
+    "placementMatchedText": "National Cemetery Administration",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "employeesOfficial": 2395,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "NATIONAL CEMETERY ADMINISTRATION",
+      "level": "subagency",
+      "agencyCode": "VA",
+      "subagencyCode": "VAPA",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 2404
+      },
+      "agencyMatched": "exec-dept-va"
+    },
+    "resolved_total_amount": 46180545011.62,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-dept-va"
+  },
+  {
     "id": "exec-dept-va-nca-under-secretary-for-memorial-affairs",
     "name": "Under Secretary for Memorial Affairs",
     "type": "Position",
@@ -34141,10 +35286,15 @@
     "confidenceScore": 0.8,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "verificationMatchedText": "Under Secretary for Memorial Affairs",
     "evidenceUrls": [
       "https://www.cem.va.gov/",
       "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
     ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_its_organisations_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-dept-va-nca",
     "positionListing": {
       "source": "opm_plum_archive",
       "edition": "Biden Administration (January 21, 2021 - January 20, 2025)",
@@ -34166,8 +35316,6 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
     "placementVerifiedAt": "2026-09-08T19:49:47Z",
@@ -34204,10 +35352,7 @@
       "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
       "checkedAt": "2026-09-11T03:05:36Z"
     },
-    "parentId": "exec-dept-va-nca",
-    "verificationSiteFrom": "exec-dept-va-nca",
-    "verificationMatchedIn": "content",
-    "verificationMatchedText": "Under Secretary for Memorial Affairs"
+    "parentId": "exec-dept-va-nca"
   },
   {
     "id": "exec-dept-va-bva",
@@ -37395,14 +38540,17 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.epa.gov/aboutepa"
+      "https://www.epa.gov/aboutepa",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -37416,19 +38564,30 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "verificationMatchedText": "Inspector General",
     "evidenceUrls": [
-      "https://www.epa.gov/aboutepa"
+      "https://www.epa.gov/aboutepa",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135"
     ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-epa",
-    "parentId": "exec-ind-epa"
+    "parentId": "exec-ind-epa",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Environmental Protection Agency",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-135",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-135",
+      "tableFooter": "The above list of key personnel was updated 7–2021."
+    }
   },
   {
     "id": "exec-ind-epa-office-of-air-radiation-oar",
@@ -43089,16 +44248,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-208"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -43112,12 +44274,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-208"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -43140,7 +44303,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -43148,7 +44311,17 @@
     "placementParentId": "exec-ind-misc-national-endowment-for-the-arts-nea",
     "placementMatchedText": "GENERAL COUNSEL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-ind-misc-national-endowment-for-the-arts-nea"
+    "parentId": "exec-ind-misc-national-endowment-for-the-arts-nea",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "General Counsel",
+      "listedUnder": "National Endowment for the Arts",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-208",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-208",
+      "tableFooter": null
+    }
   },
   {
     "id": "exec-ind-misc-national-endowment-for-the-humanities-neh",
@@ -43237,16 +44410,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-209"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -43260,12 +44436,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-209"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -43288,7 +44465,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -43296,7 +44473,17 @@
     "placementParentId": "exec-ind-misc-national-endowment-for-the-humanities-neh",
     "placementMatchedText": "GENERAL COUNSEL",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-ind-misc-national-endowment-for-the-humanities-neh"
+    "parentId": "exec-ind-misc-national-endowment-for-the-humanities-neh",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "General Counsel",
+      "listedUnder": "National Endowment for the Humanities",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-209",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-209",
+      "tableFooter": null
+    }
   },
   {
     "id": "exec-ind-misc-broadcasting-board-of-governors-usagm",
@@ -43728,16 +44915,19 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158"
     ],
     "sourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 2,
+    "proofSourceCount": 3,
     "proofSourceTypes": [
       "opm_plum_archive",
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -43751,12 +44941,13 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:49:47Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "evidenceUrls": [
-      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv"
+      "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158"
     ],
     "positionListing": {
       "source": "opm_plum_archive",
@@ -43779,7 +44970,7 @@
       "url": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
       "checkedAt": "2026-09-08T19:49:47Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:49:47Z",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "listed_in_opm_plum_archive",
     "placementVerified": true,
     "placementUrl": "https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv",
@@ -43787,7 +44978,17 @@
     "placementParentId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
     "placementMatchedText": "CHIEF FINANCIAL OFFICER",
     "placementMethod": "listed_under_organization_in_opm_plum_archive",
-    "parentId": "exec-ind-misc-national-labor-relations-board-nlrb-independent"
+    "parentId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Chief Financial Officer",
+      "listedUnder": "National Labor Relations Board",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-158",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158",
+      "tableFooter": null
+    }
   },
   {
     "id": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
@@ -45679,14 +46880,17 @@
     "color": "#666666",
     "children": [],
     "sourceUrls": [
-      "https://oig.tva.gov/"
+      "https://oig.tva.gov/",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178"
     ],
     "sourceTypes": [
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
-    "proofSourceCount": 1,
+    "proofSourceCount": 2,
     "proofSourceTypes": [
-      "official_site"
+      "official_site",
+      "us_government_manual"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -45700,19 +46904,30 @@
     "costConfidenceScore": 0.0,
     "costVerificationReason": "missing_cost",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2025-12-31",
     "verificationMatchedText": "Inspector General",
     "evidenceUrls": [
-      "https://oig.tva.gov/"
+      "https://oig.tva.gov/",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178"
     ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2025-12-31",
     "verificationMethod": "name_labelled_on_its_organisations_official_page",
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "exec-ind-misc-tennessee-valley-authority-tva",
-    "parentId": "exec-ind-misc-tennessee-valley-authority-tva"
+    "parentId": "exec-ind-misc-tennessee-valley-authority-tva",
+    "govmanListing": {
+      "source": "us_government_manual",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Tennessee Valley Authority",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-178",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-178",
+      "tableFooter": "The above list of key personnel was updated 8–2020."
+    }
   },
   {
     "id": "exec-ind-misc-appalachian-regional-commission-arc",
@@ -46089,7 +47304,23 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceUrls": [
+      "https://rrb.gov/",
+      "https://www.federalregister.gov/agencies/railroad-retirement-board"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-ind-misc-railroad-retirement-board",
     "placementCheckable": false,
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Railroad Retirement Board",
+      "url": "https://www.federalregister.gov/agencies/railroad-retirement-board",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "employeesOfficial": 767,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -46131,23 +47362,7 @@
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
     "treasury_unapportioned": 15897790393.49,
-    "parentId": "exec-ind-misc",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-misc-railroad-retirement-board",
-    "verificationMatchedIn": "navigation",
-    "evidenceUrls": [
-      "https://rrb.gov/",
-      "https://www.federalregister.gov/agencies/railroad-retirement-board"
-    ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Railroad Retirement Board",
-      "url": "https://www.federalregister.gov/agencies/railroad-retirement-board",
-      "agencyUrl": null,
-      "parentListedName": null,
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-railroad-retirement-board--treasury-receipts",
@@ -46271,16 +47486,15 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
-    "placementCheckable": false,
-    "parentId": "exec-ind-misc",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-misc-institute-of-museum-and-library-services",
-    "verificationMatchedIn": "content",
     "evidenceUrls": [
       "https://www.imls.gov/",
       "https://www.federalregister.gov/agencies/institute-of-museum-and-library-services"
     ],
     "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-institute-of-museum-and-library-services",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Institute of Museum and Library Services",
@@ -46288,7 +47502,8 @@
       "agencyUrl": null,
       "parentListedName": "National Foundation on the Arts and the Humanities",
       "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    },
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-legal-services-corporation",
@@ -46351,16 +47566,15 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
-    "placementCheckable": false,
-    "parentId": "exec-ind-misc",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-misc-legal-services-corporation",
-    "verificationMatchedIn": "content",
     "evidenceUrls": [
       "https://www.lsc.gov/",
       "https://www.federalregister.gov/agencies/legal-services-corporation"
     ],
     "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-legal-services-corporation",
+    "placementCheckable": false,
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Legal Services Corporation",
@@ -46368,7 +47582,8 @@
       "agencyUrl": "http://www.lsc.gov/",
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    },
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-millennium-challenge-corporation",
@@ -46431,7 +47646,23 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceUrls": [
+      "https://www.mcc.gov/",
+      "https://www.federalregister.gov/agencies/millennium-challenge-corporation"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "exec-ind-misc-millennium-challenge-corporation",
     "placementCheckable": false,
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Millennium Challenge Corporation",
+      "url": "https://www.federalregister.gov/agencies/millennium-challenge-corporation",
+      "agencyUrl": "http://www.mcc.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "employeesOfficial": 346,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -46456,23 +47687,7 @@
         }
       ]
     },
-    "parentId": "exec-ind-misc",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-ind-misc-millennium-challenge-corporation",
-    "verificationMatchedIn": "content",
-    "evidenceUrls": [
-      "https://www.mcc.gov/",
-      "https://www.federalregister.gov/agencies/millennium-challenge-corporation"
-    ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Millennium Challenge Corporation",
-      "url": "https://www.federalregister.gov/agencies/millennium-challenge-corporation",
-      "agencyUrl": "http://www.mcc.gov/",
-      "parentListedName": null,
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-ind-misc"
   },
   {
     "id": "exec-ind-misc-corporation-for-public-broadcasting",
@@ -46592,6 +47807,25 @@
     "confidenceScore": 0.9,
     "verificationStatus": "verified",
     "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceUrls": [
+      "https://www.gsa.gov/",
+      "https://www.federalregister.gov/agencies/general-services-administration"
+    ],
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "exec-independent-general-services-administration",
+    "placementVerified": false,
+    "placementParentId": "exec-independent",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "General Services Administration",
+      "url": "https://www.federalregister.gov/agencies/general-services-administration",
+      "agencyUrl": "http://www.gsa.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
     "employeesOfficial": 13182,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -46713,26 +47947,7 @@
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
     "treasury_unapportioned": -789232279.93,
-    "parentId": "exec-independent",
-    "verificationMethod": "name_labelled_on_own_official_page",
-    "verificationSiteFrom": "exec-independent-general-services-administration",
-    "placementVerified": false,
-    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "exec-independent",
-    "verificationMatchedIn": "navigation",
-    "evidenceUrls": [
-      "https://www.gsa.gov/",
-      "https://www.federalregister.gov/agencies/general-services-administration"
-    ],
-    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "General Services Administration",
-      "url": "https://www.federalregister.gov/agencies/general-services-administration",
-      "agencyUrl": "http://www.gsa.gov/",
-      "parentListedName": null,
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-independent-general-services-administration--treasury-receipts",
@@ -46855,6 +48070,22 @@
     "confidenceScore": 0.5,
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
+    "placementVerified": false,
+    "placementParentId": "exec-independent",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/agency-for-international-development"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Agency for International Development",
+      "url": "https://www.federalregister.gov/agencies/agency-for-international-development",
+      "agencyUrl": "http://www.usaid.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
     "auditedNetCost": {
       "source": "treasury_statement_of_net_cost",
       "sourceType": "audited_financial_statement",
@@ -46872,23 +48103,7 @@
       "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
     },
     "treasury_unapportioned": 7250549929.16,
-    "parentId": "exec-independent",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "placementVerified": false,
-    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "exec-independent",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/agency-for-international-development"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Agency for International Development",
-      "url": "https://www.federalregister.gov/agencies/agency-for-international-development",
-      "agencyUrl": "http://www.usaid.gov",
-      "parentListedName": null,
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-independent-agency-for-international-development--treasury-receipts",
@@ -47005,11 +48220,11 @@
     "confidenceScore": 0.4,
     "verificationStatus": "unverified",
     "lastVerified": null,
-    "treasury_unapportioned": 12003552434.13,
-    "parentId": "exec-independent",
     "placementVerified": false,
+    "placementParentId": "exec-independent",
     "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
-    "placementParentId": "exec-independent"
+    "treasury_unapportioned": 12003552434.13,
+    "parentId": "exec-independent"
   },
   {
     "id": "exec-independent-corps-of-engineers--treasury-receipts",
@@ -48179,6 +49394,19 @@
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/federal-housing-finance-agency"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Federal Housing Finance Agency",
+      "url": "https://www.federalregister.gov/agencies/federal-housing-finance-agency",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
     "employeesOfficial": 869,
     "employeesOfficialSource": {
       "source": "opm_fedscope_employment",
@@ -48208,20 +49436,7 @@
         }
       ]
     },
-    "parentId": "exec-regulatory",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
-    "evidenceUrls": [
-      "https://www.federalregister.gov/agencies/federal-housing-finance-agency"
-    ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-    "directoryListing": {
-      "source": "federal_register_agency_directory",
-      "listedName": "Federal Housing Finance Agency",
-      "url": "https://www.federalregister.gov/agencies/federal-housing-finance-agency",
-      "agencyUrl": null,
-      "parentListedName": null,
-      "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    "parentId": "exec-regulatory"
   },
   {
     "id": "exec-regulatory-bureau-of-consumer-financial-protection",
@@ -48282,12 +49497,9 @@
     "verificationStatus": "partial",
     "lastVerified": "2026-09-08T19:19:15Z",
     "placementCheckable": false,
-    "parentId": "exec-regulatory",
-    "verificationMethod": "listed_in_federal_register_agency_directory",
     "evidenceUrls": [
       "https://www.federalregister.gov/agencies/consumer-financial-protection-bureau"
     ],
-    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
     "directoryListing": {
       "source": "federal_register_agency_directory",
       "listedName": "Consumer Financial Protection Bureau",
@@ -48295,7 +49507,10 @@
       "agencyUrl": "http://www.consumerfinance.gov/",
       "parentListedName": null,
       "checkedAt": "2026-09-08T19:19:15Z"
-    }
+    },
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "parentId": "exec-regulatory"
   },
   {
     "id": "judicial-branch",
@@ -48568,6 +49783,230 @@
     "verificationMatchedIn": "content",
     "verificationSiteFrom": "jud-scotus",
     "parentId": "jud-scotus"
+  },
+  {
+    "id": "jud-circuit-1st-circuit",
+    "name": "First Circuit",
+    "type": "Circuit Court",
+    "desc": "Headquartered in Boston, MA. Jurisdiction: CT, ME, MA, NH, RI, Puerto Rico. 6 active circuit judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.ca1.uscourts.gov/",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "First Circuit | United States Court of Appeals",
+    "sourceUrls": [
+      "https://www.ca1.uscourts.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.ca1.uscourts.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-circuit-1st-circuit",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "First Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 432234291.16,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-appeals"
+  },
+  {
+    "id": "jud-circuit-8th-circuit",
+    "name": "Eighth Circuit",
+    "type": "Circuit Court",
+    "desc": "Headquartered in St. Louis, MO. Jurisdiction: AR, IA, MN, MO, NE, ND, SD. 11 active circuit judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.ca8.uscourts.gov/",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Eighth Circuit | United States Court of Appeals",
+    "sourceUrls": [
+      "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links"
+    ],
+    "evidenceUrls": [
+      "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-appeals",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "Eighth Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 432234291.16,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-appeals"
+  },
+  {
+    "id": "jud-circuit-10th-circuit",
+    "name": "Tenth Circuit",
+    "type": "Circuit Court",
+    "desc": "Headquartered in Denver, CO. Jurisdiction: CO, KS, NM, OK, UT, WY. 12 active circuit judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.ca10.uscourts.gov/",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Tenth Circuit | The United States Court of Appeals",
+    "sourceUrls": [
+      "https://www.ca10.uscourts.gov/"
+    ],
+    "evidenceUrls": [
+      "https://www.ca10.uscourts.gov/"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "content",
+    "verificationSiteFrom": "jud-circuit-10th-circuit",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "Tenth Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 432234291.16,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-appeals"
+  },
+  {
+    "id": "jud-circuit-11th-circuit",
+    "name": "Eleventh Circuit",
+    "type": "Circuit Court",
+    "desc": "Headquartered in Atlanta, GA. Jurisdiction: AL, FL, GA. 12 active circuit judges.",
+    "employees": null,
+    "budget": null,
+    "color": "#4a8ac8",
+    "children": [],
+    "nameSource": "named_on_its_own_official_page",
+    "nameSourceDetail": "https://www.ca11.uscourts.gov/",
+    "nameVerifiedAt": "2026-09-19",
+    "nameMatchedText": "Eleventh Circuit | United States Court of Appeals",
+    "sourceUrls": [
+      "https://www.ca11.uscourts.gov/about-court"
+    ],
+    "evidenceUrls": [
+      "https://www.ca11.uscourts.gov/about-court"
+    ],
+    "sourceTypes": [
+      "official_site"
+    ],
+    "lastVerified": "2026-09-20T00:33:15+00:00",
+    "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "verificationMatchedIn": "navigation",
+    "verificationSiteFrom": "jud-circuit-11th-circuit",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 1,
+    "proofSourceTypes": [
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "placementVerified": true,
+    "placementUrl": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure/court-website-links",
+    "placementVerifiedAt": "2026-09-20T00:33:15+00:00",
+    "placementParentId": "jud-appeals",
+    "placementMatchedText": "Eleventh Circuit",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "placementMatchedIn": "content",
+    "resolved_total_amount": 432234291.16,
+    "cost_status": "allocated",
+    "cost_basis": "subtree_weight",
+    "cost_validation": "estimated_from_parent",
+    "child_cost_basis": "subtree",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "jud-appeals"
   },
   {
     "id": "jud-circuit-11th-circuit-clerk-of-court",

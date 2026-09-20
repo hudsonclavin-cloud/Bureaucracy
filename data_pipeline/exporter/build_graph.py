@@ -239,6 +239,10 @@ MINIMAL_GRAPH_FIELDS = (
     # the three pay blocks, each a different kind of claim
     "positionListing", "positionPayRate", "positionStatutoryPay", "positionReportedPay",
     "positionSchedulePay",
+    # the Government Manual's listing of a post in its own agency's entry,
+    # with the leadership table's own "updated" footer, which the panel
+    # prints because some tables are years older than the edition
+    "govmanListing",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
@@ -2457,6 +2461,7 @@ def build_graph(
     whitehouse_pay_evidence_path: str | Path | None = "default",
     usaspending_evidence_path: str | Path | None = "default",
     net_cost_evidence_path: str | Path | None = "default",
+    govman_evidence_path: str | Path | None = "default",
 ) -> BuildResult:
     payload_list = list(iter_payload_items(payloads))
     fresh_budget_summary = extract_budget_summary(payload_list)
@@ -2717,6 +2722,23 @@ def build_graph(
     )
     validation["net_cost_evidence"] = apply_net_cost_evidence(
         graph, load_net_cost_evidence(resolved_net_cost_path) if resolved_net_cost_path else {}, index_tree=index_tree,
+    )
+    # The United States Government Manual, applied last of the evidence
+    # modules and never over a page claim: a post confirmed on its own
+    # organisation's website keeps that method and gains this as a second
+    # source, which the confidence arithmetic rewards without relabelling
+    # what was read.
+    from data_pipeline.verification.govman import (  # noqa: E402 — same late-import shape as net_cost
+        apply_govman_evidence,
+        load_govman_evidence,
+    )
+
+    default_govman_path = PROJECT_ROOT / "data" / "verification" / "govman_evidence.json"
+    resolved_govman_path = (
+        default_govman_path if govman_evidence_path == "default" else govman_evidence_path
+    )
+    validation["govman_evidence"] = apply_govman_evidence(
+        graph, load_govman_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
     )
     validation["usaspending_evidence"] = apply_usaspending_evidence(
         graph, load_usaspending_evidence(resolved_usaspending_path) if resolved_usaspending_path else {}, index_tree=index_tree,
