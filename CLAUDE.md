@@ -2392,21 +2392,31 @@ these" list matters as much as the rest: without it the sweep returns
 
 ## Known base-graph gaps
 
-Table 5 lines whose unit the curated graph has no node for at all, so no alias
-can reach them. Adding the nodes is curation work, not pipeline work;
-`CURATION.md` carries the proposal (parent, type, candidate page) for each,
-plus the AmeriCorps alias case and the cap. (The Coast Guard duplicate was in
-this list until 2026-09-18; it is merged, and the Treasury's own
-$10.93B now sits on the surviving DHS node as a measured cost — CURATION.md §3.)
+This section used to list sixteen Table 5 units the curated graph had no node
+for at all. **Fifteen of them were added on 2026-09-19** by
+`scripts/add_curated_nodes.py` under the `treasury_statement_line` licence,
+and every one now carries its measured cost (`cost_status: official`): GSA,
+USAID, the Railroad Retirement Board, the Administration for Children and
+Families, the Corps of Engineers, the Administration for Community Living,
+the Agricultural Marketing Service, the Foreign Agricultural Service, the
+Legal Services Corporation, the Economic Development Administration, the
+Millennium Challenge Corporation, the FHFA, the CFPB, the IMLS and the CPB.
+Checked against the published graph on 2026-09-20 rather than restated.
 
-    General Services Administration          Agency for International Development
-    Railroad Retirement Board                Administration for Children and Families
-    Corps of Engineers                       Administration for Community Living
-    Agricultural Marketing Service           Corporation for National and Community Service
-    Foreign Agricultural Service             Legal Services Corporation
-    Economic Development Administration      Millennium Challenge Corporation
-    Federal Housing Finance Agency           Bureau of Consumer Financial Protection
-    Institute of Museum and Library Services Corporation for Public Broadcasting
+The one left is the **Corporation for National and Community Service**,
+which is the AmeriCorps alias case `CURATION.md` §2 records: the graph's
+node is named for the agency's current branding and the statement for its
+statutory name, and the record falls through to the rule beneath — the
+statement's line for it prints an outlay amount of `0.0`, and zero is never
+published as a measurement.
+
+A second, quieter gap surfaced the same day: a unit added under a licence
+that is not the Treasury's — the Office of Surface Mining Reclamation and
+Enforcement, added from the Government Manual — whose name equals a unique
+Table 5 money line ($1.13bn) and whose cost is still `allocated`, because an
+offline rebuild only carries previously applied lines forward and the line
+is matched on the next build that is handed a statement. The phase 1c sweep
+nominated it as a cost identifier; it applies on the next live crawl.
 
 ("Other Defense Civil Programs" and "International Assistance Programs" are
 Treasury groupings rather than organisations; those stay unmatched by design.)
