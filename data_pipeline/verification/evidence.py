@@ -126,6 +126,7 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationMethod",
     "verificationFailure",
     "verificationUnread",
+    "govmanEntry",
     "verificationSiteFrom",
     "placementVerified",
     "placementUrl",

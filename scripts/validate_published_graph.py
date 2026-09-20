@@ -1445,6 +1445,8 @@ def omb_database():
 # A post listed in its own organisation's entry in the United States
 # Government Manual. Mirrors data_pipeline.verification.govman.METHOD.
 GOVMAN_METHOD = "listed_in_its_organisations_us_government_manual_entry"
+GOVMAN_ORG_METHOD = "listed_in_us_government_manual"
+GOVMAN_ORG_PLACEMENT_METHOD = "listed_under_parent_in_us_government_manual"
 GOVMAN_PACKAGE = "GOVMAN-2025-12-31"
 GOVMAN_DETAILS = "https://www.govinfo.gov/app/details"
 GOVMAN_FIXTURE = (
@@ -1497,12 +1499,20 @@ def govman_entries():
         return bool(letters) and all(c.isupper() for c in letters)
 
     entries = {}
+    parents = {}  # granule -> the enclosing entity's printed name, or None at the top
 
-    def visit(element):
+    def visit(element, parent_name=None):
         if element.tag in GOVMAN_ENTITY_TAGS:
             name = flat(element.findtext("AgencyName"))
             entity_id = (element.get("EntityId") or "").strip()
             if name and entity_id.isdigit():
+                parents["{}-{:03d}".format(GOVMAN_PACKAGE, int(entity_id))] = parent_name
+                parent_for_children = name
+            else:
+                parent_for_children = parent_name
+        else:
+            parent_for_children = parent_name
+        if element.tag in GOVMAN_ENTITY_TAGS and (element.get("EntityId") or "").strip().isdigit() and flat(element.findtext("AgencyName")):
                 titles = {}
                 tables = element.find("LeaderShipTables")
                 for table in (tables.findall("LeaderShipTable") if tables is not None else []):
@@ -1529,12 +1539,20 @@ def govman_entries():
         children = element.find("Childrens")
         if children is not None:
             for sub in children:
-                visit(sub)
+                visit(sub, parent_for_children)
 
     for entity in _ET.parse(GOVMAN_FIXTURE).getroot():
-        visit(entity)
+        visit(entity, None)
     _GOVMAN_CACHE["entries"] = entries
+    _GOVMAN_CACHE["parents"] = parents
     return entries
+
+
+def govman_parents():
+    """granule id -> the name of the entity the Manual files it under, from
+    the same independent parse as govman_entries()."""
+    govman_entries()
+    return _GOVMAN_CACHE.get("parents", {})
 
 
 def is_committee(node):
@@ -1975,6 +1993,7 @@ def main(argv):
         "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
         GOVMAN_METHOD,
+        GOVMAN_ORG_METHOD,
     }
     # Placement claims that rest on reading a page, as opposed to consulting a
     # separate document. Only these are refused on a post; see below.
@@ -2240,6 +2259,7 @@ def main(argv):
         if str(node.get("placementMethod") or "") not in (
             "name_labelled_on_parent_official_page",
             "listed_under_parent_in_federal_register_agency_directory",
+            GOVMAN_ORG_PLACEMENT_METHOD,
             "listed_under_committee_in_senate_committee_list",
             "listed_under_committee_in_house_clerk_committee_list",
             "listed_under_organization_in_opm_plum_archive",
@@ -2519,6 +2539,64 @@ def main(argv):
             govman_violations.append(
                 "{} claims placement from the Government Manual, which reads one entry".format(label(node)))
     gate.check("a Government Manual listing is a title that entry really prints", govman_violations)
+    # The organisation route: an entry for the unit itself. Mirrors the post
+    # block's discipline -- granule in the manifest, name as the Manual prints
+    # it, the publisher's own URL -- and adds the hierarchy: the parent the
+    # block quotes must be the one the independent parse finds around that
+    # entry, and a placement claimed from it must name the parent the TREE
+    # gives the node, read off the tree the gate is walking.
+    govman_org_violations = []
+    try:
+        govman_parent_index = govman_parents()
+    except (OSError, ValueError) as error:
+        govman_parent_index = {}
+        govman_org_violations.append("the Government Manual fixture could not be read: {}".format(error))
+    for node in nodes:
+        entry_block = node.get("govmanEntry")
+        method_is_manual = str(node.get("verificationMethod") or "") == GOVMAN_ORG_METHOD
+        if not isinstance(entry_block, dict):
+            if method_is_manual:
+                govman_org_violations.append("{} takes the Manual as its method and carries no entry block".format(label(node)))
+            if str(node.get("placementMethod") or "") == GOVMAN_ORG_PLACEMENT_METHOD:
+                govman_org_violations.append("{} is placed by the Manual and carries no entry block".format(label(node)))
+            continue
+        if is_post(node):
+            govman_org_violations.append("{} is a post but carries a Government Manual entry of its own".format(label(node)))
+            continue
+        granule = str(entry_block.get("granule") or "")
+        entry = govman_index.get(granule)
+        if govman_index and entry is None:
+            govman_org_violations.append("{} cites granule {!r}, which the committed Manual does not carry".format(label(node), granule))
+            continue
+        listed_name = str(entry_block.get("listedName") or "")
+        if entry is not None and canonical_key(listed_name) != canonical_key(entry[0]):
+            govman_org_violations.append("{} quotes {!r} for granule {}, which the Manual names {!r}".format(label(node), listed_name, granule, entry[0]))
+            continue
+        if canonical_key(node.get("name")) != canonical_key(listed_name):
+            govman_org_violations.append("{} carries an entry for {!r}, which is not this node's name".format(label(node), listed_name))
+            continue
+        expected_url = "{}/{}/{}".format(GOVMAN_DETAILS, GOVMAN_PACKAGE, granule)
+        if str(entry_block.get("url") or "") != expected_url:
+            govman_org_violations.append("{} cites {!r}, not the publisher's own address {!r}".format(label(node), entry_block.get("url"), expected_url))
+            continue
+        if not _past_iso(entry_block.get("edition")):
+            govman_org_violations.append("{} cites a Manual edition {!r} that has not happened".format(label(node), entry_block.get("edition")))
+            continue
+        parent_listed = entry_block.get("parentListedName")
+        if govman_parent_index and granule in govman_parent_index:
+            printed_parent = govman_parent_index.get(granule)
+            if canonical_key(str(parent_listed or "")) != canonical_key(str(printed_parent or "")):
+                govman_org_violations.append("{} says the Manual files it under {!r}; the Manual files it under {!r}".format(label(node), parent_listed, printed_parent))
+                continue
+        if str(node.get("placementMethod") or "") == GOVMAN_ORG_PLACEMENT_METHOD:
+            tree_parent = by_id.get(tree_parents.get(str(node.get("id") or "")) or "")
+            if not parent_listed or tree_parent is None or canonical_key(tree_parent.get("name")) != canonical_key(str(parent_listed)):
+                govman_org_violations.append("{} is placed by the Manual under {!r}, which is not the parent the tree gives it".format(label(node), parent_listed))
+                continue
+            if str(node.get("placementUrl") or "") != expected_url:
+                govman_org_violations.append("{} is placed by the Manual but cites {!r} for it".format(label(node), node.get("placementUrl")))
+                continue
+    gate.check("a Government Manual entry names this unit, its parent as the Manual prints it, and places it only under that parent", govman_org_violations)
 
     # OMB's Public Budget Database, re-derived from the committed package
     # rather than trusted. The check that matters most is the fiscal year: the
@@ -2871,6 +2949,12 @@ def main(argv):
     govman_nodes = [n for n in nodes if isinstance(n.get("govmanListing"), dict)]
     govman_method = sum(1 for n in govman_nodes if str(n.get("verificationMethod") or "") == GOVMAN_METHOD)
     govman_dated = sum(1 for n in govman_nodes if str((n.get("govmanListing") or {}).get("tableFooter") or "").strip())
+    manual_orgs = [n for n in nodes if not is_post(n) and isinstance(n.get("govmanEntry"), dict)]
+    manual_org_method = sum(1 for n in manual_orgs if str(n.get("verificationMethod") or "") == GOVMAN_ORG_METHOD)
+    manual_org_placed = sum(1 for n in manual_orgs if str(n.get("placementMethod") or "") == GOVMAN_ORG_PLACEMENT_METHOD)
+    manual_org_disagree = sum(1 for n in manual_orgs if isinstance(n.get("placementDirectoryDisagreement"), dict) and n["placementDirectoryDisagreement"].get("source") == "us_government_manual")
+    print("  Manual (organisations): {:,} organisations carry the Manual's own entry for them; {:,} take it as their method; {:,} placed under their parent by the Manual's hierarchy; {:,} filed elsewhere by it".format(
+        len(manual_orgs), manual_org_method, manual_org_placed, manual_org_disagree))
     print("  Government Manual    : {:,} positions listed in their own organisation's entry across {:,} agencies; {:,} take it as their method and grade partial; {:,} carry the leadership table's own 'updated' footer; no placement is claimed from it".format(
         len(govman_nodes),
         len({str((n.get("govmanListing") or {}).get("listedUnder") or "") for n in govman_nodes}),

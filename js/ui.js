@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260920e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260920e";
+import { createGovernmentGraph } from "./graph.js?v=20260920f";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260920f";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1252,17 +1252,23 @@ function renderPlacementLine(data) {
   }
   const disagreement = data.placementDirectoryDisagreement;
   const ancestorListing = data.placementDirectoryAncestor;
+  // Which directory is speaking. The Federal Register's list and the
+  // Government Manual both print a hierarchy, and a disagreement is only
+  // auditable if the panel says whose it is.
+  const directoryName = (source) =>
+    String(source || "") === "us_government_manual" ? "The United States Government Manual" : "The Federal Register's agency directory";
   const addDisagreement = () => {
     if (ancestorListing && typeof ancestorListing === "object") {
       dom.verificationPlacement.appendChild(document.createElement("br"));
-      add(`The Federal Register's agency directory files it under "${ancestorListing.listedUnder}", an ancestor here; the grouping between is curated, and the directory says nothing about it`);
+      add(`${directoryName(ancestorListing.source)} files it under "${ancestorListing.listedUnder}", an ancestor here; the grouping between is curated, and the directory says nothing about it`);
     }
     if (!disagreement || typeof disagreement !== "object") return;
     dom.verificationPlacement.appendChild(document.createElement("br"));
-    add(`The Federal Register's agency directory files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);
+    add(`${directoryName(disagreement.source)} files it under "${disagreement.listedUnder}", not under its parent here — the two sources disagree, and neither is resolved`);
   };
   const directoryPlacement = {
     listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
+    listed_under_parent_in_us_government_manual: "the United States Government Manual files it under its parent here",
     listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
     listed_under_committee_in_house_clerk_committee_list: "the House Clerk's official committee list carries it under its committee here",
   }[String(data.placementMethod || "")];
@@ -1381,6 +1387,7 @@ function renderVerificationPanel(data) {
       // and is not evidence about who holds it or what it does.
       name_labelled_on_its_organisations_official_page: "Its organisation's own official page names it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
+      listed_in_us_government_manual: "The United States Government Manual carries an entry for it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
       listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
       // The Manual is the government's own handbook of itself, and each
@@ -1396,6 +1403,7 @@ function renderVerificationPanel(data) {
       federal_register_agency_directory: "the Federal Register's agency directory",
       senate_committee_list: "the Senate's official committee list",
       house_clerk_committee_list: "the House Clerk's official committee list",
+      us_government_manual: "the United States Government Manual",
     };
     let checkLine = "Not yet verified";
     const failureSource = data.verificationFailureSource;
@@ -1481,6 +1489,20 @@ function renderVerificationPanel(data) {
         : ` · also listed in the United States Government Manual${quoted}${under}`;
       if (govman.edition) checkLine += ` (${govman.edition} edition)`;
       if (govman.tableFooter) checkLine += ` — the Manual says of that table: "${govman.tableFooter}"`;
+    }
+    // The Manual's entry for the unit ITSELF (the organisation route), as
+    // distinct from a leadership-table row naming a post. Says the name as
+    // the Manual prints it and where the Manual files it, because the
+    // hierarchy is the claim the placement line then checks against the tree.
+    const govmanEntry = data.govmanEntry;
+    if (govmanEntry && typeof govmanEntry === "object") {
+      const alreadyEntry = String(data.verificationMethod || "") === "listed_in_us_government_manual";
+      const asName = govmanEntry.listedName ? ` as "${govmanEntry.listedName}"` : "";
+      const filed = govmanEntry.parentListedName ? `, filed under "${govmanEntry.parentListedName}"` : ", as a top-level entry";
+      const edition = govmanEntry.edition ? ` (${govmanEntry.edition} edition)` : "";
+      checkLine += alreadyEntry
+        ? `${asName}${filed}${edition}`
+        : ` · the United States Government Manual also carries an entry for it${asName}${filed}${edition}`;
     }
     // Both facts, where both are true: a directory lists it, and its own
     // page was read and did not name it. Withdrawing the badge is right —

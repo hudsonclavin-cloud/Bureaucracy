@@ -41,7 +41,8 @@ from data_pipeline.exporter.build_graph import (  # noqa: E402
     load_base_graph,
 )
 from data_pipeline.verification.evidence import EVIDENCE_OWNED_FIELDS  # noqa: E402
-from data_pipeline.verification.govman import (  # noqa: E402
+from data_pipeline.verification.govman import (
+    is_post_node,  # noqa: E402
     DEFAULT_MODS,
     DEFAULT_PACKAGE,
     METHOD,
@@ -393,9 +394,26 @@ class PublishedGraphTests(unittest.TestCase):
                              canonical_name_key(block["listedUnder"]))
             self.assertIn(block["url"], node.get("sourceUrls") or [])
 
-    def test_no_node_claims_placement_from_the_manual(self):
+    def test_no_post_claims_placement_from_the_manual(self):
+        """The post route reads one entry and yields one observation, so it
+        never publishes existence and placement as two findings. The
+        ORGANISATION route (since 2026-09-20) does claim placement, the way
+        the Federal Register directory does: an entry's name is existence
+        and its printed parent is a separate claim about the edge, recorded
+        as a disagreement where the tree differs. So the rule is scoped to
+        posts, and the organisation method may sit only on non-posts."""
         for node, _ in self.pairs:
-            self.assertNotIn("government_manual", str(node.get("placementMethod") or ""))
+            if is_post_node(node):
+                self.assertNotIn("government_manual", str(node.get("placementMethod") or ""))
+        published = json.loads((Path(__file__).resolve().parent.parent / "output" / "graph.json").read_text(encoding="utf-8"))
+        root = published.get("tree") or published.get("root") or published
+        stack = [root]
+        while stack:
+            n = stack.pop()
+            if str(n.get("placementMethod") or "") == "listed_under_parent_in_us_government_manual":
+                self.assertFalse(is_post_node(n), n.get("id"))
+                self.assertIsInstance(n.get("govmanEntry"), dict, n.get("id"))
+            stack.extend(n.get("children") or [])
 
     def test_a_manual_listing_alone_grades_partial_not_verified(self):
         for node, _ in self.pairs:
@@ -480,6 +498,186 @@ class GateCorruptionTests(unittest.TestCase):
         self.assert_refused(lambda n: n.update(sourceUrls=[]),
                             "the node cites the Manual without carrying its URL")
 
+
+
+class OrganisationRouteTests(unittest.TestCase):
+    """The Manual's entry for a unit ITSELF, since 2026-09-20 -- the one route
+    to evidence for organisations on the 67 hosts that refuse the page as they
+    refuse robots.txt (docs/NETWORK_ACCESS.md 11)."""
+
+    def setUp(self):
+        from data_pipeline.verification.govman import build_org_records
+        self.build_org_records = build_org_records
+        self.manual = read_manual()
+        self.graph = load_base_graph(DEFAULT_BASE_GRAPH)
+
+    def test_the_real_join_names_the_unit_as_the_manual_prints_it(self):
+        records, stats = self.build_org_records(self.manual, self.graph)
+        self.assertGreater(len(records), 120)
+        self.assertEqual(stats["entry_names_several_entries"], 0)
+        self.assertEqual(stats["entry_names_several_nodes"], 0)
+        node_map, _ = index_tree(self.graph)
+        for node_id, record in records.items():
+            self.assertEqual(canonical_name_key(node_map[node_id]["name"]), canonical_name_key(record["listedName"]))
+            self.assertFalse(is_post_node(node_map[node_id]), node_id)
+            self.assertTrue(record["url"].startswith("https://www.govinfo.gov/app/details/GOVMAN-"))
+            self.assertRegex(record["granule"], r"^GOVMAN-\d{4}-\d{2}-\d{2}-\d{3}$")
+
+    def test_the_parent_on_a_record_is_the_manuals_own_and_never_invented(self):
+        records, _ = self.build_org_records(self.manual, self.graph)
+        by_id = {e["entityId"]: e for e in self.manual["entities"]}
+        for record in records.values():
+            entry = by_id[record["entityId"]]
+            parent = by_id.get(entry.get("parentId") or "")
+            self.assertEqual(record["parentListedName"], parent["name"] if parent else None)
+
+    def test_the_two_routes_agree_on_which_entry_is_which_agency(self):
+        posts, _ = build_records(self.manual, self.graph)
+        orgs, _ = self.build_org_records(self.manual, self.graph)
+        for post in posts.values():
+            org = orgs.get(post["organisationId"])
+            self.assertIsNotNone(org, post["organisationId"])
+            self.assertEqual(org["listedName"], post["listedUnder"])
+
+    def _tree(self):
+        return {"id": "root", "name": "Root", "type": "Foundation", "children": [
+            {"id": "dod", "name": "Department of Defense (DoD)", "type": "Cabinet Department", "children": [
+                {"id": "def-agencies", "name": "Defense Agencies & Field Activities", "type": "Division", "children": [
+                    {"id": "dca", "name": "Defense Commissary Agency", "type": "Defense Agency", "children": []},
+                ]},
+                {"id": "sec-def", "name": "Secretary of Defense", "type": "Position", "children": []},
+            ]},
+            {"id": "elsewhere", "name": "Somewhere Else", "type": "Agency", "children": [
+                {"id": "dcaa", "name": "Defense Contract Audit Agency (DCAA)", "type": "Defense Agency", "children": []},
+            ]},
+        ]}
+
+    def _record(self, listed, parent, granule="GOVMAN-2025-12-31-216"):
+        return {"source": "us_government_manual", "nodeName": listed, "listedName": listed, "entityId": granule[-3:].lstrip("0"),
+                "parentListedName": parent, "parentEntityId": "206", "package": "GOVMAN-2025-12-31", "edition": "2025-12-31",
+                "granule": granule, "url": f"https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/{granule}", "documentSha256": "x"}
+
+    def test_apply_sets_the_method_only_where_none_and_places_only_under_the_printed_parent(self):
+        from data_pipeline.verification.govman import apply_govman_org_evidence, ORG_METHOD, ORG_PLACEMENT_METHOD
+        tree = self._tree()
+        stats = apply_govman_org_evidence(tree, {
+            "dca": self._record("Defense Commissary Agency", "Defense Agencies"),          # scaffolding parent: no placement claim
+            "dcaa": self._record("Defense Contract Audit Agency", "Department of Defense", "GOVMAN-2025-12-31-217"),  # names another node: disagreement
+            "sec-def": self._record("Secretary of Defense", "Department of Defense", "GOVMAN-2025-12-31-114"),       # a post: refused
+        })
+        node_map, _ = index_tree(tree)
+        dca = node_map["dca"]
+        self.assertEqual(dca["verificationMethod"], ORG_METHOD)
+        self.assertEqual(dca["govmanEntry"]["parentListedName"], "Defense Agencies")
+        self.assertIn("https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-216", dca["sourceUrls"])
+        self.assertEqual(dca["lastVerified"], "2025-12-31")
+        self.assertNotIn("placementVerified", dca)
+        self.assertEqual(stats["placements_unresolved"], 1)
+        dcaa = node_map["dcaa"]
+        self.assertEqual(dcaa["placementDirectoryDisagreement"]["directoryParentId"], "dod")
+        self.assertEqual(dcaa["placementDirectoryDisagreement"]["source"], "us_government_manual")
+        self.assertNotIn("placementVerified", dcaa)
+        self.assertEqual(stats["placements_disagree"], 1)
+        self.assertEqual(stats["is_a_post"], 1)
+        self.assertNotIn("govmanEntry", node_map["sec-def"])
+        # A page claim already there is kept; the Manual sits beside it.
+        tree2 = self._tree(); index_tree(tree2)[0]["dca"].update({"verificationMethod": "name_labelled_on_own_official_page", "sourceUrls": ["https://www.commissaries.com/x"], "sourceCount": 1})
+        s2 = apply_govman_org_evidence(tree2, {"dca": self._record("Defense Commissary Agency", "Defense Agencies")})
+        self.assertEqual(index_tree(tree2)[0]["dca"]["verificationMethod"], "name_labelled_on_own_official_page")
+        self.assertEqual(s2["method_kept"], 1)
+        # Placement is claimed exactly when the Manual's parent IS the tree parent.
+        tree3 = self._tree()
+        apply_govman_org_evidence(tree3, {"dca": self._record("Defense Commissary Agency", "Defense Agencies & Field Activities")})
+        dca3 = index_tree(tree3)[0]["dca"]
+        self.assertTrue(dca3["placementVerified"]); self.assertEqual(dca3["placementMethod"], ORG_PLACEMENT_METHOD)
+        self.assertEqual(dca3["placementParentId"], "def-agencies")
+        self.assertEqual(dca3["placementMatchedText"], "Defense Commissary Agency", "the matched text names the child, as every placement route stamps it")
+
+    def test_a_renamed_node_and_a_missing_record_both_withdraw(self):
+        from data_pipeline.verification.govman import apply_govman_org_evidence
+        from data_pipeline.verification.evidence import apply_evidence_to_tree
+        tree = self._tree()
+        apply_govman_org_evidence(tree, {"dca": self._record("Defense Commissary Agency", "Defense Agencies")})
+        self.assertIn("govmanEntry", index_tree(tree)[0]["dca"])
+        apply_evidence_to_tree(tree, {})  # the owned-field sweep of the next build
+        self.assertNotIn("govmanEntry", index_tree(tree)[0]["dca"])
+        self.assertNotIn("verificationMethod", index_tree(tree)[0]["dca"])
+        tree = self._tree(); index_tree(tree)[0]["dca"]["name"] = "Defense Commissary Service"
+        s = apply_govman_org_evidence(tree, {"dca": self._record("Defense Commissary Agency", "Defense Agencies")})
+        self.assertEqual(s["stale_name"], 1); self.assertNotIn("govmanEntry", index_tree(tree)[0]["dca"])
+
+
+class OrganisationRouteGateTests(unittest.TestCase):
+    """The gate re-derives the entry, its name and its printed parent from an
+    independent parse, and refuses each way the block could lie."""
+
+    def setUp(self):
+        import io, json, tempfile, uuid
+        from contextlib import redirect_stdout
+        from scripts.validate_published_graph import main as gate_main, govman_parents
+        self.io, self.json, self.uuid, self.redirect = io, json, uuid, redirect_stdout
+        self.gate_main = gate_main
+        self.tmp = Path(tempfile.mkdtemp())
+        self.published = Path(__file__).resolve().parent.parent / "output" / "graph.json"
+        if not self.published.exists():
+            self.skipTest("no published graph on disk")
+        self.graph = json.loads(self.published.read_text(encoding="utf-8"))
+        self.root = self.graph.get("tree") or self.graph.get("root") or self.graph
+        self.node = None
+        def walk(n):
+            if isinstance(n.get("govmanEntry"), dict) and self.node is None and n.get("placementMethod") == "listed_under_parent_in_us_government_manual":
+                self.node = n
+            for c in n.get("children") or []: walk(c)
+        walk(self.root)
+        if self.node is None:
+            self.skipTest("the published graph carries no Manual-placed organisation yet")
+        self.parents = govman_parents()
+
+    def _gate(self, graph):
+        path = self.tmp / f"{self.uuid.uuid4().hex}.json"
+        path.write_text(self.json.dumps(graph), encoding="utf-8")
+        out = self.io.StringIO()
+        with self.redirect(out):
+            code = self.gate_main(["gate", str(path)])
+        return code, out.getvalue()
+
+    def test_the_gates_parent_mirror_equals_the_modules(self):
+        from data_pipeline.verification.govman import build_org_records
+        records, _ = build_org_records(read_manual(), load_base_graph(DEFAULT_BASE_GRAPH))
+        for r in records.values():
+            self.assertEqual(canonical_name_key(str(self.parents.get(r["granule"]) or "")), canonical_name_key(str(r["parentListedName"] or "")), r["granule"])
+
+    def test_the_published_graph_passes_and_each_corruption_fails(self):
+        code, out = self._gate(self.graph)
+        self.assertEqual(code, 0, out)
+        self.assertIn("Manual (organisations):", out)
+        nid = self.node["id"]
+        def find(g):
+            r = g.get("tree") or g.get("root") or g
+            stack=[r]
+            while stack:
+                n=stack.pop()
+                if n.get("id")==nid: return n
+                stack.extend(n.get("children") or [])
+        cases = {
+            "invented granule": lambda n: n["govmanEntry"].__setitem__("granule", "GOVMAN-2025-12-31-999"),
+            "another agency's name": lambda n: n["govmanEntry"].__setitem__("listedName", "Department of Energy"),
+            "node renamed": lambda n: n.__setitem__("name", "Renamed Unit"),
+            "wrong url": lambda n: n["govmanEntry"].__setitem__("url", "https://www.govinfo.gov/content/pkg/x.htm"),
+            "future edition": lambda n: n["govmanEntry"].__setitem__("edition", "2999-01-01"),
+            "invented parent": lambda n: n["govmanEntry"].__setitem__("parentListedName", "The Moon"),
+            "placed under a parent the tree does not give": lambda n: n.__setitem__("placementMethod", "listed_under_parent_in_us_government_manual") or n["govmanEntry"].__setitem__("parentListedName", self.parents.get(n["govmanEntry"]["granule"])) or n.__setitem__("id", n["id"]),
+            "on a post": lambda n: n.__setitem__("type", "Position"),
+            "method without a block": lambda n: n.pop("govmanEntry"),
+        }
+        for name, mutate in cases.items():
+            with self.subTest(case=name):
+                g = self.json.loads(self.json.dumps(self.graph)); n = find(g); mutate(n)
+                if name == "placed under a parent the tree does not give":
+                    # move the node's claimed parent name to something the tree does not have above it
+                    n["govmanEntry"]["parentListedName"] = "The Moon"; n["placementMatchedText"] = "The Moon"
+                code, out = self._gate(g)
+                self.assertEqual(code, 1, f"{name} should fail the gate:\n{out[-1500:]}")
 
 if __name__ == "__main__":
     unittest.main()

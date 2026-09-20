@@ -242,7 +242,7 @@ MINIMAL_GRAPH_FIELDS = (
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
-    "govmanListing",
+    "govmanListing", "govmanEntry",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
@@ -2734,7 +2734,9 @@ def build_graph(
     # what was read.
     from data_pipeline.verification.govman import (  # noqa: E402 — same late-import shape as net_cost
         apply_govman_evidence,
+        apply_govman_org_evidence,
         load_govman_evidence,
+        load_govman_org_evidence,
     )
 
     default_govman_path = PROJECT_ROOT / "data" / "verification" / "govman_evidence.json"
@@ -2743,6 +2745,12 @@ def build_graph(
     )
     validation["govman_evidence"] = apply_govman_evidence(
         graph, load_govman_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
+    )
+    # The organisation route from the same document: an entry for the unit
+    # itself, and where the Manual files it. Beside a page claim, never over
+    # it; the one route to evidence for units on the 67 walled hosts.
+    validation["govman_org_evidence"] = apply_govman_org_evidence(
+        graph, load_govman_org_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
     )
     # OMB's Public Budget Database, beside the cost and never in it. Applied
     # after the evidence sweep has withdrawn the field, so a package whose

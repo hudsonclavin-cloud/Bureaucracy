@@ -118,6 +118,16 @@ DEFAULT_MODS = FIXTURE_DIR / "GOVMAN-2025-12-31.mods.xml"
 SOURCE = "us_government_manual"
 SOURCE_TYPE = "us_government_manual"
 METHOD = "listed_in_its_organisations_us_government_manual_entry"
+#: The organisation route, since 2026-09-20. A different claim from METHOD --
+#: "the Manual carries an entry for this unit" rather than "an entry lists
+#: this post" -- so a different string, and the panel prints a different
+#: sentence. It exists because 67 of the 68 hosts this project had recorded
+#: as refusing robots.txt refuse the page too (docs/NETWORK_ACCESS.md 11), so
+#: for the units on them a page can never be the route; the Manual is the
+#: government's own handbook of itself, committed verbatim, and it names 38
+#: of the 344 organisations that carried no verification when this landed.
+ORG_METHOD = "listed_in_us_government_manual"
+ORG_PLACEMENT_METHOD = "listed_under_parent_in_us_government_manual"
 DETAILS_BASE = "https://www.govinfo.gov/app/details"
 
 #: The tags an entity is published under. The Manual nests an agency's
@@ -293,6 +303,235 @@ def read_manual(package_path: Path | str | None = None) -> dict[str, Any]:
             "url": loaded["url"], "fetchedAt": loaded["fetchedAt"], "entities": entities}
 
 
+def match_organisations(
+    manual: dict[str, Any], node_map: dict[str, dict[str, Any]],
+) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
+    """Organisation node id -> the one Manual entry that names it.
+
+    Unambiguous on both sides or nothing: an entry naming two nodes claims
+    neither, and a name two entries carry identifies no entry. Shared by the
+    post route and the organisation route so the two can never disagree
+    about which entry is which agency.
+    """
+    org_by_key: dict[str, list[str]] = {}
+    for node_id, node in node_map.items():
+        if is_post_node(node):
+            continue
+        key = canonical_name_key(node.get("name"))
+        if key:
+            org_by_key.setdefault(key, []).append(node_id)
+    entry_by_key: dict[str, list[dict[str, Any]]] = {}
+    for entry in manual["entities"]:
+        key = canonical_name_key(entry["name"])
+        if key:
+            entry_by_key.setdefault(key, []).append(entry)
+    stats = {
+        "entries": len(manual["entities"]), "organisations_matched": 0,
+        "entry_names_several_entries": 0, "entry_names_several_nodes": 0,
+        "entry_names_no_node": 0,
+    }
+    matched: dict[str, dict[str, Any]] = {}
+    for key, entries in entry_by_key.items():
+        node_ids = org_by_key.get(key) or []
+        if len(entries) > 1:
+            if node_ids:
+                stats["entry_names_several_entries"] += 1
+            continue
+        if not node_ids:
+            stats["entry_names_no_node"] += 1
+            continue
+        if len(node_ids) > 1:
+            stats["entry_names_several_nodes"] += 1
+            continue
+        matched[node_ids[0]] = entries[0]
+    stats["organisations_matched"] = len(matched)
+    return matched, stats
+
+
+def build_org_records(
+    manual: dict[str, Any],
+    root: dict[str, Any],
+    *,
+    index_tree=None,
+) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
+    """One record per organisation the Manual carries an entry for.
+
+    The claim is the entry's existence and where the Manual files it -- the
+    parent entry's name rides on the record so the exporter can compare it
+    with the tree, the way the Federal Register directory's parent is. No
+    leadership row is read here; that is the post route's job.
+    """
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    node_map, _ = index_tree(root)
+    matched, stats = match_organisations(manual, node_map)
+    stats.update({"organisations_listed": 0, "refused_no_access_id": 0, "top_level_entries": 0})
+    by_entity = {e["entityId"]: e for e in manual["entities"]}
+    records: dict[str, dict[str, Any]] = {}
+    for org_id, entry in matched.items():
+        granule = access_id(manual["package"], entry["entityId"])
+        if not granule:
+            stats["refused_no_access_id"] += 1
+            continue
+        parent = by_entity.get(entry.get("parentId") or "")
+        if parent is None:
+            stats["top_level_entries"] += 1
+        records[org_id] = {
+            "source": SOURCE,
+            "nodeName": node_map[org_id].get("name"),
+            "listedName": entry["name"],
+            "entityId": entry["entityId"],
+            "parentListedName": parent["name"] if parent else None,
+            "parentEntityId": parent["entityId"] if parent else None,
+            "package": manual["package"],
+            "edition": manual["edition"],
+            "granule": granule,
+            "url": f"{DETAILS_BASE}/{manual['package']}/{granule}",
+            "documentSha256": manual["sha256"],
+        }
+        stats["organisations_listed"] += 1
+    return records, stats
+
+
+def apply_govman_org_evidence(
+    root: dict[str, Any],
+    records: dict[str, dict[str, Any]],
+    *,
+    index_tree=None,
+) -> dict[str, Any]:
+    """Stamp a Manual entry onto the organisation it names, beside any page
+    claim and never over it; place the node under its parent only when the
+    Manual's own parent entry names the parent the tree gives it, and say so
+    when the Manual files it elsewhere. Runs after `apply_evidence_to_tree`
+    has withdrawn every field this module owns."""
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    from data_pipeline.processors.normalize_nodes import verify_node_sources
+
+    node_map, parent_map = index_tree(root)
+    org_by_key: dict[str, list[str]] = {}
+    for node_id, node in node_map.items():
+        if not is_post_node(node):
+            key = canonical_name_key(node.get("name"))
+            if key:
+                org_by_key.setdefault(key, []).append(node_id)
+    stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "is_a_post": 0,
+             "urls_added": 0, "method_kept": 0, "method_set": 0, "failed_checks_withdrawn": 0,
+             "placements_listed": 0, "placements_disagree": 0, "placements_unresolved": 0,
+             "placements_already_evidenced": 0, "top_level": 0}
+    for node_id, record in records.items():
+        node = node_map.get(node_id)
+        if node is None:
+            stats["unknown_node"] += 1
+            continue
+        if is_post_node(node):
+            stats["is_a_post"] += 1
+            continue
+        if canonical_name_key(node.get("name")) != canonical_name_key(record.get("listedName")):
+            stats["stale_name"] += 1
+            continue
+        url = str(record.get("url") or "")
+        if not url:
+            continue
+        if node.get("verificationFailure"):
+            # The rule directories.py sets: the badge goes, the fact does not.
+            if str(node.get("lastVerified") or "") == str(node.get("evidenceVerifiedAt") or ""):
+                node.pop("lastVerified", None)
+            node.pop("evidenceVerifiedAt", None)
+            failed_kind = str(node.pop("verificationFailure", None) or "")
+            failed_source = node.pop("verificationFailureSource", None)
+            node.pop("verificationSiteFrom", None)
+            if failed_kind == "not_found" and isinstance(failed_source, dict) and failed_source.get("url"):
+                node["pageReadNotNamed"] = {
+                    "url": str(failed_source["url"]), "checkedAt": failed_source.get("checkedAt"),
+                }
+            stats["failed_checks_withdrawn"] += 1
+        urls = [str(u) for u in (node.get("sourceUrls") or [])]
+        if url not in urls:
+            urls.append(url)
+            stats["urls_added"] += 1
+        node["sourceUrls"] = urls
+        mine = [str(u) for u in (node.get("evidenceUrls") or [])]
+        if url not in mine:
+            mine.append(url)
+        node["evidenceUrls"] = mine
+        types = [str(t) for t in (node.get("sourceTypes") or [])]
+        if SOURCE_TYPE not in types:
+            types.append(SOURCE_TYPE)
+        node["sourceTypes"] = types
+        node["govmanEntry"] = {
+            "source": SOURCE,
+            "listedName": record.get("listedName"),
+            "parentListedName": record.get("parentListedName"),
+            "edition": record.get("edition"),
+            "package": record.get("package"),
+            "granule": record.get("granule"),
+            "url": url,
+        }
+        if node.get("verificationMethod"):
+            stats["method_kept"] += 1
+        else:
+            node["verificationMethod"] = ORG_METHOD
+            stats["method_set"] += 1
+        edition = str(record.get("edition") or "")
+        if edition and (not node.get("lastVerified") or edition > str(node.get("lastVerified"))):
+            node["lastVerified"] = edition
+            node["evidenceVerifiedAt"] = edition
+        # Placement: the Manual prints a hierarchy, so its parent entry is a
+        # claim about the edge above this node, checked against the tree.
+        parent_listed = record.get("parentListedName")
+        tree_parent_id = parent_map.get(node_id)
+        tree_parent = node_map.get(tree_parent_id or "")
+        if not parent_listed:
+            stats["top_level"] += 1
+        elif tree_parent is not None and canonical_name_key(tree_parent.get("name")) == canonical_name_key(parent_listed):
+            if node.get("placementVerified") is True:
+                stats["placements_already_evidenced"] += 1
+            else:
+                node["placementVerified"] = True
+                node["placementUrl"] = url
+                node["placementVerifiedAt"] = edition or None
+                node["placementParentId"] = tree_parent_id
+                # The text that names the CHILD as the source prints it, as
+                # every other placement route stamps it; the parent's name
+                # is in the entry block beside it.
+                node["placementMatchedText"] = record.get("listedName")
+                node["placementMethod"] = ORG_PLACEMENT_METHOD
+                node.pop("placementCheckable", None)
+                stats["placements_listed"] += 1
+        else:
+            other = org_by_key.get(canonical_name_key(parent_listed)) or []
+            if len(other) == 1 and other[0] != tree_parent_id:
+                node["placementDirectoryDisagreement"] = {
+                    "source": SOURCE, "listedUnder": parent_listed,
+                    "directoryParentId": other[0], "url": url, "checkedAt": edition or None,
+                }
+                stats["placements_disagree"] += 1
+            else:
+                # The Manual's parent is its own scaffolding ("Defense
+                # Agencies", "Bureaus") or names nothing here: no claim.
+                stats["placements_unresolved"] += 1
+        verify_node_sources(node)
+        stats["listed"] += 1
+    return stats
+
+
+def load_govman_org_evidence(path: Path | str | None = None) -> dict[str, dict[str, Any]]:
+    """The organisation records, stored beside the post records."""
+    import json
+
+    resolved = Path(path or (PROJECT_ROOT / "data" / "verification" / "govman_evidence.json"))
+    if not resolved.exists():
+        return {}
+    store = json.loads(resolved.read_text(encoding="utf-8")) or {}
+    orgs = store.get("organisations")
+    return {str(k): v for k, v in (orgs or {}).items() if isinstance(v, dict)}
+
+
 def build_records(
     manual: dict[str, Any],
     root: dict[str, Any],
@@ -319,43 +558,13 @@ def build_records(
         if parent_id:
             children.setdefault(parent_id, []).append(node)
 
-    org_by_key: dict[str, list[str]] = {}
-    for node_id, node in node_map.items():
-        if is_post_node(node):
-            continue
-        key = canonical_name_key(node.get("name"))
-        if key:
-            org_by_key.setdefault(key, []).append(node_id)
-
-    entry_by_key: dict[str, list[dict[str, Any]]] = {}
-    for entry in manual["entities"]:
-        key = canonical_name_key(entry["name"])
-        if key:
-            entry_by_key.setdefault(key, []).append(entry)
-
-    stats = {
-        "entries": len(manual["entities"]), "organisations_matched": 0,
-        "entry_names_several_entries": 0, "entry_names_several_nodes": 0,
-        "entry_names_no_node": 0, "posts_listed": 0,
+    matched, stats = match_organisations(manual, node_map)
+    stats.update({
+        "posts_listed": 0,
         "refused_title_not_listed": 0, "refused_title_listed_twice": 0,
         "refused_siblings_share_the_name": 0, "refused_name_too_short": 0,
         "refused_no_access_id": 0,
-    }
-    matched: dict[str, dict[str, Any]] = {}
-    for key, entries in entry_by_key.items():
-        node_ids = org_by_key.get(key) or []
-        if len(entries) > 1:
-            if node_ids:
-                stats["entry_names_several_entries"] += 1
-            continue
-        if not node_ids:
-            stats["entry_names_no_node"] += 1
-            continue
-        if len(node_ids) > 1:
-            stats["entry_names_several_nodes"] += 1
-            continue
-        matched[node_ids[0]] = entries[0]
-    stats["organisations_matched"] = len(matched)
+    })
 
     records: dict[str, dict[str, Any]] = {}
     for org_id, entry in matched.items():

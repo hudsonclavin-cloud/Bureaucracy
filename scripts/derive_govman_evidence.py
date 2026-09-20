@@ -35,6 +35,7 @@ from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification.govman import (  # noqa: E402
     DEFAULT_PACKAGE,
     SOURCE,
+    build_org_records,
     build_records,
     read_manual,
 )
@@ -51,7 +52,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv[1:] if argv else None)
 
     manual = read_manual(args.fixture)
-    records, stats = build_records(manual, load_base_graph(args.base_graph))
+    base = load_base_graph(args.base_graph)
+    records, stats = build_records(manual, base)
+    org_records, org_stats = build_org_records(manual, base)
 
     print(f"  manual              : {manual['package']} (edition {manual['edition']})")
     print(f"  agency entries      : {stats['entries']}")
@@ -63,6 +66,7 @@ def main(argv: list[str] | None = None) -> int:
                    "refused_no_access_id", "entry_names_several_entries",
                    "entry_names_several_nodes"):
         print(f"  {reason:34s}: {stats[reason]}")
+    print(f"  organisations listed: {org_stats['organisations_listed']} (top-level entries {org_stats['top_level_entries']})")
     print(f"  document sha256     : {manual['sha256'][:16]}...")
     print("\nA listing is evidence the post exists and that the Manual files it under this")
     print("agency. It says nothing about who holds it: the incumbent column is never read,")
@@ -90,10 +94,15 @@ def main(argv: list[str] | None = None) -> int:
                    "derivedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                    "fixture": str(Path(args.fixture).relative_to(PROJECT_ROOT))},
         "report": stats,
+        "organisationsReport": org_stats,
         "nodes": records,
+        # The organisation route (govman.build_org_records): one record per
+        # unit the Manual carries an entry for, with the parent entry's name
+        # so the exporter can compare where the Manual files it with the tree.
+        "organisations": org_records,
     }
     write_json_file(args.out, store)
-    print(f"\nwrote {len(records)} records -> {args.out}")
+    print(f"\nwrote {len(records)} post records and {len(org_records)} organisation records -> {args.out}")
     return 0
 
 
