@@ -7,35 +7,38 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-21T05:29:55Z",
+    "derivedAt": "2026-09-21T16:29:03Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
     "entries": 231,
-    "organisations_matched": 163,
+    "organisations_matched": 170,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 68,
-    "posts_listed": 85,
-    "refused_title_not_listed": 1013,
+    "entry_names_no_node": 61,
+    "organisations_matched_by_alias": 7,
+    "posts_listed": 89,
+    "posts_under_an_aliased_organisation": 4,
+    "refused_title_not_listed": 1062,
     "refused_title_listed_twice": 0,
     "refused_siblings_share_the_name": 0,
-    "refused_name_too_short": 29,
+    "refused_name_too_short": 31,
     "refused_no_access_id": 0
   },
   "organisationsReport": {
     "entries": 231,
-    "organisations_matched": 163,
+    "organisations_matched": 170,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 68,
-    "organisations_listed": 163,
+    "entry_names_no_node": 61,
+    "organisations_matched_by_alias": 7,
+    "organisations_listed": 170,
     "refused_no_access_id": 0,
-    "top_level_entries": 65,
-    "descriptions_extracted": 142,
-    "descriptions_mission_statement": 89,
-    "descriptions_opening_paragraph": 53,
-    "descriptions_truncated": 17,
+    "top_level_entries": 67,
+    "descriptions_extracted": 149,
+    "descriptions_mission_statement": 92,
+    "descriptions_opening_paragraph": 57,
+    "descriptions_truncated": 18,
     "descriptions_refused_opening_paragraph_does_not_name_the_unit": 14,
     "descriptions_refused_opening_paragraph_is_a_navigation_note": 4,
     "descriptions_refused_no_descriptive_text": 2,
@@ -47,6 +50,7 @@
       "nodeName": "Architect of the Capitol",
       "listedTitle": "ARCHITECT OF THE CAPITOL",
       "listedUnder": "Architect of the Capitol",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-aoc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -60,6 +64,7 @@
       "nodeName": "Comptroller General of the United States",
       "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
       "listedUnder": "Government Accountability Office",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-gao",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -73,6 +78,7 @@
       "nodeName": "Chief Operating Officer",
       "listedTitle": "CHIEF OPERATING OFFICER",
       "listedUnder": "Government Accountability Office",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-gao",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -86,6 +92,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "GENERAL COUNSEL",
       "listedUnder": "Government Accountability Office",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-gao",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -99,6 +106,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Government Accountability Office",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-gao",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -112,6 +120,7 @@
       "nodeName": "Librarian of Congress",
       "listedTitle": "LIBRARIAN OF CONGRESS",
       "listedUnder": "Library of Congress",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-loc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -125,6 +134,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Library of Congress",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-loc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -138,6 +148,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Library of Congress",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-loc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -151,6 +162,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Library of Congress",
+      "organisationNameAlias": null,
       "organisationId": "leg-support-loc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -159,11 +171,30 @@
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "jud-support-aousc-general-counsel": {
+      "source": "us_government_manual",
+      "nodeName": "General Counsel",
+      "listedTitle": "General Counsel",
+      "listedUnder": "Administrative Office of the United States Courts",
+      "organisationNameAlias": {
+        "alias": "Administrative Office of the United States Courts",
+        "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+        "organisationId": "jud-support-aousc"
+      },
+      "organisationId": "jud-support-aousc",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-093",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+      "tableFooter": "The above list of key personnel was updated 8–2020.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "jud-support-ussc-staff-director": {
       "source": "us_government_manual",
       "nodeName": "Staff Director",
       "listedTitle": "Staff Director",
       "listedUnder": "United States Sentencing Commission",
+      "organisationNameAlias": null,
       "organisationId": "jud-support-ussc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -177,6 +208,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "United States Sentencing Commission",
+      "organisationNameAlias": null,
       "organisationId": "jud-support-ussc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -190,6 +222,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Agriculture",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-usda",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -203,6 +236,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "INSPECTOR GENERAL",
       "listedUnder": "Department of Commerce",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -216,6 +250,7 @@
       "nodeName": "Under Secretary for International Trade",
       "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
       "listedUnder": "International Trade Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doc-ita",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -224,11 +259,30 @@
       "tableFooter": "The above list of key personnel was updated 10–2021.",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-doc-noaa-chief-scientist": {
+      "source": "us_government_manual",
+      "nodeName": "Chief Scientist",
+      "listedTitle": "Chief Scientist",
+      "listedUnder": "National Oceanic and Atmospheric Administration",
+      "organisationNameAlias": {
+        "alias": "National Oceanic and Atmospheric Administration",
+        "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+        "organisationId": "exec-dept-doc-noaa"
+      },
+      "organisationId": "exec-dept-doc-noaa",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-264",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+      "tableFooter": "The above list of key personnel was updated 6–2022.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-defense-secretary-of-defense": {
       "source": "us_government_manual",
       "nodeName": "Secretary of Defense",
       "listedTitle": "SECRETARY OF DEFENSE",
       "listedUnder": "Department of Defense",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-defense",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -242,6 +296,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Defense",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-defense",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -255,6 +310,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Department of Defense",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-defense",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -268,6 +324,7 @@
       "nodeName": "Chief Information Officer",
       "listedTitle": "Chief Information Officer",
       "listedUnder": "Department of Defense",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-defense",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -281,6 +338,7 @@
       "nodeName": "Commandant of the Marine Corps (4-star General)",
       "listedTitle": "COMMANDANT OF THE MARINE CORPS",
       "listedUnder": "United States Marine Corps",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-defense-marines",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -294,6 +352,7 @@
       "nodeName": "Secretary of Education",
       "listedTitle": "SECRETARY OF EDUCATION",
       "listedUnder": "Department of Education",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-ed",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -307,6 +366,7 @@
       "nodeName": "Secretary of Energy",
       "listedTitle": "SECRETARY OF ENERGY",
       "listedUnder": "Department of Energy",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doe",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -320,6 +380,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Department of Energy",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doe",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -333,6 +394,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Energy",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doe",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -346,6 +408,7 @@
       "nodeName": "Secretary of Health and Human Services",
       "listedTitle": "SECRETARY OF HEALTH AND HUMAN SERVICES",
       "listedUnder": "Department of Health and Human Services",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-hhs",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -359,6 +422,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Centers for Medicare and Medicaid Services",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-hhs-cms",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -372,6 +436,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Food and Drug Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-hhs-fda",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -385,6 +450,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Department of Homeland Security",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dhs",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -398,6 +464,7 @@
       "nodeName": "Executive Secretary",
       "listedTitle": "Executive Secretary",
       "listedUnder": "Department of Homeland Security",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dhs",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -411,6 +478,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Department of Homeland Security",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dhs",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -424,6 +492,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Housing and Urban Development",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-hud",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -437,6 +506,7 @@
       "nodeName": "Attorney General",
       "listedTitle": "ATTORNEY GENERAL",
       "listedUnder": "Department of Justice",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doj",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -450,6 +520,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Justice",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doj",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -463,6 +534,7 @@
       "nodeName": "Deputy Director",
       "listedTitle": "Deputy Director",
       "listedUnder": "United States Marshals Service",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doj-usms",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -476,6 +548,7 @@
       "nodeName": "Secretary of Labor",
       "listedTitle": "SECRETARY OF LABOR",
       "listedUnder": "Department of Labor",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dol",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -489,6 +562,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Labor",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dol",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -502,6 +576,7 @@
       "nodeName": "Chief Financial Officer",
       "listedTitle": "Chief Financial Officer",
       "listedUnder": "Department of Labor",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dol",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -515,6 +590,7 @@
       "nodeName": "Chief Information Officer",
       "listedTitle": "Chief Information Officer",
       "listedUnder": "Department of Labor",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dol",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -528,6 +604,7 @@
       "nodeName": "Secretary of State",
       "listedTitle": "SECRETARY OF STATE",
       "listedUnder": "Department of State",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-state",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -541,6 +618,7 @@
       "nodeName": "Deputy Secretary of State",
       "listedTitle": "DEPUTY SECRETARY OF STATE",
       "listedUnder": "Department of State",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-state",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -554,6 +632,7 @@
       "nodeName": "Executive Secretary",
       "listedTitle": "Executive Secretary",
       "listedUnder": "Department of State",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-state",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -567,6 +646,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of State",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-state",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -580,6 +660,7 @@
       "nodeName": "Secretary of Transportation",
       "listedTitle": "SECRETARY OF TRANSPORTATION",
       "listedUnder": "Department of Transportation",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dot",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -593,6 +674,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Department of Transportation",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dot",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -606,6 +688,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Department of Transportation",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dot",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -619,6 +702,7 @@
       "nodeName": "Deputy Administrator",
       "listedTitle": "Deputy Administrator",
       "listedUnder": "Federal Highway Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-dot-fhwa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -632,6 +716,7 @@
       "nodeName": "Secretary of the Interior",
       "listedTitle": "SECRETARY OF THE INTERIOR",
       "listedUnder": "Department of the Interior",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-doi",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -645,6 +730,7 @@
       "nodeName": "Secretary of the Treasury",
       "listedTitle": "SECRETARY OF THE TREASURY",
       "listedUnder": "Department of the Treasury",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-treasury",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -658,6 +744,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Department of the Treasury",
+      "organisationNameAlias": null,
       "organisationId": "exec-dept-treasury",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -671,6 +758,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Consumer Product Safety Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-cpsc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -679,11 +767,48 @@
       "tableFooter": "The above list of key personnel was updated 10–2019.",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-americorps-general-counsel": {
+      "source": "us_government_manual",
+      "nodeName": "General Counsel",
+      "listedTitle": "General Counsel",
+      "listedUnder": "Corporation for National and Community Service",
+      "organisationNameAlias": {
+        "alias": "Corporation for National and Community Service",
+        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+        "organisationId": "exec-ind-misc-americorps"
+      },
+      "organisationId": "exec-ind-misc-americorps",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-133",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-americorps-inspector-general": {
+      "source": "us_government_manual",
+      "nodeName": "Inspector General",
+      "listedTitle": "Inspector General",
+      "listedUnder": "Corporation for National and Community Service",
+      "organisationNameAlias": {
+        "alias": "Corporation for National and Community Service",
+        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+        "organisationId": "exec-ind-misc-americorps"
+      },
+      "organisationId": "exec-ind-misc-americorps",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-133",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-epa-general-counsel": {
       "source": "us_government_manual",
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Environmental Protection Agency",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-epa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -697,6 +822,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Environmental Protection Agency",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-epa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -710,6 +836,7 @@
       "nodeName": "Chief Financial Officer",
       "listedTitle": "Chief Financial Officer",
       "listedUnder": "Environmental Protection Agency",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-epa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -723,6 +850,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Equal Employment Opportunity Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -736,6 +864,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Equal Employment Opportunity Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-equal-employment-opportunity-commission-eeoc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -749,6 +878,7 @@
       "nodeName": "Chief Financial Officer",
       "listedTitle": "Chief Financial Officer",
       "listedUnder": "Export-Import Bank of the United States",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-export-import-bank-of-the-u-s",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -762,6 +892,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Farm Credit Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-farm-credit-administration",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -775,6 +906,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Farm Credit Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-farm-credit-administration",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -788,6 +920,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Federal Communications Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-fcc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -801,6 +934,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Federal Deposit Insurance Corporation",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-fdic",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -814,6 +948,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Aeronautics and Space Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-nasa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -827,6 +962,7 @@
       "nodeName": "Archivist of the United States",
       "listedTitle": "ARCHIVIST OF THE UNITED STATES",
       "listedUnder": "National Archives and Records Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-nara",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -840,6 +976,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "National Archives and Records Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-nara",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -853,6 +990,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Archives and Records Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-nara",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -866,6 +1004,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "National Credit Union Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-credit-union-administration-ncua",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -879,6 +1018,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Credit Union Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-credit-union-administration-ncua",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -892,6 +1032,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "National Endowment for the Arts",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-endowment-for-the-arts-nea",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -905,6 +1046,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Endowment for the Arts",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-endowment-for-the-arts-nea",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -918,6 +1060,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "National Endowment for the Humanities",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -931,6 +1074,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Endowment for the Humanities",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-endowment-for-the-humanities-neh",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -944,6 +1088,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "GENERAL COUNSEL",
       "listedUnder": "National Labor Relations Board",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -957,6 +1102,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "National Labor Relations Board",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -970,6 +1116,7 @@
       "nodeName": "Chief Financial Officer",
       "listedTitle": "Chief Financial Officer",
       "listedUnder": "National Labor Relations Board",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -983,6 +1130,7 @@
       "nodeName": "Executive Director for Operations",
       "listedTitle": "Executive Director for Operations",
       "listedUnder": "Nuclear Regulatory Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-nrc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -996,6 +1144,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Nuclear Regulatory Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-nrc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1009,6 +1158,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Nuclear Regulatory Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-regulatory-nrc",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1022,6 +1172,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Peace Corps",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-peace-corps",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1035,6 +1186,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Peace Corps",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-peace-corps",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1048,6 +1200,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Postal Regulatory Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1061,6 +1214,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Postal Regulatory Commission",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1074,6 +1228,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Small Business Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-sba",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1087,6 +1242,7 @@
       "nodeName": "Chief of Staff",
       "listedTitle": "Chief of Staff",
       "listedUnder": "Social Security Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-ssa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1100,6 +1256,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Social Security Administration",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-ssa",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1113,6 +1270,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Tennessee Valley Authority",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-misc-tennessee-valley-authority-tva",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1126,6 +1284,7 @@
       "nodeName": "General Counsel",
       "listedTitle": "General Counsel",
       "listedUnder": "Smithsonian Institution",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-smithsonian",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1139,6 +1298,7 @@
       "nodeName": "Inspector General",
       "listedTitle": "Inspector General",
       "listedUnder": "Smithsonian Institution",
+      "organisationNameAlias": null,
       "organisationId": "exec-ind-smithsonian",
       "package": "GOVMAN-2025-12-31",
       "edition": "2025-12-31",
@@ -1158,6 +1318,7 @@
         "fullLength": 356
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "United States Senate",
       "listedName": "The Senate",
       "entityId": "202",
@@ -1178,6 +1339,7 @@
         "fullLength": 463
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "United States House of Representatives",
       "listedName": "The House of Representatives",
       "entityId": "72",
@@ -1198,6 +1360,7 @@
         "fullLength": 108
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Architect of the Capitol",
       "listedName": "Architect of the Capitol",
       "entityId": "73",
@@ -1218,6 +1381,7 @@
         "fullLength": 129
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Congressional Budget Office (CBO)",
       "listedName": "Congressional Budget Office",
       "entityId": "79",
@@ -1238,6 +1402,7 @@
         "fullLength": 170
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Government Accountability Office (GAO)",
       "listedName": "Government Accountability Office",
       "entityId": "75",
@@ -1258,6 +1423,7 @@
         "fullLength": 185
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Government Publishing Office (GPO)",
       "listedName": "Government Publishing Office",
       "entityId": "76",
@@ -1278,6 +1444,7 @@
         "fullLength": 210
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Library of Congress",
       "listedName": "Library of Congress",
       "entityId": "77",
@@ -1298,6 +1465,7 @@
         "fullLength": 211
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Congressional Research Service",
       "listedName": "Congressional Research Service",
       "entityId": "78",
@@ -1318,6 +1486,7 @@
         "fullLength": 249
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Supreme Court of the United States (SCOTUS)",
       "listedName": "The Supreme Court of the United States",
       "entityId": "80",
@@ -1332,6 +1501,7 @@
     "jud-appeals": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Courts of Appeals (13 Circuits)",
       "listedName": "United States Courts of Appeals",
       "entityId": "82",
@@ -1346,6 +1516,7 @@
     "jud-circuit-federal-circuit": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Court of Appeals for the Federal Circuit",
       "listedName": "United States Court of Appeals for the Federal Circuit",
       "entityId": "83",
@@ -1360,6 +1531,7 @@
     "jud-district": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. District Courts (94 Districts)",
       "listedName": "United States District Courts",
       "entityId": "84",
@@ -1374,6 +1546,7 @@
     "jud-specialized-intl-trade": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Court of International Trade (CIT)",
       "listedName": "United States Court of International Trade",
       "entityId": "86",
@@ -1388,6 +1561,7 @@
     "jud-specialized-caaf": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Court of Appeals for the Armed Forces (CAAF)",
       "listedName": "United States Court of Appeals for the Armed Forces",
       "entityId": "90",
@@ -1408,6 +1582,7 @@
         "fullLength": 961
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Court of Appeals for Veterans Claims (CAVC)",
       "listedName": "United States Court of Appeals for Veterans Claims",
       "entityId": "92",
@@ -1428,6 +1603,7 @@
         "fullLength": 422
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Court of Federal Claims",
       "listedName": "United States Court of Federal Claims",
       "entityId": "89",
@@ -1448,6 +1624,7 @@
         "fullLength": 470
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Tax Court",
       "listedName": "United States Tax Court",
       "entityId": "91",
@@ -1459,6 +1636,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-091",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "jud-support-aousc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.",
+        "truncated": false,
+        "fullLength": 143
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Administrative Office of the United States Courts",
+        "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'"
+      },
+      "nodeName": "Administrative Office of U.S. Courts (AOUSC)",
+      "listedName": "Administrative Office of the United States Courts",
+      "entityId": "93",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-093",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "jud-support-fjc": {
       "description": {
         "kind": "mission_statement",
@@ -1468,6 +1669,7 @@
         "fullLength": 105
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Judicial Center (FJC)",
       "listedName": "Federal Judicial Center",
       "entityId": "94",
@@ -1488,6 +1690,7 @@
         "fullLength": 113
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Sentencing Commission (USSC)",
       "listedName": "United States Sentencing Commission",
       "entityId": "95",
@@ -1508,6 +1711,7 @@
         "fullLength": 157
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Agriculture (USDA)",
       "listedName": "Department of Agriculture",
       "entityId": "322",
@@ -1528,6 +1732,7 @@
         "fullLength": 369
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Commerce",
       "listedName": "Department of Commerce",
       "entityId": "113",
@@ -1548,6 +1753,7 @@
         "fullLength": 256
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Industry and Security",
       "listedName": "Bureau of Industry and Security",
       "entityId": "259",
@@ -1568,6 +1774,7 @@
         "fullLength": 450
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Economic Development Administration",
       "listedName": "Economic Development Administration",
       "entityId": "260",
@@ -1588,6 +1795,7 @@
         "fullLength": 220
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "International Trade Administration (ITA)",
       "listedName": "International Trade Administration",
       "entityId": "262",
@@ -1608,6 +1816,7 @@
         "fullLength": 173
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Minority Business Development Agency",
       "listedName": "Minority Business Development Agency",
       "entityId": "263",
@@ -1619,6 +1828,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-263",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-doc-noaa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Oceanic and Atmospheric Administration seeks to understand and predict changes in climate and weather and changes that affect coasts and oceans; shares its knowledge and information with others; and conserves and manages coastal and marine ecosystems and resources.",
+        "truncated": false,
+        "fullLength": 278
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "National Oceanic and Atmospheric Administration",
+        "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym."
+      },
+      "nodeName": "NOAA — National Oceanic & Atmospheric Administration",
+      "listedName": "National Oceanic and Atmospheric Administration",
+      "entityId": "264",
+      "parentListedName": "Department of Commerce",
+      "parentEntityId": "113",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-264",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-doc-ntia": {
       "description": {
         "kind": "opening_paragraph",
@@ -1628,6 +1861,7 @@
         "fullLength": 575
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Telecommunications and Information Administration",
       "listedName": "National Telecommunications and Information Administration",
       "entityId": "265",
@@ -1648,6 +1882,7 @@
         "fullLength": 372
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Institute of Standards and Technology (NIST)",
       "listedName": "National Institute of Standards and Technology",
       "entityId": "266",
@@ -1668,6 +1903,7 @@
         "fullLength": 617
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Technical Information Service",
       "listedName": "National Technical Information Service",
       "entityId": "267",
@@ -1688,6 +1924,7 @@
         "fullLength": 411
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "United States Patent and Trademark Office (USPTO)",
       "listedName": "United States Patent and Trademark Office",
       "entityId": "268",
@@ -1708,6 +1945,7 @@
         "fullLength": 388
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Defense (DoD)",
       "listedName": "Department of Defense",
       "entityId": "114",
@@ -1728,6 +1966,7 @@
         "fullLength": 174
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Marine Corps",
       "listedName": "United States Marine Corps",
       "entityId": "275",
@@ -1742,6 +1981,7 @@
     "exec-dept-defense-navy-naval-academy": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "United States Naval Academy",
       "listedName": "United States Naval Academy",
       "entityId": "276",
@@ -1753,6 +1993,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-276",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-defense-agency-darpa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense and is under the authority, direction, and control of the Under Secretary of Defense (Acquisition, Technology and Logistics). The Agency serves as the central research and development organization of the Department of Defense with a primary responsibility to maintain U.S. technological superiority over potential adversaries.",
+        "truncated": true,
+        "fullLength": 970
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Defense Advanced Research Projects Agency",
+        "basis": "The curated name is the agency's acronym, letter for letter the initials of the alternative. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding that NOAA, NTIA, DARPA, NSA and FMCSA are all already in the graph under acronyms, which is why no node was added for the Manual's entry. The Manual's entry 214 is headed 'Defense Advanced Research Projects Agency' and its opening paragraph reads 'The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense', which agrees with where this graph places the node."
+      },
+      "nodeName": "DARPA",
+      "listedName": "Defense Advanced Research Projects Agency",
+      "entityId": "214",
+      "parentListedName": "Defense Agencies",
+      "parentEntityId": "206",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-214",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-defense-agency-defense-commissary-agency": {
       "description": {
         "kind": "opening_paragraph",
@@ -1762,6 +2026,7 @@
         "fullLength": 258
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Commissary Agency",
       "listedName": "Defense Commissary Agency",
       "entityId": "216",
@@ -1782,6 +2047,7 @@
         "fullLength": 833
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Contract Audit Agency (DCAA)",
       "listedName": "Defense Contract Audit Agency",
       "entityId": "217",
@@ -1802,6 +2068,7 @@
         "fullLength": 507
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Contract Management Agency (DCMA)",
       "listedName": "Defense Contract Management Agency",
       "entityId": "218",
@@ -1822,6 +2089,7 @@
         "fullLength": 680
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Finance & Accounting Service (DFAS)",
       "listedName": "Defense Finance and Accounting Service",
       "entityId": "219",
@@ -1842,6 +2110,7 @@
         "fullLength": 488
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Information Systems Agency (DISA)",
       "listedName": "Defense Information Systems Agency",
       "entityId": "220",
@@ -1862,6 +2131,7 @@
         "fullLength": 945
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Intelligence Agency (DIA)",
       "listedName": "Defense Intelligence Agency",
       "entityId": "221",
@@ -1882,6 +2152,7 @@
         "fullLength": 819
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Legal Services Agency",
       "listedName": "Defense Legal Services Agency",
       "entityId": "222",
@@ -1902,6 +2173,7 @@
         "fullLength": 836
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Logistics Agency (DLA)",
       "listedName": "Defense Logistics Agency",
       "entityId": "223",
@@ -1922,6 +2194,7 @@
         "fullLength": 438
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Security Cooperation Agency",
       "listedName": "Defense Security Cooperation Agency",
       "entityId": "224",
@@ -1942,6 +2215,7 @@
         "fullLength": 610
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Counterintelligence & Security Agency (DCSA)",
       "listedName": "Defense Counterintelligence and Security Agency",
       "entityId": "225",
@@ -1962,6 +2236,7 @@
         "fullLength": 974
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Defense Threat Reduction Agency (DTRA)",
       "listedName": "Defense Threat Reduction Agency",
       "entityId": "226",
@@ -1982,6 +2257,7 @@
         "fullLength": 889
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Missile Defense Agency (MDA)",
       "listedName": "Missile Defense Agency",
       "entityId": "227",
@@ -1996,6 +2272,7 @@
     "exec-dept-defense-agency-nga": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Geospatial-Intelligence Agency (NGA)",
       "listedName": "National Geospatial-Intelligence Agency",
       "entityId": "228",
@@ -2016,6 +2293,7 @@
         "fullLength": 931
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Pentagon Force Protection Agency (PFPA)",
       "listedName": "Pentagon Force Protection Agency",
       "entityId": "230",
@@ -2036,6 +2314,7 @@
         "fullLength": 890
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Intelligence University",
       "listedName": "National Intelligence University",
       "entityId": "233",
@@ -2056,6 +2335,7 @@
         "fullLength": 291
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Defense University",
       "listedName": "National Defense University",
       "entityId": "234",
@@ -2076,6 +2356,7 @@
         "fullLength": 403
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Uniformed Services University of the Health Sciences",
       "listedName": "Uniformed Services University of the Health Sciences",
       "entityId": "235",
@@ -2096,6 +2377,7 @@
         "fullLength": 274
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Education",
       "listedName": "Department of Education",
       "entityId": "115",
@@ -2116,6 +2398,7 @@
         "fullLength": 182
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Energy (DOE)",
       "listedName": "Department of Energy",
       "entityId": "116",
@@ -2136,6 +2419,7 @@
         "fullLength": 182
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Energy Regulatory Commission (FERC)",
       "listedName": "Federal Energy Regulatory Commission",
       "entityId": "207",
@@ -2156,6 +2440,7 @@
         "fullLength": 340
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Health & Human Services (HHS)",
       "listedName": "Department of Health and Human Services",
       "entityId": "117",
@@ -2170,6 +2455,7 @@
     "exec-dept-hhs-administration-for-children-and-families": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Administration for Children and Families",
       "listedName": "Administration for Children and Families",
       "entityId": "310",
@@ -2184,6 +2470,7 @@
     "exec-dept-hhs-administration-for-community-living": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Administration for Community Living",
       "listedName": "Administration for Community Living",
       "entityId": "309",
@@ -2198,6 +2485,7 @@
     "exec-dept-hhs-ahrq": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Agency for Healthcare Research & Quality (AHRQ)",
       "listedName": "Agency for Healthcare Research and Quality",
       "entityId": "311",
@@ -2212,6 +2500,7 @@
     "exec-dept-hhs-agency-toxic-substances-disease-registry": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Agency for Toxic Substances and Disease Registry",
       "listedName": "Agency for Toxic Substances and Disease Registry",
       "entityId": "312",
@@ -2226,6 +2515,7 @@
     "exec-dept-hhs-cdc": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Centers for Disease Control & Prevention (CDC)",
       "listedName": "Centers for Disease Control and Prevention",
       "entityId": "313",
@@ -2240,6 +2530,7 @@
     "exec-dept-hhs-cms": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Centers for Medicare & Medicaid Services (CMS)",
       "listedName": "Centers for Medicare and Medicaid Services",
       "entityId": "314",
@@ -2254,6 +2545,7 @@
     "exec-dept-hhs-fda": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Food & Drug Administration (FDA)",
       "listedName": "Food and Drug Administration",
       "entityId": "315",
@@ -2268,6 +2560,7 @@
     "exec-dept-hhs-hrsa": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Health Resources & Services Administration (HRSA)",
       "listedName": "Health Resources and Services Administration",
       "entityId": "316",
@@ -2288,6 +2581,7 @@
         "fullLength": 163
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Indian Health Service (IHS)",
       "listedName": "Indian Health Service",
       "entityId": "317",
@@ -2308,6 +2602,7 @@
         "fullLength": 222
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Institutes of Health (NIH)",
       "listedName": "National Institutes of Health",
       "entityId": "318",
@@ -2328,6 +2623,7 @@
         "fullLength": 179
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
       "listedName": "Substance Abuse and Mental Health Services Administration",
       "entityId": "320",
@@ -2348,6 +2644,7 @@
         "fullLength": 208
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Homeland Security (DHS)",
       "listedName": "Department of Homeland Security",
       "entityId": "118",
@@ -2368,6 +2665,7 @@
         "fullLength": 178
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Housing & Urban Development (HUD)",
       "listedName": "Department of Housing and Urban Development",
       "entityId": "119",
@@ -2388,6 +2686,7 @@
         "fullLength": 365
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Justice (DOJ)",
       "listedName": "Department of Justice",
       "entityId": "121",
@@ -2408,6 +2707,7 @@
         "fullLength": 309
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
       "listedName": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
       "entityId": "287",
@@ -2422,6 +2722,7 @@
     "exec-dept-doj-bop": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Prisons (BOP)",
       "listedName": "Bureau of Prisons",
       "entityId": "281",
@@ -2442,6 +2743,7 @@
         "fullLength": 406
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Drug Enforcement Administration (DEA)",
       "listedName": "Drug Enforcement Administration",
       "entityId": "284",
@@ -2462,6 +2764,7 @@
         "fullLength": 357
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Bureau of Investigation (FBI)",
       "listedName": "Federal Bureau of Investigation",
       "entityId": "280",
@@ -2476,6 +2779,7 @@
     "exec-dept-doj-international-criminal-police-organization-washington": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "International Criminal Police Organization (INTERPOL)-Washington",
       "listedName": "International Criminal Police Organization (INTERPOL)–Washington",
       "entityId": "283",
@@ -2496,6 +2800,7 @@
         "fullLength": 616
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of Justice Programs",
       "listedName": "Office of Justice Programs",
       "entityId": "285",
@@ -2516,6 +2821,7 @@
         "fullLength": 317
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Marshals Service (USMS)",
       "listedName": "United States Marshals Service",
       "entityId": "282",
@@ -2536,6 +2842,7 @@
         "fullLength": 370
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Executive Office for Immigration Review",
       "listedName": "Executive Office for Immigration Review",
       "entityId": "288",
@@ -2556,6 +2863,7 @@
         "fullLength": 699
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Foreign Claims Settlement Commission of the United States",
       "listedName": "Foreign Claims Settlement Commission of the United States",
       "entityId": "291",
@@ -2576,6 +2884,7 @@
         "fullLength": 646
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of Community Oriented Policing Services",
       "listedName": "Office of Community Oriented Policing Services",
       "entityId": "290",
@@ -2590,6 +2899,7 @@
     "exec-dept-doj-office-violence-against-women": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office on Violence Against Women",
       "listedName": "Office on Violence Against Women",
       "entityId": "334",
@@ -2604,6 +2914,7 @@
     "exec-dept-doj-parole-commission": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "United States Parole Commission",
       "listedName": "United States Parole Commission",
       "entityId": "289",
@@ -2624,6 +2935,7 @@
         "fullLength": 357
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Labor (DOL)",
       "listedName": "Department of Labor",
       "entityId": "323",
@@ -2644,6 +2956,7 @@
         "fullLength": 145
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of International Labor Affairs",
       "listedName": "Bureau of International Labor Affairs",
       "entityId": "324",
@@ -2664,6 +2977,7 @@
         "fullLength": 205
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Labor Statistics (BLS)",
       "listedName": "Bureau of Labor Statistics",
       "entityId": "325",
@@ -2684,6 +2998,7 @@
         "fullLength": 170
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Employee Benefits Security Administration (EBSA)",
       "listedName": "Employee Benefits Security Administration",
       "entityId": "326",
@@ -2704,6 +3019,7 @@
         "fullLength": 194
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Employment & Training Administration (ETA)",
       "listedName": "Employment and Training Administration",
       "entityId": "327",
@@ -2724,6 +3040,7 @@
         "fullLength": 152
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Mine Safety & Health Administration (MSHA)",
       "listedName": "Mine Safety and Health Administration",
       "entityId": "328",
@@ -2744,6 +3061,7 @@
         "fullLength": 152
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Occupational Safety & Health Administration (OSHA)",
       "listedName": "Occupational Safety and Health Administration",
       "entityId": "329",
@@ -2764,6 +3082,7 @@
         "fullLength": 277
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Veterans' Employment and Training Service",
       "listedName": "Veterans' Employment and Training Service",
       "entityId": "330",
@@ -2784,6 +3103,7 @@
         "fullLength": 144
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Wage & Hour Division (WHD)",
       "listedName": "Wage and Hour Division",
       "entityId": "331",
@@ -2804,6 +3124,7 @@
         "fullLength": 236
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Women's Bureau",
       "listedName": "Women's Bureau",
       "entityId": "332",
@@ -2824,6 +3145,7 @@
         "fullLength": 202
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of State",
       "listedName": "Department of State",
       "entityId": "123",
@@ -2844,6 +3166,7 @@
         "fullLength": 238
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Transportation (DOT)",
       "listedName": "Department of Transportation",
       "entityId": "124",
@@ -2864,6 +3187,7 @@
         "fullLength": 148
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Aviation Administration (FAA)",
       "listedName": "Federal Aviation Administration",
       "entityId": "240",
@@ -2884,6 +3208,7 @@
         "fullLength": 282
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Highway Administration (FHWA)",
       "listedName": "Federal Highway Administration",
       "entityId": "241",
@@ -2895,6 +3220,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-241",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-dot-fmcsa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Motor Carrier Safety Administration (FMCSA) was established within the Department of Transportation on January 1, 2000, pursuant to the Motor Carrier Safety Improvement Act of 1999 (113 Stat. 1750).",
+        "truncated": false,
+        "fullLength": 210
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Federal Motor Carrier Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries."
+      },
+      "nodeName": "Federal Motor Carrier Safety Admin (FMCSA)",
+      "listedName": "Federal Motor Carrier Safety Administration",
+      "entityId": "249",
+      "parentListedName": "Department of Transportation",
+      "parentEntityId": "124",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-249",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-dot-fra": {
       "description": {
         "kind": "opening_paragraph",
@@ -2904,6 +3253,7 @@
         "fullLength": 146
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Railroad Administration (FRA)",
       "listedName": "Federal Railroad Administration",
       "entityId": "242",
@@ -2924,6 +3274,7 @@
         "fullLength": 514
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Transit Administration (FTA)",
       "listedName": "Federal Transit Administration",
       "entityId": "244",
@@ -2944,6 +3295,7 @@
         "fullLength": 215
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Great Lakes Saint Lawrence Seaway Development Corporation",
       "listedName": "Great Lakes Saint Lawrence Seaway Development Corporation",
       "entityId": "246",
@@ -2964,6 +3316,7 @@
         "fullLength": 120
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Maritime Administration (MARAD)",
       "listedName": "Maritime Administration",
       "entityId": "245",
@@ -2975,6 +3328,54 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-245",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-dot-nhtsa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Highway Traffic Safety Administration (NHTSA) was established by the Highway Safety Act of 1970 (23 U.S.C. 401 note) to reduce the number of deaths, injuries, and economic losses resulting from motor vehicle crashes on the Nation's highways.",
+        "truncated": false,
+        "fullLength": 254
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "National Highway Traffic Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair. The Manual's entry 243 is headed 'National Highway Traffic Safety Administration' and its opening paragraph prints '(NHTSA)', the acronym the curated name carries."
+      },
+      "nodeName": "National Highway Traffic Safety Admin (NHTSA)",
+      "listedName": "National Highway Traffic Safety Administration",
+      "entityId": "243",
+      "parentListedName": "Department of Transportation",
+      "parentEntityId": "124",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-243",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-dot-phmsa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Pipeline and Hazardous Materials Safety Administration (PHMSA) was established on February 20, 2005. It is responsible for hazardous materials transportation and pipeline safety.",
+        "truncated": false,
+        "fullLength": 182
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Pipeline and Hazardous Materials Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'."
+      },
+      "nodeName": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+      "listedName": "Pipeline and Hazardous Materials Safety Administration",
+      "entityId": "247",
+      "parentListedName": "Department of Transportation",
+      "parentEntityId": "124",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-247",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-va": {
       "description": {
         "kind": "mission_statement",
@@ -2984,6 +3385,7 @@
         "fullLength": 464
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of Veterans Affairs (VA)",
       "listedName": "Department of Veterans Affairs",
       "entityId": "126",
@@ -3004,6 +3406,7 @@
         "fullLength": 170
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of the Interior (DOI)",
       "listedName": "Department of the Interior",
       "entityId": "120",
@@ -3024,6 +3427,7 @@
         "fullLength": 188
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Indian Affairs (BIA)",
       "listedName": "Bureau of Indian Affairs",
       "entityId": "298",
@@ -3044,6 +3448,7 @@
         "fullLength": 155
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Land Management (BLM)",
       "listedName": "Bureau of Land Management",
       "entityId": "301",
@@ -3064,6 +3469,7 @@
         "fullLength": 181
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Ocean Energy Management (BOEM)",
       "listedName": "Bureau of Ocean Energy Management",
       "entityId": "300",
@@ -3084,6 +3490,7 @@
         "fullLength": 186
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Reclamation (BOR)",
       "listedName": "Bureau of Reclamation",
       "entityId": "302",
@@ -3104,6 +3511,7 @@
         "fullLength": 208
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Safety & Environmental Enforcement (BSEE)",
       "listedName": "Bureau of Safety and Environmental Enforcement",
       "entityId": "308",
@@ -3124,6 +3532,7 @@
         "fullLength": 115
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Park Service (NPS)",
       "listedName": "National Park Service",
       "entityId": "295",
@@ -3144,6 +3553,7 @@
         "fullLength": 190
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of Surface Mining Reclamation and Enforcement",
       "listedName": "Office of Surface Mining Reclamation and Enforcement",
       "entityId": "297",
@@ -3158,6 +3568,7 @@
     "exec-dept-doi-fws": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Fish & Wildlife Service (FWS)",
       "listedName": "United States Fish and Wildlife Service",
       "entityId": "294",
@@ -3178,6 +3589,7 @@
         "fullLength": 299
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Geological Survey (USGS)",
       "listedName": "United States Geological Survey",
       "entityId": "296",
@@ -3198,6 +3610,7 @@
         "fullLength": 139
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Department of the Treasury",
       "listedName": "Department of the Treasury",
       "entityId": "125",
@@ -3218,6 +3631,7 @@
         "fullLength": 218
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Alcohol & Tobacco Tax & Trade Bureau (TTB)",
       "listedName": "Alcohol and Tobacco Tax and Trade Bureau",
       "entityId": "251",
@@ -3238,6 +3652,7 @@
         "fullLength": 407
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of Engraving & Printing",
       "listedName": "Bureau of Engraving and Printing",
       "entityId": "253",
@@ -3258,6 +3673,7 @@
         "fullLength": 447
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Bureau of the Fiscal Service",
       "listedName": "Bureau of the Fiscal Service",
       "entityId": "254",
@@ -3278,6 +3694,7 @@
         "fullLength": 1161
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Internal Revenue Service (IRS)",
       "listedName": "Internal Revenue Service",
       "entityId": "255",
@@ -3298,6 +3715,7 @@
         "fullLength": 568
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of the Comptroller of the Currency (OCC)",
       "listedName": "Office of the Comptroller of the Currency",
       "entityId": "252",
@@ -3318,6 +3736,7 @@
         "fullLength": 308
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Mint",
       "listedName": "United States Mint",
       "entityId": "256",
@@ -3338,6 +3757,7 @@
         "fullLength": 195
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Central Intelligence Agency (CIA)",
       "listedName": "Central Intelligence Agency",
       "entityId": "130",
@@ -3358,6 +3778,7 @@
         "fullLength": 344
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Commodity Futures Trading Commission (CFTC)",
       "listedName": "Commodity Futures Trading Commission",
       "entityId": "131",
@@ -3378,6 +3799,7 @@
         "fullLength": 123
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Consumer Product Safety Commission (CPSC)",
       "listedName": "Consumer Product Safety Commission",
       "entityId": "132",
@@ -3389,6 +3811,30 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-132",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-misc-americorps": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement through service and volunteering.",
+        "truncated": false,
+        "fullLength": 154
+      },
+      "source": "us_government_manual",
+      "nameAlias": {
+        "alias": "Corporation for National and Community Service",
+        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps."
+      },
+      "nodeName": "AmeriCorps",
+      "listedName": "Corporation for National and Community Service",
+      "entityId": "133",
+      "parentListedName": null,
+      "parentEntityId": null,
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-133",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-epa": {
       "description": {
         "kind": "mission_statement",
@@ -3398,6 +3844,7 @@
         "fullLength": 89
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Environmental Protection Agency (EPA)",
       "listedName": "Environmental Protection Agency",
       "entityId": "135",
@@ -3418,6 +3865,7 @@
         "fullLength": 195
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Equal Employment Opportunity Commission (EEOC)",
       "listedName": "Equal Employment Opportunity Commission",
       "entityId": "136",
@@ -3438,6 +3886,7 @@
         "fullLength": 100
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Export-Import Bank of the U.S.",
       "listedName": "Export-Import Bank of the United States",
       "entityId": "137",
@@ -3458,6 +3907,7 @@
         "fullLength": 304
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Farm Credit Administration",
       "listedName": "Farm Credit Administration",
       "entityId": "138",
@@ -3478,6 +3928,7 @@
         "fullLength": 376
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Communications Commission (FCC)",
       "listedName": "Federal Communications Commission",
       "entityId": "139",
@@ -3498,6 +3949,7 @@
         "fullLength": 156
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Election Commission (FEC)",
       "listedName": "Federal Election Commission",
       "entityId": "141",
@@ -3518,6 +3970,7 @@
         "fullLength": 231
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Deposit Insurance Corporation (FDIC)",
       "listedName": "Federal Deposit Insurance Corporation",
       "entityId": "140",
@@ -3538,6 +3991,7 @@
         "fullLength": 225
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Housing Finance Agency",
       "listedName": "Federal Housing Finance Agency",
       "entityId": "142",
@@ -3558,6 +4012,7 @@
         "fullLength": 123
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Labor Relations Authority (FLRA)",
       "listedName": "Federal Labor Relations Authority",
       "entityId": "143",
@@ -3578,6 +4033,7 @@
         "fullLength": 296
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Maritime Commission (FMC)",
       "listedName": "Federal Maritime Commission",
       "entityId": "144",
@@ -3598,6 +4054,7 @@
         "fullLength": 103
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Reserve System",
       "listedName": "Federal Reserve System",
       "entityId": "147",
@@ -3618,6 +4075,7 @@
         "fullLength": 145
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Federal Trade Commission (FTC)",
       "listedName": "Federal Trade Commission",
       "entityId": "149",
@@ -3638,6 +4096,7 @@
         "fullLength": 157
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "General Services Administration",
       "listedName": "General Services Administration",
       "entityId": "150",
@@ -3658,6 +4117,7 @@
         "fullLength": 168
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Aeronautics & Space Administration (NASA)",
       "listedName": "National Aeronautics and Space Administration",
       "entityId": "153",
@@ -3678,6 +4138,7 @@
         "fullLength": 133
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Merit Systems Protection Board (MSPB)",
       "listedName": "Merit Systems Protection Board",
       "entityId": "152",
@@ -3698,6 +4159,7 @@
         "fullLength": 261
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Archives & Records Administration (NARA)",
       "listedName": "National Archives and Records Administration",
       "entityId": "154",
@@ -3718,6 +4180,7 @@
         "fullLength": 330
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Capital Planning Commission (NCPC)",
       "listedName": "National Capital Planning Commission",
       "entityId": "155",
@@ -3738,6 +4201,7 @@
         "fullLength": 152
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Credit Union Administration (NCUA)",
       "listedName": "National Credit Union Administration",
       "entityId": "156",
@@ -3758,6 +4222,7 @@
         "fullLength": 143
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Endowment for the Arts (NEA)",
       "listedName": "National Endowment for the Arts",
       "entityId": "208",
@@ -3778,6 +4243,7 @@
         "fullLength": 124
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Endowment for the Humanities (NEH)",
       "listedName": "National Endowment for the Humanities",
       "entityId": "209",
@@ -3798,6 +4264,7 @@
         "fullLength": 162
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Institute of Museum and Library Services",
       "listedName": "Institute of Museum and Library Services",
       "entityId": "210",
@@ -3818,6 +4285,7 @@
         "fullLength": 187
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Labor Relations Board (NLRB — independent)",
       "listedName": "National Labor Relations Board",
       "entityId": "158",
@@ -3838,6 +4306,7 @@
         "fullLength": 111
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Mediation Board (NMB)",
       "listedName": "National Mediation Board",
       "entityId": "159",
@@ -3858,6 +4327,7 @@
         "fullLength": 99
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Science Foundation (NSF)",
       "listedName": "National Science Foundation",
       "entityId": "161",
@@ -3878,6 +4348,7 @@
         "fullLength": 183
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Transportation Safety Board (NTSB)",
       "listedName": "National Transportation Safety Board",
       "entityId": "162",
@@ -3898,6 +4369,7 @@
         "fullLength": 144
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Nuclear Regulatory Commission (NRC)",
       "listedName": "Nuclear Regulatory Commission",
       "entityId": "163",
@@ -3918,6 +4390,7 @@
         "fullLength": 544
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of Personnel Management (OPM)",
       "listedName": "Office of Personnel Management",
       "entityId": "167",
@@ -3938,6 +4411,7 @@
         "fullLength": 222
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Peace Corps",
       "listedName": "Peace Corps",
       "entityId": "170",
@@ -3958,6 +4432,7 @@
         "fullLength": 141
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Pension Benefit Guaranty Corporation (PBGC)",
       "listedName": "Pension Benefit Guaranty Corporation",
       "entityId": "171",
@@ -3978,6 +4453,7 @@
         "fullLength": 99
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Postal Regulatory Commission",
       "listedName": "Postal Regulatory Commission",
       "entityId": "172",
@@ -3998,6 +4474,7 @@
         "fullLength": 172
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Railroad Retirement Board",
       "listedName": "Railroad Retirement Board",
       "entityId": "173",
@@ -4018,6 +4495,7 @@
         "fullLength": 141
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Securities & Exchange Commission (SEC)",
       "listedName": "Securities and Exchange Commission",
       "entityId": "174",
@@ -4038,6 +4516,7 @@
         "fullLength": 175
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Selective Service System",
       "listedName": "Selective Service System",
       "entityId": "175",
@@ -4058,6 +4537,7 @@
         "fullLength": 208
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Small Business Administration (SBA)",
       "listedName": "Small Business Administration",
       "entityId": "176",
@@ -4078,6 +4558,7 @@
         "fullLength": 340
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Social Security Administration (SSA)",
       "listedName": "Social Security Administration",
       "entityId": "177",
@@ -4098,6 +4579,7 @@
         "fullLength": 140
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Tennessee Valley Authority (TVA)",
       "listedName": "Tennessee Valley Authority",
       "entityId": "178",
@@ -4118,6 +4600,7 @@
         "fullLength": 124
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Agency for Global Media",
       "listedName": "United States Agency for Global Media",
       "entityId": "129",
@@ -4138,6 +4621,7 @@
         "fullLength": 171
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Agency for International Development",
       "listedName": "United States Agency for International Development",
       "entityId": "180",
@@ -4158,6 +4642,7 @@
         "fullLength": 203
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Office of Special Counsel (OSC)",
       "listedName": "United States Office of Special Counsel",
       "entityId": "168",
@@ -4178,6 +4663,7 @@
         "fullLength": 271
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "U.S. Postal Service (USPS)",
       "listedName": "United States Postal Service",
       "entityId": "183",
@@ -4198,6 +4684,7 @@
         "fullLength": 122
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Legal Services Corporation",
       "listedName": "Legal Services Corporation",
       "entityId": "185",
@@ -4218,6 +4705,7 @@
         "fullLength": 107
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Smithsonian Institution",
       "listedName": "Smithsonian Institution",
       "entityId": "186",
@@ -4232,6 +4720,7 @@
     "exec-ind-smithsonian-john-f-kennedy-center-performing-arts": {
       "description": null,
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "John F. Kennedy Center for the Performing Arts",
       "listedName": "John F. Kennedy Center for the Performing Arts",
       "entityId": "211",
@@ -4252,6 +4741,7 @@
         "fullLength": 1232
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "National Gallery of Art",
       "listedName": "National Gallery of Art",
       "entityId": "212",
@@ -4272,6 +4762,7 @@
         "fullLength": 556
       },
       "source": "us_government_manual",
+      "nameAlias": null,
       "nodeName": "Woodrow Wilson International Center for Scholars",
       "listedName": "Woodrow Wilson International Center for Scholars",
       "entityId": "213",
@@ -4283,5 +4774,47 @@
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-213",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     }
+  },
+  "offices": {
+    "exec-president": {
+      "source": "us_government_manual",
+      "nodeName": "The President of the United States",
+      "listedName": "The President",
+      "matchedName": "THE PRESIDENT OF THE UNITED STATES",
+      "entityId": "96",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-096",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-096",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-vp": {
+      "source": "us_government_manual",
+      "nodeName": "The Vice President of the United States",
+      "listedName": "The Vice President",
+      "matchedName": "The Vice President",
+      "entityId": "97",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-097",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
+      "nameAlias": {
+        "alias": "The Vice President",
+        "basis": "The United States Government Manual carries a top-level entry (entity 97, granule GOVMAN-2025-12-31-097) headed 'The Vice President', whose leadership table prints the office as 'THE VICE PRESIDENT' and whose opening paragraph reads 'The U.S. Constitution stipulates that while occupying his (or her) office for a term of 4 years, the President will serve the duration of that term together with the Vice President (ART. II, Sec. 1).' The entry is the office; the graph writes the office's full constitutional style."
+      }
+    }
+  },
+  "officesReport": {
+    "top_level_entries_considered": 105,
+    "refused_entry_is_an_agency": 67,
+    "refused_name_reaches_no_post": 35,
+    "refused_name_reaches_several_posts": 0,
+    "refused_post_reached_by_several_entries": 0,
+    "refused_post_sits_under_a_manual_agency": 0,
+    "refused_no_access_id": 0,
+    "refused_caps_row_is_not_the_entrys_own_name": 32,
+    "offices_listed": 2,
+    "offices_matched_by_alias": 1
   }
 }

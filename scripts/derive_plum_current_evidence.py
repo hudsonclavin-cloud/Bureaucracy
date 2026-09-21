@@ -41,6 +41,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from data_pipeline.exporter.build_graph import index_tree, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification import financial_evidence as fe  # noqa: E402
+from data_pipeline.verification.aliases import load_alias_table  # noqa: E402
 from data_pipeline.verification.plum_current import (  # noqa: E402
     DEFAULT_EVIDENCE_PATH,
     DEFAULT_EXPORT_CSV,
@@ -74,7 +75,10 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     root = load_base_graph(args.base_graph)
     node_map, parent_map = index_tree(root)
-    records, report = match_positions(export, node_map, parent_map, root_id=str(root.get("id") or ""))
+    # The reviewed alternative names the export may file an agency under.
+    alias_table = load_alias_table(node_map=node_map, parent_map=parent_map)
+    records, report = match_positions(export, node_map, parent_map, root_id=str(root.get("id") or ""),
+                                      alias_table=alias_table)
 
     pay_records, pay_report = build_pay_records(records)
     validated: dict[str, dict] = {}
@@ -108,7 +112,8 @@ def main(argv: list[str] | None = None) -> int:
           f"({report['folded_duplicates']} folds)  agencies {report['agencies']}  organisations {report['organizations']}  titles {report['titles']}")
     print(f"pay plans: {report['pay_plans']}")
     print(f"agencies matched {report['agencies_matched']} (of which {report['agencies_matched_by_scoped_prefix']} by the export's own "
-          f"'<parent> - <unit>' form)  unmatched {len(report['agencies_unmatched'])}  ambiguous {len(report['agencies_ambiguous'])}")
+          f"'<parent> - <unit>' form, {report['agencies_matched_by_alias']} through the reviewed alias table)  "
+          f"unmatched {len(report['agencies_unmatched'])}  ambiguous {len(report['agencies_ambiguous'])}")
     print("  unmatched agencies by live rows:")
     for item in report["unmatched_agencies_top"][:25]:
         print(f"    {item['rows']:5d}  {item['agency']}")
@@ -122,7 +127,7 @@ def main(argv: list[str] | None = None) -> int:
         print("  ambiguous organisation:", item)
     print(f"positions in graph {report['positions_in_graph']}  under a matched agency node {report['positions_under_matched_agency_node']}  "
           f"under a matched organisation {report['positions_under_matched_organization']}  matched {report['positions_matched']}  "
-          f"with a rate printed {report['positions_with_a_rate']}  placements {placements}  "
+          f"with a rate printed {report['positions_with_a_rate']}  under an aliased agency {report['positions_under_an_aliased_agency']}  placements {placements}  "
           f"unmatched {report['positions_unmatched']}  shared title {len(report['positions_shared_title'])}  "
           f"alternatives ambiguous {len(report['positions_ambiguous_alternatives'])}  export title ambiguous {len(report['positions_title_ambiguous_in_export'])}")
     print(f"  matched by pay plan: {report['positions_by_pay_plan']}")

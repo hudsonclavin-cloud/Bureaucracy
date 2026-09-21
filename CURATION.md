@@ -1999,3 +1999,185 @@ that names the seat is `docs.house.gov`'s listing for the committee, which is
 neither the unit's own page nor its parent's in the sense `filing_id_for_role`
 draws; nominating it is phase 1b's, and the `official_list` role is the one
 that describes it.
+
+## 17. Alternative names a node answers to (2026-09-21)
+
+A node keeps the name the graph displays. `data/curation/node_aliases.json`
+records, per node, the OTHER names an official document may print for the same
+unit, and the verification process accepts them. It is the fourth table of this
+shape, after `unit_renames.json`, `TREASURY_ROW_ALIASES` and
+`USASPENDING_NAME_ALIASES`: a reviewed identification, with the basis written
+beside it, re-adjudicated against the curated file on every run rather than
+trusted.
+
+It exists because §13.1 recorded the problem and then correctly declined the
+only tool available at the time. The Manual prints "Federal Motor Carrier
+Safety Administration" where this graph writes "Admin"; §13.1 refused to
+*rename* those four nodes, because "the reason to rename must be the agency's
+own wording and the payoff must be real". Both halves of that still hold. An
+alias is the other move: the displayed name does not change, and the matcher
+does not loosen — a name is either in the table or it is not.
+
+### 17.1 What a row must clear, and what it may never touch
+
+Per row: the node id, the node's **current** name, the alternative, and a
+`basis`. A row is refused — offline, on every run, with the reason printed —
+when the node is not there, when it no longer carries the stated name, when
+there is no basis, when the alternative reduces to the node's own key (a
+no-op), when it is **one token** or on `GENERIC_NAMES`, and when it collides
+with a **sibling's** name or a sibling's accepted alias. The collision rule is
+sibling-scoped for exactly the reason §9 gives.
+
+**An alias is consulted by name and existence evidence only.** The page-label
+test in `evidence.py`, the Government Manual's entry join, the chambers'
+committee lists, and the current PLUM export's agency scoping. It is never
+consulted by a join that lands a number — not `headcounts.py`, not the Treasury
+row matching, not `usaspending.py`, `net_cost.py` or `omb_budget.py`. Those
+already have their own tables where a figure is at stake, and CLAUDE.md records
+why one table for both kinds of claim would be dangerous: FedScope's
+"DEPARTMENT OF THE ARMY" is a civilian department and this graph's "U.S. Army"
+the uniformed service. The separation is **structural** — those modules do not
+import the alias module, and `tests/test_node_aliases.py::IsolationTests`
+asserts the whole repository's import list against a whitelist and that none of
+the money matchers even has a parameter one could be handed to.
+
+**A confirmation reached this way is the weaker claim and reads as one.** The
+record carries `matchRule: matched_on_a_recorded_alternative_name` with the
+alternative and its basis; the node publishes `verificationAliasMatch`; and
+`cap_alias_only_confirmations` holds a node whose every official source came
+through the table at `partial`, never `verified`. That is the same deliberate
+downgrade `usaspending.py` makes for an aliased key. The panel (and the atlas
+view) prints both names and the basis in words, and says when the cap applied.
+A **node-scoped** alias never publishes a placement, in either the page route
+or the Manual's organisation route.
+
+### 17.2 The eight rows, and what each unlocked
+
+| Node | The graph's name | The alternative | Basis |
+|---|---|---|---|
+| `exec-ind-misc-americorps` | AmeriCorps | Corporation for National and Community Service | §2 records the statutory name; the Manual's entry 133 is printed under it; OPM's current PLUM export files 31 live rows under it |
+| `exec-vp` | The Vice President of the United States | The Vice President | The Manual's top-level entry 97, headed exactly so |
+| `jud-support-aousc` | Administrative Office of U.S. Courts (AOUSC) | Administrative Office of the United States Courts | The same words; the graph writes "U.S." and drops "the" |
+| `exec-dept-doc-noaa` | NOAA — National Oceanic & Atmospheric Administration | National Oceanic and Atmospheric Administration | The graph's own `<ACRONYM> — <name>` typography; the Manual's entry 264 prints "(NOAA)" |
+| `exec-dept-dot-fmcsa` | Federal Motor Carrier Safety Admin (FMCSA) | Federal Motor Carrier Safety Administration | §13.1; the Manual's entry 249 prints "(FMCSA)" |
+| `exec-dept-dot-nhtsa` | National Highway Traffic Safety Admin (NHTSA) | National Highway Traffic Safety Administration | §13.1; entry 243 prints "(NHTSA)" |
+| `exec-dept-dot-phmsa` | Pipeline & Hazardous Materials Safety Admin (PHMSA) | Pipeline and Hazardous Materials Safety Administration | §13.1; entry 247 prints "(PHMSA)" |
+| `exec-dept-defense-agency-darpa` | DARPA | Defense Advanced Research Projects Agency | The acronym, letter for letter; §13.3 records the same adjudication |
+
+Measured on the two derivations and the rebuilt graph, before → after:
+
+- Manual entries matched to an organisation **163 → 170**; posts listed from
+  the leadership tables **85 → 89**; official descriptions **142 → 149**;
+  Manual-as-method **23 → 28**.
+- Current PLUM export: agencies matched **78 → 79**, positions listed
+  **170 → 173**, rates **100 → 101**.
+- Published graph: nodes with an official source **931 → 942**; `verified`
+  **484 → 485**; `partial` **401 → 415**; **16 nodes** change verification
+  status and **no cost figure moves at all**. **15 nodes** carry a
+  `verificationAliasMatch` and **14** of them rest on nothing else and are
+  held at `partial` by the cap. The one that is not is DARPA, which already
+  had `darpa.mil`.
+
+**The cap turns on `official_site`, not on "a `.gov` URL", and the first
+version had it wrong.** NOAA, FMCSA and NHTSA each carried exactly one source
+before this work — the FiscalData URL their measured Treasury line put there —
+which `classify_source_url` files as `government_dataset` and which earns no
+`official_site` bonus, so each sat at confidence 0.4. One aliased Manual entry
+took all three to **0.8 and `verified`** in the first build, because the
+broader test read the dataset URL as other evidence and lifted the cap. The
+gate caught it, the rule is now `official_site` exactly on both sides, and the
+gate mirrors the three-line classification stdlib-only with a test pinning the
+two equal. A second defect surfaced in the same build: the cap was applied
+beside the other evidence passes, and both `verify_node_sources` and
+`annotate_proof_tree` run after them and recompute the status from the URL
+count, silently undoing it. It now runs after the tree is final, beside
+`withdraw_pay_from_multi_post_nodes`.
+
+`output/` is not rebuilt by this change — the integrator does that — so the
+classes in `tests/test_node_aliases.py` that measure the PUBLISHED graph skip
+with "output/graph.json predates the alias table; regenerate it" until it is.
+They were run green against a locally regenerated graph, and the release gate
+passed clean on it.
+
+**AmeriCorps is the row that gained least where it was expected to gain most,
+and the reason is worth recording.** The export's 31 live CNCS rows all sit
+under sub-organisations (`… / OFFICE OF AMERICORPS VISTA`, `… / OFFICE OF THE
+CHIEF EXECUTIVE OFFICER`) that this graph has no nodes for, so matching the
+agency reached no position. What the row did buy is the Manual's entry for the
+unit itself, its official description, and two of its posts. The remaining 31
+rows need *nodes*, not an alias — the distinction §13.3 already draws.
+
+The three positions the table unlocked in the export are FMCSA's and PHMSA's
+Administrators and PHMSA's Deputy Administrator, and they are reached through
+the ORGANISATION half of the export's filing rather than the agency half, so
+each carries `scope: "organisation"` and the panel says the agency, not the
+post, was named differently.
+
+### 17.3 The President and the Vice President
+
+`govman.match_organisations` skips every post, and the post route requires the
+post to be a direct child of a matched organisation, so neither office could
+ever be reached however its name was spelled. The Manual carries a top-level
+entry for each — entity 96 "The President" and entity 97 "The Vice President" —
+and those entries are not agencies: the entry IS the office.
+
+`govman.build_office_records` is that third route, published as
+`verificationMethod: listed_as_its_own_entry_in_us_government_manual` in its
+own field `govmanOfficeEntry`, and **never as a placement**. Four guards keep
+it from reaching an ordinary agency entry, each checked on the run: the entry
+has no parent entry; it names no organisation in this graph (an agency entry
+does, and the organisation route owns it); it reaches exactly one post and that
+post answers to exactly one such entry; and the post's own parent is not an
+organisation the Manual has an entry for.
+
+A fifth guard was added because the first version failed without it, on the
+real data: the entry's ALL-CAPS principal row may be used as a name only when
+it is the entry's own heading, or that heading plus the five words "of the
+United States". Without it, the Manual's entry for the **United States
+International Trade Commission** — an agency this graph has no node for —
+printed `CHIEF ADMINISTRATIVE LAW JUDGE`, which reached the Social Security
+Administration's Chief Administrative Law Judge: an agency entry naming one of
+its officers, published as though the Manual carried an entry for that officer.
+With the rule, 32 caps rows are refused and exactly two offices are listed.
+
+**The President has no alias row, and that is the rule working rather than a
+gap.** The Manual's heading is "The President", which reduces to the single
+token `president` under `canonical_name_key`, and the alias is consulted by the
+page-label test — "President" is a label on thousands of `.gov` pages. The
+one-token floor refuses it. No alias is needed: the same entry's leadership
+table prints the office as `THE PRESIDENT OF THE UNITED STATES`, which is
+exactly this node's name, and the route reaches it by plain equality. The Vice
+President's caps row reads only `THE VICE PRESIDENT`, so that one does need the
+row — and "The Vice President" is two tokens and clears the floor.
+
+Both publish `partial`: one official URL is 0.4 + 0.3 in `verify_node_sources`,
+and nothing here changes that arithmetic.
+
+### 17.4 Four cases considered and declined
+
+- **`U.S. Army` / `U.S. Navy` / `U.S. Air Force` → `Department of the …`.**
+  Refused outright and recorded in the table's own comment block. CLAUDE.md
+  records twice — for FedScope's employment table and for the Manual's
+  entries — that the civilian department and the uniformed service are
+  different units with different populations, and §13.2 records the same split.
+  That is a semantic claim, not a spelling. The owner is deciding it
+  separately, and a test asserts no row here names any of the three.
+- **`Bureau of Consumer Financial Protection` → `Consumer Financial Protection
+  Bureau`.** The Manual's entry 321 is headed with the second and says the
+  agency was "established by title X of the Dodd-Frank Wall Street Reform and
+  Consumer Protection Act of 2012 (12 U.S.C. 5491)". The two are almost
+  certainly one agency under its statutory name and its branding — but
+  establishing that needs 12 U.S.C. 5491 itself, which this repository has not
+  read. A word-order difference is not a spelling. Declined rather than
+  guessed; a committed section of the Code would settle it.
+- **`National Security Agency (NSA)` → `National Security Agency / Central
+  Security Service`.** The Manual's entry 229 is a joint designation and its
+  own opening paragraph says so: "The National Security Agency (NSA) was
+  established in 1952 and the Central Security Service (CSS) was established in
+  1972." Recording it would have this node answer to a label covering a body
+  the graph does not carry — the shape `usaspending.BROADER_API_ENTITY`
+  refuses.
+- **A wholesale fold of `Admin` → `Administration`.** Not attempted. That is a
+  matcher change rather than a table, and it is the looseness that once let
+  "Office of Science" match "Office of Science and Technology Policy". Four
+  rows, each argued, cost nothing and can be read.

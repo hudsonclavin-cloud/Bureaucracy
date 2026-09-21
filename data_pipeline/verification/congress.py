@@ -210,6 +210,37 @@ def _is_type(node: dict[str, Any], type_name: str) -> bool:
     return str(node.get("type") or "").casefold() == type_name
 
 
+def _index_with_aliases(
+    nodes: dict[str, dict[str, Any]],
+    key_of,
+    alias_table: Any | None,
+) -> dict[str, list[str]]:
+    """Name index for one set of committee nodes, with the reviewed
+    alternative names filed beside the curated ones.
+
+    The node's own key is indexed first and an alias is added only under a
+    key no curated name already claims, so a plain match can never be
+    displaced by one; a key two nodes reach is left for the caller's
+    `len(candidates) != 1` rule to refuse, exactly as a duplicate curated
+    name is. The table ships with no committee row, so on the current data
+    this changes nothing -- it is the hook, tested in both directions.
+    """
+    index: dict[str, list[str]] = {}
+    for node_id, node in nodes.items():
+        index.setdefault(key_of(node.get("name")), []).append(node_id)
+    if alias_table is None:
+        return index
+    extra: dict[str, list[str]] = {}
+    for node_id, node in nodes.items():
+        for row in alias_table.for_node(node_id):
+            key = key_of(row.alias)
+            if key and key not in index:
+                extra.setdefault(key, []).append(node_id)
+    for key, ids in extra.items():
+        index.setdefault(key, []).extend(ids)
+    return index
+
+
 def match_committee_list(
     committees: list[dict[str, Any]],
     node_map: dict[str, dict[str, Any]],
@@ -218,6 +249,7 @@ def match_committee_list(
     source: str,
     id_prefix: str,
     list_label: str,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     """One chamber's complete list against the graph's committees under one
     id prefix. Listed → a record naming the list's spelling; a subcommittee
@@ -225,9 +257,7 @@ def match_committee_list(
     list's own structure; a curated name the list does not carry → a checked
     negative with the list's names beside it. Never a nearest-name guess."""
     graph_committees = {i: n for i, n in node_map.items() if i.startswith(id_prefix) and _is_type(n, "committee")}
-    by_key: dict[str, list[str]] = {}
-    for node_id, node in graph_committees.items():
-        by_key.setdefault(committee_key(node.get("name")), []).append(node_id)
+    by_key = _index_with_aliases(graph_committees, committee_key, alias_table)
     report: dict[str, Any] = {
         "source": source, "committees_in_list": len(committees), "committees_matched": 0,
         "committees_not_in_graph": [], "graph_committees_not_in_list": [], "ambiguous": [],
@@ -258,9 +288,7 @@ def match_committee_list(
             i: n for i, n in node_map.items()
             if parent_map.get(i) == node_id and _is_type(n, "subcommittee")
         }
-        sub_by_key: dict[str, list[str]] = {}
-        for sid, snode in graph_subs.items():
-            sub_by_key.setdefault(subcommittee_key(snode.get("name")), []).append(sid)
+        sub_by_key = _index_with_aliases(graph_subs, subcommittee_key, alias_table)
         listed_keys = {subcommittee_key(s["name"]): s for s in committee["subcommittees"]}
         for skey, sub in listed_keys.items():
             found = sub_by_key.get(skey, [])
@@ -304,13 +332,17 @@ def match_senate(
     committees: list[dict[str, Any]],
     node_map: dict[str, dict[str, Any]],
     parent_map: dict[str, str | None],
+    *,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
-    return match_committee_list(committees, node_map, parent_map, source=SENATE_SOURCE, id_prefix=SENATE_ID_PREFIX, list_label=SENATE_LIST_LABEL)
+    return match_committee_list(committees, node_map, parent_map, source=SENATE_SOURCE, id_prefix=SENATE_ID_PREFIX, list_label=SENATE_LIST_LABEL, alias_table=alias_table)
 
 
 def match_house(
     committees: list[dict[str, Any]],
     node_map: dict[str, dict[str, Any]],
     parent_map: dict[str, str | None],
+    *,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
-    return match_committee_list(committees, node_map, parent_map, source=HOUSE_SOURCE, id_prefix=HOUSE_ID_PREFIX, list_label=HOUSE_LIST_LABEL)
+    return match_committee_list(committees, node_map, parent_map, source=HOUSE_SOURCE, id_prefix=HOUSE_ID_PREFIX, list_label=HOUSE_LIST_LABEL, alias_table=alias_table)

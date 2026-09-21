@@ -38,6 +38,7 @@ python scripts/probe_post_titles.py --dry-run    # which post titles an org's ow
 python scripts/rename_templated_post_titles.py --dry-run  # templated cabinet titles -> the title an official document gives them
 python scripts/probe_candidate_pages.py --uncovered        # organisations with no candidate page; read-only, no fetch
 python scripts/rename_units_to_official_wording.py --dry-run  # organisations -> the wording their own page carries; drives CURATION.md §9
+python -c "import sys;sys.path.insert(0,'.');from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH,load_base_graph;from data_pipeline.verification.aliases import load_alias_table;t=load_alias_table(load_base_graph(DEFAULT_BASE_GRAPH));print(len(t),t.refusals)"  # adjudicate data/curation/node_aliases.json; CURATION.md §17
 python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, licensed by the statement or a page; CURATION.md §1
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
@@ -1274,6 +1275,138 @@ The third group was admitted the same day (see the caps-row paragraph
 above): the equality join, not a plural test, is what keeps "DEPUTY
 ADMINISTRATORS" from reaching anything. The first two stay refused, recorded
 as a measurement.
+
+**Alternative names a node answers to (since 2026-09-21).** A node keeps the
+name the graph displays and carries a reviewed list of other names the
+verification process will also accept. `data/curation/node_aliases.json` is
+that table and `data_pipeline/verification/aliases.py` its only reader: per
+row, the node id, the node's **current** name, the alternative and a `basis`
+saying on what authority the two denote one unit. It is the fourth table of
+this shape after `unit_renames.json`, `TREASURY_ROW_ALIASES` and
+`USASPENDING_NAME_ALIASES`, and like those it is re-adjudicated against the
+curated file on every run rather than trusted: a row is refused when the node
+is gone, when it no longer carries the stated name, when there is no basis,
+when the alternative is a no-op under `canonical_name_key`, when it is one
+token or on `GENERIC_NAMES`, or when it collides with a **sibling's** name or
+a sibling's accepted alias — the sibling-scoped rule
+`rename_units_to_official_wording.py` already uses, for the reason recorded
+there.
+
+It exists because `CURATION.md` §13.1 recorded the problem and correctly
+declined the only tool then available. The Manual prints "Federal Motor
+Carrier Safety Administration" where this graph writes "Admin"; §13.1 refused
+to *rename* those nodes, because the reason to rename must be the agency's own
+wording and the payoff must be real. An alias is the other move: the displayed
+name does not change and the matcher does not loosen — a name is either in the
+table or it is not.
+
+**It is consulted by name and existence evidence only, and that is
+structural.** The page-label test in `evidence.py`, the Government Manual's
+entry join, the chambers' committee lists and the current PLUM export's agency
+scoping take an alias table explicitly. No join that lands a NUMBER may see
+one: not `headcounts.py`, not the Treasury row matching, not `usaspending.py`,
+`net_cost.py` or `omb_budget.py`. Each of those has its own reviewed table
+where a figure is at stake, and this file records why one table for both kinds
+of claim would be dangerous — FedScope's "DEPARTMENT OF THE ARMY" is a
+civilian department and this graph's "U.S. Army" the uniformed service, so a
+name written down for a badge would start dividing money. The rule is not
+discipline: those modules do not import the alias module, and
+`tests/test_node_aliases.py::IsolationTests` asserts the whole repository's
+import list against a whitelist and that no money matcher even has a parameter
+one could be handed to.
+
+**A confirmation reached this way is weaker and says so.** The record carries
+`matchRule: matched_on_a_recorded_alternative_name` with the alternative and
+its basis; the node publishes `verificationAliasMatch` {alias, basis,
+matchedText, scope, urls, matches}; and `cap_alias_only_confirmations` — run
+after the last evidence pass, because every `apply_*` ends in
+`verify_node_sources` and would undo it — holds a node whose every official
+source came through the table at `partial`, never `verified`. That is the same
+deliberate downgrade `usaspending.py` makes for an aliased key: `verified` is
+what two documents naming the unit outright earn. The panel and the atlas view
+print both names and the basis in words and say when the cap applied. A
+**node-scoped** alias never publishes a placement — the claim would be "the
+parent's own page lists it by name", and a page printing a name the graph does
+not use is a weaker thing with no honest wording; an **organisation-scoped**
+one (the post's own title matched, its agency needed the table) leaves the
+source's own filing standing and says whose name was different. Both fields
+are in `EVIDENCE_OWNED_FIELDS` and `MINIMAL_GRAPH_FIELDS`, so a deleted row is
+a real withdrawal.
+
+**Eight rows, and what they bought, measured rather than asserted.**
+AmeriCorps → Corporation for National and Community Service; the Vice
+President → The Vice President; AOUSC, NOAA, FMCSA, NHTSA, PHMSA and DARPA →
+the Manual's own spelling of each. Manual entries matched to an organisation
+**163 → 170**, posts listed from the leadership tables **85 → 89**, official
+descriptions **142 → 149**; the current PLUM export's agencies **78 → 79**,
+positions **170 → 173**, rates **100 → 101**; on the rebuilt graph, nodes with
+an official source **931 → 942**, `verified` **484 → 485**, `partial`
+**401 → 415**, **16** nodes changing verification status and **no cost figure
+moving at all**, with **15** nodes carrying an alias match and **14** held at
+`partial` by the cap (the exception is DARPA, which already had `darpa.mil`).
+The cap turns on `official_site` and not on "a `.gov` URL", because the first
+version used the broader test and let one aliased Manual entry carry NOAA,
+FMCSA and NHTSA from 0.4 to 0.8 — their only other source being the FiscalData
+URL a measured Treasury line puts on every measured node, which
+`classify_source_url` files as `government_dataset` and which earns no
+`official_site` bonus. The gate caught that, and a second defect in the same
+build: the cap sat beside the other evidence passes, and both
+`verify_node_sources` and `annotate_proof_tree` run after them and recompute
+the status from the URL count. It runs after the tree is final now.
+AmeriCorps gained least where most was expected: the
+export's 31 live CNCS rows all sit under sub-organisations this graph has no
+nodes for, so matching the agency reached no position — those rows need
+*nodes*, not an alias.
+
+**The President and the Vice President, and the narrow route that reaches
+them.** `govman.match_organisations` skips every post and the post route needs
+the post's own parent to have an entry, so neither office was reachable however
+its name was spelled. The Manual carries a top-level entry for each — the entry
+IS the office — and `build_office_records` publishes that as
+`verificationMethod: listed_as_its_own_entry_in_us_government_manual` in its
+own field `govmanOfficeEntry`, **never as a placement**. Four guards keep it
+off an ordinary agency entry: the entry has no parent entry, it names no
+organisation in this graph, it reaches exactly one post and that post answers
+to exactly one such entry, and the post's parent is not an organisation the
+Manual has an entry for. A fifth was added because the first version failed
+without it on the real data — the entry's ALL-CAPS principal row counts only
+when it is the entry's own heading, or that heading plus "of the United
+States". Without it the Manual's entry for the United States International
+Trade Commission printed `CHIEF ADMINISTRATIVE LAW JUDGE` and reached the
+Social Security Administration's Chief Administrative Law Judge: an agency
+entry naming one of its officers, published as an entry for that officer. With
+it, 32 caps rows are refused and exactly two offices are listed.
+
+**The President has no alias row, and the refusal is the rule working.** The
+Manual's heading is "The President", which reduces to the single token
+`president` — a label on thousands of `.gov` pages, and the alias IS consulted
+by the page test — so the one-token floor refuses it. None is needed: the same
+entry prints the office as `THE PRESIDENT OF THE UNITED STATES`, exactly this
+node's name, and the route reaches it by plain equality. The Vice President's
+caps row reads only `THE VICE PRESIDENT`, so that one needs the row, and two
+tokens clear the floor. Both publish `partial`.
+
+**Declined, and recorded in `CURATION.md` §17.4.** `U.S. Army` / `Navy` /
+`Air Force` → `Department of the …` is refused outright and named in the
+table's own comment: this file records twice that the civilian department and
+the uniformed service are different units with different populations, so it is
+a semantic claim the owner is deciding separately, and a test asserts no row
+names any of the three. `Bureau of Consumer Financial Protection` →
+`Consumer Financial Protection Bureau` is a word-order difference whose basis
+would need 12 U.S.C. 5491, which this repository has not read. `National
+Security Agency (NSA)` → the Manual's joint `National Security Agency /
+Central Security Service` names a second body the graph has no node for — the
+shape `usaspending.BROADER_API_ENTITY` refuses.
+
+The gate mirrors the table **by node id** with the name each row was written
+against (`NODE_ALIASES`, pinned equal to the committed JSON by a test) and
+refuses: an alias match whose node — or whose owning ancestor — no longer
+carries the recorded name, a quoted alternative the table does not carry for
+that node, a `verified` badge on alias evidence alone, a match with no basis,
+a URL the block's own matches do not name, an organisation-scoped row filed as
+the node's own name, and `matched_on_a_recorded_alternative_name` or
+`verificationAliasMatch` anywhere inside a money or headcount block.
+`tests/test_node_aliases.py` corrupts each in turn.
 
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from

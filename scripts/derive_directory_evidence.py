@@ -25,6 +25,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from data_pipeline.exporter.build_graph import index_tree, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.verification.aliases import load_alias_table  # noqa: E402
 from data_pipeline.verification.congress import load_house_committees, load_senate_committees, match_house, match_senate  # noqa: E402
 from data_pipeline.verification.directories import (  # noqa: E402
     DEFAULT_DIRECTORY_EVIDENCE_PATH,
@@ -67,7 +68,9 @@ def main(argv: list[str] | None = None) -> int:
         print("  disagrees:", item)
     print("  unmatched sample:", report["unmatched_entries"][:40])
     senate = load_senate_committees(args.senate_dir) if args.senate_dir.exists() else []
-    senate_records, senate_report = match_senate(senate, node_map, parent_map)
+    # The reviewed alternative names, adjudicated against this tree.
+    alias_table = load_alias_table(node_map=node_map, parent_map=parent_map)
+    senate_records, senate_report = match_senate(senate, node_map, parent_map, alias_table=alias_table)
     print(f"senate list: {senate_report['committees_in_list']} committees; matched {senate_report['committees_matched']}; "
           f"subcommittees matched {senate_report['subcommittees_matched']}; curated names not in the list {len(senate_report['subcommittees_not_in_list'])}; "
           f"list names not in the graph {len(senate_report['subcommittees_not_in_graph'])}; committees not in graph {len(senate_report['committees_not_in_graph'])}")
@@ -81,7 +84,7 @@ def main(argv: list[str] | None = None) -> int:
     assert not overlap, f"a node in two directories: {sorted(overlap)[:5]}"
     records = {**records, **senate_records}
     house = load_house_committees(args.house_xlsx)
-    house_records, house_report = match_house(house, node_map, parent_map)
+    house_records, house_report = match_house(house, node_map, parent_map, alias_table=alias_table)
     print(f"house clerk list: {house_report['committees_in_list']} committees; matched {house_report['committees_matched']}; "
           f"subcommittees matched {house_report['subcommittees_matched']}; curated names not in the list {len(house_report['subcommittees_not_in_list'])}; "
           f"list names not in the graph {len(house_report['subcommittees_not_in_graph'])}; committees not in graph {len(house_report['committees_not_in_graph'])}")

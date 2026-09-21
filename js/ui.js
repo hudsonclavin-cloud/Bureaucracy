@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921c";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921c";
+import { createGovernmentGraph } from "./graph.js?v=20260921d";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921d";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1638,6 +1638,12 @@ function renderVerificationPanel(data, isRoot = false) {
       // older than the edition.
       listed_in_its_organisations_us_government_manual_entry:
         "The United States Government Manual lists it in its organisation's entry",
+      // The Manual's TOP-LEVEL entry for the office itself, rather than an
+      // agency's entry listing one of its officers. Two nodes carry it: the
+      // President and the Vice President, neither of which any other route
+      // in this project can reach.
+      listed_as_its_own_entry_in_us_government_manual:
+        "The United States Government Manual carries an entry for the office itself",
     };
     const SOURCE_TEXT = {
       federal_register_agency_directory: "the Federal Register's agency directory",
@@ -1729,9 +1735,44 @@ function renderVerificationPanel(data, isRoot = false) {
         ? `${asName}${filed}${edition}`
         : ` · the United States Government Manual also carries an entry for it${asName}${filed}${edition}`;
     }
+    // The Manual's top-level entry FOR an office. A different claim again:
+    // not an agency's entry listing an officer, but an entry whose subject
+    // IS the office. No placement is ever claimed from it — one entry was
+    // read and it yields one observation.
+    const govmanOffice = data.govmanOfficeEntry;
+    if (govmanOffice && typeof govmanOffice === "object") {
+      const alreadyOffice = String(data.verificationMethod || "") === "listed_as_its_own_entry_in_us_government_manual";
+      const heading = govmanOffice.listedName ? ` headed "${govmanOffice.listedName}"` : "";
+      const printedAs =
+        govmanOffice.matchedName && govmanOffice.matchedName !== govmanOffice.listedName
+          ? `, which prints the office as "${govmanOffice.matchedName}"`
+          : "";
+      const officeEdition = govmanOffice.edition ? ` (${govmanOffice.edition} edition)` : "";
+      checkLine += alreadyOffice
+        ? `${heading}${printedAs}${officeEdition}`
+        : ` · the United States Government Manual also carries a top-level entry for the office${heading}${printedAs}${officeEdition}`;
+    }
     // Both facts, where both are true: a directory lists it, and its own
     // page was read and did not name it. Withdrawing the badge is right —
     // the node has a source — but the read still happened.
+    // The whole point of the alternative-names table, said in words: the page
+    // or the entry did NOT print the name above. Both names are quoted — the
+    // graph's and the source's — with the basis the reviewed table states for
+    // taking them to be one unit, and the sentence says plainly when a claim
+    // resting only on this is held at "partial". An organisation-scoped match
+    // says whose name it was, because the post's own title matched outright
+    // and only its agency needed the table.
+    const aliasMatch = data.verificationAliasMatch;
+    if (aliasMatch && typeof aliasMatch === "object" && aliasMatch.alias) {
+      checkLine +=
+        aliasMatch.scope === "organisation"
+          ? ` · the source files it under its organisation by a different recorded name, "${aliasMatch.alias}", which is not what this graph calls that unit`
+          : ` · the source names it "${aliasMatch.alias}", not "${data.name || ""}", and that alternative is a reviewed entry in this project's own table`;
+      if (aliasMatch.basis) checkLine += ` — the reviewed basis for treating the two as one unit: ${aliasMatch.basis}`;
+      if (aliasMatch.gradedAtMost === "partial") {
+        checkLine += " · nothing else names this unit, so the check is graded no higher than partial";
+      }
+    }
     const readNotNamed = data.pageReadNotNamed;
     if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {
       const on = readNotNamed.checkedAt

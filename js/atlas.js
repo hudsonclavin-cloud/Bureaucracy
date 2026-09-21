@@ -123,6 +123,9 @@ const METHOD_TEXT = {
   // map; the claim is the same, and it is the previous administration's
   // archive, which says nothing about who holds the post now.
   listed_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, lists a post of this title under its organisation",
+  // A top-level Manual entry whose subject IS the office, rather than an
+  // agency's entry listing one of its officers.
+  listed_as_its_own_entry_in_us_government_manual: "The United States Government Manual carries an entry for the office itself",
 };
 
 const SOURCE_TEXT = {
@@ -239,6 +242,37 @@ function describeEvidence(node) {
     const filed = entry.parentListedName ? `, filed under "${entry.parentListedName}"` : ", as a top-level entry";
     const edition = entry.edition ? ` (${entry.edition} edition)` : "";
     text += alreadyEntry ? `${asName}${filed}${edition}` : ` · the United States Government Manual also carries an entry for it${asName}${filed}${edition}`;
+  }
+  // The Manual's top-level entry FOR an office (the President, the Vice
+  // President): not an agency's entry listing an officer, and never a
+  // placement. Same block as the panel's.
+  const office = node.govmanOfficeEntry;
+  if (office && typeof office === "object") {
+    const alreadyOffice = String(node.verificationMethod || "") === "listed_as_its_own_entry_in_us_government_manual";
+    const heading = office.listedName ? ` headed "${office.listedName}"` : "";
+    const printedAs =
+      office.matchedName && office.matchedName !== office.listedName
+        ? `, which prints the office as "${office.matchedName}"`
+        : "";
+    const officeEdition = office.edition ? ` (${office.edition} edition)` : "";
+    text += alreadyOffice
+      ? `${heading}${printedAs}${officeEdition}`
+      : ` · the United States Government Manual also carries a top-level entry for the office${heading}${printedAs}${officeEdition}`;
+  }
+  // A claim reached through the reviewed alternative-names table, said as
+  // the weaker claim it is: both names quoted, the basis printed, and the
+  // grading cap stated where nothing else names the unit. The same block as
+  // the panel's.
+  const aliasMatch = node.verificationAliasMatch;
+  if (aliasMatch && typeof aliasMatch === "object" && aliasMatch.alias) {
+    text +=
+      aliasMatch.scope === "organisation"
+        ? ` · the source files it under its organisation by a different recorded name, "${aliasMatch.alias}", which is not what this graph calls that unit`
+        : ` · the source names it "${aliasMatch.alias}", not "${node.name || ""}", and that alternative is a reviewed entry in this project's own table`;
+    if (aliasMatch.basis) text += ` — the reviewed basis for treating the two as one unit: ${aliasMatch.basis}`;
+    if (aliasMatch.gradedAtMost === "partial") {
+      text += " · nothing else names this unit, so the check is graded no higher than partial";
+    }
   }
   const readNotNamed = node.pageReadNotNamed;
   if (readNotNamed && typeof readNotNamed === "object" && readNotNamed.url) {

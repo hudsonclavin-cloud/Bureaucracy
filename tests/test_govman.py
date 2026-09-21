@@ -75,6 +75,19 @@ def published_nodes():
     return out
 
 
+def alias_names_for(node):
+    """The reviewed alternatives a node answers to, from the committed table
+    and only while it still carries the name the row was written against."""
+    from data_pipeline.verification.aliases import load_rows
+
+    return [
+        str(row.get("alias") or "")
+        for row in load_rows()
+        if str(row.get("id") or "") == str((node or {}).get("id") or "")
+        and str(row.get("name") or "") == str((node or {}).get("name") or "")
+    ]
+
+
 class FixtureIntegrityTests(unittest.TestCase):
     """The bytes on disk are the publisher's, and the code says so before reading."""
 
@@ -417,8 +430,15 @@ class PublishedGraphTests(unittest.TestCase):
             block = node["govmanListing"]
             parent = by_id.get(parent_of.get(node["id"]) or "")
             self.assertIsNotNone(parent)
-            self.assertEqual(canonical_name_key(parent["name"]),
-                             canonical_name_key(block["listedUnder"]))
+            # The parent's own name, or an alternative the reviewed table
+            # records for it: the Manual prints "Administrative Office of the
+            # United States Courts" where the graph writes "U.S. Courts", and
+            # `data/curation/node_aliases.json` is where that identification
+            # is written down. The node carrying the listing then says so
+            # (verificationAliasMatch, scope "organisation").
+            answers_to = {canonical_name_key(parent["name"])}
+            answers_to.update(canonical_name_key(a) for a in alias_names_for(parent))
+            self.assertIn(canonical_name_key(block["listedUnder"]), answers_to)
             self.assertIn(block["url"], node.get("sourceUrls") or [])
 
     def test_no_post_claims_placement_from_the_manual(self):

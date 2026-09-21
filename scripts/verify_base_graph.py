@@ -60,6 +60,7 @@ from data_pipeline.verification.evidence import (  # noqa: E402
     verify_node,
     verify_placement,
 )
+from data_pipeline.verification.aliases import load_alias_table  # noqa: E402
 from data_pipeline.verification.politeness import RobotsPolicy  # noqa: E402
 
 
@@ -135,6 +136,10 @@ def main(argv: list[str] | None = None) -> int:
 
     root = load_base_graph(args.base_graph)
     node_map, parent_map = index_tree(root)
+    # The reviewed alternative names a page may print for a node. Adjudicated
+    # against this tree, so a row written for a name the node no longer has is
+    # already refused; the placement pass is deliberately NOT given them.
+    alias_table = load_alias_table(node_map=node_map, parent_map=parent_map)
     evidence = load_evidence(args.evidence) if args.evidence.exists() else {}
     nodes = select_nodes(node_map, ids=args.ids, include_positions=args.include_positions)
 
@@ -291,7 +296,8 @@ def main(argv: list[str] | None = None) -> int:
         "nodes": evidence,
     }
     for index, (node, urls, site_from, own_page) in enumerate(plan, 1):
-        record = verify_node(node, urls, fetch=fetch, now=now, site_from=site_from, is_own_page=own_page)
+        record = verify_node(node, urls, fetch=fetch, now=now, site_from=site_from, is_own_page=own_page,
+                             aliases=alias_table.for_node(node.get("id")))
         prior_block = (evidence.get(str(node["id"])) or {}).get("placement")
         if isinstance(prior_block, dict):
             # The existence record is replaced wholesale; the edge evidence

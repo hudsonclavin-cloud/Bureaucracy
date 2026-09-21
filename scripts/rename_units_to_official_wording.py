@@ -76,6 +76,7 @@ from data_pipeline.exporter.build_graph import (  # noqa: E402
     load_base_graph,
 )
 from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.verification.aliases import GENERIC_NAMES as ALIAS_GENERIC_NAMES  # noqa: E402
 from data_pipeline.verification.evidence import (  # noqa: E402
     REGION_CONTENT,
     find_label_region_rule,
@@ -101,12 +102,12 @@ MIN_NAME_TOKENS = 2
 #: 80, 71 and 47 times across 76 organisations, plus the words a `.gov` footer
 #: carries as standard furniture. A page labelling one of these says nothing
 #: about which unit it means.
-GENERIC_NAMES = frozenset({
-    "inspector general", "office of the inspector general", "general counsel",
-    "office of the general counsel", "chief financial officer", "chief of staff",
-    "chief information officer", "office of communications", "office of public affairs",
-    "about us", "leadership", "our mission", "contact us", "headquarters",
-})
+#:
+#: The list lives in `data_pipeline/verification/aliases.py` and is imported
+#: rather than copied: the alternative-names table applies exactly this floor
+#: to an alternative for the same reason this one applies it to a proposed
+#: name, and two copies would drift.
+GENERIC_NAMES = ALIAS_GENERIC_NAMES
 
 
 def load_table(path: Path) -> list[dict]:
