@@ -1617,6 +1617,19 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-digital-assets",
+                      "name": "Digital Assets",
+                      "type": "Subcommittee",
+                      "desc": "Digital Assets is named on https://www.banking.senate.gov/about/subcommittees, which labels it as 'Digital Assets'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.banking.senate.gov/about/subcommittees",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -2022,6 +2035,45 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-senate-cmte-commerce-science-transportation-sub-coast-guard-maritime-fisheries",
+                      "name": "Coast Guard, Maritime, and Fisheries",
+                      "type": "Subcommittee",
+                      "desc": "Coast Guard, Maritime, and Fisheries is named on https://www.commerce.senate.gov/about/commerce-subcommittees/, which labels it as 'Coast Guard, Maritime, & Fisheries'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-senate-cmte-commerce-science-transportation-sub-science-manufacturing-competitiveness",
+                      "name": "Science, Manufacturing, and Competitiveness",
+                      "type": "Subcommittee",
+                      "desc": "Science, Manufacturing, and Competitiveness is named on https://www.commerce.senate.gov/about/commerce-subcommittees/, which labels it as 'Science, Manufacturing, & Competitiveness'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-freight-pipelines-safety",
+                      "name": "Surface Transportation, Freight, Pipelines, and Safety",
+                      "type": "Subcommittee",
+                      "desc": "Surface Transportation, Freight, Pipelines, and Safety is named on https://www.commerce.senate.gov/about/commerce-subcommittees/, which labels it as 'Surface Transportation, Freight, Pipelines, & Safety'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -3269,6 +3321,19 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-senate-cmte-health-education-labor-pensions-sub-education-the-american-family",
+                      "name": "Subcommittee on Education and the American Family",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Education and the American Family is named on https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml, which labels it as 'Subcommittee on Education and the American Family'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -3364,7 +3429,7 @@
                     },
                     {
                       "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management",
-                      "name": "Government Operations & Border Management",
+                      "name": "Border Management, Federal Workforce, and Regulatory Affairs",
                       "type": "Subcommittee",
                       "desc": "Subcommittee of the Senate Homeland Security & Governmental Affairs Committee.",
                       "employees": null,
@@ -3401,7 +3466,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://www.hsgac.senate.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Border Management, Federal Workforce and Regulatory Affairs"
                     },
                     {
                       "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-investigations-subcommittee-on-permanent-investigations",
@@ -3447,6 +3516,19 @@
                       "nameSourceDetail": "https://www.hsgac.senate.gov/subcommittees/",
                       "nameVerifiedAt": "2026-09-19",
                       "nameMatchedText": "Permanent Subcommittee on Investigations"
+                    },
+                    {
+                      "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-disaster-management-district-of-columbia-census",
+                      "name": "Disaster Management, District of Columbia, and Census",
+                      "type": "Subcommittee",
+                      "desc": "Disaster Management, District of Columbia, and Census is named on https://www.hsgac.senate.gov/subcommittees/, which labels it as 'Disaster Management, District of Columbia, and Census'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.hsgac.senate.gov/subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -3797,6 +3879,19 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights",
+                      "name": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights is named on https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml, which labels it as 'Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ],
                   "nameSource": "named_on_its_own_official_page",
@@ -5218,6 +5313,19 @@
                       "nameSourceDetail": "https://agriculture.house.gov/subcommittees/",
                       "nameVerifiedAt": "2026-09-19",
                       "nameMatchedText": "Nutrition and Foreign Agriculture"
+                    },
+                    {
+                      "id": "leg-house-cmte-agriculture-sub-forestry-horticulture",
+                      "name": "Subcommittee on Forestry and Horticulture",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Forestry and Horticulture is named on https://docs.house.gov/Committee/Committees.aspx?Code=AG00, which labels it as 'Subcommittee on Forestry and Horticulture'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=AG00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -5715,7 +5823,7 @@
                     },
                     {
                       "id": "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation",
-                      "name": "Subcommittee on Cyber, Information Technology & Innovation",
+                      "name": "Subcommittee on Cyber, Information Technologies, and Innovation",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over cyber, information technology & innovation.",
                       "employees": null,
@@ -5742,7 +5850,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14892",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Cyber, Information Technologies, and Innovation | House Armed Services Committee"
                     },
                     {
                       "id": "leg-house-cmte-armed-services-sub-military-personnel",
@@ -5898,6 +6010,19 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-house-cmte-armed-services-sub-intelligence-special-operations",
+                      "name": "Subcommittee on Intelligence and Special Operations",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Intelligence and Special Operations is named on https://docs.house.gov/Committee/Committees.aspx?Code=AS00, which labels it as 'Subcommittee on Intelligence and Special Operations'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -6209,7 +6334,7 @@
                     },
                     {
                       "id": "leg-house-cmte-energy-commerce-sub-energy-climate-grid-security",
-                      "name": "Subcommittee on Energy, Climate & Grid Security",
+                      "name": "Subcommittee on Energy",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over energy, climate & grid security.",
                       "employees": null,
@@ -6236,11 +6361,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Energy"
                     },
                     {
                       "id": "leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials",
-                      "name": "Subcommittee on Environment, Manufacturing & Critical Materials",
+                      "name": "Subcommittee on Environment",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over environment, manufacturing & critical materials.",
                       "employees": null,
@@ -6267,7 +6396,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Environment"
                     },
                     {
                       "id": "leg-house-cmte-energy-commerce-sub-health",
@@ -6302,7 +6435,7 @@
                     },
                     {
                       "id": "leg-house-cmte-energy-commerce-sub-innovation-data-commerce",
-                      "name": "Subcommittee on Innovation, Data & Commerce",
+                      "name": "Subcommittee on Commerce, Manufacturing, and Trade",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over innovation, data & commerce.",
                       "employees": null,
@@ -6329,7 +6462,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Commerce, Manufacturing, and Trade"
                     },
                     {
                       "id": "leg-house-cmte-energy-commerce-sub-oversight-investigations",
@@ -6477,7 +6614,7 @@
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy",
-                      "name": "Subcommittee on Financial Institutions & Monetary Policy",
+                      "name": "Subcommittee on Financial Institutions",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over financial institutions & monetary policy.",
                       "employees": null,
@@ -6504,7 +6641,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://financialservices.house.gov/subcommittees",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Financial Institutions"
                     },
                     {
                       "id": "leg-house-cmte-financial-services-sub-housing-insurance",
@@ -6718,7 +6859,7 @@
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-indo-pacific",
-                      "name": "Subcommittee on Indo-Pacific",
+                      "name": "East Asia and Pacific Subcommittee",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over indo-pacific.",
                       "employees": null,
@@ -6745,11 +6886,15 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "East Asia and Pacific Subcommittee"
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia",
-                      "name": "Subcommittee on Middle East, North Africa & Central Asia",
+                      "name": "Middle East and North Africa Subcommittee",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over middle east, north africa & central asia.",
                       "employees": null,
@@ -6776,7 +6921,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Middle East and North Africa Subcommittee"
                     },
                     {
                       "id": "leg-house-cmte-foreign-affairs-sub-oversight-accountability",
@@ -6843,6 +6992,32 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-house-cmte-foreign-affairs-sub-europe",
+                      "name": "Europe Subcommittee",
+                      "type": "Subcommittee",
+                      "desc": "Europe Subcommittee is named on https://foreignaffairs.house.gov/subcommittees/, which labels it as 'Europe Subcommittee'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-house-cmte-foreign-affairs-sub-south-central-asia",
+                      "name": "South and Central Asia Subcommittee",
+                      "type": "Subcommittee",
+                      "desc": "South and Central Asia Subcommittee is named on https://foreignaffairs.house.gov/subcommittees/, which labels it as 'South and Central Asia Subcommittee'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://foreignaffairs.house.gov/subcommittees/",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -7197,6 +7372,19 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-house-cmte-house-administration-sub-modernization-innovation",
+                      "name": "Subcommittee on Modernization and Innovation",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Modernization and Innovation is named on https://docs.house.gov/Committee/Committees.aspx?Code=HA00, which labels it as 'Subcommittee on Modernization and Innovation'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=HA00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -7473,6 +7661,19 @@
                       "nameSourceDetail": "https://judiciary.house.gov/about/subcommittees",
                       "nameVerifiedAt": "2026-09-19",
                       "nameMatchedText": "Select Subcommittee on the Weaponization of the Federal Government"
+                    },
+                    {
+                      "id": "leg-house-cmte-judiciary-sub-oversight",
+                      "name": "Subcommittee on Oversight",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Oversight is named on https://judiciary.house.gov/about/subcommittees, which labels it as 'The Subcommittee on Oversight'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://judiciary.house.gov/about/subcommittees",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 },
@@ -7795,7 +7996,7 @@
                     },
                     {
                       "id": "leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce",
-                      "name": "Subcommittee on Government Operations & the Federal Workforce",
+                      "name": "Subcommittee on Government Operations",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over government operations & the federal workforce.",
                       "employees": null,
@@ -7822,7 +8023,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Government Operations"
                     },
                     {
                       "id": "leg-house-cmte-oversight-accountability-sub-health-care-financial-services",
@@ -7916,6 +8121,32 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-house-cmte-oversight-accountability-sub-delivering-on-government-efficiency",
+                      "name": "Subcommittee on Delivering on Government Efficiency",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Delivering on Government Efficiency is named on https://docs.house.gov/Committee/Committees.aspx?Code=GO00, which labels it as 'Subcommittee on Delivering on Government Efficiency'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-house-cmte-oversight-accountability-sub-federal-law-enforcement",
+                      "name": "Subcommittee on Federal Law Enforcement",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Federal Law Enforcement is named on https://docs.house.gov/Committee/Committees.aspx?Code=GO00, which labels it as 'Subcommittee on Federal Law Enforcement'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ],
                   "nameSource": "named_on_its_own_official_page",
@@ -9163,7 +9394,7 @@
                     },
                     {
                       "id": "leg-house-cmte-ways-means-sub-worker-family-support",
-                      "name": "Subcommittee on Worker & Family Support",
+                      "name": "Subcommittee on Work and Welfare",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over worker & family support.",
                       "employees": null,
@@ -9190,7 +9421,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://waysandmeans.house.gov/subcommittees/",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Work & Welfare"
                     }
                   ]
                 },
@@ -9331,7 +9566,7 @@
                     },
                     {
                       "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support",
-                      "name": "Subcommittee on Defense Intelligence & Warfighter Support",
+                      "name": "Subcommittee on Defense Intelligence and Overhead Architecture",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over defense intelligence & warfighter support.",
                       "employees": null,
@@ -9358,7 +9593,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+                      "nameVerifiedAt": "2026-09-21",
+                      "nameMatchedText": "Subcommittee on Defense Intelligence and Overhead Architecture"
                     },
                     {
                       "id": "leg-house-cmte-intelligence-sub-nsa-cybersecurity",
@@ -9425,6 +9664,45 @@
                           "children": []
                         }
                       ]
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-national-intelligence-enterprise",
+                      "name": "Subcommittee on the National Intelligence Enterprise",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on the National Intelligence Enterprise is named on https://docs.house.gov/Committee/Committees.aspx?Code=IG00, which labels it as 'Subcommittee on the National Intelligence Enterprise'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-open-source-intelligence",
+                      "name": "Subcommittee on Open Source Intelligence",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Open Source Intelligence is named on https://docs.house.gov/Committee/Committees.aspx?Code=IG00, which labels it as 'Subcommittee on Open Source Intelligence'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
+                    },
+                    {
+                      "id": "leg-house-cmte-intelligence-sub-oversight-investigations",
+                      "name": "Subcommittee on Oversight and Investigations",
+                      "type": "Subcommittee",
+                      "desc": "Subcommittee on Oversight and Investigations is named on https://docs.house.gov/Committee/Committees.aspx?Code=IG00, which labels it as 'Subcommittee on Oversight and Investigations'. This node exists because that page names the unit; nothing further about it has been read.",
+                      "structureSource": "named_on_an_official_page",
+                      "structureSourceDetail": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+                      "employees": null,
+                      "budget": null,
+                      "color": "#c84a4a",
+                      "children": [],
+                      "descriptionSource": "generated_from_its_official_page"
                     }
                   ]
                 }
@@ -35014,7 +35292,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -35334,7 +35612,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -35654,7 +35932,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -35974,7 +36252,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -36294,7 +36572,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -36614,7 +36892,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -36934,7 +37212,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -37254,7 +37532,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -37574,7 +37852,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -37894,7 +38172,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -38214,7 +38492,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -38534,7 +38812,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -38854,7 +39132,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -39174,7 +39452,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -39494,7 +39772,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -39814,7 +40092,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -40134,7 +40412,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {
@@ -40454,7 +40732,7 @@
                           "supersededSource": {
                             "url": "https://department.va.gov/integrated-service-networks/",
                             "quote": "The Department of Veterans Affairs comprises 5 Veterans Integrated Service Networks or VISNs",
-                            "readAt": "2026-09-19"
+                            "readAt": "2026-09-21"
                           }
                         },
                         {

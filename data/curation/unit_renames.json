@@ -771,6 +771,94 @@
    "url": "https://www.ethics.senate.gov/",
    "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'U.S. Senate Select Committee on Ethics'). Probed 2026-09-20 with scripts/probe_candidate_pages.py (2,955 readable chars; verdict not-labelled for the curated 'Senate Committee on Select Committee on Ethics') and confirmed by direct fetch: <title> and <h1> both read exactly 'U.S. Senate Select Committee on Ethics'. CLAUDE.md's own committee-fold documentation names this exact node as the one case where committee_core_key's fold reduces the doubled 'Committee on ... Committee on' scaffolding to a single token ('Ethics') and so cannot confirm under the fold rule -- but the page's real, un-folded title was never tried as a straight rename, and it is a clean, unique, 6-token name. | verifier: Re-probed https://www.ethics.senate.gov/ with",
    "addedOn": "2026-09-20"
+  },
+  {
+   "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-government-operations-border-management",
+   "from": "Government Operations & Border Management",
+   "to": "Border Management, Federal Workforce, and Regulatory Affairs",
+   "url": "https://www.hsgac.senate.gov/subcommittees/",
+   "basis": "The Senate's own committee list (tests/fixtures/directories/senate/committee_memberships_SSGA.xml, fetched 2026-09-08) is the complete list of this committee's subcommittees and carries the proposed name; hsgac.senate.gov's own Subcommittees page labels it, under a 'SUBCOMMITTEE ON' heading in page content, 'Border Management, Federal Workforce and Regulatory Affairs' (the committee's site drops the Oxford comma; the key ignores punctuation). Same committee, and 'Border Management' is the jurisdiction phrase the two names share: the committee carries three subcommittees in both Congresses, the Permanent Subcommittee on Investigations is unchanged, and this is the seat that kept border management. The curated name is the 118th Congress's; the page does not carry it in any form. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-armed-services-sub-cyber-information-technology-innovation",
+   "from": "Subcommittee on Cyber, Information Technology & Innovation",
+   "to": "Subcommittee on Cyber, Information Technologies, and Innovation",
+   "url": "https://armedservices.house.gov/subcommittees/subcommittee/default.aspx?IssueID=14892",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; the subcommittee's own page on armedservices.house.gov (already the node's queued candidate, recorded not_found on the strength of one letter) titles itself 'Cyber, Information Technologies, and Innovation | House Armed Services', and docs.house.gov's listing for the committee (Code=AS00) prints 'Subcommittee on Cyber, Information Technologies, and Innovation' in page content. The curated name is the same words with 'Technology' singular. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-energy-commerce-sub-energy-climate-grid-security",
+   "from": "Subcommittee on Energy, Climate & Grid Security",
+   "to": "Subcommittee on Energy",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Committee on Energy and Commerce prints 'Subcommittee on Energy' in page content, and the committee's own home page lists its six current subcommittees in content as Energy; Commerce, Manufacturing, and Trade; Communications & Technology; Environment; Health; Oversight & Investigations (its /subcommittees page is a script shell below the readable floor). Same committee, same six seats, and this is the seat whose 118th-Congress name led with 'Energy'; the qualifier 'Climate & Grid Security' was dropped for the 119th. A bare 'Energy' is refused by the two-token floor and can never be page-confirmed by the committee fold, so the name keeps the type words the House's own listing prints. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-energy-commerce-sub-environment-manufacturing-critical-materials",
+   "from": "Subcommittee on Environment, Manufacturing & Critical Materials",
+   "to": "Subcommittee on Environment",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Committee on Energy and Commerce prints 'Subcommittee on Environment' in page content, and the committee's own home page lists 'Environment' among its six current subcommittees. Same committee, same six seats, and this is the seat whose 118th-Congress name led with 'Environment'; 'Manufacturing & Critical Materials' was dropped for the 119th (manufacturing moved to the Commerce, Manufacturing, and Trade seat). CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-energy-commerce-sub-innovation-data-commerce",
+   "from": "Subcommittee on Innovation, Data & Commerce",
+   "to": "Subcommittee on Commerce, Manufacturing, and Trade",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IF00",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Committee on Energy and Commerce prints 'Subcommittee on Commerce, Manufacturing, and Trade' in page content, and the committee's own home page lists 'Commerce, Manufacturing, and Trade' among its six current subcommittees. Same committee, same six seats: five of the six are accounted for by name (Energy, Environment, Health, Communications & Technology, Oversight & Investigations) and this is the sixth, the commerce seat, which shares the jurisdiction word 'Commerce' with the curated 118th-Congress name. The weakest of the three Energy and Commerce renames, and recorded as such. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-financial-services-sub-financial-institutions-monetary-policy",
+   "from": "Subcommittee on Financial Institutions & Monetary Policy",
+   "to": "Subcommittee on Financial Institutions",
+   "url": "https://financialservices.house.gov/subcommittees",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; financialservices.house.gov's own Subcommittees page labels it 'Subcommittee on Financial Institutions' in page content. Same committee, same seat with the '& Monetary Policy' qualifier dropped for the 119th Congress (monetary policy now sits with a separately listed task force, which is not a subcommittee and is not added). The page does not carry the curated name in any form. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-foreign-affairs-sub-indo-pacific",
+   "from": "Subcommittee on Indo-Pacific",
+   "to": "East Asia and Pacific Subcommittee",
+   "url": "https://foreignaffairs.house.gov/subcommittees/",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; foreignaffairs.house.gov's own Subcommittees page labels it 'East Asia and Pacific Subcommittee' in page content, and docs.house.gov (Code=FA00) prints the same. The committee's regional subcommittees are one seat per region: this is the Pacific seat, named 'Indo-Pacific' in the 118th Congress and 'East Asia and Pacific' in the 119th, sharing the jurisdiction word 'Pacific'. Named as the committee's own page prints it, type word after the region, exactly as its sibling 'Africa Subcommittee' already is. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-foreign-affairs-sub-middle-east-north-africa-central-asia",
+   "from": "Subcommittee on Middle East, North Africa & Central Asia",
+   "to": "Middle East and North Africa Subcommittee",
+   "url": "https://foreignaffairs.house.gov/subcommittees/",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; foreignaffairs.house.gov's own Subcommittees page labels it 'Middle East and North Africa Subcommittee' in page content, and docs.house.gov (Code=FA00) prints the same. Same committee, same regional seat: 'Middle East' and 'North Africa' are the jurisdiction words shared, and 'Central Asia' moved to the 119th Congress's separate South and Central Asia Subcommittee, which is added beside it rather than folded into this rename. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-oversight-accountability-sub-government-operations-the-federal-workforce",
+   "from": "Subcommittee on Government Operations & the Federal Workforce",
+   "to": "Subcommittee on Government Operations",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Committee on Oversight and Government Reform prints 'Subcommittee on Government Operations' in page content; the committee's own site names it 'Government Operations' in its site-wide navigation (oversight.house.gov, every page) and its subcommittee page's title, that page being a script shell below the readable floor. Same committee, same seat with the '& the Federal Workforce' qualifier dropped for the 119th Congress. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-ways-means-sub-worker-family-support",
+   "from": "Subcommittee on Worker & Family Support",
+   "to": "Subcommittee on Work and Welfare",
+   "url": "https://waysandmeans.house.gov/subcommittees/",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; waysandmeans.house.gov's own Subcommittees page labels it 'Work & Welfare' under a 'Subcommittee On' heading in page content (the committee fold sets the type words aside), and docs.house.gov (Code=WM00) prints 'Subcommittee on Work and Welfare'. Same committee, same seat: the committee's six subcommittees are otherwise unchanged by name (Health, Oversight, Social Security, Tax, Trade) and this is the one whose 118th-Congress name, 'Worker and Family Support', was replaced; 'Work' is the jurisdiction stem shared. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-intelligence-sub-defense-intelligence-warfighter-support",
+   "from": "Subcommittee on Defense Intelligence & Warfighter Support",
+   "to": "Subcommittee on Defense Intelligence and Overhead Architecture",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+   "basis": "The House Clerk's committee list (tests/fixtures/directories/house/committees.xlsx, fetched 2026-09-13) is the complete list of the 119th Congress's House subcommittees and carries the proposed name under this committee; docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on Defense Intelligence and Overhead Architecture' in page content, the same page that licensed this committee's NSA and Cyber rename in §9 (intelligence.house.gov's own /subcommittees page is a script shell below the readable floor). Same committee, same seat: 'Defense Intelligence' is the jurisdiction phrase shared, with '& Warfighter Support' replaced by 'and Overhead Architecture' for the 119th Congress. CURATION.md §16.",
+   "addedOn": "2026-09-21"
   }
  ]
 }
