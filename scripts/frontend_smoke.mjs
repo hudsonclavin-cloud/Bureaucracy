@@ -134,6 +134,25 @@ try {
   await page.waitForTimeout(200);
   check("the reading guide closes when dismissed", (await page.locator("#reading-guide.open").count()) === 0, "still open after dismissal");
 
+  // The WebGL universe remains the main simulation. The evidence-first
+  // directory is explicitly available from the persistent view switcher.
+  check("the 3D universe is the default view", await page.locator("body.atlas-mode").count() === 0, "directory unexpectedly opened");
+  await page.locator('.view-switch[data-view="atlas"]').click();
+  await page.waitForTimeout(100);
+  check("the directory opens from the view switcher", await page.locator("body.atlas-mode").count() === 1, "directory did not open");
+  check("the directory limits itself to six generations", await page.locator('[data-atlas-depth="6"].active').count() === 1, "depth six is not active");
+  const coverageText = await text("#atlas-coverage");
+  check("the directory exposes evidence coverage", /verified records/.test(coverageText) && /reported financial figures/.test(coverageText), coverageText);
+  check("the first organizational generation is rendered", await page.locator("#atlas-columns .atlas-generation").count() >= 1, "no generation column");
+  await page.fill("#atlas-search", "Bureau of Prisons");
+  await page.waitForTimeout(250);
+  check("directory search finds a published entity", await page.locator("#atlas-search-results .atlas-result").count() >= 1, "no directory result");
+  await page.fill("#atlas-search", "");
+
+  await page.locator('.view-switch[data-view="universe"]').click();
+  await page.waitForTimeout(100);
+  check("the 3D universe remains available", await page.locator("body.atlas-mode").count() === 0, "universe did not open");
+
   const statsTotal = await text("#stats-total");
   check("published count excludes the review queue", /published nodes · [\d,]+ unreviewed candidates|total nodes/.test(statsTotal), statsTotal);
   check("published count is the tree, not tree plus queue", !/9,0\d\d/.test(statsTotal), statsTotal);
