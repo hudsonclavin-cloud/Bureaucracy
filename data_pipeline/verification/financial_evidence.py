@@ -172,6 +172,12 @@ SOURCE_TYPES = {
     # claim about an incumbent rather than about the office. See
     # data_pipeline/verification/whitehouse_pay.py.
     "whitehouse_staff_report",
+    # OPM's CURRENT PLUM Reporting export: one row per listed position with a
+    # "Level, Grade, or Pay" cell that, on ES rows, prints a rate of basic pay
+    # ("$228,000"). A row is an incumbency, so a record from it is a claim
+    # about the one row listed under a title now, never about the office.
+    # See data_pipeline/verification/plum_current.py.
+    "opm_plum_current_export",
 }
 
 #: Documents that state their scale by *printing* it rather than by declaring
@@ -186,6 +192,9 @@ SCALE_PRINTED_SOURCE_TYPES = {
     "uscourts_judicial_compensation",
     "senate_salary_schedule",
     "whitehouse_staff_report",
+    # The export's cell prints "$228,000" and nothing in the file says
+    # "dollars"; the mark attached to the record's own figure is the scale.
+    "opm_plum_current_export",
 }
 
 #: A third way a source can state its scale, narrower still, and granted to
@@ -242,6 +251,7 @@ SOURCE_BASES = {
     "uscourts_judicial_compensation": {"basic_pay"},
     "senate_salary_schedule": {"basic_pay"},
     "whitehouse_staff_report": {"basic_pay"},
+    "opm_plum_current_export": {"basic_pay"},
 }
 
 SCOPE_MATCHES = {"exact", "parent", "child", "broader_account", "proxy", "ambiguous"}

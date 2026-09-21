@@ -779,9 +779,10 @@ GET (the page's script POSTs a filter body to it); nothing depends on it.
 columns, a `Pay Plan` column and a `Level, Grade, or Pay` column carrying a GS
 grade, an Executive Schedule level or a rate — the same three things the
 archive's `LevelGradePay` holds — with 3,761 GS rows carrying a grade. The two
-name columns and the unique-ID column are never read. **No matcher reads it
-yet**; position evidence still rests on the previous administration's archive,
-and every published sentence still says so.
+name columns and the unique-ID column are never read. **`plum_current.py` reads
+it since the same day** (CLAUDE.md, "The current Plum Book, read"): 170 positions
+listed, 100 with the rate the export prints, as a second document beside the
+archive and never over it.
 
 ### `www.opm.gov`: the 2026 GS, SES and SL/ST tables
 

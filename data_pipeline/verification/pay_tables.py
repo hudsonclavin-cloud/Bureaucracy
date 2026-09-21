@@ -422,6 +422,10 @@ def eligible(record: Mapping[str, Any], table: Mapping[str, Any]) -> tuple[bool,
     pay_plan, level = _listing_of(record)
     if record.get("reportedPay") is not None:
         return False, "archive_reports_a_rate"
+    if record.get("anyListingReportsRate"):
+        # The OTHER PLUM listing on this node (plum_current.combine_listings
+        # marks it) states a rate; a table rate beside it is two figures.
+        return False, "a_listing_reports_a_rate"
     if not level:
         return False, "no_level_reported"
     if not pay_plan:
@@ -570,7 +574,7 @@ def withdraw_pay_from_multi_post_nodes(root: dict[str, Any]) -> int:
         node = stack.pop()
         if node.get("representsPosts"):
             for field in ("positionPayRate", "positionStatutoryPay", "positionReportedPay",
-                          "positionSchedulePay", "positionGradePay"):
+                          "positionSchedulePay", "positionGradePay", "positionCurrentPay"):
                 if node.pop(field, None) is not None:
                     withdrawn += 1
         stack.extend(node.get("children") or [])
@@ -622,12 +626,17 @@ def apply_pay_evidence(
         if node.get("representsPosts"):
             stats["stands_for_many_posts"] += 1
             continue
-        listing = node.get("positionListing")
+        claim = record.get("levelClaim") or {}
+        # Which document reported the level: the archive's listing or the
+        # current export's (positions.LISTING_FIELD_BY_SOURCE). The rate is
+        # tied to that listing and withdrawn with it, never the other one.
+        from data_pipeline.verification.positions import any_listing_reports_a_rate, listing_field_for
+
+        listing = node.get(listing_field_for(claim.get("source")) or "positionListing")
         if not isinstance(listing, Mapping):
             stats["no_listing_published"] += 1
             continue
-        claim = record.get("levelClaim") or {}
-        if listing.get("reportedPay") is not None:
+        if listing.get("reportedPay") is not None or any_listing_reports_a_rate(node):
             stats["listing_reports_a_rate"] += 1
             continue
         if (

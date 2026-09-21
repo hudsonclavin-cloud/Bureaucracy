@@ -243,6 +243,10 @@ MINIMAL_GRAPH_FIELDS = (
     # the base-pay RANGE a salary table states for the listing's pay plan or
     # grade: a minimum and a maximum, never a rate, and never a cost
     "positionGradePay",
+    # OPM's CURRENT PLUM export: the listing of the post as it stands now,
+    # and the rate of basic pay that export prints for the one row under the
+    # title -- a second document beside the archive's listing, never a cost
+    "positionCurrentListing", "positionCurrentPay",
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
@@ -2463,6 +2467,7 @@ def build_graph(
     position_evidence_path: str | Path | None = "default",
     pay_evidence_path: str | Path | None = "default",
     grade_pay_evidence_path: str | Path | None = "default",
+    plum_current_evidence_path: str | Path | None = "default",
     schedule_pay_evidence_path: str | Path | None = "default",
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
@@ -2634,6 +2639,22 @@ def build_graph(
     validation["position_evidence"] = apply_position_evidence(
         graph, load_position_evidence(resolved_position_path) if resolved_position_path else {}, index_tree=index_tree,
     )
+    # OPM's CURRENT PLUM export, beside the archive's listing and never over
+    # it: a second, independent document listing the post as it stands now.
+    # Applied right after the archive so the salary-table joins below can
+    # read either listing back through positions.LISTING_FIELD_BY_SOURCE.
+    from data_pipeline.verification.plum_current import (  # noqa: E402 — plum_current imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_PLUM_CURRENT_EVIDENCE_PATH,
+        apply_current_listing,
+        apply_current_pay,
+        load_evidence as load_plum_current_evidence,
+    )
+
+    resolved_plum_current_path = (
+        DEFAULT_PLUM_CURRENT_EVIDENCE_PATH if plum_current_evidence_path == "default" else plum_current_evidence_path
+    )
+    plum_current_evidence = load_plum_current_evidence(resolved_plum_current_path) if resolved_plum_current_path else {"nodes": {}, "pay": {}}
+    validation["plum_current_evidence"] = apply_current_listing(graph, plum_current_evidence["nodes"], index_tree=index_tree)
     # The salary table last of all, because it is a gloss on the listing above
     # and is published only where that listing still reports the same level.
     from data_pipeline.verification.pay_tables import (  # noqa: E402 — pay_tables imports this module
@@ -2665,6 +2686,11 @@ def build_graph(
     validation["grade_pay_evidence"] = apply_grade_pay(
         graph, load_grade_pay_evidence(resolved_grade_pay_path) if resolved_grade_pay_path else {}, index_tree=index_tree,
     )
+    # The rate the current export itself prints for the one row under the
+    # title, validated by financial_evidence and tied to the current listing
+    # above exactly as positionPayRate is tied to the archive's: published
+    # only while that listing still reports the same figure.
+    validation["plum_current_pay"] = apply_current_pay(graph, plum_current_evidence["pay"], index_tree=index_tree)
     # The same Executive Schedule rate, from the other direction: the level
     # comes from 5 U.S.C. 5312-5316 rather than from the previous
     # administration's archive, so it needs no positionListing and survives a

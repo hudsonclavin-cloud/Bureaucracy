@@ -56,6 +56,11 @@ from data_pipeline.verification.gs_pay import (  # noqa: E402
     build_records,
     load_all_tables,
 )
+from data_pipeline.verification.plum_current import (  # noqa: E402
+    DEFAULT_EVIDENCE_PATH as DEFAULT_PLUM_CURRENT_EVIDENCE_PATH,
+    combine_listings,
+    load_current_listings,
+)
 from data_pipeline.verification.positions import (  # noqa: E402
     DEFAULT_POSITION_EVIDENCE_PATH,
     load_position_evidence,
@@ -77,6 +82,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--slst-html", type=Path, default=DEFAULT_SLST_HTML, help="verbatim SL/ST structure table")
     parser.add_argument("--positions", type=Path, default=DEFAULT_POSITION_EVIDENCE_PATH,
                         help="position evidence, which supplies the pay plan and grade each post was reported on")
+    parser.add_argument("--current-listings", type=Path, default=DEFAULT_PLUM_CURRENT_EVIDENCE_PATH,
+                        help="current PLUM export evidence; where it lists a post its pay plan and grade are used instead of the archive's")
     parser.add_argument("--out", type=Path, default=DEFAULT_EVIDENCE_PATH)
     parser.add_argument("--dry-run", action="store_true", help="report what would be written and write nothing")
     args = parser.parse_args((argv or sys.argv)[1:])
@@ -87,10 +94,14 @@ def main(argv: list[str] | None = None) -> int:
         print(f"refused: {error}")
         return 1
 
-    listings = load_position_evidence(args.positions)
+    archive_listings = load_position_evidence(args.positions)
+    current_listings = load_current_listings(args.current_listings)
+    listings, listing_stats = combine_listings(archive_listings, current_listings)
     if not listings:
-        print(f"no position evidence at {_relative(args.positions)}; nothing can be ranged")
+        print(f"no position evidence at {_relative(args.positions)} or {_relative(args.current_listings)}; nothing can be ranged")
         return 1
+    print(f"listings: {listing_stats['from_current']} from the current export, {listing_stats['from_archive']} from the archive; "
+          f"{listing_stats['either_reports_a_rate']} refused because a listing states a rate")
 
     records, report = build_records(listings, tables)
 
@@ -167,7 +178,14 @@ def main(argv: list[str] | None = None) -> int:
             "Regenerate by re-running the script; never edit by hand."
         ),
         "sources": report["tables"],
-        "listingSource": {"kind": "opm_plum_archive", "file": _relative(args.positions)},
+        "listingSource": {
+            "kind": "opm_plum_archive_or_current_export",
+            "file": _relative(args.positions),
+            "current_export_file": _relative(args.current_listings),
+            "rule": "the current export's listing supplies the pay plan and grade where it lists the post; the archive's "
+                    "otherwise; each record's listingClaim.source names which",
+            **listing_stats,
+        },
         "report": report,
         "nodes": validated,
     }

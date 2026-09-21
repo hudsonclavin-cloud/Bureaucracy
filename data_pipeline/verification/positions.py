@@ -67,6 +67,32 @@ PLUM_SOURCE_TYPE = "opm_plum_archive"
 STATUS_LISTED = "listed"
 DEFAULT_EDITION = "Biden administration archive"
 
+#: The second PLUM document, OPM's CURRENT export (plum_current.py), and the
+#: field each document's listing is published in. A pay claim derived from a
+#: listing names the listing's source, and pay_tables.py / gs_pay.py read the
+#: node's listing back through this table, so a rate looked up from the
+#: current export is tied to -- and withdrawn with -- the current listing,
+#: never the archive's, and the other way round.
+CURRENT_PLUM_SOURCE = "opm_plum_current_export"
+LISTING_FIELD_BY_SOURCE = {PLUM_SOURCE: "positionListing", CURRENT_PLUM_SOURCE: "positionCurrentListing"}
+
+
+def listing_field_for(source: Any) -> str | None:
+    """Which published field carries the listing a claim names, or None for
+    a source this project has no listing for."""
+    return LISTING_FIELD_BY_SOURCE.get(str(source or ""))
+
+
+def any_listing_reports_a_rate(node: dict[str, Any]) -> bool:
+    """Whether any PLUM listing published on the node states a rate of basic
+    pay. A table rate or range beside such a listing would be two figures for
+    one post, whichever document each came from."""
+    for field in LISTING_FIELD_BY_SOURCE.values():
+        listing = node.get(field)
+        if isinstance(listing, dict) and listing.get("reportedPay") is not None:
+            return True
+    return False
+
 FIXTURE_DIR = Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "opm" / "plum"
 DEFAULT_ARCHIVE_CSV = FIXTURE_DIR / "plum-archive-biden-administration.csv"
 DEFAULT_ARCHIVE_PAGE = FIXTURE_DIR / "opm_plum_archive_page.html"

@@ -249,6 +249,21 @@ GRADE_PAY_UNITS_KIND = {
     "senior_executive_service": "currency_mark_on_the_printed_figure",
     "senior_level": "currency_mark_on_the_printed_figure",
 }
+# OPM's CURRENT PLUM export (data_pipeline/verification/plum_current.py). The
+# gate re-reads the committed file by each block's own keys, projecting ONLY
+# these columns by header index: the two name columns and the unique-ID column
+# are never materialised here any more than in the module, and
+# tests/test_plum_current.py plants a sentinel in them to prove it.
+PLUM_CURRENT_FIXTURE = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "plum" / "escs_pbpub_download-data.csv"
+PLUM_CURRENT_COLUMNS = (
+    "Agency", "Organization", "Position Title", "Position Status", "Appointment Type", "Level, Grade, or Pay", "Pay Plan",
+)
+PLUM_CURRENT_LIVE_STATUSES = ("Filled", "Vacant")
+PLUM_CURRENT_SOURCE = "opm_plum_current_export"
+PLUM_CURRENT_METHOD = "listed_in_opm_current_plum_export"
+PLUM_CURRENT_PLACEMENT_METHOD = "listed_under_organization_in_opm_current_plum_export"
+PLUM_CURRENT_PAY_UNITS_KIND = "currency_mark_on_the_printed_figure"
+_PLUM_CURRENT_CACHE = {}
 _FIXTURE_DIGESTS = {}
 
 
@@ -987,6 +1002,277 @@ def grade_pay_violations(node, pay, listing, today, label):
         say("carries a table range and a verified cost")
     if str(pay.get("url") or "") in [str(u) for u in (node.get("sourceUrls") or [])]:
         say("cites the salary table as a source of the post's existence")
+    return out
+
+
+def plum_current_export(path=None):
+    """The current PLUM export re-read by the gate: its digest, its fetch
+    record and an index (Agency, Organization, Position Title) -> live rows,
+    each row exactly PLUM_CURRENT_COLUMNS and nothing else. Historical rows
+    are counted per key and never read. Returns None when the fixture, its
+    meta or its digest is missing or wrong, and every current-PLUM block is
+    then refused rather than passed unchecked."""
+    fixture = Path(path) if path else PLUM_CURRENT_FIXTURE
+    key = str(fixture)
+    if key in _PLUM_CURRENT_CACHE:
+        return _PLUM_CURRENT_CACHE[key]
+    out = None
+    try:
+        raw = fixture.read_bytes()
+        meta = json.loads(fixture.with_name(fixture.name + ".meta.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        _PLUM_CURRENT_CACHE[key] = out
+        return out
+    import csv as _csv
+    import hashlib as _hashlib
+    import io as _io
+
+    digest = _hashlib.sha256(raw).hexdigest()
+    if digest != str(meta.get("sha256") or "").lower():
+        _PLUM_CURRENT_CACHE[key] = out
+        return out
+    reader = _csv.reader(_io.StringIO(raw.decode("utf-8-sig", errors="replace"), newline=""))
+    header = [h.strip() for h in next(reader, [])]
+    if any(column not in header for column in PLUM_CURRENT_COLUMNS):
+        _PLUM_CURRENT_CACHE[key] = out
+        return out
+    positions = {column: header.index(column) for column in PLUM_CURRENT_COLUMNS}
+    width = max(positions.values()) + 1
+    index = {}
+    for cells in reader:
+        if len(cells) < width:
+            continue
+        row = {column: cells[i].strip() for column, i in positions.items()}
+        entry = index.setdefault((row["Agency"], row["Organization"], row["Position Title"]), {"live": [], "historical": 0})
+        if row["Position Status"] in PLUM_CURRENT_LIVE_STATUSES:
+            entry["live"].append(row)
+        else:
+            entry["historical"] += 1
+    out = {
+        "sha256": digest,
+        "url": str(meta.get("final_url") or meta.get("url") or ""),
+        "fetched_at": str(meta.get("fetched_at") or ""),
+        "index": index,
+    }
+    _PLUM_CURRENT_CACHE[key] = out
+    return out
+
+
+def plum_org_keys(value):
+    """positions.organisation_name_keys mirrored stdlib-only: the canonical
+    key and the 'department of (the) X' tolerance, the export's HTML entities
+    resolved first. tests/test_plum_current.py pins the two together."""
+    import html as _html
+
+    key = canonical_key(_html.unescape(str(value or "")))
+    if not key:
+        return set()
+    keys = {key}
+    if key.startswith("department of the "):
+        keys.add("department of " + key[len("department of the "):])
+    elif key.startswith("department of "):
+        keys.add("department of the " + key[len("department of "):])
+    return keys
+
+
+def _strip_plum_qualifier(text, qualifier_keys):
+    if "," not in text:
+        return text
+    for index, char in enumerate(text):
+        if char != ",":
+            continue
+        head, tail = text[:index].strip(), text[index + 1:].strip()
+        if head and tail and canonical_key(tail) in qualifier_keys:
+            return head
+    return text
+
+
+def plum_export_title_keys(title, organization):
+    """positions.archive_title_keys mirrored: the title's own key and, when
+    the tail after a comma is the organisation the row is filed under, the
+    key of what is left."""
+    import html as _html
+
+    text = _html.unescape(str(title or "")).strip()
+    keys = []
+    for candidate in (text, _strip_plum_qualifier(text, plum_org_keys(organization))):
+        key = canonical_key(candidate)
+        if key and key not in keys:
+            keys.append(key)
+    return keys
+
+
+def plum_agency_unit(agency):
+    """The unit an agency string denotes: the whole string, or the half after
+    ' - ' in the export's own '<parent> - <unit>' form."""
+    import html as _html
+
+    text = _html.unescape(str(agency or "")).strip()
+    match = re.match(r"^(.+?)\s+-\s+(.+)$", text)
+    return match.group(2).strip() if match else text
+
+
+def plum_listing_parent_keys(listing):
+    """The keys the tree parent must answer to: the organisation the export
+    files the title under, or -- when that is the agency itself -- the agency
+    as a whole and as its unit half."""
+    org_keys = plum_org_keys(listing.get("organization"))
+    agency_keys = plum_org_keys(listing.get("agency")) | plum_org_keys(plum_agency_unit(listing.get("agency")))
+    if not org_keys or org_keys & agency_keys:
+        return agency_keys
+    return org_keys
+
+
+def current_listing_violations(node, listing, today, label, parent_name):
+    """Everything that must be true of a listing from OPM's current PLUM
+    export: a post, dated by the fetch, citing the committed file byte for
+    byte, a Filled or Vacant row -- never Historical -- carrying every value
+    the block publishes, filed under the node's own tree parent, and a title
+    the node's name still answers to."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(listing, dict):
+        say("positionCurrentListing {!r} is not a record".format(listing))
+        return out
+    if not is_post(node):
+        say("carries a current PLUM listing but is a {!r}, not a post".format(node.get("type")))
+    if str(listing.get("source") or "") != PLUM_CURRENT_SOURCE or str(listing.get("method") or "") != PLUM_CURRENT_METHOD:
+        say("names a source or method for its current PLUM listing that this pipeline does not produce")
+    fetched = str(listing.get("exportFetchedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", fetched) or fetched[:10] > today:
+        say("claims a current PLUM listing without a past fetch date ({!r})".format(fetched))
+    if str(listing.get("checkedAt") or "") != fetched:
+        say("dates its current PLUM listing {!r} but the export was fetched {!r}".format(listing.get("checkedAt"), fetched))
+    url = str(listing.get("url") or "")
+    if not host_of(url).endswith((".gov", ".mil")):
+        say("claims a current PLUM listing with no .gov/.mil document behind it")
+    export = plum_current_export()
+    if export is None:
+        say("claims a current PLUM listing but the committed export cannot be read or does not match its recorded digest")
+        return out
+    if str(listing.get("documentSha256") or "").lower() != export["sha256"]:
+        say("names a document digest that is not the committed export's")
+    if url != export["url"]:
+        say("cites {!r}; the export was fetched from {!r}".format(url, export["url"]))
+    if fetched != export["fetched_at"]:
+        say("dates the export {!r}; its fetch record says {!r}".format(fetched, export["fetched_at"]))
+    agency, organization, title = (str(listing.get(k) or "") for k in ("agency", "organization", "listedTitle"))
+    # The parent: the organisation the export files the title under must be
+    # the node's parent in the tree the gate is walking. Checked before the
+    # row is looked up, so a block filed under the wrong organisation is
+    # named as such rather than only as a row the export does not carry.
+    if not (plum_org_keys(parent_name) & plum_listing_parent_keys(listing)):
+        say("is filed by the export under {!r}, but its parent in the tree is {!r}".format(organization or agency, parent_name))
+    # The name: the title must still be one the node's name answers to.
+    if not (position_title_keys(node.get("name"), parent_name) & set(plum_export_title_keys(title, organization))):
+        say("is listed as {!r}, which does not name it".format(title))
+    # The row, by the block's own keys and nothing about who holds it.
+    entry = export["index"].get((agency, organization, title))
+    live = list((entry or {}).get("live") or [])
+    if not live:
+        say("lists {!r} under {!r} / {!r}, which the export carries no Filled or Vacant row for{}".format(
+            title, agency, organization, " (Historical rows only)" if entry else ""))
+        return out
+    status = listing.get("positionStatus")
+    statuses = {r["Position Status"] for r in live}
+    if status is not None and (str(status) not in PLUM_CURRENT_LIVE_STATUSES or str(status) not in statuses):
+        say("publishes position status {!r}; the export's live rows for this title read {!r}".format(status, sorted(statuses)))
+    for claimed in (listing.get("positionStatusCounts") or {}):
+        if str(claimed) not in PLUM_CURRENT_LIVE_STATUSES or str(claimed) not in statuses:
+            say("counts a position status {!r} the export's live rows do not carry".format(claimed))
+    plan = listing.get("payPlan")
+    if plan is not None and str(plan) not in {r["Pay Plan"] for r in live}:
+        say("publishes pay plan {!r}; no live row of this title carries it".format(plan))
+    appointment = listing.get("appointmentType")
+    if appointment is not None and str(appointment) not in {r["Appointment Type"] for r in live}:
+        say("publishes appointment type {!r}; no live row of this title carries it".format(appointment))
+    cells = {r["Level, Grade, or Pay"] for r in live}
+    pay_level = listing.get("payLevel")
+    if pay_level is not None and (not isinstance(pay_level, str) or "$" in pay_level or pay_level not in cells):
+        say("publishes {!r} as a pay level; the export's cell(s) for this title read {!r}".format(pay_level, sorted(cells)))
+    reported = listing.get("reportedPay")
+    text = listing.get("reportedPayText")
+    if reported is not None:
+        if isinstance(reported, bool) or not isinstance(reported, (int, float)) or reported <= 0:
+            say("publishes {!r} as a reported rate of pay".format(reported))
+        elif str(text or "") not in cells:
+            say("reports pay as {!r}, which no live row of this title prints".format(text))
+        else:
+            digits = re.sub(r"[^0-9]", "", str(text).split(".")[0])
+            if not digits or abs(float(digits) - float(reported)) > 0.005:
+                say("publishes {!r} as the rate but the row prints {!r}".format(reported, text))
+        if pay_level is not None:
+            say("publishes both a rate and a level for one listing")
+    elif text is not None:
+        # The one text a listing may carry with no figure is a printed zero:
+        # the export's cell is quoted, and zero is never published as a rate.
+        if not re.fullmatch(r"\$\s*0(?:,0+)*(?:\.0+)?", str(text)):
+            say("carries reported-pay text {!r} with no figure".format(text))
+        elif str(text) not in cells:
+            say("quotes a zero rate {!r} that no live row of this title prints".format(text))
+    return out
+
+
+def current_pay_violations(node, pay, listing, today, label):
+    """Everything that must be true of the rate the current PLUM export
+    prints for the one row under a title: a post standing for one post, the
+    very figure and text the node's current listing reports and a live row of
+    the committed file prints, a proxy graded partial, never zero, never a
+    cost, and dated by the fetch."""
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionCurrentPay {!r} is not a record".format(pay))
+        return out
+    if not is_post(node):
+        say("carries a rate of basic pay from the current PLUM export but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one listing's rate but stands for several posts")
+    amount = pay.get("amount")
+    if isinstance(amount, bool) or not isinstance(amount, (int, float)) or amount <= 0:
+        say("publishes {!r} as a rate of basic pay; zero or a non-number is never a rate".format(amount))
+        amount = None
+    text = str(pay.get("rateText") or "")
+    if not re.fullmatch(r"\$[0-9][0-9,]*(?:\.\d{2})?", text):
+        say("prints the rate as {!r}, which is not a dollar figure the export prints".format(text))
+    elif amount is not None and abs(float(re.sub(r"[^0-9]", "", text.split(".")[0])) - float(amount)) > 0.005:
+        say("prints the rate as {!r} but publishes {!r}".format(text, amount))
+    if not isinstance(listing, dict):
+        say("claims a rate from the current PLUM export with no current listing beneath it")
+    else:
+        if listing.get("reportedPay") != amount or str(listing.get("reportedPayText") or "") != text:
+            say("publishes a rate its current listing does not report ({!r} against {!r})".format(text, listing.get("reportedPayText")))
+        for field in ("listedTitle", "agency", "organization"):
+            if str(pay.get(field) or "") != str(listing.get(field) or ""):
+                say("names {} {!r} while its listing names {!r}".format(field, pay.get(field), listing.get(field)))
+        if str(pay.get("documentSha256") or "").lower() != str(listing.get("documentSha256") or "").lower():
+            say("cites a different digest from its listing")
+    if str(pay.get("scopeMatch") or "") != "proxy" or str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("claims more than a proxy graded partial; a row of the export is one listing's figure")
+    if str(pay.get("costBasis") or "") != "basic_pay":
+        say("files the rate under {!r}, not basic_pay".format(pay.get("costBasis")))
+    if str(pay.get("unitsEvidenceKind") or "") != PLUM_CURRENT_PAY_UNITS_KIND:
+        say("rests its scale on {!r}; the export states it by printing the figure with its mark".format(pay.get("unitsEvidenceKind")))
+    if text and text not in str(pay.get("quote") or ""):
+        say("quotes a row that does not print the rate it publishes")
+    export = plum_current_export()
+    if export is None:
+        say("claims a rate from the current PLUM export but the committed export cannot be read or does not match its recorded digest")
+    else:
+        if str(pay.get("documentSha256") or "").lower() != export["sha256"]:
+            say("names a document digest that is not the committed export's")
+        entry = export["index"].get(tuple(str(pay.get(k) or "") for k in ("agency", "organization", "listedTitle")))
+        if not entry or text not in {r["Level, Grade, or Pay"] for r in entry["live"]}:
+            say("publishes {!r}, which no Filled or Vacant row of this title prints".format(text))
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a current-export rate without a past retrieval date ({!r})".format(checked))
+    if not host_of(str(pay.get("url") or "")).endswith((".gov", ".mil")):
+        say("claims a current-export rate with no .gov/.mil document behind it")
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a rate of basic pay and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a rate of basic pay and a verified cost")
     return out
 
 
@@ -2002,6 +2288,10 @@ def main(argv):
         str(node.get("id") or ""): str((parent or {}).get("id") or "")
         for node, parent in pairs
     }
+    # The parent's NAME, off the same walk, for the current PLUM export's
+    # filing check: the export names the organisation it files a title under,
+    # and the gate compares that with the parent the tree actually gives.
+    name_by_id = {str(node.get("id") or ""): node.get("name") for node, _ in pairs}
     print("Validating {} ({:,} nodes)\n".format(graph_path, len(nodes)))
 
     gate = Gate()
@@ -2301,6 +2591,7 @@ def main(argv):
         "listed_in_senate_committee_list",
         "listed_in_house_clerk_committee_list",
         "listed_in_opm_plum_archive",
+        PLUM_CURRENT_METHOD,
         GOVMAN_METHOD,
         GOVMAN_ORG_METHOD,
     }
@@ -2334,6 +2625,8 @@ def main(argv):
     bad_schedule_pay = []
     bad_reported_pay = []
     bad_usaspending = []
+    bad_current_listing = []
+    bad_current_pay = []
     for node in nodes:
         urls = [str(u) for u in (node.get("sourceUrls") or []) if str(u).startswith(("http://", "https://"))]
         official = [u for u in urls if urlparse(u).netloc.lower().endswith((".gov", ".mil"))]
@@ -2483,18 +2776,51 @@ def main(argv):
                         unknown_method.append("{} publishes {!r} as a reported rate of pay".format(label(node), reported_pay))
                     elif "$" not in str(listing.get("reportedPayText") or ""):
                         unknown_method.append("{} reports pay without the text the archive prints".format(label(node)))
+        # OPM's CURRENT PLUM export: a second listing beside the archive's,
+        # re-read from the committed file by the block's own keys, and the
+        # rate that export prints for the one row under the title.
+        current_listing = node.get("positionCurrentListing")
+        if current_listing is not None:
+            bad_current_listing.extend(current_listing_violations(
+                node, current_listing, today, label, name_by_id.get(tree_parents.get(str(node.get("id") or "")))))
+        current_pay = node.get("positionCurrentPay")
+        if current_pay is not None:
+            bad_current_pay.extend(current_pay_violations(node, current_pay, current_listing, today, label))
+        if str(node.get("placementMethod") or "") == PLUM_CURRENT_PLACEMENT_METHOD and not isinstance(current_listing, dict):
+            bad_current_listing.append("{} claims a placement from the current PLUM export with no listing from it".format(label(node)))
+        # Which listing a salary-table join hangs off: the one its own claim
+        # names (positions.LISTING_FIELD_BY_SOURCE, mirrored here), so a rate
+        # looked up for the current export's level is checked against the
+        # current listing and never the archive's. A rate stated by the OTHER
+        # listing is refused too: two figures for one post.
+        listings_by_source = {"opm_plum_archive": listing, PLUM_CURRENT_SOURCE: current_listing}
+
+        def _other_listing_states_a_rate(chosen):
+            return any(
+                isinstance(l, dict) and isinstance(l.get("reportedPay"), (int, float))
+                for source, l in listings_by_source.items() if source != chosen
+            )
+
         # A rate looked up from the salary table for the level the archive
         # reports. Two documents, neither of which says what this post pays: the
         # checks below are what keep the join from being read as one source.
         pay = node.get("positionPayRate")
         if pay is not None:
-            bad_table_pay.extend(table_pay_violations(node, pay, listing, today, label))
+            level_source = pay.get("levelSource") if isinstance(pay, dict) and isinstance(pay.get("levelSource"), dict) else {}
+            chosen = str(level_source.get("source") or "opm_plum_archive")
+            bad_table_pay.extend(table_pay_violations(node, pay, listings_by_source.get(chosen), today, label))
+            if _other_listing_states_a_rate(chosen):
+                bad_table_pay.append("{} carries a table rate beside a rate a PLUM listing states; two rates for one post".format(label(node)))
         # A base-pay RANGE for the pay plan or grade the archive reports:
         # the same two-document join, a different shape of claim (two bounds
         # and no figure for the post), its own field and its own mirror.
         grade_pay = node.get("positionGradePay")
         if grade_pay is not None:
-            bad_grade_pay.extend(grade_pay_violations(node, grade_pay, listing, today, label))
+            listing_source = grade_pay.get("listingSource") if isinstance(grade_pay, dict) and isinstance(grade_pay.get("listingSource"), dict) else {}
+            chosen = str(listing_source.get("source") or "opm_plum_archive")
+            bad_grade_pay.extend(grade_pay_violations(node, grade_pay, listings_by_source.get(chosen), today, label))
+            if _other_listing_states_a_rate(chosen):
+                bad_grade_pay.append("{} carries a table range beside a rate a PLUM listing states; two figures for one post".format(label(node)))
         # A single-source statutory rate — judicial or congressional — beside
         # the two-source join above; a different field, a different set of
         # rules, checked against its own mirror.
@@ -2579,6 +2905,7 @@ def main(argv):
             "listed_under_committee_in_senate_committee_list",
             "listed_under_committee_in_house_clerk_committee_list",
             "listed_under_organization_in_opm_plum_archive",
+            PLUM_CURRENT_PLACEMENT_METHOD,
         ):
             placement_unbacked.append("{} placementMethod {!r}".format(label(node), node.get("placementMethod")))
         matched = canonical_key(node.get("placementMatchedText"))
@@ -2586,13 +2913,20 @@ def main(argv):
         if str(node.get("placementMethod") or "") in ("listed_under_committee_in_senate_committee_list", "listed_under_committee_in_house_clerk_committee_list"):
             matched = re.sub(r"^subcommittee on (the )?", "", matched)
             name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
-        if str(node.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive":
+        if str(node.get("placementMethod") or "") in ("listed_under_organization_in_opm_plum_archive", PLUM_CURRENT_PLACEMENT_METHOD):
             # A curated position name legitimately carries the parent's own
             # name or acronym ("Director, AHRQ" under AHRQ), and may offer
             # alternatives ("Director / Administrator / Chair"). The plain
             # substring test would refuse 25 of the 91 real matches, so the
             # gate mirrors the module's rule; a test pins the two together.
-            name_key = min(position_title_keys(node.get("name"), parent_name_of(node, parent_of, by_id)), key=len, default=name_key)
+            # ANY alternative the text carries counts ("Deputy Director / Vice
+            # Chair" is named by "DEPUTY DIRECTOR"), and the current export's
+            # HTML entities are resolved first ("&amp;" is the file's "&").
+            import html as _html
+
+            matched = canonical_key(_html.unescape(str(node.get("placementMatchedText") or "")))
+            keys = position_title_keys(node.get("name"), parent_name_of(node, parent_of, by_id))
+            name_key = next((k for k in sorted(keys, key=len) if k in matched), min(keys, key=len, default=name_key))
         placement_rule = node.get("placementMatchRule")
         if placement_rule is not None:
             if str(placement_rule) != MATCH_RULE_COMMITTEE:
@@ -2625,6 +2959,8 @@ def main(argv):
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
     gate.check("a File A gross outlay is the fixture's own figure for the key it names, dated, and never the cost", bad_usaspending)
+    gate.check("a current PLUM listing is a Filled or Vacant row of the committed export, filed under the node's own parent, naming it", bad_current_listing)
+    gate.check("a current PLUM rate is the row's own printed figure for the listing beneath it, a proxy, never zero and never a cost", bad_current_pay)
 
     # A published disagreement is a claim like any other: it must name both
     # figures, sit on the estimate it actually affected, and be a real
@@ -3363,6 +3699,14 @@ def main(argv):
         len(reported_paid)))
     print("  PLUM archive         : {:,} positions listed in the previous administration's archive; {:,} placements from it".format(
         len(listings), sum(1 for n in nodes if str(n.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive")))
+    current_listings = [n for n in nodes if isinstance(n.get("positionCurrentListing"), dict)]
+    current_paid = [n for n in nodes if isinstance(n.get("positionCurrentPay"), dict)]
+    print("  current Plum Book    : {:,} positions listed in OPM's current PLUM export (fetched {}); {:,} placements from it; "
+          "{:,} carry the rate of basic pay the export prints for the one row under the title, graded partial".format(
+              len(current_listings),
+              next((str(n["positionCurrentListing"].get("exportFetchedAt") or "")[:10] for n in current_listings), "n/a"),
+              sum(1 for n in nodes if str(n.get("placementMethod") or "") == PLUM_CURRENT_PLACEMENT_METHOD),
+              len(current_paid)))
     # Reported on its own line, like every other source, so "740 with an
     # official source" cannot be read as 740 independently confirmed units.
     # The stale-table count is printed beside it because 26 of these tables
