@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921a";
+import { createGovernmentGraph } from "./graph.js?v=20260921b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -270,7 +270,8 @@ function summariseGraph(root) {
     if (isPost) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
-      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay) {
+      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay
+        || gradePayOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -345,7 +346,7 @@ function readingGuidePoints(count) {
       + `So no position is given a share of an agency's outlays — that share is not a quantity that `
       + `exists, and it is why ${count.postsWithoutFigure.toLocaleString()} of the `
       + `${count.posts.toLocaleString()} posts show nothing under cost. `
-      + `${count.paidPosts.toLocaleString()} show a rate of pay instead, and only where an official `
+      + `${count.paidPosts.toLocaleString()} show a rate or a base-pay range instead, and only where an official `
       + `document states one. A salary is not a budget either, and is labelled separately.`,
     ],
     [
@@ -985,6 +986,47 @@ function renderPositionListing(data) {
   }
   add("It is a record of that period and says nothing about who holds this post now.");
   renderTableRate(data, add);
+  renderGradePay(data, add);
+}
+
+// The base-pay RANGE a salary table states for the pay plan or grade the
+// archive reports: a General Schedule grade's step 1 to step 10, or the SES /
+// SL-ST pay system's minimum and maximum. Rendered inside the listing block,
+// beside the pay plan it was looked up for, exactly as the table rate above
+// is. A range is never a rate: the sentence says which grade, which year,
+// that it is base pay before locality, and that it is neither the unit's
+// cost nor necessarily what the post pays now.
+function gradePayOf(node) {
+  const pay = node.positionGradePay;
+  if (!pay || typeof pay !== "object") return null;
+  return typeof pay.minimum === "number" && typeof pay.maximum === "number" ? pay : null;
+}
+
+function formatGradeRange(pay) {
+  return `$${Math.round(pay.minimum).toLocaleString()} – $${Math.round(pay.maximum).toLocaleString()}`;
+}
+
+function renderGradePay(data, add) {
+  const pay = gradePayOf(data);
+  if (!pay) return;
+  const year = pay.effective ? String(pay.effective).slice(0, 4) : "";
+  if (pay.kind === "general_schedule_grade") {
+    add(` Separately, OPM's ${pay.table} states ${formatGradeRange(pay)} as the base General Schedule range for grade ${pay.grade} in ${year}, before locality pay; not this unit's cost and not necessarily what the post pays now.`);
+    add(" That is a range, not a rate: the table prints ten steps for the grade and does not say which step this post is at, and every General Schedule employee in the fifty states receives a locality adjustment on top of the base rate that this table does not state.");
+  } else {
+    const system = pay.kind === "senior_executive_service" ? "Senior Executive Service" : "Senior-Level / Scientific or Professional";
+    add(` Separately, OPM's ${pay.table} states the ${system} pay system's range for ${year} as ${formatGradeRange(pay)}; not this unit's cost and not necessarily what the post pays now.`);
+    const rows = Array.isArray(pay.rows) ? pay.rows : [];
+    for (const row of rows) {
+      if (row && typeof row.minimum === "number" && typeof row.maximum === "number") {
+        add(` The table's own row: "${row.label}" — $${Math.round(row.minimum).toLocaleString()} to $${Math.round(row.maximum).toLocaleString()}.`);
+      }
+    }
+    add(" The archive does not say which kind of agency employs the post, so both rows are shown; a band is not a rate, and the table names no post.");
+  }
+  add(" Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
 // The salary table's rate for the level the archive reports. Deliberately
@@ -1746,7 +1788,11 @@ function formatCostAmount(node) {
     // The estimate is withheld; a real salary is not, and it is labelled as
     // pay rather than as a cost by the head the cost block draws beside it.
     const pay = reportedPayOf(node);
-    return pay ? pay.reportedPayText || `$${Math.round(pay.reportedPay).toLocaleString()}` : null;
+    if (pay) return pay.reportedPayText || `$${Math.round(pay.reportedPay).toLocaleString()}`;
+    // A base-pay RANGE, where a table states one for the listing's pay plan
+    // and the archive states no rate. Two bounds, never one figure.
+    const range = gradePayOf(node);
+    return range ? formatGradeRange(range) : null;
   }
   const amount = toFiniteAmount(node.resolved_total_amount);
   if (amount === null || isBelowPrecision(node)) {
@@ -1772,8 +1818,13 @@ function isBelowPrecision(node) {
 function describeCost(node) {
   if (isCostHiddenAsEstimate(node)) {
     const pay = reportedPayOf(node);
+    const range = pay ? null : gradePayOf(node);
     return {
-      label: pay ? "No cost known; a reported rate of pay is shown" : "No cost known for this node",
+      label: pay
+        ? "No cost known; a reported rate of pay is shown"
+        : range
+          ? "No cost known; a base-pay range is shown"
+          : "No cost known for this node",
       tone: "unavailable",
       note:
         "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
@@ -1782,7 +1833,11 @@ function describeCost(node) {
         (pay
           ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
             `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
-          : ""),
+          : range
+            ? (range.kind === "general_schedule_grade"
+              ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
+              : ` What is shown instead is the range OPM's ${range.table} states for the pay system the archive files this post on; not this unit's cost and not necessarily what the post pays now.`)
+            : ""),
     };
   }
   const status = String(node.cost_status || "").toLowerCase();
@@ -1900,12 +1955,18 @@ function buildCostBlock(node) {
   // claim. The period line below is the Treasury anchor's and is suppressed
   // for the same reason.
   const showingPay = isCostHiddenAsEstimate(node) && reportedPayOf(node) !== null;
-  const period = showingPay ? { label: null, amountKind: null } : getCostPeriod(node);
+  // A base-pay RANGE shown in the estimate's place is headed as a range, and
+  // as base pay before locality where it is the General Schedule's: the two
+  // bounds are the table's and the word COST would make them the unit's.
+  const showingRange = isCostHiddenAsEstimate(node) && !showingPay && gradePayOf(node) !== null;
+  const period = showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
   label.textContent = showingPay
     ? "REPORTED RATE OF BASIC PAY"
-    : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+    : showingRange
+      ? (gradePayOf(node).kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE")
+      : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);

@@ -521,6 +521,27 @@ try {
     check("the table rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(stats) || !/Salary Table/.test(stats), stats);
   }
 
+  // A base-pay RANGE for the pay plan or grade the archive reports — two
+  // bounds from a salary table, never a rate, and for the General Schedule
+  // base pay before locality. Its own field, rendered in the listing block
+  // beside the pay plan it was looked up for, and shown in the cost block
+  // under a heading that is not the word COST.
+  const withRange = allNodes.find((n) => n.positionGradePay && typeof n.positionGradePay.minimum === "number" && unique(n));
+  check("some position carries a base-pay range from a salary table", Boolean(withRange), "none");
+  if (withRange) {
+    await openByName(withRange.name);
+    const listing = await text("#info-position-listing");
+    check("the range names the table it came from", /Salary Table (No\. )?\d{4}-(GS|ES|SL\/ST)/.test(listing), listing);
+    check("the range is two bounds, not one figure", /\$[\d,]+ – \$[\d,]+/.test(listing), listing);
+    check("the panel says a range is not a rate or the unit's cost", /not this unit's cost and not necessarily what the post pays now/.test(listing), listing);
+    if (withRange.positionGradePay.kind === "general_schedule_grade") {
+      check("a General Schedule range says it is base pay before locality",
+        new RegExp(`base General Schedule range for grade ${withRange.positionGradePay.grade} in \\d{4}, before locality pay`).test(listing), listing);
+    }
+    const stats = await text("#info-stats");
+    check("the range is not headed as a cost", !/^COST|ANNUAL COST/m.test(stats.split("RANGE")[0]) || !/RANGE/.test(stats), stats.slice(0, 400));
+  }
+
   // A single-source statutory rate — judicial or congressional — a
   // different field from positionPayRate above, with its own rendering
   // and no PLUM archive beneath it.

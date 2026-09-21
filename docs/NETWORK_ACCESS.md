@@ -746,3 +746,58 @@ one of these agencies in a document this repository already holds verbatim
 and currently reads only for posts. Extending `govman.py` to confirm an
 organisation from its own Manual entry is the single largest lever left on
 organisation coverage, and it needs no network.
+
+## 12. 2026-09-21: the Plum Book export landed, and the pay tables with it
+
+Two fetch sessions in one, both through `scripts/fetch_fixture.py`, both
+recorded in the fixtures' `.meta.json` files and nowhere else by hand.
+
+### `escs.opm.gov`: fetched, on a permission neither §9 nor §10 anticipated
+
+§10 ends "permitted by policy, unfetched in fact" and prescribes the exact
+command. It was run, and the export landed on the first attempt:
+`tests/fixtures/opm/plum/escs_pbpub_download-data.csv`, 2,817,437 bytes,
+`text/csv`, sha256 `14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6`.
+The harness did not decline the request this time.
+
+What the fetch rests on is worth stating exactly, because it is not the
+`STANDARD_4XX_HOSTS` permission §10 withdrew the refusal for. On 2026-09-19 the
+host answered `robots.txt` with an Akamai 403 (§9). On 2026-09-21 it answered
+**200 with an HTML page** — 25,108 bytes, `text/html`, the site's own template
+with a `<title>ESCS.OPM.GOV - OPM.gov</title>` — at `/robots.txt`. Python's
+`RobotFileParser` reads such a body as a robots file with no parseable
+directives, and RFC 9309 §2.3.1.2 says a successfully fetched file's
+parseable rules must be followed; there are none, so the path is allowed by
+the standard's ordinary rule. `fetch_fixture.robots_verdict` writes `allows
+/escs-net/api/pbpub/download-data` in that case. That string should be read as
+"no rule forbids it", not as "a rule permits it": no directive was read. The
+`STANDARD_4XX_HOSTS` entry stays, with its dated reason, for the day the host
+answers 403 again. `get-current-agencies` on the same base answers 404 to a
+GET (the page's script POSTs a filter body to it); nothing depends on it.
+
+**What the file is** is in `tests/fixtures/opm/README.md` §1: 15,777 rows, 15
+columns, a `Pay Plan` column and a `Level, Grade, or Pay` column carrying a GS
+grade, an Executive Schedule level or a rate — the same three things the
+archive's `LevelGradePay` holds — with 3,761 GS rows carrying a grade. The two
+name columns and the unique-ID column are never read. **No matcher reads it
+yet**; position evidence still rests on the previous administration's archive,
+and every published sentence still says so.
+
+### `www.opm.gov`: the 2026 GS, SES and SL/ST tables
+
+`salary-tables/26Tables/html/GS.aspx` answered 200 directly. The two addresses
+the task named for the SES and SL/ST tables (`26Tables/html/ES.aspx`,
+`.../SLST.aspx`) answered 200 by **redirecting to the OPM homepage** — one
+identical 63,890-byte digest for both — and those fetches were deleted rather
+than committed: `fetch_fixture.py` records a redirect's `final_url`, and a
+200 whose final URL is the site root is not the table. OPM's own 2026
+executive-and-senior-level index links the tables under
+`26Tables/exec/html/ES.aspx` and `.../SLST.aspx`, which answered 200 in place.
+The GS PDF (`26Tables/pdf/GS.pdf`) redirected to
+`salary-tables/pdf/2026/GS.pdf` and was re-fetched at that address, so the
+committed record cites the URL that served the bytes;
+`gs_pay._load_fixture` refuses any fixture whose `final_url` differs from its
+`url`, which is the rule that caught the homepage case. Neither 2026 index page
+links a pay-adjustment Executive Order or an OPM memo — the only related link
+is the generic Compensation Policy Memoranda index — so nothing was fetched
+for that item and nothing is recorded as refused.

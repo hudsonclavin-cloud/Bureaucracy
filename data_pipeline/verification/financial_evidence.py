@@ -207,6 +207,22 @@ DICTIONARY_SCALED_SOURCE_TYPES = {
     },
 }
 
+#: A fourth way, and the narrowest: a typeset table that prints the currency
+#: mark ONCE, on the first figure of each column, and leaves every row beneath
+#: bare. OPM's Salary Table 2026-GS (the PDF rendering) prints "$  22,584" on
+#: grade 1 and "   25,393" on grade 2 in the same column; the HTML rendering
+#: prints no mark and no scale phrase anywhere, and neither says "dollars".
+#: `_prints_whole_dollars` cannot vouch for grade 15 from that page, so an
+#: honest record from it was unfilable -- which is the failure this module
+#: names as the dangerous one, because an unfilable honest record is how a
+#: validator gets worked around. Granted to exactly one source type; the
+#: record must quote the column's first figure WITH its mark and its own
+#: figure WITHOUT one, from the same document, and name the column. The
+#: validator checks that shape; the derive step is what guarantees the two
+#: figures sit in one column of one table, and the release gate re-reads the
+#: committed table. Kind: `currency_mark_on_the_columns_first_figure`.
+COLUMN_HEAD_MARK_SOURCE_TYPES = {"opm_pay_table"}
+
 #: Which bases a source can actually report. A Congressional Justification
 #: cannot report an audited net cost; nothing stopped that being claimed.
 #: CJs *do* print prior-year actual columns, so realized bases are allowed
@@ -353,6 +369,56 @@ def _dictionary_states_scale(record: Mapping[str, Any], evidence: str, source_ty
     if not _SHA256.match(_text(source.get("sha256")).lower()) or not _text(source.get("file")):
         return ""
     return f"{field} -> {element}"
+
+
+def _column_head_prints_dollars(
+    record: Mapping[str, Any], evidence: str, amount_raw: Any, source_type: str, units: str
+) -> str:
+    """Whether the document marks the column once, on its first figure, and
+    the record quotes that head beside its own bare figure. See
+    `COLUMN_HEAD_MARK_SOURCE_TYPES`.
+
+    Tried only after `_prints_whole_dollars` has failed, so a figure that
+    carries its own mark always takes the stronger kind. Four things, all
+    required:
+
+    - `columnHead` names the column and quotes its first figure, and that
+      figure carries the mark ATTACHED, as `_prints_whole_dollars` demands of
+      a record's own figure -- a loose dollar sign proves nothing;
+    - the record's own figure is bare digits, the shape a row beneath the
+      head actually prints;
+    - the evidence quotes the head's text, the column's name and the record's
+      own figure, so the claim is auditable against the page in one line;
+    - the record's own figure must NOT itself carry the mark in the evidence,
+      because then the stronger rule would have matched and this one has no
+      business being the kind recorded.
+
+    Returns the head's text, or "" when the evidence does not show this.
+    """
+    if units != "usd" or source_type not in COLUMN_HEAD_MARK_SOURCE_TYPES:
+        return ""
+    head = record.get("columnHead")
+    if not isinstance(head, Mapping):
+        return ""
+    column = _text(head.get("column")).casefold()
+    head_raw = _text(head.get("amountRaw"))
+    head_text = _text(head.get("text"))
+    if not column or not re.fullmatch(r"[\d,]+", head_raw):
+        return ""
+    if not re.fullmatch(rf"\$\s*{re.escape(head_raw)}", head_text):
+        return ""
+    raw = _text(amount_raw)
+    if not raw or not re.fullmatch(r"[\d,]+", raw) or raw == head_raw:
+        return ""
+    if column not in evidence or head_text.casefold() not in evidence:
+        return ""
+    # At least one occurrence of the record's own figure that is a whole
+    # figure (not the tail of a longer one) and is NOT itself marked.
+    for match in re.finditer(rf"(?<![\d,.]){re.escape(raw)}(?![\d,]|\.\d)", evidence):
+        before = evidence[: match.start()].rstrip()
+        if not before.endswith("$"):
+            return head_text
+    return ""
 
 
 def _is_real_number(value: Any) -> bool:
@@ -578,12 +644,20 @@ def validate_record(
         # `_prints_whole_dollars`.
         printed = _prints_whole_dollars(units_evidence, record.get("amountRaw"), source_type, units)
         dictionary = "" if printed else _dictionary_states_scale(record, units_evidence, source_type, basis, units)
-        if not printed and not dictionary:
+        column_head = "" if (printed or dictionary) else _column_head_prints_dollars(
+            record, units_evidence, record.get("amountRaw"), source_type, units
+        )
+        if not printed and not dictionary and not column_head:
             raise Rejected(
                 f"{node_id}: unitsEvidence {record.get('unitsEvidence')!r} states no scale "
                 f"(expected one of {UNIT_PHRASES[units]})"
             )
-        units_evidence_kind = "currency_mark_on_the_printed_figure" if printed else "publishers_data_dictionary"
+        if printed:
+            units_evidence_kind = "currency_mark_on_the_printed_figure"
+        elif dictionary:
+            units_evidence_kind = "publishers_data_dictionary"
+        else:
+            units_evidence_kind = "currency_mark_on_the_columns_first_figure"
     else:
         if stated != units:
             raise Rejected(

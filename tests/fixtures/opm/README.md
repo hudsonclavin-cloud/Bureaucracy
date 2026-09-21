@@ -37,6 +37,7 @@ weaker file from the same publisher was saved instead, this README says so.
 | `plum/opm_plum_archive_page.html` | https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/ | 2026-09-08T19:48:51Z | 200 | 91016 | `0ffa3e924d8a8c9bd584d8b6050b86c3da3e53defec32f2f06c2bb1fcb203a65` |
 | `plum/opm_plum_data_page.html` | https://www.opm.gov/about-us/open-government/plum-reporting/plum-data/ | 2026-09-08T19:47:37Z | 200 | 211195 | `55e7dc41148112cd70fd16781369567d641bb9b3a031ddaadccf8b9113128c9e` |
 | `plum/plum-archive-biden-administration.csv` | https://www.opm.gov/about-us/open-government/plum-reporting/plum-archive/plum-archive-biden-administration.csv | 2026-09-08T19:49:47Z | 200 | 3792279 | `2a77f8ca82e4e4077db4d923f77d5bc8812eecd9a8b86b9baf231e22a848fd3d` |
+| `plum/escs_pbpub_download-data.csv` | https://escs.opm.gov/escs-net/api/pbpub/download-data | 2026-09-21T03:02:16Z | 200 | 2817437 | `14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6` |
 
 Failed fetches (meta file only). Every failure is the session's egress proxy refusing the
 `CONNECT` with 403 before any byte reached the host — a fact about this environment's
@@ -50,7 +51,7 @@ the fetch itself was then refused by the proxy, not by the host).
 | `fedscope/data_opm_gov_root.html.meta.json` | https://data.opm.gov/ | 2026-09-08T19:53:46Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
 | `fedscope/fedscope_opm_gov_root.html.meta.json` | https://www.fedscope.opm.gov/ | 2026-09-08T19:53:47Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
 | `plum/GPO-PLUMBOOK-2024.pdf.meta.json` | https://www.govinfo.gov/content/pkg/GPO-PLUMBOOK-2024/pdf/GPO-PLUMBOOK-2024.pdf | 2026-09-08T19:53:45Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
-| `plum/escs_pbpub_download-data.csv.meta.json` | https://escs.opm.gov/escs-net/api/pbpub/download-data | 2026-09-08T19:53:43Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
+| `plum/escs_pbpub_download-data.csv.meta.json` | https://escs.opm.gov/escs-net/api/pbpub/download-data | 2026-09-08T19:53:43Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` — **superseded: fetched 2026-09-21T03:02:16Z, 200, see §1** |
 | `plum/escs_pbpub_get-current-agencies.json.meta.json` | https://escs.opm.gov/escs-net/api/pbpub/get-current-agencies | 2026-09-08T19:53:44Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
 | `plum/govinfo_plum_book_collection.html.meta.json` | https://www.govinfo.gov/collection/plum-book | 2026-09-08T19:53:45Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
 | `plum/plumbook_opm_gov_root.html.meta.json` | https://plumbook.opm.gov/ | 2026-09-08T19:53:42Z | `URLError: <urlopen error Tunnel connection failed: 403 Forbidden>` |
@@ -79,15 +80,50 @@ the repository owner's explicit instruction, that refusal was withdrawn for this
 `politeness.STANDARD_4XX_HOSTS` lists it, and `scripts/fetch_fixture.py` rests on the same
 list. `docs/NETWORK_ACCESS.md` §10 records the change and its limits in full.
 
-**The file is still not here.** The third blocker is this session's own agent harness, which
-declined the outbound request, so the policy above is tested offline and has never been
-exercised against the live server. A copy obtained earlier in the session is deliberately not
-committed: it was fetched before the policy existed and so without any robots check, and its
-`.meta.json` could not honestly say which permission it rested on. Every fixture in this
-repository is the publisher's own bytes with a provenance record that is true; a record that
-is a guess is worse than an absent fixture. The record count, field names and sample rows are
-therefore still not known from this environment, and no published node carries a
-current-PLUM claim.
+**The file landed on 2026-09-21** (`plum/escs_pbpub_download-data.csv`, 2,817,437 bytes,
+sha256 `14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6`), fetched with
+`scripts/fetch_fixture.py` exactly as `docs/NETWORK_ACCESS.md` §10 prescribes. The third
+blocker — the agent harness declining the request — did not recur. Note what the fetch
+record's robots verdict rests on, because it is neither of the two cases the policy above
+was written for: `escs.opm.gov/robots.txt` answered **200 with an HTML page** (25,108 bytes,
+`text/html`, the site's own template) rather than a 403. Python's parser reads an HTML body
+as a robots file carrying no directives, which is what RFC 9309 §2.3.1.2 calls a successful
+access with no parseable rules, so the path is allowed by the standard's ordinary rule and
+`STANDARD_4XX_HOSTS` never came into play. The verdict string `allows /escs-net/...` is what
+the fetcher writes in that case; no rule was actually read. `docs/NETWORK_ACCESS.md` §12
+records it. **Nothing reads this file yet**: no `plum_current` module exists and no published
+node carries a current-PLUM claim; what follows is what the file contains, so the matcher
+that eventually reads it is written against the file and not a guess about it.
+
+- Encoding: UTF-8 with a byte-order mark; served as `text/csv`.
+- Records: **15,777** data rows after the header, every row 15 fields.
+- Fields, in order: `Agency`, `Organization`, `Position Title`, `Position Status`,
+  `Appointment Type`, `Expiration Date`, `Level, Grade, or Pay`, `Duty Location`,
+  `First Name`, `Last Name`, `Individual Unique ID`, `Pay Plan`, `Tenure`, `Begin Date`,
+  `Vacate Date`. The two name columns and the unique-ID column are **never read** by anything
+  in this repository, the rule `positions.py` already sets for the archive's incumbent
+  columns; the counts below were computed without reading them.
+- Unlike the archive, the export carries a `Position Status` of `Historical` (5,980 rows)
+  beside `Filled` (6,846) and `Vacant` (2,951), so a row is an incumbency here too: 9,797 rows
+  carry no `Vacate Date`.
+- `Pay Plan` (count): ES 8,546; GS 3,761; OT 1,171; EX 938; AD 568; FA 275; SL 219; WC 188;
+  then PD, IG, FE, ST, FP; 3 blank. `Level, Grade, or Pay` is the archive's `LevelGradePay`
+  under a new name and holds the same three things — a GS grade (`15` 1,493 rows, `14` 517,
+  `11` 430, `13` 407, `12` 402, `9` 396, `7` 87, `10` 20, `8` 9, `5` 6, `6` 3), an Executive
+  Schedule level (`IV` 522 among 884 EX rows with a level), or a rate of basic pay
+  (`$228,000` 720 rows, `$197,200` 435; 3,782 of the 8,546 ES rows carry a rate and 4,761
+  carry nothing). **So it does carry a pay plan and a grade or level per position**, which is
+  what `gs_pay.py` needs: 3,761 GS rows with a grade against the archive's one matched GS
+  post, once a matcher for this file exists.
+- `Appointment Type` (count): CA 6,285; SC 3,861; NA 2,056; PAS 1,447; XS 1,372; PA 502;
+  TA 125; CG 118; the rest under 100. Distinct `Agency`: 174 (the export names an
+  `OFFICE OF THE SECRETARY OF WAR`, 781 rows, where the archive named the Office of the
+  Secretary of Defense); distinct `Organization`: 1,230; distinct `Position Title`: 6,715.
+- Latest `Begin Date` in the file: **2026-09-30**, nine days after the fetch and after the
+  page's own "as of June 15, 2026"; the most common values are 01/20/2025 (519 rows),
+  09/30/2025 (293) and 05/03/2026 (185). A begin date in the future is a fact about the
+  export as served, kept as served, and one more reason a matcher for this file must say what
+  each row's dates mean before it publishes anything from it.
 `https://plumbook.opm.gov/` (the address the task named) and GovInfo — both the collection
 page and the 2024 printed Plum Book PDF that the OPM page links,
 `https://www.govinfo.gov/content/pkg/GPO-PLUMBOOK-2024/pdf/GPO-PLUMBOOK-2024.pdf` — were
