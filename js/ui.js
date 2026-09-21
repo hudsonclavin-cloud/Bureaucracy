@@ -167,7 +167,15 @@ function updateStats(stats) {
   // With the candidate toggle on, the review queue is on screen too and the
   // denominator says so; with it off, the count is the published graph alone.
   const denominator = stats.showCandidateNodes ? stats.totalNodeCount + candidateCount : stats.totalNodeCount;
-  setText(dom.nodeCounter, `${stats.visibleNodeCount.toLocaleString()} / ${denominator.toLocaleString()} nodes rendered`);
+  // Loaded is not drawn: the LOD tier draws only the depths it covers and
+  // the density cap hides the rest, so "5,402 / 5,402 nodes rendered" was
+  // printed over a screen showing depth 3. Both numbers, each named.
+  const drawn = Number.isFinite(stats.drawnNodeCount) ? stats.drawnNodeCount : null;
+  setText(
+    dom.nodeCounter,
+    `${stats.visibleNodeCount.toLocaleString()} / ${denominator.toLocaleString()} nodes loaded` +
+      (drawn === null ? "" : ` · ${drawn.toLocaleString()} drawn at this view`),
+  );
   setText(
     dom.statsTotal,
     candidateCount > 0
@@ -365,7 +373,7 @@ function readingGuidePoints(count) {
       "Reading a panel",
       `On a cost, a solid badge means measured and an outlined one means estimated — filled against `
       + `hollow, so the difference survives colourblindness. A box's colour is the branch it belongs `
-      + `to; the key is bottom-left. "Placement" is a separate line, because "this page lists it" and `
+      + `to; the key is bottom-right. "Placement" is a separate line, because "this page lists it" and `
       + `"this thing exists" are different claims.`,
     ],
   ];
@@ -741,7 +749,7 @@ function ensureVerificationLegend() {
   title.id = "legend-verification-label";
   title.dataset.verificationLegend = "true";
   title.textContent = "Verification";
-  title.style.fontSize = "8px";
+  title.style.fontSize = "10px";
   title.style.color = "#8f7a5d";
   title.style.letterSpacing = "0.2em";
   title.style.textTransform = "uppercase";
@@ -914,7 +922,7 @@ function renderCountProvenance(data) {
     // department offices, the Deputy Solicitor General (×4) and two Deputy
     // Assistant Attorney General nodes — each printing a single archive
     // rate under a sentence calling it the group's.
-    const perPost = isCostHiddenAsEstimate(data) && reportedPayOf(data) !== null;
+    const perPost = showsPayInsteadOfCost(data);
     if (perPost) {
       // Only what was actually read. An earlier version of this sentence said
       // "each of the 2 to 4 would be paid separately", which the archive does
@@ -1327,8 +1335,14 @@ function hostnameOf(url) {
   }
 }
 
-function renderPlacementLine(data) {
+function renderPlacementLine(data, isRoot = false) {
   if (!dom.verificationPlacement) return;
+  if (isRoot) {
+    // There is no edge above the root to have evidence for. "No evidence
+    // recorded for where this sits" read as a gap on the Constitution.
+    setText(dom.verificationPlacement, "Placement: the root of the graph — nothing sits above it, so there is no edge here to evidence");
+    return;
+  }
   if (data.isCandidate) {
     // Not a placement claim — nothing has verified this belongs anywhere.
     // It is the discovery crawler's own guess at a parent, shown so a
@@ -1371,6 +1385,7 @@ function renderPlacementLine(data) {
   const directoryPlacement = {
     listed_under_parent_in_federal_register_agency_directory: "the Federal Register's agency directory files it under its parent here",
     listed_under_parent_in_us_government_manual: "the United States Government Manual files it under its parent here",
+    listed_under_organization_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, files a post of this title under its organisation here",
     listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
     listed_under_committee_in_house_clerk_committee_list: "the House Clerk's official committee list carries it under its committee here",
   }[String(data.placementMethod || "")];
@@ -1432,7 +1447,33 @@ function renderPlacementLine(data) {
   addDisagreement();
 }
 
-function renderVerificationPanel(data) {
+// The page queued for a node went unread, and the record says why. Said as
+// a fact about the host or the page, never as a finding about the unit: 67 of
+// 68 such hosts refuse the page exactly as they refuse robots.txt
+// (docs/NETWORK_ACCESS.md §11), and "Not yet verified" read as though nobody
+// had tried. Null where no such record exists or a method confirmed the node
+// by another route.
+function describeUnreadPage(data) {
+  const u = data.verificationUnread;
+  if (data.verificationMethod || !u || typeof u !== "object") {
+    return null;
+  }
+  const when = u.checkedAt ? new Date(u.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
+  const on = when ? ` on ${when}` : "";
+  const host = u.host || hostnameOf(u.url) || "its queued page";
+  const UNREAD_TEXT = {
+    host_refuses_crawler: `Not verified: ${host} refuses this crawler${on} (401/403 to the project's User-Agent), so the page queued for it could not be read — a fact about the host, not about the unit`,
+    robots_unreachable: `Not verified: ${host}'s robots.txt could not be reached${on}; the crawl standard treats that as a complete disallow, so the page was not read`,
+    page_not_found: `Not verified: the page queued for it (${host}) answered 404${on}; it has moved or gone, and no other page has been proposed`,
+    page_below_readable_floor: `Not verified: the page queued for it (${host}) served under 400 characters of readable text${on} — a script shell — so nothing could be read`,
+    site_failing: `Not verified: ${host} answered a server error${on}; refused until the site recovers`,
+    network_error: `Not verified: ${host} could not be reached${on} (network error); the page was not read`,
+    other: `Not verified: the page queued for it (${host}) could not be read${on}`,
+  };
+  return UNREAD_TEXT[String(u.kind || "")] || UNREAD_TEXT.other;
+}
+
+function renderVerificationPanel(data, isRoot = false) {
   if (!dom.verificationWrap) {
     return;
   }
@@ -1469,8 +1510,10 @@ function renderVerificationPanel(data) {
         ? "No source URL has been attached to it yet."
         : "No source has been attached for its existence. OPM's employment table, linked below, names a unit of this name — evidence about its staffing, not about whether it exists as drawn."
     );
-    setText(dom.verificationLastVerified, "");
-    renderPlacementLine(data);
+    // A never-checked node can still have a page queued that went unread;
+    // that is the line a reader most needs, and it was never printed here.
+    setText(dom.verificationLastVerified, describeUnreadPage(data) || "");
+    renderPlacementLine(data, isRoot);
   } else {
     setText(dom.verificationStatus, `Verification Status: ${status}`);
     setText(dom.verificationConfidence, `Confidence: ${confidence.toFixed(2)} (${Math.round(confidence * 100)}%) · Sources: ${linkableSources.length}`);
@@ -1489,6 +1532,11 @@ function renderVerificationPanel(data) {
       // and is not evidence about who holds it or what it does.
       name_labelled_on_its_organisations_official_page: "Its organisation's own official page names it",
       listed_in_federal_register_agency_directory: "The Federal Register's agency directory lists it",
+      // The archive is the previous administration's reported positions,
+      // so this is a record of that period; the listing block below says so
+      // and names the edition. The title is quoted where the archive gives
+      // one, for the reason a post's page label is.
+      listed_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, lists a post of this title under its organisation",
       listed_in_us_government_manual: "The United States Government Manual carries an entry for it",
       listed_in_senate_committee_list: "The Senate's official committee list carries it",
       listed_in_house_clerk_committee_list: "The House Clerk's official committee list carries it",
@@ -1519,26 +1567,8 @@ function renderVerificationPanel(data) {
       checkLine = checkedOn
         ? `Checked ${checkedOn}: its official page${where} does not name it as a heading or link`
         : `Its official page${where} does not name it as a heading or link`;
-    } else if (!data.verificationMethod && data.verificationUnread && typeof data.verificationUnread === "object") {
-      // The page queued for it went unread, and the record says why. Said as
-      // a fact about the host or the page, never as a finding about the unit:
-      // 67 of 68 such hosts refuse the page exactly as they refuse robots.txt
-      // (docs/NETWORK_ACCESS.md §11), and "Not yet verified" read as though
-      // nobody had tried.
-      const u = data.verificationUnread;
-      const when = u.checkedAt ? new Date(u.checkedAt).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "";
-      const on = when ? ` on ${when}` : "";
-      const host = u.host || hostnameOf(u.url) || "its queued page";
-      const UNREAD_TEXT = {
-        host_refuses_crawler: `Not verified: ${host} refuses this crawler${on} (401/403 to the project's User-Agent), so the page queued for it could not be read — a fact about the host, not about the unit`,
-        robots_unreachable: `Not verified: ${host}'s robots.txt could not be reached${on}; the crawl standard treats that as a complete disallow, so the page was not read`,
-        page_not_found: `Not verified: the page queued for it (${host}) answered 404${on}; it has moved or gone, and no other page has been proposed`,
-        page_below_readable_floor: `Not verified: the page queued for it (${host}) served under 400 characters of readable text${on} — a script shell — so nothing could be read`,
-        site_failing: `Not verified: ${host} answered a server error${on}; refused until the site recovers`,
-        network_error: `Not verified: ${host} could not be reached${on} (network error); the page was not read`,
-        other: `Not verified: the page queued for it (${host}) could not be read${on}`,
-      };
-      checkLine = UNREAD_TEXT[String(u.kind || "")] || UNREAD_TEXT.other;
+    } else if (describeUnreadPage(data)) {
+      checkLine = describeUnreadPage(data);
     } else if (checkedOn) {
       const how = METHOD_TEXT[String(data.verificationMethod || "")];
       const where = data.verificationMatchedIn === "navigation" ? " (in the site-wide navigation)" : "";
@@ -1554,12 +1584,15 @@ function renderVerificationPanel(data) {
       // page and the words on it are the only things that tie a confirmation
       // to this post rather than another — showing the badge without them
       // would ask the reader to take the match on trust.
+      const plumListing = data.positionListing && typeof data.positionListing === "object" ? data.positionListing : null;
       const quoted =
         !folded
         && String(data.verificationMethod || "") === "name_labelled_on_its_organisations_official_page"
         && data.verificationMatchedText
           ? ` as "${data.verificationMatchedText}"`
-          : "";
+          : String(data.verificationMethod || "") === "listed_in_opm_plum_archive" && plumListing && plumListing.listedTitle
+            ? ` as "${plumListing.listedTitle}"${plumListing.listedOrganization ? ` under "${plumListing.listedOrganization}"` : ""}`
+            : "";
       checkLine = how ? `${how}${where}${folded}${quoted} · checked ${checkedOn}` : `Last checked: ${checkedOn}`;
     }
     // A directory listing beside a page claim: a second, weaker claim, said
@@ -1618,7 +1651,7 @@ function renderVerificationPanel(data) {
     }
     setText(dom.verificationLastVerified, checkLine);
   }
-  renderPlacementLine(data);
+  renderPlacementLine(data, isRoot);
   renderSupersededNotice(data);
 
   dom.verificationSources.replaceChildren();
@@ -1828,8 +1861,51 @@ function isCostIdentifiedForTheNode(node) {
   return ["official", "root_total"].includes(String(node.cost_status || "").toLowerCase());
 }
 
-function isCostHiddenAsEstimate(node) {
-  return state.exactCostsOnly && !isCostIdentifiedForTheNode(node);
+// True only where a figure exists to withhold: an apportioned share (or a
+// capped Treasury line, which is an estimate too) that the exact-costs view
+// keeps back. This used to fire for every node whose cost was not measured —
+// posts and the units beneath a negative Treasury pool included — so 4,441
+// posts were told to tick "Also show estimated shares" to see a figure the
+// data does not hold for them. Those nodes have no estimate, and describeCost
+// routes them to their own copy instead.
+function hasWithheldEstimate(node) {
+  if (!state.exactCostsOnly || isCostIdentifiedForTheNode(node)) {
+    return false;
+  }
+  const status = String(node.cost_status || "").toLowerCase();
+  if (status !== "allocated" && status !== "scaled_official") {
+    return false;
+  }
+  return toFiniteAmount(node.resolved_total_amount) !== null && !isBelowPrecision(node);
+}
+
+// What stands in for the cost wherever the node has no measured cost of its
+// own and no estimate is on show — the estimate withheld, or, for a post, no
+// figure at all: a reported rate of basic pay, else a base-pay range a table
+// states for the listing's grade. Never beside a measured cost, and null
+// where there is nothing to stand in.
+function costStandInOf(node) {
+  if (isCostIdentifiedForTheNode(node)) {
+    return null;
+  }
+  const pay = reportedPayOf(node);
+  const range = pay ? null : gradePayOf(node);
+  if (!pay && !range) {
+    return null;
+  }
+  const status = String(node.cost_status || "").toLowerCase();
+  const nothingElse = !status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node);
+  return hasWithheldEstimate(node) || nothingElse ? { pay, range } : null;
+}
+
+function showsPayInsteadOfCost(node) {
+  const standIn = costStandInOf(node);
+  return Boolean(standIn && standIn.pay);
+}
+
+function showsRangeInsteadOfCost(node) {
+  const standIn = costStandInOf(node);
+  return Boolean(standIn && standIn.range);
 }
 
 // A rate of basic pay an official source reports for this post. Not the
@@ -1844,15 +1920,20 @@ function reportedPayOf(node) {
 }
 
 function formatCostAmount(node) {
-  if (isCostHiddenAsEstimate(node)) {
-    // The estimate is withheld; a real salary is not, and it is labelled as
-    // pay rather than as a cost by the head the cost block draws beside it.
-    const pay = reportedPayOf(node);
-    if (pay) return pay.reportedPayText || `$${Math.round(pay.reportedPay).toLocaleString()}`;
+  const standIn = costStandInOf(node);
+  if (standIn) {
+    // The estimate is withheld, or there is none; a real salary or a stated
+    // range is shown, headed as pay rather than as a cost by the head drawn
+    // beside it.
+    if (standIn.pay) {
+      return standIn.pay.reportedPayText || `$${Math.round(standIn.pay.reportedPay).toLocaleString()}`;
+    }
     // A base-pay RANGE, where a table states one for the listing's pay plan
     // and the archive states no rate. Two bounds, never one figure.
-    const range = gradePayOf(node);
-    return range ? formatGradeRange(range) : null;
+    return formatGradeRange(standIn.range);
+  }
+  if (hasWithheldEstimate(node)) {
+    return null;
   }
   const amount = toFiniteAmount(node.resolved_total_amount);
   if (amount === null || isBelowPrecision(node)) {
@@ -1876,55 +1957,67 @@ function isBelowPrecision(node) {
 }
 
 function describeCost(node) {
-  if (isCostHiddenAsEstimate(node)) {
-    const pay = reportedPayOf(node);
-    const range = pay ? null : gradePayOf(node);
+  const standIn = costStandInOf(node);
+  const pay = standIn ? standIn.pay : null;
+  const range = standIn ? standIn.range : null;
+  const payNote = pay
+    ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
+      `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
+    : range
+      ? (range.kind === "general_schedule_grade"
+        ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
+        : ` What is shown instead is the range OPM's ${range.table} states for the pay system the archive files this post on; not this unit's cost and not necessarily what the post pays now.`)
+      : "";
+  const payLabel = pay
+    ? "No cost known; a reported rate of pay is shown"
+    : range
+      ? "No cost known; a base-pay range is shown"
+      : null;
+  // Only a node that actually holds an apportioned share is told the box
+  // would reveal one. A post, or a unit beneath a negative Treasury pool,
+  // has nothing to reveal, and "tick to see it" about a figure that does not
+  // exist is a promise the data cannot keep.
+  if (hasWithheldEstimate(node)) {
     return {
-      label: pay
-        ? "No cost known; a reported rate of pay is shown"
-        : range
-          ? "No cost known; a base-pay range is shown"
-          : "No cost known for this node",
+      label: payLabel || "No cost known for this node",
       tone: "unavailable",
       note:
         "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
-        "measured total, divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is " +
+        "measured total, divided among siblings by budget, headcount or subtree size \u2014 a number nobody measured, so it is " +
         "not shown here. Tick \u201cAlso show estimated shares of a parent's total\u201d to see it, labelled as the estimate it is." +
-        (pay
-          ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
-            `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
-          : range
-            ? (range.kind === "general_schedule_grade"
-              ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
-              : ` What is shown instead is the range OPM's ${range.table} states for the pay system the archive files this post on; not this unit's cost and not necessarily what the post pays now.`)
-            : ""),
+        payNote,
     };
   }
   const status = String(node.cost_status || "").toLowerCase();
   const amount = toFiniteAmount(node.resolved_total_amount);
   const validation = String(node.cost_validation || "").toLowerCase();
   if (!status || status === "unavailable" || amount === null || isBelowPrecision(node)) {
+    const unavailable = { ...COST_STATUS_COPY.unavailable, label: payLabel || COST_STATUS_COPY.unavailable.label };
     if (isBelowPrecision(node)) {
       return {
-        ...COST_STATUS_COPY.unavailable,
-        note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0.",
+        ...unavailable,
+        note: "Its share of the estimate above it rounds to less than one cent (or an ancestor's did), so no figure is shown rather than $0." + payNote,
       };
     }
     if (validation === "treasury_pool_negative") {
       return {
-        ...COST_STATUS_COPY.unavailable,
+        ...unavailable,
         note:
-          "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it — its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no figure is shown rather than a guess.",
+          "The unit above it publishes the Treasury's net figure, and the measured lines beneath that unit already reach or exceed it \u2014 its net outlays are negative, or a line this graph has no node for is. Nothing remains to apportion to its unmeasured parts, so no figure is shown rather than a guess. There is no estimate for this node to reveal, whatever the estimates box says." +
+          payNote,
       };
     }
     if (validation === "post_is_not_a_budget_unit") {
       return {
-        ...COST_STATUS_COPY.unavailable,
+        ...unavailable,
         note:
-          "This is a post, not a unit of government. No federal financial system reports spending for an individual post, and a share of the organisation's budget above it would not be a cost this post incurred — so no figure is shown. Where an official document states what the post is paid, that rate appears below instead, and a salary is not the same thing as a budget.",
+          "This is a post, not a unit of government. No federal financial system reports spending for an individual post, and a share of the organisation's budget above it would not be a cost this post incurred \u2014 so no figure is shown, and there is no estimate to reveal." +
+          (pay
+            ? payNote
+            : " Where an official document states what the post is paid, that rate appears below instead, and a salary is not the same thing as a budget."),
       };
     }
-    return COST_STATUS_COPY.unavailable;
+    return { ...unavailable, note: COST_STATUS_COPY.unavailable.note + payNote };
   }
   if (String(node.synthetic || "") === "treasury_receipts") {
     return {
@@ -2014,11 +2107,11 @@ function buildCostBlock(node) {
   // a unit costs, and the label is the first thing a reader takes as the
   // claim. The period line below is the Treasury anchor's and is suppressed
   // for the same reason.
-  const showingPay = isCostHiddenAsEstimate(node) && reportedPayOf(node) !== null;
+  const showingPay = showsPayInsteadOfCost(node);
   // A base-pay RANGE shown in the estimate's place is headed as a range, and
   // as base pay before locality where it is the General Schedule's: the two
   // bounds are the table's and the word COST would make them the unit's.
-  const showingRange = isCostHiddenAsEstimate(node) && !showingPay && gradePayOf(node) !== null;
+  const showingRange = showsRangeInsteadOfCost(node);
   const period = showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
@@ -2033,6 +2126,19 @@ function buildCostBlock(node) {
   const amount = document.createElement("span");
   amount.className = "info-cost-amount";
   amount.textContent = amountText === null ? "Not available" : amountText;
+  // A measured figure is printed exact — sixteen digits for the root — and
+  // that stays the primary reading. Above a billion dollars a compact form is
+  // set beneath it so the magnitude can be read at a glance: the same number
+  // to three figures, never a different claim. Estimates are untouched; they
+  // were always rounded and marked ≈.
+  const exactAmount = toFiniteAmount(node.resolved_total_amount);
+  if (amountText !== null && !showingPay && !showingRange && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
+    const compact = document.createElement("span");
+    compact.className = "info-cost-compact";
+    compact.textContent = `${formatApproximateCost(exactAmount)}, to three figures`;
+    compact.title = "The same measured figure, rounded for reading; the exact figure above it is the claim.";
+    amount.appendChild(compact);
+  }
   head.appendChild(amount);
   block.appendChild(head);
 
@@ -2061,6 +2167,69 @@ function buildCostBlock(node) {
   block.appendChild(note);
 
   return block;
+}
+
+// The first eight children, then a row that opens the rest. The old "+ 241
+// more" was a dead div: the White House Office carries 249 children and 241
+// of them could not be reached from the panel at all. The list scrolls.
+const CHILD_LIST_PREVIEW = 8;
+
+function renderChildrenList(nodeObj, children, showAll) {
+  dom.childrenList.replaceChildren();
+  if (children.length === 0) {
+    dom.childrenLabel.style.display = "none";
+    return;
+  }
+  dom.childrenLabel.style.display = "block";
+  const fragment = document.createDocumentFragment();
+  const shown = showAll ? children : children.slice(0, CHILD_LIST_PREVIEW);
+  for (const child of shown) {
+    const item = document.createElement("div");
+    item.className = "child-item";
+
+    const dot = document.createElement("div");
+    dot.className = "child-dot";
+    dot.style.background = child.color || "#666";
+    item.appendChild(dot);
+
+    const label = document.createElement("span");
+    label.textContent = child.name;
+    item.appendChild(label);
+
+    makeInteractiveRow(item, `Open ${child.name}`, () => {
+      const childObj = state.graph.getNodeById(child.id);
+      if (childObj) {
+        selectAndFocus(childObj);
+        return;
+      }
+      state.graph.expandNode(nodeObj, true);
+      pollForRevealedNode(child.id);
+    });
+
+    fragment.appendChild(item);
+  }
+
+  if (!showAll && children.length > CHILD_LIST_PREVIEW) {
+    const more = document.createElement("div");
+    more.className = "child-item child-item-more";
+    more.id = "info-children-more";
+    const dot = document.createElement("div");
+    dot.className = "child-dot";
+    dot.style.background = "#555";
+    more.appendChild(dot);
+    const label = document.createElement("span");
+    const rest = children.length - CHILD_LIST_PREVIEW;
+    label.textContent = `+ ${rest.toLocaleString()} more — show all ${children.length.toLocaleString()}`;
+    more.appendChild(label);
+    makeInteractiveRow(more, `Show all ${children.length} sub-units`, () => {
+      renderChildrenList(nodeObj, children, true);
+      const first = dom.childrenList.children[CHILD_LIST_PREVIEW];
+      if (first && typeof first.focus === "function") first.focus();
+    });
+    fragment.appendChild(more);
+  }
+
+  dom.childrenList.appendChild(fragment);
 }
 
 function renderInfoPanel(nodeObj) {
@@ -2203,49 +2372,8 @@ function renderInfoPanel(nodeObj) {
   }
   dom.infoStats.replaceChildren(statsFragment);
 
-  dom.childrenList.replaceChildren();
   const children = data.children || [];
-  if (children.length > 0) {
-    dom.childrenLabel.style.display = "block";
-    const fragment = document.createDocumentFragment();
-    for (const child of children.slice(0, 8)) {
-      const item = document.createElement("div");
-      item.className = "child-item";
-
-      const dot = document.createElement("div");
-      dot.className = "child-dot";
-      dot.style.background = child.color || "#666";
-      item.appendChild(dot);
-
-      const label = document.createElement("span");
-      label.textContent = child.name;
-      item.appendChild(label);
-
-      makeInteractiveRow(item, `Open ${child.name}`, () => {
-        const childObj = state.graph.getNodeById(child.id);
-        if (childObj) {
-          state.graph.setSelectedNode(childObj);
-          return;
-        }
-        state.graph.expandNode(nodeObj, true);
-        pollForRevealedNode(child.id);
-      });
-
-      fragment.appendChild(item);
-    }
-
-    if (children.length > 8) {
-      const more = document.createElement("div");
-      more.className = "child-item";
-      more.style.color = "#5a4a3a";
-      more.innerHTML = `<div class="child-dot" style="background:#333"></div><span>+ ${children.length - 8} more</span>`;
-      fragment.appendChild(more);
-    }
-
-    dom.childrenList.appendChild(fragment);
-  } else {
-    dom.childrenLabel.style.display = "none";
-  }
+  renderChildrenList(nodeObj, children, false);
 
   if (children.length > 0 && !nodeObj.expanded) {
     dom.btnExpand.disabled = false;
@@ -2280,12 +2408,15 @@ function renderInfoPanel(nodeObj) {
 
   dom.infoPanel.classList.add("open");
   dom.depthCtrl.classList.add("panel-open");
+  // Fixed bottom-right, the key sat inside the open panel, which spans the
+  // viewport's height at 1400x900; it shifts left with the depth control.
+  if (dom.legend) dom.legend.classList.add("panel-open");
   dom.statsPanel.classList.remove("panel-closed");
   setText(dom.btnFlyMode, state.graph?.isFlyMode() ? "Disable Fly Mode" : "Enable Fly Mode");
   if (dom.btnTraceOrigin) {
     renderOriginTrace(nodeObj);
   }
-  renderVerificationPanel(data);
+  renderVerificationPanel(data, !nodeObj.isCluster && !data.isCandidate && nodeObj === state.graph.getRootNode());
   renderBreadcrumb(nodeObj);
 }
 
@@ -2367,7 +2498,7 @@ function pollForRevealedNode(id, timeoutMs = REVEAL_TIMEOUT_MS) {
     state.revealFrame = 0;
     const revealed = state.graph.getNodeById(id);
     if (revealed) {
-      state.graph.setSelectedNode(revealed);
+      selectAndFocus(revealed);
       return;
     }
     if (performance.now() >= deadline) {
@@ -2383,6 +2514,31 @@ function pollForRevealedNode(id, timeoutMs = REVEAL_TIMEOUT_MS) {
   state.revealFrame = window.requestAnimationFrame(settle);
 }
 
+// A manual depth filter below the node's own depth would draw the node
+// alone — it is exempt as the selection — with every ancestor above it
+// hidden. Revealing a node is an explicit request to see it, so the filter
+// is lifted to "all", through the same button a hand would press, so the
+// control and the stored preference agree with what is on screen.
+function ensureDepthFilterCovers(depth) {
+  const active = document.querySelector(".depth-btn.active");
+  const current = active && active.dataset.depth !== "all" ? Number(active.dataset.depth) : Infinity;
+  if (Number.isFinite(current) && current < depth) {
+    const all = document.querySelector('.depth-btn[data-depth="all"]');
+    if (all) all.click();
+  }
+}
+
+// Select the node and fly the camera to it, close enough that its LOD tier
+// draws its level (graph.focusNode) — selection alone re-centred the camera
+// at whatever distance it was, so a depth-8 node reached by search sat at
+// "Agency View | depth 3" with its ancestors between depths 4 and 7 undrawn.
+function selectAndFocus(nodeObj) {
+  if (!nodeObj) return;
+  ensureDepthFilterCovers(nodeObj.depth);
+  state.graph.setSelectedNode(nodeObj);
+  state.graph.focusNode(nodeObj);
+}
+
 function revealAndSelect(id) {
   cancelRevealLoop();
   const revealed = state.graph.revealNodeById(id, true);
@@ -2392,7 +2548,7 @@ function revealAndSelect(id) {
     console.warn(`Node "${id}" could not be revealed.`);
     return;
   }
-  state.graph.setSelectedNode(revealed);
+  selectAndFocus(revealed);
 }
 
 function stopProgressiveExpansion() {
@@ -2446,7 +2602,11 @@ function waitForExpansionDrain(onDone) {
   onDone();
 }
 
-function expandProgressively(targetDepth) {
+// `scopeObj` confines the expansion to one node's subtree — what "Expand All
+// Below" promises. Without it the frontier was every loaded node, and the
+// button on the Department of the Interior opened all 5,402. The depth
+// buttons pass no scope, because they are about the whole graph.
+function expandProgressively(targetDepth, scopeObj = null) {
   state.expandCancelled = false;
   dom.btnExpandAll.disabled = true;
   setText(dom.btnExpandAll, "Expanding…");
@@ -2463,7 +2623,7 @@ function expandProgressively(targetDepth) {
       return;
     }
 
-    const frontier = state.graph.getFrontier(targetDepth);
+    const frontier = state.graph.getFrontier(targetDepth, scopeObj);
     if (frontier.nodes.length === 0) {
       if (state.graph.hasPendingExpansions()) {
         showLoader("Loading queued nodes…");
@@ -2592,10 +2752,13 @@ function bindControls() {
   });
 
   dom.btnExpandAll.addEventListener("click", () => {
-    if (!state.graph.getSelectedNode()) {
+    const selected = state.graph.getSelectedNode();
+    if (!selected) {
       return;
     }
-    expandProgressively(Infinity);
+    // A cluster stands for its source node's hidden descendants; "below" it
+    // means below that node.
+    expandProgressively(Infinity, selected.isCluster ? selected.sourceNode || null : selected);
   });
 
   dom.btnCancelExpand.addEventListener("click", stopProgressiveExpansion);
@@ -2693,7 +2856,7 @@ function safeInitUI() {
 // restore state into until that has run. Setting a checkbox's `.checked`
 // does not fire its own `change` handler, so each restored toggle calls the
 // same graph method its handler would rather than relying on that event.
-function restorePersistedState() {
+function restorePersistedState(requestedNodeId) {
   const prefs = readStoredPrefs();
 
   if (typeof prefs.showSuperseded === "boolean" && dom.toggleSuperseded) {
@@ -2722,13 +2885,30 @@ function restorePersistedState() {
   }
   updateStats(state.graph.getStats());
 
-  const hashedId = getNodeIdFromHash();
-  if (hashedId) {
-    revealAndSelect(hashedId);
+  // The id is the one the URL carried when the page opened, not what the
+  // hash says now: loadData selects the root, onSelect writes the root's id
+  // into the hash, and reading the hash at this point returned the root
+  // every time — a link to any other node landed on the Constitution.
+  if (requestedNodeId) {
+    revealAndSelect(requestedNodeId);
   }
 }
 
+// Editing the hash by hand, or the browser's back button restoring an
+// earlier one, is the same request as arriving with it. replaceState does
+// not fire this, so the selection's own hash writes never loop back in.
+function bindHashNavigation() {
+  window.addEventListener("hashchange", () => {
+    const id = getNodeIdFromHash();
+    if (!id || !state.graph) return;
+    const selected = state.graph.getSelectedNode();
+    if (selected && !selected.isCluster && selected.data?.id === id) return;
+    revealAndSelect(id);
+  });
+}
+
 async function initGraphApp() {
+  const requestedNodeId = getNodeIdFromHash();
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: (nodeObj) => {
@@ -2780,7 +2960,8 @@ async function initGraphApp() {
   state.graph.loadData(data);
   state.searchIndex = state.graph.getSearchIndex();
   safeInitUI();
-  safeUiCall("restorePersistedState", restorePersistedState);
+  safeUiCall("restorePersistedState", restorePersistedState, requestedNodeId);
+  safeUiCall("bindHashNavigation", bindHashNavigation);
   hideLoadingOverlay();
 }
 

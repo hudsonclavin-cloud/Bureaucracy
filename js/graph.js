@@ -223,6 +223,7 @@ export function createGovernmentGraph({
     allEdges: new Set(),
     visibleNodes: new Set(),
     visibleNodeCount: 0,
+    drawnNodeCount: 0,
     screenSpaceBuckets: new Map(),
     activeClusters: [],
     clusterMap: new Map(),
@@ -284,6 +285,7 @@ export function createGovernmentGraph({
   function notifyCounts() {
     onCountsChange({
       visibleNodeCount: state.visibleNodeCount,
+      drawnNodeCount: state.drawnNodeCount,
       totalNodeCount: state.totalNodeCount,
       maxDataDepth: state.maxDataDepth,
       maxVisibleDepth: state.maxVisibleDepth,
@@ -1881,6 +1883,51 @@ export function createGovernmentGraph({
     onSelect(nodeObj);
   }
 
+  // The orbit zoom at which the LOD tier draws a node of this depth. The
+  // tiers are keyed on camera distance (lodManager.thresholds), and each
+  // caps the depth it draws: Agency View stops at depth 3, so a depth-8
+  // node selected from a search was drawn alone, exempt as the selection,
+  // with every ancestor between it and the department hidden. Flying to a
+  // node means getting close enough that its tier shows its level.
+  function zoomForDepth(depth) {
+    const levels = lodManager.levels;
+    const ceilings = [
+      lodManager.thresholds.COSMIC_VIEW,
+      lodManager.thresholds.BRANCH_VIEW,
+      lodManager.thresholds.AGENCY_VIEW,
+      lodManager.thresholds.OFFICE_VIEW,
+    ];
+    for (let level = 0; level < levels.length; level += 1) {
+      if (depth <= levels[level].maxDepth) {
+        if (level === 0) {
+          return 0;
+        }
+        // Inside the ceiling by a margin, so a settling camera does not sit
+        // on the boundary and flicker between tiers.
+        return CAMERA_DISTANCE / (ceilings[level - 1] * 0.9);
+      }
+    }
+    return CAMERA_DISTANCE / (ceilings[ceilings.length - 1] * 0.9);
+  }
+
+  function focusNode(nodeObj) {
+    if (!nodeObj) {
+      return;
+    }
+    state.lastUserDrillAt = performance.now();
+    if (state.flyMode) {
+      const focusPoint = nodeObj.pos;
+      const backward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA).multiplyScalar(-Math.max(22, nodeObj.radius ? nodeObj.radius * 5 : 28));
+      state.flyPosition.copy(focusPoint).add(backward);
+      setFlyLookAt(focusPoint);
+      return;
+    }
+    state.camFocusTarget.copy(nodeObj.pos);
+    // Never pulls the camera outward: a reader who zoomed in stays in.
+    state.targetZoom = Math.max(state.targetZoom, 1.45, zoomForDepth(nodeObj.depth));
+    state.renderDirty = true;
+  }
+
   function setDepthFilter(depth) {
     state.manualDepthFilter = Number.isFinite(depth) ? Math.min(depth, MAX_DEPTH) : MAX_DEPTH;
     updateLodState();
@@ -1888,13 +1935,21 @@ export function createGovernmentGraph({
     refreshVisibility();
   }
 
-  function getFrontier(targetDepth = Infinity) {
+  // The shallowest unexpanded, child-bearing nodes — the next level a
+  // progressive expansion should open. With `scopeObj` the search is confined
+  // to that node's own subtree: "Expand All Below" on the Department of the
+  // Interior used to walk this over every loaded node and open all 5,402,
+  // because nothing told it "below" meant below the selection.
+  function getFrontier(targetDepth = Infinity, scopeObj = null) {
     const boundedDepth = Number.isFinite(targetDepth) ? Math.min(targetDepth, MAX_DEPTH) : MAX_DEPTH;
     let minDepth = Infinity;
     const frontier = [];
 
     for (const nodeObj of state.visibleNodes) {
       if (nodeObj.expanded || nodeObj.expanding || nodeObj.depth >= boundedDepth) {
+        continue;
+      }
+      if (scopeObj && !isDescendantOf(nodeObj, scopeObj)) {
         continue;
       }
       const childCount = nodeObj.data.__meta?.childCount || 0;
@@ -2567,13 +2622,26 @@ export function createGovernmentGraph({
     }
 
     applyDensityCap(nodeCandidates, protectedIds);
+    // What is actually on screen this pass. "5,402 / 5,402 nodes rendered"
+    // used to be printed while the Agency tier drew depth 3 and nothing
+    // below it: the loaded count and the drawn count are different numbers,
+    // and the counter has to carry both.
+    let drawnCount = 0;
     for (const nodeObj of nodeCandidates) {
       if (nodeObj.densityCapped && nodeObj !== state.selectedNode && nodeObj !== state.rootObj) {
         hideNodeInstance(nodeObj);
         continue;
       }
+      drawnCount += 1;
       setNodeMatrix(nodeObj, 1);
     }
+    for (const nodeObj of state.allNodes) {
+      if (nodeObj.renderVisible && !nodeObj.culled && lodManager.shouldRenderHalo(nodeObj, state.lod)) {
+        drawnCount += 1;
+      }
+    }
+    const drawnChanged = drawnCount !== state.drawnNodeCount;
+    state.drawnNodeCount = drawnCount;
 
     let clusterSlot = 0;
     for (const clusterObj of state.activeClusters) {
@@ -2611,6 +2679,9 @@ export function createGovernmentGraph({
     updatePathGlowMeshes();
 
     state.renderDirty = clustersSettling;
+    if (drawnChanged) {
+      notifyCounts();
+    }
   }
 
   function refreshVisibility(force = false) {
@@ -3127,19 +3198,9 @@ export function createGovernmentGraph({
     getFrontier,
     refreshVisibility,
     focusSelectedNode() {
-      if (state.selectedNode) {
-        state.lastUserDrillAt = performance.now();
-        if (state.flyMode) {
-          const focusPoint = state.selectedNode.pos;
-          const backward = getForwardFromAngles(state.flyYaw, state.flyPitch, tempVecA).multiplyScalar(-Math.max(22, state.selectedNode.radius ? state.selectedNode.radius * 5 : 28));
-          state.flyPosition.copy(focusPoint).add(backward);
-          setFlyLookAt(focusPoint);
-        } else {
-          state.camFocusTarget.copy(state.selectedNode.pos);
-          state.targetZoom = Math.max(state.targetZoom, 1.45);
-        }
-      }
+      focusNode(state.selectedNode);
     },
+    focusNode,
     setFlyMode(enabled) {
       const nextEnabled = Boolean(enabled);
       if (nextEnabled === state.flyMode) {
@@ -3188,6 +3249,7 @@ export function createGovernmentGraph({
     getStats() {
       return {
         visibleNodeCount: state.visibleNodeCount,
+        drawnNodeCount: state.drawnNodeCount,
         totalNodeCount: state.totalNodeCount,
         candidateNodeCount: state.candidateNodeCount,
         maxDataDepth: state.maxDataDepth,
