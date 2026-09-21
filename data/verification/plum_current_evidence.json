@@ -50,8 +50,9 @@
       "ST": 2,
       "FP": 1
     },
-    "agencies_matched": 78,
+    "agencies_matched": 79,
     "agencies_matched_by_scoped_prefix": 7,
+    "agencies_matched_by_alias": 1,
     "agencies_unmatched": [
       "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
       "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
@@ -63,7 +64,6 @@
       "CIVIL RIGHTS COLD CASE RECORDS REVIEW BOARD",
       "COMMISSION OF FINE ARTS",
       "CONSUMER FINANCIAL PROTECTION BUREAU",
-      "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
       "COUNCIL OF INSPECTORS GENERAL ON INTEGRITY AND EFFICIENCY",
       "COURT SERVICES AND OFFENDER SUPERVISION AGENCY FOR THE DISTRICT OF COLUMBIA",
       "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
@@ -152,8 +152,9 @@
     ],
     "agencies_ambiguous": [],
     "organizations_of_agency": 35,
-    "organizations_matched": 161,
-    "organizations_under_unmatched_agency": 259,
+    "organizations_matched": 165,
+    "organizations_matched_by_alias": 4,
+    "organizations_under_unmatched_agency": 247,
     "organizations_unmatched": [
       {
         "agency": "CENTRAL INTELLIGENCE AGENCY",
@@ -166,6 +167,54 @@
       {
         "agency": "COMMODITY FUTURES TRADING COMMISSION",
         "organization": "OFFICE OF THE CHAIRPERSON"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "BOARD OF DIRECTORS"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "DEPARTMENT OF THE EXECUTIVE DIRECTOR"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF AMERICORPS SENIORS"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF AMERICORPS STATE AND NATIONAL"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF AMERICORPS VISTA"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF COMMUNICATIONS AND MARKETING"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF GENERAL COUNSEL"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF GOVERNMENT RELATIONS"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF STRATEGIC ENGAGEMENT"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF THE CHIEF EXECUTIVE OFFICER"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF THE CHIEF OF PROGRAM OPERATIONS"
+      },
+      {
+        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
+        "organization": "OFFICE OF THE INSPECTOR GENERAL"
       },
       {
         "agency": "DEPARTMENT OF AGRICULTURE",
@@ -522,10 +571,6 @@
       {
         "agency": "DEPARTMENT OF COMMERCE",
         "organization": "NATIONAL OCEAN SERVICE"
-      },
-      {
-        "agency": "DEPARTMENT OF COMMERCE",
-        "organization": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION"
       },
       {
         "agency": "DEPARTMENT OF COMMERCE",
@@ -2049,10 +2094,6 @@
       },
       {
         "agency": "DEPARTMENT OF TRANSPORTATION",
-        "organization": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION"
-      },
-      {
-        "agency": "DEPARTMENT OF TRANSPORTATION",
         "organization": "FIELD SERVICES"
       },
       {
@@ -2066,10 +2107,6 @@
       {
         "agency": "DEPARTMENT OF TRANSPORTATION",
         "organization": "MERCHANT MARINE ACADEMY"
-      },
-      {
-        "agency": "DEPARTMENT OF TRANSPORTATION",
-        "organization": "NATIONAL HIGHWAY TRAFFIC SAFETY ADMINISTRATION"
       },
       {
         "agency": "DEPARTMENT OF TRANSPORTATION",
@@ -2210,10 +2247,6 @@
       {
         "agency": "DEPARTMENT OF TRANSPORTATION",
         "organization": "OFFICE OF THE UNDER SECRETARY OF TRANSPORTATION FOR POLICY"
-      },
-      {
-        "agency": "DEPARTMENT OF TRANSPORTATION",
-        "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION"
       },
       {
         "agency": "DEPARTMENT OF TRANSPORTATION",
@@ -3770,13 +3803,14 @@
     ],
     "organizations_ambiguous": [],
     "positions_in_graph": 4591,
-    "positions_under_matched_agency_node": 905,
-    "positions_under_matched_organization": 1296,
-    "positions_matched": 170,
-    "positions_with_a_rate": 100,
+    "positions_under_matched_agency_node": 910,
+    "positions_under_matched_organization": 1325,
+    "positions_matched": 173,
+    "positions_under_an_aliased_agency": 3,
+    "positions_with_a_rate": 101,
     "positions_by_pay_plan": {
-      "ES": 85,
-      "EX": 32,
+      "ES": 86,
+      "EX": 34,
       "OT": 6,
       "AD": 43,
       "?": 3,
@@ -3837,7 +3871,7 @@
         ]
       }
     ],
-    "positions_unmatched": 1119,
+    "positions_unmatched": 1145,
     "positions_unmatched_sample": [
       {
         "id": "exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations",
@@ -4058,6 +4092,10 @@
         17
       ],
       [
+        "Deputy Administrator",
+        14
+      ],
+      [
         "Deputy Director",
         14
       ],
@@ -4070,12 +4108,12 @@
         12
       ],
       [
-        "Deputy Administrator",
+        "Deputy Director / Vice Chair",
         11
       ],
       [
-        "Deputy Director / Vice Chair",
-        11
+        "Chief Scientist",
+        10
       ],
       [
         "Director of Human Resources",
@@ -4083,10 +4121,6 @@
       ],
       [
         "Chief Engineer",
-        9
-      ],
-      [
-        "Chief Scientist",
         9
       ],
       [
@@ -4162,10 +4196,6 @@
       {
         "agency": "DEPARTMENT OF THE AIR FORCE",
         "rows": 54
-      },
-      {
-        "agency": "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE",
-        "rows": 31
       },
       {
         "agency": "PRESIDENTS COMMITTEE ON THE ARTS AND THE HUMANITIES",
@@ -4262,6 +4292,10 @@
       {
         "agency": "PUBLIC BUILDINGS REFORM BOARD",
         "rows": 7
+      },
+      {
+        "agency": "INTER-AMERICAN FOUNDATION",
+        "rows": 6
       }
     ],
     "samples": [
@@ -4373,12 +4407,12 @@
     ],
     "positions_title_in_several_groups": [],
     "pay": {
-      "priced": 100,
+      "priced": 101,
       "refused": {
-        "no_rate_printed": 63,
+        "no_rate_printed": 65,
         "rows_print_different_figures": 7
       },
-      "validated": 100,
+      "validated": 101,
       "rejected": []
     }
   },
@@ -6018,6 +6052,102 @@
         "status": "listed",
         "parentId": "exec-dept-dol-whd",
         "parentListedName": "WAGE AND HOUR DIVISION"
+      }
+    },
+    "exec-dept-dot-fmcsa-administrator-fmcsa": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "ADMINISTRATOR",
+      "agency": "DEPARTMENT OF TRANSPORTATION",
+      "organization": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION",
+      "agencyMatchedBy": "name",
+      "rows": 1,
+      "rowsListed": 1,
+      "positionStatus": "Filled",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot-fmcsa",
+        "parentListedName": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION"
+      },
+      "organisationNameAlias": {
+        "alias": "Federal Motor Carrier Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+        "organisationId": "exec-dept-dot-fmcsa"
+      }
+    },
+    "exec-dept-dot-phmsa-administrator-phmsa": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "ADMINISTRATOR",
+      "agency": "DEPARTMENT OF TRANSPORTATION",
+      "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+      "agencyMatchedBy": "name",
+      "rows": 1,
+      "rowsListed": 1,
+      "positionStatus": "Filled",
+      "appointmentType": "PAS",
+      "payPlan": "EX",
+      "level": "III",
+      "payLevel": "III",
+      "reportedPay": null,
+      "reportedPayText": null,
+      "payPlanAndLevelOnOneRow": true,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot-phmsa",
+        "parentListedName": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION"
+      },
+      "organisationNameAlias": {
+        "alias": "Pipeline and Hazardous Materials Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+        "organisationId": "exec-dept-dot-phmsa"
+      }
+    },
+    "exec-dept-dot-phmsa-deputy-administrator": {
+      "source": "opm_plum_current_export",
+      "method": "listed_in_opm_current_plum_export",
+      "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+      "listedTitle": "DEPUTY ADMINISTRATOR",
+      "agency": "DEPARTMENT OF TRANSPORTATION",
+      "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+      "agencyMatchedBy": "name",
+      "rows": 1,
+      "rowsListed": 1,
+      "positionStatus": "Filled",
+      "appointmentType": "NA",
+      "payPlan": "ES",
+      "level": "$197,200",
+      "payLevel": null,
+      "reportedPay": 197200.0,
+      "reportedPayText": "$197,200",
+      "payPlanAndLevelOnOneRow": true,
+      "exportFetchedAt": "2026-09-21T03:02:16Z",
+      "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dot-phmsa",
+        "parentListedName": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION"
+      },
+      "organisationNameAlias": {
+        "alias": "Pipeline and Hazardous Materials Safety Administration",
+        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+        "organisationId": "exec-dept-dot-phmsa"
       }
     },
     "exec-dept-ed-fsa-chief-operating-officer-fsa": {
@@ -9954,6 +10084,39 @@
       "payPlan": "ES",
       "positionStatus": "Filled",
       "rateText": "$225,700",
+      "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
+    },
+    "exec-dept-dot-phmsa-deputy-administrator": {
+      "nodeId": "exec-dept-dot-phmsa-deputy-administrator",
+      "financialEvidenceStatus": "partial",
+      "costBasis": "basic_pay",
+      "amount": 197200.0,
+      "amountRaw": "197,200",
+      "units": "usd",
+      "normalizedMultiplier": 1,
+      "unitsEvidence": "DEPUTY ADMINISTRATOR; DEPARTMENT OF TRANSPORTATION; PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION; Pay Plan ES; Level, Grade, or Pay $197,200; Position Status Filled",
+      "quote": "DEPUTY ADMINISTRATOR; DEPARTMENT OF TRANSPORTATION; PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION; Pay Plan ES; Level, Grade, or Pay $197,200; Position Status Filled",
+      "fiscalYear": 2026,
+      "periodCoverage": "annual_rate",
+      "periodAsOf": "2026-09-21",
+      "amountScope": "DEPUTY ADMINISTRATOR",
+      "scopeMatch": "proxy",
+      "rollupRole": "line",
+      "sourceType": "opm_plum_current_export",
+      "sourceUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+      "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+      "retrievedAt": "2026-09-21T03:02:16Z",
+      "locator": {
+        "table": "PLUM Reporting export (download-data)",
+        "row": "DEPARTMENT OF TRANSPORTATION / PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION / DEPUTY ADMINISTRATOR",
+        "column": "Level, Grade, or Pay"
+      },
+      "listedTitle": "DEPUTY ADMINISTRATOR",
+      "agency": "DEPARTMENT OF TRANSPORTATION",
+      "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+      "payPlan": "ES",
+      "positionStatus": "Filled",
+      "rateText": "$197,200",
       "unitsEvidenceKind": "currency_mark_on_the_printed_figure"
     },
     "exec-dept-ed-oese-deputy-assistant-secretary": {

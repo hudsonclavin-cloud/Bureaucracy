@@ -309,6 +309,8 @@ def match_organisations(
     parent_map: Mapping[str, str | None],
     *,
     root_id: str,
+    alias_table: Any | None = None,
+    alias_hits: dict[str, Any] | None = None,
 ) -> tuple[dict[str, str], dict[tuple[str, str], str], dict[str, Any]]:
     """Agency -> node id, (Agency, Organization) -> node id, and a report.
 
@@ -326,11 +328,28 @@ def match_organisations(
         key = canonical_name_key(node.get("name"))
         if key:
             by_key.setdefault(key, []).append(node_id)
+    # The reviewed alternative names the export may file a unit under --
+    # "CORPORATION FOR NATIONAL AND COMMUNITY SERVICE" for the node this
+    # graph calls AmeriCorps. A curated name is indexed first and an alias is
+    # added only under a key no curated name claims, so a plain match is
+    # never displaced; which nodes were reached this way is recorded, because
+    # every listing beneath one rests on it and must say so.
+    alias_keys: dict[str, Any] = {}
+    if alias_table is not None:
+        for node_id, node in node_map.items():
+            if node_id == root_id or not _is_organisation(node):
+                continue
+            for row in alias_table.for_node(node_id):
+                if row.key and row.key not in by_key:
+                    by_key.setdefault(row.key, []).append(node_id)
+                    alias_keys[row.key] = row
 
     report: dict[str, Any] = {
         "agencies": 0, "agencies_matched": 0, "agencies_matched_by_scoped_prefix": 0,
+        "agencies_matched_by_alias": 0,
         "agencies_unmatched": [], "agencies_ambiguous": [],
         "organizations": len(groups), "organizations_of_agency": 0, "organizations_matched": 0,
+        "organizations_matched_by_alias": 0,
         "organizations_under_unmatched_agency": 0, "organizations_unmatched": [], "organizations_ambiguous": [],
     }
     agency_names = sorted({agency for agency, _ in groups})
@@ -365,12 +384,18 @@ def match_organisations(
             report["agencies_matched"] += 1
             if agency in scoped_agencies:
                 report["agencies_matched_by_scoped_prefix"] += 1
+            row = next((alias_keys[k] for k in export_agency_keys(agency) if k in alias_keys), None)
+            if row is not None:
+                report["agencies_matched_by_alias"] = report.get("agencies_matched_by_alias", 0) + 1
+                if alias_hits is not None:
+                    alias_hits[next(iter(found))] = row
         elif len(found) > 1 or (found and claimed[next(iter(found))] > 1):
             report["agencies_ambiguous"].append({"name": agency, "nodes": sorted(found)})
         else:
             report["agencies_unmatched"].append(agency)
 
     group_candidates: dict[tuple[str, str], set[str]] = {}
+    group_alias_rows: dict[tuple[str, str], tuple[str, Any]] = {}
     for agency, organization in groups:
         agency_node = agency_nodes.get(agency)
         if agency_node is None:
@@ -383,8 +408,14 @@ def match_organisations(
             report["organizations_of_agency"] += 1
             continue
         found = set()
+        group_alias = None
         for key in org_keys:
-            found.update(n for n in by_key.get(key, []) if agency_node in _ancestors_of(n, parent_map))
+            hits = [n for n in by_key.get(key, []) if agency_node in _ancestors_of(n, parent_map)]
+            if hits and key in alias_keys:
+                group_alias = alias_keys[key]
+            found.update(hits)
+        if group_alias is not None and len(found) == 1:
+            group_alias_rows[(agency, organization)] = (next(iter(found)), group_alias)
         group_candidates[(agency, organization)] = found
     # Several groups may legitimately be the agency node itself -- the export
     # files the USPTO's rows under both "PATENT AND TRADEMARK OFFICE" and
@@ -403,6 +434,11 @@ def match_organisations(
         elif len(found) == 1 and claimed[next(iter(found))] == 1:
             group_nodes[group] = next(iter(found))
             report["organizations_matched"] += 1
+            hit = group_alias_rows.get(group)
+            if hit is not None and hit[0] == group_nodes[group]:
+                report["organizations_matched_by_alias"] = report.get("organizations_matched_by_alias", 0) + 1
+                if alias_hits is not None:
+                    alias_hits.setdefault(hit[0], hit[1])
         elif len(found) > 1 or (found and claimed[next(iter(found))] > 1):
             report["organizations_ambiguous"].append({"agency": group[0], "organization": group[1], "nodes": sorted(found)})
         else:
@@ -463,11 +499,15 @@ def match_positions(
     parent_map: Mapping[str, str | None],
     *,
     root_id: str,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
     """Records keyed by position node id, and a report of every count and
     refusal. No record is written for a position the export lacks."""
     groups: Mapping[tuple[str, str], list[dict[str, Any]]] = export.get("groups") or {}
-    agency_nodes, group_nodes, report = match_organisations(groups, node_map, parent_map, root_id=root_id)
+    alias_hits: dict[str, Any] = {}
+    agency_nodes, group_nodes, report = match_organisations(
+        groups, node_map, parent_map, root_id=root_id, alias_table=alias_table, alias_hits=alias_hits,
+    )
     report = {"source": SOURCE, "url": export.get("url"), "fetched_at": export.get("fetched_at"),
               "sha256": export.get("sha256"), **summarize_export(export), **report}
     positions = {i: n for i, n in node_map.items() if _is_position(n)}
@@ -478,6 +518,7 @@ def match_positions(
         "positions_under_matched_agency_node": sum(1 for i in positions if parent_map.get(i) in matched_agency_ids),
         "positions_under_matched_organization": sum(1 for i in positions if parent_map.get(i) in node_groups),
         "positions_matched": 0,
+        "positions_under_an_aliased_agency": 0,
         "positions_with_a_rate": 0,
         "positions_by_pay_plan": {},
         "positions_shared_title": [],
@@ -537,7 +578,12 @@ def match_positions(
                 report["positions_title_in_several_groups"].append({"id": node_id, "name": positions[node_id].get("name"), "groups": sorted(filings)})
                 continue
             agency, organization = next(iter(filings))
-            agency_node_name = node_map[agency_nodes[agency]].get("name")
+            agency_node_id = agency_nodes[agency]
+            agency_node_name = node_map[agency_node_id].get("name")
+            # Whose name needed the table: the organisation the post sits
+            # under if that is what the alias reached, else the agency.
+            agency_alias = alias_hits.get(org_id) or alias_hits.get(agency_node_id)
+            alias_owner = org_id if alias_hits.get(org_id) else agency_node_id
             record: dict[str, Any] = {
                 "source": SOURCE,
                 "method": METHOD,
@@ -554,6 +600,15 @@ def match_positions(
             }
             if len(keys) > 1:
                 record["matchedAlternative"] = hits[0]
+            if agency_alias is not None:
+                # The title matched outright; the AGENCY the export files it
+                # under reached this node's ancestor only through the
+                # reviewed table, so the listing rests on it and says so.
+                record["organisationNameAlias"] = {
+                    "alias": agency_alias.alias, "basis": agency_alias.basis,
+                    "organisationId": alias_owner,
+                }
+                report["positions_under_an_aliased_agency"] = report.get("positions_under_an_aliased_agency", 0) + 1
             records[node_id] = record
             report["positions_matched"] += 1
             plan = str(record.get("payPlan") or "?")
@@ -691,6 +746,7 @@ def apply_current_listing(
     records: Mapping[str, Mapping[str, Any]],
     *,
     index_tree: Any = None,
+    alias_table: Any | None = None,
 ) -> dict[str, Any]:
     """Stamp the export's listing onto the position nodes it names.
 
@@ -705,9 +761,14 @@ def apply_current_listing(
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
 
         index_tree = _index_tree
+    from data_pipeline.verification.aliases import ALIAS_SCOPE_ORGANISATION, load_alias_table, stamp_alias_match
+
     node_map, parent_map = index_tree(root)
+    if alias_table is None:
+        alias_table = load_alias_table(root, index_tree=index_tree)
     stats = {"listed": 0, "unknown_node": 0, "not_a_position": 0, "stale_name": 0, "undated": 0,
-             "placements_listed": 0, "placements_stale_parent": 0, "urls_added": 0, "with_a_rate": 0}
+             "placements_listed": 0, "placements_stale_parent": 0, "urls_added": 0, "with_a_rate": 0,
+             "agency_alias_row_withdrawn": 0, "under_an_aliased_agency": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
@@ -729,6 +790,17 @@ def apply_current_listing(
         if not listed_title_still_names(node.get("name"), parent_names, record.get("listedTitle")):
             stats["stale_name"] += 1
             continue
+        agency_alias = record.get("organisationNameAlias")
+        agency_alias_row = None
+        if isinstance(agency_alias, dict):
+            # The listing was reached by scoping to an agency the export
+            # names differently. The row must still be in the table, for
+            # that same organisation; otherwise nothing here is published.
+            agency_alias_row = alias_table.by_alias(str(agency_alias.get("organisationId") or ""),
+                                                    str(agency_alias.get("alias") or ""))
+            if agency_alias_row is None:
+                stats["agency_alias_row_withdrawn"] += 1
+                continue
         urls = [str(u) for u in (node.get("sourceUrls") or [])]
         if url not in urls:
             urls.append(url)
@@ -770,6 +842,12 @@ def apply_current_listing(
             if record.get(field):
                 block[field] = record[field]
         node["positionCurrentListing"] = block
+        if agency_alias_row is not None:
+            stamp_alias_match(node, agency_alias_row.block(
+                source=SOURCE, url=url, matched_text=str(record.get("agency") or ""),
+                scope=ALIAS_SCOPE_ORGANISATION,
+            ))
+            stats["under_an_aliased_agency"] += 1
         if not node.get("lastVerified") or fetched > str(node.get("lastVerified")):
             node["lastVerified"] = fetched
             node["evidenceVerifiedAt"] = fetched

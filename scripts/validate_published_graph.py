@@ -1123,7 +1123,7 @@ def plum_listing_parent_keys(listing):
     return org_keys
 
 
-def current_listing_violations(node, listing, today, label, parent_name):
+def current_listing_violations(node, listing, today, label, parent_name, parent_alias_keys=()):
     """Everything that must be true of a listing from OPM's current PLUM
     export: a post, dated by the fetch, citing the committed file byte for
     byte, a Filled or Vacant row -- never Historical -- carrying every value
@@ -1161,7 +1161,7 @@ def current_listing_violations(node, listing, today, label, parent_name):
     # the node's parent in the tree the gate is walking. Checked before the
     # row is looked up, so a block filed under the wrong organisation is
     # named as such rather than only as a row the export does not carry.
-    if not (plum_org_keys(parent_name) & plum_listing_parent_keys(listing)):
+    if not ((plum_org_keys(parent_name) | set(parent_alias_keys)) & plum_listing_parent_keys(listing)):
         say("is filed by the export under {!r}, but its parent in the tree is {!r}".format(organization or agency, parent_name))
     # The name: the title must still be one the node's name answers to.
     if not (position_title_keys(node.get("name"), parent_name) & set(plum_export_title_keys(title, organization))):
@@ -1630,6 +1630,124 @@ def statutory_pay_violations(node, pay, today, label):
     return out
 
 
+def alias_match_violations(node, label_of, by_id=None):
+    """Everything a published alias match must be, checked against the
+    mirrored table rather than against itself.
+
+    The block is the weaker claim this project allows a name to carry, so
+    each refusal below answers a way it could be made to read as the
+    stronger one: a row moved to another node, a node renamed out from under
+    its row, an alternative nobody reviewed, a claim with no basis, a
+    `verified` badge resting on alias-derived documents alone, and an alias
+    anywhere near a figure.
+    """
+    out = []
+    block = node.get("verificationAliasMatch")
+    node_id = str(node.get("id") or "")
+    if block is None:
+        if str(node.get("verificationMatchRule") or "") == MATCH_RULE_ALIAS:
+            out.append("{} claims an alias match rule with no alias block".format(label_of(node)))
+        return out
+    if not isinstance(block, dict):
+        out.append("{} verificationAliasMatch is not an object".format(label_of(node)))
+        return out
+    by_id = by_id or {}
+    owner_id = str(block.get("owner") or "") or node_id
+    known = NODE_ALIASES.get(owner_id)
+    if known is None:
+        out.append("{} publishes an alias match but the committed table has no row for {!r}".format(label_of(node), owner_id))
+        return out
+    recorded_name, allowed = known
+    # The row is written against ONE curated name, and a rename withdraws it.
+    # For a node-scoped match that is this node; for an organisation-scoped
+    # one it is the ancestor whose name the source printed differently, and
+    # the gate reads that node off the graph rather than off the block.
+    owner_node = node if owner_id == node_id else by_id.get(owner_id)
+    if owner_node is None:
+        out.append("{} cites an alias row for {!r}, which is not in the graph".format(label_of(node), owner_id))
+        return out
+    if str(owner_node.get("name") or "") != recorded_name:
+        out.append("{} carries an alias row written against {!r}, and that node is now named {!r}".format(
+            label_of(node), recorded_name, owner_node.get("name")))
+        return out
+    matches = block.get("matches")
+    if not isinstance(matches, list) or not matches:
+        out.append("{} publishes an alias block with no matches behind it".format(label_of(node)))
+        return out
+    urls = [str(u) for u in (block.get("urls") or [])]
+    node_urls = {str(u) for u in (node.get("sourceUrls") or [])}
+    seen = []
+    for entry in matches:
+        if not isinstance(entry, dict):
+            out.append("{} alias match entry is not an object".format(label_of(node)))
+            continue
+        entry_owner = str(entry.get("owner") or "") or node_id
+        entry_known = NODE_ALIASES.get(entry_owner)
+        alias = str(entry.get("alias") or "")
+        if entry_known is None or alias not in entry_known[1]:
+            out.append("{} quotes the alternative {!r}, which the committed table does not carry for {!r}".format(
+                label_of(node), alias, entry_owner))
+        if not str(entry.get("basis") or "").strip():
+            out.append("{} publishes an alias match with no basis".format(label_of(node)))
+        scope = str(entry.get("scope") or "")
+        if scope not in ALIAS_SCOPES:
+            out.append("{} alias match scope {!r} is not one this pipeline produces".format(
+                label_of(node), entry.get("scope")))
+        elif scope == "node" and entry_owner != node_id:
+            out.append("{} claims another node's alternative as its own name".format(label_of(node)))
+        elif scope == "organisation" and entry_owner == node_id:
+            out.append("{} files its own alternative as its organisation's".format(label_of(node)))
+        url = str(entry.get("url") or "")
+        if not host_of(url).endswith((".gov", ".mil")):
+            out.append("{} alias match cites {!r}, which is not an official host".format(label_of(node), url))
+        elif url not in urls:
+            out.append("{} alias match cites {!r}, which its own url list omits".format(label_of(node), url))
+        elif url not in node_urls:
+            out.append("{} alias match cites {!r}, which is not one of the node's sources".format(label_of(node), url))
+        seen.append(url)
+    if sorted(set(urls)) != sorted(set(seen)):
+        out.append("{} alias urls {} are not the urls its matches name".format(label_of(node), urls))
+    if str(block.get("alias") or "") not in allowed:
+        out.append("{} alias block headline {!r} is not a reviewed alternative for it".format(
+            label_of(node), block.get("alias")))
+    if not str(block.get("basis") or "").strip():
+        out.append("{} alias block headline carries no basis".format(label_of(node)))
+    # The cap. A node every one of whose official sources was reached through
+    # the table may not read `verified`: that is what two documents naming the
+    # unit outright earn, and writing an identification down is not that.
+    official = [u for u in node_urls if is_official_site(u)]
+    alias_only = bool(official) and set(official) <= set(urls)
+    graded = str(block.get("gradedAtMost") or "")
+    if alias_only:
+        if graded != "partial":
+            out.append("{} rests only on alias-matched sources and does not say it is graded at most partial".format(label_of(node)))
+        if str(node.get("verificationStatus") or "") == "verified":
+            out.append("{} reads verified on alias-matched sources alone".format(label_of(node)))
+        try:
+            if float(node.get("confidenceScore") or 0.0) > 0.7:
+                out.append("{} scores {} on alias-matched sources alone".format(label_of(node), node.get("confidenceScore")))
+        except (TypeError, ValueError):
+            out.append("{} has an unreadable confidenceScore beside an alias match".format(label_of(node)))
+    elif graded:
+        out.append("{} claims an alias grading cap while other sources name it too".format(label_of(node)))
+    return out
+
+
+def alias_on_a_figure_violations(node, label_of):
+    """An alias may never appear on a block that lands a number."""
+    out = []
+    for field in ALIAS_FORBIDDEN_BLOCKS:
+        blob = node.get(field)
+        if blob is None:
+            continue
+        text = json.dumps(blob, default=str)
+        for marker in ALIAS_MARKERS:
+            if marker in text:
+                out.append("{} carries {!r} inside {}, which lands a figure".format(label_of(node), marker, field))
+                break
+    return out
+
+
 def walk(node, parent=None):
     """Yield (node, parent) for every dict node in the tree."""
     yield node, parent
@@ -1853,6 +1971,83 @@ def directory_name_keys(value):
 
 COMMITTEE_TYPES = {"committee", "subcommittee"}
 MATCH_RULE_COMMITTEE = "committee_scaffolding_folded"
+MATCH_RULE_ALIAS = "matched_on_a_recorded_alternative_name"
+ALIAS_SCOPES = {"node", "organisation"}
+#: `data/curation/node_aliases.json`, mirrored BY NODE ID for the reason the
+#: Executive Schedule and White House tables are: an alias moved to another
+#: node keeps a real alternative name and a real basis, and only a check tied
+#: to the node's own identity catches it. The name is mirrored too, because
+#: the row is written against one curated name and a rename must withdraw it.
+#: `tests/test_node_aliases.py` pins this equal to the committed table.
+NODE_ALIASES = {
+    "exec-ind-misc-americorps": ("AmeriCorps", ("Corporation for National and Community Service",)),
+    "exec-vp": ("The Vice President of the United States", ("The Vice President",)),
+    "jud-support-aousc": ("Administrative Office of U.S. Courts (AOUSC)",
+                          ("Administrative Office of the United States Courts",)),
+    "exec-dept-doc-noaa": ("NOAA — National Oceanic & Atmospheric Administration",
+                           ("National Oceanic and Atmospheric Administration",)),
+    "exec-dept-dot-fmcsa": ("Federal Motor Carrier Safety Admin (FMCSA)",
+                            ("Federal Motor Carrier Safety Administration",)),
+    "exec-dept-dot-nhtsa": ("National Highway Traffic Safety Admin (NHTSA)",
+                            ("National Highway Traffic Safety Administration",)),
+    "exec-dept-dot-phmsa": ("Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+                            ("Pipeline and Hazardous Materials Safety Administration",)),
+    "exec-dept-defense-agency-darpa": ("DARPA", ("Defense Advanced Research Projects Agency",)),
+}
+#: The blocks an alias may never appear on. An alias is a claim about two
+#: NAMES, and every one of these lands a NUMBER; each already has its own
+#: reviewed table where a figure is at stake, and `CLAUDE.md` records why one
+#: table serving both kinds of claim is dangerous (FedScope's "DEPARTMENT OF
+#: THE ARMY" is a civilian department, the graph's "U.S. Army" the uniformed
+#: service). The check is a string scan of the block as published, so a field
+#: nobody anticipated cannot smuggle one in.
+ALIAS_FORBIDDEN_BLOCKS = (
+    "usaspendingOutlays", "auditedNetCost", "ombBudget", "employeesOfficial",
+    "employeesOfficialSource", "cost_weight_dispute", "positionPayRate",
+    "positionGradePay", "positionStatutoryPay", "positionSchedulePay",
+    "positionReportedPay", "positionCurrentPay",
+)
+#: Deliberately only this feature's own rule and field. `usaspendingOutlays`
+#: carries a `nameAlias` of its OWN -- `USASPENDING_NAME_ALIASES`, a separate
+#: reviewed table mirrored by node id in this file -- and that separation is
+#: the point rather than a violation: a figure's alias is reviewed where the
+#: figure is at stake. What must never appear on a money block is a name
+#: reached through the EXISTENCE table, which is what these two strings mean.
+ALIAS_MARKERS = (MATCH_RULE_ALIAS, "verificationAliasMatch")
+
+
+#: `normalize_nodes.GOVERNMENT_DATASET_HOSTS`, mirrored stdlib-only. The
+#: grading cap turns on the difference between "a .gov URL" and "an official
+#: SITE": a FiscalData dataset URL and a Federal Register agency page are
+#: both `.gov` and neither earns the +0.3 that makes a node `verified`, so a
+#: node carrying only one of those is exactly the node one aliased document
+#: could otherwise carry from 0.4 to 0.8. `tests/test_node_aliases.py` pins
+#: this function equal to `classify_source_url` on the published graph.
+GOVERNMENT_DATASET_HOSTS = ("fiscaldata.treasury.gov", "api.fiscaldata.treasury.gov", "api.usaspending.gov")
+
+
+def is_official_site(url):
+    host = host_of(url)
+    if "federalregister.gov" in host:
+        return False
+    if any(host == d or host.endswith("." + d) for d in GOVERNMENT_DATASET_HOSTS):
+        return False
+    return host.endswith((".gov", ".mil"))
+
+
+def alias_keys_for(node_id, by_id):
+    """The canonical keys a node also answers to, or an empty set.
+
+    Empty unless the node still carries the exact name the row was written
+    against: a rename withdraws every alternative, here as in the pipeline.
+    """
+    known = NODE_ALIASES.get(str(node_id or ""))
+    if not known:
+        return set()
+    node = (by_id or {}).get(str(node_id or ""))
+    if node is None or str(node.get("name") or "") != known[0]:
+        return set()
+    return {canonical_key(a) for a in known[1]}
 # A post confirmed by a label in its own organisation's page content. Mirrors
 # data_pipeline.verification.evidence.METHOD_POST_ON_ORG_PAGE; the checks
 # below and the coverage report both key off it.
@@ -1992,6 +2187,10 @@ def omb_database():
 GOVMAN_METHOD = "listed_in_its_organisations_us_government_manual_entry"
 GOVMAN_ORG_METHOD = "listed_in_us_government_manual"
 GOVMAN_ORG_PLACEMENT_METHOD = "listed_under_parent_in_us_government_manual"
+#: The top-level office route (govman.TOP_LEVEL_OFFICE_METHOD) and the one
+#: extension a principal row may add to its entry's heading.
+GOVMAN_OFFICE_METHOD = "listed_as_its_own_entry_in_us_government_manual"
+GOVMAN_OFFICE_STYLE_SUFFIX = "of the united states"
 GOVMAN_PACKAGE = "GOVMAN-2025-12-31"
 GOVMAN_DETAILS = "https://www.govinfo.gov/app/details"
 GOVMAN_FIXTURE = (
@@ -2315,6 +2514,11 @@ def main(argv):
     # filing check: the export names the organisation it files a title under,
     # and the gate compares that with the parent the tree actually gives.
     name_by_id = {str(node.get("id") or ""): node.get("name") for node, _ in pairs}
+    # The same index by node, built here rather than 600 lines down, because
+    # the alias checks need to read the OWNER of a row off the graph: an
+    # organisation-scoped match belongs to an ancestor, and the rename guard
+    # is a fact about that ancestor's current name.
+    by_id = {str(node.get("id") or ""): node for node, _ in pairs}
     print("Validating {} ({:,} nodes)\n".format(graph_path, len(nodes)))
 
     gate = Gate()
@@ -2617,6 +2821,7 @@ def main(argv):
         PLUM_CURRENT_METHOD,
         GOVMAN_METHOD,
         GOVMAN_ORG_METHOD,
+        GOVMAN_OFFICE_METHOD,
     }
     # Placement claims that rest on reading a page, as opposed to consulting a
     # separate document. Only these are refused on a post; see below.
@@ -2694,7 +2899,16 @@ def main(argv):
         rule = node.get("verificationMatchRule")
         if rule is not None:
             matched_text = node.get("verificationMatchedText")
-            if str(rule) != MATCH_RULE_COMMITTEE:
+            if str(rule) == MATCH_RULE_ALIAS:
+                # Checked in full by `alias_match_violations` below, against
+                # the mirrored table. Here only the two things that tie it to
+                # this node's own claim: the label is quoted, and there is an
+                # alias block behind the rule.
+                if not matched_text:
+                    unknown_method.append("{} claims an alias match without quoting the label".format(label(node)))
+                if not isinstance(node.get("verificationAliasMatch"), dict):
+                    unknown_method.append("{} claims an alias match with no alias block".format(label(node)))
+            elif str(rule) != MATCH_RULE_COMMITTEE:
                 unknown_method.append("{} verificationMatchRule {!r}".format(label(node), rule))
             elif not is_committee(node):
                 unknown_method.append("{} folds committee scaffolding but is typed {!r}".format(label(node), node.get("type")))
@@ -2804,8 +3018,10 @@ def main(argv):
         # rate that export prints for the one row under the title.
         current_listing = node.get("positionCurrentListing")
         if current_listing is not None:
+            _parent_id = tree_parents.get(str(node.get("id") or ""))
             bad_current_listing.extend(current_listing_violations(
-                node, current_listing, today, label, name_by_id.get(tree_parents.get(str(node.get("id") or "")))))
+                node, current_listing, today, label, name_by_id.get(_parent_id),
+                alias_keys_for(_parent_id, by_id)))
         current_pay = node.get("positionCurrentPay")
         if current_pay is not None:
             bad_current_pay.extend(current_pay_violations(node, current_pay, current_listing, today, label))
@@ -3187,8 +3403,10 @@ def main(argv):
             govman_violations.append(
                 "{} carries a listing quoting {!r}, which is not this node's name".format(label(node), listed_title))
             continue
-        parent = by_id.get(tree_parents.get(str(node.get("id") or "")) or "")
-        if parent is None or canonical_key(parent.get("name")) != canonical_key(listed_under):
+        parent_id = tree_parents.get(str(node.get("id") or "")) or ""
+        parent = by_id.get(parent_id)
+        parent_names = ({canonical_key(parent.get("name"))} | alias_keys_for(parent_id, by_id)) if parent is not None else set()
+        if canonical_key(listed_under) not in parent_names:
             govman_violations.append(
                 "{} was listed under {!r}, which is not the organisation the tree gives it".format(
                     label(node), listed_under))
@@ -3248,7 +3466,7 @@ def main(argv):
         if entry is not None and canonical_key(listed_name) != canonical_key(entry[0]):
             govman_org_violations.append("{} quotes {!r} for granule {}, which the Manual names {!r}".format(label(node), listed_name, granule, entry[0]))
             continue
-        if canonical_key(node.get("name")) != canonical_key(listed_name):
+        if canonical_key(listed_name) not in ({canonical_key(node.get("name"))} | alias_keys_for(node.get("id"), by_id)):
             govman_org_violations.append("{} carries an entry for {!r}, which is not this node's name".format(label(node), listed_name))
             continue
         expected_url = "{}/{}/{}".format(GOVMAN_DETAILS, GOVMAN_PACKAGE, granule)
@@ -3273,6 +3491,69 @@ def main(argv):
                 govman_org_violations.append("{} is placed by the Manual but cites {!r} for it".format(label(node), node.get("placementUrl")))
                 continue
     gate.check("a Government Manual entry names this unit, its parent as the Manual prints it, and places it only under that parent", govman_org_violations)
+    # The narrow third route: a TOP-LEVEL Manual entry that IS an office.
+    # Everything the organisation check asks, plus the three things that
+    # make this route what it is -- the node is a post, the entry is
+    # top-level (the Manual prints no parent for it), and no placement is
+    # ever claimed from it, because one entry was read and it yields one
+    # observation.
+    govman_office_violations = []
+    for node in nodes:
+        block = node.get("govmanOfficeEntry")
+        method_is_office = str(node.get("verificationMethod") or "") == GOVMAN_OFFICE_METHOD
+        if not isinstance(block, dict):
+            if method_is_office:
+                govman_office_violations.append("{} takes a Manual office entry as its method and carries no block".format(label(node)))
+            continue
+        if not is_post(node):
+            govman_office_violations.append("{} is not a post but carries a Manual office entry".format(label(node)))
+            continue
+        granule = str(block.get("granule") or "")
+        entry = govman_index.get(granule)
+        if govman_index and entry is None:
+            govman_office_violations.append("{} cites granule {!r}, which the committed Manual does not carry".format(label(node), granule))
+            continue
+        listed_name = str(block.get("listedName") or "")
+        if entry is not None and canonical_key(listed_name) != canonical_key(entry[0]):
+            govman_office_violations.append("{} quotes {!r} for granule {}, which the Manual names {!r}".format(label(node), listed_name, granule, entry[0]))
+            continue
+        if govman_parent_index and canonical_key(str(govman_parent_index.get(granule) or "")):
+            govman_office_violations.append("{} claims a top-level office entry the Manual files under {!r}".format(label(node), govman_parent_index.get(granule)))
+            continue
+        matched = str(block.get("matchedName") or "")
+        recorded = NODE_ALIASES.get(str(node.get("id") or ""))
+        allowed_names = {canonical_key(node.get("name"))}
+        if recorded:
+            allowed_names.update(canonical_key(a) for a in recorded[1])
+        if canonical_key(matched) not in allowed_names:
+            govman_office_violations.append("{} carries an office entry matched on {!r}, which is not its name or a reviewed alternative".format(label(node), matched))
+            continue
+        if canonical_key(matched) != canonical_key(listed_name) and canonical_key(matched) != "{} {}".format(canonical_key(listed_name), GOVMAN_OFFICE_STYLE_SUFFIX):
+            govman_office_violations.append("{} matched on {!r}, which is neither the entry's name nor that name in its full style".format(label(node), matched))
+            continue
+        expected_url = "{}/{}/{}".format(GOVMAN_DETAILS, GOVMAN_PACKAGE, granule)
+        if str(block.get("url") or "") != expected_url:
+            govman_office_violations.append("{} cites {!r}, not the publisher's own address {!r}".format(label(node), block.get("url"), expected_url))
+            continue
+        if not _past_iso(block.get("edition")):
+            govman_office_violations.append("{} cites a Manual edition {!r} that has not happened".format(label(node), block.get("edition")))
+            continue
+        if str(node.get("placementMethod") or "").endswith("us_government_manual") or node.get("placementVerified") is True and str(node.get("placementUrl") or "") == expected_url:
+            govman_office_violations.append("{} claims a placement from the Manual entry that is its own existence".format(label(node)))
+            continue
+    gate.check("a Manual office entry is a top-level entry for the office itself, on a post, and never a placement", govman_office_violations)
+    # Alternative names: the reviewed table, mirrored by node id, and the
+    # grading cap that keeps what it buys from reading as more than it is.
+    alias_violations = []
+    alias_on_figures = []
+    for node in nodes:
+        alias_violations.extend(alias_match_violations(node, label, by_id))
+        alias_on_figures.extend(alias_on_a_figure_violations(node, label))
+    gate.check("an alias match quotes a reviewed alternative for this node, under the name the row was written against, and never reads verified alone", alias_violations)
+    gate.check("no money or headcount block rests on an alternative name", alias_on_figures)
+    aliased_nodes = [n for n in nodes if isinstance(n.get("verificationAliasMatch"), dict)]
+    print("      {} node(s) carry a claim reached through a recorded alternative name; {} of them rest on nothing else".format(
+        len(aliased_nodes), sum(1 for n in aliased_nodes if str((n.get("verificationAliasMatch") or {}).get("gradedAtMost") or ""))))
     # The entry's own description, re-derived from the committed package
     # rather than trusted. The block quotes text and names the element it came
     # from; the check is that the text is VERBATIM in exactly that element of
@@ -3328,7 +3609,7 @@ def main(argv):
             if canonical_key(str(block_data.get("listedName") or "")) != canonical_key(entry[0]):
                 govman_desc_violations.append("{} quotes a description under {!r} for granule {}, which the Manual names {!r}".format(label(node), block_data.get("listedName"), granule, entry[0]))
                 continue
-            if canonical_key(node.get("name")) != canonical_key(entry[0]):
+            if canonical_key(entry[0]) not in ({canonical_key(node.get("name"))} | alias_keys_for(node.get("id"), by_id)):
                 govman_desc_violations.append("{} carries the Manual's description of {!r}, which is not this node's name".format(label(node), entry[0]))
                 continue
         if govman_desc_index and granule in govman_desc_index:

@@ -32,10 +32,12 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_graph  # noqa: E402
 from data_pipeline.json_io import write_json_file  # noqa: E402
+from data_pipeline.verification.aliases import load_alias_table  # noqa: E402
 from data_pipeline.verification.govman import (  # noqa: E402
     DEFAULT_PACKAGE,
     DESCRIPTION_MAX_CHARS,
     SOURCE,
+    build_office_records,
     build_org_records,
     build_records,
     read_manual,
@@ -54,8 +56,12 @@ def main(argv: list[str] | None = None) -> int:
 
     manual = read_manual(args.fixture)
     base = load_base_graph(args.base_graph)
-    records, stats = build_records(manual, base)
-    org_records, org_stats = build_org_records(manual, base)
+    # The reviewed alternative names a document may print for a node,
+    # adjudicated against the curated file as it is now.
+    alias_table = load_alias_table(base)
+    records, stats = build_records(manual, base, alias_table=alias_table)
+    org_records, org_stats = build_org_records(manual, base, alias_table=alias_table)
+    office_records, office_stats = build_office_records(manual, base, alias_table=alias_table)
 
     print(f"  manual              : {manual['package']} (edition {manual['edition']})")
     print(f"  agency entries      : {stats['entries']}")
@@ -68,6 +74,12 @@ def main(argv: list[str] | None = None) -> int:
                    "entry_names_several_nodes"):
         print(f"  {reason:34s}: {stats[reason]}")
     print(f"  organisations listed: {org_stats['organisations_listed']} (top-level entries {org_stats['top_level_entries']})")
+    print(f"  matched via an alias: {org_stats['organisations_matched_by_alias']} organisations, "
+          f"{stats['posts_under_an_aliased_organisation']} posts beneath one")
+    print(f"  top-level offices   : {office_stats['offices_listed']} "
+          f"({office_stats['offices_matched_by_alias']} via an alias); refused "
+          f"{office_stats['refused_entry_is_an_agency']} agency entries and "
+          f"{office_stats['refused_caps_row_is_not_the_entrys_own_name']} caps rows that are not the entry's own name")
     # The entry's own description, beside the curated prose (govman.py,
     # last section of the module docstring). Refusals are printed with the
     # count because the name guard costs real entries and a reader should
@@ -129,9 +141,15 @@ def main(argv: list[str] | None = None) -> int:
         # unit the Manual carries an entry for, with the parent entry's name
         # so the exporter can compare where the Manual files it with the tree.
         "organisations": org_records,
+        # The top-level office route (govman.build_office_records): a Manual
+        # entry that IS an office rather than an agency, which is the only
+        # route by which the President and the Vice President are reachable.
+        "offices": office_records,
+        "officesReport": office_stats,
     }
     write_json_file(args.out, store)
-    print(f"\nwrote {len(records)} post records and {len(org_records)} organisation records -> {args.out}")
+    print(f"\nwrote {len(records)} post records, {len(org_records)} organisation records "
+          f"and {len(office_records)} top-level office records -> {args.out}")
     return 0
 
 

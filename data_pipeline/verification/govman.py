@@ -175,6 +175,42 @@ METHOD = "listed_in_its_organisations_us_government_manual_entry"
 #: of the 344 organisations that carried no verification when this landed.
 ORG_METHOD = "listed_in_us_government_manual"
 ORG_PLACEMENT_METHOD = "listed_under_parent_in_us_government_manual"
+#: The narrow third route, since 2026-09-21. A handful of the Manual's
+#: TOP-LEVEL entries are not agencies at all: the entry IS the office. "The
+#: President" (entity 96) and "The Vice President" (97) carry no bureaus and
+#: no parent, and their leadership tables print the office itself in caps --
+#: `THE PRESIDENT OF THE UNITED STATES`. `match_organisations` skips every
+#: post, and the post route requires the post to be a direct child of a
+#: matched ORGANISATION, so neither could ever reach those two nodes however
+#: the names were spelled.
+#:
+#: The claim is its own, and its own string, because it is a different
+#: sentence: the Manual carries an entry FOR this office, rather than an
+#: agency's entry listing it among that agency's officers. Four guards keep
+#: it from reaching an ordinary agency entry, and each is checked on the run:
+#: the entry has no parent entry; it names no ORGANISATION in this graph
+#: (an agency entry does, and the organisation route owns it); it reaches
+#: exactly one post node and that post answers to exactly one such entry; and
+#: the post's own parent is not an organisation the Manual has an entry for,
+#: because where it is, the ordinary post route is the right one and this
+#: must not compete with it. No placement is ever published: one entry was
+#: read and it yields one observation, the rule this file sets throughout.
+TOP_LEVEL_OFFICE_METHOD = "listed_as_its_own_entry_in_us_government_manual"
+
+#: The one extension a principal row may add to its entry's own heading. The
+#: Manual heads the entry "The President" and prints the office itself as
+#: "THE PRESIDENT OF THE UNITED STATES"; that is the office's constitutional
+#: style, and it is the only difference this route tolerates between the two.
+#:
+#: The rule earns its narrowness on the real data. Without it the caps row of
+#: any top-level entry counts, and the Manual's entry for the United States
+#: International Trade Commission -- an agency this graph has no node for --
+#: prints `CHIEF ADMINISTRATIVE LAW JUDGE`, which reached the Social Security
+#: Administration's Chief Administrative Law Judge: an agency entry naming one
+#: of its officers, published as though the Manual carried an entry for that
+#: officer. An entry heading extended only by these five words cannot be a
+#: job title inside somebody else's table.
+OFFICE_STYLE_SUFFIX = "of the united states"
 DETAILS_BASE = "https://www.govinfo.gov/app/details"
 
 #: The tags an entity is published under. The Manual nests an agency's
@@ -469,6 +505,9 @@ def read_manual(package_path: Path | str | None = None) -> dict[str, Any]:
 
 def match_organisations(
     manual: dict[str, Any], node_map: dict[str, dict[str, Any]],
+    *,
+    alias_table: Any | None = None,
+    alias_hits: dict[str, Any] | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
     """Organisation node id -> the one Manual entry that names it.
 
@@ -476,13 +515,34 @@ def match_organisations(
     neither, and a name two entries carry identifies no entry. Shared by the
     post route and the organisation route so the two can never disagree
     about which entry is which agency.
+
+    `alias_table` files a node under the alternative names
+    `data/curation/node_aliases.json` records for it as well as its own, so
+    the Manual's "Federal Motor Carrier Safety Administration" reaches the
+    node this graph writes as "Admin". The node's OWN name is indexed first,
+    so a plain match is never displaced by an alias; when a node is reached
+    only through the table the row is recorded in `alias_hits`, and every
+    caller publishes it as the weaker claim it is.
     """
     org_by_key: dict[str, list[str]] = {}
+    alias_by_key: dict[str, list[tuple[str, Any]]] = {}
     for node_id, node in node_map.items():
         if is_post_node(node):
             continue
         key = canonical_name_key(node.get("name"))
         if key:
+            org_by_key.setdefault(key, []).append(node_id)
+        if alias_table is not None:
+            for row in alias_table.for_node(node_id):
+                if row.key:
+                    alias_by_key.setdefault(row.key, []).append((node_id, row))
+    for key, pairs in alias_by_key.items():
+        # An alias may only ever ADD a node under a key its own name does not
+        # already claim; a key two aliases reach is left ambiguous, which the
+        # count below refuses exactly as it refuses two nodes of one name.
+        if key in org_by_key:
+            continue
+        for node_id, _row in pairs:
             org_by_key.setdefault(key, []).append(node_id)
     entry_by_key: dict[str, list[dict[str, Any]]] = {}
     for entry in manual["entities"]:
@@ -492,7 +552,7 @@ def match_organisations(
     stats = {
         "entries": len(manual["entities"]), "organisations_matched": 0,
         "entry_names_several_entries": 0, "entry_names_several_nodes": 0,
-        "entry_names_no_node": 0,
+        "entry_names_no_node": 0, "organisations_matched_by_alias": 0,
     }
     matched: dict[str, dict[str, Any]] = {}
     for key, entries in entry_by_key.items():
@@ -508,6 +568,12 @@ def match_organisations(
             stats["entry_names_several_nodes"] += 1
             continue
         matched[node_ids[0]] = entries[0]
+        if canonical_name_key(node_map[node_ids[0]].get("name")) != key:
+            row = next((r for nid, r in alias_by_key.get(key, []) if nid == node_ids[0]), None)
+            if row is not None:
+                stats["organisations_matched_by_alias"] = stats.get("organisations_matched_by_alias", 0) + 1
+                if alias_hits is not None:
+                    alias_hits[node_ids[0]] = row
     stats["organisations_matched"] = len(matched)
     return matched, stats
 
@@ -517,6 +583,7 @@ def build_org_records(
     root: dict[str, Any],
     *,
     index_tree=None,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
     """One record per organisation the Manual carries an entry for.
 
@@ -530,7 +597,8 @@ def build_org_records(
 
         index_tree = _index_tree
     node_map, _ = index_tree(root)
-    matched, stats = match_organisations(manual, node_map)
+    alias_hits: dict[str, Any] = {}
+    matched, stats = match_organisations(manual, node_map, alias_table=alias_table, alias_hits=alias_hits)
     stats.update({"organisations_listed": 0, "refused_no_access_id": 0, "top_level_entries": 0,
                   # The entry's own description (module docstring, last section).
                   "descriptions_extracted": 0, "descriptions_mission_statement": 0,
@@ -556,9 +624,13 @@ def build_org_records(
             stats["descriptions_extracted"] += 1
             stats["descriptions_" + description["kind"]] += 1
             stats["descriptions_truncated"] += int(description["truncated"])
+        alias_row = alias_hits.get(org_id)
         records[org_id] = {
             "description": description,
             "source": SOURCE,
+            # Set when the entry reached this node only through the reviewed
+            # alternative-names table, never when its own name matched.
+            "nameAlias": ({"alias": alias_row.alias, "basis": alias_row.basis} if alias_row else None),
             "nodeName": node_map[org_id].get("name"),
             "listedName": entry["name"],
             "entityId": entry["entityId"],
@@ -579,17 +651,23 @@ def apply_govman_org_evidence(
     records: dict[str, dict[str, Any]],
     *,
     index_tree=None,
+    alias_table: Any | None = None,
 ) -> dict[str, Any]:
     """Stamp a Manual entry onto the organisation it names, beside any page
     claim and never over it; place the node under its parent only when the
     Manual's own parent entry names the parent the tree gives it, and say so
     when the Manual files it elsewhere. Runs after `apply_evidence_to_tree`
     has withdrawn every field this module owns."""
+    from data_pipeline.verification.aliases import ALIAS_SCOPE_NODE, load_alias_table, stamp_alias_match
+
     if index_tree is None:
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
 
         index_tree = _index_tree
     from data_pipeline.processors.normalize_nodes import verify_node_sources
+
+    if alias_table is None:
+        alias_table = load_alias_table(root, index_tree=index_tree)
 
     node_map, parent_map = index_tree(root)
     org_by_key: dict[str, list[str]] = {}
@@ -610,7 +688,18 @@ def apply_govman_org_evidence(
         if is_post_node(node):
             stats["is_a_post"] += 1
             continue
-        if canonical_name_key(node.get("name")) != canonical_name_key(record.get("listedName")):
+        alias_block = record.get("nameAlias") if isinstance(record.get("nameAlias"), dict) else None
+        alias_row = None
+        if alias_block:
+            # The record rests on the reviewed table: the row must still be
+            # there, for this node, with this alternative. The table is
+            # re-adjudicated against the current tree, so a rename has
+            # already withdrawn it.
+            alias_row = alias_table.by_alias(node_id, str(alias_block.get("alias") or ""))
+            if alias_row is None or canonical_name_key(alias_row.alias) != canonical_name_key(record.get("listedName")):
+                stats["alias_row_withdrawn"] = stats.get("alias_row_withdrawn", 0) + 1
+                continue
+        elif canonical_name_key(node.get("name")) != canonical_name_key(record.get("listedName")):
             stats["stale_name"] += 1
             continue
         url = str(record.get("url") or "")
@@ -656,6 +745,11 @@ def apply_govman_org_evidence(
         else:
             node["verificationMethod"] = ORG_METHOD
             stats["method_set"] += 1
+        if alias_row is not None:
+            stamp_alias_match(node, alias_row.block(
+                source=SOURCE, url=url, matched_text=str(record.get("listedName") or ""),
+                scope=ALIAS_SCOPE_NODE,
+            ))
         # The entry's own description, BESIDE the curated prose and never in
         # its place: `desc` is not touched, and the curated text keeps its
         # "uncited" label on the panel. Withdrawn by the evidence sweep with
@@ -688,7 +782,13 @@ def apply_govman_org_evidence(
         parent_listed = record.get("parentListedName")
         tree_parent_id = parent_map.get(node_id)
         tree_parent = node_map.get(tree_parent_id or "")
-        if not parent_listed:
+        if alias_row is not None:
+            # The entry reached this node through the reviewed table, so the
+            # edge claim would rest on the same identification the existence
+            # claim does -- and `evidence.py` already refuses an alias-derived
+            # placement for that reason. Nothing is published either way.
+            stats["placements_refused_alias"] = stats.get("placements_refused_alias", 0) + 1
+        elif not parent_listed:
             stats["top_level"] += 1
         elif tree_parent is not None and canonical_name_key(tree_parent.get("name")) == canonical_name_key(parent_listed):
             if node.get("placementVerified") is True:
@@ -734,11 +834,242 @@ def load_govman_org_evidence(path: Path | str | None = None) -> dict[str, dict[s
     return {str(k): v for k, v in (orgs or {}).items() if isinstance(v, dict)}
 
 
+# --------------------------------------------------------------------------
+# The top-level office route (TOP_LEVEL_OFFICE_METHOD)
+
+
+def build_office_records(
+    manual: dict[str, Any],
+    root: dict[str, Any],
+    *,
+    index_tree=None,
+    alias_table: Any | None = None,
+) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
+    """One record per POST the Manual carries a top-level entry FOR.
+
+    The four guards named on `TOP_LEVEL_OFFICE_METHOD`, in order, each
+    counted so a reader of the dry run sees what was refused and why. The
+    names a top-level entry offers are its own printed name and the ALL-CAPS
+    principal rows of its leadership table -- the Manual's own way of
+    printing the office itself ("THE PRESIDENT OF THE UNITED STATES") -- and
+    nothing else. A post's own name is tried first; the reviewed alias table
+    is consulted only after that fails.
+    """
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    node_map, parent_map = index_tree(root)
+    org_matched, _ = match_organisations(manual, node_map, alias_table=alias_table)
+    org_entry_ids = {str(entry["entityId"]) for entry in org_matched.values()}
+    organisation_parents = set(org_matched)
+
+    posts_by_key: dict[str, list[str]] = {}
+    alias_by_key: dict[str, list[tuple[str, Any]]] = {}
+    for node_id, node in node_map.items():
+        if not is_post_node(node):
+            continue
+        key = canonical_name_key(node.get("name"))
+        if key:
+            posts_by_key.setdefault(key, []).append(node_id)
+        if alias_table is not None:
+            for row in alias_table.for_node(node_id):
+                if row.key:
+                    alias_by_key.setdefault(row.key, []).append((node_id, row))
+
+    by_entity = {str(e["entityId"]): e for e in manual["entities"]}
+    stats = {
+        "top_level_entries_considered": 0, "refused_entry_is_an_agency": 0,
+        "refused_name_reaches_no_post": 0, "refused_name_reaches_several_posts": 0,
+        "refused_post_reached_by_several_entries": 0,
+        "refused_post_sits_under_a_manual_agency": 0, "refused_no_access_id": 0,
+        "refused_caps_row_is_not_the_entrys_own_name": 0,
+        "offices_listed": 0, "offices_matched_by_alias": 0,
+    }
+    # (post id) -> list of (entry, printed name, alias or None)
+    proposals: dict[str, list[tuple[dict[str, Any], str, Any]]] = {}
+    for entry in manual["entities"]:
+        if str(entry.get("parentId") or "") in by_entity:
+            continue  # not a top-level entry
+        stats["top_level_entries_considered"] += 1
+        if str(entry["entityId"]) in org_entry_ids:
+            # It is an agency entry; the organisation route owns it.
+            stats["refused_entry_is_an_agency"] += 1
+            continue
+        entry_key = canonical_name_key(entry["name"])
+        names = [entry["name"]]
+        for title in entry["titles"]:
+            if not title.get("allCaps"):
+                continue
+            row_key = canonical_name_key(title["title"])
+            if row_key == entry_key or row_key == f"{entry_key} {OFFICE_STYLE_SUFFIX}":
+                names.append(title["title"])
+            else:
+                stats["refused_caps_row_is_not_the_entrys_own_name"] += 1
+        for printed in names:
+            key = canonical_name_key(printed)
+            if not key:
+                continue
+            found = posts_by_key.get(key) or []
+            alias_row = None
+            if not found:
+                pairs = alias_by_key.get(key) or []
+                found = [nid for nid, _ in pairs]
+                if len(found) == 1:
+                    alias_row = pairs[0][1]
+            if not found:
+                continue
+            if len(found) > 1:
+                stats["refused_name_reaches_several_posts"] += 1
+                continue
+            proposals.setdefault(found[0], []).append((entry, printed, alias_row))
+    reached = sum(len(v) for v in proposals.values())
+    stats["refused_name_reaches_no_post"] = stats["top_level_entries_considered"] - stats["refused_entry_is_an_agency"] - reached
+
+    records: dict[str, dict[str, Any]] = {}
+    for node_id, hits in proposals.items():
+        entries = {str(e["entityId"]) for e, _, _ in hits}
+        if len(entries) > 1:
+            stats["refused_post_reached_by_several_entries"] += 1
+            continue
+        if parent_map.get(node_id) in organisation_parents:
+            # Its organisation has an entry of its own: the post route reads
+            # that entry's leadership table, and this route must not compete.
+            stats["refused_post_sits_under_a_manual_agency"] += 1
+            continue
+        entry, printed, alias_row = hits[0]
+        granule = access_id(manual["package"], entry["entityId"])
+        if not granule:
+            stats["refused_no_access_id"] += 1
+            continue
+        record: dict[str, Any] = {
+            "source": SOURCE,
+            "nodeName": node_map[node_id].get("name"),
+            "listedName": entry["name"],
+            "matchedName": printed,
+            "entityId": entry["entityId"],
+            "package": manual["package"],
+            "edition": manual["edition"],
+            "granule": granule,
+            "url": f"{DETAILS_BASE}/{manual['package']}/{granule}",
+            "documentSha256": manual["sha256"],
+        }
+        if alias_row is not None:
+            record["nameAlias"] = {"alias": alias_row.alias, "basis": alias_row.basis}
+            stats["offices_matched_by_alias"] += 1
+        records[node_id] = record
+        stats["offices_listed"] += 1
+    return records, stats
+
+
+def apply_govman_office_evidence(
+    root: dict[str, Any],
+    records: dict[str, dict[str, Any]],
+    *,
+    index_tree=None,
+    alias_table: Any | None = None,
+) -> dict[str, Any]:
+    """Stamp a top-level Manual entry onto the post it is an entry for.
+
+    Never a placement, and never over a claim a page made. Runs after the
+    evidence sweep has withdrawn `govmanOfficeEntry`.
+    """
+    from data_pipeline.verification.aliases import ALIAS_SCOPE_NODE, stamp_alias_match
+
+    if index_tree is None:
+        from data_pipeline.exporter.build_graph import index_tree as _index_tree
+
+        index_tree = _index_tree
+    from data_pipeline.processors.normalize_nodes import verify_node_sources
+
+    node_map, _ = index_tree(root)
+    if alias_table is None:
+        from data_pipeline.verification.aliases import load_alias_table
+
+        alias_table = load_alias_table(root, index_tree=index_tree)
+    stats = {"listed": 0, "unknown_node": 0, "not_a_post": 0, "stale_name": 0,
+             "alias_row_withdrawn": 0, "method_kept": 0, "method_set": 0, "urls_added": 0}
+    for node_id, record in records.items():
+        node = node_map.get(node_id)
+        if node is None:
+            stats["unknown_node"] += 1
+            continue
+        if not is_post_node(node):
+            stats["not_a_post"] += 1
+            continue
+        matched = str(record.get("matchedName") or record.get("listedName") or "")
+        alias_block = record.get("nameAlias") if isinstance(record.get("nameAlias"), dict) else None
+        row = None
+        if alias_block:
+            row = alias_table.by_alias(node_id, str(alias_block.get("alias") or ""))
+            if row is None:
+                # The table no longer carries the row this record rests on.
+                stats["alias_row_withdrawn"] += 1
+                continue
+        elif canonical_name_key(node.get("name")) != canonical_name_key(matched):
+            stats["stale_name"] += 1
+            continue
+        url = str(record.get("url") or "")
+        if not url:
+            continue
+        urls = [str(u) for u in (node.get("sourceUrls") or [])]
+        if url not in urls:
+            urls.append(url)
+            stats["urls_added"] += 1
+        node["sourceUrls"] = urls
+        mine = [str(u) for u in (node.get("evidenceUrls") or [])]
+        if url not in mine:
+            mine.append(url)
+        node["evidenceUrls"] = mine
+        types = [str(t) for t in (node.get("sourceTypes") or [])]
+        if SOURCE_TYPE not in types:
+            types.append(SOURCE_TYPE)
+        node["sourceTypes"] = types
+        node["govmanOfficeEntry"] = {
+            "source": SOURCE,
+            "listedName": record.get("listedName"),
+            "matchedName": matched,
+            "edition": record.get("edition"),
+            "package": record.get("package"),
+            "granule": record.get("granule"),
+            "url": url,
+        }
+        if node.get("verificationMethod"):
+            stats["method_kept"] += 1
+        else:
+            node["verificationMethod"] = TOP_LEVEL_OFFICE_METHOD
+            stats["method_set"] += 1
+        if row is not None:
+            stamp_alias_match(node, row.block(
+                source=SOURCE, url=url, matched_text=matched, scope=ALIAS_SCOPE_NODE,
+            ))
+        edition = str(record.get("edition") or "")
+        if edition and (not node.get("lastVerified") or edition > str(node.get("lastVerified"))):
+            node["lastVerified"] = edition
+            node["evidenceVerifiedAt"] = edition
+        verify_node_sources(node)
+        stats["listed"] += 1
+    return stats
+
+
+def load_govman_office_evidence(path: Path | str | None = None) -> dict[str, dict[str, Any]]:
+    """The top-level office records, stored beside the other two."""
+    import json
+
+    resolved = Path(path or (PROJECT_ROOT / "data" / "verification" / "govman_evidence.json"))
+    if not resolved.exists():
+        return {}
+    store = json.loads(resolved.read_text(encoding="utf-8")) or {}
+    offices = store.get("offices")
+    return {str(k): v for k, v in (offices or {}).items() if isinstance(v, dict)}
+
+
 def build_records(
     manual: dict[str, Any],
     root: dict[str, Any],
     *,
     index_tree=None,
+    alias_table: Any | None = None,
 ) -> tuple[dict[str, dict[str, Any]], dict[str, int]]:
     """One record per post the Manual names under its own organisation.
 
@@ -760,9 +1091,10 @@ def build_records(
         if parent_id:
             children.setdefault(parent_id, []).append(node)
 
-    matched, stats = match_organisations(manual, node_map)
+    alias_hits: dict[str, Any] = {}
+    matched, stats = match_organisations(manual, node_map, alias_table=alias_table, alias_hits=alias_hits)
     stats.update({
-        "posts_listed": 0,
+        "posts_listed": 0, "posts_under_an_aliased_organisation": 0,
         "refused_title_not_listed": 0, "refused_title_listed_twice": 0,
         "refused_siblings_share_the_name": 0, "refused_name_too_short": 0,
         "refused_no_access_id": 0,
@@ -799,11 +1131,19 @@ def build_records(
             if siblings.get(key, 0) > 1:
                 stats["refused_siblings_share_the_name"] += 1
                 continue
+            org_alias = alias_hits.get(org_id)
+            if org_alias is not None:
+                stats["posts_under_an_aliased_organisation"] += 1
             records[child["id"]] = {
                 "source": SOURCE,
                 "nodeName": child.get("name"),
                 "listedTitle": found[0]["title"],
                 "listedUnder": entry["name"],
+                # The post's own title matched outright; what needed the
+                # reviewed table was the ORGANISATION whose entry this is, so
+                # the block records whose name the alternative stood in for.
+                "organisationNameAlias": ({"alias": org_alias.alias, "basis": org_alias.basis,
+                                           "organisationId": org_id} if org_alias else None),
                 "organisationId": org_id,
                 "package": manual["package"],
                 "edition": manual["edition"],
@@ -821,6 +1161,7 @@ def apply_govman_evidence(
     records: dict[str, dict[str, Any]],
     *,
     index_tree=None,
+    alias_table: Any | None = None,
 ) -> dict[str, Any]:
     """Stamp Manual listings onto the posts they name.
 
@@ -830,6 +1171,8 @@ def apply_govman_evidence(
     A page-based claim on the same node is kept and this is added beside it,
     never over it -- the rule `directories.py` follows.
     """
+    from data_pipeline.verification.aliases import ALIAS_SCOPE_ORGANISATION, load_alias_table, stamp_alias_match
+
     if index_tree is None:
         from data_pipeline.exporter.build_graph import index_tree as _index_tree
 
@@ -837,9 +1180,11 @@ def apply_govman_evidence(
     from data_pipeline.processors.normalize_nodes import verify_node_sources
 
     node_map, parent_map = index_tree(root)
+    if alias_table is None:
+        alias_table = load_alias_table(root, index_tree=index_tree)
     stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "not_a_post": 0,
              "reparented": 0, "urls_added": 0, "method_kept_from_page": 0,
-             "failed_checks_withdrawn": 0}
+             "failed_checks_withdrawn": 0, "organisation_alias_row_withdrawn": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
@@ -859,6 +1204,14 @@ def apply_govman_evidence(
             # against that parent's entry.
             stats["reparented"] += 1
             continue
+        org_alias = record.get("organisationNameAlias")
+        org_alias_row = None
+        if isinstance(org_alias, dict):
+            org_alias_row = alias_table.by_alias(str(org_alias.get("organisationId") or ""),
+                                                 str(org_alias.get("alias") or ""))
+            if org_alias_row is None or str(org_alias.get("organisationId") or "") != str(record.get("organisationId") or ""):
+                stats["organisation_alias_row_withdrawn"] += 1
+                continue
         url = str(record.get("url") or "")
         if not url:
             continue
@@ -895,6 +1248,14 @@ def apply_govman_evidence(
             "url": url,
             "tableFooter": record.get("tableFooter"),
         }
+        if org_alias_row is not None:
+            # The title matched outright; the ORGANISATION whose entry this
+            # is was reached through the reviewed table, so the claim rests
+            # on it and is published as the weaker one.
+            stamp_alias_match(node, org_alias_row.block(
+                source=SOURCE, url=url, matched_text=str(record.get("listedUnder") or ""),
+                scope=ALIAS_SCOPE_ORGANISATION,
+            ))
         if node.get("verificationMethod"):
             # A page read this post's own organisation and labelled it. That
             # is the stronger claim and it stays; the Manual is a second

@@ -57,11 +57,20 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any, Callable, Sequence
 
 from data_pipeline.exporter.build_graph import canonical_name_key, is_post_node
 from data_pipeline.json_io import load_json_file
 from data_pipeline.processors.normalize_nodes import classify_source_url, verify_node_sources
+from data_pipeline.verification.aliases import (
+    ALIAS_FIELD,
+    ALIAS_SCOPE_NODE,
+    MATCH_RULE_ALIAS,
+    Alias,
+    AliasTable,
+    load_alias_table,
+    stamp_alias_match,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -127,6 +136,9 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationFailure",
     "verificationUnread",
     "govmanEntry",
+    # The Manual's top-level entry FOR an office (govman.py's third route:
+    # the President and the Vice President). Withdrawn here with the rest.
+    "govmanOfficeEntry",
     # The Manual entry's own description, beside the curated prose and never
     # in its place (govman.py). It depends on the entry block above it, so it
     # is withdrawn on the same build.
@@ -148,6 +160,12 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationMatchedText",
     "verificationMatchRule",
     "placementMatchRule",
+    # The alternative name a claim was reached through, with the basis the
+    # reviewed table states for it (data_pipeline/verification/aliases.py).
+    # Withdrawn here with everything else: a row deleted from the table, or a
+    # rename that invalidates one, must take the weaker badge with it rather
+    # than survive on the re-fed graph.
+    ALIAS_FIELD,
     # Exactly the URLs this module put on the node, so the next build can
     # remove exactly those and nothing else. The first version cleared the
     # node's whole list, which stripped the Treasury FiscalData URL from 26
@@ -765,6 +783,16 @@ def find_label_region(name: str, fragments: list[str] | PageText) -> tuple[str, 
     return (found[0], found[1]) if found else None
 
 
+def alias_matching(aliases: Sequence[Alias], fragment: str) -> Alias | None:
+    """The recorded alternative this fragment is a label of, if any. Tried
+    only after equality and the committee fold have both failed, so a page
+    carrying the graph's own name is never recorded as an alias match."""
+    for alias in aliases or ():
+        if alias.key and label_matches(alias.key, fragment):
+            return alias
+    return None
+
+
 def find_label_region_rule(
     name: str,
     fragments: list[str] | PageText,
@@ -772,16 +800,23 @@ def find_label_region_rule(
     fold_committee: bool = False,
     is_post: bool = False,
     regions_allowed: tuple[str, ...] | None = None,
+    aliases: Sequence[Alias] = (),
 ) -> tuple[str, str, str | None] | None:
     """As find_label_region, plus the rule that made the match: None for
     plain label equality, MATCH_RULE_COMMITTEE when the committee fold was
-    needed. Equality is tried on every fragment first, so a page that carries
-    the name in full is never recorded as folded.
+    needed, MATCH_RULE_ALIAS when the page printed a recorded alternative
+    name. Equality is tried on every fragment first, so a page that carries
+    the name in full is never recorded as folded or aliased; the alias is
+    tried last, so it can only ever add a match the strict rules missed.
 
     `regions_allowed` narrows which parts of the page may confirm. Callers
     pass `(REGION_CONTENT,)` for a post, so a title found only in the
     site-wide navigation, header or footer cannot confirm it; see
     REASON_POST_ONLY_IN_NAVIGATION for why that asymmetry exists.
+
+    `aliases` are this node's accepted rows from
+    `data/curation/node_aliases.json`. An empty sequence -- the default -- is
+    the behaviour every caller had before the table existed.
     """
     if uncheckable_reason(name, is_post=is_post):
         return None
@@ -800,6 +835,9 @@ def find_label_region_rule(
         for fragment, region in pairs:
             if label_matches_folded(core, fragment):
                 return fragment[:200], region, MATCH_RULE_COMMITTEE
+    for fragment, region in pairs:
+        if alias_matching(aliases, fragment):
+            return fragment[:200], region, MATCH_RULE_ALIAS
     return None
 
 
@@ -811,6 +849,7 @@ def verify_node(
     now: str | None = None,
     site_from: str | None = None,
     is_own_page: bool = False,
+    aliases: Sequence[Alias] = (),
 ) -> dict[str, Any]:
     """Fetch each candidate URL and look for the node's name as a label.
 
@@ -866,6 +905,7 @@ def verify_node(
             # match in one department's footer would confirm a bureau's own
             # post from markup that says nothing about the bureau.
             regions_allowed=(REGION_CONTENT,) if is_post else None,
+            aliases=aliases,
         )
         if found:
             # A label a visitor can see is a confirmation wherever it sits;
@@ -875,9 +915,21 @@ def verify_node(
             source = {"url": url, "matchedText": found[0], "matchedIn": found[1]}
             if found[2]:
                 source["matchRule"] = found[2]
+            if found[2] == MATCH_RULE_ALIAS:
+                # Which recorded alternative, and on what authority. Both are
+                # published, because the whole claim is that this document
+                # printed a name the graph does not use for this unit.
+                hit = alias_matching(aliases, found[0])
+                if hit is None:
+                    # The rule fired but no row owns the label: refuse rather
+                    # than record a confirmation nothing can be audited to.
+                    failures.append({"url": url, "reason": "alias_match_without_a_row"})
+                    continue
+                source["matchedAlias"] = hit.alias
+                source["aliasBasis"] = hit.basis
             confirmed.append(source)
             continue
-        if is_post and find_label_region_rule(name, page, is_post=is_post):
+        if is_post and find_label_region_rule(name, page, is_post=is_post, aliases=aliases):
             # The title IS on the page, in the navigation, header or footer.
             # Recorded as its own outcome rather than folded into "the page
             # does not name it", which would be false, or into a
@@ -1042,7 +1094,12 @@ def placement_from_record(record: dict[str, Any], parent_id: str | None) -> dict
     return None
 
 
-def evidence_names_this_node(node_name: str, matched_text: Any, node: dict[str, Any] | None = None) -> bool:
+def evidence_names_this_node(
+    node_name: str,
+    matched_text: Any,
+    node: dict[str, Any] | None = None,
+    aliases: Sequence[Alias] = (),
+) -> bool:
     """Does the recorded label still name the node as it is now called?
 
     Records are keyed by id and never re-fetched once confirmed. A curator
@@ -1055,6 +1112,12 @@ def evidence_names_this_node(node_name: str, matched_text: Any, node: dict[str, 
     if not key:
         return False
     if label_matches(key, str(matched_text)):
+        return True
+    # A recorded alternative names the node too -- but only one the table
+    # holds for THIS node right now, which is itself re-adjudicated against
+    # the node's current name on every build. A row deleted, or invalidated
+    # by a rename, takes the confirmation with it.
+    if alias_matching(aliases, str(matched_text)):
         return True
     # The fold is granted by the node's kind, never by the record: a
     # committee re-typed as an office keeps nothing it earned as a committee.
@@ -1148,6 +1211,7 @@ def apply_evidence_to_tree(
     *,
     index_tree=None,
     sites: dict[str, list[str]] | None = None,
+    alias_table: AliasTable | None = None,
 ) -> dict[str, Any]:
     """Stamp evidence onto the nodes it names, and only what was observed.
 
@@ -1175,6 +1239,12 @@ def apply_evidence_to_tree(
         "unknown_node": 0, "unknown_status": 0, "urls_added": 0, "stale_claims_cleared": 0,
     }
     node_map, parent_map = index_tree(root)
+    # The reviewed alternative names, adjudicated against the tree as it is
+    # now -- so a row whose node has been renamed is already refused before
+    # any record is read.
+    if alias_table is None:
+        alias_table = load_alias_table(node_map=node_map, parent_map=parent_map)
+    stats.update({"alias_confirmations": 0, "alias_records_without_a_row": 0, "placements_refused_alias": 0})
     stats.update({
         "placements_evidenced": 0, "placements_checked_not_listed": 0, "placements_stale_parent": 0,
         "placements_stale_name": 0, "existence_stale_name": 0, "placements_not_checkable_no_parent_page": 0,
@@ -1282,7 +1352,22 @@ def apply_evidence_to_tree(
             # No official URL behind it: not a confirmation at all.
             stats["unknown_status"] += 1
             continue
-        sources = [s for s in official if evidence_names_this_node(str(node.get("name") or ""), s.get("matchedText"), node)]
+        node_aliases = alias_table.for_node(node_id)
+        # A source recorded as an alias match is kept only while the table
+        # still carries that exact alternative for this node. The row is what
+        # licenses the claim, so a deleted row is a real withdrawal.
+        kept: list[dict[str, Any]] = []
+        for src in official:
+            if str(src.get("matchRule") or "") == MATCH_RULE_ALIAS:
+                quoted = str(src.get("matchedAlias") or "")
+                if not quoted or alias_table.by_alias(node_id, quoted) is None:
+                    stats["alias_records_without_a_row"] += 1
+                    continue
+            kept.append(src)
+        sources = [
+            s for s in kept
+            if evidence_names_this_node(str(node.get("name") or ""), s.get("matchedText"), node, node_aliases)
+        ]
         if not sources:
             # The label recorded names a unit this node is no longer called.
             stats["existence_stale_name"] += 1
@@ -1291,8 +1376,30 @@ def apply_evidence_to_tree(
         # page prints it, so the panel can quote the page rather than the
         # graph. An unfolded match on any page outranks it — the plain claim
         # is the stronger one and the one shown.
+        aliased = [s for s in sources if s.get("matchRule") == MATCH_RULE_ALIAS]
         folded = [s for s in sources if s.get("matchRule") == MATCH_RULE_COMMITTEE]
-        if folded and len(folded) == len(sources):
+        plain = [s for s in sources if not s.get("matchRule")]
+        # Every alias-derived page is recorded in the block whichever rule
+        # wins the headline, because the cap has to see all of them: a node
+        # reached by one plain page and one alias page keeps the plain claim
+        # and must not be graded as if two documents had named it outright.
+        for src in aliased:
+            hit = alias_table.by_alias(node_id, str(src.get("matchedAlias") or ""))
+            if hit is not None:
+                stamp_alias_match(node, hit.block(
+                    source="own_official_page" if record.get("ownPage") else "parent_official_page",
+                    url=str(src.get("url") or ""),
+                    matched_text=str(src.get("matchedText") or "")[:200],
+                    scope=ALIAS_SCOPE_NODE,
+                ))
+        if aliased and not plain and not folded:
+            # Every page that named this unit named it by another recorded
+            # name. The weaker claim is published as the weaker claim: the
+            # rule, the alternative and the label as the page prints it.
+            node["verificationMatchRule"] = MATCH_RULE_ALIAS
+            node["verificationMatchedText"] = str(aliased[0].get("matchedText") or "")[:200]
+            stats["alias_confirmations"] += 1
+        elif folded and not plain:
             node["verificationMatchRule"] = MATCH_RULE_COMMITTEE
             node["verificationMatchedText"] = str(folded[0].get("matchedText") or "")[:200]
             stats["existence_folded"] += 1
@@ -1356,6 +1463,14 @@ def apply_evidence_to_tree(
             # Evidence for an edge the tree no longer has. Never inherited.
             stats["placements_stale_parent"] += 1
         listed = placement_from_record(record, actual_parent)
+        if listed and str(listed.get("matchRule") or "") == MATCH_RULE_ALIAS:
+            # An alias is consulted for existence only. The placement claim
+            # this project makes is "the parent's own page lists it by name";
+            # a parent's page printing a name the graph does not use is a
+            # weaker thing, and there is no honest wording for it that a
+            # reader would not take as the plain claim. Refused, counted.
+            stats["placements_refused_alias"] += 1
+            listed = None
         if listed and not evidence_names_this_node(str(node.get("name") or ""), listed.get("matchedText"), node):
             stats["placements_stale_name"] += 1
             listed = None

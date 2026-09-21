@@ -231,6 +231,9 @@ MINIMAL_GRAPH_FIELDS = (
     "verificationMatchedIn", "verificationMatchRule", "verificationMatchedText",
     "verificationFailure", "verificationFailureSource", "directoryListing",
     "pageReadNotNamed", "verificationUnread",
+    # the alternative name a claim was reached through, and the basis the
+    # reviewed table states for it; the panel quotes both names
+    "verificationAliasMatch",
     # the placement line, which is evidence for the edge above the node
     "placementVerified", "placementVerifiedAt", "placementUrl", "placementMethod",
     "placementMatchedText", "placementMatchRule", "placementMatchedIn",
@@ -250,7 +253,7 @@ MINIMAL_GRAPH_FIELDS = (
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
-    "govmanListing", "govmanEntry",
+    "govmanListing", "govmanEntry", "govmanOfficeEntry",
     # USAspending File A gross outlays, beside the cost and never in it
     "usaspendingOutlays",
     # Treasury's audited Statement of Net Cost, likewise beside and never in
@@ -2783,8 +2786,10 @@ def build_graph(
     # what was read.
     from data_pipeline.verification.govman import (  # noqa: E402 — same late-import shape as net_cost
         apply_govman_evidence,
+        apply_govman_office_evidence,
         apply_govman_org_evidence,
         load_govman_evidence,
+        load_govman_office_evidence,
         load_govman_org_evidence,
     )
 
@@ -2800,6 +2805,14 @@ def build_graph(
     # it; the one route to evidence for units on the 67 walled hosts.
     validation["govman_org_evidence"] = apply_govman_org_evidence(
         graph, load_govman_org_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
+    )
+    # The narrow third route from the same document: a top-level Manual entry
+    # that IS an office rather than an agency. Two nodes carry it -- the
+    # President and the Vice President -- and neither could be reached by
+    # either route above, because `match_organisations` skips every post and
+    # the post route needs the post's own parent to have an entry.
+    validation["govman_office_evidence"] = apply_govman_office_evidence(
+        graph, load_govman_office_evidence(resolved_govman_path) if resolved_govman_path else {}, index_tree=index_tree,
     )
     # OMB's Public Budget Database, beside the cost and never in it. Applied
     # after the evidence sweep has withdrawn the field, so a package whose
@@ -2878,6 +2891,17 @@ def build_graph(
     # whitehouse_pay's positionReportedPay — since the multi-post rule is the
     # same rule on each.
     multi_post_withdrawn = withdraw_pay_from_multi_post_nodes(graph)
+    # The grading cap, and it has to be HERE rather than beside the evidence
+    # passes: every `apply_*` ends in `verify_node_sources`, and so does
+    # `annotate_proof_tree`, both of which recompute the status from the URL
+    # count and silently undid a cap applied earlier -- the gate caught it.
+    # A node every one of whose `official_site` sources was reached through a
+    # recorded alternative name is held at `partial`; `verified` is what two
+    # documents naming the unit outright earn, and writing an identification
+    # down is not that.
+    from data_pipeline.verification.aliases import cap_alias_only_confirmations  # noqa: E402
+
+    validation["alias_matches"] = cap_alias_only_confirmations(graph, index_tree=index_tree)
     validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
     validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
