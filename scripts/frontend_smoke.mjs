@@ -1349,7 +1349,7 @@ try {
   if (unreadNeverChecked) {
     await openByName(unreadNeverChecked.name);
     const unreadPanel = await text("#info-panel");
-    check("a never-checked node with an unread page says the page went unread", /Not verified: .*(could not be read|refuses this crawler|answered 404|could not be reached|server error)/.test(unreadPanel), unreadPanel.slice(0, 700));
+    check("a never-checked node with an unread page says the page went unread", /Not verified: .*(could not be read|nothing could be read|refuses this crawler|answered 404|could not be reached|server error)/.test(unreadPanel), unreadPanel.slice(-700));
     check("an unread page is described as a fact about the page or host, not the unit", !/Not yet verified/.test(unreadPanel), unreadPanel.slice(0, 700));
   }
   // OPM's PLUM archive as the method that confirmed a post and placed it:
