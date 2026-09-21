@@ -319,6 +319,27 @@ try {
   await page.waitForTimeout(100);
   check("the 3D universe remains available", await page.locator("body.atlas-mode").count() === 0, "universe did not open");
 
+  // A still camera must draw a still picture. The density cap is recomputed
+  // every frame from screen-tile membership, and when its ranking is unstable
+  // nodes blink in and out with nothing moving — the symptom reported on
+  // 2026-09-21. Membership is compared, not the count: the count can hold
+  // steady while which nodes are drawn churns underneath it.
+  const drawnSamples = [];
+  for (let i = 0; i < 8; i += 1) {
+    drawnSamples.push(await page.evaluate(() => window.__bureaucracy_drawn_node_ids__?.() || []));
+    await page.waitForTimeout(140);
+  }
+  check("the renderer exposes its drawn set for this check", drawnSamples[0].length > 0, "no ids returned");
+  let drawnChurn = 0;
+  for (let i = 1; i < drawnSamples.length; i += 1) {
+    const prev = new Set(drawnSamples[i - 1]);
+    const cur = new Set(drawnSamples[i]);
+    for (const id of cur) if (!prev.has(id)) drawnChurn += 1;
+    for (const id of prev) if (!cur.has(id)) drawnChurn += 1;
+  }
+  check("a still camera draws a still set of nodes", drawnChurn === 0,
+    `${drawnChurn} visibility change(s) across ${drawnSamples.length} frames with the camera untouched`);
+
   const statsTotal = await text("#stats-total");
   check("published count excludes the review queue", /published nodes · [\d,]+ unreviewed candidates|total nodes/.test(statsTotal), statsTotal);
   check("published count is the tree, not tree plus queue", !/9,0\d\d/.test(statsTotal), statsTotal);

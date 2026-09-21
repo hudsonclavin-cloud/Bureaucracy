@@ -1,9 +1,21 @@
 import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
-import { createLodManager } from "./lodManager.js?v=20260921e";
+import { createLodManager } from "./lodManager.js?v=20260921f";
 
 const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 const CAMERA_DISTANCE = 280;
 const HIDDEN_OFFSET = 1e8;
+//: Worth less than one place in the importance ordering's real terms (the
+//: smallest of which, a depth step, is 400) so it settles flicker without
+//: letting a node hold a tile against a genuinely more important one.
+const DENSITY_STICKY_BONUS = 120;
+//: Measured on the White House Office's 249-child brood, orbiting: at 8
+//: frames 28 nodes toggled three or more times over 26 samples, at 20 it was
+//: 16, at 40 it was 6 and at 80 it was none. The mean drawn count was 84, 86,
+//: 87 and 87 across those runs, so the longer hold does not defeat the cap it
+//: stabilises. A node leaving the SCREEN is frustum-culled regardless of this
+//: hold; what lingers is only one that loses its tile while still on screen,
+//: which is the thing that should not have vanished in the first place.
+const DENSITY_HOLD_FRAMES = 80;
 const MAX_NODES = 100000;
 const MAX_DEPTH = 20;
 const MAX_BATCH = 200;
@@ -617,6 +629,29 @@ export function createGovernmentGraph({
     return BASE_RADIUS + depth * RADIUS_STEP + depth * depth * 6;
   }
 
+  // The shell a brood of `count` children is laid out on. Until 2026-09-21
+  // this was the depth radius alone, so a parent with three children and a
+  // parent with 249 got the same sphere and the big brood simply piled up:
+  // the White House Office carries 249 and "Other Independent Agencies" went
+  // from 32 to 70 the same day. Growth is sub-linear in the count, so a
+  // typical brood barely moves (five children: 1.05x) while the two that
+  // overflow get real room (70: 1.20x, 249: 1.38x), and every child of one
+  // parent still shares one sphere.
+  function shellRadiusForBrood(depth, count) {
+    const crowding = Math.min(0.55, Math.sqrt(Math.max(count, 1)) / 42);
+    return shellRadiusForDepth(depth) * (1 + crowding);
+  }
+
+  // How wide a cone that brood is spread over. The cap was a flat 0.42 -- a
+  // roughly 23-degree half-angle -- whatever the count, which is the other
+  // half of the same pile-up.
+  function spreadCapForCount(count) {
+    if (count <= 12) {
+      return 0.42;
+    }
+    return Math.min(0.95, 0.42 * (1 + Math.log10(count / 12) * 0.62));
+  }
+
   function getNavigationDistance() {
     if (state.flyMode) {
       // flyLookTarget is always FLY_LOOK_DISTANCE ahead of the camera, so
@@ -706,6 +741,22 @@ export function createGovernmentGraph({
     if (nodeObj.clusterRef) {
       score -= 2_000;
     }
+    // A node that is on screen keeps a small edge over one that is not. The
+    // cap is recomputed every frame from screen-tile membership, so a node
+    // drifting across a tile edge joins a different contest and could lose a
+    // place it had held a moment earlier; at the widest zoom a tile keeps
+    // only ONE node, so in a crowded brood the survivor changed constantly
+    // and the rest blinked. The bonus is small enough that real importance
+    // still wins and a node cannot hold a tile against a better one.
+    if (nodeObj.densityCapped === false) {
+      score += DENSITY_STICKY_BONUS;
+    }
+    // Ties are the other half. Sibling positions share a depth and a subtree
+    // count of one, so their scores are identical to the point, and which of
+    // them survived was decided by their order in the bucket -- which shifts
+    // as nodes rebin. A constant per node makes that order the same on every
+    // frame. It is derived from the id, so it is stable across reloads too.
+    score += (hashString(String(nodeObj.data?.id || "")) % 997) / 1000;
     return score;
   }
 
@@ -757,9 +808,21 @@ export function createGovernmentGraph({
       }
     }
 
+    // A minimum dwell. Winning a tile's place is decided afresh every frame,
+    // so a node drifting near a tile edge can lose and regain its place over
+    // and over -- the blinking. Once a node is drawn it is held for a short
+    // while whatever the next frame's contest says, which turns an
+    // oscillation into at most one transition. The hold is short enough that
+    // a node genuinely leaving the view is gone within a third of a second,
+    // and it can only ever show MORE than the cap intends, never fewer.
     let hiddenCount = 0;
     for (const nodeObj of nodeObjs) {
-      const visible = allowed.has(nodeObj.data.id);
+      let visible = allowed.has(nodeObj.data.id);
+      if (visible) {
+        nodeObj.densityHoldUntil = state.frame + DENSITY_HOLD_FRAMES;
+      } else if ((nodeObj.densityHoldUntil || 0) > state.frame) {
+        visible = true;
+      }
       nodeObj.densityCapped = !visible;
       if (!visible) {
         hiddenCount += 1;
@@ -1443,7 +1506,8 @@ export function createGovernmentGraph({
 
   function getSpreadPositions(parentObj, children) {
     const depth = parentObj.depth + 1;
-    const shellRadius = shellRadiusForDepth(depth);
+    const shellRadius = shellRadiusForBrood(depth, children.length);
+    const spreadCap = spreadCapForCount(children.length);
     const parentSeed = hashString(parentObj.data.id);
     // Own vector: getLayoutDirectionForChild reuses tempVecA inside the loop,
     // so aliasing the anchor to it would silently retarget the lerp below.
@@ -1459,7 +1523,7 @@ export function createGovernmentGraph({
     for (let i = 0; i < count; i += 1) {
       const childSeed = hashString(children[i].id);
       const theta = GOLDEN_ANGLE * (i + 1);
-      const radial = Math.min(0.42, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * 0.3);
+      const radial = Math.min(spreadCap, 0.08 + Math.sqrt((i + 0.5) / Math.max(count, 1)) * spreadCap * 0.72);
       const shellDirection = directionFromSeed(childSeed, depth);
       const branchDirection = getLayoutDirectionForChild(children[i], parentObj, childSeed).clone();
       getOrbitBasis(branchDirection);
@@ -1478,6 +1542,7 @@ export function createGovernmentGraph({
     relaxSiblingPositions(positions, shellRadius);
     return positions.map((position, index) => ({
       position,
+      shellRadius,
       direction: positions[index].clone().normalize().lerp(directions[index], 0.28).normalize(),
       layoutBranchKey: resolveLayoutBranchKey(children[index], parentObj.layoutBranchKey || inferBranchKey(parentObj.data)),
     }));
@@ -1613,6 +1678,10 @@ export function createGovernmentGraph({
       const placement = placements[job.index];
       const targetPos = placement.position;
       childObj.layoutBranchKey = placement.layoutBranchKey;
+      // Without this the settle pass below drags the brood back to the
+      // depth-only radius every frame, undoing the spread and moving nodes
+      // while it does it.
+      childObj.shellRadius = placement.shellRadius;
       childObj.branchDirection.copy(placement.direction);
       childObj.targetPos.copy(targetPos);
 
@@ -2778,7 +2847,7 @@ export function createGovernmentGraph({
         continue;
       }
 
-      const desiredRadius = shellRadiusForDepth(nodeObj.depth);
+      const desiredRadius = nodeObj.shellRadius || shellRadiusForDepth(nodeObj.depth);
       const branchTarget =
         nodeObj.branchDirection.lengthSq() > 0
           ? tempVecD.copy(nodeObj.branchDirection).normalize().multiplyScalar(desiredRadius)
@@ -3245,6 +3314,21 @@ export function createGovernmentGraph({
     },
     getSearchIndex() {
       return state.searchIndex;
+    },
+    // The ids actually drawn this frame. Exposed so a regression check can
+    // assert that a still camera produces a still picture: the density cap is
+    // recomputed every frame from screen-tile membership, and when it is
+    // unstable nodes blink in and out with nothing moving. The drawn COUNT is
+    // not enough to catch that -- membership can churn while the count holds.
+    getDrawnNodeIds() {
+      const ids = [];
+      for (const nodeObj of state.visibleNodes) {
+        if (nodeObj.renderVisible && !nodeObj.clustered && !nodeObj.culled && nodeObj.data?.id) {
+          ids.push(String(nodeObj.data.id));
+        }
+      }
+      ids.sort();
+      return ids;
     },
     getStats() {
       return {

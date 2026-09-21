@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921e";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921e";
+import { createGovernmentGraph } from "./graph.js?v=20260921f";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921f";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -3107,6 +3107,9 @@ function bindHashNavigation() {
 
 async function initGraphApp() {
   const requestedNodeId = getNodeIdFromHash();
+  // The renderer's drawn-node set, for the regression check that a still
+  // camera draws a still picture. Read-only, and nothing in the page uses it.
+  window.__bureaucracy_drawn_node_ids__ = () => state.graph?.getDrawnNodeIds?.() || [];
   state.graph = createGovernmentGraph({
     canvas: dom.canvas,
     onSelect: (nodeObj) => {
