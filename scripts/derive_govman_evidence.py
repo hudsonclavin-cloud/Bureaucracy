@@ -34,6 +34,7 @@ from data_pipeline.exporter.build_graph import DEFAULT_BASE_GRAPH, load_base_gra
 from data_pipeline.json_io import write_json_file  # noqa: E402
 from data_pipeline.verification.govman import (  # noqa: E402
     DEFAULT_PACKAGE,
+    DESCRIPTION_MAX_CHARS,
     SOURCE,
     build_org_records,
     build_records,
@@ -67,7 +68,35 @@ def main(argv: list[str] | None = None) -> int:
                    "entry_names_several_nodes"):
         print(f"  {reason:34s}: {stats[reason]}")
     print(f"  organisations listed: {org_stats['organisations_listed']} (top-level entries {org_stats['top_level_entries']})")
+    # The entry's own description, beside the curated prose (govman.py,
+    # last section of the module docstring). Refusals are printed with the
+    # count because the name guard costs real entries and a reader should
+    # see that number, not only the gain.
+    print(f"  official descriptions: {org_stats['descriptions_extracted']} of {org_stats['organisations_listed']} organisations "
+          f"({org_stats['descriptions_mission_statement']} mission statements, "
+          f"{org_stats['descriptions_opening_paragraph']} opening paragraphs, "
+          f"{org_stats['descriptions_truncated']} cut at a sentence boundary within {DESCRIPTION_MAX_CHARS} characters)")
+    for reason in ("descriptions_refused_opening_paragraph_does_not_name_the_unit",
+                   "descriptions_refused_opening_paragraph_is_a_navigation_note",
+                   "descriptions_refused_no_descriptive_text",
+                   "descriptions_refused_no_sentence_boundary_within_bound"):
+        print(f"  {reason:60s}: {org_stats[reason]}")
     print(f"  document sha256     : {manual['sha256'][:16]}...")
+    if args.dry_run:
+        # Three examples, one of each shape the rule produces, so a reader of
+        # the dry run sees the text and the element it came from.
+        shown: dict[tuple[str, bool], tuple[str, dict]] = {}
+        for record in org_records.values():
+            block = record.get("description")
+            if not block:
+                continue
+            shape = (block["kind"], bool(block["truncated"]))
+            shown.setdefault(shape, (record["listedName"], block))
+        print("\nExamples (the Manual's own words, verbatim):")
+        for (kind, truncated), (name, block) in list(shown.items())[:3]:
+            cut = f", cut at a sentence boundary after {len(block['text'])} of {block['fullLength']} characters" if truncated else ""
+            print(f"  - {name} [{kind}, from {block['extractedFrom']}{cut}]")
+            print(f'    "{block["text"]}"')
     print("\nA listing is evidence the post exists and that the Manual files it under this")
     print("agency. It says nothing about who holds it: the incumbent column is never read,")
     print("and a leadership table carries its own 'Sources of Information' date, which rides")

@@ -1497,6 +1497,28 @@ def govman_entries():
 
     entries = {}
     parents = {}  # granule -> the enclosing entity's printed name, or None at the top
+    # granule -> the two texts a description may be read from: the FIRST
+    # MissionStatement record's paragraph, and the first non-empty
+    # Detail/Paragraph under ProgramAndActivities in document order. Nothing
+    # else in the entry is descriptive text, so nothing else is read.
+    descriptions = {}
+
+    def description_texts(element):
+        mission = None
+        statement = element.find("MissionStatement")
+        if statement is not None:
+            first = statement.find("Record")
+            if first is not None:
+                mission = flat(first.findtext("Paragraph")) or None
+        opening = None
+        programmes = element.find("ProgramAndActivities")
+        if programmes is not None:
+            for paragraph in programmes.findall(".//Detail/Paragraph"):
+                text = flat(paragraph.text)
+                if text:
+                    opening = text
+                    break
+        return {"mission": mission, "opening": opening}
 
     def visit(element, parent_name=None):
         if element.tag in GOVMAN_ENTITY_TAGS:
@@ -1533,6 +1555,7 @@ def govman_entries():
                         titles.setdefault(canonical_key(title), []).append(title)
                 granule = "{}-{:03d}".format(GOVMAN_PACKAGE, int(entity_id))
                 entries[granule] = (name, titles)
+                descriptions[granule] = description_texts(element)
         children = element.find("Childrens")
         if children is not None:
             for sub in children:
@@ -1542,6 +1565,8 @@ def govman_entries():
         visit(entity, None)
     _GOVMAN_CACHE["entries"] = entries
     _GOVMAN_CACHE["parents"] = parents
+    _GOVMAN_CACHE["descriptions"] = descriptions
+    _GOVMAN_CACHE["digest"] = digest
     return entries
 
 
@@ -1550,6 +1575,31 @@ def govman_parents():
     the same independent parse as govman_entries()."""
     govman_entries()
     return _GOVMAN_CACHE.get("parents", {})
+
+
+def govman_descriptions():
+    """granule id -> {"mission": ..., "opening": ...}, the two texts a
+    description may be read from, and the package digest, from the same
+    independent parse as govman_entries()."""
+    govman_entries()
+    return _GOVMAN_CACHE.get("descriptions", {}), _GOVMAN_CACHE.get("digest")
+
+
+# Mirrors data_pipeline.verification.govman: the bound on a published
+# description, the two kinds, and the element path each is read from.
+GOVMAN_DESCRIPTION_MAX_CHARS = 600
+GOVMAN_DESCRIPTION_PATHS = {
+    "mission_statement": "MissionStatement/Record[1]/Paragraph",
+    "opening_paragraph": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+}
+# An opening paragraph about the unit's website rather than the unit, mirrored
+# from the module: a closed list that only ever withholds a description.
+GOVMAN_NAVIGATION_NOTE_MARKERS = ("organizational chart", "organization chart", "web page", "website")
+# A sentence boundary, mirrored from the module: a terminator after a
+# lower-case letter, digit or closing mark, then whitespace and a capital.
+GOVMAN_SENTENCE_BOUNDARY = re.compile(
+    r'(?<=[a-z0-9\)\]"”’])[.!?]["”’)]*(?=\s+[A-Z"“(])'
+)
 
 
 def is_committee(node):
@@ -2594,6 +2644,105 @@ def main(argv):
                 govman_org_violations.append("{} is placed by the Manual but cites {!r} for it".format(label(node), node.get("placementUrl")))
                 continue
     gate.check("a Government Manual entry names this unit, its parent as the Manual prints it, and places it only under that parent", govman_org_violations)
+    # The entry's own description, re-derived from the committed package
+    # rather than trusted. The block quotes text and names the element it came
+    # from; the check is that the text is VERBATIM in exactly that element of
+    # exactly that granule -- the whole of it, or a prefix ending at a
+    # sentence boundary when the block says it was cut -- that the granule
+    # names this node, that the package on disk is the one the block cites,
+    # and that the curated prose was left exactly where it was: the Manual's
+    # text sits beside `desc`, never in its place.
+    govman_desc_violations = []
+    govman_desc_index = {}
+    govman_digest = None
+    try:
+        govman_desc_index, govman_digest = govman_descriptions()
+    except (OSError, ValueError) as error:
+        govman_desc_violations.append("the Government Manual fixture could not be read: {}".format(error))
+    for node in nodes:
+        block_data = node.get("descriptionOfficial")
+        if not isinstance(block_data, dict):
+            continue
+        if is_post(node):
+            govman_desc_violations.append("{} is a post but carries a Government Manual description".format(label(node)))
+            continue
+        if str(block_data.get("source") or "") != "us_government_manual":
+            govman_desc_violations.append("{} carries an official description from {!r}, which is not a source this gate can check".format(label(node), block_data.get("source")))
+            continue
+        entry_block = node.get("govmanEntry")
+        granule = str(block_data.get("granule") or "")
+        if not isinstance(entry_block, dict) or str(entry_block.get("granule") or "") != granule:
+            govman_desc_violations.append("{} carries a Manual description without the Manual entry it was read from".format(label(node)))
+            continue
+        text = str(block_data.get("text") or "")
+        if not text.strip() or text != " ".join(text.split()):
+            govman_desc_violations.append("{} carries an empty or un-normalised Manual description".format(label(node)))
+            continue
+        if len(text) > GOVMAN_DESCRIPTION_MAX_CHARS:
+            govman_desc_violations.append("{} carries a Manual description of {} characters, past the {}-character bound".format(label(node), len(text), GOVMAN_DESCRIPTION_MAX_CHARS))
+            continue
+        kind = str(block_data.get("kind") or "")
+        if kind not in GOVMAN_DESCRIPTION_PATHS:
+            govman_desc_violations.append("{} carries a Manual description of kind {!r}".format(label(node), kind))
+            continue
+        if str(block_data.get("extractedFrom") or "") != GOVMAN_DESCRIPTION_PATHS[kind]:
+            govman_desc_violations.append("{} says its {} came from {!r}, which is not where one is read".format(label(node), kind, block_data.get("extractedFrom")))
+            continue
+        if govman_digest and str(block_data.get("documentSha256") or "") != govman_digest:
+            govman_desc_violations.append("{} cites a Manual digest {!r} that is not the committed package's".format(label(node), block_data.get("documentSha256")))
+            continue
+        entry = govman_index.get(granule)
+        if govman_index and entry is None:
+            govman_desc_violations.append("{} cites granule {!r}, which the committed Manual does not carry".format(label(node), granule))
+            continue
+        if entry is not None:
+            if canonical_key(str(block_data.get("listedName") or "")) != canonical_key(entry[0]):
+                govman_desc_violations.append("{} quotes a description under {!r} for granule {}, which the Manual names {!r}".format(label(node), block_data.get("listedName"), granule, entry[0]))
+                continue
+            if canonical_key(node.get("name")) != canonical_key(entry[0]):
+                govman_desc_violations.append("{} carries the Manual's description of {!r}, which is not this node's name".format(label(node), entry[0]))
+                continue
+        if govman_desc_index and granule in govman_desc_index:
+            texts = govman_desc_index[granule]
+            printed = texts.get("mission") if kind == "mission_statement" else texts.get("opening")
+            if kind == "opening_paragraph" and texts.get("mission"):
+                govman_desc_violations.append("{} publishes the opening paragraph where the Manual prints a mission statement".format(label(node)))
+                continue
+            if not printed:
+                govman_desc_violations.append("{} quotes a {} that granule {} does not carry".format(label(node), kind, granule))
+                continue
+            if bool(block_data.get("truncated")):
+                boundaries = {m.end() for m in GOVMAN_SENTENCE_BOUNDARY.finditer(printed)}
+                if not (printed.startswith(text) and len(text) < len(printed) and len(text) in boundaries):
+                    govman_desc_violations.append("{} says its description was cut at a sentence boundary, and the text is not such a prefix of what the Manual prints".format(label(node)))
+                    continue
+                if int(block_data.get("fullLength") or -1) != len(printed):
+                    govman_desc_violations.append("{} states a full length of {!r} for a paragraph of {} characters".format(label(node), block_data.get("fullLength"), len(printed)))
+                    continue
+            elif text != printed:
+                govman_desc_violations.append("{} quotes a {} that is not verbatim what granule {} prints".format(label(node), kind, granule))
+                continue
+            # Tested on the text PUBLISHED, not the whole paragraph: a name
+            # that appears only after the cut is not on the reader's screen.
+            if kind == "opening_paragraph" and entry is not None and entry[0] not in text:
+                govman_desc_violations.append("{} publishes an opening paragraph that does not name the unit".format(label(node)))
+                continue
+            if kind == "opening_paragraph" and any(marker in text.casefold() for marker in GOVMAN_NAVIGATION_NOTE_MARKERS):
+                govman_desc_violations.append("{} publishes a note about the unit's website as its description".format(label(node)))
+                continue
+        expected_url = "{}/{}/{}".format(GOVMAN_DETAILS, GOVMAN_PACKAGE, granule)
+        if str(block_data.get("url") or "") != expected_url:
+            govman_desc_violations.append("{} cites {!r} for its description, not the publisher's own address {!r}".format(label(node), block_data.get("url"), expected_url))
+            continue
+        if not _past_iso(block_data.get("edition")):
+            govman_desc_violations.append("{} cites a Manual edition {!r} that has not happened".format(label(node), block_data.get("edition")))
+            continue
+        # The curated prose is untouched: it is never the Manual's text and it
+        # keeps its own provenance label.
+        if str(node.get("desc") or "") == text and not node.get("descriptionSource"):
+            govman_desc_violations.append("{}'s curated description IS the Manual's text -- the official description must sit beside the prose, never replace it".format(label(node)))
+            continue
+    gate.check("a Government Manual description is that entry's own text, verbatim, beside the curated prose", govman_desc_violations)
 
     # OMB's Public Budget Database, re-derived from the committed package
     # rather than trusted. The check that matters most is the fiscal year: the
@@ -2952,6 +3101,14 @@ def main(argv):
     manual_org_disagree = sum(1 for n in manual_orgs if isinstance(n.get("placementDirectoryDisagreement"), dict) and n["placementDirectoryDisagreement"].get("source") == "us_government_manual")
     print("  Manual (organisations): {:,} organisations carry the Manual's own entry for them; {:,} take it as their method; {:,} placed under their parent by the Manual's hierarchy; {:,} filed elsewhere by it".format(
         len(manual_orgs), manual_org_method, manual_org_placed, manual_org_disagree))
+    # Reported on its own line so a reader can see how many of the 5,155
+    # "uncited prose" descriptions now have the Manual's own words beside
+    # them -- beside, never instead: the curated count does not move.
+    manual_desc = [n for n in manual_orgs if isinstance(n.get("descriptionOfficial"), dict)]
+    manual_desc_mission = sum(1 for n in manual_desc if n["descriptionOfficial"].get("kind") == "mission_statement")
+    manual_desc_cut = sum(1 for n in manual_desc if n["descriptionOfficial"].get("truncated"))
+    print("  Manual (descriptions): {:,} organisations carry the Manual's own description beside their curated prose ({:,} mission statements, {:,} opening paragraphs, {:,} cut at a sentence boundary); no curated description was replaced".format(
+        len(manual_desc), manual_desc_mission, len(manual_desc) - manual_desc_mission, manual_desc_cut))
     print("  Government Manual    : {:,} positions listed in their own organisation's entry across {:,} agencies; {:,} take it as their method and grade partial; {:,} carry the leadership table's own 'updated' footer; no placement is claimed from it".format(
         len(govman_nodes),
         len({str((n.get("govmanListing") or {}).get("listedUnder") or "") for n in govman_nodes}),
