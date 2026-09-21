@@ -2936,16 +2936,17 @@
     "children": [],
     "descriptionSource": "generated_from_its_official_page",
     "sourceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -2959,14 +2960,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:00Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-    "placementVerifiedAt": "2026-09-08T19:21:00Z",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
     "evidenceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "directoryListing": {
@@ -2977,12 +2979,15 @@
       "parentListedName": "Committee on Commerce, Science, and Transportation",
       "checkedAt": "2026-09-08T19:21:00Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-    "placementMatchedText": "Subcommittee on Coast Guard, Maritime, and Fisheries",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-commerce-science-transportation"
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+    "placementMatchedText": "Coast Guard, Maritime, & Fisheries",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-commerce-science-transportation",
+    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-commerce-science-transportation-sub-science-manufacturing-competitiveness",
@@ -2997,16 +3002,17 @@
     "children": [],
     "descriptionSource": "generated_from_its_official_page",
     "sourceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3020,14 +3026,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:00Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-    "placementVerifiedAt": "2026-09-08T19:21:00Z",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
     "evidenceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "directoryListing": {
@@ -3038,12 +3045,15 @@
       "parentListedName": "Committee on Commerce, Science, and Transportation",
       "checkedAt": "2026-09-08T19:21:00Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-    "placementMatchedText": "Subcommittee on Science, Manufacturing, and Competitiveness",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-commerce-science-transportation"
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+    "placementMatchedText": "Science, Manufacturing, & Competitiveness",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-commerce-science-transportation",
+    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-freight-pipelines-safety",
@@ -3058,16 +3068,17 @@
     "children": [],
     "descriptionSource": "generated_from_its_official_page",
     "sourceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "sourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "senate_committee_list",
-      "official_site"
+      "official_site",
+      "senate_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -3081,14 +3092,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-08T19:21:00Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
     "placementVerified": true,
     "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-    "placementVerifiedAt": "2026-09-08T19:21:00Z",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
     "evidenceUrls": [
+      "https://www.commerce.senate.gov/about/commerce-subcommittees/",
       "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
     ],
     "directoryListing": {
@@ -3099,12 +3111,15 @@
       "parentListedName": "Committee on Commerce, Science, and Transportation",
       "checkedAt": "2026-09-08T19:21:00Z"
     },
-    "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-    "verificationMethod": "listed_in_senate_committee_list",
-    "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-    "placementMatchedText": "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
-    "placementMethod": "listed_under_committee_in_senate_committee_list",
-    "parentId": "leg-senate-cmte-commerce-science-transportation"
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+    "placementMatchedText": "Surface Transportation, Freight, Pipelines, & Safety",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-senate-cmte-commerce-science-transportation",
+    "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-senate-cmte-energy-natural-resources",
@@ -8499,16 +8514,17 @@
     "children": [],
     "descriptionSource": "generated_from_its_official_page",
     "sourceUrls": [
+      "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "house_clerk_committee_list",
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "house_clerk_committee_list",
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -8522,14 +8538,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T22:51:28Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
     "placementVerified": true,
     "placementParentId": "leg-house-cmte-armed-services",
-    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
     "evidenceUrls": [
+      "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "directoryListing": {
@@ -8540,12 +8557,15 @@
       "parentListedName": "Committee on Armed Services",
       "checkedAt": "2026-09-13T22:51:28Z"
     },
-    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
-    "verificationMethod": "listed_in_house_clerk_committee_list",
-    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-    "placementMatchedText": "Intelligence and Special Operations",
-    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
-    "parentId": "leg-house-cmte-armed-services"
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+    "placementMatchedText": "Subcommittee on Intelligence and Special Operations",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-house-cmte-armed-services",
+    "verificationSiteFrom": "leg-house-cmte-armed-services",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-house-cmte-budget",
@@ -11314,16 +11334,17 @@
     "children": [],
     "descriptionSource": "generated_from_its_official_page",
     "sourceUrls": [
+      "https://judiciary.house.gov/about/subcommittees",
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "sourceTypes": [
-      "house_clerk_committee_list",
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "proofSourceCount": 2,
     "proofSourceTypes": [
-      "house_clerk_committee_list",
-      "official_site"
+      "official_site",
+      "house_clerk_committee_list"
     ],
     "existsProven": true,
     "parentProven": true,
@@ -11337,14 +11358,15 @@
     "costConfidenceScore": 0.2,
     "costVerificationReason": "estimated_from_parent",
     "costSourceCount": 0,
-    "sourceCount": 1,
-    "confidenceScore": 0.7,
-    "verificationStatus": "partial",
-    "lastVerified": "2026-09-13T22:51:28Z",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-21T17:57:28+00:00",
     "placementVerified": true,
     "placementParentId": "leg-house-cmte-judiciary",
-    "placementVerifiedAt": "2026-09-13T22:51:28Z",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
     "evidenceUrls": [
+      "https://judiciary.house.gov/about/subcommittees",
       "https://clerk.house.gov/Committees/ExcelCommitteeData"
     ],
     "directoryListing": {
@@ -11355,12 +11377,15 @@
       "parentListedName": "Committee on the Judiciary",
       "checkedAt": "2026-09-13T22:51:28Z"
     },
-    "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
-    "verificationMethod": "listed_in_house_clerk_committee_list",
-    "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-    "placementMatchedText": "Oversight",
-    "placementMethod": "listed_under_committee_in_house_clerk_committee_list",
-    "parentId": "leg-house-cmte-judiciary"
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementUrl": "https://judiciary.house.gov/about/subcommittees",
+    "placementMatchedText": "The Subcommittee on Oversight",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "parentId": "leg-house-cmte-judiciary",
+    "verificationSiteFrom": "leg-house-cmte-judiciary",
+    "placementMatchedIn": "content",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "leg-house-cmte-natural-resources",
@@ -23685,6 +23710,75 @@
       }
     },
     "parentId": "exec-eop"
+  },
+  {
+    "id": "exec-eop-ceq",
+    "name": "Council on Environmental Quality",
+    "type": "Office",
+    "desc": "Council on Environmental Quality is named on https://www.usa.gov/agency-index/c, which labels it as 'Council on Environmental Quality (CEQ)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/c",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "sourceUrls": [
+      "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+      "https://www.federalregister.gov/agencies/council-on-environmental-quality"
+    ],
+    "evidenceUrls": [
+      "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+      "https://www.federalregister.gov/agencies/council-on-environmental-quality"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Council on Environmental Quality",
+      "url": "https://www.federalregister.gov/agencies/council-on-environmental-quality",
+      "agencyUrl": "https://www.whitehouse.gov/ceq/",
+      "parentListedName": "Executive Office of the President",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_parent_official_page",
+    "placementVerified": true,
+    "placementUrl": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+    "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "placementParentId": "exec-eop",
+    "placementMatchedText": "Council on Environmental Quality",
+    "placementMethod": "name_labelled_on_parent_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": null,
+    "cost_status": "unavailable",
+    "cost_basis": "implied_employee_weight",
+    "cost_validation": "treasury_pool_negative",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.0,
+    "costVerificationReason": "missing_cost",
+    "costSourceCount": 0,
+    "parentId": "exec-eop",
+    "verificationSiteFrom": "exec-eop",
+    "placementMatchedIn": "navigation",
+    "verificationMatchedIn": "navigation"
   },
   {
     "id": "exec-eop--treasury-receipts",
@@ -78388,6 +78482,2761 @@
       "url": "https://www.govinfo.gov/content/pkg/BUDGET-2027-DB/zip/BUDGET-2027-DB.zip"
     },
     "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-holocaust-memorial-museum",
+    "name": "United States Holocaust Memorial Museum",
+    "type": "Independent Agency",
+    "desc": "United States Holocaust Memorial Museum is named on https://www.usa.gov/agency-index/h, which labels it as 'Holocaust Memorial Museum'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/h",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "employeesOfficial": 109,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+      "level": "agency",
+      "agencyCode": "HD",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 111
+      },
+      "components": [
+        {
+          "subagencyCode": "HD00",
+          "listedName": "U.S. HOLOCAUST MEMORIAL MUSEUM",
+          "employees": 109
+        }
+      ]
+    },
+    "sourceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
+    ],
+    "evidenceUrls": [
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site"
+    ],
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "United States Holocaust Memorial Museum",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-333",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
+    },
+    "verificationMethod": "listed_in_us_government_manual",
+    "descriptionOfficial": {
+      "text": "The United States Holocaust Memorial Museum promotes documentation, study, and interpretation of the Holocaust and maintains a permanent living memorial to its victims.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 168,
+      "source": "us_government_manual",
+      "listedName": "United States Holocaust Memorial Museum",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-333",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "lastVerified": "2025-12-31",
+    "evidenceVerifiedAt": "2025-12-31",
+    "sourceCount": 1,
+    "confidenceScore": 0.7,
+    "verificationStatus": "partial",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-commission-on-civil-rights",
+    "name": "United States Commission on Civil Rights",
+    "type": "Independent Agency",
+    "desc": "United States Commission on Civil Rights is named on https://www.usccr.gov/about, which labels it as 'Our Mission | U.S. Commission on Civil Rights'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usccr.gov/about",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.usccr.gov/about",
+      "https://www.federalregister.gov/agencies/civil-rights-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
+    ],
+    "evidenceUrls": [
+      "https://www.usccr.gov/about",
+      "https://www.federalregister.gov/agencies/civil-rights-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Civil Rights Commission",
+      "url": "https://www.federalregister.gov/agencies/civil-rights-commission",
+      "agencyUrl": "http://www.usccr.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 60,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "COMMISSION ON CIVIL RIGHTS",
+      "level": "agency",
+      "agencyCode": "CC",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 62
+      },
+      "components": [
+        {
+          "subagencyCode": "CC00",
+          "listedName": "COMMISSION ON CIVIL RIGHTS",
+          "employees": 60
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "United States Commission on Civil Rights",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-181",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
+    },
+    "descriptionOfficial": {
+      "text": "The Commission on Civil Rights informs the development of national civil rights policy and enhances enforcement of Federal civil rights laws.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 141,
+      "source": "us_government_manual",
+      "listedName": "United States Commission on Civil Rights",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-181",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-commission-on-civil-rights",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-surface-transportation-board",
+    "name": "Surface Transportation Board",
+    "type": "Independent Agency",
+    "desc": "Surface Transportation Board is named on https://www.stb.gov/about-stb/, which labels it as 'Surface Transportation Board'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.stb.gov/about-stb/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.stb.gov/about-stb/",
+      "https://www.federalregister.gov/agencies/surface-transportation-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
+    ],
+    "evidenceUrls": [
+      "https://www.stb.gov/about-stb/",
+      "https://www.federalregister.gov/agencies/surface-transportation-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Surface Transportation Board",
+      "url": "https://www.federalregister.gov/agencies/surface-transportation-board",
+      "agencyUrl": "https://www.stb.gov",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 126,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "SURFACE TRANSPORTATION BOARD",
+      "level": "agency",
+      "agencyCode": "TW",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 121
+      },
+      "components": [
+        {
+          "subagencyCode": "TW00",
+          "listedName": "SURFACE TRANSPORTATION BOARD",
+          "employees": 126
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Surface Transportation Board",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-335",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
+    },
+    "descriptionOfficial": {
+      "text": "The Surface Transportation Board adjudicates and resolves railroad rate and service disputes and reviews proposals for railroad mergers.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 136,
+      "source": "us_government_manual",
+      "listedName": "Surface Transportation Board",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-335",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-surface-transportation-board",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-international-trade-commission",
+    "name": "United States International Trade Commission",
+    "type": "Independent Agency",
+    "desc": "United States International Trade Commission is named on https://www.usitc.gov/press_room/about_usitc.htm, which labels it as 'About the USITC | United States International Trade Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usitc.gov/press_room/about_usitc.htm",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.usitc.gov/press_room/about_usitc.htm",
+      "https://www.federalregister.gov/agencies/international-trade-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
+    ],
+    "evidenceUrls": [
+      "https://www.usitc.gov/press_room/about_usitc.htm",
+      "https://www.federalregister.gov/agencies/international-trade-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "International Trade Commission",
+      "url": "https://www.federalregister.gov/agencies/international-trade-commission",
+      "agencyUrl": "http://usitc.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 443,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+      "level": "agency",
+      "agencyCode": "TC",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 440
+      },
+      "components": [
+        {
+          "subagencyCode": "TC00",
+          "listedName": "U.S. INTERNATIONAL TRADE COMMISSION",
+          "employees": 443
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "United States International Trade Commission",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-182",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
+    },
+    "descriptionOfficial": {
+      "text": "The United States International Trade Commission provides the President, the U.S. Trade Representative, and the Congress with independent analysis of and information on tariffs, international trade, and the Nation's competitiveness; makes determinations in proceedings involving imports that may harm a domestic industry or violate U.S. intellectual property rights; and maintains the Harmonized Tariff Schedule of the United States.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 433,
+      "source": "us_government_manual",
+      "listedName": "United States International Trade Commission",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-182",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-international-trade-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-institute-of-peace",
+    "name": "United States Institute of Peace",
+    "type": "Independent Agency",
+    "desc": "United States Institute of Peace is named on https://www.usa.gov/agency-index/u, which labels it as 'United States Institute of Peace (USIP)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/u",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "United States Institute of Peace",
+      "url": "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "United States Institute of Peace",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-188",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188"
+    },
+    "descriptionOfficial": {
+      "text": "The United States Institute of Peace prevents, mitigates, and resolves violent conflicts around the world.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 106,
+      "source": "us_government_manual",
+      "listedName": "United States Institute of Peace",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-188",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-federal-retirement-thrift-investment-board",
+    "name": "Federal Retirement Thrift Investment Board",
+    "type": "Independent Agency",
+    "desc": "Federal Retirement Thrift Investment Board is named on https://www.usa.gov/agency-index/f, which labels it as 'Federal Retirement Thrift Investment Board (FRTIB)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/f",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Federal Retirement Thrift Investment Board",
+      "url": "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
+      "agencyUrl": "http://www.frtib.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Federal Retirement Thrift Investment Board",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-148",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148"
+    },
+    "descriptionOfficial": {
+      "text": "The Federal Retirement Thrift Investment Board administers the Thrift Savings Plan in the interest of its participants and beneficiaries.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 137,
+      "source": "us_government_manual",
+      "listedName": "Federal Retirement Thrift Investment Board",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-148",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-defense-nuclear-facilities-safety-board",
+    "name": "Defense Nuclear Facilities Safety Board",
+    "type": "Independent Agency",
+    "desc": "Defense Nuclear Facilities Safety Board is named on https://www.usa.gov/agency-index/d, which labels it as 'Defense Nuclear Facilities Safety Board (DNFSB)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/d",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Defense Nuclear Facilities Safety Board",
+      "url": "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
+      "agencyUrl": "http://www.dnfsb.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 112,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+      "level": "agency",
+      "agencyCode": "BF",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 108
+      },
+      "components": [
+        {
+          "subagencyCode": "BF00",
+          "listedName": "DEFENSE NUCLEAR FACILITIES SAFETY BOARD",
+          "employees": 112
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Defense Nuclear Facilities Safety Board",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-134",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134"
+    },
+    "descriptionOfficial": {
+      "text": "The Defense Nuclear Facilities Safety Board identifies the nature and consequences of public health and safety threats at the Department of Energy's defense nuclear facilities, elevates awareness of and information on such threats to the highest levels of governmental authority, and keeps the public informed.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 310,
+      "source": "us_government_manual",
+      "listedName": "Defense Nuclear Facilities Safety Board",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-134",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
+    "name": "Federal Mine Safety and Health Review Commission",
+    "type": "Independent Agency",
+    "desc": "Federal Mine Safety and Health Review Commission is named on https://www.fmshrc.gov/, which labels it as 'Home | Federal Mine Safety and Health Review Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.fmshrc.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.fmshrc.gov/",
+      "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
+    ],
+    "evidenceUrls": [
+      "https://www.fmshrc.gov/",
+      "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Federal Mine Safety and Health Review Commission",
+      "url": "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
+      "agencyUrl": "http://www.fmshrc.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Federal Mine Safety and Health Review Commission",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-146",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
+    },
+    "descriptionOfficial": {
+      "text": "The Federal Mine Safety and Health Review Commission ensures compliance with occupational safety and health standards in the Nation's surface and underground coal, metal, and nonmetal mines.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 190,
+      "source": "us_government_manual",
+      "listedName": "Federal Mine Safety and Health Review Commission",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-146",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-inter-american-foundation",
+    "name": "Inter-American Foundation",
+    "type": "Independent Agency",
+    "desc": "Inter-American Foundation is named on https://www.usa.gov/agency-index/i, which labels it as 'Inter-American Foundation (IAF)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/i",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/inter-american-foundation",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/inter-american-foundation",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Inter-American Foundation",
+      "url": "https://www.federalregister.gov/agencies/inter-american-foundation",
+      "agencyUrl": "http://www.iaf.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 36,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "INTER-AMERICAN FOUNDATION",
+      "level": "agency",
+      "agencyCode": "IF",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 45
+      },
+      "components": [
+        {
+          "subagencyCode": "IF00",
+          "listedName": "INTER-AMERICAN FOUNDATION",
+          "employees": 36
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Inter-American Foundation",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-151",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151"
+    },
+    "descriptionOfficial": {
+      "text": "The Inter-American Foundation supports social and economic development in Latin America and the Caribbean.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 106,
+      "source": "us_government_manual",
+      "listedName": "Inter-American Foundation",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-151",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-occupational-safety-and-health-review-commission",
+    "name": "Occupational Safety and Health Review Commission",
+    "type": "Independent Agency",
+    "desc": "Occupational Safety and Health Review Commission is named on https://www.oshrc.gov/, which labels it as 'Occupational Safety and Health Review Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.oshrc.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.oshrc.gov/",
+      "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
+    ],
+    "evidenceUrls": [
+      "https://www.oshrc.gov/",
+      "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Occupational Safety and Health Review Commission",
+      "url": "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Occupational Safety and Health Review Commission",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-164",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
+    },
+    "descriptionOfficial": {
+      "text": "The Occupational Safety and Health Review Commission ensures the timely and fair resolution of cases involving the alleged exposure of American workers to unsafe or unhealthy working conditions.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 194,
+      "source": "us_government_manual",
+      "listedName": "Occupational Safety and Health Review Commission",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-164",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-occupational-safety-and-health-review-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-odni",
+    "name": "Office of the Director of National Intelligence",
+    "type": "Independent Agency",
+    "desc": "Office of the Director of National Intelligence is named on https://www.dni.gov/index.php/who-we-are, which labels it as 'About – Office of the Director of National Intelligence – Office of the Director of National Intelligence'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.dni.gov/index.php/who-we-are",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.dni.gov/index.php/who-we-are",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
+    ],
+    "evidenceUrls": [
+      "https://www.dni.gov/index.php/who-we-are",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site"
+    ],
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Office of the Director of National Intelligence",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-165",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
+    },
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "descriptionOfficial": {
+      "text": "The Office of the Director of National Intelligence oversees and coordinates the foreign and domestic activities of the Intelligence Community across the Federal Government.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 173,
+      "source": "us_government_manual",
+      "listedName": "Office of the Director of National Intelligence",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-165",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 2,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-odni",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-african-development-foundation",
+    "name": "United States African Development Foundation",
+    "type": "Independent Agency",
+    "desc": "United States African Development Foundation is named on https://www.usadf.gov/, which labels it as 'US African Development Foundation'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usadf.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.usadf.gov/",
+      "https://www.federalregister.gov/agencies/african-development-foundation",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
+    ],
+    "evidenceUrls": [
+      "https://www.usadf.gov/",
+      "https://www.federalregister.gov/agencies/african-development-foundation",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "United States African Development Foundation",
+      "url": "https://www.federalregister.gov/agencies/african-development-foundation",
+      "agencyUrl": "https://www.usadf.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 32,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+      "level": "agency",
+      "agencyCode": "AN",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 30
+      },
+      "components": [
+        {
+          "subagencyCode": "AN00",
+          "listedName": "AFRICAN DEVELOPMENT FOUNDATION",
+          "employees": 32
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "United States African Development Foundation",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-128",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
+    },
+    "descriptionOfficial": {
+      "text": "The United States African Development Foundation provides seed capital and technical assistance to support African-led development that grows community enterprises.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 164,
+      "source": "us_government_manual",
+      "listedName": "United States African Development Foundation",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-128",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-african-development-foundation",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-trade-and-development-agency",
+    "name": "United States Trade and Development Agency",
+    "type": "Independent Agency",
+    "desc": "United States Trade and Development Agency is named on https://www.usa.gov/agency-index/u, which labels it as 'U.S. Trade and Development Agency (USTDA)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/u",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/trade-and-development-agency",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/trade-and-development-agency",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Trade and Development Agency",
+      "url": "https://www.federalregister.gov/agencies/trade-and-development-agency",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 59,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "TRADE AND DEVELOPMENT AGENCY",
+      "level": "agency",
+      "agencyCode": "EW",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 70
+      },
+      "components": [
+        {
+          "subagencyCode": "EW00",
+          "listedName": "TRADE AND DEVELOPMENT AGENCY",
+          "employees": 59
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Trade and Development Agency",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-179",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179"
+    },
+    "descriptionOfficial": {
+      "text": "The Trade and Development Agency advances economic development and U.S. commercial interest in developing and middle-income countries.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 134,
+      "source": "us_government_manual",
+      "listedName": "Trade and Development Agency",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-179",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-public-buildings-reform-board",
+    "name": "Public Buildings Reform Board",
+    "type": "Independent Agency",
+    "desc": "Public Buildings Reform Board is named on https://www.pbrb.gov/, which labels it as 'Public Buildings Reform Board'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.pbrb.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.pbrb.gov/",
+      "https://www.federalregister.gov/agencies/public-buildings-reform-board"
+    ],
+    "evidenceUrls": [
+      "https://www.pbrb.gov/",
+      "https://www.federalregister.gov/agencies/public-buildings-reform-board"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Public Buildings Reform Board",
+      "url": "https://www.federalregister.gov/agencies/public-buildings-reform-board",
+      "agencyUrl": "https://www.pbrb.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-public-buildings-reform-board",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-federal-mediation-and-conciliation-service",
+    "name": "Federal Mediation and Conciliation Service",
+    "type": "Independent Agency",
+    "desc": "Federal Mediation and Conciliation Service is named on https://www.fmcs.gov/, which labels it as 'Home - Federal Mediation and Conciliation Service'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.fmcs.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.fmcs.gov/",
+      "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
+    ],
+    "evidenceUrls": [
+      "https://www.fmcs.gov/",
+      "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Federal Mediation and Conciliation Service",
+      "url": "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
+      "agencyUrl": "http://www.fmcs.gov/internet/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 3,
+    "confidenceScore": 0.9,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Federal Mediation and Conciliation Service",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-145",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
+    },
+    "descriptionOfficial": {
+      "text": "The Federal Mediation and Conciliation Service helps labor and management resolve disputes in industries affecting commerce, offers training in cooperative processes to promote workplace stability and economic growth, and provides alternative dispute resolution services, training, negotiated rulemaking, and public policy facilitation to government entities.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 359,
+      "source": "us_government_manual",
+      "listedName": "Federal Mediation and Conciliation Service",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-145",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-federal-mediation-and-conciliation-service",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-administrative-conference-of-the-united-states",
+    "name": "Administrative Conference of the United States",
+    "type": "Independent Agency",
+    "desc": "Administrative Conference of the United States is named on https://www.usa.gov/agency-index, which labels it as 'Administrative Conference of the United States (ACUS)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Administrative Conference of the United States",
+      "url": "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
+      "agencyUrl": "http://www.acus.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Administrative Conference of the United States",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-127",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127"
+    },
+    "descriptionOfficial": {
+      "text": "The Administrative Conference of the United States develops recommendations for improving the fairness and effectiveness of procedures by which Federal agencies administer regulatory, benefit, and other Government programs.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 223,
+      "source": "us_government_manual",
+      "listedName": "Administrative Conference of the United States",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-127",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-office-of-government-ethics",
+    "name": "United States Office of Government Ethics",
+    "type": "Independent Agency",
+    "desc": "United States Office of Government Ethics is named on https://www.usa.gov/agency-index/o, which labels it as 'Office of Government Ethics (OGE)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/o",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/government-ethics-office",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/government-ethics-office",
+      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166"
+    ],
+    "sourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Government Ethics Office",
+      "url": "https://www.federalregister.gov/agencies/government-ethics-office",
+      "agencyUrl": "http://www.oge.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 5,
+    "proofSourceTypes": [
+      "us_government_manual",
+      "federal_register_directory",
+      "federal_register",
+      "official_site",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 72,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "OFFICE OF GOVERNMENT ETHICS",
+      "level": "agency",
+      "agencyCode": "GG",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 74
+      },
+      "components": [
+        {
+          "subagencyCode": "GG00",
+          "listedName": "OFFICE OF GOVERNMENT ETHICS",
+          "employees": 72
+        }
+      ]
+    },
+    "govmanEntry": {
+      "source": "us_government_manual",
+      "listedName": "Office of Government Ethics",
+      "parentListedName": null,
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-166",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166"
+    },
+    "descriptionOfficial": {
+      "text": "The Office of Government Ethics leads and oversees the executive branch program for preventing and resolving conflicts of interest.",
+      "kind": "mission_statement",
+      "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+      "truncated": false,
+      "fullLength": 131,
+      "source": "us_government_manual",
+      "listedName": "Office of Government Ethics",
+      "edition": "2025-12-31",
+      "package": "GOVMAN-2025-12-31",
+      "granule": "GOVMAN-2025-12-31-166",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-nuclear-waste-technical-review-board",
+    "name": "Nuclear Waste Technical Review Board",
+    "type": "Independent Agency",
+    "desc": "Nuclear Waste Technical Review Board is named on https://www.nwtrb.gov/, which labels it as 'U.S. Nuclear Waste Technical Review Board | NWTRB'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.nwtrb.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.nwtrb.gov/",
+      "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board"
+    ],
+    "evidenceUrls": [
+      "https://www.nwtrb.gov/",
+      "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Nuclear Waste Technical Review Board",
+      "url": "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 22,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+      "level": "agency",
+      "agencyCode": "BW",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 14
+      },
+      "components": [
+        {
+          "subagencyCode": "BW00",
+          "listedName": "NUCLEAR WASTE TECHNICAL REVIEW BOARD",
+          "employees": 22
+        }
+      ]
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-nuclear-waste-technical-review-board",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-advisory-council-on-historic-preservation",
+    "name": "Advisory Council on Historic Preservation",
+    "type": "Independent Agency",
+    "desc": "Advisory Council on Historic Preservation is named on https://www.achp.gov/about, which labels it as 'About the ACHP | Advisory Council on Historic Preservation'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.achp.gov/about",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.achp.gov/about",
+      "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation"
+    ],
+    "evidenceUrls": [
+      "https://www.achp.gov/about",
+      "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Advisory Council on Historic Preservation",
+      "url": "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation",
+      "agencyUrl": "http://www.achp.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-advisory-council-on-historic-preservation",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-national-council-on-disability",
+    "name": "National Council on Disability",
+    "type": "Independent Agency",
+    "desc": "National Council on Disability is named on https://www.usa.gov/agency-index/n, which labels it as 'National Council on Disability (NCD)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/n",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/national-council-on-disability"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/national-council-on-disability"
+    ],
+    "sourceTypes": [
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "National Council on Disability",
+      "url": "https://www.federalregister.gov/agencies/national-council-on-disability",
+      "agencyUrl": "https://ncd.gov/about",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "proofSourceCount": 3,
+    "proofSourceTypes": [
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "employeesOfficial": 18,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "NATIONAL COUNCIL ON DISABILITY",
+      "level": "agency",
+      "agencyCode": "NK",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 19
+      },
+      "components": [
+        {
+          "subagencyCode": "NK00",
+          "listedName": "NATIONAL COUNCIL ON DISABILITY",
+          "employees": 18
+        }
+      ]
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-commission-of-fine-arts",
+    "name": "United States Commission of Fine Arts",
+    "type": "Independent Agency",
+    "desc": "United States Commission of Fine Arts is named on https://www.cfa.gov/about-cfa, which labels it as 'About CFA | Commission of Fine Arts'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.cfa.gov/about-cfa",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.cfa.gov/about-cfa",
+      "https://www.federalregister.gov/agencies/commission-of-fine-arts"
+    ],
+    "evidenceUrls": [
+      "https://www.cfa.gov/about-cfa",
+      "https://www.federalregister.gov/agencies/commission-of-fine-arts"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Commission of Fine Arts",
+      "url": "https://www.federalregister.gov/agencies/commission-of-fine-arts",
+      "agencyUrl": "http://www.cfa.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 12,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "COMMISSION OF FINE ARTS",
+      "level": "agency",
+      "agencyCode": "CF",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 12
+      },
+      "components": [
+        {
+          "subagencyCode": "CF00",
+          "listedName": "COMMISSION OF FINE ARTS",
+          "employees": 12
+        }
+      ]
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-commission-of-fine-arts",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-arctic-research-commission",
+    "name": "United States Arctic Research Commission",
+    "type": "Independent Agency",
+    "desc": "United States Arctic Research Commission is named on https://www.arctic.gov/, which labels it as 'Home - US Arctic Research Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.arctic.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.arctic.gov/",
+      "https://www.federalregister.gov/agencies/arctic-research-commission"
+    ],
+    "evidenceUrls": [
+      "https://www.arctic.gov/",
+      "https://www.federalregister.gov/agencies/arctic-research-commission"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Arctic Research Commission",
+      "url": "https://www.federalregister.gov/agencies/arctic-research-commission",
+      "agencyUrl": "http://www.arctic.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-arctic-research-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-truman-scholarship-foundation",
+    "name": "Harry S. Truman Scholarship Foundation",
+    "type": "Independent Agency",
+    "desc": "Harry S. Truman Scholarship Foundation is named on https://www.truman.gov/, which labels it as 'The Harry S. Truman Scholarship Foundation'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.truman.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.truman.gov/",
+      "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation"
+    ],
+    "evidenceUrls": [
+      "https://www.truman.gov/",
+      "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Harry S. Truman Scholarship Foundation",
+      "url": "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation",
+      "agencyUrl": "http://truman.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-truman-scholarship-foundation",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-madison-fellowship-foundation",
+    "name": "James Madison Memorial Fellowship Foundation",
+    "type": "Independent Agency",
+    "desc": "James Madison Memorial Fellowship Foundation is named on https://www.usa.gov/agency-index/j, which labels it as 'James Madison Memorial Fellowship Foundation'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/j",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation"
+    ],
+    "sourceTypes": [
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "James Madison Memorial Fellowship Foundation",
+      "url": "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation",
+      "agencyUrl": "http://www.jamesmadison.com/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "proofSourceCount": 3,
+    "proofSourceTypes": [
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-medpac",
+    "name": "Medicare Payment Advisory Commission",
+    "type": "Independent Agency",
+    "desc": "Medicare Payment Advisory Commission is named on https://www.usa.gov/agency-index/m, which labels it as 'Medicare Payment Advisory Commission (MedPAC)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/m",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission"
+    ],
+    "sourceTypes": [
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Medicare Payment Advisory Commission",
+      "url": "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission",
+      "agencyUrl": "http://medpac.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "proofSourceCount": 3,
+    "proofSourceTypes": [
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-marine-mammal-commission",
+    "name": "Marine Mammal Commission",
+    "type": "Independent Agency",
+    "desc": "Marine Mammal Commission is named on https://www.mmc.gov/about-the-commission/, which labels it as 'About the Commission - Marine Mammal Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.mmc.gov/about-the-commission/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.mmc.gov/about-the-commission/",
+      "https://www.federalregister.gov/agencies/marine-mammal-commission"
+    ],
+    "evidenceUrls": [
+      "https://www.mmc.gov/about-the-commission/",
+      "https://www.federalregister.gov/agencies/marine-mammal-commission"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Marine Mammal Commission",
+      "url": "https://www.federalregister.gov/agencies/marine-mammal-commission",
+      "agencyUrl": "http://www.mmc.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 23,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "MARINE MAMMAL COMMISSION",
+      "level": "agency",
+      "agencyCode": "MA",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 24
+      },
+      "components": [
+        {
+          "subagencyCode": "MA00",
+          "listedName": "MARINE MAMMAL COMMISSION",
+          "employees": 23
+        }
+      ]
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-marine-mammal-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-csosa",
+    "name": "Court Services and Offender Supervision Agency for the District of Columbia",
+    "type": "Independent Agency",
+    "desc": "Court Services and Offender Supervision Agency for the District of Columbia is named on https://www.usa.gov/agency-index/c, which labels it as 'Court Services and Offender Supervision Agency for the District of Columbia (CSOSA)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/c",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia"
+    ],
+    "sourceTypes": [
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Court Services and Offender Supervision Agency for the District of Columbia",
+      "url": "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia",
+      "agencyUrl": "http://www.csosa.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "proofSourceCount": 3,
+    "proofSourceTypes": [
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-armed-forces-retirement-home",
+    "name": "Armed Forces Retirement Home",
+    "type": "Independent Agency",
+    "desc": "Armed Forces Retirement Home is named on https://www.afrh.gov/, which labels it as 'Armed Forces Retirement Home | Armed Forces Retirement Home'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.afrh.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.afrh.gov/",
+      "https://www.federalregister.gov/agencies/armed-forces-retirement-home"
+    ],
+    "evidenceUrls": [
+      "https://www.afrh.gov/",
+      "https://www.federalregister.gov/agencies/armed-forces-retirement-home"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Armed Forces Retirement Home",
+      "url": "https://www.federalregister.gov/agencies/armed-forces-retirement-home",
+      "agencyUrl": "https://www.afrh.gov/afrh/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "employeesOfficial": 311,
+    "employeesOfficialSource": {
+      "source": "opm_fedscope_employment",
+      "listedName": "ARMED FORCES RETIREMENT HOME",
+      "level": "agency",
+      "agencyCode": "RH",
+      "subagencyCode": null,
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "previous": {
+        "period": "2024-09",
+        "employees": 310
+      },
+      "components": [
+        {
+          "subagencyCode": "RH00",
+          "listedName": "ARMED FORCES RETIREMENT HOME",
+          "employees": 311
+        }
+      ]
+    },
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-armed-forces-retirement-home",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-cigie",
+    "name": "Council of the Inspectors General on Integrity and Efficiency",
+    "type": "Independent Agency",
+    "desc": "Council of the Inspectors General on Integrity and Efficiency is named on https://www.ignet.gov/, which labels it as 'The Council of the Inspectors General on Integrity and Efficiency (CIGIE)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.ignet.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.ignet.gov/",
+      "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency"
+    ],
+    "evidenceUrls": [
+      "https://www.ignet.gov/",
+      "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Council of the Inspectors General on Integrity and Efficiency",
+      "url": "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency",
+      "agencyUrl": "http://www.ignet.gov/cigie1.html",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-cigie",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-delta-regional-authority",
+    "name": "Delta Regional Authority",
+    "type": "Independent Agency",
+    "desc": "Delta Regional Authority is named on https://dra.gov/, which labels it as 'Homepage - Delta Regional Authority'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://dra.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://dra.gov/",
+      "https://www.federalregister.gov/agencies/delta-regional-authority"
+    ],
+    "evidenceUrls": [
+      "https://dra.gov/",
+      "https://www.federalregister.gov/agencies/delta-regional-authority"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Delta Regional Authority",
+      "url": "https://www.federalregister.gov/agencies/delta-regional-authority",
+      "agencyUrl": "https://dra.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-delta-regional-authority",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-northern-border-regional-commission",
+    "name": "Northern Border Regional Commission",
+    "type": "Independent Agency",
+    "desc": "Northern Border Regional Commission is named on https://www.nbrc.gov/, which labels it as 'Homepage | Northern Border Regional Commission'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.nbrc.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.nbrc.gov/",
+      "https://www.federalregister.gov/agencies/northern-border-regional-commission"
+    ],
+    "evidenceUrls": [
+      "https://www.nbrc.gov/",
+      "https://www.federalregister.gov/agencies/northern-border-regional-commission"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Northern Border Regional Commission",
+      "url": "https://www.federalregister.gov/agencies/northern-border-regional-commission",
+      "agencyUrl": "https://www.nbrc.gov/",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-northern-border-regional-commission",
+    "verificationMatchedIn": "content"
+  },
+  {
+    "id": "exec-ind-misc-japan-united-states-friendship-commission",
+    "name": "Japan-United States Friendship Commission",
+    "type": "Independent Agency",
+    "desc": "Japan-United States Friendship Commission is named on https://www.usa.gov/agency-index/j, which labels it as 'Japan-United States Friendship Commission (JUSFC)'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.usa.gov/agency-index/j",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission"
+    ],
+    "evidenceUrls": [
+      "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission"
+    ],
+    "sourceTypes": [
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Japan-United States Friendship Commission",
+      "url": "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission",
+      "agencyUrl": "http://www.jusfc.gov/index.asp",
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-08T19:19:15Z",
+    "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+    "verificationMethod": "listed_in_federal_register_agency_directory",
+    "sourceCount": 1,
+    "confidenceScore": 0.4,
+    "verificationStatus": "unverified",
+    "proofSourceCount": 3,
+    "proofSourceTypes": [
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "historical_documentation_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc"
+  },
+  {
+    "id": "exec-ind-misc-civil-rights-cold-case-records-review-board",
+    "name": "Civil Rights Cold Case Records Review Board",
+    "type": "Independent Agency",
+    "desc": "Civil Rights Cold Case Records Review Board is named on https://www.coldcaserecords.gov/, which labels it as 'Home | Civil Rights Cold Case Records Review Board'. This node exists because that page names the unit; nothing further about it has been read.",
+    "structureSource": "named_on_an_official_page",
+    "structureSourceDetail": "https://www.coldcaserecords.gov/",
+    "employees": null,
+    "budget": null,
+    "color": "#c84a4a",
+    "children": [],
+    "descriptionSource": "generated_from_its_official_page",
+    "placementCheckable": false,
+    "sourceUrls": [
+      "https://www.coldcaserecords.gov/",
+      "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board"
+    ],
+    "evidenceUrls": [
+      "https://www.coldcaserecords.gov/",
+      "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board"
+    ],
+    "sourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register"
+    ],
+    "directoryListing": {
+      "source": "federal_register_agency_directory",
+      "listedName": "Civil Rights Cold Case Records Review Board",
+      "url": "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board",
+      "agencyUrl": null,
+      "parentListedName": null,
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "lastVerified": "2026-09-21T17:57:28+00:00",
+    "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+    "verificationMethod": "name_labelled_on_own_official_page",
+    "sourceCount": 2,
+    "confidenceScore": 0.8,
+    "verificationStatus": "verified",
+    "proofSourceCount": 4,
+    "proofSourceTypes": [
+      "official_site",
+      "federal_register_directory",
+      "federal_register",
+      "historical_documentation"
+    ],
+    "existsProven": true,
+    "parentProven": true,
+    "proofStatus": "proven",
+    "proofReason": "official_source_recorded",
+    "resolved_total_amount": 94012555.51,
+    "cost_status": "allocated",
+    "cost_basis": "implied_budget_weight",
+    "cost_validation": "estimated_from_parent",
+    "costVerificationStatus": "unverified",
+    "costConfidenceScore": 0.2,
+    "costVerificationReason": "estimated_from_parent",
+    "costSourceCount": 0,
+    "parentId": "exec-ind-misc",
+    "verificationSiteFrom": "exec-ind-misc-civil-rights-cold-case-records-review-board",
+    "verificationMatchedIn": "content"
   },
   {
     "id": "exec-independent-general-services-administration",

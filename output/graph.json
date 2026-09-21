@@ -7258,16 +7258,17 @@
                       "children": [],
                       "descriptionSource": "generated_from_its_official_page",
                       "sourceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
                       "sourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -7281,16 +7282,25 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "lastVerified": "2026-09-08T19:21:00Z",
-                      "placementVerified": true,
-                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-08T19:21:00Z",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T17:57:28+00:00",
                       "evidenceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
+                      "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "verificationMethod": "name_labelled_on_parent_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
+                      "placementMatchedText": "Coast Guard, Maritime, & Fisheries",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content",
                       "directoryListing": {
                         "source": "senate_committee_list",
                         "listedName": "Subcommittee on Coast Guard, Maritime, and Fisheries",
@@ -7298,12 +7308,7 @@
                         "agencyUrl": null,
                         "parentListedName": "Committee on Commerce, Science, and Transportation",
                         "checkedAt": "2026-09-08T19:21:00Z"
-                      },
-                      "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-                      "verificationMethod": "listed_in_senate_committee_list",
-                      "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-                      "placementMatchedText": "Subcommittee on Coast Guard, Maritime, and Fisheries",
-                      "placementMethod": "listed_under_committee_in_senate_committee_list"
+                      }
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-science-manufacturing-competitiveness",
@@ -7318,16 +7323,17 @@
                       "children": [],
                       "descriptionSource": "generated_from_its_official_page",
                       "sourceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
                       "sourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -7341,16 +7347,25 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "lastVerified": "2026-09-08T19:21:00Z",
-                      "placementVerified": true,
-                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-08T19:21:00Z",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T17:57:28+00:00",
                       "evidenceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
+                      "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "verificationMethod": "name_labelled_on_parent_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
+                      "placementMatchedText": "Science, Manufacturing, & Competitiveness",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content",
                       "directoryListing": {
                         "source": "senate_committee_list",
                         "listedName": "Subcommittee on Science, Manufacturing, and Competitiveness",
@@ -7358,12 +7373,7 @@
                         "agencyUrl": null,
                         "parentListedName": "Committee on Commerce, Science, and Transportation",
                         "checkedAt": "2026-09-08T19:21:00Z"
-                      },
-                      "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-                      "verificationMethod": "listed_in_senate_committee_list",
-                      "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-                      "placementMatchedText": "Subcommittee on Science, Manufacturing, and Competitiveness",
-                      "placementMethod": "listed_under_committee_in_senate_committee_list"
+                      }
                     },
                     {
                       "id": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-freight-pipelines-safety",
@@ -7378,16 +7388,17 @@
                       "children": [],
                       "descriptionSource": "generated_from_its_official_page",
                       "sourceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
                       "sourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "senate_committee_list",
-                        "official_site"
+                        "official_site",
+                        "senate_committee_list"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -7401,16 +7412,25 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "lastVerified": "2026-09-08T19:21:00Z",
-                      "placementVerified": true,
-                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
-                      "placementVerifiedAt": "2026-09-08T19:21:00Z",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T17:57:28+00:00",
                       "evidenceUrls": [
+                        "https://www.commerce.senate.gov/about/commerce-subcommittees/",
                         "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml"
                       ],
+                      "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "verificationMethod": "name_labelled_on_parent_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-senate-cmte-commerce-science-transportation",
+                      "placementVerified": true,
+                      "placementUrl": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+                      "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "placementParentId": "leg-senate-cmte-commerce-science-transportation",
+                      "placementMatchedText": "Surface Transportation, Freight, Pipelines, & Safety",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content",
                       "directoryListing": {
                         "source": "senate_committee_list",
                         "listedName": "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
@@ -7418,12 +7438,7 @@
                         "agencyUrl": null,
                         "parentListedName": "Committee on Commerce, Science, and Transportation",
                         "checkedAt": "2026-09-08T19:21:00Z"
-                      },
-                      "evidenceVerifiedAt": "2026-09-08T19:21:00Z",
-                      "verificationMethod": "listed_in_senate_committee_list",
-                      "placementUrl": "https://www.senate.gov/general/committee_membership/committee_memberships_SSCM.xml",
-                      "placementMatchedText": "Subcommittee on Surface Transportation, Freight, Pipelines, and Safety",
-                      "placementMethod": "listed_under_committee_in_senate_committee_list"
+                      }
                     }
                   ],
                   "sourceUrls": [
@@ -21809,16 +21824,17 @@
                       "children": [],
                       "descriptionSource": "generated_from_its_official_page",
                       "sourceUrls": [
+                        "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
                       ],
                       "sourceTypes": [
-                        "house_clerk_committee_list",
-                        "official_site"
+                        "official_site",
+                        "house_clerk_committee_list"
                       ],
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "house_clerk_committee_list",
-                        "official_site"
+                        "official_site",
+                        "house_clerk_committee_list"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -21832,16 +21848,25 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "lastVerified": "2026-09-13T22:51:28Z",
-                      "placementVerified": true,
-                      "placementParentId": "leg-house-cmte-armed-services",
-                      "placementVerifiedAt": "2026-09-13T22:51:28Z",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T17:57:28+00:00",
                       "evidenceUrls": [
+                        "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
                       ],
+                      "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "verificationMethod": "name_labelled_on_parent_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-armed-services",
+                      "placementVerified": true,
+                      "placementUrl": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+                      "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "placementParentId": "leg-house-cmte-armed-services",
+                      "placementMatchedText": "Subcommittee on Intelligence and Special Operations",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content",
                       "directoryListing": {
                         "source": "house_clerk_committee_list",
                         "listedName": "Intelligence and Special Operations",
@@ -21849,12 +21874,7 @@
                         "agencyUrl": null,
                         "parentListedName": "Committee on Armed Services",
                         "checkedAt": "2026-09-13T22:51:28Z"
-                      },
-                      "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
-                      "verificationMethod": "listed_in_house_clerk_committee_list",
-                      "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-                      "placementMatchedText": "Intelligence and Special Operations",
-                      "placementMethod": "listed_under_committee_in_house_clerk_committee_list"
+                      }
                     }
                   ],
                   "sourceUrls": [
@@ -28042,16 +28062,17 @@
                       "children": [],
                       "descriptionSource": "generated_from_its_official_page",
                       "sourceUrls": [
+                        "https://judiciary.house.gov/about/subcommittees",
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
                       ],
                       "sourceTypes": [
-                        "house_clerk_committee_list",
-                        "official_site"
+                        "official_site",
+                        "house_clerk_committee_list"
                       ],
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "house_clerk_committee_list",
-                        "official_site"
+                        "official_site",
+                        "house_clerk_committee_list"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -28065,16 +28086,25 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "lastVerified": "2026-09-13T22:51:28Z",
-                      "placementVerified": true,
-                      "placementParentId": "leg-house-cmte-judiciary",
-                      "placementVerifiedAt": "2026-09-13T22:51:28Z",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
+                      "lastVerified": "2026-09-21T17:57:28+00:00",
                       "evidenceUrls": [
+                        "https://judiciary.house.gov/about/subcommittees",
                         "https://clerk.house.gov/Committees/ExcelCommitteeData"
                       ],
+                      "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "verificationMethod": "name_labelled_on_parent_official_page",
+                      "verificationMatchedIn": "content",
+                      "verificationSiteFrom": "leg-house-cmte-judiciary",
+                      "placementVerified": true,
+                      "placementUrl": "https://judiciary.house.gov/about/subcommittees",
+                      "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+                      "placementParentId": "leg-house-cmte-judiciary",
+                      "placementMatchedText": "The Subcommittee on Oversight",
+                      "placementMethod": "name_labelled_on_parent_official_page",
+                      "placementMatchedIn": "content",
                       "directoryListing": {
                         "source": "house_clerk_committee_list",
                         "listedName": "Oversight",
@@ -28082,12 +28112,7 @@
                         "agencyUrl": null,
                         "parentListedName": "Committee on the Judiciary",
                         "checkedAt": "2026-09-13T22:51:28Z"
-                      },
-                      "evidenceVerifiedAt": "2026-09-13T22:51:28Z",
-                      "verificationMethod": "listed_in_house_clerk_committee_list",
-                      "placementUrl": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-                      "placementMatchedText": "Oversight",
-                      "placementMethod": "listed_under_committee_in_house_clerk_committee_list"
+                      }
                     }
                   ],
                   "sourceUrls": [
@@ -68777,37 +68802,17 @@
               "children": [],
               "descriptionSource": "generated_from_its_official_page",
               "sourceUrls": [
-                "https://www.federalregister.gov/agencies/council-on-environmental-quality"
-              ],
-              "evidenceUrls": [
+                "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
                 "https://www.federalregister.gov/agencies/council-on-environmental-quality"
               ],
               "sourceTypes": [
+                "official_site",
                 "federal_register_directory",
                 "federal_register"
               ],
-              "directoryListing": {
-                "source": "federal_register_agency_directory",
-                "listedName": "Council on Environmental Quality",
-                "url": "https://www.federalregister.gov/agencies/council-on-environmental-quality",
-                "agencyUrl": "https://www.whitehouse.gov/ceq/",
-                "parentListedName": "Executive Office of the President",
-                "checkedAt": "2026-09-08T19:19:15Z"
-              },
-              "lastVerified": "2026-09-08T19:19:15Z",
-              "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-              "verificationMethod": "listed_in_federal_register_agency_directory",
-              "placementVerified": true,
-              "placementUrl": "https://www.federalregister.gov/agencies/council-on-environmental-quality",
-              "placementVerifiedAt": "2026-09-08T19:19:15Z",
-              "placementParentId": "exec-eop",
-              "placementMatchedText": "Council on Environmental Quality",
-              "placementMethod": "listed_under_parent_in_federal_register_agency_directory",
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
-              "proofSourceCount": 3,
+              "proofSourceCount": 4,
               "proofSourceTypes": [
+                "official_site",
                 "federal_register_directory",
                 "federal_register",
                 "historical_documentation"
@@ -68815,7 +68820,7 @@
               "existsProven": true,
               "parentProven": true,
               "proofStatus": "proven",
-              "proofReason": "historical_documentation_recorded",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": null,
               "cost_status": "unavailable",
               "cost_basis": "implied_employee_weight",
@@ -68823,7 +68828,34 @@
               "costVerificationStatus": "unverified",
               "costConfidenceScore": 0.0,
               "costVerificationReason": "missing_cost",
-              "costSourceCount": 0
+              "costSourceCount": 0,
+              "sourceCount": 2,
+              "confidenceScore": 0.8,
+              "verificationStatus": "verified",
+              "lastVerified": "2026-09-21T17:57:28+00:00",
+              "evidenceUrls": [
+                "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+                "https://www.federalregister.gov/agencies/council-on-environmental-quality"
+              ],
+              "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+              "verificationMethod": "name_labelled_on_parent_official_page",
+              "verificationMatchedIn": "navigation",
+              "verificationSiteFrom": "exec-eop",
+              "placementVerified": true,
+              "placementUrl": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+              "placementVerifiedAt": "2026-09-21T17:57:28+00:00",
+              "placementParentId": "exec-eop",
+              "placementMatchedText": "Council on Environmental Quality",
+              "placementMethod": "name_labelled_on_parent_official_page",
+              "placementMatchedIn": "navigation",
+              "directoryListing": {
+                "source": "federal_register_agency_directory",
+                "listedName": "Council on Environmental Quality",
+                "url": "https://www.federalregister.gov/agencies/council-on-environmental-quality",
+                "agencyUrl": "https://www.whitehouse.gov/ceq/",
+                "parentListedName": "Executive Office of the President",
+                "checkedAt": "2026-09-08T19:19:15Z"
+              }
             },
             {
               "id": "exec-eop--treasury-receipts",
@@ -220943,6 +220975,34 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "placementCheckable": false,
                   "employeesOfficial": 109,
                   "employeesOfficialSource": {
@@ -220968,15 +221028,8 @@
                       }
                     ]
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanEntry": {
                     "source": "us_government_manual",
@@ -221002,28 +221055,7 @@
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-333",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
                   },
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-ind-misc-commission-on-civil-rights",
@@ -221037,21 +221069,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/civil-rights-commission",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.usccr.gov/about",
                     "https://www.federalregister.gov/agencies/civil-rights-commission",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.usccr.gov/about",
+                    "https://www.federalregister.gov/agencies/civil-rights-commission",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-commission-on-civil-rights",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Civil Rights Commission",
@@ -221060,24 +221122,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 60,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -221124,15 +221168,7 @@
                     "granule": "GOVMAN-2025-12-31-181",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-181",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-surface-transportation-board",
@@ -221146,21 +221182,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/surface-transportation-board",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.stb.gov/about-stb/",
                     "https://www.federalregister.gov/agencies/surface-transportation-board",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.stb.gov/about-stb/",
+                    "https://www.federalregister.gov/agencies/surface-transportation-board",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-surface-transportation-board",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Surface Transportation Board",
@@ -221169,24 +221235,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 126,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -221233,15 +221281,7 @@
                     "granule": "GOVMAN-2025-12-31-335",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-335",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-international-trade-commission",
@@ -221255,21 +221295,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/international-trade-commission",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.usitc.gov/press_room/about_usitc.htm",
                     "https://www.federalregister.gov/agencies/international-trade-commission",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.usitc.gov/press_room/about_usitc.htm",
+                    "https://www.federalregister.gov/agencies/international-trade-commission",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-international-trade-commission",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "International Trade Commission",
@@ -221278,24 +221348,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 443,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -221342,15 +221394,7 @@
                     "granule": "GOVMAN-2025-12-31-182",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-182",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-institute-of-peace",
@@ -221364,20 +221408,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/united-states-institute-of-peace",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -221387,24 +221455,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "United States Institute of Peace",
@@ -221427,15 +221479,7 @@
                     "granule": "GOVMAN-2025-12-31-188",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-188",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-federal-retirement-thrift-investment-board",
@@ -221449,20 +221493,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/federal-retirement-thrift-investment-board",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -221472,24 +221540,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "Federal Retirement Thrift Investment Board",
@@ -221512,15 +221564,7 @@
                     "granule": "GOVMAN-2025-12-31-148",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-148",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-defense-nuclear-facilities-safety-board",
@@ -221534,20 +221578,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/defense-nuclear-facilities-safety-board",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -221557,24 +221625,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 112,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -221621,15 +221673,7 @@
                     "granule": "GOVMAN-2025-12-31-134",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-134",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
@@ -221643,21 +221687,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.fmshrc.gov/",
                     "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.fmshrc.gov/",
+                    "https://www.federalregister.gov/agencies/federal-mine-safety-and-health-review-commission",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Federal Mine Safety and Health Review Commission",
@@ -221666,24 +221740,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "Federal Mine Safety and Health Review Commission",
@@ -221706,15 +221762,7 @@
                     "granule": "GOVMAN-2025-12-31-146",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-146",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-inter-american-foundation",
@@ -221728,20 +221776,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/inter-american-foundation",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/inter-american-foundation",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -221751,24 +221823,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 36,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -221815,15 +221871,7 @@
                     "granule": "GOVMAN-2025-12-31-151",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-151",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-occupational-safety-and-health-review-commission",
@@ -221837,21 +221885,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.oshrc.gov/",
                     "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.oshrc.gov/",
+                    "https://www.federalregister.gov/agencies/occupational-safety-and-health-review-commission",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-occupational-safety-and-health-review-commission",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Occupational Safety and Health Review Commission",
@@ -221860,24 +221938,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "Occupational Safety and Health Review Commission",
@@ -221900,15 +221960,7 @@
                     "granule": "GOVMAN-2025-12-31-164",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-164",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-odni",
@@ -221922,46 +221974,14 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.dni.gov/index.php/who-we-are",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanEntry": {
-                    "source": "us_government_manual",
-                    "listedName": "Office of the Director of National Intelligence",
-                    "parentListedName": null,
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-165",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
-                  },
-                  "verificationMethod": "listed_in_us_government_manual",
-                  "descriptionOfficial": {
-                    "text": "The Office of the Director of National Intelligence oversees and coordinates the foreign and domestic activities of the Intelligence Community across the Federal Government.",
-                    "kind": "mission_statement",
-                    "extractedFrom": "MissionStatement/Record[1]/Paragraph",
-                    "truncated": false,
-                    "fullLength": 173,
-                    "source": "us_government_manual",
-                    "listedName": "Office of the Director of National Intelligence",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-165",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165",
-                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -221978,7 +221998,43 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.dni.gov/index.php/who-we-are",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-odni",
+                  "placementCheckable": false,
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "Office of the Director of National Intelligence",
+                    "parentListedName": null,
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-165",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The Office of the Director of National Intelligence oversees and coordinates the foreign and domestic activities of the Intelligence Community across the Federal Government.",
+                    "kind": "mission_statement",
+                    "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+                    "truncated": false,
+                    "fullLength": 173,
+                    "source": "us_government_manual",
+                    "listedName": "Office of the Director of National Intelligence",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-165",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-165",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-african-development-foundation",
@@ -221992,21 +222048,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/african-development-foundation",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.usadf.gov/",
                     "https://www.federalregister.gov/agencies/african-development-foundation",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.usadf.gov/",
+                    "https://www.federalregister.gov/agencies/african-development-foundation",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-african-development-foundation",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "United States African Development Foundation",
@@ -222015,24 +222101,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 32,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222079,15 +222147,7 @@
                     "granule": "GOVMAN-2025-12-31-128",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-128",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-trade-and-development-agency",
@@ -222101,20 +222161,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/trade-and-development-agency",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/trade-and-development-agency",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -222124,24 +222208,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 59,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222188,15 +222256,7 @@
                     "granule": "GOVMAN-2025-12-31-179",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-179",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-abilityone-commission",
@@ -222210,19 +222270,32 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.abilityone.gov/"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.abilityone.gov/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-abilityone-commission",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222244,33 +222317,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/public-buildings-reform-board"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.pbrb.gov/",
                     "https://www.federalregister.gov/agencies/public-buildings-reform-board"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Public Buildings Reform Board",
-                    "url": "https://www.federalregister.gov/agencies/public-buildings-reform-board",
-                    "agencyUrl": "https://www.pbrb.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -222278,7 +222336,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222286,7 +222344,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.pbrb.gov/",
+                    "https://www.federalregister.gov/agencies/public-buildings-reform-board"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-public-buildings-reform-board",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Public Buildings Reform Board",
+                    "url": "https://www.federalregister.gov/agencies/public-buildings-reform-board",
+                    "agencyUrl": "https://www.pbrb.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-federal-mediation-and-conciliation-service",
@@ -222300,21 +222379,51 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.fmcs.gov/",
                     "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
                   ],
                   "sourceTypes": [
+                    "us_government_manual",
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
-                    "us_government_manual",
-                    "official_site"
+                    "historical_documentation"
                   ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 3,
+                  "confidenceScore": 0.9,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.fmcs.gov/",
+                    "https://www.federalregister.gov/agencies/federal-mediation-and-conciliation-service",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-federal-mediation-and-conciliation-service",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Federal Mediation and Conciliation Service",
@@ -222323,24 +222432,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "Federal Mediation and Conciliation Service",
@@ -222363,15 +222454,7 @@
                     "granule": "GOVMAN-2025-12-31-145",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-145",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-administrative-conference-of-the-united-states",
@@ -222385,20 +222468,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/administrative-conference-of-the-united-states",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -222408,24 +222515,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "govmanEntry": {
                     "source": "us_government_manual",
                     "listedName": "Administrative Conference of the United States",
@@ -222448,15 +222539,7 @@
                     "granule": "GOVMAN-2025-12-31-127",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-127",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-office-of-government-ethics",
@@ -222470,20 +222553,44 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
                     "https://www.federalregister.gov/agencies/government-ethics-office",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166"
                   ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 5,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "federal_register_directory",
+                    "federal_register",
+                    "official_site",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/government-ethics-office",
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -222493,24 +222600,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 2,
-                  "confidenceScore": 0.8,
-                  "verificationStatus": "verified",
-                  "proofSourceCount": 5,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "us_government_manual",
-                    "official_site",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
                   "employeesOfficial": 72,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222557,15 +222648,7 @@
                     "granule": "GOVMAN-2025-12-31-166",
                     "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-166",
                     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-access-board",
@@ -222579,19 +222662,32 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.access-board.gov/about/"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.access-board.gov/about/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-access-board",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222613,17 +222709,47 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.nwtrb.gov/",
                     "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.nwtrb.gov/",
+                    "https://www.federalregister.gov/agencies/nuclear-waste-technical-review-board"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-nuclear-waste-technical-review-board",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Nuclear Waste Technical Review Board",
@@ -222632,22 +222758,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
                   "employeesOfficial": 22,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222671,15 +222781,7 @@
                         "employees": 22
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-advisory-council-on-historic-preservation",
@@ -222693,17 +222795,47 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.achp.gov/about",
                     "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.achp.gov/about",
+                    "https://www.federalregister.gov/agencies/advisory-council-on-historic-preservation"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-advisory-council-on-historic-preservation",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Advisory Council on Historic Preservation",
@@ -222711,13 +222843,27 @@
                     "agencyUrl": "http://www.achp.gov/",
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
+                  }
+                },
+                {
+                  "id": "exec-ind-misc-national-council-on-disability",
+                  "name": "National Council on Disability",
+                  "type": "Independent Agency",
+                  "desc": "National Council on Disability is named on https://www.usa.gov/agency-index/n, which labels it as 'National Council on Disability (NCD)'. This node exists because that page names the unit; nothing further about it has been read.",
+                  "structureSource": "named_on_an_official_page",
+                  "structureSourceDetail": "https://www.usa.gov/agency-index/n",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#c84a4a",
+                  "children": [],
+                  "descriptionSource": "generated_from_its_official_page",
+                  "sourceUrls": [
+                    "https://www.federalregister.gov/agencies/national-council-on-disability"
+                  ],
+                  "sourceTypes": [
+                    "federal_register_directory",
+                    "federal_register"
+                  ],
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "federal_register_directory",
@@ -222735,30 +222881,14 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
-                },
-                {
-                  "id": "exec-ind-misc-national-council-on-disability",
-                  "name": "National Council on Disability",
-                  "type": "Independent Agency",
-                  "desc": "National Council on Disability is named on https://www.usa.gov/agency-index/n, which labels it as 'National Council on Disability (NCD)'. This node exists because that page names the unit; nothing further about it has been read.",
-                  "structureSource": "named_on_an_official_page",
-                  "structureSourceDetail": "https://www.usa.gov/agency-index/n",
-                  "employees": null,
-                  "budget": null,
-                  "color": "#c84a4a",
-                  "children": [],
-                  "descriptionSource": "generated_from_its_official_page",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
                   "placementCheckable": false,
-                  "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/national-council-on-disability"
-                  ],
                   "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/national-council-on-disability"
-                  ],
-                  "sourceTypes": [
-                    "federal_register_directory",
-                    "federal_register"
                   ],
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
@@ -222768,22 +222898,8 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
                   "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
                   "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
                   "employeesOfficial": 18,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222807,15 +222923,7 @@
                         "employees": 18
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-commission-of-fine-arts",
@@ -222829,17 +222937,47 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/commission-of-fine-arts"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.cfa.gov/about-cfa",
                     "https://www.federalregister.gov/agencies/commission-of-fine-arts"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.cfa.gov/about-cfa",
+                    "https://www.federalregister.gov/agencies/commission-of-fine-arts"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-commission-of-fine-arts",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Commission of Fine Arts",
@@ -222848,22 +222986,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
                   "employeesOfficial": 12,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -222887,15 +223009,7 @@
                         "employees": 12
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-arctic-research-commission",
@@ -222909,33 +223023,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/arctic-research-commission"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.arctic.gov/",
                     "https://www.federalregister.gov/agencies/arctic-research-commission"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Arctic Research Commission",
-                    "url": "https://www.federalregister.gov/agencies/arctic-research-commission",
-                    "agencyUrl": "http://www.arctic.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -222943,7 +223042,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -222951,7 +223050,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.arctic.gov/",
+                    "https://www.federalregister.gov/agencies/arctic-research-commission"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-arctic-research-commission",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Arctic Research Commission",
+                    "url": "https://www.federalregister.gov/agencies/arctic-research-commission",
+                    "agencyUrl": "http://www.arctic.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-truman-scholarship-foundation",
@@ -222965,33 +223085,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.truman.gov/",
                     "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Harry S. Truman Scholarship Foundation",
-                    "url": "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation",
-                    "agencyUrl": "http://truman.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -222999,7 +223104,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223007,7 +223112,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.truman.gov/",
+                    "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-truman-scholarship-foundation",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Harry S. Truman Scholarship Foundation",
+                    "url": "https://www.federalregister.gov/agencies/harry-s-truman-scholarship-foundation",
+                    "agencyUrl": "http://truman.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-madison-fellowship-foundation",
@@ -223021,31 +223147,13 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation"
-                  ],
-                  "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation"
                   ],
                   "sourceTypes": [
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "James Madison Memorial Fellowship Foundation",
-                    "url": "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation",
-                    "agencyUrl": "http://www.jamesmadison.com/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "federal_register_directory",
@@ -223063,7 +223171,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
+                  "evidenceUrls": [
+                    "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation"
+                  ],
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "James Madison Memorial Fellowship Foundation",
+                    "url": "https://www.federalregister.gov/agencies/james-madison-memorial-fellowship-foundation",
+                    "agencyUrl": "http://www.jamesmadison.com/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+                  "verificationMethod": "listed_in_federal_register_agency_directory"
                 },
                 {
                   "id": "exec-ind-misc-heritage-abroad-commission",
@@ -223077,19 +223203,32 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.heritageabroad.gov/"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.heritageabroad.gov/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-heritage-abroad-commission",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "placementCheckable": false,
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223145,31 +223284,13 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission"
-                  ],
-                  "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission"
                   ],
                   "sourceTypes": [
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Medicare Payment Advisory Commission",
-                    "url": "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission",
-                    "agencyUrl": "http://medpac.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "federal_register_directory",
@@ -223187,7 +223308,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
+                  "evidenceUrls": [
+                    "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission"
+                  ],
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Medicare Payment Advisory Commission",
+                    "url": "https://www.federalregister.gov/agencies/medicare-payment-advisory-commission",
+                    "agencyUrl": "http://medpac.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+                  "verificationMethod": "listed_in_federal_register_agency_directory"
                 },
                 {
                   "id": "exec-ind-misc-marine-mammal-commission",
@@ -223201,17 +223340,47 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/marine-mammal-commission"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.mmc.gov/about-the-commission/",
                     "https://www.federalregister.gov/agencies/marine-mammal-commission"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.mmc.gov/about-the-commission/",
+                    "https://www.federalregister.gov/agencies/marine-mammal-commission"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-marine-mammal-commission",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Marine Mammal Commission",
@@ -223220,22 +223389,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
                   "employeesOfficial": 23,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -223259,15 +223412,7 @@
                         "employees": 23
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-csosa",
@@ -223281,31 +223426,13 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia"
-                  ],
-                  "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia"
                   ],
                   "sourceTypes": [
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Court Services and Offender Supervision Agency for the District of Columbia",
-                    "url": "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia",
-                    "agencyUrl": "http://www.csosa.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "federal_register_directory",
@@ -223323,7 +223450,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
+                  "evidenceUrls": [
+                    "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia"
+                  ],
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Court Services and Offender Supervision Agency for the District of Columbia",
+                    "url": "https://www.federalregister.gov/agencies/court-services-and-offender-supervision-agency-for-the-district-of-columbia",
+                    "agencyUrl": "http://www.csosa.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+                  "verificationMethod": "listed_in_federal_register_agency_directory"
                 },
                 {
                   "id": "exec-ind-misc-armed-forces-retirement-home",
@@ -223337,17 +223482,47 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/armed-forces-retirement-home"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.afrh.gov/",
                     "https://www.federalregister.gov/agencies/armed-forces-retirement-home"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
+                  "proofSourceCount": 4,
+                  "proofSourceTypes": [
+                    "official_site",
+                    "federal_register_directory",
+                    "federal_register",
+                    "historical_documentation"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": 94012555.51,
+                  "cost_status": "allocated",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "estimated_from_parent",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.2,
+                  "costVerificationReason": "estimated_from_parent",
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.afrh.gov/",
+                    "https://www.federalregister.gov/agencies/armed-forces-retirement-home"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-armed-forces-retirement-home",
+                  "placementCheckable": false,
                   "directoryListing": {
                     "source": "federal_register_agency_directory",
                     "listedName": "Armed Forces Retirement Home",
@@ -223356,22 +223531,6 @@
                     "parentListedName": null,
                     "checkedAt": "2026-09-08T19:19:15Z"
                   },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
-                  "proofSourceTypes": [
-                    "federal_register_directory",
-                    "federal_register",
-                    "historical_documentation"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
                   "employeesOfficial": 311,
                   "employeesOfficialSource": {
                     "source": "opm_fedscope_employment",
@@ -223395,15 +223554,7 @@
                         "employees": 311
                       }
                     ]
-                  },
-                  "resolved_total_amount": 94012555.51,
-                  "cost_status": "allocated",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "estimated_from_parent",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.2,
-                  "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  }
                 },
                 {
                   "id": "exec-ind-misc-cigie",
@@ -223417,33 +223568,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.ignet.gov/",
                     "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Council of the Inspectors General on Integrity and Efficiency",
-                    "url": "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency",
-                    "agencyUrl": "http://www.ignet.gov/cigie1.html",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -223451,7 +223587,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223459,7 +223595,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.ignet.gov/",
+                    "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-cigie",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Council of the Inspectors General on Integrity and Efficiency",
+                    "url": "https://www.federalregister.gov/agencies/council-of-the-inspectors-general-on-integrity-and-efficiency",
+                    "agencyUrl": "http://www.ignet.gov/cigie1.html",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-delta-regional-authority",
@@ -223473,33 +223630,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/delta-regional-authority"
-                  ],
-                  "evidenceUrls": [
+                    "https://dra.gov/",
                     "https://www.federalregister.gov/agencies/delta-regional-authority"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Delta Regional Authority",
-                    "url": "https://www.federalregister.gov/agencies/delta-regional-authority",
-                    "agencyUrl": "https://dra.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -223507,7 +223649,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223515,7 +223657,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://dra.gov/",
+                    "https://www.federalregister.gov/agencies/delta-regional-authority"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-delta-regional-authority",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Delta Regional Authority",
+                    "url": "https://www.federalregister.gov/agencies/delta-regional-authority",
+                    "agencyUrl": "https://dra.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-northern-border-regional-commission",
@@ -223529,33 +223692,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/northern-border-regional-commission"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.nbrc.gov/",
                     "https://www.federalregister.gov/agencies/northern-border-regional-commission"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Northern Border Regional Commission",
-                    "url": "https://www.federalregister.gov/agencies/northern-border-regional-commission",
-                    "agencyUrl": "https://www.nbrc.gov/",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -223563,7 +223711,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223571,7 +223719,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.nbrc.gov/",
+                    "https://www.federalregister.gov/agencies/northern-border-regional-commission"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-northern-border-regional-commission",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Northern Border Regional Commission",
+                    "url": "https://www.federalregister.gov/agencies/northern-border-regional-commission",
+                    "agencyUrl": "https://www.nbrc.gov/",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 },
                 {
                   "id": "exec-ind-misc-japan-united-states-friendship-commission",
@@ -223585,31 +223754,13 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission"
-                  ],
-                  "evidenceUrls": [
                     "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission"
                   ],
                   "sourceTypes": [
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Japan-United States Friendship Commission",
-                    "url": "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission",
-                    "agencyUrl": "http://www.jusfc.gov/index.asp",
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
                   "proofSourceCount": 3,
                   "proofSourceTypes": [
                     "federal_register_directory",
@@ -223627,7 +223778,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.4,
+                  "verificationStatus": "unverified",
+                  "lastVerified": "2026-09-08T19:19:15Z",
+                  "placementCheckable": false,
+                  "evidenceUrls": [
+                    "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission"
+                  ],
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Japan-United States Friendship Commission",
+                    "url": "https://www.federalregister.gov/agencies/japan-united-states-friendship-commission",
+                    "agencyUrl": "http://www.jusfc.gov/index.asp",
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  },
+                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
+                  "verificationMethod": "listed_in_federal_register_agency_directory"
                 },
                 {
                   "id": "exec-ind-misc-interagency-council-on-homelessness",
@@ -223641,6 +223810,31 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
+                  "sourceUrls": [
+                    "https://www.usich.gov/"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.usich.gov/"
+                  ],
+                  "sourceTypes": [
+                    "official_site"
+                  ],
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-interagency-council-on-homelessness",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 1,
+                  "proofSourceTypes": [
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "placementCheckable": false,
                   "employeesOfficial": 13,
                   "employeesOfficialSource": {
@@ -223666,18 +223860,6 @@
                       }
                     ]
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
-                  "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223699,33 +223881,18 @@
                   "color": "#c84a4a",
                   "children": [],
                   "descriptionSource": "generated_from_its_official_page",
-                  "placementCheckable": false,
                   "sourceUrls": [
-                    "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board"
-                  ],
-                  "evidenceUrls": [
+                    "https://www.coldcaserecords.gov/",
                     "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board"
                   ],
                   "sourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register"
                   ],
-                  "directoryListing": {
-                    "source": "federal_register_agency_directory",
-                    "listedName": "Civil Rights Cold Case Records Review Board",
-                    "url": "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board",
-                    "agencyUrl": null,
-                    "parentListedName": null,
-                    "checkedAt": "2026-09-08T19:19:15Z"
-                  },
-                  "lastVerified": "2026-09-08T19:19:15Z",
-                  "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-                  "verificationMethod": "listed_in_federal_register_agency_directory",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 4,
                   "proofSourceTypes": [
+                    "official_site",
                     "federal_register_directory",
                     "federal_register",
                     "historical_documentation"
@@ -223733,7 +223900,7 @@
                   "existsProven": true,
                   "parentProven": true,
                   "proofStatus": "proven",
-                  "proofReason": "historical_documentation_recorded",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 94012555.51,
                   "cost_status": "allocated",
                   "cost_basis": "implied_budget_weight",
@@ -223741,7 +223908,28 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.8,
+                  "verificationStatus": "verified",
+                  "lastVerified": "2026-09-21T17:57:28+00:00",
+                  "evidenceUrls": [
+                    "https://www.coldcaserecords.gov/",
+                    "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T17:57:28+00:00",
+                  "verificationMethod": "name_labelled_on_own_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "exec-ind-misc-civil-rights-cold-case-records-review-board",
+                  "placementCheckable": false,
+                  "directoryListing": {
+                    "source": "federal_register_agency_directory",
+                    "listedName": "Civil Rights Cold Case Records Review Board",
+                    "url": "https://www.federalregister.gov/agencies/civil-rights-cold-case-records-review-board",
+                    "agencyUrl": null,
+                    "parentListedName": null,
+                    "checkedAt": "2026-09-08T19:19:15Z"
+                  }
                 }
               ],
               "sourceUrls": [],
