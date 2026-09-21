@@ -27,6 +27,7 @@ import ast
 import copy
 import io
 import json
+import subprocess
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
@@ -277,11 +278,26 @@ class IsolationTests(unittest.TestCase):
     )
 
     def importers(self):
-        """Every file in the repository that imports the alias module."""
+        """Every file IN THE REPOSITORY that imports the alias module.
+
+        Asked of git rather than of the filesystem. An `rglob` walk also
+        descends into whatever else happens to be sitting in the working
+        directory -- a virtualenv, a build tree, or (the case that actually
+        broke this on 2026-09-21) the agent worktrees under `.claude/`, which
+        are complete second checkouts of this same repository. Every allowed
+        importer then appeared a second time under a path outside the
+        whitelist and the guardrail failed on its own reflection. What the
+        check is about is the repository's contents, and `git ls-files` is
+        that set exactly.
+        """
+        listed = subprocess.run(
+            ["git", "-C", str(PROJECT_ROOT), "ls-files", "-z", "*.py"],
+            check=True, capture_output=True, text=True,
+        ).stdout
         out = set()
-        for path in sorted(PROJECT_ROOT.rglob("*.py")):
-            rel = path.relative_to(PROJECT_ROOT).as_posix()
-            if rel.startswith((".git/", "node_modules/")):
+        for rel in [r for r in listed.split("\0") if r]:
+            path = PROJECT_ROOT / rel
+            if not path.is_file():
                 continue
             text = path.read_text(encoding="utf-8", errors="ignore")
             if "verification.aliases" in text or "verification import aliases" in text:

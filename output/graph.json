@@ -17597,24 +17597,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Speaker of the House",
                   "sourceUrls": [
-                    "https://www.house.gov/leadership"
-                  ],
-                  "evidenceUrls": [
                     "https://www.house.gov/leadership"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-house-leadership",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -17630,7 +17618,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "verificationMatchedText": "Speaker of the House",
+                  "evidenceUrls": [
+                    "https://www.house.gov/leadership"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-house-leadership"
                 },
                 {
                   "id": "leg-house-leadership-speaker-pro-tempore",
@@ -17671,24 +17671,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Majority Leader",
                   "sourceUrls": [
-                    "https://www.house.gov/leadership"
-                  ],
-                  "evidenceUrls": [
                     "https://www.house.gov/leadership"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-house-leadership",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -17704,7 +17692,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "verificationMatchedText": "Majority Leader",
+                  "evidenceUrls": [
+                    "https://www.house.gov/leadership"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-house-leadership"
                 },
                 {
                   "id": "leg-house-leadership-minority-leader",
@@ -17745,24 +17745,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Majority Whip",
                   "sourceUrls": [
-                    "https://www.house.gov/leadership"
-                  ],
-                  "evidenceUrls": [
                     "https://www.house.gov/leadership"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-house-leadership",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -17778,7 +17766,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "verificationMatchedText": "Majority Whip",
+                  "evidenceUrls": [
+                    "https://www.house.gov/leadership"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-house-leadership"
                 },
                 {
                   "id": "leg-house-leadership-minority-whip",
@@ -17909,24 +17909,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Democratic Caucus Vice Chair",
                   "sourceUrls": [
-                    "https://www.house.gov/leadership"
-                  ],
-                  "evidenceUrls": [
                     "https://www.house.gov/leadership"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-house-leadership",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -17942,7 +17930,19 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "verificationMatchedText": "Democratic Caucus Vice Chair",
+                  "evidenceUrls": [
+                    "https://www.house.gov/leadership"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-house-leadership"
                 },
                 {
                   "id": "leg-house-leadership-republican-conference-chair",
@@ -38469,40 +38469,13 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationUnread": {
-                    "kind": "host_refuses_crawler",
-                    "url": "https://www.gao.gov/about",
-                    "host": "www.gao.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
-                    "attempts": 1,
-                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  },
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
-                  ],
-                  "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanListing": {
-                    "source": "us_government_manual",
-                    "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
-                    "listedUnder": "Government Accountability Office",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-075",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
-                    "tableFooter": null
-                  },
-                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -38519,7 +38492,34 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
+                  "verificationUnread": {
+                    "kind": "host_refuses_crawler",
+                    "url": "https://www.gao.gov/about",
+                    "host": "www.gao.gov",
+                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "attempts": 1,
+                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
+                    "listedUnder": "Government Accountability Office",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-075",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+                    "tableFooter": null
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "leg-support-gao-deputy-comptroller-general",
@@ -38568,40 +38568,13 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationUnread": {
-                    "kind": "host_refuses_crawler",
-                    "url": "https://www.gao.gov/about",
-                    "host": "www.gao.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
-                    "attempts": 1,
-                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  },
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
-                  ],
-                  "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanListing": {
-                    "source": "us_government_manual",
-                    "listedTitle": "CHIEF OPERATING OFFICER",
-                    "listedUnder": "Government Accountability Office",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-075",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
-                    "tableFooter": null
-                  },
-                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -38618,7 +38591,34 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
+                  "verificationUnread": {
+                    "kind": "host_refuses_crawler",
+                    "url": "https://www.gao.gov/about",
+                    "host": "www.gao.gov",
+                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "attempts": 1,
+                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "CHIEF OPERATING OFFICER",
+                    "listedUnder": "Government Accountability Office",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-075",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+                    "tableFooter": null
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "leg-support-gao-chief-administrative-officer",
@@ -38667,40 +38667,13 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationUnread": {
-                    "kind": "host_refuses_crawler",
-                    "url": "https://www.gao.gov/about",
-                    "host": "www.gao.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
-                    "attempts": 1,
-                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  },
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
-                  ],
-                  "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanListing": {
-                    "source": "us_government_manual",
-                    "listedTitle": "GENERAL COUNSEL",
-                    "listedUnder": "Government Accountability Office",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-075",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
-                    "tableFooter": null
-                  },
-                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -38717,7 +38690,34 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
+                  "verificationUnread": {
+                    "kind": "host_refuses_crawler",
+                    "url": "https://www.gao.gov/about",
+                    "host": "www.gao.gov",
+                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "attempts": 1,
+                    "detail": "PermissionError: robots.txt disallows this path (www.gao.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "GENERAL COUNSEL",
+                    "listedUnder": "Government Accountability Office",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-075",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+                    "tableFooter": null
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "leg-support-gao-inspector-general",
@@ -43299,29 +43299,10 @@
                   "sourceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
                   ],
-                  "evidenceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
-                  ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanListing": {
-                    "source": "us_government_manual",
-                    "listedTitle": "LIBRARIAN OF CONGRESS",
-                    "listedUnder": "Library of Congress",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-077",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077",
-                    "tableFooter": null
-                  },
-                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -43338,7 +43319,26 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "LIBRARIAN OF CONGRESS",
+                    "listedUnder": "Library of Congress",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-077",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077",
+                    "tableFooter": null
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "leg-support-loc-deputy-librarian-of-congress",
@@ -44963,13 +44963,13 @@
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-073"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -47124,30 +47124,12 @@
                       }
                     }
                   ],
-                  "placementVerified": true,
-                  "placementUrl": "https://www.uscp.gov/about/leadership",
-                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "placementParentId": "leg-support-uscp",
-                  "placementMatchedText": "Office of Professional Responsibility",
-                  "placementMethod": "name_labelled_on_parent_official_page",
-                  "placementMatchedIn": "content",
                   "sourceUrls": [
-                    "https://www.uscp.gov/about/leadership"
-                  ],
-                  "evidenceUrls": [
                     "https://www.uscp.gov/about/leadership"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "verificationMethod": "name_labelled_on_parent_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "leg-support-uscp",
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -47164,7 +47146,25 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.2,
                   "costVerificationReason": "estimated_from_parent",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "placementVerified": true,
+                  "placementUrl": "https://www.uscp.gov/about/leadership",
+                  "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "placementParentId": "leg-support-uscp",
+                  "placementMatchedText": "Office of Professional Responsibility",
+                  "placementMethod": "name_labelled_on_parent_official_page",
+                  "placementMatchedIn": "content",
+                  "evidenceUrls": [
+                    "https://www.uscp.gov/about/leadership"
+                  ],
+                  "verificationMethod": "name_labelled_on_parent_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "leg-support-uscp",
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00"
                 }
               ],
               "sourceUrls": [
@@ -47453,18 +47453,40 @@
             "attempts": 1,
             "detail": "no_readable_text"
           },
-          "sourceUrls": [],
-          "sourceTypes": [],
-          "sourceCount": 0,
-          "confidenceScore": 0.0,
-          "verificationStatus": "unverified",
-          "lastVerified": null,
-          "proofSourceCount": 0,
-          "proofSourceTypes": [],
-          "existsProven": false,
+          "sourceUrls": [
+            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-096"
+          ],
+          "evidenceUrls": [
+            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-096"
+          ],
+          "sourceTypes": [
+            "us_government_manual",
+            "official_site"
+          ],
+          "govmanOfficeEntry": {
+            "source": "us_government_manual",
+            "listedName": "The President",
+            "matchedName": "THE PRESIDENT OF THE UNITED STATES",
+            "edition": "2025-12-31",
+            "package": "GOVMAN-2025-12-31",
+            "granule": "GOVMAN-2025-12-31-096",
+            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-096"
+          },
+          "verificationMethod": "listed_as_its_own_entry_in_us_government_manual",
+          "lastVerified": "2025-12-31",
+          "evidenceVerifiedAt": "2025-12-31",
+          "sourceCount": 1,
+          "confidenceScore": 0.7,
+          "verificationStatus": "partial",
+          "proofSourceCount": 2,
+          "proofSourceTypes": [
+            "us_government_manual",
+            "official_site"
+          ],
+          "existsProven": true,
           "parentProven": true,
-          "proofStatus": "baseline",
-          "proofReason": "trusted_base_graph",
+          "proofStatus": "proven",
+          "proofReason": "official_source_recorded",
           "resolved_total_amount": null,
           "cost_status": "unavailable",
           "cost_basis": "subtree_weight",
@@ -47491,18 +47513,63 @@
             "attempts": 1,
             "detail": "no_readable_text"
           },
-          "sourceUrls": [],
-          "sourceTypes": [],
-          "sourceCount": 0,
-          "confidenceScore": 0.0,
-          "verificationStatus": "unverified",
-          "lastVerified": null,
-          "proofSourceCount": 0,
-          "proofSourceTypes": [],
-          "existsProven": false,
+          "sourceUrls": [
+            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097"
+          ],
+          "evidenceUrls": [
+            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097"
+          ],
+          "sourceTypes": [
+            "us_government_manual",
+            "official_site"
+          ],
+          "govmanOfficeEntry": {
+            "source": "us_government_manual",
+            "listedName": "The Vice President",
+            "matchedName": "The Vice President",
+            "edition": "2025-12-31",
+            "package": "GOVMAN-2025-12-31",
+            "granule": "GOVMAN-2025-12-31-097",
+            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097"
+          },
+          "verificationMethod": "listed_as_its_own_entry_in_us_government_manual",
+          "verificationAliasMatch": {
+            "alias": "The Vice President",
+            "basis": "The United States Government Manual carries a top-level entry (entity 97, granule GOVMAN-2025-12-31-097) headed 'The Vice President', whose leadership table prints the office as 'THE VICE PRESIDENT' and whose opening paragraph reads 'The U.S. Constitution stipulates that while occupying his (or her) office for a term of 4 years, the President will serve the duration of that term together with the Vice President (ART. II, Sec. 1).' The entry is the office; the graph writes the office's full constitutional style.",
+            "matchedText": "The Vice President",
+            "scope": "node",
+            "source": "us_government_manual",
+            "owner": "exec-vp",
+            "urls": [
+              "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097"
+            ],
+            "matches": [
+              {
+                "source": "us_government_manual",
+                "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-097",
+                "alias": "The Vice President",
+                "basis": "The United States Government Manual carries a top-level entry (entity 97, granule GOVMAN-2025-12-31-097) headed 'The Vice President', whose leadership table prints the office as 'THE VICE PRESIDENT' and whose opening paragraph reads 'The U.S. Constitution stipulates that while occupying his (or her) office for a term of 4 years, the President will serve the duration of that term together with the Vice President (ART. II, Sec. 1).' The entry is the office; the graph writes the office's full constitutional style.",
+                "matchedText": "The Vice President",
+                "scope": "node",
+                "owner": "exec-vp"
+              }
+            ],
+            "gradedAtMost": "partial"
+          },
+          "lastVerified": "2025-12-31",
+          "evidenceVerifiedAt": "2025-12-31",
+          "sourceCount": 1,
+          "confidenceScore": 0.7,
+          "verificationStatus": "partial",
+          "proofSourceCount": 2,
+          "proofSourceTypes": [
+            "us_government_manual",
+            "official_site"
+          ],
+          "existsProven": true,
           "parentProven": true,
-          "proofStatus": "baseline",
-          "proofReason": "trusted_base_graph",
+          "proofStatus": "proven",
+          "proofReason": "official_source_recorded",
           "resolved_total_amount": null,
           "cost_status": "unavailable",
           "cost_basis": "subtree_weight",
@@ -68886,6 +68953,34 @@
                   "children": [],
                   "nameSource": "listed_in_opm_plum_archive",
                   "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.state.gov/about/",
@@ -68922,15 +69017,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -68943,11 +69031,26 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
+                  "evidenceVerifiedAt": "2025-12-31"
+                },
+                {
+                  "id": "exec-dept-state-deputy-secretary-of-department-of-state",
+                  "name": "Deputy Secretary of State",
+                  "type": "Position",
+                  "desc": "Second-in-command; acts as Secretary when absent.",
+                  "employees": null,
+                  "budget": null,
+                  "color": "#666666",
+                  "children": [],
+                  "nameSource": "listed_in_opm_plum_archive",
+                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -68964,19 +69067,11 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
-                },
-                {
-                  "id": "exec-dept-state-deputy-secretary-of-department-of-state",
-                  "name": "Deputy Secretary of State",
-                  "type": "Position",
-                  "desc": "Second-in-command; acts as Secretary when absent.",
-                  "employees": null,
-                  "budget": null,
-                  "color": "#666666",
-                  "children": [],
-                  "nameSource": "listed_in_opm_plum_archive",
-                  "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.state.gov/about/",
@@ -69013,15 +69108,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -69034,28 +69122,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-state-chief-of-staff",
@@ -74482,6 +74549,34 @@
                   "children": [],
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-125"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_employee_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "positionSchedulePay": {
                     "source": "us_code_executive_schedule",
                     "method": "level_assigned_by_5_usc_5312_5316",
@@ -74510,15 +74605,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-125"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-125"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -74531,28 +74619,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_employee_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-treasury-deputy-secretary-of-department-of-the-treasury",
@@ -79659,6 +79726,34 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.defense.gov/About/",
@@ -79695,15 +79790,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -79716,28 +79804,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-defense-deputy-secretary-of-defense",
@@ -82754,29 +82821,10 @@
                           "sourceUrls": [
                             "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275"
                           ],
-                          "evidenceUrls": [
-                            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275"
-                          ],
                           "sourceTypes": [
                             "us_government_manual",
                             "official_site"
                           ],
-                          "govmanListing": {
-                            "source": "us_government_manual",
-                            "listedTitle": "COMMANDANT OF THE MARINE CORPS",
-                            "listedUnder": "United States Marine Corps",
-                            "edition": "2025-12-31",
-                            "package": "GOVMAN-2025-12-31",
-                            "granule": "GOVMAN-2025-12-31-275",
-                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275",
-                            "tableFooter": null
-                          },
-                          "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                          "lastVerified": "2025-12-31",
-                          "evidenceVerifiedAt": "2025-12-31",
-                          "sourceCount": 1,
-                          "confidenceScore": 0.7,
-                          "verificationStatus": "partial",
                           "proofSourceCount": 2,
                           "proofSourceTypes": [
                             "us_government_manual",
@@ -82793,7 +82841,26 @@
                           "costVerificationStatus": "unverified",
                           "costConfidenceScore": 0.0,
                           "costVerificationReason": "missing_cost",
-                          "costSourceCount": 0
+                          "costSourceCount": 0,
+                          "sourceCount": 1,
+                          "confidenceScore": 0.7,
+                          "verificationStatus": "partial",
+                          "lastVerified": "2025-12-31",
+                          "evidenceUrls": [
+                            "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275"
+                          ],
+                          "govmanListing": {
+                            "source": "us_government_manual",
+                            "listedTitle": "COMMANDANT OF THE MARINE CORPS",
+                            "listedUnder": "United States Marine Corps",
+                            "edition": "2025-12-31",
+                            "package": "GOVMAN-2025-12-31",
+                            "granule": "GOVMAN-2025-12-31-275",
+                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275",
+                            "tableFooter": null
+                          },
+                          "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                          "evidenceVerifiedAt": "2025-12-31"
                         },
                         {
                           "id": "exec-dept-defense-marines-assistant-commandant-of-the-marine-corps",
@@ -90636,14 +90703,17 @@
                         }
                       ],
                       "sourceUrls": [
-                        "https://www.darpa.mil/"
+                        "https://www.darpa.mil/",
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214"
                       ],
                       "sourceTypes": [
-                        "official_site"
+                        "official_site",
+                        "us_government_manual"
                       ],
-                      "proofSourceCount": 1,
+                      "proofSourceCount": 2,
                       "proofSourceTypes": [
-                        "official_site"
+                        "official_site",
+                        "us_government_manual"
                       ],
                       "existsProven": true,
                       "parentProven": true,
@@ -90658,18 +90728,64 @@
                       "costConfidenceScore": 0.2,
                       "costVerificationReason": "estimated_from_parent",
                       "costSourceCount": 0,
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
+                      "sourceCount": 2,
+                      "confidenceScore": 0.8,
+                      "verificationStatus": "verified",
                       "lastVerified": "2026-09-20T00:33:15+00:00",
                       "evidenceUrls": [
-                        "https://www.darpa.mil/"
+                        "https://www.darpa.mil/",
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214"
                       ],
                       "evidenceVerifiedAt": "2026-09-20T00:33:15+00:00",
                       "verificationMethod": "name_labelled_on_own_official_page",
                       "verificationMatchedIn": "content",
                       "verificationSiteFrom": "exec-dept-defense-agency-darpa",
-                      "placementCheckable": false
+                      "placementCheckable": false,
+                      "govmanEntry": {
+                        "source": "us_government_manual",
+                        "listedName": "Defense Advanced Research Projects Agency",
+                        "parentListedName": "Defense Agencies",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-214",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214"
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Defense Advanced Research Projects Agency",
+                        "basis": "The curated name is the agency's acronym, letter for letter the initials of the alternative. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding that NOAA, NTIA, DARPA, NSA and FMCSA are all already in the graph under acronyms, which is why no node was added for the Manual's entry. The Manual's entry 214 is headed 'Defense Advanced Research Projects Agency' and its opening paragraph reads 'The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense', which agrees with where this graph places the node.",
+                        "matchedText": "Defense Advanced Research Projects Agency",
+                        "scope": "node",
+                        "source": "us_government_manual",
+                        "owner": "exec-dept-defense-agency-darpa",
+                        "urls": [
+                          "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214"
+                        ],
+                        "matches": [
+                          {
+                            "source": "us_government_manual",
+                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214",
+                            "alias": "Defense Advanced Research Projects Agency",
+                            "basis": "The curated name is the agency's acronym, letter for letter the initials of the alternative. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding that NOAA, NTIA, DARPA, NSA and FMCSA are all already in the graph under acronyms, which is why no node was added for the Manual's entry. The Manual's entry 214 is headed 'Defense Advanced Research Projects Agency' and its opening paragraph reads 'The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense', which agrees with where this graph places the node.",
+                            "matchedText": "Defense Advanced Research Projects Agency",
+                            "scope": "node",
+                            "owner": "exec-dept-defense-agency-darpa"
+                          }
+                        ]
+                      },
+                      "descriptionOfficial": {
+                        "text": "The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense and is under the authority, direction, and control of the Under Secretary of Defense (Acquisition, Technology and Logistics). The Agency serves as the central research and development organization of the Department of Defense with a primary responsibility to maintain U.S. technological superiority over potential adversaries.",
+                        "kind": "opening_paragraph",
+                        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+                        "truncated": true,
+                        "fullLength": 970,
+                        "source": "us_government_manual",
+                        "listedName": "Defense Advanced Research Projects Agency",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-214",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-214",
+                        "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                      }
                     },
                     {
                       "id": "exec-dept-defense-agency-dla",
@@ -95610,6 +95726,34 @@
                   "children": [],
                   "nameSource": "listed_in_opm_plum_archive",
                   "nameSourceDetail": "https://www.opm.gov/policy-data-oversight/senior-executive-service/plum-archive/",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "positionSchedulePay": {
                     "source": "us_code_executive_schedule",
                     "method": "level_assigned_by_5_usc_5312_5316",
@@ -95638,15 +95782,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -95659,28 +95796,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-doj-deputy-secretary-of-department-of-justice-doj",
@@ -104346,6 +104462,34 @@
                   "children": [],
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-120"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "positionSchedulePay": {
                     "source": "us_code_executive_schedule",
                     "method": "level_assigned_by_5_usc_5312_5316",
@@ -104374,15 +104518,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-120"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-120"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -104395,28 +104532,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-doi-deputy-secretary-of-department-of-the-interior-doi",
@@ -114168,40 +114284,13 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationUnread": {
-                    "kind": "host_refuses_crawler",
-                    "url": "https://www.commerce.gov/about",
-                    "host": "www.commerce.gov",
-                    "checkedAt": "2026-09-21T05:26:27+00:00",
-                    "attempts": 1,
-                    "detail": "PermissionError: robots.txt disallows this path (www.commerce.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  },
                   "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113"
-                  ],
-                  "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113"
                   ],
                   "sourceTypes": [
                     "us_government_manual",
                     "official_site"
                   ],
-                  "govmanListing": {
-                    "source": "us_government_manual",
-                    "listedTitle": "INSPECTOR GENERAL",
-                    "listedUnder": "Department of Commerce",
-                    "edition": "2025-12-31",
-                    "package": "GOVMAN-2025-12-31",
-                    "granule": "GOVMAN-2025-12-31-113",
-                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113",
-                    "tableFooter": null
-                  },
-                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
                     "us_government_manual",
@@ -114218,7 +114307,34 @@
                   "costVerificationStatus": "unverified",
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
+                  "verificationUnread": {
+                    "kind": "host_refuses_crawler",
+                    "url": "https://www.commerce.gov/about",
+                    "host": "www.commerce.gov",
+                    "checkedAt": "2026-09-21T05:26:27+00:00",
+                    "attempts": 1,
+                    "detail": "PermissionError: robots.txt disallows this path (www.commerce.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "INSPECTOR GENERAL",
+                    "listedUnder": "Department of Commerce",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-113",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113",
+                    "tableFooter": null
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-doc-deputy-inspector-general",
@@ -115139,18 +115255,64 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.noaa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                      ],
+                      "evidenceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                      ],
+                      "sourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "govmanListing": {
+                        "source": "us_government_manual",
+                        "listedTitle": "Chief Scientist",
+                        "listedUnder": "National Oceanic and Atmospheric Administration",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-264",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+                        "tableFooter": "The above list of key personnel was updated 6–2022."
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "National Oceanic and Atmospheric Administration",
+                        "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+                        "matchedText": "National Oceanic and Atmospheric Administration",
+                        "scope": "organisation",
+                        "source": "us_government_manual",
+                        "owner": "exec-dept-doc-noaa",
+                        "urls": [
+                          "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                        ],
+                        "matches": [
+                          {
+                            "source": "us_government_manual",
+                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+                            "alias": "National Oceanic and Atmospheric Administration",
+                            "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+                            "matchedText": "National Oceanic and Atmospheric Administration",
+                            "scope": "organisation",
+                            "owner": "exec-dept-doc-noaa"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                      "lastVerified": "2025-12-31",
+                      "evidenceVerifiedAt": "2025-12-31",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -115490,16 +115652,21 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "government_dataset"
+                    "government_dataset",
+                    "us_government_manual",
+                    "official_site"
                   ],
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "treasury_outlays",
                     "government_dataset",
+                    "us_government_manual",
+                    "official_site",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -115517,10 +115684,10 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Commerce",
                   "treasury_classification_id": "59308614",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "rollup_total_amount": 6414280623.71,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Oceanic and Atmospheric Administration",
@@ -115536,7 +115703,58 @@
                     "checkedAt": "2026-09-21T05:26:27+00:00",
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.noaa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  }
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                  ],
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "National Oceanic and Atmospheric Administration",
+                    "parentListedName": "Department of Commerce",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-264",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                  },
+                  "verificationMethod": "listed_in_us_government_manual",
+                  "verificationAliasMatch": {
+                    "alias": "National Oceanic and Atmospheric Administration",
+                    "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+                    "matchedText": "National Oceanic and Atmospheric Administration",
+                    "scope": "node",
+                    "source": "us_government_manual",
+                    "owner": "exec-dept-doc-noaa",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+                        "alias": "National Oceanic and Atmospheric Administration",
+                        "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+                        "matchedText": "National Oceanic and Atmospheric Administration",
+                        "scope": "node",
+                        "owner": "exec-dept-doc-noaa"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The National Oceanic and Atmospheric Administration seeks to understand and predict changes in climate and weather and changes that affect coasts and oceans; shares its knowledge and information with others; and conserves and manages coastal and marine ecosystems and resources.",
+                    "kind": "mission_statement",
+                    "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+                    "truncated": false,
+                    "fullLength": 278,
+                    "source": "us_government_manual",
+                    "listedName": "National Oceanic and Atmospheric Administration",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-264",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-264",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-doc-nist",
@@ -116509,29 +116727,10 @@
                       "sourceUrls": [
                         "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262"
                       ],
-                      "evidenceUrls": [
-                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262"
-                      ],
                       "sourceTypes": [
                         "us_government_manual",
                         "official_site"
                       ],
-                      "govmanListing": {
-                        "source": "us_government_manual",
-                        "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
-                        "listedUnder": "International Trade Administration",
-                        "edition": "2025-12-31",
-                        "package": "GOVMAN-2025-12-31",
-                        "granule": "GOVMAN-2025-12-31-262",
-                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262",
-                        "tableFooter": "The above list of key personnel was updated 10–2021."
-                      },
-                      "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                      "lastVerified": "2025-12-31",
-                      "evidenceVerifiedAt": "2025-12-31",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
                       "proofSourceCount": 2,
                       "proofSourceTypes": [
                         "us_government_manual",
@@ -116548,7 +116747,26 @@
                       "costVerificationStatus": "unverified",
                       "costConfidenceScore": 0.0,
                       "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2025-12-31",
+                      "evidenceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262"
+                      ],
+                      "govmanListing": {
+                        "source": "us_government_manual",
+                        "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
+                        "listedUnder": "International Trade Administration",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-262",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262",
+                        "tableFooter": "The above list of key personnel was updated 10–2021."
+                      },
+                      "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                      "evidenceVerifiedAt": "2025-12-31"
                     },
                     {
                       "id": "exec-dept-doc-ita-deputy-under-secretary",
@@ -118344,13 +118562,13 @@
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -122594,6 +122812,34 @@
                   "children": [],
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-117"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "subtree_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.hhs.gov/about/index.html",
@@ -122630,15 +122876,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-117"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-117"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -122651,28 +122890,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "subtree_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-hhs-deputy-secretary-of-department-of-health-human-services-hhs",
@@ -132833,6 +133051,34 @@
                   "children": [],
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_budget_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "verificationUnread": {
                     "kind": "host_refuses_crawler",
                     "url": "https://www.transportation.gov/about",
@@ -132869,15 +133115,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -132890,28 +133129,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_budget_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-dot-deputy-secretary-of-department-of-transportation-dot",
@@ -134958,16 +135176,21 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243"
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "government_dataset"
+                    "government_dataset",
+                    "us_government_manual",
+                    "official_site"
                   ],
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "treasury_outlays",
                     "government_dataset",
+                    "us_government_manual",
+                    "official_site",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -134985,10 +135208,10 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309360",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "rollup_total_amount": 1360453649.92,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "National Highway Traffic Safety Administration",
@@ -135004,7 +135227,58 @@
                     "checkedAt": "2026-09-21T05:26:27+00:00",
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.nhtsa.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen)"
-                  }
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243"
+                  ],
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "National Highway Traffic Safety Administration",
+                    "parentListedName": "Department of Transportation",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-243",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243"
+                  },
+                  "verificationMethod": "listed_in_us_government_manual",
+                  "verificationAliasMatch": {
+                    "alias": "National Highway Traffic Safety Administration",
+                    "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair. The Manual's entry 243 is headed 'National Highway Traffic Safety Administration' and its opening paragraph prints '(NHTSA)', the acronym the curated name carries.",
+                    "matchedText": "National Highway Traffic Safety Administration",
+                    "scope": "node",
+                    "source": "us_government_manual",
+                    "owner": "exec-dept-dot-nhtsa",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243",
+                        "alias": "National Highway Traffic Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair. The Manual's entry 243 is headed 'National Highway Traffic Safety Administration' and its opening paragraph prints '(NHTSA)', the acronym the curated name carries.",
+                        "matchedText": "National Highway Traffic Safety Administration",
+                        "scope": "node",
+                        "owner": "exec-dept-dot-nhtsa"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The National Highway Traffic Safety Administration (NHTSA) was established by the Highway Safety Act of 1970 (23 U.S.C. 401 note) to reduce the number of deaths, injuries, and economic losses resulting from motor vehicle crashes on the Nation's highways.",
+                    "kind": "opening_paragraph",
+                    "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+                    "truncated": false,
+                    "fullLength": 254,
+                    "source": "us_government_manual",
+                    "listedName": "National Highway Traffic Safety Administration",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-243",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-243",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-dot-fra",
@@ -135373,18 +135647,82 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.fmcsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ADMINISTRATOR",
+                        "agency": "DEPARTMENT OF TRANSPORTATION",
+                        "organization": "FEDERAL MOTOR CARRIER SAFETY ADMINISTRATION",
+                        "positionStatus": "Filled",
+                        "appointmentType": "PAS",
+                        "payPlan": "EX",
+                        "level": "III",
+                        "payLevel": "III",
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Federal Motor Carrier Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+                        "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                        "scope": "organisation",
+                        "source": "opm_plum_current_export",
+                        "owner": "exec-dept-dot-fmcsa",
+                        "urls": [
+                          "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                        ],
+                        "matches": [
+                          {
+                            "source": "opm_plum_current_export",
+                            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                            "alias": "Federal Motor Carrier Safety Administration",
+                            "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+                            "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                            "scope": "organisation",
+                            "owner": "exec-dept-dot-fmcsa"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "placementVerified": true,
+                      "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                      "placementParentId": "exec-dept-dot-fmcsa",
+                      "placementMatchedText": "ADMINISTRATOR",
+                      "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -135545,16 +135883,21 @@
                     }
                   ],
                   "sourceUrls": [
-                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government"
+                    "https://fiscaldata.treasury.gov/datasets/monthly-treasury-statement/outlays-of-the-u-s-government",
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249"
                   ],
                   "sourceTypes": [
                     "treasury_outlays",
-                    "government_dataset"
+                    "government_dataset",
+                    "us_government_manual",
+                    "official_site"
                   ],
-                  "proofSourceCount": 3,
+                  "proofSourceCount": 5,
                   "proofSourceTypes": [
                     "treasury_outlays",
                     "government_dataset",
+                    "us_government_manual",
+                    "official_site",
                     "official_financial_record"
                   ],
                   "existsProven": true,
@@ -135572,10 +135915,10 @@
                   "costSourceCount": 1,
                   "treasury_section": "Department of Transportation",
                   "treasury_classification_id": "59309357",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.4,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
+                  "sourceCount": 2,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "rollup_total_amount": 863605463.94,
                   "budget_source": "Treasury MTS Table 5",
                   "treasury_row_name": "Federal Motor Carrier Safety Administration",
@@ -135591,7 +135934,58 @@
                     "checkedAt": "2026-09-21T05:26:27+00:00",
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.fmcsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
-                  }
+                  },
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249"
+                  ],
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "Federal Motor Carrier Safety Administration",
+                    "parentListedName": "Department of Transportation",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-249",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249"
+                  },
+                  "verificationMethod": "listed_in_us_government_manual",
+                  "verificationAliasMatch": {
+                    "alias": "Federal Motor Carrier Safety Administration",
+                    "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+                    "matchedText": "Federal Motor Carrier Safety Administration",
+                    "scope": "node",
+                    "source": "us_government_manual",
+                    "owner": "exec-dept-dot-fmcsa",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249",
+                        "alias": "Federal Motor Carrier Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+                        "matchedText": "Federal Motor Carrier Safety Administration",
+                        "scope": "node",
+                        "owner": "exec-dept-dot-fmcsa"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The Federal Motor Carrier Safety Administration (FMCSA) was established within the Department of Transportation on January 1, 2000, pursuant to the Motor Carrier Safety Improvement Act of 1999 (113 Stat. 1750).",
+                    "kind": "opening_paragraph",
+                    "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+                    "truncated": false,
+                    "fullLength": 210,
+                    "source": "us_government_manual",
+                    "listedName": "Federal Motor Carrier Safety Administration",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-249",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-249",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-dot-fta",
@@ -135960,18 +136354,82 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.phmsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "ADMINISTRATOR",
+                        "agency": "DEPARTMENT OF TRANSPORTATION",
+                        "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+                        "positionStatus": "Filled",
+                        "appointmentType": "PAS",
+                        "payPlan": "EX",
+                        "level": "III",
+                        "payLevel": "III",
+                        "reportedPay": null,
+                        "reportedPayText": null,
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Pipeline and Hazardous Materials Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                        "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                        "scope": "organisation",
+                        "source": "opm_plum_current_export",
+                        "owner": "exec-dept-dot-phmsa",
+                        "urls": [
+                          "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                        ],
+                        "matches": [
+                          {
+                            "source": "opm_plum_current_export",
+                            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                            "alias": "Pipeline and Hazardous Materials Safety Administration",
+                            "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                            "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                            "scope": "organisation",
+                            "owner": "exec-dept-dot-phmsa"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "placementVerified": true,
+                      "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                      "placementParentId": "exec-dept-dot-phmsa",
+                      "placementMatchedText": "ADMINISTRATOR",
+                      "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -135998,18 +136456,104 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.phmsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "evidenceUrls": [
+                        "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                      ],
+                      "sourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "positionCurrentListing": {
+                        "source": "opm_plum_current_export",
+                        "method": "listed_in_opm_current_plum_export",
+                        "edition": "OPM PLUM Reporting current export (fetched 2026-09-21)",
+                        "listedTitle": "DEPUTY ADMINISTRATOR",
+                        "agency": "DEPARTMENT OF TRANSPORTATION",
+                        "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+                        "positionStatus": "Filled",
+                        "appointmentType": "NA",
+                        "payPlan": "ES",
+                        "level": "$197,200",
+                        "payLevel": null,
+                        "reportedPay": 197200.0,
+                        "reportedPayText": "$197,200",
+                        "payPlanAndLevelOnOneRow": true,
+                        "rows": 1,
+                        "rowsListed": 1,
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "checkedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6"
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Pipeline and Hazardous Materials Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                        "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                        "scope": "organisation",
+                        "source": "opm_plum_current_export",
+                        "owner": "exec-dept-dot-phmsa",
+                        "urls": [
+                          "https://escs.opm.gov/escs-net/api/pbpub/download-data"
+                        ],
+                        "matches": [
+                          {
+                            "source": "opm_plum_current_export",
+                            "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                            "alias": "Pipeline and Hazardous Materials Safety Administration",
+                            "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                            "matchedText": "DEPARTMENT OF TRANSPORTATION",
+                            "scope": "organisation",
+                            "owner": "exec-dept-dot-phmsa"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "lastVerified": "2026-09-21T03:02:16Z",
+                      "evidenceVerifiedAt": "2026-09-21T03:02:16Z",
+                      "verificationMethod": "listed_in_opm_current_plum_export",
+                      "placementVerified": true,
+                      "placementUrl": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                      "placementVerifiedAt": "2026-09-21T03:02:16Z",
+                      "placementParentId": "exec-dept-dot-phmsa",
+                      "placementMatchedText": "DEPUTY ADMINISTRATOR",
+                      "placementMethod": "listed_under_organization_in_opm_current_plum_export",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "opm_plum_current_export",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
+                      "positionCurrentPay": {
+                        "source": "opm_plum_current_export",
+                        "sourceLabel": "OPM's current PLUM Reporting export",
+                        "method": "rate_of_basic_pay_stated_in_opm_current_plum_export",
+                        "amount": 197200.0,
+                        "rateText": "$197,200",
+                        "payPlan": "ES",
+                        "listedTitle": "DEPUTY ADMINISTRATOR",
+                        "agency": "DEPARTMENT OF TRANSPORTATION",
+                        "organization": "PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION",
+                        "positionStatus": "Filled",
+                        "costBasis": "basic_pay",
+                        "scopeMatch": "proxy",
+                        "financialEvidenceStatus": "partial",
+                        "amountScope": "DEPUTY ADMINISTRATOR",
+                        "quote": "DEPUTY ADMINISTRATOR; DEPARTMENT OF TRANSPORTATION; PIPELINE AND HAZARDOUS MATERIALS SAFETY ADMINISTRATION; Pay Plan ES; Level, Grade, or Pay $197,200; Position Status Filled",
+                        "unitsEvidenceKind": "currency_mark_on_the_printed_figure",
+                        "exportFetchedAt": "2026-09-21T03:02:16Z",
+                        "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+                        "documentSha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+                        "checkedAt": "2026-09-21T03:02:16Z"
+                      },
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -136139,6 +136683,77 @@
                     "attempts": 1,
                     "detail": "PermissionError: robots.txt disallows this path (www.phmsa.dot.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was seen"
                   },
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "Pipeline and Hazardous Materials Safety Administration",
+                    "parentListedName": "Department of Transportation",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-247",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247"
+                  },
+                  "verificationMethod": "listed_in_us_government_manual",
+                  "verificationAliasMatch": {
+                    "alias": "Pipeline and Hazardous Materials Safety Administration",
+                    "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                    "matchedText": "Pipeline and Hazardous Materials Safety Administration",
+                    "scope": "node",
+                    "source": "us_government_manual",
+                    "owner": "exec-dept-dot-phmsa",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247",
+                        "alias": "Pipeline and Hazardous Materials Safety Administration",
+                        "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+                        "matchedText": "Pipeline and Hazardous Materials Safety Administration",
+                        "scope": "node",
+                        "owner": "exec-dept-dot-phmsa"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The Pipeline and Hazardous Materials Safety Administration (PHMSA) was established on February 20, 2005. It is responsible for hazardous materials transportation and pipeline safety.",
+                    "kind": "opening_paragraph",
+                    "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+                    "truncated": false,
+                    "fullLength": 182,
+                    "source": "us_government_manual",
+                    "listedName": "Pipeline and Hazardous Materials Safety Administration",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-247",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-247",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "lastVerified": "2025-12-31",
+                  "evidenceVerifiedAt": "2025-12-31",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "usaspendingOutlays": {
                     "source": "usaspending_file_ab",
                     "basis": "gross_outlays",
@@ -136172,18 +136787,6 @@
                       "url": "https://files.usaspending.gov/docs/Data_Dictionary_Crosswalk.xlsx"
                     }
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
-                  "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
                   "resolved_total_amount": 695296577.66,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -136952,13 +137555,13 @@
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -144686,6 +145289,34 @@
                   "children": [],
                   "nameSource": "named_in_5_usc_5312_5316",
                   "nameSourceDetail": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title5-chapter53-subchapterII",
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-115"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
+                  "parentProven": true,
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
+                  "resolved_total_amount": null,
+                  "cost_status": "unavailable",
+                  "cost_basis": "implied_employee_weight",
+                  "cost_validation": "post_is_not_a_budget_unit",
+                  "costVerificationStatus": "unverified",
+                  "costConfidenceScore": 0.0,
+                  "costVerificationReason": "missing_cost",
+                  "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2025-12-31",
                   "positionSchedulePay": {
                     "source": "us_code_executive_schedule",
                     "method": "level_assigned_by_5_usc_5312_5316",
@@ -144714,15 +145345,8 @@
                     "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                     "checkedAt": "2026-09-11T03:05:36Z"
                   },
-                  "sourceUrls": [
-                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-115"
-                  ],
                   "evidenceUrls": [
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-115"
-                  ],
-                  "sourceTypes": [
-                    "us_government_manual",
-                    "official_site"
                   ],
                   "govmanListing": {
                     "source": "us_government_manual",
@@ -144735,28 +145359,7 @@
                     "tableFooter": null
                   },
                   "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                  "lastVerified": "2025-12-31",
-                  "evidenceVerifiedAt": "2025-12-31",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
-                  "proofSourceCount": 2,
-                  "proofSourceTypes": [
-                    "us_government_manual",
-                    "official_site"
-                  ],
-                  "existsProven": true,
-                  "parentProven": true,
-                  "proofStatus": "proven",
-                  "proofReason": "official_source_recorded",
-                  "resolved_total_amount": null,
-                  "cost_status": "unavailable",
-                  "cost_basis": "implied_employee_weight",
-                  "cost_validation": "post_is_not_a_budget_unit",
-                  "costVerificationStatus": "unverified",
-                  "costConfidenceScore": 0.0,
-                  "costVerificationReason": "missing_cost",
-                  "costSourceCount": 0
+                  "evidenceVerifiedAt": "2025-12-31"
                 },
                 {
                   "id": "exec-dept-ed-deputy-secretary-of-department-of-education",
@@ -206195,13 +206798,13 @@
                     "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-154"
                   ],
                   "sourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "proofSourceCount": 2,
                   "proofSourceTypes": [
-                    "official_site",
-                    "us_government_manual"
+                    "us_government_manual",
+                    "official_site"
                   ],
                   "existsProven": true,
                   "parentProven": true,
@@ -210445,18 +211048,64 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.americorps.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                      ],
+                      "evidenceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                      ],
+                      "sourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "govmanListing": {
+                        "source": "us_government_manual",
+                        "listedTitle": "General Counsel",
+                        "listedUnder": "Corporation for National and Community Service",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-133",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                        "tableFooter": null
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Corporation for National and Community Service",
+                        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                        "matchedText": "Corporation for National and Community Service",
+                        "scope": "organisation",
+                        "source": "us_government_manual",
+                        "owner": "exec-ind-misc-americorps",
+                        "urls": [
+                          "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                        ],
+                        "matches": [
+                          {
+                            "source": "us_government_manual",
+                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                            "alias": "Corporation for National and Community Service",
+                            "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                            "matchedText": "Corporation for National and Community Service",
+                            "scope": "organisation",
+                            "owner": "exec-ind-misc-americorps"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                      "lastVerified": "2025-12-31",
+                      "evidenceVerifiedAt": "2025-12-31",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -210483,18 +211132,64 @@
                         "attempts": 1,
                         "detail": "PermissionError: robots.txt disallows this path (www.americorps.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
                       },
-                      "sourceUrls": [],
-                      "sourceTypes": [],
-                      "sourceCount": 0,
-                      "confidenceScore": 0.0,
-                      "verificationStatus": "unverified",
-                      "lastVerified": null,
-                      "proofSourceCount": 0,
-                      "proofSourceTypes": [],
-                      "existsProven": false,
+                      "sourceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                      ],
+                      "evidenceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                      ],
+                      "sourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "govmanListing": {
+                        "source": "us_government_manual",
+                        "listedTitle": "Inspector General",
+                        "listedUnder": "Corporation for National and Community Service",
+                        "edition": "2025-12-31",
+                        "package": "GOVMAN-2025-12-31",
+                        "granule": "GOVMAN-2025-12-31-133",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                        "tableFooter": null
+                      },
+                      "verificationAliasMatch": {
+                        "alias": "Corporation for National and Community Service",
+                        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                        "matchedText": "Corporation for National and Community Service",
+                        "scope": "organisation",
+                        "source": "us_government_manual",
+                        "owner": "exec-ind-misc-americorps",
+                        "urls": [
+                          "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                        ],
+                        "matches": [
+                          {
+                            "source": "us_government_manual",
+                            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                            "alias": "Corporation for National and Community Service",
+                            "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                            "matchedText": "Corporation for National and Community Service",
+                            "scope": "organisation",
+                            "owner": "exec-ind-misc-americorps"
+                          }
+                        ],
+                        "gradedAtMost": "partial"
+                      },
+                      "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                      "lastVerified": "2025-12-31",
+                      "evidenceVerifiedAt": "2025-12-31",
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "existsProven": true,
                       "parentProven": true,
-                      "proofStatus": "baseline",
-                      "proofReason": "trusted_base_graph",
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
                       "resolved_total_amount": null,
                       "cost_status": "unavailable",
                       "cost_basis": "subtree_weight",
@@ -210552,18 +211247,77 @@
                     "detail": "PermissionError: robots.txt disallows this path (www.americorps.gov/robots.txt could not be read (403) on each of 3 attempts; refused by policy, no rule was see"
                   },
                   "placementCheckable": false,
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "govmanEntry": {
+                    "source": "us_government_manual",
+                    "listedName": "Corporation for National and Community Service",
+                    "parentListedName": null,
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-133",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                  },
+                  "verificationMethod": "listed_in_us_government_manual",
+                  "verificationAliasMatch": {
+                    "alias": "Corporation for National and Community Service",
+                    "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                    "matchedText": "Corporation for National and Community Service",
+                    "scope": "node",
+                    "source": "us_government_manual",
+                    "owner": "exec-ind-misc-americorps",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                        "alias": "Corporation for National and Community Service",
+                        "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+                        "matchedText": "Corporation for National and Community Service",
+                        "scope": "node",
+                        "owner": "exec-ind-misc-americorps"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "descriptionOfficial": {
+                    "text": "The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement through service and volunteering.",
+                    "kind": "mission_statement",
+                    "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+                    "truncated": false,
+                    "fullLength": 154,
+                    "source": "us_government_manual",
+                    "listedName": "Corporation for National and Community Service",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-133",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-133",
+                    "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+                  },
+                  "lastVerified": "2025-12-31",
+                  "evidenceVerifiedAt": "2025-12-31",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": 1692112339.36,
                   "cost_status": "allocated",
                   "cost_basis": "budget_weight",
@@ -213199,6 +213953,34 @@
                       "budget": null,
                       "color": "#666666",
                       "children": [],
+                      "sourceUrls": [
+                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158"
+                      ],
+                      "sourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "proofSourceCount": 2,
+                      "proofSourceTypes": [
+                        "us_government_manual",
+                        "official_site"
+                      ],
+                      "existsProven": true,
+                      "parentProven": true,
+                      "proofStatus": "proven",
+                      "proofReason": "official_source_recorded",
+                      "resolved_total_amount": null,
+                      "cost_status": "unavailable",
+                      "cost_basis": "subtree_weight",
+                      "cost_validation": "post_is_not_a_budget_unit",
+                      "costVerificationStatus": "unverified",
+                      "costConfidenceScore": 0.0,
+                      "costVerificationReason": "missing_cost",
+                      "costSourceCount": 0,
+                      "sourceCount": 1,
+                      "confidenceScore": 0.7,
+                      "verificationStatus": "partial",
+                      "lastVerified": "2025-12-31",
                       "positionSchedulePay": {
                         "source": "us_code_executive_schedule",
                         "method": "level_assigned_by_5_usc_5312_5316",
@@ -213227,15 +214009,8 @@
                         "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/26Tables/exec/html/EX.aspx",
                         "checkedAt": "2026-09-11T03:05:36Z"
                       },
-                      "sourceUrls": [
-                        "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158"
-                      ],
                       "evidenceUrls": [
                         "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158"
-                      ],
-                      "sourceTypes": [
-                        "us_government_manual",
-                        "official_site"
                       ],
                       "govmanListing": {
                         "source": "us_government_manual",
@@ -213248,28 +214023,7 @@
                         "tableFooter": null
                       },
                       "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
-                      "lastVerified": "2025-12-31",
-                      "evidenceVerifiedAt": "2025-12-31",
-                      "sourceCount": 1,
-                      "confidenceScore": 0.7,
-                      "verificationStatus": "partial",
-                      "proofSourceCount": 2,
-                      "proofSourceTypes": [
-                        "us_government_manual",
-                        "official_site"
-                      ],
-                      "existsProven": true,
-                      "parentProven": true,
-                      "proofStatus": "proven",
-                      "proofReason": "official_source_recorded",
-                      "resolved_total_amount": null,
-                      "cost_status": "unavailable",
-                      "cost_basis": "subtree_weight",
-                      "cost_validation": "post_is_not_a_budget_unit",
-                      "costVerificationStatus": "unverified",
-                      "costConfidenceScore": 0.0,
-                      "costVerificationReason": "missing_cost",
-                      "costSourceCount": 0
+                      "evidenceVerifiedAt": "2025-12-31"
                     },
                     {
                       "id": "exec-ind-misc-national-labor-relations-board-nlrb-independent-inspector-general",
@@ -228746,24 +229500,12 @@
                   "budget": null,
                   "color": "#666666",
                   "children": [],
-                  "verificationMatchedText": "Vacancy - Staff Attorney (term)",
                   "sourceUrls": [
-                    "https://www.ca3.uscourts.gov/"
-                  ],
-                  "evidenceUrls": [
                     "https://www.ca3.uscourts.gov/"
                   ],
                   "sourceTypes": [
                     "official_site"
                   ],
-                  "lastVerified": "2026-09-21T05:26:27+00:00",
-                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
-                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
-                  "verificationMatchedIn": "content",
-                  "verificationSiteFrom": "jud-circuit-3rd-circuit",
-                  "sourceCount": 1,
-                  "confidenceScore": 0.7,
-                  "verificationStatus": "partial",
                   "proofSourceCount": 1,
                   "proofSourceTypes": [
                     "official_site"
@@ -228780,6 +229522,18 @@
                   "costConfidenceScore": 0.0,
                   "costVerificationReason": "missing_cost",
                   "costSourceCount": 0,
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "lastVerified": "2026-09-21T05:26:27+00:00",
+                  "verificationMatchedText": "Vacancy - Staff Attorney (term)",
+                  "evidenceUrls": [
+                    "https://www.ca3.uscourts.gov/"
+                  ],
+                  "evidenceVerifiedAt": "2026-09-21T05:26:27+00:00",
+                  "verificationMethod": "name_labelled_on_its_organisations_official_page",
+                  "verificationMatchedIn": "content",
+                  "verificationSiteFrom": "jud-circuit-3rd-circuit",
                   "representsPosts": {
                     "text": "×multiple",
                     "kind": "unstated",
@@ -234930,18 +235684,64 @@
                     "attempts": 1,
                     "detail": "HTTPError: HTTP Error 404: Not Found"
                   },
-                  "sourceUrls": [],
-                  "sourceTypes": [],
-                  "sourceCount": 0,
-                  "confidenceScore": 0.0,
-                  "verificationStatus": "unverified",
-                  "lastVerified": null,
-                  "proofSourceCount": 0,
-                  "proofSourceTypes": [],
-                  "existsProven": false,
+                  "sourceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
+                  ],
+                  "evidenceUrls": [
+                    "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
+                  ],
+                  "sourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "govmanListing": {
+                    "source": "us_government_manual",
+                    "listedTitle": "General Counsel",
+                    "listedUnder": "Administrative Office of the United States Courts",
+                    "edition": "2025-12-31",
+                    "package": "GOVMAN-2025-12-31",
+                    "granule": "GOVMAN-2025-12-31-093",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+                    "tableFooter": "The above list of key personnel was updated 8–2020."
+                  },
+                  "verificationAliasMatch": {
+                    "alias": "Administrative Office of the United States Courts",
+                    "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+                    "matchedText": "Administrative Office of the United States Courts",
+                    "scope": "organisation",
+                    "source": "us_government_manual",
+                    "owner": "jud-support-aousc",
+                    "urls": [
+                      "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
+                    ],
+                    "matches": [
+                      {
+                        "source": "us_government_manual",
+                        "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+                        "alias": "Administrative Office of the United States Courts",
+                        "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+                        "matchedText": "Administrative Office of the United States Courts",
+                        "scope": "organisation",
+                        "owner": "jud-support-aousc"
+                      }
+                    ],
+                    "gradedAtMost": "partial"
+                  },
+                  "verificationMethod": "listed_in_its_organisations_us_government_manual_entry",
+                  "lastVerified": "2025-12-31",
+                  "evidenceVerifiedAt": "2025-12-31",
+                  "sourceCount": 1,
+                  "confidenceScore": 0.7,
+                  "verificationStatus": "partial",
+                  "proofSourceCount": 2,
+                  "proofSourceTypes": [
+                    "us_government_manual",
+                    "official_site"
+                  ],
+                  "existsProven": true,
                   "parentProven": true,
-                  "proofStatus": "baseline",
-                  "proofReason": "trusted_base_graph",
+                  "proofStatus": "proven",
+                  "proofReason": "official_source_recorded",
                   "resolved_total_amount": null,
                   "cost_status": "unavailable",
                   "cost_basis": "subtree_weight",
@@ -235257,22 +236057,27 @@
                 }
               ],
               "sourceUrls": [
-                "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts"
+                "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts",
+                "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
               ],
               "sourceTypes": [
                 "federal_register_directory",
-                "federal_register"
+                "federal_register",
+                "us_government_manual",
+                "official_site"
               ],
-              "proofSourceCount": 3,
+              "proofSourceCount": 5,
               "proofSourceTypes": [
                 "federal_register_directory",
                 "federal_register",
+                "us_government_manual",
+                "official_site",
                 "historical_documentation"
               ],
               "existsProven": true,
               "parentProven": true,
               "proofStatus": "proven",
-              "proofReason": "historical_documentation_recorded",
+              "proofReason": "official_source_recorded",
               "resolved_total_amount": 540178395.12,
               "cost_status": "allocated",
               "cost_basis": "subtree_weight",
@@ -235282,9 +236087,9 @@
               "costConfidenceScore": 0.2,
               "costVerificationReason": "estimated_from_parent",
               "costSourceCount": 0,
-              "sourceCount": 1,
-              "confidenceScore": 0.4,
-              "verificationStatus": "unverified",
+              "sourceCount": 2,
+              "confidenceScore": 0.7,
+              "verificationStatus": "partial",
               "lastVerified": "2026-09-08T19:19:15Z",
               "verificationUnread": {
                 "kind": "page_not_found",
@@ -235298,7 +236103,8 @@
               "placementParentId": "jud-support",
               "placementVerifiedAt": "2026-09-21T05:26:27+00:00",
               "evidenceUrls": [
-                "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts"
+                "https://www.federalregister.gov/agencies/administrative-office-of-united-states-courts",
+                "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
               ],
               "directoryListing": {
                 "source": "federal_register_agency_directory",
@@ -235309,7 +236115,53 @@
                 "checkedAt": "2026-09-08T19:19:15Z"
               },
               "evidenceVerifiedAt": "2026-09-08T19:19:15Z",
-              "verificationMethod": "listed_in_federal_register_agency_directory"
+              "verificationMethod": "listed_in_federal_register_agency_directory",
+              "govmanEntry": {
+                "source": "us_government_manual",
+                "listedName": "Administrative Office of the United States Courts",
+                "parentListedName": null,
+                "edition": "2025-12-31",
+                "package": "GOVMAN-2025-12-31",
+                "granule": "GOVMAN-2025-12-31-093",
+                "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
+              },
+              "verificationAliasMatch": {
+                "alias": "Administrative Office of the United States Courts",
+                "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+                "matchedText": "Administrative Office of the United States Courts",
+                "scope": "node",
+                "source": "us_government_manual",
+                "owner": "jud-support-aousc",
+                "urls": [
+                  "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093"
+                ],
+                "matches": [
+                  {
+                    "source": "us_government_manual",
+                    "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+                    "alias": "Administrative Office of the United States Courts",
+                    "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+                    "matchedText": "Administrative Office of the United States Courts",
+                    "scope": "node",
+                    "owner": "jud-support-aousc"
+                  }
+                ],
+                "gradedAtMost": "partial"
+              },
+              "descriptionOfficial": {
+                "text": "The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.",
+                "kind": "mission_statement",
+                "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+                "truncated": false,
+                "fullLength": 143,
+                "source": "us_government_manual",
+                "listedName": "Administrative Office of the United States Courts",
+                "edition": "2025-12-31",
+                "package": "GOVMAN-2025-12-31",
+                "granule": "GOVMAN-2025-12-31-093",
+                "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-093",
+                "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+              }
             },
             {
               "id": "jud-support-fjc",
