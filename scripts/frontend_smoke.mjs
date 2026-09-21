@@ -166,14 +166,153 @@ try {
   await page.waitForTimeout(100);
   check("the directory opens from the view switcher", await page.locator("body.atlas-mode").count() === 1, "directory did not open");
   check("the directory limits itself to six generations", await page.locator('[data-atlas-depth="6"].active').count() === 1, "depth six is not active");
-  const coverageText = await text("#atlas-coverage");
-  // Case-insensitive: innerText applies the stylesheet's text-transform, and
-  // the directory sets its coverage labels in uppercase.
-  check("the directory exposes evidence coverage", /verified records/i.test(coverageText) && /reported financial figures/i.test(coverageText), coverageText);
+  await page.waitForFunction(() => window.__atlas_loaded__ === true, null, { timeout: 30000 });
+  // The stylesheet upper-cases the strip, and innerText reports the rendered
+  // text, so every match here is case-insensitive. The counts are held to
+  // the same definitions the provenance line uses, recomputed from the
+  // served graph: measured is official/root_total plus the receipts lines,
+  // sourced is a non-empty sourceUrls, and the estimates are the nodes that
+  // carry an apportioned share.
+  const coverageText = (await text("#atlas-coverage")).replace(/\s+/g, " ");
+  check(
+    "the directory exposes evidence coverage",
+    /costs measured from the monthly treasury statement/i.test(coverageText) && /nodes carry a source/i.test(coverageText) && /apportioned estimates, withheld/i.test(coverageText),
+    coverageText,
+  );
+  check("the directory does not call a figure reported", !/reported financial figures|verified records/i.test(coverageText), coverageText);
+  const directoryMeasured = /([\d,]+) costs measured/i.exec(coverageText);
+  const expectedDirectoryMeasured = allNodes.filter((n) => String(n.synthetic || "") === "treasury_receipts" || ["official", "root_total"].includes(String(n.cost_status || ""))).length;
+  check(
+    "the directory's measured count is the graph's own",
+    Boolean(directoryMeasured) && Number(directoryMeasured[1].replace(/,/g, "")) === expectedDirectoryMeasured,
+    `${directoryMeasured ? directoryMeasured[1] : "absent"} shown, ${expectedDirectoryMeasured} in the served graph`,
+  );
+  const directorySourced = /([\d,]+) of [\d,]+ nodes carry a source/i.exec(coverageText);
+  const expectedDirectorySourced = allNodes.filter((n) => Array.isArray(n.sourceUrls) && n.sourceUrls.length).length;
+  check(
+    "the directory's sourced count is the graph's own",
+    Boolean(directorySourced) && Number(directorySourced[1].replace(/,/g, "")) === expectedDirectorySourced,
+    `${directorySourced ? directorySourced[1] : "absent"} shown, ${expectedDirectorySourced} in the served graph`,
+  );
+  const directoryAllocated = /([\d,]+) apportioned estimates, withheld/i.exec(coverageText);
+  const expectedDirectoryAllocated = allNodes.filter((n) => String(n.cost_status || "") === "allocated").length;
+  check(
+    "the directory's estimate count is the graph's own",
+    Boolean(directoryAllocated) && Number(directoryAllocated[1].replace(/,/g, "")) === expectedDirectoryAllocated,
+    `${directoryAllocated ? directoryAllocated[1] : "absent"} shown, ${expectedDirectoryAllocated} allocated in the served graph`,
+  );
   check("the first organizational generation is rendered", await page.locator("#atlas-columns .atlas-generation").count() >= 1, "no generation column");
   await page.fill("#atlas-search", "Bureau of Prisons");
   await page.waitForTimeout(250);
   check("directory search finds a published entity", await page.locator("#atlas-search-results .atlas-result").count() >= 1, "no directory result");
+  await page.fill("#atlas-search", "");
+
+  // Examples are chosen from the served graph, never named: a node reachable
+  // in the directory sits within six generations, is not a replaced unit,
+  // and has a name no other node shares, so the search result carrying its
+  // own id is the one clicked.
+  const depthById = new Map();
+  const walkDepth = (node, depth) => {
+    depthById.set(node.id, depth);
+    for (const child of node.children || []) walkDepth(child, depth + 1);
+  };
+  walkDepth(graphJson, 0);
+  const directoryNameCounts = new Map();
+  for (const n of allNodes) directoryNameCounts.set(n.name, (directoryNameCounts.get(n.name) || 0) + 1);
+  const reachable = (n) => depthById.get(n.id) <= 6 && directoryNameCounts.get(n.name) === 1 && String(n.lifecycle || "") !== "superseded";
+  const openInDirectory = async (node) => {
+    await page.fill("#atlas-search", node.name);
+    await page.waitForTimeout(250);
+    const result = page.locator(`#atlas-search-results .atlas-result[data-result-id="${node.id}"]`);
+    if (!(await result.count())) return false;
+    await result.first().click();
+    await page.waitForTimeout(150);
+    return true;
+  };
+  const rowText = async (selector) => (await page.locator(`#atlas-detail ${selector}`).first().innerText()).replace(/\s+/g, " ").trim();
+  const isPostNode = (n) => /position/i.test(String(n.type || ""));
+
+  // A post: the panel's sentence, no dollar figure under cost, and where an
+  // official document states a rate, that rate under PAY and never COST.
+  const directoryPost =
+    allNodes.find((n) => isPostNode(n) && n.cost_validation === "post_is_not_a_budget_unit" && n.positionSchedulePay && n.desc && !n.descriptionSource && reachable(n))
+    || allNodes.find((n) => isPostNode(n) && n.cost_validation === "post_is_not_a_budget_unit" && reachable(n));
+  check("a post is reachable in the directory", Boolean(directoryPost), "none");
+  if (directoryPost) {
+    check("the directory opens a post", await openInDirectory(directoryPost), directoryPost.name);
+    const costRow = await rowText(".cost-row");
+    check("the directory says a post is not a budget unit", /This is a post, not a unit of government/.test(costRow), costRow);
+    check("the directory shows no dollar cost for a post", !/\$\s?[\d,]+/.test(costRow), costRow);
+    check("the directory does not call a post's cost measured", !/measured/i.test(costRow), costRow);
+    if (directoryPost.positionSchedulePay) {
+      const payHead = await rowText(".pay-row dt");
+      const payRow = await rowText(".pay-row dd");
+      check("a post's pay is headed pay, not cost", /^pay$/i.test(payHead), payHead);
+      check("a post's Executive Schedule rate is shown under pay", /Executive Schedule level/.test(payRow) && /\$[\d,]+/.test(payRow), payRow);
+      check("a rate of pay says it is not the unit's cost", /not a share of federal outlays/.test(payRow), payRow);
+    }
+    if (directoryPost.desc && !directoryPost.descriptionSource) {
+      const descLabel = await rowText(".detail-desc-label");
+      check("a base-graph description is labelled uncited in the directory", /uncited prose from the base graph/i.test(descLabel), descLabel);
+    }
+  }
+
+  // An organisation whose queued page could not be read: the directory says
+  // why, as a fact about the host, and never "no source recorded".
+  const unreadOrg = allNodes.find((n) => !isPostNode(n) && n.verificationUnread && !n.verificationMethod && !n.verificationFailure && reachable(n));
+  check("an unread organisation is reachable in the directory", Boolean(unreadOrg), "none");
+  if (unreadOrg) {
+    check("the directory opens an unread organisation", await openInDirectory(unreadOrg), unreadOrg.name);
+    const evidenceRow = await rowText(".detail-row:first-child dd");
+    check("an unread page is not called no source recorded", !/no source recorded/i.test(evidenceRow), evidenceRow);
+    check("an unread page says why it went unread", /^Not verified: /.test(evidenceRow) && /(could not be read|was not read|answered 404|refused until|could not be reached)/.test(evidenceRow), evidenceRow);
+  }
+
+  // A checked-and-failed node says what was tested and against what.
+  const failedNode = allNodes.find((n) => n.verificationFailure && reachable(n));
+  if (failedNode) {
+    check("the directory opens a failed check", await openInDirectory(failedNode), failedNode.name);
+    const evidenceRow = await rowText(".detail-row:first-child dd");
+    check("a failed check is not called no source recorded", !/no source recorded/i.test(evidenceRow), evidenceRow);
+    check("a failed check says what was tested", /(does not name it as a heading or link|it carries no unit of this name under)/.test(evidenceRow), evidenceRow);
+  }
+
+  // A measured organisation: the Treasury's exact figure labelled measured,
+  // the existence method in words, and the cost's source on its own row —
+  // never offered as evidence the unit exists.
+  const measuredOrg = allNodes.find((n) => !isPostNode(n) && ["official", "root_total"].includes(String(n.cost_status || "")) && n.costVerificationStatus === "verified" && n.verificationMethod && reachable(n));
+  check("a measured organisation with an existence method is reachable", Boolean(measuredOrg), "none");
+  if (measuredOrg) {
+    check("the directory opens a measured organisation", await openInDirectory(measuredOrg), measuredOrg.name);
+    const costRow = await rowText(".cost-row");
+    const exact = `$${Math.round(Math.abs(Number(measuredOrg.resolved_total_amount))).toLocaleString("en-US")}`;
+    check("a measured cost is shown exactly and labelled measured", costRow.includes(exact) && /Measured/.test(costRow) && /Monthly Treasury Statement/.test(costRow), costRow);
+    check("a measured cost is not called an estimate", !/estimate/i.test(costRow), costRow);
+    const evidenceRow = await rowText(".detail-row:first-child dd");
+    check("a measured organisation's evidence line names the method", /(names it|lists it|carries it|carries an entry for it|lists a post of this name)/.test(evidenceRow), evidenceRow);
+    check("the cost's source is not offered as existence evidence", !/fiscaldata/i.test(evidenceRow) && (await page.locator('#atlas-detail .detail-row:nth-child(2) a[href*="fiscaldata.treasury.gov"]').count()) === 0, evidenceRow);
+    check("the cost's source has its own row", (await page.locator('#atlas-detail a[href*="fiscaldata.treasury.gov"]').count()) >= 1 && /Evidence of the cost, not of the unit's existence/.test(await text("#atlas-detail")), "no cost-source row");
+    check("the directory has no 'open primary evidence' link", !/Open primary evidence/i.test(await text("#atlas-detail")), "link present");
+  }
+
+  // A replaced unit is hidden until asked for, and labelled when shown.
+  const replacedNode = allNodes.find((n) => String(n.lifecycle || "") === "superseded" && depthById.get(n.id) <= 6 && directoryNameCounts.get(n.name) === 1);
+  if (replacedNode) {
+    await page.fill("#atlas-search", replacedNode.name);
+    await page.waitForTimeout(250);
+    check("a replaced unit is hidden from the directory by default", (await page.locator(`#atlas-search-results .atlas-result[data-result-id="${replacedNode.id}"]`).count()) === 0, replacedNode.name);
+    await page.check("#atlas-show-superseded");
+    await page.fill("#atlas-search", replacedNode.name);
+    await page.waitForTimeout(250);
+    const shown = page.locator(`#atlas-search-results .atlas-result[data-result-id="${replacedNode.id}"]`);
+    check("a replaced unit appears when asked for", (await shown.count()) === 1, replacedNode.name);
+    if (await shown.count()) {
+      await shown.first().click();
+      await page.waitForTimeout(150);
+      check("a replaced unit is labelled as replaced", /REPLACED — the government no longer has this unit as drawn/.test(await text("#atlas-detail")), (await text("#atlas-detail")).slice(0, 300));
+    }
+    await page.uncheck("#atlas-show-superseded");
+  }
   await page.fill("#atlas-search", "");
 
   await page.locator('.view-switch[data-view="universe"]').click();
@@ -532,6 +671,27 @@ try {
     check("the table rate is not headed as a cost", !/\bCOST\b[^A-Z]*\$[\d,]+/.test(stats) || !/Salary Table/.test(stats), stats);
   }
 
+  // A base-pay RANGE for the pay plan or grade the archive reports — two
+  // bounds from a salary table, never a rate, and for the General Schedule
+  // base pay before locality. Its own field, rendered in the listing block
+  // beside the pay plan it was looked up for, and shown in the cost block
+  // under a heading that is not the word COST.
+  const withRange = allNodes.find((n) => n.positionGradePay && typeof n.positionGradePay.minimum === "number" && unique(n));
+  check("some position carries a base-pay range from a salary table", Boolean(withRange), "none");
+  if (withRange) {
+    await openByName(withRange.name);
+    const listing = await text("#info-position-listing");
+    check("the range names the table it came from", /Salary Table (No\. )?\d{4}-(GS|ES|SL\/ST)/.test(listing), listing);
+    check("the range is two bounds, not one figure", /\$[\d,]+ – \$[\d,]+/.test(listing), listing);
+    check("the panel says a range is not a rate or the unit's cost", /not this unit's cost and not necessarily what the post pays now/.test(listing), listing);
+    if (withRange.positionGradePay.kind === "general_schedule_grade") {
+      check("a General Schedule range says it is base pay before locality",
+        new RegExp(`base General Schedule range for grade ${withRange.positionGradePay.grade} in \\d{4}, before locality pay`).test(listing), listing);
+    }
+    const stats = await text("#info-stats");
+    check("the range is not headed as a cost", !/^COST|ANNUAL COST/m.test(stats.split("RANGE")[0]) || !/RANGE/.test(stats), stats.slice(0, 400));
+  }
+
   // A single-source statutory rate — judicial or congressional — a
   // different field from positionPayRate above, with its own rendering
   // and no PLUM archive beneath it.
@@ -741,6 +901,43 @@ try {
     const note = await text("#info-desc-provenance");
     check("curated prose says it was never checked against a source",
       /uncited prose from the base graph/.test(note), note);
+  }
+  // The Government Manual's own description, printed BESIDE the curated
+  // prose. Picked from the served graph, because whether any node carries one
+  // depends on the last build having applied govman_evidence.json: until the
+  // next regenerate none is published, and an assertion that named a node
+  // would fail on the absence of data rather than on a defect. So the check
+  // is conditional and says so — and when a block IS published, three things
+  // must hold at once: the heading names the Manual and its edition, the text
+  // on screen is the block's text verbatim, and the curated prose above it is
+  // still labelled uncited, since the official text sits beside it and never
+  // replaces it.
+  const official = allNodes.find((n) => n.descriptionOfficial && n.descriptionOfficial.text
+    && !n.descriptionSource && n.desc && nameCount.get(n.name) === 1);
+  if (official) {
+    await openByName(official.name);
+    const officialBlock = await text("#info-desc-official");
+    check("an official description names the Manual and its edition",
+      officialBlock.includes(`OFFICIAL DESCRIPTION — U.S. Government Manual, ${official.descriptionOfficial.edition}`), officialBlock.slice(0, 200));
+    check("an official description shows the Manual's text verbatim",
+      officialBlock.includes(official.descriptionOfficial.text), officialBlock.slice(0, 300));
+    check("an official description says which element it was read from",
+      official.descriptionOfficial.kind === "mission_statement"
+        ? /the Manual's own mission statement/.test(officialBlock)
+        : /the opening (of the Manual's entry|paragraph of the Manual's entry)/.test(officialBlock), officialBlock.slice(0, 300));
+    const curatedNote = await text("#info-desc-provenance");
+    check("the curated prose beside an official description is still labelled uncited",
+      /uncited prose from the base graph/.test(curatedNote), curatedNote);
+    const curatedText = await text("#info-desc");
+    check("the curated prose beside an official description is the curated text, not the Manual's",
+      curatedText === String(official.desc).trim(), curatedText.slice(0, 200));
+  } else {
+    // Asserted conditionally: no published node carries one yet. The block
+    // element must still exist in the page's script so the assertion above is
+    // live the moment a build publishes a block, not silently absent.
+    const rendererPresent = fs.readFileSync(path.join(ROOT, "js", "ui.js"), "utf8").includes("info-desc-official");
+    check("no official description is published yet, and the panel is ready to show one (conditional)", rendererPresent,
+      "js/ui.js does not render #info-desc-official");
   }
   await page.fill("#search-input", "President of the United States");
   await page.waitForTimeout(500);

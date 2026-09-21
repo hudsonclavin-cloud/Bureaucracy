@@ -1,12 +1,12 @@
 {
- "fetched_at": "2026-09-08T19:53:43Z",
+ "fetched_at": "2026-09-21T03:02:16Z",
  "url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
- "status": null,
- "final_url": null,
- "content_type": null,
+ "status": 200,
+ "final_url": "https://escs.opm.gov/escs-net/api/pbpub/download-data",
+ "content_type": "text/csv",
  "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
- "robots": "no readable robots.txt",
- "bytes": null,
- "sha256": null,
- "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+ "robots": "allows /escs-net/api/pbpub/download-data",
+ "bytes": 2817437,
+ "sha256": "14b39c477f66b0478298d7a49963bd3c99d22b39dd81ea43acb10c3151f070f6",
+ "error": null
 }

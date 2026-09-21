@@ -84,6 +84,38 @@ class KeyTests(unittest.TestCase):
         # A renamed subcommittee is a different key: no fuzzing.
         self.assertNotEqual(subcommittee_key("Competition Policy, Antitrust & Consumer Rights"), subcommittee_key("Subcommittee on Antitrust, Competition Policy, and Consumer Rights"))
 
+    def test_the_gate_mirrors_the_subcommittee_fold(self) -> None:
+        """The release gate is stdlib-only and carries its own copy of the
+        fold; a list placement it refused on 2026-09-21 ('East Asia and
+        Pacific' for 'East Asia and Pacific Subcommittee') was the two
+        drifting apart."""
+        from data_pipeline.verification.evidence import canonical_name_key
+        from scripts import validate_published_graph as gate
+
+        for name in (
+            "Subcommittee on the Constitution",
+            "East Asia and Pacific Subcommittee",
+            "Europe Subcommittee",
+            "Subcommittee on Oversight and Intelligence",
+            "Permanent Subcommittee on Investigations",
+            "Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture",
+            "Readiness",
+        ):
+            self.assertEqual(gate.list_subcommittee_key(canonical_name_key(name)), subcommittee_key(name), name)
+
+    def test_a_trailing_type_word_folds_and_nothing_else_does(self) -> None:
+        """foreignaffairs.house.gov prints "Africa Subcommittee"; the Clerk prints
+        "Africa". One seat, one key. The fold is the type word only: a
+        "Permanent Subcommittee on …" keeps its name, and a type word in the
+        middle of a garbled curated name is not a suffix and is left alone."""
+        self.assertEqual(subcommittee_key("Africa Subcommittee"), subcommittee_key("Africa"))
+        self.assertEqual(subcommittee_key("Oversight and Intelligence Subcommittee"), subcommittee_key("Subcommittee on Oversight and Intelligence"))
+        self.assertEqual(subcommittee_key("East Asia and Pacific Subcommittee"), "east asia and pacific")
+        self.assertEqual(subcommittee_key("Permanent Subcommittee on Investigations"), "permanent subcommittee on investigations")
+        self.assertEqual(subcommittee_key("Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture"),
+                         "horticulture farm inputs and subcommittee on precision agriculture")
+        self.assertNotEqual(subcommittee_key("Europe Subcommittee"), subcommittee_key("Subcommittee on Europe and Regional Security Cooperation"))
+
 
 class MatchTests(unittest.TestCase):
     def setUp(self) -> None:

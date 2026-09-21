@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921a";
+import { createGovernmentGraph } from "./graph.js?v=20260921b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -278,7 +278,8 @@ function summariseGraph(root) {
     if (isPost) {
       count.posts += 1;
       if (String(node.cost_validation || "") === "post_is_not_a_budget_unit") count.postsWithoutFigure += 1;
-      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay) {
+      if (reportedPayOf(node) || node.positionPayRate || node.positionStatutoryPay || node.positionReportedPay
+        || gradePayOf(node)) {
         count.paidPosts += 1;
       }
     }
@@ -353,7 +354,7 @@ function readingGuidePoints(count) {
       + `So no position is given a share of an agency's outlays — that share is not a quantity that `
       + `exists, and it is why ${count.postsWithoutFigure.toLocaleString()} of the `
       + `${count.posts.toLocaleString()} posts show nothing under cost. `
-      + `${count.paidPosts.toLocaleString()} show a rate of pay instead, and only where an official `
+      + `${count.paidPosts.toLocaleString()} show a rate or a base-pay range instead, and only where an official `
       + `document states one. A salary is not a budget either, and is labelled separately.`,
     ],
     [
@@ -993,6 +994,47 @@ function renderPositionListing(data) {
   }
   add("It is a record of that period and says nothing about who holds this post now.");
   renderTableRate(data, add);
+  renderGradePay(data, add);
+}
+
+// The base-pay RANGE a salary table states for the pay plan or grade the
+// archive reports: a General Schedule grade's step 1 to step 10, or the SES /
+// SL-ST pay system's minimum and maximum. Rendered inside the listing block,
+// beside the pay plan it was looked up for, exactly as the table rate above
+// is. A range is never a rate: the sentence says which grade, which year,
+// that it is base pay before locality, and that it is neither the unit's
+// cost nor necessarily what the post pays now.
+function gradePayOf(node) {
+  const pay = node.positionGradePay;
+  if (!pay || typeof pay !== "object") return null;
+  return typeof pay.minimum === "number" && typeof pay.maximum === "number" ? pay : null;
+}
+
+function formatGradeRange(pay) {
+  return `$${Math.round(pay.minimum).toLocaleString()} – $${Math.round(pay.maximum).toLocaleString()}`;
+}
+
+function renderGradePay(data, add) {
+  const pay = gradePayOf(data);
+  if (!pay) return;
+  const year = pay.effective ? String(pay.effective).slice(0, 4) : "";
+  if (pay.kind === "general_schedule_grade") {
+    add(` Separately, OPM's ${pay.table} states ${formatGradeRange(pay)} as the base General Schedule range for grade ${pay.grade} in ${year}, before locality pay; not this unit's cost and not necessarily what the post pays now.`);
+    add(" That is a range, not a rate: the table prints ten steps for the grade and does not say which step this post is at, and every General Schedule employee in the fifty states receives a locality adjustment on top of the base rate that this table does not state.");
+  } else {
+    const system = pay.kind === "senior_executive_service" ? "Senior Executive Service" : "Senior-Level / Scientific or Professional";
+    add(` Separately, OPM's ${pay.table} states the ${system} pay system's range for ${year} as ${formatGradeRange(pay)}; not this unit's cost and not necessarily what the post pays now.`);
+    const rows = Array.isArray(pay.rows) ? pay.rows : [];
+    for (const row of rows) {
+      if (row && typeof row.minimum === "number" && typeof row.maximum === "number") {
+        add(` The table's own row: "${row.label}" — $${Math.round(row.minimum).toLocaleString()} to $${Math.round(row.maximum).toLocaleString()}.`);
+      }
+    }
+    add(" The archive does not say which kind of agency employs the post, so both rows are shown; a band is not a rate, and the table names no post.");
+  }
+  add(" Two documents, not one: the pay plan is the archive's record of a period that ended, and the range is from a table that took effect afterwards.");
+  const notes = Array.isArray(pay.footnotes) ? pay.footnotes.filter((n) => String(n || "").trim()) : [];
+  for (const note of notes) add(` The table's own note: "${String(note).trim()}"`);
 }
 
 // The salary table's rate for the level the archive reports. Deliberately
@@ -1189,6 +1231,66 @@ function renderDescriptionProvenance(data, isClusteredView) {
     return;
   }
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
+}
+
+// The United States Government Manual's own description of the unit, printed
+// BESIDE the curated prose and never in its place: the curated text above
+// keeps its "uncited" label exactly as it was, and this block says which
+// element of the Manual's entry the words came from — its mission statement,
+// or the opening of its entry, cut at a sentence boundary where the record
+// says so — quoted verbatim, dated by the edition and linked to the granule.
+function renderOfficialDescription(data, isClusteredView) {
+  let host = document.getElementById("info-desc-official");
+  if (!host) {
+    const anchor = document.getElementById("info-desc-provenance") || dom.infoDesc;
+    if (!anchor) return;
+    host = document.createElement("div");
+    host.id = "info-desc-official";
+    host.style.fontSize = "10px";
+    host.style.color = "#9a8a6a";
+    host.style.lineHeight = "1.7";
+    host.style.margin = "0 0 12px";
+    anchor.insertAdjacentElement("afterend", host);
+  }
+  host.textContent = "";
+  const block = data && data.descriptionOfficial;
+  if (isClusteredView || !data || data.isCandidate || !block || typeof block !== "object" || !block.text
+      || String(block.source || "") !== "us_government_manual") {
+    host.style.display = "none";
+    return;
+  }
+  host.style.display = "";
+  const heading = document.createElement("div");
+  heading.style.fontSize = "9px";
+  heading.style.color = "#8f7a5d";
+  heading.style.letterSpacing = "0.08em";
+  heading.style.margin = "0 0 4px";
+  heading.textContent = `OFFICIAL DESCRIPTION — U.S. Government Manual, ${block.edition || "edition not stated"}`;
+  host.appendChild(heading);
+  const quote = document.createElement("div");
+  quote.className = "info-desc-official-text";
+  quote.textContent = block.text;
+  host.appendChild(quote);
+  const note = document.createElement("div");
+  note.style.fontSize = "9px";
+  note.style.color = "#8f7a5d";
+  note.style.margin = "4px 0 0";
+  const which = block.kind === "mission_statement"
+    ? "the Manual's own mission statement for this unit"
+    : block.truncated
+      ? `the opening of the Manual's entry for this unit, cut at a sentence boundary after ${String(block.text).length} of ${block.fullLength || "its"} characters`
+      : "the opening paragraph of the Manual's entry for this unit";
+  note.appendChild(document.createTextNode(`Quoted verbatim: ${which}. The curated description above is unchanged and remains uncited. `));
+  if (block.url) {
+    const link = document.createElement("a");
+    link.href = block.url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Read the entry";
+    link.setAttribute("aria-label", `Read the Government Manual entry for ${block.listedName || data.name || "this unit"}`);
+    note.appendChild(link);
+  }
+  host.appendChild(note);
 }
 
 // A unit the government has replaced. The node is still here, with everything
@@ -1777,18 +1879,33 @@ function hasWithheldEstimate(node) {
   return toFiniteAmount(node.resolved_total_amount) !== null && !isBelowPrecision(node);
 }
 
-// A rate of pay stands in for the cost wherever the node has no measured
-// cost of its own and no estimate is on show — the estimate withheld, or, for
-// a post, no figure at all. Never beside a measured cost.
-function showsPayInsteadOfCost(node) {
-  if (isCostIdentifiedForTheNode(node) || reportedPayOf(node) === null) {
-    return false;
+// What stands in for the cost wherever the node has no measured cost of its
+// own and no estimate is on show — the estimate withheld, or, for a post, no
+// figure at all: a reported rate of basic pay, else a base-pay range a table
+// states for the listing's grade. Never beside a measured cost, and null
+// where there is nothing to stand in.
+function costStandInOf(node) {
+  if (isCostIdentifiedForTheNode(node)) {
+    return null;
   }
-  if (hasWithheldEstimate(node)) {
-    return true;
+  const pay = reportedPayOf(node);
+  const range = pay ? null : gradePayOf(node);
+  if (!pay && !range) {
+    return null;
   }
   const status = String(node.cost_status || "").toLowerCase();
-  return !status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node);
+  const nothingElse = !status || status === "unavailable" || toFiniteAmount(node.resolved_total_amount) === null || isBelowPrecision(node);
+  return hasWithheldEstimate(node) || nothingElse ? { pay, range } : null;
+}
+
+function showsPayInsteadOfCost(node) {
+  const standIn = costStandInOf(node);
+  return Boolean(standIn && standIn.pay);
+}
+
+function showsRangeInsteadOfCost(node) {
+  const standIn = costStandInOf(node);
+  return Boolean(standIn && standIn.range);
 }
 
 // A rate of basic pay an official source reports for this post. Not the
@@ -1803,11 +1920,17 @@ function reportedPayOf(node) {
 }
 
 function formatCostAmount(node) {
-  if (showsPayInsteadOfCost(node)) {
-    // The estimate is withheld, or there is none; a real salary is shown,
-    // labelled as pay rather than as a cost by the head drawn beside it.
-    const pay = reportedPayOf(node);
-    return pay.reportedPayText || `$${Math.round(pay.reportedPay).toLocaleString()}`;
+  const standIn = costStandInOf(node);
+  if (standIn) {
+    // The estimate is withheld, or there is none; a real salary or a stated
+    // range is shown, headed as pay rather than as a cost by the head drawn
+    // beside it.
+    if (standIn.pay) {
+      return standIn.pay.reportedPayText || `$${Math.round(standIn.pay.reportedPay).toLocaleString()}`;
+    }
+    // A base-pay RANGE, where a table states one for the listing's pay plan
+    // and the archive states no rate. Two bounds, never one figure.
+    return formatGradeRange(standIn.range);
   }
   if (hasWithheldEstimate(node)) {
     return null;
@@ -1834,12 +1957,22 @@ function isBelowPrecision(node) {
 }
 
 function describeCost(node) {
-  const pay = showsPayInsteadOfCost(node) ? reportedPayOf(node) : null;
+  const standIn = costStandInOf(node);
+  const pay = standIn ? standIn.pay : null;
+  const range = standIn ? standIn.range : null;
   const payNote = pay
     ? ` What is shown instead is a rate of basic pay: OPM's PLUM archive reports ${pay.reportedPayText} for this post` +
       `${pay.edition ? ` (${pay.edition})` : ""}. That is compensation for one post, not what this unit costs.`
-    : "";
-  const payLabel = pay ? "No cost known; a reported rate of pay is shown" : null;
+    : range
+      ? (range.kind === "general_schedule_grade"
+        ? ` What is shown instead is the base General Schedule range for grade ${range.grade} in ${String(range.effective || "").slice(0, 4)}, before locality pay, from OPM's ${range.table}; not this unit's cost and not necessarily what the post pays now.`
+        : ` What is shown instead is the range OPM's ${range.table} states for the pay system the archive files this post on; not this unit's cost and not necessarily what the post pays now.`)
+      : "";
+  const payLabel = pay
+    ? "No cost known; a reported rate of pay is shown"
+    : range
+      ? "No cost known; a base-pay range is shown"
+      : null;
   // Only a node that actually holds an apportioned share is told the box
   // would reveal one. A post, or a unit beneath a negative Treasury pool,
   // has nothing to reveal, and "tick to see it" about a figure that does not
@@ -1975,12 +2108,18 @@ function buildCostBlock(node) {
   // claim. The period line below is the Treasury anchor's and is suppressed
   // for the same reason.
   const showingPay = showsPayInsteadOfCost(node);
-  const period = showingPay ? { label: null, amountKind: null } : getCostPeriod(node);
+  // A base-pay RANGE shown in the estimate's place is headed as a range, and
+  // as base pay before locality where it is the General Schedule's: the two
+  // bounds are the table's and the word COST would make them the unit's.
+  const showingRange = showsRangeInsteadOfCost(node);
+  const period = showingPay || showingRange ? { label: null, amountKind: null } : getCostPeriod(node);
   const label = document.createElement("span");
   label.className = "info-cost-label";
   label.textContent = showingPay
     ? "REPORTED RATE OF BASIC PAY"
-    : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
+    : showingRange
+      ? (gradePayOf(node).kind === "general_schedule_grade" ? "BASE PAY RANGE, BEFORE LOCALITY" : "PAY SYSTEM RANGE")
+      : coversFullYear(period.amountKind) ? "ANNUAL COST" : "COST";
   head.appendChild(label);
 
   const amountText = formatCostAmount(node);
@@ -1993,7 +2132,7 @@ function buildCostBlock(node) {
   // to three figures, never a different claim. Estimates are untouched; they
   // were always rounded and marked ≈.
   const exactAmount = toFiniteAmount(node.resolved_total_amount);
-  if (amountText !== null && !showingPay && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
+  if (amountText !== null && !showingPay && !showingRange && isCostIdentifiedForTheNode(node) && exactAmount !== null && Math.abs(exactAmount) >= 1e9) {
     const compact = document.createElement("span");
     compact.className = "info-cost-compact";
     compact.textContent = `${formatApproximateCost(exactAmount)}, to three figures`;
@@ -2112,6 +2251,7 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
   renderDescriptionProvenance(data, isClusteredView);
+  renderOfficialDescription(data, isClusteredView);
   renderHeadcountProvenance(data);
   renderPositionListing(data);
   renderStatutoryPay(data);

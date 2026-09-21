@@ -127,6 +127,10 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationFailure",
     "verificationUnread",
     "govmanEntry",
+    # The Manual entry's own description, beside the curated prose and never
+    # in its place (govman.py). It depends on the entry block above it, so it
+    # is withdrawn on the same build.
+    "descriptionOfficial",
     "verificationSiteFrom",
     "placementVerified",
     "placementUrl",
@@ -177,6 +181,12 @@ EVIDENCE_OWNED_FIELDS = (
     # so it must be withdrawn on the same build the listing is, or a rate
     # would outlive the level it was looked up from.
     "positionPayRate",
+    # Written by gs_pay.py: the base range a salary table states for the pay
+    # plan (and, for the General Schedule, the grade) the listing reports.
+    # Tied to positionListing exactly as positionPayRate is, and withdrawn
+    # on the same build, or a range would outlive the pay plan it was looked
+    # up for.
+    "positionGradePay",
     # Written by judicial_pay.py and congressional_pay.py, withdrawn here
     # with the rest for the same reason: a statutory-pay claim that is no
     # longer supported (the table stops naming this tier, the node is

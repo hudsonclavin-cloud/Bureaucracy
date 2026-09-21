@@ -261,6 +261,87 @@ class NodeBindingTestCase(unittest.TestCase):
         self.assertEqual(out["unitsEvidenceKind"], "scale_stated_in_the_document")
 
 
+class ColumnHeadMarkTestCase(unittest.TestCase):
+    """The fourth scale rule: a typeset table that marks each column once, on
+    its first figure. OPM's Salary Table 2026-GS (PDF) prints "$  22,584" on
+    grade 1 and "   126,384" on grade 15 in the same column, and says
+    "dollars" nowhere. Both directions: the honest record files, and each way
+    of dressing a loose dollar sign as a column head is refused."""
+
+    def _gs(self, **over):
+        record = {
+            "nodeId": "doj-fbi-director",
+            "amount": 126384.0, "amountRaw": "126,384", "units": "usd",
+            "normalizedMultiplier": 1,
+            "unitsEvidence": "Step 1 column: $  22,584 at grade 1; 126,384 at grade 15",
+            "columnHead": {"column": "Step 1", "text": "$  22,584", "amountRaw": "22,584"},
+            "costBasis": "basic_pay", "fiscalYear": 2026,
+            "periodCoverage": "annual_rate", "periodAsOf": "2026-01-01",
+            "amountScope": "Grade 15, step 1 to step 10", "scopeMatch": "proxy", "rollupRole": "line",
+            "sourceType": "opm_pay_table",
+            "sourceUrl": "https://www.opm.gov/salary-tables/pdf/2026/GS.pdf",
+            "documentSha256": "b" * 64, "retrievedAt": "2026-09-21T00:00:00Z",
+            "locator": {"table": "Salary Table 2026-GS", "row": "Grade 15", "column": "Step 1"},
+            "quote": "15 126,384 130,597 134,810 139,023 143,236 147,449 151,662 155,875 160,088 164,301 4,213",
+            "financialEvidenceStatus": "partial",
+        }
+        record.update(over)
+        return record
+
+    def test_a_bare_figure_beneath_a_marked_column_head_files_under_its_own_kind(self):
+        out = fe.validate_record(self._gs(), POST)
+        self.assertEqual(out["unitsEvidenceKind"], "currency_mark_on_the_columns_first_figure")
+        self.assertEqual(fe.classify(out), "partial")
+
+    def test_a_figure_that_carries_its_own_mark_takes_the_stronger_kind(self):
+        out = fe.validate_record(self._gs(
+            amount=22584.0, amountRaw="22,584",
+            unitsEvidence="Step 1 column: $  22,584 at grade 1",
+            quote="1 $  22,584 $  23,341 VARIES",
+        ), POST)
+        self.assertEqual(out["unitsEvidenceKind"], "currency_mark_on_the_printed_figure")
+
+    def test_a_column_head_without_the_mark_is_refused(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(
+                columnHead={"column": "Step 1", "text": "22,584", "amountRaw": "22,584"},
+                unitsEvidence="Step 1 column: 22,584 at grade 1; 126,384 at grade 15",
+            ), POST)
+
+    def test_a_loose_dollar_sign_is_not_a_column_head(self):
+        # The mark must be ATTACHED to the head's own figure.
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(
+                columnHead={"column": "Step 1", "text": "$ (see note) 22,584", "amountRaw": "22,584"},
+                unitsEvidence="Step 1 column: $ (see note) 22,584 at grade 1; 126,384 at grade 15",
+            ), POST)
+
+    def test_the_evidence_must_quote_the_head(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(unitsEvidence="Step 1 column: 126,384 at grade 15"), POST)
+
+    def test_the_evidence_must_quote_the_records_own_figure(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(unitsEvidence="Step 1 column: $  22,584 at grade 1; 130,597 at grade 15"), POST)
+
+    def test_the_evidence_must_name_the_column(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(unitsEvidence="$  22,584 at grade 1; 126,384 at grade 15"), POST)
+
+    def test_no_column_head_means_the_ordinary_refusal(self):
+        with self.assertRaises(fe.Rejected) as ctx:
+            fe.validate_record(self._gs(columnHead=None), POST)
+        self.assertIn("states no scale", str(ctx.exception))
+
+    def test_the_rule_is_granted_to_the_pay_table_only(self):
+        with self.assertRaises(fe.Rejected):
+            fe.validate_record(self._gs(
+                sourceType="congressional_justification", costBasis="budget_request",
+                periodCoverage="full_fiscal_year", periodAsOf=None,
+                sourceUrl="https://www.gsa.gov/cdnstatic/fy2026-cj.pdf",
+            ), ORG)
+
+
 class SourceAndBasisTestCase(unittest.TestCase):
     def test_a_source_cannot_report_a_basis_it_does_not_produce(self):
         with self.assertRaises(fe.Rejected):

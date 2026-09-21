@@ -42,6 +42,7 @@ python scripts/add_curated_nodes.py --dry-run     # add a unit the graph lacks, 
 python scripts/mark_superseded_units.py --dry-run # mark a unit the government has replaced; nothing is ever deleted
 python scripts/probe_network_access.py           # what this session can reach now, and whether a 403 was the proxy or the host
 python scripts/derive_pay_evidence.py --dry-run  # the salary table joined to the archive's levels; writes nothing
+python scripts/derive_gs_pay_evidence.py --dry-run  # GS / SES / SL-ST base-pay RANGES for the archive's pay plans; writes nothing
 python scripts/derive_judicial_pay_evidence.py --dry-run    # uscourts.gov's own compensation table; writes nothing
 python scripts/derive_congressional_pay_evidence.py --dry-run  # senate.gov's own salary schedule; writes nothing
 python scripts/derive_whitehouse_pay_evidence.py --dry-run     # the White House Office's statutory staff roster; writes nothing
@@ -945,7 +946,12 @@ listed subcommittee is placed under its committee by the list's own
 structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
 `committee_key` folds the graph's artifacts ("Senate Committee on Select
 Committee on Ethics", "Committee on Judiciary") onto the Senate's names
-and nothing else. First run: all 20 curated Senate committees listed, 43
+and nothing else; `subcommittee_key` sets the type word aside on either
+side — a leading "Subcommittee on" and, since 2026-09-21, a trailing
+"Subcommittee", because foreignaffairs.house.gov and docs.house.gov both
+print "Europe Subcommittee" where the Clerk prints "Europe" (CURATION.md
+§16, which reconciled both lists seat by seat: 11 renames, 18 units added,
+nothing superseded). First run: all 20 curated Senate committees listed, 43
 subcommittees listed and placed, 27 curated names the Senate no longer
 carries. **The House Clerk's list landed on 2026-09-13**, once the
 allowlist reached clerk.house.gov (the 2026-09-08 proxy refusal stays
@@ -984,14 +990,17 @@ permitted — while every other host keeps the refusal, and a listed host is
 still refused on a 5xx or a network failure, which 2.3.1.4 requires. It
 manufactures no rule: the verdict says the file could not be read and that no
 rule was seen, and adds only which permission the fetch rests on.
-**Nothing has been fetched from that host.** The third blocker is this
-session's own agent harness, which declined the request, so the policy is
-tested offline and has never met the live server; a copy obtained earlier is
-deliberately not committed, because it predates the policy and so carries no
-honest robots verdict, and a fixture whose provenance record is a guess is
-worse than an absent one. So the standing state is permitted by policy,
-unfetched in fact, and position evidence still rests entirely on the previous
-administration's archive (docs/NETWORK_ACCESS.md §10). The rest of the list that stood
+**The export landed on 2026-09-21** (`tests/fixtures/opm/plum/
+escs_pbpub_download-data.csv`, 2.8 MB, 15,777 rows, its `.meta.json` beside
+it), fetched with `fetch_fixture.py` exactly as §10 prescribes — and on a
+permission neither §9 nor §10 anticipated: the host answered `robots.txt` with
+**200 and an HTML page** rather than a 403, which RFC 9309 §2.3.1.2 reads as a
+successfully fetched file with no parseable rules, so the standard's ordinary
+rule allowed the path and the 4xx policy never came into play
+(`docs/NETWORK_ACCESS.md` §12; `tests/fixtures/opm/README.md` §1 says what the
+file contains, name columns never read). **Nothing reads it yet**: no matcher
+exists for it, and position evidence still rests entirely on the previous
+administration's archive. The rest of the list that stood
 here — clerk.house.gov, www.usa.gov, api.sam.gov, data.opm.gov and
 govinfo.gov — was re-measured on 2026-09-19 and **every one of them now
 answers**: clerk.house.gov, api.sam.gov and data.opm.gov with a 404 (nothing
@@ -1188,6 +1197,72 @@ because a plain HEAD request does not tell you: govinfo answers **200 with a
 real ids included, and publishing those would have put a fabricated citation
 on all 64 records.
 
+**The entry's own description, beside the curated prose (since 2026-09-21).**
+Every one of the 5,155 curated descriptions is published as "uncited prose —
+not checked against any source", and the Manual carries, per entry, the
+government's own statement of what the unit is for. `entity_description_texts`
+in `govman.py` reads two elements and nothing else: `MissionStatement/
+Record[1]/Paragraph`, the element the publisher itself labels as the entry's
+mission statement (131 of 231 entries carry one, no sub-entity does, the
+longest is 544 characters, only the FIRST record is read because Congress's
+second is history); otherwise the entry's opening paragraph — the first
+non-empty `Detail/Paragraph` under `ProgramAndActivities` in document order —
+and only when the **published** text carries the entry's printed name. The
+guard is what ties the paragraph to the unit, the job label equality does for
+a page: four sub-entities open with "The Administration posts an
+organizational chart on its 'Offices' web page", a navigation note, and it
+refuses all four; it also refuses "The U.S. Naval Academy is the undergraduate
+college of the Naval Service" for the entry named "United States Naval
+Academy", a real cost recorded rather than argued away. The text is verbatim,
+bounded at 600 characters and cut only at a sentence boundary (a terminator
+after a lower-case letter, digit or closing bracket, then a capital, so "15
+U.S.C. 271" is never a sentence end); no mission statement needs the cut and
+17 opening paragraphs take it, with `truncated` and the full length on the
+record. The guard was first written against the whole paragraph and the test
+suite caught it: the Court of International Trade is named only after the cut,
+so a reader would have seen a paragraph that never names the court. It is
+tested on the published text now. The guard is not enough on its own, and
+the end-to-end check found why: four HHS sub-entities open with "The Centers
+for Medicare and Medicaid Services (CMS) posts an organizational chart in
+Portable Document Format", which names the unit in full and describes its
+website. `NAVIGATION_NOTE_MARKERS` — "organizational chart", "organization
+chart", "web page", "website", a closed list that can only ever withhold, the
+direction `name_appears_unlabelled` is allowed to work in — refuses exactly
+those four on the real Manual and no mission statement contains any of them;
+the gate mirrors the list and refuses such a text even where it is verbatim.
+
+It is published as `descriptionOfficial` {text, kind, extractedFrom,
+truncated, fullLength, source, listedName, edition, package, granule, url,
+documentSha256} **beside** `desc`, which is never overwritten and keeps its
+"uncited" label; the panel prints it under "OFFICIAL DESCRIPTION — U.S.
+Government Manual, <edition>" with the element it came from and a link. It is
+in `EVIDENCE_OWNED_FIELDS` (withdrawn each build with the entry block it
+depends on) and `MINIMAL_GRAPH_FIELDS`. The gate re-derives both texts per
+granule with its own stdlib parse and refuses a block whose text is not
+verbatim in the element it names (the whole, or a prefix ending at a sentence
+boundary when it says it was cut), that cites a granule its own `govmanEntry`
+does not, whose granule names another agency, whose node no longer carries
+the name, whose URL is not the granule's, whose digest is not the committed
+package's, on a post, of an unknown kind or path, past the bound, publishing
+an opening paragraph where a mission statement is printed, or where the
+curated `desc` has become the Manual's text. `tests/test_govman.py` corrupts
+each in turn. Dry run on the real join: **142 of the 163 matched
+organisations** (89 mission statements, 53 opening paragraphs, 17 cut); 14
+refused by the name guard, 4 as navigation notes, 2 with no descriptive text,
+1 with no sentence boundary inside the bound. Nothing writes `sourceUrls` or `verificationMethod` from this: a
+description is not evidence that the unit exists, and the entry block already
+carries that claim.
+
+The post route was measured for reach at the same time and left alone: beside
+the 64 posts the complete-title rule admits, 144 more under matched agencies
+equal exactly one leadership row that the rule refuses — 69 under a table
+header, 37 under an ALL-CAPS row, and 38 that are ALL-CAPS rows themselves.
+The Manual uses an ALL-CAPS row both for a principal's own title ("INSPECTOR
+GENERAL") and for a plural group heading ("DEPUTY ADMINISTRATORS" over "Naval
+Reactors"), and telling those apart is the plural test on free text the rule
+refuses because it is wrong about "Chief of Naval Operations". So the 144 stay
+refused, recorded as a measurement.
+
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from
 `data/verification/headcount_evidence.json` (133 records) and
@@ -1365,6 +1440,68 @@ congressional and White House modules below), applies only when no
 scale phrase is present at all, requires the currency mark to be attached to
 the record's own figure, and is recorded in `unitsEvidenceKind` so a reviewer
 can see which records rest on it.
+
+**A range, never a rate: the GS, SES and SL/ST tables (`gs_pay.py`, since
+2026-09-21).** The archive's 129 matched positions break down by pay plan as
+ES 89 (46 with a rate the archive states, none with a level), EX 31 (30 with
+a level), OT 4, AD 3, GS 1 (grade 15) and SL 1. `pay_tables.py` prices the
+EX levels; the ES, GS and SL posts had nothing, because no table states one
+figure for them — Salary Table 2026-GS prints ten steps per grade, and
+Salary Tables No. 2026-ES and 2026-SL/ST print a pay system's minimum and
+maximum, once for agencies with a certified appraisal system and once
+without. So the fifth pay field, `positionGradePay`, is a **range**: a
+minimum, a maximum, the kind (`general_schedule_grade`,
+`senior_executive_service`, `senior_level`), for GS the grade and its ten
+steps and the words "base General Schedule rates before locality pay; the
+table states no locality adjustment", for the structure tables both rows as
+printed. Tied to `positionListing` exactly as `positionPayRate` is — the
+listing must still report the same pay plan (and grade, on one archive row)
+and no rate — withdrawn with it, in `EVIDENCE_OWNED_FIELDS`, and where the
+archive itself prints a rate for a post that rate wins and no range is
+written (46 ES listings). `scopeMatch: proxy`, graded `partial`, every
+bound of every range through `financial_evidence.validate_record` against
+its node; nothing writes `sourceUrls`, `sourceTypes`, `lastVerified` or
+`verificationMethod`. **45 records** on the current evidence (1 GS, 43 SES,
+1 SL), of which **32 reach the published graph** — 13 sit on nodes that
+stand for several posts and the multi-post sweep takes the field with the
+other four.
+
+**The GS table states its scale in one place, and the HTML is not it.** The
+web page prints bare integers (`22584`) and says "dollars" nowhere; the XML
+prints `<Annual>22584</Annual>`. The PDF rendering prints `$  22,584` on
+grade 1 — and only on grade 1; every row beneath is bare, the ordinary
+typesetting of a column marked once at its head. `_prints_whole_dollars` can
+vouch for grade 1 and nothing else, so an honest GS-15 record was unfilable,
+which `financial_evidence` names as the dangerous case. A fourth and
+narrowest rule, `COLUMN_HEAD_MARK_SOURCE_TYPES` (`unitsEvidenceKind:
+currency_mark_on_the_columns_first_figure`, granted to `opm_pay_table`
+only), files a record that quotes the column's first figure WITH its mark
+and its own bare figure, names the column, and would have filed under the
+stronger rule had its own figure carried the mark — the validator checks that
+shape, `gs_pay` guarantees the two sit in one column, and the gate mirrors
+all fifteen (step 1, step 10) pairs in `GENERAL_SCHEDULE_RANGES` and
+recomputes the digest. The PDF is therefore the cited document
+(`salary-tables/pdf/2026/GS.pdf`, the address it redirects to, because a
+record cites the URL that served the bytes) and the HTML page is
+corroboration: `load_general_schedule` refuses to return a table unless the
+two renderings agree on the number, the effective heading and every one of
+the 150 figures. The SES and SL/ST pages mark every bound, print identical
+figures, and are committed and cited separately, since a SL post's range
+must cite the SL/ST document; the gate refuses a `senior_level` block naming
+the ES table, and a first fetch of both at the URLs the task named
+"succeeded" with a 200 by redirecting to OPM's homepage, which is why
+`_load_fixture` refuses a fixture whose `final_url` is not its `url`. The
+gate (`grade_pay_violations`) further refuses a block on a non-post, on a
+node standing for several posts, beside a rate the archive states, beside a
+measured cost, with a grade or plan the listing no longer reports, with
+bounds or printed digits or structure rows the table does not print, with a
+GS block lacking the before-locality sentence or carrying a note the PDF
+does not print, with the wrong scale rule, claiming more than a proxy, or
+citing the table as a source of the post's existence;
+`tests/test_gs_pay.py` corrupts each in turn. The panel prints the range in
+the listing block beside the pay plan it rests on, and in the cost block
+under `BASE PAY RANGE, BEFORE LOCALITY` (or `PAY SYSTEM RANGE`), never under
+COST.
 
 **The level half, from current law instead of a closed archive (since
 2026-09-18).** Every Executive Schedule rate this project published took its
@@ -1596,8 +1733,8 @@ person, and must name this node by equality or with the rank folded off.
 `CURATION.md` §7.4-7.5 record the run and what stays unpriced.
 
 The PLUM archive is the previous administration's reported positions
-(the current export is on escs.opm.gov, which nothing here has fetched — the
-refusal was lifted on 2026-09-20 and the fetch has not happened, §10), so every
+(the current export from escs.opm.gov landed on 2026-09-21 and nothing reads
+it yet, §12), so every
 record and every proposed panel sentence names the archive and its period
 and says nothing about who holds a post now: the incumbent columns are
 never read. 91 of the graph's 4,382 position nodes matched a listed title
@@ -1824,7 +1961,10 @@ parent's total" opts back in. The exception is a real salary — **311** of the
 4,591 positions now carry a rate of pay an official source states: 99 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
 roster, 30 from the archive's level joined to OPM's table, 18 statutory. Shown
-in the cost block under its own heading and never headed COST.
+in the cost block under its own heading and never headed COST. Since
+2026-09-21 a further **32** positions carry a base-pay **range** rather than a
+rate (`positionGradePay`: 1 General Schedule grade, 30 SES, 1 SL/ST), which is
+counted separately here because a range is not a rate and the panel says so.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,

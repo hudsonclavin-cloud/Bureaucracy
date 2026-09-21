@@ -98,6 +98,53 @@ less here than it would in a roster -- a job title outlives its holder --
 but the record says the edition it came from and claims nothing about today.
 One official URL scores 0.4 + 0.3 in `verify_node_sources`, so a post
 confirmed here alone publishes `partial`, not `verified`.
+
+**The entry's own description, since 2026-09-21.** Every one of the curated
+descriptions in this graph is published as "uncited prose -- not checked
+against any source", and the Manual carries, per entry, the government's own
+statement of what the unit is for. `entity_description_texts` reads two
+elements and nothing else, and the rule is structural:
+
+  - `MissionStatement/Record[1]/Paragraph` -- the element the publisher
+    itself labels as the entry's mission statement. 131 of the 231 entries
+    carry one (no sub-entity does), the longest is 544 characters, and 118
+    open with the entry's own name. Only the FIRST record is read: Congress
+    carries two, and the second is history rather than mission.
+  - otherwise the entry's OPENING paragraph -- the first non-empty
+    `Detail/Paragraph` under `ProgramAndActivities`, in document order --
+    and only when it carries the entry's printed name as a substring. The
+    guard is what ties the paragraph to the unit, the same job label
+    equality does for a page: four sub-entities open with "The Administration
+    posts an organizational chart on its 'Offices' web page", which is a
+    navigation note and not a description, and the guard refuses all four.
+    It also refuses "The U.S. Naval Academy is the undergraduate college of
+    the Naval Service" for the entry named "United States Naval Academy",
+    which is a real cost, recorded here rather than argued away: 14 of the
+    163 matched entries are refused this way, 2 carry no text at all, and 1
+    has no sentence boundary inside the bound. The guard is not enough on
+    its own: four HHS sub-entities open with "The Centers for Medicare and
+    Medicaid Services (CMS) posts an organizational chart in Portable
+    Document Format", which names the unit in full and describes its
+    website. `NAVIGATION_NOTE_MARKERS`, a closed list that can only withhold,
+    refuses those four and nothing else on the real Manual.
+
+The text is published verbatim and bounded: `DESCRIPTION_MAX_CHARS` (600),
+cut only at a sentence boundary -- a terminator after a lower-case letter, a
+digit or a closing bracket, followed by a capital -- so "15 U.S.C. 271" and
+"(ch. 872)" are never taken for the end of a sentence. No mission statement
+needs the cut; 17 opening paragraphs take it, and the record says so
+(`truncated`, with the full length), so the panel can say "the opening of
+its entry" and never present a cut as the whole. The name guard is tested on
+the text that is PUBLISHED, not on the whole paragraph -- the first version
+tested the whole, and the test suite found the Court of International Trade
+named only after the cut, so the reader would have seen a paragraph that
+never names the court. 142 of the 163 matched units carry one (89 mission
+statements, 53 opening paragraphs). Never a leadership row,
+never a footer, never an address: those elements are not read here. The
+curated `desc` is never overwritten -- the Manual's text sits BESIDE it as
+`descriptionOfficial`, the curated prose keeps its "uncited" label, and the
+gate re-derives the text from the committed package and refuses a block
+that is not verbatim in the granule it cites.
 """
 
 from __future__ import annotations
@@ -148,6 +195,36 @@ NON_GOVERNING_HEADERS = ("", "*")
 #: context a qualified title lacks and supplies nothing at all to a single
 #: common noun.
 MIN_POST_TOKENS = 2
+
+#: The bound on a published description. The Manual's mission statements
+#: never reach it (the longest is 544 characters); an opening paragraph is
+#: cut at the last sentence boundary at or before it, and the record says so.
+DESCRIPTION_MAX_CHARS = 600
+DESCRIPTION_KIND_MISSION = "mission_statement"
+DESCRIPTION_KIND_OPENING = "opening_paragraph"
+DESCRIPTION_KINDS = (DESCRIPTION_KIND_MISSION, DESCRIPTION_KIND_OPENING)
+#: The element path each kind is read from, as the record cites it.
+DESCRIPTION_PATHS = {
+    DESCRIPTION_KIND_MISSION: "MissionStatement/Record[1]/Paragraph",
+    DESCRIPTION_KIND_OPENING: "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+}
+#: An opening paragraph that describes the unit's WEBSITE rather than the
+#: unit: "The Centers for Medicare and Medicaid Services (CMS) posts an
+#: organizational chart in Portable Document Format (PDF) for viewing and
+#: downloading." It names the unit in full, so the name guard passes it, and
+#: it is not a description. A closed list, matched case-insensitively, that
+#: can only ever WITHHOLD a description and never produce one -- the same
+#: direction `name_appears_unlabelled` is allowed to work in. Measured on the
+#: real Manual: it refuses exactly four, all HHS sub-entities, and no
+#: mission statement contains any of these words.
+NAVIGATION_NOTE_MARKERS = ("organizational chart", "organization chart", "web page", "website")
+#: A sentence boundary: a terminator that follows a lower-case letter, a
+#: digit or a closing mark, optionally closed by a quote or bracket, followed
+#: by whitespace and a capital or an opening mark. "15 U.S.C. 271" and
+#: "(ch. 872)" are not boundaries; "...Organization Act." President" is.
+SENTENCE_BOUNDARY = re.compile(
+    r'(?<=[a-z0-9\)\]"”’])[.!?]["”’)]*(?=\s+[A-Z"“(])'
+)
 
 WHITESPACE = re.compile(r"\s+")
 
@@ -284,6 +361,81 @@ def entity_titles(entity: ET.Element) -> list[dict[str, str]]:
     return out
 
 
+def entity_description_texts(entity: ET.Element) -> dict[str, str | None]:
+    """The two elements a description may be read from, and nothing else.
+
+    `mission` is the FIRST `MissionStatement/Record`'s paragraph -- Congress
+    carries two records and the second is history. `opening` is the first
+    non-empty `Detail/Paragraph` under `ProgramAndActivities`, in document
+    order. Leadership tables, addresses and footers are other elements and
+    are never read here.
+    """
+    mission = None
+    statement = entity.find("MissionStatement")
+    if statement is not None:
+        first = statement.find("Record")
+        if first is not None:
+            mission = normalise(first.findtext("Paragraph")) or None
+    opening = None
+    programmes = entity.find("ProgramAndActivities")
+    if programmes is not None:
+        for paragraph in programmes.findall(".//Detail/Paragraph"):
+            text = normalise(paragraph.text)
+            if text:
+                opening = text
+                break
+    return {"mission": mission, "opening": opening}
+
+
+def sentence_bounded(text: str, limit: int = DESCRIPTION_MAX_CHARS) -> tuple[str | None, bool]:
+    """`text` whole when it fits, else its longest prefix that ends at a
+    sentence boundary within `limit` -- or None when no boundary falls
+    inside it, since a cut mid-sentence would not be the Manual's sentence."""
+    text = normalise(text)
+    if len(text) <= limit:
+        return text, False
+    ends = [match.end() for match in SENTENCE_BOUNDARY.finditer(text) if match.end() <= limit]
+    if not ends:
+        return None, True
+    return text[:ends[-1]], True
+
+
+def entry_description(name: str, texts: dict[str, str | None]) -> tuple[dict[str, Any] | None, str]:
+    """The description block for an entry, or None with the reason.
+
+    The mission statement wins where the publisher labels one. Otherwise the
+    opening paragraph is taken only when it carries the entry's printed name
+    -- the guard that refuses "The Administration posts an organizational
+    chart on its 'Offices' web page" as a description of the Administration
+    for Children and Families.
+    """
+    mission = normalise(texts.get("mission"))
+    opening = normalise(texts.get("opening"))
+    if mission:
+        kind, text = DESCRIPTION_KIND_MISSION, mission
+    elif opening:
+        kind, text = DESCRIPTION_KIND_OPENING, opening
+    else:
+        return None, "no_descriptive_text"
+    bounded, truncated = sentence_bounded(text)
+    if bounded is None:
+        return None, "no_sentence_boundary_within_bound"
+    # The guard is tested on the text that is PUBLISHED, not on the whole
+    # paragraph: the Court of International Trade's opening paragraph names
+    # the court only after the cut, and a reader sees the cut.
+    if kind == DESCRIPTION_KIND_OPENING and normalise(name) not in bounded:
+        return None, "opening_paragraph_does_not_name_the_unit"
+    if kind == DESCRIPTION_KIND_OPENING and any(marker in bounded.casefold() for marker in NAVIGATION_NOTE_MARKERS):
+        return None, "opening_paragraph_is_a_navigation_note"
+    return {
+        "kind": kind,
+        "extractedFrom": DESCRIPTION_PATHS[kind],
+        "text": bounded,
+        "truncated": truncated,
+        "fullLength": len(text),
+    }, "extracted"
+
+
 def read_manual(package_path: Path | str | None = None) -> dict[str, Any]:
     """The committed Manual, indexed by agency."""
     loaded = load_fixture(package_path or DEFAULT_PACKAGE)
@@ -298,6 +450,7 @@ def read_manual(package_path: Path | str | None = None) -> dict[str, Any]:
             "parentId": (element.get("ParentId") or "").strip(),
             "name": name,
             "titles": entity_titles(element),
+            "descriptionTexts": entity_description_texts(element),
         })
     return {"package": package, "edition": edition_date(package), "sha256": loaded["sha256"],
             "url": loaded["url"], "fetchedAt": loaded["fetchedAt"], "entities": entities}
@@ -367,7 +520,14 @@ def build_org_records(
         index_tree = _index_tree
     node_map, _ = index_tree(root)
     matched, stats = match_organisations(manual, node_map)
-    stats.update({"organisations_listed": 0, "refused_no_access_id": 0, "top_level_entries": 0})
+    stats.update({"organisations_listed": 0, "refused_no_access_id": 0, "top_level_entries": 0,
+                  # The entry's own description (module docstring, last section).
+                  "descriptions_extracted": 0, "descriptions_mission_statement": 0,
+                  "descriptions_opening_paragraph": 0, "descriptions_truncated": 0,
+                  "descriptions_refused_opening_paragraph_does_not_name_the_unit": 0,
+                  "descriptions_refused_opening_paragraph_is_a_navigation_note": 0,
+                  "descriptions_refused_no_descriptive_text": 0,
+                  "descriptions_refused_no_sentence_boundary_within_bound": 0})
     by_entity = {e["entityId"]: e for e in manual["entities"]}
     records: dict[str, dict[str, Any]] = {}
     for org_id, entry in matched.items():
@@ -378,7 +538,15 @@ def build_org_records(
         parent = by_entity.get(entry.get("parentId") or "")
         if parent is None:
             stats["top_level_entries"] += 1
+        description, why = entry_description(entry["name"], entry.get("descriptionTexts") or {})
+        if description is None:
+            stats["descriptions_refused_" + why] += 1
+        else:
+            stats["descriptions_extracted"] += 1
+            stats["descriptions_" + description["kind"]] += 1
+            stats["descriptions_truncated"] += int(description["truncated"])
         records[org_id] = {
+            "description": description,
             "source": SOURCE,
             "nodeName": node_map[org_id].get("name"),
             "listedName": entry["name"],
@@ -422,7 +590,7 @@ def apply_govman_org_evidence(
     stats = {"listed": 0, "unknown_node": 0, "stale_name": 0, "is_a_post": 0,
              "urls_added": 0, "method_kept": 0, "method_set": 0, "failed_checks_withdrawn": 0,
              "placements_listed": 0, "placements_disagree": 0, "placements_unresolved": 0,
-             "placements_already_evidenced": 0, "top_level": 0}
+             "placements_already_evidenced": 0, "top_level": 0, "descriptions_published": 0}
     for node_id, record in records.items():
         node = node_map.get(node_id)
         if node is None:
@@ -477,6 +645,29 @@ def apply_govman_org_evidence(
         else:
             node["verificationMethod"] = ORG_METHOD
             stats["method_set"] += 1
+        # The entry's own description, BESIDE the curated prose and never in
+        # its place: `desc` is not touched, and the curated text keeps its
+        # "uncited" label on the panel. Withdrawn by the evidence sweep with
+        # the entry block it depends on.
+        description = record.get("description")
+        if (isinstance(description, dict) and str(description.get("text") or "").strip()
+                and description.get("kind") in DESCRIPTION_KINDS
+                and len(str(description["text"])) <= DESCRIPTION_MAX_CHARS):
+            node["descriptionOfficial"] = {
+                "text": str(description["text"]),
+                "kind": description["kind"],
+                "extractedFrom": str(description.get("extractedFrom") or DESCRIPTION_PATHS[description["kind"]]),
+                "truncated": bool(description.get("truncated")),
+                "fullLength": int(description.get("fullLength") or len(str(description["text"]))),
+                "source": SOURCE,
+                "listedName": record.get("listedName"),
+                "edition": record.get("edition"),
+                "package": record.get("package"),
+                "granule": record.get("granule"),
+                "url": url,
+                "documentSha256": record.get("documentSha256"),
+            }
+            stats["descriptions_published"] += 1
         edition = str(record.get("edition") or "")
         if edition and (not node.get("lastVerified") or edition > str(node.get("lastVerified"))):
             node["lastVerified"] = edition

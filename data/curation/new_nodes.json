@@ -438,6 +438,186 @@
    "licence": "government_manual_entry",
    "basis": "The United States Government Manual carries an entry for this unit and files it in the branch this row proposes. No node of this name exists under any spelling or acronym: adjudicated once. Genuine gap, agreeing with CURATION.md 13.3. Not a heading, not a civilian/uniformed distinction, not non-federal as the graph draws it. Type 'Museum/Unit' is the type all 21 existing Smithsonian children carry, and it already covers research bodies there (Tropical Research Institute, Environmental Research Center, Astrophysical Observatory), so a scholars' centre fits without inventing a type word. No measured cost would follow: Table 5 carries no line matching 'Wilson' or 'Scholars'. NOTE: the payload's",
    "addedOn": "2026-09-20"
+  },
+  {
+   "id": "leg-senate-cmte-banking-housing-urban-affairs-sub-digital-assets",
+   "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
+   "name": "Digital Assets",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.banking.senate.gov/about/subcommittees",
+   "basis": "banking.senate.gov's own Subcommittees page labels 'Digital Assets' in page content beside the committee's five other subcommittees, every one of which the graph already carries under this node; the Senate's list prints it as SSBK13 'Subcommittee on Digital Assets'. Named bare, as its siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-commerce-science-transportation-sub-coast-guard-maritime-fisheries",
+   "parentId": "leg-senate-cmte-commerce-science-transportation",
+   "name": "Coast Guard, Maritime, and Fisheries",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+   "basis": "commerce.senate.gov's own subcommittees page labels 'Coast Guard, Maritime, & Fisheries' in page content (the key reads '&' as 'and'); the Senate's list prints SSCM36 'Subcommittee on Coast Guard, Maritime, and Fisheries'. The committee's six current subcommittees are now all in the graph; the four 118th-Congress names the graph also carries are left as they are (§16). Named bare, as its siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-commerce-science-transportation-sub-science-manufacturing-competitiveness",
+   "parentId": "leg-senate-cmte-commerce-science-transportation",
+   "name": "Science, Manufacturing, and Competitiveness",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+   "basis": "commerce.senate.gov's own subcommittees page labels 'Science, Manufacturing, & Competitiveness' in page content; the Senate's list prints SSCM37 'Subcommittee on Science, Manufacturing, and Competitiveness'. Named bare, as its siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-freight-pipelines-safety",
+   "parentId": "leg-senate-cmte-commerce-science-transportation",
+   "name": "Surface Transportation, Freight, Pipelines, and Safety",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+   "basis": "commerce.senate.gov's own subcommittees page labels 'Surface Transportation, Freight, Pipelines, & Safety' in page content; the Senate's list prints SSCM38 'Subcommittee on Surface Transportation, Freight, Pipelines, and Safety'. Added beside, not in place of, the curated 'Surface Transportation, Maritime, Freight & Ports': §9.4 declined that rename because it moves maritime jurisdiction the page does not confirm, and the same holds today. Named bare, as its siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-homeland-security-governmental-affairs-sub-disaster-management-district-of-columbia-census",
+   "parentId": "leg-senate-cmte-homeland-security-governmental-affairs",
+   "name": "Disaster Management, District of Columbia, and Census",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.hsgac.senate.gov/subcommittees/",
+   "basis": "hsgac.senate.gov's own Subcommittees page labels 'Disaster Management, District of Columbia, and Census' under a 'SUBCOMMITTEE ON' heading in page content; the Senate's list prints SSGA20. No curated name shares a word with it (§5.1), so nothing is renamed to it. Named bare, as its siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-health-education-labor-pensions-sub-education-the-american-family",
+   "parentId": "leg-senate-cmte-health-education-labor-pensions",
+   "name": "Subcommittee on Education and the American Family",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSHR.xml",
+   "basis": "The Senate's own committee-membership file for the committee, at senate.gov, prints 'Subcommittee on Education and the American Family' (SSHR09) — the same document the §9 Judiciary renames were licensed by. The committee's own page (help.senate.gov/about/subcommittees) names it too, but splits the name across four elements ('SUBCOMMITTEE ON' / 'Education' / '&' / 'the American Family'), which label equality refuses by design, so the Senate's file is the page that can decide. Named as the file prints it; the curated 'Children & Families' shares one stem with it and §5.1 called that the weakest lead, so it is added beside rather than renamed (§16). A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights",
+   "parentId": "leg-senate-cmte-judiciary",
+   "name": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://www.senate.gov/general/committee_membership/committee_memberships_SSJU.xml",
+   "basis": "The Senate's own committee-membership file for the committee, at senate.gov, prints 'Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights' (SSJU25), the document that licensed three of this committee's §9 renames. The committee's own page splits the name across elements ('Subcommittee on' / 'Federal Courts, Oversight, Agency Action and' / 'Federal Rights'), which label equality refuses by design. This seat existed in the 118th Congress as well; the graph simply never carried it. Named as the file prints it, as its §9 siblings are. A subcommittee the Senate's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.1); the parent is the committee node, and the placement is the list's own structure, which the exporter publishes as listed_under_committee_in_senate_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-agriculture-sub-forestry-horticulture",
+   "parentId": "leg-house-cmte-agriculture",
+   "name": "Subcommittee on Forestry and Horticulture",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=AG00",
+   "basis": "docs.house.gov's listing for the Committee on Agriculture prints 'Subcommittee on Forestry and Horticulture' in page content, and the committee's own page (agriculture.house.gov/subcommittees/) labels it 'Forestry and Horticulture', which the verifier's committee fold confirms as the same name. Named with the type words, as four of its five siblings are. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-armed-services-sub-intelligence-special-operations",
+   "parentId": "leg-house-cmte-armed-services",
+   "name": "Subcommittee on Intelligence and Special Operations",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+   "basis": "docs.house.gov's listing for the Committee on Armed Services prints 'Subcommittee on Intelligence and Special Operations' in page content; the committee's own /subcommittees page is a script shell below the readable floor. Named with the type words, as its siblings are. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-foreign-affairs-sub-europe",
+   "parentId": "leg-house-cmte-foreign-affairs",
+   "name": "Europe Subcommittee",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://foreignaffairs.house.gov/subcommittees/",
+   "basis": "foreignaffairs.house.gov's own Subcommittees page labels 'Europe Subcommittee' in page content, and docs.house.gov (Code=FA00) prints the same; the Clerk prints 'Europe'. Named as the committee's own page prints it, type word after the region, as its sibling 'Africa Subcommittee' already is; the trailing type word is what subcommittee_key sets aside. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-foreign-affairs-sub-south-central-asia",
+   "parentId": "leg-house-cmte-foreign-affairs",
+   "name": "South and Central Asia Subcommittee",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://foreignaffairs.house.gov/subcommittees/",
+   "basis": "foreignaffairs.house.gov's own Subcommittees page labels 'South and Central Asia Subcommittee' in page content, and docs.house.gov (Code=FA00) prints the same; the Clerk prints 'South and Central Asia'. Central Asia sat with the Middle East seat in the 118th Congress and has its own seat in the 119th. Named as the committee's own page prints it. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-house-administration-sub-modernization-innovation",
+   "parentId": "leg-house-cmte-house-administration",
+   "name": "Subcommittee on Modernization and Innovation",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=HA00",
+   "basis": "docs.house.gov's listing for the Committee on House Administration prints 'Subcommittee on Modernization and Innovation' in page content; the committee's own site names it only in site-wide navigation ('Modernization & Innovation'), and its /subcommittees page is below the readable floor. Named with the type words, as its sibling 'Subcommittee on Elections' is. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-judiciary-sub-oversight",
+   "parentId": "leg-house-cmte-judiciary",
+   "name": "Subcommittee on Oversight",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://judiciary.house.gov/about/subcommittees",
+   "basis": "judiciary.house.gov's own Subcommittees page labels 'The Subcommittee on Oversight' under its 'Current Congress' heading in page content (the leading 'The' is bounded scaffolding), and docs.house.gov (Code=JU00) prints 'Subcommittee on Oversight'. The page files 'The Subcommittee on Responsiveness and Accountability To Oversight' under its '118th Congress' heading and not under the current one, so the curated 'Responsiveness & Accountability to Americans' is left alone rather than renamed to an archived name (§9.4, §16). Named with the type words, as its siblings are. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-oversight-accountability-sub-delivering-on-government-efficiency",
+   "parentId": "leg-house-cmte-oversight-accountability",
+   "name": "Subcommittee on Delivering on Government Efficiency",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+   "basis": "docs.house.gov's listing for the Committee on Oversight and Government Reform prints 'Subcommittee on Delivering on Government Efficiency' in page content; the committee's own site names it only in site-wide navigation and its subcommittee pages are script shells below the readable floor. Named with the type words, as its siblings are. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-oversight-accountability-sub-federal-law-enforcement",
+   "parentId": "leg-house-cmte-oversight-accountability",
+   "name": "Subcommittee on Federal Law Enforcement",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=GO00",
+   "basis": "docs.house.gov's listing for the Committee on Oversight and Government Reform prints 'Subcommittee on Federal Law Enforcement' in page content; the committee's own site names it only in site-wide navigation. Named with the type words, as its siblings are. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-intelligence-sub-national-intelligence-enterprise",
+   "parentId": "leg-house-cmte-permanent-select-committee-on-intelligence",
+   "name": "Subcommittee on the National Intelligence Enterprise",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+   "basis": "docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on the National Intelligence Enterprise' in page content (the page that licensed the §9 NSA and Cyber rename); the Clerk prints 'National Intelligence Enterprise' and subcommittee_key sets the 'Subcommittee on the' aside. Named as the House's own listing prints it, as its sibling 'Subcommittee on the National Security Agency and Cyber' is. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-intelligence-sub-open-source-intelligence",
+   "parentId": "leg-house-cmte-permanent-select-committee-on-intelligence",
+   "name": "Subcommittee on Open Source Intelligence",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+   "basis": "docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on Open Source Intelligence' in page content; the committee's own /subcommittees page is below the readable floor. Named as the House's own listing prints it. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
+  },
+  {
+   "id": "leg-house-cmte-intelligence-sub-oversight-investigations",
+   "parentId": "leg-house-cmte-permanent-select-committee-on-intelligence",
+   "name": "Subcommittee on Oversight and Investigations",
+   "type": "Subcommittee",
+   "licence": "official_page_label",
+   "url": "https://docs.house.gov/Committee/Committees.aspx?Code=IG00",
+   "basis": "docs.house.gov's listing for the Permanent Select Committee on Intelligence prints 'Subcommittee on Oversight and Investigations' in page content. Three other committees carry a subcommittee of this name and the graph already has those; a duplicate across parents is allowed on purpose (the rename table's sibling rule), and this committee had none. Named as the House's own listing prints it. A subcommittee the House Clerk's complete committee list carries under this committee and the graph had no node for (CURATION.md §5.7); the parent is the committee node, and the placement is the Clerk's own structure, which the exporter publishes as listed_under_committee_in_house_clerk_committee_list once the derive step runs. CURATION.md §16.",
+   "addedOn": "2026-09-21"
   }
  ]
 }

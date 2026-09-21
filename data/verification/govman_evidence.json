@@ -7,7 +7,7 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-21T00:07:34Z",
+    "derivedAt": "2026-09-21T03:19:40Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
@@ -31,7 +31,15 @@
     "entry_names_no_node": 68,
     "organisations_listed": 163,
     "refused_no_access_id": 0,
-    "top_level_entries": 65
+    "top_level_entries": 65,
+    "descriptions_extracted": 142,
+    "descriptions_mission_statement": 89,
+    "descriptions_opening_paragraph": 53,
+    "descriptions_truncated": 17,
+    "descriptions_refused_opening_paragraph_does_not_name_the_unit": 14,
+    "descriptions_refused_opening_paragraph_is_a_navigation_note": 4,
+    "descriptions_refused_no_descriptive_text": 2,
+    "descriptions_refused_no_sentence_boundary_within_bound": 1
   },
   "nodes": {
     "leg-support-gao-inspector-general": {
@@ -869,6 +877,13 @@
   },
   "organisations": {
     "leg-senate": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Senate comprises 100 Members, 2 from each State. Senators are elected to serve for a term of 6 years. There are three classes of Senators, and a new class is elected every 2 years. Senators were originally chosen by the State legislatures. The 17th amendment, which became part of the Constitution in 1913, made their election a function of the people.",
+        "truncated": false,
+        "fullLength": 356
+      },
       "source": "us_government_manual",
       "nodeName": "United States Senate",
       "listedName": "The Senate",
@@ -882,6 +897,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-house": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The House of Representatives comprises 435 Representatives. The number representing each State is determined by population, but every State is entitled to at least one Representative. Members are elected by the people for 2-year terms, all terms running for the same period. Representatives must be residents of the State from which they are chosen. In addition, a Representative must be at least 25 years of age and must have been a citizen for at least 7 years.",
+        "truncated": false,
+        "fullLength": 463
+      },
       "source": "us_government_manual",
       "nodeName": "United States House of Representatives",
       "listedName": "The House of Representatives",
@@ -895,6 +917,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-aoc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Architect of the Capitol maintains the U.S. Capitol and the buildings and grounds of the Capitol campus.",
+        "truncated": false,
+        "fullLength": 108
+      },
       "source": "us_government_manual",
       "nodeName": "Architect of the Capitol",
       "listedName": "Architect of the Capitol",
@@ -908,6 +937,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-cbo": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Congressional Budget Office independently analyzes budgetary and economic issues to support the congressional budget process.",
+        "truncated": false,
+        "fullLength": 129
+      },
       "source": "us_government_manual",
       "nodeName": "Congressional Budget Office (CBO)",
       "listedName": "Congressional Budget Office",
@@ -921,6 +957,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-gao": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Government Accountability Office helps the Congress fulfill its constitutional responsibilities and heightens the Federal Government's accountability and performance.",
+        "truncated": false,
+        "fullLength": 170
+      },
       "source": "us_government_manual",
       "nodeName": "Government Accountability Office (GAO)",
       "listedName": "Government Accountability Office",
@@ -934,6 +977,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-gpo": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Government Publishing Office produces, procures, and disseminates printed and electronic publications of the Congress, executive departments, and Federal agencies and establishments",
+        "truncated": false,
+        "fullLength": 185
+      },
       "source": "us_government_manual",
       "nodeName": "Government Publishing Office (GPO)",
       "listedName": "Government Publishing Office",
@@ -947,6 +997,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-loc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Library of Congress is the national library of the United States, offering diverse materials for research, including the world's most extensive collections in areas such as American history, music, and law.",
+        "truncated": false,
+        "fullLength": 210
+      },
       "source": "us_government_manual",
       "nodeName": "Library of Congress",
       "listedName": "Library of Congress",
@@ -960,6 +1017,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-loc-crs": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Congressional Research Service provides high quality research, analysis, information, and confidential consultation to help the U.S. Congress carry out its legislative, representational and oversight duties.",
+        "truncated": false,
+        "fullLength": 211
+      },
       "source": "us_government_manual",
       "nodeName": "Congressional Research Service",
       "listedName": "Congressional Research Service",
@@ -973,6 +1037,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-scotus": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "Article III, section 1, of the Constitution of the United States provides that \"[t]he judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish.\"",
+        "truncated": false,
+        "fullLength": 249
+      },
       "source": "us_government_manual",
       "nodeName": "Supreme Court of the United States (SCOTUS)",
       "listedName": "The Supreme Court of the United States",
@@ -986,6 +1057,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-appeals": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "U.S. Courts of Appeals (13 Circuits)",
       "listedName": "United States Courts of Appeals",
@@ -999,6 +1071,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-circuit-federal-circuit": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "U.S. Court of Appeals for the Federal Circuit",
       "listedName": "United States Court of Appeals for the Federal Circuit",
@@ -1012,6 +1085,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-district": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "U.S. District Courts (94 Districts)",
       "listedName": "United States District Courts",
@@ -1025,6 +1099,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-specialized-intl-trade": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "U.S. Court of International Trade (CIT)",
       "listedName": "United States Court of International Trade",
@@ -1038,6 +1113,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-specialized-caaf": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Court of Appeals for the Armed Forces (CAAF)",
       "listedName": "United States Court of Appeals for the Armed Forces",
@@ -1051,6 +1127,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-specialized-cavc": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Court of Appeals for Veterans Claims, a court of record under Article I of the Constitution, was established on November 18, 1988 (38 U.S.C. 7251) and given exclusive jurisdiction to review decisions of the Board of Veterans' Appeals. Appeals concern veteran disability benefits, dependent educational assistance, survivor benefits, and pension benefits claims.",
+        "truncated": true,
+        "fullLength": 961
+      },
       "source": "us_government_manual",
       "nodeName": "Court of Appeals for Veterans Claims (CAVC)",
       "listedName": "United States Court of Appeals for Veterans Claims",
@@ -1064,6 +1147,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-specialized-claims": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Court of Federal Claims has jurisdiction over claims seeking money judgments against the United States. A claim must be founded upon the Constitution, an act of Congress, an Executive order, a contract with the United States, or Federal regulations. Judges are appointed by the President for 15-year terms, subject to Senate confirmation. Appeals are to the U.S. Court of Appeals for the Federal Circuit.",
+        "truncated": false,
+        "fullLength": 422
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Court of Federal Claims",
       "listedName": "United States Court of Federal Claims",
@@ -1077,6 +1167,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-specialized-tax": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Tax Court is a court of record under Article I of the Constitution of the United States (26 U.S.C. 7441). The court was created as the United States Board of Tax Appeals by the Revenue Act of 1924 (43 Stat. 336). The name was changed to the Tax Court of the United States by the Revenue Act of 1942 (56 Stat. 957). The Tax Reform Act of 1969 (83 Stat. 730) established the court under Article I and then changed its name to the United States Tax Court.",
+        "truncated": false,
+        "fullLength": 470
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Tax Court",
       "listedName": "United States Tax Court",
@@ -1090,6 +1187,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-support-fjc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Judicial Center is the judicial branch's agency for policy research and continuing education.",
+        "truncated": false,
+        "fullLength": 105
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Judicial Center (FJC)",
       "listedName": "Federal Judicial Center",
@@ -1103,6 +1207,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "jud-support-ussc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Sentencing Commission develops sentencing guidelines and policies for the Federal court system.",
+        "truncated": false,
+        "fullLength": 113
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Sentencing Commission (USSC)",
       "listedName": "United States Sentencing Commission",
@@ -1116,6 +1227,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-usda": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Agriculture develops agricultural markets, fights hunger and malnutrition, conserves natural resources, and ensures food quality standards.",
+        "truncated": false,
+        "fullLength": 157
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Agriculture (USDA)",
       "listedName": "Department of Agriculture",
@@ -1129,6 +1247,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Commerce promotes the Nation's domestic and international trade, economic growth, and technological advancement by fostering free enterprise worldwide, supporting fair trade, compiling social and economic statistics, protecting Earth's physical resources, granting patents and registering trademarks, and assisting small and minority-owned businesses.",
+        "truncated": false,
+        "fullLength": 369
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Commerce",
       "listedName": "Department of Commerce",
@@ -1142,6 +1267,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-bureau-industry-security": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Industry and Security ensures an effective export control and treaty compliance system and promotes the Nation's strategic leadership in technology to strengthen national security, advance U.S. foreign policy, and achieve economic objectives.",
+        "truncated": false,
+        "fullLength": 256
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Industry and Security",
       "listedName": "Bureau of Industry and Security",
@@ -1155,6 +1287,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-economic-development-administration": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Economic Development Administration (EDA) was created in 1965 under the Public Works and Economic Development Act (42 U.S.C. 3121) as part of an effort to target Federal resources to economically distressed areas and to help develop local economies in the United States. It was mandated to assist rural and urban communities that were outside the mainstream economy and that lagged in economic development, industrial growth, and personal income.",
+        "truncated": false,
+        "fullLength": 450
+      },
       "source": "us_government_manual",
       "nodeName": "Economic Development Administration",
       "listedName": "Economic Development Administration",
@@ -1168,6 +1307,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-ita": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The International Trade Administration (ITA) was established on January 2, 1980, by the Secretary of Commerce to promote world trade and to strengthen the international trade and investment position of the United States.",
+        "truncated": false,
+        "fullLength": 220
+      },
       "source": "us_government_manual",
       "nodeName": "International Trade Administration (ITA)",
       "listedName": "International Trade Administration",
@@ -1181,6 +1327,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-minority-business-development-agency": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Minority Business Development Agency was established by Executive order in 1969. The Agency develops and coordinates a national program for minority business enterprise.",
+        "truncated": false,
+        "fullLength": 173
+      },
       "source": "us_government_manual",
       "nodeName": "Minority Business Development Agency",
       "listedName": "Minority Business Development Agency",
@@ -1194,6 +1347,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-ntia": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Telecommunications and Information Administration (NTIA) was established in 1978 by Reorganization Plan No. 1 of 1977 (5 U.S.C. app.) and Executive Order 12046 of March 27, 1978 (3 CFR, 1978 Comp., p. 158), by combining the Office of Telecommunications Policy of the Executive Office of the President and the Office of Telecommunications of the Department of Commerce to form a new agency reporting to the Secretary of Commerce. NTIA operates under the authority of the National Telecommunications and Information Administration Organization Act (47 U.S.C. 901).",
+        "truncated": false,
+        "fullLength": 575
+      },
       "source": "us_government_manual",
       "nodeName": "National Telecommunications and Information Administration",
       "listedName": "National Telecommunications and Information Administration",
@@ -1207,6 +1367,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-nist": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Institute of Standards and Technology (NIST) operates under the authority of the National Institute of Standards and Technology Act (15 U.S.C. 271), which amends the Organic Act of March 3, 1901 (ch. 872), which created the National Bureau of Standards (NBS) in 1901. In 1988, the Congress renamed NBS as NIST and expanded its activities and responsibilities.",
+        "truncated": false,
+        "fullLength": 372
+      },
       "source": "us_government_manual",
       "nodeName": "National Institute of Standards and Technology (NIST)",
       "listedName": "National Institute of Standards and Technology",
@@ -1220,6 +1387,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-national-technical-information-service": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Technical Information Service (NTIS) is the largest central resource for business-related, engineering, Government-funded, scientific, and technical information available. For more than 60 years, the Service has assured businesses, Government, universities, and the public timely access to approximately 3 million publications covering over 350 subject areas. The Service supports the Department of Commerce's mission by providing access to information that stimulates innovation and discovery.",
+        "truncated": true,
+        "fullLength": 617
+      },
       "source": "us_government_manual",
       "nodeName": "National Technical Information Service",
       "listedName": "National Technical Information Service",
@@ -1233,6 +1407,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-uspto": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Patent and Trademark Office (USPTO) was established by the act of July 19, 1952 (35 U.S.C. 1) \"to promote the progress of science and useful arts, by securing for limited times to authors and inventors the exclusive right to their respective writings and discoveries\" (U.S. Constitution Art. I, sec. 8). The commerce clause provides the constitutional basis for the registration of trademarks.",
+        "truncated": false,
+        "fullLength": 411
+      },
       "source": "us_government_manual",
       "nodeName": "United States Patent and Trademark Office (USPTO)",
       "listedName": "United States Patent and Trademark Office",
@@ -1246,6 +1427,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Defense provides the military forces needed to deter war and protect national security. Under the President, the Secretary of Defense directs and exercises authority and control over the separately organized Departments of the Air Force, the Army, and the Navy; over the Joint Chiefs of Staff; over the combatant commands; and over defense agencies and field activities.",
+        "truncated": false,
+        "fullLength": 388
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Defense (DoD)",
       "listedName": "Department of Defense",
@@ -1259,6 +1447,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-marines": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Continental Congress established the United States Marine Corps by resolution on November 10, 1775. Marine Corps composition and functions are detailed in 10 U.S.C. 5063.",
+        "truncated": false,
+        "fullLength": 174
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Marine Corps",
       "listedName": "United States Marine Corps",
@@ -1272,6 +1467,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-navy-naval-academy": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "United States Naval Academy",
       "listedName": "United States Naval Academy",
@@ -1285,6 +1481,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-defense-commissary-agency": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Commissary Agency (DeCA) was established in 1990 and is under the authority, direction, and control of the Under Secretary of Defense for Personnel and Readiness and the operational supervision of the Defense Commissary Agency Board of Directors.",
+        "truncated": false,
+        "fullLength": 258
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Commissary Agency",
       "listedName": "Defense Commissary Agency",
@@ -1298,6 +1501,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dcaa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Contract Audit Agency (DCAA) was established in 1965 and is under the authority, direction, and control of the Under Secretary of Defense (Comptroller)/Chief Financial Officer. DCAA performs all necessary contract audit functions for DOD and provides accounting and financial advisory services to all Defense components responsible for procurement and contract administration. These services are provided in connection with the negotiation, administration, and settlement of contracts and subcontracts to ensure taxpayer dollars are spent on fair and reasonable contract prices.",
+        "truncated": true,
+        "fullLength": 833
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Contract Audit Agency (DCAA)",
       "listedName": "Defense Contract Audit Agency",
@@ -1311,6 +1521,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dcma": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Contract Management Agency (DCMA) was established by the Deputy Secretary of Defense in 2000 and is under the authority, direction, and control of the Under Secretary of Defense (Acquisition, Technology, and Logistics). DCMA is responsible for DOD contract management in support of the military departments, other DOD components, the National Aeronautics and Space Administration, other designated Federal and State agencies, foreign governments, and international organizations, as appropriate.",
+        "truncated": false,
+        "fullLength": 507
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Contract Management Agency (DCMA)",
       "listedName": "Defense Contract Management Agency",
@@ -1324,6 +1541,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dfas": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Finance and Accounting Service (DFAS) was established in 1991 under the authority, direction, and control of the Under Secretary of Defense (Comptroller)/Chief Financial Officer to strengthen and reduce costs of financial management and operations within DOD. DFAS is responsible for all payments to servicemembers, employees, vendors, and contractors. It provides business intelligence and finance and accounting information to DOD decisionmakers.",
+        "truncated": true,
+        "fullLength": 680
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Finance & Accounting Service (DFAS)",
       "listedName": "Defense Finance and Accounting Service",
@@ -1337,6 +1561,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-disa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Information Systems Agency (DISA), established originally as the Defense Communications Agency in 1960, is under the authority, direction, and control of the Assistant Secretary of Defense (Networks and Information Integration). DISA is a combat support agency responsible for planning, engineering, acquiring, fielding, operating, and supporting global net-centric solutions to serve the needs of the President, Vice President, Secretary of Defense, and other DOD components.",
+        "truncated": false,
+        "fullLength": 488
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Information Systems Agency (DISA)",
       "listedName": "Defense Information Systems Agency",
@@ -1350,6 +1581,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dia": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Intelligence Agency (DIA) was established in 1961 and is under the authority, direction, and control of the Under Secretary of Defense for Intelligence. DIA provides timely, objective, and cogent military intelligence to warfighters, force planners, as well as defense and national security policymakers.",
+        "truncated": true,
+        "fullLength": 945
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Intelligence Agency (DIA)",
       "listedName": "Defense Intelligence Agency",
@@ -1363,6 +1601,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-defense-legal-services-agency": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Legal Services Agency (DLSA) was established in 1981 and is under the authority, direction, and control of the General Counsel of the Department of Defense, who also serves as its Director. DLSA provides legal advice and services for specified DOD components and adjudication of personnel security cases for DOD and other assigned Federal agencies and departments.",
+        "truncated": true,
+        "fullLength": 819
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Legal Services Agency",
       "listedName": "Defense Legal Services Agency",
@@ -1376,6 +1621,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dla": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Logistics Agency (DLA) is under the authority, direction, and control of the Under Secretary of Defense for Acquisition, Technology, and Logistics. DLA supports both the logistics requirements of the military services and their acquisition of weapons and other materiel. It provides logistics support and technical services to all branches of the military and to a number of Federal agencies. DLA supply centers consolidate the requirements of the military services and procure the supplies in sufficient quantities to meet their projected needs.",
+        "truncated": true,
+        "fullLength": 836
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Logistics Agency (DLA)",
       "listedName": "Defense Logistics Agency",
@@ -1389,6 +1641,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-defense-security-cooperation-agency": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Security Cooperation Agency (DSCA) was established in 1971 and is under the authority, direction, and control of the Under Secretary of Defense (Policy). DSCA provides traditional security assistance functions such as military assistance, international military education and training, and foreign military sales. DSCA also has program management responsibilities for humanitarian assistance, demining, and other DOD programs.",
+        "truncated": false,
+        "fullLength": 438
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Security Cooperation Agency",
       "listedName": "Defense Security Cooperation Agency",
@@ -1402,6 +1661,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dcsa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Counterintelligence and Security Agency (DCSA) is under the authority, direction, and control of the Under Secretary of Defense for Intelligence. It protects America’s trusted workforce and trusted real and virtual workspaces. The DCSA joins two missions: personnel vetting and critical technology protection. Vetting personnel and protecting technology are supported by counterintelligence and training, education, and certification functions.",
+        "truncated": true,
+        "fullLength": 610
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Counterintelligence & Security Agency (DCSA)",
       "listedName": "Defense Counterintelligence and Security Agency",
@@ -1415,6 +1681,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-dtra": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Defense Threat Reduction Agency (DTRA) was established in 1998 and is under the authority, direction, and control of the Under Secretary of Defense for Acquisition, Technology, and Logistics. DTRA's mission is to reduce the threat posed by weapons of mass destruction (WMD). DTRA covers the full range of WMD threats (chemical, biological, nuclear, radiological, and high explosive), bridges the gap between the warfighters and the technical community, sustains the nuclear deterrent, and provides both offensive and defensive technology and operational concepts to warfighters.",
+        "truncated": true,
+        "fullLength": 974
+      },
       "source": "us_government_manual",
       "nodeName": "Defense Threat Reduction Agency (DTRA)",
       "listedName": "Defense Threat Reduction Agency",
@@ -1428,6 +1701,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-mda": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Missile Defense Agency's (MDA) mission is to establish and deploy a layered ballistic missile defense system to intercept missiles in all phases of their flight and against all ranges of threats. This capability will provide a defense of the United States, deployed forces, and allies. The MDA is under the authority, direction, and control of the Under Secretary of Defense for Acquisition, Technology, and Logistics. It manages and directs DOD's ballistic missile defense acquisition programs and enables the Services to field elements of the overall system as soon as practicable.",
+        "truncated": true,
+        "fullLength": 889
+      },
       "source": "us_government_manual",
       "nodeName": "Missile Defense Agency (MDA)",
       "listedName": "Missile Defense Agency",
@@ -1441,6 +1721,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-nga": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "National Geospatial-Intelligence Agency (NGA)",
       "listedName": "National Geospatial-Intelligence Agency",
@@ -1454,6 +1735,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-pfpa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Pentagon Force Protection Agency (PFPA) was established in May 2002 in response to the events of September 11, 2001, and subsequent terrorist threats facing the DOD workforce and facilities in the National Capital Region (NCR). PFPA is under the authority, direction, and control of the Director, Administration and Management, in the Office of the Secretary of Defense.",
+        "truncated": true,
+        "fullLength": 931
+      },
       "source": "us_government_manual",
       "nodeName": "Pentagon Force Protection Agency (PFPA)",
       "listedName": "Pentagon Force Protection Agency",
@@ -1467,6 +1755,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-national-intelligence-university": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Intelligence University, formerly the Joint Military Intelligence College, was established in 1962. The College is a joint service interagency educational institution serving the intelligence community and operates under the authority of the Director, Defense Intelligence Agency. Its mission is to educate military and civilian intelligence professionals, conduct and disseminate relevant intelligence research, and perform academic outreach regarding intelligence matters.",
+        "truncated": true,
+        "fullLength": 890
+      },
       "source": "us_government_manual",
       "nodeName": "National Intelligence University",
       "listedName": "National Intelligence University",
@@ -1480,6 +1775,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-national-defense-university": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The mission of the National Defense University is to prepare military and civilian leaders from the United States and other countries to evaluate national and international security challenges through multidisciplinary educational and research programs, professional exchanges, and outreach.",
+        "truncated": false,
+        "fullLength": 291
+      },
       "source": "us_government_manual",
       "nodeName": "National Defense University",
       "listedName": "National Defense University",
@@ -1493,6 +1795,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-defense-agency-uniformed-services-university-health-sciences": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "Authorized by act of September 21, 1972 (10 U.S.C. 2112), the Uniformed Services University of the Health Sciences was established to educate career-oriented medical officers for the Military Departments and the Public Health Service. The University currently incorporates the F. Edward Hebert School of Medicine (including graduate and continuing education programs) and the Graduate School of Nursing.",
+        "truncated": false,
+        "fullLength": 403
+      },
       "source": "us_government_manual",
       "nodeName": "Uniformed Services University of the Health Sciences",
       "listedName": "Uniformed Services University of the Health Sciences",
@@ -1506,6 +1815,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-ed": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Education ensures equal access to education; promotes educational excellence; and administers, coordinates, and makes policy for most Federal assistance to education with the aim of raising levels of student achievement and readiness for the global future.",
+        "truncated": false,
+        "fullLength": 274
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Education",
       "listedName": "Department of Education",
@@ -1519,6 +1835,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doe": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Energy addresses the Nation's energy, environmental, and nuclear challenges, using transformative science and technology to ensure national security and prosperity.",
+        "truncated": false,
+        "fullLength": 182
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Energy (DOE)",
       "listedName": "Department of Energy",
@@ -1532,6 +1855,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-ferc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Energy Regulatory Commission helps consumers obtain efficient, reliable, and sustainable energy services at fair and reasonable rates through regulatory and market means.",
+        "truncated": false,
+        "fullLength": 182
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Energy Regulatory Commission (FERC)",
       "listedName": "Federal Energy Regulatory Commission",
@@ -1545,6 +1875,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Health and Human Services strengthens the public health and welfare of the American people by making affordable and quality health care and childcare accessible, ensuring the safety of food products, preparing for public health emergencies, and advancing the diagnosis, treatment, and curing of life-threatening illnesses.",
+        "truncated": false,
+        "fullLength": 340
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Health & Human Services (HHS)",
       "listedName": "Department of Health and Human Services",
@@ -1558,6 +1895,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-administration-for-children-and-families": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Administration for Children and Families",
       "listedName": "Administration for Children and Families",
@@ -1571,6 +1909,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-administration-for-community-living": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Administration for Community Living",
       "listedName": "Administration for Community Living",
@@ -1584,6 +1923,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-ahrq": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Agency for Healthcare Research & Quality (AHRQ)",
       "listedName": "Agency for Healthcare Research and Quality",
@@ -1597,6 +1937,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-agency-toxic-substances-disease-registry": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Agency for Toxic Substances and Disease Registry",
       "listedName": "Agency for Toxic Substances and Disease Registry",
@@ -1610,6 +1951,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-cdc": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Centers for Disease Control & Prevention (CDC)",
       "listedName": "Centers for Disease Control and Prevention",
@@ -1623,6 +1965,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-cms": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Centers for Medicare & Medicaid Services (CMS)",
       "listedName": "Centers for Medicare and Medicaid Services",
@@ -1636,6 +1979,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-fda": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Food & Drug Administration (FDA)",
       "listedName": "Food and Drug Administration",
@@ -1649,6 +1993,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-hrsa": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Health Resources & Services Administration (HRSA)",
       "listedName": "Health Resources and Services Administration",
@@ -1662,6 +2007,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-ihs": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Indian Health Service (IHS) organizational structure is composed of two major office groups: headquarters offices and regional offices, which are called areas.",
+        "truncated": false,
+        "fullLength": 163
+      },
       "source": "us_government_manual",
       "nodeName": "Indian Health Service (IHS)",
       "listedName": "Indian Health Service",
@@ -1675,6 +2027,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-nih": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Institutes of Health seeks to expand fundamental knowledge about the nature and behavior of living systems and to apply that knowledge for improved health, longer life, and for reducing disability and illness.",
+        "truncated": false,
+        "fullLength": 222
+      },
       "source": "us_government_manual",
       "nodeName": "National Institutes of Health (NIH)",
       "listedName": "National Institutes of Health",
@@ -1688,6 +2047,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-samhsa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Substance Abuse and Mental Health Services Administration alleviates the pain and mitigates the harm that substance abuse and mental illness visit upon communities nationwide.",
+        "truncated": false,
+        "fullLength": 179
+      },
       "source": "us_government_manual",
       "nodeName": "Substance Abuse and Mental Health Services Administration (SAMHSA)",
       "listedName": "Substance Abuse and Mental Health Services Administration",
@@ -1701,6 +2067,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dhs": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Homeland Security prevents terrorism and enhances security, manages the Nation’s borders, administers immigration laws, safeguards cyberspace, and ensures resilience in the wake of disaster.",
+        "truncated": false,
+        "fullLength": 208
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Homeland Security (DHS)",
       "listedName": "Department of Homeland Security",
@@ -1714,6 +2087,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hud": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Housing and Urban Development oversees housing needs nationwide, ensures fair housing opportunities, and creates strong, sustainable, and inclusive communities.",
+        "truncated": false,
+        "fullLength": 178
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Housing & Urban Development (HUD)",
       "listedName": "Department of Housing and Urban Development",
@@ -1727,6 +2107,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Justice enforces the law and defends national interests according to the law; ensures public safety against domestic and foreign threats; provides Federal leadership in preventing and controlling crime; seeks just punishment for those who have behaved unlawfully; and ensures fair and impartial administration of justice for all American citizens.",
+        "truncated": false,
+        "fullLength": 365
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Justice (DOJ)",
       "listedName": "Department of Justice",
@@ -1740,6 +2127,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-atf": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Alcohol, Tobacco, Firearms and Explosives protects the public from crimes involving arson, explosives, firearms, and the diversion of alcohol and tobacco products; regulates lawful commerce in explosives and firearms; and supports law enforcement, public safety, and industry partners worldwide.",
+        "truncated": false,
+        "fullLength": 309
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
       "listedName": "Bureau of Alcohol, Tobacco, Firearms and Explosives",
@@ -1753,6 +2147,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-bop": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Bureau of Prisons (BOP)",
       "listedName": "Bureau of Prisons",
@@ -1766,6 +2161,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-dea": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Drug Enforcement Administration (DEA) is the lead Federal agency in enforcing narcotics and controlled substances laws and regulations. The DEA also enforces the Federal money laundering and bulk currency smuggling statutes when the funds involved in the transactions or smuggling are derived from the sale of narcotics. It was created in July 1973 by Reorganization Plan No. 2 of 1973 (5 U.S.C. app.).",
+        "truncated": false,
+        "fullLength": 406
+      },
       "source": "us_government_manual",
       "nodeName": "Drug Enforcement Administration (DEA)",
       "listedName": "Drug Enforcement Administration",
@@ -1779,6 +2181,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-fbi": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Bureau of Investigation (FBI) is the Department of Justice's principal investigative arm. It is primarily charged with gathering and reporting facts, locating witnesses, and compiling evidence in cases involving Federal jurisdiction. It also provides law enforcement leadership and assistance to State and international law enforcement agencies.",
+        "truncated": false,
+        "fullLength": 357
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Bureau of Investigation (FBI)",
       "listedName": "Federal Bureau of Investigation",
@@ -1792,6 +2201,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-international-criminal-police-organization-washington": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "International Criminal Police Organization (INTERPOL)-Washington",
       "listedName": "International Criminal Police Organization (INTERPOL)–Washington",
@@ -1805,6 +2215,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-office-justice-programs": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Office of Justice Programs (OJP) was established by the Justice Assistance Act of 1984 (42 U.S.C. 3711) and reauthorized in 1994 and 2005 to provide Federal leadership, coordination, and assistance needed to make the Nation's justice system more efficient and effective in preventing and controlling crime.",
+        "truncated": true,
+        "fullLength": 616
+      },
       "source": "us_government_manual",
       "nodeName": "Office of Justice Programs",
       "listedName": "Office of Justice Programs",
@@ -1818,6 +2235,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-usms": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Marshals Service (USMS) is the Nation's oldest Federal law enforcement agency, having served as a vital link between the executive and judicial branches of the Government since 1789. The USMS performs tasks that are essential to the operation of virtually every aspect of the Federal justice system.",
+        "truncated": false,
+        "fullLength": 317
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Marshals Service (USMS)",
       "listedName": "United States Marshals Service",
@@ -1831,6 +2255,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-executive-office-immigration-review": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Executive Office for Immigration Review (EOIR), under a delegation of authority from the Attorney General, is charged with adjudicating matters brought under various immigration statutes before its three administrative tribunals: the Office of the Chief Immigration Judge, the Board of Immigration Appeals, and the Office of the Chief Administrative Hearing Officer.",
+        "truncated": false,
+        "fullLength": 370
+      },
       "source": "us_government_manual",
       "nodeName": "Executive Office for Immigration Review",
       "listedName": "Executive Office for Immigration Review",
@@ -1844,6 +2275,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-foreign-claims-settlement-commission": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Foreign Claims Settlement Commission of the United States is a quasi-judicial, independent agency within the Department of Justice, which adjudicates claims of U.S. nationals against foreign governments, either under specific jurisdiction conferred by Congress or the Department of State or pursuant to international claims settlement agreements. The decisions of the Commission are final and are not reviewable under any standard by any court or other authority.",
+        "truncated": true,
+        "fullLength": 699
+      },
       "source": "us_government_manual",
       "nodeName": "Foreign Claims Settlement Commission of the United States",
       "listedName": "Foreign Claims Settlement Commission of the United States",
@@ -1857,6 +2295,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-office-community-oriented-policing-services": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Office of Community Oriented Policing Services (COPS) was established to assist law enforcement agencies in enhancing public safety through the implementation of community policing strategies.",
+        "truncated": true,
+        "fullLength": 646
+      },
       "source": "us_government_manual",
       "nodeName": "Office of Community Oriented Policing Services",
       "listedName": "Office of Community Oriented Policing Services",
@@ -1870,6 +2315,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-office-violence-against-women": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "Office on Violence Against Women",
       "listedName": "Office on Violence Against Women",
@@ -1883,6 +2329,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doj-parole-commission": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "United States Parole Commission",
       "listedName": "United States Parole Commission",
@@ -1896,6 +2343,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Labor promotes the welfare of job seekers, wage earners, and retirees by improving working conditions, advancing opportunities for profitable employment, protecting retirement and health care benefits, matching workers to employers, strengthening free collective bargaining, and tracking changes in economic indicators on a national scale.",
+        "truncated": false,
+        "fullLength": 357
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Labor (DOL)",
       "listedName": "Department of Labor",
@@ -1909,6 +2363,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-bureau-international-labor-affairs": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of International Labor Affairs promotes a fair competitive environment for workers in the United States and other countries worldwide.",
+        "truncated": false,
+        "fullLength": 145
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of International Labor Affairs",
       "listedName": "Bureau of International Labor Affairs",
@@ -1922,6 +2383,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-bls": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Labor Statistics measures labor market activity, working conditions, price changes, and productivity in the Nation's economy to support decision making in both the public and private sectors.",
+        "truncated": false,
+        "fullLength": 205
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Labor Statistics (BLS)",
       "listedName": "Bureau of Labor Statistics",
@@ -1935,6 +2403,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-ebsa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Employee Benefits Security Administration assures the security of the retirement, health, and other workplace related benefits of American workers and their families.",
+        "truncated": false,
+        "fullLength": 170
+      },
       "source": "us_government_manual",
       "nodeName": "Employee Benefits Security Administration (EBSA)",
       "listedName": "Employee Benefits Security Administration",
@@ -1948,6 +2423,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-eta": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Employment and Training Administration helps the U.S. labor market function more efficiently by providing job training, employment, labor market information, and income maintenance services.",
+        "truncated": false,
+        "fullLength": 194
+      },
       "source": "us_government_manual",
       "nodeName": "Employment & Training Administration (ETA)",
       "listedName": "Employment and Training Administration",
@@ -1961,6 +2443,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-msha": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Mine Safety and Health Administration works to prevent mine-related deaths, illnesses, and injuries and promotes safe and healthy work environments.",
+        "truncated": false,
+        "fullLength": 152
+      },
       "source": "us_government_manual",
       "nodeName": "Mine Safety & Health Administration (MSHA)",
       "listedName": "Mine Safety and Health Administration",
@@ -1974,6 +2463,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-osha": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Occupational Safety and Health Administration (OSHA) was created pursuant to the Occupational Safety and Health Act of 1970 (29 U.S.C. 651 et seq.).",
+        "truncated": false,
+        "fullLength": 152
+      },
       "source": "us_government_manual",
       "nodeName": "Occupational Safety & Health Administration (OSHA)",
       "listedName": "Occupational Safety and Health Administration",
@@ -1987,6 +2483,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-veterans-employment-training-service": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Veterans' Employment and Training Service helps America's veterans, servicemembers, and their spouses who are eligible prepare for careers; provides them with employment resources and expertise; protects their employment rights; and promotes their employment opportunities.",
+        "truncated": false,
+        "fullLength": 277
+      },
       "source": "us_government_manual",
       "nodeName": "Veterans' Employment and Training Service",
       "listedName": "Veterans' Employment and Training Service",
@@ -2000,6 +2503,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-whd": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Wage and Hour Division protects and enhances the welfare of the Nation's workers by promoting and achieving compliance with labor standards.",
+        "truncated": false,
+        "fullLength": 144
+      },
       "source": "us_government_manual",
       "nodeName": "Wage & Hour Division (WHD)",
       "listedName": "Wage and Hour Division",
@@ -2013,6 +2523,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-women-s-bureau": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Women's Bureau develops policies and standards and conducts inquiries to safeguard the interests of working women, to advocate for their equality and the economic security of their families, and to promote quality work environments.",
+        "truncated": false,
+        "fullLength": 236
+      },
       "source": "us_government_manual",
       "nodeName": "Women's Bureau",
       "listedName": "Women's Bureau",
@@ -2026,6 +2543,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-state": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of State advises the President on issues of foreign policy; supports democracy, freedom, and prosperity for all people; and fosters conditions that favor stability and progress worldwide.",
+        "truncated": false,
+        "fullLength": 202
+      },
       "source": "us_government_manual",
       "nodeName": "Department of State",
       "listedName": "Department of State",
@@ -2039,6 +2563,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Transportation establishes national transportation policy for highway planning and construction, motor carrier safety, urban mass transit, railroads, aviation, and the safety of waterways, ports, highways, and pipelines.",
+        "truncated": false,
+        "fullLength": 238
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Transportation (DOT)",
       "listedName": "Department of Transportation",
@@ -2052,6 +2583,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-faa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Aviation Administration (FAA), formerly the Federal Aviation Agency, was established by the Federal Aviation Act of 1958 (72 Stat. 731).",
+        "truncated": false,
+        "fullLength": 148
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Aviation Administration (FAA)",
       "listedName": "Federal Aviation Administration",
@@ -2065,6 +2603,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-fhwa": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Highway Administration (FHWA) was established as an agency of the Department of Transportation by the Department of Transportation Act (49 U.S.C. 104). Title 23 of the United States Code and other supporting legislation authorize the Administration's various activities.",
+        "truncated": false,
+        "fullLength": 282
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Highway Administration (FHWA)",
       "listedName": "Federal Highway Administration",
@@ -2078,6 +2623,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-fra": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Railroad Administration (FRA) was created pursuant to section 3(e)(1) of the Department of Transportation Act of 1966 (49 U.S.C. 103).",
+        "truncated": false,
+        "fullLength": 146
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Railroad Administration (FRA)",
       "listedName": "Federal Railroad Administration",
@@ -2091,6 +2643,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-fta": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Federal Transit Administration (FTA), formerly the Urban Mass Transportation Administration, was established as an operating administration of the U.S. Department of Transportation by section 1 of Reorganization Plan No. 2 of 1968 (5 U.S.C. app. 1), effective July 1, 1968. The FTA helps America's communities by developing improved public transportation and providing financial assistance to State and local governments to finance public transportation systems and carry out national transit goals and policy.",
+        "truncated": false,
+        "fullLength": 514
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Transit Administration (FTA)",
       "listedName": "Federal Transit Administration",
@@ -2104,6 +2663,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-great-lakes-saint-lawrence-seaway-development-corporatio": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Great Lakes Saint Lawrence Seaway Development Corporation (GLSLSDC) was established by the Saint Lawrence Seaway Act of May 13, 1954 (33 U.S.C. 981-990) and became an operating administration of the DOT in 1966.",
+        "truncated": false,
+        "fullLength": 215
+      },
       "source": "us_government_manual",
       "nodeName": "Great Lakes Saint Lawrence Seaway Development Corporation",
       "listedName": "Great Lakes Saint Lawrence Seaway Development Corporation",
@@ -2117,6 +2683,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-marad": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "MARAD develops and promotes the U.S. merchant marine and its operations and oversees emergency merchant ship operations.",
+        "truncated": false,
+        "fullLength": 120
+      },
       "source": "us_government_manual",
       "nodeName": "Maritime Administration (MARAD)",
       "listedName": "Maritime Administration",
@@ -2130,6 +2703,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-va": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of Veterans Affairs operates programs benefiting Veterans and members of their families: It offers education opportunities and rehabilitation services and provides compensation payments for disabilities or death related to military service, home loan guaranties, pensions, burials, and health care that includes the services in clinics, medical centers, community living centers (which replace nursing home)s, and home- and community-based settings.",
+        "truncated": false,
+        "fullLength": 464
+      },
       "source": "us_government_manual",
       "nodeName": "Department of Veterans Affairs (VA)",
       "listedName": "Department of Veterans Affairs",
@@ -2143,6 +2723,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of the Interior protects America's heritage and natural resources, honors its cultures and tribal communities, and supplies energy for powering its future.",
+        "truncated": false,
+        "fullLength": 170
+      },
       "source": "us_government_manual",
       "nodeName": "Department of the Interior (DOI)",
       "listedName": "Department of the Interior",
@@ -2156,6 +2743,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-bia": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Indian Affairs enhances the quality of life, promotes economic opportunity, and protects and improves the trust assets of American Indians, Indian tribes, and Alaska Natives.",
+        "truncated": false,
+        "fullLength": 188
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Indian Affairs (BIA)",
       "listedName": "Bureau of Indian Affairs",
@@ -2169,6 +2763,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-blm": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Land Management sustains the health, diversity, and productivity of public lands for the use and enjoyment of present and future generations.",
+        "truncated": false,
+        "fullLength": 155
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Land Management (BLM)",
       "listedName": "Bureau of Land Management",
@@ -2182,6 +2783,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-boem": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Ocean Energy Management manages development of U.S. Outer Continental Shelf energy and mineral resources in a way that is environmentally and economically responsible.",
+        "truncated": false,
+        "fullLength": 181
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Ocean Energy Management (BOEM)",
       "listedName": "Bureau of Ocean Energy Management",
@@ -2195,6 +2803,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-bor": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Reclamation develops, manages, and protects water and related resources in a way that is environmentally and economically responsible and that benefits the American public.",
+        "truncated": false,
+        "fullLength": 186
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Reclamation (BOR)",
       "listedName": "Bureau of Reclamation",
@@ -2208,6 +2823,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-bsee": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Bureau of Safety and Environmental Enforcement promotes safety, protects the environment, and conserves resources offshore by overseeing the regulatory process and enforcing Federal rules and regulations.",
+        "truncated": false,
+        "fullLength": 208
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Safety & Environmental Enforcement (BSEE)",
       "listedName": "Bureau of Safety and Environmental Enforcement",
@@ -2221,6 +2843,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-nps": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Park Service (NPS) was established in the Department of the Interior on August 25, 1916 (16 U.S.C. 1).",
+        "truncated": false,
+        "fullLength": 115
+      },
       "source": "us_government_manual",
       "nodeName": "National Park Service (NPS)",
       "listedName": "National Park Service",
@@ -2234,6 +2863,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-office-surface-mining-reclamation-enforcement": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Office of Surface Mining Reclamation and Enforcement (OSMRE) was established in the Department of the Interior by the Surface Mining Control and Reclamation Act of 1977 (30 U.S.C. 1211).",
+        "truncated": false,
+        "fullLength": 190
+      },
       "source": "us_government_manual",
       "nodeName": "Office of Surface Mining Reclamation and Enforcement",
       "listedName": "Office of Surface Mining Reclamation and Enforcement",
@@ -2247,6 +2883,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-fws": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "U.S. Fish & Wildlife Service (FWS)",
       "listedName": "United States Fish and Wildlife Service",
@@ -2260,6 +2897,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doi-usgs": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The United States Geological Survey (USGS) was established by the Organic Act of March 3, 1879 (Ch. 182 / 20 Stat. 394 / 43 U.S.C. 31). Since March 3, 1879, the Survey has provided the United States with science information needed to make important land use and resource management policy decisions.",
+        "truncated": false,
+        "fullLength": 299
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Geological Survey (USGS)",
       "listedName": "United States Geological Survey",
@@ -2273,6 +2917,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Department of the Treasury enforces financial laws, manufactures coins and currency, and recommends economic, fiscal, and tax policies.",
+        "truncated": false,
+        "fullLength": 139
+      },
       "source": "us_government_manual",
       "nodeName": "Department of the Treasury",
       "listedName": "Department of the Treasury",
@@ -2286,6 +2937,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-ttb": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Alcohol and Tobacco Tax and Trade Bureau enforces the laws regulating alcohol production, importation, and wholesale businesses; tobacco manufacturing and importing businesses; and alcohol labeling and advertising.",
+        "truncated": false,
+        "fullLength": 218
+      },
       "source": "us_government_manual",
       "nodeName": "Alcohol & Tobacco Tax & Trade Bureau (TTB)",
       "listedName": "Alcohol and Tobacco Tax and Trade Bureau",
@@ -2299,6 +2957,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-bep": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Bureau of Engraving and Printing operates on basic authorities conferred by act of July 11, 1862 (31 U.S.C. 303), and on additional authorities contained in past appropriations made to the Bureau that are still in force. A revolving fund established in 1950, in accordance with Public Law 81–656, finances the Bureau's operations. The Secretary of the Treasury selects the Director who heads the Bureau.",
+        "truncated": false,
+        "fullLength": 407
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of Engraving & Printing",
       "listedName": "Bureau of Engraving and Printing",
@@ -2312,6 +2977,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-fiscal": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Bureau of the Fiscal Service provides central payment services to Federal program agencies, operates the Federal Government's collections and deposit systems, provides Governmentwide accounting and reporting services, manages the collection of delinquent debt owed to the Federal Government, borrows the money needed to operate the Federal Government, accounts for the resulting public debt, and gives reimbursable support to Federal agencies.",
+        "truncated": false,
+        "fullLength": 447
+      },
       "source": "us_government_manual",
       "nodeName": "Bureau of the Fiscal Service",
       "listedName": "Bureau of the Fiscal Service",
@@ -2325,6 +2997,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-irs": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Office of the Commissioner of Internal Revenue was established by act of July 1, 1862 (26 U.S.C. 7802). The Internal Revenue Service (IRS) administers and enforces the internal revenue laws and related statutes, except those relating to alcohol, tobacco, firearms, and explosives. It collects the proper amount of tax revenue, at the least cost to the public, by efficiently applying the tax law with integrity and fairness.",
+        "truncated": true,
+        "fullLength": 1161
+      },
       "source": "us_government_manual",
       "nodeName": "Internal Revenue Service (IRS)",
       "listedName": "Internal Revenue Service",
@@ -2338,6 +3017,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-occ": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The Office of the Comptroller of the Currency (OCC) was created on February 25, 1863 (12 Stat. 665), as a bureau of the Department of the Treasury. In 1929, with the issuance of the last national bank notes, the OCC essentially became an organization of national bank examiners with a singular mission: to maintain the safety and soundness of the banks under its supervision. In 2011, when the Office of Thrift Supervision integrated into the OCC, the bureau also assumed responsibility for regulating Federal savings associations, also referred to as Federal thrifts.",
+        "truncated": false,
+        "fullLength": 568
+      },
       "source": "us_government_manual",
       "nodeName": "Office of the Comptroller of the Currency (OCC)",
       "listedName": "Office of the Comptroller of the Currency",
@@ -2351,6 +3037,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-mint": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The establishment of a mint was authorized by act of April 2, 1792 (1 Stat. 246). The Bureau of the Mint was established by act of February 12, 1873 (17 Stat. 424), and recodified on September 13, 1982 (31 U.S.C. 304, 5131). The name was changed to United States Mint by Secretarial order on January 9, 1984.",
+        "truncated": false,
+        "fullLength": 308
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Mint",
       "listedName": "United States Mint",
@@ -2364,6 +3057,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-cia": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Central Intelligence Agency collects, evaluates, and disseminates vital information on economic, military, political, scientific, and other developments abroad to safeguard national security.",
+        "truncated": false,
+        "fullLength": 195
+      },
       "source": "us_government_manual",
       "nodeName": "Central Intelligence Agency (CIA)",
       "listedName": "Central Intelligence Agency",
@@ -2377,6 +3077,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-cftc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Commodity Futures Trading Commission avoids systemic risk; fosters open, transparent, competitive, and financially sound markets; and protects the market users and their funds, consumers, and the public from fraud, manipulation, and abusive practices related to derivatives and other products that are subject to the Commodity Exchange Act.",
+        "truncated": false,
+        "fullLength": 344
+      },
       "source": "us_government_manual",
       "nodeName": "Commodity Futures Trading Commission (CFTC)",
       "listedName": "Commodity Futures Trading Commission",
@@ -2390,6 +3097,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-cpsc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Consumer Product Safety Commission protects the public by reducing the risk of injury and death from consumer products.",
+        "truncated": false,
+        "fullLength": 123
+      },
       "source": "us_government_manual",
       "nodeName": "Consumer Product Safety Commission (CPSC)",
       "listedName": "Consumer Product Safety Commission",
@@ -2403,6 +3117,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-epa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Environmental Protection Agency protects human health and safeguards the environment.",
+        "truncated": false,
+        "fullLength": 89
+      },
       "source": "us_government_manual",
       "nodeName": "Environmental Protection Agency (EPA)",
       "listedName": "Environmental Protection Agency",
@@ -2416,6 +3137,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-equal-employment-opportunity-commission-eeoc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Equal Employment Opportunity Commission enforces laws that prohibit employment discrimination based on age, color, disability, gender, genetic information, national origin, race, or religion.",
+        "truncated": false,
+        "fullLength": 195
+      },
       "source": "us_government_manual",
       "nodeName": "Equal Employment Opportunity Commission (EEOC)",
       "listedName": "Equal Employment Opportunity Commission",
@@ -2429,6 +3157,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-export-import-bank-of-the-u-s": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Export-Import Bank helps finance the export of U.S. goods and services to international markets.",
+        "truncated": false,
+        "fullLength": 100
+      },
       "source": "us_government_manual",
       "nodeName": "Export-Import Bank of the U.S.",
       "listedName": "Export-Import Bank of the United States",
@@ -2442,6 +3177,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-farm-credit-administration": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Farm Credit Administration ensures the safe and sound operation of the banks, associations, affiliated service organizations, and other entities of the Farm Credit System, and protects the interests of the public and those who borrow from Farm Credit institutions or invest in Farm Credit securities.",
+        "truncated": false,
+        "fullLength": 304
+      },
       "source": "us_government_manual",
       "nodeName": "Farm Credit Administration",
       "listedName": "Farm Credit Administration",
@@ -2455,6 +3197,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-fcc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Communications Commission regulates interstate and foreign communications by radio, television, wire, satellite, and cable in all 50 states, the District of Columbia and the U.S. territories. A U.S. government agency overseen by Congress, the Commission is the federal agency responsible for implementing and enforcing America's communications law and regulations.",
+        "truncated": false,
+        "fullLength": 376
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Communications Commission (FCC)",
       "listedName": "Federal Communications Commission",
@@ -2468,6 +3217,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-federal-election-commission-fec": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Election Commission provides public disclosure of campaign finance activities and ensures compliance with campaign finance laws and regulations.",
+        "truncated": false,
+        "fullLength": 156
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Election Commission (FEC)",
       "listedName": "Federal Election Commission",
@@ -2481,6 +3237,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-fdic": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Deposit Insurance Corporation preserves and promotes public confidence in U.S. financial institutions by insuring bank and thrift deposits, examining State-chartered banks, and liquidating assets of failed institutions.",
+        "truncated": false,
+        "fullLength": 231
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Deposit Insurance Corporation (FDIC)",
       "listedName": "Federal Deposit Insurance Corporation",
@@ -2494,6 +3257,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-federal-housing-finance-agency": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Housing and Finance Agency ensures that the housing Government-Sponsored Enterprises operate safely and soundly and serve as a reliable source of liquidity and funding for housing finance and community investment.",
+        "truncated": false,
+        "fullLength": 225
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Housing Finance Agency",
       "listedName": "Federal Housing Finance Agency",
@@ -2507,6 +3277,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-federal-labor-relations-authority-flra": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Labor Relations Authority oversees labor-management relations between the Federal Government and its employees.",
+        "truncated": false,
+        "fullLength": 123
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Labor Relations Authority (FLRA)",
       "listedName": "Federal Labor Relations Authority",
@@ -2520,6 +3297,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-fmc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Maritime Commission promotes an efficient, fair, and reliable supply system of international ocean transportation; protects the public from deceptive, unfair, and unlawful practices; and contributes to the integrity and security of the Nation's supply chain and transportation system.",
+        "truncated": false,
+        "fullLength": 296
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Maritime Commission (FMC)",
       "listedName": "Federal Maritime Commission",
@@ -2533,6 +3317,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-fed": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Reserve System keeps the Nation's monetary and financial system flexible, safe, and stable.",
+        "truncated": false,
+        "fullLength": 103
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Reserve System",
       "listedName": "Federal Reserve System",
@@ -2546,6 +3337,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-ftc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Federal Trade Commission protects America's consumers and enforces laws prohibiting anticompetitive, deceptive, or unfair business practices.",
+        "truncated": false,
+        "fullLength": 145
+      },
       "source": "us_government_manual",
       "nodeName": "Federal Trade Commission (FTC)",
       "listedName": "Federal Trade Commission",
@@ -2559,6 +3357,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-independent-general-services-administration": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The General Services Administration delivers value and savings in real estate, acquisition, technology, and other mission-support services across Government.",
+        "truncated": false,
+        "fullLength": 157
+      },
       "source": "us_government_manual",
       "nodeName": "General Services Administration",
       "listedName": "General Services Administration",
@@ -2572,6 +3377,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-nasa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Aeronautics and Space Administration explores the unknown in air and space, innovates for the benefit of humanity and inspires the world through discovery.",
+        "truncated": false,
+        "fullLength": 168
+      },
       "source": "us_government_manual",
       "nodeName": "National Aeronautics & Space Administration (NASA)",
       "listedName": "National Aeronautics and Space Administration",
@@ -2585,6 +3397,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-merit-systems-protection-board-mspb": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Merit Systems Protection Board protects the integrity of the Federal personnel merit systems and the rights of Federal employees.",
+        "truncated": false,
+        "fullLength": 133
+      },
       "source": "us_government_manual",
       "nodeName": "Merit Systems Protection Board (MSPB)",
       "listedName": "Merit Systems Protection Board",
@@ -2598,6 +3417,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-nara": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Archives and Records Administration safeguards and preserves the records of the U.S. Government and provides public access to them, ensuring that the American people can discover, learn from, and use their documentary heritage to support democracy.",
+        "truncated": false,
+        "fullLength": 261
+      },
       "source": "us_government_manual",
       "nodeName": "National Archives & Records Administration (NARA)",
       "listedName": "National Archives and Records Administration",
@@ -2611,6 +3437,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-capital-planning-commission-ncpc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Capital Planning Commission conducts planning and development activities for Federal lands and facilities in the National Capital Region—the District of Columbia, the City of Alexandria, and all land areas within the boundaries of Montgomery, Prince George's, Fairfax, Loudoun, Prince William, and Arlington Counties.",
+        "truncated": false,
+        "fullLength": 330
+      },
       "source": "us_government_manual",
       "nodeName": "National Capital Planning Commission (NCPC)",
       "listedName": "National Capital Planning Commission",
@@ -2624,6 +3457,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-credit-union-administration-ncua": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Credit Union Administration provides a trustworthy credit union system that builds confidence in the Nation's system of cooperative credit.",
+        "truncated": false,
+        "fullLength": 152
+      },
       "source": "us_government_manual",
       "nodeName": "National Credit Union Administration (NCUA)",
       "listedName": "National Credit Union Administration",
@@ -2637,6 +3477,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-endowment-for-the-arts-nea": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Endowment for the Arts supports artistic excellence and promotes creativity and innovation to benefit individuals and communities.",
+        "truncated": false,
+        "fullLength": 143
+      },
       "source": "us_government_manual",
       "nodeName": "National Endowment for the Arts (NEA)",
       "listedName": "National Endowment for the Arts",
@@ -2650,6 +3497,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-endowment-for-the-humanities-neh": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Endowment for the Humanities supports research, education, preservation, and public programs in the humanities.",
+        "truncated": false,
+        "fullLength": 124
+      },
       "source": "us_government_manual",
       "nodeName": "National Endowment for the Humanities (NEH)",
       "listedName": "National Endowment for the Humanities",
@@ -2663,6 +3517,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-institute-of-museum-and-library-services": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Institute of Museum and Library Services helps libraries and museums enhance cultural and civic engagement, embrace innovation, and further lifelong learning.",
+        "truncated": false,
+        "fullLength": 162
+      },
       "source": "us_government_manual",
       "nodeName": "Institute of Museum and Library Services",
       "listedName": "Institute of Museum and Library Services",
@@ -2676,6 +3537,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-labor-relations-board-nlrb-independent": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Labor Relations Board remedies unfair labor practices and safeguards employees' rights to organize and to determine whether to have unions as their bargaining representative.",
+        "truncated": false,
+        "fullLength": 187
+      },
       "source": "us_government_manual",
       "nodeName": "National Labor Relations Board (NLRB — independent)",
       "listedName": "National Labor Relations Board",
@@ -2689,6 +3557,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-mediation-board-nmb": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Mediation Board facilitates labor-management relations within the railroad and airline industries.",
+        "truncated": false,
+        "fullLength": 111
+      },
       "source": "us_government_manual",
       "nodeName": "National Mediation Board (NMB)",
       "listedName": "National Mediation Board",
@@ -2702,6 +3577,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-nsf": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Science Foundation supports research and education to advance science and engineering.",
+        "truncated": false,
+        "fullLength": 99
+      },
       "source": "us_government_manual",
       "nodeName": "National Science Foundation (NSF)",
       "listedName": "National Science Foundation",
@@ -2715,6 +3597,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The National Transportation Safety Board investigates accidents, conducts studies, and makes recommendations on safety to Government agencies, the transportation industry, and others.",
+        "truncated": false,
+        "fullLength": 183
+      },
       "source": "us_government_manual",
       "nodeName": "National Transportation Safety Board (NTSB)",
       "listedName": "National Transportation Safety Board",
@@ -2728,6 +3617,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-nrc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Nuclear Regulatory Commission licenses and regulates civilian use of nuclear energy to protect public health and safety and the environment.",
+        "truncated": false,
+        "fullLength": 144
+      },
       "source": "us_government_manual",
       "nodeName": "Nuclear Regulatory Commission (NRC)",
       "listedName": "Nuclear Regulatory Commission",
@@ -2741,6 +3637,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-opm": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "OPM assesses human capital management Governmentwide and within agencies to gather information for policy development and program refinement, ensure compliance with law and regulation, and enhance agency capability for human resources management accountability. Agency accountability systems help ensure that human capital decisions are consistent with merit principles and that human capital strategies are aligned with mission accomplishment. OPM also works with agencies to find better and more strategic ways to manage Federal human capital",
+        "truncated": false,
+        "fullLength": 544
+      },
       "source": "us_government_manual",
       "nodeName": "Office of Personnel Management (OPM)",
       "listedName": "Office of Personnel Management",
@@ -2754,6 +3657,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-peace-corps": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Peace Corps gives the peoples of host countries increased access to volunteers who are qualified, skilled, and trained, and it strengthens mutual understanding between Americans and the peoples of the countries served.",
+        "truncated": false,
+        "fullLength": 222
+      },
       "source": "us_government_manual",
       "nodeName": "Peace Corps",
       "listedName": "Peace Corps",
@@ -2767,6 +3677,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-pension-benefit-guaranty-corporation-pbgc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Pension Benefit Guaranty Corporation protects the retirement incomes of American workers in private-sector defined benefit pension plans.",
+        "truncated": false,
+        "fullLength": 141
+      },
       "source": "us_government_manual",
       "nodeName": "Pension Benefit Guaranty Corporation (PBGC)",
       "listedName": "Pension Benefit Guaranty Corporation",
@@ -2780,6 +3697,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-u-s-postal-rate-commission-postal-regulatory-commission": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Postal Regulatory Commission develops and implements a modern system of postal rate regulation.",
+        "truncated": false,
+        "fullLength": 99
+      },
       "source": "us_government_manual",
       "nodeName": "Postal Regulatory Commission",
       "listedName": "Postal Regulatory Commission",
@@ -2793,6 +3717,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-railroad-retirement-board": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Railroad Retirement Board administers comprehensive retirement-survivor and unemployment-sickness benefit programs for the Nation's railroad workers and their families.",
+        "truncated": false,
+        "fullLength": 172
+      },
       "source": "us_government_manual",
       "nodeName": "Railroad Retirement Board",
       "listedName": "Railroad Retirement Board",
@@ -2806,6 +3737,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-regulatory-sec": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Securities and Exchange Commission protects investors, facilitates capital formation, and maintains efficient, fair, and orderly markets.",
+        "truncated": false,
+        "fullLength": 141
+      },
       "source": "us_government_manual",
       "nodeName": "Securities & Exchange Commission (SEC)",
       "listedName": "Securities and Exchange Commission",
@@ -2819,6 +3757,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-selective-service-system": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Selective Service System supplies the Armed Forces with manpower in an emergency and operates an Alternative Service Program for men classified as conscientious objectors.",
+        "truncated": false,
+        "fullLength": 175
+      },
       "source": "us_government_manual",
       "nodeName": "Selective Service System",
       "listedName": "Selective Service System",
@@ -2832,6 +3777,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-sba": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Small Business Administration aids, assists, and counsels entrepreneurs and protects their business interests; preserves free and competitive enterprise; and maintains and strengthens the overall economy.",
+        "truncated": false,
+        "fullLength": 208
+      },
       "source": "us_government_manual",
       "nodeName": "Small Business Administration (SBA)",
       "listedName": "Small Business Administration",
@@ -2845,6 +3797,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-ssa": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Social Security Administration manages the retirement, survivors, and disability insurance programs that are known as Social Security; it administers the Supplemental Security Income program for the aged, blind, and disabled; and it assigns Social Security numbers to U.S. citizens and maintains earnings records based on those numbers.",
+        "truncated": false,
+        "fullLength": 340
+      },
       "source": "us_government_manual",
       "nodeName": "Social Security Administration (SSA)",
       "listedName": "Social Security Administration",
@@ -2858,6 +3817,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-tennessee-valley-authority-tva": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Tennessee Valley Authority conducts a unified program of resource development to advance economic growth in the Tennessee Valley region.",
+        "truncated": false,
+        "fullLength": 140
+      },
       "source": "us_government_manual",
       "nodeName": "Tennessee Valley Authority (TVA)",
       "listedName": "Tennessee Valley Authority",
@@ -2871,6 +3837,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The U.S. Agency for Global Media informs, engages, and connects people around the world in support of freedom and democracy.",
+        "truncated": false,
+        "fullLength": 124
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Agency for Global Media",
       "listedName": "United States Agency for Global Media",
@@ -2884,6 +3857,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-independent-agency-for-international-development": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Agency for International Development seeks to eradicate extreme global poverty and enables resilient and democratic societies to realize their potential.",
+        "truncated": false,
+        "fullLength": 171
+      },
       "source": "us_government_manual",
       "nodeName": "Agency for International Development",
       "listedName": "United States Agency for International Development",
@@ -2897,6 +3877,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-office-of-special-counsel-osc": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Office of Special Counsel investigates allegations of certain activities prohibited by civil service laws, rules, or regulations and litigates before the Merit Systems Protection Board.",
+        "truncated": false,
+        "fullLength": 203
+      },
       "source": "us_government_manual",
       "nodeName": "Office of Special Counsel (OSC)",
       "listedName": "United States Office of Special Counsel",
@@ -2910,6 +3897,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-usps": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The United States Postal Service binds the Nation together through the people's personal, educational, literary, and business correspondence by providing prompt, reliable, and efficient services to patrons in all areas and by rendering postal services to all communities.",
+        "truncated": false,
+        "fullLength": 271
+      },
       "source": "us_government_manual",
       "nodeName": "U.S. Postal Service (USPS)",
       "listedName": "United States Postal Service",
@@ -2923,6 +3917,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-misc-legal-services-corporation": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Legal Services Corporation promotes equal access to justice and provides civil legal assistance to low-income persons.",
+        "truncated": false,
+        "fullLength": 122
+      },
       "source": "us_government_manual",
       "nodeName": "Legal Services Corporation",
       "listedName": "Legal Services Corporation",
@@ -2936,6 +3937,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-smithsonian": {
+      "description": {
+        "kind": "mission_statement",
+        "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+        "text": "The Smithsonian Institution increases the fund of human knowledge and diffuses that knowledge among people.",
+        "truncated": false,
+        "fullLength": 107
+      },
       "source": "us_government_manual",
       "nodeName": "Smithsonian Institution",
       "listedName": "Smithsonian Institution",
@@ -2949,6 +3957,7 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-smithsonian-john-f-kennedy-center-performing-arts": {
+      "description": null,
       "source": "us_government_manual",
       "nodeName": "John F. Kennedy Center for the Performing Arts",
       "listedName": "John F. Kennedy Center for the Performing Arts",
@@ -2962,6 +3971,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-smithsonian-national-gallery-art": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "The National Gallery of Art administers a world-class collection of painting, sculpture, and the graphic arts. The West Building includes European (13th–early 20th century) and American (18th–early 20th century) works. An extensive survey of Italian painting and sculpture, including the only painting by Leonardo da Vinci in the Americas, is on display in the Gallery.",
+        "truncated": true,
+        "fullLength": 1232
+      },
       "source": "us_government_manual",
       "nodeName": "National Gallery of Art",
       "listedName": "National Gallery of Art",
@@ -2975,6 +3991,13 @@
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-ind-smithsonian-woodrow-wilson-international-center-scholars": {
+      "description": {
+        "kind": "opening_paragraph",
+        "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+        "text": "Created by an Act of Congress in 1968, the Woodrow Wilson International Center for Scholars is a national, living memorial honoring the legacy of President Woodrow Wilson. The Wilson Center, headquartered in Washington, DC, and supported by both public and private funds, provides a strictly nonpartisan space for scholars and policymakers to interact. By conducting relevant, timely research and promoting dialogue from diverse perspectives, the Center works to address critical current and emerging challenges confronting the United States and the world.",
+        "truncated": false,
+        "fullLength": 556
+      },
       "source": "us_government_manual",
       "nodeName": "Woodrow Wilson International Center for Scholars",
       "listedName": "Woodrow Wilson International Center for Scholars",
