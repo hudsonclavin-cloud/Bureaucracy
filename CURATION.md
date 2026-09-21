@@ -1722,3 +1722,280 @@ Division, on a host that served its page at 00:33 and refused it at 21:00.
 - **Prior recheck1 records (2026-09-13)** assert headings for the Truman,
   Clinton and LBJ libraries and several subcommittees that today's re-probes
   cannot find. Six of the 22 unsure verdicts are this pattern.
+
+## 16. The two chambers' complete lists, reconciled seat by seat (2026-09-21)
+
+§5.1 and §5.7 recorded what the Senate's committee-membership files and the
+House Clerk's spreadsheet say about the curated committees, and §9 acted on
+the clearest cases. What was left on 2026-09-21, read off
+`scripts/derive_directory_evidence.py --dry-run` rather than off those
+sections: **12 Senate and 21 House subcommittee nodes** published as
+"checked against the official list: it carries no unit of this name", one
+House committee (§12.2, no action), and **12 Senate and 23 House list names
+the graph had no node for**. This section is the seat-by-seat disposition of
+every one of them, under the same rules §9 and §10 set: nothing is renamed
+or added except by its sanctioned script, every rename or addition is
+licensed by an official page the script re-fetches and re-tests on every
+run, and a decision that cannot be cited is recorded as a decision not to
+act.
+
+**What was read.** Every committee's own subcommittees page (21 pages,
+senate.gov and house.gov hosts), the five Senate committee-membership XML
+files at senate.gov for the committees concerned, and — where a committee's
+own page is a script shell below the verifier's readable floor
+(`armedservices.house.gov/subcommittees` at 278 characters,
+`intelligence.house.gov/subcommittees/` at 360, `cha.house.gov/subcommittees`
+at 229, every `oversight.house.gov/subcommittee/…` page at 343) or names its
+subcommittees only in site-wide navigation (`oversight.house.gov`,
+`cha.house.gov`) — the House's own document repository,
+`docs.house.gov/Committee/Committees.aspx?Code=<code>`, which prints each
+committee's subcommittees in page content and had already licensed the
+Intelligence Committee's NSA rename in §9. Every page was fetched once under
+the verifier's robots policy and User-Agent by a read-only scratch script
+that ran the verifier's own `find_label_region_rule` for every curated child
+name, every list name, and every proposed name, both with the committee fold
+(the rename script's test) and without it (the add script's test). The
+script wrote nothing; the two sanctioned scripts re-fetched every page again
+before writing.
+
+Three things the reading established that decided cases below:
+
+- **The Senate Appropriations Committee's own site names its subcommittees
+  without "Department of".** appropriations.senate.gov labels them "Defense",
+  "Homeland Security", "Interior, Environment, and Related Agencies", "Labor,
+  Health and Human Services, Education, and Related Agencies"; the Senate's
+  XML prints "Subcommittee on Department of Defense", "…Department of Homeland
+  Security", "…Department of Interior, Environment, and Related Agencies",
+  "…Departments of Labor, Health and Human Services, and Education, and
+  Related Agencies". The committee fold did find "Department of Defense" and
+  "Department of Homeland Security" on two subcommittee pages, and those hits
+  were checked in context before being believed: they are entries in each
+  subcommittee's *jurisdiction* list ("Department of Defense—Military" sits
+  beside "Defense Health", "Missile Defense Agency (DOD)"), not the
+  subcommittee's label. A rename licensed by that hit would have been exactly
+  the over-match the fold was built to refuse.
+- **help.senate.gov and judiciary.senate.gov split each subcommittee name
+  across DOM elements** — `SUBCOMMITTEE ON` / `Education` / `&` / `the American
+  Family`; `Subcommittee on` / `Federal Courts, Oversight, Agency Action and` /
+  `Federal Rights` — which label equality refuses by design (the "phrase
+  spanning two DOM elements" case §15.6 records for Ways & Means). Neither
+  page can confirm any subcommittee, current or curated; the Senate's own
+  membership file is the page that can, and §9 had already used it for three
+  Judiciary renames.
+- **judiciary.house.gov/about/subcommittees is an archive.** It carries a
+  "Current Congress" block of six names and then blocks headed "118th
+  Congress", "117th Congress" and so on back to the 110th. "The Subcommittee
+  on Responsiveness and Accountability To Oversight" and the "Select
+  Subcommittee on the Weaponization of the Federal Government" sit under the
+  118th heading and not under the current one. §9's rename of the
+  Weaponization node, and the `name_labelled_on_own_official_page`
+  confirmation it then earned, rest on that archived block — the very thing
+  §9.4 declined a different proposal for.
+
+### 16.1 Eleven renames, each licensed by the page the row names
+
+All eleven are in `data/curation/unit_renames.json` with the basis written
+beside them, and were applied by `rename_units_to_official_wording.py`
+(dry run: `renamed 11 refused 95 of 106 rows`; the 95 are the earlier rows,
+already applied, skipped before any fetch). The rule applied is the brief's:
+the current list name plainly denotes the same seat — same committee, and
+the jurisdiction words shared — and the committee's own page, or the House's
+own listing, labels it.
+
+| Node | Was | Now | Licensed by | Shared jurisdiction words |
+|---|---|---|---|---|
+| HSGAC `…-sub-government-operations-border-management` | Government Operations & Border Management | Border Management, Federal Workforce, and Regulatory Affairs | hsgac.senate.gov/subcommittees/ (content, under a "SUBCOMMITTEE ON" heading; the site drops the Oxford comma) | Border Management; three seats in both Congresses, PSI unchanged |
+| House Armed Services `…-sub-cyber-information-technology-innovation` | Subcommittee on Cyber, Information Technology & Innovation | Subcommittee on Cyber, Information Technologies, and Innovation | the node's own queued page (its title), and docs.house.gov AS00 | all of them; one letter |
+| House E&C `…-sub-energy-climate-grid-security` | Subcommittee on Energy, Climate & Grid Security | Subcommittee on Energy | docs.house.gov IF00 (content); the committee's home page lists its six current subcommittees in content | Energy; six seats in both Congresses |
+| House E&C `…-sub-environment-manufacturing-critical-materials` | Subcommittee on Environment, Manufacturing & Critical Materials | Subcommittee on Environment | docs.house.gov IF00 | Environment |
+| House E&C `…-sub-innovation-data-commerce` | Subcommittee on Innovation, Data & Commerce | Subcommittee on Commerce, Manufacturing, and Trade | docs.house.gov IF00; energycommerce.house.gov home page (folded) | Commerce; the sixth seat once the other five are accounted for by name — the weakest of the eleven, and recorded as such on the row |
+| House Financial Services `…-sub-financial-institutions-monetary-policy` | Subcommittee on Financial Institutions & Monetary Policy | Subcommittee on Financial Institutions | financialservices.house.gov/subcommittees (content) | Financial Institutions; the qualifier dropped (monetary policy now sits with a task force, which is not a subcommittee and is not added) |
+| House Foreign Affairs `…-sub-indo-pacific` | Subcommittee on Indo-Pacific | East Asia and Pacific Subcommittee | foreignaffairs.house.gov/subcommittees/ (content); docs.house.gov FA00 prints the same | Pacific; one regional seat |
+| House Foreign Affairs `…-sub-middle-east-north-africa-central-asia` | Subcommittee on Middle East, North Africa & Central Asia | Middle East and North Africa Subcommittee | foreignaffairs.house.gov/subcommittees/ | Middle East, North Africa; Central Asia moved to a new seat, added in §16.2 |
+| House Oversight `…-sub-government-operations-the-federal-workforce` | Subcommittee on Government Operations & the Federal Workforce | Subcommittee on Government Operations | docs.house.gov GO00 (content); the committee's own site carries the name in navigation only | Government Operations |
+| House Ways & Means `…-sub-worker-family-support` | Subcommittee on Worker & Family Support | Subcommittee on Work and Welfare | waysandmeans.house.gov/subcommittees/ ("Work & Welfare" under a "Subcommittee On" heading, folded); docs.house.gov WM00 | Work; the other five seats unchanged by name |
+| HPSCI `…-sub-defense-intelligence-warfighter-support` | Subcommittee on Defense Intelligence & Warfighter Support | Subcommittee on Defense Intelligence and Overhead Architecture | docs.house.gov IG00 (the page that licensed §9's NSA rename) | Defense Intelligence |
+
+Two of the Foreign Affairs renames take the form the committee's own page
+prints — type word after the region, "East Asia and Pacific Subcommittee" —
+rather than the graph's "Subcommittee on …", because the page and
+docs.house.gov both print it that way and the sibling "Africa Subcommittee"
+already does. That form is what §16.5 is about.
+
+### 16.2 Eighteen units added, all under `official_page_label`
+
+All in `data/curation/new_nodes.json`, added by `add_curated_nodes.py`
+(dry run: `added 18 refused 47 of 65 rows`; the 47 are the earlier rows,
+already present), typed `Subcommittee`, parent the committee node, with the
+generated description that says only that the page names the unit. The add
+script applies plain label equality — no committee fold — so each name is
+exactly what its page prints, which is why the Senate rows are bare ("Digital
+Assets") where the committee's page is bare and prefixed ("Subcommittee on
+Education and the American Family") where the only page that can decide is
+the Senate's membership file. Nothing was named from a list alone.
+
+| Under | Added | Licensed by |
+|---|---|---|
+| Senate Banking | Digital Assets | banking.senate.gov/about/subcommittees |
+| Senate Commerce | Coast Guard, Maritime, and Fisheries | commerce.senate.gov/about/commerce-subcommittees/ (prints "&") |
+| Senate Commerce | Science, Manufacturing, and Competitiveness | same |
+| Senate Commerce | Surface Transportation, Freight, Pipelines, and Safety | same |
+| Senate HSGAC | Disaster Management, District of Columbia, and Census | hsgac.senate.gov/subcommittees/ |
+| Senate HELP | Subcommittee on Education and the American Family | senate.gov committee_memberships_SSHR.xml |
+| Senate Judiciary | Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights | senate.gov committee_memberships_SSJU.xml (a seat the 118th Congress had too; the graph never carried it) |
+| House Agriculture | Subcommittee on Forestry and Horticulture | docs.house.gov AG00; the committee's page labels "Forestry and Horticulture" |
+| House Armed Services | Subcommittee on Intelligence and Special Operations | docs.house.gov AS00 |
+| House Foreign Affairs | Europe Subcommittee | foreignaffairs.house.gov/subcommittees/ |
+| House Foreign Affairs | South and Central Asia Subcommittee | same |
+| House Administration | Subcommittee on Modernization and Innovation | docs.house.gov HA00 |
+| House Judiciary | Subcommittee on Oversight | judiciary.house.gov/about/subcommittees, under "Current Congress" |
+| House Oversight | Subcommittee on Delivering on Government Efficiency | docs.house.gov GO00 |
+| House Oversight | Subcommittee on Federal Law Enforcement | docs.house.gov GO00 |
+| HPSCI | Subcommittee on the National Intelligence Enterprise | docs.house.gov IG00 (prints "the"; `subcommittee_key` sets it aside) |
+| HPSCI | Subcommittee on Open Source Intelligence | docs.house.gov IG00 |
+| HPSCI | Subcommittee on Oversight and Investigations | docs.house.gov IG00 (three other committees have one; a cross-parent duplicate is allowed, this committee had none) |
+
+None of the eighteen collides with a sibling. The `jointly_measured_names`
+guard had nothing to say: no committee carries a Treasury line.
+
+### 16.3 Left alone, each with the reason
+
+**The Senate Appropriations four** — Defense; Homeland Security; Interior,
+Environment & Related Agencies; Labor, Health and Human Services, Education,
+and Related Agencies. The committee's own site names all four as the graph
+does, three are confirmed on their own pages already, and the Senate's XML
+alone adds "Department(s) of". §12.2's rule governs: a committee's own site is
+the better authority for its own name, and a rename to the list's spelling
+would trade a confirmation from the committee's page for a listing in an
+administrative index. They stay published as names the list does not carry,
+and the list's four names stay reported as ones the graph lacks — the same
+four seats, spelled two ways by two official sources. "Defense" is the one
+that costs something: one generic word, so `uncheckable_reason` refuses it
+before any fetch and the list was its only possible evidence.
+
+**Senate Commerce's four** — Oceans, Fisheries, Climate Change &
+Manufacturing; Science & Space; Surface Transportation, Maritime, Freight &
+Ports; Tourism, Trade & Export Promotion. The committee's page labels none of
+them in any form; its six current subcommittees are all now in the graph (three
+matched, three added). The words were redistributed rather than renamed —
+§5.1's notes set out how — and §9.4 had already declined the Surface
+Transportation rename for moving maritime jurisdiction the page does not
+confirm. No official page states in words that any of the four was abolished.
+
+**HSGAC's "Emerging Threats & Spending Oversight"**: shares no word with any
+current name (§5.1). **HELP's "Children & Families"**: shares one stem with
+"Education and the American Family", which §5.1 called the weakest lead; under
+the brief's rule — same jurisdiction words — that is not a rename, so the
+current seat is added beside it. **Senate Judiciary's "Human Rights & the
+Law"**: no current name is its successor.
+
+**House Agriculture's "Subcommittee on Horticulture, Farm Inputs &
+Subcommittee on Precision Agriculture"**: a garbled name (two run together)
+matching no seat on the committee's page in any Congress. **House Foreign
+Affairs' "Global Health, Global Human Rights & International Organizations"**:
+no such seat in the 119th Congress's seven. **House Administration's
+"Subcommittee on Committees"**: no such seat; the Clerk lists Elections and
+Modernization and Innovation. **Veterans' Affairs' "Subcommittee on
+Benefits"**: no such seat. **HPSCI's "Strategic Technologies & Advanced
+Research"**: no current name is its successor.
+
+**Two whose successor is already a sibling.** House Oversight's "National
+Security, the Border & Foreign Affairs" is the 118th-Congress name of the seat
+the graph already carries as "Subcommittee on Military & Foreign Affairs";
+Ways & Means' "Select Revenue Measures" is the 118th name of the seat the graph
+already carries as "Subcommittee on Tax". A rename would collide with the
+sibling, and nothing here merges nodes; both are leads for
+`merge_duplicate_nodes.py`, for the owner.
+
+**House Judiciary's two archived names.** "Responsiveness & Accountability to
+Americans" is a garbled form of "The Subcommittee on Responsiveness and
+Accountability To Oversight", which the committee's page files under its
+"118th Congress" heading. Renaming to an archived name is what §9.4 declined,
+so it is left; the current "Subcommittee on Oversight" is added. The
+Weaponization select subcommittee is §16.4.
+
+**House Education & the Workforce**: §12.2, no action.
+
+### 16.4 No supersession applied, and the one it nearly was
+
+`data/curation/superseded.json` gains no row. The candidate §15.6 named — the
+Select Subcommittee on the Weaponization of the Federal Government — was
+taken as far as the discipline allows:
+
+- the House Clerk's complete list (2026-09-13) does not carry it;
+- judiciary.house.gov files it under "118th Congress" and not "Current
+  Congress" — a statement by heading, not in words;
+- the resolution that created it, H.Res.12 of the 118th Congress, is served
+  by govinfo.gov (`content/pkg/BILLS-118hres12eh/html/…`, robots.txt allows
+  it, 5,381 readable characters) and states, in its own words: **"The select
+  subcommittee shall cease to exist 30 days after filing the final report
+  required under subsection (b)."**
+
+That sentence states the condition on which it ceased, not that the condition
+occurred, and no official page read states the date. `mark_superseded_units.py`
+requires `supersededOn` "as the source states it", and the only date on offer
+would be reasoned from the Twentieth Amendment rather than read off a page —
+which is a restructuring on one true sentence, the thing §10 exists to refuse.
+Left, with this trail, for the owner: the quote above is on a page the script
+can fetch, so a row needs only a citable date.
+
+### 16.5 A fold the list matcher lacked, found on nodes the page had confirmed
+
+"Africa Subcommittee" and "Oversight and Intelligence Subcommittee" were
+renamed in §9 to the wording foreignaffairs.house.gov prints, confirmed on
+that page, and still published as names the Clerk's list does not carry —
+because `congress.subcommittee_key` set aside a leading "Subcommittee on" and
+not a trailing "Subcommittee", while the Clerk prints "Africa". docs.house.gov
+prints the committee's seven regional subcommittees the same way the
+committee does. The page test's own fold, `evidence.committee_core_key`, has
+always folded the type word on both sides; the list key now does too, and
+nothing else: "Permanent Subcommittee on Investigations" keeps its name, and a
+type word in the middle of the garbled Agriculture name is not a suffix.
+Pinned both ways in `tests/test_congress.py`. It is a closed type-word fold,
+not a similarity match, and it is what lets the two Foreign Affairs renames and
+two additions above take the committee's own wording and still match the
+Clerk. Six nodes match by it.
+
+### 16.6 What moved, measured
+
+`scripts/derive_directory_evidence.py` before and after (the committed
+`directory_evidence.json` against the regenerated one):
+
+| | Before | After |
+|---|---|---|
+| Senate list: subcommittees matched and placed | 58 | 66 |
+| Senate list: curated names not in the list | 12 | 11 |
+| Senate list: list names not in the graph | 12 | 4 (the Appropriations four, §16.3) |
+| House Clerk: subcommittees matched and placed | 82 | 105 |
+| House Clerk: curated names not in the list | 21 | 9 |
+| House Clerk: list names not in the graph | 23 | 0 |
+| Directory records in the file | 384 | 402 |
+| Curated nodes | 5,424 | 5,442 |
+
+Of the 31 nodes whose status changed, 13 went `not_in_list → listed` (11
+renames, 2 by the fold) and 18 are new. Nothing measured moved: no committee
+carries a cost of its own, and `output/` is untouched — the integrator
+rebuilds it.
+
+**What it cost.** The supersession script's real run — made only because the
+brief asked for all three scripts to run for real, with no row to add — met a
+transient `RemoteDisconnected` at `department.va.gov/robots.txt`, refused all
+18 VA rows as `page_refused`, and, because it withdraws every mark before
+re-applying the table, wrote the curated file with the 18 marks gone. A second
+run a minute later re-fetched the page, found the quote, and restored all 18
+with `readAt` moved from 2026-09-19 to 2026-09-21. That is the design working
+as written — a mark that cannot be re-checked is not re-asserted — but it means
+a real run on a bad network day silently unmarks nodes and a dry run does not
+warn of it. Worth a line in that script's docstring, or a refusal to write
+when a fetch failed rather than the quote; a code decision for the owner.
+
+**What the verifier will see next.** The eleven renamed nodes carry
+`nameSource`, `nameSourceDetail` and `nameMatchedText` from the pages above.
+The eighteen new nodes have no candidate page in `official_sites.json` — that
+file was not touched — so their existence evidence is, for now, the list's
+listing and placement alone, which is what the panel will say. For the House
+committees whose own subcommittee pages are script shells, the readable page
+that names the seat is `docs.house.gov`'s listing for the committee, which is
+neither the unit's own page nor its parent's in the sense `filing_id_for_role`
+draws; nominating it is phase 1b's, and the `official_list` role is the one
+that describes it.

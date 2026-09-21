@@ -186,11 +186,23 @@ def committee_key(name: Any) -> str:
 
 
 def subcommittee_key(name: Any) -> str:
+    """The type word set aside on either side, and nothing else. "Subcommittee
+    on Readiness" and "Readiness" are one key; so are "Africa Subcommittee"
+    and "Africa" — the House Foreign Affairs Committee's own site and
+    docs.house.gov both print every regional subcommittee as "<Region>
+    Subcommittee" while the Clerk's spreadsheet prints the bare region, and
+    until 2026-09-21 that trailing type word alone read as "not in the
+    official list" on nodes the committee's own page had confirmed. It is
+    the same closed fold `evidence.committee_core_key` already applies on
+    both sides for the page test; a "Permanent Subcommittee on …" is not
+    touched, and a type word in the middle of a name is not either."""
     key = canonical_name_key(name)
     if key.startswith("subcommittee on "):
         key = key[len("subcommittee on "):]
     if key.startswith("the "):
         key = key[len("the "):]
+    if key.endswith(" subcommittee"):
+        key = key[: -len(" subcommittee")]
     return key.strip()
 
 

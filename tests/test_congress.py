@@ -84,6 +84,19 @@ class KeyTests(unittest.TestCase):
         # A renamed subcommittee is a different key: no fuzzing.
         self.assertNotEqual(subcommittee_key("Competition Policy, Antitrust & Consumer Rights"), subcommittee_key("Subcommittee on Antitrust, Competition Policy, and Consumer Rights"))
 
+    def test_a_trailing_type_word_folds_and_nothing_else_does(self) -> None:
+        """foreignaffairs.house.gov prints "Africa Subcommittee"; the Clerk prints
+        "Africa". One seat, one key. The fold is the type word only: a
+        "Permanent Subcommittee on …" keeps its name, and a type word in the
+        middle of a garbled curated name is not a suffix and is left alone."""
+        self.assertEqual(subcommittee_key("Africa Subcommittee"), subcommittee_key("Africa"))
+        self.assertEqual(subcommittee_key("Oversight and Intelligence Subcommittee"), subcommittee_key("Subcommittee on Oversight and Intelligence"))
+        self.assertEqual(subcommittee_key("East Asia and Pacific Subcommittee"), "east asia and pacific")
+        self.assertEqual(subcommittee_key("Permanent Subcommittee on Investigations"), "permanent subcommittee on investigations")
+        self.assertEqual(subcommittee_key("Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture"),
+                         "horticulture farm inputs and subcommittee on precision agriculture")
+        self.assertNotEqual(subcommittee_key("Europe Subcommittee"), subcommittee_key("Subcommittee on Europe and Regional Security Cooperation"))
+
 
 class MatchTests(unittest.TestCase):
     def setUp(self) -> None:

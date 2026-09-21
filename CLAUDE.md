@@ -945,7 +945,12 @@ listed subcommittee is placed under its committee by the list's own
 structure (`placementMethod: listed_under_committee_in_senate_committee_list`).
 `committee_key` folds the graph's artifacts ("Senate Committee on Select
 Committee on Ethics", "Committee on Judiciary") onto the Senate's names
-and nothing else. First run: all 20 curated Senate committees listed, 43
+and nothing else; `subcommittee_key` sets the type word aside on either
+side — a leading "Subcommittee on" and, since 2026-09-21, a trailing
+"Subcommittee", because foreignaffairs.house.gov and docs.house.gov both
+print "Europe Subcommittee" where the Clerk prints "Europe" (CURATION.md
+§16, which reconciled both lists seat by seat: 11 renames, 18 units added,
+nothing superseded). First run: all 20 curated Senate committees listed, 43
 subcommittees listed and placed, 27 curated names the Senate no longer
 carries. **The House Clerk's list landed on 2026-09-13**, once the
 allowlist reached clerk.house.gov (the 2026-09-08 proxy refusal stays
