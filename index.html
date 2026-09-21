@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141414'/%3E%3Ccircle cx='16' cy='8' r='3' fill='%23c8a84a'/%3E%3Ccircle cx='8' cy='23' r='3' fill='%234a8ac8'/%3E%3Ccircle cx='24' cy='23' r='3' fill='%23c84a4a'/%3E%3Cpath d='M16 11v6M14 19l-4 2M18 19l4 2' stroke='%236a6a6a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./css/atlas.css?v=20260920a">
 <title>U.S. Federal Government — 3D Explorer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
@@ -268,6 +269,52 @@ body.dragging{cursor:grabbing;}
 
 <canvas id="canvas"></canvas>
 
+<!-- The WebGL universe remains the main simulation. The evidence directory is
+     an alternate six-generation view reached explicitly from this control. -->
+<nav id="view-switcher" aria-label="Choose explorer view">
+  <button type="button" class="view-switch" data-view="atlas" aria-pressed="false">Directory</button>
+  <button type="button" class="view-switch active" data-view="universe" aria-pressed="true">3D universe</button>
+</nav>
+
+<main id="atlas" aria-label="Federal government directory">
+  <header class="atlas-hero">
+    <div>
+      <p class="atlas-kicker">Evidence-backed federal directory</p>
+      <h1>Follow the government,<br><em>claim by claim.</em></h1>
+      <p class="atlas-intro">Browse six generations of the published hierarchy. Measured figures, inferred placement, and missing evidence stay visibly different.</p>
+    </div>
+    <div id="atlas-coverage" class="atlas-coverage" aria-live="polite"></div>
+  </header>
+
+  <section class="atlas-tools" aria-label="Directory controls">
+    <label class="atlas-search-wrap" for="atlas-search">
+      <span>Find an agency, office, court, committee, or position</span>
+      <input id="atlas-search" type="search" autocomplete="off" placeholder="Try “Environmental Protection Agency”">
+    </label>
+    <div class="atlas-depth" aria-label="Maximum generation">
+      <span>Generations</span>
+      <button type="button" data-atlas-depth="3">3</button>
+      <button type="button" data-atlas-depth="4">4</button>
+      <button type="button" data-atlas-depth="5">5</button>
+      <button type="button" class="active" data-atlas-depth="6">6</button>
+    </div>
+    <div id="atlas-search-results" role="listbox" aria-label="Search results"></div>
+  </section>
+
+  <section class="atlas-stage" aria-label="Organization browser">
+    <div class="atlas-stage-head">
+      <div>
+        <p class="atlas-eyebrow">Organizational view</p>
+        <h2 id="atlas-path-title">United States federal government</h2>
+      </div>
+      <p id="atlas-stage-note">Choose a card to reveal the next generation.</p>
+    </div>
+    <div id="atlas-columns" class="atlas-columns"></div>
+  </section>
+
+  <aside id="atlas-detail" aria-label="Selected entity details" aria-live="polite"></aside>
+</main>
+
 <div id="left-stack">
 <div id="title-panel">
   <h1>Government of the<br>United States</h1>
@@ -420,7 +467,8 @@ window.setTimeout(function () {
   }
 }, 20000);
 </script>
-<script type="module" src="./js/ui.js?v=20260918c"
-  onerror="window.__graphBootFailed('Failed to load application scripts (network or CDN unreachable). Check your connection and reload.')"></script>
+<script type="module" src="./js/atlas.js?v=20260920a"></script>
+<script type="module" src="./js/ui.js?v=20260920a"
+  onerror="window.__graphBootFailed('Failed to load the 3D simulation. Check your connection and reload.')"></script>
 </body>
 </html>
