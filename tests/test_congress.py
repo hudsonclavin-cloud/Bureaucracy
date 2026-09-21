@@ -84,6 +84,25 @@ class KeyTests(unittest.TestCase):
         # A renamed subcommittee is a different key: no fuzzing.
         self.assertNotEqual(subcommittee_key("Competition Policy, Antitrust & Consumer Rights"), subcommittee_key("Subcommittee on Antitrust, Competition Policy, and Consumer Rights"))
 
+    def test_the_gate_mirrors_the_subcommittee_fold(self) -> None:
+        """The release gate is stdlib-only and carries its own copy of the
+        fold; a list placement it refused on 2026-09-21 ('East Asia and
+        Pacific' for 'East Asia and Pacific Subcommittee') was the two
+        drifting apart."""
+        from data_pipeline.verification.evidence import canonical_name_key
+        from scripts import validate_published_graph as gate
+
+        for name in (
+            "Subcommittee on the Constitution",
+            "East Asia and Pacific Subcommittee",
+            "Europe Subcommittee",
+            "Subcommittee on Oversight and Intelligence",
+            "Permanent Subcommittee on Investigations",
+            "Subcommittee on Horticulture, Farm Inputs & Subcommittee on Precision Agriculture",
+            "Readiness",
+        ):
+            self.assertEqual(gate.list_subcommittee_key(canonical_name_key(name)), subcommittee_key(name), name)
+
     def test_a_trailing_type_word_folds_and_nothing_else_does(self) -> None:
         """foreignaffairs.house.gov prints "Africa Subcommittee"; the Clerk prints
         "Africa". One seat, one key. The fold is the type word only: a

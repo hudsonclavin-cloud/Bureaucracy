@@ -975,7 +975,16 @@ class DescriptionGateTests(unittest.TestCase):
             code, output = self.run_gate(graph)
             self.assertIn("ok    " + self.LINE, output)
             self.assertEqual(code, 0, output[-2000:])
-            self.assertIn("Manual (descriptions): 1 organisations", output)
+            # The published graph carries the module's own blocks already, so
+            # the count is whatever the stamped graph holds, never a literal.
+            carrying = 0
+            stack = [graph]
+            while stack:
+                item = stack.pop()
+                carrying += 1 if isinstance(item.get("descriptionOfficial"), dict) else 0
+                stack.extend([c for c in (item.get("children") or []) if isinstance(c, dict)])
+            self.assertGreaterEqual(carrying, 1)
+            self.assertIn(f"Manual (descriptions): {carrying:,} organisations", output)
 
     def test_the_gates_parser_agrees_with_the_module_on_every_entry(self):
         from scripts.validate_published_graph import (

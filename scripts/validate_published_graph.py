@@ -1864,6 +1864,23 @@ GOVMAN_SENTENCE_BOUNDARY = re.compile(
 )
 
 
+def list_subcommittee_key(key):
+    """Mirror of data_pipeline.verification.congress.subcommittee_key on an
+    already-canonical key: the type word set aside on either side and nothing
+    else. 'subcommittee on the constitution' -> 'constitution'; 'east asia and
+    pacific subcommittee' -> 'east asia and pacific'; a 'permanent
+    subcommittee on ...' is untouched. tests/test_congress.py pins the two
+    together."""
+    text = str(key or "").strip()
+    if text.startswith("subcommittee on "):
+        text = text[len("subcommittee on "):]
+    if text.startswith("the "):
+        text = text[len("the "):]
+    if text.endswith(" subcommittee"):
+        text = text[: -len(" subcommittee")]
+    return text.strip()
+
+
 def is_committee(node):
     return str(node.get("type") or "").strip().casefold() in COMMITTEE_TYPES
 
@@ -2584,8 +2601,8 @@ def main(argv):
         matched = canonical_key(node.get("placementMatchedText"))
         name_key = canonical_key(node.get("name"))
         if str(node.get("placementMethod") or "") in ("listed_under_committee_in_senate_committee_list", "listed_under_committee_in_house_clerk_committee_list"):
-            matched = re.sub(r"^subcommittee on (the )?", "", matched)
-            name_key = re.sub(r"^subcommittee on (the )?", "", name_key)
+            matched = list_subcommittee_key(matched)
+            name_key = list_subcommittee_key(name_key)
         if str(node.get("placementMethod") or "") == "listed_under_organization_in_opm_plum_archive":
             # A curated position name legitimately carries the parent's own
             # name or acronym ("Director, AHRQ" under AHRQ), and may offer
