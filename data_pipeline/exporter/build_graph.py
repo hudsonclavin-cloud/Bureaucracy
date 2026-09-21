@@ -240,6 +240,9 @@ MINIMAL_GRAPH_FIELDS = (
     # the three pay blocks, each a different kind of claim
     "positionListing", "positionPayRate", "positionStatutoryPay", "positionReportedPay",
     "positionSchedulePay",
+    # the base-pay RANGE a salary table states for the listing's pay plan or
+    # grade: a minimum and a maximum, never a rate, and never a cost
+    "positionGradePay",
     # the Government Manual's listing of a post in its own agency's entry,
     # with the leadership table's own "updated" footer, which the panel
     # prints because some tables are years older than the edition
@@ -2459,6 +2462,7 @@ def build_graph(
     headcount_evidence_path: str | Path | None = "default",
     position_evidence_path: str | Path | None = "default",
     pay_evidence_path: str | Path | None = "default",
+    grade_pay_evidence_path: str | Path | None = "default",
     schedule_pay_evidence_path: str | Path | None = "default",
     judicial_pay_evidence_path: str | Path | None = "default",
     congressional_pay_evidence_path: str | Path | None = "default",
@@ -2642,6 +2646,24 @@ def build_graph(
     resolved_pay_path = DEFAULT_PAY_EVIDENCE_PATH if pay_evidence_path == "default" else pay_evidence_path
     validation["pay_evidence"] = apply_pay_evidence(
         graph, load_pay_evidence(resolved_pay_path) if resolved_pay_path else {}, index_tree=index_tree,
+    )
+    # The RANGE a salary table states for the listing's pay plan or grade --
+    # a General Schedule grade's step 1 to step 10, or a pay system's minimum
+    # and maximum. Its own field because it is a different shape of claim
+    # from a rate: two bounds, no figure for the post, and for the General
+    # Schedule base pay before locality. Tied to positionListing exactly as
+    # positionPayRate is, and applied right after it for the same reason.
+    from data_pipeline.verification.gs_pay import (  # noqa: E402 — gs_pay imports this module
+        DEFAULT_EVIDENCE_PATH as DEFAULT_GRADE_PAY_EVIDENCE_PATH,
+        apply_grade_pay,
+        load_evidence as load_grade_pay_evidence,
+    )
+
+    resolved_grade_pay_path = (
+        DEFAULT_GRADE_PAY_EVIDENCE_PATH if grade_pay_evidence_path == "default" else grade_pay_evidence_path
+    )
+    validation["grade_pay_evidence"] = apply_grade_pay(
+        graph, load_grade_pay_evidence(resolved_grade_pay_path) if resolved_grade_pay_path else {}, index_tree=index_tree,
     )
     # The same Executive Schedule rate, from the other direction: the level
     # comes from 5 U.S.C. 5312-5316 rather than from the previous
@@ -2831,6 +2853,7 @@ def build_graph(
     # same rule on each.
     multi_post_withdrawn = withdraw_pay_from_multi_post_nodes(graph)
     validation["pay_evidence"]["stands_for_many_posts"] = multi_post_withdrawn
+    validation["grade_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["judicial_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["congressional_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn
     validation["whitehouse_pay_evidence"]["stands_for_many_posts_after_pruning"] = multi_post_withdrawn

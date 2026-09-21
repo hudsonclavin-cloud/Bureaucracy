@@ -175,6 +175,96 @@ EXECUTIVE_SCHEDULE_FOOTNOTES = (
     "continues through January 30, 2026. Future Congressional action will determine whether these "
     "frozen rates continue beyond that date.",
 )
+# OPM's Salary Table 2026-GS, mirrored as the fifteen (step 1, step 10) pairs a
+# published range can be checked against, and pinned to BOTH committed
+# renderings of the table by tests/test_gs_pay.py -- the PDF the records cite
+# and the HTML page beside it. A range published from a grade the mirror does
+# not have, or with bounds the table does not print, is refused here. Base pay
+# before locality: the table states no locality adjustment, and the block must
+# say so in the words gs_pay.GS_BASE_BEFORE_LOCALITY carries.
+GENERAL_SCHEDULE_TABLE = "Salary Table 2026-GS"
+GENERAL_SCHEDULE_EFFECTIVE = "2026-01-01"
+GENERAL_SCHEDULE_EFFECTIVE_TEXT = "Effective January 2026"
+GENERAL_SCHEDULE_RANGES = {
+    "1": (22_584.0, 28_248.0),
+    "2": (25_393.0, 31_953.0),
+    "3": (27_708.0, 36_024.0),
+    "4": (31_103.0, 40_436.0),
+    "5": (34_799.0, 45_239.0),
+    "6": (38_791.0, 50_428.0),
+    "7": (43_106.0, 56_039.0),
+    "8": (47_738.0, 62_057.0),
+    "9": (52_727.0, 68_549.0),
+    "10": (58_064.0, 75_479.0),
+    "11": (63_795.0, 82_938.0),
+    "12": (76_463.0, 99_404.0),
+    "13": (90_925.0, 118_204.0),
+    "14": (107_446.0, 139_684.0),
+    "15": (126_384.0, 164_301.0),
+}
+GENERAL_SCHEDULE_BASE_BEFORE_LOCALITY = (
+    "base General Schedule rates before locality pay; the table states no locality adjustment"
+)
+# The SES and SL/ST structure tables: two rows each, a minimum and a maximum,
+# for agencies with and without a certified performance appraisal system.
+# Mirrored as the page prints them and pinned by tests/test_gs_pay.py. The two
+# tables print identical figures, which is exactly why a block must name the
+# table for its own pay plan: a SL/ST range citing the SES table would carry
+# every right number and the wrong document.
+PAY_STRUCTURE_TABLES = {
+    "senior_executive_service": {
+        "table": "Salary Table No. 2026-ES",
+        "payPlans": ("ES",),
+        "rows": (
+            ("Agencies with a Certified SES Performance Appraisal System", 151_661.0, 228_000.0),
+            ("Agencies without a Certified SES Performance Appraisal System", 151_661.0, 209_600.0),
+        ),
+    },
+    "senior_level": {
+        "table": "Salary Table No. 2026-SL/ST",
+        "payPlans": ("SL", "ST"),
+        "rows": (
+            ("Agencies with a Certified SL/ST Performance Appraisal System", 151_661.0, 228_000.0),
+            ("Agencies without a Certified SL/ST Performance Appraisal System", 151_661.0, 209_600.0),
+        ),
+    },
+}
+# The committed documents each kind of range cites, so the gate can recompute
+# the digest a block names from the bytes on disk. The GS block cites the PDF
+# and carries the HTML's digest as corroboration; both are checked.
+GRADE_PAY_FIXTURES = {
+    "general_schedule_grade": (
+        Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "pay" / "general_schedule_2026.pdf",
+        Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "pay" / "general_schedule_2026.html",
+    ),
+    "senior_executive_service": (
+        Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "pay" / "senior_executive_service_2026.html",
+    ),
+    "senior_level": (
+        Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "opm" / "pay" / "senior_level_2026.html",
+    ),
+}
+GRADE_PAY_UNITS_KIND = {
+    "general_schedule_grade": "currency_mark_on_the_columns_first_figure",
+    "senior_executive_service": "currency_mark_on_the_printed_figure",
+    "senior_level": "currency_mark_on_the_printed_figure",
+}
+_FIXTURE_DIGESTS = {}
+
+
+def fixture_digest(path):
+    """sha256 of a committed fixture, computed once per run."""
+    import hashlib as _hashlib
+
+    key = str(path)
+    if key not in _FIXTURE_DIGESTS:
+        try:
+            _FIXTURE_DIGESTS[key] = _hashlib.sha256(Path(path).read_bytes()).hexdigest()
+        except OSError:
+            _FIXTURE_DIGESTS[key] = None
+    return _FIXTURE_DIGESTS[key]
+
+
 # The U.S. Courts' own Judicial Compensation table, mirrored for the same
 # reason and pinned the same way: tests/test_judicial_pay.py parses
 # tests/fixtures/uscourts/judicial_compensation.html and asserts equality.
@@ -725,6 +815,178 @@ def usaspending_violations(node, block, today, label):
     cost = node.get("resolved_total_amount")
     if measured and isinstance(cost, (int, float)) and abs(float(cost) - float(amount)) <= 0.005:
         say("publishes its File A gross outlay as its measured cost")
+    return out
+
+
+def grade_pay_violations(node, pay, listing, today, label):
+    """Everything that must be true of a base-pay RANGE looked up from a
+    salary table for the pay plan or grade the archive reports.
+
+    The claim is a join, as positionPayRate's is -- *the archive files this
+    post on pay plan GS at grade 15; Salary Table 2026-GS pays grade 15 from
+    $126,384 to $164,301 before locality* -- and every rule here stops one
+    half being published as if it were the other, a range being read as a
+    rate, or either being read as this unit's cost.
+    """
+    out = []
+    say = lambda text: out.append("{} {}".format(label(node), text))
+    if not isinstance(pay, dict):
+        say("positionGradePay {!r} is not a record".format(pay))
+        return out
+
+    type_text = str(node.get("type") or "").casefold()
+    if not any(word in type_text for word in ("position", "role", "office holder")):
+        say("carries a base-pay range but is a {!r}, not a post".format(node.get("type")))
+    if node.get("representsPosts"):
+        say("carries one post's pay range but stands for several posts")
+
+    kind = str(pay.get("kind") or "")
+    plan = str(pay.get("payPlan") or "")
+    grade = str(pay.get("grade") or "")
+    if kind == "general_schedule_grade":
+        plans = ("GS",)
+    elif kind in PAY_STRUCTURE_TABLES:
+        plans = PAY_STRUCTURE_TABLES[kind]["payPlans"]
+    else:
+        say("publishes a range of kind {!r}, which this pipeline does not produce".format(kind))
+        return out
+    if plan not in plans:
+        say("publishes a {} range for pay plan {!r}; that table covers {!r}".format(kind, plan, plans))
+
+    # The listing half: the pay plan (and grade) must still be what the
+    # archive publishes on this very node, and the archive must not itself
+    # state a rate, which would make the range a second figure for one post.
+    if not isinstance(listing, dict):
+        say("claims a table range with no position listing beneath it to say what pay plan the post is on")
+    else:
+        if str(listing.get("payPlan") or "") != plan:
+            say("ranges pay plan {!r} but its listing reports {!r}".format(plan, listing.get("payPlan")))
+        if listing.get("reportedPay") is not None:
+            say("carries a table range beside a rate the archive states; two figures for one post")
+        if kind == "general_schedule_grade":
+            if str(listing.get("payLevel") or "") != grade:
+                say("ranges grade {!r} but its listing reports {!r}".format(grade, listing.get("payLevel")))
+            if not listing.get("payPlanAndLevelOnOneRow"):
+                say("ranges a pay plan and grade the archive never printed on one row")
+        elif listing.get("payLevel"):
+            say("ranges a pay system that has no levels beside a listing reporting level {!r}".format(listing.get("payLevel")))
+
+    # The table half: the two bounds must be the figures the mirrored table
+    # prints, as numbers AND as the printed digits the panel shows.
+    minimum, maximum = pay.get("minimum"), pay.get("maximum")
+    for name, value in (("minimum", minimum), ("maximum", maximum)):
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            say("publishes {!r} as the {} of a pay range".format(value, name))
+    numeric = all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in (minimum, maximum))
+    if numeric and float(minimum) > float(maximum):
+        say("publishes a minimum above its maximum; that is not a range")
+    if kind == "general_schedule_grade":
+        expected = GENERAL_SCHEDULE_RANGES.get(grade)
+        if expected is None:
+            say("ranges grade {!r}, which the General Schedule does not have".format(grade))
+        elif numeric and (abs(float(minimum) - expected[0]) > 0.005 or abs(float(maximum) - expected[1]) > 0.005):
+            say("publishes {:,.2f}-{:,.2f} for grade {}, which the table prints as {:,.2f}-{:,.2f}".format(
+                float(minimum), float(maximum), grade, expected[0], expected[1]))
+        if str(pay.get("table") or "") != GENERAL_SCHEDULE_TABLE:
+            say("cites table {!r}, not {!r}".format(pay.get("table"), GENERAL_SCHEDULE_TABLE))
+        if str(pay.get("effective") or "") != GENERAL_SCHEDULE_EFFECTIVE:
+            say("dates the table {!r}, not {!r}".format(pay.get("effective"), GENERAL_SCHEDULE_EFFECTIVE))
+        if str(pay.get("effectiveText") or "") != GENERAL_SCHEDULE_EFFECTIVE_TEXT:
+            say("prints the effective heading as {!r}; the page prints {!r}".format(
+                pay.get("effectiveText"), GENERAL_SCHEDULE_EFFECTIVE_TEXT))
+        steps = pay.get("steps")
+        if not isinstance(steps, list) or len(steps) != 10 or not all(
+            isinstance(s, (int, float)) and not isinstance(s, bool) for s in steps
+        ):
+            say("does not carry the ten steps the table prints for the grade")
+        elif numeric and (abs(float(steps[0]) - float(minimum)) > 0.005 or abs(float(steps[-1]) - float(maximum)) > 0.005):
+            say("publishes bounds that are not its own step 1 and step 10")
+        if str(pay.get("baseBeforeLocality") or "") != GENERAL_SCHEDULE_BASE_BEFORE_LOCALITY:
+            # The panel prints this beside every GS range. A range without it
+            # reads as what the post pays; with the locality adjustment it is
+            # not, anywhere in the fifty states.
+            say("publishes a General Schedule range without saying it is base pay before locality")
+        footnotes = pay.get("footnotes")
+        if not isinstance(footnotes, list) or any(str(f).strip() for f in footnotes):
+            # The GS PDF prints no note beneath the table; a note attributed to
+            # it is a fabricated quotation.
+            say("quotes notes the General Schedule table does not carry")
+        corroboration = pay.get("corroboration") if isinstance(pay.get("corroboration"), dict) else {}
+        html_digest = fixture_digest(GRADE_PAY_FIXTURES[kind][1])
+        if str(corroboration.get("documentSha256") or "").lower() != (html_digest or "-"):
+            say("names an HTML corroboration digest that is not the committed page's")
+        if not host_of(str(corroboration.get("url") or "")).endswith((".gov", ".mil")):
+            say("corroborates the range from a document that is not on a .gov/.mil host")
+    else:
+        mirror = PAY_STRUCTURE_TABLES[kind]
+        if str(pay.get("table") or "") != mirror["table"]:
+            say("cites table {!r}, not {!r}".format(pay.get("table"), mirror["table"]))
+        if str(pay.get("effective") or "") != GENERAL_SCHEDULE_EFFECTIVE:
+            say("dates the table {!r}, not {!r}".format(pay.get("effective"), GENERAL_SCHEDULE_EFFECTIVE))
+        if str(pay.get("effectiveText") or "") != GENERAL_SCHEDULE_EFFECTIVE_TEXT:
+            say("prints the effective heading as {!r}; the page prints {!r}".format(
+                pay.get("effectiveText"), GENERAL_SCHEDULE_EFFECTIVE_TEXT))
+        rows = pay.get("rows")
+        if not isinstance(rows, list) or len(rows) != len(mirror["rows"]):
+            say("does not carry the two structure rows the table prints")
+        else:
+            for row, (m_label, m_min, m_max) in zip(rows, mirror["rows"]):
+                if not isinstance(row, dict) or str(row.get("label") or "") != m_label:
+                    say("prints a structure row labelled {!r}; the table prints {!r}".format(
+                        (row or {}).get("label") if isinstance(row, dict) else row, m_label))
+                    continue
+                for name, expected_value in (("minimum", m_min), ("maximum", m_max)):
+                    value = row.get(name)
+                    if isinstance(value, bool) or not isinstance(value, (int, float)) or abs(float(value) - expected_value) > 0.005:
+                        say("publishes {!r} as the {} for {!r}, which the table prints as {:,.2f}".format(
+                            value, name, m_label, expected_value))
+        expected_min = mirror["rows"][0][1]
+        expected_max = max(r[2] for r in mirror["rows"])
+        if numeric and (abs(float(minimum) - expected_min) > 0.005 or abs(float(maximum) - expected_max) > 0.005):
+            say("publishes {:,.2f}-{:,.2f} as the pay system's bounds, which the table prints as {:,.2f}-{:,.2f}".format(
+                float(minimum), float(maximum), expected_min, expected_max))
+        footnotes = pay.get("footnotes")
+        if not isinstance(footnotes, list) or not any(str(f).strip() for f in footnotes):
+            say("carries a table range without the notes the table prints beside it")
+        elif tuple(str(f).strip() for f in footnotes) != EXECUTIVE_SCHEDULE_FOOTNOTES:
+            say("quotes notes the table does not carry")
+        if pay.get("baseBeforeLocality"):
+            say("calls a {} range General Schedule base pay".format(kind))
+
+    # The printed digits the panel shows must be the mirrored figures too.
+    if numeric:
+        for name, value in (("minimum", minimum), ("maximum", maximum)):
+            printed = "{:,.0f}".format(float(value))
+            if str(pay.get(name + "Printed") or "") != printed:
+                say("prints the {} as {!r}; the table prints {!r}".format(name, pay.get(name + "Printed"), printed))
+
+    # Which document, and that it is the committed one, byte for byte.
+    cited = GRADE_PAY_FIXTURES[kind][0]
+    if str(pay.get("documentSha256") or "").lower() != (fixture_digest(cited) or "-"):
+        say("names a document digest that is not the committed {}'s".format(cited.name))
+    if str(pay.get("unitsEvidenceKind") or "") != GRADE_PAY_UNITS_KIND[kind]:
+        say("rests its scale on {!r}; a {} range rests on {!r}".format(
+            pay.get("unitsEvidenceKind"), kind, GRADE_PAY_UNITS_KIND[kind]))
+    if str(pay.get("scopeMatch") or "") != "proxy" or str(pay.get("financialEvidenceStatus") or "") != "partial":
+        say("claims more than a proxy graded partial; a grade or a pay system names no post")
+    checked = str(pay.get("checkedAt") or "")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}", checked) or checked[:10] > today:
+        say("claims a table range without a past retrieval date ({!r})".format(checked))
+    if not host_of(str(pay.get("url") or "")).endswith((".gov", ".mil")):
+        say("claims a table range with no .gov/.mil document behind it")
+    source = pay.get("listingSource") if isinstance(pay.get("listingSource"), dict) else {}
+    if not str(source.get("edition") or "").strip():
+        say("does not say which edition of the archive reported the pay plan")
+    if not host_of(str(source.get("url") or "")).endswith((".gov", ".mil")):
+        say("does not say which document reported the pay plan")
+
+    # It is not a cost, and it is not evidence that the post exists.
+    if str(node.get("cost_status") or "") in ("official", "root_total", "scaled_official"):
+        say("carries a table range and a measured cost status {!r}".format(node.get("cost_status")))
+    if str(node.get("costVerificationStatus") or "") == "verified":
+        say("carries a table range and a verified cost")
+    if str(pay.get("url") or "") in [str(u) for u in (node.get("sourceUrls") or [])]:
+        say("cites the salary table as a source of the post's existence")
     return out
 
 
@@ -2067,6 +2329,7 @@ def main(argv):
     # "every verification method is one this pipeline can produce" would be
     # reported as the wrong kind of fault.
     bad_table_pay = []
+    bad_grade_pay = []
     bad_statutory_pay = []
     bad_schedule_pay = []
     bad_reported_pay = []
@@ -2226,6 +2489,12 @@ def main(argv):
         pay = node.get("positionPayRate")
         if pay is not None:
             bad_table_pay.extend(table_pay_violations(node, pay, listing, today, label))
+        # A base-pay RANGE for the pay plan or grade the archive reports:
+        # the same two-document join, a different shape of claim (two bounds
+        # and no figure for the post), its own field and its own mirror.
+        grade_pay = node.get("positionGradePay")
+        if grade_pay is not None:
+            bad_grade_pay.extend(grade_pay_violations(node, grade_pay, listing, today, label))
         # A single-source statutory rate — judicial or congressional — beside
         # the two-source join above; a different field, a different set of
         # rules, checked against its own mirror.
@@ -2351,6 +2620,7 @@ def main(argv):
     gate.check("an official source type has a .gov/.mil URL behind it", unofficial_official)
     gate.check("every verification method is one this pipeline can produce", unknown_method)
     gate.check("a salary-table rate names a level the archive still reports and the rate that table prints", bad_table_pay)
+    gate.check("a base-pay range names the pay plan and grade the archive still reports and the bounds that table prints", bad_grade_pay)
     gate.check("a statutory pay rate is the mirrored source's own figure for the tier or role it names", bad_statutory_pay)
     gate.check("an Executive Schedule rate names the post the U.S. Code names, at the level the Code sets", bad_schedule_pay)
     gate.check("a reported pay rate is the roster's own figure for the title it names, and never zero", bad_reported_pay)
@@ -3065,6 +3335,12 @@ def main(argv):
               len(table_paid), EXECUTIVE_SCHEDULE_TABLE,
               ", ".join("{} {}".format(k, by_level[k]) for k in sorted(by_level, key=len)) or "none",
               with_level - len(table_paid)))
+    ranged = [n for n in nodes if isinstance(n.get("positionGradePay"), dict)]
+    ranged_kinds = Counter(str(n["positionGradePay"].get("kind") or "?") for n in ranged)
+    print("  pay ranges           : {:,} positions carry a base-pay RANGE, never a rate, for the pay plan the archive reports "
+          "(General Schedule grade {:,}, base pay before locality; SES {:,}; SL/ST {:,})".format(
+              len(ranged), ranged_kinds.get("general_schedule_grade", 0),
+              ranged_kinds.get("senior_executive_service", 0), ranged_kinds.get("senior_level", 0)))
     schedule_paid = [n for n in nodes if isinstance(n.get("positionSchedulePay"), dict)]
     if schedule_paid or US_CODE_EXECUTIVE_SCHEDULE:
         sched_levels = Counter(str(n["positionSchedulePay"].get("payLevel") or "?") for n in schedule_paid)

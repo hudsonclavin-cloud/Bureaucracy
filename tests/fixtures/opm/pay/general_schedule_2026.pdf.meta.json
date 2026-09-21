@@ -1,0 +1,12 @@
+{
+ "fetched_at": "2026-09-21T03:12:47Z",
+ "url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/pdf/2026/GS.pdf",
+ "status": 200,
+ "final_url": "https://www.opm.gov/policy-data-oversight/pay-leave/salaries-wages/salary-tables/pdf/2026/GS.pdf",
+ "content_type": "application/pdf",
+ "user_agent": "bureaucracy-data-pipeline/1.0 (+https://github.com/hudsonclavin-cloud/Bureaucracy)",
+ "robots": "allows /policy-data-oversight/pay-leave/salaries-wages/salary-tables/pdf/2026/GS.pdf",
+ "bytes": 8498,
+ "sha256": "88317177a9a7f21b1de6243993ac2d88d8db99889d9590826b76c52687df6578",
+ "error": null
+}
