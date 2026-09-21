@@ -450,13 +450,15 @@
   "https://www.copyright.gov/"
  ],
  "leg-house-cmte-agriculture": [
-  "https://agriculture.house.gov/"
+  "https://agriculture.house.gov/",
+  "https://docs.house.gov/Committee/Committees.aspx?Code=AG00"
  ],
  "leg-house-cmte-appropriations": [
   "https://appropriations.house.gov/"
  ],
  "leg-house-cmte-armed-services": [
-  "https://armedservices.house.gov/"
+  "https://armedservices.house.gov/",
+  "https://docs.house.gov/Committee/Committees.aspx?Code=AS00"
  ],
  "leg-house-cmte-budget": [
   "https://budget.house.gov/"
@@ -468,17 +470,20 @@
   "https://financialservices.house.gov/"
  ],
  "leg-house-cmte-foreign-affairs": [
-  "https://foreignaffairs.house.gov/"
+  "https://foreignaffairs.house.gov/",
+  "https://foreignaffairs.house.gov/subcommittees/"
  ],
  "leg-house-cmte-homeland-security": [
   "https://homeland.house.gov/",
   "https://homeland.house.gov/about/"
  ],
  "leg-house-cmte-house-administration": [
-  "https://cha.house.gov/"
+  "https://cha.house.gov/",
+  "https://docs.house.gov/Committee/Committees.aspx?Code=HA00"
  ],
  "leg-house-cmte-judiciary": [
-  "https://judiciary.house.gov/"
+  "https://judiciary.house.gov/",
+  "https://judiciary.house.gov/about/subcommittees"
  ],
  "leg-house-cmte-natural-resources": [
   "https://naturalresources.house.gov/"
@@ -525,13 +530,15 @@
   "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
   "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
   "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
-  "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment"
+  "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+  "https://www.banking.senate.gov/about/subcommittees"
  ],
  "leg-senate-cmte-budget": [
   "https://www.budget.senate.gov/"
  ],
  "leg-senate-cmte-commerce-science-transportation": [
-  "https://www.commerce.senate.gov/"
+  "https://www.commerce.senate.gov/",
+  "https://www.commerce.senate.gov/about/commerce-subcommittees/"
  ],
  "leg-senate-cmte-energy-natural-resources": [
   "https://www.energy.senate.gov/",
@@ -560,7 +567,8 @@
   "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
  ],
  "leg-senate-cmte-homeland-security-governmental-affairs": [
-  "https://www.hsgac.senate.gov/"
+  "https://www.hsgac.senate.gov/",
+  "https://www.hsgac.senate.gov/subcommittees/"
  ],
  "leg-senate-cmte-indian-affairs": [
   "https://www.indian.senate.gov/"
@@ -598,7 +606,8 @@
   "https://edworkforce.house.gov/subcommittees/"
  ],
  "leg-house-cmte-oversight-accountability": [
-  "https://oversight.house.gov/"
+  "https://oversight.house.gov/",
+  "https://docs.house.gov/Committee/Committees.aspx?Code=GO00"
  ],
  "leg-house-cmte-select-committee-on-the-chinese-communist-party": [
   "https://selectcommitteeontheccp.house.gov/"
@@ -1603,5 +1612,77 @@
  ],
  "leg-house-leadership": [
   "https://www.house.gov/leadership"
+ ],
+ "exec-ind-misc-abilityone-commission": [
+  "https://www.abilityone.gov/"
+ ],
+ "exec-ind-misc-access-board": [
+  "https://www.access-board.gov/about/"
+ ],
+ "exec-ind-misc-advisory-council-on-historic-preservation": [
+  "https://www.achp.gov/about"
+ ],
+ "exec-ind-misc-african-development-foundation": [
+  "https://www.usadf.gov/"
+ ],
+ "exec-ind-misc-arctic-research-commission": [
+  "https://www.arctic.gov/"
+ ],
+ "exec-ind-misc-armed-forces-retirement-home": [
+  "https://www.afrh.gov/"
+ ],
+ "exec-ind-misc-cigie": [
+  "https://www.ignet.gov/"
+ ],
+ "exec-ind-misc-civil-rights-cold-case-records-review-board": [
+  "https://www.coldcaserecords.gov/"
+ ],
+ "exec-ind-misc-commission-of-fine-arts": [
+  "https://www.cfa.gov/about-cfa"
+ ],
+ "exec-ind-misc-commission-on-civil-rights": [
+  "https://www.usccr.gov/about"
+ ],
+ "exec-ind-misc-delta-regional-authority": [
+  "https://dra.gov/"
+ ],
+ "exec-ind-misc-federal-mediation-and-conciliation-service": [
+  "https://www.fmcs.gov/"
+ ],
+ "exec-ind-misc-federal-mine-safety-and-health-review-commission": [
+  "https://www.fmshrc.gov/"
+ ],
+ "exec-ind-misc-heritage-abroad-commission": [
+  "https://www.heritageabroad.gov/"
+ ],
+ "exec-ind-misc-interagency-council-on-homelessness": [
+  "https://www.usich.gov/"
+ ],
+ "exec-ind-misc-international-trade-commission": [
+  "https://www.usitc.gov/press_room/about_usitc.htm"
+ ],
+ "exec-ind-misc-marine-mammal-commission": [
+  "https://www.mmc.gov/about-the-commission/"
+ ],
+ "exec-ind-misc-northern-border-regional-commission": [
+  "https://www.nbrc.gov/"
+ ],
+ "exec-ind-misc-nuclear-waste-technical-review-board": [
+  "https://www.nwtrb.gov/"
+ ],
+ "exec-ind-misc-occupational-safety-and-health-review-commission": [
+  "https://www.oshrc.gov/"
+ ],
+ "exec-ind-misc-odni": [
+  "https://www.dni.gov/index.php/who-we-are"
+ ],
+ "exec-ind-misc-public-buildings-reform-board": [
+  "https://www.pbrb.gov/"
+ ],
+ "exec-ind-misc-surface-transportation-board": [
+  "https://www.stb.gov/about-stb/"
+ ],
+ "exec-ind-misc-truman-scholarship-foundation": [
+  "https://www.truman.gov/"
  ]
 }

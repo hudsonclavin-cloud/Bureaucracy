@@ -64443,12 +64443,19 @@
     },
     "leg-senate-cmte-commerce-science-transportation-sub-coast-guard-maritime-fisheries": {
       "name": "Coast Guard, Maritime, and Fisheries",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+          "matchedText": "Coast Guard, Maritime, & Fisheries",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
@@ -64456,22 +64463,29 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
-        "urlsRead": [
-          "https://www.commerce.senate.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+        "matchedText": "Coast Guard, Maritime, & Fisheries",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-senate-cmte-commerce-science-transportation-sub-science-manufacturing-competitiveness": {
       "name": "Science, Manufacturing, and Competitiveness",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+          "matchedText": "Science, Manufacturing, & Competitiveness",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
@@ -64479,22 +64493,29 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
-        "urlsRead": [
-          "https://www.commerce.senate.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+        "matchedText": "Science, Manufacturing, & Competitiveness",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-senate-cmte-commerce-science-transportation-sub-surface-transportation-freight-pipelines-safety": {
       "name": "Surface Transportation, Freight, Pipelines, and Safety",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-senate-cmte-commerce-science-transportation",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+          "matchedText": "Surface Transportation, Freight, Pipelines, & Safety",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.commerce.senate.gov/",
@@ -64502,17 +64523,17 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-commerce-science-transportation",
-        "urlsRead": [
-          "https://www.commerce.senate.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://www.commerce.senate.gov/about/commerce-subcommittees/",
+        "matchedText": "Surface Transportation, Freight, Pipelines, & Safety",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-senate-cmte-health-education-labor-pensions-sub-education-the-american-family": {
       "name": "Subcommittee on Education and the American Family",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-senate-cmte-health-education-labor-pensions",
       "ownPage": false,
       "status": "inconclusive",
@@ -64540,7 +64561,7 @@
           "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
           "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-senate-cmte-homeland-security-governmental-affairs-sub-disaster-management-district-of-columbia-census": {
@@ -64569,7 +64590,7 @@
     },
     "leg-senate-cmte-judiciary-sub-federal-courts-oversight-agency-action-federal-rights": {
       "name": "Subcommittee on Federal Courts, Oversight, Agency Action, and Federal Rights",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-senate-cmte-judiciary",
       "ownPage": false,
       "status": "inconclusive",
@@ -64592,7 +64613,7 @@
           "https://www.judiciary.senate.gov/",
           "https://www.judiciary.senate.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-house-leadership-speaker-of-the-house": {
@@ -64915,12 +64936,19 @@
     },
     "leg-house-cmte-armed-services-sub-intelligence-special-operations": {
       "name": "Subcommittee on Intelligence and Special Operations",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-house-cmte-armed-services",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+          "matchedText": "Subcommittee on Intelligence and Special Operations",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://armedservices.house.gov/",
@@ -64928,12 +64956,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-house-cmte-armed-services",
-        "urlsRead": [
-          "https://armedservices.house.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://docs.house.gov/Committee/Committees.aspx?Code=AS00",
+        "matchedText": "Subcommittee on Intelligence and Special Operations",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-house-cmte-foreign-affairs-sub-oversight-accountability-chair-subcommittee-on-oversight-accountability": {
@@ -65044,12 +65072,19 @@
     },
     "leg-house-cmte-judiciary-sub-oversight": {
       "name": "Subcommittee on Oversight",
-      "checkedAt": "2026-09-21T05:26:27+00:00",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
       "siteFrom": "leg-house-cmte-judiciary",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://judiciary.house.gov/about/subcommittees",
+          "matchedText": "The Subcommittee on Oversight",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://judiciary.house.gov/",
@@ -65057,12 +65092,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-house-cmte-judiciary",
-        "urlsRead": [
-          "https://judiciary.house.gov/"
-        ],
-        "checkedAt": "2026-09-21T05:26:27+00:00"
+        "url": "https://judiciary.house.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Oversight",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
       }
     },
     "leg-house-cmte-oversight-accountability-sub-delivering-on-government-efficiency": {
@@ -66265,6 +66300,414 @@
           "reason": "name_not_labelled_on_page"
         }
       ]
+    },
+    "exec-ind-misc-commission-on-civil-rights": {
+      "name": "United States Commission on Civil Rights",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-commission-on-civil-rights",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usccr.gov/about",
+          "matchedText": "Our Mission | U.S. Commission on Civil Rights",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-surface-transportation-board": {
+      "name": "Surface Transportation Board",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-surface-transportation-board",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.stb.gov/about-stb/",
+          "matchedText": "Surface Transportation Board",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-international-trade-commission": {
+      "name": "United States International Trade Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-international-trade-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usitc.gov/press_room/about_usitc.htm",
+          "matchedText": "About the USITC | United States International Trade Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-federal-mine-safety-and-health-review-commission": {
+      "name": "Federal Mine Safety and Health Review Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-federal-mine-safety-and-health-review-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fmshrc.gov/",
+          "matchedText": "Home | Federal Mine Safety and Health Review Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-occupational-safety-and-health-review-commission": {
+      "name": "Occupational Safety and Health Review Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-occupational-safety-and-health-review-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.oshrc.gov/",
+          "matchedText": "Occupational Safety and Health Review Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-odni": {
+      "name": "Office of the Director of National Intelligence",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-odni",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.dni.gov/index.php/who-we-are",
+          "matchedText": "About – Office of the Director of National Intelligence – Office of the Director of National Intelligence",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-african-development-foundation": {
+      "name": "United States African Development Foundation",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-african-development-foundation",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usadf.gov/",
+          "matchedText": "US African Development Foundation",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-abilityone-commission": {
+      "name": "U.S. AbilityOne Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-abilityone-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.abilityone.gov/",
+          "matchedText": "U.S. AbilityOne Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-public-buildings-reform-board": {
+      "name": "Public Buildings Reform Board",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-public-buildings-reform-board",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.pbrb.gov/",
+          "matchedText": "Public Buildings Reform Board",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-federal-mediation-and-conciliation-service": {
+      "name": "Federal Mediation and Conciliation Service",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-federal-mediation-and-conciliation-service",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fmcs.gov/",
+          "matchedText": "Home - Federal Mediation and Conciliation Service",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-access-board": {
+      "name": "U.S. Access Board (Architectural and Transportation Barriers Compliance Board)",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-access-board",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.access-board.gov/about/",
+          "matchedText": "About the U.S. Access Board",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-nuclear-waste-technical-review-board": {
+      "name": "Nuclear Waste Technical Review Board",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-nuclear-waste-technical-review-board",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nwtrb.gov/",
+          "matchedText": "U.S. Nuclear Waste Technical Review Board | NWTRB",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-advisory-council-on-historic-preservation": {
+      "name": "Advisory Council on Historic Preservation",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-advisory-council-on-historic-preservation",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.achp.gov/about",
+          "matchedText": "About the ACHP | Advisory Council on Historic Preservation",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-commission-of-fine-arts": {
+      "name": "United States Commission of Fine Arts",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-commission-of-fine-arts",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.cfa.gov/about-cfa",
+          "matchedText": "About CFA | Commission of Fine Arts",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-arctic-research-commission": {
+      "name": "United States Arctic Research Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-arctic-research-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.arctic.gov/",
+          "matchedText": "Home - US Arctic Research Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-truman-scholarship-foundation": {
+      "name": "Harry S. Truman Scholarship Foundation",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-truman-scholarship-foundation",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.truman.gov/",
+          "matchedText": "The Harry S. Truman Scholarship Foundation",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-heritage-abroad-commission": {
+      "name": "United States Commission for the Preservation of America's Heritage Abroad",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-heritage-abroad-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.heritageabroad.gov/",
+          "matchedText": "U.S Commission for the Preservation of America's Heritage Abroad | Restoration, Preservation, and Memorialization of Historical Sites",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-marine-mammal-commission": {
+      "name": "Marine Mammal Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-marine-mammal-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.mmc.gov/about-the-commission/",
+          "matchedText": "About the Commission - Marine Mammal Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-armed-forces-retirement-home": {
+      "name": "Armed Forces Retirement Home",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-armed-forces-retirement-home",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.afrh.gov/",
+          "matchedText": "Armed Forces Retirement Home | Armed Forces Retirement Home",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-cigie": {
+      "name": "Council of the Inspectors General on Integrity and Efficiency",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-cigie",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.ignet.gov/",
+          "matchedText": "The Council of the Inspectors General on Integrity and Efficiency (CIGIE)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-delta-regional-authority": {
+      "name": "Delta Regional Authority",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-delta-regional-authority",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://dra.gov/",
+          "matchedText": "Homepage - Delta Regional Authority",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-northern-border-regional-commission": {
+      "name": "Northern Border Regional Commission",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-northern-border-regional-commission",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nbrc.gov/",
+          "matchedText": "Homepage | Northern Border Regional Commission",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-interagency-council-on-homelessness": {
+      "name": "United States Interagency Council on Homelessness",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-interagency-council-on-homelessness",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.usich.gov/",
+          "matchedText": "Home | United States Interagency Council on Homelessness",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-ind-misc-civil-rights-cold-case-records-review-board": {
+      "name": "Civil Rights Cold Case Records Review Board",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-ind-misc-civil-rights-cold-case-records-review-board",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.coldcaserecords.gov/",
+          "matchedText": "Home | Civil Rights Cold Case Records Review Board",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-eop-ceq": {
+      "name": "Council on Environmental Quality",
+      "checkedAt": "2026-09-21T17:57:28+00:00",
+      "siteFrom": "exec-eop",
+      "ownPage": false,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+          "matchedText": "Council on Environmental Quality",
+          "matchedIn": "navigation"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-eop",
+        "url": "https://www.whitehouse.gov/administration/executive-office-of-the-president/",
+        "matchedText": "Council on Environmental Quality",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-21T17:57:28+00:00"
+      }
     }
   }
 }
