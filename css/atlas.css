@@ -91,7 +91,9 @@ body.atlas-mode #reading-guide { visibility: visible; }
 .coverage-stat strong { display: block; color: #fff; font: 600 27px/1 'Playfair Display', serif; }
 .coverage-stat span { display: block; margin-top: 6px; color: #9fc0b7; font: 9px/1.4 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
 
-.atlas-tools { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: minmax(320px, 1fr) auto; gap: 24px; align-items: end; padding: 18px clamp(24px, 5vw, 76px); border-bottom: 1px solid var(--atlas-line); background: rgba(242,238,229,.94); backdrop-filter: blur(18px); }
+.atlas-tools { position: sticky; z-index: 20; top: 0; display: grid; grid-template-columns: minmax(320px, 1fr) auto auto; gap: 24px; align-items: end; padding: 18px clamp(24px, 5vw, 76px); border-bottom: 1px solid var(--atlas-line); background: rgba(242,238,229,.94); backdrop-filter: blur(18px); }
+.atlas-superseded-toggle { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; color: var(--atlas-muted); font: 500 9px/1.4 'IBM Plex Mono', monospace; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.atlas-superseded-toggle input { margin: 0; accent-color: var(--atlas-signal); }
 .atlas-search-wrap span, .atlas-depth > span { display: block; margin-bottom: 7px; color: var(--atlas-muted); font: 500 9px/1 'IBM Plex Mono', monospace; letter-spacing: .1em; text-transform: uppercase; }
 #atlas-search { width: 100%; padding: 10px 0; border: 0; border-bottom: 2px solid var(--atlas-ink); outline: 0; color: var(--atlas-ink); background: transparent; font: 17px/1.2 'Playfair Display', serif; }
 #atlas-search::placeholder { color: #8f9691; }
@@ -121,9 +123,18 @@ body.atlas-mode #reading-guide { visibility: visible; }
 .entity-card small { display: block; margin-top: 5px; color: var(--atlas-muted); font: 8px/1.35 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: .07em; }
 .entity-card.selected small { color: #b8d0c9; }
 .entity-card .child-count { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); font: 500 9px 'IBM Plex Mono', monospace; }
-.evidence-dot { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: #a7a9a2; }
+/* One dot per evidence state the panel distinguishes: confirmed (verified or
+   partial), checked and failed, a page that could not be read, and never
+   checked. "No source recorded" is only the last of these. */
+.evidence-dot { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: #a7a9a2; vertical-align: middle; }
 .evidence-dot.verified { background: #2f8c67; }
 .evidence-dot.partial { background: #d69b37; }
+.evidence-dot.failed { background: var(--atlas-signal); }
+.evidence-dot.unread { background: #8a7bb5; }
+.evidence-dot.none, .evidence-dot.unverified { background: #a7a9a2; }
+.replaced-tag { margin-left: 6px; padding: 1px 5px; border: 1px solid var(--atlas-signal); border-radius: 2px; color: var(--atlas-signal); }
+.entity-card.selected .replaced-tag { border-color: #f2b09c; color: #f2b09c; }
+.entity-card.superseded strong { text-decoration: line-through; text-decoration-thickness: 1px; opacity: .8; }
 
 #atlas-detail { display: none; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 36px; margin: 0 clamp(24px, 5vw, 76px) 80px; padding: 30px; border-top: 4px solid var(--atlas-signal); background: #fffdf7; box-shadow: 0 18px 60px rgba(31,42,39,.1); }
 #atlas-detail.open { display: grid; }
@@ -135,12 +146,19 @@ body.atlas-mode #reading-guide { visibility: visible; }
 .detail-row dt { color: var(--atlas-muted); text-transform: uppercase; letter-spacing: .07em; }
 .detail-row dd { margin: 0; }
 .detail-row a { color: var(--atlas-civic); text-underline-offset: 3px; }
+.detail-desc-label { margin: 6px 0 0; color: var(--atlas-signal); font: 500 9px/1.5 'IBM Plex Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.detail-superseded { margin: 0 0 12px; padding: 10px 12px; border-left: 3px solid var(--atlas-signal); color: #7a3a26; background: rgba(213, 92, 63, .08); font: 10px/1.6 'IBM Plex Mono', monospace; }
+.detail-note { display: block; margin-top: 4px; color: var(--atlas-muted); }
+.detail-amount { font: 600 15px/1.2 'Playfair Display', serif; }
+.detail-pay { display: block; margin-bottom: 6px; }
+.detail-pay em { font: 500 9px/1.4 'IBM Plex Mono', monospace; font-style: normal; color: var(--atlas-civic); letter-spacing: .07em; text-transform: uppercase; }
 
 @media (max-width: 800px) {
   #view-switcher { top: 12px; right: 12px; }
   .atlas-hero { grid-template-columns: 1fr; padding-top: 82px; }
-  .atlas-tools { grid-template-columns: 1fr; }
+  .atlas-tools { grid-template-columns: 1fr; gap: 12px; }
   .atlas-depth { display: none; }
+  .atlas-superseded-toggle { padding-bottom: 0; }
   .atlas-stage-head { align-items: start; flex-direction: column; }
   .atlas-columns { grid-auto-columns: minmax(82vw, 1fr); }
   #atlas-detail { grid-template-columns: 1fr; }
