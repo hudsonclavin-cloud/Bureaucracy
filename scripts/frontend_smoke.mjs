@@ -728,6 +728,43 @@ try {
     check("curated prose says it was never checked against a source",
       /uncited prose from the base graph/.test(note), note);
   }
+  // The Government Manual's own description, printed BESIDE the curated
+  // prose. Picked from the served graph, because whether any node carries one
+  // depends on the last build having applied govman_evidence.json: until the
+  // next regenerate none is published, and an assertion that named a node
+  // would fail on the absence of data rather than on a defect. So the check
+  // is conditional and says so — and when a block IS published, three things
+  // must hold at once: the heading names the Manual and its edition, the text
+  // on screen is the block's text verbatim, and the curated prose above it is
+  // still labelled uncited, since the official text sits beside it and never
+  // replaces it.
+  const official = allNodes.find((n) => n.descriptionOfficial && n.descriptionOfficial.text
+    && !n.descriptionSource && n.desc && nameCount.get(n.name) === 1);
+  if (official) {
+    await openByName(official.name);
+    const officialBlock = await text("#info-desc-official");
+    check("an official description names the Manual and its edition",
+      officialBlock.includes(`OFFICIAL DESCRIPTION — U.S. Government Manual, ${official.descriptionOfficial.edition}`), officialBlock.slice(0, 200));
+    check("an official description shows the Manual's text verbatim",
+      officialBlock.includes(official.descriptionOfficial.text), officialBlock.slice(0, 300));
+    check("an official description says which element it was read from",
+      official.descriptionOfficial.kind === "mission_statement"
+        ? /the Manual's own mission statement/.test(officialBlock)
+        : /the opening (of the Manual's entry|paragraph of the Manual's entry)/.test(officialBlock), officialBlock.slice(0, 300));
+    const curatedNote = await text("#info-desc-provenance");
+    check("the curated prose beside an official description is still labelled uncited",
+      /uncited prose from the base graph/.test(curatedNote), curatedNote);
+    const curatedText = await text("#info-desc");
+    check("the curated prose beside an official description is the curated text, not the Manual's",
+      curatedText === String(official.desc).trim(), curatedText.slice(0, 200));
+  } else {
+    // Asserted conditionally: no published node carries one yet. The block
+    // element must still exist in the page's script so the assertion above is
+    // live the moment a build publishes a block, not silently absent.
+    const rendererPresent = fs.readFileSync(path.join(ROOT, "js", "ui.js"), "utf8").includes("info-desc-official");
+    check("no official description is published yet, and the panel is ready to show one (conditional)", rendererPresent,
+      "js/ui.js does not render #info-desc-official");
+  }
   await page.fill("#search-input", "President of the United States");
   await page.waitForTimeout(500);
   await page.locator("#search-results .sr-item").first().click();

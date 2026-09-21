@@ -1188,6 +1188,72 @@ because a plain HEAD request does not tell you: govinfo answers **200 with a
 real ids included, and publishing those would have put a fabricated citation
 on all 64 records.
 
+**The entry's own description, beside the curated prose (since 2026-09-21).**
+Every one of the 5,155 curated descriptions is published as "uncited prose —
+not checked against any source", and the Manual carries, per entry, the
+government's own statement of what the unit is for. `entity_description_texts`
+in `govman.py` reads two elements and nothing else: `MissionStatement/
+Record[1]/Paragraph`, the element the publisher itself labels as the entry's
+mission statement (131 of 231 entries carry one, no sub-entity does, the
+longest is 544 characters, only the FIRST record is read because Congress's
+second is history); otherwise the entry's opening paragraph — the first
+non-empty `Detail/Paragraph` under `ProgramAndActivities` in document order —
+and only when the **published** text carries the entry's printed name. The
+guard is what ties the paragraph to the unit, the job label equality does for
+a page: four sub-entities open with "The Administration posts an
+organizational chart on its 'Offices' web page", a navigation note, and it
+refuses all four; it also refuses "The U.S. Naval Academy is the undergraduate
+college of the Naval Service" for the entry named "United States Naval
+Academy", a real cost recorded rather than argued away. The text is verbatim,
+bounded at 600 characters and cut only at a sentence boundary (a terminator
+after a lower-case letter, digit or closing bracket, then a capital, so "15
+U.S.C. 271" is never a sentence end); no mission statement needs the cut and
+17 opening paragraphs take it, with `truncated` and the full length on the
+record. The guard was first written against the whole paragraph and the test
+suite caught it: the Court of International Trade is named only after the cut,
+so a reader would have seen a paragraph that never names the court. It is
+tested on the published text now. The guard is not enough on its own, and
+the end-to-end check found why: four HHS sub-entities open with "The Centers
+for Medicare and Medicaid Services (CMS) posts an organizational chart in
+Portable Document Format", which names the unit in full and describes its
+website. `NAVIGATION_NOTE_MARKERS` — "organizational chart", "organization
+chart", "web page", "website", a closed list that can only ever withhold, the
+direction `name_appears_unlabelled` is allowed to work in — refuses exactly
+those four on the real Manual and no mission statement contains any of them;
+the gate mirrors the list and refuses such a text even where it is verbatim.
+
+It is published as `descriptionOfficial` {text, kind, extractedFrom,
+truncated, fullLength, source, listedName, edition, package, granule, url,
+documentSha256} **beside** `desc`, which is never overwritten and keeps its
+"uncited" label; the panel prints it under "OFFICIAL DESCRIPTION — U.S.
+Government Manual, <edition>" with the element it came from and a link. It is
+in `EVIDENCE_OWNED_FIELDS` (withdrawn each build with the entry block it
+depends on) and `MINIMAL_GRAPH_FIELDS`. The gate re-derives both texts per
+granule with its own stdlib parse and refuses a block whose text is not
+verbatim in the element it names (the whole, or a prefix ending at a sentence
+boundary when it says it was cut), that cites a granule its own `govmanEntry`
+does not, whose granule names another agency, whose node no longer carries
+the name, whose URL is not the granule's, whose digest is not the committed
+package's, on a post, of an unknown kind or path, past the bound, publishing
+an opening paragraph where a mission statement is printed, or where the
+curated `desc` has become the Manual's text. `tests/test_govman.py` corrupts
+each in turn. Dry run on the real join: **142 of the 163 matched
+organisations** (89 mission statements, 53 opening paragraphs, 17 cut); 14
+refused by the name guard, 4 as navigation notes, 2 with no descriptive text,
+1 with no sentence boundary inside the bound. Nothing writes `sourceUrls` or `verificationMethod` from this: a
+description is not evidence that the unit exists, and the entry block already
+carries that claim.
+
+The post route was measured for reach at the same time and left alone: beside
+the 64 posts the complete-title rule admits, 144 more under matched agencies
+equal exactly one leadership row that the rule refuses — 69 under a table
+header, 37 under an ALL-CAPS row, and 38 that are ALL-CAPS rows themselves.
+The Manual uses an ALL-CAPS row both for a principal's own title ("INSPECTOR
+GENERAL") and for a plural group heading ("DEPUTY ADMINISTRATORS" over "Naval
+Reactors"), and telling those apart is the plural test on free text the rule
+refuses because it is wrong about "Chief of Naval Operations". So the 144 stay
+refused, recorded as a measurement.
+
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from
 `data/verification/headcount_evidence.json` (133 records) and

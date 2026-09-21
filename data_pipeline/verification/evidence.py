@@ -127,6 +127,10 @@ EVIDENCE_OWNED_FIELDS = (
     "verificationFailure",
     "verificationUnread",
     "govmanEntry",
+    # The Manual entry's own description, beside the curated prose and never
+    # in its place (govman.py). It depends on the entry block above it, so it
+    # is withdrawn on the same build.
+    "descriptionOfficial",
     "verificationSiteFrom",
     "placementVerified",
     "placementUrl",

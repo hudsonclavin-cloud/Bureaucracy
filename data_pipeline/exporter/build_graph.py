@@ -215,8 +215,9 @@ def load_existing_graph_payload(graph_path: str | Path) -> dict[str, Any]:
 MINIMAL_GRAPH_FIELDS = (
     # identity, layout and label
     "id", "name", "type", "color", "children",
-    # the description block
-    "desc", "descriptionSource",
+    # the description block: the curated prose, its provenance label, and
+    # the Government Manual's own description of the unit beside it
+    "desc", "descriptionSource", "descriptionOfficial",
     # the figures the panel prints beside the name
     "budget", "employees", "employeesOfficial", "employeesOfficialSource",
     # cost badge, amount and the note explaining which of the two it is

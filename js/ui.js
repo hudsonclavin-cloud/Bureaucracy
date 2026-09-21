@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921a";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921a";
+import { createGovernmentGraph } from "./graph.js?v=20260921b";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921b";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -1183,6 +1183,66 @@ function renderDescriptionProvenance(data, isClusteredView) {
   line.textContent = "DESCRIPTION: uncited prose from the base graph — not checked against any source";
 }
 
+// The United States Government Manual's own description of the unit, printed
+// BESIDE the curated prose and never in its place: the curated text above
+// keeps its "uncited" label exactly as it was, and this block says which
+// element of the Manual's entry the words came from — its mission statement,
+// or the opening of its entry, cut at a sentence boundary where the record
+// says so — quoted verbatim, dated by the edition and linked to the granule.
+function renderOfficialDescription(data, isClusteredView) {
+  let host = document.getElementById("info-desc-official");
+  if (!host) {
+    const anchor = document.getElementById("info-desc-provenance") || dom.infoDesc;
+    if (!anchor) return;
+    host = document.createElement("div");
+    host.id = "info-desc-official";
+    host.style.fontSize = "10px";
+    host.style.color = "#9a8a6a";
+    host.style.lineHeight = "1.7";
+    host.style.margin = "0 0 12px";
+    anchor.insertAdjacentElement("afterend", host);
+  }
+  host.textContent = "";
+  const block = data && data.descriptionOfficial;
+  if (isClusteredView || !data || data.isCandidate || !block || typeof block !== "object" || !block.text
+      || String(block.source || "") !== "us_government_manual") {
+    host.style.display = "none";
+    return;
+  }
+  host.style.display = "";
+  const heading = document.createElement("div");
+  heading.style.fontSize = "9px";
+  heading.style.color = "#8f7a5d";
+  heading.style.letterSpacing = "0.08em";
+  heading.style.margin = "0 0 4px";
+  heading.textContent = `OFFICIAL DESCRIPTION — U.S. Government Manual, ${block.edition || "edition not stated"}`;
+  host.appendChild(heading);
+  const quote = document.createElement("div");
+  quote.className = "info-desc-official-text";
+  quote.textContent = block.text;
+  host.appendChild(quote);
+  const note = document.createElement("div");
+  note.style.fontSize = "9px";
+  note.style.color = "#8f7a5d";
+  note.style.margin = "4px 0 0";
+  const which = block.kind === "mission_statement"
+    ? "the Manual's own mission statement for this unit"
+    : block.truncated
+      ? `the opening of the Manual's entry for this unit, cut at a sentence boundary after ${String(block.text).length} of ${block.fullLength || "its"} characters`
+      : "the opening paragraph of the Manual's entry for this unit";
+  note.appendChild(document.createTextNode(`Quoted verbatim: ${which}. The curated description above is unchanged and remains uncited. `));
+  if (block.url) {
+    const link = document.createElement("a");
+    link.href = block.url;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.textContent = "Read the entry";
+    link.setAttribute("aria-label", `Read the Government Manual entry for ${block.listedName || data.name || "this unit"}`);
+    note.appendChild(link);
+  }
+  host.appendChild(note);
+}
+
 // A unit the government has replaced. The node is still here, with everything
 // it ever earned; what the panel must not do is let a reader take it for part
 // of the government as it stands. The claim is quoted, dated and linked,
@@ -1961,6 +2021,7 @@ function renderInfoPanel(nodeObj) {
   setText(dom.infoType, data.type || "—");
   setText(dom.infoDesc, data.desc || "—");
   renderDescriptionProvenance(data, isClusteredView);
+  renderOfficialDescription(data, isClusteredView);
   renderHeadcountProvenance(data);
   renderPositionListing(data);
   renderStatutoryPay(data);

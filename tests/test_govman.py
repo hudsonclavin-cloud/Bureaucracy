@@ -679,5 +679,407 @@ class OrganisationRouteGateTests(unittest.TestCase):
                 code, out = self._gate(g)
                 self.assertEqual(code, 1, f"{name} should fail the gate:\n{out[-1500:]}")
 
+class DescriptionExtractionTests(unittest.TestCase):
+    """The entry's own description, since 2026-09-21: two elements and
+    nothing else, a name guard on the opening paragraph, a bound cut only at
+    a sentence boundary, and the curated prose never touched."""
+
+    def setUp(self):
+        from data_pipeline.verification.govman import (
+            DESCRIPTION_KIND_MISSION, DESCRIPTION_KIND_OPENING, DESCRIPTION_MAX_CHARS,
+            entity_description_texts, entry_description, sentence_bounded,
+        )
+        self.MISSION, self.OPENING, self.MAX = DESCRIPTION_KIND_MISSION, DESCRIPTION_KIND_OPENING, DESCRIPTION_MAX_CHARS
+        self.texts, self.describe, self.bounded = entity_description_texts, entry_description, sentence_bounded
+
+    def test_a_short_text_is_published_whole(self):
+        self.assertEqual(self.bounded("The Agency protects human health.", 600),
+                         ("The Agency protects human health.", False))
+
+    def test_a_long_text_is_cut_at_the_last_sentence_boundary_within_the_bound(self):
+        sentence = "The court was created by act of June 10, 1890 (19 U.S.C. ch. 4). "
+        text = (sentence * 20).strip()
+        cut, truncated = self.bounded(text, 600)
+        self.assertTrue(truncated)
+        self.assertLessEqual(len(cut), 600)
+        self.assertTrue(text.startswith(cut))
+        self.assertTrue(cut.endswith("(19 U.S.C. ch. 4)."), cut[-40:])
+        # The last boundary at or before 600, not the first.
+        self.assertGreater(len(cut), 600 - len(sentence))
+
+    def test_an_abbreviation_is_never_taken_for_a_sentence_end(self):
+        # "U.S.C." is followed by a digit, "ch." by a digit: neither is a
+        # boundary, so a paragraph with no real sentence end inside the bound
+        # yields nothing rather than a sentence the Manual never wrote.
+        self.assertEqual(self.bounded("Authority under 15 U.S.C. 271 and ch. 872 and " + "x" * 700, 600), (None, True))
+        cut, _ = self.bounded("Created by Public Law 95–91, the \"Energy Act.\" President Carter " + "y" * 700, 600)
+        self.assertEqual(cut, "Created by Public Law 95–91, the \"Energy Act.\"")
+
+    def test_the_mission_statement_wins_and_the_opening_paragraph_needs_the_units_name(self):
+        entity = ET.fromstring("""
+        <Entity><AgencyName>Widget Commission</AgencyName>
+          <MissionStatement><Heading/><Record><Paragraph MissionStatmentId="1">The Widget Commission regulates widgets.</Paragraph></Record>
+            <Record><Paragraph>The first Commission met in 1901.</Paragraph></Record></MissionStatement>
+          <ProgramAndActivities><ProgramAndActivity><Activity><Details>
+            <Detail><Paragraph></Paragraph></Detail>
+            <Detail><Paragraph>The Widget Commission was established in 1900.</Paragraph></Detail>
+          </Details></Activity></ProgramAndActivity></ProgramAndActivities>
+        </Entity>""")
+        texts = self.texts(entity)
+        self.assertEqual(texts, {"mission": "The Widget Commission regulates widgets.",
+                                 "opening": "The Widget Commission was established in 1900."},
+                         "the FIRST record and the first NON-EMPTY paragraph")
+        block, why = self.describe("Widget Commission", texts)
+        self.assertEqual(why, "extracted")
+        self.assertEqual(block["kind"], self.MISSION)
+        self.assertEqual(block["extractedFrom"], "MissionStatement/Record[1]/Paragraph")
+        self.assertFalse(block["truncated"])
+        block, why = self.describe("Widget Commission", {"mission": None, "opening": texts["opening"]})
+        self.assertEqual((why, block["kind"]), ("extracted", self.OPENING))
+        block, why = self.describe("Widget Commission", {"mission": None, "opening": "The Commission posts an organizational chart online."})
+        self.assertIsNone(block)
+        self.assertEqual(why, "opening_paragraph_does_not_name_the_unit")
+        # Names the unit in full and describes its website: the closed marker
+        # list withholds it. A mission statement is never subject to the list.
+        block, why = self.describe("Widget Commission", {"mission": None, "opening": "The Widget Commission (WC) posts an organizational chart in Portable Document Format (PDF)."})
+        self.assertIsNone(block)
+        self.assertEqual(why, "opening_paragraph_is_a_navigation_note")
+        block, why = self.describe("Widget Commission", {"mission": "The Widget Commission runs the website of record.", "opening": None})
+        self.assertEqual((why, block["kind"]), ("extracted", self.MISSION))
+        self.assertEqual(self.describe("Widget Commission", {"mission": None, "opening": None}), (None, "no_descriptive_text"))
+
+    def test_the_name_guard_is_tested_on_the_published_text(self):
+        # The Court of International Trade's opening paragraph names the court
+        # only after the 600-character cut; a reader sees the cut.
+        tail = " The United States Court of International Trade was so renamed in 1980."
+        head = ("The court was created by act of June 10, 1890, as the Board of General Appraisers. " * 8).strip()
+        self.assertGreater(len(head), 600)
+        block, why = self.describe("United States Court of International Trade", {"mission": None, "opening": head + tail})
+        self.assertIsNone(block)
+        self.assertEqual(why, "opening_paragraph_does_not_name_the_unit")
+
+    def test_leadership_rows_footers_and_addresses_are_never_descriptive_text(self):
+        entity = ET.fromstring("""
+        <Entity><AgencyName>Widget Commission</AgencyName>
+          <MissionStatement><Heading/></MissionStatement>
+          <LeaderShipTables><LeaderShipTable><Header/><LeaderShipTableValues>
+            <Values><NameColumnValue>A Person</NameColumnValue><TitleColumnValue>Chair of the Widget Commission</TitleColumnValue></Values>
+          </LeaderShipTableValues></LeaderShipTable></LeaderShipTables>
+          <Addresses><Address><Address>1 Widget Way, Washington, DC. The Widget Commission is here.</Address></Address></Addresses>
+          <FooterDetails><Footer>The Widget Commission updated its Sources of Information 2-2019.</Footer></FooterDetails>
+          <ProgramAndActivities/>
+        </Entity>""")
+        self.assertEqual(self.texts(entity), {"mission": None, "opening": None})
+        self.assertEqual(self.describe("Widget Commission", self.texts(entity)), (None, "no_descriptive_text"))
+
+    def test_the_real_fixture_is_verbatim_bounded_and_names_no_person(self):
+        from data_pipeline.verification.govman import build_org_records
+        manual = read_manual()
+        records, stats = build_org_records(manual, load_base_graph(DEFAULT_BASE_GRAPH))
+        by_entity = {e["entityId"]: e for e in manual["entities"]}
+        # Office holders, read here in the TEST only, to assert that no
+        # published description names one.
+        people = set()
+        for entity in iter_entities(ET.parse(DEFAULT_PACKAGE).getroot()):
+            for row in entity.findall(".//LeaderShipTableValues/Values"):
+                name = normalise(row.findtext("NameColumnValue"))
+                if name:
+                    people.add(name)
+        self.assertGreater(len(people), 500)
+        described = {k: r for k, r in records.items() if r.get("description")}
+        self.assertGreaterEqual(len(described), 140, "the real join should describe most matched units")
+        self.assertEqual(len(described), stats["descriptions_extracted"])
+        self.assertGreater(stats["descriptions_mission_statement"], 80)
+        self.assertGreater(stats["descriptions_opening_paragraph"], 40)
+        self.assertGreater(stats["descriptions_truncated"], 0, "the bound should be doing work on the real Manual")
+        self.assertGreater(stats["descriptions_refused_opening_paragraph_does_not_name_the_unit"], 0,
+                           "the name guard should be doing work on the real Manual")
+        for node_id, record in described.items():
+            block = record["description"]
+            texts = by_entity[record["entityId"]]["descriptionTexts"]
+            printed = texts["mission"] if block["kind"] == self.MISSION else texts["opening"]
+            self.assertLessEqual(len(block["text"]), self.MAX, node_id)
+            self.assertEqual(block["text"], " ".join(block["text"].split()), node_id)
+            if block["truncated"]:
+                self.assertTrue(printed.startswith(block["text"]) and len(block["text"]) < len(printed), node_id)
+                self.assertRegex(block["text"], r'[.!?]["”’)]*$', f"{node_id}: a cut must end at a sentence boundary")
+                self.assertEqual(block["fullLength"], len(printed))
+            else:
+                self.assertEqual(block["text"], printed, f"{node_id}: not verbatim")
+            if block["kind"] == self.OPENING:
+                self.assertIsNone(texts["mission"], f"{node_id}: the mission statement wins where one is printed")
+                self.assertIn(record["listedName"], block["text"], node_id)
+            for person in people:
+                self.assertNotIn(person, block["text"], f"{node_id} publishes a description naming {person!r}")
+        # The guard's worked example: a navigation note is not a description.
+        acf = next(r for r in records.values() if r["listedName"] == "Administration for Children and Families")
+        self.assertIsNone(acf["description"])
+        # And the one the name guard cannot see, because it names the unit in
+        # full: "The Centers for Medicare and Medicaid Services (CMS) posts an
+        # organizational chart in Portable Document Format".
+        cms = next(r for r in records.values() if r["listedName"] == "Centers for Medicare and Medicaid Services")
+        self.assertIsNone(cms["description"])
+        self.assertEqual(stats["descriptions_refused_opening_paragraph_is_a_navigation_note"], 4)
+        for record in described.values():
+            self.assertNotIn("organizational chart", record["description"]["text"].casefold())
+            self.assertNotIn("organization chart", record["description"]["text"].casefold())
+
+    def test_a_record_lacking_a_description_still_records_the_entry(self):
+        from data_pipeline.verification.govman import build_org_records
+        records, _ = build_org_records(read_manual(), load_base_graph(DEFAULT_BASE_GRAPH))
+        self.assertTrue(any(r["description"] is None for r in records.values()))
+        for record in records.values():
+            self.assertIn("granule", record)
+
+
+class DescriptionApplyTests(unittest.TestCase):
+    """`descriptionOfficial` sits beside `desc` and never in its place."""
+
+    def setUp(self):
+        from data_pipeline.verification.govman import apply_govman_org_evidence
+        self.apply = apply_govman_org_evidence
+
+    def tree(self):
+        return {"id": "root", "name": "Root", "type": "Foundation", "children": [
+            {"id": "fmc", "name": "Federal Maritime Commission", "type": "Independent Agency",
+             "desc": "Curated prose about the FMC.", "children": []},
+        ]}
+
+    def record(self, description):
+        return {"fmc": {
+            "source": "us_government_manual", "nodeName": "Federal Maritime Commission",
+            "listedName": "Federal Maritime Commission", "entityId": "144", "parentListedName": None,
+            "parentEntityId": None, "package": "GOVMAN-2025-12-31", "edition": "2025-12-31",
+            "granule": "GOVMAN-2025-12-31-144",
+            "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-144",
+            "documentSha256": "abc", "description": description,
+        }}
+
+    def good(self):
+        return {"kind": "mission_statement", "extractedFrom": "MissionStatement/Record[1]/Paragraph",
+                "text": "The Federal Maritime Commission promotes an efficient, fair, and reliable supply system.",
+                "truncated": False, "fullLength": 89}
+
+    def test_the_block_is_published_beside_the_curated_prose(self):
+        tree = self.tree()
+        stats = self.apply(tree, self.record(self.good()))
+        node = tree["children"][0]
+        self.assertEqual(stats["descriptions_published"], 1)
+        block = node["descriptionOfficial"]
+        self.assertEqual(block["text"], self.good()["text"])
+        self.assertEqual(block["kind"], "mission_statement")
+        self.assertEqual(block["source"], "us_government_manual")
+        self.assertEqual(block["granule"], "GOVMAN-2025-12-31-144")
+        self.assertEqual(block["url"], self.record(None)["fmc"]["url"])
+        self.assertEqual(block["documentSha256"], "abc")
+        self.assertEqual(block["edition"], "2025-12-31")
+        self.assertEqual(node["desc"], "Curated prose about the FMC.", "the curated prose is never overwritten")
+        self.assertNotIn("descriptionSource", node, "the curated prose keeps its own, uncited, label")
+
+    def test_no_description_on_the_record_publishes_nothing(self):
+        tree = self.tree()
+        stats = self.apply(tree, self.record(None))
+        self.assertEqual(stats["descriptions_published"], 0)
+        self.assertNotIn("descriptionOfficial", tree["children"][0])
+        self.assertIn("govmanEntry", tree["children"][0])
+
+    def test_an_over_long_or_unknown_kind_block_is_refused(self):
+        for bad in (dict(self.good(), text="x" * 601), dict(self.good(), kind="footer"), dict(self.good(), text="  ")):
+            tree = self.tree()
+            self.apply(tree, self.record(bad))
+            self.assertNotIn("descriptionOfficial", tree["children"][0], bad.get("kind"))
+
+    def test_a_renamed_node_keeps_nothing(self):
+        tree = self.tree()
+        tree["children"][0]["name"] = "Federal Maritime Board"
+        self.apply(tree, self.record(self.good()))
+        self.assertNotIn("descriptionOfficial", tree["children"][0])
+        self.assertEqual(tree["children"][0]["desc"], "Curated prose about the FMC.")
+
+    def test_the_field_is_withdrawn_by_the_evidence_sweep_and_kept_for_the_viewer(self):
+        from data_pipeline.exporter.build_graph import MINIMAL_GRAPH_FIELDS
+        from data_pipeline.verification.evidence import apply_evidence_to_tree
+        self.assertIn("descriptionOfficial", EVIDENCE_OWNED_FIELDS)
+        self.assertIn("descriptionOfficial", MINIMAL_GRAPH_FIELDS)
+        tree = self.tree()
+        self.apply(tree, self.record(self.good()))
+        apply_evidence_to_tree(tree, {})
+        self.assertNotIn("descriptionOfficial", tree["children"][0])
+        self.assertEqual(tree["children"][0]["desc"], "Curated prose about the FMC.")
+
+
+class DescriptionGateTests(unittest.TestCase):
+    """The gate re-derives the text from the committed package with its own
+    parse, and refuses each way the block could lie."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not PUBLISHED.exists():
+            raise unittest.SkipTest("output/graph.json is not built")
+        from data_pipeline.verification.govman import build_org_records
+        cls.graph = json.loads(PUBLISHED.read_text(encoding="utf-8"))
+        cls.records, _ = build_org_records(read_manual(), load_base_graph(DEFAULT_BASE_GRAPH))
+
+    def run_gate(self, graph):
+        import tempfile
+        from scripts.validate_published_graph import main as gate_main
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "graph.json"
+            path.write_text(json.dumps(graph), encoding="utf-8")
+            buffer = io.StringIO()
+            with redirect_stdout(buffer):
+                code = gate_main(["gate", str(path)])
+            return code, buffer.getvalue()
+
+    def block_for(self, record):
+        block = record["description"]
+        return {
+            "text": block["text"], "kind": block["kind"], "extractedFrom": block["extractedFrom"],
+            "truncated": block["truncated"], "fullLength": block["fullLength"],
+            "source": "us_government_manual", "listedName": record["listedName"],
+            "edition": record["edition"], "package": record["package"], "granule": record["granule"],
+            "url": record["url"], "documentSha256": record["documentSha256"],
+        }
+
+    def stamped(self, want_truncated=False):
+        """A copy of the published graph with one node carrying a block the
+        module would have written, exactly as apply_govman_org_evidence
+        writes it; returns the graph and that node."""
+        graph = copy.deepcopy(self.graph)
+        stack = [graph]
+        while stack:
+            node = stack.pop()
+            entry = node.get("govmanEntry")
+            record = self.records.get(str(node.get("id") or ""))
+            if (isinstance(entry, dict) and record and record.get("description")
+                    and record["granule"] == entry.get("granule")
+                    and bool(record["description"]["truncated"]) == want_truncated):
+                node["descriptionOfficial"] = self.block_for(record)
+                return graph, node
+            stack.extend([c for c in (node.get("children") or []) if isinstance(c, dict)])
+        self.skipTest("no published node matches a record with the wanted description")
+
+    LINE = "a Government Manual description is that entry's own text, verbatim, beside the curated prose"
+
+    def assert_refused(self, mutate, because, want_truncated=False):
+        graph, node = self.stamped(want_truncated)
+        mutate(node)
+        code, output = self.run_gate(graph)
+        self.assertEqual(code, 1, f"the gate accepted a graph where {because}")
+        self.assertIn("FAIL  " + self.LINE, output, because)
+
+    def test_a_block_the_module_would_write_passes(self):
+        for want in (False, True):
+            graph, node = self.stamped(want)
+            code, output = self.run_gate(graph)
+            self.assertIn("ok    " + self.LINE, output)
+            self.assertEqual(code, 0, output[-2000:])
+            self.assertIn("Manual (descriptions): 1 organisations", output)
+
+    def test_the_gates_parser_agrees_with_the_module_on_every_entry(self):
+        from scripts.validate_published_graph import (
+            GOVMAN_DESCRIPTION_MAX_CHARS, GOVMAN_DESCRIPTION_PATHS, GOVMAN_SENTENCE_BOUNDARY, govman_descriptions,
+        )
+        from data_pipeline.verification.govman import DESCRIPTION_MAX_CHARS, DESCRIPTION_PATHS, SENTENCE_BOUNDARY
+        theirs, digest = govman_descriptions()
+        manual = read_manual()
+        self.assertEqual(digest, manual["sha256"])
+        self.assertEqual(GOVMAN_DESCRIPTION_MAX_CHARS, DESCRIPTION_MAX_CHARS)
+        self.assertEqual(GOVMAN_DESCRIPTION_PATHS, DESCRIPTION_PATHS)
+        self.assertEqual(GOVMAN_SENTENCE_BOUNDARY.pattern, SENTENCE_BOUNDARY.pattern)
+        self.assertEqual(len(theirs), len(manual["entities"]))
+        for entry in manual["entities"]:
+            granule = access_id(manual["package"], entry["entityId"])
+            self.assertEqual(theirs[granule], entry["descriptionTexts"], f"{entry['name']}: the two parsers disagree")
+
+    def test_text_altered(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(text=n["descriptionOfficial"]["text"] + " It also makes widgets."),
+                            "the text is not verbatim in the entry")
+
+    def test_text_from_another_entry(self):
+        other = next(r for r in self.records.values() if r.get("description") and r["description"]["kind"] == "mission_statement"
+                     and r["listedName"] == "Environmental Protection Agency")
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(text=other["description"]["text"]) if n["descriptionOfficial"]["text"] != other["description"]["text"] else n["descriptionOfficial"].update(text="The Agency does other things."),
+                            "the text is another entry's")
+
+    def test_granule_swapped_for_another_real_one(self):
+        self.assert_refused(lambda n: (n["descriptionOfficial"].update(granule="GOVMAN-2025-12-31-135"), n["govmanEntry"].update(granule="GOVMAN-2025-12-31-135")),
+                            "the granule names a different agency")
+
+    def test_granule_differs_from_the_entry_block(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(granule="GOVMAN-2025-12-31-135"),
+                            "the description cites a granule its own entry block does not")
+
+    def test_entry_block_removed(self):
+        self.assert_refused(lambda n: n.pop("govmanEntry"), "a description outlives the entry it was read from")
+
+    def test_url_not_the_granules(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(url="https://www.govinfo.gov/content/pkg/x.htm"),
+                            "the URL does not address the granule")
+
+    def test_digest_mismatch(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(documentSha256="0" * 64),
+                            "the digest is not the committed package's")
+
+    def test_on_a_post(self):
+        self.assert_refused(lambda n: n.update(type="Position"), "a description sits on a post")
+
+    def test_node_renamed(self):
+        self.assert_refused(lambda n: n.update(name="Renamed Unit"), "the node no longer carries the matched name")
+
+    def test_edition_in_the_future(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(edition="2999-01-01"), "the edition has not happened")
+
+    def test_unknown_kind_and_wrong_element_path(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(kind="footer"), "the kind is not one that is read")
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(extractedFrom="FooterDetails/Footer"), "the element path is not where a description is read")
+
+    def test_over_the_bound(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(text=n["descriptionOfficial"]["text"] + " x" * 400), "the text is past the bound")
+
+    def test_a_cut_not_at_a_sentence_boundary(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(text=n["descriptionOfficial"]["text"][:-3]),
+                            "a cut text does not end at a sentence boundary", want_truncated=True)
+
+    def test_a_whole_text_flagged_as_cut(self):
+        self.assert_refused(lambda n: n["descriptionOfficial"].update(truncated=True),
+                            "a whole text says it was cut")
+
+    def test_the_curated_prose_replaced_by_the_manuals_text(self):
+        self.assert_refused(lambda n: (n.update(desc=n["descriptionOfficial"]["text"]), n.pop("descriptionSource", None)),
+                            "the curated prose was overwritten with the Manual's text")
+
+    def test_a_navigation_note_that_is_verbatim_and_names_the_unit_is_still_refused(self):
+        """CMS's opening paragraph is the Manual's own words, under the
+        bound, and names the unit in full -- every other check passes -- and
+        it describes a website. Only the marker list refuses it."""
+        from data_pipeline.verification.govman import read_manual as _read
+        manual = _read()
+        cms = next(e for e in manual["entities"] if e["name"] == "Centers for Medicare and Medicaid Services")
+        opening = cms["descriptionTexts"]["opening"]
+        self.assertIn("organizational chart", opening)
+        graph = copy.deepcopy(self.graph)
+        stack = [graph]
+        target = None
+        while stack:
+            node = stack.pop()
+            entry = node.get("govmanEntry")
+            if isinstance(entry, dict) and entry.get("granule") == access_id(manual["package"], cms["entityId"]):
+                target = node
+                break
+            stack.extend([c for c in (node.get("children") or []) if isinstance(c, dict)])
+        if target is None:
+            self.skipTest("the published graph carries no CMS entry")
+        record = self.records[target["id"]]
+        target["descriptionOfficial"] = dict(self.block_for(dict(record, description={
+            "kind": "opening_paragraph", "extractedFrom": "ProgramAndActivities//Detail/Paragraph[first non-empty]",
+            "text": opening, "truncated": False, "fullLength": len(opening)})))
+        code, output = self.run_gate(graph)
+        self.assertEqual(code, 1)
+        self.assertIn("FAIL  " + self.LINE, output)
+        self.assertIn("publishes a note about the unit's website", output)
+
+
 if __name__ == "__main__":
     unittest.main()
