@@ -122,7 +122,7 @@ const METHOD_TEXT = {
   // The panel prints this one from the listing block rather than the method
   // map; the claim is the same, and it is the previous administration's
   // archive, which says nothing about who holds the post now.
-  listed_in_opm_plum_archive: "OPM's PLUM archive of the previous administration lists a post of this name under its organisation",
+  listed_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, lists a post of this title under its organisation",
 };
 
 const SOURCE_TEXT = {
@@ -277,7 +277,7 @@ function describePlacement(node) {
     listed_under_parent_in_us_government_manual: "the United States Government Manual files it under its parent here",
     listed_under_committee_in_senate_committee_list: "the Senate's official committee list carries it under its committee here",
     listed_under_committee_in_house_clerk_committee_list: "the House Clerk's official committee list carries it under its committee here",
-    listed_under_organization_in_opm_plum_archive: "OPM's PLUM archive of the previous administration files a post of this name under its organisation here",
+    listed_under_organization_in_opm_plum_archive: "OPM's PLUM archive, the previous administration's reported positions, files a post of this title under its organisation here",
   }[String(node.placementMethod || "")];
   let main;
   if (node.placementVerified === true && directoryPlacement) {

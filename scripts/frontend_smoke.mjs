@@ -658,11 +658,12 @@ try {
   check("some position is priced from the salary table", Boolean(withTableRate), "none");
   if (withTableRate) {
     await openByName(withTableRate.name);
-    const listing = await text("#info-position-listing");
+    // The sentence sits in the block of whichever listing supplied the level.
+    const listing = `${await text("#info-position-listing")}\n${await text("#info-current-listing")}`;
     check("the table rate names the table it came from", /Salary Table No\. \d{4}-EX/.test(listing), listing);
     check("the table rate names the level it prices", /pays \$[\d,]+ for Level [IVX]+/.test(listing), listing);
     check("the panel says it is two documents, not one", /two documents, not one/.test(listing), listing);
-    check("the panel disclaims the current holder", /neither says what this post pays whoever holds it now/.test(listing), listing);
+    check("the panel disclaims the current holder", /neither says what this post pays whoever holds it now|a table's figure for a rank, not a figure for the post/.test(listing), listing);
     check("the panel says a rate of pay is not the unit's cost", /not this unit's cost/.test(listing), listing);
     check("the pay-freeze note is carried through", /The table's own note: "/.test(listing), listing);
     check("the freeze note names what it covers", /freeze on the payable pay rates/.test(listing), listing);
@@ -680,7 +681,7 @@ try {
   check("some position carries a base-pay range from a salary table", Boolean(withRange), "none");
   if (withRange) {
     await openByName(withRange.name);
-    const listing = await text("#info-position-listing");
+    const listing = `${await text("#info-position-listing")}\n${await text("#info-current-listing")}`;
     check("the range names the table it came from", /Salary Table (No\. )?\d{4}-(GS|ES|SL\/ST)/.test(listing), listing);
     check("the range is two bounds, not one figure", /\$[\d,]+ – \$[\d,]+/.test(listing), listing);
     check("the panel says a range is not a rate or the unit's cost", /not this unit's cost and not necessarily what the post pays now/.test(listing), listing);

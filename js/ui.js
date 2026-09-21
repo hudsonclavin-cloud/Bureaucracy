@@ -1,5 +1,5 @@
-import { createGovernmentGraph } from "./graph.js?v=20260921b";
-import { loadMergedGraphData } from "./graphLoader.js?v=20260921b";
+import { createGovernmentGraph } from "./graph.js?v=20260921c";
+import { loadMergedGraphData } from "./graphLoader.js?v=20260921c";
 
 const shouldBootUi = (() => {
   if (typeof window === "undefined") {
@@ -993,8 +993,17 @@ function renderPositionListing(data) {
     add("Those details come from a past incumbency, not a standing listing. ");
   }
   add("It is a record of that period and says nothing about who holds this post now.");
-  renderTableRate(data, add);
-  renderGradePay(data, add);
+  // The table rate and the range hang off the document that supplied the
+  // level. Where that was the current export, they are printed in its block
+  // below; a node the archive never listed would otherwise lose them.
+  if (!levelSourceIsCurrent(data.positionPayRate)) renderTableRate(data, add);
+  if (!levelSourceIsCurrent(data.positionGradePay)) renderGradePay(data, add);
+}
+
+function levelSourceIsCurrent(block) {
+  if (!block || typeof block !== "object") return false;
+  const source = (block.levelSource && block.levelSource.source) || (block.listingSource && block.listingSource.source) || "";
+  return source === "opm_plum_current_export";
 }
 
 // The base-pay RANGE a salary table states for the pay plan or grade the
@@ -1262,6 +1271,8 @@ function renderCurrentListing(data) {
     add(`It prints basic pay of ${listing.reportedPayText || `$${listing.reportedPay.toLocaleString()}`} for the one row listed under this title — what that listing is paid, not what the post pays whoever holds it, and not this unit's cost. `);
   }
   add("A Vacant row is still a listed position. This says nothing about who holds the post: the export's name columns are never read.");
+  if (levelSourceIsCurrent(data.positionPayRate)) renderTableRate(data, add);
+  if (levelSourceIsCurrent(data.positionGradePay)) renderGradePay(data, add);
 }
 
 function renderDescriptionProvenance(data, isClusteredView) {
@@ -2081,7 +2092,7 @@ function describeCost(node) {
       tone: "unavailable",
       note:
         "No record names this node's own cost. The figure this graph could otherwise show is its share of an ancestor's " +
-        "measured total, divided among siblings by budget, headcount or subtree size \u2014 a number nobody measured, so it is " +
+        "measured total, divided among siblings by budget, headcount or subtree size — a number nobody measured, so it is " +
         "not shown here. Tick \u201cAlso show estimated shares of a parent's total\u201d to see it, labelled as the estimate it is." +
         payNote,
     };
