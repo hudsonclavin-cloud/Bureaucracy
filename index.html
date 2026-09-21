@@ -281,7 +281,7 @@ body.dragging{cursor:grabbing;}
     <div>
       <p class="atlas-kicker">Evidence-backed federal directory</p>
       <h1>Follow the government,<br><em>claim by claim.</em></h1>
-      <p class="atlas-intro">Browse six generations of the published hierarchy. Measured figures, inferred placement, and missing evidence stay visibly different.</p>
+      <p class="atlas-intro">Browse six generations of the published hierarchy. A measured cost, a withheld estimate, a post with no budget to divide, a check that failed and a page that could not be read each say what they are — the same words the 3D panel uses.</p>
     </div>
     <div id="atlas-coverage" class="atlas-coverage" aria-live="polite"></div>
   </header>
@@ -298,6 +298,12 @@ body.dragging{cursor:grabbing;}
       <button type="button" data-atlas-depth="5">5</button>
       <button type="button" class="active" data-atlas-depth="6">6</button>
     </div>
+    <!-- The default view is the government as it stands. A unit the
+         government has replaced is kept in the data, hidden here until
+         asked for, and labelled when shown — the rule the 3D view follows. -->
+    <label class="atlas-superseded-toggle" for="atlas-show-superseded">
+      <input id="atlas-show-superseded" type="checkbox"> also show units the government has replaced
+    </label>
     <div id="atlas-search-results" role="listbox" aria-label="Search results"></div>
   </section>
 
