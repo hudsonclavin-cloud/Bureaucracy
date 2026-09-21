@@ -2058,21 +2058,25 @@ subdivide measured money rather than invent it — which does not make a
 subdivision a measurement. **Since 2026-09-09 the site does not show one by
 default**, by the owner's decision: a node with no measured cost of its own
 shows no figure and says why, and ticking "Also show estimated shares of a
-parent's total" opts back in. The exception is a real salary — **311** of the
-4,591 positions now carry a rate of pay an official source states: 99 from the
+parent's total" opts back in. The exception is a real salary — **380** of the
+4,591 positions carry a pay claim an official source states, counted on the
+published graph on 2026-09-21 after the current Plum Book landed: 99 from the
 Executive Schedule as 5 U.S.C. §§5312–5316 sets it, 166 from the White House
-roster, 30 from the archive's level joined to OPM's table, 18 statutory. Shown
-in the cost block under its own heading and never headed COST. Since
-2026-09-21 a further **32** positions carry a base-pay **range** rather than a
-rate (`positionGradePay`: 1 General Schedule grade, 30 SES, 1 SL/ST), which is
-counted separately here because a range is not a rate and the panel says so.
+roster, 87 the rate the current PLUM export prints for the one row under the
+title, 31 from a listing's level joined to OPM's table, 18 statutory, and 18 a
+base-pay **range** rather than a rate (`positionGradePay`, counted separately
+because a range is not a rate and the panel says so; it read 32 until the
+current export supplied a printed figure for 14 of them, and a printed figure
+beats a band). A node may carry more than one of these, so the per-source
+figures sum past 380. Shown in the cost block under its own heading and never
+headed COST.
 
 That figure read **354** until 2026-09-19 and was wrong: it added up the
 *records* each source derives rather than counting the nodes that publish one,
 and the archive's 46 pay records yield 30 published `positionPayRate` blocks
 because the rest carry a level or grade and no rate. The published count is
 what the site shows, so it is the one stated here; it was 310 before the §9
-renames and is 311 after. The estimates
+renames, 311 after, and 380 once the current export was read. The estimates
 stay in `graph.json` because the cascade's arithmetic and the gate's
 child-sum checks are built on them, so a consumer of the JSON must read
 `cost_status`, not `resolved_total_amount` alone. The gate prints both
