@@ -1139,15 +1139,15 @@
     },
     "leg-house-leadership": {
       "name": "House Leadership",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house",
-      "ownPage": false,
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "leg-house-leadership",
+      "ownPage": true,
       "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "reason": "named_on_the_page_but_not_as_a_label",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.house.gov/",
+          "url": "https://www.house.gov/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -1157,7 +1157,7 @@
         "urlsRead": [
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-committees": {
@@ -5708,15 +5708,23 @@
     },
     "exec-ind-cia": {
       "name": "Central Intelligence Agency (CIA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": true,
       "status": "inconclusive",
       "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -5745,12 +5753,12 @@
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-cia",
-        "urlsRead": [
-          "https://www.cia.gov/about/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.cia.gov/about/organization",
+        "matchedText": "Directorate of Operations",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-cia-directorate-of-analysis-da": {
@@ -5769,12 +5777,12 @@
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-cia",
-        "urlsRead": [
-          "https://www.cia.gov/about/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.cia.gov/about/organization",
+        "matchedText": "Directorate of Analysis",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-cia-directorate-of-science-technology-dst": {
@@ -5793,25 +5801,33 @@
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-cia",
-        "urlsRead": [
-          "https://www.cia.gov/about/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.cia.gov/about/organization",
+        "matchedText": "Directorate of Science and Technology",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-cia-directorate-of-digital-innovation-ddi": {
       "name": "Directorate of Digital Innovation (DDI)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -5819,9 +5835,11 @@
         "status": "not_listed",
         "parentId": "exec-ind-cia",
         "urlsRead": [
-          "https://www.cia.gov/about/"
+          "https://www.cia.gov/about/",
+          "https://www.cia.gov/about/organization",
+          "https://www.cia.gov/about/organization/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-cia-directorate-of-support-ds": {
@@ -5840,12 +5858,12 @@
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-cia",
-        "urlsRead": [
-          "https://www.cia.gov/about/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.cia.gov/about/organization",
+        "matchedText": "Directorate of Support",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa": {
@@ -5969,15 +5987,19 @@
     },
     "exec-ind-epa-office-of-research-development-ord": {
       "name": "Office of Research & Development (ORD)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "exec-ind-epa",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.epa.gov/aboutepa",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.epa.gov/aboutepa/epa-organization-chart",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -5985,9 +6007,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-office-of-enforcement-compliance-assurance-oeca": {
@@ -6057,9 +6080,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-ii-new-york": {
@@ -6081,9 +6105,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-iii-mid-atlantic": {
@@ -6105,9 +6130,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-iv-southeast": {
@@ -6129,9 +6155,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-v-midwest": {
@@ -6153,9 +6180,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-vi-south-central": {
@@ -6177,9 +6205,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-vii-plains": {
@@ -6201,9 +6230,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-viii-mountain": {
@@ -6225,9 +6255,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-ix-pacific": {
@@ -6249,9 +6280,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-epa-region-x-northwest": {
@@ -6273,9 +6305,10 @@
         "status": "not_listed",
         "parentId": "exec-ind-epa",
         "urlsRead": [
-          "https://www.epa.gov/aboutepa"
+          "https://www.epa.gov/aboutepa",
+          "https://www.epa.gov/aboutepa/epa-organization-chart"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nasa": {
@@ -6773,15 +6806,15 @@
     },
     "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia": {
       "name": "Herbert Hoover Presidential Library (West Branch, IA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nara-herbert-hoover-presidential-library-west-branch-ia",
+      "ownPage": true,
       "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "reason": "named_on_the_page_but_not_as_a_label",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.archives.gov/about",
+          "url": "https://hoover.archives.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -6789,9 +6822,11 @@
         "status": "not_listed",
         "parentId": "exec-ind-nara",
         "urlsRead": [
-          "https://www.archives.gov/about"
+          "https://www.archives.gov/about",
+          "https://www.archives.gov/presidential-libraries",
+          "https://www.archives.gov/about/organization"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": {
@@ -6826,15 +6861,15 @@
     },
     "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
       "name": "Harry S. Truman Presidential Library (Independence, MO)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
+      "ownPage": true,
       "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "reason": "named_on_the_page_but_not_as_a_label",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.archives.gov/about",
+          "url": "https://www.trumanlibrary.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -6842,22 +6877,23 @@
         "status": "not_listed",
         "parentId": "exec-ind-nara",
         "urlsRead": [
-          "https://www.archives.gov/about"
+          "https://www.archives.gov/about",
+          "https://www.archives.gov/presidential-libraries",
+          "https://www.archives.gov/about/organization"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks": {
       "name": "Dwight D. Eisenhower Presidential Library (Abilene, KS)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nara-dwight-d-eisenhower-presidential-library-abilene-ks",
+      "ownPage": true,
+      "status": "not_found",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.archives.gov/about",
+          "url": "https://www.eisenhowerlibrary.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -6865,9 +6901,11 @@
         "status": "not_listed",
         "parentId": "exec-ind-nara",
         "urlsRead": [
-          "https://www.archives.gov/about"
+          "https://www.archives.gov/about",
+          "https://www.archives.gov/presidential-libraries",
+          "https://www.archives.gov/about/organization"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nara-john-f-kennedy-presidential-library-boston-ma": {
@@ -7001,15 +7039,15 @@
     },
     "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca": {
       "name": "Ronald Reagan Presidential Library (Simi Valley, CA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nara-ronald-reagan-presidential-library-simi-valley-ca",
+      "ownPage": true,
       "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "reason": "named_on_the_page_but_not_as_a_label",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.archives.gov/about",
+          "url": "https://www.reaganlibrary.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -7017,9 +7055,11 @@
         "status": "not_listed",
         "parentId": "exec-ind-nara",
         "urlsRead": [
-          "https://www.archives.gov/about"
+          "https://www.archives.gov/about",
+          "https://www.archives.gov/presidential-libraries",
+          "https://www.archives.gov/about/organization"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": {
@@ -7054,15 +7094,15 @@
     },
     "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
       "name": "William J. Clinton Presidential Library (Little Rock, AR)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
+      "ownPage": true,
       "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
+      "reason": "named_on_the_page_but_not_as_a_label",
       "pagesRead": 1,
       "failures": [
         {
-          "url": "https://www.archives.gov/about",
+          "url": "https://www.clintonlibrary.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -7070,9 +7110,11 @@
         "status": "not_listed",
         "parentId": "exec-ind-nara",
         "urlsRead": [
-          "https://www.archives.gov/about"
+          "https://www.archives.gov/about",
+          "https://www.archives.gov/presidential-libraries",
+          "https://www.archives.gov/about/organization"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": {
@@ -13611,7 +13653,7 @@
     },
     "leg-senate-admin-chaplain": {
       "name": "Senate Chaplain",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-senate-admin-chaplain",
       "ownPage": true,
       "status": "fetch_failed",
@@ -13750,15 +13792,19 @@
     },
     "leg-house-cmte-education-the-workforce-sub-workforce-environmental-regulation": {
       "name": "Subcommittee on Workforce & Environmental Regulation",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-house-cmte-education-the-workforce",
       "ownPage": false,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://edworkforce.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://edworkforce.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
         }
       ],
@@ -13766,9 +13812,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-education-the-workforce",
         "urlsRead": [
-          "https://edworkforce.house.gov/"
+          "https://edworkforce.house.gov/",
+          "https://edworkforce.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-cmte-oversight-accountability": {
@@ -14105,7 +14152,7 @@
     },
     "leg-senate-admin-saa": {
       "name": "Sergeant at Arms of the Senate",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-senate-admin-saa",
       "ownPage": true,
       "status": "not_found",
@@ -14123,12 +14170,12 @@
           "https://www.senate.gov/about/officers-staff.htm",
           "https://www.senate.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-saa": {
       "name": "Sergeant at Arms of the House",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-house-admin",
       "ownPage": false,
       "status": "inconclusive",
@@ -14151,12 +14198,12 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-chaplain": {
       "name": "House Chaplain",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-house-chaplain",
       "ownPage": true,
       "status": "not_found",
@@ -14174,7 +14221,7 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-parliamentarian": {
@@ -14199,12 +14246,12 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-counsel": {
       "name": "Office of the Legislative Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-house-counsel",
       "ownPage": true,
       "status": "inconclusive",
@@ -14247,7 +14294,7 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T23:47:06+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-dept-defense-army": {
@@ -15383,11 +15430,19 @@
         }
       ],
       "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "url": "https://www.nsf.gov/eng",
+        "matchedText": "Chemical, Bioengineering, Energy and Transport Systems",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-21T03:55:15+00:00"
+      }
     },
     "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation": {
       "name": "Division of Civil, Mechanical & Manufacturing Innovation",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "exec-ind-nsf-engineering-eng-civil-mechanical-manufacturing-innovation",
       "ownPage": true,
       "status": "not_found",
@@ -15397,11 +15452,19 @@
           "url": "https://www.nsf.gov/eng/civil-mechanical-manufacturing-innovation",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "urlsRead": [
+          "https://www.nsf.gov/eng"
+        ],
+        "checkedAt": "2026-09-21T03:55:15+00:00"
+      }
     },
     "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems": {
       "name": "Division of Electrical, Communications & Cyber Systems",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "exec-ind-nsf-engineering-eng-electrical-communications-cyber-systems",
       "ownPage": true,
       "status": "not_found",
@@ -15411,7 +15474,15 @@
           "url": "https://www.nsf.gov/div/index.jsp?div=ECCS",
           "reason": "name_not_labelled_on_page"
         }
-      ]
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "urlsRead": [
+          "https://www.nsf.gov/eng"
+        ],
+        "checkedAt": "2026-09-21T03:55:15+00:00"
+      }
     },
     "exec-ind-nsf-geosciences-geo-atmospheric-geospace-sciences": {
       "name": "Division of Atmospheric & Geospace Sciences",
@@ -17443,7 +17514,7 @@
       "name": "Special Agent in Charge (SAC) — 56 Field Offices",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-dept-doj-dea-special-agent-in-charge-21-domestic-division-offices": {
       "name": "Special Agent in Charge — 21 Domestic Division Offices",
@@ -18818,13 +18889,13 @@
       "name": "Commissioner (×4)",
       "status": "not_checkable",
       "reason": "post_title_is_a_bare_job_title",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-nrc-regional-director-4-regions": {
       "name": "Regional Director — 4 Regions",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-ferc-commissioner-4": {
       "name": "Commissioner (×4)",
@@ -18842,31 +18913,31 @@
       "name": "Director (×3)",
       "status": "not_checkable",
       "reason": "post_title_is_a_bare_job_title",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-fdic-ceo-coo": {
       "name": "CEO (COO)",
       "status": "not_checkable",
       "reason": "post_title_is_a_bare_job_title",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-fdic-cfo": {
       "name": "CFO",
       "status": "not_checkable",
       "reason": "post_title_is_a_bare_job_title",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-fdic-cio": {
       "name": "CIO",
       "status": "not_checkable",
       "reason": "post_title_is_a_bare_job_title",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-fdic-regional-director-8-regions": {
       "name": "Regional Director — 8 Regions",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-21T03:52:23+00:00"
     },
     "exec-regulatory-cftc-commissioner-4": {
       "name": "Commissioner (×4)",
@@ -27802,13 +27873,20 @@
     },
     "leg-support-uscp-chief-of-police": {
       "name": "Chief of Police",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.uscp.gov/about/leadership",
+          "matchedText": "Chief of Police",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
@@ -27818,61 +27896,80 @@
     },
     "leg-support-uscp-deputy-chief-uniformed-operations": {
       "name": "Deputy Chief — Uniformed Operations",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.uscp.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "leg-support-uscp-deputy-chief-professional-responsibility": {
       "name": "Deputy Chief — Professional Responsibility",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.uscp.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "leg-support-uscp-assistant-chief-operations": {
       "name": "Assistant Chief — Operations",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.uscp.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "leg-support-uscp-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.uscp.gov/about/leadership",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
@@ -27882,16 +27979,20 @@
     },
     "leg-support-uscp-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "leg-support-uscp",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.uscp.gov/the-department",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.uscp.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -33864,29 +33965,40 @@
     },
     "exec-dept-doj-fbi-director-fbi": {
       "name": "Director, FBI",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-deputy-director": {
       "name": "Deputy Director",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
+          "matchedText": "Office of the Director/Deputy Director/Associate Deputy Director",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
@@ -33896,13 +34008,20 @@
     },
     "exec-dept-doj-fbi-associate-deputy-director": {
       "name": "Associate Deputy Director",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
+          "matchedText": "Associate Deputy Director –",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
@@ -33912,288 +34031,360 @@
     },
     "exec-dept-doj-fbi-executive-assistant-director-national-security-branch": {
       "name": "Executive Assistant Director — National Security Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-executive-assistant-director-criminal-cyber-response-services-branch": {
       "name": "Executive Assistant Director — Criminal, Cyber, Response & Services Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-executive-assistant-director-human-resources-branch": {
       "name": "Executive Assistant Director — Human Resources Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-executive-assistant-director-information-technology-branch": {
       "name": "Executive Assistant Director — Information & Technology Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-executive-assistant-director-science-technology-branch": {
       "name": "Executive Assistant Director — Science & Technology Branch",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-counterintelligence-division": {
       "name": "Director — Counterintelligence Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-counterterrorism-division": {
       "name": "Director — Counterterrorism Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-cyber-division": {
       "name": "Director — Cyber Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-criminal-investigative-division": {
       "name": "Director — Criminal Investigative Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-criminal-justice-information-services-cjis": {
       "name": "Director — Criminal Justice Information Services (CJIS)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-laboratory-division": {
       "name": "Director — Laboratory Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-legal-counsel-division": {
       "name": "Director — Legal Counsel Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-director-training-development-division": {
       "name": "Director — Training & Development Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-inspector-general-doj-ig-covers-fbi": {
       "name": "Inspector General (DoJ IG covers FBI)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-assistant-special-agent-in-charge-asac-multiple-per-office": {
       "name": "Assistant Special Agent in Charge (ASAC) (×multiple per office)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-supervisory-special-agent-ssa-squad-level": {
       "name": "Supervisory Special Agent (SSA) — Squad Level",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-special-agent-sa-multiple": {
       "name": "Special Agent (SA) (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doj-fbi-intelligence-analyst-multiple": {
       "name": "Intelligence Analyst (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fbi.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fbi.gov/about/leadership-and-structure",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -38153,29 +38344,40 @@
     },
     "exec-dept-doc-bea-director-bea": {
       "name": "Director, BEA",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doc-bea",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.bea.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.bea.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doc-bea-deputy-director": {
       "name": "Deputy Director",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doc-bea",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.bea.gov/about/leadership",
+          "matchedText": "Deputy Director",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.bea.gov/",
@@ -38185,32 +38387,40 @@
     },
     "exec-dept-doc-bea-chief-statistician": {
       "name": "Chief Statistician",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doc-bea",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.bea.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.bea.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-doc-bea-national-accounts-economist-multiple": {
       "name": "National Accounts Economist (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-doc-bea",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.bea.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.bea.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -39429,45 +39639,60 @@
     },
     "exec-dept-hhs-cdc-director-cdc": {
       "name": "Director, CDC",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-principal-deputy-director": {
       "name": "Principal Deputy Director",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.cdc.gov/about/organization/",
+          "matchedText": "Chief of Staff",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
@@ -39477,160 +39702,200 @@
     },
     "exec-dept-hhs-cdc-director-national-center-for-chronic-disease-prevention-nccdphp": {
       "name": "Director — National Center for Chronic Disease Prevention (NCCDPHP)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-national-center-for-injury-prevention-ncipc": {
       "name": "Director — National Center for Injury Prevention (NCIPC)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-national-center-for-immunization-respiratory-diseases-ncird": {
       "name": "Director — National Center for Immunization & Respiratory Diseases (NCIRD)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-national-center-for-hiv-aids-viral-hepatitis-std-tb-nchhstp": {
       "name": "Director — National Center for HIV/AIDS, Viral Hepatitis, STD & TB (NCHHSTP)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-national-center-for-environmental-health-nceh": {
       "name": "Director — National Center for Environmental Health (NCEH)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-center-for-global-health-cgh": {
       "name": "Director — Center for Global Health (CGH)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-office-of-public-health-preparedness-response-ophpr": {
       "name": "Director — Office of Public Health Preparedness & Response (OPHPR)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-director-center-for-surveillance-epidemiology-lab-services-csels": {
       "name": "Director — Center for Surveillance, Epidemiology & Lab Services (CSELS)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-epidemic-intelligence-service-eis-officer-multiple": {
       "name": "Epidemic Intelligence Service (EIS) Officer (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hhs-cdc-public-health-advisor-multiple": {
       "name": "Public Health Advisor (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hhs-cdc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.cdc.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cdc.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -40315,13 +40580,13 @@
     },
     "exec-dept-hud-secretary-of-department-of-housing-urban-development-hud": {
       "name": "Secretary of Housing and Urban Development",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40339,19 +40604,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-deputy-secretary-of-department-of-housing-urban-development-hud": {
       "name": "Deputy Secretary of Housing and Urban Development",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40370,18 +40639,29 @@
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
           "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "matchedText": "Chief of Staff",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40405,13 +40685,13 @@
     },
     "exec-dept-hud-executive-secretary": {
       "name": "Executive Secretary",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40429,19 +40709,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40459,19 +40743,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-deputy-inspector-general": {
       "name": "Deputy Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40490,18 +40778,29 @@
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
           "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40525,13 +40824,13 @@
     },
     "exec-dept-hud-deputy-general-counsel": {
       "name": "Deputy General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40550,18 +40849,29 @@
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
           "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "matchedText": "Chief Financial Officer",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40585,13 +40895,13 @@
     },
     "exec-dept-hud-deputy-cfo-controller": {
       "name": "Deputy CFO / Controller",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40610,18 +40920,29 @@
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
           "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-chief-information-officer": {
       "name": "Chief Information Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
+          "matchedText": "Chief Information Officer",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40645,13 +40966,13 @@
     },
     "exec-dept-hud-deputy-cio": {
       "name": "Deputy CIO",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40669,19 +40990,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-chief-human-capital-officer": {
       "name": "Chief Human Capital Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40699,19 +41024,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-director-of-legislative-affairs": {
       "name": "Director of Legislative Affairs",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40729,19 +41058,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-director-of-public-affairs": {
       "name": "Director of Public Affairs",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40759,19 +41092,23 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-dept-hud-diversity-inclusion-officer": {
       "name": "Diversity & Inclusion Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-dept-hud",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 2,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.hud.gov/about",
@@ -40789,6 +41126,10 @@
         },
         {
           "url": "https://www.hud.gov/aboutus/field-leadership",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.hud.gov/aboutus/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -47456,13 +47797,25 @@
     },
     "exec-ind-cia-director-of-the-cia-dcia": {
       "name": "Director of the CIA (DCIA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "matchedText": "The Director of the CIA",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
+          "matchedText": "The Director of the CIA",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
@@ -47472,45 +47825,73 @@
     },
     "exec-ind-cia-deputy-director-of-the-cia-ddcia": {
       "name": "Deputy Director of the CIA (DDCIA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-chief-operating-officer-coo": {
       "name": "Chief Operating Officer (COO)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
@@ -47520,96 +47901,144 @@
     },
     "exec-ind-cia-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "post_title_only_in_site_navigation"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "post_title_only_in_site_navigation"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-ind-cia-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-chief-information-officer": {
       "name": "Chief Information Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-director-of-congressional-affairs": {
       "name": "Director of Congressional Affairs",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-director-of-public-affairs": {
       "name": "Director of Public Affairs",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-cia-director-sherman-kent-school-training": {
       "name": "Director — Sherman Kent School (Training)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-cia",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.cia.gov/about/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.cia.gov/about/organization/",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -51291,45 +51720,60 @@
     },
     "exec-ind-nsf-director-nsf": {
       "name": "Director, NSF",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nsf.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nsf-deputy-director-nsf": {
       "name": "Deputy Director, NSF",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nsf.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nsf-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/about/leadership",
+          "matchedText": "Chief of Staff (Acting)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
@@ -51339,13 +51783,20 @@
     },
     "exec-ind-nsf-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/about/leadership",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
@@ -51355,13 +51806,20 @@
     },
     "exec-ind-nsf-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/about/leadership",
+          "matchedText": "Inspector General (Acting)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
@@ -51371,13 +51829,20 @@
     },
     "exec-ind-nsf-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nsf.gov/about/leadership",
+          "matchedText": "Chief Financial Officer (Acting)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
@@ -51387,48 +51852,60 @@
     },
     "exec-ind-nsf-chief-information-officer": {
       "name": "Chief Information Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nsf.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nsf-director-office-of-integrative-activities": {
       "name": "Director — Office of Integrative Activities",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nsf.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nsf-director-office-of-budget-finance-award-management": {
       "name": "Director — Office of Budget, Finance & Award Management",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nsf",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nsf.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nsf.gov/about/leadership",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -52787,176 +53264,273 @@
     },
     "exec-ind-nara-archivist-of-the-united-states": {
       "name": "Archivist of the United States",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/about/organization",
+          "matchedText": "Archivist of the United States",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-deputy-archivist": {
       "name": "Deputy Archivist",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/about/organization",
+          "matchedText": "Deputy Archivist of the United States",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-chief-of-staff": {
       "name": "Chief of Staff",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/about/organization",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-executive-for-research-services": {
       "name": "Executive for Research Services",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-executive-for-legislative-archives-presidential-libraries-museum-services": {
       "name": "Executive for Legislative Archives, Presidential Libraries & Museum Services",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-executive-for-agency-services": {
       "name": "Executive for Agency Services",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-director-national-personnel-records-center": {
       "name": "Director — National Personnel Records Center",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-director-federal-register": {
       "name": "Director — Federal Register",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-nara-director-information-services-cio": {
       "name": "Director — Information Services (CIO)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.archives.gov/about/organization",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -54713,45 +55287,60 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-director-administrator-chair-national-transportation-safety-board": {
       "name": "Director / Administrator / Chair, National Transportation Safety Board",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.ntsb.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.ntsb.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.ntsb.gov/",
@@ -54761,29 +55350,40 @@
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.ntsb.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-transportation-safety-board-ntsb-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-transportation-safety-board-ntsb",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.ntsb.gov/about/organization/Pages/default.aspx",
+          "matchedText": "Chief Financial Officer",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.ntsb.gov/",
@@ -55508,151 +56108,247 @@
     },
     "exec-ind-misc-farm-credit-administration-director-administrator-chair-farm-credit-administration": {
       "name": "Director / Administrator / Chair, Farm Credit Administration",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
           "reason": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.fca.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fca.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-farm-credit-administration-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
           "reason": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.fca.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fca.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-farm-credit-administration-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
           "reason": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.fca.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fca.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-farm-credit-administration-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fca.gov/about/leadership",
+          "matchedText": "Inspector general",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
           "reason": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.fca.gov/",
+          "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-ind-misc-farm-credit-administration-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
           "reason": "HTTPError: HTTP Error 404: Not Found"
+        },
+        {
+          "url": "https://www.fca.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fca.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-credit-union-administration-ncua-director-administrator-chair-national-credit-union-administration": {
       "name": "Director / Administrator / Chair, National Credit Union Administration",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://ncua.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-credit-union-administration-ncua-deputy-director-vice-chair": {
       "name": "Deputy Director / Vice Chair",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://ncua.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-ind-misc-national-credit-union-administration-ncua-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://ncua.gov/about/leadership",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
         }
       ]
     },
     "exec-ind-misc-national-credit-union-administration-ncua-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://ncua.gov/about/leadership",
+          "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-ind-misc-national-credit-union-administration-ncua-chief-financial-officer": {
       "name": "Chief Financial Officer",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": false,
       "isPost": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "reason": "URLError: <urlopen error _ssl.c:999: The handshake operation timed out>"
+        },
+        {
+          "url": "https://ncua.gov/about/leadership",
+          "reason": "name_not_labelled_on_page"
         }
       ]
     },
@@ -56959,29 +57655,40 @@
     },
     "exec-regulatory-nrc-chair-nrc": {
       "name": "Chair, NRC",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-nrc-executive-director-for-operations": {
       "name": "Executive Director for Operations",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
+          "matchedText": ", Executive Director for Operations",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
@@ -56991,77 +57698,100 @@
     },
     "exec-regulatory-nrc-director-office-of-nuclear-reactor-regulation": {
       "name": "Director — Office of Nuclear Reactor Regulation",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-nrc-director-office-of-nuclear-material-safety-safeguards": {
       "name": "Director — Office of Nuclear Material Safety & Safeguards",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-nrc-director-office-of-nuclear-regulatory-research": {
       "name": "Director — Office of Nuclear Regulatory Research",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-nrc-director-office-of-nuclear-security-incident-response": {
       "name": "Director — Office of Nuclear Security & Incident Response",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-nrc-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
+          "matchedText": ", General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
@@ -57071,13 +57801,20 @@
     },
     "exec-regulatory-nrc-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
+          "matchedText": ", Inspector General",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
@@ -57087,16 +57824,20 @@
     },
     "exec-regulatory-nrc-nuclear-reactor-regulation-specialist-multiple": {
       "name": "Nuclear Reactor Regulation Specialist (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-nrc",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.nrc.gov/about-nrc.html",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.nrc.gov/about-nrc/organization-functions",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -57365,128 +58106,201 @@
     },
     "exec-regulatory-fdic-chair-fdic": {
       "name": "Chair, FDIC",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-vice-chair": {
       "name": "Vice Chair",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-general-counsel": {
       "name": "General Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
+          "matchedText": "General Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-inspector-general": {
       "name": "Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "post_title_only_in_site_navigation"
+        },
+        {
+          "url": "https://www.fdic.gov/",
+          "reason": "post_title_only_in_site_navigation"
+        },
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
           "reason": "post_title_only_in_site_navigation"
         }
       ]
     },
     "exec-regulatory-fdic-director-division-of-risk-management-supervision": {
       "name": "Director — Division of Risk Management Supervision",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
+          "matchedText": "Director, Division of Risk Management Supervision",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-director-division-of-depositor-consumer-protection": {
       "name": "Director — Division of Depositor & Consumer Protection",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
+          "matchedText": "Director, Division of Depositor and Consumer Protection",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_its_organisations_official_page",
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-director-division-of-resolutions-receiverships": {
       "name": "Director — Division of Resolutions & Receiverships",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
           "reason": "name_not_labelled_on_page"
         }
       ]
     },
     "exec-regulatory-fdic-bank-examiner-multiple": {
       "name": "Bank Examiner (×multiple)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:52:23+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": false,
       "isPost": true,
       "status": "inconclusive",
       "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "pagesRead": 3,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.fdic.gov/about/board-directors-senior-executives",
           "reason": "name_not_labelled_on_page"
         }
       ]
@@ -59839,7 +60653,7 @@
     },
     "leg-senate-admin-physician": {
       "name": "Office of the Senate Physician",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-senate-admin",
       "ownPage": false,
       "status": "inconclusive",
@@ -59862,12 +60676,12 @@
           "https://www.senate.gov/about/officers-staff.htm",
           "https://www.senate.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-senate-admin-legal": {
       "name": "Office of Senate Legal Counsel",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-senate-admin",
       "ownPage": false,
       "status": "inconclusive",
@@ -59890,7 +60704,7 @@
           "https://www.senate.gov/about/officers-staff.htm",
           "https://www.senate.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-house-cmte-natural-resources-sub-energy-mineral-resources-chair-subcommittee-on-energy-mineral-resources": {
@@ -60177,7 +60991,7 @@
     },
     "leg-house-physician": {
       "name": "Office of the Attending Physician",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "leg-house-admin",
       "ownPage": false,
       "status": "inconclusive",
@@ -60200,7 +61014,7 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "leg-joint-library": {
@@ -60768,7 +61582,7 @@
     },
     "exec-ind-nsf-education-human-resources-ehr-human-resource-development": {
       "name": "Division of Human Resource Development",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
       "siteFrom": "exec-ind-nsf-education-human-resources-ehr",
       "ownPage": false,
       "status": "inconclusive",
@@ -60791,7 +61605,7 @@
           "https://www.nsf.gov/edu",
           "https://www.nsf.gov/about/directorates-offices"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-21T03:55:15+00:00"
       }
     },
     "exec-ind-smithsonian": {
@@ -62893,6 +63707,52 @@
       ],
       "method": "name_labelled_on_own_official_page",
       "pagesRead": 1
+    },
+    "exec-ind-nsf-engineering-eng-engineering-education-centers": {
+      "name": "Division of Engineering Education & Centers",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nsf-engineering-eng",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.nsf.gov/eng",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "urlsRead": [
+          "https://www.nsf.gov/eng"
+        ],
+        "checkedAt": "2026-09-21T03:55:15+00:00"
+      }
+    },
+    "exec-ind-nsf-engineering-eng-emerging-frontiers-in-research-innovation": {
+      "name": "Division of Emerging Frontiers in Research & Innovation",
+      "checkedAt": "2026-09-21T03:55:15+00:00",
+      "siteFrom": "exec-ind-nsf-engineering-eng",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.nsf.gov/eng",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-ind-nsf-engineering-eng",
+        "urlsRead": [
+          "https://www.nsf.gov/eng"
+        ],
+        "checkedAt": "2026-09-21T03:55:15+00:00"
+      }
     }
   }
 }
