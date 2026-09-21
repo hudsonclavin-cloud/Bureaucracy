@@ -353,6 +353,17 @@ def entity_titles(entity: ET.Element) -> list[dict[str, str]]:
                 governed = False
                 continue
             if is_all_caps(title):
+                # The caps row is the principal's own title, printed as the
+                # Manual prints it ("SECRETARY OF STATE", "ATTORNEY GENERAL",
+                # "LIBRARIAN OF CONGRESS"); what it governs beneath it is what
+                # the rule refuses. A plural group heading ("DEPUTY
+                # ADMINISTRATORS") is admitted here too and claims nothing,
+                # because the join downstream is equality with exactly one
+                # curated post and no post is named in the plural. Measured
+                # on 2026-09-21 before the change: 175 caps rows under the
+                # matched entries, 21 equal to exactly one curated post, every
+                # one of the 21 a real title, nine of them department heads.
+                out.append({"title": title, "footer": footer, "allCaps": True})
                 governed = True
                 continue
             if governed:

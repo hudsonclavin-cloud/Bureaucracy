@@ -2096,6 +2096,9 @@ def govman_entries():
                             governed = False
                             continue
                         if all_caps(title):
+                            # The caps row is a title in its own right (the
+                            # principal's, as printed); it governs what follows.
+                            titles.setdefault(canonical_key(title), []).append(title)
                             governed = True
                             continue
                         if governed:

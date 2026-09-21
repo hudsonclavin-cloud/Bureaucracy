@@ -7,7 +7,7 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-21T03:19:40Z",
+    "derivedAt": "2026-09-21T05:29:55Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
@@ -16,8 +16,8 @@
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
     "entry_names_no_node": 68,
-    "posts_listed": 64,
-    "refused_title_not_listed": 1034,
+    "posts_listed": 85,
+    "refused_title_not_listed": 1013,
     "refused_title_listed_twice": 0,
     "refused_siblings_share_the_name": 0,
     "refused_name_too_short": 29,
@@ -42,6 +42,58 @@
     "descriptions_refused_no_sentence_boundary_within_bound": 1
   },
   "nodes": {
+    "leg-support-aoc-architect-of-the-capitol": {
+      "source": "us_government_manual",
+      "nodeName": "Architect of the Capitol",
+      "listedTitle": "ARCHITECT OF THE CAPITOL",
+      "listedUnder": "Architect of the Capitol",
+      "organisationId": "leg-support-aoc",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-073",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-073",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "leg-support-gao-comptroller-general-of-the-united-states": {
+      "source": "us_government_manual",
+      "nodeName": "Comptroller General of the United States",
+      "listedTitle": "COMPTROLLER GENERAL OF THE UNITED STATES",
+      "listedUnder": "Government Accountability Office",
+      "organisationId": "leg-support-gao",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-075",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "leg-support-gao-chief-operating-officer": {
+      "source": "us_government_manual",
+      "nodeName": "Chief Operating Officer",
+      "listedTitle": "CHIEF OPERATING OFFICER",
+      "listedUnder": "Government Accountability Office",
+      "organisationId": "leg-support-gao",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-075",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "leg-support-gao-general-counsel": {
+      "source": "us_government_manual",
+      "nodeName": "General Counsel",
+      "listedTitle": "GENERAL COUNSEL",
+      "listedUnder": "Government Accountability Office",
+      "organisationId": "leg-support-gao",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-075",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "leg-support-gao-inspector-general": {
       "source": "us_government_manual",
       "nodeName": "Inspector General",
@@ -53,6 +105,19 @@
       "granule": "GOVMAN-2025-12-31-075",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-075",
       "tableFooter": "The key personnel table was updated 2–2019.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "leg-support-loc-librarian-of-congress": {
+      "source": "us_government_manual",
+      "nodeName": "Librarian of Congress",
+      "listedTitle": "LIBRARIAN OF CONGRESS",
+      "listedUnder": "Library of Congress",
+      "organisationId": "leg-support-loc",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-077",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-077",
+      "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "leg-support-loc-chief-of-staff": {
@@ -133,6 +198,45 @@
       "tableFooter": "[For the Department of Agriculture statement of organization, see the Code of Federal Regulations, Title 7, Part 2]",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-doc-inspector-general": {
+      "source": "us_government_manual",
+      "nodeName": "Inspector General",
+      "listedTitle": "INSPECTOR GENERAL",
+      "listedUnder": "Department of Commerce",
+      "organisationId": "exec-dept-doc",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-113",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-113",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-doc-ita-under-secretary-for-international-trade": {
+      "source": "us_government_manual",
+      "nodeName": "Under Secretary for International Trade",
+      "listedTitle": "UNDER SECRETARY FOR INTERNATIONAL TRADE",
+      "listedUnder": "International Trade Administration",
+      "organisationId": "exec-dept-doc-ita",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-262",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-262",
+      "tableFooter": "The above list of key personnel was updated 10–2021.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-defense-secretary-of-defense": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Defense",
+      "listedTitle": "SECRETARY OF DEFENSE",
+      "listedUnder": "Department of Defense",
+      "organisationId": "exec-dept-defense",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-114",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-114",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-defense-inspector-general": {
       "source": "us_government_manual",
       "nodeName": "Inspector General",
@@ -172,6 +276,45 @@
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-defense-marines-commandant-of-the-marine-corps-4-star-general": {
+      "source": "us_government_manual",
+      "nodeName": "Commandant of the Marine Corps (4-star General)",
+      "listedTitle": "COMMANDANT OF THE MARINE CORPS",
+      "listedUnder": "United States Marine Corps",
+      "organisationId": "exec-dept-defense-marines",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-275",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-275",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-ed-secretary-of-department-of-education": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Education",
+      "listedTitle": "SECRETARY OF EDUCATION",
+      "listedUnder": "Department of Education",
+      "organisationId": "exec-dept-ed",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-115",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-115",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-doe-secretary-of-department-of-energy-doe": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Energy",
+      "listedTitle": "SECRETARY OF ENERGY",
+      "listedUnder": "Department of Energy",
+      "organisationId": "exec-dept-doe",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-116",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-doe-chief-of-staff": {
       "source": "us_government_manual",
       "nodeName": "Chief of Staff",
@@ -196,6 +339,19 @@
       "granule": "GOVMAN-2025-12-31-116",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-116",
       "tableFooter": "The above list of key personnel was updated 1–2022.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-hhs-secretary-of-department-of-health-human-services-hhs": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Health and Human Services",
+      "listedTitle": "SECRETARY OF HEALTH AND HUMAN SERVICES",
+      "listedUnder": "Department of Health and Human Services",
+      "organisationId": "exec-dept-hhs",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-117",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-117",
+      "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-hhs-cms-chief-of-staff": {
@@ -276,6 +432,19 @@
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-doj-secretary-of-department-of-justice-doj": {
+      "source": "us_government_manual",
+      "nodeName": "Attorney General",
+      "listedTitle": "ATTORNEY GENERAL",
+      "listedUnder": "Department of Justice",
+      "organisationId": "exec-dept-doj",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-121",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-121",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-doj-inspector-general": {
       "source": "us_government_manual",
       "nodeName": "Inspector General",
@@ -300,6 +469,19 @@
       "granule": "GOVMAN-2025-12-31-282",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-282",
       "tableFooter": "The above list of key personnel was updated 8–2021.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-dol-secretary-of-department-of-labor-dol": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Labor",
+      "listedTitle": "SECRETARY OF LABOR",
+      "listedUnder": "Department of Labor",
+      "organisationId": "exec-dept-dol",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-323",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-323",
+      "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dol-inspector-general": {
@@ -341,6 +523,32 @@
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-dept-state-secretary-of-department-of-state": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of State",
+      "listedTitle": "SECRETARY OF STATE",
+      "listedUnder": "Department of State",
+      "organisationId": "exec-dept-state",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-123",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-state-deputy-secretary-of-department-of-state": {
+      "source": "us_government_manual",
+      "nodeName": "Deputy Secretary of State",
+      "listedTitle": "DEPUTY SECRETARY OF STATE",
+      "listedUnder": "Department of State",
+      "organisationId": "exec-dept-state",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-123",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-dept-state-executive-secretary": {
       "source": "us_government_manual",
       "nodeName": "Executive Secretary",
@@ -365,6 +573,19 @@
       "granule": "GOVMAN-2025-12-31-123",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-123",
       "tableFooter": "The above list of key personnel was updated 6–2020.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-dot-secretary-of-department-of-transportation-dot": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of Transportation",
+      "listedTitle": "SECRETARY OF TRANSPORTATION",
+      "listedUnder": "Department of Transportation",
+      "organisationId": "exec-dept-dot",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-124",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-124",
+      "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-dot-chief-of-staff": {
@@ -404,6 +625,32 @@
       "granule": "GOVMAN-2025-12-31-241",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-241",
       "tableFooter": "The above list of key personnel was updated 9–2021.",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-doi-secretary-of-department-of-the-interior-doi": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of the Interior",
+      "listedTitle": "SECRETARY OF THE INTERIOR",
+      "listedUnder": "Department of the Interior",
+      "organisationId": "exec-dept-doi",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-120",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-120",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-treasury-secretary-of-department-of-the-treasury": {
+      "source": "us_government_manual",
+      "nodeName": "Secretary of the Treasury",
+      "listedTitle": "SECRETARY OF THE TREASURY",
+      "listedUnder": "Department of the Treasury",
+      "organisationId": "exec-dept-treasury",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-125",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-125",
+      "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-treasury-chief-of-staff": {
@@ -575,6 +822,19 @@
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
+    "exec-ind-nara-archivist-of-the-united-states": {
+      "source": "us_government_manual",
+      "nodeName": "Archivist of the United States",
+      "listedTitle": "ARCHIVIST OF THE UNITED STATES",
+      "listedUnder": "National Archives and Records Administration",
+      "organisationId": "exec-ind-nara",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-154",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-154",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
     "exec-ind-nara-chief-of-staff": {
       "source": "us_government_manual",
       "nodeName": "Chief of Staff",
@@ -676,6 +936,19 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-209",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-209",
+      "tableFooter": null,
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-ind-misc-national-labor-relations-board-nlrb-independent-general-counsel": {
+      "source": "us_government_manual",
+      "nodeName": "General Counsel",
+      "listedTitle": "GENERAL COUNSEL",
+      "listedUnder": "National Labor Relations Board",
+      "organisationId": "exec-ind-misc-national-labor-relations-board-nlrb-independent",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-158",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-158",
       "tableFooter": null,
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },

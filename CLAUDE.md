@@ -1092,7 +1092,19 @@ So qualifiers are discarded wholesale rather than assembled, by three rules
 that are purely structural and need no vocabulary and no grammar: a table that
 carries a `Header` at all (anything but empty or the footnote mark `*`)
 governs its rows; a row after an ALL-CAPS row is governed by it; a row of
-dashes resets the grouping.
+dashes resets the grouping. **The ALL-CAPS row itself is a title (since
+2026-09-21).** It is how the Manual prints the principal — `SECRETARY OF
+STATE`, `ATTORNEY GENERAL`, `LIBRARIAN OF CONGRESS`, `COMPTROLLER GENERAL OF
+THE UNITED STATES` — and until then it was refused along with what it
+governs, which is why nine department heads and the Attorney General carried
+no evidence while the government's own handbook named each of them. The
+worry that motivated refusing it, that the same typography marks a plural
+group heading (`DEPUTY ADMINISTRATORS`), is answered by the join rather than
+by a plural test: a row reaches a post only by equality with exactly one
+curated child, and no post is named in the plural. Measured before the
+change: 175 caps rows under the matched entries, 21 equal to exactly one
+curated post, every one of the 21 a real title. What follows a caps row is
+still refused.
 
 That is deliberately blunt and it costs real evidence, measured rather than
 argued away: EPA's own `Deputy Administrator` is refused because
@@ -1258,11 +1270,10 @@ The post route was measured for reach at the same time and left alone: beside
 the 64 posts the complete-title rule admits, 144 more under matched agencies
 equal exactly one leadership row that the rule refuses — 69 under a table
 header, 37 under an ALL-CAPS row, and 38 that are ALL-CAPS rows themselves.
-The Manual uses an ALL-CAPS row both for a principal's own title ("INSPECTOR
-GENERAL") and for a plural group heading ("DEPUTY ADMINISTRATORS" over "Naval
-Reactors"), and telling those apart is the plural test on free text the rule
-refuses because it is wrong about "Chief of Naval Operations". So the 144 stay
-refused, recorded as a measurement.
+The third group was admitted the same day (see the caps-row paragraph
+above): the equality join, not a plural test, is what keeps "DEPUTY
+ADMINISTRATORS" from reaching anything. The first two stay refused, recorded
+as a measurement.
 
 **Headcounts and positions (`headcounts.py`, `positions.py`).** Two more
 official sources, applied by the exporter since 2026-09-09 from

@@ -192,18 +192,45 @@ class EligibilityTests(unittest.TestCase):
             <Values><TitleColumnValue>Chief of Staff</TitleColumnValue></Values>
           </LeaderShipTableValues>
         </LeaderShipTable></LeaderShipTables></Entity>"""))
-        self.assertEqual([t["title"] for t in titles], ["Chief of Staff"],
-                         "a row after ALL CAPS is governed; a separator resets")
+        self.assertEqual([t["title"] for t in titles], ["ADMINISTRATOR", "Chief of Staff"],
+                         "the ALL-CAPS row is a title itself; the row after it is governed; a separator resets")
+        self.assertTrue(titles[0].get("allCaps"))
+        self.assertNotIn("allCaps", titles[1])
+
+    def test_a_caps_row_is_the_principals_title_and_a_plural_heading_claims_nothing(self):
+        """Nine department heads sit in the Manual as ALL-CAPS rows
+        ("SECRETARY OF STATE", "ATTORNEY GENERAL") and were refused as group
+        headings until 2026-09-21. The join is equality with exactly one
+        curated post, so a plural heading ("DEPUTY ADMINISTRATORS") is
+        admitted as a row and reaches nothing."""
+        manual = read_manual()
+        graph = load_base_graph(DEFAULT_BASE_GRAPH)
+        records, _ = build_records(manual, graph)
+        by_title = {r["listedTitle"] for r in records.values()}
+        for printed in ("SECRETARY OF STATE", "ATTORNEY GENERAL", "SECRETARY OF THE TREASURY", "LIBRARIAN OF CONGRESS"):
+            self.assertIn(printed, by_title, printed)
+        # Plural caps headings the Manual prints in tables with no header
+        # (so they are admitted as rows), none of which names a post.
+        plural_headings = {"DIRECTORS", "CHIEF OFFICERS", "ASSOCIATE DIRECTORS", "ASSISTANT SECRETARIES",
+                           "DEPUTY ASSISTANT SECRETARIES", "REGIONAL DIRECTORS"}
+        admitted = {t["title"] for e in manual["entities"] for t in e["titles"] if t.get("allCaps")}
+        self.assertTrue(plural_headings & admitted, "the fixture no longer prints a plural caps heading as a row")
+        self.assertFalse(plural_headings & by_title, "no plural caps heading may reach a post")
 
     def test_the_real_fixture_refuses_every_qualifier_epa_prints(self):
         """EPA's entry is the worked example in the module docstring."""
         manual = read_manual()
         epa = next(e for e in manual["entities"] if e["name"] == "Environmental Protection Agency")
-        printed = {t["title"] for t in epa["titles"]}
+        printed = {t["title"] for t in epa["titles"] if not t.get("allCaps")}
         # Kept: rows in tables that carry no header at all, or only the
-        # footnote mark, and that nothing ALL-CAPS governs.
+        # footnote mark, and that nothing ALL-CAPS governs. The ALL-CAPS
+        # rows themselves ("ADMINISTRATOR") are titles too since 2026-09-21
+        # and are set aside here to keep the qualifier assertions exact.
         self.assertEqual(printed, {"General Counsel", "Inspector General",
                                    "Chief Financial Officer", "Agency Science Advisor"})
+        # EPA's own "ADMINISTRATOR" sits in a table headed "Office of the
+        # Administrator", so the header rule still refuses it, caps or not.
+        self.assertNotIn("ADMINISTRATOR", {t["title"] for t in epa["titles"]})
         # Refused under the header "Assistant Administrators": assembling
         # "Assistant Administrator for Water" would produce a title rather
         # than select one.
