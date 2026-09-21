@@ -13,3 +13,6 @@ saved_pages/
 *.json.gz
 *.ndjson
 file_sizes.json
+
+# agent worktrees created during sessions; never part of the repository
+.claude/worktrees/
