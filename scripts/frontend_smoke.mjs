@@ -123,11 +123,20 @@ try {
   // progress.
   const graphJson = JSON.parse(fs.readFileSync(path.join(ROOT, "output", "graph.json"), "utf8"));
   const allNodes = [];
-  const walkGraph = (node) => {
+  // Each node is stamped with its depth (a harness-side field, never
+  // published) so the deep-link checks below can say what they expect.
+  const walkGraph = (node, depth = 0) => {
+    node.__depth = depth;
     allNodes.push(node);
-    for (const child of node.children || []) walkGraph(child);
+    for (const child of node.children || []) walkGraph(child, depth + 1);
   };
   walkGraph(graphJson);
+  const subtreeSizeOf = (node) => {
+    let n = 0;
+    const count = (item) => { n += 1; for (const child of item.children || []) count(child); };
+    count(node);
+    return n;
+  };
 
   // "How to read this" — the first-visit explainer. A fresh browser context
   // has an empty localStorage, so this is exactly the state a first-time
@@ -158,7 +167,9 @@ try {
   check("the directory opens from the view switcher", await page.locator("body.atlas-mode").count() === 1, "directory did not open");
   check("the directory limits itself to six generations", await page.locator('[data-atlas-depth="6"].active').count() === 1, "depth six is not active");
   const coverageText = await text("#atlas-coverage");
-  check("the directory exposes evidence coverage", /verified records/.test(coverageText) && /reported financial figures/.test(coverageText), coverageText);
+  // Case-insensitive: innerText applies the stylesheet's text-transform, and
+  // the directory sets its coverage labels in uppercase.
+  check("the directory exposes evidence coverage", /verified records/i.test(coverageText) && /reported financial figures/i.test(coverageText), coverageText);
   check("the first organizational generation is rendered", await page.locator("#atlas-columns .atlas-generation").count() >= 1, "no generation column");
   await page.fill("#atlas-search", "Bureau of Prisons");
   await page.waitForTimeout(250);
@@ -675,8 +686,11 @@ try {
   check("an evidenced placement quotes the label and links the page", /lists it( in its site-wide navigation)? as "[^"]+" on [a-z0-9.-]+\.(gov|mil)/.test(placed), placed);
   check("an evidenced placement never says 'reports to'", !/reports to/i.test(placed), placed);
   // Likewise chosen from the data: a node whose placement is not evidenced.
+  // Never the root: it has no parent, so its placement line says it is the
+  // root rather than naming one of the three unevidenced states.
   const unplacedNode = allNodes.find((n) =>
-    nameCount.get(n.name) === 1 && n.placementVerified !== true
+    n !== graphJson
+    && nameCount.get(n.name) === 1 && n.placementVerified !== true
     && !n.synthetic && String(n.name || "").length > 8
     && !/position/i.test(String(n.type || "")));
   check("the graph still carries an organisation with no evidenced placement", Boolean(unplacedNode), "none");
@@ -1048,6 +1062,198 @@ try {
       const noParentPlacement = await text("#verification-placement");
       check("a candidate with no parent guess says so", /No possible parent was identified/.test(noParentPlacement), noParentPlacement);
     }
+  }
+
+  // ---- Presentation and navigation, 2026-09-21. --------------------------
+  // Each of these was a verified defect: read what the page does, not what
+  // the code says it does.
+
+  // The legend is fixed bottom-right; the open panel spans the viewport's
+  // height at 1400x900, so the key was drawn inside the panel. Measured with
+  // getBoundingClientRect, with the panel open, which it is by now.
+  const boxes = await page.evaluate(() => {
+    const rect = (id) => {
+      const el = document.getElementById(id);
+      const b = el.getBoundingClientRect();
+      return { left: b.left, right: b.right, top: b.top, bottom: b.bottom, open: el.classList.contains("open") };
+    };
+    return { legend: rect("legend"), panel: rect("info-panel"), depth: rect("depth-ctrl"), hint: rect("controls-hint"), crumbs: rect("breadcrumb") };
+  });
+  const overlaps = (a, b) => a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+  check("the info panel is open for the overlap check", boxes.panel.open, JSON.stringify(boxes.panel));
+  check("the legend never sits under the open info panel", !overlaps(boxes.legend, boxes.panel), JSON.stringify(boxes));
+  check("the legend does not sit under the depth control either", !overlaps(boxes.legend, boxes.depth), JSON.stringify(boxes));
+  // Moved left of the panel, the legend shared a row with the controls hint.
+  check("the legend does not collide with the controls hint", !overlaps(boxes.legend, boxes.hint), JSON.stringify(boxes));
+  check("the legend does not collide with the breadcrumb", !overlaps(boxes.legend, boxes.crumbs), JSON.stringify(boxes));
+
+  // The counter names both numbers: loaded is not drawn, and "5,402 / 5,402
+  // nodes rendered" was printed while the Agency tier drew depth 3.
+  check("the counter says loaded and drawn separately", /nodes loaded · [\d,]+ drawn/.test(await text("#node-counter")), await text("#node-counter"));
+
+  // The root has no parent, so "no evidence recorded for where this sits"
+  // was a gap that does not exist.
+  // Opened by name rather than through the breadcrumb: with the candidate
+  // toggle on, the selection may be a candidate, which has no ancestors and
+  // a one-crumb trail.
+  await openByName(graphJson.name);
+  const rootName = await text("#info-name");
+  check("the root opens from the search", rootName === graphJson.name, rootName);
+  const rootPlacement = await text("#verification-placement");
+  check("the root's placement line says it is the root", /root of the graph/.test(rootPlacement), rootPlacement);
+  check("the root is not told no placement evidence was recorded", !/no evidence recorded/.test(rootPlacement), rootPlacement);
+  // The root's measured figure is exact and, above a billion, also readable.
+  const rootStats = await text("#info-stats");
+  check("the root's exact figure is the primary reading", rootStats.includes(exactDollars(graphJson.resolved_total_amount)), rootStats.slice(0, 200));
+  check("a measured figure above $1B carries a compact reading", /\$\d+(\.\d+)? (billion|trillion), to three figures/.test(rootStats), rootStats.slice(0, 200));
+
+  // Only a node holding an apportioned share is told the estimates box would
+  // reveal one. A post and a unit beneath a negative Treasury pool have no
+  // estimate, and were told to tick a box that reveals nothing for them.
+  await setEstimatesShown(false);
+  const plainPost = allNodes.find((n) => n.cost_validation === "post_is_not_a_budget_unit" && !n.positionListing && unique(n));
+  check("some post has no figure and no pay listing", Boolean(plainPost), "none");
+  if (plainPost) {
+    await openByName(plainPost.name);
+    const postStats = await text("#info-stats");
+    check("a post is never told to tick the estimates box", !/Tick/.test(postStats), postStats.slice(0, 500));
+    check("a post says it is a post, with nothing to reveal", /This is a post/.test(postStats) && /no estimate to reveal/.test(postStats), postStats.slice(0, 500));
+  }
+  if (paid) {
+    await openByName(paid.name);
+    const paidStats = await text("#info-stats");
+    check("a paid post is never told to tick the estimates box", !/Tick/.test(paidStats), paidStats.slice(0, 500));
+    check("a paid post still heads its figure as pay", /REPORTED RATE OF BASIC PAY/.test(paidStats), paidStats.slice(0, 300));
+  }
+  if (poolNegative && unique(poolNegative)) {
+    await openByName(poolNegative.name);
+    const poolStats = await text("#info-stats");
+    check("a node beneath a negative pool is never told to tick the estimates box", !/Tick/.test(poolStats), poolStats.slice(0, 600));
+    check("a node beneath a negative pool explains itself in the default view", /Nothing remains to apportion/.test(poolStats), poolStats.slice(0, 600));
+  }
+  if (allocatedNode) {
+    await openByName(allocatedNode.name);
+    const stillWithheld = await text("#info-stats");
+    check("an apportioned share is still told the box reveals it", /Tick/.test(stillWithheld), stillWithheld.slice(0, 500));
+    await setEstimatesShown(true);
+    const shownEstimate = await text("#info-stats");
+    check("an estimate keeps its own rounded form and gets no compact line", /≈\s*\$/.test(shownEstimate) && !/to three figures/.test(shownEstimate), shownEstimate.slice(0, 300));
+    await setEstimatesShown(false);
+  }
+
+  // A node whose queued page went unread, and which carries no source and no
+  // date — 924 of the 931 such nodes. The unread sentence lived only in the
+  // branch a never-checked node cannot reach, so the panel said "hand-compiled
+  // base graph" while the guide counted a page that could not be read.
+  const unreadNeverChecked = allNodes.find((n) =>
+    n.verificationUnread && typeof n.verificationUnread === "object" && !n.verificationMethod
+    && !(n.sourceUrls || []).length && !n.lastVerified && unique(n));
+  check("some never-checked node has a queued page that went unread", Boolean(unreadNeverChecked), "none");
+  if (unreadNeverChecked) {
+    await openByName(unreadNeverChecked.name);
+    const unreadPanel = await text("#info-panel");
+    check("a never-checked node with an unread page says the page went unread", /Not verified: .*(could not be read|refuses this crawler|answered 404|could not be reached|server error)/.test(unreadPanel), unreadPanel.slice(0, 700));
+    check("an unread page is described as a fact about the page or host, not the unit", !/Not yet verified/.test(unreadPanel), unreadPanel.slice(0, 700));
+  }
+  // OPM's PLUM archive as the method that confirmed a post and placed it:
+  // 125 and 129 nodes, which the wording maps did not know, so the panel
+  // fell to "Last checked: <date>" and "no evidence recorded".
+  const plumMethod = allNodes.find((n) => n.verificationMethod === "listed_in_opm_plum_archive"
+    && n.placementMethod === "listed_under_organization_in_opm_plum_archive" && unique(n));
+  check("some post is confirmed and placed by the PLUM archive", Boolean(plumMethod), "none");
+  if (plumMethod) {
+    await openByName(plumMethod.name);
+    const plumPanel = await text("#info-panel");
+    check("a PLUM-confirmed post names the archive as its method", /OPM's PLUM archive, the previous administration's reported positions, lists a post of this title/.test(plumPanel), plumPanel.slice(0, 900));
+    check("a PLUM-confirmed post does not fall back to a bare date", !/Last checked:/.test(plumPanel), plumPanel.slice(0, 900));
+    const plumPlacement = await text("#verification-placement");
+    check("a PLUM placement names the archive", /Placement: OPM's PLUM archive, the previous administration's reported positions, files a post of this title under its organisation here/.test(plumPlacement), plumPlacement);
+    check("a PLUM placement is not reported as no evidence", !/no evidence recorded/.test(plumPlacement), plumPlacement);
+  }
+
+  // Every child in the data must be reachable from the panel. The White
+  // House Office carries 249 children; the list showed eight and a dead
+  // "+ 241 more".
+  const widest = allNodes.filter((n) => unique(n)).sort((a, b) => (b.children || []).length - (a.children || []).length)[0];
+  if (widest && (widest.children || []).length > 8) {
+    await openByName(widest.name);
+    const moreRow = page.locator("#info-children-more");
+    check("a long children list offers to show the rest", (await moreRow.count()) === 1, `${await moreRow.count()} such rows`);
+    if (await moreRow.count()) {
+      const moreAttrs = await moreRow.evaluate((el) => ({ role: el.getAttribute("role"), tabindex: el.getAttribute("tabindex") }));
+      check("the show-all row is keyboard-reachable", moreAttrs.role === "button" && moreAttrs.tabindex === "0", JSON.stringify(moreAttrs));
+      await moreRow.click();
+      await page.waitForTimeout(300);
+      const rowCount = await page.locator("#info-children-list > *").count();
+      check("showing all lists every child in the data", rowCount === widest.children.length, `${rowCount} rows for ${widest.children.length} children`);
+      const last = widest.children[widest.children.length - 1];
+      await page.locator("#info-children-list > *").last().click();
+      await page.waitForTimeout(2500);
+      const opened = await text("#info-name");
+      check("the last child in the list opens when clicked", opened === last.name, `${opened} opened, wanted ${last.name}`);
+    }
+  }
+
+  // "Expand All Below" is scoped to the selection's subtree: on the
+  // Department of the Interior it used to open all 5,402 nodes.
+  const interior = byId("exec-dept-doi");
+  if (interior) {
+    const subtreeSize = subtreeSizeOf(interior);
+    // On a fresh load, so the count is not the residue of everything opened
+    // above (nothing unloads), and with the four-second auto-expansion window
+    // that follows a selection left to close before the button is pressed.
+    await page.goto(`http://127.0.0.1:${PORT}/index.html`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(
+      () => window.__bureaucracy_ui_loaded__ && (() => { const el = document.getElementById("loading"); return !el || getComputedStyle(el).opacity === "0"; })(),
+      null,
+      { timeout: 90000 },
+    );
+    await page.waitForTimeout(1500);
+    await openByName(interior.name);
+    await page.waitForTimeout(4500);
+    const loadedNow = async () => Number((/^([\d,]+) \//.exec(await text("#node-counter")) || [])[1]?.replace(/,/g, "") || 0);
+    const before = await loadedNow();
+    await page.locator("#btn-expand-all").click();
+    await page.waitForFunction(() => document.getElementById("btn-expand-all").textContent === "Expand All Below", null, { timeout: 60000 });
+    await page.waitForTimeout(500);
+    const after = await loadedNow();
+    check("Expand All Below loads the selection's whole subtree", after >= subtreeSize, `${after} loaded, subtree is ${subtreeSize}`);
+    check("Expand All Below opens no more than the selection's subtree", after - before <= subtreeSize, `${after - before} added, subtree is ${subtreeSize}`);
+    check("Expand All Below does not open the rest of the graph", after < allNodes.length * 0.6, `${after} loaded of ${allNodes.length}`);
+  }
+
+  // A deep link to a node outside the initial load. loadData selected the
+  // root and the selection wrote the root's id over the hash before it was
+  // read, so every shared link landed on the Constitution.
+  const deepLinked = allNodes.find((n) => n.id === "exec-dept-doi-chief-of-staff") || allNodes.find((n) => n.cost_validation === "post_is_not_a_budget_unit");
+  const deepest = allNodes.reduce((best, n) => ((n.__depth || 0) > (best.__depth || 0) ? n : best), allNodes[0]);
+  for (const target of [deepLinked, deepest].filter(Boolean)) {
+    await page.goto(`http://127.0.0.1:${PORT}/index.html#node=${encodeURIComponent(target.id)}`, { waitUntil: "domcontentloaded" });
+    await page.waitForFunction(
+      () => window.__bureaucracy_ui_loaded__ && (() => { const el = document.getElementById("loading"); return !el || getComputedStyle(el).opacity === "0"; })(),
+      null,
+      { timeout: 90000 },
+    );
+    await page.waitForTimeout(2500);
+    const linkedName = await text("#info-name");
+    check(`a deep link to ${target.id} opens that node`, linkedName === target.name, `${linkedName} opened`);
+    const linkedHash = await page.evaluate(() => window.location.hash);
+    check("the deep link's hash survives the boot selection", linkedHash === `#node=${encodeURIComponent(target.id)}`, linkedHash);
+    const crumbs = await page.locator("#bc-items .bc-item").count();
+    check("the deep-linked node's ancestor path is expanded", crumbs === (target.__depth || 0) + 1, `${crumbs} crumbs for depth ${target.__depth}`);
+    // Flown to: the camera has come close enough that the LOD tier draws the
+    // node's own depth, so its ancestors are on screen and not just the node.
+    await page.waitForFunction(
+      (depth) => {
+        const m = /depth (\d+)/.exec(document.getElementById("stats-depth").textContent || "");
+        return m && Number(m[1]) >= depth;
+      },
+      target.__depth || 0,
+      { timeout: 20000 },
+    ).catch(() => {});
+    const depthLine = await text("#stats-depth");
+    const shownDepth = Number((/depth (\d+)/.exec(depthLine) || [])[1] || 0);
+    check(`the camera flies close enough to draw depth ${target.__depth}`, shownDepth >= (target.__depth || 0), depthLine);
   }
 
   await page.fill("#search-input", "");
