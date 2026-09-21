@@ -2237,6 +2237,26 @@ department's index of them, as *its own* official page; also JPL on nasa.gov,
 three presidential libraries on archives.gov, the Secretary of the Senate,
 Federal Student Aid and the CAAF.
 
+**A refiling is not a wasted nomination (since 2026-09-20).** `record` refused
+a URL already queued under the node's own key, and a URL already fetched for
+the node — right for `own_site`, and exactly wrong for the one case
+`--refile-misplaced` exists to repair, since the ledger is its only input. The
+sweep's verifiers found 35 subcommittees carrying their committee's index
+page as their own, 26 published `verified` on it; both rules now apply to
+`own_site` only, and a re-nomination under a role that files the URL
+elsewhere records as a refiling (`tests/test_nominate.py::RefilingTests`).
+
+**A listed placement publishes the existence it is (since 2026-09-20).** A
+node whose own queued host is walled reached the site with existence
+`fetch_failed` while the placement pass had already read the parent's page
+and found it listed by name — Federal Student Aid and six DOE labs. This file
+already treats a parent-page confirmation as placement without a second
+fetch; `apply_evidence_to_tree` now does the reverse, stamping
+`name_labelled_on_parent_official_page` from the placement block when no
+method exists, quoting the label only on a folded committee match as the
+confirmed path does, and dropping `verificationUnread` for the page that was
+read. Never on a post, which never carries a placement.
+
 `filing_id_for_role` is the rule now: `own_site` files under the node, so the
 claim is true; `parent_listing` files under the node's **parent**, so the
 verifier finds it one level up, `is_own_page` is false, and it publishes what

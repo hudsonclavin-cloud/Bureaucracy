@@ -529,6 +529,45 @@ class ApplyEvidenceTests(unittest.TestCase):
         apply_evidence_to_tree(tree, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa", "failures": []}})
         self.assertEqual(index_tree(tree)[0]["doe-nnsa"], untouched)
 
+    def test_a_listed_placement_publishes_the_parent_page_existence_it_is(self) -> None:
+        """Same page, same label, same fact: a node whose own host is walled
+        but whose parent's page lists it by name gets the parent-page method
+        from the placement block, and the unread fact yields to it. A node
+        confirmed on its own page keeps that; a post never gets one."""
+        listed = {"status": "listed", "parentId": "exec-dept-doe", "url": "https://www.energy.gov/about-us",
+                  "matchedText": "National Nuclear Security Administration", "matchedIn": "content", "checkedAt": "2026-09-03T12:00:00+00:00"}
+        tree = self._tree()
+        stats = apply_evidence_to_tree(tree, {"doe-nnsa": {
+            "status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+            "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "HTTPError: HTTP Error 403: Forbidden"}],
+            "placement": listed}})
+        node = index_tree(tree)[0]["doe-nnsa"]
+        self.assertEqual(stats["existence_from_placement"], 1)
+        self.assertEqual(node["verificationMethod"], METHOD_PARENT_PAGE)
+        self.assertEqual(node["sourceUrls"], ["https://www.energy.gov/about-us"])
+        self.assertNotIn("verificationMatchedText", node, "an organisation's plain match quotes no label; only a folded committee match does")
+        self.assertEqual(node["lastVerified"], "2026-09-03T12:00:00+00:00")
+        self.assertTrue(node["placementVerified"])
+        self.assertNotIn("verificationUnread", node, "the unread fact yields to the page that was read")
+        # A confirmed own page is the stronger claim and stays.
+        tree2 = self._tree()
+        own = self._confirmed(text="National Nuclear Security Administration"); own["placement"] = listed
+        apply_evidence_to_tree(tree2, {"doe-nnsa": own})
+        self.assertEqual(index_tree(tree2)[0]["doe-nnsa"]["verificationMethod"], METHOD_OWN_PAGE)
+        # A checked negative on the unit's OWN page is the stronger fact and is
+        # never overwritten by the parent's listing: the failed check stays.
+        tree4 = self._tree()
+        s4 = apply_evidence_to_tree(tree4, {"doe-nnsa": {"status": NOT_FOUND, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+            "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "name_not_labelled_on_page"}], "placement": listed}})
+        n4 = index_tree(tree4)[0]["doe-nnsa"]
+        self.assertEqual(n4["verificationFailure"], NOT_FOUND); self.assertNotIn("verificationMethod", n4); self.assertTrue(n4["placementVerified"])
+        self.assertEqual(s4.get("existence_from_placement", 0), 0)
+        # A post never acquires a placement, so never this either.
+        tree3 = self._tree(); index_tree(tree3)[0]["doe-nnsa"]["type"] = "Position"
+        s3 = apply_evidence_to_tree(tree3, {"doe-nnsa": {"status": FETCH_FAILED, "checkedAt": "2026-09-03T12:00:00+00:00", "siteFrom": "doe-nnsa",
+            "failures": [{"url": "https://www.energy.gov/nnsa", "reason": "HTTPError: HTTP Error 403: Forbidden"}], "placement": listed}})
+        self.assertNotIn("verificationMethod", index_tree(tree3)[0]["doe-nnsa"]); self.assertEqual(s3.get("existence_from_placement", 0), 0)
+
     def test_a_confirmation_is_withdrawn_when_the_evidence_is(self) -> None:
         """The published graph is re-fed as a payload on every build, so
         without an explicit withdrawal a claim outlives its evidence forever."""
@@ -1255,8 +1294,13 @@ class PlacementTests(unittest.TestCase):
         self.assertTrue(science["placementVerified"])
         self.assertEqual(science["placementParentId"], "exec-dept-doe")
         self.assertEqual(science["placementUrl"], "https://www.energy.gov/leadership-organization")
-        self.assertFalse(science.get("sourceUrls"), "placement is not an existence source")
+        # Since 2026-09-20 the parent's page listing the unit by name is
+        # published as the parent-page existence method it states -- the
+        # same page, label and fact -- where nothing read the unit's own page.
+        self.assertEqual(science["verificationMethod"], METHOD_PARENT_PAGE)
+        self.assertEqual(science.get("sourceUrls"), ["https://www.energy.gov/leadership-organization"])
         self.assertNotIn("placementVerified", node_map["doe-nnsa"])
+        self.assertNotIn("verificationMethod", node_map["doe-nnsa"], "a stale-parent placement supplies nothing")
         self.assertEqual(stats["placements_evidenced"], 1)
         self.assertEqual(stats["placements_stale_parent"], 1)
 
@@ -1489,8 +1533,12 @@ class EvidenceScopeTests(unittest.TestCase):
         self.assertEqual(stats[PLACEMENT_ONLY], 1)
         self.assertEqual(stats["unknown_status"], 0)
         self.assertIs(science["placementVerified"], True)
-        self.assertFalse(science.get("sourceUrls"), "the edge was checked; the unit's own existence was not")
-        self.assertNotIn("lastVerified", science)
+        # The edge was checked on the parent's page and the unit was listed
+        # there by name: that IS the parent-page existence claim, published
+        # since 2026-09-20 with the placement's own date.
+        self.assertEqual(science["verificationMethod"], METHOD_PARENT_PAGE)
+        self.assertEqual(science.get("sourceUrls"), ["https://www.energy.gov/leadership-organization"])
+        self.assertEqual(science["lastVerified"], "2026-09-06T12:00:00+00:00")
 
 
 class PlacementRetractionTests(unittest.TestCase):
@@ -1856,9 +1904,14 @@ class RegionAndReadabilityTests(unittest.TestCase):
         apply_evidence_to_tree(tree, {"doe-science": {"status": PLACEMENT_ONLY, "checkedAt": "2026-09-08", "placement": stamped}})
         science = index_tree(tree)[0]["doe-science"]
         self.assertEqual(science["placementMatchedIn"], REGION_NAVIGATION)
-        self.assertNotIn("verificationMatchedIn", science, "withdrawn with the existence record")
+        # The own-page record is withdrawn; the still-listed placement now
+        # supplies the parent-page method, and the region it carries is the
+        # placement's (navigation), not the withdrawn record's (content).
+        self.assertEqual(science["verificationMethod"], METHOD_PARENT_PAGE)
+        self.assertEqual(science["verificationMatchedIn"], REGION_NAVIGATION, "re-stamped from the placement, not carried from the withdrawn record")
         apply_evidence_to_tree(tree, {})
         self.assertNotIn("placementMatchedIn", index_tree(tree)[0]["doe-science"])
+        self.assertNotIn("verificationMethod", index_tree(tree)[0]["doe-science"])
 
     def test_a_logo_naming_the_agency_withholds_the_negative_and_confirms_nothing(self) -> None:
         for markup in (
@@ -2056,3 +2109,16 @@ class CountLabelFloorTests(unittest.TestCase):
         self.assertTrue(evidence.states_a_count_in_prose("Regional Offices (10 Regions)"))
         self.assertEqual(evidence.uncheckable_reason("Regional Offices (10 Regions)"), "curated_count_label")
         self.assertEqual(evidence.uncheckable_reason("Individual Senator Offices (100)"), "curated_count_label")
+
+class DrupalMastheadIsChromeTests(unittest.TestCase):
+    """acl.gov wraps its logo lockup in <div class="main-header" role="region">;
+    neither token was on the chrome lists, so 'ACL Administration for Community
+    Living' surfaced as a CONTENT label and nearly became a rename. Chrome
+    detection only ever demotes a label, so this is a tightening."""
+    def test_a_main_header_label_is_navigation_not_content(self):
+        from data_pipeline.verification.evidence import parse_page, REGION_NAVIGATION
+        page = parse_page('<html><body><div class="main-header" role="region"><a href="/">ACL Administration for Community Living</a></div><main><h1>About ACL</h1><p>' + 'x ' * 300 + '</p></main></body></html>')
+        regions = dict(zip(page.fragments, page.regions))
+        self.assertEqual(regions.get("ACL Administration for Community Living"), REGION_NAVIGATION)
+        self.assertEqual(regions.get("About ACL"), "content")
+

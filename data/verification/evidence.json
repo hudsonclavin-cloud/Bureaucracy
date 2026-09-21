@@ -23,7 +23,7 @@
       "name": "Personnel",
       "status": "not_checkable",
       "reason": "name_too_generic",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-20T23:47:06+00:00"
     },
     "leg-senate-cmte-armed-services-sub-seapower": {
       "name": "Seapower",
@@ -33,12 +33,19 @@
     },
     "leg-senate-cmte-energy-natural-resources-sub-energy": {
       "name": "Subcommittee on Energy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "leg-senate-cmte-energy-natural-resources",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.energy.senate.gov/about/subcommittees",
+          "matchedText": "Subcommittee on Energy",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.energy.senate.gov/",
@@ -46,12 +53,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-energy-natural-resources",
-        "urlsRead": [
-          "https://www.energy.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.energy.senate.gov/about/subcommittees",
+        "matchedText": "Subcommittee on Energy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-judiciary-sub-constitution": {
@@ -631,48 +638,50 @@
     },
     "exec-ind-nsf-engineering-eng": {
       "name": "Directorate for Engineering (ENG)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nsf",
-      "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-ind-nsf-engineering-eng",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
         {
-          "url": "https://www.nsf.gov/about",
-          "reason": "name_not_labelled_on_page"
+          "url": "https://www.nsf.gov/eng",
+          "matchedText": "Directorate for Engineering (ENG) | NSF - U.S. National Science Foundation",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "exec-ind-nsf",
         "urlsRead": [
           "https://www.nsf.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nsf-geosciences-geo": {
       "name": "Directorate for Geosciences (GEO)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nsf",
-      "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-ind-nsf-geosciences-geo",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
         {
-          "url": "https://www.nsf.gov/about",
-          "reason": "name_not_labelled_on_page"
+          "url": "https://www.nsf.gov/geo",
+          "matchedText": "Directorate for Geosciences (GEO) | NSF - U.S. National Science Foundation",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "exec-ind-nsf",
         "urlsRead": [
           "https://www.nsf.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-misc": {
@@ -2267,18 +2276,19 @@
     },
     "exec-eop-omb-oira-office-of-information-regulatory-affairs": {
       "name": "Office of Information and Regulatory Affairs (OIRA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-eop-omb",
-      "ownPage": false,
-      "status": "fetch_failed",
-      "pagesRead": 0,
-      "failures": [
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-eop-omb-oira-office-of-information-regulatory-affairs",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
         {
-          "url": "https://www.whitehouse.gov/omb/",
-          "reason": "no_readable_text",
-          "contentChars": 49
+          "url": "https://www.reginfo.gov/public/jsp/Utilities/aboutUs.myjsp",
+          "matchedText": "Office of Information and Regulatory Affairs",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     },
     "exec-eop-omb-office-of-federal-procurement-policy": {
       "name": "Office of Federal Procurement Policy",
@@ -2939,11 +2949,19 @@
     },
     "exec-dept-treasury-ofr": {
       "name": "Office of Financial Research (OFR)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-treasury-ofr",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.financialresearch.gov/",
+          "matchedText": "Office of Financial Research (OFR)",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.treasury.gov/initiatives/Pages/ofr.aspx",
@@ -2956,7 +2974,7 @@
         "urlsRead": [
           "https://home.treasury.gov/about/bureaus"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00",
+        "checkedAt": "2026-09-20T23:47:06+00:00",
         "failures": [
           {
             "url": "https://home.treasury.gov/about/general-information",
@@ -3064,7 +3082,7 @@
     },
     "exec-dept-doj-fbi": {
       "name": "Federal Bureau of Investigation (FBI)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-fbi",
       "ownPage": true,
       "status": "confirmed",
@@ -3083,12 +3101,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-dea": {
       "name": "Drug Enforcement Administration (DEA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-dea",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3105,12 +3123,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-atf": {
       "name": "Bureau of Alcohol, Tobacco, Firearms & Explosives (ATF)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-atf",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3127,12 +3145,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-bop": {
       "name": "Bureau of Prisons (BOP)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-bop",
       "ownPage": true,
       "status": "inconclusive",
@@ -3150,12 +3168,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-usms": {
       "name": "U.S. Marshals Service (USMS)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-usms",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3172,18 +3190,18 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-usao": {
       "name": "U.S. Attorneys Office (USAO — 94 Districts)",
       "status": "not_checkable",
       "reason": "curated_count_label",
-      "checkedAt": "2026-09-20T00:33:15+00:00"
+      "checkedAt": "2026-09-20T23:47:06+00:00"
     },
     "exec-dept-doj-div-antitrust": {
       "name": "Antitrust Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-div-antitrust",
       "ownPage": true,
       "status": "confirmed",
@@ -3202,19 +3220,33 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-div-civil": {
       "name": "Civil Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:59:35+00:00",
       "siteFrom": "exec-dept-doj-div-civil",
+      "ownPage": true,
+      "status": "fetch_failed",
+      "pagesRead": 0,
+      "failures": [
+        {
+          "url": "https://www.justice.gov/civil",
+          "reason": "PermissionError: robots.txt disallows this path (www.justice.gov/robots.txt could not be read (401) on each of 3 attempts; refused by policy, no rule was seen)"
+        }
+      ]
+    },
+    "exec-dept-doj-div-civil-rights": {
+      "name": "Civil Rights Division",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj-div-civil-rights",
       "ownPage": true,
       "status": "confirmed",
       "sources": [
         {
-          "url": "https://www.justice.gov/civil",
-          "matchedText": "Civil Division | Civil Division",
+          "url": "https://www.justice.gov/crt",
+          "matchedText": "Civil Rights Division | Civil Rights Division",
           "matchedIn": "content"
         }
       ],
@@ -3226,34 +3258,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
-      }
-    },
-    "exec-dept-doj-div-civil-rights": {
-      "name": "Civil Rights Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-dept-doj-div-civil-rights",
-      "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
-      "failures": [
-        {
-          "url": "https://www.justice.gov/crt",
-          "reason": "HTTPError: HTTP Error 401: Unauthorized"
-        }
-      ],
-      "placement": {
-        "status": "not_listed",
-        "parentId": "exec-dept-doj",
-        "urlsRead": [
-          "https://www.justice.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-div-criminal": {
       "name": "Criminal Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-div-criminal",
       "ownPage": true,
       "status": "confirmed",
@@ -3272,21 +3282,20 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-div-enrd": {
       "name": "Environment & Natural Resources Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-div-enrd",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "status": "fetch_failed",
+      "pagesRead": 0,
       "failures": [
         {
           "url": "https://www.justice.gov/enrd",
-          "reason": "name_not_labelled_on_page"
+          "reason": "HTTPError: HTTP Error 401: Unauthorized"
         }
       ],
       "placement": {
@@ -3295,12 +3304,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-div-nsd": {
       "name": "National Security Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-div-nsd",
       "ownPage": true,
       "status": "confirmed",
@@ -3319,12 +3328,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-div-tax": {
       "name": "Tax Division",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj",
       "ownPage": false,
       "status": "inconclusive",
@@ -3342,12 +3351,12 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doj-solicitor": {
       "name": "Office of the Solicitor General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doj-solicitor",
       "ownPage": true,
       "status": "fetch_failed",
@@ -3364,7 +3373,7 @@
         "urlsRead": [
           "https://www.justice.gov/about"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doi": {
@@ -3806,19 +3815,20 @@
       "pagesRead": 1
     },
     "exec-dept-doc-ntia": {
-      "name": "National Telecommunications & Information Admin (NTIA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "National Telecommunications and Information Administration",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doc-ntia",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.ntia.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Home Page | National Telecommunications and Information Administration",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     },
     "exec-dept-dol": {
       "name": "Department of Labor (DOL)",
@@ -6785,13 +6795,20 @@
       }
     },
     "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny": {
-      "name": "Franklin D. Roosevelt Presidential Library (Hyde Park, NY)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "Franklin D. Roosevelt Presidential Library and Museum",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "Franklin D. Roosevelt Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
@@ -6799,12 +6816,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Franklin D. Roosevelt Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nara-harry-s-truman-presidential-library-independence-mo": {
@@ -6900,13 +6917,20 @@
       }
     },
     "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca": {
-      "name": "Richard Nixon Presidential Library (Yorba Linda, CA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "Richard Nixon Presidential Library and Museum",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "Richard Nixon Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
@@ -6914,22 +6938,29 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Richard Nixon Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi": {
       "name": "Gerald R. Ford Presidential Library (Ann Arbor, MI)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "Gerald R. Ford Presidential Library",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
@@ -6937,12 +6968,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Gerald R. Ford Presidential Library",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nara-jimmy-carter-presidential-library-atlanta-ga": {
@@ -6992,13 +7023,20 @@
       }
     },
     "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx": {
-      "name": "George H.W. Bush Presidential Library (College Station, TX)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "George Bush Presidential Library and Museum",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "George Bush Presidential Library and Museum",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
@@ -7006,12 +7044,12 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "George Bush Presidential Library and Museum",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar": {
@@ -7039,12 +7077,19 @@
     },
     "exec-ind-nara-george-w-bush-presidential-library-dallas-tx": {
       "name": "George W. Bush Presidential Library (Dallas, TX)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-nara",
       "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.archives.gov/presidential-libraries",
+          "matchedText": "George W. Bush Presidential Library",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.archives.gov/about",
@@ -7052,35 +7097,36 @@
         }
       ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "George W. Bush Presidential Library",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nara-barack-obama-presidential-library-chicago-il": {
       "name": "Barack Obama Presidential Library (Chicago, IL)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nara",
-      "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-ind-nara-barack-obama-presidential-library-chicago-il",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
         {
-          "url": "https://www.archives.gov/about",
-          "reason": "name_not_labelled_on_page"
+          "url": "https://www.obamalibrary.gov/",
+          "matchedText": "Barack Obama Presidential Library | Barack Obama Presidential Library",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "exec-ind-nara",
-        "urlsRead": [
-          "https://www.archives.gov/about"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.archives.gov/presidential-libraries",
+        "matchedText": "Barack Obama Presidential Library",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-regulatory": {
@@ -7204,12 +7250,19 @@
     },
     "exec-regulatory-fdic": {
       "name": "Federal Deposit Insurance Corporation (FDIC)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-regulatory-fdic",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fdic.gov/",
+          "matchedText": "FDIC: Federal Deposit Insurance Corporation",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 2,
       "failures": [
         {
           "url": "https://www.fdic.gov/about",
@@ -7354,25 +7407,26 @@
     },
     "jud-district-sdny": {
       "name": "Southern District of New York (S.D.N.Y.)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "jud-district",
-      "ownPage": false,
-      "status": "inconclusive",
-      "reason": "only_an_ancestor_page_was_read",
-      "pagesRead": 1,
-      "failures": [
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "jud-district-sdny",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
         {
-          "url": "https://www.uscourts.gov/about-federal-courts/court-role-and-structure",
-          "reason": "name_not_labelled_on_page"
+          "url": "https://www.nysd.uscourts.gov/",
+          "matchedText": "Southern District of New York",
+          "matchedIn": "navigation"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "jud-district",
         "urlsRead": [
           "https://www.uscourts.gov/about-federal-courts/court-role-and-structure"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "jud-specialized": {
@@ -7804,9 +7858,9 @@
     },
     "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade": {
       "name": "The Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -7815,22 +7869,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.agriculture.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-        "urlsRead": [
-          "https://www.agriculture.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Commodities, Derivatives, Risk Management, and Trade",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources": {
       "name": "The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -7839,22 +7899,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.agriculture.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-        "urlsRead": [
-          "https://www.agriculture.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Conservation, Forestry, Natural Resources, and Biotechnology",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research": {
       "name": "Food and Nutrition, Specialty Crops, Organics, and Research",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -7864,22 +7930,29 @@
           "matchRule": "committee_scaffolding_folded"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.agriculture.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-        "urlsRead": [
-          "https://www.agriculture.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Food and Nutrition, Specialty Crops, Organics, and Research",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00",
+        "matchRule": "committee_scaffolding_folded"
       }
     },
     "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security": {
       "name": "Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -7888,22 +7961,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.agriculture.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-        "urlsRead": [
-          "https://www.agriculture.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Livestock, Dairy, Poultry, and Food Safety",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy": {
       "name": "Subcommittee on Rural Development, Energy, and Credit",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-agriculture-nutrition-and-forestry",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -7912,15 +7991,21 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.agriculture.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-agriculture-nutrition-and-forestry",
-        "urlsRead": [
-          "https://www.agriculture.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.agriculture.senate.gov/about/subcommittees",
+        "matchedText": "The Subcommittee on Rural Development, Energy, and Credit",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-appropriations": {
@@ -8244,9 +8329,9 @@
     },
     "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities": {
       "name": "Emerging Threats & Capabilities",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-armed-services",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -8255,22 +8340,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.armed-services.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
         "status": "listed",
         "parentId": "leg-senate-cmte-armed-services",
         "url": "https://www.armed-services.senate.gov/subcommittees",
         "matchedText": "Emerging Threats and Capabilities",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-armed-services-sub-readiness-management-support": {
       "name": "Readiness & Management Support",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-armed-services-sub-readiness-management-support",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-armed-services",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -8279,22 +8370,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.armed-services.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
         "status": "listed",
         "parentId": "leg-senate-cmte-armed-services",
         "url": "https://www.armed-services.senate.gov/subcommittees",
         "matchedText": "Readiness and Management Support",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-armed-services-sub-strategic-forces": {
       "name": "Strategic Forces",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-armed-services-sub-strategic-forces",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-armed-services",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -8303,15 +8400,21 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.armed-services.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
         "status": "listed",
         "parentId": "leg-senate-cmte-armed-services",
         "url": "https://www.armed-services.senate.gov/subcommittees",
         "matchedText": "Strategic Forces",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-banking-housing-urban-affairs": {
@@ -8348,127 +8451,272 @@
     },
     "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy": {
       "name": "Economic Policy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
           "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
           "matchedText": "Economic Policy",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+          "matchedText": "Economic Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+          "matchedText": "Economic Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+          "matchedText": "Economic Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+          "matchedText": "Economic Policy",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.banking.senate.gov/public",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.banking.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
-        "urlsRead": [
-          "https://www.banking.senate.gov/public",
-          "https://www.banking.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+        "matchedText": "Economic Policy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection": {
       "name": "Financial Institutions & Consumer Protection",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+          "matchedText": "Financial Institutions and Consumer Protection",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
           "matchedText": "Financial Institutions and Consumer Protection",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+          "matchedText": "Financial Institutions and Consumer Protection",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+          "matchedText": "Financial Institutions and Consumer Protection",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+          "matchedText": "Financial Institutions and Consumer Protection",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.banking.senate.gov/public",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.banking.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
-        "urlsRead": [
-          "https://www.banking.senate.gov/public",
-          "https://www.banking.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+        "matchedText": "Financial Institutions and Consumer Protection",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development": {
       "name": "Housing, Transportation & Community Development",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+          "matchedText": "Housing, Transportation, and Community Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+          "matchedText": "Housing, Transportation, and Community Development",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
           "matchedText": "Housing, Transportation, and Community Development",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+          "matchedText": "Housing, Transportation, and Community Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+          "matchedText": "Housing, Transportation, and Community Development",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.banking.senate.gov/public",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.banking.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
-        "urlsRead": [
-          "https://www.banking.senate.gov/public",
-          "https://www.banking.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+        "matchedText": "Housing, Transportation, and Community Development",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance": {
       "name": "National Security & International Trade & Finance",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+          "matchedText": "National Security and International Trade and Finance",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+          "matchedText": "National Security and International Trade and Finance",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+          "matchedText": "National Security and International Trade and Finance",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
           "matchedText": "National Security and International Trade and Finance",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
+          "matchedText": "National Security and International Trade and Finance",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.banking.senate.gov/public",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.banking.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
-        "urlsRead": [
-          "https://www.banking.senate.gov/public",
-          "https://www.banking.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+        "matchedText": "National Security and International Trade and Finance",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment": {
       "name": "Securities, Insurance & Investment",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-banking-housing-urban-affairs",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+          "matchedText": "Securities, Insurance, and Investment",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+          "matchedText": "Securities, Insurance, and Investment",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+          "matchedText": "Securities, Insurance, and Investment",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+          "matchedText": "Securities, Insurance, and Investment",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment",
           "matchedText": "Securities, Insurance, and Investment",
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.banking.senate.gov/public",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.banking.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-banking-housing-urban-affairs",
-        "urlsRead": [
-          "https://www.banking.senate.gov/public",
-          "https://www.banking.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+        "matchedText": "Securities, Insurance, and Investment",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-budget": {
@@ -8956,9 +9204,9 @@
     },
     "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure": {
       "name": "Energy, Natural Resources & Infrastructure",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -8967,22 +9215,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "Energy, Natural Resources, and Infrastructure",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth": {
       "name": "Fiscal Responsibility & Economic Growth",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -8991,22 +9245,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "Fiscal Responsibility and Economic Growth",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-finance-sub-health-care": {
       "name": "Health Care",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-health-care",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -9015,22 +9275,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "Health Care",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness": {
       "name": "International Trade, Customs & Global Competitiveness",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -9039,22 +9305,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "International Trade, Customs, and Global Competitiveness",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-finance-sub-social-security-pensions-family-policy": {
       "name": "Social Security, Pensions & Family Policy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-social-security-pensions-family-policy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -9063,22 +9335,28 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "Social Security, Pensions, and Family Policy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-finance-sub-taxation-irs-oversight": {
       "name": "Taxation & IRS Oversight",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-finance-sub-taxation-irs-oversight",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-finance",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -9087,15 +9365,21 @@
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://www.finance.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-finance",
-        "urlsRead": [
-          "https://www.finance.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.finance.senate.gov/about/subcommittees",
+        "matchedText": "Taxation and IRS Oversight",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations": {
@@ -9125,146 +9409,332 @@
     },
     "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy": {
       "name": "Africa & Global Health Policy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
           "matchedText": "Africa & Global Health Policy",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+          "matchedText": "Africa & Global Health Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+          "matchedText": "Africa & Global Health Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+          "matchedText": "Africa & Global Health Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+          "matchedText": "Africa & Global Health Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+          "matchedText": "Africa & Global Health Policy",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "Africa & Global Health Policy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy": {
       "name": "East Asia, The Pacific & International Cybersecurity Policy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+          "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
           "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+          "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+          "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+          "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+          "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "East Asia, The Pacific, & International Cybersecurity Policy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation": {
       "name": "Europe & Regional Security Cooperation",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+          "matchedText": "Europe & Regional Security Cooperation",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+          "matchedText": "Europe & Regional Security Cooperation",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
           "matchedText": "Europe & Regional Security Cooperation",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+          "matchedText": "Europe & Regional Security Cooperation",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+          "matchedText": "Europe & Regional Security Cooperation",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+          "matchedText": "Europe & Regional Security Cooperation",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "Europe & Regional Security Cooperation",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy": {
       "name": "Multilateral International Development, Multilateral Institutions & International Economic, Energy & Environmental Policy",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+          "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+          "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+          "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
           "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+          "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+          "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "Multilateral International Development, Multilateral Institutions, & International Economic, Energy, & Environmental Policy",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism": {
       "name": "Near East, South Asia, Central Asia & Counterterrorism",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+          "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+          "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+          "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+          "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
           "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
           "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
+          "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "Near East, South Asia, Central Asia, & Counterterrorism",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development": {
       "name": "State Department & USAID Management, International Operations & Bilateral International Development",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-foreign-relations",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+          "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+          "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+          "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+          "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+          "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+          "matchedIn": "content"
+        },
         {
           "url": "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development",
           "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 7,
+      "failures": [
+        {
+          "url": "https://www.foreign.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-senate-cmte-foreign-relations",
-        "urlsRead": [
-          "https://www.foreign.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+        "matchedText": "State Department & USAID Management, International Operations, & Bilateral International Development",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-foreign-relations-sub-western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues": {
@@ -9340,36 +9810,21 @@
     },
     "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": {
       "name": "Employment & Workplace Safety",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-health-education-labor-pensions",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 3,
       "failures": [
+        {
+          "url": "https://www.help.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
           "reason": "name_not_labelled_on_page"
-        }
-      ],
-      "placement": {
-        "status": "not_listed",
-        "parentId": "leg-senate-cmte-health-education-labor-pensions",
-        "urlsRead": [
-          "https://www.help.senate.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
-      }
-    },
-    "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": {
-      "name": "Primary Health & Retirement Security",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security",
-      "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+        },
         {
           "url": "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security",
           "reason": "name_not_labelled_on_page"
@@ -9379,9 +9834,44 @@
         "status": "not_listed",
         "parentId": "leg-senate-cmte-health-education-labor-pensions",
         "urlsRead": [
-          "https://www.help.senate.gov/"
+          "https://www.help.senate.gov/",
+          "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
+          "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": {
+      "name": "Primary Health & Retirement Security",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-health-education-labor-pensions",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 3,
+      "failures": [
+        {
+          "url": "https://www.help.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
+          "reason": "name_not_labelled_on_page"
+        },
+        {
+          "url": "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "leg-senate-cmte-health-education-labor-pensions",
+        "urlsRead": [
+          "https://www.help.senate.gov/",
+          "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
+          "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-homeland-security-governmental-affairs": {
@@ -9511,13 +10001,17 @@
     },
     "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights": {
       "name": "Antitrust, Competition Policy, and Consumer Rights",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-judiciary",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://www.judiciary.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://www.judiciary.senate.gov/about/subcommittees",
           "reason": "name_not_labelled_on_page"
@@ -9530,7 +10024,7 @@
           "https://www.judiciary.senate.gov/",
           "https://www.judiciary.senate.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-judiciary-sub-criminal-justice-counterterrorism": {
@@ -9619,13 +10113,17 @@
     },
     "leg-senate-cmte-judiciary-sub-intellectual-property": {
       "name": "Intellectual Property",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-judiciary-sub-intellectual-property",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-judiciary",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://www.judiciary.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://www.judiciary.senate.gov/about/subcommittees",
           "reason": "name_not_labelled_on_page"
@@ -9638,18 +10136,22 @@
           "https://www.judiciary.senate.gov/",
           "https://www.judiciary.senate.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-judiciary-sub-privacy-technology-the-law": {
       "name": "Privacy, Technology & the Law",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-senate-cmte-judiciary-sub-privacy-technology-the-law",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-senate-cmte-judiciary",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://www.judiciary.senate.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://www.judiciary.senate.gov/about/subcommittees",
           "reason": "name_not_labelled_on_page"
@@ -9662,7 +10164,7 @@
           "https://www.judiciary.senate.gov/",
           "https://www.judiciary.senate.gov/about/subcommittees"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-rules-administration": {
@@ -9792,18 +10294,20 @@
       }
     },
     "leg-senate-cmte-select-committee-on-ethics": {
-      "name": "Senate Committee on Select Committee on Ethics",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "U.S. Senate Select Committee on Ethics",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "leg-senate-cmte-select-committee-on-ethics",
       "ownPage": true,
-      "status": "not_found",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.ethics.senate.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "U.S. Senate Select Committee on Ethics",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "leg-senate-committees",
@@ -9811,7 +10315,7 @@
           "https://www.senate.gov/committees/",
           "https://www.foreign.senate.gov/about/subcommittees#western-hemisphere-transnational-crime-civilian-security-democracy-human-rights-global-womens-issues"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-senate-cmte-indian-affairs": {
@@ -11083,18 +11587,18 @@
     },
     "leg-house-cmte-foreign-affairs-sub-oversight-accountability": {
       "name": "Oversight and Intelligence Subcommittee",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-foreign-affairs",
-      "ownPage": false,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-foreign-affairs-sub-oversight-accountability",
+      "ownPage": true,
       "status": "confirmed",
       "sources": [
         {
-          "url": "https://foreignaffairs.house.gov/",
-          "matchedText": "Oversight and Intelligence Subcommittee",
-          "matchedIn": "navigation"
+          "url": "https://foreignaffairs.house.gov/subcommittees/oversight-and-intelligence-subcommittee-119th-congress",
+          "matchedText": "Oversight and Intelligence Subcommittee (119th Congress) | Republican Foreign Affairs Committee",
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_parent_official_page",
+      "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
         "status": "listed",
@@ -11102,7 +11606,7 @@
         "url": "https://foreignaffairs.house.gov/",
         "matchedText": "Oversight and Intelligence Subcommittee",
         "matchedIn": "navigation",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-foreign-affairs-sub-the-western-hemisphere": {
@@ -11501,25 +12005,27 @@
       }
     },
     "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": {
-      "name": "Subcommittee on Courts, Intellectual Property & the Internet",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet",
       "ownPage": true,
-      "status": "not_found",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "The Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "leg-house-cmte-judiciary",
         "urlsRead": [
           "https://judiciary.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance": {
@@ -12571,13 +13077,17 @@
     },
     "leg-house-cmte-ways-means-sub-health": {
       "name": "Subcommittee on Health",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-ways-means-sub-health",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-ways-means",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://waysandmeans.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://waysandmeans.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
@@ -12587,20 +13097,25 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-ways-means",
         "urlsRead": [
-          "https://waysandmeans.house.gov/"
+          "https://waysandmeans.house.gov/",
+          "https://waysandmeans.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-ways-means-sub-oversight": {
       "name": "Subcommittee on Oversight",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-ways-means-sub-oversight",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-ways-means",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://waysandmeans.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://waysandmeans.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
@@ -12610,9 +13125,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-ways-means",
         "urlsRead": [
-          "https://waysandmeans.house.gov/"
+          "https://waysandmeans.house.gov/",
+          "https://waysandmeans.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-ways-means-sub-select-revenue-measures": {
@@ -12640,9 +13156,9 @@
     },
     "leg-house-cmte-ways-means-sub-social-security": {
       "name": "Subcommittee on Social Security",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-ways-means-sub-social-security",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-ways-means",
+      "ownPage": false,
       "status": "confirmed",
       "sources": [
         {
@@ -12652,26 +13168,37 @@
           "matchRule": "committee_scaffolding_folded"
         }
       ],
-      "method": "name_labelled_on_own_official_page",
-      "pagesRead": 1,
+      "method": "name_labelled_on_parent_official_page",
+      "pagesRead": 2,
+      "failures": [
+        {
+          "url": "https://waysandmeans.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
       "placement": {
-        "status": "not_listed",
+        "status": "listed",
         "parentId": "leg-house-cmte-ways-means",
-        "urlsRead": [
-          "https://waysandmeans.house.gov/"
-        ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "url": "https://waysandmeans.house.gov/subcommittees/",
+        "matchedText": "Social Security",
+        "matchedIn": "content",
+        "checkedAt": "2026-09-20T23:47:06+00:00",
+        "matchRule": "committee_scaffolding_folded"
       }
     },
     "leg-house-cmte-ways-means-sub-tax": {
       "name": "Subcommittee on Tax",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-ways-means-sub-tax",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-ways-means",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://waysandmeans.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://waysandmeans.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
@@ -12681,20 +13208,25 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-ways-means",
         "urlsRead": [
-          "https://waysandmeans.house.gov/"
+          "https://waysandmeans.house.gov/",
+          "https://waysandmeans.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-ways-means-sub-trade": {
       "name": "Subcommittee on Trade",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "leg-house-cmte-ways-means-sub-trade",
-      "ownPage": true,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "leg-house-cmte-ways-means",
+      "ownPage": false,
       "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 2,
       "failures": [
+        {
+          "url": "https://waysandmeans.house.gov/",
+          "reason": "name_not_labelled_on_page"
+        },
         {
           "url": "https://waysandmeans.house.gov/subcommittees/",
           "reason": "name_not_labelled_on_page"
@@ -12704,9 +13236,10 @@
         "status": "not_listed",
         "parentId": "leg-house-cmte-ways-means",
         "urlsRead": [
-          "https://waysandmeans.house.gov/"
+          "https://waysandmeans.house.gov/",
+          "https://waysandmeans.house.gov/subcommittees/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "leg-house-cmte-ways-means-sub-worker-family-support": {
@@ -12903,11 +13436,19 @@
     },
     "exec-ind-misc-office-of-special-counsel-osc": {
       "name": "Office of Special Counsel (OSC)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-misc-office-of-special-counsel-osc",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.osc.gov/",
+          "matchedText": "Home | U.S. Office of Special Counsel",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.osc.gov/Intro.htm",
@@ -12997,11 +13538,19 @@
     },
     "exec-ind-misc-farm-credit-administration": {
       "name": "Farm Credit Administration",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-misc-farm-credit-administration",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.fca.gov/",
+          "matchedText": "Farm Credit Administration",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.fca.gov/index.html",
@@ -13011,17 +13560,24 @@
     },
     "exec-ind-misc-national-credit-union-administration-ncua": {
       "name": "National Credit Union Administration (NCUA)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-misc-national-credit-union-administration-ncua",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.ncua.gov",
-          "reason": "PermissionError: robots.txt disallows this path (www.ncua.gov/robots.txt could not be reached (URLError); refused: an undefined robots.txt is a complete disallow)"
+          "matchedText": "The National Credit Union Administration",
+          "matchedIn": "content"
+        },
+        {
+          "url": "https://www.ncua.gov/",
+          "matchedText": "The National Credit Union Administration",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 2
     },
     "exec-ind-misc-appalachian-regional-commission-arc": {
       "name": "Appalachian Regional Commission (ARC)",
@@ -13670,18 +14226,20 @@
       }
     },
     "leg-house-ig": {
-      "name": "Office of the Inspector General",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "Inspector General of the House",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "leg-house-ig",
       "ownPage": true,
-      "status": "not_found",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.house.gov/the-house-explained/officers-and-organizations/inspector-general",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "Inspector General of the House | house.gov",
+          "matchedIn": "content"
         }
       ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "not_listed",
         "parentId": "leg-house-admin",
@@ -13689,7 +14247,7 @@
           "https://www.house.gov/the-house-explained/officers-and-organizations",
           "https://www.house.gov/"
         ],
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-defense-army": {
@@ -14047,7 +14605,7 @@
     },
     "exec-dept-doe-argonne-national-laboratory": {
       "name": "Argonne National Laboratory",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doe-argonne-national-laboratory",
       "ownPage": true,
       "status": "fetch_failed",
@@ -14064,7 +14622,7 @@
         "url": "https://www.energy.gov/national-laboratories",
         "matchedText": "Argonne National Laboratory",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doe-brookhaven-national-laboratory": {
@@ -14209,11 +14767,19 @@
     },
     "exec-dept-doe-national-renewable-energy-laboratory": {
       "name": "National Laboratory of the Rockies (NLR)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-dept-doe-national-renewable-energy-laboratory",
       "ownPage": true,
-      "status": "fetch_failed",
-      "pagesRead": 0,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.nlr.gov/",
+          "matchedText": "National Laboratory of the Rockies",
+          "matchedIn": "navigation"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "failures": [
         {
           "url": "https://www.nrel.gov/",
@@ -14226,7 +14792,7 @@
         "url": "https://www.energy.gov/national-laboratories",
         "matchedText": "National Laboratory of the Rockies",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doe-oak-ridge-national-laboratory": {
@@ -14279,18 +14845,18 @@
     },
     "exec-dept-doe-sandia-national-laboratories": {
       "name": "Sandia National Laboratories",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-dept-doe-natl-labs",
-      "ownPage": false,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doe-sandia-national-laboratories",
+      "ownPage": true,
       "status": "confirmed",
       "sources": [
         {
-          "url": "https://www.energy.gov/national-laboratories",
+          "url": "https://www.sandia.gov/",
           "matchedText": "Sandia National Laboratories",
           "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_parent_official_page",
+      "method": "name_labelled_on_own_official_page",
       "pagesRead": 1,
       "placement": {
         "status": "listed",
@@ -14298,7 +14864,7 @@
         "url": "https://www.energy.gov/national-laboratories",
         "matchedText": "Sandia National Laboratories",
         "matchedIn": "content",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-dept-doe-savannah-river-national-laboratory": {
@@ -14987,31 +15553,26 @@
     },
     "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences": {
       "name": "Division of Behavioral & Cognitive Sciences",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
-      "siteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
-      "ownPage": false,
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences",
+      "ownPage": true,
       "status": "confirmed",
       "sources": [
         {
-          "url": "https://www.nsf.gov/dir/index.jsp?org=SBE",
+          "url": "https://www.nsf.gov/sbe/bcs",
           "matchedText": "Division of Behavioral and Cognitive Sciences (SBE/BCS)",
-          "matchedIn": "navigation"
-        },
-        {
-          "url": "https://www.nsf.gov/sbe",
-          "matchedText": "Division of Behavioral and Cognitive Sciences (SBE/BCS)",
-          "matchedIn": "navigation"
+          "matchedIn": "content"
         }
       ],
-      "method": "name_labelled_on_parent_official_page",
-      "pagesRead": 2,
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
       "placement": {
         "status": "listed",
         "parentId": "exec-ind-nsf-social-behavioral-economic-sciences-sbe",
         "url": "https://www.nsf.gov/dir/index.jsp?org=SBE",
         "matchedText": "Division of Behavioral and Cognitive Sciences (SBE/BCS)",
         "matchedIn": "navigation",
-        "checkedAt": "2026-09-20T00:33:15+00:00"
+        "checkedAt": "2026-09-20T23:47:06+00:00"
       }
     },
     "exec-ind-nsf-social-behavioral-economic-sciences-sbe-social-economic-sciences": {
@@ -15168,19 +15729,20 @@
       ]
     },
     "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
-      "name": "U.S. International Development Finance Corp (DFC)",
-      "checkedAt": "2026-09-20T00:33:15+00:00",
+      "name": "U.S. International Development Finance Corporation",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
       "siteFrom": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
       "ownPage": true,
-      "status": "inconclusive",
-      "reason": "named_on_the_page_but_not_as_a_label",
-      "pagesRead": 1,
-      "failures": [
+      "status": "confirmed",
+      "sources": [
         {
           "url": "https://www.dfc.gov/",
-          "reason": "name_not_labelled_on_page"
+          "matchedText": "U.S. International Development Finance Corporation - Learn More",
+          "matchedIn": "content"
         }
-      ]
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
       "name": "U.S. Agency for Global Media",
@@ -62023,6 +62585,314 @@
           "reason": "name_not_labelled_on_page"
         }
       ]
+    },
+    "exec-dept-doc-bureau-industry-security": {
+      "name": "Bureau of Industry and Security",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doc-bureau-industry-security",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.bis.gov/",
+          "matchedText": "Homepage | Bureau of Industry and Security",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-dept-doc-national-technical-information-service": {
+      "name": "National Technical Information Service",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doc-national-technical-information-service",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.ntis.gov/",
+          "matchedText": "U.S. National Technical Information Service",
+          "matchedIn": "navigation"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
+    },
+    "exec-dept-doi-office-surface-mining-reclamation-enforcement": {
+      "name": "Office of Surface Mining Reclamation and Enforcement",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doi-office-surface-mining-reclamation-enforcement",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.osmre.gov/",
+          "matchedText": "Home | Office of Surface Mining Reclamation and Enforcement",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "url": "https://www.doi.gov/whoweare",
+        "matchedText": "Office of Surface Mining Reclamation & Enforcement",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-executive-office-immigration-review": {
+      "name": "Executive Office for Immigration Review",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj-executive-office-immigration-review",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.justice.gov/eoir",
+          "matchedText": "Executive Office for Immigration Review | Executive Office for Immigration Review",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-foreign-claims-settlement-commission": {
+      "name": "Foreign Claims Settlement Commission of the United States",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.justice.gov/about",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-international-criminal-police-organization-washington": {
+      "name": "International Criminal Police Organization (INTERPOL)-Washington",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.justice.gov/about",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-office-community-oriented-policing-services": {
+      "name": "Office of Community Oriented Policing Services",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj-office-community-oriented-policing-services",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://cops.usdoj.gov/",
+          "matchedText": "Office of Community Oriented Policing Services",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-office-justice-programs": {
+      "name": "Office of Justice Programs",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj-office-justice-programs",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.ojp.gov/",
+          "matchedText": "Home | Office of Justice Programs",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-office-violence-against-women": {
+      "name": "Office on Violence Against Women",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.justice.gov/about",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-doj-parole-commission": {
+      "name": "United States Parole Commission",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-doj",
+      "ownPage": false,
+      "status": "inconclusive",
+      "reason": "only_an_ancestor_page_was_read",
+      "pagesRead": 1,
+      "failures": [
+        {
+          "url": "https://www.justice.gov/about",
+          "reason": "name_not_labelled_on_page"
+        }
+      ],
+      "placement": {
+        "status": "not_listed",
+        "parentId": "exec-dept-doj",
+        "urlsRead": [
+          "https://www.justice.gov/about"
+        ],
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-dol-bureau-international-labor-affairs": {
+      "name": "Bureau of International Labor Affairs",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-dol-bureau-international-labor-affairs",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.dol.gov/agencies/ilab",
+          "matchedText": "Bureau of International Labor Affairs",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Bureau of International Labor Affairs (ILAB)",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-dol-veterans-employment-training-service": {
+      "name": "Veterans' Employment and Training Service",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-dol-veterans-employment-training-service",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.dol.gov/agencies/vets",
+          "matchedText": "Veterans' Employment and Training Service",
+          "matchedIn": "navigation"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Veterans' Employment and Training Service (VETS)",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-dol-women-s-bureau": {
+      "name": "Women's Bureau",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-dol-women-s-bureau",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.dol.gov/agencies/wb",
+          "matchedText": "The Women's Bureau",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1,
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "url": "https://www.dol.gov/general/aboutdol",
+        "matchedText": "Women's Bureau (WB)",
+        "matchedIn": "navigation",
+        "checkedAt": "2026-09-20T23:47:06+00:00"
+      }
+    },
+    "exec-dept-hhs-agency-toxic-substances-disease-registry": {
+      "name": "Agency for Toxic Substances and Disease Registry",
+      "checkedAt": "2026-09-20T23:47:06+00:00",
+      "siteFrom": "exec-dept-hhs-agency-toxic-substances-disease-registry",
+      "ownPage": true,
+      "status": "confirmed",
+      "sources": [
+        {
+          "url": "https://www.atsdr.cdc.gov/",
+          "matchedText": "Agency for Toxic Substances and Disease Registry | ATSDR",
+          "matchedIn": "content"
+        }
+      ],
+      "method": "name_labelled_on_own_official_page",
+      "pagesRead": 1
     }
   }
 }

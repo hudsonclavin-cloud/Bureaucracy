@@ -168,11 +168,6 @@ USASPENDING_NAME_ALIASES: dict[str, dict[str, str]] = {
         "apiName": "United States Chemical Safety Board",
         "basis": "One board under its short and long forms; both carry CSB, and the API's row is the only chemical-safety entry in the toptier list.",
     },
-    "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
-        "graphName": "U.S. International Development Finance Corp (DFC)",
-        "apiName": "U.S. International Development Finance Corporation",
-        "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'.",
-    },
     # exec-ind-misc-broadcasting-board-of-governors-usagm was here until
     # 2026-09-19, for the same reason as USPTO above: CURATION.md §9 renamed the
     # node to "U.S. Agency for Global Media", the agency's own wording, and it

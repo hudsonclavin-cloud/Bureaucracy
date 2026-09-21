@@ -7,17 +7,17 @@
     "url": "https://www.govinfo.gov/content/pkg/GOVMAN-2025-12-31/xml/GOVMAN-2025-12-31.xml",
     "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138",
     "fetchedAt": "2026-09-20T02:40:27Z",
-    "derivedAt": "2026-09-20T20:33:40Z",
+    "derivedAt": "2026-09-21T00:07:34Z",
     "fixture": "tests/fixtures/govman/GOVMAN-2025-12-31.xml"
   },
   "report": {
     "entries": 231,
-    "organisations_matched": 162,
+    "organisations_matched": 163,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 69,
+    "entry_names_no_node": 68,
     "posts_listed": 64,
-    "refused_title_not_listed": 1031,
+    "refused_title_not_listed": 1034,
     "refused_title_listed_twice": 0,
     "refused_siblings_share_the_name": 0,
     "refused_name_too_short": 29,
@@ -25,11 +25,11 @@
   },
   "organisationsReport": {
     "entries": 231,
-    "organisations_matched": 162,
+    "organisations_matched": 163,
     "entry_names_several_entries": 0,
     "entry_names_several_nodes": 0,
-    "entry_names_no_node": 69,
-    "organisations_listed": 162,
+    "entry_names_no_node": 68,
+    "organisations_listed": 163,
     "refused_no_access_id": 0,
     "top_level_entries": 65
   },
@@ -1191,6 +1191,19 @@
       "edition": "2025-12-31",
       "granule": "GOVMAN-2025-12-31-263",
       "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-263",
+      "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
+    },
+    "exec-dept-doc-ntia": {
+      "source": "us_government_manual",
+      "nodeName": "National Telecommunications and Information Administration",
+      "listedName": "National Telecommunications and Information Administration",
+      "entityId": "265",
+      "parentListedName": "Department of Commerce",
+      "parentEntityId": "113",
+      "package": "GOVMAN-2025-12-31",
+      "edition": "2025-12-31",
+      "granule": "GOVMAN-2025-12-31-265",
+      "url": "https://www.govinfo.gov/app/details/GOVMAN-2025-12-31/GOVMAN-2025-12-31-265",
       "documentSha256": "c1e5b58cce0a018b4995f900584605d07e473079a37d5a665a3a8ebb5d643138"
     },
     "exec-dept-doc-nist": {

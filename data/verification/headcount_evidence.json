@@ -29,7 +29,7 @@
     ],
     "agencies": 115,
     "agencies_matched": 59,
-    "subagencies_matched": 104,
+    "subagencies_matched": 105,
     "total_employees": 2289472,
     "agency_total_rows_found": 0,
     "ambiguous_agencies": [],
@@ -790,17 +790,6 @@
     ],
     "scoped_out": [
       {
-        "agencyCode": "DD",
-        "agencyListedName": "DEPARTMENT OF DEFENSE",
-        "agencyNode": "exec-dept-defense",
-        "subagencyCode": "DD26",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 1832,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
         "agencyCode": "FR",
         "agencyListedName": "FEDERAL RESERVE SYSTEM",
         "agencyNode": "exec-regulatory-fed",
@@ -820,72 +809,6 @@
         "employees": 1581,
         "nodesElsewhere": [
           "exec-regulatory-ferc"
-        ]
-      },
-      {
-        "agencyCode": "HS",
-        "agencyListedName": "DEPARTMENT OF HOMELAND SECURITY",
-        "agencyNode": "exec-dept-dhs",
-        "subagencyCode": "HSAE",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 786,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
-        "agencyCode": "DJ",
-        "agencyListedName": "DEPARTMENT OF JUSTICE",
-        "agencyNode": "exec-dept-doj",
-        "subagencyCode": "DJ10",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 566,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
-        "agencyCode": "AG",
-        "agencyListedName": "DEPARTMENT OF AGRICULTURE",
-        "agencyNode": "exec-dept-usda",
-        "subagencyCode": "AG23",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 420,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
-        "agencyCode": "IN",
-        "agencyListedName": "DEPARTMENT OF INTERIOR",
-        "agencyNode": "exec-dept-doi",
-        "subagencyCode": "IN24",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 295,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
-        "agencyCode": "DL",
-        "agencyListedName": "DEPARTMENT OF LABOR",
-        "agencyNode": "exec-dept-dol",
-        "subagencyCode": "DLIG",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 294,
-        "nodesElsewhere": [
-          "leg-house-ig"
-        ]
-      },
-      {
-        "agencyCode": "CM",
-        "agencyListedName": "DEPARTMENT OF COMMERCE",
-        "agencyNode": "exec-dept-doc",
-        "subagencyCode": "CM64",
-        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
-        "employees": 217,
-        "nodesElsewhere": [
-          "leg-house-ig"
         ]
       },
       {
@@ -1033,6 +956,7 @@
       "districts",
       "health care",
       "labor health and human services education and related agencies",
+      "legislative branch",
       "national security division",
       "subcommittee on energy",
       "subcommittee on health",
@@ -1811,6 +1735,14 @@
         "employees": 1887
       },
       {
+        "agencyCode": "DD",
+        "agencyListedName": "DEPARTMENT OF DEFENSE",
+        "agencyMatched": "exec-dept-defense",
+        "subagencyCode": "DD26",
+        "listedName": "OFFICE OF THE INSPECTOR GENERAL",
+        "employees": 1832
+      },
+      {
         "agencyCode": "AG",
         "agencyListedName": "DEPARTMENT OF AGRICULTURE",
         "agencyMatched": "exec-dept-usda",
@@ -2169,34 +2101,26 @@
         "subagencyCode": "ARGB",
         "listedName": "OFFICE OF THE CHIEF OF THE NATIONAL GUARD BUREAU",
         "employees": 800
-      },
-      {
-        "agencyCode": "NV",
-        "agencyListedName": "DEPARTMENT OF THE NAVY",
-        "agencyMatched": null,
-        "subagencyCode": "NV15",
-        "listedName": "NAVAL INTELLIGENCE COMMAND",
-        "employees": 797
       }
     ],
     "comparison": {
-      "compared": 127,
+      "compared": 128,
       "bands": {
         "within_10pct": 55,
         "10_to_25pct": 34,
-        "25pct_to_2x": 23,
+        "25pct_to_2x": 24,
         "beyond_2x": 15
       },
       "cumulative": {
         "within_10pct": 55,
         "within_25pct": 89,
-        "within_2x": 112,
+        "within_2x": 113,
         "beyond_2x": 15
       },
       "opm_lower": 66,
-      "opm_higher": 61,
-      "curated_sum": 4887960.0,
-      "opm_sum": 2858049,
+      "opm_higher": 62,
+      "curated_sum": 4888310.0,
+      "opm_sum": 2858694,
       "largest_discrepancies": [
         {
           "node": "exec-dept-defense-agency-dha",
@@ -3798,6 +3722,18 @@
           "ratio": 0.9714,
           "factor": 1.0294,
           "direction": "opm_lower"
+        },
+        {
+          "node": "exec-dept-doc-ntia",
+          "name": "National Telecommunications and Information Administration",
+          "curated": 350.0,
+          "curatedText": "~350",
+          "opm": 645,
+          "listedName": "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION",
+          "level": "subagency",
+          "ratio": 1.8429,
+          "factor": 1.8429,
+          "direction": "opm_higher"
         },
         {
           "node": "exec-dept-doi-boem",
@@ -8968,6 +8904,29 @@
       "previous": {
         "period": "2024-09",
         "employees": 739
+      }
+    },
+    "exec-dept-doc-ntia": {
+      "source": "opm_fedscope_employment",
+      "status": "listed",
+      "period": "2025-03",
+      "coverage": "EHRI includes data related to Federal civilian employees in the Executive Branch excluding some agencies such as the U.S. Postal Service and intelligence agencies. The Employment dataset only includes Federal employees in an active pay status.",
+      "coverageSource": "OPM, (Preliminary) March 2025 Employment Dataset data dictionary, Overview",
+      "url": "https://www.opm.gov/data/datasets/Files/753/bc88ce69-1bbe-406f-9441-3c5153014616.zip",
+      "checkedAt": "2026-09-08T19:50:51Z",
+      "file": "tests/fixtures/opm/fedscope/fedscope_employment_summary_2025-03.zip",
+      "level": "subagency",
+      "listedName": "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION",
+      "agencyCode": "CM",
+      "agencyListedName": "DEPARTMENT OF COMMERCE",
+      "agencyMatched": "exec-dept-doc",
+      "subagencyCode": "CM61",
+      "employees": 645,
+      "agencyEmployees": 47410,
+      "agencySubagencyRows": 13,
+      "previous": {
+        "period": "2024-09",
+        "employees": 674
       }
     },
     "exec-dept-doi-boem": {

@@ -81,6 +81,13 @@ class ReleaseGateTests(unittest.TestCase):
             evidence_path=None,
             directory_evidence_path=None,
             govman_evidence_path=None,
+            # Every name-keyed evidence file, not just three: the fixture's branch
+            # is named "Legislative Branch" and OMB files an agency of that name.
+            headcount_evidence_path=None,
+            position_evidence_path=None,
+            usaspending_evidence_path=None,
+            net_cost_evidence_path=None,
+            omb_budget_evidence_path=None,
         )
         self.graph_path = result.graph_path
         self.graph = json.loads(self.graph_path.read_text(encoding="utf-8"))

@@ -357,6 +357,29 @@ class RunbookTests(unittest.TestCase):
         self.assertIn("COST_NOMINATION_RUNBOOK.md", text)
 
 
+
+class RefilingTests(HarnessTestCase):
+    """A URL already queued under a node's OWN key, re-nominated under a role
+    that files it elsewhere, is a refiling -- the one input
+    `promote --refile-misplaced` acts on. The 2026-09-20 adversarial pass
+    found 35 subcommittees carrying their committee's index page as their
+    own, 26 of them published as verified on it, and the harness refused
+    the repair twice: once as "already a candidate", once as "already
+    fetched for this node". Both rules keep their force for own_site."""
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.sites.write_text(json.dumps({"bureau": ["https://www.things.gov/subcommittees"]}), encoding="utf-8")
+        (self.tmp_path / "verification" / "evidence.json").write_text(json.dumps({"nodes": {"bureau": {
+            "status": "confirmed", "sources": [{"url": "https://www.things.gov/subcommittees", "matchedText": "Bureau of Stuff"}]}}}), encoding="utf-8")
+
+    def test_an_own_site_re_nomination_of_a_queued_url_is_still_refused(self) -> None:
+        self.assertNotEqual(self.record([{"id": "bureau", "nominations": [self.page(url="https://www.things.gov/subcommittees", role="own_site")]}]), 0)
+
+    def test_a_parent_listing_re_nomination_of_the_same_url_is_a_refiling_and_records(self) -> None:
+        self.assertEqual(self.record([{"id": "bureau", "nominations": [
+            self.page(url="https://www.things.gov/subcommittees", role="parent_listing", basis="the page's own heading names the parent and lists this unit among several")]}]), 0)
+
 if __name__ == "__main__":
     unittest.main()
 

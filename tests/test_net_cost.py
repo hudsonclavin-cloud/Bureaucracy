@@ -94,9 +94,12 @@ class MatchingTests(unittest.TestCase):
 
     def test_the_counts_are_what_the_statement_supports(self) -> None:
         self.assertEqual(self.report["rows_considered"], 40)
-        self.assertEqual(self.report["applied"], 33)
+        # 33 -> 34 on 2026-09-20 (later): the DFC's rename to its full name made
+        # its curated name equal the statement's reporting-entity name, so the
+        # audited row applies by name equality with no alias.
+        self.assertEqual(self.report["applied"], 34)
         self.assertEqual(self.report["refused"], {
-            "no_node_carries_this_name": 2,
+            "no_node_carries_this_name": 1,
             "row_names_no_unit_of_government": 5,
         })
 

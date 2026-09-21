@@ -3,7 +3,7 @@
   "source": {
     "kind": "usaspending_file_ab",
     "basis": "gross_outlays",
-    "derivedAt": "2026-09-20T01:23:52Z",
+    "derivedAt": "2026-09-21T00:07:30Z",
     "fixtures": "tests/fixtures/usaspending/"
   },
   "dictionary": {
@@ -1487,7 +1487,7 @@
     },
     "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
       "nodeId": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
-      "financialEvidenceStatus": "partial",
+      "financialEvidenceStatus": "verified",
       "costBasis": "gross_outlays",
       "amount": 1550586075.11,
       "amountRaw": "1550586075.11",
@@ -1504,7 +1504,7 @@
       "periodCoverage": "fiscal_year_to_date",
       "periodAsOf": "2026-09-17",
       "amountScope": "U.S. International Development Finance Corporation",
-      "scopeMatch": "proxy",
+      "scopeMatch": "exact",
       "rollupRole": "total",
       "sourceType": "usaspending_file_ab",
       "sourceUrl": "https://api.usaspending.gov/api/v2/references/toptier_agencies/",
@@ -1521,11 +1521,6 @@
       "obligations": 1481540532.84,
       "accounts": null,
       "nominationConfidence": "likely",
-      "nameAlias": {
-        "graphName": "U.S. International Development Finance Corp (DFC)",
-        "apiName": "U.S. International Development Finance Corporation",
-        "basis": "The same words: the graph abbreviates 'Corporation' to 'Corp'."
-      },
       "unitsEvidenceKind": "publishers_data_dictionary"
     },
     "exec-regulatory-cftc": {

@@ -396,9 +396,14 @@ def validate_source(record, node, sites, tried, tried_for_node=None):
         if url in seen:
             raise Rejected(f"{node_id}: {url} nominated twice")
         seen.add(url)
-        if url in existing:
+        if url in existing and nomination.get("role") == "own_site":
             raise Rejected(f"{node_id}: {url} is already a candidate for this node")
-        if url in tried and url in (tried_for_node or ()):
+        # A URL already queued under this node's OWN key, re-nominated under a
+        # role that files it elsewhere, is a REFILING -- the one input
+        # `promote --refile-misplaced` acts on -- and not a wasted fetch. The
+        # 2026-09-20 adversarial pass found 35 subcommittees carrying their
+        # committee's index page as their own, published as verified on it.
+        if nomination.get("role") == "own_site" and url in tried and url in (tried_for_node or ()):
             # Only a page already read FOR THIS NODE is a wasted nomination. The
             # first version refused any URL the verifier had ever fetched, so
             # senate.gov — read once to confirm the Senate — could never be

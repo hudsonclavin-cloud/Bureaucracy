@@ -25,7 +25,7 @@
     "directory_url": "https://www.federalregister.gov/api/v1/agencies.json",
     "fetched_at": "2026-09-08T19:19:15Z",
     "entries": 472,
-    "matched": 158,
+    "matched": 170,
     "ambiguous_entries": [],
     "ambiguous_names_in_graph": [
       "agriculture rural development food and drug administration and related agencies",
@@ -33,6 +33,7 @@
       "districts",
       "health care",
       "labor health and human services education and related agencies",
+      "legislative branch",
       "national security division",
       "subcommittee on energy",
       "subcommittee on health",
@@ -40,8 +41,8 @@
       "transportation housing and urban development and related agencies",
       "va medical centers"
     ],
-    "placements_listed": 72,
-    "placements_ancestor": 5,
+    "placements_listed": 82,
+    "placements_ancestor": 6,
     "placements_disagree": [
       {
         "id": "exec-regulatory-ferc",
@@ -50,13 +51,12 @@
       }
     ],
     "placements_parent_unmatched": 3,
-    "top_level_entries": 77,
+    "top_level_entries": 78,
     "unmatched_sample": [
       "ACTION",
       "Administrative Conference of the United States",
       "Advisory Council on Historic Preservation",
       "Advocacy and Outreach Office",
-      "Agency for Toxic Substances and Disease Registry",
       "Aging Administration",
       "Air Force Department",
       "Air Quality National Commission",
@@ -111,7 +111,8 @@
       "Crime and Security in U.S. Seaports, Interagency Commission",
       "Customs Service",
       "Defense Acquisition Regulations System",
-      "Defense Base Closure and Realignment Commission"
+      "Defense Base Closure and Realignment Commission",
+      "Defense Criminal Investigative Service"
     ]
   },
   "senate_report": {
@@ -261,7 +262,7 @@
       }
     ],
     "ambiguous": [],
-    "subcommittees_matched": 81,
+    "subcommittees_matched": 82,
     "subcommittees_not_in_list": [
       {
         "id": "leg-house-cmte-agriculture-sub-horticulture-farm-inputs-subcommittee-on-precision-agriculture",
@@ -322,11 +323,6 @@
         "id": "leg-house-cmte-house-administration-sub-committees",
         "name": "Subcommittee on Committees",
         "committee": "Committee on House Administration"
-      },
-      {
-        "id": "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet",
-        "name": "Subcommittee on Courts, Intellectual Property & the Internet",
-        "committee": "Committee on the Judiciary"
       },
       {
         "id": "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans",
@@ -433,10 +429,6 @@
       },
       {
         "committee": "Committee on the Judiciary",
-        "subcommittee": "Courts, Intellectual Property, Artificial Intelligence, and the Internet"
-      },
-      {
-        "committee": "Committee on the Judiciary",
         "subcommittee": "Oversight"
       },
       {
@@ -526,6 +518,22 @@
       "agencyUrl": "http://www.usaid.gov",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-hhs-agency-toxic-substances-disease-registry": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 7,
+      "listedName": "Agency for Toxic Substances and Disease Registry",
+      "url": "https://www.federalregister.gov/agencies/agency-for-toxic-substances-and-disease-registry",
+      "agencyUrl": "http://www.atsdr.cdc.gov",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Health and Human Services Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-hhs",
+        "parentListedName": "Health and Human Services Department"
+      }
     },
     "exec-dept-usda-agricultural-marketing-service": {
       "source": "federal_register_agency_directory",
@@ -1105,6 +1113,22 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-dept-doj-executive-office-immigration-review": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 149,
+      "listedName": "Executive Office for Immigration Review",
+      "url": "https://www.federalregister.gov/agencies/executive-office-for-immigration-review",
+      "agencyUrl": "http://www.justice.gov/eoir/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
+    },
     "exec-eop": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1634,6 +1658,22 @@
         "parentListedName": "Health and Human Services Department"
       }
     },
+    "exec-dept-doc-bureau-industry-security": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 241,
+      "listedName": "Industry and Security Bureau",
+      "url": "https://www.federalregister.gov/agencies/industry-and-security-bureau",
+      "agencyUrl": "https://www.bis.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
     "exec-ind-misc-institute-of-museum-and-library-services": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -1696,6 +1736,22 @@
       "agencyUrl": "http://www.justice.gov/",
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-doj-office-justice-programs": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 269,
+      "listedName": "Justice Programs Office",
+      "url": "https://www.federalregister.gov/agencies/justice-programs-office",
+      "agencyUrl": "http://www.ojp.usdoj.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
+      }
     },
     "exec-dept-dol": {
       "source": "federal_register_agency_directory",
@@ -1819,6 +1875,22 @@
         "status": "listed",
         "parentId": "exec-dept-dol",
         "parentListedName": "Labor Department"
+      }
+    },
+    "exec-dept-doc-minority-business-development-agency": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 291,
+      "listedName": "Minority Business Development Agency",
+      "url": "https://www.federalregister.gov/agencies/minority-business-development-agency",
+      "agencyUrl": "http://www.mbda.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
       }
     },
     "exec-ind-nasa": {
@@ -2015,6 +2087,38 @@
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
     },
+    "exec-dept-doc-national-technical-information-service": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 372,
+      "listedName": "National Technical Information Service",
+      "url": "https://www.federalregister.gov/agencies/national-technical-information-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
+    "exec-dept-doc-ntia": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 373,
+      "listedName": "National Telecommunications and Information Administration",
+      "url": "https://www.federalregister.gov/agencies/national-telecommunications-and-information-administration",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Commerce Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doc",
+        "parentListedName": "Commerce Department"
+      }
+    },
     "exec-ind-misc-national-transportation-safety-board-ntsb": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2097,6 +2201,22 @@
         "status": "listed",
         "parentId": "exec-eop",
         "parentListedName": "Executive Office of the President"
+      }
+    },
+    "exec-dept-doj-parole-commission": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 401,
+      "listedName": "Parole Commission",
+      "url": "https://www.federalregister.gov/agencies/parole-commission",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Justice Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doj",
+        "parentListedName": "Justice Department"
       }
     },
     "exec-dept-doc-uspto": {
@@ -2345,6 +2465,22 @@
         "parentListedName": "Health and Human Services Department"
       }
     },
+    "exec-dept-doi-office-surface-mining-reclamation-enforcement": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 480,
+      "listedName": "Surface Mining Reclamation and Enforcement Office",
+      "url": "https://www.federalregister.gov/agencies/surface-mining-reclamation-and-enforcement-office",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Interior Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-doi",
+        "parentListedName": "Interior Department"
+      }
+    },
     "exec-ind-misc-tennessee-valley-authority-tva": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2459,6 +2595,34 @@
         "parentListedName": "Homeland Security Department"
       }
     },
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 606,
+      "listedName": "U.S. International Development Finance Corporation",
+      "url": "https://www.federalregister.gov/agencies/u-s-international-development-finance-corporation",
+      "agencyUrl": "https://www.dfc.gov/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-defense-agency-uniformed-services-university-health-sciences": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 506,
+      "listedName": "Uniformed Services University of the Health Sciences",
+      "url": "https://www.federalregister.gov/agencies/uniformed-services-university-of-the-health-sciences",
+      "agencyUrl": "http://www.usuhs.mil/",
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Defense Department",
+      "placement": {
+        "status": "ancestor",
+        "ancestorId": "exec-dept-defense",
+        "parentListedName": "Defense Department",
+        "distance": 2,
+        "treeParentId": "exec-dept-defense-agencies"
+      }
+    },
     "exec-ind-misc-broadcasting-board-of-governors-usagm": {
       "source": "federal_register_agency_directory",
       "status": "listed",
@@ -2520,6 +2684,22 @@
       "agencyUrl": null,
       "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
       "checkedAt": "2026-09-08T19:19:15Z"
+    },
+    "exec-dept-dol-veterans-employment-training-service": {
+      "source": "federal_register_agency_directory",
+      "status": "listed",
+      "entryId": 521,
+      "listedName": "Veterans Employment and Training Service",
+      "url": "https://www.federalregister.gov/agencies/veterans-employment-and-training-service",
+      "agencyUrl": null,
+      "directoryUrl": "https://www.federalregister.gov/api/v1/agencies.json",
+      "checkedAt": "2026-09-08T19:19:15Z",
+      "parentListedName": "Labor Department",
+      "placement": {
+        "status": "listed",
+        "parentId": "exec-dept-dol",
+        "parentListedName": "Labor Department"
+      }
     },
     "exec-dept-dol-whd": {
       "source": "federal_register_agency_directory",
@@ -4537,6 +4717,20 @@
         "parentListedName": "Committee on the Judiciary"
       }
     },
+    "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": {
+      "source": "house_clerk_committee_list",
+      "status": "listed",
+      "listedName": "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+      "code": "JU03",
+      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
+      "checkedAt": "2026-09-13T22:51:28Z",
+      "parentListedName": "Committee on the Judiciary",
+      "placement": {
+        "status": "listed",
+        "parentId": "leg-house-cmte-judiciary",
+        "parentListedName": "Committee on the Judiciary"
+      }
+    },
     "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance": {
       "source": "house_clerk_committee_list",
       "status": "listed",
@@ -4564,21 +4758,6 @@
         "parentId": "leg-house-cmte-judiciary",
         "parentListedName": "Committee on the Judiciary"
       }
-    },
-    "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet": {
-      "source": "house_clerk_committee_list",
-      "status": "not_in_list",
-      "listedUnder": "Committee on the Judiciary",
-      "url": "https://clerk.house.gov/Committees/ExcelCommitteeData",
-      "checkedAt": "2026-09-13T22:51:28Z",
-      "listedSubcommittees": [
-        "The Administrative State, Regulatory Reform, and Antitrust",
-        "The Constitution and Limited Government",
-        "Courts, Intellectual Property, Artificial Intelligence, and the Internet",
-        "Crime and Federal Government Surveillance",
-        "Immigration Integrity, Security, and Enforcement",
-        "Oversight"
-      ]
     },
     "leg-house-cmte-judiciary-sub-responsiveness-accountability-to-americans": {
       "source": "house_clerk_committee_list",

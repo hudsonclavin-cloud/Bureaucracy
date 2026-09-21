@@ -589,9 +589,6 @@ USASPENDING_NAME_ALIASES = {
                            "Fair Housing and Equal Opportunity"),
     "exec-ind-misc-chemical-safety-hazard-investigation-board-csb": (
         "Chemical Safety & Hazard Investigation Board (CSB)", "United States Chemical Safety Board"),
-    "exec-ind-misc-u-s-international-development-finance-corp-dfc": (
-        "U.S. International Development Finance Corp (DFC)",
-        "U.S. International Development Finance Corporation"),
     "exec-ind-misc-americorps": ("AmeriCorps", "Corporation for National and Community Service"),
 }
 

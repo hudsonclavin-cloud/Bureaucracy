@@ -2,19 +2,18 @@
   "_note": "Derived by scripts/derive_net_cost_evidence.py from Treasury's Statement of Net Cost, committed verbatim under tests/fixtures/treasury/net_cost/ with its digest. Each record is an AUDITED figure -- the only cost in this project checked by somebody outside the reporting agency -- on an accrual basis for a fiscal year that has ended. It is not the unit's outlays and not the same period as the graph's anchor, so the exporter stamps it beside the cost and never over it. Rows that name no unit of government ('Total', 'All other entities') are refused rather than matched to the nearest node.",
   "source": {
     "kind": "treasury_statement_of_net_cost",
-    "derivedAt": "2026-09-20T01:23:52Z",
+    "derivedAt": "2026-09-21T00:07:30Z",
     "fixture": "tests/fixtures/treasury/net_cost/statement_net_cost_2025-09-30.json"
   },
   "report": {
     "rows_considered": 40,
-    "applied": 33,
+    "applied": 34,
     "refused": {
-      "no_node_carries_this_name": 2,
+      "no_node_carries_this_name": 1,
       "row_names_no_unit_of_government": 5
     },
     "refused_detail": {
       "no_node_carries_this_name": [
-        "United States International Development Finance Corporation",
         "Farm Credit System Insurance Corporation"
       ],
       "row_names_no_unit_of_government": [
@@ -357,6 +356,22 @@
       "netCostUsd": 200000000.0,
       "grossCostUsd": 1000000000.0,
       "earnedRevenueUsd": 800000000.0,
+      "fiscalYear": "2025",
+      "statementDate": "2025-09-30",
+      "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",
+      "documentSha256": "cc18a4ad530cdfac57f3b1a80b0bbd463daddfcd2a7b80c1f6b8a444bb303a12",
+      "unitsEvidenceKind": "publisher_states_the_unit_in_the_field_name",
+      "printedUnit": "billions of dollars, per the column name net_cost_bil_amt",
+      "basisNote": "Audited net cost for the fiscal year named, on an accrual basis: gross cost less earned revenue. It is not this unit's outlays, not the same period as the graph's anchor, and not its cost."
+    },
+    "exec-ind-misc-u-s-international-development-finance-corp-dfc": {
+      "source": "treasury_statement_of_net_cost",
+      "sourceType": "audited_financial_statement",
+      "metric": "audited_net_cost",
+      "agencyName": "United States International Development Finance Corporation",
+      "netCostUsd": -100000000.0,
+      "grossCostUsd": 400000000.0,
+      "earnedRevenueUsd": 500000000.0,
       "fiscalYear": "2025",
       "statementDate": "2025-09-30",
       "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/statement_net_cost?filter=record_date:eq:2025-09-30&page[size]=200",

@@ -707,6 +707,70 @@
    "url": "https://www.usa.gov/branches-of-government",
    "basis": "A branch of government has no website of its own; usa.gov is the federal government's official portal and its 'Branches of the U.S. government' page is the government's own statement of its structure, labelling all three branches as headings in page content ('Legislative branch', 'Executive branch', 'Judicial branch'). The curated name is the same words with a qualifier bolted on after an em dash, which is the graph's convention and not anything any page carries: canonical_name_key('Legislative Branch — The Congress') is 'legislative branch the congress', and no page labels that, so the top-level node of a whole branch of government could never verify. The Senate Appropriations subcommittee of the same name is not a sibling and is excluded from Treasury name-matching by type; the branch's Treasury line is applied by TREASURY_ROW_ALIASES to the node id, not to the name, and tests/test_treasury_outlays_wiring.py pins that the subcommittee never takes it.",
    "addedOn": "2026-09-20"
+  },
+  {
+   "id": "exec-dept-doc-ntia",
+   "from": "National Telecommunications & Information Admin (NTIA)",
+   "to": "National Telecommunications and Information Administration",
+   "url": "https://www.ntia.gov/about",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'National Telecommunications and Information Administration'). Probed https://www.ntia.gov/about today (2,096 readable chars): the curated name 'National Telecommunications & Information Admin (NTIA)' is not-labelled, but --orphan-labels surfaces 'National Telecommunications and Information Administration' as a genuine CONTENT-region label. The mismatch is the abbreviation 'Admin' vs the page's spelled-out 'Administration' (canonical_name_key folds '&' -> 'and' but does not expand 'Admin' to 'Administration'). Consistent with the node's own root-page (ntia.gov/) evidence record from today's run: status inconclusive/named_on_the_page_but_not_as_a_label -- the name is on that page in some form but not as an exact label, same cause. | verifier: Re-probed h",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca",
+   "from": "Richard Nixon Presidential Library (Yorba Linda, CA)",
+   "to": "Richard Nixon Presidential Library and Museum",
+   "url": "https://www.archives.gov/presidential-libraries",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'Richard Nixon Presidential Library and Museum'). Probed this session (parent NARA's own directory of its libraries, 4,651 readable content chars, read=true): the curated name including its '(Yorba Linda, CA)' qualifier is not-labelled. I then read the raw page directly (respecting the project's User-Agent) and found the actual content heading: <h3>Richard Nixon Presidential Library and Museum</h3> in facility row facil-40, address 18001 Yorba Linda Boulevard, Yorba Linda, CA -- the same facility, different exact wording ('and Museum' appended). Per instruction (c), a not-labelled probe means no nomination for this URL under the current name; this is a rename lead instead. Once renamed, archives.gov/presidential-libraries is the right paren",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "leg-house-ig",
+   "from": "Office of the Inspector General",
+   "to": "Inspector General of the House",
+   "url": "https://www.house.gov/the-house-explained/officers-and-organizations/inspector-general",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'Inspector General of the House'). Freshly fetched this session (not from the ledger): the page's own <h1><span>Inspector General of the House</span></h1> is a clean, single-element content-region label, four tokens, names the House specifically rather than being a bare generic title ('Office of the Director'-class), and is exactly the wording a prior speculative nomination (brute1, 2026-09-13) had already flagged from the page's <title> tag. | verifier: Re-probed https://www.house.gov/the-house-explained/officers-and-organizations/inspector-general with --orphan-labels (robots: allowed; 895 readable chars, the ",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
+   "from": "U.S. International Development Finance Corp (DFC)",
+   "to": "U.S. International Development Finance Corporation",
+   "url": "https://www.dfc.gov/",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'U.S. International Development Finance Corporation'). Probed with scripts/probe_candidate_pages.py --orphan-labels in this session: dfc.gov's own homepage (1,211 readable chars) carries 'U.S. International Development Finance Corporation' as a content-region label; the curated node is titled 'U.S. International Development Finance Corp (DFC)', substituting the abbreviation 'Corp (DFC)' for the page's own full word 'Corporation'. OMB's Public Budget Database independently carries the same full spelling ('United States International Development Finance Corporation'), corroborating. | verifier: Re-probed https://www.dfc.gov/ with --orphan-labels: the curated name is not-labelled (as the standing evidence record says, named_on_the_page_but_not_as_a",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet",
+   "from": "Subcommittee on Courts, Intellectual Property & the Internet",
+   "to": "Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet",
+   "url": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'The Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet'). Probed this session (3,408 readable chars): this exact sentence appears in the page's content region, naming the subcommittee under its current 119th-Congress title. The 118th-Congress archive page used the curated wording exactly, so this is a real name change (adding 'Artificial Intelligence,'), not a curation error. | verifier: Re-probed with --orphan-labels: 3,408 readable chars; the current curated name 'Subcommittee on Courts, Intellectual Property & the Internet' is not-labelled, a",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny",
+   "from": "Franklin D. Roosevelt Presidential Library (Hyde Park, NY)",
+   "to": "Franklin D. Roosevelt Presidential Library and Museum",
+   "url": "https://www.archives.gov/presidential-libraries",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'Franklin D. Roosevelt Presidential Library and Museum'). Probed 2026-09-20: page reads (4,651 readable content chars); the curated '(Hyde Park, NY)' form is not-labelled, but direct inspection of the page's content-region fragments shows it carries 'Franklin D. Roosevelt Presidential Library and Museum' verbatim -- NARA's actual wording for this library, and the same pattern its sibling libraries on this index use. | verifier: Re-probed 2026-09-20 with --orphan-labels: the orphan list does not surface the proposed name, but only because the probe's UNIT_WORDS filter has no 'library'; ",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx",
+   "from": "George H.W. Bush Presidential Library (College Station, TX)",
+   "to": "George Bush Presidential Library and Museum",
+   "url": "https://www.archives.gov/presidential-libraries",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'George Bush Presidential Library and Museum'). Re-fetched the page directly 2026-09-20 (same URL a 2026-09-13 pass flagged): NARA's own facility listing carries <h3>George Bush Presidential Library and Museum</h3> at '1000 George Bush Drive West, College Station' -- the same College Station, TX site the curated node names -- omitting 'H.W.' and reading 'Museum' rather than 'Library'. Note: probe_candidate_pages.py's own --orphan-labels pass does not surface this fragment (it sits inside a facility-row div beside an address block), so this is confirmed by a direct fetch of the raw markup rather than the tool's heuristic; worth flagging as a possible gap in the orphan-label extraction for grid/card-style listings. | verifier: Re-probed htt",
+   "addedOn": "2026-09-20"
+  },
+  {
+   "id": "leg-senate-cmte-select-committee-on-ethics",
+   "from": "Senate Committee on Select Committee on Ethics",
+   "to": "U.S. Senate Select Committee on Ethics",
+   "url": "https://www.ethics.senate.gov/",
+   "basis": "Proposed by the 2026-09-20 phase 1c sweep and re-probed by its adversarial verifier (matched 'U.S. Senate Select Committee on Ethics'). Probed 2026-09-20 with scripts/probe_candidate_pages.py (2,955 readable chars; verdict not-labelled for the curated 'Senate Committee on Select Committee on Ethics') and confirmed by direct fetch: <title> and <h1> both read exactly 'U.S. Senate Select Committee on Ethics'. CLAUDE.md's own committee-fold documentation names this exact node as the one case where committee_core_key's fold reduces the doubled 'Committee on ... Committee on' scaffolding to a single token ('Ethics') and so cannot confirm under the fold rule -- but the page's real, un-folded title was never tried as a straight rename, and it is a clean, unique, 6-token name. | verifier: Re-probed https://www.ethics.senate.gov/ with",
+   "addedOn": "2026-09-20"
   }
  ]
 }

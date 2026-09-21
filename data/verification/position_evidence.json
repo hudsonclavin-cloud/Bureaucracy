@@ -37,7 +37,7 @@
       "Filled": 18475,
       "Vacant": 2837
     },
-    "agencies_matched": 69,
+    "agencies_matched": 70,
     "agencies_unmatched": [
       "ADMINISTRATIVE CONFERENCE OF THE UNITED STATES",
       "ADVISORY COUNCIL ON HISTORIC PRESERVATION",
@@ -135,15 +135,14 @@
       "U.S. COMMISSION ON CIVIL RIGHTS",
       "U.S. HOLOCAUST MEMORIAL MUSEUM",
       "U.S. INSTITUTE OF PEACE",
-      "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
       "U.S. INTERNATIONAL TRADE COMMISSION",
       "U.S. SEMIQUINCENTENNIAL COMMISSION",
       "UTAH RECLAMATION MITIGATION AND CONSERVATION COMMISSION"
     ],
     "agencies_ambiguous": [],
     "organizations_of_agency": 34,
-    "organizations_matched": 180,
-    "organizations_under_unmatched_agency": 356,
+    "organizations_matched": 181,
+    "organizations_under_unmatched_agency": 348,
     "organizations_unmatched": [
       {
         "agency": "AMERICAN BATTLE MONUMENTS COMMISSION",
@@ -568,10 +567,6 @@
       {
         "agency": "DEPARTMENT OF COMMERCE",
         "organization": "NATIONAL SEA GRANT COLLEGE PROGRAM"
-      },
-      {
-        "agency": "DEPARTMENT OF COMMERCE",
-        "organization": "NATIONAL TELECOMMUNICATIONS AND INFORMATION ADMINISTRATION"
       },
       {
         "agency": "DEPARTMENT OF COMMERCE",
@@ -3898,6 +3893,38 @@
         "organization": "OFFICE OF THE GENERAL COUNSEL"
       },
       {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "CHIEF DEVELOPMENT OFFICER DIVISION"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "CHIEF OPERATING OFFICER DIVISION"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF DEVELOPMENT POLICY"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF EXTERNAL AFFAIRS"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF FOREIGN POLICY"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF GENERAL COUNSEL"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF INFRASTRUCTURE"
+      },
+      {
+        "agency": "U.S. INTERNATIONAL DEVELOPMENT FINANCE CORPORATION",
+        "organization": "OFFICE OF THE CHIEF EXECUTIVE"
+      },
+      {
         "agency": "WOODROW WILSON INTERNATIONAL CENTER FOR SCHOLARS",
         "organization": "BOARD OF TRUSTEES"
       }
@@ -3919,8 +3946,8 @@
       }
     ],
     "positions_in_graph": 4591,
-    "positions_under_matched_agency_node": 602,
-    "positions_under_matched_organization": 1106,
+    "positions_under_matched_agency_node": 607,
+    "positions_under_matched_organization": 1109,
     "positions_matched": 129,
     "positions_shared_title": [],
     "positions_ambiguous_alternatives": [],
@@ -3967,7 +3994,7 @@
         ]
       }
     ],
-    "positions_unmatched": 972,
+    "positions_unmatched": 975,
     "positions_unmatched_sample": [
       {
         "id": "exec-dept-dhs-cbp-assistant-commissioner-air-marine-operations",

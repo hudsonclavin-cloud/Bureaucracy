@@ -161,7 +161,8 @@
   "https://www.opm.gov/about-us/"
  ],
  "exec-ind-nara": [
-  "https://www.archives.gov/about"
+  "https://www.archives.gov/about",
+  "https://www.archives.gov/presidential-libraries"
  ],
  "exec-regulatory-fed": [
   "https://www.federalreserve.gov/aboutthefed.htm"
@@ -185,7 +186,8 @@
   "https://www.cpsc.gov/About-CPSC"
  ],
  "exec-regulatory-fdic": [
-  "https://www.fdic.gov/about"
+  "https://www.fdic.gov/about",
+  "https://www.fdic.gov/"
  ],
  "exec-regulatory-cftc": [
   "https://www.cftc.gov/About/AboutTheCommission"
@@ -238,7 +240,8 @@
   "https://www.whitehouse.gov"
  ],
  "exec-ind-misc-national-credit-union-administration-ncua": [
-  "https://www.ncua.gov"
+  "https://www.ncua.gov",
+  "https://www.ncua.gov/"
  ],
  "exec-dept-defense-agency-dcaa": [
   "https://www.dcaa.mil/"
@@ -370,7 +373,8 @@
   "https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx"
  ],
  "exec-dept-treasury-ofr": [
-  "https://www.treasury.gov/initiatives/Pages/ofr.aspx"
+  "https://www.treasury.gov/initiatives/Pages/ofr.aspx",
+  "https://www.financialresearch.gov/"
  ],
  "exec-dept-treasury-ttb": [
   "https://www.ttb.gov"
@@ -406,7 +410,8 @@
   "https://www.eeoc.gov/"
  ],
  "exec-ind-misc-farm-credit-administration": [
-  "https://www.fca.gov/index.html"
+  "https://www.fca.gov/index.html",
+  "https://www.fca.gov/"
  ],
  "exec-ind-misc-federal-election-commission-fec": [
   "https://www.fec.gov/"
@@ -424,7 +429,8 @@
   "https://www.neh.gov/"
  ],
  "exec-ind-misc-office-of-special-counsel-osc": [
-  "https://www.osc.gov/Intro.htm"
+  "https://www.osc.gov/Intro.htm",
+  "https://www.osc.gov/"
  ],
  "leg-support-loc-copyright": [
   "https://www.copyright.gov/"
@@ -484,10 +490,12 @@
   "https://veterans.house.gov/"
  ],
  "leg-house-cmte-ways-means": [
-  "https://waysandmeans.house.gov/"
+  "https://waysandmeans.house.gov/",
+  "https://waysandmeans.house.gov/subcommittees/"
  ],
  "leg-senate-cmte-agriculture-nutrition-and-forestry": [
-  "https://www.agriculture.senate.gov/"
+  "https://www.agriculture.senate.gov/",
+  "https://www.agriculture.senate.gov/about/subcommittees"
  ],
  "leg-senate-cmte-appropriations": [
   "https://www.appropriations.senate.gov/"
@@ -498,7 +506,12 @@
  ],
  "leg-senate-cmte-banking-housing-urban-affairs": [
   "https://www.banking.senate.gov/public",
-  "https://www.banking.senate.gov/"
+  "https://www.banking.senate.gov/",
+  "https://www.banking.senate.gov/about/subcommittees#economic-policy",
+  "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection",
+  "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development",
+  "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance",
+  "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment"
  ],
  "leg-senate-cmte-budget": [
   "https://www.budget.senate.gov/"
@@ -507,20 +520,30 @@
   "https://www.commerce.senate.gov/"
  ],
  "leg-senate-cmte-energy-natural-resources": [
-  "https://www.energy.senate.gov/"
+  "https://www.energy.senate.gov/",
+  "https://www.energy.senate.gov/about/subcommittees"
  ],
  "leg-senate-cmte-environment-public-works": [
   "https://www.epw.senate.gov/",
   "https://www.epw.senate.gov/public/index.cfm/subcommittees"
  ],
  "leg-senate-cmte-finance": [
-  "https://www.finance.senate.gov/"
+  "https://www.finance.senate.gov/",
+  "https://www.finance.senate.gov/about/subcommittees"
  ],
  "leg-senate-cmte-foreign-relations": [
-  "https://www.foreign.senate.gov/"
+  "https://www.foreign.senate.gov/",
+  "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy",
+  "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy",
+  "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation",
+  "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy",
+  "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism",
+  "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development"
  ],
  "leg-senate-cmte-health-education-labor-pensions": [
-  "https://www.help.senate.gov/"
+  "https://www.help.senate.gov/",
+  "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety",
+  "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
  ],
  "leg-senate-cmte-homeland-security-governmental-affairs": [
   "https://www.hsgac.senate.gov/"
@@ -859,36 +882,6 @@
  "leg-house-cmte-veterans-affairs-sub-technology-modernization": [
   "https://veterans.house.gov/issues/issue/?IssueID=117997"
  ],
- "leg-house-cmte-ways-means-sub-health": [
-  "https://waysandmeans.house.gov/subcommittees/"
- ],
- "leg-house-cmte-ways-means-sub-oversight": [
-  "https://waysandmeans.house.gov/subcommittees/"
- ],
- "leg-house-cmte-ways-means-sub-social-security": [
-  "https://waysandmeans.house.gov/subcommittees/"
- ],
- "leg-house-cmte-ways-means-sub-tax": [
-  "https://waysandmeans.house.gov/subcommittees/"
- ],
- "leg-house-cmte-ways-means-sub-trade": [
-  "https://waysandmeans.house.gov/subcommittees/"
- ],
- "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-commodities-risk-management-trade": [
-  "https://www.agriculture.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-conservation-climate-forestry-natural-resources": [
-  "https://www.agriculture.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-food-nutrition-specialty-crops-agricultural-research": [
-  "https://www.agriculture.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-livestock-dairy-poultry-local-food-systems-food-safety-security": [
-  "https://www.agriculture.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-agriculture-nutrition-and-forestry-sub-rural-development-energy": [
-  "https://www.agriculture.senate.gov/about/subcommittees"
- ],
  "leg-senate-cmte-appropriations-sub-agriculture-rural-development-fda-related-agencies": [
   "https://www.appropriations.senate.gov/subcommittees/agriculture-rural-development-food-and-drug-administration-and-related-agencies"
  ],
@@ -897,81 +890,6 @@
  ],
  "leg-senate-cmte-appropriations-sub-transportation-hud-related-agencies": [
   "https://www.appropriations.senate.gov/subcommittees/transportation-housing-and-urban-development-and-related-agencies"
- ],
- "leg-senate-cmte-armed-services-sub-emerging-threats-capabilities": [
-  "https://www.armed-services.senate.gov/subcommittees"
- ],
- "leg-senate-cmte-armed-services-sub-readiness-management-support": [
-  "https://www.armed-services.senate.gov/subcommittees"
- ],
- "leg-senate-cmte-armed-services-sub-strategic-forces": [
-  "https://www.armed-services.senate.gov/subcommittees"
- ],
- "leg-senate-cmte-banking-housing-urban-affairs-sub-economic-policy": [
-  "https://www.banking.senate.gov/about/subcommittees#economic-policy"
- ],
- "leg-senate-cmte-banking-housing-urban-affairs-sub-financial-institutions-consumer-protection": [
-  "https://www.banking.senate.gov/about/subcommittees#financial-institutions-and-consumer-protection"
- ],
- "leg-senate-cmte-banking-housing-urban-affairs-sub-housing-transportation-community-development": [
-  "https://www.banking.senate.gov/about/subcommittees#housing-transportation-and-community-development"
- ],
- "leg-senate-cmte-banking-housing-urban-affairs-sub-national-security-international-trade-finance": [
-  "https://www.banking.senate.gov/about/subcommittees#national-security-and-international-trade-and-finance"
- ],
- "leg-senate-cmte-banking-housing-urban-affairs-sub-securities-insurance-investment": [
-  "https://www.banking.senate.gov/about/subcommittees#securities-insurance-and-investment"
- ],
- "leg-senate-cmte-finance-sub-energy-natural-resources-infrastructure": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-finance-sub-fiscal-responsibility-economic-growth": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-finance-sub-health-care": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-finance-sub-international-trade-customs-global-competitiveness": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-finance-sub-social-security-pensions-family-policy": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-finance-sub-taxation-irs-oversight": [
-  "https://www.finance.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-foreign-relations-sub-africa-global-health-policy": [
-  "https://www.foreign.senate.gov/about/subcommittees#africa-global-health-policy"
- ],
- "leg-senate-cmte-foreign-relations-sub-east-asia-the-pacific-international-cybersecurity-policy": [
-  "https://www.foreign.senate.gov/about/subcommittees#east-asia-the-pacific-international-cybersecurity-policy"
- ],
- "leg-senate-cmte-foreign-relations-sub-europe-regional-security-cooperation": [
-  "https://www.foreign.senate.gov/about/subcommittees#europe-regional-security-cooperation"
- ],
- "leg-senate-cmte-foreign-relations-sub-multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy": [
-  "https://www.foreign.senate.gov/about/subcommittees#multilateral-international-development-multilateral-institutions-international-economic-energy-environmental-policy"
- ],
- "leg-senate-cmte-foreign-relations-sub-near-east-south-asia-central-asia-counterterrorism": [
-  "https://www.foreign.senate.gov/about/subcommittees#near-east-south-asia-central-asia-counterterrorism"
- ],
- "leg-senate-cmte-foreign-relations-sub-state-department-usaid-management-international-operations-bilateral-international-development": [
-  "https://www.foreign.senate.gov/about/subcommittees#state-department-usaid-management-international-operations-bilateral-international-development"
- ],
- "leg-senate-cmte-health-education-labor-pensions-sub-employment-workplace-safety": [
-  "https://www.help.senate.gov/about/subcommittees#employment-ii-workplace-safety"
- ],
- "leg-senate-cmte-health-education-labor-pensions-sub-primary-health-retirement-security": [
-  "https://www.help.senate.gov/about/subcommittees#primary-health-ii-retirement-security"
- ],
- "leg-senate-cmte-judiciary-sub-competition-policy-antitrust-consumer-rights": [
-  "https://www.judiciary.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-judiciary-sub-intellectual-property": [
-  "https://www.judiciary.senate.gov/about/subcommittees"
- ],
- "leg-senate-cmte-judiciary-sub-privacy-technology-the-law": [
-  "https://www.judiciary.senate.gov/about/subcommittees"
  ],
  "leg-support-uscp-office-of-professional-responsibility": [
   "https://www.uscp.gov/the-department/our-mission"
@@ -1085,7 +1003,8 @@
   "https://www.llnl.gov/"
  ],
  "exec-dept-doe-national-renewable-energy-laboratory": [
-  "https://www.nrel.gov/"
+  "https://www.nrel.gov/",
+  "https://www.nlr.gov/"
  ],
  "exec-dept-doe-oak-ridge-national-laboratory": [
   "https://www.ornl.gov/"
@@ -1596,5 +1515,59 @@
  ],
  "jud-circuit-9th-circuit": [
   "https://www.ca9.uscourts.gov/"
+ ],
+ "exec-dept-doc-bureau-industry-security": [
+  "https://www.bis.gov/"
+ ],
+ "exec-dept-doc-national-technical-information-service": [
+  "https://www.ntis.gov/"
+ ],
+ "exec-dept-doe-sandia-national-laboratories": [
+  "https://www.sandia.gov/"
+ ],
+ "exec-dept-doi-office-surface-mining-reclamation-enforcement": [
+  "https://www.osmre.gov/"
+ ],
+ "exec-dept-doj-executive-office-immigration-review": [
+  "https://www.justice.gov/eoir"
+ ],
+ "exec-dept-doj-office-community-oriented-policing-services": [
+  "https://cops.usdoj.gov/"
+ ],
+ "exec-dept-doj-office-justice-programs": [
+  "https://www.ojp.gov/"
+ ],
+ "exec-dept-dol-bureau-international-labor-affairs": [
+  "https://www.dol.gov/agencies/ilab"
+ ],
+ "exec-dept-dol-veterans-employment-training-service": [
+  "https://www.dol.gov/agencies/vets"
+ ],
+ "exec-dept-dol-women-s-bureau": [
+  "https://www.dol.gov/agencies/wb"
+ ],
+ "exec-dept-hhs-agency-toxic-substances-disease-registry": [
+  "https://www.atsdr.cdc.gov/"
+ ],
+ "exec-eop-omb-oira-office-of-information-regulatory-affairs": [
+  "https://www.reginfo.gov/public/jsp/Utilities/aboutUs.myjsp"
+ ],
+ "exec-ind-nara-barack-obama-presidential-library-chicago-il": [
+  "https://www.obamalibrary.gov/"
+ ],
+ "exec-ind-nsf-engineering-eng": [
+  "https://www.nsf.gov/eng"
+ ],
+ "exec-ind-nsf-geosciences-geo": [
+  "https://www.nsf.gov/geo"
+ ],
+ "exec-ind-nsf-social-behavioral-economic-sciences-sbe-behavioral-cognitive-sciences": [
+  "https://www.nsf.gov/sbe/bcs"
+ ],
+ "jud-district-sdny": [
+  "https://www.nysd.uscourts.gov/"
+ ],
+ "leg-house-cmte-foreign-affairs-sub-oversight-accountability": [
+  "https://foreignaffairs.house.gov/subcommittees/oversight-and-intelligence-subcommittee-119th-congress"
  ]
 }

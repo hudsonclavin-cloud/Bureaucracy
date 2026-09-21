@@ -1636,3 +1636,89 @@ nominations, candidate Treasury lines), probed live, and proposed; 16
 adversarial verifiers then re-probed every nomination, rename and cost key to
 refute it. The results, once recorded, promoted and verified, are the subject
 of the next section.
+
+### 15.6 What the sweep found, and what was done with it
+
+**Scale.** 832 organisations, 16 shards of 52, 32 agents (16 triage, 16
+adversarial verify), 1,150 live probes and tool calls, 3.4 hours. Verdicts:
+342 already confirmed on their own page, 438 declined with a specific reason,
+30 nominated, 22 honestly unsure. The verifiers refuted **19 of 29 rename
+proposals** (page headings, site-section labels, a "program" suffix, an
+Obama-library basis under a Ford-library id, one no-op), **4 of 30
+nominations**, and the one cost identifier's *reasoning* while confirming its
+substance (OSMRE, §15.4 above). Nothing an agent proposed reached a ledger
+without a second agent trying to refute it.
+
+**What landed.** 26 upheld URL nominations and 2 more the verifiers found
+while spot-checking declines (the FDIC homepage; NSF's SBE/BCS division
+page); 204 declines carrying a probe synthesized from a *recorded* reading —
+the evidence record or the 68-host measurement — and **45 declines dropped**
+because they named a page nobody in the repository had read, which the
+harness rightly refuses; 54 cost records (53 declines, one identifier); and
+eight renames the page licensed (NTIA, the House Inspector General, the
+Senate Ethics Committee's long-standing "Committee on Select Committee"
+artifact, the Judiciary IP subcommittee's current name, the DFC, and the
+Nixon, Roosevelt and George Bush libraries' official names). Three proposals
+were refused by the script and are NOT in the table, because a row the page
+did not license is a declined proposal and `tests/test_unit_renames.py` holds
+the table to that: "Energy and Natural Resources Division" for DOJ's ENRD and
+"Offices of the United States Attorneys" for the USAO, both on justice.gov,
+which answered 401 on every attempt today (re-proposable when it answers; the
+verifiers read both labels in content earlier in the day), and "Subcommittee
+on Personnel", which the Senate's list names but no page labels. The House Chaplain's proposed "Office of the Chaplain"
+was declined by hand for dropping the chamber.
+
+**The over-claim the verifiers exposed, fixed.** 35 subcommittees carried
+their *committee's* index of subcommittees under their own key, and 26 of them
+were published `verified` on it as "its own official page" — the
+energy.gov/national-laboratories mechanism on nine other hosts. The harness
+refused the repair twice, as "already a candidate" and as "already fetched
+for this node"; both rules keep their force for `own_site` and now admit a
+re-nomination under a role that files the URL elsewhere, which is the one
+input `promote --refile-misplaced` acts on. 36 URLs moved to their committees;
+those subcommittees now publish the parent-page method with placement from
+the same page.
+
+**The same fact, published once.** Eleven organisations — Federal Student Aid
+($76bn measured), six DOE laboratories, the FHA, CRS, the Senate Chaplain and
+the House Legislative Counsel — had their own queued host walled while the
+placement pass had already read the parent's page and found them listed by
+name. The site said "not verified" beside "listed on its parent's page". This
+file already treats a parent-page confirmation as placement without a second
+fetch; the reverse is now true too, and the label is quoted exactly where the
+confirmed path quotes it (a folded committee match), which the gate caught
+when the first cut quoted it everywhere.
+
+**On the published graph:** official source 783 → 806 of 5,453; no source
+recorded 4,618 → 4,597; placements 480 → 486; 26 gained a method, 52 changed
+one (26 honestly down from own-page to parent-page, 12 Manual and 9
+directory listings up to page confirmations), 1 lost one — DOJ's Civil
+Division, on a host that served its page at 00:33 and refused it at 21:00.
+
+**Open, recorded rather than guessed:**
+
+- **Ways & Means.** `<h2><span>Subcommittee On</span> <span>Tax</span></h2>`
+  parses as two fragments, so every Ways & Means subcommittee fails label
+  equality on its own committee's page. A parser rule joining *inline*
+  children inside one heading element — never across block elements, which is
+  the "phrase spanning two DOM elements" case the adversarial review refused —
+  would fix the family. A code decision for the owner.
+- **usa.gov as a branch's "own page"** (§15.2). Verifier (shard 1): the
+  method wording over-claims; usa.gov is the government's portal, not the
+  judiciary's site. The confirmation stands with that objection recorded; the
+  honest alternative is a distinct method for a government portal that
+  describes the unit, which `official_list` nominations would also need.
+- **NSF CISE/IIS** carries the *directorate's* page under its own key as
+  `own_site`, so the verifier publishes a false `not_found`; recorded role is
+  own_site, so `--refile-misplaced` cannot reach it. Needs a hand refiling.
+- **Weaponization select subcommittee** expired with the 118th Congress;
+  judiciary.house.gov names it only in an archived block. A supersession, not
+  a rename — the first honest entry for `mark_superseded_units.py`.
+- **EERE**: energy.gov/eere now redirects to the Office of Critical Minerals
+  and Energy Innovation. A rename or supersession lead.
+- **Bureau of Reclamation**: Table 5 prints it as a header with two lines
+  beneath summing to $2.756bn and no Total line; the graph's apportioned
+  estimate is $4.374bn. Worth a curator's eye.
+- **Prior recheck1 records (2026-09-13)** assert headings for the Truman,
+  Clinton and LBJ libraries and several subcommittees that today's re-probes
+  cannot find. Six of the 22 unsure verdicts are this pattern.

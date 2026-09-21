@@ -359,7 +359,9 @@ Fetcher = Callable[[str], str]
 # banner and footer address and no body at all.
 CHROME_TAGS = {"nav", "header", "footer", "aside"}
 CHROME_ROLES = {"navigation", "banner", "contentinfo", "complementary"}
-CHROME_CLASS_HINTS = ("usa-banner", "usa-header", "usa-footer", "usa-nav", "site-header", "site-footer", "skip-link")
+CHROME_CLASS_HINTS = ("usa-banner", "usa-header", "usa-footer", "usa-nav", "site-header", "site-footer", "skip-link",
+                      # Drupal's masthead: the 2026-09-20 sweep saw a logo lockup on acl.gov surface as a CONTENT label through it.
+                      "main-header")
 VOID_TAGS = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "param", "source", "track", "wbr"}
 REGION_NAVIGATION = "navigation"
 REGION_CONTENT = "content"
@@ -1340,6 +1342,51 @@ def apply_evidence_to_tree(
                 node["placementMatchRule"] = MATCH_RULE_COMMITTEE
                 stats["placements_folded"] += 1
             stats["placements_evidenced"] += 1
+            # The same page, the same label, the same fact. A node whose own
+            # queued host is walled reaches here with existence fetch_failed
+            # and the parent's page listing it by name -- Federal Student Aid
+            # ($76bn measured) and six DOE laboratories on 2026-09-20 -- and
+            # the site said "not verified" beside "listed on its parent's
+            # page". This file already treats the reverse direction as one
+            # observation (a parent-page confirmation counts as placement
+            # without a second fetch); the parent-page existence method is
+            # exactly what this listing states, so it is published from it.
+            if (
+                not node.get("verificationMethod")
+                and str(record.get("status") or "") in (FETCH_FAILED, INCONCLUSIVE, PLACEMENT_ONLY)
+                and listed.get("checkedAt")
+            ):
+                url = str(listed["url"])
+                urls = [str(u) for u in (node.get("sourceUrls") or [])]
+                if url not in urls:
+                    urls.append(url)
+                node["sourceUrls"] = urls
+                mine = [str(u) for u in (node.get("evidenceUrls") or [])]
+                if url not in mine:
+                    mine.append(url)
+                node["evidenceUrls"] = mine
+                types = [str(x) for x in (node.get("sourceTypes") or [])]
+                if "official_site" not in types:
+                    types.append("official_site")
+                node["sourceTypes"] = types
+                node["verificationMethod"] = METHOD_PARENT_PAGE
+                if listed.get("matchedIn") in KNOWN_REGIONS:
+                    node["verificationMatchedIn"] = str(listed["matchedIn"])
+                # The label is quoted exactly where the confirmed path quotes
+                # it: on a folded committee match, with the rule beside it.
+                # An organisation's plain match carries no quote, and the
+                # gate refuses one without the rule.
+                if listed.get("matchRule") == MATCH_RULE_COMMITTEE:
+                    node["verificationMatchRule"] = MATCH_RULE_COMMITTEE
+                    node["verificationMatchedText"] = str(listed.get("matchedText") or "")[:200]
+                node["verificationSiteFrom"] = actual_parent
+                node["lastVerified"] = str(listed["checkedAt"])
+                node["evidenceVerifiedAt"] = str(listed["checkedAt"])
+                # The own page went unread; the gate refuses that fact beside a
+                # page method, and the panel now states the stronger one.
+                node.pop("verificationUnread", None)
+                verify_node_sources(node)
+                stats["existence_from_placement"] = stats.get("existence_from_placement", 0) + 1
         elif block and block.get("status") == PLACEMENT_NOT_LISTED and str(block.get("parentId") or "") == str(actual_parent or ""):
             # Read and not listed. Recorded so it is auditable; claims nothing.
             node["placementVerified"] = False

@@ -466,7 +466,13 @@ class RealFixtureTests(unittest.TestCase):
         # 68 -> 69 matched on 2026-09-20: one of the 26 units added from the
         # Government Manual is an organisation the PLUM archive files positions
         # under, so the archive reached it as soon as the node existed.
-        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (69, 100, 0))
+        # 69 -> 70 on 2026-09-20 (later): the phase 1c sweep renamed NTIA to the
+        # full name the archive files it under, so one more agency answers by
+        # name. A matching count is not a published claim; the records are
+        # re-derived and the exporter decides what applies.
+        self.assertEqual((r["agencies_matched"], len(r["agencies_unmatched"]), len(r["agencies_ambiguous"])), (70, 99, 0))
+        # The same rename reaches one more organisation and seven more positions
+        # beneath it (180 -> 181, 939 -> 946); published records stayed at 129.
         # The two ambiguous organisations are both the USPTO's: the archive
         # files rows under "PATENT AND TRADEMARK OFFICE" and "UNITED STATES
         # PATENT AND TRADEMARK OFFICE", and after the rename BOTH reduce to
@@ -478,13 +484,13 @@ class RealFixtureTests(unittest.TestCase):
         # Government Manual are organisations the PLUM archive files positions
         # under, so its rows reached them as soon as the nodes existed.
         self.assertEqual((r["organizations_matched"], r["organizations_of_agency"], len(r["organizations_unmatched"]), len(r["organizations_ambiguous"]), r["organizations_under_unmatched_agency"]),
-                         (180, 34, 939, 2, 356))
+                         (181, 34, 946, 2, 348))
         # 4,382 before the White House Office roster expansion added 222, then
         # 13 fewer when the duplicate Coast Guard and House intelligence
         # committee subtrees were merged away (scripts/merge_duplicate_nodes.py).
         # 584 and 1,084 until 2026-09-19: the §9 renames matched three more
         # agencies and six more organisations, so more posts sit under one.
-        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4591, 602, 1106))
+        self.assertEqual((r["positions_in_graph"], r["positions_under_matched_agency_node"], r["positions_under_matched_organization"]), (4591, 607, 1109))
         # 126, not the 91 of 2026-09-08: reading the organisation's own name
         # back off the archive's own title recovers 35 posts the archive
         # spells "COMMISSIONER, UNITED STATES CUSTOMS AND BORDER PROTECTION".
@@ -498,7 +504,7 @@ class RealFixtureTests(unittest.TestCase):
         # the FNS Administrator, since the archive still files that bureau as
         # the Food and Nutrition Service.
         self.assertEqual((r["positions_matched"], r["positions_unmatched"], len(r["positions_shared_title"]), len(r["positions_ambiguous_alternatives"]), len(r["positions_title_ambiguous_in_archive"])),
-                         (129, 972, 0, 0, 5))
+                         (129, 975, 0, 0, 5))
         self.assertEqual(len(self.records), 129)
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["listedTitle"], "CHIEF OF STAFF")
         self.assertEqual(self.records["exec-dept-dhs-cisa-chief-of-staff"]["placement"]["parentId"], "exec-dept-dhs-cisa")

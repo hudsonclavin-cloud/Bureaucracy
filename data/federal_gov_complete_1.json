@@ -4069,7 +4069,7 @@
                 },
                 {
                   "id": "leg-senate-cmte-select-committee-on-ethics",
-                  "name": "Senate Committee on Select Committee on Ethics",
+                  "name": "U.S. Senate Select Committee on Ethics",
                   "type": "Committee",
                   "desc": "Standing committee of the U.S. Senate with jurisdiction over select committee on ethics policy.",
                   "employees": null,
@@ -4116,7 +4116,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.ethics.senate.gov/",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "U.S. Senate Select Committee on Ethics"
                 },
                 {
                   "id": "leg-senate-cmte-indian-affairs",
@@ -7309,7 +7313,7 @@
                     },
                     {
                       "id": "leg-house-cmte-judiciary-sub-courts-intellectual-property-the-internet",
-                      "name": "Subcommittee on Courts, Intellectual Property & the Internet",
+                      "name": "Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet",
                       "type": "Subcommittee",
                       "desc": "House subcommittee with jurisdiction over courts, intellectual property & the internet.",
                       "employees": null,
@@ -7336,7 +7340,11 @@
                           "color": "#666666",
                           "children": []
                         }
-                      ]
+                      ],
+                      "nameSource": "named_on_its_own_official_page",
+                      "nameSourceDetail": "https://judiciary.house.gov/subcommittees/committee-judiciary-119th-congress/courts-intellectual-property-artificial",
+                      "nameVerifiedAt": "2026-09-20",
+                      "nameMatchedText": "The Subcommittee on Courts, Intellectual Property, Artificial Intelligence, and the Internet"
                     },
                     {
                       "id": "leg-house-cmte-judiciary-sub-crime-federal-government-surveillance",
@@ -9860,13 +9868,17 @@
                 },
                 {
                   "id": "leg-house-ig",
-                  "name": "Office of the Inspector General",
+                  "name": "Inspector General of the House",
                   "type": "Office",
                   "desc": "Conducts audits and investigations of House operations.",
                   "employees": null,
                   "budget": null,
                   "color": "#8a4ac8",
-                  "children": []
+                  "children": [],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.house.gov/the-house-explained/officers-and-organizations/inspector-general",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "Inspector General of the House | house.gov"
                 }
               ]
             }
@@ -27835,7 +27847,7 @@
                 },
                 {
                   "id": "exec-dept-doc-ntia",
-                  "name": "National Telecommunications & Information Admin (NTIA)",
+                  "name": "National Telecommunications and Information Administration",
                   "type": "Bureau",
                   "desc": "Advises the President on telecom policy; manages federal spectrum.",
                   "employees": "~350",
@@ -27872,7 +27884,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.ntia.gov/about",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "About NTIA | National Telecommunications and Information Administration"
                 },
                 {
                   "id": "exec-dept-doc-economic-development-administration",
@@ -50168,7 +50184,7 @@
                 },
                 {
                   "id": "exec-ind-nara-franklin-d-roosevelt-presidential-library-hyde-park-ny",
-                  "name": "Franklin D. Roosevelt Presidential Library (Hyde Park, NY)",
+                  "name": "Franklin D. Roosevelt Presidential Library and Museum",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50235,7 +50251,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "Franklin D. Roosevelt Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-harry-s-truman-presidential-library-independence-mo",
@@ -50523,7 +50543,7 @@
                 },
                 {
                   "id": "exec-ind-nara-richard-nixon-presidential-library-yorba-linda-ca",
-                  "name": "Richard Nixon Presidential Library (Yorba Linda, CA)",
+                  "name": "Richard Nixon Presidential Library and Museum",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50590,7 +50610,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "Richard Nixon Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-gerald-r-ford-presidential-library-ann-arbor-mi",
@@ -50807,7 +50831,7 @@
                 },
                 {
                   "id": "exec-ind-nara-george-h-w-bush-presidential-library-college-station-tx",
-                  "name": "George H.W. Bush Presidential Library (College Station, TX)",
+                  "name": "George Bush Presidential Library and Museum",
                   "type": "Presidential Library",
                   "desc": "Houses records and artifacts from the presidential administration.",
                   "employees": null,
@@ -50874,7 +50898,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.archives.gov/presidential-libraries",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "George Bush Presidential Library and Museum"
                 },
                 {
                   "id": "exec-ind-nara-william-j-clinton-presidential-library-little-rock-ar",
@@ -51346,7 +51374,7 @@
                 },
                 {
                   "id": "exec-ind-misc-u-s-international-development-finance-corp-dfc",
-                  "name": "U.S. International Development Finance Corp (DFC)",
+                  "name": "U.S. International Development Finance Corporation",
                   "type": "Independent Agency",
                   "desc": "Mobilizes private capital for development in emerging markets.",
                   "employees": "~400",
@@ -51403,7 +51431,11 @@
                       "color": "#666666",
                       "children": []
                     }
-                  ]
+                  ],
+                  "nameSource": "named_on_its_own_official_page",
+                  "nameSourceDetail": "https://www.dfc.gov/",
+                  "nameVerifiedAt": "2026-09-20",
+                  "nameMatchedText": "U.S. International Development Finance Corporation - Learn More"
                 },
                 {
                   "id": "exec-ind-misc-national-endowment-for-the-arts-nea",

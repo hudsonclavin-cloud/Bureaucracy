@@ -152,6 +152,8 @@ class SyntheticFixtureTests(unittest.TestCase):
         self.assertIsInstance(irs["employees"], int)
         self.assertEqual(period_label("202409"), "2024-09")
         meta = load_fedscope_meta(self.zip)
+        # 104 -> 105 sub-agencies and 163 -> 164 records on 2026-09-20 (later): the
+        # phase 1c sweep renamed NTIA to the name FedScope files it under.
         self.assertEqual((meta["url"], meta["fetched_at"]), (META["url"], META["fetched_at"]))
 
     def test_a_count_that_is_not_a_number_is_an_error_never_a_zero(self) -> None:
@@ -442,15 +444,21 @@ class RealFixturePinTests(unittest.TestCase):
         # units the Government Manual carries were added to the curated file:
         # OPM already had rows for them and they landed the moment the nodes
         # existed. The same effect the 15 Treasury units had (136 -> 145).
-        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (59, 104, 163))
+        self.assertEqual((self.report["agencies_matched"], self.report["subagencies_matched"], len(self.records)), (59, 105, 164))
         self.assertEqual((len(self.report["ambiguous_agencies"]), len(self.report["ambiguous_subagencies"])), (0, 0))
         # Two fewer unmatched agencies: NASA and NARA, whose names the table
         # truncates ("NAT ...") and whose truncation is now undone, so their
         # rows are scoped against the right agency instead of floating.
         # 349 -> 331 on 2026-09-20: exactly the 18 sub-agency rows that found a
         # node when the 26 Government Manual units were added.
-        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (54, 331))
-        self.assertEqual(len(self.report["scoped_out"]), 10)
+        self.assertEqual((len(self.report["unmatched_agencies"]), len(self.report["unmatched_subagencies"])), (54, 337))
+        # 10 -> 3 and 331 -> 337 on 2026-09-20 (later): the House Inspector
+        # General was renamed from "Office of the Inspector General", a name
+        # FedScope's sub-agency rows carry under several agencies, each of
+        # which had matched that node OUTSIDE its own subtree (scoped_out).
+        # They now match nothing, which is the honest state. NTIA's rename
+        # adds the one match (163 -> 164).
+        self.assertEqual(len(self.report["scoped_out"]), 3)
         # One more: NARA's agency name now matches, so its single self-named
         # row is carried by the agency record instead of standing alone. 42 ->
         # 45 with the fifteen added units, for the same reason.
@@ -483,8 +491,8 @@ class RealFixturePinTests(unittest.TestCase):
         # 18 -> 36 with no curated figure: the 26 nodes added on 2026-09-20 carry
         # an OPM headcount and no curated `employees` of their own, which is
         # the honest state for a node whose whole basis is the Manual naming it.
-        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (127, 36))
-        self.assertEqual(sum(comparison["bands"].values()), 127)
+        self.assertEqual((comparison["compared"], comparison["no_curated_figure"]), (128, 36))
+        self.assertEqual(sum(comparison["bands"].values()), 128)
         # Defense heads the list now that the judicial branch's record is
         # refused: a curated "~750,000 civilian + 1.3M active military"
         # against the table's civilians-only figure for its own rows.
