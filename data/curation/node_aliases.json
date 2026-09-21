@@ -1,119 +1,160 @@
 {
- "_comment": [
-  "Alternative names a node answers to. The node KEEPS the name the graph",
-  "displays; these are the other names an official document may print for the",
-  "same unit, and the verification process will accept them.",
-  "data_pipeline/verification/aliases.py is the only reader, and CURATION.md",
-  "§17 records every row and every case considered and declined.",
-  "",
-  "'name' is the node's CURRENT name, re-checked on every run: a rename by any",
-  "route invalidates the row rather than letting a badge earned by an old name",
-  "ride along. A row is also refused when the alternative is a no-op under",
-  "canonical_name_key, is one token or on GENERIC_NAMES, or collides with a",
-  "SIBLING's name or alias -- the sibling-scoped collision rule",
-  "rename_units_to_official_wording.py already uses, for the reason recorded",
-  "there.",
-  "",
-  "SCOPE. An alias is consulted ONLY by evidence that a unit exists and is",
-  "named: the page-label test, the Government Manual's entry join, the",
-  "chambers' committee lists, and the current PLUM export's agency scoping. It",
-  "is never consulted by a money or headcount join. Those have their own",
-  "reviewed tables (TREASURY_ROW_ALIASES, USASPENDING_NAME_ALIASES), and the",
-  "separation is structural: headcounts.py, usaspending.py, net_cost.py,",
-  "omb_budget.py and the Treasury row matching do not import the alias module,",
-  "and tests/test_node_aliases.py asserts the whole repository's import list",
-  "against a whitelist.",
-  "",
-  "DELIBERATELY ABSENT: U.S. Army / U.S. Navy / U.S. Air Force -> Department of",
-  "the Army / Navy / Air Force. CLAUDE.md records twice -- for FedScope's",
-  "civilian employment table and for the Government Manual's entries -- that the",
-  "civilian department and the uniformed service are DIFFERENT UNITS with",
-  "different populations, and CURATION.md §13.2 records the same split. That is",
-  "a semantic claim, not a spelling, and the owner is deciding it separately.",
-  "No row here may be added for it."
- ],
- "aliases": [
-  {
-   "id": "exec-ind-misc-americorps",
-   "name": "AmeriCorps",
-   "alias": "Corporation for National and Community Service",
-   "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-vp",
-   "name": "The Vice President of the United States",
-   "alias": "The Vice President",
-   "basis": "The United States Government Manual carries a top-level entry (entity 97, granule GOVMAN-2025-12-31-097) headed 'The Vice President', whose leadership table prints the office as 'THE VICE PRESIDENT' and whose opening paragraph reads 'The U.S. Constitution stipulates that while occupying his (or her) office for a term of 4 years, the President will serve the duration of that term together with the Vice President (ART. II, Sec. 1).' The entry is the office; the graph writes the office's full constitutional style.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "jud-support-aousc",
-   "name": "Administrative Office of U.S. Courts (AOUSC)",
-   "alias": "Administrative Office of the United States Courts",
-   "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-dept-doc-noaa",
-   "name": "NOAA — National Oceanic & Atmospheric Administration",
-   "alias": "National Oceanic and Atmospheric Administration",
-   "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-dept-dot-fmcsa",
-   "name": "Federal Motor Carrier Safety Admin (FMCSA)",
-   "alias": "Federal Motor Carrier Safety Administration",
-   "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-dept-dot-nhtsa",
-   "name": "National Highway Traffic Safety Admin (NHTSA)",
-   "alias": "National Highway Traffic Safety Administration",
-   "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair. The Manual's entry 243 is headed 'National Highway Traffic Safety Administration' and its opening paragraph prints '(NHTSA)', the acronym the curated name carries.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-dept-dot-phmsa",
-   "name": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
-   "alias": "Pipeline and Hazardous Materials Safety Administration",
-   "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
-   "addedOn": "2026-09-21"
-  },
-  {
-   "id": "exec-dept-defense-agency-darpa",
-   "name": "DARPA",
-   "alias": "Defense Advanced Research Projects Agency",
-   "basis": "The curated name is the agency's acronym, letter for letter the initials of the alternative. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding that NOAA, NTIA, DARPA, NSA and FMCSA are all already in the graph under acronyms, which is why no node was added for the Manual's entry. The Manual's entry 214 is headed 'Defense Advanced Research Projects Agency' and its opening paragraph reads 'The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense', which agrees with where this graph places the node.",
-   "addedOn": "2026-09-21"
-  }
- ],
- "_declined": [
-  {
-   "id": "exec-president",
-   "alias": "The President",
-   "reason": "alias_too_short",
-   "note": "The Government Manual's top-level entry 96 is headed 'The President', which reduces to the single token 'president' under canonical_name_key. The alias would be consulted by the page-label test, and 'President' is a label on thousands of .gov pages, so the one-token floor refuses it and is right to. No alias is needed: the same entry's leadership table prints the office as 'THE PRESIDENT OF THE UNITED STATES', which is exactly this node's name, and govman.match_top_level_offices reaches it by plain equality."
-  },
-  {
-   "id": "exec-dept-defense-agency-nsa",
-   "alias": "National Security Agency / Central Security Service",
-   "reason": "the alternative names a second body this graph has no node for",
-   "note": "The Manual's entry 229 is a joint designation, and its own opening paragraph says so: 'The National Security Agency (NSA) was established in 1952 and the Central Security Service (CSS) was established in 1972.' Recording it as another name for the National Security Agency would have this graph's node answer to a label covering a body it does not carry -- the shape usaspending.BROADER_API_ENTITY refuses. Declined; the node keeps its honest state."
-  },
-  {
-   "id": "exec-regulatory-bureau-of-consumer-financial-protection",
-   "alias": "Consumer Financial Protection Bureau",
-   "reason": "a statutory-name-against-branding claim no document in hand establishes",
-   "note": "The Manual's entry 321 is headed 'Consumer Financial Protection Bureau' and says the agency was 'established by title X of the Dodd-Frank Wall Street Reform and Consumer Protection Act of 2012 (12 U.S.C. 5491)'. The curated node is named 'Bureau of Consumer Financial Protection'. The two are almost certainly one agency under its statutory name and its branding, but establishing that needs 12 U.S.C. 5491 itself, which this repository has not read. A word-order difference is not a spelling, so it is declined rather than guessed."
-  },
-  {
-   "id": "exec-army",
-   "alias": "Department of the Army",
-   "reason": "a semantic claim the owner is deciding separately",
-   "note": "See the DELIBERATELY ABSENT note above. The same applies to U.S. Navy and U.S. Air Force."
-  }
- ]
+  "_comment": [
+    "Alternative names a node answers to. The node KEEPS the name the graph",
+    "displays; these are the other names an official document may print for the",
+    "same unit, and the verification process will accept them.",
+    "data_pipeline/verification/aliases.py is the only reader, and CURATION.md",
+    "§17 records every row and every case considered and declined.",
+    "",
+    "'name' is the node's CURRENT name, re-checked on every run: a rename by any",
+    "route invalidates the row rather than letting a badge earned by an old name",
+    "ride along. A row is also refused when the alternative is a no-op under",
+    "canonical_name_key, is one token or on GENERIC_NAMES, or collides with a",
+    "SIBLING's name or alias -- the sibling-scoped collision rule",
+    "rename_units_to_official_wording.py already uses, for the reason recorded",
+    "there.",
+    "",
+    "SCOPE. An alias is consulted ONLY by evidence that a unit exists and is",
+    "named: the page-label test, the Government Manual's entry join, the",
+    "chambers' committee lists, and the current PLUM export's agency scoping. It",
+    "is never consulted by a money or headcount join. Those have their own",
+    "reviewed tables (TREASURY_ROW_ALIASES, USASPENDING_NAME_ALIASES), and the",
+    "separation is structural: headcounts.py, usaspending.py, net_cost.py,",
+    "omb_budget.py and the Treasury row matching do not import the alias module,",
+    "and tests/test_node_aliases.py asserts the whole repository's import list",
+    "against a whitelist.",
+    "",
+    "DELIBERATELY ABSENT: U.S. Army / U.S. Navy / U.S. Air Force -> Department of",
+    "the Army / Navy / Air Force. CLAUDE.md records twice -- for FedScope's",
+    "civilian employment table and for the Government Manual's entries -- that the",
+    "civilian department and the uniformed service are DIFFERENT UNITS with",
+    "different populations, and CURATION.md §13.2 records the same split. That is",
+    "a semantic claim, not a spelling, and the owner is deciding it separately.",
+    "No row here may be added for it."
+  ],
+  "aliases": [
+    {
+      "id": "exec-ind-misc-americorps",
+      "name": "AmeriCorps",
+      "alias": "Corporation for National and Community Service",
+      "basis": "CURATION.md §2 records that the Corporation for National and Community Service is the statutory name of the unit this graph calls AmeriCorps, and USASPENDING_NAME_ALIASES already carries the same identification for the money side. The United States Government Manual's entry 133 is printed under the statutory name and its own mission statement reads 'The Corporation for National and Community Service improves lives, strengthens communities, and fosters civic engagement'; OPM's current PLUM export files 31 live rows under 'CORPORATION FOR NATIONAL AND COMMUNITY SERVICE' and none under AmeriCorps.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-vp",
+      "name": "The Vice President of the United States",
+      "alias": "The Vice President",
+      "basis": "The United States Government Manual carries a top-level entry (entity 97, granule GOVMAN-2025-12-31-097) headed 'The Vice President', whose leadership table prints the office as 'THE VICE PRESIDENT' and whose opening paragraph reads 'The U.S. Constitution stipulates that while occupying his (or her) office for a term of 4 years, the President will serve the duration of that term together with the Vice President (ART. II, Sec. 1).' The entry is the office; the graph writes the office's full constitutional style.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "jud-support-aousc",
+      "name": "Administrative Office of U.S. Courts (AOUSC)",
+      "alias": "Administrative Office of the United States Courts",
+      "basis": "The same words: the graph abbreviates 'the United States' to 'U.S.' and bolts the office's own acronym on in brackets. The United States Government Manual's entry 93 is headed 'Administrative Office of the United States Courts' and its mission statement reads 'The Administrative Office of the United States Courts supports and serves the nonjudicial, administrative business of the United States Courts.'",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-doc-noaa",
+      "name": "NOAA — National Oceanic & Atmospheric Administration",
+      "alias": "National Oceanic and Atmospheric Administration",
+      "basis": "The same words, in the graph's own '<ACRONYM> — <name>' typography, which no document carries. The United States Government Manual's entry 264 is headed 'National Oceanic and Atmospheric Administration' and its opening paragraph reads 'On October 3, 1970, Reorganization Plan No. 4 of 1970 (5 U.S.C. app.) formed the National Oceanic and Atmospheric Administration (NOAA).', printing the acronym the curated name leads with. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding this node already carries that agency under its acronym.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-dot-fmcsa",
+      "name": "Federal Motor Carrier Safety Admin (FMCSA)",
+      "alias": "Federal Motor Carrier Safety Administration",
+      "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair among the four entries kept apart from the Manual's by that abbreviation alone. The Manual's entry 249 is headed 'Federal Motor Carrier Safety Administration' and its opening paragraph prints '(FMCSA)', the acronym the curated name carries.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-dot-nhtsa",
+      "name": "National Highway Traffic Safety Admin (NHTSA)",
+      "alias": "National Highway Traffic Safety Administration",
+      "basis": "The same words: the graph abbreviates 'Administration' to 'Admin'. CURATION.md §13.1 lists this pair. The Manual's entry 243 is headed 'National Highway Traffic Safety Administration' and its opening paragraph prints '(NHTSA)', the acronym the curated name carries.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-dot-phmsa",
+      "name": "Pipeline & Hazardous Materials Safety Admin (PHMSA)",
+      "alias": "Pipeline and Hazardous Materials Safety Administration",
+      "basis": "The same words: the graph abbreviates 'Administration' to 'Admin' and writes '&' for 'and'. CURATION.md §13.1 lists this pair, and USASPENDING_NAME_ALIASES already carries the identical identification for the money side. The Manual's entry 247 is headed 'Pipeline and Hazardous Materials Safety Administration' and its opening paragraph prints '(PHMSA)'.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-dept-defense-agency-darpa",
+      "name": "DARPA",
+      "alias": "Defense Advanced Research Projects Agency",
+      "basis": "The curated name is the agency's acronym, letter for letter the initials of the alternative. CURATION.md §13.3 records the 2026-09-20 second-round adjudication finding that NOAA, NTIA, DARPA, NSA and FMCSA are all already in the graph under acronyms, which is why no node was added for the Manual's entry. The Manual's entry 214 is headed 'Defense Advanced Research Projects Agency' and its opening paragraph reads 'The Defense Advanced Research Projects Agency is a separately organized agency within the Department of Defense', which agrees with where this graph places the node.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-ind-misc-export-import-bank-of-the-u-s",
+      "name": "Export-Import Bank of the U.S.",
+      "alias": "Export-Import Bank",
+      "basis": "The short form of the same name. The United States Government Manual's entry 137 is headed 'Export-Import Bank of the United States', which is the name this graph carries (canonical_name_key reads the graph's trailing 'of the U.S.' as 'of the united states', which is why the Manual already reaches this node). OPM's current PLUM export files 18 live rows under the bare 'EXPORT-IMPORT BANK'. No other unit in this graph answers to either spelling.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-regulatory-bureau-of-consumer-financial-protection",
+      "name": "Bureau of Consumer Financial Protection",
+      "alias": "Consumer Financial Protection Bureau",
+      "basis": "Two official documents, two word orders, one bureau. The Monthly Treasury Statement and this graph print 'Bureau of Consumer Financial Protection'; the United States Government Manual's entry 321 is headed 'Consumer Financial Protection Bureau', and OPM's current PLUM export files its rows under that heading too. The identification does not rest on the statute: it rests on the Manual's own entry, which is committed at tests/fixtures/govman/ and re-read on every run.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-ind-misc-odni",
+      "name": "Office of the Director of National Intelligence",
+      "alias": "Office of the Director for National Intelligence",
+      "basis": "The same office with one preposition changed. dni.gov and the Government Manual's entry both print 'of'; OPM's current PLUM export prints 'for' and files 6 live rows under it. The node keeps the spelling two official documents give it, and the export's spelling is recorded here rather than the node being bent to it.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-ind-misc-cigie",
+      "name": "Council of the Inspectors General on Integrity and Efficiency",
+      "alias": "Council of Inspectors General on Integrity and Efficiency",
+      "basis": "The same name without the article. ignet.gov labels the body 'The Council of the Inspectors General on Integrity and Efficiency (CIGIE)', which is what the node carries; OPM's current PLUM export omits the 'the'. One body, and no other unit in this graph answers to either spelling.",
+      "addedOn": "2026-09-21"
+    },
+    {
+      "id": "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob",
+      "name": "Privacy & Civil Liberties Oversight Board (PCLOB)",
+      "alias": "Privacy and Civil Liberties and Oversight Board",
+      "basis": "The export's own spelling, recorded as the export's rather than as the board's. OPM's current PLUM export files 5 live rows under 'PRIVACY AND CIVIL LIBERTIES AND OVERSIGHT BOARD', which carries a conjunction before 'Oversight' that the board's own name does not; the Federal Register's agency directory, which already reaches this node, prints it without. Recorded so those rows can be read, and the panel quotes the export's string rather than presenting it as a name the board uses.",
+      "addedOn": "2026-09-21"
+    }
+  ],
+  "_declined": [
+    {
+      "id": "exec-president",
+      "alias": "The President",
+      "reason": "alias_too_short",
+      "note": "The Government Manual's top-level entry 96 is headed 'The President', which reduces to the single token 'president' under canonical_name_key. The alias would be consulted by the page-label test, and 'President' is a label on thousands of .gov pages, so the one-token floor refuses it and is right to. No alias is needed: the same entry's leadership table prints the office as 'THE PRESIDENT OF THE UNITED STATES', which is exactly this node's name, and govman.match_top_level_offices reaches it by plain equality."
+    },
+    {
+      "id": "exec-dept-defense-agency-nsa",
+      "alias": "National Security Agency / Central Security Service",
+      "reason": "the alternative names a second body this graph has no node for",
+      "note": "The Manual's entry 229 is a joint designation, and its own opening paragraph says so: 'The National Security Agency (NSA) was established in 1952 and the Central Security Service (CSS) was established in 1972.' Recording it as another name for the National Security Agency would have this graph's node answer to a label covering a body it does not carry -- the shape usaspending.BROADER_API_ENTITY refuses. Declined; the node keeps its honest state."
+    },
+    {
+      "id": "exec-regulatory-bureau-of-consumer-financial-protection",
+      "alias": "Consumer Financial Protection Bureau",
+      "reason": "a statutory-name-against-branding claim no document in hand establishes",
+      "note": "The Manual's entry 321 is headed 'Consumer Financial Protection Bureau' and says the agency was 'established by title X of the Dodd-Frank Wall Street Reform and Consumer Protection Act of 2012 (12 U.S.C. 5491)'. The curated node is named 'Bureau of Consumer Financial Protection'. The two are almost certainly one agency under its statutory name and its branding, but establishing that needs 12 U.S.C. 5491 itself, which this repository has not read. A word-order difference is not a spelling, so it is declined rather than guessed."
+    },
+    {
+      "id": "exec-army",
+      "alias": "Department of the Army",
+      "reason": "a semantic claim the owner is deciding separately",
+      "note": "See the DELIBERATELY ABSENT note above. The same applies to U.S. Navy and U.S. Air Force."
+    },
+    {
+      "id": "exec-ind-misc-interagency-council-on-homelessness",
+      "alias": "Interagency Council on the Homeless",
+      "declined": "A former name, not another spelling. OPM's current PLUM export files 1 live row under the council's pre-1994 name. Saying that the Interagency Council on the Homeless IS the United States Interagency Council on Homelessness is a claim about a succession, and this repository requires a source that states a succession in its own words before publishing one - the rule scripts/mark_superseded_units.py enforces. No such document is committed here, so the row is declined rather than guessed.",
+      "declinedOn": "2026-09-21"
+    }
+  ]
 }

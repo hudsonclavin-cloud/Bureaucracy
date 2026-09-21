@@ -1993,6 +1993,17 @@ NODE_ALIASES = {
     "exec-dept-dot-phmsa": ("Pipeline & Hazardous Materials Safety Admin (PHMSA)",
                             ("Pipeline and Hazardous Materials Safety Administration",)),
     "exec-dept-defense-agency-darpa": ("DARPA", ("Defense Advanced Research Projects Agency",)),
+    "exec-ind-misc-export-import-bank-of-the-u-s": ("Export-Import Bank of the U.S.",
+                                                    ("Export-Import Bank",)),
+    "exec-regulatory-bureau-of-consumer-financial-protection": (
+        "Bureau of Consumer Financial Protection", ("Consumer Financial Protection Bureau",)),
+    "exec-ind-misc-odni": ("Office of the Director of National Intelligence",
+                           ("Office of the Director for National Intelligence",)),
+    "exec-ind-misc-cigie": ("Council of the Inspectors General on Integrity and Efficiency",
+                            ("Council of Inspectors General on Integrity and Efficiency",)),
+    "exec-ind-misc-privacy-civil-liberties-oversight-board-pclob": (
+        "Privacy & Civil Liberties Oversight Board (PCLOB)",
+        ("Privacy and Civil Liberties and Oversight Board",)),
 }
 #: The blocks an alias may never appear on. An alias is a claim about two
 #: NAMES, and every one of these lands a NUMBER; each already has its own
