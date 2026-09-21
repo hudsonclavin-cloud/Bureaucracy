@@ -625,6 +625,13 @@ def uncheckable_reason_for_node(node: dict[str, Any] | None) -> str | None:
 
 def label_matches(key: str, fragment: str) -> bool:
     """Is this fragment the name, rather than text that contains the name?"""
+    # An address is never a label. "director@usgs.gov" reduces to "director
+    # usgs gov", and "gov" is a scaffold token, so it read as the label
+    # "Director, USGS" on usgs.gov/about/key-officials (found 2026-09-21 by
+    # the leadership-page sweep, refused before it was nominated). No
+    # published confirmation rested on one; none may.
+    if "@" in fragment:
+        return False
     # The whole fragment first. The separator split runs before the key
     # drops parentheticals, so "Division of Social and Economic Sciences
     # (SBE/SES)" was split at the "/" into "… Sciences (SBE" and "SES)", and

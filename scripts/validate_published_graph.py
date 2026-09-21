@@ -1967,6 +1967,9 @@ def label_names(node, matched_text):
     if not key:
         return False
     text = str(matched_text or "")
+    # An address is never a label (mirrors the matcher's 2026-09-21 rule).
+    if "@" in text:
+        return False
     if canonical_key(text) == key:
         return True
     for part in re.split(r"\s*[—–|·•:>›»/·]\s*|\s+[-–]\s+|\n+", text):
